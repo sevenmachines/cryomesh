@@ -1,0 +1,108 @@
+.TH "cryomesh::common" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::common \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBexceptions\fP"
+.br
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBConnector\fP"
+.br
+.RI "\fI\fBConnector\fP is a template to add connectable functionality between two classes. \fP"
+.ti -1c
+.RI "class \fBContainers\fP"
+.br
+.RI "\fI\fBContainers\fP contains utility functions for containers. \fP"
+.ti -1c
+.RI "class \fBCycle\fP"
+.br
+.ti -1c
+.RI "class \fBDebuggable\fP"
+.br
+.RI "\fISimple class to aid setting debuggable output on a class. \fP"
+.ti -1c
+.RI "class \fBICollection\fP"
+.br
+.ti -1c
+.RI "class \fBKeyMappedCollection\fP"
+.br
+.RI "\fI\fBKeyMappedCollection\fP is a template class of U, a key class which supports getKey(), and T, the object class. \fP"
+.ti -1c
+.RI "class \fBKeyStore\fP"
+.br
+.RI "\fISimple class to store and retrieve keys. \fP"
+.ti -1c
+.RI "class \fBMaths\fP"
+.br
+.RI "\fI\fBMaths\fP contains some useful maths functions and algorithmns. \fP"
+.ti -1c
+.RI "class \fBMisc\fP"
+.br
+.RI "\fI\fBMisc\fP contains a collection of useful miscellaneous functions. \fP"
+.ti -1c
+.RI "class \fBParallel\fP"
+.br
+.RI "\fI\fBParallel\fP contains template classes for multithreading and synchronisation. \fP"
+.ti -1c
+.RI "class \fBSimpleCollection\fP"
+.br
+.RI "\fI\fBSimpleCollection\fP of objects with accessors. \fP"
+.ti -1c
+.RI "class \fBTagged\fP"
+.br
+.RI "\fI\fBTagged\fP class implements uuid tagging of classes. \fP"
+.ti -1c
+.RI "class \fBTimeKeeper\fP"
+.br
+.RI "\fI\fBTimeKeeper\fP is a class keep track of the cycle state and timing. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef unsigned long int \fBULONG\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBCycle\fP &obj)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef unsigned long int \fBcryomesh::common::ULONG\fP"
+.PP
+Definition at line 15 of file Defs.h.
+.SH "Function Documentation"
+.PP 
+.SS "std::ostream& cryomesh::common::operator<< (std::ostream &os, const Cycle &obj)"\fBParameters:\fP
+.RS 4
+\fIstd::ostream\fP & os The output stream 
+.br
+\fIconst\fP \fBCycle\fP & obj The object to stream
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::ostream & The output stream 
+.RE
+.PP
+
+.PP
+Definition at line 110 of file Cycle.cpp.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

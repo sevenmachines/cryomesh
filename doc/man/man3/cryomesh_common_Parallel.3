@@ -1,0 +1,72 @@
+.TH "cryomesh::common::Parallel" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::common::Parallel \- 
+.PP
+\fBParallel\fP contains template classes for multithreading and synchronisation.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Parallel.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBParallel\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Parallel\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "template<class T > static void \fBparallelProcessUpdate\fP (std::map< boost::uuids::uuid, boost::shared_ptr< T > > &objs, const int PARALLEL_LIMIT)"
+.br
+.RI "\fIParallelise update call to a collection of objects up to a thread limit. \fP"
+.ti -1c
+.RI "template<class T > static boost::thread \fBgetUpdateThread\fP (boost::shared_ptr< T > obj)"
+.br
+.RI "\fIGenerate an threaded update function call to an object. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBParallel\fP contains template classes for multithreading and synchronisation. 
+.PP
+Definition at line 25 of file Parallel.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::common::Parallel::Parallel ()"
+.SS "virtual cryomesh::common::Parallel::~Parallel ()\fC [virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class T > static boost::thread cryomesh::common::Parallel::getUpdateThread (boost::shared_ptr< T >obj)\fC [inline, static]\fP"
+.PP
+Generate an threaded update function call to an object. \fBParameters:\fP
+.RS 4
+\fIboost::shared_ptr<T>\fP obj \fBPointer\fP to object containing update() call 
+.RE
+.PP
+
+.PP
+Definition at line 91 of file Parallel.h.
+.SS "template<class T > static void cryomesh::common::Parallel::parallelProcessUpdate (std::map< boost::uuids::uuid, boost::shared_ptr< T > > &objs, const intPARALLEL_LIMIT)\fC [inline, static]\fP"
+.PP
+Parallelise update call to a collection of objects up to a thread limit. \fBParameters:\fP
+.RS 4
+\fIstd::map<boost::uuids::uuid,boost::shared_ptr<T>\fP > & objs A UUID mapped pointer collection 
+.br
+\fIconst\fP int PARALLEL_LIMIT Maximum number of threads to run 
+.RE
+.PP
+
+.PP
+Definition at line 39 of file Parallel.h.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

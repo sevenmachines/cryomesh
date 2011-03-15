@@ -1,0 +1,369 @@
+.TH "cryomesh::structures::Cluster" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::structures::Cluster \- 
+.PP
+A \fBCluster\fP is a collection of self-contained nodes and connections along with an associated Mesh, that can be connected up to one another.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Cluster.h>\fP
+.PP
+Inherits \fBcryomesh::common::Tagged\fP.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBValueTypeSpecifier\fP { \fBAsIncrement\fP, \fBAsDecrement\fP, \fBAsMinumum\fP, \fBAsAbsolute\fP }"
+.br
+.RI "\fIEnum to force value of a parameter. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCluster\fP ()"
+.br
+.RI "\fIConstructor. \fP"
+.ti -1c
+.RI "\fBCluster\fP (int nodeCount, int connectivity)"
+.br
+.RI "\fIConstructor with number of nodes and connectivity. \fP"
+.ti -1c
+.RI "virtual \fB~Cluster\fP ()"
+.br
+.RI "\fIDestructor. \fP"
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.RI "\fIUpdate all elements. \fP"
+.ti -1c
+.RI "virtual void \fBcreateNodes\fP (const int number=1)"
+.br
+.RI "\fICreate a number of nodes in the cluster. \fP"
+.ti -1c
+.RI "virtual void \fBcreateConnectivity\fP (const int connectivity=1)"
+.br
+.RI "\fICreate connections between all nodes. \fP"
+.ti -1c
+.RI "const std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Node\fP > > & \fBgetNodes\fP () const "
+.br
+.RI "\fIGet all nodes. \fP"
+.ti -1c
+.RI "const std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Connection\fP > > & \fBgetConnections\fP () const "
+.br
+.RI "\fIGet all connections. \fP"
+.ti -1c
+.RI "const \fBcommon::Connector\fP< \fBCluster\fP, \fBFibre\fP > & \fBgetConnector\fP () const "
+.br
+.ti -1c
+.RI "\fBcommon::Connector\fP< \fBCluster\fP, \fBFibre\fP > & \fBgetMutableConnector\fP ()"
+.br
+.ti -1c
+.RI "const \fBcomponents::NodeMap\fP & \fBgetNodeMap\fP () const "
+.br
+.ti -1c
+.RI "\fBcomponents::NodeMap\fP & \fBgetMutableNodeMap\fP ()"
+.br
+.ti -1c
+.RI "boost::uuids::uuid \fBgetUUID\fP () const "
+.br
+.RI "\fIGet the uuid of object. \fP"
+.ti -1c
+.RI "boost::uuids::uuid \fBgetKey\fP () const "
+.br
+.RI "\fIGet the key of object. \fP"
+.ti -1c
+.RI "boost::uuids::uuid \fBgetTag\fP () const "
+.br
+.RI "\fIGet the tag of object. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBupdateConnectivity\fP (const int connectivity, \fBValueTypeSpecifier\fP asValue=AsIncrement)"
+.br
+.RI "\fIUpdate connectivity so that each node has at least param number of connections. \fP"
+.ti -1c
+.RI "virtual void \fBcreateConnection\fP (boost::shared_ptr< \fBcomponents::Node\fP > nodeStart, boost::shared_ptr< \fBcomponents::Node\fP > nodeEnd, int connectivity=1)"
+.br
+.RI "\fICreate connection between an input node and output node. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcomponents::NodeMap\fP \fBnodes\fP"
+.br
+.ti -1c
+.RI "\fBcomponents::ConnectionMap\fP \fBconnections\fP"
+.br
+.ti -1c
+.RI "\fBcomponents::Mesh\fP \fBmesh\fP"
+.br
+.ti -1c
+.RI "\fBcommon::Connector\fP< \fBCluster\fP, \fBFibre\fP > \fBconnector\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBCluster\fP &obj)"
+.br
+.RI "\fITo stream operator. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A \fBCluster\fP is a collection of self-contained nodes and connections along with an associated Mesh, that can be connected up to one another. 
+.PP
+Definition at line 33 of file Cluster.h.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBcryomesh::structures::Cluster::ValueTypeSpecifier\fP"
+.PP
+Enum to force value of a parameter. 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIAsIncrement \fP\fP
+.TP
+\fB\fIAsDecrement \fP\fP
+.TP
+\fB\fIAsMinumum \fP\fP
+.TP
+\fB\fIAsAbsolute \fP\fP
+
+.PP
+Definition at line 39 of file Cluster.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::structures::Cluster::Cluster ()"
+.PP
+Constructor. 
+.PP
+Definition at line 17 of file Cluster.cpp.
+.SS "cryomesh::structures::Cluster::Cluster (intnodeCount, intconnectivity)"
+.PP
+Constructor with number of nodes and connectivity. \fBParameters:\fP
+.RS 4
+\fIint\fP nodeCount Number of nodes to make 
+.br
+\fIint\fP connectivity Connectivity to start with 
+.RE
+.PP
+
+.PP
+Definition at line 20 of file Cluster.cpp.
+.PP
+References createConnectivity(), and createNodes().
+.SS "cryomesh::structures::Cluster::~Cluster ()\fC [virtual]\fP"
+.PP
+Destructor. 
+.PP
+Definition at line 25 of file Cluster.cpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "void cryomesh::structures::Cluster::createConnection (boost::shared_ptr< \fBcomponents::Node\fP >nodeStart, boost::shared_ptr< \fBcomponents::Node\fP >nodeEnd, intconnectivity = \fC1\fP)\fC [protected, virtual]\fP"
+.PP
+Create connection between an input node and output node. \fBParameters:\fP
+.RS 4
+\fIboost::shared_ptr<Node>\fP nodeStart Input node to connect 
+.br
+\fIboost::shared_ptr<Node>\fP nodeEnd Output node to connect 
+.br
+\fIint\fP connecticity Number of connections to create between start and end nodes 
+.RE
+.PP
+
+.PP
+Definition at line 92 of file Cluster.cpp.
+.PP
+References cryomesh::common::KeyMappedCollection< U, T >::add(), and connections.
+.PP
+Referenced by updateConnectivity().
+.SS "void cryomesh::structures::Cluster::createConnectivity (const intconnectivity = \fC1\fP)\fC [virtual]\fP"
+.PP
+Create connections between all nodes. \fBParameters:\fP
+.RS 4
+\fIint\fP connectivity The number of connections between each node 
+.RE
+.PP
+
+.PP
+Definition at line 45 of file Cluster.cpp.
+.PP
+References AsIncrement, and updateConnectivity().
+.PP
+Referenced by Cluster().
+.SS "void cryomesh::structures::Cluster::createNodes (const intnumber = \fC1\fP)\fC [virtual]\fP"
+.PP
+Create a number of nodes in the cluster. \fBParameters:\fP
+.RS 4
+\fIint\fP number Number of nodes to create 
+.RE
+.PP
+
+.PP
+Definition at line 38 of file Cluster.cpp.
+.PP
+References cryomesh::common::KeyMappedCollection< U, T >::add(), cryomesh::components::Node::getRandom(), and nodes.
+.PP
+Referenced by Cluster().
+.SS "const std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Connection\fP > > & cryomesh::structures::Cluster::getConnections () const"
+.PP
+Get all connections. \fBReturns:\fP
+.RS 4
+std::map<boost::uuids::uuid, boost::shared_ptr< components::Connection > > Return all Connections 
+.RE
+.PP
+
+.PP
+Definition at line 113 of file Cluster.cpp.
+.PP
+References connections, and cryomesh::common::KeyMappedCollection< U, T >::getCollection().
+.PP
+Referenced by cryomesh::structures::operator<<().
+.SS "const \fBcommon::Connector\fP< \fBCluster\fP, \fBFibre\fP > & cryomesh::structures::Cluster::getConnector () const"
+.PP
+Definition at line 117 of file Cluster.cpp.
+.PP
+References connector.
+.SS "boost::uuids::uuid cryomesh::common::Tagged::getKey () const\fC [inline, inherited]\fP"
+.PP
+Get the key of object. \fBReturns:\fP
+.RS 4
+boost::uuids::uuid The unique uuid tag of this object 
+.RE
+.PP
+
+.PP
+Definition at line 61 of file Tagged.h.
+.PP
+References cryomesh::common::Tagged::getUUID().
+.SS "\fBcommon::Connector\fP< \fBCluster\fP, \fBFibre\fP > & cryomesh::structures::Cluster::getMutableConnector ()"
+.PP
+Definition at line 121 of file Cluster.cpp.
+.PP
+References connector.
+.SS "\fBcomponents::NodeMap\fP & cryomesh::structures::Cluster::getMutableNodeMap ()"
+.PP
+Definition at line 128 of file Cluster.cpp.
+.PP
+References nodes.
+.SS "const \fBcomponents::NodeMap\fP & cryomesh::structures::Cluster::getNodeMap () const"
+.PP
+Definition at line 125 of file Cluster.cpp.
+.PP
+References nodes.
+.PP
+Referenced by cryomesh::structures::operator<<().
+.SS "const std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Node\fP > > & cryomesh::structures::Cluster::getNodes () const"
+.PP
+Get all nodes. \fBReturns:\fP
+.RS 4
+std::map<boost::uuids::uuid, boost::shared_ptr< components::Node > > Return all nodes 
+.RE
+.PP
+
+.PP
+Definition at line 109 of file Cluster.cpp.
+.PP
+References cryomesh::common::KeyMappedCollection< U, T >::getCollection(), and nodes.
+.PP
+Referenced by cryomesh::structures::operator<<().
+.SS "boost::uuids::uuid cryomesh::common::Tagged::getTag () const\fC [inline, inherited]\fP"
+.PP
+Get the tag of object. \fBReturns:\fP
+.RS 4
+boost::uuids::uuid The unique uuid tag of this object 
+.RE
+.PP
+
+.PP
+Definition at line 71 of file Tagged.h.
+.PP
+References cryomesh::common::Tagged::getUUID().
+.SS "boost::uuids::uuid cryomesh::common::Tagged::getUUID () const\fC [inline, inherited]\fP"
+.PP
+Get the uuid of object. \fBReturns:\fP
+.RS 4
+boost::uuids::uuid The unique uuid tag of this object 
+.RE
+.PP
+
+.PP
+Definition at line 51 of file Tagged.h.
+.PP
+References cryomesh::common::Tagged::uuid.
+.PP
+Referenced by cryomesh::common::Tagged::getKey(), and cryomesh::common::Tagged::getTag().
+.SS "void cryomesh::structures::Cluster::update ()"
+.PP
+Update all elements. 
+.PP
+Definition at line 28 of file Cluster.cpp.
+.PP
+References connections, nodes, cryomesh::components::ConnectionMap::update(), and cryomesh::components::NodeMap::update().
+.SS "void cryomesh::structures::Cluster::updateConnectivity (const intconnectivity, \fBValueTypeSpecifier\fPasValue = \fCAsIncrement\fP)\fC [protected, virtual]\fP"
+.PP
+Update connectivity so that each node has at least param number of connections. \fBParameters:\fP
+.RS 4
+\fIint\fP connectivity The least connectivity to ensure 
+.RE
+.PP
+
+.PP
+Definition at line 49 of file Cluster.cpp.
+.PP
+References AsIncrement, AsMinumum, createConnection(), cryomesh::common::KeyMappedCollection< U, T >::getMutableCollection(), cryomesh::common::KeyMappedCollection< U, T >::getObjectList(), and nodes.
+.PP
+Referenced by createConnectivity().
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream &os, const \fBCluster\fP &obj)\fC [friend]\fP"
+.PP
+To stream operator. \fBParameters:\fP
+.RS 4
+\fIstd::ostream\fP & os The output stream 
+.br
+\fIconst\fP \fBCluster\fP & obj The object to stream
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::ostream & The output stream 
+.RE
+.PP
+
+.PP
+Definition at line 132 of file Cluster.cpp.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBcomponents::ConnectionMap\fP \fBcryomesh::structures::Cluster::connections\fP\fC [private]\fP"
+.PP
+Definition at line 144 of file Cluster.h.
+.PP
+Referenced by createConnection(), getConnections(), and update().
+.SS "\fBcommon::Connector\fP<\fBCluster\fP, \fBFibre\fP> \fBcryomesh::structures::Cluster::connector\fP\fC [private]\fP"
+.PP
+Definition at line 147 of file Cluster.h.
+.PP
+Referenced by getConnector(), and getMutableConnector().
+.SS "\fBcomponents::Mesh\fP \fBcryomesh::structures::Cluster::mesh\fP\fC [private]\fP"
+.PP
+Definition at line 145 of file Cluster.h.
+.SS "\fBcomponents::NodeMap\fP \fBcryomesh::structures::Cluster::nodes\fP\fC [private]\fP"
+.PP
+Definition at line 143 of file Cluster.h.
+.PP
+Referenced by createNodes(), getMutableNodeMap(), getNodeMap(), getNodes(), update(), and updateConnectivity().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

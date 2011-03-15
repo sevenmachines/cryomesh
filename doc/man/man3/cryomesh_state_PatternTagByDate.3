@@ -1,0 +1,311 @@
+.TH "cryomesh::state::PatternTagByDate" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::state::PatternTagByDate \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PatternTagByDate.h>\fP
+.PP
+Inherits \fBcryomesh::state::PatternTag\fP.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBDateType\fP { \fBByHour\fP, \fBByDay\fP, \fBByWeek\fP, \fBByMonth\fP, \fBByYear\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "template<class Archive > void \fBserialize\fP (Archive &ar, const unsigned int version)"
+.br
+.ti -1c
+.RI "\fBPatternTagByDate\fP (\fBDateType\fP dt)"
+.br
+.ti -1c
+.RI "\fBPatternTagByDate\fP (\fBDateType\fP dt, std::tm start_time, std::tm end_time, std::tm current_time)"
+.br
+.ti -1c
+.RI "virtual \fB~PatternTagByDate\fP ()"
+.br
+.ti -1c
+.RI "virtual std::string \fBgetTag\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBsetTag\fP (std::string tg)"
+.br
+.ti -1c
+.RI "virtual std::string \fBmoveTag\fP ()"
+.br
+.ti -1c
+.RI "virtual std::string \fBmoveTag\fP (int i)"
+.br
+.ti -1c
+.RI "virtual std::string \fBgetStartTag\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBsetStartTag\fP (std::string tg)"
+.br
+.ti -1c
+.RI "virtual std::string \fBgetEndTag\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBsetEndTag\fP (std::string tg)"
+.br
+.ti -1c
+.RI "virtual boost::shared_ptr< \fBPatternTag\fP > \fBgetGlobalTag\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static std::tm \fBtagToTm\fP (const std::string &tg)"
+.br
+.ti -1c
+.RI "static std::string \fBtmToTag\fP (const std::tm &t)"
+.br
+.ti -1c
+.RI "static std::tm \fBmoveHour\fP (std::tm &ttime, int i)"
+.br
+.ti -1c
+.RI "static std::tm \fBmoveDay\fP (std::tm &ttime, int i)"
+.br
+.ti -1c
+.RI "static std::tm \fBmoveWeek\fP (std::tm &ttime, int i)"
+.br
+.ti -1c
+.RI "static std::tm \fBmoveMonth\fP (std::tm &ttime, int i)"
+.br
+.ti -1c
+.RI "static std::tm \fBmoveYear\fP (std::tm &ttime, int i)"
+.br
+.ti -1c
+.RI "static bool \fBisLeapYear\fP (const std::tm &tmtime)"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static std::string \fBGlobalStartTag\fP = ''"
+.br
+.ti -1c
+.RI "static std::string \fBGlobalEndTag\fP = ''"
+.br
+.ti -1c
+.RI "static std::string \fBGlobalCurrentTag\fP = ''"
+.br
+.ti -1c
+.RI "static std::string \fBDateFormat\fP = '%S %M %H %d %m %Y %w %j '"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBDateType\fP \fBdateType\fP"
+.br
+.ti -1c
+.RI "std::tm \fBstartTime\fP"
+.br
+.ti -1c
+.RI "std::tm \fBendTime\fP"
+.br
+.ti -1c
+.RI "std::tm \fBcurrentTime\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static boost::shared_ptr< \fBPatternTagByDate\fP > \fBglobalTag\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBboost::serialization::access\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 20 of file PatternTagByDate.h.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBcryomesh::state::PatternTagByDate::DateType\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIByHour \fP\fP
+.TP
+\fB\fIByDay \fP\fP
+.TP
+\fB\fIByWeek \fP\fP
+.TP
+\fB\fIByMonth \fP\fP
+.TP
+\fB\fIByYear \fP\fP
+
+.PP
+Definition at line 22 of file PatternTagByDate.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::state::PatternTagByDate::PatternTagByDate (\fBDateType\fPdt)"
+.PP
+Definition at line 23 of file PatternTagByDate.cpp.
+.SS "cryomesh::state::PatternTagByDate::PatternTagByDate (\fBDateType\fPdt, std::tmstart_time, std::tmend_time, std::tmcurrent_time)"
+.PP
+Definition at line 27 of file PatternTagByDate.cpp.
+.PP
+References GlobalEndTag, GlobalStartTag, globalTag, and startTime.
+.SS "cryomesh::state::PatternTagByDate::~PatternTagByDate ()\fC [virtual]\fP"
+.PP
+Definition at line 37 of file PatternTagByDate.cpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::string cryomesh::state::PatternTagByDate::getEndTag () const\fC [virtual]\fP"
+.PP
+Implements \fBcryomesh::state::PatternTag\fP.
+.PP
+Definition at line 73 of file PatternTagByDate.cpp.
+.SS "boost::shared_ptr< \fBPatternTag\fP > cryomesh::state::PatternTagByDate::getGlobalTag ()\fC [virtual]\fP"
+.PP
+Implements \fBcryomesh::state::PatternTag\fP.
+.PP
+Definition at line 80 of file PatternTagByDate.cpp.
+.SS "std::string cryomesh::state::PatternTagByDate::getStartTag () const\fC [virtual]\fP"
+.PP
+Implements \fBcryomesh::state::PatternTag\fP.
+.PP
+Definition at line 67 of file PatternTagByDate.cpp.
+.SS "std::string cryomesh::state::PatternTagByDate::getTag () const\fC [virtual]\fP"
+.PP
+Implements \fBcryomesh::state::PatternTag\fP.
+.PP
+Definition at line 40 of file PatternTagByDate.cpp.
+.SS "bool cryomesh::state::PatternTagByDate::isLeapYear (const std::tm &tmtime)\fC [static]\fP"
+.PP
+Definition at line 207 of file PatternTagByDate.cpp.
+.SS "std::tm cryomesh::state::PatternTagByDate::moveDay (std::tm &ttime, inti)\fC [static]\fP"
+.PP
+Definition at line 155 of file PatternTagByDate.cpp.
+.SS "std::tm cryomesh::state::PatternTagByDate::moveHour (std::tm &ttime, inti)\fC [static]\fP"
+.PP
+Definition at line 143 of file PatternTagByDate.cpp.
+.PP
+Referenced by moveTag().
+.SS "std::tm cryomesh::state::PatternTagByDate::moveMonth (std::tm &ttime, inti)\fC [static]\fP"
+.PP
+Definition at line 165 of file PatternTagByDate.cpp.
+.PP
+References moveYear().
+.SS "std::string cryomesh::state::PatternTagByDate::moveTag ()\fC [virtual]\fP"
+.PP
+Implements \fBcryomesh::state::PatternTag\fP.
+.PP
+Definition at line 46 of file PatternTagByDate.cpp.
+.PP
+References currentTime, and moveHour().
+.PP
+Referenced by moveTag().
+.SS "std::string cryomesh::state::PatternTagByDate::moveTag (inti)\fC [virtual]\fP"
+.PP
+Implements \fBcryomesh::state::PatternTag\fP.
+.PP
+Definition at line 60 of file PatternTagByDate.cpp.
+.PP
+References moveTag().
+.SS "std::tm cryomesh::state::PatternTagByDate::moveWeek (std::tm &ttime, inti)\fC [static]\fP"
+.PP
+Definition at line 160 of file PatternTagByDate.cpp.
+.SS "std::tm cryomesh::state::PatternTagByDate::moveYear (std::tm &ttime, inti)\fC [static]\fP"
+.PP
+Definition at line 199 of file PatternTagByDate.cpp.
+.PP
+Referenced by moveMonth().
+.SS "template<class Archive > void cryomesh::state::PatternTagByDate::serialize (Archive &ar, const unsigned intversion)\fC [inline]\fP"
+.PP
+Definition at line 28 of file PatternTagByDate.h.
+.PP
+References currentTime, dateType, endTime, globalTag, and startTime.
+.SS "void cryomesh::state::PatternTagByDate::setEndTag (std::stringtg)\fC [virtual]\fP"
+.PP
+Implements \fBcryomesh::state::PatternTag\fP.
+.PP
+Definition at line 76 of file PatternTagByDate.cpp.
+.SS "void cryomesh::state::PatternTagByDate::setStartTag (std::stringtg)\fC [virtual]\fP"
+.PP
+Implements \fBcryomesh::state::PatternTag\fP.
+.PP
+Definition at line 70 of file PatternTagByDate.cpp.
+.SS "void cryomesh::state::PatternTagByDate::setTag (std::stringtg)\fC [virtual]\fP"
+.PP
+Implements \fBcryomesh::state::PatternTag\fP.
+.PP
+Definition at line 43 of file PatternTagByDate.cpp.
+.SS "std::tm cryomesh::state::PatternTagByDate::tagToTm (const std::string &tg)\fC [static]\fP"
+.PP
+Definition at line 84 of file PatternTagByDate.cpp.
+.SS "std::string cryomesh::state::PatternTagByDate::tmToTag (const std::tm &t)\fC [static]\fP"
+.PP
+Definition at line 136 of file PatternTagByDate.cpp.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class boost::serialization::access\fC [friend]\fP"
+.PP
+Definition at line 26 of file PatternTagByDate.h.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::tm \fBcryomesh::state::PatternTagByDate::currentTime\fP\fC [private]\fP"
+.PP
+Definition at line 73 of file PatternTagByDate.h.
+.PP
+Referenced by moveTag(), and serialize().
+.SS "std::string \fBcryomesh::state::PatternTagByDate::DateFormat\fP = '%S %M %H %d %m %Y %w %j '\fC [static, protected]\fP"
+.PP
+Definition at line 66 of file PatternTagByDate.h.
+.SS "\fBDateType\fP \fBcryomesh::state::PatternTagByDate::dateType\fP\fC [private]\fP"
+.PP
+Definition at line 70 of file PatternTagByDate.h.
+.PP
+Referenced by serialize().
+.SS "std::tm \fBcryomesh::state::PatternTagByDate::endTime\fP\fC [private]\fP"
+.PP
+Definition at line 72 of file PatternTagByDate.h.
+.PP
+Referenced by serialize().
+.SS "std::string \fBcryomesh::state::PatternTagByDate::GlobalCurrentTag\fP = ''\fC [static, protected]\fP"
+.PP
+Definition at line 65 of file PatternTagByDate.h.
+.SS "std::string \fBcryomesh::state::PatternTagByDate::GlobalEndTag\fP = ''\fC [static, protected]\fP"
+.PP
+Definition at line 64 of file PatternTagByDate.h.
+.PP
+Referenced by PatternTagByDate().
+.SS "std::string \fBcryomesh::state::PatternTagByDate::GlobalStartTag\fP = ''\fC [static, protected]\fP"
+.PP
+Definition at line 63 of file PatternTagByDate.h.
+.PP
+Referenced by PatternTagByDate().
+.SS "boost::shared_ptr< \fBPatternTagByDate\fP > \fBcryomesh::state::PatternTagByDate::globalTag\fP\fC [static, private]\fP"
+.PP
+Definition at line 69 of file PatternTagByDate.h.
+.PP
+Referenced by PatternTagByDate(), and serialize().
+.SS "std::tm \fBcryomesh::state::PatternTagByDate::startTime\fP\fC [private]\fP"
+.PP
+Definition at line 71 of file PatternTagByDate.h.
+.PP
+Referenced by PatternTagByDate(), and serialize().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

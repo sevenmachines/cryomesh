@@ -1,0 +1,263 @@
+.TH "cryomesh::spacial::SphericalPoint" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::spacial::SphericalPoint \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SphericalPoint.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSphericalPoint\fP ()"
+.br
+.ti -1c
+.RI "\fBSphericalPoint\fP (double r, \fBRadian\fP th, \fBRadian\fP ph)"
+.br
+.ti -1c
+.RI "\fBSphericalPoint\fP (double r, \fBDegree\fP th, \fBDegree\fP ph)"
+.br
+.ti -1c
+.RI "\fBSphericalPoint\fP (const \fBPoint\fP &p)"
+.br
+.ti -1c
+.RI "\fBSphericalPoint\fP (const \fBSphericalPoint\fP &p)"
+.br
+.ti -1c
+.RI "virtual \fB~SphericalPoint\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetArcLength\fP (const \fBSphericalPoint\fP &start) const "
+.br
+.ti -1c
+.RI "double \fBgetArcLengthBasic\fP (const \fBSphericalPoint\fP &start) const "
+.br
+.ti -1c
+.RI "double \fBgetArcLengthHaversine\fP (const \fBSphericalPoint\fP &start) const "
+.br
+.ti -1c
+.RI "\fBSphericalPoint\fP \fBgetOpposite\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetRadius\fP () const "
+.br
+.ti -1c
+.RI "\fBRadian\fP \fBgetTheta\fP () const "
+.br
+.ti -1c
+.RI "\fBRadian\fP \fBgetPhi\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetRadius\fP (double r)"
+.br
+.ti -1c
+.RI "void \fBsetTheta\fP (\fBRadian\fP th)"
+.br
+.ti -1c
+.RI "void \fBsetPhi\fP (\fBRadian\fP ph)"
+.br
+.ti -1c
+.RI "bool \fBequals\fP (const \fBSphericalPoint\fP &obj) const "
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBSphericalPoint\fP &obj) const "
+.br
+.ti -1c
+.RI "\fBSphericalPoint\fP & \fBoperator=\fP (const \fBSphericalPoint\fP &obj)"
+.br
+.ti -1c
+.RI "\fBSphericalPoint\fP \fBoperator+\fP (const \fBSphericalPoint\fP &obj) const "
+.br
+.ti -1c
+.RI "\fBSphericalPoint\fP \fBoperator-\fP (const \fBSphericalPoint\fP &obj) const "
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const double \fBPI\fP = 3.14159265"
+.br
+.ti -1c
+.RI "static const double \fBMIN_ALLOWED_X\fP = 0.00000000001"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBradius\fP"
+.br
+.ti -1c
+.RI "\fBRadian\fP \fBtheta\fP"
+.br
+.ti -1c
+.RI "\fBRadian\fP \fBphi\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBSphericalPoint\fP &obj)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 19 of file SphericalPoint.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::spacial::SphericalPoint::SphericalPoint ()"
+.PP
+Definition at line 20 of file SphericalPoint.cpp.
+.PP
+Referenced by getOpposite(), operator+(), and operator-().
+.SS "cryomesh::spacial::SphericalPoint::SphericalPoint (doubler, \fBRadian\fPth, \fBRadian\fPph)"
+.PP
+Definition at line 23 of file SphericalPoint.cpp.
+.SS "cryomesh::spacial::SphericalPoint::SphericalPoint (doubler, \fBDegree\fPth, \fBDegree\fPph)"
+.PP
+Definition at line 26 of file SphericalPoint.cpp.
+.SS "cryomesh::spacial::SphericalPoint::SphericalPoint (const \fBPoint\fP &p)"
+.PP
+Definition at line 33 of file SphericalPoint.cpp.
+.PP
+References cryomesh::spacial::Point::getX(), cryomesh::spacial::Point::getY(), cryomesh::spacial::Point::getZ(), MIN_ALLOWED_X, radius, setPhi(), setRadius(), and setTheta().
+.SS "cryomesh::spacial::SphericalPoint::SphericalPoint (const \fBSphericalPoint\fP &p)"
+.PP
+Definition at line 30 of file SphericalPoint.cpp.
+.SS "cryomesh::spacial::SphericalPoint::~SphericalPoint ()\fC [virtual]\fP"
+.PP
+Definition at line 48 of file SphericalPoint.cpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool cryomesh::spacial::SphericalPoint::equals (const \fBSphericalPoint\fP &obj) const"
+.PP
+Definition at line 124 of file SphericalPoint.cpp.
+.PP
+References getPhi(), getRadius(), getTheta(), and cryomesh::spacial::Radian::getValue().
+.PP
+Referenced by getArcLengthHaversine().
+.SS "double cryomesh::spacial::SphericalPoint::getArcLength (const \fBSphericalPoint\fP &start) const"
+.PP
+Definition at line 51 of file SphericalPoint.cpp.
+.PP
+References getArcLengthHaversine().
+.SS "double cryomesh::spacial::SphericalPoint::getArcLengthBasic (const \fBSphericalPoint\fP &start) const"
+.PP
+Definition at line 54 of file SphericalPoint.cpp.
+.PP
+References getPhi(), getRadius(), getTheta(), cryomesh::spacial::Radian::getValue(), and cryomesh::spacial::Radian::toDegrees().
+.SS "double cryomesh::spacial::SphericalPoint::getArcLengthHaversine (const \fBSphericalPoint\fP &start) const"
+.PP
+Definition at line 67 of file SphericalPoint.cpp.
+.PP
+References equals(), getPhi(), getRadius(), getTheta(), cryomesh::spacial::Radian::getValue(), PI, and cryomesh::spacial::Radian::toDegrees().
+.PP
+Referenced by getArcLength().
+.SS "\fBSphericalPoint\fP cryomesh::spacial::SphericalPoint::getOpposite () const"
+.PP
+Definition at line 102 of file SphericalPoint.cpp.
+.PP
+References SphericalPoint().
+.SS "\fBRadian\fP cryomesh::spacial::SphericalPoint::getPhi () const"
+.PP
+Definition at line 112 of file SphericalPoint.cpp.
+.PP
+References phi.
+.PP
+Referenced by equals(), getArcLengthBasic(), getArcLengthHaversine(), cryomesh::spacial::operator<<(), operator=(), and operator==().
+.SS "double cryomesh::spacial::SphericalPoint::getRadius () const"
+.PP
+Definition at line 106 of file SphericalPoint.cpp.
+.PP
+References radius.
+.PP
+Referenced by equals(), getArcLengthBasic(), getArcLengthHaversine(), cryomesh::spacial::operator<<(), operator=(), and operator==().
+.SS "\fBRadian\fP cryomesh::spacial::SphericalPoint::getTheta () const"
+.PP
+Definition at line 109 of file SphericalPoint.cpp.
+.PP
+References theta.
+.PP
+Referenced by equals(), getArcLengthBasic(), getArcLengthHaversine(), cryomesh::spacial::operator<<(), operator=(), and operator==().
+.SS "\fBSphericalPoint\fP cryomesh::spacial::SphericalPoint::operator+ (const \fBSphericalPoint\fP &obj) const"
+.PP
+Definition at line 148 of file SphericalPoint.cpp.
+.PP
+References SphericalPoint().
+.SS "\fBSphericalPoint\fP cryomesh::spacial::SphericalPoint::operator- (const \fBSphericalPoint\fP &obj) const"
+.PP
+Definition at line 153 of file SphericalPoint.cpp.
+.PP
+References SphericalPoint().
+.SS "\fBSphericalPoint\fP & cryomesh::spacial::SphericalPoint::operator= (const \fBSphericalPoint\fP &obj)"
+.PP
+Definition at line 140 of file SphericalPoint.cpp.
+.PP
+References getPhi(), getRadius(), getTheta(), setPhi(), setRadius(), and setTheta().
+.SS "bool cryomesh::spacial::SphericalPoint::operator== (const \fBSphericalPoint\fP &obj) const"
+.PP
+Definition at line 136 of file SphericalPoint.cpp.
+.PP
+References getPhi(), getRadius(), and getTheta().
+.SS "void cryomesh::spacial::SphericalPoint::setPhi (\fBRadian\fPph)"
+.PP
+Definition at line 121 of file SphericalPoint.cpp.
+.PP
+References phi.
+.PP
+Referenced by operator=(), and SphericalPoint().
+.SS "void cryomesh::spacial::SphericalPoint::setRadius (doubler)"
+.PP
+Definition at line 115 of file SphericalPoint.cpp.
+.PP
+References radius.
+.PP
+Referenced by operator=(), and SphericalPoint().
+.SS "void cryomesh::spacial::SphericalPoint::setTheta (\fBRadian\fPth)"
+.PP
+Definition at line 118 of file SphericalPoint.cpp.
+.PP
+References theta.
+.PP
+Referenced by operator=(), and SphericalPoint().
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream &os, const \fBSphericalPoint\fP &obj)\fC [friend]\fP"
+.PP
+Definition at line 159 of file SphericalPoint.cpp.
+.SH "Member Data Documentation"
+.PP 
+.SS "const double \fBcryomesh::spacial::SphericalPoint::MIN_ALLOWED_X\fP = 0.00000000001\fC [static]\fP"
+.PP
+Definition at line 51 of file SphericalPoint.h.
+.PP
+Referenced by SphericalPoint().
+.SS "\fBRadian\fP \fBcryomesh::spacial::SphericalPoint::phi\fP\fC [private]\fP"
+.PP
+Definition at line 59 of file SphericalPoint.h.
+.PP
+Referenced by getPhi(), and setPhi().
+.SS "const double \fBcryomesh::spacial::SphericalPoint::PI\fP = 3.14159265\fC [static]\fP"
+.PP
+Definition at line 50 of file SphericalPoint.h.
+.PP
+Referenced by getArcLengthHaversine().
+.SS "double \fBcryomesh::spacial::SphericalPoint::radius\fP\fC [private]\fP"
+.PP
+Definition at line 55 of file SphericalPoint.h.
+.PP
+Referenced by getRadius(), setRadius(), and SphericalPoint().
+.SS "\fBRadian\fP \fBcryomesh::spacial::SphericalPoint::theta\fP\fC [private]\fP"
+.PP
+Definition at line 57 of file SphericalPoint.h.
+.PP
+Referenced by getTheta(), and setTheta().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

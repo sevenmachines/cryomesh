@@ -1,0 +1,175 @@
+.TH "cryomesh::spacial::Point" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::spacial::Point \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Point.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPoint\fP ()"
+.br
+.ti -1c
+.RI "\fBPoint\fP (double new_x, double new_y, double new_z)"
+.br
+.ti -1c
+.RI "\fBPoint\fP (const \fBPoint\fP &sp)"
+.br
+.ti -1c
+.RI "\fBPoint\fP (const \fBSphericalPoint\fP &sp)"
+.br
+.ti -1c
+.RI "virtual \fB~Point\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetDistance\fP (const \fBPoint\fP &start) const "
+.br
+.ti -1c
+.RI "void \fBsetToMinimumDistances\fP (double min)"
+.br
+.ti -1c
+.RI "double \fBgetX\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetY\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetZ\fP () const "
+.br
+.ti -1c
+.RI "\fBPoint\fP \fBgetNormalisedVector\fP () const "
+.br
+.ti -1c
+.RI "bool \fBequals\fP (const \fBPoint\fP &obj) const "
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBPoint\fP &obj) const "
+.br
+.ti -1c
+.RI "\fBPoint\fP & \fBoperator=\fP (const \fBPoint\fP &obj)"
+.br
+.ti -1c
+.RI "\fBPoint\fP \fBoperator+\fP (const \fBPoint\fP &obj) const "
+.br
+.ti -1c
+.RI "\fBPoint\fP \fBoperator-\fP (const \fBPoint\fP &obj) const "
+.br
+.ti -1c
+.RI "\fBPoint\fP \fBoperator*\fP (double d) const "
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBx\fP"
+.br
+.ti -1c
+.RI "double \fBy\fP"
+.br
+.ti -1c
+.RI "double \fBz\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBPoint\fP &obj)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 19 of file Point.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::spacial::Point::Point ()"
+.PP
+Definition at line 18 of file Point.cpp.
+.SS "cryomesh::spacial::Point::Point (doublenew_x, doublenew_y, doublenew_z)"
+.PP
+Definition at line 22 of file Point.cpp.
+.SS "cryomesh::spacial::Point::Point (const \fBPoint\fP &sp)"
+.PP
+Definition at line 26 of file Point.cpp.
+.SS "cryomesh::spacial::Point::Point (const \fBSphericalPoint\fP &sp)"
+.PP
+Definition at line 29 of file Point.cpp.
+.SS "cryomesh::spacial::Point::~Point ()\fC [virtual]\fP"
+.PP
+Definition at line 34 of file Point.cpp.
+.PP
+References getX(), and x.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool cryomesh::spacial::Point::equals (const \fBPoint\fP &obj) const"
+.PP
+Definition at line 73 of file Point.cpp.
+.SS "double cryomesh::spacial::Point::getDistance (const \fBPoint\fP &start) const"
+.PP
+Definition at line 36 of file Point.cpp.
+.PP
+Referenced by cryomesh::components::Connection::updatePosition().
+.SS "\fBPoint\fP cryomesh::spacial::Point::getNormalisedVector () const"
+.PP
+Definition at line 65 of file Point.cpp.
+.SS "double cryomesh::spacial::Point::getX () const"
+.PP
+Definition at line 55 of file Point.cpp.
+.PP
+Referenced by cryomesh::components::Node::getRandom(), cryomesh::spacial::SphericalPoint::SphericalPoint(), and ~Point().
+.SS "double cryomesh::spacial::Point::getY () const"
+.PP
+Definition at line 58 of file Point.cpp.
+.PP
+Referenced by cryomesh::components::Node::getRandom(), and cryomesh::spacial::SphericalPoint::SphericalPoint().
+.SS "double cryomesh::spacial::Point::getZ () const"
+.PP
+Definition at line 61 of file Point.cpp.
+.PP
+Referenced by cryomesh::components::Node::getRandom(), and cryomesh::spacial::SphericalPoint::SphericalPoint().
+.SS "\fBPoint\fP cryomesh::spacial::Point::operator* (doubled) const"
+.PP
+Definition at line 100 of file Point.cpp.
+.SS "\fBPoint\fP cryomesh::spacial::Point::operator+ (const \fBPoint\fP &obj) const"
+.PP
+Definition at line 92 of file Point.cpp.
+.SS "\fBPoint\fP cryomesh::spacial::Point::operator- (const \fBPoint\fP &obj) const"
+.PP
+Definition at line 96 of file Point.cpp.
+.SS "\fBPoint\fP & cryomesh::spacial::Point::operator= (const \fBPoint\fP &obj)"
+.PP
+Definition at line 84 of file Point.cpp.
+.SS "bool cryomesh::spacial::Point::operator== (const \fBPoint\fP &obj) const"
+.PP
+Definition at line 80 of file Point.cpp.
+.SS "void cryomesh::spacial::Point::setToMinimumDistances (doublemin)"
+.PP
+Definition at line 44 of file Point.cpp.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream &os, const \fBPoint\fP &obj)\fC [friend]\fP"
+.PP
+Definition at line 104 of file Point.cpp.
+.SH "Member Data Documentation"
+.PP 
+.SS "double \fBcryomesh::spacial::Point::x\fP\fC [private]\fP"
+.PP
+Definition at line 47 of file Point.h.
+.PP
+Referenced by ~Point().
+.SS "double \fBcryomesh::spacial::Point::y\fP\fC [private]\fP"
+.PP
+Definition at line 48 of file Point.h.
+.SS "double \fBcryomesh::spacial::Point::z\fP\fC [private]\fP"
+.PP
+Definition at line 49 of file Point.h.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

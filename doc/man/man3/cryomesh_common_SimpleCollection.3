@@ -1,0 +1,502 @@
+.TH "cryomesh::common::SimpleCollection" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::common::SimpleCollection \- 
+.PP
+\fBSimpleCollection\fP of objects with accessors.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SimpleCollection.h>\fP
+.PP
+Inherits \fBICollection< SimpleCollection< T > >\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSimpleCollection\fP ()"
+.br
+.RI "\fIDefault constructor. \fP"
+.ti -1c
+.RI "\fBSimpleCollection\fP (const std::initializer_list< T > &list)"
+.br
+.RI "\fIConstruct from initializer list. \fP"
+.ti -1c
+.RI "\fBSimpleCollection\fP (const std::list< T > &list)"
+.br
+.RI "\fIConstruct by list. \fP"
+.ti -1c
+.RI "virtual \fB~SimpleCollection\fP ()"
+.br
+.RI "\fIDefault destructor. \fP"
+.ti -1c
+.RI "virtual void \fBclear\fP ()"
+.br
+.RI "\fIClear all objects from collection. \fP"
+.ti -1c
+.RI "virtual void \fBadd\fP (T obj)"
+.br
+.RI "\fIAdd object to collection. \fP"
+.ti -1c
+.RI "virtual void \fBadd\fP (const std::initializer_list< T > &list)"
+.br
+.RI "\fIAdd object to collection by initialiser list. \fP"
+.ti -1c
+.RI "virtual void \fBadd\fP (const std::list< T > &list)"
+.br
+.RI "\fIAdd object to collection by list. \fP"
+.ti -1c
+.RI "virtual void \fBremove\fP (T obj)"
+.br
+.RI "\fIRemove object from collection. \fP"
+.ti -1c
+.RI "virtual void \fBremove\fP (const std::initializer_list< T > &list)"
+.br
+.RI "\fIRemove objects from collection by initialiser list. \fP"
+.ti -1c
+.RI "virtual void \fBremove\fP (const std::list< T > &list)"
+.br
+.RI "\fIRemove objects from collection by list. \fP"
+.ti -1c
+.RI "virtual T \fBgetSum\fP () const "
+.br
+.ti -1c
+.RI "virtual T \fBgetMaximum\fP () const "
+.br
+.ti -1c
+.RI "virtual T \fBgetMinimum\fP () const "
+.br
+.ti -1c
+.RI "virtual T \fBoperator[]\fP (unsigned index) const   throw (exceptions::IndexOutOfBoundsException)"
+.br
+.RI "\fIGet value at index. \fP"
+.ti -1c
+.RI "virtual \fBSimpleCollection\fP & \fBinvert\fP ()"
+.br
+.RI "\fIInvert collection. \fP"
+.ti -1c
+.RI "virtual \fBSimpleCollection\fP< T > & \fBreverse\fP ()"
+.br
+.RI "\fIReverse collection. \fP"
+.ti -1c
+.RI "virtual const std::list< T > & \fBgetCollection\fP () const "
+.br
+.RI "\fIGet underlying collection. \fP"
+.ti -1c
+.RI "virtual std::list< T > & \fBgetMutableCollection\fP ()"
+.br
+.RI "\fIGet mutable underlying collection. \fP"
+.ti -1c
+.RI "virtual int \fBgetSize\fP () const "
+.br
+.RI "\fIGet underlying collections size. \fP"
+.ti -1c
+.RI "virtual const \fBSimpleCollection\fP< T > \fBoperator+\fP (const \fBSimpleCollection\fP< T > &obj) const "
+.br
+.RI "\fINon-destructive addition operator. \fP"
+.ti -1c
+.RI "virtual \fBSimpleCollection\fP< T > & \fBoperator+=\fP (const \fBSimpleCollection\fP< T > &obj)"
+.br
+.RI "\fIDestructive addition and assignment operator. \fP"
+.ti -1c
+.RI "virtual \fBSimpleCollection\fP< T > & \fBoperator=\fP (const \fBSimpleCollection\fP< T > &obj)"
+.br
+.RI "\fIAssignment operator. \fP"
+.ti -1c
+.RI "virtual bool \fBoperator==\fP (const \fBSimpleCollection\fP< T > &obj) const "
+.br
+.RI "\fIComparator operator. \fP"
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBSimpleCollection\fP &obj) const "
+.br
+.RI "\fINot comparator operator. \fP"
+.ti -1c
+.RI "std::list< T > & \fBpad\fP (int front_pad, int back_pad, T pad_value)"
+.br
+.RI "\fIPad Collection. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "T \fBgetBoundaryValue\fP (bool greater) const "
+.br
+.ti -1c
+.RI "void \fBgenerateCurve\fP (const double max_y, const unsigned long length)"
+.br
+.RI "\fIGenerate a curve from boundary value. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::list< T > \fBobjects\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &out, const \fBSimpleCollection\fP &obj)"
+.br
+.RI "\fITo stream operator. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class T> class cryomesh::common::SimpleCollection< T >"
+\fBSimpleCollection\fP of objects with accessors. 
+.PP
+Definition at line 28 of file SimpleCollection.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class T> \fBcryomesh::common::SimpleCollection\fP< T >::\fBSimpleCollection\fP ()\fC [inline]\fP"
+.PP
+Default constructor. 
+.PP
+Definition at line 34 of file SimpleCollection.h.
+.SS "template<class T> \fBcryomesh::common::SimpleCollection\fP< T >::\fBSimpleCollection\fP (const std::initializer_list< T > &list)\fC [inline]\fP"
+.PP
+Construct from initializer list. \fBParameters:\fP
+.RS 4
+\fIstd::initialiser_list<T>\fP obj The values to be added to the collection 
+.RE
+.PP
+
+.PP
+Definition at line 43 of file SimpleCollection.h.
+.SS "template<class T> \fBcryomesh::common::SimpleCollection\fP< T >::\fBSimpleCollection\fP (const std::list< T > &list)\fC [inline]\fP"
+.PP
+Construct by list. \fBParameters:\fP
+.RS 4
+\fIstd::list<T>\fP list The list values to be added to the collection 
+.RE
+.PP
+
+.PP
+Definition at line 53 of file SimpleCollection.h.
+.SS "template<class T> virtual \fBcryomesh::common::SimpleCollection\fP< T >::~\fBSimpleCollection\fP ()\fC [inline, virtual]\fP"
+.PP
+Default destructor. 
+.PP
+Definition at line 60 of file SimpleCollection.h.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class T> virtual void \fBcryomesh::common::SimpleCollection\fP< T >::add (Tobj)\fC [inline, virtual]\fP"
+.PP
+Add object to collection. \fBParameters:\fP
+.RS 4
+\fIT\fP obj The value to be added to the collection
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+T The value added to the collection 
+.RE
+.PP
+
+.PP
+Definition at line 80 of file SimpleCollection.h.
+.PP
+Referenced by cryomesh::common::SimpleCollection< double >::add(), and cryomesh::common::SimpleCollection< double >::SimpleCollection().
+.SS "template<class T> virtual void \fBcryomesh::common::SimpleCollection\fP< T >::add (const std::list< T > &list)\fC [inline, virtual]\fP"
+.PP
+Add object to collection by list. \fBParameters:\fP
+.RS 4
+\fIstd::list<T>\fP list The list values to be added to the collection 
+.RE
+.PP
+
+.PP
+Definition at line 108 of file SimpleCollection.h.
+.SS "template<class T> virtual void \fBcryomesh::common::SimpleCollection\fP< T >::add (const std::initializer_list< T > &list)\fC [inline, virtual]\fP"
+.PP
+Add object to collection by initialiser list. \fBParameters:\fP
+.RS 4
+\fIstd::initialiser_list<T>\fP obj The values to be added to the collection 
+.RE
+.PP
+
+.PP
+Definition at line 90 of file SimpleCollection.h.
+.SS "template<class T> virtual void \fBcryomesh::common::SimpleCollection\fP< T >::clear ()\fC [inline, virtual]\fP"
+.PP
+Clear all objects from collection. 
+.PP
+Definition at line 66 of file SimpleCollection.h.
+.PP
+Referenced by cryomesh::components::Impulse::operator=().
+.SS "template<class T> void \fBcryomesh::common::SimpleCollection\fP< T >::generateCurve (const doublemax_y, const unsigned longlength)\fC [inline, protected]\fP"
+.PP
+Generate a curve from boundary value. \fBParameters:\fP
+.RS 4
+\fIconst\fP int max_y Boundary value of curve 
+.br
+\fIconst\fP int length Length of Impulse 
+.RE
+.PP
+
+.PP
+Definition at line 537 of file SimpleCollection.h.
+.SS "template<class T> T \fBcryomesh::common::SimpleCollection\fP< T >::getBoundaryValue (boolgreater) const\fC [inline, protected]\fP"
+.PP
+Definition at line 500 of file SimpleCollection.h.
+.PP
+Referenced by cryomesh::common::SimpleCollection< double >::getMaximum(), and cryomesh::common::SimpleCollection< double >::getMinimum().
+.SS "template<class T> virtual const std::list<T>& \fBcryomesh::common::SimpleCollection\fP< T >::getCollection () const\fC [inline, virtual]\fP"
+.PP
+Get underlying collection. \fBReturns:\fP
+.RS 4
+const std::list<T> & The collection 
+.RE
+.PP
+
+.PP
+Definition at line 298 of file SimpleCollection.h.
+.PP
+Referenced by cryomesh::components::Impulse::operator+=(), cryomesh::common::SimpleCollection< double >::operator+=(), cryomesh::components::operator<<(), cryomesh::components::Impulse::operator=(), cryomesh::common::SimpleCollection< double >::operator=(), cryomesh::components::Impulse::operator==(), and cryomesh::common::SimpleCollection< double >::operator==().
+.SS "template<class T> virtual T \fBcryomesh::common::SimpleCollection\fP< T >::getMaximum () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 205 of file SimpleCollection.h.
+.SS "template<class T> virtual T \fBcryomesh::common::SimpleCollection\fP< T >::getMinimum () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 215 of file SimpleCollection.h.
+.SS "template<class T> virtual std::list<T>& \fBcryomesh::common::SimpleCollection\fP< T >::getMutableCollection ()\fC [inline, virtual]\fP"
+.PP
+Get mutable underlying collection. \fBReturns:\fP
+.RS 4
+std::list<T> & The mutable collection 
+.RE
+.PP
+
+.PP
+Definition at line 308 of file SimpleCollection.h.
+.PP
+Referenced by cryomesh::common::SimpleCollection< double >::operator+=().
+.SS "template<class T> virtual int \fBcryomesh::common::SimpleCollection\fP< T >::getSize () const\fC [inline, virtual]\fP"
+.PP
+Get underlying collections size. \fBReturns:\fP
+.RS 4
+int The collections size 
+.RE
+.PP
+
+.PP
+Definition at line 318 of file SimpleCollection.h.
+.PP
+Referenced by cryomesh::common::SimpleCollection< double >::operator[]().
+.SS "template<class T> virtual T \fBcryomesh::common::SimpleCollection\fP< T >::getSum () const\fC [inline, virtual]\fP"
+.PP
+Definition at line 185 of file SimpleCollection.h.
+.SS "template<class T> virtual \fBSimpleCollection\fP& \fBcryomesh::common::SimpleCollection\fP< T >::invert ()\fC [inline, virtual]\fP"
+.PP
+Invert collection. Reflect the collection in the x axis
+.PP
+\fBReturns:\fP
+.RS 4
+\fBSimpleCollection\fP & The inverted object 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBcryomesh::components::Impulse\fP.
+.PP
+Definition at line 264 of file SimpleCollection.h.
+.PP
+Referenced by cryomesh::components::Impulse::invert().
+.SS "template<class T> bool \fBcryomesh::common::SimpleCollection\fP< T >::operator!= (const \fBSimpleCollection\fP< T > &obj) const\fC [inline, virtual]\fP"
+.PP
+Not comparator operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBSimpleCollection\fP & obj RHS object
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True if not equal, false otherwise 
+.RE
+.PP
+
+.PP
+Implements \fBcryomesh::common::ICollection< SimpleCollection< T > >\fP.
+.PP
+Definition at line 432 of file SimpleCollection.h.
+.SS "template<class T> virtual const \fBSimpleCollection\fP<T> \fBcryomesh::common::SimpleCollection\fP< T >::operator+ (const \fBSimpleCollection\fP< T > &obj) const\fC [inline, virtual]\fP"
+.PP
+Non-destructive addition operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP SimpleCollection<T> & obj RHS addition
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+SimpleCollection<T> New object after addition 
+.RE
+.PP
+
+.PP
+Implements \fBcryomesh::common::ICollection< SimpleCollection< T > >\fP.
+.PP
+Definition at line 331 of file SimpleCollection.h.
+.SS "template<class T> virtual \fBSimpleCollection\fP<T>& \fBcryomesh::common::SimpleCollection\fP< T >::operator+= (const \fBSimpleCollection\fP< T > &obj)\fC [inline, virtual]\fP"
+.PP
+Destructive addition and assignment operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP SimpleCollection<T> & obj RHS addition
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+SimpleCollection<T> & This object after addition and assignment 
+.RE
+.PP
+
+.PP
+Implements \fBcryomesh::common::ICollection< SimpleCollection< T > >\fP.
+.PP
+Definition at line 346 of file SimpleCollection.h.
+.SS "template<class T> virtual \fBSimpleCollection\fP<T>& \fBcryomesh::common::SimpleCollection\fP< T >::operator= (const \fBSimpleCollection\fP< T > &obj)\fC [inline, virtual]\fP"
+.PP
+Assignment operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP SimpleCollection<T> & obj RHS assignment
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+SimpleCollection<T> & This object after assignment 
+.RE
+.PP
+
+.PP
+Implements \fBcryomesh::common::ICollection< SimpleCollection< T > >\fP.
+.PP
+Definition at line 362 of file SimpleCollection.h.
+.SS "template<class T> virtual bool \fBcryomesh::common::SimpleCollection\fP< T >::operator== (const \fBSimpleCollection\fP< T > &obj) const\fC [inline, virtual]\fP"
+.PP
+Comparator operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP SimpleCollection<T> & obj RHS object
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True if equal, false otherwise 
+.RE
+.PP
+
+.PP
+Implements \fBcryomesh::common::ICollection< SimpleCollection< T > >\fP.
+.PP
+Definition at line 390 of file SimpleCollection.h.
+.SS "template<class T> virtual T \fBcryomesh::common::SimpleCollection\fP< T >::operator[] (unsignedindex) const  throw (\fBexceptions::IndexOutOfBoundsException\fP)\fC [inline, virtual]\fP"
+.PP
+Get value at index. \fBParameters:\fP
+.RS 4
+\fIunsigned\fP index Index to return
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+T Value at index, 0 if out of bounds 
+.RE
+.PP
+
+.PP
+Definition at line 228 of file SimpleCollection.h.
+.SS "template<class T> std::list<T>& \fBcryomesh::common::SimpleCollection\fP< T >::pad (intfront_pad, intback_pad, Tpad_value)\fC [inline]\fP"
+.PP
+Pad Collection. \fBParameters:\fP
+.RS 4
+\fIint\fP front_pad Amount of places to pad to front 
+.br
+\fIint\fP back_pad Amount of places to pad to back 
+.br
+\fIT\fP & obj Object to use for pad
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+T & Return the collection 
+.RE
+.PP
+
+.PP
+Definition at line 475 of file SimpleCollection.h.
+.SS "template<class T> virtual void \fBcryomesh::common::SimpleCollection\fP< T >::remove (const std::list< T > &list)\fC [inline, virtual]\fP"
+.PP
+Remove objects from collection by list. \fBParameters:\fP
+.RS 4
+\fIstd::list<T>\fP list The list values to be removed to the collection 
+.RE
+.PP
+
+.PP
+Definition at line 167 of file SimpleCollection.h.
+.SS "template<class T> virtual void \fBcryomesh::common::SimpleCollection\fP< T >::remove (const std::initializer_list< T > &list)\fC [inline, virtual]\fP"
+.PP
+Remove objects from collection by initialiser list. \fBParameters:\fP
+.RS 4
+\fIstd::initialiser_list<T>\fP obj The values to be removed from the collection 
+.RE
+.PP
+
+.PP
+Definition at line 149 of file SimpleCollection.h.
+.SS "template<class T> virtual void \fBcryomesh::common::SimpleCollection\fP< T >::remove (Tobj)\fC [inline, virtual]\fP"
+.PP
+Remove object from collection. \fBParameters:\fP
+.RS 4
+\fIT\fP obj The object to be removed from the collection 
+.RE
+.PP
+
+.PP
+Definition at line 126 of file SimpleCollection.h.
+.SS "template<class T> virtual \fBSimpleCollection\fP<T>& \fBcryomesh::common::SimpleCollection\fP< T >::reverse ()\fC [inline, virtual]\fP"
+.PP
+Reverse collection. Reflect the collection in the y axis
+.PP
+\fBReturns:\fP
+.RS 4
+SimpleCollection<T> & The inverted object 
+.RE
+.PP
+
+.PP
+Definition at line 285 of file SimpleCollection.h.
+.PP
+Referenced by cryomesh::common::SimpleCollection< double >::reverse().
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "template<class T> std::ostream& operator<< (std::ostream &out, const \fBSimpleCollection\fP< T > &obj)\fC [friend]\fP"
+.PP
+To stream operator. \fBParameters:\fP
+.RS 4
+\fIstd::ostream\fP & out The output stream 
+.br
+\fIconst\fP \fBSimpleCollection\fP & obj The object to stream
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::ostream & The output stream 
+.RE
+.PP
+
+.PP
+Definition at line 447 of file SimpleCollection.h.
+.SH "Member Data Documentation"
+.PP 
+.SS "template<class T> std::list<T> \fBcryomesh::common::SimpleCollection\fP< T >::\fBobjects\fP\fC [private]\fP"
+.PP
+Definition at line 551 of file SimpleCollection.h.
+.PP
+Referenced by cryomesh::common::SimpleCollection< double >::add(), cryomesh::common::SimpleCollection< double >::clear(), cryomesh::common::SimpleCollection< double >::generateCurve(), cryomesh::common::SimpleCollection< double >::getBoundaryValue(), cryomesh::common::SimpleCollection< double >::getCollection(), cryomesh::common::SimpleCollection< double >::getMutableCollection(), cryomesh::common::SimpleCollection< double >::getSize(), cryomesh::common::SimpleCollection< double >::getSum(), cryomesh::common::SimpleCollection< double >::invert(), cryomesh::common::SimpleCollection< double >::operator=(), cryomesh::common::SimpleCollection< double >::operator[](), cryomesh::common::SimpleCollection< double >::pad(), cryomesh::common::SimpleCollection< double >::remove(), and cryomesh::common::SimpleCollection< double >::reverse().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

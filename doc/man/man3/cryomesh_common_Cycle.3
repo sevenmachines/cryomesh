@@ -1,0 +1,412 @@
+.TH "cryomesh::common::Cycle" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::common::Cycle \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Cycle.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCycle\fP ()"
+.br
+.RI "\fIDefault Constructor. \fP"
+.ti -1c
+.RI "\fBCycle\fP (const unsigned long int it)"
+.br
+.RI "\fIConstruct from unsigned long int. \fP"
+.ti -1c
+.RI "\fBCycle\fP (mpz_class mp)"
+.br
+.RI "\fIConstruct from mpz. \fP"
+.ti -1c
+.RI "\fBCycle\fP & \fBoperator=\fP (const \fBCycle\fP &obj)"
+.br
+.RI "\fIAssignment operator. \fP"
+.ti -1c
+.RI "const \fBCycle\fP \fBoperator+\fP (const \fBCycle\fP &obj) const "
+.br
+.RI "\fINon-destructive addition operator. \fP"
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBCycle\fP &obj) const "
+.br
+.RI "\fIGreater than operator. \fP"
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBCycle\fP &obj) const "
+.br
+.RI "\fILess than operator. \fP"
+.ti -1c
+.RI "bool \fBoperator>=\fP (const \fBCycle\fP &obj) const "
+.br
+.RI "\fI>= than operator \fP"
+.ti -1c
+.RI "bool \fBoperator<=\fP (const \fBCycle\fP &obj) const "
+.br
+.RI "\fI<= than operator \fP"
+.ti -1c
+.RI "\fBCycle\fP & \fBoperator+=\fP (const \fBCycle\fP &obj)"
+.br
+.RI "\fIDestructive addition and assignment operator. \fP"
+.ti -1c
+.RI "const \fBCycle\fP \fBoperator-\fP (const \fBCycle\fP &obj) const "
+.br
+.RI "\fINon-destructive addition operator. \fP"
+.ti -1c
+.RI "\fBCycle\fP & \fBoperator-=\fP (const \fBCycle\fP &obj)"
+.br
+.RI "\fIDestructive addition and assignment operator. \fP"
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBCycle\fP &obj) const "
+.br
+.RI "\fIComparator operator. \fP"
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBCycle\fP &obj) const "
+.br
+.RI "\fINot comparator operator. \fP"
+.ti -1c
+.RI "\fBCycle\fP & \fBoperator++\fP ()"
+.br
+.RI "\fIPrefix increment operator. \fP"
+.ti -1c
+.RI "\fBCycle\fP \fBoperator++\fP (int)"
+.br
+.RI "\fIPostfix increment operator. \fP"
+.ti -1c
+.RI "\fBCycle\fP \fBoperator--\fP (int)"
+.br
+.RI "\fIPostfix decrement operator. \fP"
+.ti -1c
+.RI "\fBCycle\fP & \fBoperator--\fP ()"
+.br
+.RI "\fIPrefix increment operator. \fP"
+.ti -1c
+.RI "unsigned long int \fBtoULInt\fP () const "
+.br
+.RI "\fIReturn as an unsigned integer. \fP"
+.ti -1c
+.RI "long int \fBtoLInt\fP () const "
+.br
+.RI "\fIReturn as an signed integer. \fP"
+.ti -1c
+.RI "const mpz_class & \fBgetMP\fP () const "
+.br
+.RI "\fIGet multiprecision value. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "mpz_class \fBcycle\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBCycle\fP &obj)"
+.br
+.RI "\fITo stream operator. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 20 of file Cycle.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::common::Cycle::Cycle ()"
+.PP
+Default Constructor. 
+.PP
+Definition at line 16 of file Cycle.cpp.
+.SS "cryomesh::common::Cycle::Cycle (const unsigned long intit)"
+.PP
+Construct from unsigned long int. \fBParameters:\fP
+.RS 4
+\fIconst\fP unsigned long int The ulong int to contruct from 
+.RE
+.PP
+
+.PP
+Definition at line 19 of file Cycle.cpp.
+.SS "cryomesh::common::Cycle::Cycle (mpz_classmp)"
+.PP
+Construct from mpz. \fBParameters:\fP
+.RS 4
+\fImpz_class\fP mp The multi-precision integer to contruct from 
+.RE
+.PP
+
+.PP
+Definition at line 23 of file Cycle.cpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "const mpz_class & cryomesh::common::Cycle::getMP () const"
+.PP
+Get multiprecision value. \fBReturns:\fP
+.RS 4
+mpz_class 
+.RE
+.PP
+
+.PP
+Definition at line 115 of file Cycle.cpp.
+.SS "bool cryomesh::common::Cycle::operator!= (const \fBCycle\fP &obj) const"
+.PP
+Not comparator operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBCycle\fP & obj RHS object
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True if not equal, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 68 of file Cycle.cpp.
+.SS "const \fBCycle\fP cryomesh::common::Cycle::operator+ (const \fBCycle\fP &obj) const"
+.PP
+Non-destructive addition operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBCycle\fP & obj RHS addition
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCycle\fP New object after addition 
+.RE
+.PP
+
+.PP
+Definition at line 32 of file Cycle.cpp.
+.SS "\fBCycle\fP & cryomesh::common::Cycle::operator++ ()"
+.PP
+Prefix increment operator. \fBReturns:\fP
+.RS 4
+\fBCycle\fP & Return this 
+.RE
+.PP
+
+.PP
+Definition at line 88 of file Cycle.cpp.
+.SS "\fBCycle\fP cryomesh::common::Cycle::operator++ (int)"
+.PP
+Postfix increment operator. \fBReturns:\fP
+.RS 4
+\fBCycle\fP & Return this 
+.RE
+.PP
+
+.PP
+Definition at line 93 of file Cycle.cpp.
+.SS "\fBCycle\fP & cryomesh::common::Cycle::operator+= (const \fBCycle\fP &obj)"
+.PP
+Destructive addition and assignment operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBCycle\fP & obj RHS addition
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCycle\fP & This object after addition and assignment 
+.RE
+.PP
+
+.PP
+Definition at line 38 of file Cycle.cpp.
+.SS "const \fBCycle\fP cryomesh::common::Cycle::operator- (const \fBCycle\fP &obj) const"
+.PP
+Non-destructive addition operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBCycle\fP & obj RHS addition
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCycle\fP New object after addition 
+.RE
+.PP
+
+.PP
+Definition at line 43 of file Cycle.cpp.
+.SS "\fBCycle\fP & cryomesh::common::Cycle::operator-- ()"
+.PP
+Prefix increment operator. \fBReturns:\fP
+.RS 4
+\fBCycle\fP & Return this 
+.RE
+.PP
+
+.PP
+Definition at line 105 of file Cycle.cpp.
+.SS "\fBCycle\fP cryomesh::common::Cycle::operator-- (int)"
+.PP
+Postfix decrement operator. \fBReturns:\fP
+.RS 4
+\fBCycle\fP & Return this 
+.RE
+.PP
+
+.PP
+Definition at line 99 of file Cycle.cpp.
+.SS "\fBCycle\fP & cryomesh::common::Cycle::operator-= (const \fBCycle\fP &obj)"
+.PP
+Destructive addition and assignment operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBCycle\fP & obj RHS addition
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCycle\fP & This object after addition and assignment 
+.RE
+.PP
+
+.PP
+Definition at line 51 of file Cycle.cpp.
+.SS "bool cryomesh::common::Cycle::operator< (const \fBCycle\fP &obj) const"
+.PP
+Less than operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBCycle\fP & obj RHS addition
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True if less than obj, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 76 of file Cycle.cpp.
+.SS "bool cryomesh::common::Cycle::operator<= (const \fBCycle\fP &obj) const"
+.PP
+<= than operator \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBCycle\fP & obj RHS addition
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True if less than obj, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 84 of file Cycle.cpp.
+.SS "\fBCycle\fP & cryomesh::common::Cycle::operator= (const \fBCycle\fP &obj)"
+.PP
+Assignment operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBCycle\fP & obj RHS assignment
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBCycle\fP & This object after assignment 
+.RE
+.PP
+
+.PP
+Definition at line 27 of file Cycle.cpp.
+.SS "bool cryomesh::common::Cycle::operator== (const \fBCycle\fP &obj) const"
+.PP
+Comparator operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBCycle\fP & obj RHS object
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True if equal, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 64 of file Cycle.cpp.
+.SS "bool cryomesh::common::Cycle::operator> (const \fBCycle\fP &obj) const"
+.PP
+Greater than operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBCycle\fP & obj RHS addition
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True if > than obj, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 72 of file Cycle.cpp.
+.SS "bool cryomesh::common::Cycle::operator>= (const \fBCycle\fP &obj) const"
+.PP
+>= than operator \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBCycle\fP & obj RHS addition
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True if > than obj, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 80 of file Cycle.cpp.
+.SS "long int cryomesh::common::Cycle::toLInt () const"
+.PP
+Return as an signed integer. \fBReturns:\fP
+.RS 4
+signed int The cycle as an int 
+.RE
+.PP
+
+.PP
+Definition at line 60 of file Cycle.cpp.
+.PP
+Referenced by cryomesh::components::Impulse::getActivity().
+.SS "unsigned long int cryomesh::common::Cycle::toULInt () const"
+.PP
+Return as an unsigned integer. \fBReturns:\fP
+.RS 4
+unsigned int The cycle as an int 
+.RE
+.PP
+
+.PP
+Definition at line 56 of file Cycle.cpp.
+.PP
+Referenced by cryomesh::components::Impulse::operator+=(), and cryomesh::components::ImpulseCollection::refreshDataObject().
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream &os, const \fBCycle\fP &obj)\fC [friend]\fP"
+.PP
+To stream operator. \fBParameters:\fP
+.RS 4
+\fIstd::ostream\fP & os The output stream 
+.br
+\fIconst\fP \fBCycle\fP & obj The object to stream
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::ostream & The output stream 
+.RE
+.PP
+
+.PP
+Definition at line 110 of file Cycle.cpp.
+.SH "Member Data Documentation"
+.PP 
+.SS "mpz_class \fBcryomesh::common::Cycle::cycle\fP\fC [private]\fP"
+.PP
+Definition at line 240 of file Cycle.h.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

@@ -1,0 +1,172 @@
+.TH "cryomesh::common::Collection" 3 "Wed Jan 26 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::common::Collection \- 
+.PP
+\fBCollection\fP is a template class of U, a key class which supports getKey(), and T, the object class.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Collection.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCollection\fP ()"
+.br
+.RI "\fIConstructor. \fP"
+.ti -1c
+.RI "virtual \fB~Collection\fP ()"
+.br
+.RI "\fIDestructor. \fP"
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.RI "\fIClear all objects from collection. \fP"
+.ti -1c
+.RI "boost::shared_ptr< T > \fBadd\fP (boost::shared_ptr< T > obj)"
+.br
+.RI "\fIAdd object to collection. \fP"
+.ti -1c
+.RI "boost::shared_ptr< T > \fBremove\fP (boost::shared_ptr< T > obj)"
+.br
+.RI "\fIRemove object from collection. \fP"
+.ti -1c
+.RI "boost::shared_ptr< T > \fBremove\fP (U key)"
+.br
+.RI "\fIRemove object from collection bt key. \fP"
+.ti -1c
+.RI "const std::map< U, boost::shared_ptr< T > > & \fBgetCollection\fP () const "
+.br
+.RI "\fIGet underlying collection. \fP"
+.ti -1c
+.RI "std::map< U, boost::shared_ptr< T > > & \fBgetMutableCollection\fP ()"
+.br
+.RI "\fIGet mutable underlying collection. \fP"
+.ti -1c
+.RI "unsigned int \fBgetSize\fP () const "
+.br
+.RI "\fIGet underlying collections size. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::map< U, boost::shared_ptr< T > > \fBobjects\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class U, class T> class cryomesh::common::Collection< U, T >"
+\fBCollection\fP is a template class of U, a key class which supports getKey(), and T, the object class. 
+.PP
+Definition at line 21 of file Collection.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class U, class T> \fBcryomesh::common::Collection\fP< U, T >::\fBCollection\fP ()\fC [inline]\fP"
+.PP
+Constructor. Constructor for Collection<U,T> 
+.PP
+Definition at line 28 of file Collection.h.
+.SS "template<class U, class T> virtual \fBcryomesh::common::Collection\fP< U, T >::~\fBCollection\fP ()\fC [inline, virtual]\fP"
+.PP
+Destructor. Destructor for Collection<U,T> 
+.PP
+Definition at line 37 of file Collection.h.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class U, class T> boost::shared_ptr<T> \fBcryomesh::common::Collection\fP< U, T >::add (boost::shared_ptr< T >obj)\fC [inline]\fP"
+.PP
+Add object to collection. \fBParameters:\fP
+.RS 4
+\fIboost::shared_ptr<T>\fP obj The object to be added to the collection
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+boost::shared_ptr<T> The object added to the collection 
+.RE
+.PP
+
+.PP
+Definition at line 58 of file Collection.h.
+.SS "template<class U, class T> void \fBcryomesh::common::Collection\fP< U, T >::clear ()\fC [inline]\fP"
+.PP
+Clear all objects from collection. 
+.PP
+Definition at line 44 of file Collection.h.
+.SS "template<class U, class T> const std::map<U, boost::shared_ptr<T> >& \fBcryomesh::common::Collection\fP< U, T >::getCollection () const\fC [inline]\fP"
+.PP
+Get underlying collection. \fBReturns:\fP
+.RS 4
+const std::map<U, boost::shared_ptr<T> > & The collection 
+.RE
+.PP
+
+.PP
+Definition at line 107 of file Collection.h.
+.SS "template<class U, class T> std::map<U, boost::shared_ptr<T> >& \fBcryomesh::common::Collection\fP< U, T >::getMutableCollection ()\fC [inline]\fP"
+.PP
+Get mutable underlying collection. \fBReturns:\fP
+.RS 4
+const std::map<U, boost::shared_ptr<T> > & The mutable collection 
+.RE
+.PP
+
+.PP
+Definition at line 117 of file Collection.h.
+.SS "template<class U, class T> unsigned int \fBcryomesh::common::Collection\fP< U, T >::getSize () const\fC [inline]\fP"
+.PP
+Get underlying collections size. \fBReturns:\fP
+.RS 4
+unsigned int The collections size 
+.RE
+.PP
+
+.PP
+Definition at line 127 of file Collection.h.
+.SS "template<class U, class T> boost::shared_ptr<T> \fBcryomesh::common::Collection\fP< U, T >::remove (boost::shared_ptr< T >obj)\fC [inline]\fP"
+.PP
+Remove object from collection. \fBParameters:\fP
+.RS 4
+\fIboost::shared_ptr<T>\fP obj The object to be removed from the collection
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+boost::shared_ptr<T> The object removed from the collection 
+.RE
+.PP
+
+.PP
+Definition at line 73 of file Collection.h.
+.SS "template<class U, class T> boost::shared_ptr<T> \fBcryomesh::common::Collection\fP< U, T >::remove (Ukey)\fC [inline]\fP"
+.PP
+Remove object from collection bt key. \fBParameters:\fP
+.RS 4
+\fIU\fP key The ey of the object to be removed from the collection
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+boost::shared_ptr<T> The object removed from the collection 
+.RE
+.PP
+
+.PP
+Definition at line 88 of file Collection.h.
+.SH "Member Data Documentation"
+.PP 
+.SS "template<class U, class T> std::map<U, boost::shared_ptr<T> > \fBcryomesh::common::Collection\fP< U, T >::\fBobjects\fP\fC [private]\fP"
+.PP
+Definition at line 137 of file Collection.h.
+.PP
+Referenced by cryomesh::common::Collection< boost::uuids::uuid, Impulse >::add(), cryomesh::common::Collection< boost::uuids::uuid, Impulse >::clear(), cryomesh::common::Collection< boost::uuids::uuid, Impulse >::getCollection(), cryomesh::common::Collection< boost::uuids::uuid, Impulse >::getMutableCollection(), cryomesh::common::Collection< boost::uuids::uuid, Impulse >::getSize(), and cryomesh::common::Collection< boost::uuids::uuid, Impulse >::remove().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

@@ -1,0 +1,266 @@
+.TH "cryomesh::components::ActivityTimerDistance" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::components::ActivityTimerDistance \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ActivityTimerDistance.h>\fP
+.PP
+Inherits \fBcryomesh::components::ActivityTimer\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBActivityTimerDistance\fP ()"
+.br
+.RI "\fIConstructor. \fP"
+.ti -1c
+.RI "\fBActivityTimerDistance\fP (double dist, double dec)"
+.br
+.RI "\fIConstruct from an initial distance, and a rate of decrement. \fP"
+.ti -1c
+.RI "virtual \fB~ActivityTimerDistance\fP ()"
+.br
+.ti -1c
+.RI "\fBActivityTimerDistance\fP & \fBoperator=\fP (const \fBActivityTimerDistance\fP &obj)"
+.br
+.RI "\fIAssignment operator. \fP"
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBActivityTimerDistance\fP &obj) const "
+.br
+.RI "\fILess than operator. \fP"
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBActivityTimerDistance\fP &obj) const "
+.br
+.RI "\fIGreater than operator. \fP"
+.ti -1c
+.RI "\fBActivityTimerDistance\fP & \fBoperator--\fP ()"
+.br
+.RI "\fIPrefix increment operator. \fP"
+.ti -1c
+.RI "\fBActivityTimerDistance\fP \fBoperator--\fP (int)"
+.br
+.RI "\fIPostfix decrement operator. \fP"
+.ti -1c
+.RI "const \fBActivityTimerDistance\fP \fBoperator+\fP (const \fBActivityTimerDistance\fP &obj) const "
+.br
+.RI "\fINon-destructive addition operator. \fP"
+.ti -1c
+.RI "\fBActivityTimerDistance\fP & \fBoperator+=\fP (const \fBActivityTimerDistance\fP &obj)"
+.br
+.RI "\fIDestructive addition and assignment operator. \fP"
+.ti -1c
+.RI "double \fBgetDelay\fP () const "
+.br
+.RI "\fIGet the delay. \fP"
+.ti -1c
+.RI "double \fBgetDecrement\fP () const "
+.br
+.RI "\fIGet the decrement. \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static boost::shared_ptr< \fBActivityTimerDistance\fP > \fBgetRandom\fP ()"
+.br
+.RI "\fIGet a random object. \fP"
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const double \fBMIN_DECREMENT\fP = 1.0"
+.br
+.ti -1c
+.RI "static const double \fBMAX_DECREMENT\fP = 10.0"
+.br
+.ti -1c
+.RI "static const double \fBMIN_DISTANCE\fP = 1.0"
+.br
+.ti -1c
+.RI "static const double \fBMAX_DISTANCE\fP = 100.0"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBdistance\fP"
+.br
+.ti -1c
+.RI "double \fBdecrement\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 18 of file ActivityTimerDistance.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::components::ActivityTimerDistance::ActivityTimerDistance ()"
+.PP
+Constructor. 
+.PP
+Definition at line 28 of file ActivityTimerDistance.cpp.
+.SS "cryomesh::components::ActivityTimerDistance::ActivityTimerDistance (doubledist, doubledec)"
+.PP
+Construct from an initial distance, and a rate of decrement. 
+.PP
+Definition at line 32 of file ActivityTimerDistance.cpp.
+.SS "cryomesh::components::ActivityTimerDistance::~ActivityTimerDistance ()\fC [virtual]\fP"
+.PP
+Definition at line 36 of file ActivityTimerDistance.cpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "double cryomesh::components::ActivityTimerDistance::getDecrement () const"
+.PP
+Get the decrement. \fBReturns:\fP
+.RS 4
+double The decrement of the timer 
+.RE
+.PP
+
+.PP
+Definition at line 80 of file ActivityTimerDistance.cpp.
+.SS "double cryomesh::components::ActivityTimerDistance::getDelay () const"
+.PP
+Get the delay. \fBReturns:\fP
+.RS 4
+double The distance delay 
+.RE
+.PP
+
+.PP
+Definition at line 76 of file ActivityTimerDistance.cpp.
+.SS "boost::shared_ptr< \fBActivityTimerDistance\fP > cryomesh::components::ActivityTimerDistance::getRandom ()\fC [static]\fP"
+.PP
+Get a random object. \fBReturns:\fP
+.RS 4
+boost::shared_ptr<ActivityTimerDistance> The random object 
+.RE
+.PP
+
+.PP
+Definition at line 21 of file ActivityTimerDistance.cpp.
+.SS "const \fBActivityTimerDistance\fP cryomesh::components::ActivityTimerDistance::operator+ (const \fBActivityTimerDistance\fP &obj) const"
+.PP
+Non-destructive addition operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBActivityTimerDistance\fP & obj RHS addition
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBActivityTimerDistance\fP New object after addition 
+.RE
+.PP
+
+.PP
+Definition at line 64 of file ActivityTimerDistance.cpp.
+.SS "\fBActivityTimerDistance\fP & cryomesh::components::ActivityTimerDistance::operator+= (const \fBActivityTimerDistance\fP &obj)"
+.PP
+Destructive addition and assignment operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBActivityTimerDistance\fP & obj RHS addition
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBActivityTimerDistance\fP & This object after addition and assignment 
+.RE
+.PP
+
+.PP
+Definition at line 70 of file ActivityTimerDistance.cpp.
+.SS "\fBActivityTimerDistance\fP cryomesh::components::ActivityTimerDistance::operator-- (int)"
+.PP
+Postfix decrement operator. \fBReturns:\fP
+.RS 4
+\fBActivityTimerDistance\fP & Return this 
+.RE
+.PP
+
+.PP
+Definition at line 58 of file ActivityTimerDistance.cpp.
+.SS "\fBActivityTimerDistance\fP & cryomesh::components::ActivityTimerDistance::operator-- ()"
+.PP
+Prefix increment operator. \fBReturns:\fP
+.RS 4
+\fBActivityTimerDistance\fP & Return this 
+.RE
+.PP
+
+.PP
+Definition at line 53 of file ActivityTimerDistance.cpp.
+.SS "bool cryomesh::components::ActivityTimerDistance::operator< (const \fBActivityTimerDistance\fP &obj) const"
+.PP
+Less than operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBActivityTimerDistance\fP & obj RHS
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True if < than obj, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 45 of file ActivityTimerDistance.cpp.
+.SS "\fBActivityTimerDistance\fP & cryomesh::components::ActivityTimerDistance::operator= (const \fBActivityTimerDistance\fP &obj)"
+.PP
+Assignment operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBActivityTimerDistance\fP & obj RHS assignment
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBActivityTimerDistance\fP & This object after assignment 
+.RE
+.PP
+
+.PP
+Definition at line 39 of file ActivityTimerDistance.cpp.
+.SS "bool cryomesh::components::ActivityTimerDistance::operator> (const \fBActivityTimerDistance\fP &obj) const"
+.PP
+Greater than operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBActivityTimerDistance\fP & obj RHS
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True if > than obj, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 49 of file ActivityTimerDistance.cpp.
+.SH "Member Data Documentation"
+.PP 
+.SS "double \fBcryomesh::components::ActivityTimerDistance::decrement\fP\fC [private]\fP"
+.PP
+Definition at line 158 of file ActivityTimerDistance.h.
+.SS "double \fBcryomesh::components::ActivityTimerDistance::distance\fP\fC [private]\fP"
+.PP
+Definition at line 157 of file ActivityTimerDistance.h.
+.SS "const double \fBcryomesh::components::ActivityTimerDistance::MAX_DECREMENT\fP = 10.0\fC [static]\fP"
+.PP
+Definition at line 139 of file ActivityTimerDistance.h.
+.SS "const double \fBcryomesh::components::ActivityTimerDistance::MAX_DISTANCE\fP = 100.0\fC [static]\fP"
+.PP
+Definition at line 153 of file ActivityTimerDistance.h.
+.SS "const double \fBcryomesh::components::ActivityTimerDistance::MIN_DECREMENT\fP = 1.0\fC [static]\fP"
+.PP
+Definition at line 132 of file ActivityTimerDistance.h.
+.SS "const double \fBcryomesh::components::ActivityTimerDistance::MIN_DISTANCE\fP = 1.0\fC [static]\fP"
+.PP
+Definition at line 146 of file ActivityTimerDistance.h.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

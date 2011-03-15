@@ -1,0 +1,93 @@
+.TH "cryomesh::common::Maths" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::common::Maths \- 
+.PP
+\fBMaths\fP contains some useful maths functions and algorithmns.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Maths.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMaths\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Maths\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBcompareDoubles\fP (const double lhs, const double rhs, const double delta=0.00001)"
+.br
+.RI "\fICompare doubles using delta. \fP"
+.ti -1c
+.RI "static int \fBgetRandomInteger\fP (int low, int high)"
+.br
+.ti -1c
+.RI "static double \fBgetRandomDouble\fP (double low, double high)"
+.br
+.ti -1c
+.RI "static bool \fBgetRandomBool\fP (double fraction=0.5)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBMaths\fP contains some useful maths functions and algorithmns. 
+.PP
+Definition at line 18 of file Maths.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::common::Maths::Maths ()"
+.SS "virtual cryomesh::common::Maths::~Maths ()\fC [virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "static bool cryomesh::common::Maths::compareDoubles (const doublelhs, const doublerhs, const doubledelta = \fC0.00001\fP)\fC [inline, static]\fP"
+.PP
+Compare doubles using delta. \fBParameters:\fP
+.RS 4
+\fIconst\fP double lhs lhs comparator 
+.br
+\fIconst\fP double rhs rhs comparator 
+.br
+\fIconst\fP double delta comparison delta
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True if lhs and rhs compare within delta margin, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 36 of file Maths.h.
+.PP
+Referenced by cryomesh::components::ImpulseCollection::getByActivityTimerValue(), and cryomesh::components::Impulse::operator==().
+.SS "static bool cryomesh::common::Maths::getRandomBool (doublefraction = \fC0.5\fP)\fC [inline, static]\fP"
+.PP
+Definition at line 66 of file Maths.h.
+.PP
+References getRandomDouble().
+.PP
+Referenced by cryomesh::state::Pattern::getRandom().
+.SS "static double cryomesh::common::Maths::getRandomDouble (doublelow, doublehigh)\fC [inline, static]\fP"
+.PP
+Definition at line 54 of file Maths.h.
+.PP
+Referenced by cryomesh::components::Node::getRandom(), getRandomBool(), and cryomesh::components::Impulse::randomise().
+.SS "static int cryomesh::common::Maths::getRandomInteger (intlow, inthigh)\fC [inline, static]\fP"
+.PP
+Definition at line 43 of file Maths.h.
+.PP
+Referenced by cryomesh::components::Impulse::randomise().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

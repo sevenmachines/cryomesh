@@ -1,0 +1,283 @@
+.TH "cryomesh::state::BinaryString" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::state::BinaryString \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <BinaryString.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBType\fP { \fBTXT\fP, \fBBIN\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "template<class Archive > void \fBserialize\fP (Archive &ar, const unsigned int version)"
+.br
+.ti -1c
+.RI "\fBBinaryString\fP ()"
+.br
+.ti -1c
+.RI "\fBBinaryString\fP (const std::string &str, bool sign_bit=false, \fBType\fP tp=TXT)"
+.br
+.ti -1c
+.RI "\fBBinaryString\fP (const std::vector< bool > &binvec, bool sign_bit)"
+.br
+.ti -1c
+.RI "\fBBinaryString\fP (const \fBBinaryString\fP &obj)"
+.br
+.ti -1c
+.RI "virtual \fB~BinaryString\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetSignBit\fP (bool b)"
+.br
+.ti -1c
+.RI "bool \fBgetSignBit\fP () const "
+.br
+.ti -1c
+.RI "const std::string & \fBgetBinaryString\fP () const "
+.br
+.ti -1c
+.RI "const std::vector< bool > \fBgetBools\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetBinaryString\fP (const std::string &str)"
+.br
+.ti -1c
+.RI "void \fBsetBinaryString\fP (const std::vector< bool > &binvec)"
+.br
+.ti -1c
+.RI "bool \fBisValidBinary\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisAllZeroes\fP () const "
+.br
+.ti -1c
+.RI "unsigned int \fBgetWidth\fP () const "
+.br
+.ti -1c
+.RI "std::list< int > \fBtoInts\fP () const "
+.br
+.ti -1c
+.RI "std::string \fBtoText\fP () const "
+.br
+.ti -1c
+.RI "std::string \fBresize\fP (const unsigned int size)"
+.br
+.ti -1c
+.RI "int \fBtoInt\fP () const "
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static std::list< int > \fBformatTextToInts\fP (const std::string &str)"
+.br
+.ti -1c
+.RI "static std::string \fBformatIntsToText\fP (const std::list< int > &charints)"
+.br
+.ti -1c
+.RI "static std::list< \fBBinaryString\fP > \fBformatTextToBinaryStrings\fP (const std::string &str, std::string &allbins)"
+.br
+.ti -1c
+.RI "static std::string \fBformatBinaryStringsToText\fP (const std::list< std::string > &strs)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const unsigned int \fBBINARY_CHAR_LENGTH\fP = 8"
+.br
+.ti -1c
+.RI "static const int \fBMAX_BINARY_INTEGER_SIZE\fP = 32"
+.br
+.in -1c
+.SS "Static Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static std::string \fBcharToBinaryString\fP (const char &ch, bool sign_bit)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBbinaryString\fP"
+.br
+.ti -1c
+.RI "bool \fBsignBit\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBboost::serialization::access\fP"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBBinaryString\fP &obj)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 21 of file BinaryString.h.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBcryomesh::state::BinaryString::Type\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fITXT \fP\fP
+.TP
+\fB\fIBIN \fP\fP
+
+.PP
+Definition at line 29 of file BinaryString.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::state::BinaryString::BinaryString ()"
+.PP
+Definition at line 22 of file BinaryString.cpp.
+.SS "cryomesh::state::BinaryString::BinaryString (const std::string &str, boolsign_bit = \fCfalse\fP, \fBType\fPtp = \fCTXT\fP)"
+.PP
+Definition at line 26 of file BinaryString.cpp.
+.PP
+References BINARY_CHAR_LENGTH, charToBinaryString(), formatTextToInts(), and resize().
+.SS "cryomesh::state::BinaryString::BinaryString (const std::vector< bool > &binvec, boolsign_bit)"
+.PP
+Definition at line 60 of file BinaryString.cpp.
+.SS "cryomesh::state::BinaryString::BinaryString (const \fBBinaryString\fP &obj)"
+.PP
+Definition at line 79 of file BinaryString.cpp.
+.SS "cryomesh::state::BinaryString::~BinaryString ()\fC [virtual]\fP"
+.PP
+Definition at line 84 of file BinaryString.cpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::string cryomesh::state::BinaryString::charToBinaryString (const char &ch, boolsign_bit)\fC [static, private]\fP"
+.PP
+Definition at line 327 of file BinaryString.cpp.
+.PP
+Referenced by BinaryString(), and formatTextToBinaryStrings().
+.SS "static std::string cryomesh::state::BinaryString::formatBinaryStringsToText (const std::list< std::string > &strs)\fC [static]\fP"
+.SS "std::string cryomesh::state::BinaryString::formatIntsToText (const std::list< int > &charints)\fC [static]\fP"
+.PP
+Definition at line 290 of file BinaryString.cpp.
+.SS "std::list< \fBBinaryString\fP > cryomesh::state::BinaryString::formatTextToBinaryStrings (const std::string &str, std::string &allbins)\fC [static]\fP"
+.PP
+Definition at line 304 of file BinaryString.cpp.
+.PP
+References BIN, and charToBinaryString().
+.SS "std::list< int > cryomesh::state::BinaryString::formatTextToInts (const std::string &str)\fC [static]\fP"
+.PP
+Definition at line 277 of file BinaryString.cpp.
+.PP
+Referenced by BinaryString().
+.SS "const std::string & cryomesh::state::BinaryString::getBinaryString () const"
+.PP
+Definition at line 94 of file BinaryString.cpp.
+.PP
+Referenced by resize(), and toText().
+.SS "const std::vector< bool > cryomesh::state::BinaryString::getBools () const"
+.PP
+Definition at line 98 of file BinaryString.cpp.
+.SS "bool cryomesh::state::BinaryString::getSignBit () const"
+.PP
+Definition at line 91 of file BinaryString.cpp.
+.PP
+Referenced by toText().
+.SS "unsigned int cryomesh::state::BinaryString::getWidth () const"
+.PP
+Definition at line 178 of file BinaryString.cpp.
+.SS "bool cryomesh::state::BinaryString::isAllZeroes () const"
+.PP
+Definition at line 163 of file BinaryString.cpp.
+.PP
+References binaryString.
+.SS "bool cryomesh::state::BinaryString::isValidBinary () const"
+.PP
+Definition at line 148 of file BinaryString.cpp.
+.PP
+References binaryString.
+.SS "std::string cryomesh::state::BinaryString::resize (const unsigned intsize)"
+.PP
+Definition at line 376 of file BinaryString.cpp.
+.PP
+References getBinaryString().
+.PP
+Referenced by BinaryString(), and toText().
+.SS "template<class Archive > void cryomesh::state::BinaryString::serialize (Archive &ar, const unsigned intversion)\fC [inline]\fP"
+.PP
+Definition at line 25 of file BinaryString.h.
+.PP
+References binaryString, and signBit.
+.SS "void cryomesh::state::BinaryString::setBinaryString (const std::string &str)"
+.PP
+Definition at line 126 of file BinaryString.cpp.
+.SS "void cryomesh::state::BinaryString::setBinaryString (const std::vector< bool > &binvec)"
+.PP
+Definition at line 129 of file BinaryString.cpp.
+.SS "void cryomesh::state::BinaryString::setSignBit (boolb)"
+.PP
+Definition at line 88 of file BinaryString.cpp.
+.SS "int cryomesh::state::BinaryString::toInt () const"
+.PP
+Definition at line 182 of file BinaryString.cpp.
+.PP
+References binaryString, and MAX_BINARY_INTEGER_SIZE.
+.PP
+Referenced by toText().
+.SS "std::list< int > cryomesh::state::BinaryString::toInts () const"
+.PP
+Definition at line 228 of file BinaryString.cpp.
+.SS "std::string cryomesh::state::BinaryString::toText () const"
+.PP
+Definition at line 243 of file BinaryString.cpp.
+.PP
+References BIN, BINARY_CHAR_LENGTH, binaryString, getBinaryString(), getSignBit(), resize(), and toInt().
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class boost::serialization::access\fC [friend]\fP"
+.PP
+Definition at line 23 of file BinaryString.h.
+.SS "std::ostream& operator<< (std::ostream &os, const \fBBinaryString\fP &obj)\fC [friend]\fP"
+.PP
+Definition at line 224 of file BinaryString.cpp.
+.SH "Member Data Documentation"
+.PP 
+.SS "const unsigned int \fBcryomesh::state::BinaryString::BINARY_CHAR_LENGTH\fP = 8\fC [static]\fP"
+.PP
+Definition at line 61 of file BinaryString.h.
+.PP
+Referenced by BinaryString(), and toText().
+.SS "std::string \fBcryomesh::state::BinaryString::binaryString\fP\fC [private]\fP"
+.PP
+Definition at line 64 of file BinaryString.h.
+.PP
+Referenced by isAllZeroes(), isValidBinary(), serialize(), toInt(), and toText().
+.SS "const int \fBcryomesh::state::BinaryString::MAX_BINARY_INTEGER_SIZE\fP = 32\fC [static]\fP"
+.PP
+Definition at line 62 of file BinaryString.h.
+.PP
+Referenced by toInt().
+.SS "bool \fBcryomesh::state::BinaryString::signBit\fP\fC [private]\fP"
+.PP
+Definition at line 65 of file BinaryString.h.
+.PP
+Referenced by serialize().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

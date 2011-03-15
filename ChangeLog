@@ -1,0 +1,112 @@
+2011-03-11  SevenMachines  <SevenMachines@yahoo.co.uk>
+
+	* src/common/Debuggable.h (Debuggable): Simple class to enable debugging on a subclass
+	(Debuggable): get debug status
+	* src/components/Impulse.h (Impulse): Default start cycle to 0 on creation, this will effectively become the delay
+
+2011-03-08  SevenMachines  <SevenMachines@yahoo.co.uk>
+
+	* src/components/Connection.cpp (Connection::Connection): connections only have one input and one output
+	* src/common/Connector.h (Connector): Force a maximum inputs and outputs, default to any number
+
+2011-03-05  SevenMachines  <SevenMachines@yahoo.co.uk>
+
+	* src/components/Node.cpp (Node::addImpulses): pass to single this->addImpulse
+	(Node::addImpulse): Make impulse start into current start+now cycle
+
+2011-03-04  SevenMachines  <SevenMachines@yahoo.co.uk>
+
+	* src/structures/Bundle.cpp (Bundle::update): Now updates time
+	* src/state/Pattern.cpp (Pattern::getRandom): random pattern generator
+	* src/common/Maths.h (Maths.getRandomBool): Random bool generator
+	* src/components/Node.cpp (operator <<): added print stream
+	* src/components/NodeMap.h (NodeMap.operator <<): added print stream
+
+2011-03-03  SevenMachines  <SevenMachines@yahoo.co.uk>
+
+	* src/dataobjects/DataObjectController.h (getMap): Allow refreshing by subclasses
+	(getDataObject):  Allow refreshing by subclasses
+	* src/components/Connection.h (Connection): Use data objects 
+	* src/components/Node.h (Node): Now is a DataObject
+
+2011-02-07  SevenMachines  <SevenMachines@yahoo.co.uk>
+
+	* src/common/TimeKeeper.cpp (TimeKeeper::reset): Allow TimeKeeper reset, zero the clock
+	* src/components/Impulse.cpp (Impulse::Impulse): Add start cycle constructor param, with default of now
+	(Impulse::isActive): check i active on a cycle
+
+2011-02-05  SevenMachines  <SevenMachines@yahoo.co.uk>
+
+	* src/common/SimpleCollection.h (SimpleCollection): Added initialiser list and list add/remove functions 
+
+2011-02-04  SevenMachines  <SevenMachines@yahoo.co.uk>
+
+	* src/common/Connector.h (Connector): added connect and disconnect collection and initialiser list versions
+
+2011-02-03  SevenMachines  <SevenMachines@yahoo.co.uk>
+
+	* src/components/Node.h (Node): Started implementation
+
+2011-02-02  SevenMachines  <SevenMachines@yahoo.co.uk>
+
+	* src/common/Cycle.h (Cycle): More operators, proper use of mpz's
+	* src/common/Cycle.cpp (Cycle::Cycle): Remove to get rid of mpz_t/unsigned int constructor ambiguity
+	* src/components/Impulse.cpp (Impulse::Impulse): No need to set first/last activity, default is zero for cycles
+	(Impulse::operator +=): Fixed merge addition
+
+2011-02-01  SevenMachines  <SevenMachines@yahoo.co.uk>
+
+	* src/common/Cycle.h (Cycle): Move Cycle to its own class
+	* src/common/SimpleCollection.h (generateCurve): Make start and end active points, zeros are now beyond collection endpoints
+	* src/components/Impulse.cpp (Impulse::randomise): Make sure have at least a min length 
+	(Impulse::getActivity): Index starts at 1
+	(Impulse::Impulse): Force min activity length on construction
+	(Impulse::MIN_ACTIVITY_LENGTH): Must have at least length 1 to have at least one non zero value
+	(Impulse::operator ==): delta compare on doubles, not exact
+	* src/components/ImpulseCollection.cpp (ImpulseCollection::clearCycles): Make match interval [start, end), ie, closed start but open end
+
+2011-01-31  SevenMachines  <SevenMachines@yahoo.co.uk>
+
+	* src/common/Containers.h (Containers): Add containers together
+	(Containers): add(lhs, rhs) function
+	(Containers): add(lhs, rhs) function, const version 
+	(Containers.compare): added
+	* src/common/SimpleCollection.h (operator +): added
+	(operator +=): added
+	(operator =): added
+	(operator ==): added
+	(operator <<): added
+	* src/components/Impulse.cpp (Impulse::operator +): added
+	* src/components/ImpulseCollection.cpp (ImpulseCollection::operator =): added
+	(ImpulseCollection::operator +=): added
+	(ImpulseCollection::operator +): added
+	(ImpulseCollection::operator ==): added
+	* src/common/Maths.h (Maths.compareDoubles): Compare doubles using a delta value
+	* src/common/KeyMappedCollection.h: Move to protected to allow superclass access
+
+2011-01-28  SevenMachines  <SevenMachines@yahoo.co.uk>
+
+	* src/common/SimpleCollection.h (operator []): Allow array operator lookup
+	(invert): Reflect the collection in the x axis
+	(reverse): Reflect the collection in the y axis
+	
+	* src/common/exceptions/IndexOutOfBoundsException.h (IndexOutOfBoundsException): New class for index out of bounds collection lookups
+
+2011-01-27  SevenMachines  <SevenMachines@yahoo.co.uk>
+
+	* src/common/KeyMappedCollection.h: Refactor to KeyMappedCollection.h
+
+2011-01-26  SevenMachines  <SevenMachines@yahoo.co.uk>
+
+	* src/components/ImpulseCollection.h: Added clear by cycle and clear by activity functionality 
+	* src/components/Impulse.h: Added accessors for start and finish cycle and max and min activity
+	
+2011-01-24  SevenMachines  <SevenMachines@yahoo.co.uk>
+
+	* src/components/Impulse.h:  Added Doxygen comments
+	* src/common/Connector.h: Added Doxygen comments
+
+2011-01-19  SevenMachines  <SevenMachines@yahoo.co.uk>
+
+	* src/common/Connector.h: Template class implemented for connectable objects
+	* src/components/Node.cpp (Node::Node): Initial declarations

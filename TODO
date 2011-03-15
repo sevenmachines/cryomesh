@@ -1,0 +1,37 @@
+HIGH ----------------------------------------------------------------------------------------
+
+* Implement server
+	- Set command defs, a keystore to allowed messaging values
+
+* BUG: Impulses have very high start/end values
+	- see
+
+* Use DataObjects in Nodes and ImpulseCOllection to show whats happening
+
+MEDIUM ------------------------------------------------------------------------------------
+
+
+
+
+
+LOW -----------------------------------------------------------------------------------------
+
+
+
+
+
+WISHLIST ----------------------------------------------------------------------------------
+
+* Dont clear past impulses from Nodes on every cycle if extra performance is needed
+
+DONE -----------------------------------------------------------------------------------------
+
+* Impulses do not seem to be propogating from fibre to Nodes, see UseCasesTest (05/03/2011)
+	- Impulses needed to be time reset on addition to connections otherwise they were always in the past
+
+* Add Spherical or point co-ordinates to components. (05/03/2011)
+	- Whats the local reference point inside a cluster? DONE (see below)
+	- Whats the global refrence point for structural components?  DONE (see below)
+	- Set a max bounding box, give each node a random point, allow for a density function if needed
+	- Nodes and connections are stationary, caclulate everything on creation.
+	- When impulses added to connections, use connection length

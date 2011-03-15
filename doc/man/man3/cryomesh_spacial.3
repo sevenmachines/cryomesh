@@ -1,0 +1,47 @@
+.TH "cryomesh::spacial" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::spacial \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBDegree\fP"
+.br
+.ti -1c
+.RI "class \fBPoint\fP"
+.br
+.ti -1c
+.RI "class \fBRadian\fP"
+.br
+.ti -1c
+.RI "class \fBSphericalPoint\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBPoint\fP &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBSphericalPoint\fP &obj)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "std::ostream& cryomesh::spacial::operator<< (std::ostream &os, const Point &obj)"
+.PP
+Definition at line 104 of file Point.cpp.
+.SS "std::ostream& cryomesh::spacial::operator<< (std::ostream &os, const SphericalPoint &obj)"
+.PP
+Definition at line 159 of file SphericalPoint.cpp.
+.PP
+References cryomesh::spacial::SphericalPoint::getPhi(), cryomesh::spacial::SphericalPoint::getRadius(), cryomesh::spacial::SphericalPoint::getTheta(), and cryomesh::spacial::Radian::toDegrees().
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

@@ -1,0 +1,94 @@
+.TH "cryomesh::common::Debuggable" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::common::Debuggable \- 
+.PP
+Simple class to aid setting debuggable output on a class.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Debuggable.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDebuggable\fP ()"
+.br
+.RI "\fIDefault constructor. \fP"
+.ti -1c
+.RI "virtual \fB~Debuggable\fP ()"
+.br
+.RI "\fIDefault destructor. \fP"
+.ti -1c
+.RI "bool \fBgetDebug\fP ()"
+.br
+.RI "\fIGet debug status. \fP"
+.ti -1c
+.RI "void \fBsetDebug\fP (bool b)"
+.br
+.RI "\fISet debug on or off. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBdebug\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Simple class to aid setting debuggable output on a class. 
+.PP
+Definition at line 18 of file Debuggable.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::common::Debuggable::Debuggable ()\fC [inline]\fP"
+.PP
+Default constructor. 
+.PP
+Definition at line 23 of file Debuggable.h.
+.SS "virtual cryomesh::common::Debuggable::~Debuggable ()\fC [inline, virtual]\fP"
+.PP
+Default destructor. 
+.PP
+Definition at line 30 of file Debuggable.h.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool cryomesh::common::Debuggable::getDebug ()\fC [inline]\fP"
+.PP
+Get debug status. \fBReturns:\fP
+.RS 4
+bool True if debugging on, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 39 of file Debuggable.h.
+.PP
+References debug.
+.SS "void cryomesh::common::Debuggable::setDebug (boolb)\fC [inline]\fP"
+.PP
+Set debug on or off. \fBParameters:\fP
+.RS 4
+\fIbool\fP True to set debugging on, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 49 of file Debuggable.h.
+.PP
+References debug.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool \fBcryomesh::common::Debuggable::debug\fP\fC [private]\fP"
+.PP
+Definition at line 58 of file Debuggable.h.
+.PP
+Referenced by getDebug(), and setDebug().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

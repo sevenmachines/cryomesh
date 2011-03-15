@@ -1,0 +1,291 @@
+.TH "cryomesh::state::Sequence" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::state::Sequence \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Sequence.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSequence\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Sequence\fP ()"
+.br
+.ti -1c
+.RI "\fBSequence\fP (const \fBSequence\fP &seq)"
+.br
+.ti -1c
+.RI "\fBSequence\fP (const std::vector< \fBPattern\fP > &input_pats, const std::vector< \fBPattern\fP > &output_pats)"
+.br
+.ti -1c
+.RI "\fBSequence\fP (std::ifstream &ifs)"
+.br
+.ti -1c
+.RI "\fBSequence\fP & \fBoperator=\fP (const \fBSequence\fP &seq)"
+.br
+.ti -1c
+.RI "const \fBPattern\fP & \fBgetCurrentInputPattern\fP () const "
+.br
+.ti -1c
+.RI "const \fBPattern\fP & \fBgetCurrentOutputPattern\fP () const "
+.br
+.ti -1c
+.RI "const \fBPattern\fP & \fBgetAndAdvanceCurrentInputPattern\fP ()"
+.br
+.ti -1c
+.RI "const \fBPattern\fP & \fBgetAndAdvanceCurrentOutputPattern\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetCurrentInputPatternId\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetCurrentOutputPatternId\fP () const "
+.br
+.ti -1c
+.RI "std::list< std::pair< \fBPattern\fP, \fBPattern\fP > >::const_iterator \fBgetCurrentIterator\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetCurrentIterator\fP (std::list< std::pair< \fBPattern\fP, \fBPattern\fP > >::const_iterator)"
+.br
+.ti -1c
+.RI "const \fBPattern\fP & \fBgetNextInputPattern\fP ()"
+.br
+.ti -1c
+.RI "const std::list< std::pair< \fBPattern\fP, \fBPattern\fP > > & \fBgetPatterns\fP () const "
+.br
+.ti -1c
+.RI "const void \fBsetPatterns\fP (const std::list< std::pair< \fBPattern\fP, \fBPattern\fP > > &pats)"
+.br
+.ti -1c
+.RI "void \fBsaveToFile\fP (std::ofstream &ofs) const "
+.br
+.ti -1c
+.RI "void \fBloadFromFile\fP (std::ifstream &ifs)"
+.br
+.ti -1c
+.RI "void \fBaddEntry\fP (\fBPattern\fP new_in_pat, \fBPattern\fP new_out_pat)"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "double \fBcompareOutput\fP (const \fBSequence\fP &seq) const "
+.br
+.ti -1c
+.RI "double \fBcompareInput\fP (const \fBSequence\fP &seq) const "
+.br
+.ti -1c
+.RI "double \fBcompare\fP (const \fBSequence\fP &seq) const "
+.br
+.ti -1c
+.RI "double \fBcompare\fP (int id, const \fBPattern\fP &pat) const "
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBSequence\fP &obj) const "
+.br
+.ti -1c
+.RI "bool \fBisAllZeroes\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisInputAllZeroes\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisOutputAllZeroes\fP () const "
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const std::string \fBINPUT_TAG\fP = '<input>'"
+.br
+.ti -1c
+.RI "static const std::string \fBOUTPUT_TAG\fP = '<output>'"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "template<class Archive > void \fBserialize\fP (Archive &ar, const unsigned int version)"
+.br
+.ti -1c
+.RI "void \fBinitialise\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::list< std::pair< \fBPattern\fP, \fBPattern\fP > > \fBpatterns\fP"
+.br
+.ti -1c
+.RI "std::list< std::pair< \fBPattern\fP, \fBPattern\fP > >::const_iterator \fBit_patterns\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBboost::serialization::access\fP"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBSequence\fP &obj)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 26 of file Sequence.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::state::Sequence::Sequence ()"
+.PP
+Definition at line 18 of file Sequence.cpp.
+.SS "cryomesh::state::Sequence::~Sequence ()\fC [virtual]\fP"
+.PP
+Definition at line 21 of file Sequence.cpp.
+.SS "cryomesh::state::Sequence::Sequence (const \fBSequence\fP &seq)"
+.PP
+Definition at line 23 of file Sequence.cpp.
+.SS "cryomesh::state::Sequence::Sequence (const std::vector< \fBPattern\fP > &input_pats, const std::vector< \fBPattern\fP > &output_pats)"
+.PP
+Definition at line 28 of file Sequence.cpp.
+.PP
+References initialise(), and patterns.
+.SS "cryomesh::state::Sequence::Sequence (std::ifstream &ifs)"
+.PP
+Definition at line 47 of file Sequence.cpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "void cryomesh::state::Sequence::addEntry (\fBPattern\fPnew_in_pat, \fBPattern\fPnew_out_pat)"
+.PP
+Definition at line 151 of file Sequence.cpp.
+.SS "void cryomesh::state::Sequence::clear ()"
+.PP
+Definition at line 157 of file Sequence.cpp.
+.SS "double cryomesh::state::Sequence::compare (const \fBSequence\fP &seq) const"
+.PP
+Definition at line 254 of file Sequence.cpp.
+.SS "double cryomesh::state::Sequence::compare (intid, const \fBPattern\fP &pat) const"
+.PP
+Definition at line 332 of file Sequence.cpp.
+.SS "double cryomesh::state::Sequence::compareInput (const \fBSequence\fP &seq) const"
+.PP
+Definition at line 210 of file Sequence.cpp.
+.SS "double cryomesh::state::Sequence::compareOutput (const \fBSequence\fP &seq) const"
+.PP
+Definition at line 164 of file Sequence.cpp.
+.SS "const \fBPattern\fP & cryomesh::state::Sequence::getAndAdvanceCurrentInputPattern ()"
+.PP
+Definition at line 65 of file Sequence.cpp.
+.SS "const \fBPattern\fP & cryomesh::state::Sequence::getAndAdvanceCurrentOutputPattern ()"
+.PP
+Definition at line 72 of file Sequence.cpp.
+.SS "const \fBPattern\fP & cryomesh::state::Sequence::getCurrentInputPattern () const"
+.PP
+Definition at line 62 of file Sequence.cpp.
+.SS "int cryomesh::state::Sequence::getCurrentInputPatternId () const"
+.PP
+Definition at line 76 of file Sequence.cpp.
+.SS "std::list< std::pair< \fBPattern\fP, \fBPattern\fP > >::const_iterator cryomesh::state::Sequence::getCurrentIterator () const"
+.PP
+Definition at line 84 of file Sequence.cpp.
+.SS "const \fBPattern\fP & cryomesh::state::Sequence::getCurrentOutputPattern () const"
+.PP
+Definition at line 69 of file Sequence.cpp.
+.SS "int cryomesh::state::Sequence::getCurrentOutputPatternId () const"
+.PP
+Definition at line 80 of file Sequence.cpp.
+.SS "const \fBPattern\fP & cryomesh::state::Sequence::getNextInputPattern ()"
+.PP
+Definition at line 87 of file Sequence.cpp.
+.PP
+References getPatterns(), and setCurrentIterator().
+.SS "const std::list< std::pair< \fBPattern\fP, \fBPattern\fP > > & cryomesh::state::Sequence::getPatterns () const"
+.PP
+Definition at line 94 of file Sequence.cpp.
+.PP
+Referenced by getNextInputPattern().
+.SS "void cryomesh::state::Sequence::initialise ()\fC [private]\fP"
+.PP
+Definition at line 438 of file Sequence.cpp.
+.PP
+Referenced by Sequence().
+.SS "bool cryomesh::state::Sequence::isAllZeroes () const"
+.PP
+Definition at line 393 of file Sequence.cpp.
+.PP
+References it_patterns, and patterns.
+.SS "bool cryomesh::state::Sequence::isInputAllZeroes () const"
+.PP
+Definition at line 408 of file Sequence.cpp.
+.PP
+References it_patterns, and patterns.
+.SS "bool cryomesh::state::Sequence::isOutputAllZeroes () const"
+.PP
+Definition at line 423 of file Sequence.cpp.
+.PP
+References it_patterns, and patterns.
+.SS "void cryomesh::state::Sequence::loadFromFile (std::ifstream &ifs)"
+.PP
+Definition at line 117 of file Sequence.cpp.
+.PP
+References patterns.
+.SS "\fBSequence\fP & cryomesh::state::Sequence::operator= (const \fBSequence\fP &seq)"
+.PP
+Definition at line 53 of file Sequence.cpp.
+.SS "bool cryomesh::state::Sequence::operator== (const \fBSequence\fP &obj) const"
+.PP
+Definition at line 350 of file Sequence.cpp.
+.SS "void cryomesh::state::Sequence::saveToFile (std::ofstream &ofs) const"
+.PP
+Definition at line 101 of file Sequence.cpp.
+.SS "template<class Archive > void cryomesh::state::Sequence::serialize (Archive &ar, const unsigned intversion)\fC [inline, private]\fP"
+.PP
+Definition at line 29 of file Sequence.h.
+.PP
+References patterns.
+.SS "void cryomesh::state::Sequence::setCurrentIterator (std::list< std::pair< \fBPattern\fP, \fBPattern\fP > >::const_iteratorit)"
+.PP
+Definition at line 448 of file Sequence.cpp.
+.PP
+Referenced by getNextInputPattern().
+.SS "const void cryomesh::state::Sequence::setPatterns (const std::list< std::pair< \fBPattern\fP, \fBPattern\fP > > &pats)"
+.PP
+Definition at line 97 of file Sequence.cpp.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class boost::serialization::access\fC [friend]\fP"
+.PP
+Definition at line 27 of file Sequence.h.
+.SS "std::ostream& operator<< (std::ostream &os, const \fBSequence\fP &obj)\fC [friend]\fP"
+.PP
+Definition at line 381 of file Sequence.cpp.
+.SH "Member Data Documentation"
+.PP 
+.SS "const std::string \fBcryomesh::state::Sequence::INPUT_TAG\fP = '<input>'\fC [static]\fP"
+.PP
+Definition at line 122 of file Sequence.h.
+.SS "std::list<std::pair<\fBPattern\fP, \fBPattern\fP> >::const_iterator \fBcryomesh::state::Sequence::it_patterns\fP\fC [private]\fP"
+.PP
+Definition at line 134 of file Sequence.h.
+.PP
+Referenced by isAllZeroes(), isInputAllZeroes(), and isOutputAllZeroes().
+.SS "const std::string \fBcryomesh::state::Sequence::OUTPUT_TAG\fP = '<output>'\fC [static]\fP"
+.PP
+Definition at line 123 of file Sequence.h.
+.SS "std::list<std::pair<\fBPattern\fP, \fBPattern\fP> > \fBcryomesh::state::Sequence::patterns\fP\fC [private]\fP"
+.PP
+Definition at line 130 of file Sequence.h.
+.PP
+Referenced by isAllZeroes(), isInputAllZeroes(), isOutputAllZeroes(), loadFromFile(), Sequence(), and serialize().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

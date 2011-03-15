@@ -1,0 +1,117 @@
+.TH "cryomesh::spacial::Radian" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::spacial::Radian \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Radian.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRadian\fP (double d)"
+.br
+.ti -1c
+.RI "virtual \fB~Radian\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetValue\fP () const "
+.br
+.ti -1c
+.RI "double \fBtoDegrees\fP () const "
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBRadian\fP &obj) const "
+.br
+.ti -1c
+.RI "\fBRadian\fP & \fBoperator=\fP (const \fBRadian\fP &obj)"
+.br
+.ti -1c
+.RI "\fBRadian\fP \fBoperator+\fP (const \fBRadian\fP &obj) const "
+.br
+.ti -1c
+.RI "\fBRadian\fP \fBoperator-\fP (const \fBRadian\fP &obj) const "
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const double \fBPI\fP = 3.14159265"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBvalue\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 15 of file Radian.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::spacial::Radian::Radian (doubled)"
+.PP
+Definition at line 16 of file Radian.cpp.
+.PP
+Referenced by operator+(), and operator-().
+.SS "cryomesh::spacial::Radian::~Radian ()\fC [virtual]\fP"
+.PP
+Definition at line 22 of file Radian.cpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "double cryomesh::spacial::Radian::getValue () const"
+.PP
+Definition at line 25 of file Radian.cpp.
+.PP
+References value.
+.PP
+Referenced by cryomesh::spacial::SphericalPoint::equals(), cryomesh::spacial::SphericalPoint::getArcLengthBasic(), and cryomesh::spacial::SphericalPoint::getArcLengthHaversine().
+.SS "\fBRadian\fP cryomesh::spacial::Radian::operator+ (const \fBRadian\fP &obj) const"
+.PP
+Definition at line 39 of file Radian.cpp.
+.PP
+References Radian(), and value.
+.SS "\fBRadian\fP cryomesh::spacial::Radian::operator- (const \fBRadian\fP &obj) const"
+.PP
+Definition at line 42 of file Radian.cpp.
+.PP
+References Radian(), and value.
+.SS "\fBRadian\fP & cryomesh::spacial::Radian::operator= (const \fBRadian\fP &obj)"
+.PP
+Definition at line 35 of file Radian.cpp.
+.PP
+References value.
+.SS "bool cryomesh::spacial::Radian::operator== (const \fBRadian\fP &obj) const"
+.PP
+Definition at line 32 of file Radian.cpp.
+.PP
+References value.
+.SS "double cryomesh::spacial::Radian::toDegrees () const"
+.PP
+Definition at line 28 of file Radian.cpp.
+.PP
+References PI, and value.
+.PP
+Referenced by cryomesh::spacial::SphericalPoint::getArcLengthBasic(), cryomesh::spacial::SphericalPoint::getArcLengthHaversine(), and cryomesh::spacial::operator<<().
+.SH "Member Data Documentation"
+.PP 
+.SS "const double \fBcryomesh::spacial::Radian::PI\fP = 3.14159265\fC [static]\fP"
+.PP
+Definition at line 27 of file Radian.h.
+.PP
+Referenced by toDegrees().
+.SS "double \fBcryomesh::spacial::Radian::value\fP\fC [private]\fP"
+.PP
+Definition at line 29 of file Radian.h.
+.PP
+Referenced by getValue(), operator+(), operator-(), operator=(), operator==(), and toDegrees().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

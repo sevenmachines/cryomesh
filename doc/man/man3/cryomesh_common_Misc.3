@@ -1,0 +1,100 @@
+.TH "cryomesh::common::Misc" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::common::Misc \- 
+.PP
+\fBMisc\fP contains a collection of useful miscellaneous functions.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Misc.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMisc\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Misc\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "template<class T > static std::string \fBgetMapUUIDPointerString\fP (const std::map< boost::uuids::uuid, boost::shared_ptr< T > > &obj)"
+.br
+.ti -1c
+.RI "static std::list< std::string > \fBparseArgs\fP (const std::string &str)"
+.br
+.ti -1c
+.RI "template<class T > static std::string \fBgetContainerString\fP (const std::list< T > &obj)"
+.br
+.ti -1c
+.RI "static std::ostream & \fBprint\fP (std::ostream &os, const boost::uuids::uuid &id)"
+.br
+.ti -1c
+.RI "static std::ostream & \fBprint\fP (std::ostream &os, const std::vector< bool > &obj)"
+.br
+.ti -1c
+.RI "static std::ostream & \fBprint\fP (std::ostream &os, const std::list< bool > &obj)"
+.br
+.ti -1c
+.RI "static std::string \fBtoLower\fP (const std::string &str)"
+.br
+.ti -1c
+.RI "static std::list< std::string > \fBtoLower\fP (const std::list< std::string > &strlist)"
+.br
+.ti -1c
+.RI "static std::string \fBremoveChars\fP (const std::string &delchars, const std::string &str)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBMisc\fP contains a collection of useful miscellaneous functions. 
+.PP
+Definition at line 29 of file Misc.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::common::Misc::Misc ()"
+.SS "virtual cryomesh::common::Misc::~Misc ()\fC [virtual]\fP"
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class T > static std::string cryomesh::common::Misc::getContainerString (const std::list< T > &obj)\fC [inline, static]\fP"
+.PP
+Definition at line 72 of file Misc.h.
+.SS "template<class T > static std::string cryomesh::common::Misc::getMapUUIDPointerString (const std::map< boost::uuids::uuid, boost::shared_ptr< T > > &obj)\fC [inline, static]\fP"
+.PP
+Definition at line 35 of file Misc.h.
+.SS "static std::list<std::string> cryomesh::common::Misc::parseArgs (const std::string &str)\fC [inline, static]\fP"
+.PP
+Definition at line 54 of file Misc.h.
+.SS "static std::ostream& cryomesh::common::Misc::print (std::ostream &os, const boost::uuids::uuid &id)\fC [inline, static]\fP"
+.PP
+Definition at line 87 of file Misc.h.
+.SS "static std::ostream& cryomesh::common::Misc::print (std::ostream &os, const std::vector< bool > &obj)\fC [inline, static]\fP"
+.PP
+Definition at line 102 of file Misc.h.
+.SS "static std::ostream& cryomesh::common::Misc::print (std::ostream &os, const std::list< bool > &obj)\fC [inline, static]\fP"
+.PP
+Definition at line 122 of file Misc.h.
+.SS "std::string cryomesh::common::Misc::removeChars (const std::string &delchars, const std::string &str)\fC [static]\fP"
+.PP
+Definition at line 36 of file Misc.cpp.
+.SS "std::string cryomesh::common::Misc::toLower (const std::string &str)\fC [static]\fP"
+.PP
+Definition at line 8 of file Misc.cpp.
+.PP
+Referenced by toLower().
+.SS "std::list< std::string > cryomesh::common::Misc::toLower (const std::list< std::string > &strlist)\fC [static]\fP"
+.PP
+Definition at line 22 of file Misc.cpp.
+.PP
+References toLower().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

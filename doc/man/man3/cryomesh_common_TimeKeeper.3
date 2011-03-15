@@ -1,0 +1,236 @@
+.TH "cryomesh::common::TimeKeeper" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::common::TimeKeeper \- 
+.PP
+\fBTimeKeeper\fP is a class keep track of the cycle state and timing.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <TimeKeeper.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBreset\fP ()"
+.br
+.RI "\fIDestructor. \fP"
+.ti -1c
+.RI "virtual \fB~TimeKeeper\fP ()"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBTimeKeeper\fP &)"
+.br
+.RI "\fIEquality test override for object. \fP"
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.RI "\fIMove the timing on one cycle. \fP"
+.ti -1c
+.RI "\fBCycle\fP \fBgetCycle\fP () const "
+.br
+.RI "\fIGet the current cycle we're on as an \fBCycle\fP. \fP"
+.ti -1c
+.RI "std::time_t \fBgetStartTime\fP () const "
+.br
+.RI "\fIGet the time we started cycling. \fP"
+.ti -1c
+.RI "double \fBgetTiming\fP () const "
+.br
+.RI "\fIDifference between the last time and now. \fP"
+.ti -1c
+.RI "const boost::timer & \fBgetTimer\fP () const "
+.br
+.RI "\fIGet the Timer. \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBTimeKeeper\fP & \fBgetTimeKeeper\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTimeKeeper\fP ()"
+.br
+.RI "\fIConstructor. \fP"
+.ti -1c
+.RI "\fBTimeKeeper\fP (const \fBTimeKeeper\fP &)"
+.br
+.RI "\fICopy Constructor. \fP"
+.ti -1c
+.RI "\fBTimeKeeper\fP & \fBoperator=\fP (const \fBTimeKeeper\fP &)"
+.br
+.RI "\fIAssignment Operator. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBCycle\fP \fBcycle\fP"
+.br
+.ti -1c
+.RI "std::time_t \fBstart_time\fP"
+.br
+.ti -1c
+.RI "boost::timer \fBtimer\fP"
+.br
+.ti -1c
+.RI "double \fBthis_timing\fP"
+.br
+.ti -1c
+.RI "double \fBlast_timing\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static boost::shared_ptr< \fBTimeKeeper\fP > \fBtimekeeper\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBTimeKeeper\fP is a class keep track of the cycle state and timing. 
+
+\fBTimeKeeper\fP manages the 'tick' cycle and provides the means by which classes throughout the system can keep track of the cycle 
+.PP
+Definition at line 31 of file TimeKeeper.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::common::TimeKeeper::~TimeKeeper ()\fC [virtual]\fP"
+.PP
+Definition at line 38 of file TimeKeeper.cpp.
+.SS "cryomesh::common::TimeKeeper::TimeKeeper ()\fC [protected]\fP"
+.PP
+Constructor. Constructor for \fBTimeKeeper\fP. Inaccessible to force singleton class 
+.PP
+Definition at line 35 of file TimeKeeper.cpp.
+.PP
+Referenced by getTimeKeeper().
+.SS "cryomesh::common::TimeKeeper::TimeKeeper (const \fBTimeKeeper\fP &)\fC [protected]\fP"
+.PP
+Copy Constructor. Overridden Copy Contructor for \fBTimeKeeper\fP. Inaccessible to force singleton class
+.PP
+\fBParameters:\fP
+.RS 4
+\fI\fBTimeKeeper\fP\fP Object to Copy Construct from 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBCycle\fP cryomesh::common::TimeKeeper::getCycle () const"
+.PP
+Get the current cycle we're on as an \fBCycle\fP. \fBReturns:\fP
+.RS 4
+\fBCycle\fP The cycle we're currently on 
+.RE
+.PP
+
+.PP
+Definition at line 77 of file TimeKeeper.cpp.
+.SS "std::time_t cryomesh::common::TimeKeeper::getStartTime () const"
+.PP
+Get the time we started cycling. \fBReturns:\fP
+.RS 4
+time_t The start time 
+.RE
+.PP
+
+.PP
+Definition at line 84 of file TimeKeeper.cpp.
+.SS "\fBTimeKeeper\fP & cryomesh::common::TimeKeeper::getTimeKeeper ()\fC [static]\fP"
+.PP
+Definition at line 20 of file TimeKeeper.cpp.
+.PP
+References TimeKeeper(), and timekeeper.
+.PP
+Referenced by cryomesh::components::Node::addImpulse(), cryomesh::components::ImpulseCollection::clearActiveImpulses(), cryomesh::components::ImpulseCollection::clearImpulses(), cryomesh::components::Node::getActivity(), cryomesh::components::ImpulseCollection::getActivity(), cryomesh::components::Impulse::getActivity(), cryomesh::components::ConnectionMap::getActivityPattern(), cryomesh::components::Impulse::getTriggerImpulse(), cryomesh::components::Impulse::Impulse(), cryomesh::components::Impulse::isActive(), cryomesh::components::ImpulseCollection::refreshDataObject(), and cryomesh::components::Node::setActivity().
+.SS "const boost::timer & cryomesh::common::TimeKeeper::getTimer () const"
+.PP
+Get the Timer. \fBReturns:\fP
+.RS 4
+boost::Timer 
+.RE
+.PP
+
+.PP
+Definition at line 88 of file TimeKeeper.cpp.
+.SS "double cryomesh::common::TimeKeeper::getTiming () const"
+.PP
+Difference between the last time and now. \fBReturns:\fP
+.RS 4
+double The difference between the clock now and the last clock 
+.RE
+.PP
+
+.PP
+Definition at line 81 of file TimeKeeper.cpp.
+.SS "\fBTimeKeeper\fP& cryomesh::common::TimeKeeper::operator= (const \fBTimeKeeper\fP &)\fC [protected]\fP"
+.PP
+Assignment Operator. Overridden Assignment Operator for \fBTimeKeeper\fP. Inaccessible to force singleton class
+.PP
+\fBParameters:\fP
+.RS 4
+\fI\fBTimeKeeper\fP\fP Object to Assign this to 
+.RE
+.PP
+
+.SS "bool cryomesh::common::TimeKeeper::operator== (const \fBTimeKeeper\fP &obj)"
+.PP
+Equality test override for object. \fBParameters:\fP
+.RS 4
+\fI\fBTimeKeeper\fP\fP obj Object to compare this with
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True if equal, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 41 of file TimeKeeper.cpp.
+.SS "void cryomesh::common::TimeKeeper::reset ()"
+.PP
+Destructor. Destructor for \fBTimeKeeper\fP Reset the timekeeper 
+.PP
+Definition at line 27 of file TimeKeeper.cpp.
+.SS "void cryomesh::common::TimeKeeper::update ()"
+.PP
+Move the timing on one cycle. 
+.PP
+Definition at line 67 of file TimeKeeper.cpp.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBCycle\fP \fBcryomesh::common::TimeKeeper::cycle\fP\fC [private]\fP"
+.PP
+Definition at line 159 of file TimeKeeper.h.
+.SS "double \fBcryomesh::common::TimeKeeper::last_timing\fP\fC [private]\fP"
+.PP
+Definition at line 187 of file TimeKeeper.h.
+.SS "std::time_t \fBcryomesh::common::TimeKeeper::start_time\fP\fC [private]\fP"
+.PP
+Definition at line 166 of file TimeKeeper.h.
+.SS "double \fBcryomesh::common::TimeKeeper::this_timing\fP\fC [private]\fP"
+.PP
+Definition at line 180 of file TimeKeeper.h.
+.SS "boost::shared_ptr< \fBTimeKeeper\fP > \fBcryomesh::common::TimeKeeper::timekeeper\fP\fC [static, private]\fP"
+.PP
+Definition at line 151 of file TimeKeeper.h.
+.PP
+Referenced by getTimeKeeper().
+.SS "boost::timer \fBcryomesh::common::TimeKeeper::timer\fP\fC [private]\fP"
+.PP
+Definition at line 173 of file TimeKeeper.h.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

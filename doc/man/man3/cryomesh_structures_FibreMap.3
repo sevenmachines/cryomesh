@@ -1,0 +1,347 @@
+.TH "cryomesh::structures::FibreMap" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::structures::FibreMap \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <FibreMap.h>\fP
+.PP
+Inherits \fBKeyMappedCollection< boost::uuids::uuid, Fibre >\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFibreMap\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~FibreMap\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP ()"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.RI "\fIClear all objects from collection. \fP"
+.ti -1c
+.RI "boost::shared_ptr< \fBFibre\fP > \fBadd\fP (boost::shared_ptr< \fBFibre\fP > obj)"
+.br
+.RI "\fIAdd object to collection. \fP"
+.ti -1c
+.RI "virtual void \fBadd\fP (const std::initializer_list< boost::shared_ptr< \fBFibre\fP > > &list)"
+.br
+.RI "\fIAdd object to collection by initialiser list. \fP"
+.ti -1c
+.RI "virtual void \fBadd\fP (const std::list< boost::shared_ptr< \fBFibre\fP > > &list)"
+.br
+.RI "\fIAdd object to collection by list. \fP"
+.ti -1c
+.RI "virtual void \fBremove\fP (const std::initializer_list< boost::shared_ptr< \fBFibre\fP > > &list)"
+.br
+.RI "\fIRemove objects from collection by initialiser list. \fP"
+.ti -1c
+.RI "virtual void \fBremove\fP (const std::list< boost::shared_ptr< \fBFibre\fP > > &list)"
+.br
+.RI "\fIRemove objects from collection by list. \fP"
+.ti -1c
+.RI "boost::shared_ptr< \fBFibre\fP > \fBremove\fP (boost::shared_ptr< \fBFibre\fP > obj)"
+.br
+.RI "\fIAdd object to collection. \fP"
+.ti -1c
+.RI "boost::shared_ptr< \fBFibre\fP > \fBremove\fP (\fBFibre\fP &obj)"
+.br
+.RI "\fIRemove object from collection. \fP"
+.ti -1c
+.RI "boost::shared_ptr< \fBFibre\fP > \fBremove\fP (boost::uuids::uuidkey)"
+.br
+.RI "\fIRemove object from collection bt key. \fP"
+.ti -1c
+.RI "std::list< boost::uuids::uuid > \fBgetKeyList\fP () const"
+.br
+.RI "\fIGet keys for underlying connection. \fP"
+.ti -1c
+.RI "std::vector< boost::shared_ptr< \fBFibre\fP > > \fBgetObjectList\fP () const"
+.br
+.RI "\fIGet object list for underlying connection. \fP"
+.ti -1c
+.RI "boost::shared_ptr< \fBFibre\fP > \fBgetObjectByKey\fP (const boost::uuids::uuid &key)"
+.br
+.RI "\fIGet object using key. \fP"
+.ti -1c
+.RI "std::vector< boost::shared_ptr< \fBFibre\fP > > \fBgetRandomRange\fP (int number) const"
+.br
+.ti -1c
+.RI "const std::map< boost::uuids::uuid, boost::shared_ptr< \fBFibre\fP > > & \fBgetCollection\fP () const"
+.br
+.RI "\fIGet maximum value. \fP"
+.ti -1c
+.RI "std::map< boost::uuids::uuid, boost::shared_ptr< \fBFibre\fP > > & \fBgetMutableCollection\fP ()"
+.br
+.RI "\fIGet mutable underlying collection. \fP"
+.ti -1c
+.RI "int \fBgetSize\fP () const"
+.br
+.RI "\fIGet underlying collections size. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::map< boost::uuids::uuid, boost::shared_ptr< \fBFibre\fP > > \fBobjects\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBFibreMap\fP &objs)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 18 of file FibreMap.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::structures::FibreMap::FibreMap ()\fC [inline]\fP"
+.PP
+Definition at line 20 of file FibreMap.h.
+.SS "virtual cryomesh::structures::FibreMap::~FibreMap ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 22 of file FibreMap.h.
+.SH "Member Function Documentation"
+.PP 
+.SS "boost::shared_ptr<\fBFibre\fP > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBFibre\fP  >::add (boost::shared_ptr< Fibre  >obj)\fC [inline, inherited]\fP"
+.PP
+Add object to collection. \fBParameters:\fP
+.RS 4
+\fIboost::shared_ptr<T>\fP obj The object to be added to the collection
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+boost::shared_ptr<T> The object added to the collection 
+.RE
+.PP
+
+.PP
+Definition at line 59 of file KeyMappedCollection.h.
+.PP
+References cryomesh::common::KeyMappedCollection< U, T >::objects.
+.SS "virtual void \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBFibre\fP  >::add (const std::initializer_list< boost::shared_ptr< Fibre  > > &list)\fC [inline, virtual, inherited]\fP"
+.PP
+Add object to collection by initialiser list. \fBParameters:\fP
+.RS 4
+\fIstd::initialiser_list<T>\fP obj The values to be added to the collection 
+.RE
+.PP
+
+.PP
+Definition at line 70 of file KeyMappedCollection.h.
+.PP
+References cryomesh::common::KeyMappedCollection< U, T >::objects.
+.SS "virtual void \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBFibre\fP  >::add (const std::list< boost::shared_ptr< Fibre  > > &list)\fC [inline, virtual, inherited]\fP"
+.PP
+Add object to collection by list. \fBParameters:\fP
+.RS 4
+\fIstd::list<T>\fP list The list values to be added to the collection 
+.RE
+.PP
+
+.PP
+Definition at line 88 of file KeyMappedCollection.h.
+.PP
+References cryomesh::common::KeyMappedCollection< U, T >::objects.
+.SS "void \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBFibre\fP  >::clear ()\fC [inline, inherited]\fP"
+.PP
+Clear all objects from collection. 
+.PP
+Definition at line 45 of file KeyMappedCollection.h.
+.PP
+References cryomesh::common::KeyMappedCollection< U, T >::objects.
+.SS "const std::map<boost::uuids::uuid , boost::shared_ptr<\fBFibre\fP > >& \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBFibre\fP  >::getCollection () const\fC [inline, inherited]\fP"
+.PP
+Get maximum value. \fBReturns:\fP
+.RS 4
+T The maximum value Get underlying collection
+.PP
+const std::map<U, boost::shared_ptr<T> > & The collection 
+.RE
+.PP
+
+.PP
+Definition at line 309 of file KeyMappedCollection.h.
+.PP
+References cryomesh::common::KeyMappedCollection< U, T >::objects.
+.SS "std::list<boost::uuids::uuid > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBFibre\fP  >::getKeyList () const\fC [inline, inherited]\fP"
+.PP
+Get keys for underlying connection. \fBReturns:\fP
+.RS 4
+std::list<U> The list of keys 
+.RE
+.PP
+
+.PP
+Definition at line 208 of file KeyMappedCollection.h.
+.PP
+References cryomesh::common::KeyMappedCollection< U, T >::objects.
+.SS "std::map<boost::uuids::uuid , boost::shared_ptr<\fBFibre\fP > >& \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBFibre\fP  >::getMutableCollection ()\fC [inline, inherited]\fP"
+.PP
+Get mutable underlying collection. \fBReturns:\fP
+.RS 4
+const std::map<U, boost::shared_ptr<T> > & The mutable collection 
+.RE
+.PP
+
+.PP
+Definition at line 319 of file KeyMappedCollection.h.
+.PP
+References cryomesh::common::KeyMappedCollection< U, T >::objects.
+.SS "boost::shared_ptr<\fBFibre\fP > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBFibre\fP  >::getObjectByKey (const boost::uuids::uuid  &key)\fC [inline, inherited]\fP"
+.PP
+Get object using key. \fBParameters:\fP
+.RS 4
+\fIU\fP key Key to search for 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+boost::shared_ptr<T> The found object 
+.RE
+.PP
+
+.PP
+Definition at line 250 of file KeyMappedCollection.h.
+.PP
+References cryomesh::common::KeyMappedCollection< U, T >::objects.
+.SS "std::vector<boost::shared_ptr<\fBFibre\fP > > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBFibre\fP  >::getObjectList () const\fC [inline, inherited]\fP"
+.PP
+Get object list for underlying connection. \fBReturns:\fP
+.RS 4
+std::list<U> The list of object values 
+.RE
+.PP
+
+.PP
+Definition at line 228 of file KeyMappedCollection.h.
+.PP
+References cryomesh::common::KeyMappedCollection< U, T >::objects.
+.SS "std::vector<boost::shared_ptr<\fBFibre\fP > > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBFibre\fP  >::getRandomRange (intnumber) const\fC [inline, inherited]\fP"
+.PP
+Definition at line 261 of file KeyMappedCollection.h.
+.PP
+References cryomesh::common::KeyMappedCollection< U, T >::getObjectList().
+.SS "int \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBFibre\fP  >::getSize () const\fC [inline, inherited]\fP"
+.PP
+Get underlying collections size. \fBReturns:\fP
+.RS 4
+int The collections size 
+.RE
+.PP
+
+.PP
+Definition at line 329 of file KeyMappedCollection.h.
+.PP
+References cryomesh::common::KeyMappedCollection< U, T >::objects.
+.SS "virtual void \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBFibre\fP  >::remove (const std::list< boost::shared_ptr< Fibre  > > &list)\fC [inline, virtual, inherited]\fP"
+.PP
+Remove objects from collection by list. \fBParameters:\fP
+.RS 4
+\fIstd::list<T>\fP list The list values to be removed to the collection 
+.RE
+.PP
+
+.PP
+Definition at line 124 of file KeyMappedCollection.h.
+.SS "boost::shared_ptr<\fBFibre\fP > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBFibre\fP  >::remove (boost::shared_ptr< Fibre  >obj)\fC [inline, inherited]\fP"
+.PP
+Add object to collection. \fBParameters:\fP
+.RS 4
+\fIT\fP & refobj The object to be added to the collection
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+boost::shared_ptr<T> The object added to the collection
+.RE
+.PP
+boost::shared_ptr<T> add(T & refobj) { boost::shared_ptr<T> obj = boost::shared_ptr<T>(&refobj); objects[obj->getKey()] = obj; return objects.find(obj->getKey())->second; } Remove object from collection
+.PP
+\fBParameters:\fP
+.RS 4
+\fIboost::shared_ptr<T>\fP obj The object to be removed from the collection
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+boost::shared_ptr<T> The object removed from the collection 
+.RE
+.PP
+
+.PP
+Definition at line 163 of file KeyMappedCollection.h.
+.SS "boost::shared_ptr<\fBFibre\fP > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBFibre\fP  >::remove (boost::uuids::uuidkey)\fC [inline, inherited]\fP"
+.PP
+Remove object from collection bt key. \fBParameters:\fP
+.RS 4
+\fIU\fP key The ey of the object to be removed from the collection
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+boost::shared_ptr<T> The object removed from the collection 
+.RE
+.PP
+
+.PP
+Definition at line 191 of file KeyMappedCollection.h.
+.PP
+References cryomesh::common::KeyMappedCollection< U, T >::objects.
+.SS "virtual void \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBFibre\fP  >::remove (const std::initializer_list< boost::shared_ptr< Fibre  > > &list)\fC [inline, virtual, inherited]\fP"
+.PP
+Remove objects from collection by initialiser list. \fBParameters:\fP
+.RS 4
+\fIstd::initialiser_list<T>\fP obj The values to be removed from the collection 
+.RE
+.PP
+
+.PP
+Definition at line 106 of file KeyMappedCollection.h.
+.SS "boost::shared_ptr<\fBFibre\fP > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBFibre\fP  >::remove (Fibre  &obj)\fC [inline, inherited]\fP"
+.PP
+Remove object from collection. \fBParameters:\fP
+.RS 4
+\fIT\fP & obj The object to be removed from the collection
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+boost::shared_ptr<T> The object removed from the collection 
+.RE
+.PP
+
+.PP
+Definition at line 177 of file KeyMappedCollection.h.
+.SS "virtual void cryomesh::structures::FibreMap::update ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 24 of file FibreMap.h.
+.PP
+References cryomesh::common::KeyMappedCollection< boost::uuids::uuid, Fibre >::objects.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream &os, const \fBFibreMap\fP &objs)\fC [friend]\fP"
+.PP
+Definition at line 40 of file FibreMap.h.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::map<boost::uuids::uuid , boost::shared_ptr<\fBFibre\fP > > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBFibre\fP  >::\fBobjects\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 339 of file KeyMappedCollection.h.
+.PP
+Referenced by update().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

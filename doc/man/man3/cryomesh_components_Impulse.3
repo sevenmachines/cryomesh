@@ -1,0 +1,1048 @@
+.TH "cryomesh::components::Impulse" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::components::Impulse \- 
+.PP
+\fBImpulse\fP is a mobile information packet to be passed between Nodes.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Impulse.h>\fP
+.PP
+Inherits \fBcryomesh::common::Tagged\fP, and \fBSimpleCollection< double >\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImpulse\fP ()"
+.br
+.RI "\fIConstructor. \fP"
+.ti -1c
+.RI "\fBImpulse\fP (const double max_y, const int length, const \fBcommon::Cycle\fP &startCycle=0)"
+.br
+.RI "\fIConstruct a from a curve with max f(x) and length and set starting cycle to startCycle, which defaults to the present, 'now' cycle. \fP"
+.ti -1c
+.RI "\fBImpulse\fP (const double max_y, const int length, const \fBcommon::Cycle\fP &startCycle, boost::shared_ptr< \fBActivityTimerDistance\fP >)"
+.br
+.RI "\fIConstruct a from a curve with max f(x) and length and set starting cycle to startCycle, and an activity timer. \fP"
+.ti -1c
+.RI "virtual \fB~Impulse\fP ()"
+.br
+.RI "\fIDestructor. \fP"
+.ti -1c
+.RI "void \fBrandomise\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisActive\fP () const "
+.br
+.RI "\fIIs the \fBImpulse\fP active on current cycle. \fP"
+.ti -1c
+.RI "bool \fBisActive\fP (const \fBcommon::Cycle\fP &cycle) const "
+.br
+.RI "\fIIs the \fBImpulse\fP active on cycle. \fP"
+.ti -1c
+.RI "bool \fBisActive\fP (const \fBcommon::Cycle\fP &startCycle, const \fBcommon::Cycle\fP &endCycle) const "
+.br
+.RI "\fIIs the \fBImpulse\fP active at some point in cycle range. \fP"
+.ti -1c
+.RI "double \fBgetActivity\fP (\fBcommon::Cycle\fP cycle) const "
+.br
+.RI "\fIGet activity at cycle. \fP"
+.ti -1c
+.RI "double \fBgetActivity\fP () const "
+.br
+.RI "\fIGet activity at current cycle. \fP"
+.ti -1c
+.RI "double \fBgetActivityMaximum\fP () const "
+.br
+.RI "\fIGet maximum activity. \fP"
+.ti -1c
+.RI "double \fBgetActivityMinimum\fP () const "
+.br
+.RI "\fIGet minimum activity. \fP"
+.ti -1c
+.RI "virtual \fBImpulse\fP & \fBinvert\fP ()"
+.br
+.RI "\fIInvert the impulse. \fP"
+.ti -1c
+.RI "\fBcommon::Cycle\fP \fBgetFirstActiveCycle\fP () const "
+.br
+.RI "\fIGet the first active cycle. \fP"
+.ti -1c
+.RI "void \fBsetFirstActiveCycle\fP (const \fBcommon::Cycle\fP cycle)"
+.br
+.RI "\fISet the first active cycle. \fP"
+.ti -1c
+.RI "\fBcommon::Cycle\fP \fBgetLastActiveCycle\fP () const "
+.br
+.RI "\fIGet the last active cycle. \fP"
+.ti -1c
+.RI "const std::list< double > & \fBgetActivities\fP () const "
+.br
+.RI "\fIGet activities. \fP"
+.ti -1c
+.RI "const boost::shared_ptr< \fBActivityTimerDistance\fP > \fBgetActivityTimer\fP () const "
+.br
+.RI "\fIGet activity timer. \fP"
+.ti -1c
+.RI "boost::shared_ptr< \fBActivityTimerDistance\fP > \fBgetMutableActivityTimer\fP ()"
+.br
+.RI "\fIGet mutable activity timer. \fP"
+.ti -1c
+.RI "void \fBsetActivityTimer\fP (boost::shared_ptr< \fBActivityTimerDistance\fP > timer)"
+.br
+.RI "\fISet activity timer. \fP"
+.ti -1c
+.RI "const \fBImpulse\fP \fBoperator+\fP (const \fBImpulse\fP &obj) const "
+.br
+.RI "\fINon-destructive addition operator. \fP"
+.ti -1c
+.RI "\fBImpulse\fP & \fBoperator+=\fP (const \fBImpulse\fP &obj)"
+.br
+.RI "\fIDestructive addition and assignment operator. \fP"
+.ti -1c
+.RI "\fBImpulse\fP & \fBoperator=\fP (const \fBImpulse\fP &obj)"
+.br
+.RI "\fIAssignment operator. \fP"
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBImpulse\fP &obj) const "
+.br
+.RI "\fIComparator operator. \fP"
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBImpulse\fP &obj) const "
+.br
+.RI "\fINot comparator operator. \fP"
+.ti -1c
+.RI "boost::uuids::uuid \fBgetUUID\fP () const "
+.br
+.RI "\fIGet the uuid of object. \fP"
+.ti -1c
+.RI "boost::uuids::uuid \fBgetKey\fP () const "
+.br
+.RI "\fIGet the key of object. \fP"
+.ti -1c
+.RI "boost::uuids::uuid \fBgetTag\fP () const "
+.br
+.RI "\fIGet the tag of object. \fP"
+.ti -1c
+.RI "virtual void \fBclear\fP ()"
+.br
+.RI "\fIClear all objects from collection. \fP"
+.ti -1c
+.RI "virtual void \fBadd\fP (doubleobj)"
+.br
+.RI "\fIAdd object to collection. \fP"
+.ti -1c
+.RI "virtual void \fBadd\fP (const std::initializer_list< double > &list)"
+.br
+.RI "\fIAdd object to collection by initialiser list. \fP"
+.ti -1c
+.RI "virtual void \fBadd\fP (const std::list< double > &list)"
+.br
+.RI "\fIAdd object to collection by list. \fP"
+.ti -1c
+.RI "virtual void \fBremove\fP (doubleobj)"
+.br
+.RI "\fIRemove object from collection. \fP"
+.ti -1c
+.RI "virtual void \fBremove\fP (const std::initializer_list< double > &list)"
+.br
+.RI "\fIRemove objects from collection by initialiser list. \fP"
+.ti -1c
+.RI "virtual void \fBremove\fP (const std::list< double > &list)"
+.br
+.RI "\fIRemove objects from collection by list. \fP"
+.ti -1c
+.RI "virtual double \fBgetSum\fP () const"
+.br
+.ti -1c
+.RI "virtual double \fBgetMaximum\fP () const"
+.br
+.ti -1c
+.RI "virtual double \fBgetMinimum\fP () const"
+.br
+.ti -1c
+.RI "virtual double \fBoperator[]\fP (unsigned index) const  throw (exceptions::IndexOutOfBoundsException)"
+.br
+.RI "\fIGet value at index. \fP"
+.ti -1c
+.RI "virtual SimpleCollection< double > & \fBreverse\fP ()"
+.br
+.RI "\fIReverse collection. \fP"
+.ti -1c
+.RI "virtual const std::list< double > & \fBgetCollection\fP () const"
+.br
+.RI "\fIGet underlying collection. \fP"
+.ti -1c
+.RI "virtual std::list< double > & \fBgetMutableCollection\fP ()"
+.br
+.RI "\fIGet mutable underlying collection. \fP"
+.ti -1c
+.RI "virtual int \fBgetSize\fP () const"
+.br
+.RI "\fIGet underlying collections size. \fP"
+.ti -1c
+.RI "virtual const SimpleCollection< double > \fBoperator+\fP (const SimpleCollection< double > &obj) const"
+.br
+.RI "\fINon-destructive addition operator. \fP"
+.ti -1c
+.RI "virtual SimpleCollection< double > & \fBoperator+=\fP (const SimpleCollection< double > &obj)"
+.br
+.RI "\fIDestructive addition and assignment operator. \fP"
+.ti -1c
+.RI "virtual bool \fBoperator==\fP (const SimpleCollection< double > &obj) const"
+.br
+.RI "\fIComparator operator. \fP"
+.ti -1c
+.RI "bool \fBoperator!=\fP (const SimpleCollection &obj) const"
+.br
+.RI "\fINot comparator operator. \fP"
+.ti -1c
+.RI "virtual bool \fBoperator!=\fP (const SimpleCollection< double > &obj) const =0"
+.br
+.RI "\fINot comparator operator. \fP"
+.ti -1c
+.RI "std::list< double > & \fBpad\fP (int front_pad, int back_pad, doublepad_value)"
+.br
+.RI "\fIPad Collection. \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static boost::shared_ptr< \fBImpulse\fP > \fBgetTriggerImpulse\fP ()"
+.br
+.RI "\fIGet a 'trigger' impulse, a maximum impulse. \fP"
+.ti -1c
+.RI "static boost::shared_ptr< \fBImpulse\fP > \fBgetRandomImpulse\fP ()"
+.br
+.RI "\fIGet a randomised impulse. \fP"
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const double \fBFORCED_TRIGGER_ACTIVITY\fP = 1000"
+.br
+.ti -1c
+.RI "static const double \fBMAX_ACTIVITY\fP = 1"
+.br
+.ti -1c
+.RI "static const double \fBMIN_ACTIVITY\fP = -1"
+.br
+.ti -1c
+.RI "static const int \fBMAX_ACTIVITY_LENGTH\fP = 10"
+.br
+.ti -1c
+.RI "static const int \fBMIN_ACTIVITY_LENGTH\fP = 1"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBgetActivityBoundary\fP (bool maximal) const "
+.br
+.RI "\fIGet the boundary value of activity. \fP"
+.ti -1c
+.RI "double \fBgetBoundaryValue\fP (bool greater) const"
+.br
+.ti -1c
+.RI "void \fBgenerateCurve\fP (const double max_y, const unsigned long length)"
+.br
+.RI "\fIGenerate a curve from boundary value. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcommon::Cycle\fP \fBfirstActiveCycle\fP"
+.br
+.RI "\fIThe first cycle that this \fBImpulse\fP has activity. \fP"
+.ti -1c
+.RI "\fBcommon::Cycle\fP \fBlastActiveCycle\fP"
+.br
+.RI "\fIThe lase cycle that this \fBImpulse\fP has activity. \fP"
+.ti -1c
+.RI "boost::shared_ptr< \fBActivityTimerDistance\fP > \fBactivityTimer\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBImpulse\fP &obj)"
+.br
+.RI "\fITo stream operator. \fP"
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &out, const SimpleCollection &obj)"
+.br
+.RI "\fITo stream operator. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBImpulse\fP is a mobile information packet to be passed between Nodes. 
+
+Impulses represent information generated by a \fBNode\fP firing They are propagated along a connection Can be modified by the overlying \fBMesh\fP as they propagate 
+.PP
+Definition at line 30 of file Impulse.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::components::Impulse::Impulse ()"
+.PP
+Constructor. Constructor for \fBImpulse\fP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbool\fP random If true then randomise the impulse on creation 
+.RE
+.PP
+
+.PP
+Definition at line 37 of file Impulse.cpp.
+.PP
+References cryomesh::common::TimeKeeper::getTimeKeeper().
+.SS "cryomesh::components::Impulse::Impulse (const doublemax_y, const intlength, const \fBcommon::Cycle\fP &startCycle = \fC0\fP)"
+.PP
+Construct a from a curve with max f(x) and length and set starting cycle to startCycle, which defaults to the present, 'now' cycle. \fBParameters:\fP
+.RS 4
+\fIconst\fP int max_y Boundary value of curve 
+.br
+\fIconst\fP int length Length of \fBImpulse\fP 
+.br
+\fIconst\fP Cycle startCycle Cycle to start activity on 
+.RE
+.PP
+
+.PP
+Definition at line 45 of file Impulse.cpp.
+.SS "cryomesh::components::Impulse::Impulse (const doublemax_y, const intlength, const \fBcommon::Cycle\fP &startCycle, boost::shared_ptr< \fBActivityTimerDistance\fP >timer)"
+.PP
+Construct a from a curve with max f(x) and length and set starting cycle to startCycle, and an activity timer. \fBParameters:\fP
+.RS 4
+\fIconst\fP int max_y Boundary value of curve 
+.br
+\fIconst\fP int length Length of \fBImpulse\fP 
+.br
+\fIconst\fP Cycle startCycle Cycle to start activity on 
+.br
+\fIboost::shared_ptr<ActivityTimer>\fP timer The activity timer associated with this 
+.RE
+.PP
+
+.PP
+Definition at line 54 of file Impulse.cpp.
+.SS "cryomesh::components::Impulse::~Impulse ()\fC [virtual]\fP"
+.PP
+Destructor. Destructor for \fBImpulse\fP 
+.PP
+Definition at line 62 of file Impulse.cpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void \fBcryomesh::common::SimpleCollection\fP< double  >::add (doubleobj)\fC [inline, virtual, inherited]\fP"
+.PP
+Add object to collection. \fBParameters:\fP
+.RS 4
+\fIT\fP obj The value to be added to the collection
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+T The value added to the collection 
+.RE
+.PP
+
+.PP
+Definition at line 80 of file SimpleCollection.h.
+.PP
+References cryomesh::common::SimpleCollection< T >::objects.
+.SS "virtual void \fBcryomesh::common::SimpleCollection\fP< double  >::add (const std::initializer_list< double  > &list)\fC [inline, virtual, inherited]\fP"
+.PP
+Add object to collection by initialiser list. \fBParameters:\fP
+.RS 4
+\fIstd::initialiser_list<T>\fP obj The values to be added to the collection 
+.RE
+.PP
+
+.PP
+Definition at line 90 of file SimpleCollection.h.
+.PP
+References cryomesh::common::SimpleCollection< T >::add().
+.SS "virtual void \fBcryomesh::common::SimpleCollection\fP< double  >::add (const std::list< double  > &list)\fC [inline, virtual, inherited]\fP"
+.PP
+Add object to collection by list. \fBParameters:\fP
+.RS 4
+\fIstd::list<T>\fP list The list values to be added to the collection 
+.RE
+.PP
+
+.PP
+Definition at line 108 of file SimpleCollection.h.
+.PP
+References cryomesh::common::SimpleCollection< T >::add().
+.SS "virtual void \fBcryomesh::common::SimpleCollection\fP< double  >::clear ()\fC [inline, virtual, inherited]\fP"
+.PP
+Clear all objects from collection. 
+.PP
+Definition at line 66 of file SimpleCollection.h.
+.PP
+References cryomesh::common::SimpleCollection< T >::objects.
+.SS "void \fBcryomesh::common::SimpleCollection\fP< double  >::generateCurve (const doublemax_y, const unsigned longlength)\fC [inline, protected, inherited]\fP"
+.PP
+Generate a curve from boundary value. \fBParameters:\fP
+.RS 4
+\fIconst\fP int max_y Boundary value of curve 
+.br
+\fIconst\fP int length Length of Impulse 
+.RE
+.PP
+
+.PP
+Definition at line 537 of file SimpleCollection.h.
+.PP
+References cryomesh::common::SimpleCollection< T >::objects.
+.SS "const std::list< double > & cryomesh::components::Impulse::getActivities () const"
+.PP
+Get activities. \fBReturns:\fP
+.RS 4
+const std::list<double> & The activities list 
+.RE
+.PP
+
+.PP
+Definition at line 155 of file Impulse.cpp.
+.SS "double cryomesh::components::Impulse::getActivity () const"
+.PP
+Get activity at current cycle. Sum all the Impulses in the collection on the current cycle and return activity
+.PP
+\fBReturns:\fP
+.RS 4
+double The activity on specified cycle 
+.RE
+.PP
+
+.PP
+Definition at line 91 of file Impulse.cpp.
+.PP
+References cryomesh::common::TimeKeeper::getTimeKeeper().
+.SS "double cryomesh::components::Impulse::getActivity (\fBcommon::Cycle\fPcycle) const"
+.PP
+Get activity at cycle. Sum all the Impulses in the collection on specified cycle and return activity
+.PP
+\fBParameters:\fP
+.RS 4
+\fIint\fP cycle The cycle to calculate the activity on
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+double The activity on specified cycle 
+.RE
+.PP
+
+.PP
+Definition at line 95 of file Impulse.cpp.
+.PP
+References cryomesh::common::Cycle::toLInt().
+.SS "double cryomesh::components::Impulse::getActivityBoundary (boolmaximal) const\fC [protected]\fP"
+.PP
+Get the boundary value of activity. \fBParameters:\fP
+.RS 4
+\fIbool\fP maximal True if maximal boundary, false if minimal
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+double The boundary value of activity 
+.RE
+.PP
+
+.SS "double cryomesh::components::Impulse::getActivityMaximum () const"
+.PP
+Get maximum activity. Find the maximum activity between start and end cycles
+.PP
+\fBReturns:\fP
+.RS 4
+double The maximum activity 
+.RE
+.PP
+
+.PP
+Definition at line 120 of file Impulse.cpp.
+.SS "double cryomesh::components::Impulse::getActivityMinimum () const"
+.PP
+Get minimum activity. Find the minimum activity between start and end cycles
+.PP
+\fBReturns:\fP
+.RS 4
+double The minimum activity 
+.RE
+.PP
+
+.PP
+Definition at line 124 of file Impulse.cpp.
+.SS "const boost::shared_ptr< \fBActivityTimerDistance\fP > cryomesh::components::Impulse::getActivityTimer () const"
+.PP
+Get activity timer. \fBReturns:\fP
+.RS 4
+boost::shared_ptr< ActivityTimer > activityTimer; The activity timer 
+.RE
+.PP
+
+.PP
+Definition at line 159 of file Impulse.cpp.
+.PP
+Referenced by operator=().
+.SS "double  \fBcryomesh::common::SimpleCollection\fP< double  >::getBoundaryValue (boolgreater) const\fC [inline, protected, inherited]\fP"
+.PP
+Definition at line 500 of file SimpleCollection.h.
+.PP
+References cryomesh::common::SimpleCollection< T >::objects.
+.SS "virtual const std::list<double >& \fBcryomesh::common::SimpleCollection\fP< double  >::getCollection () const\fC [inline, virtual, inherited]\fP"
+.PP
+Get underlying collection. \fBReturns:\fP
+.RS 4
+const std::list<T> & The collection 
+.RE
+.PP
+
+.PP
+Definition at line 298 of file SimpleCollection.h.
+.PP
+References cryomesh::common::SimpleCollection< T >::objects.
+.SS "\fBCycle\fP cryomesh::components::Impulse::getFirstActiveCycle () const"
+.PP
+Get the first active cycle. \fBReturns:\fP
+.RS 4
+Cycle The first active cycle 
+.RE
+.PP
+
+.PP
+Definition at line 133 of file Impulse.cpp.
+.PP
+Referenced by cryomesh::components::ImpulseCollection::clearActiveImpulses(), operator+=(), operator=(), and operator==().
+.SS "boost::uuids::uuid cryomesh::common::Tagged::getKey () const\fC [inline, inherited]\fP"
+.PP
+Get the key of object. \fBReturns:\fP
+.RS 4
+boost::uuids::uuid The unique uuid tag of this object 
+.RE
+.PP
+
+.PP
+Definition at line 61 of file Tagged.h.
+.PP
+References cryomesh::common::Tagged::getUUID().
+.SS "\fBCycle\fP cryomesh::components::Impulse::getLastActiveCycle () const"
+.PP
+Get the last active cycle. \fBReturns:\fP
+.RS 4
+Cycle The last active cycle 
+.RE
+.PP
+
+.PP
+Definition at line 151 of file Impulse.cpp.
+.PP
+Referenced by cryomesh::components::ImpulseCollection::clearActiveImpulses(), operator+=(), and operator==().
+.SS "virtual double  \fBcryomesh::common::SimpleCollection\fP< double  >::getMaximum () const\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 205 of file SimpleCollection.h.
+.PP
+References cryomesh::common::SimpleCollection< T >::getBoundaryValue().
+.SS "virtual double  \fBcryomesh::common::SimpleCollection\fP< double  >::getMinimum () const\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 215 of file SimpleCollection.h.
+.PP
+References cryomesh::common::SimpleCollection< T >::getBoundaryValue().
+.SS "boost::shared_ptr< \fBActivityTimerDistance\fP > cryomesh::components::Impulse::getMutableActivityTimer ()"
+.PP
+Get mutable activity timer. \fBReturns:\fP
+.RS 4
+boost::shared_ptr< ActivityTimer > activityTimer; The activity timer 
+.RE
+.PP
+
+.PP
+Definition at line 163 of file Impulse.cpp.
+.SS "virtual std::list<double >& \fBcryomesh::common::SimpleCollection\fP< double  >::getMutableCollection ()\fC [inline, virtual, inherited]\fP"
+.PP
+Get mutable underlying collection. \fBReturns:\fP
+.RS 4
+std::list<T> & The mutable collection 
+.RE
+.PP
+
+.PP
+Definition at line 308 of file SimpleCollection.h.
+.PP
+References cryomesh::common::SimpleCollection< T >::objects.
+.SS "boost::shared_ptr< \fBImpulse\fP > cryomesh::components::Impulse::getRandomImpulse ()\fC [static]\fP"
+.PP
+Get a randomised impulse. \fBReturns:\fP
+.RS 4
+boost::shared_ptr<Impulse> The randomised impulse 
+.RE
+.PP
+
+.PP
+Definition at line 31 of file Impulse.cpp.
+.PP
+Referenced by cryomesh::components::Node::randomise().
+.SS "virtual int \fBcryomesh::common::SimpleCollection\fP< double  >::getSize () const\fC [inline, virtual, inherited]\fP"
+.PP
+Get underlying collections size. \fBReturns:\fP
+.RS 4
+int The collections size 
+.RE
+.PP
+
+.PP
+Definition at line 318 of file SimpleCollection.h.
+.PP
+References cryomesh::common::SimpleCollection< T >::objects.
+.SS "virtual double  \fBcryomesh::common::SimpleCollection\fP< double  >::getSum () const\fC [inline, virtual, inherited]\fP"
+.PP
+Definition at line 185 of file SimpleCollection.h.
+.PP
+References cryomesh::common::SimpleCollection< T >::objects.
+.SS "boost::uuids::uuid cryomesh::common::Tagged::getTag () const\fC [inline, inherited]\fP"
+.PP
+Get the tag of object. \fBReturns:\fP
+.RS 4
+boost::uuids::uuid The unique uuid tag of this object 
+.RE
+.PP
+
+.PP
+Definition at line 71 of file Tagged.h.
+.PP
+References cryomesh::common::Tagged::getUUID().
+.SS "boost::shared_ptr< \fBImpulse\fP > cryomesh::components::Impulse::getTriggerImpulse ()\fC [static]\fP"
+.PP
+Get a 'trigger' impulse, a maximum impulse. \fBReturns:\fP
+.RS 4
+boost::shared_ptr<Impulse> The trigger impulse 
+.RE
+.PP
+
+.PP
+Definition at line 26 of file Impulse.cpp.
+.PP
+References cryomesh::common::TimeKeeper::getTimeKeeper().
+.PP
+Referenced by cryomesh::structures::Fibre::trigger().
+.SS "boost::uuids::uuid cryomesh::common::Tagged::getUUID () const\fC [inline, inherited]\fP"
+.PP
+Get the uuid of object. \fBReturns:\fP
+.RS 4
+boost::uuids::uuid The unique uuid tag of this object 
+.RE
+.PP
+
+.PP
+Definition at line 51 of file Tagged.h.
+.PP
+References cryomesh::common::Tagged::uuid.
+.PP
+Referenced by cryomesh::common::Tagged::getKey(), and cryomesh::common::Tagged::getTag().
+.SS "\fBImpulse\fP & cryomesh::components::Impulse::invert ()\fC [virtual]\fP"
+.PP
+Invert the impulse. @ return \fBImpulse\fP & This object inverted 
+.PP
+Reimplemented from \fBcryomesh::common::SimpleCollection< double >\fP.
+.PP
+Definition at line 128 of file Impulse.cpp.
+.PP
+References cryomesh::common::SimpleCollection< T >::invert().
+.SS "bool cryomesh::components::Impulse::isActive () const"
+.PP
+Is the \fBImpulse\fP active on current cycle. \fBReturns:\fP
+.RS 4
+bool True if active, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 74 of file Impulse.cpp.
+.PP
+References cryomesh::common::TimeKeeper::getTimeKeeper().
+.PP
+Referenced by cryomesh::components::ImpulseCollection::clearActiveImpulses().
+.SS "bool cryomesh::components::Impulse::isActive (const \fBcommon::Cycle\fP &startCycle, const \fBcommon::Cycle\fP &endCycle) const"
+.PP
+Is the \fBImpulse\fP active at some point in cycle range. \fBReturns:\fP
+.RS 4
+bool True if active, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 82 of file Impulse.cpp.
+.SS "bool cryomesh::components::Impulse::isActive (const \fBcommon::Cycle\fP &cycle) const"
+.PP
+Is the \fBImpulse\fP active on cycle. \fBReturns:\fP
+.RS 4
+bool True if active, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 78 of file Impulse.cpp.
+.SS "bool cryomesh::components::Impulse::operator!= (const \fBImpulse\fP &obj) const"
+.PP
+Not comparator operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBImpulse\fP & obj RHS object
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True if not equal, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 290 of file Impulse.cpp.
+.SS "bool \fBcryomesh::common::SimpleCollection\fP< double  >::operator!= (const \fBSimpleCollection\fP< double > &obj) const\fC [inline, inherited]\fP"
+.PP
+Not comparator operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP SimpleCollection & obj RHS object
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True if not equal, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 432 of file SimpleCollection.h.
+.SS "virtual bool \fBcryomesh::common::ICollection\fP< SimpleCollection< double >  >::operator!= (const \fBSimpleCollection\fP< double >  &obj) const\fC [pure virtual, inherited]\fP"
+.PP
+Not comparator operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP T & obj RHS object
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True if not equal, false otherwise 
+.RE
+.PP
+
+.SS "virtual const SimpleCollection<double > \fBcryomesh::common::SimpleCollection\fP< double  >::operator+ (const \fBSimpleCollection\fP< double  > &obj) const\fC [inline, virtual, inherited]\fP"
+.PP
+Non-destructive addition operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP SimpleCollection<T> & obj RHS addition
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+SimpleCollection<T> New object after addition 
+.RE
+.PP
+
+.PP
+Implements \fBcryomesh::common::ICollection< SimpleCollection< double > >\fP.
+.PP
+Definition at line 331 of file SimpleCollection.h.
+.SS "const \fBImpulse\fP cryomesh::components::Impulse::operator+ (const \fBImpulse\fP &obj) const"
+.PP
+Non-destructive addition operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBImpulse\fP & obj RHS addition
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBImpulse\fP New object after addition 
+.RE
+.PP
+
+.PP
+Definition at line 171 of file Impulse.cpp.
+.SS "virtual SimpleCollection<double >& \fBcryomesh::common::SimpleCollection\fP< double  >::operator+= (const \fBSimpleCollection\fP< double  > &obj)\fC [inline, virtual, inherited]\fP"
+.PP
+Destructive addition and assignment operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP SimpleCollection<T> & obj RHS addition
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+SimpleCollection<T> & This object after addition and assignment 
+.RE
+.PP
+
+.PP
+Implements \fBcryomesh::common::ICollection< SimpleCollection< double > >\fP.
+.PP
+Definition at line 346 of file SimpleCollection.h.
+.PP
+References cryomesh::common::SimpleCollection< T >::getCollection(), and cryomesh::common::SimpleCollection< T >::getMutableCollection().
+.SS "\fBImpulse\fP & cryomesh::components::Impulse::operator+= (const \fBImpulse\fP &obj)"
+.PP
+Destructive addition and assignment operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBImpulse\fP & obj RHS addition
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBImpulse\fP & This object after addition and assignment 
+.RE
+.PP
+
+.PP
+Definition at line 177 of file Impulse.cpp.
+.PP
+References cryomesh::common::SimpleCollection< T >::getCollection(), getFirstActiveCycle(), getLastActiveCycle(), and cryomesh::common::Cycle::toULInt().
+.SS "\fBImpulse\fP & cryomesh::components::Impulse::operator= (const \fBImpulse\fP &obj)"
+.PP
+Assignment operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBImpulse\fP & obj RHS assignment
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBImpulse\fP & This object after assignment 
+.RE
+.PP
+
+.PP
+Definition at line 231 of file Impulse.cpp.
+.PP
+References cryomesh::common::SimpleCollection< T >::clear(), getActivityTimer(), cryomesh::common::SimpleCollection< T >::getCollection(), and getFirstActiveCycle().
+.SS "virtual bool \fBcryomesh::common::SimpleCollection\fP< double  >::operator== (const \fBSimpleCollection\fP< double  > &obj) const\fC [inline, virtual, inherited]\fP"
+.PP
+Comparator operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP SimpleCollection<T> & obj RHS object
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True if equal, false otherwise 
+.RE
+.PP
+
+.PP
+Implements \fBcryomesh::common::ICollection< SimpleCollection< double > >\fP.
+.PP
+Definition at line 390 of file SimpleCollection.h.
+.PP
+References cryomesh::common::SimpleCollection< T >::getCollection(), and cryomesh::common::Containers::print().
+.SS "bool cryomesh::components::Impulse::operator== (const \fBImpulse\fP &obj) const"
+.PP
+Comparator operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBImpulse\fP & obj RHS object
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True if equal, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 253 of file Impulse.cpp.
+.PP
+References cryomesh::common::Maths::compareDoubles(), cryomesh::common::SimpleCollection< T >::getCollection(), getFirstActiveCycle(), and getLastActiveCycle().
+.SS "virtual double  \fBcryomesh::common::SimpleCollection\fP< double  >::operator[] (unsignedindex) const  throw (exceptions::IndexOutOfBoundsException)\fC [inline, virtual, inherited]\fP"
+.PP
+Get value at index. \fBParameters:\fP
+.RS 4
+\fIunsigned\fP index Index to return
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+T Value at index, 0 if out of bounds 
+.RE
+.PP
+
+.PP
+Definition at line 228 of file SimpleCollection.h.
+.PP
+References cryomesh::common::SimpleCollection< T >::getSize(), and cryomesh::common::SimpleCollection< T >::objects.
+.SS "std::list<double >& \fBcryomesh::common::SimpleCollection\fP< double  >::pad (intfront_pad, intback_pad, doublepad_value)\fC [inline, inherited]\fP"
+.PP
+Pad Collection. \fBParameters:\fP
+.RS 4
+\fIint\fP front_pad Amount of places to pad to front 
+.br
+\fIint\fP back_pad Amount of places to pad to back 
+.br
+\fIT\fP & obj Object to use for pad
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+T & Return the collection 
+.RE
+.PP
+
+.PP
+Definition at line 475 of file SimpleCollection.h.
+.PP
+References cryomesh::common::SimpleCollection< T >::objects.
+.SS "void cryomesh::components::Impulse::randomise ()"
+.PP
+Definition at line 65 of file Impulse.cpp.
+.PP
+References cryomesh::common::Maths::getRandomDouble(), and cryomesh::common::Maths::getRandomInteger().
+.SS "virtual void \fBcryomesh::common::SimpleCollection\fP< double  >::remove (const std::initializer_list< double  > &list)\fC [inline, virtual, inherited]\fP"
+.PP
+Remove objects from collection by initialiser list. \fBParameters:\fP
+.RS 4
+\fIstd::initialiser_list<T>\fP obj The values to be removed from the collection 
+.RE
+.PP
+
+.PP
+Definition at line 149 of file SimpleCollection.h.
+.SS "virtual void \fBcryomesh::common::SimpleCollection\fP< double  >::remove (const std::list< double  > &list)\fC [inline, virtual, inherited]\fP"
+.PP
+Remove objects from collection by list. \fBParameters:\fP
+.RS 4
+\fIstd::list<T>\fP list The list values to be removed to the collection 
+.RE
+.PP
+
+.PP
+Definition at line 167 of file SimpleCollection.h.
+.SS "virtual void \fBcryomesh::common::SimpleCollection\fP< double  >::remove (doubleobj)\fC [inline, virtual, inherited]\fP"
+.PP
+Remove object from collection. \fBParameters:\fP
+.RS 4
+\fIT\fP obj The object to be removed from the collection 
+.RE
+.PP
+
+.PP
+Definition at line 126 of file SimpleCollection.h.
+.PP
+References cryomesh::common::SimpleCollection< T >::objects.
+.SS "virtual SimpleCollection<double >& \fBcryomesh::common::SimpleCollection\fP< double  >::reverse ()\fC [inline, virtual, inherited]\fP"
+.PP
+Reverse collection. Reflect the collection in the y axis
+.PP
+\fBReturns:\fP
+.RS 4
+SimpleCollection<T> & The inverted object 
+.RE
+.PP
+
+.PP
+Definition at line 285 of file SimpleCollection.h.
+.PP
+References cryomesh::common::SimpleCollection< T >::objects, and cryomesh::common::SimpleCollection< T >::reverse().
+.SS "void cryomesh::components::Impulse::setActivityTimer (boost::shared_ptr< \fBActivityTimerDistance\fP >timer)"
+.PP
+Set activity timer. \fBParameters:\fP
+.RS 4
+\fIboost::shared_ptr<ActivityTimer>\fP The activity timer to set 
+.RE
+.PP
+
+.PP
+Definition at line 167 of file Impulse.cpp.
+.SS "void cryomesh::components::Impulse::setFirstActiveCycle (const \fBcommon::Cycle\fPcycle)"
+.PP
+Set the first active cycle. \fBParameters:\fP
+.RS 4
+\fIconst\fP Cycle cycle The first active cycle 
+.RE
+.PP
+
+.PP
+Definition at line 137 of file Impulse.cpp.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream &os, const \fBImpulse\fP &obj)\fC [friend]\fP"
+.PP
+To stream operator. \fBParameters:\fP
+.RS 4
+\fIstd::ostream\fP & os The output stream 
+.br
+\fIconst\fP \fBImpulse\fP & obj The object to stream
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::ostream & The output stream 
+.RE
+.PP
+
+.PP
+Definition at line 294 of file Impulse.cpp.
+.SS "std::ostream& operator<< (std::ostream &out, const \fBSimpleCollection\fP< double > &obj)\fC [friend, inherited]\fP"
+.PP
+To stream operator. \fBParameters:\fP
+.RS 4
+\fIstd::ostream\fP & out The output stream 
+.br
+\fIconst\fP SimpleCollection & obj The object to stream
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::ostream & The output stream 
+.RE
+.PP
+
+.PP
+Definition at line 447 of file SimpleCollection.h.
+.SH "Member Data Documentation"
+.PP 
+.SS "boost::shared_ptr<\fBActivityTimerDistance\fP> \fBcryomesh::components::Impulse::activityTimer\fP\fC [private]\fP"
+.PP
+Definition at line 377 of file Impulse.h.
+.SS "\fBcommon::Cycle\fP \fBcryomesh::components::Impulse::firstActiveCycle\fP\fC [private]\fP"
+.PP
+The first cycle that this \fBImpulse\fP has activity. \fBReturns:\fP
+.RS 4
+Cycle Return first active cycle 
+.RE
+.PP
+
+.PP
+Definition at line 362 of file Impulse.h.
+.SS "const double \fBcryomesh::components::Impulse::FORCED_TRIGGER_ACTIVITY\fP = 1000\fC [static]\fP"
+.PP
+Definition at line 293 of file Impulse.h.
+.SS "\fBcommon::Cycle\fP \fBcryomesh::components::Impulse::lastActiveCycle\fP\fC [private]\fP"
+.PP
+The lase cycle that this \fBImpulse\fP has activity. \fBReturns:\fP
+.RS 4
+Cycle Return last active cycle 
+.RE
+.PP
+
+.PP
+Definition at line 370 of file Impulse.h.
+.SS "const double \fBcryomesh::components::Impulse::MAX_ACTIVITY\fP = 1\fC [static]\fP"
+.PP
+Definition at line 300 of file Impulse.h.
+.SS "const int \fBcryomesh::components::Impulse::MAX_ACTIVITY_LENGTH\fP = 10\fC [static]\fP"
+.PP
+Definition at line 316 of file Impulse.h.
+.SS "const double \fBcryomesh::components::Impulse::MIN_ACTIVITY\fP = -1\fC [static]\fP"
+.PP
+Definition at line 308 of file Impulse.h.
+.SS "const int \fBcryomesh::components::Impulse::MIN_ACTIVITY_LENGTH\fP = 1\fC [static]\fP"
+.PP
+Definition at line 324 of file Impulse.h.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

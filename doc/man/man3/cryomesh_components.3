@@ -1,0 +1,134 @@
+.TH "cryomesh::components" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::components \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBActivityTimer\fP"
+.br
+.RI "\fISimple interface class for activity timers. \fP"
+.ti -1c
+.RI "class \fBActivityTimerDistance\fP"
+.br
+.ti -1c
+.RI "class \fBConnection\fP"
+.br
+.RI "\fI\fBConnection\fP class to manage the transfer of Impulses between Nodes. \fP"
+.ti -1c
+.RI "class \fBConnectionMap\fP"
+.br
+.RI "\fIHelper class for \fBConnectionMap\fP to KeyMappedCollection mapping. \fP"
+.ti -1c
+.RI "class \fBImpulse\fP"
+.br
+.RI "\fI\fBImpulse\fP is a mobile information packet to be passed between Nodes. \fP"
+.ti -1c
+.RI "class \fBImpulseCollection\fP"
+.br
+.RI "\fI\fBImpulseCollection\fP represents a collection of \fBImpulse\fP objects. \fP"
+.ti -1c
+.RI "class \fBMesh\fP"
+.br
+.RI "\fI\fBMesh\fP is the fabric of connection space and warps and is warped by it. \fP"
+.ti -1c
+.RI "class \fBNode\fP"
+.br
+.RI "\fI\fBNode\fP is an accumulation and computational nodal point of impulses. \fP"
+.ti -1c
+.RI "class \fBNodeMap\fP"
+.br
+.RI "\fIHelper class for \fBNodeMap\fP to KeyMappedCollection mapping. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBConnection\fP &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBImpulse\fP &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBImpulseCollection\fP &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBNode\fP &obj)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "std::ostream& cryomesh::components::operator<< (std::ostream &os, const Connection &obj)"\fBParameters:\fP
+.RS 4
+\fIstd::ostream\fP & os The output stream 
+.br
+\fIconst\fP \fBConnection\fP & obj The object to stream
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::ostream & The output stream 
+.RE
+.PP
+
+.PP
+Definition at line 111 of file Connection.cpp.
+.SS "std::ostream& cryomesh::components::operator<< (std::ostream &os, const Node &obj)"\fBParameters:\fP
+.RS 4
+\fIstd::ostream\fP & os The output stream 
+.br
+\fIconst\fP \fBNode\fP & obj The object to stream
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::ostream & The output stream 
+.RE
+.PP
+
+.PP
+Definition at line 251 of file Node.cpp.
+.PP
+References cryomesh::components::Node::getConnector(), and cryomesh::components::Node::getImpulses().
+.SS "std::ostream& cryomesh::components::operator<< (std::ostream &os, const ImpulseCollection &obj)"\fBParameters:\fP
+.RS 4
+\fIstd::ostream\fP & os The output stream 
+.br
+\fIconst\fP \fBImpulseCollection\fP & obj The object to stream
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::ostream & The output stream 
+.RE
+.PP
+
+.PP
+Definition at line 317 of file ImpulseCollection.cpp.
+.PP
+References cryomesh::common::KeyMappedCollection< U, T >::getCollection().
+.SS "std::ostream& cryomesh::components::operator<< (std::ostream &os, const Impulse &obj)"\fBParameters:\fP
+.RS 4
+\fIstd::ostream\fP & os The output stream 
+.br
+\fIconst\fP \fBImpulse\fP & obj The object to stream
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::ostream & The output stream 
+.RE
+.PP
+
+.PP
+Definition at line 294 of file Impulse.cpp.
+.PP
+References cryomesh::common::SimpleCollection< T >::getCollection().
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

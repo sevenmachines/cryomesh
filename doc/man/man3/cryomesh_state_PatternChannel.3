@@ -1,0 +1,447 @@
+.TH "cryomesh::state::PatternChannel" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::state::PatternChannel \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PatternChannel.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBPrintFormat\fP { \fBBINARY\fP, \fBTEXT\fP, \fBINTEGER\fP }"
+.br
+.ti -1c
+.RI "enum \fBChannelDataType\fP { \fBInput\fP, \fBOutput\fP, \fBTransitional\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPatternChannel\fP (\fBChannelDataType\fP dt)"
+.br
+.ti -1c
+.RI "\fBPatternChannel\fP (const std::list< boost::shared_ptr< \fBPattern\fP > > &pats, \fBChannelDataType\fP dt)"
+.br
+.ti -1c
+.RI "virtual \fB~PatternChannel\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddPattern\fP (boost::shared_ptr< \fBPattern\fP > pat)"
+.br
+.ti -1c
+.RI "void \fBaddPatterns\fP (const std::list< boost::shared_ptr< \fBPattern\fP > > &pats)"
+.br
+.ti -1c
+.RI "void \fBaddPatterns\fP (const std::list< boost::shared_ptr< \fBPattern\fP > > &pats, int position)"
+.br
+.ti -1c
+.RI "std::list< boost::shared_ptr< \fBPattern\fP > > \fBremovePatterns\fP (const std::list< boost::shared_ptr< \fBPattern\fP > > &pats)"
+.br
+.ti -1c
+.RI "std::list< boost::shared_ptr< \fBPattern\fP > > \fBremovePatterns\fP (const std::list< boost::uuids::uuid > &uuids)"
+.br
+.ti -1c
+.RI "void \fBclearPatternList\fP ()"
+.br
+.ti -1c
+.RI "std::list< boost::shared_ptr< \fBPattern\fP > > \fBforcePatternListSize\fP (int sz)"
+.br
+.ti -1c
+.RI "std::list< boost::shared_ptr< \fBPattern\fP > > \fBforcePatternListSize\fP ()"
+.br
+.ti -1c
+.RI "const boost::shared_ptr< \fBPattern\fP > \fBgetCurrentPattern\fP ()"
+.br
+.ti -1c
+.RI "const boost::shared_ptr< \fBPattern\fP > \fBgetPatternByTag\fP (const boost::shared_ptr< \fBPatternTag\fP > tg) const "
+.br
+.ti -1c
+.RI "const boost::shared_ptr< \fBPattern\fP > \fBnextPattern\fP ()"
+.br
+.ti -1c
+.RI "const boost::shared_ptr< \fBPattern\fP > \fBpreviousPattern\fP ()"
+.br
+.ti -1c
+.RI "double \fBmatchGlobally\fP (const \fBPatternChannel\fP &)"
+.br
+.ti -1c
+.RI "double \fBmatchSequentially\fP (const \fBPatternChannel\fP &)"
+.br
+.ti -1c
+.RI "\fBChannelDataType\fP \fBgetChannelDataType\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetLength\fP () const "
+.br
+.ti -1c
+.RI "const std::map< boost::shared_ptr< \fBPatternTag\fP >, boost::uuids::uuid > & \fBgetPatternByTagMap\fP () const "
+.br
+.ti -1c
+.RI "const boost::shared_ptr< \fBPattern\fP > \fBgetPatternByUUID\fP (const boost::uuids::uuid &id) const "
+.br
+.ti -1c
+.RI "boost::shared_ptr< \fBPattern\fP > \fBgetMutablePatternByUUID\fP (const boost::uuids::uuid &id)"
+.br
+.ti -1c
+.RI "const std::list< boost::uuids::uuid > & \fBgetPatternList\fP () const "
+.br
+.ti -1c
+.RI "std::list< boost::uuids::uuid >::iterator \fBgetPatternListIterator\fP () const "
+.br
+.ti -1c
+.RI "const std::map< boost::uuids::uuid, boost::shared_ptr< \fBPattern\fP > > & \fBgetPatternMap\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetPatternPosition\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetWidth\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetWidth\fP (int w)"
+.br
+.ti -1c
+.RI "const boost::uuids::uuid \fBgetUUID\fP (void) const "
+.br
+.ti -1c
+.RI "int \fBgetRefID\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetRefID\fP (int r)"
+.br
+.ti -1c
+.RI "const int \fBgetMaxPatternListSize\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetMaxPatternListSize\fP (int sz)"
+.br
+.ti -1c
+.RI "std::ostream & \fBprintPatternList\fP (std::ostream &os, bool reversed=false) const "
+.br
+.ti -1c
+.RI "std::ostream & \fBprintTextFormattedPatternList\fP (std::ostream &os, bool reversed=false) const "
+.br
+.ti -1c
+.RI "std::ostream & \fBprintIntegerFormattedPatternList\fP (std::ostream &os, bool reversed) const "
+.br
+.ti -1c
+.RI "std::ostream & \fBprintBinaryFormattedPatternList\fP (std::ostream &os, bool reversed) const "
+.br
+.ti -1c
+.RI "std::ostream & \fBprintFormattedPatternList\fP (std::ostream &os, const \fBPrintFormat\fP &pf, bool reversed) const "
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static unsigned int \fBgetRefIDS\fP ()"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const int \fBDEFAULT_MAX_PATTERN_LIST_SIZE\fP = 1000"
+.br
+.ti -1c
+.RI "static const unsigned int \fBREFID_CREATE_START\fP = 100000"
+.br
+.ti -1c
+.RI "static unsigned int \fBrefIDS\fP = \fBPatternChannel::REFID_CREATE_START\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBrefID\fP"
+.br
+.ti -1c
+.RI "boost::uuids::uuid \fBuuid\fP"
+.br
+.ti -1c
+.RI "int \fBwidth\fP"
+.br
+.ti -1c
+.RI "int \fBlength\fP"
+.br
+.ti -1c
+.RI "int \fBmaxPatternListSize\fP"
+.br
+.ti -1c
+.RI "std::list< boost::uuids::uuid > \fBpatternList\fP"
+.br
+.ti -1c
+.RI "std::map< boost::uuids::uuid, boost::shared_ptr< \fBPattern\fP > > \fBpatternMap\fP"
+.br
+.ti -1c
+.RI "std::list< boost::uuids::uuid >::iterator \fBpatternListIterator\fP"
+.br
+.ti -1c
+.RI "int \fBpatternPosition\fP"
+.br
+.ti -1c
+.RI "std::map< boost::shared_ptr< \fBPatternTag\fP >, boost::uuids::uuid > \fBpatternByTagMap\fP"
+.br
+.ti -1c
+.RI "\fBChannelDataType\fP \fBchannelDataType\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBPatternChannel\fP &obj)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 23 of file PatternChannel.h.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBcryomesh::state::PatternChannel::ChannelDataType\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIInput \fP\fP
+.TP
+\fB\fIOutput \fP\fP
+.TP
+\fB\fITransitional \fP\fP
+
+.PP
+Definition at line 28 of file PatternChannel.h.
+.SS "enum \fBcryomesh::state::PatternChannel::PrintFormat\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIBINARY \fP\fP
+.TP
+\fB\fITEXT \fP\fP
+.TP
+\fB\fIINTEGER \fP\fP
+
+.PP
+Definition at line 25 of file PatternChannel.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::state::PatternChannel::PatternChannel (\fBChannelDataType\fPdt)"
+.PP
+Definition at line 24 of file PatternChannel.cpp.
+.PP
+References getRefIDS(), and Input.
+.SS "cryomesh::state::PatternChannel::PatternChannel (const std::list< boost::shared_ptr< \fBPattern\fP > > &pats, \fBChannelDataType\fPdt)"
+.PP
+Definition at line 35 of file PatternChannel.cpp.
+.PP
+References getRefIDS(), Input, and Output.
+.SS "cryomesh::state::PatternChannel::~PatternChannel ()\fC [virtual]\fP"
+.PP
+Definition at line 54 of file PatternChannel.cpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "void cryomesh::state::PatternChannel::addPattern (boost::shared_ptr< \fBPattern\fP >pat)"
+.PP
+Definition at line 56 of file PatternChannel.cpp.
+.SS "void cryomesh::state::PatternChannel::addPatterns (const std::list< boost::shared_ptr< \fBPattern\fP > > &pats)"
+.PP
+Definition at line 61 of file PatternChannel.cpp.
+.SS "void cryomesh::state::PatternChannel::addPatterns (const std::list< boost::shared_ptr< \fBPattern\fP > > &pats, intposition)"
+.PP
+Definition at line 65 of file PatternChannel.cpp.
+.PP
+References patternList.
+.SS "void cryomesh::state::PatternChannel::clearPatternList ()"
+.PP
+Definition at line 157 of file PatternChannel.cpp.
+.SS "std::list< boost::shared_ptr< \fBPattern\fP > > cryomesh::state::PatternChannel::forcePatternListSize ()"
+.PP
+Definition at line 188 of file PatternChannel.cpp.
+.PP
+Referenced by setMaxPatternListSize().
+.SS "std::list< boost::shared_ptr< \fBPattern\fP > > cryomesh::state::PatternChannel::forcePatternListSize (intsz)"
+.PP
+Definition at line 166 of file PatternChannel.cpp.
+.PP
+References patternList, and removePatterns().
+.SS "\fBPatternChannel::ChannelDataType\fP cryomesh::state::PatternChannel::getChannelDataType () const"
+.PP
+Definition at line 432 of file PatternChannel.cpp.
+.SS "const boost::shared_ptr< \fBPattern\fP > cryomesh::state::PatternChannel::getCurrentPattern ()"
+.PP
+Definition at line 193 of file PatternChannel.cpp.
+.SS "int cryomesh::state::PatternChannel::getLength () const"
+.PP
+Definition at line 388 of file PatternChannel.cpp.
+.SS "const int cryomesh::state::PatternChannel::getMaxPatternListSize () const"
+.PP
+Definition at line 436 of file PatternChannel.cpp.
+.SS "boost::shared_ptr< \fBPattern\fP > cryomesh::state::PatternChannel::getMutablePatternByUUID (const boost::uuids::uuid &id)"
+.PP
+Definition at line 458 of file PatternChannel.cpp.
+.SS "const boost::shared_ptr< \fBPattern\fP > cryomesh::state::PatternChannel::getPatternByTag (const boost::shared_ptr< \fBPatternTag\fP >tg) const"
+.PP
+Definition at line 196 of file PatternChannel.cpp.
+.PP
+References patternMap.
+.SS "const std::map< boost::shared_ptr< \fBPatternTag\fP >, boost::uuids::uuid > & cryomesh::state::PatternChannel::getPatternByTagMap () const"
+.PP
+Definition at line 392 of file PatternChannel.cpp.
+.SS "const boost::shared_ptr< \fBPattern\fP > cryomesh::state::PatternChannel::getPatternByUUID (const boost::uuids::uuid &id) const"
+.PP
+Definition at line 446 of file PatternChannel.cpp.
+.PP
+Referenced by printFormattedPatternList(), and printPatternList().
+.SS "const std::list< boost::uuids::uuid > & cryomesh::state::PatternChannel::getPatternList () const"
+.PP
+Definition at line 396 of file PatternChannel.cpp.
+.SS "std::list< boost::uuids::uuid >::iterator cryomesh::state::PatternChannel::getPatternListIterator () const"
+.PP
+Definition at line 400 of file PatternChannel.cpp.
+.SS "const std::map< boost::uuids::uuid, boost::shared_ptr< \fBPattern\fP > > & cryomesh::state::PatternChannel::getPatternMap () const"
+.PP
+Definition at line 404 of file PatternChannel.cpp.
+.SS "int cryomesh::state::PatternChannel::getPatternPosition () const"
+.PP
+Definition at line 408 of file PatternChannel.cpp.
+.SS "int cryomesh::state::PatternChannel::getRefID () const"
+.PP
+Definition at line 424 of file PatternChannel.cpp.
+.SS "unsigned int cryomesh::state::PatternChannel::getRefIDS ()\fC [static]\fP"
+.PP
+Definition at line 20 of file PatternChannel.cpp.
+.PP
+Referenced by PatternChannel().
+.SS "const boost::uuids::uuid cryomesh::state::PatternChannel::getUUID (void) const"
+.PP
+Definition at line 420 of file PatternChannel.cpp.
+.SS "int cryomesh::state::PatternChannel::getWidth () const"
+.PP
+Definition at line 412 of file PatternChannel.cpp.
+.SS "double cryomesh::state::PatternChannel::matchGlobally (const \fBPatternChannel\fP &obj)"
+.PP
+Definition at line 236 of file PatternChannel.cpp.
+.SS "double cryomesh::state::PatternChannel::matchSequentially (const \fBPatternChannel\fP &obj)"
+.PP
+Definition at line 325 of file PatternChannel.cpp.
+.SS "const boost::shared_ptr< \fBPattern\fP > cryomesh::state::PatternChannel::nextPattern ()"
+.PP
+Definition at line 205 of file PatternChannel.cpp.
+.PP
+References patternList, patternListIterator, and patternPosition.
+.SS "const boost::shared_ptr< \fBPattern\fP > cryomesh::state::PatternChannel::previousPattern ()"
+.PP
+Definition at line 225 of file PatternChannel.cpp.
+.PP
+References patternList, patternListIterator, and patternPosition.
+.SS "std::ostream & cryomesh::state::PatternChannel::printBinaryFormattedPatternList (std::ostream &os, boolreversed) const"
+.PP
+Definition at line 505 of file PatternChannel.cpp.
+.SS "std::ostream & cryomesh::state::PatternChannel::printFormattedPatternList (std::ostream &os, const \fBPrintFormat\fP &pf, boolreversed) const"
+.PP
+Definition at line 508 of file PatternChannel.cpp.
+.PP
+References BINARY, getPatternByUUID(), INTEGER, patternList, and TEXT.
+.SS "std::ostream & cryomesh::state::PatternChannel::printIntegerFormattedPatternList (std::ostream &os, boolreversed) const"
+.PP
+Definition at line 502 of file PatternChannel.cpp.
+.SS "std::ostream & cryomesh::state::PatternChannel::printPatternList (std::ostream &os, boolreversed = \fCfalse\fP) const"
+.PP
+Definition at line 469 of file PatternChannel.cpp.
+.PP
+References getPatternByUUID(), and patternList.
+.SS "std::ostream & cryomesh::state::PatternChannel::printTextFormattedPatternList (std::ostream &os, boolreversed = \fCfalse\fP) const"
+.PP
+Definition at line 498 of file PatternChannel.cpp.
+.SS "std::list< boost::shared_ptr< \fBPattern\fP > > cryomesh::state::PatternChannel::removePatterns (const std::list< boost::uuids::uuid > &uuids)"
+.PP
+Definition at line 131 of file PatternChannel.cpp.
+.PP
+References patternByTagMap, patternList, and patternMap.
+.SS "std::list< boost::shared_ptr< \fBPattern\fP > > cryomesh::state::PatternChannel::removePatterns (const std::list< boost::shared_ptr< \fBPattern\fP > > &pats)"
+.PP
+Definition at line 112 of file PatternChannel.cpp.
+.PP
+Referenced by forcePatternListSize().
+.SS "void cryomesh::state::PatternChannel::setMaxPatternListSize (intsz)"
+.PP
+Definition at line 439 of file PatternChannel.cpp.
+.PP
+References forcePatternListSize().
+.SS "void cryomesh::state::PatternChannel::setRefID (intr)"
+.PP
+Definition at line 427 of file PatternChannel.cpp.
+.SS "void cryomesh::state::PatternChannel::setWidth (intw)"
+.PP
+Definition at line 415 of file PatternChannel.cpp.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream &os, const \fBPatternChannel\fP &obj)\fC [friend]\fP"
+.PP
+Definition at line 567 of file PatternChannel.cpp.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBChannelDataType\fP \fBcryomesh::state::PatternChannel::channelDataType\fP\fC [private]\fP"
+.PP
+Definition at line 162 of file PatternChannel.h.
+.SS "const int \fBcryomesh::state::PatternChannel::DEFAULT_MAX_PATTERN_LIST_SIZE\fP = 1000\fC [static]\fP"
+.PP
+Definition at line 134 of file PatternChannel.h.
+.SS "int \fBcryomesh::state::PatternChannel::length\fP\fC [private]\fP"
+.PP
+Definition at line 149 of file PatternChannel.h.
+.SS "int \fBcryomesh::state::PatternChannel::maxPatternListSize\fP\fC [private]\fP"
+.PP
+Definition at line 150 of file PatternChannel.h.
+.SS "std::map<boost::shared_ptr<\fBPatternTag\fP>, boost::uuids::uuid> \fBcryomesh::state::PatternChannel::patternByTagMap\fP\fC [private]\fP"
+.PP
+Definition at line 160 of file PatternChannel.h.
+.PP
+Referenced by removePatterns().
+.SS "std::list<boost::uuids::uuid> \fBcryomesh::state::PatternChannel::patternList\fP\fC [private]\fP"
+.PP
+Definition at line 152 of file PatternChannel.h.
+.PP
+Referenced by addPatterns(), forcePatternListSize(), nextPattern(), previousPattern(), printFormattedPatternList(), printPatternList(), and removePatterns().
+.SS "std::list<boost::uuids::uuid>::iterator \fBcryomesh::state::PatternChannel::patternListIterator\fP\fC [private]\fP"
+.PP
+Definition at line 156 of file PatternChannel.h.
+.PP
+Referenced by nextPattern(), and previousPattern().
+.SS "std::map<boost::uuids::uuid, boost::shared_ptr<\fBPattern\fP> > \fBcryomesh::state::PatternChannel::patternMap\fP\fC [private]\fP"
+.PP
+Definition at line 154 of file PatternChannel.h.
+.PP
+Referenced by getPatternByTag(), and removePatterns().
+.SS "int \fBcryomesh::state::PatternChannel::patternPosition\fP\fC [private]\fP"
+.PP
+Definition at line 158 of file PatternChannel.h.
+.PP
+Referenced by nextPattern(), and previousPattern().
+.SS "int \fBcryomesh::state::PatternChannel::refID\fP\fC [private]\fP"
+.PP
+Definition at line 143 of file PatternChannel.h.
+.SS "const unsigned int \fBcryomesh::state::PatternChannel::REFID_CREATE_START\fP = 100000\fC [static]\fP"
+.PP
+Definition at line 136 of file PatternChannel.h.
+.SS "unsigned int \fBcryomesh::state::PatternChannel::refIDS\fP = \fBPatternChannel::REFID_CREATE_START\fP\fC [static]\fP"
+.PP
+Definition at line 137 of file PatternChannel.h.
+.SS "boost::uuids::uuid \fBcryomesh::state::PatternChannel::uuid\fP\fC [private]\fP"
+.PP
+Definition at line 145 of file PatternChannel.h.
+.SS "int \fBcryomesh::state::PatternChannel::width\fP\fC [private]\fP"
+.PP
+Definition at line 147 of file PatternChannel.h.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

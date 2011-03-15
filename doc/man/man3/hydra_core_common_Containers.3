@@ -1,0 +1,100 @@
+.TH "hydra::core::common::Containers" 3 "Fri Jan 28 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+hydra::core::common::Containers \- 
+.PP
+\fBContainers\fP contains utility functions for containers.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Containers.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~Containers\fP ()"
+.br
+.RI "\fIDestructor. \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "template<class U , class T > static std::map< boost::shared_ptr< U >, boost::shared_ptr< T > > \fBaddMapObjectByCreationObjects\fP (std::map< boost::uuids::uuid, boost::shared_ptr< T > > &mapobj, std::list< boost::shared_ptr< U > > &colist)"
+.br
+.ti -1c
+.RI "template<class U , class T > static bool \fBdeleteByEntry\fP (U &store, const T &id)"
+.br
+.ti -1c
+.RI "template<class T > static boost::shared_ptr< T > \fBdeleteMapObjectByUUID\fP (std::map< boost::uuids::uuid, boost::shared_ptr< T > > &mapobj, const boost::uuids::uuid &id)"
+.br
+.ti -1c
+.RI "template<class T > static const boost::shared_ptr< T > \fBgetByUUID\fP (const std::map< boost::uuids::uuid, boost::shared_ptr< T > > &mapobj, const boost::uuids::uuid id)"
+.br
+.ti -1c
+.RI "template<class T > static boost::shared_ptr< T > \fBgetMutableByUUID\fP (std::map< boost::uuids::uuid, boost::shared_ptr< T > > &mapobj, boost::uuids::uuid id)"
+.br
+.ti -1c
+.RI "template<class T > static const boost::shared_ptr< T > \fBgetByID\fP (const std::map< boost::uuids::uuid, boost::shared_ptr< T > > &mapobj, int id)"
+.br
+.ti -1c
+.RI "template<class T > static boost::shared_ptr< T > \fBgetMutableByID\fP (std::map< boost::uuids::uuid, boost::shared_ptr< T > > &mapobj, int id)"
+.br
+.ti -1c
+.RI "template<class U , class T > static void \fBmapByUUID\fP (const std::map< boost::shared_ptr< U >, boost::shared_ptr< T > > &creation_to_real, std::map< boost::uuids::uuid, boost::uuids::uuid > &uuid_map)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBContainers\fP ()"
+.br
+.RI "\fIProtected constructor to prevent instantiation. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBContainers\fP contains utility functions for containers. 
+.PP
+Definition at line 28 of file Containers.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual hydra::core::common::Containers::~Containers ()\fC [virtual]\fP"
+.PP
+Destructor. 
+.SS "hydra::core::common::Containers::Containers ()\fC [protected]\fP"
+.PP
+Protected constructor to prevent instantiation. 
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class U , class T > static std::map<boost::shared_ptr<U>, boost::shared_ptr<T> > hydra::core::common::Containers::addMapObjectByCreationObjects (std::map< boost::uuids::uuid, boost::shared_ptr< T > > &mapobj, std::list< boost::shared_ptr< U > > &colist)\fC [inline, static]\fP"
+.PP
+Definition at line 36 of file Containers.h.
+.SS "template<class U , class T > static bool hydra::core::common::Containers::deleteByEntry (U &store, const T &id)\fC [inline, static]\fP"
+.PP
+Definition at line 58 of file Containers.h.
+.SS "template<class T > static boost::shared_ptr<T> hydra::core::common::Containers::deleteMapObjectByUUID (std::map< boost::uuids::uuid, boost::shared_ptr< T > > &mapobj, const boost::uuids::uuid &id)\fC [inline, static]\fP"
+.PP
+Definition at line 70 of file Containers.h.
+.SS "template<class T > static const boost::shared_ptr<T> hydra::core::common::Containers::getByID (const std::map< boost::uuids::uuid, boost::shared_ptr< T > > &mapobj, intid)\fC [inline, static]\fP"
+.PP
+Definition at line 124 of file Containers.h.
+.SS "template<class T > static const boost::shared_ptr<T> hydra::core::common::Containers::getByUUID (const std::map< boost::uuids::uuid, boost::shared_ptr< T > > &mapobj, const boost::uuids::uuidid)\fC [inline, static]\fP"
+.PP
+Definition at line 87 of file Containers.h.
+.SS "template<class T > static boost::shared_ptr<T> hydra::core::common::Containers::getMutableByID (std::map< boost::uuids::uuid, boost::shared_ptr< T > > &mapobj, intid)\fC [inline, static]\fP"
+.PP
+Definition at line 151 of file Containers.h.
+.SS "template<class T > static boost::shared_ptr<T> hydra::core::common::Containers::getMutableByUUID (std::map< boost::uuids::uuid, boost::shared_ptr< T > > &mapobj, boost::uuids::uuidid)\fC [inline, static]\fP"
+.PP
+Definition at line 106 of file Containers.h.
+.SS "template<class U , class T > static void hydra::core::common::Containers::mapByUUID (const std::map< boost::shared_ptr< U >, boost::shared_ptr< T > > &creation_to_real, std::map< boost::uuids::uuid, boost::uuids::uuid > &uuid_map)\fC [inline, static]\fP"
+.PP
+Definition at line 177 of file Containers.h.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

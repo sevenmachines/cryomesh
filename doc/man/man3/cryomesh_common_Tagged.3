@@ -1,0 +1,118 @@
+.TH "cryomesh::common::Tagged" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::common::Tagged \- 
+.PP
+\fBTagged\fP class implements uuid tagging of classes.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Tagged.h>\fP
+.PP
+Inherited by \fBcryomesh::components::Connection\fP, \fBcryomesh::components::Impulse\fP, \fBcryomesh::components::Node\fP, \fBcryomesh::structures::Cluster\fP, and \fBcryomesh::structures::Fibre\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTagged\fP ()"
+.br
+.RI "\fIConstructor. \fP"
+.ti -1c
+.RI "virtual \fB~Tagged\fP ()"
+.br
+.RI "\fIDestructor. \fP"
+.ti -1c
+.RI "boost::uuids::uuid \fBgetUUID\fP () const "
+.br
+.RI "\fIGet the uuid of object. \fP"
+.ti -1c
+.RI "boost::uuids::uuid \fBgetKey\fP () const "
+.br
+.RI "\fIGet the key of object. \fP"
+.ti -1c
+.RI "boost::uuids::uuid \fBgetTag\fP () const "
+.br
+.RI "\fIGet the tag of object. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "boost::uuids::uuid \fBuuid\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBTagged\fP class implements uuid tagging of classes. 
+
+\fBTagged\fP class should be inherited by functions who want to be uuid tagged and have the related functionality. 
+.PP
+Definition at line 24 of file Tagged.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::common::Tagged::Tagged ()\fC [inline]\fP"
+.PP
+Constructor. Constructor for \fBTagged\fP 
+.PP
+Definition at line 31 of file Tagged.h.
+.PP
+References uuid.
+.SS "virtual cryomesh::common::Tagged::~Tagged ()\fC [inline, virtual]\fP"
+.PP
+Destructor. Destructor for \fBTagged\fP 
+.PP
+Definition at line 41 of file Tagged.h.
+.SH "Member Function Documentation"
+.PP 
+.SS "boost::uuids::uuid cryomesh::common::Tagged::getKey () const\fC [inline]\fP"
+.PP
+Get the key of object. \fBReturns:\fP
+.RS 4
+boost::uuids::uuid The unique uuid tag of this object 
+.RE
+.PP
+
+.PP
+Definition at line 61 of file Tagged.h.
+.PP
+References getUUID().
+.SS "boost::uuids::uuid cryomesh::common::Tagged::getTag () const\fC [inline]\fP"
+.PP
+Get the tag of object. \fBReturns:\fP
+.RS 4
+boost::uuids::uuid The unique uuid tag of this object 
+.RE
+.PP
+
+.PP
+Definition at line 71 of file Tagged.h.
+.PP
+References getUUID().
+.SS "boost::uuids::uuid cryomesh::common::Tagged::getUUID () const\fC [inline]\fP"
+.PP
+Get the uuid of object. \fBReturns:\fP
+.RS 4
+boost::uuids::uuid The unique uuid tag of this object 
+.RE
+.PP
+
+.PP
+Definition at line 51 of file Tagged.h.
+.PP
+References uuid.
+.PP
+Referenced by getKey(), and getTag().
+.SH "Member Data Documentation"
+.PP 
+.SS "boost::uuids::uuid \fBcryomesh::common::Tagged::uuid\fP\fC [private]\fP"
+.PP
+Definition at line 81 of file Tagged.h.
+.PP
+Referenced by getUUID(), and Tagged().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

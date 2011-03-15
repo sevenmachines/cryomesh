@@ -1,0 +1,140 @@
+.TH "cryomesh::common::ICollection" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::common::ICollection \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ICollection.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~ICollection\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBoperator!=\fP (const T &obj) const =0"
+.br
+.RI "\fINot comparator operator. \fP"
+.ti -1c
+.RI "virtual const T \fBoperator+\fP (const T &obj) const =0"
+.br
+.RI "\fINon-destructive addition operator. \fP"
+.ti -1c
+.RI "virtual T & \fBoperator+=\fP (const T &obj)=0"
+.br
+.RI "\fIDestructive addition and assignment operator. \fP"
+.ti -1c
+.RI "virtual T & \fBoperator=\fP (const T &obj)=0"
+.br
+.RI "\fIAssignment operator. \fP"
+.ti -1c
+.RI "virtual bool \fBoperator==\fP (const T &obj) const =0"
+.br
+.RI "\fIComparator operator. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBICollection\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class T> class cryomesh::common::ICollection< T >"
+
+.PP
+Definition at line 19 of file ICollection.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class T> virtual \fBcryomesh::common::ICollection\fP< T >::~\fBICollection\fP ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 21 of file ICollection.h.
+.SS "template<class T> \fBcryomesh::common::ICollection\fP< T >::\fBICollection\fP ()\fC [inline, protected]\fP"
+.PP
+Definition at line 80 of file ICollection.h.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class T> virtual bool \fBcryomesh::common::ICollection\fP< T >::operator!= (const T &obj) const\fC [pure virtual]\fP"
+.PP
+Not comparator operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP T & obj RHS object
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True if not equal, false otherwise 
+.RE
+.PP
+
+.PP
+Implemented in \fBcryomesh::common::SimpleCollection< T >\fP.
+.SS "template<class T> virtual const T \fBcryomesh::common::ICollection\fP< T >::operator+ (const T &obj) const\fC [pure virtual]\fP"
+.PP
+Non-destructive addition operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP T & obj RHS addition
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+T New object after addition 
+.RE
+.PP
+
+.PP
+Implemented in \fBcryomesh::common::SimpleCollection< T >\fP, and \fBcryomesh::common::SimpleCollection< double >\fP.
+.SS "template<class T> virtual T& \fBcryomesh::common::ICollection\fP< T >::operator+= (const T &obj)\fC [pure virtual]\fP"
+.PP
+Destructive addition and assignment operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP T & obj RHS addition
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+T & This object after addition and assignment 
+.RE
+.PP
+
+.PP
+Implemented in \fBcryomesh::common::SimpleCollection< T >\fP, and \fBcryomesh::common::SimpleCollection< double >\fP.
+.SS "template<class T> virtual T& \fBcryomesh::common::ICollection\fP< T >::operator= (const T &obj)\fC [pure virtual]\fP"
+.PP
+Assignment operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP T & obj RHS assignment
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+T & This object after assignment 
+.RE
+.PP
+
+.PP
+Implemented in \fBcryomesh::common::SimpleCollection< T >\fP, and \fBcryomesh::common::SimpleCollection< double >\fP.
+.SS "template<class T> virtual bool \fBcryomesh::common::ICollection\fP< T >::operator== (const T &obj) const\fC [pure virtual]\fP"
+.PP
+Comparator operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP T & obj RHS object
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True if equal, false otherwise 
+.RE
+.PP
+
+.PP
+Implemented in \fBcryomesh::common::SimpleCollection< T >\fP, and \fBcryomesh::common::SimpleCollection< double >\fP.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

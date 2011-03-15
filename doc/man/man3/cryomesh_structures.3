@@ -1,0 +1,90 @@
+.TH "cryomesh::structures" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::structures \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBBundle\fP"
+.br
+.RI "\fIA \fBBundle\fP is the collection of clusters and fibres, it represents the system as a whole. \fP"
+.ti -1c
+.RI "class \fBCluster\fP"
+.br
+.RI "\fIA \fBCluster\fP is a collection of self-contained nodes and connections along with an associated Mesh, that can be connected up to one another. \fP"
+.ti -1c
+.RI "class \fBClusterMap\fP"
+.br
+.ti -1c
+.RI "class \fBFibre\fP"
+.br
+.RI "\fIA \fBFibre\fP is a collection of connections that connect one structure to another. \fP"
+.ti -1c
+.RI "class \fBFibreMap\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBBundle\fP &bundle)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBCluster\fP &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBFibre\fP &obj)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "std::ostream& cryomesh::structures::operator<< (std::ostream &os, const Bundle &bundle)"
+.PP
+Definition at line 94 of file Bundle.cpp.
+.SS "std::ostream& cryomesh::structures::operator<< (std::ostream &os, const Fibre &obj)"\fBReturns:\fP
+.RS 4
+Pattern To stream operator
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstd::ostream\fP & os The output stream 
+.br
+\fIconst\fP \fBFibre\fP & obj The object to stream
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::ostream & The output stream 
+.RE
+.PP
+
+.PP
+Definition at line 251 of file Fibre.cpp.
+.PP
+References cryomesh::components::ConnectionMap::getActivityPattern(), cryomesh::structures::Fibre::getConnections(), and cryomesh::common::KeyMappedCollection< U, T >::getSize().
+.SS "std::ostream& cryomesh::structures::operator<< (std::ostream &os, const Cluster &obj)"\fBParameters:\fP
+.RS 4
+\fIstd::ostream\fP & os The output stream 
+.br
+\fIconst\fP \fBCluster\fP & obj The object to stream
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::ostream & The output stream 
+.RE
+.PP
+
+.PP
+Definition at line 132 of file Cluster.cpp.
+.PP
+References cryomesh::structures::Cluster::getConnections(), cryomesh::structures::Cluster::getNodeMap(), and cryomesh::structures::Cluster::getNodes().
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

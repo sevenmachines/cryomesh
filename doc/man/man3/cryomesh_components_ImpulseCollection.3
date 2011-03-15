@@ -1,0 +1,841 @@
+.TH "cryomesh::components::ImpulseCollection" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::components::ImpulseCollection \- 
+.PP
+\fBImpulseCollection\fP represents a collection of \fBImpulse\fP objects.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ImpulseCollection.h>\fP
+.PP
+Inherits \fBKeyMappedCollection< boost::uuids::uuid, Impulse >\fP, and \fBDataObjectController< unsigned long int, double >\fP.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBComparison\fP { \fBGreaterThan\fP, \fBLessThan\fP, \fBEqualTo\fP, \fBNotEqualTo\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImpulseCollection\fP ()"
+.br
+.RI "\fIContructor for \fBImpulseCollection\fP. \fP"
+.ti -1c
+.RI "virtual \fB~ImpulseCollection\fP ()"
+.br
+.RI "\fIDestructor for \fBImpulseCollection\fP. \fP"
+.ti -1c
+.RI "double \fBgetActivity\fP (\fBcommon::Cycle\fP cycle) const "
+.br
+.RI "\fIGet activity at cycle. \fP"
+.ti -1c
+.RI "double \fBgetActivity\fP () const "
+.br
+.RI "\fIGet activity at current cycle. \fP"
+.ti -1c
+.RI "void \fBclearImpulses\fP ()"
+.br
+.RI "\fIClear collection up to present cycle. \fP"
+.ti -1c
+.RI "void \fBclearImpulses\fP (\fBcommon::Cycle\fP cycle)"
+.br
+.RI "\fIClear collection up to specified cycle. \fP"
+.ti -1c
+.RI "std::map< boost::uuids::uuid, boost::shared_ptr< \fBImpulse\fP > > \fBclearImpulses\fP (\fBcommon::Cycle\fP cycleStart, \fBcommon::Cycle\fP cycleEnd)"
+.br
+.RI "\fIClear the Impulses that start on or after cycle start parameter and finish before cycle end parameter. \fP"
+.ti -1c
+.RI "std::map< boost::uuids::uuid, boost::shared_ptr< \fBImpulse\fP > > \fBclearActiveImpulses\fP ()"
+.br
+.RI "\fIClear cycles that are active on this cycle. \fP"
+.ti -1c
+.RI "std::map< boost::uuids::uuid, boost::shared_ptr< \fBImpulse\fP > > \fBclearActiveImpulses\fP (\fBcommon::Cycle\fP cycle)"
+.br
+.RI "\fIClear cycles that are active on cycle. \fP"
+.ti -1c
+.RI "std::map< boost::uuids::uuid, boost::shared_ptr< \fBImpulse\fP > > \fBclearActiveImpulses\fP (\fBcommon::Cycle\fP cycleStart, \fBcommon::Cycle\fP cycleEnd)"
+.br
+.RI "\fIClear cycles that are active on cycle range. \fP"
+.ti -1c
+.RI "std::map< boost::uuids::uuid, boost::shared_ptr< \fBImpulse\fP > > \fBclearActivitiesByMinimum\fP (double activity)"
+.br
+.RI "\fIClear the Impulses that have activities less than parameter. \fP"
+.ti -1c
+.RI "std::map< boost::uuids::uuid, boost::shared_ptr< \fBImpulse\fP > > \fBclearActivitiesByMaximum\fP (double activity)"
+.br
+.RI "\fIClear the Impulses that have activities greater than parameter. \fP"
+.ti -1c
+.RI "void \fBdecrementActivityTimers\fP ()"
+.br
+.RI "\fIDecrement the activity timers of all impulses. \fP"
+.ti -1c
+.RI "std::list< boost::shared_ptr< \fBImpulse\fP > > \fBgetByActivityTimerValue\fP (double value, \fBComparison\fP comp)"
+.br
+.RI "\fIGet impulse list by activity timer value. \fP"
+.ti -1c
+.RI "std::list< boost::shared_ptr< \fBImpulse\fP > > \fBremoveByActivityTimerValue\fP (double value=0, \fBComparison\fP comp=LessThan)"
+.br
+.RI "\fIremove impulses by activity timer value \fP"
+.ti -1c
+.RI "virtual void \fBrefreshDataObject\fP ()"
+.br
+.RI "\fIInherited from DataObjectController. \fP"
+.ti -1c
+.RI "\fBImpulseCollection\fP & \fBoperator=\fP (const \fBImpulseCollection\fP &obj)"
+.br
+.RI "\fIAssignment operator. \fP"
+.ti -1c
+.RI "\fBImpulseCollection\fP & \fBoperator+=\fP (const \fBImpulseCollection\fP &obj)"
+.br
+.RI "\fIDestructive addition and assignment operator. \fP"
+.ti -1c
+.RI "const \fBImpulseCollection\fP \fBoperator+\fP (const \fBImpulseCollection\fP &obj) const "
+.br
+.RI "\fINon-destructive addition operator. \fP"
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBImpulseCollection\fP &obj) const "
+.br
+.RI "\fIComparator operator. \fP"
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBImpulseCollection\fP &obj) const "
+.br
+.RI "\fINot comparator operator. \fP"
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.RI "\fIClear all objects from collection. \fP"
+.ti -1c
+.RI "boost::shared_ptr< \fBImpulse\fP > \fBadd\fP (boost::shared_ptr< \fBImpulse\fP > obj)"
+.br
+.RI "\fIAdd object to collection. \fP"
+.ti -1c
+.RI "virtual void \fBadd\fP (const std::initializer_list< boost::shared_ptr< \fBImpulse\fP > > &list)"
+.br
+.RI "\fIAdd object to collection by initialiser list. \fP"
+.ti -1c
+.RI "virtual void \fBadd\fP (const std::list< boost::shared_ptr< \fBImpulse\fP > > &list)"
+.br
+.RI "\fIAdd object to collection by list. \fP"
+.ti -1c
+.RI "virtual void \fBremove\fP (const std::initializer_list< boost::shared_ptr< \fBImpulse\fP > > &list)"
+.br
+.RI "\fIRemove objects from collection by initialiser list. \fP"
+.ti -1c
+.RI "virtual void \fBremove\fP (const std::list< boost::shared_ptr< \fBImpulse\fP > > &list)"
+.br
+.RI "\fIRemove objects from collection by list. \fP"
+.ti -1c
+.RI "boost::shared_ptr< \fBImpulse\fP > \fBremove\fP (boost::shared_ptr< \fBImpulse\fP > obj)"
+.br
+.RI "\fIAdd object to collection. \fP"
+.ti -1c
+.RI "boost::shared_ptr< \fBImpulse\fP > \fBremove\fP (\fBImpulse\fP &obj)"
+.br
+.RI "\fIRemove object from collection. \fP"
+.ti -1c
+.RI "boost::shared_ptr< \fBImpulse\fP > \fBremove\fP (boost::uuids::uuidkey)"
+.br
+.RI "\fIRemove object from collection bt key. \fP"
+.ti -1c
+.RI "std::list< boost::uuids::uuid > \fBgetKeyList\fP () const"
+.br
+.RI "\fIGet keys for underlying connection. \fP"
+.ti -1c
+.RI "std::vector< boost::shared_ptr< \fBImpulse\fP > > \fBgetObjectList\fP () const"
+.br
+.RI "\fIGet object list for underlying connection. \fP"
+.ti -1c
+.RI "boost::shared_ptr< \fBImpulse\fP > \fBgetObjectByKey\fP (const boost::uuids::uuid &key)"
+.br
+.RI "\fIGet object using key. \fP"
+.ti -1c
+.RI "std::vector< boost::shared_ptr< \fBImpulse\fP > > \fBgetRandomRange\fP (int number) const"
+.br
+.ti -1c
+.RI "const std::map< boost::uuids::uuid, boost::shared_ptr< \fBImpulse\fP > > & \fBgetCollection\fP () const"
+.br
+.RI "\fIGet maximum value. \fP"
+.ti -1c
+.RI "std::map< boost::uuids::uuid, boost::shared_ptr< \fBImpulse\fP > > & \fBgetMutableCollection\fP ()"
+.br
+.RI "\fIGet mutable underlying collection. \fP"
+.ti -1c
+.RI "int \fBgetSize\fP () const"
+.br
+.RI "\fIGet underlying collections size. \fP"
+.ti -1c
+.RI "virtual void \fBenableLogging\fP (bool enable)"
+.br
+.RI "\fIWhether logging is enabled or not. \fP"
+.ti -1c
+.RI "virtual const std::map< unsigned long int, double > & \fBgetMap\fP ()"
+.br
+.RI "\fIGet all cycle values. \fP"
+.ti -1c
+.RI "virtual const \fBdataobjects::DataObject\fP< unsigned long int, double > & \fBgetDataObject\fP ()"
+.br
+.RI "\fIGet data object. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "std::map< boost::uuids::uuid, boost::shared_ptr< \fBImpulse\fP > > \fBclearActivitiesByValue\fP (double activity, bool greater)"
+.br
+.RI "\fIGet the associated \fBMesh\fP. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::map< boost::uuids::uuid, boost::shared_ptr< \fBImpulse\fP > > \fBobjects\fP"
+.br
+.ti -1c
+.RI "\fBdataobjects::DataObject\fP< unsigned long int, double > \fBdataObject\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBImpulseCollection\fP &obj)"
+.br
+.RI "\fITo stream operator. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBImpulseCollection\fP represents a collection of \fBImpulse\fP objects. 
+
+A collection of Impulses that allows for Impulses to be held, 'moved forward' in time, and summated in some way 
+.PP
+Definition at line 35 of file ImpulseCollection.h.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBcryomesh::components::ImpulseCollection::Comparison\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIGreaterThan \fP\fP
+.TP
+\fB\fILessThan \fP\fP
+.TP
+\fB\fIEqualTo \fP\fP
+.TP
+\fB\fINotEqualTo \fP\fP
+
+.PP
+Definition at line 38 of file ImpulseCollection.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::components::ImpulseCollection::ImpulseCollection ()"
+.PP
+Contructor for \fBImpulseCollection\fP. Contruct using default \fBMesh\fP 
+.PP
+Definition at line 16 of file ImpulseCollection.cpp.
+.SS "cryomesh::components::ImpulseCollection::~ImpulseCollection ()\fC [virtual]\fP"
+.PP
+Destructor for \fBImpulseCollection\fP. Destructor 
+.PP
+Definition at line 20 of file ImpulseCollection.cpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "boost::shared_ptr<\fBImpulse\fP > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBImpulse\fP  >::add (boost::shared_ptr< Impulse  >obj)\fC [inline, inherited]\fP"
+.PP
+Add object to collection. \fBParameters:\fP
+.RS 4
+\fIboost::shared_ptr<T>\fP obj The object to be added to the collection
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+boost::shared_ptr<T> The object added to the collection 
+.RE
+.PP
+
+.PP
+Definition at line 59 of file KeyMappedCollection.h.
+.SS "virtual void \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBImpulse\fP  >::add (const std::initializer_list< boost::shared_ptr< Impulse  > > &list)\fC [inline, virtual, inherited]\fP"
+.PP
+Add object to collection by initialiser list. \fBParameters:\fP
+.RS 4
+\fIstd::initialiser_list<T>\fP obj The values to be added to the collection 
+.RE
+.PP
+
+.PP
+Definition at line 70 of file KeyMappedCollection.h.
+.SS "virtual void \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBImpulse\fP  >::add (const std::list< boost::shared_ptr< Impulse  > > &list)\fC [inline, virtual, inherited]\fP"
+.PP
+Add object to collection by list. \fBParameters:\fP
+.RS 4
+\fIstd::list<T>\fP list The list values to be added to the collection 
+.RE
+.PP
+
+.PP
+Definition at line 88 of file KeyMappedCollection.h.
+.SS "void \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBImpulse\fP  >::clear ()\fC [inline, inherited]\fP"
+.PP
+Clear all objects from collection. 
+.PP
+Definition at line 45 of file KeyMappedCollection.h.
+.SS "std::map< boost::uuids::uuid, boost::shared_ptr< \fBImpulse\fP > > cryomesh::components::ImpulseCollection::clearActiveImpulses ()"
+.PP
+Clear cycles that are active on this cycle. Update the collection to by dropping all impulses that are active on this cycle
+.PP
+\fBReturns:\fP
+.RS 4
+std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > The collection of deleted impulses 
+.RE
+.PP
+
+.PP
+Definition at line 100 of file ImpulseCollection.cpp.
+.PP
+References cryomesh::common::TimeKeeper::getTimeKeeper().
+.PP
+Referenced by clearActiveImpulses(), and cryomesh::components::Node::update().
+.SS "std::map< boost::uuids::uuid, boost::shared_ptr< \fBImpulse\fP > > cryomesh::components::ImpulseCollection::clearActiveImpulses (\fBcommon::Cycle\fPcycleStart, \fBcommon::Cycle\fPcycleEnd)"
+.PP
+Clear cycles that are active on cycle range. Interval is [cycle_start,cycle_end)
+.PP
+Update the collection to by dropping all impulses that are active on cycle range
+.PP
+\fBParameters:\fP
+.RS 4
+\fI\fBcommon::Cycle\fP\fP cycleStart The start cycle to drop inclusive impulses from 
+.br
+\fI\fBcommon::Cycle\fP\fP cycleEnd The end cycle to drop inclusive impulses from excluded
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > The collection of deleted impulses 
+.RE
+.PP
+
+.PP
+Definition at line 109 of file ImpulseCollection.cpp.
+.PP
+References cryomesh::components::Impulse::getFirstActiveCycle(), cryomesh::components::Impulse::getLastActiveCycle(), cryomesh::common::KeyMappedCollection< boost::uuids::uuid, Impulse >::getMutableCollection(), and cryomesh::components::Impulse::isActive().
+.SS "std::map< boost::uuids::uuid, boost::shared_ptr< \fBImpulse\fP > > cryomesh::components::ImpulseCollection::clearActiveImpulses (\fBcommon::Cycle\fPcycle)"
+.PP
+Clear cycles that are active on cycle. Update the collection to by dropping all impulses that are active on cycle
+.PP
+\fBParameters:\fP
+.RS 4
+\fI\fBcommon::Cycle\fP\fP cycle The cycle to drop inclusive impulses from
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > The collection of deleted impulses 
+.RE
+.PP
+
+.PP
+Definition at line 105 of file ImpulseCollection.cpp.
+.PP
+References clearActiveImpulses().
+.SS "std::map< boost::uuids::uuid, boost::shared_ptr< \fBImpulse\fP > > cryomesh::components::ImpulseCollection::clearActivitiesByMaximum (doubleactivity)"
+.PP
+Clear the Impulses that have activities greater than parameter. \fBParameters:\fP
+.RS 4
+\fIdouble\fP activity The maximum activity impulses must have to avoid deleteion
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > The deleted collection of impulses 
+.RE
+.PP
+
+.PP
+Definition at line 159 of file ImpulseCollection.cpp.
+.PP
+References clearActivitiesByValue().
+.SS "std::map< boost::uuids::uuid, boost::shared_ptr< \fBImpulse\fP > > cryomesh::components::ImpulseCollection::clearActivitiesByMinimum (doubleactivity)"
+.PP
+Clear the Impulses that have activities less than parameter. \fBParameters:\fP
+.RS 4
+\fIdouble\fP activity The minimum activity impulses must have to avoid deleteion
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > The deleted collection of impulses 
+.RE
+.PP
+
+.PP
+Definition at line 155 of file ImpulseCollection.cpp.
+.PP
+References clearActivitiesByValue().
+.SS "std::map< boost::uuids::uuid, boost::shared_ptr< \fBImpulse\fP > > cryomesh::components::ImpulseCollection::clearActivitiesByValue (doubleactivity, boolgreater)\fC [protected]\fP"
+.PP
+Get the associated \fBMesh\fP. \fBReturns:\fP
+.RS 4
+\fBMesh\fP
+.RE
+.PP
+const boost::shared_ptr<Mesh> getMesh() const; Clear the Impulses that have activities greater or less than parameter
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdouble\fP activity The maximum or minimum activity impulses must have to avoid deleteion 
+.br
+\fIbool\fP True is first parameter is maximum allowed value, false if its the minimum
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > The deleted collection of impulses 
+.RE
+.PP
+
+.PP
+Definition at line 342 of file ImpulseCollection.cpp.
+.PP
+References cryomesh::common::KeyMappedCollection< boost::uuids::uuid, Impulse >::getMutableCollection().
+.PP
+Referenced by clearActivitiesByMaximum(), and clearActivitiesByMinimum().
+.SS "void cryomesh::components::ImpulseCollection::clearImpulses (\fBcommon::Cycle\fPcycle)"
+.PP
+Clear collection up to specified cycle. Update the collection to specified cycle (non-inclusive) by dropping all impulses that are 'in the past' relative to that cycle. Interval is [0,cycle)
+.PP
+\fBParameters:\fP
+.RS 4
+\fI\fBcommon::Cycle\fP\fP cycle The cycle that is the cutoff point for the collection 
+.RE
+.PP
+
+.PP
+Definition at line 50 of file ImpulseCollection.cpp.
+.PP
+References clearImpulses().
+.SS "std::map< boost::uuids::uuid, boost::shared_ptr< \fBImpulse\fP > > cryomesh::components::ImpulseCollection::clearImpulses (\fBcommon::Cycle\fPcycleStart, \fBcommon::Cycle\fPcycleEnd)"
+.PP
+Clear the Impulses that start on or after cycle start parameter and finish before cycle end parameter. Interval is [cycle_start,cycle_end)
+.PP
+\fBParameters:\fP
+.RS 4
+\fICycle\fP cycleStart Cycle parameter that marks the start of the cleared area 
+.br
+\fICycle\fP cycleEnd Cycle parameter that marks the end of the cleared area (non-inclusive)
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > The deleted collection of impulses 
+.RE
+.PP
+
+.PP
+Definition at line 54 of file ImpulseCollection.cpp.
+.PP
+References cryomesh::common::KeyMappedCollection< boost::uuids::uuid, Impulse >::getMutableCollection().
+.SS "void cryomesh::components::ImpulseCollection::clearImpulses ()"
+.PP
+Clear collection up to present cycle. Update the collection to present cycle (non-inclusive) by dropping all impulses that are 'in the past' relative to that cycle. Interval is [0,present_cycle) 
+.PP
+Definition at line 46 of file ImpulseCollection.cpp.
+.PP
+References cryomesh::common::TimeKeeper::getTimeKeeper().
+.PP
+Referenced by clearImpulses(), and cryomesh::components::Node::updateImpulses().
+.SS "void cryomesh::components::ImpulseCollection::decrementActivityTimers ()"
+.PP
+Decrement the activity timers of all impulses. 
+.PP
+Definition at line 163 of file ImpulseCollection.cpp.
+.PP
+References cryomesh::common::KeyMappedCollection< boost::uuids::uuid, Impulse >::getMutableCollection().
+.SS "virtual void \fBcryomesh::dataobjects::DataObjectController\fP< unsigned long int , double  >::enableLogging (boolenable)\fC [inline, virtual, inherited]\fP"
+.PP
+Whether logging is enabled or not. \fBParameters:\fP
+.RS 4
+\fIbool\fP enable True to enable logging, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 41 of file DataObjectController.h.
+.SS "double cryomesh::components::ImpulseCollection::getActivity () const"
+.PP
+Get activity at current cycle. Sum all the Impulses in the collection on the current cycle and return activity
+.PP
+\fBReturns:\fP
+.RS 4
+double The activity on specified cycle 
+.RE
+.PP
+
+.PP
+Definition at line 41 of file ImpulseCollection.cpp.
+.PP
+References cryomesh::common::TimeKeeper::getTimeKeeper().
+.PP
+Referenced by refreshDataObject().
+.SS "double cryomesh::components::ImpulseCollection::getActivity (\fBcommon::Cycle\fPcycle) const"
+.PP
+Get activity at cycle. Sum all the Impulses in the collection on specified cycle and return activity
+.PP
+\fBParameters:\fP
+.RS 4
+\fICycle\fP cycle The cycle to calculate the activity on
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+double The activity on specified cycle 
+.RE
+.PP
+
+.PP
+Definition at line 23 of file ImpulseCollection.cpp.
+.PP
+References cryomesh::common::KeyMappedCollection< boost::uuids::uuid, Impulse >::getCollection(), and cryomesh::common::KeyMappedCollection< boost::uuids::uuid, Impulse >::objects.
+.SS "std::list< boost::shared_ptr< \fBImpulse\fP > > cryomesh::components::ImpulseCollection::getByActivityTimerValue (doublevalue, \fBImpulseCollection::Comparison\fPcomp)"
+.PP
+Get impulse list by activity timer value. \fBParameters:\fP
+.RS 4
+\fIdouble\fP value activity timer value 
+.br
+\fIComparison\fP comp What comparison to make with the value
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::list<boost::shared_ptr< Impulse> > The list of impulses that meet the comparison 
+.RE
+.PP
+
+.PP
+Definition at line 179 of file ImpulseCollection.cpp.
+.PP
+References cryomesh::common::Maths::compareDoubles(), EqualTo, cryomesh::common::KeyMappedCollection< boost::uuids::uuid, Impulse >::getMutableCollection(), GreaterThan, and LessThan.
+.PP
+Referenced by removeByActivityTimerValue().
+.SS "const std::map<boost::uuids::uuid , boost::shared_ptr<\fBImpulse\fP > >& \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBImpulse\fP  >::getCollection () const\fC [inline, inherited]\fP"
+.PP
+Get maximum value. \fBReturns:\fP
+.RS 4
+T The maximum value Get underlying collection
+.PP
+const std::map<U, boost::shared_ptr<T> > & The collection 
+.RE
+.PP
+
+.PP
+Definition at line 309 of file KeyMappedCollection.h.
+.PP
+Referenced by getActivity(), and operator==().
+.SS "virtual const \fBdataobjects::DataObject\fP<unsigned long int , double >& \fBcryomesh::dataobjects::DataObjectController\fP< unsigned long int , double  >::getDataObject ()\fC [inline, virtual, inherited]\fP"
+.PP
+Get data object. \fBReturns:\fP
+.RS 4
+dataobjects::DataObject<U,T> & The data object 
+.RE
+.PP
+
+.PP
+Definition at line 62 of file DataObjectController.h.
+.SS "std::list<boost::uuids::uuid > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBImpulse\fP  >::getKeyList () const\fC [inline, inherited]\fP"
+.PP
+Get keys for underlying connection. \fBReturns:\fP
+.RS 4
+std::list<U> The list of keys 
+.RE
+.PP
+
+.PP
+Definition at line 208 of file KeyMappedCollection.h.
+.SS "virtual const std::map<unsigned long int , double >& \fBcryomesh::dataobjects::DataObjectController\fP< unsigned long int , double  >::getMap ()\fC [inline, virtual, inherited]\fP"
+.PP
+Get all cycle values. \fBReturns:\fP
+.RS 4
+std::map<unsigned long int, double> & The cycle values 
+.RE
+.PP
+
+.PP
+Definition at line 51 of file DataObjectController.h.
+.SS "std::map<boost::uuids::uuid , boost::shared_ptr<\fBImpulse\fP > >& \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBImpulse\fP  >::getMutableCollection ()\fC [inline, inherited]\fP"
+.PP
+Get mutable underlying collection. \fBReturns:\fP
+.RS 4
+const std::map<U, boost::shared_ptr<T> > & The mutable collection 
+.RE
+.PP
+
+.PP
+Definition at line 319 of file KeyMappedCollection.h.
+.PP
+Referenced by clearActiveImpulses(), clearActivitiesByValue(), clearImpulses(), decrementActivityTimers(), and getByActivityTimerValue().
+.SS "boost::shared_ptr<\fBImpulse\fP > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBImpulse\fP  >::getObjectByKey (const boost::uuids::uuid  &key)\fC [inline, inherited]\fP"
+.PP
+Get object using key. \fBParameters:\fP
+.RS 4
+\fIU\fP key Key to search for 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+boost::shared_ptr<T> The found object 
+.RE
+.PP
+
+.PP
+Definition at line 250 of file KeyMappedCollection.h.
+.SS "std::vector<boost::shared_ptr<\fBImpulse\fP > > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBImpulse\fP  >::getObjectList () const\fC [inline, inherited]\fP"
+.PP
+Get object list for underlying connection. \fBReturns:\fP
+.RS 4
+std::list<U> The list of object values 
+.RE
+.PP
+
+.PP
+Definition at line 228 of file KeyMappedCollection.h.
+.SS "std::vector<boost::shared_ptr<\fBImpulse\fP > > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBImpulse\fP  >::getRandomRange (intnumber) const\fC [inline, inherited]\fP"
+.PP
+Definition at line 261 of file KeyMappedCollection.h.
+.SS "int \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBImpulse\fP  >::getSize () const\fC [inline, inherited]\fP"
+.PP
+Get underlying collections size. \fBReturns:\fP
+.RS 4
+int The collections size 
+.RE
+.PP
+
+.PP
+Definition at line 329 of file KeyMappedCollection.h.
+.SS "bool cryomesh::components::ImpulseCollection::operator!= (const \fBImpulseCollection\fP &obj) const"
+.PP
+Not comparator operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBImpulseCollection\fP & obj RHS object
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True if not equal, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 313 of file ImpulseCollection.cpp.
+.SS "const \fBImpulseCollection\fP cryomesh::components::ImpulseCollection::operator+ (const \fBImpulseCollection\fP &obj) const"
+.PP
+Non-destructive addition operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBImpulseCollection\fP & obj RHS addition
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBImpulseCollection\fP New object after addition 
+.RE
+.PP
+
+.PP
+Definition at line 259 of file ImpulseCollection.cpp.
+.SS "\fBImpulseCollection\fP & cryomesh::components::ImpulseCollection::operator+= (const \fBImpulseCollection\fP &obj)"
+.PP
+Destructive addition and assignment operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBImpulseCollection\fP & obj RHS addition
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBImpulseCollection\fP & This object after addition and assignment 
+.RE
+.PP
+
+.PP
+Definition at line 239 of file ImpulseCollection.cpp.
+.PP
+References cryomesh::common::KeyMappedCollection< U, T >::getCollection(), and cryomesh::common::KeyMappedCollection< boost::uuids::uuid, Impulse >::objects.
+.SS "\fBImpulseCollection\fP & cryomesh::components::ImpulseCollection::operator= (const \fBImpulseCollection\fP &obj)"
+.PP
+Assignment operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBImpulseCollection\fP & obj RHS assignment
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBImpulseCollection\fP & This object after assignment 
+.RE
+.PP
+
+.PP
+Definition at line 230 of file ImpulseCollection.cpp.
+.PP
+References cryomesh::common::KeyMappedCollection< U, T >::getCollection(), and cryomesh::common::KeyMappedCollection< boost::uuids::uuid, Impulse >::objects.
+.SS "bool cryomesh::components::ImpulseCollection::operator== (const \fBImpulseCollection\fP &obj) const"
+.PP
+Comparator operator. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBImpulseCollection\fP & obj RHS object
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True if equal, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 265 of file ImpulseCollection.cpp.
+.PP
+References cryomesh::common::KeyMappedCollection< U, T >::getCollection(), and cryomesh::common::KeyMappedCollection< boost::uuids::uuid, Impulse >::getCollection().
+.SS "void cryomesh::components::ImpulseCollection::refreshDataObject ()\fC [virtual]\fP"
+.PP
+Inherited from DataObjectController. Overriden to force refresh update on call 
+.PP
+Reimplemented from \fBcryomesh::dataobjects::DataObjectController< unsigned long int, double >\fP.
+.PP
+Definition at line 210 of file ImpulseCollection.cpp.
+.PP
+References cryomesh::dataobjects::DataObject< U, T >::clear(), cryomesh::dataobjects::DataObjectController< unsigned long int, double >::dataObject, getActivity(), cryomesh::dataobjects::DataObject< U, T >::getDatasetMaximumSize(), cryomesh::common::TimeKeeper::getTimeKeeper(), cryomesh::dataobjects::DataObject< U, T >::insert(), cryomesh::dataobjects::DataObject< U, T >::isLoggingEnabled(), and cryomesh::common::Cycle::toULInt().
+.SS "virtual void \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBImpulse\fP  >::remove (const std::list< boost::shared_ptr< Impulse  > > &list)\fC [inline, virtual, inherited]\fP"
+.PP
+Remove objects from collection by list. \fBParameters:\fP
+.RS 4
+\fIstd::list<T>\fP list The list values to be removed to the collection 
+.RE
+.PP
+
+.PP
+Definition at line 124 of file KeyMappedCollection.h.
+.SS "boost::shared_ptr<\fBImpulse\fP > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBImpulse\fP  >::remove (boost::uuids::uuidkey)\fC [inline, inherited]\fP"
+.PP
+Remove object from collection bt key. \fBParameters:\fP
+.RS 4
+\fIU\fP key The ey of the object to be removed from the collection
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+boost::shared_ptr<T> The object removed from the collection 
+.RE
+.PP
+
+.PP
+Definition at line 191 of file KeyMappedCollection.h.
+.SS "virtual void \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBImpulse\fP  >::remove (const std::initializer_list< boost::shared_ptr< Impulse  > > &list)\fC [inline, virtual, inherited]\fP"
+.PP
+Remove objects from collection by initialiser list. \fBParameters:\fP
+.RS 4
+\fIstd::initialiser_list<T>\fP obj The values to be removed from the collection 
+.RE
+.PP
+
+.PP
+Definition at line 106 of file KeyMappedCollection.h.
+.SS "boost::shared_ptr<\fBImpulse\fP > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBImpulse\fP  >::remove (boost::shared_ptr< Impulse  >obj)\fC [inline, inherited]\fP"
+.PP
+Add object to collection. \fBParameters:\fP
+.RS 4
+\fIT\fP & refobj The object to be added to the collection
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+boost::shared_ptr<T> The object added to the collection
+.RE
+.PP
+boost::shared_ptr<T> add(T & refobj) { boost::shared_ptr<T> obj = boost::shared_ptr<T>(&refobj); objects[obj->getKey()] = obj; return objects.find(obj->getKey())->second; } Remove object from collection
+.PP
+\fBParameters:\fP
+.RS 4
+\fIboost::shared_ptr<T>\fP obj The object to be removed from the collection
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+boost::shared_ptr<T> The object removed from the collection 
+.RE
+.PP
+
+.PP
+Definition at line 163 of file KeyMappedCollection.h.
+.SS "boost::shared_ptr<\fBImpulse\fP > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBImpulse\fP  >::remove (Impulse  &obj)\fC [inline, inherited]\fP"
+.PP
+Remove object from collection. \fBParameters:\fP
+.RS 4
+\fIT\fP & obj The object to be removed from the collection
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+boost::shared_ptr<T> The object removed from the collection 
+.RE
+.PP
+
+.PP
+Definition at line 177 of file KeyMappedCollection.h.
+.SS "std::list< boost::shared_ptr< \fBImpulse\fP > > cryomesh::components::ImpulseCollection::removeByActivityTimerValue (doublevalue = \fC0\fP, \fBImpulseCollection::Comparison\fPcomp = \fCLessThan\fP)"
+.PP
+remove impulses by activity timer value \fBParameters:\fP
+.RS 4
+\fIdouble\fP value activity timer value 
+.br
+\fIComparison\fP comp What comparison to make with the value
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::list<boost::shared_ptr< Impulse> > The that meet the comparison and were removed 
+.RE
+.PP
+
+.PP
+Definition at line 203 of file ImpulseCollection.cpp.
+.PP
+References getByActivityTimerValue().
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream &os, const \fBImpulseCollection\fP &obj)\fC [friend]\fP"
+.PP
+To stream operator. \fBParameters:\fP
+.RS 4
+\fIstd::ostream\fP & os The output stream 
+.br
+\fIconst\fP \fBImpulseCollection\fP & obj The object to stream
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::ostream & The output stream 
+.RE
+.PP
+
+.PP
+Definition at line 317 of file ImpulseCollection.cpp.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBdataobjects::DataObject\fP<unsigned long int , double > \fBcryomesh::dataobjects::DataObjectController\fP< unsigned long int , double  >::\fBdataObject\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 79 of file DataObjectController.h.
+.PP
+Referenced by refreshDataObject(), and cryomesh::components::Node::update().
+.SS "std::map<boost::uuids::uuid , boost::shared_ptr<\fBImpulse\fP > > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBImpulse\fP  >::\fBobjects\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 339 of file KeyMappedCollection.h.
+.PP
+Referenced by getActivity(), operator+=(), and operator=().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

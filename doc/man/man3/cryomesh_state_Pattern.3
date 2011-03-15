@@ -1,0 +1,294 @@
+.TH "cryomesh::state::Pattern" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::state::Pattern \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Pattern.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPattern\fP ()"
+.br
+.ti -1c
+.RI "\fBPattern\fP (const \fBPattern\fP &)"
+.br
+.ti -1c
+.RI "\fBPattern\fP (const std::string &)"
+.br
+.ti -1c
+.RI "\fBPattern\fP (const std::vector< bool > &)"
+.br
+.ti -1c
+.RI "\fBPattern\fP (const \fBBinaryString\fP &obj)"
+.br
+.ti -1c
+.RI "virtual \fB~Pattern\fP ()"
+.br
+.ti -1c
+.RI "\fBPattern\fP & \fBoperator=\fP (const \fBPattern\fP &)"
+.br
+.ti -1c
+.RI "double \fBcompare\fP (const \fBPattern\fP &) const "
+.br
+.ti -1c
+.RI "bool \fBisAllZeroes\fP () const "
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBPattern\fP &) const "
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBPattern\fP &) const "
+.br
+.ti -1c
+.RI "std::vector< bool > \fBgetPattern\fP () const "
+.br
+.ti -1c
+.RI "std::string \fBgetString\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetPattern\fP (const std::vector< bool > &)"
+.br
+.ti -1c
+.RI "boost::uuids::uuid \fBgetUUID\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetId\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetId\fP (int)"
+.br
+.ti -1c
+.RI "int \fBgetWidth\fP () const "
+.br
+.ti -1c
+.RI "const \fBBinaryString\fP & \fBgetBinaryString\fP () const "
+.br
+.ti -1c
+.RI "\fBBinaryString\fP & \fBgetMutableBinaryString\fP ()"
+.br
+.ti -1c
+.RI "const boost::shared_ptr< \fBPatternTag\fP > \fBgetPatternTag\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetPatternTag\fP (boost::shared_ptr< \fBPatternTag\fP > pt)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBgetIds\fP ()"
+.br
+.ti -1c
+.RI "static void \fBsetIds\fP (int)"
+.br
+.ti -1c
+.RI "static std::string \fBpatternToString\fP (const std::vector< bool > &vec)"
+.br
+.ti -1c
+.RI "static std::vector< bool > \fBstringToPattern\fP (const std::string &)"
+.br
+.ti -1c
+.RI "static \fBPattern\fP \fBgetRandom\fP (unsigned int width, double fraction=0.5)"
+.br
+.RI "\fIGenerate a random pattern of width. \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "template<class Archive > void \fBserialize\fP (Archive &ar, const unsigned int version)"
+.br
+.ti -1c
+.RI "void \fBinitialise\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBBinaryString\fP \fBbinaryString\fP"
+.br
+.ti -1c
+.RI "int \fBid\fP"
+.br
+.ti -1c
+.RI "boost::shared_ptr< \fBPatternTag\fP > \fBpatternTag\fP"
+.br
+.ti -1c
+.RI "boost::uuids::uuid \fBtag\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static int \fBids\fP = 1"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBboost::serialization::access\fP"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBPattern\fP &obj)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 25 of file Pattern.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::state::Pattern::Pattern ()"
+.PP
+Definition at line 32 of file Pattern.cpp.
+.SS "cryomesh::state::Pattern::Pattern (const \fBPattern\fP &pat)"
+.PP
+Definition at line 35 of file Pattern.cpp.
+.SS "cryomesh::state::Pattern::Pattern (const std::string &str)"
+.PP
+Definition at line 44 of file Pattern.cpp.
+.SS "cryomesh::state::Pattern::Pattern (const std::vector< bool > &pat)"
+.PP
+Definition at line 40 of file Pattern.cpp.
+.SS "cryomesh::state::Pattern::Pattern (const \fBBinaryString\fP &obj)"
+.SS "cryomesh::state::Pattern::~Pattern ()\fC [virtual]\fP"
+.PP
+Definition at line 48 of file Pattern.cpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "double cryomesh::state::Pattern::compare (const \fBPattern\fP &obj) const"
+.PP
+Definition at line 64 of file Pattern.cpp.
+.SS "const \fBBinaryString\fP & cryomesh::state::Pattern::getBinaryString () const"
+.PP
+Definition at line 156 of file Pattern.cpp.
+.SS "int cryomesh::state::Pattern::getId () const"
+.PP
+Definition at line 143 of file Pattern.cpp.
+.SS "int cryomesh::state::Pattern::getIds ()\fC [static]\fP"
+.PP
+Definition at line 212 of file Pattern.cpp.
+.PP
+Referenced by cryomesh::state::PatternTagById::getEndTag().
+.SS "\fBBinaryString\fP & cryomesh::state::Pattern::getMutableBinaryString ()"
+.PP
+Definition at line 159 of file Pattern.cpp.
+.SS "std::vector< bool > cryomesh::state::Pattern::getPattern () const"
+.PP
+Definition at line 134 of file Pattern.cpp.
+.PP
+Referenced by cryomesh::structures::Fibre::trigger().
+.SS "const boost::shared_ptr< \fBPatternTag\fP > cryomesh::state::Pattern::getPatternTag () const"
+.PP
+Definition at line 205 of file Pattern.cpp.
+.SS "\fBPattern\fP cryomesh::state::Pattern::getRandom (unsigned intwidth, doublefraction = \fC0.5\fP)\fC [static]\fP"
+.PP
+Generate a random pattern of width. \fBParameters:\fP
+.RS 4
+\fIunsigned\fP int Width of pattern to generate 
+.br
+\fIdouble\fP Fraction of pattern to activate, default to 0.5 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBPattern\fP The random pattern 
+.RE
+.PP
+
+.PP
+Definition at line 22 of file Pattern.cpp.
+.PP
+References cryomesh::common::Maths::getRandomBool().
+.PP
+Referenced by cryomesh::structures::Fibre::trigger().
+.SS "std::string cryomesh::state::Pattern::getString () const"
+.PP
+Definition at line 137 of file Pattern.cpp.
+.SS "boost::uuids::uuid cryomesh::state::Pattern::getUUID () const"
+.PP
+Definition at line 202 of file Pattern.cpp.
+.SS "int cryomesh::state::Pattern::getWidth () const"
+.PP
+Definition at line 152 of file Pattern.cpp.
+.SS "void cryomesh::state::Pattern::initialise ()\fC [private]\fP"
+.PP
+Definition at line 222 of file Pattern.cpp.
+.SS "bool cryomesh::state::Pattern::isAllZeroes () const"
+.PP
+Definition at line 61 of file Pattern.cpp.
+.SS "bool cryomesh::state::Pattern::operator< (const \fBPattern\fP &obj) const"
+.PP
+Definition at line 130 of file Pattern.cpp.
+.SS "\fBPattern\fP & cryomesh::state::Pattern::operator= (const \fBPattern\fP &obj)"
+.PP
+Definition at line 52 of file Pattern.cpp.
+.SS "bool cryomesh::state::Pattern::operator== (const \fBPattern\fP &obj) const"
+.PP
+Definition at line 116 of file Pattern.cpp.
+.SS "std::string cryomesh::state::Pattern::patternToString (const std::vector< bool > &vec)\fC [static]\fP"
+.PP
+Definition at line 163 of file Pattern.cpp.
+.SS "template<class Archive > void cryomesh::state::Pattern::serialize (Archive &ar, const unsigned intversion)\fC [inline, private]\fP"
+.PP
+Definition at line 28 of file Pattern.h.
+.PP
+References binaryString, id, and ids.
+.SS "void cryomesh::state::Pattern::setId (intnew_id)"
+.PP
+Definition at line 146 of file Pattern.cpp.
+.SS "void cryomesh::state::Pattern::setIds (intis)\fC [static]\fP"
+.PP
+Definition at line 215 of file Pattern.cpp.
+.SS "void cryomesh::state::Pattern::setPattern (const std::vector< bool > &pat)"
+.PP
+Definition at line 140 of file Pattern.cpp.
+.SS "void cryomesh::state::Pattern::setPatternTag (boost::shared_ptr< \fBPatternTag\fP >pt)"
+.PP
+Definition at line 208 of file Pattern.cpp.
+.SS "std::vector< bool > cryomesh::state::Pattern::stringToPattern (const std::string &str)\fC [static]\fP"
+.PP
+Definition at line 181 of file Pattern.cpp.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class boost::serialization::access\fC [friend]\fP"
+.PP
+Definition at line 26 of file Pattern.h.
+.SS "std::ostream& operator<< (std::ostream &os, const \fBPattern\fP &obj)\fC [friend]\fP"
+.PP
+Definition at line 233 of file Pattern.cpp.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBBinaryString\fP \fBcryomesh::state::Pattern::binaryString\fP\fC [private]\fP"
+.PP
+Definition at line 110 of file Pattern.h.
+.PP
+Referenced by serialize().
+.SS "int \fBcryomesh::state::Pattern::id\fP\fC [private]\fP"
+.PP
+Definition at line 112 of file Pattern.h.
+.PP
+Referenced by serialize().
+.SS "int \fBcryomesh::state::Pattern::ids\fP = 1\fC [static, private]\fP"
+.PP
+Definition at line 124 of file Pattern.h.
+.PP
+Referenced by serialize().
+.SS "boost::shared_ptr<\fBPatternTag\fP> \fBcryomesh::state::Pattern::patternTag\fP\fC [private]\fP"
+.PP
+Definition at line 115 of file Pattern.h.
+.SS "boost::uuids::uuid \fBcryomesh::state::Pattern::tag\fP\fC [private]\fP"
+.PP
+Definition at line 117 of file Pattern.h.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.
