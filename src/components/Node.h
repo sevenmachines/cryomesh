@@ -16,6 +16,8 @@
 #include "common/Defs.h"
 #include "spacial/Point.h"
 #include "dataobjects/DataObjectController.h"
+#include "manager/NodeDatabaseObject.h"
+
 
 #include <list>
 #include <map>
@@ -219,6 +221,13 @@ public:
 	 * 		The activity set
 	 */
 	double setActivity(const common::Cycle & cycle, double activity);
+
+	/**
+	 * Return a database object for this node
+	 *
+	 * @return DatabaseObject
+	 */
+	boost::shared_ptr< manager::DatabaseObject > getDatabaseObject()const;
 
 	/**
 	 * get the position of the node

@@ -94,9 +94,8 @@ bool DatabaseManager::clearTable(const std::string & table) {
 bool DatabaseManager::insert() {
 	return sqlCommand("insert into nodesTable (id, x, y, activity) values ('1', 0.5, 0.6, 4.5)");
 }
-bool DatabaseManager::insertNode() {
-	// TODO DatabaseManager::insertNode()
-	return false;
+bool DatabaseManager::insertNode(const NodeDatabaseObject & db_object) {
+	return sqlCommand(db_object.getInsert(NODES_TABLE_FORMAT.getName()));
 }
 bool DatabaseManager::insertConnection() {
 	// TODO DatabaseManager::insertConnection()

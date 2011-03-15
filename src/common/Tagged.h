@@ -23,14 +23,28 @@ namespace common {
  */
 class Tagged {
 public:
+
+	/**
+	 * Get a new ID, not guaranteed unique
+	 *
+	 * @return unsigned long int
+	 * 	The new id
+	 */
+	static unsigned long int getNewID() {
+		++Tagged::ids;
+		return ids;
+	}
+
+	/**
+	 * Variable for getting new id'd
+	 */
+	static unsigned long int ids;
 	/**
 	 * Constructor
 	 *
 	 * 		Constructor for Tagged
 	 */
-	Tagged() {
-		uuid = boost::uuids::random_generator()();
-
+	Tagged() : uuid (boost::uuids::random_generator()()), id(getNewID()){
 	}
 
 	/**
@@ -72,6 +86,15 @@ public:
 		return this->getUUID();
 	}
 
+	/**
+	 * Get the ID of object
+	 *
+	 * @return unsigned long ing
+	 * 		The not unique id tag of this object
+	 */
+	unsigned long int getID() const {
+		return id;
+	}
 private:
 	/*
 	 * Unique uuid of this object
@@ -79,6 +102,13 @@ private:
 	 * @var boost::uuids::uuid
 	 */
 	boost::uuids::uuid uuid;
+
+	/**
+	 * Compatibility id, not guaranteed unique
+	 *
+	 * @var unsigned long int
+	 */
+	unsigned long int id;
 };
 
 }

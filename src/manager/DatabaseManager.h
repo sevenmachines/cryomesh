@@ -7,6 +7,9 @@
 
 #ifndef DATABASEMANAGER_H_
 #define DATABASEMANAGER_H_
+
+#include "NodeDatabaseObject.h"
+
 #include <sqlite3.h>
 #include <string>
 #include <boost/shared_ptr.hpp>
@@ -108,10 +111,12 @@ public:
 		 */
 		NodeTableFormat() {
 			name = "nodesTable";
-			columns["id"] = "Integer";
-			columns["x"] = "double";
-			columns["y"] = "double";
-			columns["activity"] = "double";
+			columns[NodeDatabaseObject::ID_TAG] = "Integer";
+			columns[NodeDatabaseObject::X_TAG] = "double";
+			columns[NodeDatabaseObject::Y_TAG] = "double";
+			columns[NodeDatabaseObject::Z_TAG] = "double";
+			columns[NodeDatabaseObject::CYCLE_TAG] = "Integer";
+			columns[NodeDatabaseObject::ACTIVITY_TAG] = "double";
 		}
 	};
 
@@ -167,7 +172,7 @@ public:
 	 * Insert a node data object into the table
 	 *
 	 */
-	bool insertNode();
+	bool insertNode(const NodeDatabaseObject & db_object);
 	bool insertConnection();
 	bool selectNode();
 	bool selectConnection();
