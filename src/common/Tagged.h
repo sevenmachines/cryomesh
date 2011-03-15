@@ -11,6 +11,10 @@
 #define TAGGED_H_
 #include <boost/uuid/uuid.hpp>
 #include <boost/uuid/uuid_generators.hpp>
+#include <boost/uuid/uuid_io.hpp>
+#include <string>
+#include <sstream>
+
 namespace cryomesh {
 
 namespace common {
@@ -24,27 +28,32 @@ namespace common {
 class Tagged {
 public:
 
+	//DEPRECATED
 	/**
 	 * Get a new ID, not guaranteed unique
 	 *
 	 * @return unsigned long int
 	 * 	The new id
-	 */
-	static unsigned long int getNewID() {
-		++Tagged::ids;
-		return ids;
-	}
+	 *
+	 static unsigned long int getNewID() {
+	 ++Tagged::ids;
+	 return ids;
+	 }*/
 
+	//DEPRECATED
 	/**
 	 * Variable for getting new id'd
+	 *
+	 static unsigned long int ids;
 	 */
-	static unsigned long int ids;
+
 	/**
 	 * Constructor
 	 *
 	 * 		Constructor for Tagged
 	 */
-	Tagged() : uuid (boost::uuids::random_generator()()), id(getNewID()){
+	Tagged() :
+		uuid(boost::uuids::random_generator()()) {
 	}
 
 	/**
@@ -67,6 +76,18 @@ public:
 	}
 
 	/**
+	 * Get the uuid of object as a string
+	 *
+	 * @return std::string
+	 * 		The unique uuid tag of this object as a string
+	 */
+	std::string getUUIDString() const {
+		std::stringstream ss;
+		ss << (this->getUUID());
+		return ss.str();
+	}
+
+	/**
 	 * Get the key of object
 	 *
 	 * @return boost::uuids::uuid
@@ -74,6 +95,16 @@ public:
 	 */
 	boost::uuids::uuid getKey() const {
 		return this->getUUID();
+	}
+
+	/**
+	 * Get the key string of object
+	 *
+	 * @return std::string
+	 * 		The unique uuid tag string of this object
+	 */
+	std::string getKeyString() const {
+		return this->getUUIDString();
 	}
 
 	/**
@@ -87,14 +118,26 @@ public:
 	}
 
 	/**
+	 * Get the tag string of object
+	 *
+	 * @return std::string
+	 * 		The unique uuid tag string of this object
+	 */
+	std::string getTagString() const {
+		return this->getUUIDString();
+	}
+
+	//DEPRECATED
+	/**
 	 * Get the ID of object
 	 *
 	 * @return unsigned long ing
 	 * 		The not unique id tag of this object
-	 */
+	 *
 	unsigned long int getID() const {
 		return id;
-	}
+	}*/
+
 private:
 	/*
 	 * Unique uuid of this object
@@ -103,12 +146,14 @@ private:
 	 */
 	boost::uuids::uuid uuid;
 
+	//DEPRECATED
 	/**
 	 * Compatibility id, not guaranteed unique
 	 *
 	 * @var unsigned long int
-	 */
+	 *
 	unsigned long int id;
+	*/
 };
 
 }

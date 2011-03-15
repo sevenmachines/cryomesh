@@ -1,18 +1,20 @@
 HIGH ----------------------------------------------------------------------------------------
 
+* Implement database adding of nodes and connections
+	- Insert node with equal id overwrites or is it a new entry with a diferent cycle?
+	- NodeDatabaseObject (DONE)
+	- Node::getDatabaseObject (DONE)
+	- ConnectionDatabaseObject
+	- Connection::getDatabaseObject
+
+MEDIUM ------------------------------------------------------------------------------------
+
+	
 * Implement server
 	- Set command defs, a keystore to allowed messaging values
 
 * BUG: Impulses have very high start/end values
 	- see
-
-* Use DataObjects in Nodes and ImpulseCOllection to show whats happening
-
-MEDIUM ------------------------------------------------------------------------------------
-
-
-
-
 
 LOW -----------------------------------------------------------------------------------------
 
@@ -35,3 +37,10 @@ DONE ---------------------------------------------------------------------------
 	- Set a max bounding box, give each node a random point, allow for a density function if needed
 	- Nodes and connections are stationary, caclulate everything on creation.
 	- When impulses added to connections, use connection length
+	
+* Use DataObjects in Nodes and ImpulseCollection to show whats happening
+	- Alter data objects so that it returns enough data (eg x,y) for database entries
+	
+* Use DataObjects in Nodes and ImpulseCollection to show whats happening
+	- Alter data objects so that it returns enough data (eg x,y) for database entries
+	

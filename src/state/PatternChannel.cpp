@@ -564,7 +564,6 @@ std::ostream & PatternChannel::printFormattedPatternList(std::ostream & os, cons
 	return os;
 }
 std::ostream & operator<<(std::ostream & os, const PatternChannel & obj) {
-	//TODO Implement op<<
 	std::cout << "PatternChannel:: refid: " << obj.refID << " width: " << obj.width << " length: " << obj.length
 			<< " maxPatternSize: " << obj.maxPatternListSize << " patternPosition: " << obj.patternPosition << " patternMap: "
 			<< obj.patternMap.size() << std::endl;

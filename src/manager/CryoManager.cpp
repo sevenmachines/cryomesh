@@ -11,12 +11,10 @@ namespace cryomesh {
 namespace manager {
 
 CryoManager::CryoManager() {
-	// TODO Auto-generated constructor stub
 
 }
 
 CryoManager::~CryoManager() {
-	// TODO Auto-generated destructor stub
 }
 
 }//NAMESPACE

@@ -18,8 +18,8 @@ namespace manager {
 
 class NodeDatabaseObject: public DatabaseObject {
 public:
-	NodeDatabaseObject(int id, spacial::Point point, unsigned long int cycle, double activity) {
-		columns[ID_TAG] = toString<int> (id);
+	NodeDatabaseObject(std::string uuid_str, spacial::Point point, unsigned long int cycle, double activity) {
+		columns[ID_TAG] = uuid_str;
 		columns[X_TAG] = toString<double> (point.getX());
 		columns[Y_TAG] = toString<double> (point.getY());
 		columns[Z_TAG] = toString<double> (point.getZ());
