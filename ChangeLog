@@ -1,3 +1,12 @@
+2011-03-16  SevenMachines  <SevenMachines@yahoo.co.uk>
+
+	* src/common/Containers.h (Containers): deleteByComparison: delete from multimap by comparison
+	* src/common/Cycle.cpp (Cycle::Cycle): switch from unsigned to signed, ie, allow negative cycles
+	(Cycle::operator -): return the temporary not *this
+	* src/manager/DatabaseManager.h (DatabaseManager.ConnectionTableFormat): set connections table format
+	* src/components/Connection.cpp (Connection::getDatabaseObject): return a database object
+	(Connection::getDatabaseObject): Fix when inputs/outputs are null
+
 2011-03-15  SevenMachines  <SevenMachines@yahoo.co.uk>
 
 	* src/common/Tagged.h (Tagged): Deprecate all int ids

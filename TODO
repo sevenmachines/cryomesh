@@ -1,11 +1,11 @@
 HIGH ----------------------------------------------------------------------------------------
 
-* Implement database adding of nodes and connections
-	- Insert node with equal id overwrites or is it a new entry with a diferent cycle?
-	- NodeDatabaseObject (DONE)
-	- Node::getDatabaseObject (DONE)
-	- ConnectionDatabaseObject
-	- Connection::getDatabaseObject
+* Add updateNode/Connection functions to DatabaseManager to update 
+	entries instead of creating new ones (DONE)
+	- Create tests
+
+* Add deleteNodeByCycle/ConnectionByCycle functions to DatabaseManager (DONE)
+	- Create tests
 
 MEDIUM ------------------------------------------------------------------------------------
 
@@ -43,4 +43,11 @@ DONE ---------------------------------------------------------------------------
 	
 * Use DataObjects in Nodes and ImpulseCollection to show whats happening
 	- Alter data objects so that it returns enough data (eg x,y) for database entries
+	
+* Implement database adding of nodes and connections
+	- Insert node with equal id overwrites or is it a new entry with a diferent cycle?
+	- NodeDatabaseObject (DONE)
+	- Node::getDatabaseObject (DONE)
+	- ConnectionDatabaseObject (DONE)
+	- Connection::getDatabaseObject (DONE)
 	

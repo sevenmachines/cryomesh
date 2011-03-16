@@ -364,6 +364,60 @@ public:
 	std::string deleteAll(const std::string & table);
 
 	/**
+	 * delete all by cycle
+	 *
+	 * @param common::Cycle
+	 * 	Cycle to compare against
+	 * @param int
+	 * 	The type of comparison to make, <0 for less than, ==0 for equals, and >0 for greater than
+	 *
+	 *	@return std::string
+	 *		sql query results
+	 */
+	std::string deleteAllByCycle(const common::Cycle & cycle, int comparison_type);
+
+	/**
+	 * delete nodes by cycle
+	 *
+	 * @param common::Cycle
+	 * 	Cycle to compare against
+	 * @param int
+	 * 	The type of comparison to make, <0 for less than, ==0 for equals, and >0 for greater than
+	 *
+	 *	@return std::string
+	 *		sql query results
+	 */
+	std::string deleteNodesByCycle(const common::Cycle & cycle, int comparison_type);
+
+	/**
+	 * delete connections by cycle
+	 *
+	 * @param common::Cycle
+	 * 	Cycle to compare against
+	 * @param int
+	 * 	The type of comparison to make, <0 for less than, ==0 for equals, and >0 for greater than
+	 *
+	 *	@return std::string
+	 *		sql query results
+	 */
+	std::string deleteConnectionsByCycle(const common::Cycle & cycle, int comparison_type);
+
+	/**
+	 * delete objects from table  by cycle
+	 *
+	 *	@param std::string
+	 *		The table to delete from
+	 * @param common::Cycle
+	 * 	Cycle to compare against
+	 * @param int
+	 * 	The type of comparison to make, <0 for less than, ==0 for equals, and >0 for greater than
+	 *
+	 *	@return std::string
+	 *		sql query results
+	 */
+	std::string deleteByCycle(const std::string & table, const common::Cycle & cycle, int comparison_type);
+
+	/**
 	 * Print sql history to output stream
 	 *
 	 * @param std::ostream
