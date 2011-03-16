@@ -32,10 +32,10 @@ ConnectionDatabaseObject::~ConnectionDatabaseObject() {
 std::string ConnectionDatabaseObject::getInsert(const std::string & table) const {
 	//"insert into nodesTable (id, x, y, activity) values ('1', 0.5, 0.6, 4.5)"
 	std::stringstream ss;
-	ss << "insert into " << table << " (" << ID_TAG << ", " << INPUT_ID_TAG << ", " << OUTPUT_ID_TAG << ", " << CYCLE_TAG << ", "
-			<< IMPULSE_COUNT_TAG  << ") ";
-	ss << " values (" << "\'" << getKey(ID_TAG) << "\'" << ", " << getKey(INPUT_ID_TAG) << ", " << getKey(OUTPUT_ID_TAG) << ", "
-			<< getKey(CYCLE_TAG) << ", " << getKey(IMPULSE_COUNT_TAG) << ");";
+	ss << "insert into " << table << " (" << ID_TAG << ", " << INPUT_ID_TAG << ", " << OUTPUT_ID_TAG << ", "
+			<< CYCLE_TAG << ", " << IMPULSE_COUNT_TAG << ") ";
+	ss << " values (" << "\'" << getKey(ID_TAG) << "\'" << ", " << "\'" << getKey(INPUT_ID_TAG) << "\'" << ", " << "\'"
+			<< getKey(OUTPUT_ID_TAG) << "\'" << ", " << getKey(CYCLE_TAG) << ", " << getKey(IMPULSE_COUNT_TAG) << ");";
 	return ss.str();
 
 }

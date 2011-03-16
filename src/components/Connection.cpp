@@ -96,11 +96,22 @@ boost::shared_ptr<components::ActivityTimerDistance> Connection::getMutableActiv
 }
 
 boost::shared_ptr<manager::DatabaseObject> Connection::getDatabaseObject() const {
-	unsigned long int cycle =common::TimeKeeper::getTimeKeeper().getCycle().toULInt();
-	std::string innode = this->getConnector().getInputs().begin()->second->getUUIDString();
-	std::string outnode = this->getConnector().getOutputs().begin()->second->getUUIDString();
+	unsigned long int cycle = common::TimeKeeper::getTimeKeeper().getCycle().toULInt();
+	std::string innode;
+	if (this->getConnector().getInputs().size() > 0) {
+		innode = this->getConnector().getInputs().begin()->second->getUUIDString();
+	} else {
+		innode = "NULL";
+	}
+	std::string outnode;
+	if (this->getConnector().getOutputs().size() > 0) {
+		outnode = this->getConnector().getOutputs().begin()->second->getUUIDString();
+	} else {
+		outnode = "NULL";
+	}
 	int impulse_count = this->getImpulses().getSize();
-	boost::shared_ptr<manager::DatabaseObject> temp(	new manager::ConnectionDatabaseObject(this->getUUIDString(), innode, outnode, cycle, impulse_count) );
+	boost::shared_ptr<manager::DatabaseObject> temp(
+			new manager::ConnectionDatabaseObject(this->getUUIDString(), innode, outnode, cycle, impulse_count));
 	return temp;
 }
 

@@ -163,40 +163,83 @@ public:
 	/**
 	 * Create all needed tables
 	 */
-	bool createTables();
+	void createTables();
+
+	/**
+	 * Clear all tables
+	 */
+	void clearTables();
 
 	/**
 	 * Clear all values in a table
 	 */
-	bool clearTable(const std::string & table);
+	std::string clearTable(const std::string & table);
 
-	bool insert();
+	std::string dropTable(const std::string & table);
 
 	/**
 	 * Insert a node data object into the table
 	 *
 	 */
-	bool insertNode(const DatabaseObject & db_object);
-	bool insertConnection();
-	bool selectNode();
-	bool selectConnection();
+	std::string insertNode(const DatabaseObject & db_object);
+	std::string insertConnection(const DatabaseObject & db_object);
+	std::string selectNodes(const std::string & criteria = "");
+	std::string selectConnections(const std::string & criteria = "");
+	std::string deleteNodes(const std::string & criteria = "");
+	std::string deleteConnections(const std::string & criteria = "");
+	std::string deleteSelected(const std::string & table, const std::string & criteria);
+	int countNodes() ;
+	int countConnections() ;
+	int countRows(const std::string & table) ;
+	/**
+	 * Select all columns from table using criteria
+	 *
+	 * @param std::string
+	 * 	Name of table
+	 *	@param std::string
+	 *		Selection criteria
+	 *
+	 *	@return std::string
+	 *		sql query results
+	 */
+	std::string select(const std::string & table, const std::string & criteria = "");
 
-	bool selectAll();
-
-	bool deleteAll();
-
-	bool dropTable(const std::string & table);
+	/**
+	 * delete all data from table
+	 *
+	 * @param std::string
+	 * 	Name of table
+	 *
+	 *	@return std::string
+	 *		sql query results
+	 */
+	std::string deleteAll(const std::string & table);
 
 	/**
 	 * Print sql history to output stream
 	 *
 	 * @param std::ostream
 	 * 	Output stream to print to
+	 *@param Cycle
+	 *		The cycle to print information on
 	 *
 	 * @return std::ostream
 	 * 	Return the supplied output stream
 	 */
-	std::ostream & printHistory(std::ostream & os, const common::Cycle & cycle = common::TimeKeeper::getTimeKeeper().getCycle());
+	std::ostream & printHistory(std::ostream & os, const common::Cycle & cycle);
+
+	/**
+	 * Print sql history to output stream
+	 *
+	 * @param std::ostream
+	 * 	Output stream to print to
+	 *@param unsigned int
+	 *		Muber of cycles of previous history to print
+	 *
+	 * @return std::ostream
+	 * 	Return the supplied output stream
+	 */
+	std::ostream & printHistory(std::ostream & os, unsigned int countback =1);
 
 	/**
 	 * Default database file
@@ -279,10 +322,13 @@ protected:
 	 * @param std::string
 	 *		The command string to run
 	 *
-	 *	@return bool
-	 *		True if command was successful, false otherwise
+	 *	@return std::vector<std::string>
+	 *		vector of results
 	 */
-	bool sqlCommand(const std::string & command);
+	std::string sqlCommand(const std::string & command);
+
+	std::string sqlCommandBySelection(const std::string & table, const std::string & command,
+			const std::string & criteria);
 
 	/**
 	 * Add an entry to a historical multimap

@@ -25,7 +25,7 @@ const common::Cycle DatabaseManager::MAX_COMMAND_HISTORY = common::Cycle(100);
 int DatabaseManager::databaseCallback(void *results, int argc, char **argv, char **columnName) {
 	int i;
 	std::stringstream ss;
-	ss << "(";
+	//ss << "(";
 	for (i = 0; i < argc; i++) {
 		std::string col_name = columnName[i];
 		std::string entry;
@@ -36,11 +36,12 @@ int DatabaseManager::databaseCallback(void *results, int argc, char **argv, char
 		}
 		ss << " " << col_name << ":" << entry << " ";
 	}
-	ss << ")" << std::endl;
+	//ss << ")" << std::endl;
 
 	// add entry to history
 	std::vector<std::string> * vec_ptr = static_cast<std::vector<std::string> *> (results);
 	vec_ptr->push_back(ss.str());
+	//std::cout << ss.str() << std::endl;
 	return 0;
 }
 
@@ -78,76 +79,122 @@ bool DatabaseManager::isDatabaseAccessable() const {
 	return databaseAccess;
 }
 
-bool DatabaseManager::createTables() {
-	bool success = true;
-
-	success = sqlCommand(DatabaseManager::NODES_TABLE_FORMAT.getCreateTable());
-	if (success == false) {
-		std::cout << "DatabaseManager::createTables: " << "ERROR: "
-				<< DatabaseManager::NODES_TABLE_FORMAT.getCreateTable() << std::endl;
-	}
-
-	success = sqlCommand(DatabaseManager::CONNECTIONS_TABLE_FORMAT.getCreateTable());
-	if (success == false) {
-		std::cout << "DatabaseManager::createTables: " << "ERROR: "
-				<< DatabaseManager::CONNECTIONS_TABLE_FORMAT.getCreateTable() << std::endl;
-	}
-
-	return success;
+void DatabaseManager::createTables() {
+	sqlCommand(DatabaseManager::NODES_TABLE_FORMAT.getCreateTable());
+	sqlCommand(DatabaseManager::CONNECTIONS_TABLE_FORMAT.getCreateTable());
 }
 
-bool DatabaseManager::clearTable(const std::string & table) {
+void DatabaseManager::clearTables() {
+	clearTable("nodesTable");
+	clearTable("connectionsTable");
+}
+
+std::string DatabaseManager::clearTable(const std::string & table) {
 	std::stringstream ss;
 	ss << "delete from " << table;
 	return this->sqlCommand(ss.str());
 }
 
-bool DatabaseManager::insertNode(const DatabaseObject & db_object) {
+std::string DatabaseManager::insertNode(const DatabaseObject & db_object) {
 	return sqlCommand(db_object.getInsert(NODES_TABLE_FORMAT.getName()));
 }
-bool DatabaseManager::insertConnection() {
-	// TODO DatabaseManager::insertConnection()
-	return false;
-}
-bool DatabaseManager::selectNode() {
-	// TODO DatabaseManager::selectNode()
-	return false;
-}
-bool selectConnection() {
-	// TODO DatabaseManager::selectConnection()
-	return false;
-}
-bool DatabaseManager::DatabaseManager::selectAll() {
-	// Select all data in myTable
-	return sqlCommand("select * from nodesTable");
+std::string DatabaseManager::insertConnection(const DatabaseObject & db_object) {
+	return sqlCommand(db_object.getInsert(CONNECTIONS_TABLE_FORMAT.getName()));
 }
 
-bool DatabaseManager::deleteAll() {
-	// Remove all data in myTable
-	return sqlCommand("delete from nodesTable");
+std::string DatabaseManager::selectNodes(const std::string & criteria) {
+	return select("nodesTable", criteria);
+}
+std::string DatabaseManager::selectConnections(const std::string & criteria) {
+	return select("connectionsTable", criteria);
+}
+std::string DatabaseManager::select(const std::string & table, const std::string & criteria) {
+	return sqlCommandBySelection(table, "SELECT", criteria);
 }
 
-bool DatabaseManager::dropTable(const std::string & table) {
+std::string DatabaseManager::deleteNodes(const std::string & criteria) {
+	return deleteSelected("nodesTable", criteria);
+}
+std::string DatabaseManager::deleteConnections(const std::string & criteria) {
+	return deleteSelected("connectionsTable", criteria);
+}
+
+std::string DatabaseManager::deleteSelected(const std::string & table, const std::string & criteria) {
+	return sqlCommandBySelection(table, "DELETE", criteria);
+}
+
+int DatabaseManager::countNodes() {
+	return (this->countRows("nodesTable"));
+}
+int DatabaseManager::countConnections() {
+
+	return (this->countRows("connectionsTable"));
+}
+int DatabaseManager::countRows(const std::string & table) {
+	std::stringstream ss;
+	int number = 0;
+	ss << "SELECT count(*) FROM " << table << ";";
+	std::string result = sqlCommand(ss.str());
+	if (result.size() > 0) {
+		std::string numstr = result.substr(result.find(":") + 1, 1);
+		//std::cout<<"DatabaseManager::countRows: "<<result <<" -> "<<numstr<<std::endl;
+		number = atoi(numstr.c_str());
+	}
+	//std::cout << "DatabaseManager::countRows: " << number << std::endl;
+	return number;
+}
+
+std::string DatabaseManager::sqlCommandBySelection(const std::string & table, const std::string & command,
+		const std::string & criteria) {
+	std::stringstream ss;
+	ss << command << " * FROM " << table;
+	if (criteria != "") {
+		ss << " WHERE " << criteria;
+	}
+	ss << ";";
+	return sqlCommand(ss.str());
+}
+
+std::string DatabaseManager::dropTable(const std::string & table) {
 	// Drop the table from database
 	std::stringstream ss;
 	ss << "drop table " << table;
 	return sqlCommand(ss.str());
 }
 
-bool DatabaseManager::sqlCommand(const std::string & command) {
+std::string DatabaseManager::sqlCommand(const std::string & command) {
+	sqlResultsBuffer.clear();
 	bool success = false;
+	std::string results;
 	errorCode = sqlite3_exec(database, command.c_str(), &databaseCallback, &sqlResultsBuffer, &errorMessage);
 	// do results
+	{
+		std::stringstream ss;
+		// forall in sqlResultsBuffer
+		{
+			std::vector<std::string>::const_iterator it_sqlResultsBuffer = sqlResultsBuffer.begin();
+			const std::vector<std::string>::const_iterator it_sqlResultsBuffer_end = sqlResultsBuffer.end();
+			while (it_sqlResultsBuffer != it_sqlResultsBuffer_end) {
+				ss << *it_sqlResultsBuffer;
+				++it_sqlResultsBuffer;
+				if (it_sqlResultsBuffer != it_sqlResultsBuffer_end) {
+					ss << std::endl;
+				}
+			}
+			results = ss.str();
+		}
+
+	}
 	DatabaseManager::addHistoryEntry(command, sqlResultsBuffer, sqlResults);
-	sqlResultsBuffer.clear();
 	if (errorCode != SQLITE_OK) {
 		std::cout << "DatabaseManager::sqlCommand: " << "ERROR: " << errorMessage << std::endl;
+		std::cout << "\t" << "Command: " << command << std::endl;
 		success = false;
 	} else {
 		success = true;
 	}
 	sqlite3_free(errorMessage);
-	return success;
+	return results;
 }
 
 const std::multimap<common::Cycle, std::pair<std::string, std::string> > & DatabaseManager::addHistoryEntry(
@@ -182,6 +229,16 @@ const std::multimap<common::Cycle, std::pair<std::string, std::string> > & Datab
 	return map;
 }
 
+std::ostream & DatabaseManager::printHistory(std::ostream & os, unsigned int countback) {
+	common::Cycle now = common::TimeKeeper::getTimeKeeper().getCycle();
+	common::Cycle zero(0);
+	common::Cycle start = std::max(zero, now - countback);
+	for (common::Cycle temp_cycle = std::max(zero, now - countback); temp_cycle <= now; temp_cycle++) {
+		printHistory(os, temp_cycle);
+	}
+	return os;
+}
+
 std::ostream & DatabaseManager::printHistory(std::ostream & os, const common::Cycle & cycle) {
 
 	// forall in sqlResults
@@ -191,8 +248,8 @@ std::ostream & DatabaseManager::printHistory(std::ostream & os, const common::Cy
 		const std::multimap<common::Cycle, std::pair<std::string, std::string> >::const_iterator it_sqlResults_end =
 				sqlResults.end();
 		while (it_sqlResults != it_sqlResults_end) {
-			if (it_sqlResults->first.toULInt() == cycle.toULInt()) {
-				std::cout<<"DatabaseManager::printHistory: "<<it_sqlResults->first.toULInt() <<std::endl;
+			if (it_sqlResults->first == cycle) {
+				//std::cout << "DatabaseManager::printHistory: " << it_sqlResults->first.toULInt() << std::endl;
 				os << "Cycle:" << it_sqlResults->first << std::endl;
 				os << "Command: " << it_sqlResults->second.first << std::endl;
 				os << "Result: " << it_sqlResults->second.second << std::endl;
@@ -202,31 +259,31 @@ std::ostream & DatabaseManager::printHistory(std::ostream & os, const common::Cy
 	}
 
 	/*
-	std::cout << "DatabaseManager::printHistory: " << sqlResults.size() << std::endl;
-	std::stringstream ss;
-	common::Cycle now = common::TimeKeeper::getTimeKeeper().getCycle();
-	const std::multimap<common::Cycle, std::pair<std::string, std::string> >::const_iterator it_sqlresults_end =
-			sqlResults.end();
+	 std::cout << "DatabaseManager::printHistory: " << sqlResults.size() << std::endl;
+	 std::stringstream ss;
+	 common::Cycle now = common::TimeKeeper::getTimeKeeper().getCycle();
+	 const std::multimap<common::Cycle, std::pair<std::string, std::string> >::const_iterator it_sqlresults_end =
+	 sqlResults.end();
 
-	long int cutoff_int = std::max(0l, now.toLInt() - MAX_COMMAND_HISTORY.toLInt());
+	 long int cutoff_int = std::max(0l, now.toLInt() - MAX_COMMAND_HISTORY.toLInt());
 
-	std::cout << "DatabaseManager::printHistory: " << "range (" << cutoff_int << ":" << now.toULInt() << ")"
-			<< std::endl;
-	for (long int i = cutoff_int; i < now.toLInt(); i++) {
-		std::cout << "DatabaseManager::printHistory: " << "i: " << i << std::endl;
-		std::multimap<common::Cycle, std::pair<std::string, std::string> >::const_iterator it_sqlresults_found =
-				sqlResults.find(common::Cycle(i));
-		std::multimap<common::Cycle, std::pair<std::string, std::string> >::const_iterator it_sqlresults =
-				it_sqlresults_found;
-		ss << "DatabaseManager: " << "cycle: " << i << std::endl;
-		if (it_sqlresults != it_sqlresults_end) {//&& it_sqlresults->first == common::Cycle(i)) {
-			std::cout << "DatabaseManager::printHistory: " << "FOUND" << std::endl;
-			ss << "$ " << it_sqlresults->second.first << std::endl;
-			ss << it_sqlresults->second.second << std::endl;
-		}
-	}
-	os << ss.str() << std::endl;
-*/
+	 std::cout << "DatabaseManager::printHistory: " << "range (" << cutoff_int << ":" << now.toULInt() << ")"
+	 << std::endl;
+	 for (long int i = cutoff_int; i < now.toLInt(); i++) {
+	 std::cout << "DatabaseManager::printHistory: " << "i: " << i << std::endl;
+	 std::multimap<common::Cycle, std::pair<std::string, std::string> >::const_iterator it_sqlresults_found =
+	 sqlResults.find(common::Cycle(i));
+	 std::multimap<common::Cycle, std::pair<std::string, std::string> >::const_iterator it_sqlresults =
+	 it_sqlresults_found;
+	 ss << "DatabaseManager: " << "cycle: " << i << std::endl;
+	 if (it_sqlresults != it_sqlresults_end) {//&& it_sqlresults->first == common::Cycle(i)) {
+	 std::cout << "DatabaseManager::printHistory: " << "FOUND" << std::endl;
+	 ss << "$ " << it_sqlresults->second.first << std::endl;
+	 ss << it_sqlresults->second.second << std::endl;
+	 }
+	 }
+	 os << ss.str() << std::endl;
+	 */
 	return os;
 }
 }//NAMESPACE
