@@ -1,9 +1,15 @@
 2011-03-16  SevenMachines  <SevenMachines@yahoo.co.uk>
 
+	* src/manager/ConnectionDatabaseObject.cpp (ConnectionDatabaseObject::ConnectionDatabaseObject): Create database object from database entry
+	* src/manager/ConnectionDatabaseObject.h (ConnectionDatabaseObject): add get/sets
+	* src/manager/NodeDatabaseObject.h (NodeDatabaseObject): Add get/sets
+	* src/manager/NodeDatabaseObject.cpp (NodeDatabaseObject::NodeDatabaseObject): change to use cycle and not unsigned int
 	* src/common/Containers.h (Containers): deleteByComparison: delete from multimap by comparison
 	* src/common/Cycle.cpp (Cycle::Cycle): switch from unsigned to signed, ie, allow negative cycles
 	(Cycle::operator -): return the temporary not *this
 	* src/manager/DatabaseManager.h (DatabaseManager.ConnectionTableFormat): set connections table format
+	(DatabaseManager.ConnectionTableFormat): make  id and cycle not null
+	(DatabaseManager.NodeTableFormat):  make id and cycle not null
 	* src/components/Connection.cpp (Connection::getDatabaseObject): return a database object
 	(Connection::getDatabaseObject): Fix when inputs/outputs are null
 

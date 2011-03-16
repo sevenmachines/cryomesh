@@ -17,11 +17,13 @@ namespace cryomesh {
 
 namespace manager {
 
+//STATICS
 const std::string DatabaseManager::DEFAULT_DATABASE = "default.db";
-const DatabaseManager::NodeTableFormat DatabaseManager::NODES_TABLE_FORMAT;
-const DatabaseManager::ConnectionTableFormat DatabaseManager::CONNECTIONS_TABLE_FORMAT;
+const NodeTableFormat DatabaseManager::NODES_TABLE_FORMAT;
+const ConnectionTableFormat DatabaseManager::CONNECTIONS_TABLE_FORMAT;
 const common::Cycle DatabaseManager::MAX_COMMAND_HISTORY = common::Cycle(100);
 
+//CLASS
 int DatabaseManager::databaseCallback(void *results, int argc, char **argv, char **columnName) {
 	int i;
 	std::stringstream ss;

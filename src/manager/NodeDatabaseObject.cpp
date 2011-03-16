@@ -10,14 +10,18 @@ const std::string NodeDatabaseObject::Z_TAG = "z";
 const std::string NodeDatabaseObject::ACTIVITY_TAG = "activity";
 const std::string NodeDatabaseObject::CYCLE_TAG = "cycle";
 
-NodeDatabaseObject::NodeDatabaseObject(std::string uuid_str, spacial::Point point, unsigned long int cycle,
-		double activity) {
+NodeDatabaseObject::NodeDatabaseObject(std::string uuid_str, spacial::Point pt, common::Cycle cyc, double act) : uuid(uuid_str), point(pt), cycle(cyc), activity(act){
 	columns[ID_TAG] = uuid_str;
 	columns[X_TAG] = toString<double> (point.getX());
 	columns[Y_TAG] = toString<double> (point.getY());
 	columns[Z_TAG] = toString<double> (point.getZ());
-	columns[CYCLE_TAG] = toString<int> (cycle);
-	columns[ACTIVITY_TAG] = toString<int> (activity);
+	columns[CYCLE_TAG] = toString<unsigned long int> (cycle.toULInt());
+	columns[ACTIVITY_TAG] = toString<double> (activity);
+}
+
+NodeDatabaseObject::NodeDatabaseObject(const std::string & node_table_entry){
+	//TODO NodeDatabaseObject::NodeDatabaseObject(const std::string & node_table_entry)
+	std::cout<<"TODO NodeDatabaseObject::NodeDatabaseObject(const std::string & node_table_entry)"<<std::endl;
 }
 
 NodeDatabaseObject::~NodeDatabaseObject() {
@@ -32,6 +36,19 @@ std::string NodeDatabaseObject::getInsert(const std::string & table) const {
 			<< getKey(Z_TAG) << ", " << getKey(CYCLE_TAG) << ", " << getKey(ACTIVITY_TAG) << ");";
 	return ss.str();
 
+}
+
+ std::string NodeDatabaseObject::getUUIDString() const{
+	 return uuid;
+}
+const  spacial::Point & NodeDatabaseObject::getPoint() const{
+	 return point;
+}
+ const common::Cycle & NodeDatabaseObject::getCycle() const{
+	 return cycle;
+}
+ double NodeDatabaseObject::getActivity() const{
+	 return activity;
 }
 
 }//NAMESPACE
