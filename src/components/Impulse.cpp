@@ -28,7 +28,7 @@ boost::shared_ptr<Impulse> Impulse::getTriggerImpulse(){
 	return temp_pulse;
 }
 
-boost::shared_ptr<Impulse> Impulse::getRandomImpulse(){
+boost::shared_ptr<Impulse> Impulse::getRandom(){
 	boost::shared_ptr< Impulse > temp_pulse(new Impulse);
 	temp_pulse->randomise();
 	return temp_pulse;

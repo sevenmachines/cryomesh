@@ -15,7 +15,7 @@ namespace common {
 Cycle::Cycle() {
 	cycle = 0;
 }
-Cycle::Cycle(const unsigned long int it) :
+Cycle::Cycle(const  long int it) :
 	cycle(it) {
 }
 
@@ -41,10 +41,10 @@ Cycle & Cycle::operator+=(const Cycle & obj) {
 
 const Cycle Cycle::operator-(const Cycle & obj) const {
 	//std::cout<<"Cycle::operator -: "<<"START"<<std::endl;
-	Cycle cyc = *this;
+	Cycle cyc(*this);
 	cyc -= obj;
 	//	std::cout<<"Cycle::operator -: "<<"END"<<std::endl;
-	return *this;
+	return cyc;
 }
 
 Cycle & Cycle::operator-=(const Cycle & obj) {
@@ -107,7 +107,7 @@ Cycle & Cycle::operator--() {
 }
 
  std::ostream& operator<<(std::ostream & os, const Cycle & obj){
-	 os<<obj.toULInt();
+	 os<<obj.toLInt();
 	 return os;
  }
 

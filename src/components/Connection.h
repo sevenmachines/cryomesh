@@ -11,6 +11,7 @@
 #include "Node.h"
 #include "common/Connector.h"
 #include "common/Tagged.h"
+#include "manager/DatabaseObject.h"
 
 namespace cryomesh {
 
@@ -164,6 +165,13 @@ public:
 	 * @return boost::shared_ptr<ActivityTimer>
 	 */
 	boost::shared_ptr<components::ActivityTimerDistance> getMutableActivityTimer();
+
+	/**
+	 * Return a database object for this object
+	 *
+	 * @return DatabaseObject
+	 */
+	boost::shared_ptr< manager::DatabaseObject > getDatabaseObject()const;
 
 	/**
 	 * Update position

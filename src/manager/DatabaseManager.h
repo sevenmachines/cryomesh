@@ -9,6 +9,9 @@
 #define DATABASEMANAGER_H_
 
 #include "NodeDatabaseObject.h"
+#include "ConnectionDatabaseObject.h"
+#include "common/Cycle.h"
+#include "common/TimeKeeper.h"
 
 #include <sqlite3.h>
 #include <string>
@@ -111,12 +114,12 @@ public:
 		 */
 		NodeTableFormat() {
 			name = "nodesTable";
-			columns[NodeDatabaseObject::ID_TAG] = "Integer";
-			columns[NodeDatabaseObject::X_TAG] = "double";
-			columns[NodeDatabaseObject::Y_TAG] = "double";
-			columns[NodeDatabaseObject::Z_TAG] = "double";
-			columns[NodeDatabaseObject::CYCLE_TAG] = "Integer";
-			columns[NodeDatabaseObject::ACTIVITY_TAG] = "double";
+			columns["id"] = "TEXT";
+			columns["x"] = "DOUBLE";
+			columns["y"] = "DOUBLE";
+			columns["z"] = "DOUBLE";
+			columns["cycle"] = "INTEGER";
+			columns["activity"] = "DOUBLE";
 		}
 	};
 
@@ -130,10 +133,11 @@ public:
 		 */
 		ConnectionTableFormat() {
 			name = "connectionsTable";
-			columns["id"] = "Integer";
-			columns["inputId"] = "Integer";
-			columns["outputId"] = "Integer";
-			columns["distance"] = "double";
+			columns["id"] = "TEXT";
+			columns["inputid"] = "TEXT";
+			columns["outputid"] = "TEXT";
+			columns["cycle"] = "INTEGER";
+			columns["impulses"] = "INTEGER";
 		}
 	};
 
@@ -172,7 +176,7 @@ public:
 	 * Insert a node data object into the table
 	 *
 	 */
-	bool insertNode(const NodeDatabaseObject & db_object);
+	bool insertNode(const DatabaseObject & db_object);
 	bool insertConnection();
 	bool selectNode();
 	bool selectConnection();
@@ -182,6 +186,18 @@ public:
 	bool deleteAll();
 
 	bool dropTable(const std::string & table);
+
+	/**
+	 * Print sql history to output stream
+	 *
+	 * @param std::ostream
+	 * 	Output stream to print to
+	 *
+	 * @return std::ostream
+	 * 	Return the supplied output stream
+	 */
+	std::ostream & printHistory(std::ostream & os, const common::Cycle & cycle = common::TimeKeeper::getTimeKeeper().getCycle());
+
 	/**
 	 * Default database file
 	 *
@@ -237,6 +253,27 @@ protected:
 	bool databaseAccess;
 
 	/**
+	 * History of sql results
+	 *
+	 * @var std::map<common::Cycle, std::string>
+	 */
+	std::multimap<common::Cycle, std::pair<std::string, std::string> > sqlResults;
+
+	/**
+	 * Buffer container for sql results
+	 *
+	 * @var std::vector<std::string>
+	 */
+	std::vector<std::string> sqlResultsBuffer;
+
+	/**
+	 * Maximum number of historical cycle log to keep
+	 *
+	 * @var common::Cycle
+	 */
+	static const common::Cycle MAX_COMMAND_HISTORY;
+
+	/**
 	 * Run a provided sql command string
 	 *
 	 * @param std::string
@@ -246,6 +283,36 @@ protected:
 	 *		True if command was successful, false otherwise
 	 */
 	bool sqlCommand(const std::string & command);
+
+	/**
+	 * Add an entry to a historical multimap
+	 *
+	 * @param std::string
+	 * 	Entry to add
+	 * @param std::multimap<std::string, std::string>
+	 * 	Map to add entry to
+	 *
+	 * @return std::multimap<std::string, std::string>
+	 * 	Return the modified map
+	 */
+	static const std::multimap<common::Cycle, std::pair<std::string, std::string> > & addHistoryEntry(
+			const std::string & command, const std::string & results,
+			std::multimap<common::Cycle, std::pair<std::string, std::string> > & map);
+
+	/**
+	 * Add an list of entries to a historical multimap
+	 *
+	 * @param std::vector<std::string>
+	 * 	Entries to add
+	 * @param std::multimap<std::string, std::string>
+	 * 	Map to add entry to
+	 *
+	 * @return std::multimap<std::string, std::string>
+	 * 	Return the modified map
+	 */
+	static const std::multimap<common::Cycle, std::pair<std::string, std::string> > & addHistoryEntry(
+			const std::string & command, const std::vector<std::string> & results,
+			std::multimap<common::Cycle, std::pair<std::string, std::string> > & map);
 };
 
 }

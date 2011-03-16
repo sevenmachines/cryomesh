@@ -6,21 +6,26 @@
  */
 
 #include "DatabaseManager.h"
+#include "common/TimeKeeper.h"
+#include "common/Containers.h"
 #include <iostream>
 #include <sstream>
 #include <fstream>
+#include <algorithm>
 
 namespace cryomesh {
 
 namespace manager {
 
 const std::string DatabaseManager::DEFAULT_DATABASE = "default.db";
- const DatabaseManager::NodeTableFormat DatabaseManager::NODES_TABLE_FORMAT;
- const DatabaseManager::ConnectionTableFormat DatabaseManager::CONNECTIONS_TABLE_FORMAT;
+const DatabaseManager::NodeTableFormat DatabaseManager::NODES_TABLE_FORMAT;
+const DatabaseManager::ConnectionTableFormat DatabaseManager::CONNECTIONS_TABLE_FORMAT;
+const common::Cycle DatabaseManager::MAX_COMMAND_HISTORY = common::Cycle(100);
 
-int DatabaseManager::databaseCallback(void *unused, int argc, char **argv, char **columnName) {
+int DatabaseManager::databaseCallback(void *results, int argc, char **argv, char **columnName) {
 	int i;
-	std::cout << "(";
+	std::stringstream ss;
+	ss << "(";
 	for (i = 0; i < argc; i++) {
 		std::string col_name = columnName[i];
 		std::string entry;
@@ -29,9 +34,13 @@ int DatabaseManager::databaseCallback(void *unused, int argc, char **argv, char 
 		} else {
 			entry = argv[i];
 		}
-		std::cout << " " << col_name << ":" << entry << " ";
+		ss << " " << col_name << ":" << entry << " ";
 	}
-	std::cout << ")" << std::endl;
+	ss << ")" << std::endl;
+
+	// add entry to history
+	std::vector<std::string> * vec_ptr = static_cast<std::vector<std::string> *> (results);
+	vec_ptr->push_back(ss.str());
 	return 0;
 }
 
@@ -74,12 +83,14 @@ bool DatabaseManager::createTables() {
 
 	success = sqlCommand(DatabaseManager::NODES_TABLE_FORMAT.getCreateTable());
 	if (success == false) {
-		std::cout << "DatabaseManager::createTables: " << "ERROR: " <<DatabaseManager::NODES_TABLE_FORMAT.getCreateTable()<< std::endl;
+		std::cout << "DatabaseManager::createTables: " << "ERROR: "
+				<< DatabaseManager::NODES_TABLE_FORMAT.getCreateTable() << std::endl;
 	}
 
 	success = sqlCommand(DatabaseManager::CONNECTIONS_TABLE_FORMAT.getCreateTable());
 	if (success == false) {
-		std::cout << "DatabaseManager::createTables: " << "ERROR: " <<DatabaseManager::CONNECTIONS_TABLE_FORMAT.getCreateTable()<< std::endl;
+		std::cout << "DatabaseManager::createTables: " << "ERROR: "
+				<< DatabaseManager::CONNECTIONS_TABLE_FORMAT.getCreateTable() << std::endl;
 	}
 
 	return success;
@@ -91,10 +102,7 @@ bool DatabaseManager::clearTable(const std::string & table) {
 	return this->sqlCommand(ss.str());
 }
 
-bool DatabaseManager::insert() {
-	return sqlCommand("insert into nodesTable (id, x, y, activity) values ('1', 0.5, 0.6, 4.5)");
-}
-bool DatabaseManager::insertNode(const NodeDatabaseObject & db_object) {
+bool DatabaseManager::insertNode(const DatabaseObject & db_object) {
 	return sqlCommand(db_object.getInsert(NODES_TABLE_FORMAT.getName()));
 }
 bool DatabaseManager::insertConnection() {
@@ -128,8 +136,10 @@ bool DatabaseManager::dropTable(const std::string & table) {
 
 bool DatabaseManager::sqlCommand(const std::string & command) {
 	bool success = false;
-	std::cout << "DatabaseManager::sqlCommand: " << command << std::endl;
-	errorCode = sqlite3_exec(database, command.c_str(), DatabaseManager::databaseCallback, 0, &errorMessage);
+	errorCode = sqlite3_exec(database, command.c_str(), &databaseCallback, &sqlResultsBuffer, &errorMessage);
+	// do results
+	DatabaseManager::addHistoryEntry(command, sqlResultsBuffer, sqlResults);
+	sqlResultsBuffer.clear();
 	if (errorCode != SQLITE_OK) {
 		std::cout << "DatabaseManager::sqlCommand: " << "ERROR: " << errorMessage << std::endl;
 		success = false;
@@ -137,9 +147,88 @@ bool DatabaseManager::sqlCommand(const std::string & command) {
 		success = true;
 	}
 	sqlite3_free(errorMessage);
-	return success;;
+	return success;
 }
 
+const std::multimap<common::Cycle, std::pair<std::string, std::string> > & DatabaseManager::addHistoryEntry(
+		const std::string & command, const std::vector<std::string> & results,
+		std::multimap<common::Cycle, std::pair<std::string, std::string> > & map) {
+	std::stringstream ss;
+	// forall in entries
+	{
+		std::vector<std::string>::const_iterator it_entries = results.begin();
+		const std::vector<std::string>::const_iterator it_entries_end = results.end();
+		while (it_entries != it_entries_end) {
+			ss << "\t" << *it_entries;
+			++it_entries;
+			if (it_entries != it_entries_end) {
+				std::cout << std::endl;
+			}
+		}
+	}
+	addHistoryEntry(command, ss.str(), map);
+	return map;
+}
+const std::multimap<common::Cycle, std::pair<std::string, std::string> > & DatabaseManager::addHistoryEntry(
+		const std::string & command, const std::string & results,
+		std::multimap<common::Cycle, std::pair<std::string, std::string> > & map) {
+	common::Cycle now = common::TimeKeeper::getTimeKeeper().getCycle();
+	common::Cycle cuttoff = now - MAX_COMMAND_HISTORY;
+
+	std::pair<std::string, std::string> new_entry_pair(command, results);
+	std::pair<common::Cycle, std::pair<std::string, std::string> > new_pair(now, new_entry_pair);
+	map.insert(new_pair);
+	common::Containers::deleteByComparison(cuttoff, map, -1);
+	return map;
+}
+
+std::ostream & DatabaseManager::printHistory(std::ostream & os, const common::Cycle & cycle) {
+
+	// forall in sqlResults
+	{
+		std::multimap<common::Cycle, std::pair<std::string, std::string> >::const_iterator it_sqlResults =
+				sqlResults.begin();
+		const std::multimap<common::Cycle, std::pair<std::string, std::string> >::const_iterator it_sqlResults_end =
+				sqlResults.end();
+		while (it_sqlResults != it_sqlResults_end) {
+			if (it_sqlResults->first.toULInt() == cycle.toULInt()) {
+				std::cout<<"DatabaseManager::printHistory: "<<it_sqlResults->first.toULInt() <<std::endl;
+				os << "Cycle:" << it_sqlResults->first << std::endl;
+				os << "Command: " << it_sqlResults->second.first << std::endl;
+				os << "Result: " << it_sqlResults->second.second << std::endl;
+			}
+			++it_sqlResults;
+		}
+	}
+
+	/*
+	std::cout << "DatabaseManager::printHistory: " << sqlResults.size() << std::endl;
+	std::stringstream ss;
+	common::Cycle now = common::TimeKeeper::getTimeKeeper().getCycle();
+	const std::multimap<common::Cycle, std::pair<std::string, std::string> >::const_iterator it_sqlresults_end =
+			sqlResults.end();
+
+	long int cutoff_int = std::max(0l, now.toLInt() - MAX_COMMAND_HISTORY.toLInt());
+
+	std::cout << "DatabaseManager::printHistory: " << "range (" << cutoff_int << ":" << now.toULInt() << ")"
+			<< std::endl;
+	for (long int i = cutoff_int; i < now.toLInt(); i++) {
+		std::cout << "DatabaseManager::printHistory: " << "i: " << i << std::endl;
+		std::multimap<common::Cycle, std::pair<std::string, std::string> >::const_iterator it_sqlresults_found =
+				sqlResults.find(common::Cycle(i));
+		std::multimap<common::Cycle, std::pair<std::string, std::string> >::const_iterator it_sqlresults =
+				it_sqlresults_found;
+		ss << "DatabaseManager: " << "cycle: " << i << std::endl;
+		if (it_sqlresults != it_sqlresults_end) {//&& it_sqlresults->first == common::Cycle(i)) {
+			std::cout << "DatabaseManager::printHistory: " << "FOUND" << std::endl;
+			ss << "$ " << it_sqlresults->second.first << std::endl;
+			ss << it_sqlresults->second.second << std::endl;
+		}
+	}
+	os << ss.str() << std::endl;
+*/
+	return os;
+}
 }//NAMESPACE
 
 }//NAMESPACE

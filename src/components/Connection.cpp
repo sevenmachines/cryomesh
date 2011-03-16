@@ -6,6 +6,7 @@
  */
 
 #include "Connection.h"
+#include "manager/ConnectionDatabaseObject.h"
 
 namespace cryomesh {
 
@@ -94,12 +95,21 @@ boost::shared_ptr<components::ActivityTimerDistance> Connection::getMutableActiv
 	return activityTimer;
 }
 
+boost::shared_ptr<manager::DatabaseObject> Connection::getDatabaseObject() const {
+	unsigned long int cycle =common::TimeKeeper::getTimeKeeper().getCycle().toULInt();
+	std::string innode = this->getConnector().getInputs().begin()->second->getUUIDString();
+	std::string outnode = this->getConnector().getOutputs().begin()->second->getUUIDString();
+	int impulse_count = this->getImpulses().getSize();
+	boost::shared_ptr<manager::DatabaseObject> temp(	new manager::ConnectionDatabaseObject(this->getUUIDString(), innode, outnode, cycle, impulse_count) );
+	return temp;
+}
+
 void Connection::updatePosition() {
 	const std::map<boost::uuids::uuid, boost::shared_ptr<Node> > & innode = connector->getInputs();
 	const std::map<boost::uuids::uuid, boost::shared_ptr<Node> > & outnode = connector->getOutputs();
 	if (innode.size() > 0 && outnode.size() > 0) {
 		spacial::Point startp = innode.begin()->second->getPosition();
-		spacial::Point endp =outnode.begin()->second->getPosition();
+		spacial::Point endp = outnode.begin()->second->getPosition();
 		double dist = startp.getDistance(endp);
 		assert (dist>0);
 		boost::shared_ptr<ActivityTimerDistance> temptimer(new ActivityTimerDistance(dist, activityTimer->getDelay()));

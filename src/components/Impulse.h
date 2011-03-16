@@ -337,7 +337,7 @@ public:
 	 * @return boost::shared_ptr<Impulse>
 	 * 		The randomised impulse
 	 */
-	static boost::shared_ptr<Impulse> getRandomImpulse();
+	static boost::shared_ptr<Impulse> getRandom();
 
 protected:
 

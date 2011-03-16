@@ -31,9 +31,44 @@ public:
 	 */
 	virtual ~Containers();
 
+	/**
+	 * delete entries by comparison
+	 *
+	 * @param U
+	 * 	Comparison value
+	 * @param std::multimap<U, T>
+	 * 	MultiMap to use
+	 *@param int
+	 *		Comparison to use, result<0 for less than, 0 for equal, >0 for greater than
+	 *
+	 * @return std::multimap<U, T>
+	 * 	Modified map
+	 */
 	template<class U, class T>
-	static std::map<boost::shared_ptr<U>, boost::shared_ptr<T> > addMapObjectByCreationObjects(std::map<
-			boost::uuids::uuid, boost::shared_ptr<T> > & mapobj, std::list<boost::shared_ptr<U> > & colist) {
+	static std::multimap<U, T> deleteByComparison(const U & val, std::multimap<U, T> & mapobj, int result) {
+
+		// forall in mapobj
+		{
+			typename std::multimap<U, T>::iterator it_mapobj = mapobj.begin();
+			const typename std::multimap<U, T>::const_iterator it_mapobj_end = mapobj.end();
+			while (it_mapobj != mapobj.end()) {
+				if (result < 0 && it_mapobj->first < val) {
+					std::cout<<"Containers::deleteByComparison: "<<"Deleting "<< it_mapobj->first<<" ( < "<<val<<")"<<std::endl;
+					mapobj.erase(it_mapobj->first);
+				} else if (result == 0 && it_mapobj->first == val) {
+					mapobj.erase(it_mapobj->first);
+				} else if (result > 0 && it_mapobj->first > val) {
+					mapobj.erase(it_mapobj->first);
+				}
+				++it_mapobj;
+			}
+		}
+		return mapobj;
+
+	}
+	template<class U, class T>
+	static std::map<boost::shared_ptr<U>, boost::shared_ptr<T> > addMapObjectByCreationObjects(
+			std::map<boost::uuids::uuid, boost::shared_ptr<T> > & mapobj, std::list<boost::shared_ptr<U> > & colist) {
 		typename std::map<boost::shared_ptr<U>, boost::shared_ptr<T> > new_objs;
 		//for all in colist
 		{
@@ -153,8 +188,8 @@ public:
 	}
 
 	template<class U, class T>
-	static void mapByUUID(const std::map<boost::shared_ptr<U>, boost::shared_ptr<T> > & creation_to_real, std::map<
-			boost::uuids::uuid, boost::uuids::uuid> & uuid_map) {
+	static void mapByUUID(const std::map<boost::shared_ptr<U>, boost::shared_ptr<T> > & creation_to_real,
+			std::map<boost::uuids::uuid, boost::uuids::uuid> & uuid_map) {
 		// forall in new_chans
 		{
 			typename std::map<boost::shared_ptr<U>, boost::shared_ptr<T> >::const_iterator it_objs =
@@ -179,15 +214,15 @@ public:
 	 * @return std::ostream &
 	 * 		The output stream
 	 */
-	template <class U, class T>
-	static std::ostream & print(std::ostream & os, const std::map<U,T> & obj) {
+	template<class U, class T>
+	static std::ostream & print(std::ostream & os, const std::map<U, T> & obj) {
 		os << "Object:" << &obj << " { ";
 		// forall in obj
 		{
-			typename std::map<U,T>::const_iterator it_obj = obj.begin();
-			const typename std::map<U,T>::const_iterator it_obj_end = obj.end();
+			typename std::map<U, T>::const_iterator it_obj = obj.begin();
+			const typename std::map<U, T>::const_iterator it_obj_end = obj.end();
 			while (it_obj != it_obj_end) {
-				os << it_obj->first<<": "<<it_obj->secong<< " ";
+				os << it_obj->first << ": " << it_obj->secong << " ";
 				++it_obj;
 			}
 			os << "}";
@@ -206,7 +241,7 @@ public:
 	 * @return std::ostream &
 	 * 		The output stream
 	 */
-	template <class T>
+	template<class T>
 	static std::ostream & print(std::ostream & os, const T & obj) {
 		os << "Object:" << &obj << " { ";
 		// forall in obj
@@ -271,7 +306,7 @@ public:
 		//std::cout << "Containers::addMerge: " << "" << std::endl;
 		//std::cout<<Containers::print(std::cout, lhs)<<std::endl;
 		//std::cout<<Containers::print(std::cout, rhs)<<std::endl;
-		int size_diff = rhs.size()-lhs.size();
+		int size_diff = rhs.size() - lhs.size();
 		if (size_diff > 0) {
 			lhs.resize(lhs.size() + size_diff, 0);
 		}
@@ -281,7 +316,7 @@ public:
 			const typename T::const_iterator it_lhs_end = lhs.end();
 			typename T::const_iterator it_rhs = rhs.begin();
 			const typename T::const_iterator it_rhs_end = rhs.end();
-			while ( it_rhs != it_rhs_end) {
+			while (it_rhs != it_rhs_end) {
 				//std::cout<<"Containers::addMerge: "<<*it_lhs<<"+"<<*it_rhs;
 				*it_lhs += *it_rhs;
 				//std::cout<<"="<<*it_lhs<<std::endl;

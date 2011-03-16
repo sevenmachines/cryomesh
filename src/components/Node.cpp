@@ -208,6 +208,7 @@ boost::shared_ptr< manager::DatabaseObject > Node::getDatabaseObject()const{
 	std::map<common::Cycle, double>::const_iterator it_act = this->getActivities().begin();
 	unsigned long int cycle =common::TimeKeeper::getTimeKeeper().getCycle().toULInt();
 	double activity = this->getActivity();
+
 	boost::shared_ptr< manager::DatabaseObject > temp(new manager::NodeDatabaseObject(this->getUUIDString(), this->getPosition(), cycle, activity ));
 	return temp;
 }
@@ -222,7 +223,7 @@ void Node::setPosition(const spacial::Point & new_position) {
 }
 
 void Node::randomise() {
-	emittedImpulse = Impulse::getRandomImpulse();
+	emittedImpulse = Impulse::getRandom();
 }
 
 void Node::updatePosition() {

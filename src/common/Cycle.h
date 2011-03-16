@@ -31,7 +31,7 @@ public:
 	 * @param const unsigned long int
 	 * 		The ulong int to contruct from
 	 */
-	Cycle(const unsigned long int it);
+	Cycle(const  long int it);
 
 	/**
 	 * Construct from mpz
