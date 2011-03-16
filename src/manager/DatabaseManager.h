@@ -180,17 +180,165 @@ public:
 	/**
 	 * Insert a node data object into the table
 	 *
+	 * @param DatabaseObject
+	 * 	Database object to insert as a node
+	 *
+	 *@return std::string
+	 * 	Result of sql query
 	 */
 	std::string insertNode(const DatabaseObject & db_object);
+
+	/**
+	 * Insert a connection data object into the table
+	 *
+	 * @param DatabaseObject
+	 * 	Database object to insert as a node
+	 *
+	 *@return std::string
+	 * 	Result of sql query
+	 */
 	std::string insertConnection(const DatabaseObject & db_object);
+
+	/**
+	 * Select nodes by a criteria string eg, 'id=erwrs324 AND cycle=1'
+	 *
+	 * @param std::string
+	 * 	The criteria to match
+	 *
+	 *@return std::string
+	 * 	Result of sql query
+	 */
 	std::string selectNodes(const std::string & criteria = "");
+
+	/**
+	 * Select connections by a criteria string eg, 'id=erwrs324 AND cycle=1'
+	 *
+	 * @param std::string
+	 * 	The criteria to match
+	 *
+	 *@return std::string
+	 * 	Result of sql query
+	 */
 	std::string selectConnections(const std::string & criteria = "");
+
+	/**
+	 * Delete nodes by a criteria string eg, 'id=erwrs324 AND cycle=1'
+	 *
+	 * @param std::string
+	 * 	The criteria to match
+	 *
+	 *@return std::string
+	 * 	Result of sql query
+	 */
 	std::string deleteNodes(const std::string & criteria = "");
+
+	/**
+	 * Delete nodes by a criteria string eg, 'id=erwrs324 AND cycle=1'
+	 *
+	 * @param std::string
+	 * 	The criteria to match
+	 *
+	 *@return std::string
+	 * 	Result of sql query
+	 */
 	std::string deleteConnections(const std::string & criteria = "");
-	std::string deleteSelected(const std::string & table, const std::string & criteria);
-	int countNodes() ;
-	int countConnections() ;
-	int countRows(const std::string & table) ;
+
+	/**
+	 * Delete objects from a table by a criteria string eg, 'id=erwrs324 AND cycle=1'
+	 *
+	 * @param std::string
+	 * 	The table to delete from
+	 * @param std::string
+	 * 	The criteria to match
+	 *
+	 *@return std::string
+	 * 	Result of sql query
+	 */
+	std::string deleteSelected(const std::string & table, const std::string & criteria = "");
+
+	/**
+	 * Count nodes  by a criteria string eg, 'cycle=1'
+	 *
+	 * @param std::string
+	 * 	The criteria to match
+	 *
+	 *@return int
+	 * 	The result of the count
+	 */
+	int countNodes(const std::string & criteria = "");
+
+	/**
+	 * Count connections  by a criteria string eg, 'cycle=1'
+	 *
+	 * @param std::string
+	 * 	The criteria to match
+	 *
+	 *@return int
+	 * 	The result of the count
+	 */
+	int countConnections(const std::string & criteria = "");
+
+	/**
+	 * Count objects from a table by a criteria string eg, 'cycle=1'
+	 *
+	 * @param std::string
+	 * 	The table to count from
+	 * @param std::string
+	 * 	The criteria to match
+	 *
+	 *@return int
+	 * 	The result of the count
+	 */
+	int countRows(const std::string & table, const std::string & criteria = "");
+
+	/**
+	 * update node from using options list
+	 *
+	 * @param std::string
+	 * 	The cycle to match
+	 * @param std::string
+	 * 	The id to match
+	 * @param std::string
+	 * 	The options to set
+	 *
+	 *	@return int
+	 * 	The result of the count
+	 */
+	std::string updateNode(const std::string & cycle_str, const std::string & uuid_str, const std::string & options);
+
+	/**
+	 * update node from using options list
+	 *
+	 * @param std::string
+	 * 	The cycle to match
+	 * @param std::string
+	 * 	The id to match
+	 * @param std::string
+	 * 	The options to set
+	 *
+	 *	@return int
+	 * 	The result of the count
+	 */
+	std::string updateConnection(const std::string & cycle_str, const std::string & uuid_str,
+			const std::string & options);
+
+	/**
+	 * update object from a table using options list
+	 *
+	 * @param std::string
+	 * 	The cycle to match
+	 * @param std::string
+	 * 	The id to match
+	 * @param std::string
+	 * 	The options to set
+	 * @param std::string
+	 * 	The table to use
+	 *
+	 *	@return int
+	 * 	The result of the count
+	 */
+	std::string updateByUUID(const std::string & cycle_str, const std::string & uuid_str, const std::string & options,
+			const std::string & table);
 	/**
 	 * Select all columns from table using criteria
 	 *
@@ -239,7 +387,7 @@ public:
 	 * @return std::ostream
 	 * 	Return the supplied output stream
 	 */
-	std::ostream & printHistory(std::ostream & os, unsigned int countback =1);
+	std::ostream & printHistory(std::ostream & os, unsigned int countback = 1);
 
 	/**
 	 * Default database file

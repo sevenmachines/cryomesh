@@ -123,14 +123,14 @@ std::string DatabaseManager::deleteSelected(const std::string & table, const std
 	return sqlCommandBySelection(table, "DELETE", criteria);
 }
 
-int DatabaseManager::countNodes() {
+int DatabaseManager::countNodes( const std::string & criteria) {
 	return (this->countRows("nodesTable"));
 }
-int DatabaseManager::countConnections() {
+int DatabaseManager::countConnections( const std::string & criteria) {
 
 	return (this->countRows("connectionsTable"));
 }
-int DatabaseManager::countRows(const std::string & table) {
+int DatabaseManager::countRows(const std::string & table,  const std::string & criteria) {
 	std::stringstream ss;
 	int number = 0;
 	ss << "SELECT count(*) FROM " << table << ";";
@@ -142,6 +142,20 @@ int DatabaseManager::countRows(const std::string & table) {
 	}
 	//std::cout << "DatabaseManager::countRows: " << number << std::endl;
 	return number;
+}
+
+std::string DatabaseManager::updateNode(const std::string & cycle_str, const std::string & uuid_str, const std::string & options){
+	return ( updateByUUID(cycle_str,   uuid_str,   options, "nodesTable") );
+}
+std::string DatabaseManager::updateConnection(const std::string & cycle_str, const std::string & uuid_str,
+		const std::string & options){
+	return ( updateByUUID(cycle_str,   uuid_str,   options, "connectionsTable") );
+}
+std::string DatabaseManager::updateByUUID(const std::string & cycle_str, const std::string & uuid_str, const std::string & options,
+		const std::string & table){
+	std::stringstream ss;
+	ss<<"UPDATE " << table << " SET "<<options << "WHERE id="<<uuid_str << " AND cycle="<<cycle_str<<";";
+	return ( sqlCommand(ss.str()));
 }
 
 std::string DatabaseManager::sqlCommandBySelection(const std::string & table, const std::string & command,
