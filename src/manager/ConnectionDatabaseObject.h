@@ -35,7 +35,7 @@ public:
 	 * 	The impulse count of the connection on this entry
 	 */
 	ConnectionDatabaseObject(const std::string & uuid_str, const std::string & innode_uuid_str,
-			const std::string & outnode_uuid_str, common::Cycle & cycle, const int impulse_count);
+			const std::string & outnode_uuid_str, const common::Cycle & cycle, const int impulse_count);
 
 	/**
 	 * Create database object from a string database entry for a connection
@@ -105,11 +105,11 @@ public:
 	static const std::string CYCLE_TAG;
 
 private:
-	const std::string uuid;
-	const std::string inputNodeUUID;
-	const std::string outputNodeUUID;
-	const common::Cycle cycle;
-	const int impulseCount;
+	std::string uuid;
+	std::string inputNodeUUID;
+	std::string outputNodeUUID;
+	common::Cycle cycle;
+	int impulseCount;
 };
 
 }//NAMESPACE

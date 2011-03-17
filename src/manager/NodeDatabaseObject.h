@@ -60,31 +60,31 @@ public:
 	 * @return std::string
 	 * 	The uuid variable
 	 */
-	 std::string getUUIDString()const;
+	std::string getUUIDString() const;
 
-	 /**
-	 	 * Get point variable
-	 	 *
-	 	 * @return spacial::Point
-	 	 * 	The point variable
-	 	 */
-	 const spacial::Point & getPoint()const;
+	/**
+	 * Get point variable
+	 *
+	 * @return spacial::Point
+	 * 	The point variable
+	 */
+	const spacial::Point & getPoint() const;
 
-	 /**
-	 	 * Get cycle variable
-	 	 *
-	 	 * @return common::Cycle
-	 	 * 	The cycle variable
-	 	 */
-	 const common::Cycle  & getCycle()const;
+	/**
+	 * Get cycle variable
+	 *
+	 * @return common::Cycle
+	 * 	The cycle variable
+	 */
+	const common::Cycle & getCycle() const;
 
-	 /**
-	 	 * Get activity variable
-	 	 *
-	 	 * @return double
-	 	 * 	The activity variable
-	 	 */
-	 double getActivity()const;
+	/**
+	 * Get activity variable
+	 *
+	 * @return double
+	 * 	The activity variable
+	 */
+	double getActivity() const;
 
 	static const std::string ID_TAG;
 	static const std::string X_TAG;
@@ -94,10 +94,10 @@ public:
 	static const std::string CYCLE_TAG;
 
 private:
-	const std::string uuid;
-	const spacial::Point point;
-	const common::Cycle cycle;
-	const double activity;
+	std::string uuid;
+	spacial::Point point;
+	common::Cycle cycle;
+	double activity;
 
 };
 

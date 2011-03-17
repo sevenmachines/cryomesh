@@ -89,6 +89,53 @@ public:
 	std::string insertConnection(const DatabaseObject & db_object);
 
 	/**
+	 * Select unique node column entry
+	 *
+	 * @param std::string
+	 * 	The uuid of the node
+		 * @param Cycle
+	 * 	The cycle to select on, to force uniqueness
+	 * @param std::string
+	 * 	The column to select
+	 *
+	 * @return std::string
+	 * 	The value of the entry
+	 */
+	std::string selectNodeValue(const std::string &uuid, const common::Cycle & cycle, const std::string & column);
+
+	/**
+	 * Select unique column column entry
+	 *
+	 * @param std::string
+	 * 	The uuid of the node
+		 * @param Cycle
+	 * 	The cycle to select on, to force uniqueness
+	 * @param std::string
+	 * 	The column to select
+	 *
+	 * @return std::string
+	 * 	The value of the entry
+	 */
+	std::string selectConnectionValue(const std::string &uuid, const common::Cycle & cycle, const std::string & column);
+
+	/**
+	 * Select unique column column entry from table
+	 *
+	 *	@param std::string
+	 *		The table to utilise
+	 * @param std::string
+	 * 	The uuid of the node
+	 * @param Cycle
+	 * 	The cycle to select on, to force uniqueness
+	 * @param std::string
+	 * 	The column to select
+	 *
+	 * @return std::string
+	 * 	The value of the entry
+	 */
+	std::string selectValue(const std::string & table, const std::string &uuid, const common::Cycle & cycle, const std::string & column);
+
+	/**
 	 * Select nodes by a criteria string eg, 'id=erwrs324 AND cycle=1'
 	 *
 	 * @param std::string
@@ -111,6 +158,17 @@ public:
 	std::string selectConnections(const std::string & criteria = "");
 
 	/**
+	 * Delete node by uuid
+	 *
+	 * @param std::string
+	 * 	The uuid to match
+	 *
+	 *@return std::string
+	 * 	Result of sql query
+	 */
+	std::string deleteNode(const std::string & id);
+
+	/**
 	 * Delete nodes by a criteria string eg, 'id=erwrs324 AND cycle=1'
 	 *
 	 * @param std::string
@@ -120,6 +178,17 @@ public:
 	 * 	Result of sql query
 	 */
 	std::string deleteNodes(const std::string & criteria = "");
+
+	/**
+	 * Delete connection by uuid
+	 *
+	 * @param std::string
+	 * 	The uuid to match
+	 *
+	 *@return std::string
+	 * 	Result of sql query
+	 */
+	std::string deleteConnection(const std::string & id);
 
 	/**
 	 * Delete nodes by a criteria string eg, 'id=erwrs324 AND cycle=1'
@@ -184,40 +253,40 @@ public:
 	 * update node from using options list
 	 *
 	 * @param std::string
-	 * 	The cycle to match
-	 * @param std::string
 	 * 	The id to match
+	 * @param common::Cycle
+	 * 	The cycle to match
 	 * @param std::string
 	 * 	The options to set
 	 *
 	 *	@return int
 	 * 	The result of the count
 	 */
-	std::string updateNode(const std::string & cycle_str, const std::string & uuid_str, const std::string & options);
+	std::string updateNode(const std::string & uuid_str, const common::Cycle & cycle, const std::string & options);
 
 	/**
 	 * update node from using options list
 	 *
 	 * @param std::string
-	 * 	The cycle to match
-	 * @param std::string
 	 * 	The id to match
+	 * @param common::Cycle
+	 * 	The cycle to match
 	 * @param std::string
 	 * 	The options to set
 	 *
 	 *	@return int
 	 * 	The result of the count
 	 */
-	std::string updateConnection(const std::string & cycle_str, const std::string & uuid_str,
-			const std::string & options);
+	std::string
+			updateConnection(const std::string & uuid_str, const common::Cycle & cycle, const std::string & options);
 
 	/**
 	 * update object from a table using options list
 	 *
 	 * @param std::string
-	 * 	The cycle to match
-	 * @param std::string
 	 * 	The id to match
+	 * @param common::Cycle
+	 * 	The cycle to match
 	 * @param std::string
 	 * 	The options to set
 	 * @param std::string
@@ -226,7 +295,7 @@ public:
 	 *	@return int
 	 * 	The result of the count
 	 */
-	std::string updateByUUID(const std::string & cycle_str, const std::string & uuid_str, const std::string & options,
+	std::string updateByUUID(const std::string & uuid_str, const common::Cycle & cycle, const std::string & options,
 			const std::string & table);
 	/**
 	 * Select all columns from table using criteria

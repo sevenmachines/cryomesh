@@ -96,7 +96,7 @@ boost::shared_ptr<components::ActivityTimerDistance> Connection::getMutableActiv
 }
 
 boost::shared_ptr<manager::DatabaseObject> Connection::getDatabaseObject() const {
-	unsigned long int cycle = common::TimeKeeper::getTimeKeeper().getCycle().toULInt();
+	const common::Cycle & cycle = common::TimeKeeper::getTimeKeeper().getCycle();
 	std::string innode;
 	if (this->getConnector().getInputs().size() > 0) {
 		innode = this->getConnector().getInputs().begin()->second->getUUIDString();
