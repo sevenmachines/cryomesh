@@ -11,6 +11,8 @@
 #include <map>
 #include <string>
 #include <sstream>
+#include <iostream>
+#include <boost/tokenizer.hpp>
 
 namespace cryomesh {
 
@@ -32,7 +34,7 @@ public:
 	 *	@return std::string
 	 * 	The object associated with the search key, "" if not found
 	 */
-	std::string getKey(const std::string & key) const{
+	std::string getKey(const std::string & key) const {
 		std::string obj = "";
 		std::map<std::string, std::string>::const_iterator it_found = columns.find(key);
 		if (it_found != columns.end()) {
@@ -41,6 +43,53 @@ public:
 		return obj;
 	}
 
+
+	/**
+	 * Find entries value in map or return null
+	 *
+	 * @param std::string
+	 * 	Entry to find
+	 * @param std::map<std::string, std::string
+	 * 	map to search
+	 *
+	 * @return
+	 * 	Value of entry
+	 */
+
+	static std::string findValue(const std::string & entry, const std::map<std::string, std::string> & map){
+		std::string val= "";
+		std::map<std::string, std::string>::const_iterator it_found = map.find(entry);
+		if (it_found != map.end()){
+			val = it_found->second;
+		}
+		return val;
+	}
+
+	/**
+	 * Parse a string database entry, extract columns and values
+	 * and return a map
+	 */
+	static std::map<std::string, std::string> getColumnMapFromEntry(const std::string & entry) {
+		std::cout<<"getColumnMapFromEntry: "<<entry<<std::endl;
+		boost::char_separator<char> sep(" ");
+		std::map<std::string, std::string> entry_map;
+		boost::tokenizer<boost::char_separator<char> > tokens(entry, sep);
+		// forall in tokens
+		{
+			boost::tokenizer<boost::char_separator<char> >::const_iterator it_tokens = tokens.begin();
+			const boost::tokenizer<boost::char_separator<char> >::const_iterator it_tokens_end = tokens.end();
+			while (it_tokens != it_tokens_end) {
+				std::string pairstr = *it_tokens;
+				size_t sep_pos = pairstr.find(":");
+				std::string key = pairstr.substr(0, sep_pos);
+				std::string val = pairstr.substr(sep_pos+1);
+				entry_map[key] = val;
+				std::cout << "DatabaseObject::getColumnMapFromEntry: " << "("<<key<<","<<val <<")"<< std::endl;
+				++it_tokens;
+			}
+		}
+		return entry_map;
+	}
 	/**
 	 * Get the string that can be used to insert the sql data
 	 *

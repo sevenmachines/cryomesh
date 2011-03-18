@@ -60,7 +60,7 @@ public:
 	 * @return std::string
 	 * 	The uuid variable
 	 */
-	std::string getUUIDString() const;
+	std::string getUUID() const;
 
 	/**
 	 * Get point variable

@@ -89,6 +89,32 @@ public:
 	std::string insertConnection(const DatabaseObject & db_object);
 
 	/**
+		 * Select unique node  entry
+		 *
+		 * @param std::string
+		 * 	The uuid of the node
+			 * @param Cycle
+		 * 	The cycle to select on, to force uniqueness
+		 *
+		 * @return std::string
+		 * 	The value of the entry
+		 */
+		std::string selectNode(const std::string &uuid, const common::Cycle & cycle);
+
+		/**
+		 * Select unique column  entry
+		 *
+		 * @param std::string
+		 * 	The uuid of the node
+			 * @param Cycle
+		 * 	The cycle to select on, to force uniqueness
+		 *
+		 * @return std::string
+		 * 	The value of the entry
+		 */
+		std::string selectConnection(const std::string &uuid, const common::Cycle & cycle);
+
+	/**
 	 * Select unique node column entry
 	 *
 	 * @param std::string

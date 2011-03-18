@@ -18,7 +18,7 @@ const std::string ConnectionDatabaseObject::IMPULSE_COUNT_TAG = "impulses";
 const std::string ConnectionDatabaseObject::CYCLE_TAG = "cycle";
 
 ConnectionDatabaseObject::ConnectionDatabaseObject(const std::string & uuid_str, const std::string & innode_uuid_str,
-		const std::string & outnode_uuid_str,const  common::Cycle & cyc, const int impulse_count) :
+		const std::string & outnode_uuid_str, const common::Cycle & cyc, const int impulse_count) :
 	uuid(uuid_str), inputNodeUUID(innode_uuid_str), outputNodeUUID(outnode_uuid_str), cycle(cyc),
 			impulseCount(impulse_count) {
 	columns[ID_TAG] = uuid_str;
@@ -30,7 +30,36 @@ ConnectionDatabaseObject::ConnectionDatabaseObject(const std::string & uuid_str,
 
 ConnectionDatabaseObject::ConnectionDatabaseObject(const std::string & connection_table_entry) {
 	// TODO ConnectionDatabaseObject(const std::string & connection_table_entry)
-	std::cout << "TODO: ConnectionDatabaseObject(const std::string & connection_table_entry)" << "" << std::endl;
+
+	std::map<std::string, std::string> entry_map = DatabaseObject::getColumnMapFromEntry(connection_table_entry);
+	std::string id_str = DatabaseObject::findValue("id", entry_map);
+	std::string inputid_str = DatabaseObject::findValue("inputid", entry_map);
+	std::string outputid_str = DatabaseObject::findValue("outputid", entry_map);
+	std::string impulses_str = DatabaseObject::findValue("impulses", entry_map);
+	std::string cycle_str = DatabaseObject::findValue("cycle", entry_map);
+
+	this->uuid = id_str;
+	this->inputNodeUUID = inputid_str;
+	this->outputNodeUUID = outputid_str;
+	this->impulseCount = (impulses_str == "") ? 0 : atoi(impulses_str.c_str());
+	long int cycleint = (cycle_str == "") ? 0 : atol(cycle_str.c_str());
+	this->cycle = common::Cycle(cycleint);
+
+	/*
+	std::cout << "ConnectionDatabaseObject::ConnectionDatabaseObject: " << "FOUND:" << std::endl;
+	std::cout << "\t" << "id_str" << "=" << id_str << std::endl;
+	std::cout << "\t" << "inputid_str" << "=" << inputid_str << std::endl;
+	std::cout << "\t" << "outputid_str" << "=" << outputid_str << std::endl;
+	std::cout << "\t" << "cycle_str" << "=" << cycle_str << std::endl;
+	std::cout << "\t" << "impulses_str" << "=" << impulses_str << std::endl;
+
+	std::cout << "ConnectionDatabaseObject::ConnectionDatabaseObject: " << "FOUND:" << std::endl;
+	std::cout << "\t" << "uuid" << "=" << uuid << std::endl;
+	std::cout << "\t" << "inputNodeUUID" << "=" << inputNodeUUID << std::endl;
+	std::cout << "\t" << "outputNodeUUID" << "=" << outputNodeUUID << std::endl;
+	std::cout << "\t" << "impulseCount" << "=" << impulseCount << std::endl;
+	std::cout << "\t" << "cycle" << "=" << cycle << std::endl;
+	*/
 }
 
 ConnectionDatabaseObject::~ConnectionDatabaseObject() {

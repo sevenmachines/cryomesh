@@ -28,13 +28,13 @@
 							<targetPlatform id="cdt.managedbuild.target.gnu.platform.exe.debug.716872208" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.exe.debug"/>
 							<builder buildPath="${workspace_loc:/CryoMesh/Debug}" id="cdt.managedbuild.target.gnu.builder.exe.debug.1461226273" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="-4" superClass="cdt.managedbuild.target.gnu.builder.exe.debug"/>
 							<tool id="cdt.managedbuild.tool.gnu.archiver.base.1799356274" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
-							<tool command="/usr/bin/g++" id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.2087418656" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug">
+							<tool command="/usr/bin/g++" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG}${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.2087418656" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug">
 								<option id="gnu.cpp.compiler.exe.debug.option.optimization.level.1900668536" name="Optimization Level" superClass="gnu.cpp.compiler.exe.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.exe.debug.option.debugging.level.946132813" name="Debug Level" superClass="gnu.cpp.compiler.exe.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.2100899480" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src}&quot;"/>
 								</option>
-								<option id="gnu.cpp.compiler.option.other.other.476151538" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-c -fmessage-length=0 -std=c++0x -fPIC" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.other.other.476151538" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-c -fmessage-length=0 -std=c++0x -fPIC `pkg-config --cflags sqlite3`" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.223609032" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool command="gcc-4.5" id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1033732554" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug">
@@ -47,7 +47,7 @@
 							</tool>
 							<tool command="/usr/bin/g++" id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.833519279" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug">
 								<option defaultValue="true" id="gnu.cpp.link.option.shared.1982228091" name="Shared (-shared)" superClass="gnu.cpp.link.option.shared" valueType="boolean"/>
-								<option id="gnu.cpp.link.option.flags.1329358698" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="-std=c++0x -fPIC" valueType="string"/>
+								<option id="gnu.cpp.link.option.flags.1329358698" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="-std=c++0x -fPIC `pkg-config --libs sqlite3`" valueType="string"/>
 								<option id="gnu.cpp.link.option.libs.443788620" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" value="gmpxx"/>
 									<listOptionValue builtIn="false" value="boost_serialization"/>
@@ -669,6 +669,7 @@
 							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1385326928" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release">
 								<option id="gnu.cpp.compiler.exe.release.option.optimization.level.513083800" name="Optimization Level" superClass="gnu.cpp.compiler.exe.release.option.optimization.level" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.exe.release.option.debugging.level.712135982" name="Debug Level" superClass="gnu.cpp.compiler.exe.release.option.debugging.level" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.other.other.853113067" superClass="gnu.cpp.compiler.option.other.other" value="-c -fmessage-length=0 -std=c++0x -fPIC `pkg-config --cflags sqlite3`" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1040919215" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.release.1610894985" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.release">
@@ -686,6 +687,7 @@
 									<listOptionValue builtIn="false" value="boost_serialization"/>
 									<listOptionValue builtIn="false" value="gmp"/>
 								</option>
+								<option id="gnu.cpp.link.option.flags.990085542" superClass="gnu.cpp.link.option.flags" value="-std=c++0x -fPIC `pkg-config --libs sqlite3`" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1990462249" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -1306,7 +1308,7 @@
 								<option id="gnu.cpp.compiler.option.include.paths.468148270" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src}&quot;"/>
 								</option>
-								<option id="gnu.cpp.compiler.option.other.other.1276698027" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-c -fmessage-length=0 -std=c++0x -fPIC  -fprofile-arcs -ftest-coverage" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.other.other.1276698027" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-c -fmessage-length=0 -std=c++0x -fPIC `pkg-config --cflags sqlite3`" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1185226886" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool command="gcc-4.5" id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1517107270" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug">
@@ -1319,7 +1321,7 @@
 							</tool>
 							<tool command="/usr/bin/g++-4.5" id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.1722960658" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug">
 								<option defaultValue="true" id="gnu.cpp.link.option.shared.33359590" name="Shared (-shared)" superClass="gnu.cpp.link.option.shared" valueType="boolean"/>
-								<option id="gnu.cpp.link.option.flags.2072510691" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="-std=c++0x -fPIC  -fprofile-arcs -ftest-coverage" valueType="string"/>
+								<option id="gnu.cpp.link.option.flags.2072510691" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="-std=c++0x -fPIC `pkg-config --libs sqlite3`" valueType="string"/>
 								<option id="gnu.cpp.link.option.libs.1595265315" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" value="gmpxx"/>
 									<listOptionValue builtIn="false" value="boost_serialization"/>
