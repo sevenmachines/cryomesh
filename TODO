@@ -1,6 +1,17 @@
 HIGH ----------------------------------------------------------------------------------------
 	
-
+ * Begin work on server to,
+ 	- run the server
+ 		- Manager starts unique server thread
+ 		- Manager starts unique cryomesh thread
+ 		- Server carries Manager reference
+ 		- On message recieve, server adds command to manager queue
+ 		- Manager sorts message queue into immediate response and commands
+ 			that must wait until the cryomesh is stopped and coherent state
+ 		- at sane points in each cycle, manager runs through the pending commands list
+ 	- deal with the creation and running of Bundles
+ 	- handle the database
+ 	
 MEDIUM ------------------------------------------------------------------------------------
 
 * Redesign database
