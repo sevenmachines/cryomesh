@@ -17,8 +17,20 @@ namespace manager {
  */
 class CryoManager {
 public:
+	/**
+	 * Enum to specify the actual state of the manager/cryomesh
+	 */
+	enum ManagerState {
+		PAUSED, RUNNING, EMPTY, NEW
+	};
 	CryoManager();
 	virtual ~CryoManager();
+	void create(){}
+	void run(){}
+	void pause(){}
+	void stop(){}
+	void destroy(){}
+
 };
 
 }//NAMESPACE

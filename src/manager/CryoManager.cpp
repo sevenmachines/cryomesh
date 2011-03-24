@@ -17,5 +17,25 @@ CryoManager::CryoManager() {
 CryoManager::~CryoManager() {
 }
 
+/*
+void CryoManager::create() {
+
+}
+
+void CryoManager::run() {
+
+}
+
+void CryoManager::pause() {
+
+}
+void CryoManager::stop() {
+
+}
+
+void CryoManager::destroy() {
+
+}
+*/
 }//NAMESPACE
 }//NAMESPACE
