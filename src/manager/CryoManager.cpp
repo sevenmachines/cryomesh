@@ -11,7 +11,7 @@ namespace cryomesh {
 namespace manager {
 
 CryoManager::CryoManager() {
-
+	currentState = EMPTY;
 }
 
 CryoManager::~CryoManager() {
