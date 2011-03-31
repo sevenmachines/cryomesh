@@ -79,15 +79,13 @@ public:
 	 *
 	 * @param const Fibre::FibreType & type
 	 * 		Type of fibre connection to make
-	 *	@param  int width
-	 *		Width of fibre to create
 	 *	@param boost::uuids::uuid
 	 *		PatternChannel to map the fibre to
 	 *
 	 * @return
 	 * 		The new fibre created, possible null
 	 */
-	virtual boost::shared_ptr<Fibre> connectPrimaryInputCluster(boost::uuids::uuid clusterUUID, int fibreWidth, boost::uuids::uuid patchanid);
+	virtual boost::shared_ptr<Fibre> connectPrimaryInputCluster(boost::uuids::uuid clusterUUID, boost::uuids::uuid patchanid);
 
 	/**
 	 * Helper access function for specialised connection
@@ -107,15 +105,13 @@ public:
 	 *
 	 * @param const Fibre::FibreType & type
 	 * 		Type of fibre connection to make
-	 *	@param  int width
-	 *		Width of fibre to create
 	 *	@param boost::uuids::uuid
 	 *		PatternChannel to map the fibre to
 	 *
 	 * @return
 	 * 		The new fibre created, possible null
 	 */
-	virtual boost::shared_ptr<Fibre> connectPrimaryOutputCluster(boost::uuids::uuid clusterUUID, int fibreWidth, boost::uuids::uuid patchanid);
+	virtual boost::shared_ptr<Fibre> connectPrimaryOutputCluster(boost::uuids::uuid clusterUUID, boost::uuids::uuid patchanid);
 
 
 	/**

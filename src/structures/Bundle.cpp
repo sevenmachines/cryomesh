@@ -72,19 +72,21 @@ boost::shared_ptr<Fibre> Bundle::connectCluster(boost::uuids::uuid clusterUUID, 
 	return newfibre;
 }
 
-boost::shared_ptr<Fibre> Bundle::connectPrimaryInputCluster(boost::uuids::uuid clusterUUID, int fibreWidth,
-		boost::uuids::uuid patchanid) {
+boost::shared_ptr<Fibre> Bundle::connectPrimaryInputCluster(boost::uuids::uuid clusterUUID, boost::uuids::uuid patchanid) {
 	boost::shared_ptr<Fibre> newfib;
 	// check for pattern channel uuid existence
-	if (outputChannelsMap.getObjectByKey(patchanid) != 0) {
+	boost::shared_ptr< state::PatternChannel > patchan = inputChannelsMap.getObjectByKey(patchanid);
+	if ( patchan != 0) {
+		// get width from actual pattern channel
+		int width = patchan->getWidth();
 		// get created fibre
-		newfib = this->connectCluster(clusterUUID, Fibre::PrimaryInputFibre, fibreWidth);
+		newfib = this->connectCluster(clusterUUID, Fibre::PrimaryInputFibre, width);
 		// map it to pattern channel
 		fibrePatternChannelMap[newfib->getUUID()] = patchanid;
 
 	} else {
-		std::cout << "Bundle::connectPrimaryOutputCluster: "
-				<< "ERROR: PatternChannel does not exist, not creating primary fibre. " << "'" << patchanid << "'"
+		std::cout << "Bundle::connectPrimaryInputCluster: "
+				<< "ERROR: PatternChannel does not exist, not creating primary input fibre. " << "'" << patchanid << "'"
 				<< std::endl;
 	}
 	return newfib;
@@ -94,19 +96,21 @@ boost::shared_ptr<Fibre> Bundle::connectPrimaryInputCluster(boost::uuids::uuid c
 		return  this->connectCluster(clusterUUID, Fibre::PrimaryInputFibre, fibreWidth);
 }
 
-boost::shared_ptr<Fibre> Bundle::connectPrimaryOutputCluster(boost::uuids::uuid clusterUUID, int fibreWidth,
-		boost::uuids::uuid patchanid) {
+boost::shared_ptr<Fibre> Bundle::connectPrimaryOutputCluster(boost::uuids::uuid clusterUUID, boost::uuids::uuid patchanid) {
 	boost::shared_ptr<Fibre> newfib;
 	// check for pattern channel uuid existence
-	if (inputChannelsMap.getObjectByKey(patchanid) != 0) {
+	boost::shared_ptr< state::PatternChannel > patchan = outputChannelsMap.getObjectByKey(patchanid);
+	if ( patchan != 0) {
+		// get width from actual pattern channel
+		int width = patchan->getWidth();
 		// get created fibre
-		newfib = this->connectCluster(clusterUUID, Fibre::PrimaryOutputFibre, fibreWidth);
+		newfib = this->connectCluster(clusterUUID, Fibre::PrimaryOutputFibre, width);
 		// map it to pattern channel
 		fibrePatternChannelMap[newfib->getUUID()] = patchanid;
 
 	} else {
 		std::cout << "Bundle::connectPrimaryOutputCluster: "
-				<< "ERROR: PatternChannel does not exist, not creating primary fibre. " << "'" << patchanid << "'"
+				<< "ERROR: PatternChannel does not exist, not creating primary output fibre. " << "'" << patchanid << "'"
 				<< std::endl;
 	}
 	return newfib;

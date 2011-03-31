@@ -1,5 +1,7 @@
 2011-03-31  SevenMachines  <SevenMachines@yahoo.co.uk>
 
+	* src/structures/Bundle.cpp (Bundle::connectPrimaryOutputCluster): Get width from pattern channel, not from method args
+	(Bundle::connectPrimaryInputCluster):  Get width from pattern channel, not from method args
 	* src/manager/Creator.cpp (Creator::getAcceptedCommandList): remove set-primary- functionality, connect crerated channels to clusters instead. 
 	(Creator::createFromConfig): Primary fibres are only created from data files now and can only connect pre-existing fibres in the config
 	* src/structures/Bundle.h (Bundle.inputChannelsMap):  hold all input pattern channels
