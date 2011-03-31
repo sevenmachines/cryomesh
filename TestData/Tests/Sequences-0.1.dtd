@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT sequences (sequence+)>
+<!ATTLIST sequences 
+	version CDATA #REQUIRED   
+	width CDATA #REQUIRED
+      depth CDATA #REQUIRED
+      description CDATA #IMPLIED> 
+<!ELEMENT sequence (pair+)>
+<!ELEMENT pair EMPTY>
+<!ATTLIST pair 
+	 input  CDATA #REQUIRED	 output CDATA #REQUIRED>

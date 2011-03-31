@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT PatternChannels (PatternChannel+)>
+<!ATTLIST PatternChannels
+	Version CDATA #REQUIRED   
+	Description CDATA #IMPLIED> 
+
+<!ELEMENT PatternChannel (Pattern+)>
+<!ATTLIST PatternChannel
+    ReferenceID CDATA #REQUIRED 
+	Type CDATA #REQUIRED 
+	Depth CDATA #REQUIRED
+	Width CDATA #REQUIRED
+    Note CDATA #IMPLIED>
+      
+<!ELEMENT Pattern EMPTY>
+<!ATTLIST Pattern
+	Tag CDATA	#REQUIRED 
+	Binary CDATA #REQUIRED>
