@@ -37,6 +37,8 @@ public:
 
 	virtual ~Creator();
 
+	boost::shared_ptr< structures::Bundle > getBundle();
+
 	bool analyseConfig(const config::ConfigTranslator & conf_trans) const;
 	bool checkConfigEntry(const config::ConfigEntry & conf_entry) const;
 	bool checkConfigStructure(const std::list<config::ConfigEntry> & conf_entries) const;
