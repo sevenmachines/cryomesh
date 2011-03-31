@@ -129,6 +129,31 @@ std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> > Sequence
 	return out_channels;
 }
 
+state::PatternChannelMap SequencerChannels::getInputChannelsMap() const {
+	return getChannelMap(in_channels);
+}
+state::PatternChannelMap SequencerChannels::getOutputChannelsMap() const {
+	return getChannelMap(out_channels);
+}
+
+state::PatternChannelMap SequencerChannels::getChannelMap(
+		const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> > & patchans) const {
+
+	state::PatternChannelMap patmap;
+	// forall in patchans
+	{
+		std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_patchans =
+				patchans.begin();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_patchans_end =
+				patchans.end();
+		while (it_patchans != it_patchans_end) {
+			patmap.add(it_patchans->second);
+			++it_patchans;
+		}
+	}
+	return patmap;
+}
+
 } //NAMESPACE
 
 

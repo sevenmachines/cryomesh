@@ -10,6 +10,7 @@
 
 #include "Pattern.h"
 #include "PatternTag.h"
+#include "common/Tagged.h"
 #include <map>
 #include <list>
 #include <set>
@@ -20,7 +21,7 @@
 namespace cryomesh {
 namespace state {
 
-class PatternChannel {
+class PatternChannel : public common::Tagged{
 public:
 	enum PrintFormat {
 		BINARY, TEXT, INTEGER

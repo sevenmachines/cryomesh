@@ -46,11 +46,9 @@ public:
 	// Creation function mappings
 	void createCluster(int id, int size, int connectivity);
 	void connectCluster(int input_cluster_id, int ouput_cluster_id, int width);
-	void createPrimaryInputFibre(int id, int ouput_cluster_id, int width);
-	void createPrimaryOutputFibre(int id, int input_cluster_id, int width);
 	void loadData(std::string datafile);
-	void setPrimaryInputFibre(int id);
-	void setPrimaryOutputFibre(int id);
+	void connectPrimaryInputFibre(int id, int outputid);
+	void connectPrimaryOutputFibre(int id, int inputid);
 
 	static const std::string DEFAULT_DATABASE_FILENAME;
 
@@ -80,6 +78,11 @@ private:
 	 */
 	 std::map<int, boost::uuids::uuid>  fibreIDMap;
 
+		/**
+		 * Map of pattern channel real uuid's to config files fake id's
+		 */
+		 std::map<int, boost::uuids::uuid> patternChannelIDMap;
+
 	/**
 	 * Retreive a uuid from a fake int id
 	 *
@@ -87,6 +90,7 @@ private:
 	boost::uuids::uuid getRealID(const int id, const std::map<int, boost::uuids::uuid> & idmap) const;
 	boost::uuids::uuid getClusterRealID(const int id) const;
 	boost::uuids::uuid getFibreRealID(const int id) const;
+	boost::uuids::uuid getPatternChannelRealID(const int id) const;
 };
 
 }

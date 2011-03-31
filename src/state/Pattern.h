@@ -14,6 +14,7 @@
 
 #include "PatternTag.h"
 #include "BinaryString.h"
+#include "common/Tagged.h"
 #include <vector>
 #include <string>
 #include <boost/serialization/vector.hpp>
@@ -22,7 +23,7 @@
 
 namespace cryomesh {
 namespace state {
-class Pattern {
+class Pattern :public common::Tagged{
 	friend class boost::serialization::access;
 	template<class Archive>
 	void serialize(Archive & ar, const unsigned int version) {

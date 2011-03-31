@@ -10,6 +10,7 @@
 
 #include "state/PatternChannel.h"
 #include "state/Pattern.h"
+#include "state/PatternChannelMap.h"
 
 #include "SequencerGeneric.h"
 #include <map>
@@ -40,6 +41,9 @@ public:
 	 std::map<boost::uuids::uuid, boost::shared_ptr<
 					state::PatternChannel> >  getOutputChannels();
 
+	 state::PatternChannelMap  getInputChannelsMap() const;
+	 state::PatternChannelMap  getOutputChannelsMap() const;
+
 	//statics
 	static const std::string PATTERN_CHANNEL_STRING;
 	static const std::string PATTERN_CHANNEL_TYPE_STRING;
@@ -55,6 +59,9 @@ public:
 	static const std::string PATTERN_CHANNEL_DEPTH_STRING;
 	static const std::string PATTERN_CHANNEL_NOTE_STRING;
 
+protected:
+	state::PatternChannelMap getChannelMap(const std::map<boost::uuids::uuid, boost::shared_ptr<
+					state::PatternChannel> > & patchans) const;
 private:
 	std::map<boost::uuids::uuid, boost::shared_ptr<
 			state::PatternChannel> > in_channels;

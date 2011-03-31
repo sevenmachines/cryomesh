@@ -13,6 +13,7 @@
 #include <iostream>
 #include "ClusterMap.h"
 #include "FibreMap.h"
+#include "state/PatternChannelMap.h"
 
 namespace cryomesh {
 
@@ -80,6 +81,21 @@ public:
 	 * 		Type of fibre connection to make
 	 *	@param  int width
 	 *		Width of fibre to create
+	 *	@param boost::uuids::uuid
+	 *		PatternChannel to map the fibre to
+	 *
+	 * @return
+	 * 		The new fibre created, possible null
+	 */
+	virtual boost::shared_ptr<Fibre> connectPrimaryInputCluster(boost::uuids::uuid clusterUUID, int fibreWidth, boost::uuids::uuid patchanid);
+
+	/**
+	 * Helper access function for specialised connection
+	 *
+	 * @param const Fibre::FibreType & type
+	 * 		Type of fibre connection to make
+	 *	@param  int width
+	 *		Width of fibre to create
 	 *
 	 * @return
 	 * 		The new fibre created, possible null
@@ -93,11 +109,30 @@ public:
 	 * 		Type of fibre connection to make
 	 *	@param  int width
 	 *		Width of fibre to create
+	 *	@param boost::uuids::uuid
+	 *		PatternChannel to map the fibre to
+	 *
+	 * @return
+	 * 		The new fibre created, possible null
+	 */
+	virtual boost::shared_ptr<Fibre> connectPrimaryOutputCluster(boost::uuids::uuid clusterUUID, int fibreWidth, boost::uuids::uuid patchanid);
+
+
+	/**
+	 * Helper access function for specialised connection
+	 *
+	 * @param const Fibre::FibreType & type
+	 * 		Type of fibre connection to make
+	 *	@param  int width
+	 *		Width of fibre to create
+	 *	@param boost::uuids::uuid
+	 *		PatternChannel to map the fibre to
 	 *
 	 * @return
 	 * 		The new fibre created, possible null
 	 */
 	virtual boost::shared_ptr<Fibre> connectPrimaryOutputCluster(boost::uuids::uuid clusterUUID, int fibreWidth);
+
 
 	/**
 	 * Helper access function for specialised connection
@@ -112,17 +147,44 @@ public:
 	 */
 	virtual boost::shared_ptr<Fibre> connectLoopbackCluster(boost::uuids::uuid clusterUUID, int fibreWidth);
 
+	/**
+	 * Load in the pattern channels from a filename and create equivalent
+	 * sized fibres to go with them, tracking the mapping of the pattern
+	 * channel to the fibre
+	 */
+	virtual void loadChannels(const std::string & ifstr);
+
+
 	const ClusterMap & getClusters() const;
 	const FibreMap & getFibres() const;
+
+	const FibreMap & getInputFibres() const;
+	const FibreMap & getOutputFibres() const;
+
+	const state::PatternChannelMap & getInputChannelsMap() const;
+	const state::PatternChannelMap & getOutputChannelsMap() const;
+	const std::map<boost::uuids::uuid, boost::uuids::uuid> & getFibrePatternChannelMap()const ;
 
 	friend std::ostream & operator<<(std::ostream & os, const Bundle & bundle);
 
 protected:
 
+
 private:
 
 	ClusterMap clusters;
 	FibreMap fibres;
+
+	state::PatternChannelMap inputChannelsMap;
+	state::PatternChannelMap outputChannelsMap;
+
+	FibreMap inputFibres;
+	FibreMap outputFibres;
+
+	/**
+	 * Mapping of fibre uuid to a corresponding pattern channel
+	 */
+	std::map<boost::uuids::uuid, boost::uuids::uuid> fibrePatternChannelMap;
 };
 
 }
