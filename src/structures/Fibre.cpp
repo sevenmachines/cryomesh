@@ -267,7 +267,7 @@ boost::shared_ptr< state::Pattern > Fibre::getInputNodesPattern() const {
 				all_connections.end();
 		while (it_all_connections != it_all_connections_end) {
 			std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > all_nodes =
-					(**it_all_connections).getConnector().getOutputs();
+					(**it_all_connections).getConnector().getInputs();
 			// forall in all_nodes
 			{
 				std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator it_all_nodes =

@@ -59,7 +59,7 @@ public:
 	virtual void update();
 
 	/**
-	 * Get the Connector object for this Connection
+	 * Get the Connector object for this Connection input
 	 *
 	 * @return common::Connector<Connection, Node>
 	 * 		The connector for this Connection
@@ -194,7 +194,8 @@ public:
 protected:
 
 	/*
-	 * The Connector Object for the Connection
+	 * The Connector Object for the Connection. Contains both input and
+	 * output nodes
 	 *
 	 * @var boost::shared_ptr< common::Connector<Connection, Node> >
 	 */

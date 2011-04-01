@@ -565,7 +565,6 @@ public:
 	 *		The output stream
 	 */
 	friend std::ostream& operator<<(std::ostream & os, const Connector<U, T> & obj) {
-		// TODO: friend std::ostream& operator<<(std::ostream & os, const Connector<U,T> & obj)
 		os << "Connector<>:" << obj << std::endl;
 		os << "\tInputs:" << std::endl;
 		// forall in minputs

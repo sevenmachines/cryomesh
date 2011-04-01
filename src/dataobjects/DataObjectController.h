@@ -20,11 +20,18 @@ namespace dataobjects {
 template<class U, class T>
 class DataObjectController {
 public:
+
+	/**
+	 * Default constructor
+	 */
 	DataObjectController() {
 	}
 
 	/**
 	 * Contructor with size
+	 *
+	 * @param unsigned int
+	 * 	The maximum size of the data set
 	 */
 	DataObjectController(unsigned int sz) {
 		dataObject.setDatasetMaximumSize(sz);

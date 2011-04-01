@@ -25,11 +25,21 @@ namespace components {
  */
 class ConnectionMap: public common::KeyMappedCollection<boost::uuids::uuid, components::Connection> {
 public:
+	/**
+	 * Default constructor
+	 */
 	ConnectionMap() {
 	}
+
+	/**
+	 * Default destructor
+	 */
 	virtual ~ConnectionMap() {
 	}
 
+	/**
+	 * Update all entries in the map
+	 */
 	virtual void update() {
 #ifdef CONNECTIONMAP_DEBUG
 		std::cout << "ConnectionMap::update: " << this << std::endl;

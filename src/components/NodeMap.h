@@ -22,11 +22,21 @@ namespace components {
  */
 class NodeMap: public common::KeyMappedCollection<boost::uuids::uuid, components::Node> {
 public:
+	/**
+	 * Default constructor
+	 */
 	NodeMap() {
 	}
+
+	/**
+	 * Default destructor
+	 */
 	virtual ~NodeMap() {
 	}
 
+	/**
+	 * Update all entries in the nodemap
+	 */
 	virtual void update() {
 #ifdef NODEMAP_DEBUG
 		std::cout<<"NodeMap::update: "<<this<<std::endl;

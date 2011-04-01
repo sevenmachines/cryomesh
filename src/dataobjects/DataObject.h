@@ -21,9 +21,15 @@ namespace dataobjects {
 template<class U, class T>
 class DataObject {
 public:
+	/**
+	 * Enum to signal the type of comparison to make
+	 *
+	 * @var ComparisonType
+	 */
 	enum ComparisonType {
 		MaximumValue, MinimumValue, EqualityValue, AverageValue
 	};
+
 	/**
 	 * Default contructor
 	 */
@@ -33,6 +39,9 @@ public:
 
 	/**
 	 * Contructor with max size
+	 *
+	 * @param unsigned int
+	 * 	The maximum size of the data set
 	 */
 	DataObject(unsigned int sz) :
 		loggingEnabled(false), datasetMaximumSize(sz) {

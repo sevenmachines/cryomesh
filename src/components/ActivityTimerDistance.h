@@ -154,7 +154,18 @@ public:
 
 
 private:
+	/**
+	 * Variable representing the abstract 'distance' until the end of the timer
+	 *
+	 * @var double
+	 */
 	double distance;
+
+	/**
+	 * The decrement to the distance each cycle
+	 *
+	 * @var double
+	 */
 	double decrement;
 };
 

@@ -17,8 +17,15 @@ namespace components {
  */
 class ActivityTimer {
 public:
+	/**
+	 * Default constructor
+	 */
 	ActivityTimer() {
 	}
+
+	/**
+	 * Default destructor
+	 */
 	virtual ~ActivityTimer() {
 	}
 };

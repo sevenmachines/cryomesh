@@ -1,6 +1,7 @@
 2011-04-01  SevenMachines  <SevenMachines@yahoo.co.uk>
 
 	* src/structures/Fibre.cpp (Fibre::getInputNodesPattern): Generate pattern from the input nodes of the connections in a fibre
+	(Fibre::getInputNodesPattern): fix bug, get inputs to connections not outputs
 	* src/manager/Creator.cpp (Creator::checkConfigStructure): Simple check for some essential  commands
 	* src/structures/Bundle.cpp (Bundle::connectCluster): add fibres to input/output collections instead of general fibre collection
 	(Bundle::connectCluster): Ignore but warn on other fibre types we dont like. You cant connect an intermediate fibre to just one cluster
