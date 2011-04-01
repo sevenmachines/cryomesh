@@ -38,6 +38,9 @@ public:
 	virtual ~Creator();
 
 	boost::shared_ptr< structures::Bundle > getBundle();
+	const  std::map<int, boost::uuids::uuid> & getClusterIDMap()const;
+	const   std::map<int, boost::uuids::uuid> & getFibreIDMap()const;
+	const   std::map<int, boost::uuids::uuid> & getPatternChannelIDMap()const;
 
 	bool analyseConfig(const config::ConfigTranslator & conf_trans) const;
 	bool checkConfigEntry(const config::ConfigEntry & conf_entry) const;

@@ -64,11 +64,20 @@ boost::shared_ptr<Fibre> Bundle::connectCluster(boost::uuids::uuid clusterUUID, 
 		newfibre = boost::shared_ptr<Fibre>(new Fibre(cluster, type, fibreWidth));
 		if (type == Fibre::PrimaryInputFibre) {
 			cluster->getMutableConnector().connectInput(newfibre);
+			inputFibres.add(newfibre);
 		} else if (type == Fibre::PrimaryOutputFibre) {
 			cluster->getMutableConnector().connectOutput(newfibre);
+			outputFibres.add(newfibre);
+		} else if (type == Fibre::LoopbackFibre) {
+			cluster->getMutableConnector().connectInput(newfibre);
+			cluster->getMutableConnector().connectOutput(newfibre);
+			fibres.add(newfibre);
+		}else{
+			std::cout<<"Bundle::connectCluster (uuid, FibreType, int ) : "<<"WARNING: Ignoring improper FibreType connection call"<<std::endl;
 		}
 	}
-	fibres.add(newfibre);
+
+	//fibres.add(newfibre);
 	return newfibre;
 }
 
@@ -85,17 +94,17 @@ boost::shared_ptr<Fibre> Bundle::connectPrimaryInputCluster(boost::uuids::uuid p
 		fibrePatternChannelMap[newfib->getUUID()] = patchanid;
 
 		/*
-		// connect fibre to cluster to
-		boost::shared_ptr<Cluster> cluster = clusters.getObjectByKey(clusterUUID);
-		if (cluster == 0) {
-			std::cout << "Bundle::connectPrimaryInputCluster: " << "ERROR: Cannot find cluster: " << clusterUUID
-					<< std::endl;
-			return newfib;
-		} else {
-			newfib ->getMutableConnector().connectOutput(cluster);
-			// map it to pattern channel
-			fibrePatternChannelMap[newfib->getUUID()] = patchanid;
-		}*/
+		 // connect fibre to cluster to
+		 boost::shared_ptr<Cluster> cluster = clusters.getObjectByKey(clusterUUID);
+		 if (cluster == 0) {
+		 std::cout << "Bundle::connectPrimaryInputCluster: " << "ERROR: Cannot find cluster: " << clusterUUID
+		 << std::endl;
+		 return newfib;
+		 } else {
+		 newfib ->getMutableConnector().connectOutput(cluster);
+		 // map it to pattern channel
+		 fibrePatternChannelMap[newfib->getUUID()] = patchanid;
+		 }*/
 	} else {
 		std::cout << "Bundle::connectPrimaryInputCluster: "
 				<< "ERROR: PatternChannel does not exist, not creating primary input fibre. " << "'" << patchanid
@@ -121,17 +130,17 @@ boost::shared_ptr<Fibre> Bundle::connectPrimaryOutputCluster(boost::uuids::uuid 
 		fibrePatternChannelMap[newfib->getUUID()] = patchanid;
 
 		/*
-		// connect fibre to cluster to
-		boost::shared_ptr<Cluster> cluster = clusters.getObjectByKey(clusterUUID);
-		if (cluster == 0) {
-			std::cout << "Bundle::connectPrimaryOutputCluster: " << "ERROR: Cannot find cluster: " << clusterUUID
-					<< std::endl;
-			return newfib;
-		} else {
-			newfib ->getMutableConnector().connectInput(cluster);
-			// map it to pattern channel
-			fibrePatternChannelMap[newfib->getUUID()] = patchanid;
-		}*/
+		 // connect fibre to cluster to
+		 boost::shared_ptr<Cluster> cluster = clusters.getObjectByKey(clusterUUID);
+		 if (cluster == 0) {
+		 std::cout << "Bundle::connectPrimaryOutputCluster: " << "ERROR: Cannot find cluster: " << clusterUUID
+		 << std::endl;
+		 return newfib;
+		 } else {
+		 newfib ->getMutableConnector().connectInput(cluster);
+		 // map it to pattern channel
+		 fibrePatternChannelMap[newfib->getUUID()] = patchanid;
+		 }*/
 	} else {
 		std::cout << "Bundle::connectPrimaryOutputCluster: "
 				<< "ERROR: PatternChannel does not exist, not creating primary output fibre. " << "'" << patchanid

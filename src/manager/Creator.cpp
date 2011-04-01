@@ -26,13 +26,13 @@ std::map<std::string, std::list<std::string> > Creator::getAcceptedCommandList()
 	commap["connect-clusters"] = std::list<std::string>( { "inputid", "outputid", "width" });
 
 	//loaddata datafile
-	commap["loaddata-cluster"] = std::list<std::string>( { "datafile" });
+	commap["loaddata"] = std::list<std::string>( { "file" });
 
 	// connect-primary-input id=1 outputid=1
 	commap["connect-primary-input"] = std::list<std::string>( { "id", "outputid" });
 
 	// connect-primary-input id=2 outputid=2
-	commap["connect-primary-output"] = std::list<std::string>( { "id", "outputid" });
+	commap["connect-primary-output"] = std::list<std::string>( { "id", "inputid" });
 	return commap;
 }
 
@@ -70,6 +70,19 @@ Creator::~Creator() {
 boost::shared_ptr<structures::Bundle> Creator::getBundle() {
 	return bundle;
 }
+
+const  std::map<int, boost::uuids::uuid> & Creator::getClusterIDMap()const{
+	return clusterIDMap;
+}
+
+const   std::map<int, boost::uuids::uuid> & Creator::getFibreIDMap()const{
+	return fibreIDMap;
+}
+
+const   std::map<int, boost::uuids::uuid> & Creator::getPatternChannelIDMap()const{
+	return patternChannelIDMap;
+}
+
 
 void Creator::initialise() {
 	bundle = boost::shared_ptr<structures::Bundle>(new structures::Bundle);
@@ -126,14 +139,14 @@ bool Creator::createFromConfig() {
 						int id = it_conf_entries->getIntegerFormattedOptionValue("id");
 						int outputid = it_conf_entries->getIntegerFormattedOptionValue("outputid");
 						this->connectPrimaryInputFibre(id, outputid);
-					} else if (command == "connect-primary-input") {
+					} else if (command == "connect-primary-output") {
 						// connect-primary-output id=2 outputid=2
 						int id = it_conf_entries->getIntegerFormattedOptionValue("id");
 						int inputid = it_conf_entries->getIntegerFormattedOptionValue("inputid");
 						this->connectPrimaryOutputFibre(id, inputid);
 					} else if (command == "loaddata") {
 						//loaddata datafile
-						std::string datafile = it_conf_entries->getOptionValue("datafile");
+						std::string datafile = it_conf_entries->getOptionValue("file");
 						this->loadData(datafile);
 					} else {
 						std::cout << "Creator::createFromConfig: " << "ERROR: Unknown command " << "'" << command
@@ -221,33 +234,60 @@ void Creator::connectCluster(int input_cluster_id, int output_cluster_id, int wi
 
 //DEPRECATED
 /*
-void Creator::createPrimaryInputFibre(int id, int output_cluster_id, int width) {
-	std::cout << "Creator::createPrimaryInputFibre: " << "(" << id << ", " << output_cluster_id << ", " << width << ")"
-			<< std::endl;
-	boost::uuids::uuid real_uuid = getClusterRealID(output_cluster_id);
-	if (real_uuid != boost::uuids::nil_uuid()) {
-		bundle->connectPrimaryInputCluster(real_uuid, width);
-		fibreIDMap[id] = real_uuid;
-	}
-}
-void Creator::createPrimaryOutputFibre(int id, int input_cluster_id, int width) {
-	std::cout << "Creator::createPrimaryOutputFibre: " << "(" << id << ", " << input_cluster_id << ", " << width << ")"
-			<< std::endl;
-	boost::uuids::uuid real_uuid = getClusterRealID(input_cluster_id);
-	if (real_uuid != boost::uuids::nil_uuid()) {
-		bundle->connectPrimaryOutputCluster(real_uuid, width);
-		fibreIDMap[id] = real_uuid;
-	}
-}*/
+ void Creator::createPrimaryInputFibre(int id, int output_cluster_id, int width) {
+ std::cout << "Creator::createPrimaryInputFibre: " << "(" << id << ", " << output_cluster_id << ", " << width << ")"
+ << std::endl;
+ boost::uuids::uuid real_uuid = getClusterRealID(output_cluster_id);
+ if (real_uuid != boost::uuids::nil_uuid()) {
+ bundle->connectPrimaryInputCluster(real_uuid, width);
+ fibreIDMap[id] = real_uuid;
+ }
+ }
+ void Creator::createPrimaryOutputFibre(int id, int input_cluster_id, int width) {
+ std::cout << "Creator::createPrimaryOutputFibre: " << "(" << id << ", " << input_cluster_id << ", " << width << ")"
+ << std::endl;
+ boost::uuids::uuid real_uuid = getClusterRealID(input_cluster_id);
+ if (real_uuid != boost::uuids::nil_uuid()) {
+ bundle->connectPrimaryOutputCluster(real_uuid, width);
+ fibreIDMap[id] = real_uuid;
+ }
+ }*/
 
 void Creator::loadData(std::string datafile) {
-	std::cout << "Creator::loadData: TODO" << "(" << datafile << ")" << std::endl;
+	bundle->loadChannels(datafile);
+	// map inputs
+	{
+		std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_chans =
+				bundle->getInputChannelsMap().begin();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_chans_end =
+				bundle->getInputChannelsMap().end();
+		while (it_chans != it_chans_end) {
+			patternChannelIDMap[it_chans->second->getRefID()]= it_chans->first;
+			++it_chans;
+		}
+	}
+
+	// map outputs
+	{
+		std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_chans =
+				bundle->getOutputChannelsMap().begin();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_chans_end =
+				bundle->getOutputChannelsMap().end();
+		while (it_chans != it_chans_end) {
+			patternChannelIDMap[it_chans->second->getRefID()]= it_chans->first;
+			++it_chans;
+		}
+	}
+
 }
 void Creator::connectPrimaryInputFibre(int id, int outputid) {
-	std::cout << "Creator::connectPrimaryInputFibre: TODO" << "(" << id<<", "<<outputid<< ")" << std::endl;
+	std::cout<<"Creator::connectPrimaryInputFibre: "<<"("<<id<<", "<<outputid<<")"<<std::endl;
+	bundle->connectPrimaryInputCluster(this->getPatternChannelRealID(id), this->getClusterRealID(outputid));
+
 }
 void Creator::connectPrimaryOutputFibre(int id, int inputid) {
-	std::cout << "Creator::connectPrimaryOutputFibre: TODO" << "(" << id <<", "<<inputid<< ")" << std::endl;
+	std::cout<<"Creator::connectPrimaryOutputFibre: "<<"("<<id<<", "<<inputid<<")"<<std::endl;
+bundle->connectPrimaryOutputCluster(this->getPatternChannelRealID(id), this->getClusterRealID(inputid));
 }
 boost::uuids::uuid Creator::getRealID(const int id, const std::map<int, boost::uuids::uuid> & idmap) const {
 	boost::uuids::uuid found_id;
