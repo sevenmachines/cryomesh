@@ -1,0 +1,104 @@
+.TH "cryomesh::manager::TableFormat" 3 "Fri Apr 1 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::manager::TableFormat \- 
+.PP
+General structure of a table.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <TableFormats.h>\fP
+.PP
+Inherited by \fBcryomesh::manager::ConnectionTableFormat\fP, and \fBcryomesh::manager::NodeTableFormat\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBgetName\fP () const "
+.br
+.RI "\fIReturn the name of the table. \fP"
+.ti -1c
+.RI "std::string \fBgetKey\fP (const std::string &key)"
+.br
+.RI "\fIReturn the string object associated with a key. \fP"
+.ti -1c
+.RI "std::string \fBgetCreateTable\fP () const "
+.br
+.RI "\fIGet the string that can be used to create the sql table. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBname\fP"
+.br
+.ti -1c
+.RI "std::map< std::string, std::string > \fBcolumns\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+General structure of a table. 
+.PP
+Definition at line 22 of file TableFormats.h.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::string cryomesh::manager::TableFormat::getCreateTable () const\fC [inline]\fP"
+.PP
+Get the string that can be used to create the sql table. \fBReturns:\fP
+.RS 4
+the sql command string to create this table 
+.RE
+.PP
+
+.PP
+Definition at line 58 of file TableFormats.h.
+.PP
+References columns, and getName().
+.SS "std::string cryomesh::manager::TableFormat::getKey (const std::string &key)\fC [inline]\fP"
+.PP
+Return the string object associated with a key. ::string The key to search for
+.PP
+\fBReturns:\fP
+.RS 4
+std::string The object associated with the search key, '' if not found 
+.RE
+.PP
+
+.PP
+Definition at line 43 of file TableFormats.h.
+.PP
+References columns.
+.SS "std::string cryomesh::manager::TableFormat::getName () const\fC [inline]\fP"
+.PP
+Return the name of the table. \fBReturns:\fP
+.RS 4
+std::string The name of the table 
+.RE
+.PP
+
+.PP
+Definition at line 30 of file TableFormats.h.
+.PP
+References name.
+.PP
+Referenced by getCreateTable().
+.SH "Member Data Documentation"
+.PP 
+.SS "std::map<std::string, std::string> \fBcryomesh::manager::TableFormat::columns\fP\fC [protected]\fP"
+.PP
+Definition at line 91 of file TableFormats.h.
+.PP
+Referenced by cryomesh::manager::ConnectionTableFormat::ConnectionTableFormat(), getCreateTable(), getKey(), and cryomesh::manager::NodeTableFormat::NodeTableFormat().
+.SS "std::string \fBcryomesh::manager::TableFormat::name\fP\fC [protected]\fP"
+.PP
+Definition at line 84 of file TableFormats.h.
+.PP
+Referenced by cryomesh::manager::ConnectionTableFormat::ConnectionTableFormat(), getName(), and cryomesh::manager::NodeTableFormat::NodeTableFormat().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

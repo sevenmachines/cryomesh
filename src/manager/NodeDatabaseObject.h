@@ -86,17 +86,75 @@ public:
 	 */
 	double getActivity() const;
 
+	/**
+	 * The string to tag ids with
+	 *
+	 * @var std::string
+	 */
 	static const std::string ID_TAG;
+
+	/**
+	 * The string to tag x coordinates with
+	 *
+	 * @var std::string
+	 */
 	static const std::string X_TAG;
+
+	/**
+	 * The string to tag y coordinates with
+	 *
+	 * @var std::string
+	 */
 	static const std::string Y_TAG;
+
+	/**
+	 * The string to tag z coordinates with
+	 *
+	 * @var std::string
+	 */
 	static const std::string Z_TAG;
+
+	/**
+	 * The string to tag activities with
+	 *
+	 * @var std::string
+	 */
 	static const std::string ACTIVITY_TAG;
+
+	/**
+	 * The string to tag cycles with
+	 *
+	 * @var std::string
+	 */
 	static const std::string CYCLE_TAG;
 
 private:
+	/**
+	 * The UUID of the database object
+	 *
+	 * @var std::string
+	 */
 	std::string uuid;
+
+	/**
+	 * The Point of the database object
+	 *
+	 * @var std::string
+	 */
 	spacial::Point point;
+
+	/**
+	 * The Cycle of the database object
+	 *
+	 * @var std::string
+	 */
 	common::Cycle cycle;
+
+	/**
+	 * The activity of the database object
+	 *
+	 * @var std::string
+	 */
 	double activity;
 
 };

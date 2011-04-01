@@ -72,8 +72,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00015"></a>00015 <a class="code" href="classcryomesh_1_1common_1_1Cycle.html#a3ec7b4684fc43ded87c53f497124d384" title="Default Constructor.">Cycle::Cycle</a>() {
 <a name="l00016"></a><a class="code" href="classcryomesh_1_1common_1_1Cycle.html#a3ec7b4684fc43ded87c53f497124d384">00016</a>         <a class="code" href="classcryomesh_1_1common_1_1Cycle.html#a42d6c17a2cc0921eee969105ac9c8e03">cycle</a> = 0;
 <a name="l00017"></a>00017 }
-<a name="l00018"></a>00018 <a class="code" href="classcryomesh_1_1common_1_1Cycle.html#a3ec7b4684fc43ded87c53f497124d384" title="Default Constructor.">Cycle::Cycle</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> it) :
-<a name="l00019"></a><a class="code" href="classcryomesh_1_1common_1_1Cycle.html#a2d97db9fa3450f3eddf5875ef3efad91">00019</a>         cycle(it) {
+<a name="l00018"></a>00018 <a class="code" href="classcryomesh_1_1common_1_1Cycle.html#a3ec7b4684fc43ded87c53f497124d384" title="Default Constructor.">Cycle::Cycle</a>(<span class="keyword">const</span>  <span class="keywordtype">long</span> <span class="keywordtype">int</span> it) :
+<a name="l00019"></a><a class="code" href="classcryomesh_1_1common_1_1Cycle.html#af3feb1bcc151a49815a13950c2c2e786">00019</a>         cycle(it) {
 <a name="l00020"></a>00020 }
 <a name="l00021"></a>00021 
 <a name="l00022"></a>00022 <a class="code" href="classcryomesh_1_1common_1_1Cycle.html#a3ec7b4684fc43ded87c53f497124d384" title="Default Constructor.">Cycle::Cycle</a>(mpz_class mp) :
@@ -98,10 +98,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00041"></a>00041 
 <a name="l00042"></a>00042 <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">Cycle</a> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html#a2c8b5be6e8ce87e4994cf1aa5e5db104" title="Non-destructive addition operator.">Cycle::operator-</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">Cycle</a> &amp; obj)<span class="keyword"> const </span>{
 <a name="l00043"></a><a class="code" href="classcryomesh_1_1common_1_1Cycle.html#a2c8b5be6e8ce87e4994cf1aa5e5db104">00043</a>         <span class="comment">//std::cout&lt;&lt;&quot;Cycle::operator -: &quot;&lt;&lt;&quot;START&quot;&lt;&lt;std::endl;</span>
-<a name="l00044"></a>00044         <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">Cycle</a> cyc = *<span class="keyword">this</span>;
+<a name="l00044"></a>00044         <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">Cycle</a> cyc(*<span class="keyword">this</span>);
 <a name="l00045"></a>00045         cyc -= obj;
 <a name="l00046"></a>00046         <span class="comment">//      std::cout&lt;&lt;&quot;Cycle::operator -: &quot;&lt;&lt;&quot;END&quot;&lt;&lt;std::endl;</span>
-<a name="l00047"></a>00047         <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+<a name="l00047"></a>00047         <span class="keywordflow">return</span> cyc;
 <a name="l00048"></a>00048 }
 <a name="l00049"></a>00049 
 <a name="l00050"></a>00050 <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">Cycle</a> &amp; <a class="code" href="classcryomesh_1_1common_1_1Cycle.html#a1486f852d2104c5fbf806c9f1ad783b1" title="Destructive addition and assignment operator.">Cycle::operator-=</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">Cycle</a> &amp; obj) {
@@ -164,7 +164,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00107"></a>00107 }
 <a name="l00108"></a>00108 
 <a name="l00109"></a>00109  std::ostream&amp; <a class="code" href="namespacecryomesh_1_1common.html#a09ffb633342203192e93c454f4dbd6f9">operator&lt;&lt;</a>(std::ostream &amp; os, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">Cycle</a> &amp; obj){
-<a name="l00110"></a><a class="code" href="namespacecryomesh_1_1common.html#a09ffb633342203192e93c454f4dbd6f9">00110</a>          os&lt;&lt;obj.<a class="code" href="classcryomesh_1_1common_1_1Cycle.html#a5168b76b3a3f20b5f6e38f96f8f9a8b5" title="Return as an unsigned integer.">toULInt</a>();
+<a name="l00110"></a><a class="code" href="namespacecryomesh_1_1common.html#a09ffb633342203192e93c454f4dbd6f9">00110</a>          os&lt;&lt;obj.<a class="code" href="classcryomesh_1_1common_1_1Cycle.html#ad71494a74fe0dfdb7e470a091ee0906d" title="Return as an signed integer.">toLInt</a>();
 <a name="l00111"></a>00111          <span class="keywordflow">return</span> os;
 <a name="l00112"></a>00112  }
 <a name="l00113"></a>00113 
@@ -191,7 +191,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Mar 14 2011 14:08:47 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

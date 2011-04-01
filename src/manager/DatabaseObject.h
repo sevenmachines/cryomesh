@@ -98,6 +98,12 @@ public:
 	 */
 	virtual std::string getInsert(const std::string & table) const =0;
 
+	/**
+	 * Convert an templated object that can be piped to a stream to a string
+	 *
+	 * @param T
+	 * 	The object to get a string for
+	 */
 	template<class T>
 	static std::string toString(T obj) {
 		std::stringstream ss;

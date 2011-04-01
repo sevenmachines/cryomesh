@@ -1,4 +1,4 @@
-.TH "cryomesh::state::PatternChannel" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::state::PatternChannel" 3 "Fri Apr 1 2011" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -202,7 +202,7 @@ cryomesh::state::PatternChannel \-
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 23 of file PatternChannel.h.
+Definition at line 24 of file PatternChannel.h.
 .SH "Member Enumeration Documentation"
 .PP 
 .SS "enum \fBcryomesh::state::PatternChannel::ChannelDataType\fP"
@@ -217,7 +217,7 @@ Definition at line 23 of file PatternChannel.h.
 \fB\fITransitional \fP\fP
 
 .PP
-Definition at line 28 of file PatternChannel.h.
+Definition at line 29 of file PatternChannel.h.
 .SS "enum \fBcryomesh::state::PatternChannel::PrintFormat\fP"
 .PP
 \fBEnumerator: \fP
@@ -230,7 +230,7 @@ Definition at line 28 of file PatternChannel.h.
 \fB\fIINTEGER \fP\fP
 
 .PP
-Definition at line 25 of file PatternChannel.h.
+Definition at line 26 of file PatternChannel.h.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "cryomesh::state::PatternChannel::PatternChannel (\fBChannelDataType\fPdt)"
@@ -391,56 +391,56 @@ Definition at line 567 of file PatternChannel.cpp.
 .PP 
 .SS "\fBChannelDataType\fP \fBcryomesh::state::PatternChannel::channelDataType\fP\fC [private]\fP"
 .PP
-Definition at line 162 of file PatternChannel.h.
+Definition at line 163 of file PatternChannel.h.
 .SS "const int \fBcryomesh::state::PatternChannel::DEFAULT_MAX_PATTERN_LIST_SIZE\fP = 1000\fC [static]\fP"
 .PP
-Definition at line 134 of file PatternChannel.h.
+Definition at line 135 of file PatternChannel.h.
 .SS "int \fBcryomesh::state::PatternChannel::length\fP\fC [private]\fP"
 .PP
-Definition at line 149 of file PatternChannel.h.
+Definition at line 150 of file PatternChannel.h.
 .SS "int \fBcryomesh::state::PatternChannel::maxPatternListSize\fP\fC [private]\fP"
 .PP
-Definition at line 150 of file PatternChannel.h.
+Definition at line 151 of file PatternChannel.h.
 .SS "std::map<boost::shared_ptr<\fBPatternTag\fP>, boost::uuids::uuid> \fBcryomesh::state::PatternChannel::patternByTagMap\fP\fC [private]\fP"
 .PP
-Definition at line 160 of file PatternChannel.h.
+Definition at line 161 of file PatternChannel.h.
 .PP
 Referenced by removePatterns().
 .SS "std::list<boost::uuids::uuid> \fBcryomesh::state::PatternChannel::patternList\fP\fC [private]\fP"
 .PP
-Definition at line 152 of file PatternChannel.h.
+Definition at line 153 of file PatternChannel.h.
 .PP
 Referenced by addPatterns(), forcePatternListSize(), nextPattern(), previousPattern(), printFormattedPatternList(), printPatternList(), and removePatterns().
 .SS "std::list<boost::uuids::uuid>::iterator \fBcryomesh::state::PatternChannel::patternListIterator\fP\fC [private]\fP"
 .PP
-Definition at line 156 of file PatternChannel.h.
+Definition at line 157 of file PatternChannel.h.
 .PP
 Referenced by nextPattern(), and previousPattern().
 .SS "std::map<boost::uuids::uuid, boost::shared_ptr<\fBPattern\fP> > \fBcryomesh::state::PatternChannel::patternMap\fP\fC [private]\fP"
 .PP
-Definition at line 154 of file PatternChannel.h.
+Definition at line 155 of file PatternChannel.h.
 .PP
 Referenced by getPatternByTag(), and removePatterns().
 .SS "int \fBcryomesh::state::PatternChannel::patternPosition\fP\fC [private]\fP"
 .PP
-Definition at line 158 of file PatternChannel.h.
+Definition at line 159 of file PatternChannel.h.
 .PP
 Referenced by nextPattern(), and previousPattern().
 .SS "int \fBcryomesh::state::PatternChannel::refID\fP\fC [private]\fP"
 .PP
-Definition at line 143 of file PatternChannel.h.
+Definition at line 144 of file PatternChannel.h.
 .SS "const unsigned int \fBcryomesh::state::PatternChannel::REFID_CREATE_START\fP = 100000\fC [static]\fP"
 .PP
-Definition at line 136 of file PatternChannel.h.
+Definition at line 137 of file PatternChannel.h.
 .SS "unsigned int \fBcryomesh::state::PatternChannel::refIDS\fP = \fBPatternChannel::REFID_CREATE_START\fP\fC [static]\fP"
 .PP
-Definition at line 137 of file PatternChannel.h.
+Definition at line 138 of file PatternChannel.h.
 .SS "boost::uuids::uuid \fBcryomesh::state::PatternChannel::uuid\fP\fC [private]\fP"
 .PP
-Definition at line 145 of file PatternChannel.h.
+Definition at line 146 of file PatternChannel.h.
 .SS "int \fBcryomesh::state::PatternChannel::width\fP\fC [private]\fP"
 .PP
-Definition at line 147 of file PatternChannel.h.
+Definition at line 148 of file PatternChannel.h.
 
 .SH "Author"
 .PP 

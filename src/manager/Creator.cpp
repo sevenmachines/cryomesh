@@ -36,24 +36,10 @@ std::map<std::string, std::list<std::string> > Creator::getAcceptedCommandList()
 	return commap;
 }
 
-Creator::Creator(const std::string & config_filename) :
-	configFilename(config_filename), inputDataFilename(""), databaseFilename(Creator::DEFAULT_DATABASE_FILENAME) {
+Creator::Creator(const std::string & config_filename, const std::string & database_filename) :
+	configFilename(config_filename), databaseFilename(Creator::DEFAULT_DATABASE_FILENAME) {
 	this->initialise();
 
-	// create from config
-	{
-		bool success = this->createFromConfig();
-		if (success == false) {
-			std::cout << "Creator::Creator: " << "ERROR: Creating bundle from config file " << "'" << configFilename
-					<< "'" << std::endl;
-		}
-	}
-}
-
-Creator::Creator(const std::string & config_filename, const std::string & inputdata_filename,
-		const std::string & database_filename) :
-	configFilename(config_filename), inputDataFilename(""), databaseFilename(database_filename) {
-	this->initialise();
 	// create from config
 	{
 		bool success = this->createFromConfig();
@@ -137,12 +123,12 @@ bool Creator::createFromConfig() {
 						// connect-primary-input id=1 outputid=1
 						int id = it_conf_entries->getIntegerFormattedOptionValue("id");
 						int outputid = it_conf_entries->getIntegerFormattedOptionValue("outputid");
-						this->connectPrimaryInputFibre(id, outputid);
+						this->connectPrimaryInputChannel(id, outputid);
 					} else if (command == "connect-primary-output") {
 						// connect-primary-output id=2 outputid=2
 						int id = it_conf_entries->getIntegerFormattedOptionValue("id");
 						int inputid = it_conf_entries->getIntegerFormattedOptionValue("inputid");
-						this->connectPrimaryOutputFibre(id, inputid);
+						this->connectPrimaryOutputChannel(id, inputid);
 					} else if (command == "loaddata") {
 						//loaddata datafile
 						std::string datafile = it_conf_entries->getOptionValue("file");
@@ -226,10 +212,12 @@ bool Creator::checkConfigStructure(const std::list<config::ConfigEntry> & conf_e
 		const std::list<config::ConfigEntry>::const_iterator it_conf_entries_end = conf_entries.end();
 		while (it_conf_entries != it_conf_entries_end && ((create_cluster_found != true) || (loaddata_found != true))) {
 			if (it_conf_entries->getCommand() == "create-cluster") {
-				std::cout<<"Creator::checkConfigStructure: "<<"WARNING: Config file has no 'create-cluster' command... "<<std::endl;
+				std::cout << "Creator::checkConfigStructure: "
+						<< "WARNING: Config file has no 'create-cluster' command... " << std::endl;
 				create_cluster_found = true;
 			} else if (it_conf_entries->getCommand() == "loaddata") {
-				std::cout<<"Creator::checkConfigStructure: "<<"WARNING: Config file has no 'loaddata' command... "<<std::endl;
+				std::cout << "Creator::checkConfigStructure: " << "WARNING: Config file has no 'loaddata' command... "
+						<< std::endl;
 				loaddata_found = true;
 			}
 			++it_conf_entries;
@@ -303,14 +291,14 @@ void Creator::loadData(std::string datafile) {
 	}
 
 }
-void Creator::connectPrimaryInputFibre(int id, int outputid) {
-	std::cout << "Creator::connectPrimaryInputFibre: " << "(" << id << ", " << outputid << ")" << std::endl;
-	bundle->connectPrimaryInputCluster(this->getPatternChannelRealID(id), this->getClusterRealID(outputid));
+void Creator::connectPrimaryInputChannel(int channel_id, int outputid) {
+	std::cout << "Creator::connectPrimaryInputFibre: " << "(" << channel_id << ", " << outputid << ")" << std::endl;
+	bundle->connectPrimaryInputCluster(this->getPatternChannelRealID(channel_id), this->getClusterRealID(outputid));
 
 }
-void Creator::connectPrimaryOutputFibre(int id, int inputid) {
-	std::cout << "Creator::connectPrimaryOutputFibre: " << "(" << id << ", " << inputid << ")" << std::endl;
-	bundle->connectPrimaryOutputCluster(this->getPatternChannelRealID(id), this->getClusterRealID(inputid));
+void Creator::connectPrimaryOutputChannel(int channel_id, int inputid) {
+	std::cout << "Creator::connectPrimaryOutputFibre: " << "(" << channel_id << ", " << inputid << ")" << std::endl;
+	bundle->connectPrimaryOutputCluster(this->getPatternChannelRealID(channel_id), this->getClusterRealID(inputid));
 }
 boost::uuids::uuid Creator::getRealID(const int id, const std::map<int, boost::uuids::uuid> & idmap) const {
 	boost::uuids::uuid found_id;

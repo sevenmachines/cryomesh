@@ -270,17 +270,17 @@ void Bundle::updatePrimaryOutputFibres() {
 	outputFibres.update();
 }
 
-boost::shared_ptr<Fibre> Bundle::getPrimaryInputFibreByChannel(const boost::uuids::uuid id) {
-	return this->getPrimaryFibreByChannel(id, inputFibres);
+boost::shared_ptr<Fibre> Bundle::getPrimaryInputFibreByChannel(const boost::uuids::uuid pattern_channel_uuid) {
+	return this->getPrimaryFibreByChannel(pattern_channel_uuid, inputFibres);
 }
-boost::shared_ptr<Fibre> Bundle::getPrimaryOutputFibreByChannel(const boost::uuids::uuid id) {
-	return this->getPrimaryFibreByChannel(id, outputFibres);
+boost::shared_ptr<Fibre> Bundle::getPrimaryOutputFibreByChannel(const boost::uuids::uuid pattern_channel_uuid) {
+	return this->getPrimaryFibreByChannel(pattern_channel_uuid, outputFibres);
 }
-boost::shared_ptr<state::PatternChannel> Bundle::getPrimaryInputChannelByFibre(const boost::uuids::uuid id) {
-	return this->getPrimaryChannelByFibre(id, inputChannelsMap);
+boost::shared_ptr<state::PatternChannel> Bundle::getPrimaryInputChannelByFibre(const boost::uuids::uuid fibre_uuid) {
+	return this->getPrimaryChannelByFibre(fibre_uuid, inputChannelsMap);
 }
-boost::shared_ptr<state::PatternChannel> Bundle::getPrimaryOutputChannelByFibre(const boost::uuids::uuid id) {
-	return this->getPrimaryChannelByFibre(id, outputChannelsMap);
+boost::shared_ptr<state::PatternChannel> Bundle::getPrimaryOutputChannelByFibre(const boost::uuids::uuid fibre_uuid) {
+	return this->getPrimaryChannelByFibre(fibre_uuid, outputChannelsMap);
 }
 boost::shared_ptr<Fibre> Bundle::getPrimaryFibreByChannel(const boost::uuids::uuid id, FibreMap & map) {
 	boost::uuids::uuid fibre_id;

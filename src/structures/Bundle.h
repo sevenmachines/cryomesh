@@ -40,6 +40,17 @@ public:
 	 */
 	void update();
 
+	/**
+	 * Create a cluster with a size and connectivity
+	 *
+	 * @param int
+	 * 	The number of nodes to create
+	 * @param int
+	 * 	The connectivity of the nodes
+	 *
+	 * @return boost::shared_ptr<Cluster>
+	 * 	The cluster that was created
+	 */
 	virtual boost::shared_ptr<Cluster> createCluster(int nodeSize, int nodeConnectivity);
 
 	/**
@@ -144,59 +155,222 @@ public:
 	virtual boost::shared_ptr<Fibre> connectLoopbackCluster(boost::uuids::uuid clusterUUID, int fibreWidth);
 
 	/**
-	 * Load in the pattern channels from a filename and create equivalent
-	 * sized fibres to go with them, tracking the mapping of the pattern
-	 * channel to the fibre
+	 * Load in the pattern channels from a filename of a pattern dataset
+	 *
+	 * @param std::string
+	 * 	The full path filename of the pattern data set
 	 */
 	virtual void loadChannels(const std::string & ifstr);
 
+	/**
+	 * Get the clusters in this bundle
+	 *
+	 * @return ClusterMap
+	 * 	The map of clusters in this bundle
+	 */
 	const ClusterMap & getClusters() const;
+
+	/**
+	 * Get the mutable clusters in this bundle
+	 *
+	 * @return ClusterMap
+	 * 	The mutable map of clusters in this bundle
+	 */
 	const FibreMap & getFibres() const;
 
+	/**
+	 * Get the input fibres of this bundle
+	 *
+	 * @return FibreMap
+	 * 	The map of input fibres of this bundle
+	 */
 	const FibreMap & getInputFibres() const;
+
+	/**
+	 * Get the output fibres of this bundle
+	 *
+	 * @return FibreMap
+	 * 	The map of output fibres of this bundle
+	 */
 	const FibreMap & getOutputFibres() const;
 
+	/**
+	 * Get the input pattern channels of this bundle
+	 *
+	 * @return PatternChannelMap
+	 * 	The map of input pattern channels of this bundle
+	 */
 	const state::PatternChannelMap & getInputChannelsMap() const;
+
+	/**
+	 * Get the output pattern channels of this bundle
+	 *
+	 * @return PatternChannelMap
+	 * 	The map of output pattern channels of this bundle
+	 */
 	const state::PatternChannelMap & getOutputChannelsMap() const;
+
+	/**
+	 * Get the map of fibres to their associated pattern channels
+	 *
+	 * @return std::map<boost::uuids::uuid, boost::uuids::uuid>
+	 * 	The map of fibres to their associated pattern channels
+	 */
 	const std::map<boost::uuids::uuid, boost::uuids::uuid> & getFibrePatternChannelMap() const ;
 
+	/**
+	 * To stream operator
+	 *
+	 *	@param std::ostream & os
+	 *		The output stream
+	 *	@param const Bundle & obj
+	 *		The object to stream
+	 *
+	 *	@return std::ostream &
+	 *		The output stream
+	 */
 	friend std::ostream & operator<<(std::ostream & os, const Bundle & bundle);
 
 protected:
 
 	/**
-	 * get the next patterns from channels and apply them to their mapped fibres
+	 * Get the next patterns from channels and apply them to their mapped fibres
 	 */
 	virtual void updatePrimaryInputFibres();
 
 	/**
-		 * get the patterns from primary output fibres and apply them to their
-		 * mapped pattern channels
-		 */
-		virtual void updatePrimaryOutputFibres();
+	 * Get the patterns from primary output fibres and apply them to their
+	 * mapped pattern channels
+	 */
+	virtual void updatePrimaryOutputFibres();
 
 private:
 
+	/**
+	 * Map of all the clusters in this bundle
+	 *
+	 * @var ClusterMap
+	 */
 	ClusterMap clusters;
+
+	/**
+	 * Map of all the fibres in this bundle
+	 *
+	 * @var FibreMap
+	 */
 	FibreMap fibres;
 
+	/**
+	 * Map of all the input channels to this bundle
+	 *
+	 * @var PatternChannelMap
+	 */
 	state::PatternChannelMap inputChannelsMap;
+
+	/**
+	 * Map of all the output channels to this bundle
+	 *
+	 * @var PatternChannelMap
+	 */
 	state::PatternChannelMap outputChannelsMap;
 
+	/**
+	 * Map of all the input fibres to the bundle
+	 *
+	 * @var FibreMap
+	 */
 	FibreMap inputFibres;
+
+	/**
+	 * Map of all the output fibres to the bundle
+	 *
+	 * @var FibreMap
+	 */
 	FibreMap outputFibres;
 
 	/**
 	 * Mapping of fibre uuid to a corresponding pattern channel
+	 *
+	 * @var std::map<boost::uuids::uuid, boost::uuids::uuid>
 	 */
 	std::map<boost::uuids::uuid, boost::uuids::uuid> fibrePatternChannelMap;
 
-	boost::shared_ptr< Fibre > getPrimaryInputFibreByChannel(const boost::uuids::uuid id);
-	boost::shared_ptr< Fibre > getPrimaryOutputFibreByChannel(const boost::uuids::uuid id);
-	boost::shared_ptr< state::PatternChannel > getPrimaryInputChannelByFibre(const boost::uuids::uuid id);
-	boost::shared_ptr< state::PatternChannel  > getPrimaryOutputChannelByFibre(const boost::uuids::uuid id);
-	boost::shared_ptr< Fibre > getPrimaryFibreByChannel(const boost::uuids::uuid id, FibreMap & map);
-	boost::shared_ptr< state::PatternChannel  > getPrimaryChannelByFibre(const boost::uuids::uuid id, state::PatternChannelMap & map);
+	/**
+	 * Helper method to take a uuid and find its correspondingly mapped  object
+	 * Take an input PatternChannel uuid and find the input Fibre its mapped to
+	 *
+	 * @param boost::uuids::uuid
+	 * 	The uuid of the input PatternChannel
+	 *
+	 * @return boost::shared_ptr<Fibre>
+	 * 	The input  Fibre object the input PatternChannel with this uuid is mapped to, null if not found
+	 */
+	boost::shared_ptr<Fibre> getPrimaryInputFibreByChannel(const boost::uuids::uuid pattern_channel_uuid);
+
+	/**
+	 * Helper method to take a uuid and find its correspondingly mapped  object
+	 * Take an output PatternChannel uuid and find the output Fibre its mapped to
+	 *
+	 * @param boost::uuids::uuid
+	 * 	The uuid of the output PatternChannel
+	 *
+	 * @return boost::shared_ptr<Fibre>
+	 * 	The output  Fibre object the output PatternChannel with this uuid is mapped to, null if not found
+	 */
+	boost::shared_ptr<Fibre> getPrimaryOutputFibreByChannel(const boost::uuids::uuid pattern_channel_uuid);
+
+	/**
+	 * Helper method to take a uuid and find its correspondingly mapped  object
+	 * Take an input Fibre uuid and find the input PatternChannel its mapped to
+	 *
+	 * @param boost::uuids::uuid
+	 * 	The uuid of the input Fibre
+	 *
+	 * @return boost::shared_ptr<PatternChannel>
+	 * 	The input PatternChannel object the input Fibre with this uuid is mapped to, null if not found
+	 */
+	boost::shared_ptr<state::PatternChannel> getPrimaryInputChannelByFibre(const boost::uuids::uuid fibre_uuid);
+
+	/**
+	 * Helper method to take a uuid and find its correspondingly mapped  object
+	 * Take an output Fibre uuid and find the output PatternChannel its mapped to
+	 *
+	 * @param boost::uuids::uuid
+	 * 	The uuid of the output Fibre
+	 *
+	 * @return boost::shared_ptr<PatternChannel>
+	 * 	The output PatternChannel object the output Fibre with this uuid is mapped to, null if not found
+	 */
+	boost::shared_ptr<state::PatternChannel> getPrimaryOutputChannelByFibre(const boost::uuids::uuid fibre_uuid);
+
+	/**
+	 * Helper method to take a uuid and find its correspondingly mapped  object
+	 * Take an channel uuid and find the Fibre its mapped to inside the supplied map
+	 *
+	 * @param boost::uuids::uuid
+	 * 	The uuid of the PatternChannel
+	 *	@param FibreMap
+	 *		The map to search for a mapping from
+	 *
+	 * @return boost::shared_ptr<Fibre>
+	 * 	The Fibre object the PatternChannel with this uuid is mapped to, null if not found
+	 */
+	boost::shared_ptr<Fibre> getPrimaryFibreByChannel(const boost::uuids::uuid id, FibreMap & map);
+
+	/**
+	 * Helper method to take a uuid and find its correspondingly mapped  object
+	 * Take an Fibre uuid and find the PatternChannel its mapped to inside the supplied map
+	 *
+	 * @param boost::uuids::uuid
+	 * 	The uuid of the Fibre
+	 *	@param PatternChannelMap
+	 *		The map to search for a mapping from
+	 *
+	 * @return boost::shared_ptr<PatternChannel>
+	 * 	The PatternChannel object the Fibre with this uuid is mapped to, null if not found
+	 */
+	boost::shared_ptr<state::PatternChannel> getPrimaryChannelByFibre(const boost::uuids::uuid id,
+			state::PatternChannelMap & map);
 };
 
 }

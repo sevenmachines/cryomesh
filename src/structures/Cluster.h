@@ -34,14 +34,15 @@ class Cluster: public common::Tagged {
 public:
 
 	/**
-	 * Enum to force value of a parameter
+	 * Enum to force value type of a parameter
+	 *
 	 */
 	enum ValueTypeSpecifier {
 		AsIncrement, AsDecrement, AsMinumum, AsAbsolute
 	};
 
 	/**
-	 * Constructor
+	 * Default constructor
 	 */
 	Cluster();
 
@@ -97,24 +98,50 @@ public:
 	 */
 	const std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> > & getConnections() const;
 
+	/**
+	 * Get the connector for this Cluster
+	 *
+	 * @return common::Connector<Cluster, Fibre>
+	 * 	The connector for this Cluster
+	 */
 	const common::Connector<Cluster, Fibre> & getConnector() const;
+
+	/**
+	 * Get the mutable connector for this Cluster
+	 *
+	 * @return common::Connector<Cluster, Fibre>
+	 * 	The mutable onnector for this Cluster
+	 */
 	common::Connector<Cluster, Fibre> & getMutableConnector();
 
-	const components::NodeMap & getNodeMap()const;
+	/**
+	 * Get the NodeMap for this Cluster
+	 *
+	 * @return components::NodeMap
+	 * 	The NodeMap for this Cluster
+	 */
+	const components::NodeMap & getNodeMap() const;
+
+	/**
+	 * Get the mutable NodeMap for this Cluster
+	 *
+	 * @return components::NodeMap
+	 * 	The mutable NodeMap for this Cluster
+	 */
 	components::NodeMap & getMutableNodeMap();
 
 	/**
-		 * To stream operator
-		 *
-		 *	@param std::ostream & os
-		 *		The output stream
-		 *	@param const Cluster & obj
-		 *		The object to stream
-		 *
-		 *	@return std::ostream &
-		 *		The output stream
-		 */
-		friend std::ostream& operator<<(std::ostream & os, const Cluster & obj);
+	 * To stream operator
+	 *
+	 *	@param std::ostream & os
+	 *		The output stream
+	 *	@param const Cluster & obj
+	 *		The object to stream
+	 *
+	 *	@return std::ostream &
+	 *		The output stream
+	 */
+	friend std::ostream& operator<<(std::ostream & os, const Cluster & obj);
 
 protected:
 
@@ -140,10 +167,32 @@ protected:
 			boost::shared_ptr<components::Node> nodeEnd, int connectivity = 1);
 
 private:
+	/**
+	 * All the nodes of this cluster stored in a NodeMap
+	 *
+	 * @var NodeMap
+	 */
 	components::NodeMap nodes;
+
+	/**
+	 * All the connections of this cluster stored in a ConnectionMap
+	 *
+	 * @var ConnectionMap
+	 */
 	components::ConnectionMap connections;
+
+	/**
+	 * The underlying mesh of this cluster
+	 *
+	 * @var Mesh
+	 */
 	components::Mesh mesh;
 
+	/**
+	 * The Cluster to Fibre connector for this cluster
+	 *
+	 * @var Connector
+	 */
 	common::Connector<Cluster, Fibre> connector;
 
 };

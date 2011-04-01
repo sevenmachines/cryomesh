@@ -1,4 +1,4 @@
-.TH "cryomesh::common::Connector" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::common::Connector" 3 "Fri Apr 1 2011" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -194,7 +194,7 @@ Connect up an object using the supplied map. \fBParameters:\fP
 .PP
 
 .PP
-Definition at line 614 of file Connector.h.
+Definition at line 613 of file Connector.h.
 .PP
 Referenced by cryomesh::common::Connector< Fibre, Cluster >::connectInput(), and cryomesh::common::Connector< Fibre, Cluster >::connectOutput().
 .SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::connectInput (const boost::shared_ptr< T >obj)\fC [inline]\fP"
@@ -307,7 +307,7 @@ Disconnect an object using the supplied map. \fBParameters:\fP
 .PP
 
 .PP
-Definition at line 667 of file Connector.h.
+Definition at line 666 of file Connector.h.
 .SS "template<class U, class T> boost::shared_ptr<T> \fBcryomesh::common::Connector\fP< U, T >::disconnect (const boost::shared_ptr< T >obj, std::map< boost::uuids::uuid, boost::shared_ptr< T > > &objs)\fC [inline, protected]\fP"
 .PP
 Disconnect an object using the supplied map. \fBParameters:\fP
@@ -324,7 +324,7 @@ Disconnect an object using the supplied map. \fBParameters:\fP
 .PP
 
 .PP
-Definition at line 644 of file Connector.h.
+Definition at line 643 of file Connector.h.
 .PP
 Referenced by cryomesh::common::Connector< Fibre, Cluster >::disconnectInput(), and cryomesh::common::Connector< Fibre, Cluster >::disconnectOutput().
 .SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::disconnectAllInputs ()\fC [inline]\fP"
@@ -602,22 +602,22 @@ Definition at line 567 of file Connector.h.
 .PP 
 .SS "template<class U, class T> unsigned int \fBcryomesh::common::Connector\fP< U, T >::\fBmaxInputs\fP\fC [protected]\fP"
 .PP
-Definition at line 697 of file Connector.h.
+Definition at line 696 of file Connector.h.
 .PP
 Referenced by cryomesh::common::Connector< Fibre, Cluster >::connectInput().
 .SS "template<class U, class T> unsigned int \fBcryomesh::common::Connector\fP< U, T >::\fBmaxOutputs\fP\fC [protected]\fP"
 .PP
-Definition at line 704 of file Connector.h.
+Definition at line 703 of file Connector.h.
 .PP
 Referenced by cryomesh::common::Connector< Fibre, Cluster >::connectOutput().
 .SS "template<class U, class T> std::map<boost::uuids::uuid, boost::shared_ptr<T> > \fBcryomesh::common::Connector\fP< U, T >::\fBminputs\fP\fC [protected]\fP"
 .PP
-Definition at line 683 of file Connector.h.
+Definition at line 682 of file Connector.h.
 .PP
 Referenced by cryomesh::common::Connector< Fibre, Cluster >::connectInput(), cryomesh::common::Connector< Fibre, Cluster >::disconnectAllInputs(), cryomesh::common::Connector< Fibre, Cluster >::disconnectInput(), cryomesh::common::Connector< Fibre, Cluster >::getInputs(), and cryomesh::common::Connector< Fibre, Cluster >::getMutableInputs().
 .SS "template<class U, class T> std::map<boost::uuids::uuid, boost::shared_ptr<T> > \fBcryomesh::common::Connector\fP< U, T >::\fBmoutputs\fP\fC [protected]\fP"
 .PP
-Definition at line 690 of file Connector.h.
+Definition at line 689 of file Connector.h.
 .PP
 Referenced by cryomesh::common::Connector< Fibre, Cluster >::connectOutput(), cryomesh::common::Connector< Fibre, Cluster >::disconnectAllOutputs(), cryomesh::common::Connector< Fibre, Cluster >::disconnectOutput(), cryomesh::common::Connector< Fibre, Cluster >::getMutableOutputs(), and cryomesh::common::Connector< Fibre, Cluster >::getOutputs().
 

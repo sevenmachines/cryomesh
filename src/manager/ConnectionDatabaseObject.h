@@ -98,17 +98,74 @@ public:
 	 */
 	const int & getImpulseCount() const;
 
+	/**
+	 * The string with which to tag ids
+	 *
+	 * @var std::string
+	 */
 	static const std::string ID_TAG;
+
+	/**
+	 * The string with which to tag input id's
+	 *
+	 * @var std::string
+	 */
 	static const std::string INPUT_ID_TAG;
+
+	/**
+	 * The string with which to tag output id's
+	 *
+	 * @var std::string
+	 */
 	static const std::string OUTPUT_ID_TAG;
+
+	/**
+	 * The string with which to tag impulse counts
+	 *
+	 * @var std::string
+	 */
 	static const std::string IMPULSE_COUNT_TAG;
+	/**
+	 * The string with which to tag cycles
+	 *
+	 * @var std::string
+	 */
 	static const std::string CYCLE_TAG;
 
 private:
+	/**
+	 * UUID of the database object
+	 *
+	 * @var std::string
+	 */
 	std::string uuid;
+
+	/**
+	 * The input node UUID of the database object
+	 *
+	 * @var std::string
+	 */
 	std::string inputNodeUUID;
+
+	/**
+	 * The output node UUID of the database object
+	 *
+	 * @var std::string
+	 */
 	std::string outputNodeUUID;
+
+	/**
+	 * The cycle of the database object
+	 *
+	 * @var std::string
+	 */
 	common::Cycle cycle;
+
+	/**
+	 * The impulse count of the database object
+	 *
+	 * @var std::string
+	 */
 	int impulseCount;
 };
 

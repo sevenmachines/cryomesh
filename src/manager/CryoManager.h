@@ -23,37 +23,91 @@ public:
 	 * Enum to specify the actual state of the manager/cryomesh
 	 */
 	enum ManagerState {
-		PAUSED, RUNNING, STOPPED,  EMPTY, NEW
+		PAUSED, RUNNING, STOPPED, EMPTY, NEW
 	};
-	CryoManager();
-	virtual ~CryoManager();
-	void create(){
-		currentState = NEW;
-		std::cout<<"CryoManager::create: "<<""<<std::endl;
-	}
-	void run(){
-		currentState = RUNNING;
-		std::cout<<"CryoManager::run: "<<""<<std::endl;
-	}
-	void pause(){
-		currentState = PAUSED;
-		std::cout<<"CryoManager::pause: "<<""<<std::endl;
-	}
-	void stop(){
-		currentState = STOPPED;
-		std::cout<<"CryoManager::stop: "<<""<<std::endl;
-	}
-	void destroy(){
-		currentState = EMPTY;
-		std::cout<<"CryoManager::destroy: "<<""<<std::endl;
+
+	/**
+	 * Default contructor
+	 */
+	CryoManager() :
+		currentState(EMPTY) {
 	}
 
-	const ManagerState & getCurrentState()const{
+	/**
+	 * Default destructor
+	 */
+	virtual ~CryoManager() {
+	}
+
+	/**
+	 * Set manager state to create, load config from file
+	 *
+	 * @param std::string
+	 * 	The config file to create from
+	 */
+	void create(const std::string configfile) {
+		std::cout << "CryoManager::create: " << "" << std::endl;
+		currentState = NEW;
+		creator = boost::shared_ptr<Creator>(new Creator(configfile));
+	}
+
+	/**
+	 * Set manager state to running
+	 */
+	void run() {
+		std::cout << "CryoManager::run: " << "" << std::endl;
+		currentState = RUNNING;
+	}
+
+	/**
+	 * Set manager state to paused
+	 */
+	void pause() {
+		std::cout << "CryoManager::pause: " << "" << std::endl;
+		currentState = PAUSED;
+	}
+
+	/**
+	 * Set manager state to stopped
+	 */
+	void stop() {
+		std::cout << "CryoManager::stop: " << "" << std::endl;
+		currentState = STOPPED;
+	}
+
+	/**
+	 * Set manager state to destroy
+	 */
+	void destroy() {
+		std::cout << "CryoManager::destroy: " << "" << std::endl;
+		currentState = EMPTY;
+		creator.reset();
+	}
+
+	/**
+	 * Return the managers current state
+	 *
+	 * @return ManagerState
+	 * 	The current state of the manager
+	 */
+	const ManagerState & getCurrentState() const {
 		return currentState;
 	}
 
 private:
+	/**
+	 * The current state of the manager
+	 *
+	 * @var ManagerState
+	 */
 	ManagerState currentState;
+
+	/**
+	 * The creator for this manager
+	 *
+	 * @var boost::shared_ptr< Creator >
+	 */
+	boost::shared_ptr<Creator> creator;
 };
 
 }//NAMESPACE

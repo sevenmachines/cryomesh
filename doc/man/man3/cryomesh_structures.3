@@ -1,4 +1,4 @@
-.TH "cryomesh::structures" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::structures" 3 "Fri Apr 1 2011" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -43,9 +43,21 @@ cryomesh::structures \-
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "std::ostream& cryomesh::structures::operator<< (std::ostream &os, const Bundle &bundle)"
+.SS "std::ostream& cryomesh::structures::operator<< (std::ostream &os, const Bundle &bundle)"\fBParameters:\fP
+.RS 4
+\fIstd::ostream\fP & os The output stream 
+.br
+\fIconst\fP \fBBundle\fP & obj The object to stream
+.RE
 .PP
-Definition at line 94 of file Bundle.cpp.
+\fBReturns:\fP
+.RS 4
+std::ostream & The output stream 
+.RE
+.PP
+
+.PP
+Definition at line 207 of file Bundle.cpp.
 .SS "std::ostream& cryomesh::structures::operator<< (std::ostream &os, const Fibre &obj)"\fBReturns:\fP
 .RS 4
 Pattern To stream operator
@@ -65,9 +77,9 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 251 of file Fibre.cpp.
+Definition at line 300 of file Fibre.cpp.
 .PP
-References cryomesh::components::ConnectionMap::getActivityPattern(), cryomesh::structures::Fibre::getConnections(), and cryomesh::common::KeyMappedCollection< U, T >::getSize().
+References cryomesh::components::ConnectionMap::getActivityPattern(), and cryomesh::structures::Fibre::getConnections().
 .SS "std::ostream& cryomesh::structures::operator<< (std::ostream &os, const Cluster &obj)"\fBParameters:\fP
 .RS 4
 \fIstd::ostream\fP & os The output stream 

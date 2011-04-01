@@ -1,4 +1,4 @@
-.TH "cryomesh::components::NodeMap" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::components::NodeMap" 3 "Fri Apr 1 2011" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -11,90 +11,21 @@ Helper class for \fBNodeMap\fP to KeyMappedCollection mapping.
 .PP
 .PP
 \fC#include <NodeMap.h>\fP
-.PP
-Inherits \fBKeyMappedCollection< boost::uuids::uuid, components::Node >\fP.
 .SS "Public Member Functions"
 
 .in +1c
 .ti -1c
 .RI "\fBNodeMap\fP ()"
 .br
+.RI "\fIDefault constructor. \fP"
 .ti -1c
 .RI "virtual \fB~NodeMap\fP ()"
 .br
+.RI "\fIDefault destructor. \fP"
 .ti -1c
 .RI "virtual void \fBupdate\fP ()"
 .br
-.ti -1c
-.RI "void \fBclear\fP ()"
-.br
-.RI "\fIClear all objects from collection. \fP"
-.ti -1c
-.RI "boost::shared_ptr< \fBcomponents::Node\fP > \fBadd\fP (boost::shared_ptr< \fBcomponents::Node\fP > obj)"
-.br
-.RI "\fIAdd object to collection. \fP"
-.ti -1c
-.RI "virtual void \fBadd\fP (const std::initializer_list< boost::shared_ptr< \fBcomponents::Node\fP > > &list)"
-.br
-.RI "\fIAdd object to collection by initialiser list. \fP"
-.ti -1c
-.RI "virtual void \fBadd\fP (const std::list< boost::shared_ptr< \fBcomponents::Node\fP > > &list)"
-.br
-.RI "\fIAdd object to collection by list. \fP"
-.ti -1c
-.RI "virtual void \fBremove\fP (const std::initializer_list< boost::shared_ptr< \fBcomponents::Node\fP > > &list)"
-.br
-.RI "\fIRemove objects from collection by initialiser list. \fP"
-.ti -1c
-.RI "virtual void \fBremove\fP (const std::list< boost::shared_ptr< \fBcomponents::Node\fP > > &list)"
-.br
-.RI "\fIRemove objects from collection by list. \fP"
-.ti -1c
-.RI "boost::shared_ptr< \fBcomponents::Node\fP > \fBremove\fP (boost::shared_ptr< \fBcomponents::Node\fP > obj)"
-.br
-.RI "\fIAdd object to collection. \fP"
-.ti -1c
-.RI "boost::shared_ptr< \fBcomponents::Node\fP > \fBremove\fP (\fBcomponents::Node\fP &obj)"
-.br
-.RI "\fIRemove object from collection. \fP"
-.ti -1c
-.RI "boost::shared_ptr< \fBcomponents::Node\fP > \fBremove\fP (boost::uuids::uuidkey)"
-.br
-.RI "\fIRemove object from collection bt key. \fP"
-.ti -1c
-.RI "std::list< boost::uuids::uuid > \fBgetKeyList\fP () const"
-.br
-.RI "\fIGet keys for underlying connection. \fP"
-.ti -1c
-.RI "std::vector< boost::shared_ptr< \fBcomponents::Node\fP > > \fBgetObjectList\fP () const"
-.br
-.RI "\fIGet object list for underlying connection. \fP"
-.ti -1c
-.RI "boost::shared_ptr< \fBcomponents::Node\fP > \fBgetObjectByKey\fP (const boost::uuids::uuid &key)"
-.br
-.RI "\fIGet object using key. \fP"
-.ti -1c
-.RI "std::vector< boost::shared_ptr< \fBcomponents::Node\fP > > \fBgetRandomRange\fP (int number) const"
-.br
-.ti -1c
-.RI "const std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Node\fP > > & \fBgetCollection\fP () const"
-.br
-.RI "\fIGet maximum value. \fP"
-.ti -1c
-.RI "std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Node\fP > > & \fBgetMutableCollection\fP ()"
-.br
-.RI "\fIGet mutable underlying collection. \fP"
-.ti -1c
-.RI "int \fBgetSize\fP () const"
-.br
-.RI "\fIGet underlying collections size. \fP"
-.in -1c
-.SS "Protected Attributes"
-
-.in +1c
-.ti -1c
-.RI "std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Node\fP > > \fBobjects\fP"
-.br
+.RI "\fIUpdate all entries in the nodemap. \fP"
 .in -1c
 .SS "Friends"
 
@@ -113,204 +44,21 @@ Definition at line 23 of file NodeMap.h.
 .PP 
 .SS "cryomesh::components::NodeMap::NodeMap ()\fC [inline]\fP"
 .PP
-Definition at line 25 of file NodeMap.h.
+Default constructor. 
+.PP
+Definition at line 28 of file NodeMap.h.
 .SS "virtual cryomesh::components::NodeMap::~NodeMap ()\fC [inline, virtual]\fP"
 .PP
-Definition at line 27 of file NodeMap.h.
+Default destructor. 
+.PP
+Definition at line 34 of file NodeMap.h.
 .SH "Member Function Documentation"
 .PP 
-.SS "boost::shared_ptr<\fBcomponents::Node\fP > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBcomponents::Node\fP  >::add (boost::shared_ptr< \fBcomponents::Node\fP  >obj)\fC [inline, inherited]\fP"
-.PP
-Add object to collection. \fBParameters:\fP
-.RS 4
-\fIboost::shared_ptr<T>\fP obj The object to be added to the collection
-.RE
-.PP
-\fBReturns:\fP
-.RS 4
-boost::shared_ptr<T> The object added to the collection 
-.RE
-.PP
-
-.PP
-Definition at line 59 of file KeyMappedCollection.h.
-.SS "virtual void \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBcomponents::Node\fP  >::add (const std::initializer_list< boost::shared_ptr< \fBcomponents::Node\fP  > > &list)\fC [inline, virtual, inherited]\fP"
-.PP
-Add object to collection by initialiser list. \fBParameters:\fP
-.RS 4
-\fIstd::initialiser_list<T>\fP obj The values to be added to the collection 
-.RE
-.PP
-
-.PP
-Definition at line 70 of file KeyMappedCollection.h.
-.SS "virtual void \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBcomponents::Node\fP  >::add (const std::list< boost::shared_ptr< \fBcomponents::Node\fP  > > &list)\fC [inline, virtual, inherited]\fP"
-.PP
-Add object to collection by list. \fBParameters:\fP
-.RS 4
-\fIstd::list<T>\fP list The list values to be added to the collection 
-.RE
-.PP
-
-.PP
-Definition at line 88 of file KeyMappedCollection.h.
-.SS "void \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBcomponents::Node\fP  >::clear ()\fC [inline, inherited]\fP"
-.PP
-Clear all objects from collection. 
-.PP
-Definition at line 45 of file KeyMappedCollection.h.
-.SS "const std::map<boost::uuids::uuid , boost::shared_ptr<\fBcomponents::Node\fP > >& \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBcomponents::Node\fP  >::getCollection () const\fC [inline, inherited]\fP"
-.PP
-Get maximum value. \fBReturns:\fP
-.RS 4
-T The maximum value Get underlying collection
-.PP
-const std::map<U, boost::shared_ptr<T> > & The collection 
-.RE
-.PP
-
-.PP
-Definition at line 309 of file KeyMappedCollection.h.
-.SS "std::list<boost::uuids::uuid > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBcomponents::Node\fP  >::getKeyList () const\fC [inline, inherited]\fP"
-.PP
-Get keys for underlying connection. \fBReturns:\fP
-.RS 4
-std::list<U> The list of keys 
-.RE
-.PP
-
-.PP
-Definition at line 208 of file KeyMappedCollection.h.
-.SS "std::map<boost::uuids::uuid , boost::shared_ptr<\fBcomponents::Node\fP > >& \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBcomponents::Node\fP  >::getMutableCollection ()\fC [inline, inherited]\fP"
-.PP
-Get mutable underlying collection. \fBReturns:\fP
-.RS 4
-const std::map<U, boost::shared_ptr<T> > & The mutable collection 
-.RE
-.PP
-
-.PP
-Definition at line 319 of file KeyMappedCollection.h.
-.SS "boost::shared_ptr<\fBcomponents::Node\fP > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBcomponents::Node\fP  >::getObjectByKey (const boost::uuids::uuid  &key)\fC [inline, inherited]\fP"
-.PP
-Get object using key. \fBParameters:\fP
-.RS 4
-\fIU\fP key Key to search for 
-.RE
-.PP
-\fBReturns:\fP
-.RS 4
-boost::shared_ptr<T> The found object 
-.RE
-.PP
-
-.PP
-Definition at line 250 of file KeyMappedCollection.h.
-.SS "std::vector<boost::shared_ptr<\fBcomponents::Node\fP > > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBcomponents::Node\fP  >::getObjectList () const\fC [inline, inherited]\fP"
-.PP
-Get object list for underlying connection. \fBReturns:\fP
-.RS 4
-std::list<U> The list of object values 
-.RE
-.PP
-
-.PP
-Definition at line 228 of file KeyMappedCollection.h.
-.SS "std::vector<boost::shared_ptr<\fBcomponents::Node\fP > > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBcomponents::Node\fP  >::getRandomRange (intnumber) const\fC [inline, inherited]\fP"
-.PP
-Definition at line 261 of file KeyMappedCollection.h.
-.SS "int \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBcomponents::Node\fP  >::getSize () const\fC [inline, inherited]\fP"
-.PP
-Get underlying collections size. \fBReturns:\fP
-.RS 4
-int The collections size 
-.RE
-.PP
-
-.PP
-Definition at line 329 of file KeyMappedCollection.h.
-.SS "virtual void \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBcomponents::Node\fP  >::remove (const std::list< boost::shared_ptr< \fBcomponents::Node\fP  > > &list)\fC [inline, virtual, inherited]\fP"
-.PP
-Remove objects from collection by list. \fBParameters:\fP
-.RS 4
-\fIstd::list<T>\fP list The list values to be removed to the collection 
-.RE
-.PP
-
-.PP
-Definition at line 124 of file KeyMappedCollection.h.
-.SS "boost::shared_ptr<\fBcomponents::Node\fP > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBcomponents::Node\fP  >::remove (boost::shared_ptr< \fBcomponents::Node\fP  >obj)\fC [inline, inherited]\fP"
-.PP
-Add object to collection. \fBParameters:\fP
-.RS 4
-\fIT\fP & refobj The object to be added to the collection
-.RE
-.PP
-\fBReturns:\fP
-.RS 4
-boost::shared_ptr<T> The object added to the collection
-.RE
-.PP
-boost::shared_ptr<T> add(T & refobj) { boost::shared_ptr<T> obj = boost::shared_ptr<T>(&refobj); objects[obj->getKey()] = obj; return objects.find(obj->getKey())->second; } Remove object from collection
-.PP
-\fBParameters:\fP
-.RS 4
-\fIboost::shared_ptr<T>\fP obj The object to be removed from the collection
-.RE
-.PP
-\fBReturns:\fP
-.RS 4
-boost::shared_ptr<T> The object removed from the collection 
-.RE
-.PP
-
-.PP
-Definition at line 163 of file KeyMappedCollection.h.
-.SS "boost::shared_ptr<\fBcomponents::Node\fP > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBcomponents::Node\fP  >::remove (boost::uuids::uuidkey)\fC [inline, inherited]\fP"
-.PP
-Remove object from collection bt key. \fBParameters:\fP
-.RS 4
-\fIU\fP key The ey of the object to be removed from the collection
-.RE
-.PP
-\fBReturns:\fP
-.RS 4
-boost::shared_ptr<T> The object removed from the collection 
-.RE
-.PP
-
-.PP
-Definition at line 191 of file KeyMappedCollection.h.
-.SS "virtual void \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBcomponents::Node\fP  >::remove (const std::initializer_list< boost::shared_ptr< \fBcomponents::Node\fP  > > &list)\fC [inline, virtual, inherited]\fP"
-.PP
-Remove objects from collection by initialiser list. \fBParameters:\fP
-.RS 4
-\fIstd::initialiser_list<T>\fP obj The values to be removed from the collection 
-.RE
-.PP
-
-.PP
-Definition at line 106 of file KeyMappedCollection.h.
-.SS "boost::shared_ptr<\fBcomponents::Node\fP > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBcomponents::Node\fP  >::remove (\fBcomponents::Node\fP  &obj)\fC [inline, inherited]\fP"
-.PP
-Remove object from collection. \fBParameters:\fP
-.RS 4
-\fIT\fP & obj The object to be removed from the collection
-.RE
-.PP
-\fBReturns:\fP
-.RS 4
-boost::shared_ptr<T> The object removed from the collection 
-.RE
-.PP
-
-.PP
-Definition at line 177 of file KeyMappedCollection.h.
 .SS "virtual void cryomesh::components::NodeMap::update ()\fC [inline, virtual]\fP"
 .PP
-Definition at line 30 of file NodeMap.h.
+Update all entries in the nodemap. 
 .PP
-References cryomesh::common::KeyMappedCollection< boost::uuids::uuid, components::Node >::objects.
+Definition at line 40 of file NodeMap.h.
 .PP
 Referenced by cryomesh::structures::Cluster::update().
 .SH "Friends And Related Function Documentation"
@@ -331,14 +79,7 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 55 of file NodeMap.h.
-.SH "Member Data Documentation"
-.PP 
-.SS "std::map<boost::uuids::uuid , boost::shared_ptr<\fBcomponents::Node\fP > > \fBcryomesh::common::KeyMappedCollection\fP< boost::uuids::uuid , \fBcomponents::Node\fP  >::\fBobjects\fP\fC [protected, inherited]\fP"
-.PP
-Definition at line 339 of file KeyMappedCollection.h.
-.PP
-Referenced by update().
+Definition at line 65 of file NodeMap.h.
 
 .SH "Author"
 .PP 

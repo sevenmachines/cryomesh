@@ -33,6 +33,9 @@ public:
 	/**
 	 * Default constructor using a filename as the database or a default
 	 * Opens the file or creates it and creates the tables if it doesnt exist
+	 *
+	 * @param std::string
+	 * 	The name of the database to open/create
 	 */
 	DatabaseManager(const std::string & dbfile = DEFAULT_DATABASE);
 
@@ -61,9 +64,24 @@ public:
 
 	/**
 	 * Clear all values in a table
+	 *
+	 * @param std::string
+	 * 	The table to clear
+	 *
+	 * @return std::string
+	 * 	The result of the sql query
 	 */
 	std::string clearTable(const std::string & table);
 
+	/**
+	 * Drop a table from database
+	 *
+	 * @param std::string
+	 * 	The table to drop
+	 *
+	 * @return std::string
+	 * 	The result of the sql query
+	 */
 	std::string dropTable(const std::string & table);
 
 	/**
@@ -89,37 +107,37 @@ public:
 	std::string insertConnection(const DatabaseObject & db_object);
 
 	/**
-		 * Select unique node  entry
-		 *
-		 * @param std::string
-		 * 	The uuid of the node
-			 * @param Cycle
-		 * 	The cycle to select on, to force uniqueness
-		 *
-		 * @return std::string
-		 * 	The value of the entry
-		 */
-		std::string selectNode(const std::string &uuid, const common::Cycle & cycle);
+	 * Select unique node  entry
+	 *
+	 * @param std::string
+	 * 	The uuid of the node
+	 * @param Cycle
+	 * 	The cycle to select on, to force uniqueness
+	 *
+	 * @return std::string
+	 * 	The value of the entry
+	 */
+	std::string selectNode(const std::string &uuid, const common::Cycle & cycle);
 
-		/**
-		 * Select unique column  entry
-		 *
-		 * @param std::string
-		 * 	The uuid of the node
-			 * @param Cycle
-		 * 	The cycle to select on, to force uniqueness
-		 *
-		 * @return std::string
-		 * 	The value of the entry
-		 */
-		std::string selectConnection(const std::string &uuid, const common::Cycle & cycle);
+	/**
+	 * Select unique column  entry
+	 *
+	 * @param std::string
+	 * 	The uuid of the node
+	 * @param Cycle
+	 * 	The cycle to select on, to force uniqueness
+	 *
+	 * @return std::string
+	 * 	The value of the entry
+	 */
+	std::string selectConnection(const std::string &uuid, const common::Cycle & cycle);
 
 	/**
 	 * Select unique node column entry
 	 *
 	 * @param std::string
 	 * 	The uuid of the node
-		 * @param Cycle
+	 * @param Cycle
 	 * 	The cycle to select on, to force uniqueness
 	 * @param std::string
 	 * 	The column to select
@@ -134,7 +152,7 @@ public:
 	 *
 	 * @param std::string
 	 * 	The uuid of the node
-		 * @param Cycle
+	 * @param Cycle
 	 * 	The cycle to select on, to force uniqueness
 	 * @param std::string
 	 * 	The column to select
@@ -159,7 +177,8 @@ public:
 	 * @return std::string
 	 * 	The value of the entry
 	 */
-	std::string selectValue(const std::string & table, const std::string &uuid, const common::Cycle & cycle, const std::string & column);
+	std::string selectValue(const std::string & table, const std::string &uuid, const common::Cycle & cycle,
+			const std::string & column);
 
 	/**
 	 * Select nodes by a criteria string eg, 'id=erwrs324 AND cycle=1'
@@ -304,7 +323,7 @@ public:
 	 * 	The result of the count
 	 */
 	std::string
-			updateConnection(const std::string & uuid_str, const common::Cycle & cycle, const std::string & options);
+	updateConnection(const std::string & uuid_str, const common::Cycle & cycle, const std::string & options);
 
 	/**
 	 * update object from a table using options list

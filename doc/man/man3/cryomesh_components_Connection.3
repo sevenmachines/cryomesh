@@ -1,4 +1,4 @@
-.TH "cryomesh::components::Connection" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::components::Connection" 3 "Fri Apr 1 2011" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -11,8 +11,6 @@ cryomesh::components::Connection \-
 .PP
 .PP
 \fC#include <Connection.h>\fP
-.PP
-Inherits \fBcryomesh::common::Tagged\fP.
 .SS "Public Member Functions"
 
 .in +1c
@@ -31,7 +29,7 @@ Inherits \fBcryomesh::common::Tagged\fP.
 .ti -1c
 .RI "virtual const \fBcommon::Connector\fP< \fBConnection\fP, \fBNode\fP > & \fBgetConnector\fP () const "
 .br
-.RI "\fIGet the Connector object for this \fBConnection\fP. \fP"
+.RI "\fIGet the Connector object for this \fBConnection\fP input. \fP"
 .ti -1c
 .RI "virtual \fBcommon::Connector\fP< \fBConnection\fP, \fBNode\fP > & \fBgetMutableConnector\fP ()"
 .br
@@ -65,21 +63,13 @@ Inherits \fBcryomesh::common::Tagged\fP.
 .br
 .RI "\fIThe get mutable activity timer for this object. \fP"
 .ti -1c
+.RI "boost::shared_ptr< \fBmanager::DatabaseObject\fP > \fBgetDatabaseObject\fP () const "
+.br
+.RI "\fIReturn a database object for this object. \fP"
+.ti -1c
 .RI "void \fBupdatePosition\fP ()"
 .br
 .RI "\fIUpdate position. \fP"
-.ti -1c
-.RI "boost::uuids::uuid \fBgetUUID\fP () const "
-.br
-.RI "\fIGet the uuid of object. \fP"
-.ti -1c
-.RI "boost::uuids::uuid \fBgetKey\fP () const "
-.br
-.RI "\fIGet the key of object. \fP"
-.ti -1c
-.RI "boost::uuids::uuid \fBgetTag\fP () const "
-.br
-.RI "\fIGet the tag of object. \fP"
 .in -1c
 .SS "Protected Attributes"
 
@@ -108,19 +98,19 @@ Inherits \fBcryomesh::common::Tagged\fP.
 
 A \fBConnection\fP represents the 'journey' made by Impulses as they travel between a start \fBNode\fP and an end \fBNode\fP. They can be spatially based or more abstract representations of this journey. As each clock moment passes Impulses are propagated in some way 'closer' to their end \fBNode\fP. Impulses can be altered by the \fBMesh\fP on each cycle. When Impulses reach the 'end' of their journey they are passed to the end \fBNode\fP for accumulation. Connections can also be bi-directional, an \fBImpulse\fP from a start \fBNode\fP could be in some way 'reflected' back to that node. Perhaps once in a 'weighted' reflection to be accumulated by the start \fBNode\fP, or even in a constant per-cycle reflection as the original \fBImpulse\fP 'moves along' the \fBConnection\fP 
 .PP
-Definition at line 35 of file Connection.h.
+Definition at line 36 of file Connection.h.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "cryomesh::components::Connection::Connection ()"
 .PP
 Constructor for \fBConnection\fP. Constructor 
 .PP
-Definition at line 15 of file Connection.cpp.
+Definition at line 16 of file Connection.cpp.
 .SS "cryomesh::components::Connection::~Connection ()\fC [virtual]\fP"
 .PP
 Destructor for \fBConnection\fP. Destructor 
 .PP
-Definition at line 20 of file Connection.cpp.
+Definition at line 21 of file Connection.cpp.
 .SH "Member Function Documentation"
 .PP 
 .SS "boost::shared_ptr< \fBImpulse\fP > cryomesh::components::Connection::add (boost::shared_ptr< \fBImpulse\fP >impulse)"
@@ -137,7 +127,7 @@ boost::shared_ptr<Impulse> The \fBImpulse\fP added, null if none added
 .PP
 
 .PP
-Definition at line 58 of file Connection.cpp.
+Definition at line 59 of file Connection.cpp.
 .SS "const boost::shared_ptr< \fBcomponents::ActivityTimerDistance\fP > cryomesh::components::Connection::getActivityTimer () const"
 .PP
 Get active impulse collection. const ActiveImpulseCollection & Connection::getActiveImpulses() const { return this->activeImpulses; }
@@ -165,17 +155,31 @@ boost::shared_ptr<ActivityTimer>
 .PP
 ActiveImpulseCollection & Connection::getMutableActiveImpulses() { return this->activeImpulses; } 
 .PP
-Definition at line 90 of file Connection.cpp.
+Definition at line 91 of file Connection.cpp.
 .SS "const \fBcommon::Connector\fP< \fBConnection\fP, \fBNode\fP > & cryomesh::components::Connection::getConnector () const\fC [virtual]\fP"
 .PP
-Get the Connector object for this \fBConnection\fP. \fBReturns:\fP
+Get the Connector object for this \fBConnection\fP input. \fBReturns:\fP
 .RS 4
 common::Connector<Connection, Node> The connector for this \fBConnection\fP 
 .RE
 .PP
 
 .PP
-Definition at line 50 of file Connection.cpp.
+Definition at line 51 of file Connection.cpp.
+.PP
+Referenced by getDatabaseObject().
+.SS "boost::shared_ptr< \fBmanager::DatabaseObject\fP > cryomesh::components::Connection::getDatabaseObject () const"
+.PP
+Return a database object for this object. \fBReturns:\fP
+.RS 4
+DatabaseObject 
+.RE
+.PP
+
+.PP
+Definition at line 99 of file Connection.cpp.
+.PP
+References getConnector().
 .SS "const \fBImpulseCollection\fP & cryomesh::components::Connection::getImpulses () const"
 .PP
 Get the impulse collection. \fBReturns:\fP
@@ -185,19 +189,7 @@ const \fBImpulseCollection\fP & The impulse collection
 .PP
 
 .PP
-Definition at line 72 of file Connection.cpp.
-.SS "boost::uuids::uuid cryomesh::common::Tagged::getKey () const\fC [inline, inherited]\fP"
-.PP
-Get the key of object. \fBReturns:\fP
-.RS 4
-boost::uuids::uuid The unique uuid tag of this object 
-.RE
-.PP
-
-.PP
-Definition at line 61 of file Tagged.h.
-.PP
-References cryomesh::common::Tagged::getUUID().
+Definition at line 73 of file Connection.cpp.
 .SS "boost::shared_ptr< \fBcomponents::ActivityTimerDistance\fP > cryomesh::components::Connection::getMutableActivityTimer ()"
 .PP
 The get mutable activity timer for this object. \fBReturns:\fP
@@ -207,7 +199,7 @@ boost::shared_ptr<ActivityTimer>
 .PP
 
 .PP
-Definition at line 94 of file Connection.cpp.
+Definition at line 95 of file Connection.cpp.
 .SS "\fBcommon::Connector\fP< \fBConnection\fP, \fBNode\fP > & cryomesh::components::Connection::getMutableConnector ()\fC [virtual]\fP"
 .PP
 Get the mutable Connector object for this \fBConnection\fP. \fBReturns:\fP
@@ -217,7 +209,7 @@ common::Connector<Connection, Node> The connector for this \fBConnection\fP
 .PP
 
 .PP
-Definition at line 54 of file Connection.cpp.
+Definition at line 55 of file Connection.cpp.
 .SS "\fBImpulseCollection\fP & cryomesh::components::Connection::getMutableImpulses ()"
 .PP
 Get the mutable impulse collection. \fBReturns:\fP
@@ -227,48 +219,7 @@ Get the mutable impulse collection. \fBReturns:\fP
 .PP
 
 .PP
-Definition at line 76 of file Connection.cpp.
-.SS "boost::uuids::uuid cryomesh::common::Tagged::getTag () const\fC [inline, inherited]\fP"
-.PP
-Get the tag of object. \fBReturns:\fP
-.RS 4
-boost::uuids::uuid The unique uuid tag of this object 
-.RE
-.PP
-
-.PP
-Definition at line 71 of file Tagged.h.
-.PP
-References cryomesh::common::Tagged::getUUID().
-.SS "boost::uuids::uuid cryomesh::common::Tagged::getUUID () const\fC [inline, inherited]\fP"
-.PP
-Get the uuid of object. \fBReturns:\fP
-.RS 4
-boost::uuids::uuid The unique uuid tag of this object 
-.RE
-.PP
-
-.PP
-Definition at line 51 of file Tagged.h.
-.PP
-References cryomesh::common::Tagged::uuid.
-.PP
-Referenced by cryomesh::common::Tagged::getKey(), and cryomesh::common::Tagged::getTag().
-.SS "boost::shared_ptr< \fBImpulse\fP > cryomesh::components::Connection::remove (\fBImpulse\fP &impulse)"
-.PP
-Remove an \fBImpulse\fP from this connection. \fBParameters:\fP
-.RS 4
-\fI\fBImpulse\fP\fP & impulse The impulse to remove
-.RE
-.PP
-\fBReturns:\fP
-.RS 4
-boost::shared_ptr<Impulse> The \fBImpulse\fP removed, null if none removed 
-.RE
-.PP
-
-.PP
-Definition at line 68 of file Connection.cpp.
+Definition at line 77 of file Connection.cpp.
 .SS "boost::shared_ptr< \fBImpulse\fP > cryomesh::components::Connection::remove (boost::shared_ptr< \fBImpulse\fP >impulse)"
 .PP
 Add an \fBImpulse\fP to this connection. \fBParameters:\fP
@@ -293,21 +244,36 @@ boost::shared_ptr<Impulse> The \fBImpulse\fP removed, null if none removed
 .PP
 
 .PP
-Definition at line 64 of file Connection.cpp.
+Definition at line 65 of file Connection.cpp.
+.SS "boost::shared_ptr< \fBImpulse\fP > cryomesh::components::Connection::remove (\fBImpulse\fP &impulse)"
+.PP
+Remove an \fBImpulse\fP from this connection. \fBParameters:\fP
+.RS 4
+\fI\fBImpulse\fP\fP & impulse The impulse to remove
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+boost::shared_ptr<Impulse> The \fBImpulse\fP removed, null if none removed 
+.RE
+.PP
+
+.PP
+Definition at line 69 of file Connection.cpp.
 .SS "void cryomesh::components::Connection::update ()\fC [virtual]\fP"
 .PP
 Update the \fBConnection\fP. Update our collection of impulses. If any reach the 'endpoint' of the connection then pass them on to our end Nodes 
 .PP
-Definition at line 23 of file Connection.cpp.
+Definition at line 24 of file Connection.cpp.
 .PP
 References connector.
 .SS "void cryomesh::components::Connection::updatePosition ()"
 .PP
 Update position. 
 .PP
-Definition at line 98 of file Connection.cpp.
+Definition at line 119 of file Connection.cpp.
 .PP
-References activityTimer, and cryomesh::spacial::Point::getDistance().
+References activityTimer.
 .SH "Friends And Related Function Documentation"
 .PP 
 .SS "std::ostream& operator<< (std::ostream &os, const \fBConnection\fP &obj)\fC [friend]\fP"
@@ -326,22 +292,22 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 111 of file Connection.cpp.
+Definition at line 132 of file Connection.cpp.
 .SH "Member Data Documentation"
 .PP 
 .SS "boost::shared_ptr<\fBcomponents::ActivityTimerDistance\fP> \fBcryomesh::components::Connection::activityTimer\fP\fC [protected]\fP"
 .PP
-Definition at line 207 of file Connection.h.
+Definition at line 216 of file Connection.h.
 .PP
 Referenced by updatePosition().
 .SS "boost::shared_ptr<\fBcommon::Connector\fP<\fBConnection\fP, \fBNode\fP> > \fBcryomesh::components::Connection::connector\fP\fC [protected]\fP"
 .PP
-Definition at line 193 of file Connection.h.
+Definition at line 202 of file Connection.h.
 .PP
 Referenced by update().
 .SS "\fBImpulseCollection\fP \fBcryomesh::components::Connection::impulses\fP\fC [protected]\fP"
 .PP
-Definition at line 200 of file Connection.h.
+Definition at line 209 of file Connection.h.
 
 .SH "Author"
 .PP 

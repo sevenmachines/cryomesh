@@ -80,40 +80,41 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00020"></a>00020 <span class="keyword">template</span>&lt;<span class="keyword">class</span> U, <span class="keyword">class</span> T&gt;
 <a name="l00021"></a>00021 <span class="keyword">class </span>DataObjectController {
 <a name="l00022"></a><a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html">00022</a> <span class="keyword">public</span>:
-<a name="l00023"></a>00023         <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#a9b5dd38c83c6fb1dc5bcf4ddcbc7a577">DataObjectController</a>() {
-<a name="l00024"></a><a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#a9b5dd38c83c6fb1dc5bcf4ddcbc7a577">00024</a>         }
-<a name="l00025"></a>00025 
-<a name="l00029"></a>00029         <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#a9b5dd38c83c6fb1dc5bcf4ddcbc7a577">DataObjectController</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> sz) {
-<a name="l00030"></a><a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#a01e98fc9bc0f3495bd05e01e6cc15f29">00030</a>                 <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#aa13d30e9fa2f1caa0510635214d4bb26">dataObject</a>.setDatasetMaximumSize(sz);
-<a name="l00031"></a>00031         }
-<a name="l00032"></a>00032         <span class="keyword">virtual</span> <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#aa023e2b5199e935b52781a8556d97cbe">~DataObjectController</a>() {
-<a name="l00033"></a><a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#aa023e2b5199e935b52781a8556d97cbe">00033</a>         }
-<a name="l00040"></a>00040         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#a3e510413675407ec0a6745345ca9a3a8" title="Whether logging is enabled or not.">enableLogging</a>(<span class="keywordtype">bool</span> enable) {
-<a name="l00041"></a><a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#a3e510413675407ec0a6745345ca9a3a8">00041</a>                 <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#aa13d30e9fa2f1caa0510635214d4bb26">dataObject</a>.enableLogging(<span class="keyword">true</span>);
-<a name="l00042"></a>00042         }
-<a name="l00043"></a>00043 
-<a name="l00050"></a>00050         <span class="keyword">virtual</span> <span class="keyword">const</span> std::map&lt;U, T&gt; &amp;<a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#a70a03ee28392ecf2e039702a18511f05" title="Get all cycle values.">getMap</a>() {
-<a name="l00051"></a><a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#a70a03ee28392ecf2e039702a18511f05">00051</a>                 <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#ae015efe3d10cced82d5043f560cbe04f" title="Function to allow refreshing implementation if required by subclasses.">refreshDataObject</a>();
-<a name="l00052"></a>00052                 <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#aa13d30e9fa2f1caa0510635214d4bb26">dataObject</a>.getMap();
-<a name="l00053"></a>00053         }
-<a name="l00054"></a>00054 
-<a name="l00061"></a>00061         <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObject.html" title="Class to contain all the useful data about an object.">dataobjects::DataObject&lt;U, T&gt;</a> &amp;<a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#aa919e8676a611028c6b6e6791c87f438" title="Get data object.">getDataObject</a>() {
-<a name="l00062"></a><a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#aa919e8676a611028c6b6e6791c87f438">00062</a>                 <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#ae015efe3d10cced82d5043f560cbe04f" title="Function to allow refreshing implementation if required by subclasses.">refreshDataObject</a>();
-<a name="l00063"></a>00063                 <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#aa13d30e9fa2f1caa0510635214d4bb26">dataObject</a>;
-<a name="l00064"></a>00064         }
-<a name="l00065"></a>00065 
-<a name="l00069"></a>00069         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#ae015efe3d10cced82d5043f560cbe04f" title="Function to allow refreshing implementation if required by subclasses.">refreshDataObject</a>() {
-<a name="l00070"></a><a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#ae015efe3d10cced82d5043f560cbe04f">00070</a>         }
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072 <span class="keyword">protected</span>:
-<a name="l00078"></a>00078         <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObject.html" title="Class to contain all the useful data about an object.">dataobjects::DataObject&lt;U, T&gt;</a> <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#aa13d30e9fa2f1caa0510635214d4bb26">dataObject</a>;
-<a name="l00079"></a><a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#aa13d30e9fa2f1caa0510635214d4bb26">00079</a> };
-<a name="l00080"></a>00080 
-<a name="l00081"></a>00081 }
-<a name="l00082"></a>00082 
-<a name="l00083"></a>00083 }
-<a name="l00084"></a>00084 
-<a name="l00085"></a>00085 <span class="preprocessor">#endif </span><span class="comment">/* DATAOBJECTCONTROLLER_H_ */</span>
+<a name="l00023"></a>00023 
+<a name="l00027"></a>00027         <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#a9b5dd38c83c6fb1dc5bcf4ddcbc7a577" title="Default constructor.">DataObjectController</a>() {
+<a name="l00028"></a><a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#a9b5dd38c83c6fb1dc5bcf4ddcbc7a577">00028</a>         }
+<a name="l00029"></a>00029 
+<a name="l00036"></a>00036         <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#a9b5dd38c83c6fb1dc5bcf4ddcbc7a577" title="Default constructor.">DataObjectController</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> sz) {
+<a name="l00037"></a><a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#a01e98fc9bc0f3495bd05e01e6cc15f29">00037</a>                 <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#aa13d30e9fa2f1caa0510635214d4bb26">dataObject</a>.setDatasetMaximumSize(sz);
+<a name="l00038"></a>00038         }
+<a name="l00039"></a>00039         <span class="keyword">virtual</span> <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#aa023e2b5199e935b52781a8556d97cbe">~DataObjectController</a>() {
+<a name="l00040"></a><a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#aa023e2b5199e935b52781a8556d97cbe">00040</a>         }
+<a name="l00047"></a>00047         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#a3e510413675407ec0a6745345ca9a3a8" title="Whether logging is enabled or not.">enableLogging</a>(<span class="keywordtype">bool</span> enable) {
+<a name="l00048"></a><a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#a3e510413675407ec0a6745345ca9a3a8">00048</a>                 <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#aa13d30e9fa2f1caa0510635214d4bb26">dataObject</a>.enableLogging(<span class="keyword">true</span>);
+<a name="l00049"></a>00049         }
+<a name="l00050"></a>00050 
+<a name="l00057"></a>00057         <span class="keyword">virtual</span> <span class="keyword">const</span> std::map&lt;U, T&gt; &amp;<a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#a70a03ee28392ecf2e039702a18511f05" title="Get all cycle values.">getMap</a>() {
+<a name="l00058"></a><a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#a70a03ee28392ecf2e039702a18511f05">00058</a>                 <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#ae015efe3d10cced82d5043f560cbe04f" title="Function to allow refreshing implementation if required by subclasses.">refreshDataObject</a>();
+<a name="l00059"></a>00059                 <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#aa13d30e9fa2f1caa0510635214d4bb26">dataObject</a>.getMap();
+<a name="l00060"></a>00060         }
+<a name="l00061"></a>00061 
+<a name="l00068"></a>00068         <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObject.html" title="Class to contain all the useful data about an object.">dataobjects::DataObject&lt;U, T&gt;</a> &amp;<a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#aa919e8676a611028c6b6e6791c87f438" title="Get data object.">getDataObject</a>() {
+<a name="l00069"></a><a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#aa919e8676a611028c6b6e6791c87f438">00069</a>                 <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#ae015efe3d10cced82d5043f560cbe04f" title="Function to allow refreshing implementation if required by subclasses.">refreshDataObject</a>();
+<a name="l00070"></a>00070                 <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#aa13d30e9fa2f1caa0510635214d4bb26">dataObject</a>;
+<a name="l00071"></a>00071         }
+<a name="l00072"></a>00072 
+<a name="l00076"></a>00076         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#ae015efe3d10cced82d5043f560cbe04f" title="Function to allow refreshing implementation if required by subclasses.">refreshDataObject</a>() {
+<a name="l00077"></a><a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#ae015efe3d10cced82d5043f560cbe04f">00077</a>         }
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079 <span class="keyword">protected</span>:
+<a name="l00085"></a>00085         <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObject.html" title="Class to contain all the useful data about an object.">dataobjects::DataObject&lt;U, T&gt;</a> <a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#aa13d30e9fa2f1caa0510635214d4bb26">dataObject</a>;
+<a name="l00086"></a><a class="code" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#aa13d30e9fa2f1caa0510635214d4bb26">00086</a> };
+<a name="l00087"></a>00087 
+<a name="l00088"></a>00088 }
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090 }
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092 <span class="preprocessor">#endif </span><span class="comment">/* DATAOBJECTCONTROLLER_H_ */</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -130,7 +131,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Mar 14 2011 14:08:47 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

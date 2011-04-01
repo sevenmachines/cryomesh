@@ -87,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00024"></a>00024 
 <a name="l00025"></a>00025 std::string <a class="code" href="classcryomesh_1_1state_1_1ActivityPattern.html#a5b57eec82f5de97fc01ed356c13903f5" title="Return a string of booleans representing with each element is &amp;gt; 0 or not.">ActivityPattern::toPlusBooleanString</a>()<span class="keyword"> const </span>{
 <a name="l00026"></a><a class="code" href="classcryomesh_1_1state_1_1ActivityPattern.html#a5b57eec82f5de97fc01ed356c13903f5">00026</a>         std::stringstream ss;
-<a name="l00027"></a>00027         <a class="code" href="classcryomesh_1_1common_1_1Misc.html#a84f807fd694538ca28bcffa637fb3da5">common::Misc::print</a>(ss, this-&gt;<a class="code" href="classcryomesh_1_1state_1_1ActivityPattern.html#a3482fe5e7dbaed86272dd536adc7d751" title="Return a vector of booleans representing with each element &amp;gt; 0 or not.">toPlusBooleanList</a>());
+<a name="l00027"></a>00027         common::Misc::print(ss, this-&gt;<a class="code" href="classcryomesh_1_1state_1_1ActivityPattern.html#a3482fe5e7dbaed86272dd536adc7d751" title="Return a vector of booleans representing with each element &amp;gt; 0 or not.">toPlusBooleanList</a>());
 <a name="l00028"></a>00028         <span class="keywordflow">return</span> ss.str();
 <a name="l00029"></a>00029 }
 <a name="l00030"></a>00030 
@@ -97,7 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00034"></a>00034 
 <a name="l00035"></a>00035 std::list&lt;bool&gt; <a class="code" href="classcryomesh_1_1state_1_1ActivityPattern.html#a0d002a277bcb38447e738349593ae0af">ActivityPattern::toBooleanVector</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> cuttoff, <span class="keyword">const</span> ActivityComparison compare)<span class="keyword"> const</span>{
 <a name="l00036"></a><a class="code" href="classcryomesh_1_1state_1_1ActivityPattern.html#a0d002a277bcb38447e738349593ae0af">00036</a>         std::list&lt;bool&gt; compare_result;
-<a name="l00037"></a>00037         <span class="keyword">const</span> std::list&lt;double&gt; &amp; all_doubles = this-&gt;<a class="code" href="classcryomesh_1_1common_1_1SimpleCollection.html#ad9791b6ab3af074bb3fe2b54cb7dde6d" title="Get underlying collection.">getCollection</a>();
+<a name="l00037"></a>00037         <span class="keyword">const</span> std::list&lt;double&gt; &amp; all_doubles = this-&gt;getCollection();
 <a name="l00038"></a>00038         <span class="comment">// forall in all_doubles</span>
 <a name="l00039"></a>00039         {
 <a name="l00040"></a>00040                 std::list&lt;double&gt;::const_iterator it_all_doubles = all_doubles.begin();
@@ -116,7 +116,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00053"></a>00053                                         compare_result.push_back(<span class="keyword">false</span>);
 <a name="l00054"></a>00054                                 }
 <a name="l00055"></a>00055                         } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (compare == <a class="code" href="classcryomesh_1_1state_1_1ActivityPattern.html#a6bd9cf293aeb147f73bb82c67c626142ab45ac9f1c25aba4e864672959f0467e9">EqualTo</a>) {
-<a name="l00056"></a>00056                                 <span class="keywordflow">if</span> (<a class="code" href="classcryomesh_1_1common_1_1Maths.html#a81b112a8ff2fc648a39afabc1c52a67d" title="Compare doubles using delta.">common::Maths::compareDoubles</a>(*it_all_doubles, cuttoff) == <span class="keyword">true</span>) {
+<a name="l00056"></a>00056                                 <span class="keywordflow">if</span> (common::Maths::compareDoubles(*it_all_doubles, cuttoff) == <span class="keyword">true</span>) {
 <a name="l00057"></a>00057                                         compare_result.push_back(<span class="keyword">true</span>);
 <a name="l00058"></a>00058                                 } <span class="keywordflow">else</span> {
 <a name="l00059"></a>00059                                         compare_result.push_back(<span class="keyword">false</span>);
@@ -146,7 +146,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Mar 14 2011 14:08:47 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

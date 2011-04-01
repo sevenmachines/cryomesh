@@ -1,4 +1,4 @@
-.TH "cryomesh::common::Cycle" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::common::Cycle" 3 "Fri Apr 1 2011" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -16,7 +16,7 @@ cryomesh::common::Cycle \-
 .br
 .RI "\fIDefault Constructor. \fP"
 .ti -1c
-.RI "\fBCycle\fP (const unsigned long int it)"
+.RI "\fBCycle\fP (const long int it)"
 .br
 .RI "\fIConstruct from unsigned long int. \fP"
 .ti -1c
@@ -121,7 +121,7 @@ Definition at line 20 of file Cycle.h.
 Default Constructor. 
 .PP
 Definition at line 16 of file Cycle.cpp.
-.SS "cryomesh::common::Cycle::Cycle (const unsigned long intit)"
+.SS "cryomesh::common::Cycle::Cycle (const long intit)"
 .PP
 Construct from unsigned long int. \fBParameters:\fP
 .RS 4
@@ -369,7 +369,7 @@ signed int The cycle as an int
 .PP
 Definition at line 60 of file Cycle.cpp.
 .PP
-Referenced by cryomesh::components::Impulse::getActivity().
+Referenced by cryomesh::manager::ConnectionDatabaseObject::ConnectionDatabaseObject(), cryomesh::components::Impulse::getActivity(), and cryomesh::manager::DatabaseManager::updateByUUID().
 .SS "unsigned long int cryomesh::common::Cycle::toULInt () const"
 .PP
 Return as an unsigned integer. \fBReturns:\fP
@@ -381,7 +381,7 @@ unsigned int The cycle as an int
 .PP
 Definition at line 56 of file Cycle.cpp.
 .PP
-Referenced by cryomesh::components::Impulse::operator+=(), and cryomesh::components::ImpulseCollection::refreshDataObject().
+Referenced by cryomesh::manager::NodeDatabaseObject::NodeDatabaseObject(), cryomesh::components::Impulse::operator+=(), and cryomesh::components::ImpulseCollection::refreshDataObject().
 .SH "Friends And Related Function Documentation"
 .PP 
 .SS "std::ostream& operator<< (std::ostream &os, const \fBCycle\fP &obj)\fC [friend]\fP"

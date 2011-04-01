@@ -1,0 +1,59 @@
+.TH "cryomesh::utilities::SequencerGeneric::NodeEntry" 3 "Fri Apr 1 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::utilities::SequencerGeneric::NodeEntry \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SequencerGeneric.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBname\fP"
+.br
+.ti -1c
+.RI "std::map< std::string, std::string > \fBinfo\fP"
+.br
+.ti -1c
+.RI "boost::shared_ptr< \fBNodeEntry\fP > \fBparentNode\fP"
+.br
+.ti -1c
+.RI "std::list< boost::shared_ptr< \fBNodeEntry\fP > > \fBchildNodes\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBNodeEntry\fP &obj)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 14 of file SequencerGeneric.h.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream &os, const \fBNodeEntry\fP &obj)\fC [friend]\fP"
+.PP
+Definition at line 22 of file SequencerGeneric.h.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::list<boost::shared_ptr<\fBNodeEntry\fP> > \fBcryomesh::utilities::SequencerGeneric::NodeEntry::childNodes\fP"
+.PP
+Definition at line 20 of file SequencerGeneric.h.
+.SS "std::map<std::string, std::string> \fBcryomesh::utilities::SequencerGeneric::NodeEntry::info\fP"
+.PP
+Definition at line 18 of file SequencerGeneric.h.
+.SS "std::string \fBcryomesh::utilities::SequencerGeneric::NodeEntry::name\fP"
+.PP
+Definition at line 16 of file SequencerGeneric.h.
+.SS "boost::shared_ptr<\fBNodeEntry\fP> \fBcryomesh::utilities::SequencerGeneric::NodeEntry::parentNode\fP"
+.PP
+Definition at line 19 of file SequencerGeneric.h.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

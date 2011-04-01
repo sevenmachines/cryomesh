@@ -1,0 +1,139 @@
+.TH "cryomesh::manager::DatabaseObject" 3 "Fri Apr 1 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::manager::DatabaseObject \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DatabaseObject.h>\fP
+.PP
+Inherited by \fBcryomesh::manager::ConnectionDatabaseObject\fP, and \fBcryomesh::manager::NodeDatabaseObject\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDatabaseObject\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~DatabaseObject\fP ()"
+.br
+.ti -1c
+.RI "std::string \fBgetKey\fP (const std::string &key) const "
+.br
+.RI "\fIReturn the string object associated with a key. \fP"
+.ti -1c
+.RI "virtual std::string \fBgetInsert\fP (const std::string &table) const =0"
+.br
+.RI "\fIGet the string that can be used to insert the sql data. \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static std::string \fBfindValue\fP (const std::string &entry, const std::map< std::string, std::string > &map)"
+.br
+.RI "\fIFind entries value in map or return null. \fP"
+.ti -1c
+.RI "static std::map< std::string, std::string > \fBgetColumnMapFromEntry\fP (const std::string &entry)"
+.br
+.RI "\fIParse a string database entry, extract columns and values and return a map. \fP"
+.ti -1c
+.RI "template<class T > static std::string \fBtoString\fP (T obj)"
+.br
+.RI "\fIConvert an templated object that can be piped to a stream to a string. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::map< std::string, std::string > \fBcolumns\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 21 of file DatabaseObject.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::manager::DatabaseObject::DatabaseObject ()\fC [inline]\fP"
+.PP
+Definition at line 23 of file DatabaseObject.h.
+.SS "virtual cryomesh::manager::DatabaseObject::~DatabaseObject ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 25 of file DatabaseObject.h.
+.SH "Member Function Documentation"
+.PP 
+.SS "static std::string cryomesh::manager::DatabaseObject::findValue (const std::string &entry, const std::map< std::string, std::string > &map)\fC [inline, static]\fP"
+.PP
+Find entries value in map or return null. \fBParameters:\fP
+.RS 4
+\fIstd::string\fP Entry to find 
+.br
+\fIstd::map<std::string,std::string\fP map to search
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Value of entry 
+.RE
+.PP
+
+.PP
+Definition at line 59 of file DatabaseObject.h.
+.PP
+Referenced by cryomesh::manager::NodeDatabaseObject::NodeDatabaseObject().
+.SS "static std::map<std::string, std::string> cryomesh::manager::DatabaseObject::getColumnMapFromEntry (const std::string &entry)\fC [inline, static]\fP"
+.PP
+Parse a string database entry, extract columns and values and return a map. 
+.PP
+Definition at line 72 of file DatabaseObject.h.
+.PP
+Referenced by cryomesh::manager::NodeDatabaseObject::NodeDatabaseObject().
+.SS "virtual std::string cryomesh::manager::DatabaseObject::getInsert (const std::string &table) const\fC [pure virtual]\fP"
+.PP
+Get the string that can be used to insert the sql data. \fBReturns:\fP
+.RS 4
+the sql command string to insert into this table 
+.RE
+.PP
+
+.PP
+Implemented in \fBcryomesh::manager::ConnectionDatabaseObject\fP, and \fBcryomesh::manager::NodeDatabaseObject\fP.
+.SS "std::string cryomesh::manager::DatabaseObject::getKey (const std::string &key) const\fC [inline]\fP"
+.PP
+Return the string object associated with a key. ::string The key to search for
+.PP
+\fBReturns:\fP
+.RS 4
+std::string The object associated with the search key, '' if not found 
+.RE
+.PP
+
+.PP
+Definition at line 37 of file DatabaseObject.h.
+.PP
+References columns.
+.PP
+Referenced by cryomesh::manager::NodeDatabaseObject::getInsert().
+.SS "template<class T > static std::string cryomesh::manager::DatabaseObject::toString (Tobj)\fC [inline, static]\fP"
+.PP
+Convert an templated object that can be piped to a stream to a string. \fBParameters:\fP
+.RS 4
+\fIT\fP The object to get a string for 
+.RE
+.PP
+
+.PP
+Definition at line 108 of file DatabaseObject.h.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::map<std::string, std::string> \fBcryomesh::manager::DatabaseObject::columns\fP\fC [protected]\fP"
+.PP
+Definition at line 119 of file DatabaseObject.h.
+.PP
+Referenced by cryomesh::manager::ConnectionDatabaseObject::ConnectionDatabaseObject(), getKey(), and cryomesh::manager::NodeDatabaseObject::NodeDatabaseObject().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

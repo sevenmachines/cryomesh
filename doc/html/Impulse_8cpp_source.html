@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00028"></a>00028         <span class="keywordflow">return</span> temp_pulse;
 <a name="l00029"></a>00029 }
 <a name="l00030"></a>00030 
-<a name="l00031"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac2dbabac463f9c156a03cbe395aa5034">00031</a> boost::shared_ptr&lt;Impulse&gt; Impulse::getRandomImpulse(){
+<a name="l00031"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#afb337470d62f12f5e414b1bd7f09c6df">00031</a> boost::shared_ptr&lt;Impulse&gt; Impulse::getRandom(){
 <a name="l00032"></a>00032         boost::shared_ptr&lt; Impulse &gt; temp_pulse(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a>);
 <a name="l00033"></a>00033         temp_pulse-&gt;randomise();
 <a name="l00034"></a>00034         <span class="keywordflow">return</span> temp_pulse;
@@ -126,8 +126,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00063"></a>00063 }
 <a name="l00064"></a>00064 
 <a name="l00065"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a0f88203a7d85fc8c613e144ef302ea11">00065</a> <span class="keywordtype">void</span> Impulse::randomise() {
-<a name="l00066"></a>00066         <span class="keywordtype">double</span> maxy = <a class="code" href="classcryomesh_1_1common_1_1Maths.html#a7fad9717658d41e60e51ec224a793b80">common::Maths::getRandomDouble</a>(MIN_ACTIVITY, MAX_ACTIVITY);
-<a name="l00067"></a>00067         <span class="keywordtype">double</span> length = <a class="code" href="classcryomesh_1_1common_1_1Maths.html#aebcfc8e836beb9bde5baff5d3afb8949">common::Maths::getRandomInteger</a>(MIN_ACTIVITY_LENGTH, MAX_ACTIVITY_LENGTH);
+<a name="l00066"></a>00066         <span class="keywordtype">double</span> maxy = common::Maths::getRandomDouble(MIN_ACTIVITY, MAX_ACTIVITY);
+<a name="l00067"></a>00067         <span class="keywordtype">double</span> length = common::Maths::getRandomInteger(MIN_ACTIVITY_LENGTH, MAX_ACTIVITY_LENGTH);
 <a name="l00068"></a>00068         this-&gt;generateCurve(maxy, length);
 <a name="l00069"></a>00069         lastActiveCycle = firstActiveCycle + this-&gt;getCollection().size();
 <a name="l00070"></a>00070         boost::shared_ptr&lt; ActivityTimerDistance &gt; tempact = ActivityTimerDistance::getRandom() ;
@@ -189,7 +189,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00126"></a>00126 }
 <a name="l00127"></a>00127 
 <a name="l00128"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a21d17ce78d670cfc7082d5d09767c359">00128</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; Impulse::invert() {
-<a name="l00129"></a>00129         <a class="code" href="classcryomesh_1_1common_1_1SimpleCollection.html#ab194424c9e4a11167bfc6ac2c1f6c7f0" title="Invert collection.">SimpleCollection::invert</a>();
+<a name="l00129"></a>00129         SimpleCollection::invert();
 <a name="l00130"></a>00130         <span class="keywordflow">return</span> *<span class="keyword">this</span>;
 <a name="l00131"></a>00131 }
 <a name="l00132"></a>00132 
@@ -238,7 +238,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00175"></a>00175 }
 <a name="l00176"></a>00176 
 <a name="l00177"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a6f5351eea5c38586fe5bb3092b3626af">00177</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; Impulse::operator+=(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; obj) {
-<a name="l00178"></a>00178         <span class="keyword">const</span> std::list&lt;double&gt; all_objs(obj.<a class="code" href="classcryomesh_1_1common_1_1SimpleCollection.html#ad9791b6ab3af074bb3fe2b54cb7dde6d" title="Get underlying collection.">getCollection</a>());
+<a name="l00178"></a>00178         <span class="keyword">const</span> std::list&lt;double&gt; all_objs(obj.getCollection());
 <a name="l00179"></a>00179         std::list&lt;double&gt; &amp; this_objs = this-&gt;getMutableCollection();
 <a name="l00180"></a>00180         <span class="comment">//int allsz_old = all_objs.size();</span>
 <a name="l00181"></a>00181         <span class="comment">//int thissz_old = this_objs.size();</span>
@@ -296,8 +296,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00233"></a>00233                 <span class="keywordflow">return</span> *<span class="keyword">this</span>;
 <a name="l00234"></a>00234         }
 <a name="l00235"></a>00235 
-<a name="l00236"></a>00236         this-&gt;getMutableCollection().<a class="code" href="classcryomesh_1_1common_1_1SimpleCollection.html#a4a2f64e263ca197b93786df23a35b959" title="Clear all objects from collection.">clear</a>();
-<a name="l00237"></a>00237         <span class="keyword">const</span> std::list&lt;double&gt; &amp; all_objs = obj.<a class="code" href="classcryomesh_1_1common_1_1SimpleCollection.html#ad9791b6ab3af074bb3fe2b54cb7dde6d" title="Get underlying collection.">getCollection</a>();
+<a name="l00236"></a>00236         this-&gt;getMutableCollection().clear();
+<a name="l00237"></a>00237         <span class="keyword">const</span> std::list&lt;double&gt; &amp; all_objs = obj.getCollection();
 <a name="l00238"></a>00238         <span class="comment">// forall in all_objs</span>
 <a name="l00239"></a>00239         {
 <a name="l00240"></a>00240                 <span class="keyword">typename</span> std::list&lt;double&gt;::const_iterator it_all_objs = all_objs.begin();
@@ -324,7 +324,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00261"></a>00261                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
 <a name="l00262"></a>00262         }
 <a name="l00263"></a>00263 
-<a name="l00264"></a>00264         <span class="keyword">const</span> std::list&lt;double&gt; &amp; all_objs = obj.<a class="code" href="classcryomesh_1_1common_1_1SimpleCollection.html#ad9791b6ab3af074bb3fe2b54cb7dde6d" title="Get underlying collection.">getCollection</a>();
+<a name="l00264"></a>00264         <span class="keyword">const</span> std::list&lt;double&gt; &amp; all_objs = obj.getCollection();
 <a name="l00265"></a>00265         <span class="keyword">const</span> std::list&lt;double&gt; &amp; this_objs = this-&gt;getCollection();
 <a name="l00266"></a>00266 
 <a name="l00267"></a>00267         <span class="keywordflow">if</span> (all_objs.size() != this_objs.size()) {
@@ -339,7 +339,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00276"></a>00276                 <span class="keyword">const</span> <span class="keyword">typename</span> std::list&lt;double&gt;::const_iterator it_this_objs_end = this_objs.end();
 <a name="l00277"></a>00277 
 <a name="l00278"></a>00278                 <span class="keywordflow">while</span> (it_all_objs != it_all_objs_end &amp;&amp; it_this_objs != it_this_objs_end) {
-<a name="l00279"></a>00279                         <span class="keywordflow">if</span> (<a class="code" href="classcryomesh_1_1common_1_1Maths.html#a81b112a8ff2fc648a39afabc1c52a67d" title="Compare doubles using delta.">common::Maths::compareDoubles</a>(*it_all_objs, *it_this_objs)) {
+<a name="l00279"></a>00279                         <span class="keywordflow">if</span> (common::Maths::compareDoubles(*it_all_objs, *it_this_objs)) {
 <a name="l00280"></a>00280                                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
 <a name="l00281"></a>00281                         }
 <a name="l00282"></a>00282                         ++it_this_objs;
@@ -358,7 +358,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00295"></a>00295         os &lt;&lt; <span class="stringliteral">&quot;SimpleCollection: &quot;</span> &lt;&lt; &amp;obj &lt;&lt; <span class="stringliteral">&quot; objects: { &quot;</span>;
 <a name="l00296"></a>00296         <span class="comment">// forall in objects</span>
 <a name="l00297"></a>00297         {
-<a name="l00298"></a>00298                 std::list&lt;double&gt;::const_iterator it_objects = obj.<a class="code" href="classcryomesh_1_1common_1_1SimpleCollection.html#ad9791b6ab3af074bb3fe2b54cb7dde6d" title="Get underlying collection.">getCollection</a>().begin();
+<a name="l00298"></a>00298                 std::list&lt;double&gt;::const_iterator it_objects = obj.getCollection().begin();
 <a name="l00299"></a>00299                 <span class="keyword">const</span> std::list&lt;double&gt;::const_iterator it_objects_end = obj.getCollection().end();
 <a name="l00300"></a>00300                 <span class="keywordflow">while</span> (it_objects != it_objects_end) {
 <a name="l00301"></a>00301                         os &lt;&lt; *it_objects &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;
@@ -366,7 +366,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00303"></a>00303                 }
 <a name="l00304"></a>00304         }
 <a name="l00305"></a>00305         os &lt;&lt; <span class="stringliteral">&quot;}&quot;</span>;
-<a name="l00306"></a>00306         os &lt;&lt; <span class="stringliteral">&quot; start/end: (&quot;</span> &lt;&lt; obj.getFirstActiveCycle() &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; obj.getLastActiveCycle() &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;
+<a name="l00306"></a>00306         os &lt;&lt; <span class="stringliteral">&quot; start/end: (&quot;</span> &lt;&lt; obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a348598ef30bd651b94ebbc0cdc46cb28" title="Get the first active cycle.">getFirstActiveCycle</a>() &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; obj.getLastActiveCycle() &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;
 <a name="l00307"></a>00307         <span class="keywordflow">return</span> os;
 <a name="l00308"></a>00308 }
 <a name="l00309"></a>00309 
@@ -389,7 +389,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Mar 14 2011 14:08:47 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -1,0 +1,326 @@
+.TH "cryomesh::manager::ConnectionDatabaseObject" 3 "Fri Apr 1 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::manager::ConnectionDatabaseObject \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ConnectionDatabaseObject.h>\fP
+.PP
+Inherits \fBcryomesh::manager::DatabaseObject\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBConnectionDatabaseObject\fP (const std::string &uuid_str, const std::string &innode_uuid_str, const std::string &outnode_uuid_str, const \fBcommon::Cycle\fP &\fBcycle\fP, const int impulse_count)"
+.br
+.RI "\fICreate database object from connection information. \fP"
+.ti -1c
+.RI "\fBConnectionDatabaseObject\fP (const std::string &connection_table_entry)"
+.br
+.RI "\fICreate database object from a string database entry for a connection. \fP"
+.ti -1c
+.RI "virtual \fB~ConnectionDatabaseObject\fP ()"
+.br
+.RI "\fIDefault Destructor. \fP"
+.ti -1c
+.RI "virtual std::string \fBgetInsert\fP (const std::string &table) const "
+.br
+.RI "\fIGet the string that can be used to insert the sql data. \fP"
+.ti -1c
+.RI "const std::string & \fBgetUUID\fP () const "
+.br
+.RI "\fIGet uuid variable of this object. \fP"
+.ti -1c
+.RI "const std::string & \fBgetInputNodeUUID\fP () const "
+.br
+.RI "\fIGet inputNodeUUID variable of this object. \fP"
+.ti -1c
+.RI "const std::string & \fBgetOutputNodeUUID\fP () const "
+.br
+.RI "\fIGet outputNodeUUID variable of this object. \fP"
+.ti -1c
+.RI "const \fBcommon::Cycle\fP & \fBgetCycle\fP () const "
+.br
+.RI "\fIGet cycle variable of this object. \fP"
+.ti -1c
+.RI "const int & \fBgetImpulseCount\fP () const "
+.br
+.RI "\fIGet impulseCount variable of this object. \fP"
+.ti -1c
+.RI "std::string \fBgetKey\fP (const std::string &key) const "
+.br
+.RI "\fIReturn the string object associated with a key. \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static std::string \fBfindValue\fP (const std::string &entry, const std::map< std::string, std::string > &map)"
+.br
+.RI "\fIFind entries value in map or return null. \fP"
+.ti -1c
+.RI "static std::map< std::string, std::string > \fBgetColumnMapFromEntry\fP (const std::string &entry)"
+.br
+.RI "\fIParse a string database entry, extract columns and values and return a map. \fP"
+.ti -1c
+.RI "template<class T > static std::string \fBtoString\fP (T obj)"
+.br
+.RI "\fIConvert an templated object that can be piped to a stream to a string. \fP"
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const std::string \fBID_TAG\fP = 'id'"
+.br
+.ti -1c
+.RI "static const std::string \fBINPUT_ID_TAG\fP = 'inputid'"
+.br
+.ti -1c
+.RI "static const std::string \fBOUTPUT_ID_TAG\fP = 'outputid'"
+.br
+.ti -1c
+.RI "static const std::string \fBIMPULSE_COUNT_TAG\fP = 'impulses'"
+.br
+.ti -1c
+.RI "static const std::string \fBCYCLE_TAG\fP = 'cycle'"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::map< std::string, std::string > \fBcolumns\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBuuid\fP"
+.br
+.ti -1c
+.RI "std::string \fBinputNodeUUID\fP"
+.br
+.ti -1c
+.RI "std::string \fBoutputNodeUUID\fP"
+.br
+.ti -1c
+.RI "\fBcommon::Cycle\fP \fBcycle\fP"
+.br
+.ti -1c
+.RI "int \fBimpulseCount\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 21 of file ConnectionDatabaseObject.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::manager::ConnectionDatabaseObject::ConnectionDatabaseObject (const std::string &uuid_str, const std::string &innode_uuid_str, const std::string &outnode_uuid_str, const \fBcommon::Cycle\fP &cycle, const intimpulse_count)"
+.PP
+Create database object from connection information. \fBParameters:\fP
+.RS 4
+\fIstd::string\fP The uuid of the connection 
+.br
+\fIstd::string\fP The uuid of the input node 
+.br
+\fIstd::string\fP The uuid of the output node 
+.br
+\fI\fBcommon::Cycle\fP\fP The cycle of the entry 
+.br
+\fIint\fP The impulse count of the connection on this entry 
+.RE
+.PP
+
+.PP
+Definition at line 21 of file ConnectionDatabaseObject.cpp.
+.PP
+References cryomesh::manager::DatabaseObject::columns, cycle, CYCLE_TAG, ID_TAG, IMPULSE_COUNT_TAG, INPUT_ID_TAG, OUTPUT_ID_TAG, and cryomesh::common::Cycle::toLInt().
+.SS "cryomesh::manager::ConnectionDatabaseObject::ConnectionDatabaseObject (const std::string &connection_table_entry)"
+.PP
+Create database object from a string database entry for a connection. \fBParameters:\fP
+.RS 4
+\fIstd::string\fP The database entry of the connection 
+.RE
+.PP
+
+.PP
+Definition at line 32 of file ConnectionDatabaseObject.cpp.
+.SS "cryomesh::manager::ConnectionDatabaseObject::~ConnectionDatabaseObject ()\fC [virtual]\fP"
+.PP
+Default Destructor. 
+.PP
+Definition at line 66 of file ConnectionDatabaseObject.cpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "static std::string cryomesh::manager::DatabaseObject::findValue (const std::string &entry, const std::map< std::string, std::string > &map)\fC [inline, static, inherited]\fP"
+.PP
+Find entries value in map or return null. \fBParameters:\fP
+.RS 4
+\fIstd::string\fP Entry to find 
+.br
+\fIstd::map<std::string,std::string\fP map to search
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Value of entry 
+.RE
+.PP
+
+.PP
+Definition at line 59 of file DatabaseObject.h.
+.PP
+Referenced by cryomesh::manager::NodeDatabaseObject::NodeDatabaseObject().
+.SS "static std::map<std::string, std::string> cryomesh::manager::DatabaseObject::getColumnMapFromEntry (const std::string &entry)\fC [inline, static, inherited]\fP"
+.PP
+Parse a string database entry, extract columns and values and return a map. 
+.PP
+Definition at line 72 of file DatabaseObject.h.
+.PP
+Referenced by cryomesh::manager::NodeDatabaseObject::NodeDatabaseObject().
+.SS "const \fBcommon::Cycle\fP & cryomesh::manager::ConnectionDatabaseObject::getCycle () const"
+.PP
+Get cycle variable of this object. \fBReturns:\fP
+.RS 4
+std::string The cycle variable 
+.RE
+.PP
+
+.PP
+Definition at line 92 of file ConnectionDatabaseObject.cpp.
+.SS "const int & cryomesh::manager::ConnectionDatabaseObject::getImpulseCount () const"
+.PP
+Get impulseCount variable of this object. \fBReturns:\fP
+.RS 4
+std::string The impulseCount variable 
+.RE
+.PP
+
+.PP
+Definition at line 96 of file ConnectionDatabaseObject.cpp.
+.SS "const std::string & cryomesh::manager::ConnectionDatabaseObject::getInputNodeUUID () const"
+.PP
+Get inputNodeUUID variable of this object. \fBReturns:\fP
+.RS 4
+std::string The inputNodeUUID variable 
+.RE
+.PP
+
+.PP
+Definition at line 84 of file ConnectionDatabaseObject.cpp.
+.SS "std::string cryomesh::manager::ConnectionDatabaseObject::getInsert (const std::string &table) const\fC [virtual]\fP"
+.PP
+Get the string that can be used to insert the sql data. \fBReturns:\fP
+.RS 4
+the sql command string to insert into this table 
+.RE
+.PP
+
+.PP
+Implements \fBcryomesh::manager::DatabaseObject\fP.
+.PP
+Definition at line 69 of file ConnectionDatabaseObject.cpp.
+.SS "std::string cryomesh::manager::DatabaseObject::getKey (const std::string &key) const\fC [inline, inherited]\fP"
+.PP
+Return the string object associated with a key. ::string The key to search for
+.PP
+\fBReturns:\fP
+.RS 4
+std::string The object associated with the search key, '' if not found 
+.RE
+.PP
+
+.PP
+Definition at line 37 of file DatabaseObject.h.
+.PP
+References cryomesh::manager::DatabaseObject::columns.
+.PP
+Referenced by cryomesh::manager::NodeDatabaseObject::getInsert().
+.SS "const std::string & cryomesh::manager::ConnectionDatabaseObject::getOutputNodeUUID () const"
+.PP
+Get outputNodeUUID variable of this object. \fBReturns:\fP
+.RS 4
+std::string The outputNodeUUID variable 
+.RE
+.PP
+
+.PP
+Definition at line 88 of file ConnectionDatabaseObject.cpp.
+.SS "const std::string & cryomesh::manager::ConnectionDatabaseObject::getUUID () const"
+.PP
+Get uuid variable of this object. \fBReturns:\fP
+.RS 4
+std::string The uuid variable 
+.RE
+.PP
+
+.PP
+Definition at line 80 of file ConnectionDatabaseObject.cpp.
+.SS "template<class T > static std::string cryomesh::manager::DatabaseObject::toString (Tobj)\fC [inline, static, inherited]\fP"
+.PP
+Convert an templated object that can be piped to a stream to a string. \fBParameters:\fP
+.RS 4
+\fIT\fP The object to get a string for 
+.RE
+.PP
+
+.PP
+Definition at line 108 of file DatabaseObject.h.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::map<std::string, std::string> \fBcryomesh::manager::DatabaseObject::columns\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 119 of file DatabaseObject.h.
+.PP
+Referenced by ConnectionDatabaseObject(), cryomesh::manager::DatabaseObject::getKey(), and cryomesh::manager::NodeDatabaseObject::NodeDatabaseObject().
+.SS "\fBcommon::Cycle\fP \fBcryomesh::manager::ConnectionDatabaseObject::cycle\fP\fC [private]\fP"
+.PP
+Definition at line 162 of file ConnectionDatabaseObject.h.
+.PP
+Referenced by ConnectionDatabaseObject().
+.SS "const std::string \fBcryomesh::manager::ConnectionDatabaseObject::CYCLE_TAG\fP = 'cycle'\fC [static]\fP"
+.PP
+Definition at line 133 of file ConnectionDatabaseObject.h.
+.PP
+Referenced by ConnectionDatabaseObject().
+.SS "const std::string \fBcryomesh::manager::ConnectionDatabaseObject::ID_TAG\fP = 'id'\fC [static]\fP"
+.PP
+Definition at line 106 of file ConnectionDatabaseObject.h.
+.PP
+Referenced by ConnectionDatabaseObject().
+.SS "const std::string \fBcryomesh::manager::ConnectionDatabaseObject::IMPULSE_COUNT_TAG\fP = 'impulses'\fC [static]\fP"
+.PP
+Definition at line 127 of file ConnectionDatabaseObject.h.
+.PP
+Referenced by ConnectionDatabaseObject().
+.SS "int \fBcryomesh::manager::ConnectionDatabaseObject::impulseCount\fP\fC [private]\fP"
+.PP
+Definition at line 169 of file ConnectionDatabaseObject.h.
+.SS "const std::string \fBcryomesh::manager::ConnectionDatabaseObject::INPUT_ID_TAG\fP = 'inputid'\fC [static]\fP"
+.PP
+Definition at line 113 of file ConnectionDatabaseObject.h.
+.PP
+Referenced by ConnectionDatabaseObject().
+.SS "std::string \fBcryomesh::manager::ConnectionDatabaseObject::inputNodeUUID\fP\fC [private]\fP"
+.PP
+Definition at line 148 of file ConnectionDatabaseObject.h.
+.SS "const std::string \fBcryomesh::manager::ConnectionDatabaseObject::OUTPUT_ID_TAG\fP = 'outputid'\fC [static]\fP"
+.PP
+Definition at line 120 of file ConnectionDatabaseObject.h.
+.PP
+Referenced by ConnectionDatabaseObject().
+.SS "std::string \fBcryomesh::manager::ConnectionDatabaseObject::outputNodeUUID\fP\fC [private]\fP"
+.PP
+Definition at line 155 of file ConnectionDatabaseObject.h.
+.SS "std::string \fBcryomesh::manager::ConnectionDatabaseObject::uuid\fP\fC [private]\fP"
+.PP
+Definition at line 141 of file ConnectionDatabaseObject.h.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

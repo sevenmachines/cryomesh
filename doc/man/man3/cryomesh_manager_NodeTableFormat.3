@@ -1,0 +1,117 @@
+.TH "cryomesh::manager::NodeTableFormat" 3 "Fri Apr 1 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::manager::NodeTableFormat \- 
+.PP
+Struct representing a node table structure.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <TableFormats.h>\fP
+.PP
+Inherits \fBcryomesh::manager::TableFormat\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBNodeTableFormat\fP ()"
+.br
+.RI "\fIDefault constructor will construct all the names and columns assiciated with a node table. \fP"
+.ti -1c
+.RI "std::string \fBgetName\fP () const "
+.br
+.RI "\fIReturn the name of the table. \fP"
+.ti -1c
+.RI "std::string \fBgetKey\fP (const std::string &key)"
+.br
+.RI "\fIReturn the string object associated with a key. \fP"
+.ti -1c
+.RI "std::string \fBgetCreateTable\fP () const "
+.br
+.RI "\fIGet the string that can be used to create the sql table. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBname\fP"
+.br
+.ti -1c
+.RI "std::map< std::string, std::string > \fBcolumns\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Struct representing a node table structure. 
+.PP
+Definition at line 97 of file TableFormats.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::manager::NodeTableFormat::NodeTableFormat ()\fC [inline]\fP"
+.PP
+Default constructor will construct all the names and columns assiciated with a node table. 
+.PP
+Definition at line 102 of file TableFormats.h.
+.PP
+References cryomesh::manager::TableFormat::columns, and cryomesh::manager::TableFormat::name.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::string cryomesh::manager::TableFormat::getCreateTable () const\fC [inline, inherited]\fP"
+.PP
+Get the string that can be used to create the sql table. \fBReturns:\fP
+.RS 4
+the sql command string to create this table 
+.RE
+.PP
+
+.PP
+Definition at line 58 of file TableFormats.h.
+.PP
+References cryomesh::manager::TableFormat::columns, and cryomesh::manager::TableFormat::getName().
+.SS "std::string cryomesh::manager::TableFormat::getKey (const std::string &key)\fC [inline, inherited]\fP"
+.PP
+Return the string object associated with a key. ::string The key to search for
+.PP
+\fBReturns:\fP
+.RS 4
+std::string The object associated with the search key, '' if not found 
+.RE
+.PP
+
+.PP
+Definition at line 43 of file TableFormats.h.
+.PP
+References cryomesh::manager::TableFormat::columns.
+.SS "std::string cryomesh::manager::TableFormat::getName () const\fC [inline, inherited]\fP"
+.PP
+Return the name of the table. \fBReturns:\fP
+.RS 4
+std::string The name of the table 
+.RE
+.PP
+
+.PP
+Definition at line 30 of file TableFormats.h.
+.PP
+References cryomesh::manager::TableFormat::name.
+.PP
+Referenced by cryomesh::manager::TableFormat::getCreateTable().
+.SH "Member Data Documentation"
+.PP 
+.SS "std::map<std::string, std::string> \fBcryomesh::manager::TableFormat::columns\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 91 of file TableFormats.h.
+.PP
+Referenced by cryomesh::manager::ConnectionTableFormat::ConnectionTableFormat(), cryomesh::manager::TableFormat::getCreateTable(), cryomesh::manager::TableFormat::getKey(), and NodeTableFormat().
+.SS "std::string \fBcryomesh::manager::TableFormat::name\fP\fC [protected, inherited]\fP"
+.PP
+Definition at line 84 of file TableFormats.h.
+.PP
+Referenced by cryomesh::manager::ConnectionTableFormat::ConnectionTableFormat(), cryomesh::manager::TableFormat::getName(), and NodeTableFormat().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

@@ -383,93 +383,92 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00554"></a>00554         }
 <a name="l00555"></a>00555 
 <a name="l00567"></a><a class="code" href="classcryomesh_1_1common_1_1Connector.html#a821dbf25de8022d484c33728df5a69f5">00567</a>         <span class="keyword">friend</span> std::ostream&amp; operator&lt;&lt;(std::ostream &amp; os, const Connector&lt;U, T&gt; &amp; obj) {
-<a name="l00568"></a>00568                 <span class="comment">// TODO: friend std::ostream&amp; operator&lt;&lt;(std::ostream &amp; os, const Connector&lt;U,T&gt; &amp; obj)</span>
-<a name="l00569"></a>00569                 os &lt;&lt; <span class="stringliteral">&quot;Connector&lt;&gt;:&quot;</span> &lt;&lt; obj &lt;&lt; std::endl;
-<a name="l00570"></a>00570                 os &lt;&lt; <span class="stringliteral">&quot;\tInputs:&quot;</span> &lt;&lt; std::endl;
-<a name="l00571"></a>00571                 <span class="comment">// forall in minputs</span>
-<a name="l00572"></a>00572                 {
-<a name="l00573"></a>00573                         <span class="keyword">typename</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt;::const_iterator it_minputs =
-<a name="l00574"></a>00574                                         obj.getInputs().begin();
-<a name="l00575"></a>00575                         <span class="keyword">const</span> <span class="keyword">typename</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt;::const_iterator it_minputs_end =
-<a name="l00576"></a>00576                                         obj.getOutputs().end();
-<a name="l00577"></a>00577                         <span class="keywordflow">while</span> (it_minputs != it_minputs_end) {
-<a name="l00578"></a>00578                                 os &lt;&lt; <span class="stringliteral">&quot;\tUUID:&quot;</span> &lt;&lt; <a class="code" href="classcryomesh_1_1common_1_1Misc.html#a84f807fd694538ca28bcffa637fb3da5">common::Misc::print</a>(os, it_minputs-&gt;first);
-<a name="l00579"></a>00579                                 ++it_minputs;
-<a name="l00580"></a>00580                         }
-<a name="l00581"></a>00581                 }
-<a name="l00582"></a>00582                 os &lt;&lt; <span class="stringliteral">&quot;\tOutputs:&quot;</span> &lt;&lt; std::endl;
-<a name="l00583"></a>00583 
-<a name="l00584"></a>00584                 <span class="comment">// forall in moutputs</span>
-<a name="l00585"></a>00585                 {
-<a name="l00586"></a>00586                         <span class="keyword">typename</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt;::const_iterator it_moutputs =
-<a name="l00587"></a>00587                                         obj.getOutputs().begin();
-<a name="l00588"></a>00588                         <span class="keyword">const</span> <span class="keyword">typename</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt;::const_iterator it_moutputs_end =
-<a name="l00589"></a>00589                                         obj.getOutputs().end();
-<a name="l00590"></a>00590                         <span class="keywordflow">while</span> (it_moutputs != it_moutputs_end) {
-<a name="l00591"></a>00591                                 os &lt;&lt; <span class="stringliteral">&quot;\tUUID:&quot;</span> &lt;&lt; <a class="code" href="classcryomesh_1_1common_1_1Misc.html#a84f807fd694538ca28bcffa637fb3da5">common::Misc::print</a>(os, it_moutputs-&gt;first);
-<a name="l00592"></a>00592                                 ++it_moutputs;
-<a name="l00593"></a>00593                         }
-<a name="l00594"></a>00594                 }
-<a name="l00595"></a>00595                 <span class="keywordflow">return</span> os;
-<a name="l00596"></a>00596         }
-<a name="l00597"></a>00597 
-<a name="l00598"></a>00598 <span class="keyword">protected</span>:
-<a name="l00599"></a>00599 
-<a name="l00614"></a><a class="code" href="classcryomesh_1_1common_1_1Connector.html#a1adff096f822eee244c7c26cd7f3fc3f">00614</a>         boost::shared_ptr&lt;T&gt; <a class="code" href="classcryomesh_1_1common_1_1Connector.html#a1adff096f822eee244c7c26cd7f3fc3f" title="Connect up an object using the supplied map.">connect</a>(<span class="keyword">const</span> boost::shared_ptr&lt;T&gt; obj,
-<a name="l00615"></a>00615                         std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt; &amp; objs, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> max_connections) {
-<a name="l00616"></a>00616                 boost::uuids::uuid temp_id = obj-&gt;getUUID();
-<a name="l00617"></a>00617 
-<a name="l00618"></a>00618                 <span class="keywordflow">if</span> (max_connections &gt; 0) {
-<a name="l00619"></a>00619                         <span class="keywordflow">if</span> (objs.size() &lt; max_connections) {
-<a name="l00620"></a>00620                                 objs[temp_id] = obj;
-<a name="l00621"></a>00621                         } <span class="keywordflow">else</span> {
-<a name="l00622"></a>00622                                 std::cout &lt;&lt; <span class="stringliteral">&quot;Connector::connect: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;Warning, ignoring attempt to add to a full container. (&quot;</span>
-<a name="l00623"></a>00623                                                 &lt;&lt; objs.size() &lt;&lt; <span class="stringliteral">&quot; of &quot;</span> &lt;&lt; max_connections &lt;&lt; std::endl;
-<a name="l00624"></a>00624                         }
-<a name="l00625"></a>00625                 }<span class="keywordflow">else</span>{
-<a name="l00626"></a>00626                         objs[temp_id] = obj;
-<a name="l00627"></a>00627 
-<a name="l00628"></a>00628                 }
-<a name="l00629"></a>00629                 <span class="keywordflow">return</span> obj;
-<a name="l00630"></a>00630 }
-<a name="l00631"></a>00631 
-<a name="l00644"></a><a class="code" href="classcryomesh_1_1common_1_1Connector.html#abdabb88b660f2f71a25a15f81fe5b683">00644</a>         boost::shared_ptr&lt;T&gt; <a class="code" href="classcryomesh_1_1common_1_1Connector.html#abdabb88b660f2f71a25a15f81fe5b683" title="Disconnect an object using the supplied map.">disconnect</a>(<span class="keyword">const</span> boost::shared_ptr&lt;T&gt; obj,
-<a name="l00645"></a>00645                         std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt; &amp; objs) {
-<a name="l00646"></a>00646                 boost::shared_ptr&lt;T&gt; deleted_obj;
-<a name="l00647"></a>00647                 <span class="keyword">typename</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt;::iterator it_found = objs.find(obj-&gt;getUUID());
-<a name="l00648"></a>00648                 <span class="keywordflow">if</span> (it_found != objs.end()) {
-<a name="l00649"></a>00649                         deleted_obj = it_found-&gt;second;
-<a name="l00650"></a>00650                         objs.erase(it_found);
-<a name="l00651"></a>00651                 }
-<a name="l00652"></a>00652                 <span class="keywordflow">return</span> deleted_obj;
-<a name="l00653"></a>00653         }
-<a name="l00654"></a>00654 
-<a name="l00667"></a><a class="code" href="classcryomesh_1_1common_1_1Connector.html#a3ddc25ebd1129d2d5d93126f768fd1ee">00667</a>         boost::shared_ptr&lt;T&gt; <a class="code" href="classcryomesh_1_1common_1_1Connector.html#abdabb88b660f2f71a25a15f81fe5b683" title="Disconnect an object using the supplied map.">disconnect</a>(<span class="keyword">const</span> boost::uuids::uuid &amp; <span class="keywordtype">id</span>,
-<a name="l00668"></a>00668                         std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt; &amp; objs) {
-<a name="l00669"></a>00669                 boost::shared_ptr&lt;T&gt; deleted_obj;
-<a name="l00670"></a>00670                 <span class="keyword">typename</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt;::iterator it_found = objs.find(<span class="keywordtype">id</span>);
-<a name="l00671"></a>00671                 <span class="keywordflow">if</span> (it_found != objs.end()) {
-<a name="l00672"></a>00672                         deleted_obj = it_found-&gt;second;
-<a name="l00673"></a>00673                         objs.erase(it_found);
-<a name="l00674"></a>00674                 }
-<a name="l00675"></a>00675                 <span class="keywordflow">return</span> deleted_obj;
-<a name="l00676"></a>00676         }
-<a name="l00677"></a>00677 
-<a name="l00683"></a><a class="code" href="classcryomesh_1_1common_1_1Connector.html#a4b53045b5f70f35b9cf8838474bdbc97">00683</a>         std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt; <a class="code" href="classcryomesh_1_1common_1_1Connector.html#a4b53045b5f70f35b9cf8838474bdbc97">minputs</a>;
-<a name="l00684"></a>00684 
-<a name="l00690"></a><a class="code" href="classcryomesh_1_1common_1_1Connector.html#a3a7175d8c33a8f5cd72592748c6dc15f">00690</a>         std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt; <a class="code" href="classcryomesh_1_1common_1_1Connector.html#a3a7175d8c33a8f5cd72592748c6dc15f">moutputs</a>;
-<a name="l00691"></a>00691 
-<a name="l00697"></a><a class="code" href="classcryomesh_1_1common_1_1Connector.html#aed34a9f056b3f718cbf5669717d46694">00697</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1common_1_1Connector.html#aed34a9f056b3f718cbf5669717d46694">maxInputs</a>;
-<a name="l00698"></a>00698 
-<a name="l00704"></a><a class="code" href="classcryomesh_1_1common_1_1Connector.html#aa30303b7f79bab1364ff8ba53ea3fb25">00704</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1common_1_1Connector.html#aa30303b7f79bab1364ff8ba53ea3fb25">maxOutputs</a>;
-<a name="l00705"></a>00705 
-<a name="l00706"></a>00706 };
-<a name="l00707"></a>00707 
-<a name="l00708"></a>00708 }
-<a name="l00709"></a>00709 
-<a name="l00710"></a>00710 }
-<a name="l00711"></a>00711 
-<a name="l00712"></a>00712 <span class="preprocessor">#endif </span><span class="comment">/* CONNECTOR_H_ */</span>
+<a name="l00568"></a>00568                 os &lt;&lt; <span class="stringliteral">&quot;Connector&lt;&gt;:&quot;</span> &lt;&lt; obj &lt;&lt; std::endl;
+<a name="l00569"></a>00569                 os &lt;&lt; <span class="stringliteral">&quot;\tInputs:&quot;</span> &lt;&lt; std::endl;
+<a name="l00570"></a>00570                 <span class="comment">// forall in minputs</span>
+<a name="l00571"></a>00571                 {
+<a name="l00572"></a>00572                         <span class="keyword">typename</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt;::const_iterator it_minputs =
+<a name="l00573"></a>00573                                         obj.getInputs().begin();
+<a name="l00574"></a>00574                         <span class="keyword">const</span> <span class="keyword">typename</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt;::const_iterator it_minputs_end =
+<a name="l00575"></a>00575                                         obj.getOutputs().end();
+<a name="l00576"></a>00576                         <span class="keywordflow">while</span> (it_minputs != it_minputs_end) {
+<a name="l00577"></a>00577                                 os &lt;&lt; <span class="stringliteral">&quot;\tUUID:&quot;</span> &lt;&lt; common::Misc::print(os, it_minputs-&gt;first);
+<a name="l00578"></a>00578                                 ++it_minputs;
+<a name="l00579"></a>00579                         }
+<a name="l00580"></a>00580                 }
+<a name="l00581"></a>00581                 os &lt;&lt; <span class="stringliteral">&quot;\tOutputs:&quot;</span> &lt;&lt; std::endl;
+<a name="l00582"></a>00582 
+<a name="l00583"></a>00583                 <span class="comment">// forall in moutputs</span>
+<a name="l00584"></a>00584                 {
+<a name="l00585"></a>00585                         <span class="keyword">typename</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt;::const_iterator it_moutputs =
+<a name="l00586"></a>00586                                         obj.getOutputs().begin();
+<a name="l00587"></a>00587                         <span class="keyword">const</span> <span class="keyword">typename</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt;::const_iterator it_moutputs_end =
+<a name="l00588"></a>00588                                         obj.getOutputs().end();
+<a name="l00589"></a>00589                         <span class="keywordflow">while</span> (it_moutputs != it_moutputs_end) {
+<a name="l00590"></a>00590                                 os &lt;&lt; <span class="stringliteral">&quot;\tUUID:&quot;</span> &lt;&lt; common::Misc::print(os, it_moutputs-&gt;first);
+<a name="l00591"></a>00591                                 ++it_moutputs;
+<a name="l00592"></a>00592                         }
+<a name="l00593"></a>00593                 }
+<a name="l00594"></a>00594                 <span class="keywordflow">return</span> os;
+<a name="l00595"></a>00595         }
+<a name="l00596"></a>00596 
+<a name="l00597"></a>00597 <span class="keyword">protected</span>:
+<a name="l00598"></a>00598 
+<a name="l00613"></a><a class="code" href="classcryomesh_1_1common_1_1Connector.html#a1adff096f822eee244c7c26cd7f3fc3f">00613</a>         boost::shared_ptr&lt;T&gt; <a class="code" href="classcryomesh_1_1common_1_1Connector.html#a1adff096f822eee244c7c26cd7f3fc3f" title="Connect up an object using the supplied map.">connect</a>(<span class="keyword">const</span> boost::shared_ptr&lt;T&gt; obj,
+<a name="l00614"></a>00614                         std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt; &amp; objs, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> max_connections) {
+<a name="l00615"></a>00615                 boost::uuids::uuid temp_id = obj-&gt;getUUID();
+<a name="l00616"></a>00616 
+<a name="l00617"></a>00617                 <span class="keywordflow">if</span> (max_connections &gt; 0) {
+<a name="l00618"></a>00618                         <span class="keywordflow">if</span> (objs.size() &lt; max_connections) {
+<a name="l00619"></a>00619                                 objs[temp_id] = obj;
+<a name="l00620"></a>00620                         } <span class="keywordflow">else</span> {
+<a name="l00621"></a>00621                                 std::cout &lt;&lt; <span class="stringliteral">&quot;Connector::connect: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;Warning, ignoring attempt to add to a full container. (&quot;</span>
+<a name="l00622"></a>00622                                                 &lt;&lt; objs.size() &lt;&lt; <span class="stringliteral">&quot; of &quot;</span> &lt;&lt; max_connections &lt;&lt; std::endl;
+<a name="l00623"></a>00623                         }
+<a name="l00624"></a>00624                 }<span class="keywordflow">else</span>{
+<a name="l00625"></a>00625                         objs[temp_id] = obj;
+<a name="l00626"></a>00626 
+<a name="l00627"></a>00627                 }
+<a name="l00628"></a>00628                 <span class="keywordflow">return</span> obj;
+<a name="l00629"></a>00629 }
+<a name="l00630"></a>00630 
+<a name="l00643"></a><a class="code" href="classcryomesh_1_1common_1_1Connector.html#abdabb88b660f2f71a25a15f81fe5b683">00643</a>         boost::shared_ptr&lt;T&gt; <a class="code" href="classcryomesh_1_1common_1_1Connector.html#abdabb88b660f2f71a25a15f81fe5b683" title="Disconnect an object using the supplied map.">disconnect</a>(<span class="keyword">const</span> boost::shared_ptr&lt;T&gt; obj,
+<a name="l00644"></a>00644                         std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt; &amp; objs) {
+<a name="l00645"></a>00645                 boost::shared_ptr&lt;T&gt; deleted_obj;
+<a name="l00646"></a>00646                 <span class="keyword">typename</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt;::iterator it_found = objs.find(obj-&gt;getUUID());
+<a name="l00647"></a>00647                 <span class="keywordflow">if</span> (it_found != objs.end()) {
+<a name="l00648"></a>00648                         deleted_obj = it_found-&gt;second;
+<a name="l00649"></a>00649                         objs.erase(it_found);
+<a name="l00650"></a>00650                 }
+<a name="l00651"></a>00651                 <span class="keywordflow">return</span> deleted_obj;
+<a name="l00652"></a>00652         }
+<a name="l00653"></a>00653 
+<a name="l00666"></a><a class="code" href="classcryomesh_1_1common_1_1Connector.html#a3ddc25ebd1129d2d5d93126f768fd1ee">00666</a>         boost::shared_ptr&lt;T&gt; <a class="code" href="classcryomesh_1_1common_1_1Connector.html#abdabb88b660f2f71a25a15f81fe5b683" title="Disconnect an object using the supplied map.">disconnect</a>(<span class="keyword">const</span> boost::uuids::uuid &amp; <span class="keywordtype">id</span>,
+<a name="l00667"></a>00667                         std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt; &amp; objs) {
+<a name="l00668"></a>00668                 boost::shared_ptr&lt;T&gt; deleted_obj;
+<a name="l00669"></a>00669                 <span class="keyword">typename</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt;::iterator it_found = objs.find(<span class="keywordtype">id</span>);
+<a name="l00670"></a>00670                 <span class="keywordflow">if</span> (it_found != objs.end()) {
+<a name="l00671"></a>00671                         deleted_obj = it_found-&gt;second;
+<a name="l00672"></a>00672                         objs.erase(it_found);
+<a name="l00673"></a>00673                 }
+<a name="l00674"></a>00674                 <span class="keywordflow">return</span> deleted_obj;
+<a name="l00675"></a>00675         }
+<a name="l00676"></a>00676 
+<a name="l00682"></a><a class="code" href="classcryomesh_1_1common_1_1Connector.html#a4b53045b5f70f35b9cf8838474bdbc97">00682</a>         std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt; <a class="code" href="classcryomesh_1_1common_1_1Connector.html#a4b53045b5f70f35b9cf8838474bdbc97">minputs</a>;
+<a name="l00683"></a>00683 
+<a name="l00689"></a><a class="code" href="classcryomesh_1_1common_1_1Connector.html#a3a7175d8c33a8f5cd72592748c6dc15f">00689</a>         std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt; <a class="code" href="classcryomesh_1_1common_1_1Connector.html#a3a7175d8c33a8f5cd72592748c6dc15f">moutputs</a>;
+<a name="l00690"></a>00690 
+<a name="l00696"></a><a class="code" href="classcryomesh_1_1common_1_1Connector.html#aed34a9f056b3f718cbf5669717d46694">00696</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1common_1_1Connector.html#aed34a9f056b3f718cbf5669717d46694">maxInputs</a>;
+<a name="l00697"></a>00697 
+<a name="l00703"></a><a class="code" href="classcryomesh_1_1common_1_1Connector.html#aa30303b7f79bab1364ff8ba53ea3fb25">00703</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1common_1_1Connector.html#aa30303b7f79bab1364ff8ba53ea3fb25">maxOutputs</a>;
+<a name="l00704"></a>00704 
+<a name="l00705"></a>00705 };
+<a name="l00706"></a>00706 
+<a name="l00707"></a>00707 }
+<a name="l00708"></a>00708 
+<a name="l00709"></a>00709 }
+<a name="l00710"></a>00710 
+<a name="l00711"></a>00711 <span class="preprocessor">#endif </span><span class="comment">/* CONNECTOR_H_ */</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -486,7 +485,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Mar 14 2011 14:08:47 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -1,0 +1,193 @@
+.TH "cryomesh::utilities::SequencerChannels" 3 "Fri Apr 1 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::utilities::SequencerChannels \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SequencerChannels.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSequencerChannels\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~SequencerChannels\fP ()"
+.br
+.ti -1c
+.RI "void \fBreadSequences\fP (const std::string &ifstr)"
+.br
+.ti -1c
+.RI "void \fBwriteSequences\fP (const std::string &ofstr, std::map< boost::uuids::uuid, boost::shared_ptr< \fBstate::PatternChannel\fP > > &\fBin_channels\fP, std::map< boost::uuids::uuid, boost::shared_ptr< \fBstate::PatternChannel\fP > > &\fBout_channels\fP) const "
+.br
+.ti -1c
+.RI "std::map< boost::uuids::uuid, boost::shared_ptr< \fBstate::PatternChannel\fP > > \fBgetInputChannels\fP ()"
+.br
+.ti -1c
+.RI "std::map< boost::uuids::uuid, boost::shared_ptr< \fBstate::PatternChannel\fP > > \fBgetOutputChannels\fP ()"
+.br
+.ti -1c
+.RI "\fBstate::PatternChannelMap\fP \fBgetInputChannelsMap\fP () const "
+.br
+.ti -1c
+.RI "\fBstate::PatternChannelMap\fP \fBgetOutputChannelsMap\fP () const "
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const std::string \fBPATTERN_CHANNEL_STRING\fP = 'PatternChannel'"
+.br
+.ti -1c
+.RI "static const std::string \fBPATTERN_CHANNEL_TYPE_STRING\fP = 'Type'"
+.br
+.ti -1c
+.RI "static const std::string \fBPATTERN_CHANNEL_INPUT_STRING\fP = 'Input'"
+.br
+.ti -1c
+.RI "static const std::string \fBPATTERN_CHANNEL_OUTPUT_STRING\fP = 'Output'"
+.br
+.ti -1c
+.RI "static const std::string \fBPATTERN_CHANNEL_REFID_STRING\fP = 'ReferenceID'"
+.br
+.ti -1c
+.RI "static const std::string \fBPATTERN_STRING\fP = 'Pattern'"
+.br
+.ti -1c
+.RI "static const std::string \fBPATTERN_BINARY_STRING\fP = 'Binary'"
+.br
+.ti -1c
+.RI "static const std::string \fBPATTERN_TAG_STRING\fP = 'Tag'"
+.br
+.ti -1c
+.RI "static const std::string \fBVERSION_STRING\fP = 'Version'"
+.br
+.ti -1c
+.RI "static const std::string \fBDESCRIPTION_STRING\fP = 'Description'"
+.br
+.ti -1c
+.RI "static const std::string \fBPATTERN_CHANNEL_WIDTH_STRING\fP = 'Width'"
+.br
+.ti -1c
+.RI "static const std::string \fBPATTERN_CHANNEL_DEPTH_STRING\fP = 'Depth'"
+.br
+.ti -1c
+.RI "static const std::string \fBPATTERN_CHANNEL_NOTE_STRING\fP = 'Note'"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBstate::PatternChannelMap\fP \fBgetChannelMap\fP (const std::map< boost::uuids::uuid, boost::shared_ptr< \fBstate::PatternChannel\fP > > &patchans) const "
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::map< boost::uuids::uuid, boost::shared_ptr< \fBstate::PatternChannel\fP > > \fBin_channels\fP"
+.br
+.ti -1c
+.RI "std::map< boost::uuids::uuid, boost::shared_ptr< \fBstate::PatternChannel\fP > > \fBout_channels\fP"
+.br
+.ti -1c
+.RI "std::map< boost::uuids::uuid, boost::shared_ptr< \fBstate::PatternChannel\fP > > \fBin_channels_filtered\fP"
+.br
+.ti -1c
+.RI "std::map< boost::uuids::uuid, boost::shared_ptr< \fBstate::PatternChannel\fP > > \fBout_channels_filtered\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 21 of file SequencerChannels.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::utilities::SequencerChannels::SequencerChannels ()"
+.PP
+Definition at line 33 of file SequencerChannels.cpp.
+.SS "cryomesh::utilities::SequencerChannels::~SequencerChannels ()\fC [virtual]\fP"
+.PP
+Definition at line 37 of file SequencerChannels.cpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBstate::PatternChannelMap\fP cryomesh::utilities::SequencerChannels::getChannelMap (const std::map< boost::uuids::uuid, boost::shared_ptr< \fBstate::PatternChannel\fP > > &patchans) const\fC [protected]\fP"
+.PP
+Definition at line 140 of file SequencerChannels.cpp.
+.SS "std::map< boost::uuids::uuid, boost::shared_ptr< \fBstate::PatternChannel\fP > > cryomesh::utilities::SequencerChannels::getInputChannels ()"
+.PP
+Definition at line 126 of file SequencerChannels.cpp.
+.SS "\fBstate::PatternChannelMap\fP cryomesh::utilities::SequencerChannels::getInputChannelsMap () const"
+.PP
+Definition at line 133 of file SequencerChannels.cpp.
+.SS "std::map< boost::uuids::uuid, boost::shared_ptr< \fBstate::PatternChannel\fP > > cryomesh::utilities::SequencerChannels::getOutputChannels ()"
+.PP
+Definition at line 129 of file SequencerChannels.cpp.
+.SS "\fBstate::PatternChannelMap\fP cryomesh::utilities::SequencerChannels::getOutputChannelsMap () const"
+.PP
+Definition at line 136 of file SequencerChannels.cpp.
+.SS "void cryomesh::utilities::SequencerChannels::readSequences (const std::string &ifstr)"
+.PP
+Definition at line 40 of file SequencerChannels.cpp.
+.SS "void cryomesh::utilities::SequencerChannels::writeSequences (const std::string &ofstr, std::map< boost::uuids::uuid, boost::shared_ptr< \fBstate::PatternChannel\fP > > &in_channels, std::map< boost::uuids::uuid, boost::shared_ptr< \fBstate::PatternChannel\fP > > &out_channels) const"
+.SH "Member Data Documentation"
+.PP 
+.SS "const std::string \fBcryomesh::utilities::SequencerChannels::DESCRIPTION_STRING\fP = 'Description'\fC [static]\fP"
+.PP
+Definition at line 57 of file SequencerChannels.h.
+.SS "std::map<boost::uuids::uuid, boost::shared_ptr< \fBstate::PatternChannel\fP> > \fBcryomesh::utilities::SequencerChannels::in_channels\fP\fC [private]\fP"
+.PP
+Definition at line 67 of file SequencerChannels.h.
+.SS "std::map<boost::uuids::uuid, boost::shared_ptr< \fBstate::PatternChannel\fP> > \fBcryomesh::utilities::SequencerChannels::in_channels_filtered\fP\fC [private]\fP"
+.PP
+Definition at line 71 of file SequencerChannels.h.
+.SS "std::map<boost::uuids::uuid, boost::shared_ptr< \fBstate::PatternChannel\fP> > \fBcryomesh::utilities::SequencerChannels::out_channels\fP\fC [private]\fP"
+.PP
+Definition at line 69 of file SequencerChannels.h.
+.SS "std::map<boost::uuids::uuid, boost::shared_ptr< \fBstate::PatternChannel\fP> > \fBcryomesh::utilities::SequencerChannels::out_channels_filtered\fP\fC [private]\fP"
+.PP
+Definition at line 73 of file SequencerChannels.h.
+.SS "const std::string \fBcryomesh::utilities::SequencerChannels::PATTERN_BINARY_STRING\fP = 'Binary'\fC [static]\fP"
+.PP
+Definition at line 54 of file SequencerChannels.h.
+.SS "const std::string \fBcryomesh::utilities::SequencerChannels::PATTERN_CHANNEL_DEPTH_STRING\fP = 'Depth'\fC [static]\fP"
+.PP
+Definition at line 59 of file SequencerChannels.h.
+.SS "const std::string \fBcryomesh::utilities::SequencerChannels::PATTERN_CHANNEL_INPUT_STRING\fP = 'Input'\fC [static]\fP"
+.PP
+Definition at line 50 of file SequencerChannels.h.
+.SS "const std::string \fBcryomesh::utilities::SequencerChannels::PATTERN_CHANNEL_NOTE_STRING\fP = 'Note'\fC [static]\fP"
+.PP
+Definition at line 60 of file SequencerChannels.h.
+.SS "const std::string \fBcryomesh::utilities::SequencerChannels::PATTERN_CHANNEL_OUTPUT_STRING\fP = 'Output'\fC [static]\fP"
+.PP
+Definition at line 51 of file SequencerChannels.h.
+.SS "const std::string \fBcryomesh::utilities::SequencerChannels::PATTERN_CHANNEL_REFID_STRING\fP = 'ReferenceID'\fC [static]\fP"
+.PP
+Definition at line 52 of file SequencerChannels.h.
+.SS "const std::string \fBcryomesh::utilities::SequencerChannels::PATTERN_CHANNEL_STRING\fP = 'PatternChannel'\fC [static]\fP"
+.PP
+Definition at line 48 of file SequencerChannels.h.
+.SS "const std::string \fBcryomesh::utilities::SequencerChannels::PATTERN_CHANNEL_TYPE_STRING\fP = 'Type'\fC [static]\fP"
+.PP
+Definition at line 49 of file SequencerChannels.h.
+.SS "const std::string \fBcryomesh::utilities::SequencerChannels::PATTERN_CHANNEL_WIDTH_STRING\fP = 'Width'\fC [static]\fP"
+.PP
+Definition at line 58 of file SequencerChannels.h.
+.SS "const std::string \fBcryomesh::utilities::SequencerChannels::PATTERN_STRING\fP = 'Pattern'\fC [static]\fP"
+.PP
+Definition at line 53 of file SequencerChannels.h.
+.SS "const std::string \fBcryomesh::utilities::SequencerChannels::PATTERN_TAG_STRING\fP = 'Tag'\fC [static]\fP"
+.PP
+Definition at line 55 of file SequencerChannels.h.
+.SS "const std::string \fBcryomesh::utilities::SequencerChannels::VERSION_STRING\fP = 'Version'\fC [static]\fP"
+.PP
+Definition at line 56 of file SequencerChannels.h.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

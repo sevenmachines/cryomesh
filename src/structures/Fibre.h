@@ -25,10 +25,17 @@ class Cluster;
  */
 class Fibre: public common::Tagged {
 public:
+
+	/**
+	 * Enum representing the relation of a cluster to this fibre
+	 */
 	enum ClusterConnectionType {
 		NullCluster, InputCluster, OutputCluster, LoopbackCluster
 	};
 
+	/**
+	 * Enum representing the type of this Fibre connection
+	 */
 	enum FibreType {
 		NullFibre, // The null Fibre
 		IntermediateFibre, // intermedate fibre, [ clusterin->clusterout ]
@@ -40,6 +47,13 @@ public:
 
 	/**
 	 * Construct a fibre between two clusters with width
+	 *
+	 * @param boost::shared_ptr<Cluster>
+	 * 	The input cluster to this Fibre
+	 * @param boost::shared_ptr<Cluster>
+	 * 	The output cluster to this Fibre
+	 * @param int
+	 * 	The width of the fibre connection to create
 	 */
 	Fibre(boost::shared_ptr<Cluster> inputCluster, boost::shared_ptr<Cluster> outputCluster, int width);
 
@@ -121,6 +135,12 @@ public:
 	 */
 	const components::ConnectionMap & getConnections() const;
 
+	/**
+	 * Get the type of the fibre
+	 *
+	 * @return FibreType
+	 * 	The type of the fibre connection
+	 */
 	const FibreType & getType() const;
 
 	/**
@@ -144,8 +164,12 @@ public:
 
 	/**
 	 * Get current pattern for firing state of input nodes to the fibre
+	 *
+	 * @return boost::shared_ptr< state::Pattern >
+	 * 	The current firing pattern of the input nodes to the fibre
 	 */
 	boost::shared_ptr< state::Pattern >  getInputNodesPattern() const;
+
 	/**
 	 * Get the activity pattern of the Fibre, 0 for no activity, 1 otherwise
 	 *

@@ -84,71 +84,74 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00021"></a>00021 <span class="keyword">class </span>Cluster;
 <a name="l00026"></a><a class="code" href="classcryomesh_1_1structures_1_1Fibre.html">00026</a> <span class="keyword">class </span><a class="code" href="classcryomesh_1_1structures_1_1Fibre.html" title="A Fibre is a collection of connections that connect one structure to another.">Fibre</a>: <span class="keyword">public</span> common::Tagged {
 <a name="l00027"></a>00027 <span class="keyword">public</span>:
-<a name="l00028"></a><a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061">00028</a>         <span class="keyword">enum</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061">ClusterConnectionType</a> {
-<a name="l00029"></a><a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061aa7d846663457afd6da1e28d201f62656">00029</a>                 <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061aabc802b96fdcb5b3652b911ba4b245dd">NullCluster</a>, <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061a6ba67168d6814daae19c08e089b9221e">InputCluster</a>, <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061aa7d846663457afd6da1e28d201f62656">OutputCluster</a>, <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061add322fb6cff1b80f969b078c59f97fce">LoopbackCluster</a>
-<a name="l00030"></a>00030         };
-<a name="l00031"></a>00031 
-<a name="l00032"></a><a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4">00032</a>         <span class="keyword">enum</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4" title="The type of this Fibre.">FibreType</a> {
-<a name="l00033"></a><a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a75309eba2cce59260e4f3e51bae87447">00033</a>                 <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a75309eba2cce59260e4f3e51bae87447">NullFibre</a>, <span class="comment">// The null Fibre</span>
-<a name="l00034"></a><a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a69d28022ab4829994a47b285abbbbf1e">00034</a>                 <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a69d28022ab4829994a47b285abbbbf1e">IntermediateFibre</a>, <span class="comment">// intermedate fibre, [ clusterin-&gt;clusterout ]</span>
-<a name="l00035"></a><a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a04c484accec936ca5b35fed02fd3affd">00035</a>                 <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a04c484accec936ca5b35fed02fd3affd">PrimaryInputFibre</a>, <span class="comment">// primary input, [ -&gt;cluster ]</span>
-<a name="l00036"></a><a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a09e0e43a8d02ccfe05dfe8c0b5cce1c6">00036</a>                 <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a09e0e43a8d02ccfe05dfe8c0b5cce1c6">PrimaryOutputFibre</a>, <span class="comment">// primary output, [ cluster -&gt; ]</span>
-<a name="l00037"></a><a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4abb9c562751800615ea00d21c6d1a0dfe">00037</a>                 <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4abb9c562751800615ea00d21c6d1a0dfe">LoopbackFibre</a>
-<a name="l00038"></a>00038         <span class="comment">// Loop back, [cluster1-&gt;cluster1 ]</span>
-<a name="l00039"></a>00039         };
-<a name="l00040"></a>00040 
-<a name="l00044"></a>00044         <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a03d3ec68b23d465e802f85bbd989550f" title="Construct a fibre between two clusters with width.">Fibre</a>(boost::shared_ptr&lt;Cluster&gt; inputCluster, boost::shared_ptr&lt;Cluster&gt; outputCluster, <span class="keywordtype">int</span> width);
-<a name="l00045"></a>00045 
-<a name="l00059"></a>00059         <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a03d3ec68b23d465e802f85bbd989550f" title="Construct a fibre between two clusters with width.">Fibre</a>(boost::shared_ptr&lt;Cluster&gt; cluster, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4" title="The type of this Fibre.">FibreType</a> &amp; type, <span class="keywordtype">int</span> width);
-<a name="l00060"></a>00060 
-<a name="l00064"></a>00064         <span class="keyword">virtual</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a84a116f316383898b03fb7844dbf8d81" title="Default destructor.">~Fibre</a>();
-<a name="l00065"></a>00065 
-<a name="l00069"></a>00069         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a1f0b3b6c97d353acc172da31ad9af99f" title="Update all elements.">update</a>();
-<a name="l00070"></a>00070 
-<a name="l00077"></a>00077         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#ac92cf661269915725e52f33b02ec05c7" title="Send impulses to the connections based on a complete trigger of all of them.">trigger</a>(<span class="keywordtype">double</span> percentage);
-<a name="l00078"></a>00078 
-<a name="l00082"></a>00082         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#ac92cf661269915725e52f33b02ec05c7" title="Send impulses to the connections based on a complete trigger of all of them.">trigger</a>();
-<a name="l00083"></a>00083 
-<a name="l00090"></a>00090         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#ac92cf661269915725e52f33b02ec05c7" title="Send impulses to the connections based on a complete trigger of all of them.">trigger</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html">state::Pattern</a> &amp; pattern);
-<a name="l00091"></a>00091 
-<a name="l00098"></a>00098         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#ac92cf661269915725e52f33b02ec05c7" title="Send impulses to the connections based on a complete trigger of all of them.">trigger</a>( std::vector&lt;boost::shared_ptr&lt;components::Impulse&gt; &gt; &amp; triggerImpulses);
-<a name="l00099"></a>00099 
-<a name="l00106"></a>00106         <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Connector.html">common::Connector&lt;Fibre, Cluster&gt;</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aac08e0b13a4baffd2c74d8d1a3351072" title="Get the connector.">getConnector</a>() <span class="keyword">const</span>;
-<a name="l00107"></a>00107 
-<a name="l00114"></a>00114         <a class="code" href="classcryomesh_1_1common_1_1Connector.html">common::Connector&lt;Fibre, Cluster&gt;</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#ab38093272e6e7427b21bb6eb4ded1778" title="Get the mutable connector.">getMutableConnector</a>();
-<a name="l00115"></a>00115 
-<a name="l00122"></a>00122         <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1ConnectionMap.html" title="Helper class for ConnectionMap to KeyMappedCollection mapping.">components::ConnectionMap</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a95dbfb506308cab9c4d763f2dff66311" title="Get the connections.">getConnections</a>() <span class="keyword">const</span>;
-<a name="l00123"></a>00123 
-<a name="l00124"></a>00124         <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4" title="The type of this Fibre.">FibreType</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#ab1a8a60a116108041a1efea8fd6c35e7">getType</a>() <span class="keyword">const</span>;
-<a name="l00125"></a>00125 
-<a name="l00135"></a>00135         <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061">ClusterConnectionType</a> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a082dc2100f17f78b138b5ccbe0dd8cfe" title="Return type of connection to cluster specified, null if none.">isConnected</a>(<span class="keyword">const</span> boost::shared_ptr&lt;Cluster&gt; &amp; cluster) <span class="keyword">const</span>;
-<a name="l00136"></a>00136 
-<a name="l00143"></a>00143         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a042a1f3fce5c5938eb229764a5754a0f" title="Get width (number of connections) of fibre.">getWidth</a>()<span class="keyword">const</span>;
-<a name="l00144"></a>00144 
-<a name="l00162"></a>00162                 <span class="keyword">friend</span> std::ostream&amp; <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a7dca0c0b433cc87d41580076ca31a419" title="Get the activity pattern of the Fibre, 0 for no activity, 1 otherwise.">operator&lt;&lt;</a>(std::ostream &amp; os, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html" title="A Fibre is a collection of connections that connect one structure to another.">Fibre</a> &amp; obj);
-<a name="l00163"></a>00163 <span class="keyword">protected</span>:
+<a name="l00028"></a>00028 
+<a name="l00032"></a><a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061">00032</a>         <span class="keyword">enum</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061" title="Enum representing the relation of a cluster to this fibre.">ClusterConnectionType</a> {
+<a name="l00033"></a><a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061aa7d846663457afd6da1e28d201f62656">00033</a>                 <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061aabc802b96fdcb5b3652b911ba4b245dd">NullCluster</a>, <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061a6ba67168d6814daae19c08e089b9221e">InputCluster</a>, <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061aa7d846663457afd6da1e28d201f62656">OutputCluster</a>, <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061add322fb6cff1b80f969b078c59f97fce">LoopbackCluster</a>
+<a name="l00034"></a>00034         };
+<a name="l00035"></a>00035 
+<a name="l00039"></a><a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4">00039</a>         <span class="keyword">enum</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4" title="Enum representing the type of this Fibre connection.">FibreType</a> {
+<a name="l00040"></a><a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a75309eba2cce59260e4f3e51bae87447">00040</a>                 <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a75309eba2cce59260e4f3e51bae87447">NullFibre</a>, <span class="comment">// The null Fibre</span>
+<a name="l00041"></a><a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a69d28022ab4829994a47b285abbbbf1e">00041</a>                 <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a69d28022ab4829994a47b285abbbbf1e">IntermediateFibre</a>, <span class="comment">// intermedate fibre, [ clusterin-&gt;clusterout ]</span>
+<a name="l00042"></a><a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a04c484accec936ca5b35fed02fd3affd">00042</a>                 <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a04c484accec936ca5b35fed02fd3affd">PrimaryInputFibre</a>, <span class="comment">// primary input, [ -&gt;cluster ]</span>
+<a name="l00043"></a><a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a09e0e43a8d02ccfe05dfe8c0b5cce1c6">00043</a>                 <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a09e0e43a8d02ccfe05dfe8c0b5cce1c6">PrimaryOutputFibre</a>, <span class="comment">// primary output, [ cluster -&gt; ]</span>
+<a name="l00044"></a><a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4abb9c562751800615ea00d21c6d1a0dfe">00044</a>                 <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4abb9c562751800615ea00d21c6d1a0dfe">LoopbackFibre</a>
+<a name="l00045"></a>00045         <span class="comment">// Loop back, [cluster1-&gt;cluster1 ]</span>
+<a name="l00046"></a>00046         };
+<a name="l00047"></a>00047 
+<a name="l00058"></a>00058         <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a03d3ec68b23d465e802f85bbd989550f" title="Construct a fibre between two clusters with width.">Fibre</a>(boost::shared_ptr&lt;Cluster&gt; inputCluster, boost::shared_ptr&lt;Cluster&gt; outputCluster, <span class="keywordtype">int</span> width);
+<a name="l00059"></a>00059 
+<a name="l00073"></a>00073         <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a03d3ec68b23d465e802f85bbd989550f" title="Construct a fibre between two clusters with width.">Fibre</a>(boost::shared_ptr&lt;Cluster&gt; cluster, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4" title="Enum representing the type of this Fibre connection.">FibreType</a> &amp; type, <span class="keywordtype">int</span> width);
+<a name="l00074"></a>00074 
+<a name="l00078"></a>00078         <span class="keyword">virtual</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a84a116f316383898b03fb7844dbf8d81" title="Default destructor.">~Fibre</a>();
+<a name="l00079"></a>00079 
+<a name="l00083"></a>00083         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a1f0b3b6c97d353acc172da31ad9af99f" title="Update all elements.">update</a>();
+<a name="l00084"></a>00084 
+<a name="l00091"></a>00091         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#ac92cf661269915725e52f33b02ec05c7" title="Send impulses to the connections based on a complete trigger of all of them.">trigger</a>(<span class="keywordtype">double</span> percentage);
+<a name="l00092"></a>00092 
+<a name="l00096"></a>00096         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#ac92cf661269915725e52f33b02ec05c7" title="Send impulses to the connections based on a complete trigger of all of them.">trigger</a>();
+<a name="l00097"></a>00097 
+<a name="l00104"></a>00104         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#ac92cf661269915725e52f33b02ec05c7" title="Send impulses to the connections based on a complete trigger of all of them.">trigger</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html">state::Pattern</a> &amp; pattern);
+<a name="l00105"></a>00105 
+<a name="l00112"></a>00112         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#ac92cf661269915725e52f33b02ec05c7" title="Send impulses to the connections based on a complete trigger of all of them.">trigger</a>( std::vector&lt;boost::shared_ptr&lt;components::Impulse&gt; &gt; &amp; triggerImpulses);
+<a name="l00113"></a>00113 
+<a name="l00120"></a>00120         <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Connector.html">common::Connector&lt;Fibre, Cluster&gt;</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aac08e0b13a4baffd2c74d8d1a3351072" title="Get the connector.">getConnector</a>() <span class="keyword">const</span>;
+<a name="l00121"></a>00121 
+<a name="l00128"></a>00128         <a class="code" href="classcryomesh_1_1common_1_1Connector.html">common::Connector&lt;Fibre, Cluster&gt;</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#ab38093272e6e7427b21bb6eb4ded1778" title="Get the mutable connector.">getMutableConnector</a>();
+<a name="l00129"></a>00129 
+<a name="l00136"></a>00136         <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1ConnectionMap.html" title="Helper class for ConnectionMap to KeyMappedCollection mapping.">components::ConnectionMap</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a95dbfb506308cab9c4d763f2dff66311" title="Get the connections.">getConnections</a>() <span class="keyword">const</span>;
+<a name="l00137"></a>00137 
+<a name="l00144"></a>00144         <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4" title="Enum representing the type of this Fibre connection.">FibreType</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#ab1a8a60a116108041a1efea8fd6c35e7" title="Get the type of the fibre.">getType</a>() <span class="keyword">const</span>;
+<a name="l00145"></a>00145 
+<a name="l00155"></a>00155         <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061" title="Enum representing the relation of a cluster to this fibre.">ClusterConnectionType</a> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a082dc2100f17f78b138b5ccbe0dd8cfe" title="Return type of connection to cluster specified, null if none.">isConnected</a>(<span class="keyword">const</span> boost::shared_ptr&lt;Cluster&gt; &amp; cluster) <span class="keyword">const</span>;
+<a name="l00156"></a>00156 
+<a name="l00163"></a>00163         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a042a1f3fce5c5938eb229764a5754a0f" title="Get width (number of connections) of fibre.">getWidth</a>()<span class="keyword">const</span>;
 <a name="l00164"></a>00164 
-<a name="l00171"></a>00171         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#acdde6519103d56cb26d2c1274122622b" title="Set the type of this fibre.">setType</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4" title="The type of this Fibre.">FibreType</a> &amp; tp);
+<a name="l00171"></a>00171         boost::shared_ptr&lt; state::Pattern &gt;  <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#ac636d911ba83b83898d8a84e9e1cc7d6" title="Get current pattern for firing state of input nodes to the fibre.">getInputNodesPattern</a>() <span class="keyword">const</span>;
 <a name="l00172"></a>00172 
-<a name="l00179"></a>00179         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a2db9a8137da4294c38fc12028bce2d20" title="Reset and create a number of connections in this Fibre.">createConnections</a>(<span class="keywordtype">int</span> number);
-<a name="l00180"></a>00180 
-<a name="l00184"></a>00184         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#adb26abfba4fa239f8606afb71f6f7d61" title="Disconnect all the connections from clusters.">disconnectAllConnections</a>();
-<a name="l00185"></a>00185 
-<a name="l00194"></a>00194         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a9d1f47fb7ce5c18234054fcee35fd42b" title="Connect all the connections in this Fibre to a cluster of a specified type.">connectAllConnections</a>(boost::shared_ptr&lt;Cluster&gt; cluster, <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061">ClusterConnectionType</a> type);
-<a name="l00195"></a>00195 
-<a name="l00196"></a>00196 <span class="keyword">private</span>:
-<a name="l00202"></a><a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a13214170b78c57278f800c82f2a063f7">00202</a>         <a class="code" href="classcryomesh_1_1common_1_1Connector.html">common::Connector&lt;Fibre, Cluster&gt;</a> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a13214170b78c57278f800c82f2a063f7">connector</a>;
-<a name="l00203"></a>00203 
-<a name="l00209"></a><a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#ac6b2267d1a4b1532345988eb29e55850">00209</a>         <a class="code" href="classcryomesh_1_1components_1_1ConnectionMap.html" title="Helper class for ConnectionMap to KeyMappedCollection mapping.">components::ConnectionMap</a> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#ac6b2267d1a4b1532345988eb29e55850">connections</a>;
-<a name="l00210"></a>00210 
-<a name="l00216"></a><a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#acfd2fc68d27c91742e0319b2a0db090a">00216</a>         <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4" title="The type of this Fibre.">FibreType</a> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#acfd2fc68d27c91742e0319b2a0db090a">fibreType</a>;
-<a name="l00217"></a>00217 };
-<a name="l00218"></a>00218 
-<a name="l00219"></a>00219 }
-<a name="l00220"></a>00220 
-<a name="l00221"></a>00221 }
-<a name="l00222"></a>00222 
-<a name="l00223"></a>00223 <span class="preprocessor">#endif </span><span class="comment">/* FIBRE_H_ */</span>
+<a name="l00190"></a>00190                 <span class="keyword">friend</span> std::ostream&amp; <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a7dca0c0b433cc87d41580076ca31a419" title="Get the activity pattern of the Fibre, 0 for no activity, 1 otherwise.">operator&lt;&lt;</a>(std::ostream &amp; os, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html" title="A Fibre is a collection of connections that connect one structure to another.">Fibre</a> &amp; obj);
+<a name="l00191"></a>00191 <span class="keyword">protected</span>:
+<a name="l00192"></a>00192 
+<a name="l00199"></a>00199         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#acdde6519103d56cb26d2c1274122622b" title="Set the type of this fibre.">setType</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4" title="Enum representing the type of this Fibre connection.">FibreType</a> &amp; tp);
+<a name="l00200"></a>00200 
+<a name="l00207"></a>00207         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a2db9a8137da4294c38fc12028bce2d20" title="Reset and create a number of connections in this Fibre.">createConnections</a>(<span class="keywordtype">int</span> number);
+<a name="l00208"></a>00208 
+<a name="l00212"></a>00212         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#adb26abfba4fa239f8606afb71f6f7d61" title="Disconnect all the connections from clusters.">disconnectAllConnections</a>();
+<a name="l00213"></a>00213 
+<a name="l00222"></a>00222         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a9d1f47fb7ce5c18234054fcee35fd42b" title="Connect all the connections in this Fibre to a cluster of a specified type.">connectAllConnections</a>(boost::shared_ptr&lt;Cluster&gt; cluster, <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061" title="Enum representing the relation of a cluster to this fibre.">ClusterConnectionType</a> type);
+<a name="l00223"></a>00223 
+<a name="l00224"></a>00224 <span class="keyword">private</span>:
+<a name="l00230"></a><a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a13214170b78c57278f800c82f2a063f7">00230</a>         <a class="code" href="classcryomesh_1_1common_1_1Connector.html">common::Connector&lt;Fibre, Cluster&gt;</a> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#a13214170b78c57278f800c82f2a063f7">connector</a>;
+<a name="l00231"></a>00231 
+<a name="l00237"></a><a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#ac6b2267d1a4b1532345988eb29e55850">00237</a>         <a class="code" href="classcryomesh_1_1components_1_1ConnectionMap.html" title="Helper class for ConnectionMap to KeyMappedCollection mapping.">components::ConnectionMap</a> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#ac6b2267d1a4b1532345988eb29e55850">connections</a>;
+<a name="l00238"></a>00238 
+<a name="l00244"></a><a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#acfd2fc68d27c91742e0319b2a0db090a">00244</a>         <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4" title="Enum representing the type of this Fibre connection.">FibreType</a> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#acfd2fc68d27c91742e0319b2a0db090a">fibreType</a>;
+<a name="l00245"></a>00245 };
+<a name="l00246"></a>00246 
+<a name="l00247"></a>00247 }
+<a name="l00248"></a>00248 
+<a name="l00249"></a>00249 }
+<a name="l00250"></a>00250 
+<a name="l00251"></a>00251 <span class="preprocessor">#endif </span><span class="comment">/* FIBRE_H_ */</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -165,7 +168,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Mar 14 2011 14:08:47 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

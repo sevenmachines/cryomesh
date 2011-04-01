@@ -1,4 +1,4 @@
-.TH "cryomesh::components::Node" 3 "Mon Mar 14 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::components::Node" 3 "Fri Apr 1 2011" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -12,7 +12,7 @@ cryomesh::components::Node \-
 .PP
 \fC#include <Node.h>\fP
 .PP
-Inherits \fBcryomesh::common::Tagged\fP, and \fBDataObjectController< unsigned long int, double >\fP.
+Inherits \fBDataObjectController< unsigned long int, double >\fP.
 .SS "Public Types"
 
 .in +1c
@@ -112,29 +112,21 @@ Inherits \fBcryomesh::common::Tagged\fP, and \fBDataObjectController< unsigned l
 .br
 .RI "\fISet the activity at cycle of the node. \fP"
 .ti -1c
-.RI "const \fBspacial::Point\fP & \fBgetPosition\fP () const "
+.RI "boost::shared_ptr< \fBmanager::DatabaseObject\fP > \fBgetDatabaseObject\fP () const "
+.br
+.RI "\fIReturn a database object for this node. \fP"
+.ti -1c
+.RI "const spacial::Point & \fBgetPosition\fP () const "
 .br
 .RI "\fIget the position of the node \fP"
 .ti -1c
-.RI "void \fBsetPosition\fP (const \fBspacial::Point\fP &new_position)"
+.RI "void \fBsetPosition\fP (const spacial::Point &new_position)"
 .br
 .RI "\fISet the spacial position of the node, remembering to update connections lengths. \fP"
 .ti -1c
 .RI "void \fBrandomise\fP ()"
 .br
 .RI "\fIRandomise the nodes state. \fP"
-.ti -1c
-.RI "boost::uuids::uuid \fBgetUUID\fP () const "
-.br
-.RI "\fIGet the uuid of object. \fP"
-.ti -1c
-.RI "boost::uuids::uuid \fBgetKey\fP () const "
-.br
-.RI "\fIGet the key of object. \fP"
-.ti -1c
-.RI "boost::uuids::uuid \fBgetTag\fP () const "
-.br
-.RI "\fIGet the tag of object. \fP"
 .ti -1c
 .RI "virtual void \fBenableLogging\fP (bool enable)"
 .br
@@ -156,7 +148,7 @@ Inherits \fBcryomesh::common::Tagged\fP, and \fBDataObjectController< unsigned l
 
 .in +1c
 .ti -1c
-.RI "static boost::shared_ptr< \fBNode\fP > \fBgetRandom\fP (const \fBspacial::Point\fP &max_point=\fBMAX_BOUNDING_BOX_POINT\fP)"
+.RI "static boost::shared_ptr< \fBNode\fP > \fBgetRandom\fP (const spacial::Point &max_point=\fBMAX_BOUNDING_BOX_POINT\fP)"
 .br
 .in -1c
 .SS "Static Public Attributes"
@@ -169,7 +161,7 @@ Inherits \fBcryomesh::common::Tagged\fP, and \fBDataObjectController< unsigned l
 .RI "static const double \fBACTIVITY_THRESHOLD\fP = 3 * \fBImpulse::MAX_ACTIVITY\fP"
 .br
 .ti -1c
-.RI "static const \fBspacial::Point\fP \fBMAX_BOUNDING_BOX_POINT\fP = \fBspacial::Point\fP(100, 100, 100)"
+.RI "static const spacial::Point \fBMAX_BOUNDING_BOX_POINT\fP = spacial::Point(100, 100, 100)"
 .br
 .in -1c
 .SS "Protected Member Functions"
@@ -215,7 +207,7 @@ Inherits \fBcryomesh::common::Tagged\fP, and \fBDataObjectController< unsigned l
 .RI "\fBdataobjects::DataObject\fP< \fBcommon::Cycle\fP, double > \fBactivities\fP"
 .br
 .ti -1c
-.RI "\fBspacial::Point\fP \fBposition\fP"
+.RI "spacial::Point \fBposition\fP"
 .br
 .in -1c
 .SS "Friends"
@@ -232,7 +224,7 @@ Inherits \fBcryomesh::common::Tagged\fP, and \fBDataObjectController< unsigned l
 
 A \fBNode\fP represents the end point of one or many connections. Here, Impulses are accumulated and new Impulses generated depending on some determining criteria 
 .PP
-Definition at line 36 of file Node.h.
+Definition at line 38 of file Node.h.
 .SH "Member Enumeration Documentation"
 .PP 
 .SS "enum \fBcryomesh::components::Node::ActivationState\fP"
@@ -249,7 +241,7 @@ Enum representing posible activation states.
 \fB\fINone \fP\fP
 
 .PP
-Definition at line 42 of file Node.h.
+Definition at line 44 of file Node.h.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "cryomesh::components::Node::Node ()"
@@ -303,7 +295,7 @@ boost::shared_ptr<Impulse> The impulse added, null if none added
 .PP
 Definition at line 92 of file Node.cpp.
 .PP
-References cryomesh::common::KeyMappedCollection< U, T >::add(), getMutableImpulses(), and cryomesh::common::TimeKeeper::getTimeKeeper().
+References getMutableImpulses(), and cryomesh::common::TimeKeeper::getTimeKeeper().
 .PP
 Referenced by addImpulses().
 .SS "void cryomesh::components::Node::addImpulses (std::list< boost::shared_ptr< \fBImpulse\fP > >impulses)\fC [virtual]\fP"
@@ -387,7 +379,7 @@ Whether logging is enabled or not. \fBParameters:\fP
 .PP
 
 .PP
-Definition at line 41 of file DataObjectController.h.
+Definition at line 48 of file DataObjectController.h.
 .SS "const std::map< \fBcommon::Cycle\fP, double > & cryomesh::components::Node::getActivities () const"
 .PP
 Get the collection of all activities. \fBReturns:\fP
@@ -401,7 +393,7 @@ Definition at line 174 of file Node.cpp.
 .PP
 References activities, and cryomesh::dataobjects::DataObject< U, T >::getMap().
 .PP
-Referenced by update().
+Referenced by getDatabaseObject(), and update().
 .SS "double cryomesh::components::Node::getActivity () const"
 .PP
 Get the current activity of the node. \fBReturns:\fP
@@ -415,7 +407,7 @@ Definition at line 178 of file Node.cpp.
 .PP
 References cryomesh::common::TimeKeeper::getTimeKeeper().
 .PP
-Referenced by updateActivity().
+Referenced by getDatabaseObject(), and updateActivity().
 .SS "double cryomesh::components::Node::getActivity (const \fBcommon::Cycle\fP &cycle) const"
 .PP
 Get the activity of the node on specific cycle. \fBReturns:\fP
@@ -442,6 +434,18 @@ Definition at line 66 of file Node.cpp.
 References connector.
 .PP
 Referenced by cryomesh::components::operator<<().
+.SS "boost::shared_ptr< \fBmanager::DatabaseObject\fP > cryomesh::components::Node::getDatabaseObject () const"
+.PP
+Return a database object for this node. \fBReturns:\fP
+.RS 4
+DatabaseObject 
+.RE
+.PP
+
+.PP
+Definition at line 207 of file Node.cpp.
+.PP
+References getActivities(), getActivity(), getPosition(), and cryomesh::common::TimeKeeper::getTimeKeeper().
 .SS "virtual const \fBdataobjects::DataObject\fP<unsigned long int , double >& \fBcryomesh::dataobjects::DataObjectController\fP< unsigned long int , double  >::getDataObject ()\fC [inline, virtual, inherited]\fP"
 .PP
 Get data object. \fBReturns:\fP
@@ -451,7 +455,7 @@ dataobjects::DataObject<U,T> & The data object
 .PP
 
 .PP
-Definition at line 62 of file DataObjectController.h.
+Definition at line 69 of file DataObjectController.h.
 .SS "const boost::shared_ptr< \fBImpulse\fP > cryomesh::components::Node::getEmittedImpulse () const"
 .PP
 Get the \fBImpulse\fP that is emitted. \fBReturns:\fP
@@ -478,18 +482,6 @@ Definition at line 158 of file Node.cpp.
 References impulses.
 .PP
 Referenced by cryomesh::components::operator<<(), and updateActivity().
-.SS "boost::uuids::uuid cryomesh::common::Tagged::getKey () const\fC [inline, inherited]\fP"
-.PP
-Get the key of object. \fBReturns:\fP
-.RS 4
-boost::uuids::uuid The unique uuid tag of this object 
-.RE
-.PP
-
-.PP
-Definition at line 61 of file Tagged.h.
-.PP
-References cryomesh::common::Tagged::getUUID().
 .SS "virtual const std::map<unsigned long int , double >& \fBcryomesh::dataobjects::DataObjectController\fP< unsigned long int , double  >::getMap ()\fC [inline, virtual, inherited]\fP"
 .PP
 Get all cycle values. \fBReturns:\fP
@@ -499,7 +491,7 @@ std::map<unsigned long int, double> & The cycle values
 .PP
 
 .PP
-Definition at line 51 of file DataObjectController.h.
+Definition at line 58 of file DataObjectController.h.
 .SS "\fBcommon::Connector\fP< \fBNode\fP, \fBConnection\fP > & cryomesh::components::Node::getMutableConnector ()"
 .PP
 Get the mutable Connector object for this \fBNode\fP. \fBReturns:\fP
@@ -542,65 +534,39 @@ Definition at line 170 of file Node.cpp.
 References impulses.
 .PP
 Referenced by addImpulse(), and update().
-.SS "const \fBspacial::Point\fP & cryomesh::components::Node::getPosition () const"
+.SS "const spacial::Point & cryomesh::components::Node::getPosition () const"
 .PP
 get the position of the node \fBReturns:\fP
 .RS 4
-\fBspacial::Point\fP The spacial location of the node 
+spacial::Point The spacial location of the node 
 .RE
 .PP
 
 .PP
-Definition at line 207 of file Node.cpp.
+Definition at line 216 of file Node.cpp.
 .PP
 References position.
-.SS "boost::shared_ptr< \fBNode\fP > cryomesh::components::Node::getRandom (const \fBspacial::Point\fP &max_point = \fC\fBMAX_BOUNDING_BOX_POINT\fP\fP)\fC [static]\fP"
+.PP
+Referenced by getDatabaseObject().
+.SS "boost::shared_ptr< \fBNode\fP > cryomesh::components::Node::getRandom (const spacial::Point &max_point = \fC\fBMAX_BOUNDING_BOX_POINT\fP\fP)\fC [static]\fP"
 .PP
 Definition at line 24 of file Node.cpp.
 .PP
-References cryomesh::common::Maths::getRandomDouble(), cryomesh::spacial::Point::getX(), cryomesh::spacial::Point::getY(), and cryomesh::spacial::Point::getZ().
-.PP
-Referenced by cryomesh::structures::Cluster::createNodes().
-.SS "boost::uuids::uuid cryomesh::common::Tagged::getTag () const\fC [inline, inherited]\fP"
-.PP
-Get the tag of object. \fBReturns:\fP
-.RS 4
-boost::uuids::uuid The unique uuid tag of this object 
-.RE
-.PP
-
-.PP
-Definition at line 71 of file Tagged.h.
-.PP
-References cryomesh::common::Tagged::getUUID().
-.SS "boost::uuids::uuid cryomesh::common::Tagged::getUUID () const\fC [inline, inherited]\fP"
-.PP
-Get the uuid of object. \fBReturns:\fP
-.RS 4
-boost::uuids::uuid The unique uuid tag of this object 
-.RE
-.PP
-
-.PP
-Definition at line 51 of file Tagged.h.
-.PP
-References cryomesh::common::Tagged::uuid.
-.PP
-Referenced by cryomesh::common::Tagged::getKey(), and cryomesh::common::Tagged::getTag().
+Referenced by cryomesh::structures::Cluster::createNodes(), and randomise().
 .SS "void cryomesh::components::Node::randomise ()"
 .PP
 Randomise the nodes state. 
 .PP
-Definition at line 216 of file Node.cpp.
+Definition at line 225 of file Node.cpp.
 .PP
-References emittedImpulse, and cryomesh::components::Impulse::getRandomImpulse().
+References emittedImpulse, and getRandom().
 .SS "virtual void \fBcryomesh::dataobjects::DataObjectController\fP< unsigned long int , double  >::refreshDataObject ()\fC [inline, virtual, inherited]\fP"
 .PP
 Function to allow refreshing implementation if required by subclasses. 
 .PP
 Reimplemented in \fBcryomesh::components::ImpulseCollection\fP.
 .PP
-Definition at line 70 of file DataObjectController.h.
+Definition at line 77 of file DataObjectController.h.
 .SS "double cryomesh::components::Node::setActivity (doubleactivity)"
 .PP
 Set the current activity of the node. \fBParameters:\fP
@@ -639,16 +605,16 @@ double The activity set
 Definition at line 198 of file Node.cpp.
 .PP
 References addActivity().
-.SS "void cryomesh::components::Node::setPosition (const \fBspacial::Point\fP &new_position)"
+.SS "void cryomesh::components::Node::setPosition (const spacial::Point &new_position)"
 .PP
 Set the spacial position of the node, remembering to update connections lengths. \fBParameters:\fP
 .RS 4
-\fI\fBspacial::Point\fP\fP The position to place this node at 
+\fIspacial::Point\fP The position to place this node at 
 .RE
 .PP
 
 .PP
-Definition at line 211 of file Node.cpp.
+Definition at line 220 of file Node.cpp.
 .PP
 References position, and updatePosition().
 .SS "void cryomesh::components::Node::update ()\fC [virtual]\fP"
@@ -656,18 +622,6 @@ References position, and updatePosition().
 Definition at line 45 of file Node.cpp.
 .PP
 References checkFire(), cryomesh::components::ImpulseCollection::clearActiveImpulses(), cryomesh::dataobjects::DataObjectController< unsigned long int, double >::dataObject, getActivities(), getMutableImpulses(), cryomesh::dataobjects::DataObject< U, T >::insert(), cryomesh::dataobjects::DataObject< U, T >::isLoggingEnabled(), and updateImpulses().
-.SS "double cryomesh::components::Node::updateActivity (const \fBcommon::Cycle\fP &cycle)"
-.PP
-Update and get the activity of the node on specific cycle. \fBReturns:\fP
-.RS 4
-double The current activity 
-.RE
-.PP
-
-.PP
-Definition at line 190 of file Node.cpp.
-.PP
-References getActivity(), getImpulses(), and setActivity().
 .SS "double cryomesh::components::Node::updateActivity ()"
 .PP
 Update and get the current activity of the node. \fBReturns:\fP
@@ -682,6 +636,18 @@ Definition at line 186 of file Node.cpp.
 References getActivity(), getImpulses(), and setActivity().
 .PP
 Referenced by checkActivationState().
+.SS "double cryomesh::components::Node::updateActivity (const \fBcommon::Cycle\fP &cycle)"
+.PP
+Update and get the activity of the node on specific cycle. \fBReturns:\fP
+.RS 4
+double The current activity 
+.RE
+.PP
+
+.PP
+Definition at line 190 of file Node.cpp.
+.PP
+References getActivity(), getImpulses(), and setActivity().
 .SS "void cryomesh::components::Node::updateImpulses ()\fC [protected, virtual]\fP"
 .PP
 Update the collection of impulses by one cycle. 
@@ -695,7 +661,7 @@ Referenced by update().
 .PP
 Recalculate state of node and connections based on current position. 
 .PP
-Definition at line 220 of file Node.cpp.
+Definition at line 229 of file Node.cpp.
 .PP
 References connector.
 .PP
@@ -718,50 +684,50 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 251 of file Node.cpp.
+Definition at line 260 of file Node.cpp.
 .SH "Member Data Documentation"
 .PP 
 .SS "\fBdataobjects::DataObject\fP<\fBcommon::Cycle\fP, double> \fBcryomesh::components::Node::activities\fP\fC [private]\fP"
 .PP
-Definition at line 353 of file Node.h.
+Definition at line 362 of file Node.h.
 .PP
 Referenced by addActivity(), getActivities(), getActivity(), and Node().
 .SS "const double \fBcryomesh::components::Node::ACTIVITY_THRESHOLD\fP = 3 * \fBImpulse::MAX_ACTIVITY\fP\fC [static]\fP"
 .PP
-Definition at line 271 of file Node.h.
+Definition at line 280 of file Node.h.
 .PP
 Referenced by checkActivationState().
 .SS "boost::shared_ptr<\fBcommon::Connector\fP<\fBNode\fP, \fBConnection\fP> > \fBcryomesh::components::Node::connector\fP\fC [private]\fP"
 .PP
-Definition at line 332 of file Node.h.
+Definition at line 341 of file Node.h.
 .PP
 Referenced by getConnector(), getMutableConnector(), Node(), and updatePosition().
 .SS "\fBdataobjects::DataObject\fP<unsigned long int , double > \fBcryomesh::dataobjects::DataObjectController\fP< unsigned long int , double  >::\fBdataObject\fP\fC [protected, inherited]\fP"
 .PP
-Definition at line 79 of file DataObjectController.h.
+Definition at line 86 of file DataObjectController.h.
 .PP
 Referenced by cryomesh::components::ImpulseCollection::refreshDataObject(), and update().
 .SS "boost::shared_ptr<\fBImpulse\fP> \fBcryomesh::components::Node::emittedImpulse\fP\fC [private]\fP"
 .PP
-Definition at line 346 of file Node.h.
+Definition at line 355 of file Node.h.
 .PP
 Referenced by getEmittedImpulse(), getMutableEmittedImpulse(), Node(), and randomise().
 .SS "\fBImpulseCollection\fP \fBcryomesh::components::Node::impulses\fP\fC [private]\fP"
 .PP
-Definition at line 339 of file Node.h.
+Definition at line 348 of file Node.h.
 .PP
 Referenced by addImpulses(), getImpulses(), getMutableImpulses(), and updateImpulses().
 .SS "const int \fBcryomesh::components::Node::MAX_ACTIVITIES_LENGTH\fP = 10\fC [static]\fP"
 .PP
-Definition at line 264 of file Node.h.
+Definition at line 273 of file Node.h.
 .PP
 Referenced by Node().
-.SS "const \fBspacial::Point\fP \fBcryomesh::components::Node::MAX_BOUNDING_BOX_POINT\fP = \fBspacial::Point\fP(100, 100, 100)\fC [static]\fP"
+.SS "const spacial::Point \fBcryomesh::components::Node::MAX_BOUNDING_BOX_POINT\fP = spacial::Point(100, 100, 100)\fC [static]\fP"
 .PP
-Definition at line 278 of file Node.h.
-.SS "\fBspacial::Point\fP \fBcryomesh::components::Node::position\fP\fC [private]\fP"
+Definition at line 287 of file Node.h.
+.SS "spacial::Point \fBcryomesh::components::Node::position\fP\fC [private]\fP"
 .PP
-Definition at line 360 of file Node.h.
+Definition at line 369 of file Node.h.
 .PP
 Referenced by getPosition(), and setPosition().
 
