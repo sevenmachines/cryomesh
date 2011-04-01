@@ -261,7 +261,7 @@ std::string DatabaseManager::deleteByCycle(const std::string & table, const comm
 }
 
 std::string DatabaseManager::sqlCommand(const std::string & command) {
-	std::cout<<"DatabaseManager::sqlCommand: "<<"COMMAND:"<<command<<std::endl;
+	//std::cout<<"DatabaseManager::sqlCommand: "<<"COMMAND:"<<command<<std::endl;
 	sqlResultsBuffer.clear();
 	bool success = false;
 	std::string results;
@@ -284,7 +284,7 @@ std::string DatabaseManager::sqlCommand(const std::string & command) {
 		}
 
 	}
-	std::cout<<"DatabaseManager::sqlCommand: "<<"RESULT: "<<results<<std::endl;
+	//std::cout<<"DatabaseManager::sqlCommand: "<<"RESULT: "<<results<<std::endl;
 	DatabaseManager::addHistoryEntry(command, sqlResultsBuffer, sqlResults);
 	if (errorCode != SQLITE_OK) {
 		std::cout << "DatabaseManager::sqlCommand: " << "ERROR: " << errorMessage << std::endl;

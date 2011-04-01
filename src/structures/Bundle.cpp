@@ -72,52 +72,76 @@ boost::shared_ptr<Fibre> Bundle::connectCluster(boost::uuids::uuid clusterUUID, 
 	return newfibre;
 }
 
-boost::shared_ptr<Fibre> Bundle::connectPrimaryInputCluster(boost::uuids::uuid clusterUUID, boost::uuids::uuid patchanid) {
+boost::shared_ptr<Fibre> Bundle::connectPrimaryInputCluster(boost::uuids::uuid patchanid,
+		boost::uuids::uuid clusterUUID) {
 	boost::shared_ptr<Fibre> newfib;
 	// check for pattern channel uuid existence
-	boost::shared_ptr< state::PatternChannel > patchan = inputChannelsMap.getObjectByKey(patchanid);
-	if ( patchan != 0) {
+	boost::shared_ptr<state::PatternChannel> patchan = inputChannelsMap.getObjectByKey(patchanid);
+	if (patchan != 0) {
 		// get width from actual pattern channel
 		int width = patchan->getWidth();
-		// get created fibre
+		// get created fibre and connect the cluster to it
 		newfib = this->connectCluster(clusterUUID, Fibre::PrimaryInputFibre, width);
-		// map it to pattern channel
 		fibrePatternChannelMap[newfib->getUUID()] = patchanid;
 
+		/*
+		// connect fibre to cluster to
+		boost::shared_ptr<Cluster> cluster = clusters.getObjectByKey(clusterUUID);
+		if (cluster == 0) {
+			std::cout << "Bundle::connectPrimaryInputCluster: " << "ERROR: Cannot find cluster: " << clusterUUID
+					<< std::endl;
+			return newfib;
+		} else {
+			newfib ->getMutableConnector().connectOutput(cluster);
+			// map it to pattern channel
+			fibrePatternChannelMap[newfib->getUUID()] = patchanid;
+		}*/
 	} else {
 		std::cout << "Bundle::connectPrimaryInputCluster: "
-				<< "ERROR: PatternChannel does not exist, not creating primary input fibre. " << "'" << patchanid << "'"
-				<< std::endl;
+				<< "ERROR: PatternChannel does not exist, not creating primary input fibre. " << "'" << patchanid
+				<< "'" << std::endl;
 	}
 	return newfib;
 }
 
-boost::shared_ptr<Fibre> Bundle::connectPrimaryInputCluster(boost::uuids::uuid clusterUUID, int fibreWidth){
-		return  this->connectCluster(clusterUUID, Fibre::PrimaryInputFibre, fibreWidth);
+boost::shared_ptr<Fibre> Bundle::connectPrimaryInputCluster(boost::uuids::uuid clusterUUID, int fibreWidth) {
+	return this->connectCluster(clusterUUID, Fibre::PrimaryInputFibre, fibreWidth);
 }
 
-boost::shared_ptr<Fibre> Bundle::connectPrimaryOutputCluster(boost::uuids::uuid clusterUUID, boost::uuids::uuid patchanid) {
+boost::shared_ptr<Fibre> Bundle::connectPrimaryOutputCluster(boost::uuids::uuid patchanid,
+		boost::uuids::uuid clusterUUID) {
 	boost::shared_ptr<Fibre> newfib;
 	// check for pattern channel uuid existence
-	boost::shared_ptr< state::PatternChannel > patchan = outputChannelsMap.getObjectByKey(patchanid);
-	if ( patchan != 0) {
+	boost::shared_ptr<state::PatternChannel> patchan = outputChannelsMap.getObjectByKey(patchanid);
+	if (patchan != 0) {
 		// get width from actual pattern channel
 		int width = patchan->getWidth();
 		// get created fibre
 		newfib = this->connectCluster(clusterUUID, Fibre::PrimaryOutputFibre, width);
-		// map it to pattern channel
 		fibrePatternChannelMap[newfib->getUUID()] = patchanid;
 
+		/*
+		// connect fibre to cluster to
+		boost::shared_ptr<Cluster> cluster = clusters.getObjectByKey(clusterUUID);
+		if (cluster == 0) {
+			std::cout << "Bundle::connectPrimaryOutputCluster: " << "ERROR: Cannot find cluster: " << clusterUUID
+					<< std::endl;
+			return newfib;
+		} else {
+			newfib ->getMutableConnector().connectInput(cluster);
+			// map it to pattern channel
+			fibrePatternChannelMap[newfib->getUUID()] = patchanid;
+		}*/
 	} else {
 		std::cout << "Bundle::connectPrimaryOutputCluster: "
-				<< "ERROR: PatternChannel does not exist, not creating primary output fibre. " << "'" << patchanid << "'"
-				<< std::endl;
+				<< "ERROR: PatternChannel does not exist, not creating primary output fibre. " << "'" << patchanid
+				<< "'" << std::endl;
 	}
 	return newfib;
 }
 
-boost::shared_ptr<Fibre> Bundle::connectPrimaryOutputCluster(boost::uuids::uuid clusterUUID, int fibreWidth){
-		return  this->connectCluster(clusterUUID, Fibre::PrimaryOutputFibre, fibreWidth);
+boost::shared_ptr<Fibre> Bundle::connectPrimaryOutputCluster(boost::uuids::uuid clusterUUID, int fibreWidth) {
+	return this->connectCluster(clusterUUID, Fibre::PrimaryOutputFibre, fibreWidth);
 }
 
 boost::shared_ptr<Fibre> Bundle::connectLoopbackCluster(boost::uuids::uuid clusterUUID, int fibreWidth) {

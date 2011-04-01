@@ -166,11 +166,14 @@ const Fibre::ClusterConnectionType Fibre::isConnected(const boost::shared_ptr<Cl
 
 	if ((infound == true) && (outfound == true)) { // loopback case
 		contype = ClusterConnectionType::LoopbackCluster;
+		std::cout<<"Fibre::isConnected: "<<"LoopbackCluster"<<std::endl;
 	} else if (infound == true) {
 		contype = ClusterConnectionType::InputCluster;
-	} else if (outfound == true) {
+		std::cout<<"Fibre::isConnected: "<<"InputCluster"<<std::endl;
+} else if (outfound == true) {
 		contype = ClusterConnectionType::OutputCluster;
-	}
+		std::cout<<"Fibre::isConnected: "<<"OutputCluster"<<std::endl;
+}
 
 	return contype;
 }

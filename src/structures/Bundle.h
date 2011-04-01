@@ -77,15 +77,16 @@ public:
 	/**
 	 * Helper access function for specialised connection
 	 *
-	 * @param const Fibre::FibreType & type
-	 * 		Type of fibre connection to make
 	 *	@param boost::uuids::uuid
 	 *		PatternChannel to map the fibre to
+	 * @param const Fibre::FibreType & type
+	 * 		Type of fibre connection to make
 	 *
 	 * @return
 	 * 		The new fibre created, possible null
 	 */
-	virtual boost::shared_ptr<Fibre> connectPrimaryInputCluster(boost::uuids::uuid clusterUUID, boost::uuids::uuid patchanid);
+	virtual boost::shared_ptr<Fibre> connectPrimaryInputCluster(boost::uuids::uuid patchanid,
+			boost::uuids::uuid clusterUUID);
 
 	/**
 	 * Helper access function for specialised connection
@@ -103,16 +104,16 @@ public:
 	/**
 	 * Helper access function for specialised connection
 	 *
-	 * @param const Fibre::FibreType & type
-	 * 		Type of fibre connection to make
 	 *	@param boost::uuids::uuid
 	 *		PatternChannel to map the fibre to
+	 * @param const Fibre::FibreType & type
+	 * 		Type of fibre connection to make
 	 *
 	 * @return
 	 * 		The new fibre created, possible null
 	 */
-	virtual boost::shared_ptr<Fibre> connectPrimaryOutputCluster(boost::uuids::uuid clusterUUID, boost::uuids::uuid patchanid);
-
+	virtual boost::shared_ptr<Fibre> connectPrimaryOutputCluster(boost::uuids::uuid patchanid,
+			boost::uuids::uuid clusterUUID);
 
 	/**
 	 * Helper access function for specialised connection
@@ -128,7 +129,6 @@ public:
 	 * 		The new fibre created, possible null
 	 */
 	virtual boost::shared_ptr<Fibre> connectPrimaryOutputCluster(boost::uuids::uuid clusterUUID, int fibreWidth);
-
 
 	/**
 	 * Helper access function for specialised connection
@@ -150,7 +150,6 @@ public:
 	 */
 	virtual void loadChannels(const std::string & ifstr);
 
-
 	const ClusterMap & getClusters() const;
 	const FibreMap & getFibres() const;
 
@@ -159,12 +158,11 @@ public:
 
 	const state::PatternChannelMap & getInputChannelsMap() const;
 	const state::PatternChannelMap & getOutputChannelsMap() const;
-	const std::map<boost::uuids::uuid, boost::uuids::uuid> & getFibrePatternChannelMap()const ;
+	const std::map<boost::uuids::uuid, boost::uuids::uuid> & getFibrePatternChannelMap() const ;
 
 	friend std::ostream & operator<<(std::ostream & os, const Bundle & bundle);
 
 protected:
-
 
 private:
 
