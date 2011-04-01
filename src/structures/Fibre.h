@@ -143,6 +143,10 @@ public:
 	unsigned int getWidth()const;
 
 	/**
+	 * Get current pattern for firing state of input nodes to the fibre
+	 */
+	boost::shared_ptr< state::Pattern >  getInputNodesPattern() const;
+	/**
 	 * Get the activity pattern of the Fibre, 0 for no activity, 1 otherwise
 	 *
 	 * @return Pattern

@@ -166,14 +166,14 @@ const Fibre::ClusterConnectionType Fibre::isConnected(const boost::shared_ptr<Cl
 
 	if ((infound == true) && (outfound == true)) { // loopback case
 		contype = ClusterConnectionType::LoopbackCluster;
-		std::cout<<"Fibre::isConnected: "<<"LoopbackCluster"<<std::endl;
+		std::cout << "Fibre::isConnected: " << "LoopbackCluster" << std::endl;
 	} else if (infound == true) {
 		contype = ClusterConnectionType::InputCluster;
-		std::cout<<"Fibre::isConnected: "<<"InputCluster"<<std::endl;
-} else if (outfound == true) {
+		std::cout << "Fibre::isConnected: " << "InputCluster" << std::endl;
+	} else if (outfound == true) {
 		contype = ClusterConnectionType::OutputCluster;
-		std::cout<<"Fibre::isConnected: "<<"OutputCluster"<<std::endl;
-}
+		std::cout << "Fibre::isConnected: " << "OutputCluster" << std::endl;
+	}
 
 	return contype;
 }
@@ -249,6 +249,52 @@ void Fibre::connectAllConnections(boost::shared_ptr<Cluster> cluster, ClusterCon
 		this->connector.connectOutput(cluster);
 	}
 
+}
+
+boost::shared_ptr< state::Pattern > Fibre::getInputNodesPattern() const {
+	// get all connections
+	const std::vector<boost::shared_ptr<components::Connection> > & all_connections = connections.getObjectList();
+	std::vector<bool> firing_pattern;
+	int node_count = 0;
+	int connection_count = 0;
+
+	// get nodes of all connections
+	// forall in all_connections
+	{
+		std::vector<boost::shared_ptr<components::Connection> >::const_iterator it_all_connections =
+				all_connections.begin();
+		const std::vector<boost::shared_ptr<components::Connection> >::const_iterator it_all_connections_end =
+				all_connections.end();
+		while (it_all_connections != it_all_connections_end) {
+			std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > all_nodes =
+					(**it_all_connections).getConnector().getOutputs();
+			// forall in all_nodes
+			{
+				std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator it_all_nodes =
+						all_nodes.begin();
+				const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator
+						it_all_nodes_end = all_nodes.end();
+				while (it_all_nodes != it_all_nodes_end) {
+					// if firing state is positive (Ignoring negative firing states
+					if (it_all_nodes->second->checkFire() == components::Node::Positive) {
+						firing_pattern.push_back(true);
+					} else {
+						firing_pattern.push_back(false);
+					}
+					++node_count;
+					++it_all_nodes;
+				}
+			}
+			++connection_count;
+			++it_all_connections;
+		}
+	}
+	// Debugging sanity check
+	assert(connection_count == node_count);
+	// generate pattern
+	boost::shared_ptr< state::Pattern > pattern(new state::Pattern(firing_pattern));
+	assert(pattern->getWidth() == node_count);
+	return pattern;
 }
 
 std::ostream& operator<<(std::ostream & os, const Fibre & obj) {

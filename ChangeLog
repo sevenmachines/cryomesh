@@ -1,8 +1,15 @@
 2011-04-01  SevenMachines  <SevenMachines@yahoo.co.uk>
 
+	* src/structures/Fibre.cpp (Fibre::getInputNodesPattern): Generate pattern from the input nodes of the connections in a fibre
 	* src/manager/Creator.cpp (Creator::checkConfigStructure): Simple check for some essential  commands
 	* src/structures/Bundle.cpp (Bundle::connectCluster): add fibres to input/output collections instead of general fibre collection
 	(Bundle::connectCluster): Ignore but warn on other fibre types we dont like. You cant connect an intermediate fibre to just one cluster
+	(Bundle::getPrimaryInputFibreByChannel): Helper to get primary fibre by channel
+	(Bundle::getPrimaryOutputFibreByChannel): Helper to get primary fibre by channel
+	(Bundle::getPrimaryInputChannelByFibre): Helper to get primary channel by fibre
+	(Bundle::getPrimaryOutputChannelByFibre): Helper to get primary channel by fibre
+	(Bundle::getPrimaryFibreByChannel): Use the channel id to get a mapping to a fibre id, and the supplied map to get an actual pointer to the fibre
+	(Bundle::getPrimaryChannelByFibre): Use the fibre id to get a mapping to a channel id, and the supplied map to get an actual pointer to the channel
 
 2011-03-31  SevenMachines  <SevenMachines@yahoo.co.uk>
 

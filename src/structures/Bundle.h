@@ -164,6 +164,17 @@ public:
 
 protected:
 
+	/**
+	 * get the next patterns from channels and apply them to their mapped fibres
+	 */
+	virtual void updatePrimaryInputFibres();
+
+	/**
+		 * get the patterns from primary output fibres and apply them to their
+		 * mapped pattern channels
+		 */
+		virtual void updatePrimaryOutputFibres();
+
 private:
 
 	ClusterMap clusters;
@@ -179,6 +190,13 @@ private:
 	 * Mapping of fibre uuid to a corresponding pattern channel
 	 */
 	std::map<boost::uuids::uuid, boost::uuids::uuid> fibrePatternChannelMap;
+
+	boost::shared_ptr< Fibre > getPrimaryInputFibreByChannel(const boost::uuids::uuid id);
+	boost::shared_ptr< Fibre > getPrimaryOutputFibreByChannel(const boost::uuids::uuid id);
+	boost::shared_ptr< state::PatternChannel > getPrimaryInputChannelByFibre(const boost::uuids::uuid id);
+	boost::shared_ptr< state::PatternChannel  > getPrimaryOutputChannelByFibre(const boost::uuids::uuid id);
+	boost::shared_ptr< Fibre > getPrimaryFibreByChannel(const boost::uuids::uuid id, FibreMap & map);
+	boost::shared_ptr< state::PatternChannel  > getPrimaryChannelByFibre(const boost::uuids::uuid id, state::PatternChannelMap & map);
 };
 
 }

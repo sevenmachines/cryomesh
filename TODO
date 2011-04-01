@@ -1,8 +1,17 @@
 HIGH ----------------------------------------------------------------------------------------
 
-* Test connecting pattern channels to clusters through creator
+* Test pattern generation when querying Fibre for Input node state
+	NOTE: Do Fibre::getInputNodesPattern actual gets the output nodes from connections, either need to
+	- Have connections hold an input node too (BEST)
+	- Have output nodes on connections in primary output fibres
 
-	
+
+* Test input pattern channels actually firing their mapped fibres in Bundle update
+* Test output pattern channels being updated from their mapped fibres in Bundle update
+
+
+* Do full test run of Cryomesh cycle from data
+
 MEDIUM ------------------------------------------------------------------------------------
 
 * Redesign database
@@ -26,6 +35,14 @@ WISHLIST -----------------------------------------------------------------------
 * Dont clear past impulses from Nodes on every cycle if extra performance is needed
 
 DONE -----------------------------------------------------------------------------------------
+
+* Implement input pattern channels actually firing their mapped fibres in Bundle update (DONE)
+
+* Implement output pattern channels being updated from their mapped fibres in Bundle update (DONE)
+
+* Test Creator check structure (DONE
+
+* Test connecting pattern channels to clusters through creator (DONE)
 
 * Complete writing BundleTest::testConnectPatternChannels (DONE)
 
