@@ -171,7 +171,7 @@ public:
 	 *
 	 * @return DatabaseObject
 	 */
-	boost::shared_ptr< manager::DatabaseObject > getDatabaseObject()const;
+	boost::shared_ptr<manager::DatabaseObject> getDatabaseObject() const;
 
 	/**
 	 * Update position
@@ -179,17 +179,17 @@ public:
 	void updatePosition();
 
 	/**
-		 * To stream operator
-		 *
-		 *	@param std::ostream & os
-		 *		The output stream
-		 *	@param const Connection & obj
-		 *		The object to stream
-		 *
-		 *	@return std::ostream &
-		 *		The output stream
-		 */
-		friend std::ostream& operator<<(std::ostream & os, const Connection & obj);
+	 * To stream operator
+	 *
+	 *	@param std::ostream & os
+	 *		The output stream
+	 *	@param const Connection & obj
+	 *		The object to stream
+	 *
+	 *	@return std::ostream &
+	 *		The output stream
+	 */
+	friend std::ostream& operator<<(std::ostream & os, const Connection & obj);
 
 protected:
 

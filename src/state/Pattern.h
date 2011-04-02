@@ -73,7 +73,8 @@ public:
 	int getId() const;
 	void setId(int);
 	int getWidth() const;
-	const BinaryString & getBinaryString() const;
+	int getSize() const;
+const BinaryString & getBinaryString() const;
 	BinaryString & getMutableBinaryString();
 
 	const boost::shared_ptr<PatternTag> getPatternTag() const;

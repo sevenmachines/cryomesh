@@ -25,14 +25,14 @@ boost::shared_ptr<Node> Node::getRandom(const spacial::Point & max_point) {
 	boost::shared_ptr<Node> node(new Node);
 	node->randomise();
 	double x = common::Maths::getRandomDouble(0, max_point.getX());
-	double y= common::Maths::getRandomDouble(0, max_point.getY());
+	double y = common::Maths::getRandomDouble(0, max_point.getY());
 	double z = common::Maths::getRandomDouble(0, max_point.getZ());
 	spacial::Point random_point(x, y, z);
 	node->setPosition(random_point);
 	return node;
 }
 
-Node::Node() {
+Node::Node() :lastActivationState(None) {
 	connector = boost::shared_ptr<common::Connector<Node, Connection> >(new common::Connector<Node, Connection>());
 	emittedImpulse = boost::shared_ptr<Impulse>(new Impulse());
 	emittedImpulse->randomise();
@@ -61,6 +61,12 @@ void Node::update() {
 			dataObject.insert(it_rbegin->first.toULInt(), it_rbegin->second);
 		}
 	}
+
+	lastActivationState = state;
+}
+
+void Node::forceFire() {
+	this->addImpulse(Impulse::getTriggerImpulse());
 }
 
 const common::Connector<Node, Connection> & Node::getConnector() const {
@@ -92,6 +98,9 @@ void Node::updateImpulses() {
 boost::shared_ptr<Impulse> Node::addImpulse(boost::shared_ptr<Impulse> impulse) {
 	// Update start to start+now
 	impulse->setFirstActiveCycle((*impulse).getFirstActiveCycle() + common::TimeKeeper::getTimeKeeper().getCycle());
+	if (this->isDebugOn() == true) {
+		std::cout << "Node::addImpulse: " << *impulse << std::endl;
+	}
 	return this->getMutableImpulses().add(impulse);
 }
 void Node::addImpulses(std::list<boost::shared_ptr<Impulse> > impulses) {
@@ -204,12 +213,13 @@ double Node::addActivity(common::Cycle cycle, double activity) {
 	return activity;
 }
 
-boost::shared_ptr< manager::DatabaseObject > Node::getDatabaseObject()const{
+boost::shared_ptr<manager::DatabaseObject> Node::getDatabaseObject() const {
 	std::map<common::Cycle, double>::const_iterator it_act = this->getActivities().begin();
-	unsigned long int cycle =common::TimeKeeper::getTimeKeeper().getCycle().toULInt();
+	unsigned long int cycle = common::TimeKeeper::getTimeKeeper().getCycle().toULInt();
 	double activity = this->getActivity();
 
-	boost::shared_ptr< manager::DatabaseObject > temp(new manager::NodeDatabaseObject(this->getUUIDString(), this->getPosition(), cycle, activity ));
+	boost::shared_ptr<manager::DatabaseObject> temp(
+			new manager::NodeDatabaseObject(this->getUUIDString(), this->getPosition(), cycle, activity));
 	return temp;
 }
 
@@ -218,8 +228,12 @@ const spacial::Point & Node::getPosition() const {
 }
 
 void Node::setPosition(const spacial::Point & new_position) {
-	this->position = spacial::Point( new_position);
+	this->position = spacial::Point(new_position);
 	updatePosition();
+}
+
+Node::ActivationState Node::getLastActivationState() const{
+	return lastActivationState;
 }
 
 void Node::randomise() {

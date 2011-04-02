@@ -128,6 +128,7 @@ void Connection::updatePosition() {
 	}
 }
 
+
 std::ostream& operator<<(std::ostream & os, const Connection & obj) {
 	os << "Connection: " << "impulses:" << obj.getImpulses().getSize() << std::endl;
 	os << "\t" << obj.getImpulses() << std::endl;

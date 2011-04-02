@@ -13,11 +13,11 @@
 #include "common/Cycle.h"
 #include "common/Connector.h"
 #include "common/Tagged.h"
+#include "common/Debuggable.h"
 #include "common/Defs.h"
 #include "spacial/Point.h"
 #include "dataobjects/DataObjectController.h"
 #include "manager/NodeDatabaseObject.h"
-
 
 #include <list>
 #include <map>
@@ -35,7 +35,9 @@ class Connection;
  * Impulses are accumulated and new Impulses generated depending
  * on some determining criteria
  */
-class Node: public common::Tagged, public dataobjects::DataObjectController<unsigned long int, double> {
+class Node: public common::Tagged,
+		public dataobjects::DataObjectController<unsigned long int, double>,
+		public common::Debuggable {
 public:
 
 	/**
@@ -69,12 +71,9 @@ public:
 	virtual void update();
 
 	/**
-	 * Check if the object is ready to fire off an impulse and carry it out
-	 *
-	 * @return ActivationState
-	 * 		Return the action that was taken
+	 * Force the node to fire
 	 */
-	Node::ActivationState checkFire();
+	virtual void forceFire();
 
 	/**
 	 * Check level of impulses and decide whether to activate the node
@@ -83,16 +82,6 @@ public:
 	 * 		Positive if activity is over threshold, negative if under -threshold, None otherwise
 	 */
 	virtual Node::ActivationState checkActivationState();
-
-	/**
-	 * Emit a positive impulse to outgoing connections
-	 */
-	virtual void emitImpulsePositive();
-
-	/**
-	 * Emit a negative impulse to outgoing connections
-	 */
-	virtual void emitImpulseNegative();
 
 	/**
 	 * Add incoming Impulse
@@ -149,6 +138,16 @@ public:
 	 * 		The mutable emitted Impulse
 	 */
 	boost::shared_ptr<Impulse> getMutableEmittedImpulse();
+
+	/**
+	 * Emit a positive impulse to outgoing connections
+	 */
+	virtual void emitImpulsePositive();
+
+	/**
+	 * Emit a negative impulse to outgoing connections
+	 */
+	virtual void emitImpulseNegative();
 
 	/**
 	 * Get the mutable collection of Impulses for this Node
@@ -227,7 +226,7 @@ public:
 	 *
 	 * @return DatabaseObject
 	 */
-	boost::shared_ptr< manager::DatabaseObject > getDatabaseObject()const;
+	boost::shared_ptr<manager::DatabaseObject> getDatabaseObject() const;
 
 	/**
 	 * get the position of the node
@@ -243,14 +242,22 @@ public:
 	 * @param spacial::Point
 	 * 	The position to place this node at
 	 */
-	void setPosition(const spacial::Point & new_position );
+	void setPosition(const spacial::Point & new_position);
+
+	/**
+	 * Get the last activation state
+	 *
+	 * @return ActivationState
+	 * 	Return the last activation state
+	 */
+	ActivationState getLastActivationState() const;
 
 	/**
 	 * Randomise the nodes state
 	 */
 	void randomise();
 
-/**
+	/**
 	 * To stream operator
 	 *
 	 *	@param std::ostream & os
@@ -295,9 +302,16 @@ public:
 	 * 	@return boost::shared_ptr<Node>
 	 * 		The randomised node
 	 */
-	static boost::shared_ptr< Node > getRandom(const spacial::Point  & max_point = MAX_BOUNDING_BOX_POINT);
+	static boost::shared_ptr<Node> getRandom(const spacial::Point & max_point = MAX_BOUNDING_BOX_POINT);
 
 protected:
+	/**
+	 * Check if the object is ready to fire off an impulse and carry it out
+	 *
+	 * @return ActivationState
+	 * 		Return the action that was taken
+	 */
+	virtual Node::ActivationState checkFire();
 
 	/**
 	 * Update the collection of impulses by one cycle
@@ -330,7 +344,6 @@ protected:
 	 *
 	 */
 	virtual void updatePosition();
-
 
 private:
 	/**
@@ -367,6 +380,13 @@ private:
 	 * @var spacial::Point
 	 */
 	spacial::Point position;
+
+	/**
+	 * Last activation state
+	 *
+	 * @var ActivationState
+	 */
+	ActivationState lastActivationState;
 
 };
 

@@ -131,6 +131,10 @@ const components::ConnectionMap & Fibre::getConnections() const {
 	return connections;
 }
 
+components::ConnectionMap & Fibre::getMutableConnections() {
+	return connections;
+}
+
 const Fibre::FibreType & Fibre::getType() const {
 	return fibreType;
 }
@@ -250,51 +254,147 @@ void Fibre::connectAllConnections(boost::shared_ptr<Cluster> cluster, ClusterCon
 	}
 
 }
-
-boost::shared_ptr< state::Pattern > Fibre::getInputNodesPattern() const {
+boost::shared_ptr<state::Pattern> Fibre::getNodesPattern(
+		const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > all_nodes) const {
 	// get all connections
-	const std::vector<boost::shared_ptr<components::Connection> > & all_connections = connections.getObjectList();
 	std::vector<bool> firing_pattern;
 	int node_count = 0;
-	int connection_count = 0;
 
-	// get nodes of all connections
-	// forall in all_connections
+	// forall in all_nodes
 	{
-		std::vector<boost::shared_ptr<components::Connection> >::const_iterator it_all_connections =
-				all_connections.begin();
-		const std::vector<boost::shared_ptr<components::Connection> >::const_iterator it_all_connections_end =
-				all_connections.end();
-		while (it_all_connections != it_all_connections_end) {
-			std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > all_nodes =
-					(**it_all_connections).getConnector().getInputs();
-			// forall in all_nodes
-			{
-				std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator it_all_nodes =
-						all_nodes.begin();
-				const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator
-						it_all_nodes_end = all_nodes.end();
-				while (it_all_nodes != it_all_nodes_end) {
-					// if firing state is positive (Ignoring negative firing states
-					if (it_all_nodes->second->checkFire() == components::Node::Positive) {
-						firing_pattern.push_back(true);
-					} else {
-						firing_pattern.push_back(false);
-					}
-					++node_count;
-					++it_all_nodes;
-				}
+		std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator it_all_nodes =
+				all_nodes.begin();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator it_all_nodes_end =
+				all_nodes.end();
+		while (it_all_nodes != it_all_nodes_end) {
+			// if firing state is positive (Ignoring negative firing states
+			if (it_all_nodes->second->getLastActivationState() == components::Node::Positive) {
+				firing_pattern.push_back(true);
+			} else {
+				firing_pattern.push_back(false);
 			}
-			++connection_count;
-			++it_all_connections;
+			++node_count;
+			++it_all_nodes;
 		}
 	}
-	// Debugging sanity check
-	assert(connection_count == node_count);
 	// generate pattern
-	boost::shared_ptr< state::Pattern > pattern(new state::Pattern(firing_pattern));
+	boost::shared_ptr<state::Pattern> pattern(new state::Pattern(firing_pattern));
 	assert(pattern->getWidth() == node_count);
 	return pattern;
+}
+
+boost::shared_ptr<state::Pattern> Fibre::getInputNodesPattern() const {
+	std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > all_nodes = this->getInputNodes();
+	return this->getNodesPattern(all_nodes);
+}
+boost::shared_ptr<state::Pattern> Fibre::getOutputNodesPattern() const {
+	std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > all_nodes = this->getOutputNodes();
+	return this->getNodesPattern(all_nodes);
+}
+
+const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > Fibre::getInputNodes() const {
+	return (this->getNodes(InputCluster));
+}
+
+const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > Fibre::getOutputNodes() const {
+	return (this->getNodes(InputCluster));
+}
+
+const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > Fibre::getNodes(
+		const ClusterConnectionType type) const {
+	std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > collected_nodes;
+	if (connections.getCollection().size() > 0) {
+		int node_count = 0;
+		// get connections
+		const std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> > & connections =
+				this->connections.getCollection();
+		// forall in connections
+		{
+			std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::const_iterator it_connections =
+					connections.begin();
+			const std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::const_iterator
+					it_connections_end = connections.end();
+			while (it_connections != it_connections_end) {
+				// for each connection, get all the nodes (in practice there should only be one)
+				if (type == InputCluster) {
+					const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > & nodes =
+							it_connections->second->getConnector().getInputs();
+					// forall in nodes
+					{
+						std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator it_nodes =
+								nodes.begin();
+						const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator
+								it_nodes_end = nodes.end();
+						while (it_nodes != it_nodes_end) {
+							collected_nodes[it_nodes->first] = it_nodes->second;
+							++node_count;
+							++it_nodes;
+						}
+					}
+				} else if (type == OutputCluster) {
+					const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > & nodes =
+							it_connections->second->getConnector().getOutputs();
+					// forall in nodes
+					{
+						std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator it_nodes =
+								nodes.begin();
+						const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator
+								it_nodes_end = nodes.end();
+						while (it_nodes != it_nodes_end) {
+							collected_nodes[it_nodes->first] = it_nodes->second;
+							++node_count;
+							++it_nodes;
+						}
+					}
+				} else {
+					std::cout << "Fibre::getNodes: " << "WARNING: Ignoring unknown type" << std::endl;
+				}
+				++it_connections;
+			}
+		}
+	} else {
+		std::cout << "Fibre::getNodes: " << "WARNING: No connections in fibre" << std::endl;
+	}
+	return collected_nodes;
+}
+
+void Fibre::forceFireInputNodes(const state::Pattern & pattern) {
+	this->forceFireNodes(pattern, this->getInputNodes());
+}
+
+void Fibre::forceFireOutputNodes(const state::Pattern & pattern) {
+	this->forceFireNodes(pattern, this->getOutputNodes());
+}
+
+void Fibre::forceFireNodes(const state::Pattern & pattern,
+		std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > nodes) {
+	// pattern should be the same size as nodes
+	{
+		int pat_sz = pattern.getSize();
+		int nodes_sz = nodes.size();
+		if (pat_sz != nodes_sz) {
+			std::cout << "Fibre::forceFireNodes: " << "WARNING: Pattern and Nodes size mismatch..." << "pattern: "
+					<< pat_sz << " nodes: " << nodes_sz << std::endl;
+		}
+	}
+	// forall in nodes
+	{
+		std::vector<bool> pat_bool = pattern.getPattern();
+		std::vector<bool>::const_iterator it_pat_bool = pat_bool.begin();
+		const std::vector<bool>::const_iterator it_pat_bool_end = pat_bool.end();
+
+		std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator it_nodes = nodes.begin();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator it_nodes_end =
+				nodes.end();
+
+		while (it_nodes != it_nodes_end && it_pat_bool != it_pat_bool_end) {
+			if (*it_pat_bool == true) {
+				it_nodes->second->forceFire();
+			}
+			++it_pat_bool;
+			++it_nodes;
+		}
+	}
 }
 
 std::ostream& operator<<(std::ostream & os, const Fibre & obj) {

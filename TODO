@@ -1,15 +1,9 @@
 HIGH ----------------------------------------------------------------------------------------
 
-* Test pattern generation when querying Fibre for Input node state
-	NOTE: Do Fibre::getInputNodesPattern actual gets the output nodes from connections, either need to
-	- Have connections hold an input node too (BEST)
-	- Have output nodes on connections in primary output fibres
-
-
 * Test input pattern channels actually firing their mapped fibres in Bundle update
 * Test output pattern channels being updated from their mapped fibres in Bundle update
 
-*Document check and update state/ and utilities/
+* Document check and update state/ and utilities/
 
 * Do full test run of Cryomesh cycle from data
 
@@ -36,6 +30,17 @@ WISHLIST -----------------------------------------------------------------------
 * Dont clear past impulses from Nodes on every cycle if extra performance is needed
 
 DONE -----------------------------------------------------------------------------------------
+
+
+* FibreTest::testGetNodesPattern (DONE)
+	- this tests, getting the in/out nodes of the fibre, force firing them, and getting the pattern 
+
+* Test pattern generation when querying Fibre for Input node state (DONE)
+	//NOTE: Do Fibre::getInputNodesPattern actual gets the output nodes from connections, either need to (DONE)
+	//- Have connections hold an input node too (BEST)
+	//- Have output nodes on connections in primary output fibres
+	
+* NodeTest::testforceFire (DONE)
 
 *Document check and update common/ components/ dataobjects/ manager/ and structures/ (DONE)
 

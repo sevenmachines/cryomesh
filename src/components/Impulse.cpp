@@ -24,7 +24,7 @@ const int Impulse::MIN_ACTIVITY_LENGTH = 1;
 
 // statics
 boost::shared_ptr<Impulse> Impulse::getTriggerImpulse(){
-	boost::shared_ptr< Impulse > temp_pulse(new Impulse(Impulse::FORCED_TRIGGER_ACTIVITY, Impulse::MIN_ACTIVITY_LENGTH, TimeKeeper::getTimeKeeper().getCycle())) ;
+	boost::shared_ptr< Impulse > temp_pulse(new Impulse(Impulse::FORCED_TRIGGER_ACTIVITY, MAX_ACTIVITY_LENGTH, 1)) ;
 	return temp_pulse;
 }
 

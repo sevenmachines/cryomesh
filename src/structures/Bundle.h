@@ -187,12 +187,28 @@ public:
 	const FibreMap & getInputFibres() const;
 
 	/**
-	 * Get the output fibres of this bundle
+		 * Get the mutable input fibres of this bundle
+		 *
+		 * @return FibreMap
+		 * 	The map of mutable input fibres of this bundle
+		 */
+		 FibreMap & getMutableInputFibres() ;
+
+		/**
+		 * Get the output fibres of this bundle
+		 *
+		 * @return FibreMap
+		 * 	The map of output fibres of this bundle
+		 */
+		const FibreMap & getOutputFibres() const;
+
+	/**
+	 * Get the mutable output fibres of this bundle
 	 *
 	 * @return FibreMap
-	 * 	The map of output fibres of this bundle
+	 * 	The map of mutable output fibres of this bundle
 	 */
-	const FibreMap & getOutputFibres() const;
+	 FibreMap & getMutableOutputFibres() ;
 
 	/**
 	 * Get the input pattern channels of this bundle

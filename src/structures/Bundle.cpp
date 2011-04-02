@@ -189,7 +189,16 @@ const FibreMap & Bundle::getFibres() const {
 const FibreMap & Bundle::getInputFibres() const {
 	return inputFibres;
 }
+
+ FibreMap & Bundle::getMutableInputFibres()  {
+	return inputFibres;
+}
+
 const FibreMap & Bundle::getOutputFibres() const {
+	return outputFibres;
+}
+
+ FibreMap & Bundle::getMutableOutputFibres()  {
 	return outputFibres;
 }
 

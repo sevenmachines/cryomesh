@@ -148,6 +148,10 @@ void Pattern::setId(int new_id) {
 	id = new_id;
 }
 int Pattern::getWidth() const {
+	return (this->getSize());
+}
+
+int Pattern::getSize() const {
 	return (binaryString.getWidth());
 }
 

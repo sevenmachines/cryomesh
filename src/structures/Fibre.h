@@ -9,6 +9,7 @@
 #define FIBRE_H_
 
 #include "components/ConnectionMap.h"
+#include "components/Node.h"
 #include "common/Connector.h"
 #include "state/Pattern.h"
 #include <boost/shared_ptr.hpp>
@@ -109,7 +110,7 @@ public:
 	 *	@param const std::vector<boost::shared_ptr< components::Impulse > > & triggerImpulses
 	 *		The impulses to send to connections
 	 */
-	virtual void trigger( std::vector<boost::shared_ptr<components::Impulse> > & triggerImpulses);
+	virtual void trigger(std::vector<boost::shared_ptr<components::Impulse> > & triggerImpulses);
 
 	/**
 	 * Get the connector
@@ -122,7 +123,7 @@ public:
 	/**
 	 * Get the mutable connector
 	 *
-	 * @return common::Connector<Fibre, Cluster> &
+	 * @return common::Connector<Fibre, Cluster>
 	 * 		The connector object
 	 */
 	common::Connector<Fibre, Cluster> & getMutableConnector();
@@ -130,10 +131,18 @@ public:
 	/**
 	 * Get the connections
 	 *
-	 * @return const components::ConnectionMap &
+	 * @return  components::ConnectionMap
 	 * 		The connection map for this Fibre
 	 */
 	const components::ConnectionMap & getConnections() const;
+
+	/**
+	 * Get the mutable connections
+	 *
+	 * @return components::ConnectionMap
+	 * 		The mutable connection map for this Fibre
+	 */
+	components::ConnectionMap & getMutableConnections();
 
 	/**
 	 * Get the type of the fibre
@@ -160,7 +169,19 @@ public:
 	 * @return unsigned int
 	 * 		Width of fibre
 	 */
-	unsigned int getWidth()const;
+	unsigned int getWidth() const;
+
+	/**
+	 * Get current pattern for firing state of nodes
+	 *
+	 *	@param const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >
+	 *		The nodes to check for firing pattern
+	 *
+	 * @return boost::shared_ptr< state::Pattern >
+	 * 	The current firing pattern of the input nodes to the fibre
+	 */
+	boost::shared_ptr<state::Pattern> getNodesPattern(
+			const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > all_nodes) const;
 
 	/**
 	 * Get current pattern for firing state of input nodes to the fibre
@@ -168,7 +189,69 @@ public:
 	 * @return boost::shared_ptr< state::Pattern >
 	 * 	The current firing pattern of the input nodes to the fibre
 	 */
-	boost::shared_ptr< state::Pattern >  getInputNodesPattern() const;
+	boost::shared_ptr<state::Pattern> getInputNodesPattern() const;
+
+	/**
+	 * Get current pattern for firing state of output nodes to the fibre
+	 *
+	 * @return boost::shared_ptr< state::Pattern >
+	 * 	The current firing pattern of the output nodes to the fibre
+	 */
+	boost::shared_ptr<state::Pattern> getOutputNodesPattern() const;
+
+	/**
+	 * Get the map of  nodes to this fibre
+	 *
+	 *@param ClusterConnectionType
+	 *		The cluster to get the nodes from, eg, InputCluster means get the input nodes
+	 *
+	 * @return std::map<boost::uuid, boost::shared_ptr< components::Node > >
+	 * 	The map of  nodes
+	 */
+	const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > getNodes(const ClusterConnectionType type)const;
+
+	/**
+	 * Get the map of input nodes to this fibre
+	 *
+	 * @return std::map<boost::uuid, boost::shared_ptr< components::Node > >
+	 * 	The map of input nodes
+	 */
+	const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > getInputNodes()const;
+
+	/**
+	 * Get the map of output nodes to this fibre
+	 *
+	 * @return std::map<boost::uuid, boost::shared_ptr< components::Node > >
+	 * 	The map of output nodes
+	 */
+	const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > getOutputNodes()const;
+
+	/**
+	 * Force fire input nodes using a pattern
+	 *
+	 * @param Pattern
+	 * 	The pattern to fire
+	 */
+	void forceFireInputNodes(const state::Pattern & pattern);
+
+	/**
+	 * Force fire output nodes using a pattern
+	 *
+	 * @param Pattern
+	 * 	The pattern to fire
+	 */
+	void forceFireOutputNodes(const state::Pattern & pattern);
+
+	/**
+	 * Force fire nodes using a pattern
+	 *
+	 * @param Pattern
+	 * 	The pattern to fire
+	 * @param std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >
+	 * 	The nodes to fire the pattern on
+	 */
+	void forceFireNodes(const state::Pattern & pattern,
+			std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > nodes);
 
 	/**
 	 * Get the activity pattern of the Fibre, 0 for no activity, 1 otherwise
@@ -177,17 +260,17 @@ public:
 	 */
 
 	/**
-		 * To stream operator
-		 *
-		 *	@param std::ostream & os
-		 *		The output stream
-		 *	@param const Fibre & obj
-		 *		The object to stream
-		 *
-		 *	@return std::ostream &
-		 *		The output stream
-		 */
-		friend std::ostream& operator<<(std::ostream & os, const Fibre & obj);
+	 * To stream operator
+	 *
+	 *	@param std::ostream & os
+	 *		The output stream
+	 *	@param const Fibre & obj
+	 *		The object to stream
+	 *
+	 *	@return std::ostream &
+	 *		The output stream
+	 */
+	friend std::ostream& operator<<(std::ostream & os, const Fibre & obj);
 protected:
 
 	/**
