@@ -1,5 +1,9 @@
 2011-04-06  SevenMachines  <SevenMachines@yahoo.co.uk>
 
+	* src/utilities/SequencerChannels.cpp (SequencerChannels::readSequences): force passing pattern channels by reference otherwise we lose uuids when we copy pass
+	* src/structures/Cluster.cpp (Cluster::getLiveNodeCount):  Get the total live nodes in this cluster currently
+	(Cluster::getActiveNodeCount): Get the total active nodes in this cluster currently
+	(Cluster::getTriggeredNodeCount): Get the total fired nodes in this cluster currently
 	* src/structures/Bundle.cpp (Bundle::checkFibreStructure): Test fibre structure
 	(Bundle::checkChannelStructure): TODO
 	(Bundle::checkStructure): Test overall structure

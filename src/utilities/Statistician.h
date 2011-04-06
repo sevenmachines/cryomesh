@@ -9,6 +9,8 @@
 #define STATISTICIAN_H_
 
 #include <iostream>
+#include <map>
+#include <string>
 
 namespace cryomesh {
 
@@ -36,13 +38,19 @@ public:
 	virtual ~Statistician();
 
 	void update();
-
+	const structures::Bundle & getBundle() const;
 	int getClusterCount() const;
 	int getInputFibresCount() const;
 	int getOutputFibresCount() const;
 	int getNormalFibresCount() const;
 	int getInputChannelsCount() const;
 	int getOutputChannelsCount() const;
+	std::string getBundleUUID() const;
+	std::map<std::string, int> getTriggeredNodesPerCluster() const;
+	std::map<std::string, int> getActiveNodesPerCluster() const ;
+
+	int getTriggeredNodesTotal() const;
+	int getActiveNodesTotal() const ;
 
 	/**
 	 * To stream operator
@@ -71,7 +79,7 @@ private:
 	int normalFibresCount;
 	int inputChannelsCount;
 	int outputChannelsCount;
-
+	std::string bundleuuid;
 };
 
 }//NAMESPACE

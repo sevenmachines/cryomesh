@@ -36,10 +36,15 @@ SequencerChannels::SequencerChannels() {
 SequencerChannels::~SequencerChannels() {
 }
 
-void SequencerChannels::readSequences(const std::string & ifstr) {
+void SequencerChannels::readSequences(const std::string & ifstr, state::PatternChannelMap & in_channels_map,
+		state::PatternChannelMap & out_channels_map) {
 #ifdef SEQUENCERCHANNELS_DEBUG
 	std::cout << "SequencerChannels::readSequences: " << ifstr << std::endl;
 #endif
+	std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> > & in_channels =
+			in_channels_map.getMutableCollection();
+	std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> > &out_channels =
+			out_channels_map.getMutableCollection();
 	in_channels.clear();
 	out_channels.clear();
 	SequencerGeneric sg(ifstr);
@@ -119,40 +124,85 @@ void SequencerChannels::readSequences(const std::string & ifstr) {
 			++it_node_entries;
 		}
 	}
-
+//	std::cout << "SequencerChannels::readSequences: " << "END" << std::endl;
+	//std::cout << *this << std::endl;
 }
 
-std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> > SequencerChannels::getInputChannels() {
-	return in_channels;
-}
-std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> > SequencerChannels::getOutputChannels() {
-	return out_channels;
-}
+//DEPRECATED
+/**
+ std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> > SequencerChannels::getInputChannels() const{
 
-state::PatternChannelMap SequencerChannels::getInputChannelsMap() const {
-	return getChannelMap(in_channels);
-}
-state::PatternChannelMap SequencerChannels::getOutputChannelsMap() const {
-	return getChannelMap(out_channels);
-}
+ return in_channels;
+ }
+ std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> > SequencerChannels::getOutputChannels() const {
+ return out_channels;
+ }
 
-state::PatternChannelMap SequencerChannels::getChannelMap(
-		const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> > & patchans) const {
+ state::PatternChannelMap SequencerChannels::getInputChannelsMap() const {
+ return getChannelMap(in_channels);
+ }
+ state::PatternChannelMap SequencerChannels::getOutputChannelsMap() const {
+ return getChannelMap(out_channels);
+ }
 
-	state::PatternChannelMap patmap;
-	// forall in patchans
+ state::PatternChannelMap SequencerChannels::getChannelMap(
+ const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> > & patchans) const {
+
+ state::PatternChannelMap patmap;
+ // forall in patchans
+ {
+ std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_patchans =
+ patchans.begin();
+ const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_patchans_end =
+ patchans.end();
+ while (it_patchans != it_patchans_end) {
+ patmap.add(it_patchans->second);
+ ++it_patchans;
+ }
+ }
+ return patmap;
+ }
+std::ostream& operator<<(std::ostream & os, const SequencerChannels & obj) {
+	const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> > in_channels = obj.getInputChannels();
+	const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> > out_channels =
+			obj.getOutputChannels();
+
+	// forall in in_channels
 	{
-		std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_patchans =
-				patchans.begin();
-		const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_patchans_end =
-				patchans.end();
-		while (it_patchans != it_patchans_end) {
-			patmap.add(it_patchans->second);
-			++it_patchans;
+		os << "InChannels -> {";
+		std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_in_channels =
+				in_channels.begin();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator
+				it_in_channels_end = in_channels.end();
+		while (it_in_channels != it_in_channels_end) {
+			os << " (" << it_in_channels->first << " : " << it_in_channels->second->getRefID() << ")";
+			++it_in_channels;
+			if (it_in_channels != it_in_channels_end) {
+				os << "," << std::endl;
+			}
 		}
+		os << "}" << std::endl;
 	}
-	return patmap;
+
+	// forall in out_channels
+	{
+		os << "OutChannels -> {";
+		std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_out_channels =
+				out_channels.begin();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator
+				it_out_channels_end = out_channels.end();
+		while (it_out_channels != it_out_channels_end) {
+			os << " (" << it_out_channels->first << " : " << it_out_channels->second->getRefID() << ")";
+			++it_out_channels;
+			if (it_out_channels != it_out_channels_end) {
+				os << "," << std::endl;
+			}
+		}
+		os << "}" << std::endl;
+	}
+	return os;
 }
+ */
 
 } //NAMESPACE
 

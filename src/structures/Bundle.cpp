@@ -175,13 +175,14 @@ boost::shared_ptr<Fibre> Bundle::connectLoopbackCluster(boost::uuids::uuid clust
 
 void Bundle::loadChannels(const std::string & ifstr) {
 	utilities::SequencerChannels seqchans;
-	seqchans.readSequences(ifstr);
-
+	seqchans.readSequences(ifstr, inputChannelsMap, outputChannelsMap);
 	// get list of input channels
-	inputChannelsMap = seqchans.getInputChannelsMap();
+//	inputChannelsMap = seqchans.getInputChannelsMap();
 
 	// ditto for output channels
-	outputChannelsMap = seqchans.getOutputChannelsMap();
+	//outputChannelsMap = seqchans.getOutputChannelsMap();
+	std::cout<<"Bundle::loadChannels: "<<""<<std::endl;
+	this->printChannels(std::cout);
 }
 
 const ClusterMap & Bundle::getClusters() const {
@@ -346,9 +347,13 @@ void Bundle::updatePrimaryInputFibres() {
 			boost::shared_ptr<state::Pattern> pattern = it_channels->second->nextPattern();
 			// get the related fibre
 			boost::shared_ptr<Fibre> temp_fib = this->getPrimaryInputFibreByChannel(it_channels->second->getUUID());
-
-			// apply firing pattern to fibre
-			temp_fib->trigger(*pattern);
+			if (temp_fib != 0) {
+				// apply firing pattern to fibre
+				temp_fib->trigger(*pattern);
+			} else {
+				std::cout << "Bundle::updatePrimaryInputFibres: "
+						<< "WARNING: getPrimaryInputFibreByChannel returned null, ignoring..." << std::endl;
+			}
 			++it_channels;
 		}
 	}
@@ -396,15 +401,25 @@ void Bundle::updateStatistician() {
 	}
 }
 boost::shared_ptr<Fibre> Bundle::getPrimaryInputFibreByChannel(const boost::uuids::uuid pattern_channel_uuid) {
+	//std::cout << "Bundle::getPrimaryInputFibreByChannel: " << "" << std::endl;
+//	this->printSearch<state::PatternChannel> (std::cout, pattern_channel_uuid, inputChannelsMap.getCollection());
+	//this->printSearch<Fibre> (std::cout, pattern_channel_uuid, inputFibres.getCollection());
 	return this->getPrimaryFibreByChannel(pattern_channel_uuid, inputFibres);
 }
 boost::shared_ptr<Fibre> Bundle::getPrimaryOutputFibreByChannel(const boost::uuids::uuid pattern_channel_uuid) {
+	//std::cout << "Bundle::getPrimaryOutputFibreByChannel: " << "" << std::endl;
+	//this->printSearch<Fibre> (std::cout, pattern_channel_uuid, outputFibres.getCollection());
+
 	return this->getPrimaryFibreByChannel(pattern_channel_uuid, outputFibres);
 }
 boost::shared_ptr<state::PatternChannel> Bundle::getPrimaryInputChannelByFibre(const boost::uuids::uuid fibre_uuid) {
+	//	std::cout << "Bundle::getPrimaryInputChannelByFibre: " << "" << std::endl;
+	//	this->printSearch<state::PatternChannel> (std::cout, fibre_uuid, inputChannelsMap.getCollection());
 	return this->getPrimaryChannelByFibre(fibre_uuid, inputChannelsMap);
 }
 boost::shared_ptr<state::PatternChannel> Bundle::getPrimaryOutputChannelByFibre(const boost::uuids::uuid fibre_uuid) {
+	//	std::cout << "Bundle::getPrimaryOutputChannelByFibre: " << "" << std::endl;
+	//	this->printSearch<state::PatternChannel> (std::cout, fibre_uuid, outputChannelsMap.getCollection());
 	return this->getPrimaryChannelByFibre(fibre_uuid, outputChannelsMap);
 }
 boost::shared_ptr<Fibre> Bundle::getPrimaryFibreByChannel(const boost::uuids::uuid id, FibreMap & map) {
@@ -434,6 +449,22 @@ boost::shared_ptr<Fibre> Bundle::getPrimaryFibreByChannel(const boost::uuids::uu
 		} else {
 			std::cout << "Bundle::getPrimaryFibreByChannel: " << "WARNING: Cannot find primary fibre in map: "
 					<< fibre_id << std::endl;
+			std::cout << "{";
+			const std::map<boost::uuids::uuid, boost::shared_ptr<Fibre> > & temp_map = map.getCollection();
+			// forall in temp_map
+			{
+				std::map<boost::uuids::uuid, boost::shared_ptr<Fibre> >::const_iterator it_temp_map = temp_map.begin();
+				const std::map<boost::uuids::uuid, boost::shared_ptr<Fibre> >::const_iterator it_temp_map_end =
+						temp_map.end();
+				while (it_temp_map != it_temp_map_end) {
+					std::cout << " " << it_temp_map->first;
+					++it_temp_map;
+					if (it_temp_map != it_temp_map_end) {
+						std::cout << ", ";
+					}
+				}
+			}
+			std::cout << " }" << std::endl;
 		}
 	} else {
 		std::cout << "Bundle::getPrimaryFibreByChannel: " << "WARNING: Cannot find mapped pattern channel: " << id
@@ -465,6 +496,69 @@ boost::shared_ptr<state::PatternChannel> Bundle::getPrimaryChannelByFibre(const 
 	return found_channel;
 }
 
+template<class T>
+std::ostream & Bundle::printSearch(std::ostream & os, const boost::uuids::uuid & uuid,
+		const std::map<boost::uuids::uuid, boost::shared_ptr<T> > & map) {
+	os << uuid << " : " << "{";
+	// forall in temp_map
+	{
+		typename std::map<boost::uuids::uuid, boost::shared_ptr<T> >::const_iterator it_temp_map = map.begin();
+		const typename std::map<boost::uuids::uuid, boost::shared_ptr<T> >::const_iterator it_temp_map_end = map.end();
+		while (it_temp_map != it_temp_map_end) {
+			os << " (" << it_temp_map->first
+			//<< " : "<<it_temp_map->second->getUUIDString()
+					<< ") ";
+			++it_temp_map;
+			if (it_temp_map != it_temp_map_end) {
+				os << ", ";
+			}
+		}
+	}
+
+	os << " }" << std::endl;
+	return os;
+}
+
+std::ostream& Bundle::printChannels(std::ostream & os) {
+	std::cout << " Bundle::printChannels: " << "" << std::endl;
+	const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> > in_channels =inputChannelsMap.getCollection();
+	const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> > out_channels =outputChannelsMap.getCollection();
+
+	// forall in in_channels
+	{
+		os << "InChannels -> {";
+		std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_in_channels =
+				in_channels.begin();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator
+				it_in_channels_end = in_channels.end();
+		while (it_in_channels != it_in_channels_end) {
+			os << " (" << it_in_channels->first << " : " << it_in_channels->second->getRefID() << ")";
+			++it_in_channels;
+			if (it_in_channels != it_in_channels_end) {
+				os << "," << std::endl;
+			}
+		}
+		os << "}" << std::endl;
+	}
+
+	// forall in out_channels
+	{
+		os << "OutChannels -> {";
+		std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_out_channels =
+				out_channels.begin();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator
+				it_out_channels_end = out_channels.end();
+		while (it_out_channels != it_out_channels_end) {
+			os << " (" << it_out_channels->first << " : " << it_out_channels->second->getRefID() << ")";
+			++it_out_channels;
+			if (it_out_channels != it_out_channels_end) {
+				os << "," << std::endl;
+			}
+		}
+		os << "}" << std::endl;
+	}
+	return os;
+}
 }//NAMESPACE
 
 }//NAMESPACE

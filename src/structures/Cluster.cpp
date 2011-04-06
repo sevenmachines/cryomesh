@@ -8,6 +8,7 @@
 #include "Cluster.h"
 #include <list>
 #include <algorithm>
+#include "common/Maths.h"
 #include "Fibre.h"
 
 namespace cryomesh {
@@ -129,6 +130,103 @@ components::NodeMap & Cluster::getMutableNodeMap() {
 	return nodes;
 }
 
+int Cluster::getTriggeredNodeCount(const int indicator) const {
+	int return_count = 0;
+	int count = 0;
+	int positive_count = 0;
+	int negative_count = 0;
+	const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > & all_nodes = this->getNodes();
+	// forall in all_nodes
+	{
+		std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator it_all_nodes =
+				all_nodes.begin();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator it_all_nodes_end =
+				all_nodes.end();
+		while (it_all_nodes != it_all_nodes_end) {
+			if (it_all_nodes->second->checkActivationState() != components::Node::None) {
+				++count;
+			}
+
+			if (it_all_nodes->second->checkActivationState() == components::Node::Positive) {
+				++positive_count;
+			} else if (it_all_nodes->second->checkActivationState() == components::Node::Negative) {
+				++negative_count;
+			}
+			++it_all_nodes;
+		}
+	}
+	if (indicator > 0) {
+		return_count = positive_count;
+	} else if (indicator < 0) {
+		return_count = negative_count;
+	} else {
+		return_count = count;
+	}
+	return return_count;
+}
+
+int Cluster::getActiveNodeCount(const int indicator) const {
+	int return_count = 0;
+	int count = 0;
+	int positive_count = 0;
+	int negative_count = 0;
+	const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > & all_nodes = this->getNodes();
+	// forall in all_nodes
+	{
+		std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator it_all_nodes =
+				all_nodes.begin();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator it_all_nodes_end =
+				all_nodes.end();
+		while (it_all_nodes != it_all_nodes_end) {
+			double temp_act = it_all_nodes->second->getActivity();
+		//	std::cout << "Cluster::getActiveNodeCount: " << "indicator: " << indicator << " temp_act: " << temp_act
+			//		<< std::endl;
+			if (indicator > 0) {
+				if (temp_act > 0)
+			//		std::cout << "Cluster::getActiveNodeCount: " << "POS: " << temp_act << std::endl;
+				++positive_count;
+			} else if (indicator < 0) {
+				if (temp_act < 0)
+			//		std::cout << "Cluster::getActiveNodeCount: " << "NEG: " << temp_act << std::endl;
+				++negative_count;
+			} else if (indicator == 0) {
+				//std::cout<<"Cluster::getActiveNodeCount: "<<""<<std::endl;
+				if (temp_act < 0 || temp_act>0)
+					//std::cout << "Cluster::getActiveNodeCount: " << "ANY: " << it_all_nodes->second->getActivity() << std::endl;
+				++count;
+			}
+			++it_all_nodes;
+		}
+	}
+	if (indicator > 0) {
+		return_count = positive_count;
+	} else if (indicator < 0) {
+		return_count = negative_count;
+	} else {
+		return_count = count;
+	}
+	return return_count;
+}
+
+int Cluster::getLiveNodeCount() const {
+	int count = 0;
+	const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > & all_nodes = this->getNodes();
+	// forall in all_nodes
+	{
+		std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator it_all_nodes =
+				all_nodes.begin();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator it_all_nodes_end =
+				all_nodes.end();
+		while (it_all_nodes != it_all_nodes_end) {
+
+			if (it_all_nodes->second->getImpulses().getSize() > 0) {
+				++count;
+			}
+			++it_all_nodes;
+		}
+	}
+	return count;
+}
 std::ostream& operator<<(std::ostream & os, const Cluster & obj) {
 	os << "Cluster: " << "nodes:" << obj.getNodes().size() << " connections:" << obj.getConnections().size()
 			<< std::endl;

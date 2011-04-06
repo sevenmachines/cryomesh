@@ -131,6 +131,37 @@ public:
 	components::NodeMap & getMutableNodeMap();
 
 	/**
+	 * Get the total fired nodes in this cluster currently
+	 *
+	 *@param int
+	 *		Set >0 for only positive triggered nodes, <0 for negative, 0 for all (default)
+	 *
+	 *@return int
+	 *		The total count of currently triggered nodes
+	 */
+	int getTriggeredNodeCount(const int indicator=0) const;
+
+	/**
+	 * Get the total active nodes in this cluster currently
+	 *
+	 *@param int
+	 *		Set >0 for only positive active nodes, <0 for negative, 0 for all (default)
+	*
+	 *@return int
+	 *		The total count of currently active nodes
+	 */
+	int getActiveNodeCount(const int indicator=0) const;
+
+	/**
+	 * Get the total live nodes in this cluster currently, ie those with at least
+	 * one impulse
+	*
+	 *@return int
+	 *		The total count of currently live nodes
+	 */
+	int getLiveNodeCount() const;
+
+	/**
 	 * To stream operator
 	 *
 	 *	@param std::ostream & os

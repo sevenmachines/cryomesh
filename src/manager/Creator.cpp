@@ -301,12 +301,16 @@ void Creator::loadData(std::string datafile) {
 
 }
 void Creator::connectPrimaryInputChannel(int channel_id, int outputid) {
-	//std::cout << "Creator::connectPrimaryInputFibre: " << "(" << channel_id << ", " << outputid << ")" << std::endl;
+	std::cout << "Creator::connectPrimaryInputFibre: " << "(" << channel_id << ", " << outputid << ")" << std::endl;
+	std::cout << "Creator::connectPrimaryOutputFibre: " << "(" << this->getPatternChannelRealID(channel_id) << ", "
+			<< this->getClusterRealID(outputid) << ")" << std::endl;
 	bundle->connectPrimaryInputCluster(this->getPatternChannelRealID(channel_id), this->getClusterRealID(outputid));
 
 }
 void Creator::connectPrimaryOutputChannel(int channel_id, int inputid) {
-	//std::cout << "Creator::connectPrimaryOutputFibre: " << "(" << channel_id << ", " << inputid << ")" << std::endl;
+	std::cout << "Creator::connectPrimaryOutputFibre: " << "(" << channel_id << ", " << inputid << ")" << std::endl;
+	std::cout << "Creator::connectPrimaryOutputFibre: " << "(" << this->getPatternChannelRealID(channel_id) << ", "
+			<< this->getClusterRealID(inputid) << ")" << std::endl;
 	bundle->connectPrimaryOutputCluster(this->getPatternChannelRealID(channel_id), this->getClusterRealID(inputid));
 }
 boost::uuids::uuid Creator::getRealID(const int id, const std::map<int, boost::uuids::uuid> & idmap) const {

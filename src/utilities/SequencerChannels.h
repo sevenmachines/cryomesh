@@ -26,24 +26,23 @@ public:
 	/*
 	 * read in a set of SequenceChannels from a file
 	 */
-	void readSequences(const std::string & ifstr);
+	void readSequences(const std::string & ifstr,
+			state::PatternChannelMap & in_channels,
+			state::PatternChannelMap & out_channels);
 	/*
 	 * write out a set of sequences to a file
 	 */
 	void writeSequences(const std::string & ofstr,
-			std::map<boost::uuids::uuid, boost::shared_ptr<
-					state::PatternChannel> > & in_channels,
-			std::map<boost::uuids::uuid, boost::shared_ptr<
-					state::PatternChannel> > & out_channels) const;
+			std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> > & in_channels,
+			std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> > & out_channels) const;
 
-	 std::map<boost::uuids::uuid, boost::shared_ptr<
-				state::PatternChannel> >  getInputChannels();
-	 std::map<boost::uuids::uuid, boost::shared_ptr<
-					state::PatternChannel> >  getOutputChannels();
+	/**
+	std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> > getInputChannels() const;
+	std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> > getOutputChannels() const;
 
-	 state::PatternChannelMap  getInputChannelsMap() const;
-	 state::PatternChannelMap  getOutputChannelsMap() const;
-
+	state::PatternChannelMap getInputChannelsMap() const;
+	state::PatternChannelMap getOutputChannelsMap() const;
+*/
 	//statics
 	static const std::string PATTERN_CHANNEL_STRING;
 	static const std::string PATTERN_CHANNEL_TYPE_STRING;
@@ -59,23 +58,37 @@ public:
 	static const std::string PATTERN_CHANNEL_DEPTH_STRING;
 	static const std::string PATTERN_CHANNEL_NOTE_STRING;
 
+	/**
+	 * To stream operator
+	 *
+	 *	@param std::ostream & os
+	 *		The output stream
+	 *	@param const SequencerChannels & obj
+	 *		The object to stream
+	 *
+	 *	@return std::ostream &
+	 *		The output stream
+	 */
+	/*
+	friend std::ostream& operator<<(std::ostream & os, const SequencerChannels & obj);
+	 */
+
 protected:
-	state::PatternChannelMap getChannelMap(const std::map<boost::uuids::uuid, boost::shared_ptr<
-					state::PatternChannel> > & patchans) const;
+	/*
+	state::PatternChannelMap getChannelMap(
+			const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> > & patchans) const;
+	*/
 private:
-	std::map<boost::uuids::uuid, boost::shared_ptr<
-			state::PatternChannel> > in_channels;
-	std::map<boost::uuids::uuid, boost::shared_ptr<
-			state::PatternChannel> > out_channels;
-	std::map<boost::uuids::uuid, boost::shared_ptr<
-				state::PatternChannel> > in_channels_filtered;
-		std::map<boost::uuids::uuid, boost::shared_ptr<
-				state::PatternChannel> > out_channels_filtered;
+	//std::map<boost::uuids::uuid, boost::shared_ptr<
+	//		state::PatternChannel> > in_channels;
+	//std::map<boost::uuids::uuid, boost::shared_ptr<
+	//		state::PatternChannel> > out_channels;
+	std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> > in_channels_filtered;
+	std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> > out_channels_filtered;
 };
 
 }
 
 }
-
 
 #endif /* SEQUENCERCHANNELS_H_ */

@@ -15,6 +15,8 @@
 #include "FibreMap.h"
 #include "state/PatternChannelMap.h"
 #include "common/Debuggable.h"
+#include "common/Tagged.h"
+
 #include "utilities/Statistician.h"
 
 namespace cryomesh {
@@ -24,7 +26,7 @@ namespace structures {
 /**
  * A Bundle is the collection of clusters and fibres, it represents the system as a whole
  */
-class Bundle: public common::Debuggable {
+class Bundle: public common::Debuggable, public common::Tagged {
 public:
 
 	/**
@@ -299,6 +301,17 @@ protected:
 	 * Update the statistician if debugging is enabled
 	 */
 	virtual void updateStatistician();
+
+	/**
+	 * Print out a uuid search
+	 */
+	template < class T>
+	std::ostream & printSearch(std::ostream & os, const boost::uuids::uuid & uuid, const std::map<boost::uuids::uuid, boost::shared_ptr< T > >  & map);
+
+	/**
+	 * Print the channels to stream
+	 */
+	std::ostream& printChannels(std::ostream & os);
 
 private:
 
