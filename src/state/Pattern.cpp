@@ -9,6 +9,7 @@
 #include "PatternTagById.h"
 #include "common/Misc.h"
 #include "common/Maths.h"
+#include "common/TimeKeeper.h"
 #include <sstream>
 #include <iostream>
 
@@ -17,14 +18,14 @@ namespace state {
 // statics
 int Pattern::ids = 1;
 
- Pattern Pattern::getRandom(unsigned int width, double fraction){
-	 std::vector<bool> ranvec;
-	 for (int i = 0; i< width; i++) {
+Pattern Pattern::getRandom(unsigned int width, double fraction) {
+	std::vector<bool> ranvec;
+	for (int i = 0; i < width; i++) {
 		ranvec.push_back(common::Maths::getRandomBool(fraction));
 	}
-	 assert(ranvec.size()==width);
-	 return Pattern(ranvec);
- }
+	assert(ranvec.size()==width);
+	return Pattern(ranvec);
+}
 //END statics
 
 Pattern::Pattern() {
@@ -219,6 +220,14 @@ void Pattern::setIds(int is) {
 	std::cout << "Pattern::setIds: setting ids may break uniqueness" << std::endl;
 	Pattern::ids = is;
 #endif //PATTERN_DEBUG
+}
+
+boost::shared_ptr<manager::DatabaseObject> Pattern::getDatabaseObject() const {
+	unsigned long int cycle = common::TimeKeeper::getTimeKeeper().getCycle().toULInt();
+
+	boost::shared_ptr<manager::DatabaseObject> temp(
+			new manager::PatternDatabaseObject(this->getUUIDString(), cycle, this->getString()));
+	return temp;
 }
 
 void Pattern::initialise() {

@@ -20,6 +20,7 @@
 #include <boost/serialization/vector.hpp>
 #include <boost/uuid/uuid.hpp>
 #include <boost/uuid/uuid_generators.hpp>
+#include "manager/PatternDatabaseObject.h"
 
 namespace cryomesh {
 namespace state {
@@ -79,6 +80,8 @@ const BinaryString & getBinaryString() const;
 
 	const boost::shared_ptr<PatternTag> getPatternTag() const;
 	void setPatternTag(boost::shared_ptr<PatternTag> pt);
+
+	boost::shared_ptr<manager::DatabaseObject> getDatabaseObject() const ;
 
 	static int getIds();
 	static void setIds(int);

@@ -106,6 +106,8 @@ public:
 	 */
 	std::string insertConnection(const DatabaseObject & db_object);
 
+	std::string insertOutputPattern(const DatabaseObject & db_object) ;
+
 	/**
 	 * Select unique node  entry
 	 *
@@ -131,6 +133,8 @@ public:
 	 * 	The value of the entry
 	 */
 	std::string selectConnection(const std::string &uuid, const common::Cycle & cycle);
+
+	std::string selectOutputPattern(const std::string &uuid, const common::Cycle & cycle);
 
 	/**
 	 * Select unique node column entry
@@ -161,6 +165,8 @@ public:
 	 * 	The value of the entry
 	 */
 	std::string selectConnectionValue(const std::string &uuid, const common::Cycle & cycle, const std::string & column);
+
+	std::string selectOutputPatternValue(const std::string &uuid, const common::Cycle & cycle, const std::string & column);
 
 	/**
 	 * Select unique column column entry from table
@@ -201,6 +207,8 @@ public:
 	 * 	Result of sql query
 	 */
 	std::string selectConnections(const std::string & criteria = "");
+
+	std::string selectOutputPatterns(const std::string & criteria = "");
 
 	/**
 	 * Delete node by uuid
@@ -245,6 +253,9 @@ public:
 	 * 	Result of sql query
 	 */
 	std::string deleteConnections(const std::string & criteria = "");
+
+	std::string deleteOutputPattern(const std::string & id);
+	std::string deleteOutputPatterns(const std::string & criteria = "");
 
 	/**
 	 * Delete objects from a table by a criteria string eg, 'id=erwrs324 AND cycle=1'
@@ -469,6 +480,8 @@ public:
 	 * Default connection table format
 	 */
 	static const ConnectionTableFormat CONNECTIONS_TABLE_FORMAT;
+
+	static const OutputPatternsTableFormat OUTPUT_PATTERNS_TABLE_FORMAT;
 
 protected:
 

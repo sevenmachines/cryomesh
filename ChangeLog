@@ -1,5 +1,10 @@
 2011-04-06  SevenMachines  <SevenMachines@yahoo.co.uk>
 
+	* src/manager/TableFormats.h (OutputPatternsTableFormat):  new for  out patterns
+	(InputPatternsTableFormat): new for  in patterns
+	* src/manager/DatabaseManager.cpp (DatabaseManager::insertOutputPattern): new insert for  out patterns
+	* src/manager/PatternDatabaseObject.h (PatternDatabaseObject): New object to handle patterns in the database
+	* src/state/Pattern.cpp (Pattern::getDatabaseObject): added database object support to patterns
 	* src/utilities/SequencerChannels.cpp (SequencerChannels::readSequences): force passing pattern channels by reference otherwise we lose uuids when we copy pass
 	* src/structures/Cluster.cpp (Cluster::getLiveNodeCount):  Get the total live nodes in this cluster currently
 	(Cluster::getActiveNodeCount): Get the total active nodes in this cluster currently

@@ -21,6 +21,7 @@ namespace manager {
 const std::string DatabaseManager::DEFAULT_DATABASE = "default.db";
 const NodeTableFormat DatabaseManager::NODES_TABLE_FORMAT;
 const ConnectionTableFormat DatabaseManager::CONNECTIONS_TABLE_FORMAT;
+const OutputPatternsTableFormat DatabaseManager::OUTPUT_PATTERNS_TABLE_FORMAT;
 const common::Cycle DatabaseManager::MAX_COMMAND_HISTORY = common::Cycle(100);
 
 //CLASS
@@ -36,12 +37,12 @@ int DatabaseManager::databaseCallback(void *results, int argc, char **argv, char
 		} else {
 			entry = argv[i];
 		}
-		ss << " " << col_name << ":" << entry ;
+		ss << " " << col_name << ":" << entry;
 		// take care of farmatting business
-		if ( i !=argc-1){
-			ss<< " ";
+		if (i != argc - 1) {
+			ss << " ";
 		}
-	//	std::cout <<"databaseCallback: "<< ss.str()<<std::endl;
+		//	std::cout <<"databaseCallback: "<< ss.str()<<std::endl;
 
 	}
 	//ss << ")" << std::endl;
@@ -90,11 +91,13 @@ bool DatabaseManager::isDatabaseAccessable() const {
 void DatabaseManager::createTables() {
 	sqlCommand(DatabaseManager::NODES_TABLE_FORMAT.getCreateTable());
 	sqlCommand(DatabaseManager::CONNECTIONS_TABLE_FORMAT.getCreateTable());
+	sqlCommand(DatabaseManager::OUTPUT_PATTERNS_TABLE_FORMAT.getCreateTable());
 }
 
 void DatabaseManager::clearTables() {
 	clearTable("nodesTable");
 	clearTable("connectionsTable");
+	clearTable("outputPatternsTable");
 }
 
 std::string DatabaseManager::clearTable(const std::string & table) {
@@ -109,36 +112,54 @@ std::string DatabaseManager::insertNode(const DatabaseObject & db_object) {
 std::string DatabaseManager::insertConnection(const DatabaseObject & db_object) {
 	return sqlCommand(db_object.getInsert(CONNECTIONS_TABLE_FORMAT.getName()));
 }
-
-std::string DatabaseManager::selectNode(const std::string &uuid, const common::Cycle & cycle){
+std::string DatabaseManager::insertOutputPattern(const DatabaseObject & db_object) {
+	return sqlCommand(db_object.getInsert(OUTPUT_PATTERNS_TABLE_FORMAT.getName()));
+}
+std::string DatabaseManager::selectNode(const std::string &uuid, const common::Cycle & cycle) {
 	std::stringstream ss;
-	ss<<"id="<<"'"<<uuid<<"'"<<" AND "<<"cycle="<<cycle.toLInt();
-	std::string result = sqlCommandBySelection("nodesTable","SELECT", ss.str());
+	ss << "id=" << "'" << uuid << "'" << " AND " << "cycle=" << cycle.toLInt();
+	std::string result = sqlCommandBySelection("nodesTable", "SELECT", ss.str());
 	return result;
 }
-std::string DatabaseManager::selectConnection(const std::string &uuid, const common::Cycle & cycle){
+std::string DatabaseManager::selectConnection(const std::string &uuid, const common::Cycle & cycle) {
 	std::stringstream ss;
-	ss<<"id="<<"'"<<uuid<<"'"<<" AND "<<"cycle="<<cycle.toLInt();
-	std::string result = sqlCommandBySelection("connectionsTable","SELECT", ss.str());
+	ss << "id=" << "'" << uuid << "'" << " AND " << "cycle=" << cycle.toLInt();
+	std::string result = sqlCommandBySelection("connectionsTable", "SELECT", ss.str());
 	return result;
 }
 
-std::string DatabaseManager::selectNodeValue(const std::string &uuid, const common::Cycle & cycle, const std::string & column){
+std::string DatabaseManager::selectOutputPattern(const std::string &uuid, const common::Cycle & cycle) {
+	std::stringstream ss;
+	ss << "id=" << "'" << uuid << "'" << " AND " << "cycle=" << cycle.toLInt();
+	std::string result = sqlCommandBySelection("outputPatternsTable", "SELECT", ss.str());
+	return result;
+}
+
+std::string DatabaseManager::selectNodeValue(const std::string &uuid, const common::Cycle & cycle,
+		const std::string & column) {
 	return selectValue("nodesTable", uuid, cycle, column);
 }
 
-std::string DatabaseManager::selectConnectionValue(const std::string &uuid, const common::Cycle & cycle, const std::string & column){
+std::string DatabaseManager::selectConnectionValue(const std::string &uuid, const common::Cycle & cycle,
+		const std::string & column) {
 	return selectValue("connectionsTable", uuid, cycle, column);
 }
 
-std::string DatabaseManager::selectValue(const std::string & table, const std::string &uuid, const common::Cycle & cycle, const std::string & column){
+std::string DatabaseManager::selectOutputPatternValue(const std::string &uuid, const common::Cycle & cycle,
+		const std::string & column) {
+	return selectValue("outputPatterns", uuid, cycle, column);
+}
+
+std::string DatabaseManager::selectValue(const std::string & table, const std::string &uuid,
+		const common::Cycle & cycle, const std::string & column) {
 	std::stringstream ss;
-		ss <<"SELECT "<<column<<" FROM "<< table<< " WHERE id='"<<uuid<<"'" <<" AND cycle="<<cycle.toLInt()<<";";
-		std::string result = sqlCommand(ss.str());
-		// extract value
-		size_t pos = result.find(":");
-		std::string value = result.substr(pos +1);
-		return value;
+	ss << "SELECT " << column << " FROM " << table << " WHERE id='" << uuid << "'" << " AND cycle=" << cycle.toLInt()
+			<< ";";
+	std::string result = sqlCommand(ss.str());
+	// extract value
+	size_t pos = result.find(":");
+	std::string value = result.substr(pos + 1);
+	return value;
 }
 
 std::string DatabaseManager::selectNodes(const std::string & criteria) {
@@ -147,13 +168,16 @@ std::string DatabaseManager::selectNodes(const std::string & criteria) {
 std::string DatabaseManager::selectConnections(const std::string & criteria) {
 	return select("connectionsTable", criteria);
 }
+std::string DatabaseManager::selectOutputPatterns(const std::string & criteria) {
+	return select("outputPatternsTable", criteria);
+}
 std::string DatabaseManager::select(const std::string & table, const std::string & criteria) {
 	return sqlCommandBySelection(table, "SELECT", criteria);
 }
 
 std::string DatabaseManager::deleteNode(const std::string & id) {
 	std::stringstream ss;
-	ss << "id=" << "\'" << id<< "\'";
+	ss << "id=" << "\'" << id << "\'";
 	return this->deleteNodes(ss.str());
 }
 
@@ -163,12 +187,22 @@ std::string DatabaseManager::deleteNodes(const std::string & criteria) {
 
 std::string DatabaseManager::deleteConnection(const std::string & id) {
 	std::stringstream ss;
-	ss << "id=" << "\'" << id<< "\'";
+	ss << "id=" << "\'" << id << "\'";
 	return this->deleteConnections(ss.str());
 }
 
 std::string DatabaseManager::deleteConnections(const std::string & criteria) {
 	return deleteSelected("connectionsTable", criteria);
+}
+
+std::string DatabaseManager::deleteOutputPattern(const std::string & id) {
+	std::stringstream ss;
+	ss << "id=" << "\'" << id << "\'";
+	return this->deleteOutputPatterns(ss.str());
+}
+
+std::string DatabaseManager::deleteOutputPatterns(const std::string & criteria) {
+	return deleteSelected("outputPatternsTable", criteria);
 }
 
 std::string DatabaseManager::deleteSelected(const std::string & table, const std::string & criteria) {
@@ -200,16 +234,17 @@ int DatabaseManager::countRows(const std::string & table, const std::string & cr
 
 std::string DatabaseManager::updateNode(const std::string & uuid_str, const common::Cycle & cycle,
 		const std::string & options) {
-	return (updateByUUID( uuid_str,cycle, options, "nodesTable"));
+	return (updateByUUID(uuid_str, cycle, options, "nodesTable"));
 }
-std::string DatabaseManager::updateConnection(const std::string & uuid_str,  const common::Cycle & cycle,
+std::string DatabaseManager::updateConnection(const std::string & uuid_str, const common::Cycle & cycle,
 		const std::string & options) {
 	return (updateByUUID(uuid_str, cycle, options, "connectionsTable"));
 }
-std::string DatabaseManager::updateByUUID(const std::string & uuid_str,  const common::Cycle & cycle,
+std::string DatabaseManager::updateByUUID(const std::string & uuid_str, const common::Cycle & cycle,
 		const std::string & options, const std::string & table) {
 	std::stringstream ss;
-	ss << "UPDATE " << table << " SET " << options << " WHERE id=" << "'"<<uuid_str<< "'" << " AND cycle=" << cycle.toLInt() << ";";
+	ss << "UPDATE " << table << " SET " << options << " WHERE id=" << "'" << uuid_str << "'" << " AND cycle="
+			<< cycle.toLInt() << ";";
 	return (sqlCommand(ss.str()));
 }
 

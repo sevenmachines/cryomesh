@@ -139,14 +139,14 @@ private:
 	/**
 	 * The Point of the database object
 	 *
-	 * @var std::string
+	 * @var Point
 	 */
 	spacial::Point point;
 
 	/**
 	 * The Cycle of the database object
 	 *
-	 * @var std::string
+	 * @var Cycle
 	 */
 	common::Cycle cycle;
 

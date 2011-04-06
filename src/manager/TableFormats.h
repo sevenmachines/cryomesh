@@ -94,7 +94,7 @@ protected:
 /**
  * Struct representing a node table structure
  */
- struct NodeTableFormat: public TableFormat {
+struct NodeTableFormat: public TableFormat {
 public:
 	/**
 	 * Default constructor will construct all the names and columns assiciated with a node table
@@ -125,6 +125,38 @@ public:
 		columns["outputid"] = "TEXT";
 		columns["cycle"] = "INTEGER	NOT NULL";
 		columns["impulses"] = "INTEGER";
+	}
+};
+
+/**
+ * Struct representing input pattern table structure
+ */
+struct InputPatternsTableFormat: public TableFormat {
+public:
+	/**
+	 * Default constructor will construct all the names and columns assiciated with a pattern table
+	 */
+	InputPatternsTableFormat() {
+		name = "inputPatternsTable";
+		columns["id"] = "TEXT		NOT NULL";
+		columns["cycle"] = "INTEGER	NOT NULL";
+		columns["pattern"] = "TEXT";
+	}
+};
+
+/**
+ * Struct representing output pattern table structure
+ */
+struct OutputPatternsTableFormat: public TableFormat {
+public:
+	/**
+	 * Default constructor will construct all the names and columns assiciated with a pattern table
+	 */
+	OutputPatternsTableFormat() {
+		name = "outputPatternsTable";
+		columns["id"] = "TEXT		NOT NULL";
+		columns["cycle"] = "INTEGER	NOT NULL";
+		columns["pattern"] = "TEXT";
 	}
 };
 
