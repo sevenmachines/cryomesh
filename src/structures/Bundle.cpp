@@ -14,6 +14,7 @@ namespace cryomesh {
 namespace structures {
 
 Bundle::Bundle() {
+	statistician = boost::shared_ptr<utilities::Statistician>(new utilities::Statistician(*this));
 
 }
 
@@ -36,7 +37,12 @@ void Bundle::update() {
 
 	// TODO do evolution things
 
-	// TODO do things with storing output results
+	// TODO do things with storing output results from channels
+
+	// TODO Debugging things
+	if (this->isDebugOn() == true) {
+		this->updateStatistician();
+	}
 }
 
 boost::shared_ptr<Cluster> Bundle::createCluster(int nodeSize, int nodeConnectivity) {
@@ -190,7 +196,7 @@ const FibreMap & Bundle::getInputFibres() const {
 	return inputFibres;
 }
 
- FibreMap & Bundle::getMutableInputFibres()  {
+FibreMap & Bundle::getMutableInputFibres() {
 	return inputFibres;
 }
 
@@ -198,7 +204,7 @@ const FibreMap & Bundle::getOutputFibres() const {
 	return outputFibres;
 }
 
- FibreMap & Bundle::getMutableOutputFibres()  {
+FibreMap & Bundle::getMutableOutputFibres() {
 	return outputFibres;
 }
 
@@ -210,6 +216,104 @@ const state::PatternChannelMap & Bundle::getOutputChannelsMap() const {
 }
 const std::map<boost::uuids::uuid, boost::uuids::uuid> & Bundle::getFibrePatternChannelMap() const {
 	return fibrePatternChannelMap;
+}
+
+const boost::shared_ptr<utilities::Statistician> Bundle::getStatistician() const {
+	return statistician;
+}
+boost::shared_ptr<utilities::Statistician> Bundle::getMutableStatistician() {
+	return statistician;
+}
+
+bool Bundle::checkFibreStructure() const {
+	bool success = true;
+	const std::map<boost::uuids::uuid, boost::shared_ptr<Fibre> > & all_fibres = this->getFibres().getCollection();
+	const std::map<boost::uuids::uuid, boost::shared_ptr<Fibre> > & all_input_fibres =
+			this->getInputFibres().getCollection();
+	const std::map<boost::uuids::uuid, boost::shared_ptr<Fibre> > & all_output_fibres =
+			this->getOutputFibres().getCollection();
+	const std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> > & all_clusters =
+			this->getClusters().getCollection();
+
+	// check input fibres are all connected
+	// forall in all_input_fibres
+	{
+		std::map<boost::uuids::uuid, boost::shared_ptr<Fibre> >::const_iterator it_all_input_fibres =
+				all_input_fibres.begin();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<Fibre> >::const_iterator it_all_input_fibres_end =
+				all_input_fibres.end();
+		while (it_all_input_fibres != it_all_input_fibres_end) {
+			boost::shared_ptr<Fibre> fibre = it_all_input_fibres->second;
+			std::pair<int, int> concount = fibre->countConnections(all_clusters);
+			if (concount.first != 0 || concount.second != 1) {
+				success = false;
+				std::cout << "Bundle::checkStructure: " << "WARNING: Input fibre has bad connection count ("
+						<< concount.first << ", " << concount.second << ")" << " '" << fibre->getUUIDString() << "'"
+						<< std::endl;
+			} else {
+				std::cout << "Bundle::checkStructure: " << "PASS: Input fibre has good connection count ("
+						<< concount.first << ", " << concount.second << ")" << " '" << fibre->getUUIDString() << "'"
+						<< std::endl;
+			}
+			++it_all_input_fibres;
+		}
+	}
+
+	// forall in all_output_fibres
+	{
+		std::map<boost::uuids::uuid, boost::shared_ptr<Fibre> >::const_iterator it_all_output_fibres =
+				all_output_fibres.begin();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<Fibre> >::const_iterator it_all_output_fibres_end =
+				all_output_fibres.end();
+		while (it_all_output_fibres != it_all_output_fibres_end) {
+			boost::shared_ptr<Fibre> fibre = it_all_output_fibres->second;
+			std::pair<int, int> concount = fibre->countConnections(all_clusters);
+			if (concount.first != 1 || concount.second != 0) {
+				success = false;
+				std::cout << "Bundle::checkStructure: " << "WARNING: Output fibre has bad connection count ("
+						<< concount.first << ", " << concount.second << ")" << " '" << fibre->getUUIDString() << "'"
+						<< std::endl;
+			} else {
+				std::cout << "Bundle::checkStructure: " << "PASS: Output fibre has good connection count ("
+						<< concount.first << ", " << concount.second << ")" << " '" << fibre->getUUIDString() << "'"
+						<< std::endl;
+			}
+			++it_all_output_fibres;
+		}
+	}
+
+	// forall in all_fibres
+	{
+		std::map<boost::uuids::uuid, boost::shared_ptr<Fibre> >::const_iterator it_all_fibres = all_fibres.begin();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<Fibre> >::const_iterator it_all_fibres_end =
+				all_fibres.end();
+		while (it_all_fibres != it_all_fibres_end) {
+			boost::shared_ptr<Fibre> fibre = it_all_fibres->second;
+			std::pair<int, int> concount = fibre->countConnections(all_clusters);
+			if (concount.first != 1 || concount.second != 1) {
+				success = false;
+				std::cout << "Bundle::checkStructure: " << "WARNING: Intermediate fibre has bad connection count ("
+						<< concount.first << ", " << concount.second << ")" << " '" << fibre->getUUIDString() << "'"
+						<< std::endl;
+			} else {
+				std::cout << "Bundle::checkStructure: " << "PASS: Intermediate fibre has good connection count ("
+						<< concount.first << ", " << concount.second << ")" << " '" << fibre->getUUIDString() << "'"
+						<< std::endl;
+			}
+			++it_all_fibres;
+		}
+	}
+	return success;
+}
+
+bool Bundle::checkChannelStructure() const {
+	return false;
+}
+bool Bundle::checkStructure() const {
+	bool success = true;
+	success = success && this->checkFibreStructure();
+	success = success && this->checkChannelStructure();
+	return success;
 }
 
 std::ostream & operator<<(std::ostream & os, const Bundle & bundle) {
@@ -279,6 +383,18 @@ void Bundle::updatePrimaryOutputFibres() {
 	outputFibres.update();
 }
 
+void Bundle::updateStatistician() {
+	if (this->isDebugOn() == true) {
+		std::cout << "Bundle::updateStatistician: " << "" << std::endl;
+		if (this->statistician == 0) {
+			statistician = boost::shared_ptr<utilities::Statistician>(new utilities::Statistician(*this));
+		}
+		statistician->update();
+	} else {
+		std::cout << "Bundle::updateStatistician: "
+				<< "WARNING: Ignoring update statistician, debugging isnt enabled. " << std::endl;
+	}
+}
 boost::shared_ptr<Fibre> Bundle::getPrimaryInputFibreByChannel(const boost::uuids::uuid pattern_channel_uuid) {
 	return this->getPrimaryFibreByChannel(pattern_channel_uuid, inputFibres);
 }
@@ -351,5 +467,4 @@ boost::shared_ptr<state::PatternChannel> Bundle::getPrimaryChannelByFibre(const 
 
 }//NAMESPACE
 
-}
-//NAMESPACE
+}//NAMESPACE

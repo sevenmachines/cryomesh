@@ -147,6 +147,47 @@ unsigned int Fibre::getWidth() const {
 	return this->getConnections().getSize();
 }
 
+const std::pair<int, int> Fibre::countConnections(
+		const std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> > & all_clusters) const {
+	int input_count = 0;
+	int output_count = 0;
+	// forall in all_clusters
+	{
+		std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> >::const_iterator it_all_clusters =
+				all_clusters.begin();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> >::const_iterator it_all_clusters_end =
+				all_clusters.end();
+		while (it_all_clusters != it_all_clusters_end) {
+			const boost::shared_ptr< Cluster > cluster = it_all_clusters->second;
+			const std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> > & inputclusters =
+					this->getConnector().getInputs();
+			const std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> > & outputclusters =
+					this->getConnector().getOutputs();
+
+			const std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> >::const_iterator it_input_found =
+					inputclusters.find(cluster->getUUID());
+			const std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> >::const_iterator it_output_found =
+					outputclusters.find(cluster->getUUID());
+
+			const std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> >::const_iterator it_input_end =
+					inputclusters.end();
+			const std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> >::const_iterator it_output_end =
+					outputclusters.end();
+
+			bool infound = it_input_found != it_input_end;
+			bool outfound = it_output_found != it_output_end;
+
+			if (infound == true) {
+				++input_count;
+			}
+			if (outfound == true) {
+				++output_count;
+			}
+			++it_all_clusters;
+		}
+	}
+	return std::pair<int, int>(input_count, output_count);
+}
 const Fibre::ClusterConnectionType Fibre::isConnected(const boost::shared_ptr<Cluster> & cluster) const {
 	ClusterConnectionType contype = NullCluster;
 	//std::cout<<"Fibre::isConnected: "<<common::Misc::print(std::cout, cluster->getUUID())<<std::endl;

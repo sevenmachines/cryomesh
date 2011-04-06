@@ -9,6 +9,7 @@
 #define CRYOMANAGER_H_
 
 #include <iostream>
+#include "Creator.h"
 
 namespace cryomesh {
 namespace manager {
@@ -48,7 +49,7 @@ public:
 	void create(const std::string configfile) {
 		std::cout << "CryoManager::create: " << "" << std::endl;
 		currentState = NEW;
-		creator = boost::shared_ptr<Creator>(new Creator(configfile));
+		creator = boost::shared_ptr<manager::Creator>(new manager::Creator(configfile));
 	}
 
 	/**
@@ -94,6 +95,13 @@ public:
 		return currentState;
 	}
 
+	//TODO Temporary access, replace with database calls instead
+	const boost::shared_ptr<structures::Bundle> getBundle() const {
+		return creator->getBundle();
+	}
+	boost::shared_ptr<structures::Bundle> getMutableBundle() {
+		return creator->getMutableBundle();
+	}
 private:
 	/**
 	 * The current state of the manager

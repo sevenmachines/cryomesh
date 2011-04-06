@@ -14,6 +14,8 @@
 #include "ClusterMap.h"
 #include "FibreMap.h"
 #include "state/PatternChannelMap.h"
+#include "common/Debuggable.h"
+#include "utilities/Statistician.h"
 
 namespace cryomesh {
 
@@ -22,7 +24,7 @@ namespace structures {
 /**
  * A Bundle is the collection of clusters and fibres, it represents the system as a whole
  */
-class Bundle {
+class Bundle: public common::Debuggable {
 public:
 
 	/**
@@ -187,20 +189,20 @@ public:
 	const FibreMap & getInputFibres() const;
 
 	/**
-		 * Get the mutable input fibres of this bundle
-		 *
-		 * @return FibreMap
-		 * 	The map of mutable input fibres of this bundle
-		 */
-		 FibreMap & getMutableInputFibres() ;
+	 * Get the mutable input fibres of this bundle
+	 *
+	 * @return FibreMap
+	 * 	The map of mutable input fibres of this bundle
+	 */
+	FibreMap & getMutableInputFibres();
 
-		/**
-		 * Get the output fibres of this bundle
-		 *
-		 * @return FibreMap
-		 * 	The map of output fibres of this bundle
-		 */
-		const FibreMap & getOutputFibres() const;
+	/**
+	 * Get the output fibres of this bundle
+	 *
+	 * @return FibreMap
+	 * 	The map of output fibres of this bundle
+	 */
+	const FibreMap & getOutputFibres() const;
 
 	/**
 	 * Get the mutable output fibres of this bundle
@@ -208,7 +210,7 @@ public:
 	 * @return FibreMap
 	 * 	The map of mutable output fibres of this bundle
 	 */
-	 FibreMap & getMutableOutputFibres() ;
+	FibreMap & getMutableOutputFibres();
 
 	/**
 	 * Get the input pattern channels of this bundle
@@ -235,6 +237,39 @@ public:
 	const std::map<boost::uuids::uuid, boost::uuids::uuid> & getFibrePatternChannelMap() const ;
 
 	/**
+	 * Get the Statistician
+	 *
+	 * @return boost::shared_ptr< Statistician >
+	 * 	The current statistician, null pointer if we dont have one
+	 */
+	const boost::shared_ptr<utilities::Statistician> getStatistician() const;
+	boost::shared_ptr<utilities::Statistician> getMutableStatistician();
+
+	/**
+	 * Run a system structure check
+	 *
+	 * @return bool
+	 * 	True if system passes all tests, false otherwise
+	 */
+	virtual bool checkStructure() const;
+
+	/**
+	 * Check the structure of Fibres
+	 *
+	 * @return bool
+	 * 	True if structure tests pass, false otherwise
+	 */
+	virtual bool checkFibreStructure() const;
+
+	/**
+	 * Check the structure of Channels
+	 *
+	 * @return bool
+	 * 	True if structure tests pass, false otherwise
+	 */
+	virtual bool checkChannelStructure() const;
+
+	/**
 	 * To stream operator
 	 *
 	 *	@param std::ostream & os
@@ -259,6 +294,11 @@ protected:
 	 * mapped pattern channels
 	 */
 	virtual void updatePrimaryOutputFibres();
+
+	/**
+	 * Update the statistician if debugging is enabled
+	 */
+	virtual void updateStatistician();
 
 private:
 
@@ -303,6 +343,11 @@ private:
 	 * @var FibreMap
 	 */
 	FibreMap outputFibres;
+
+	/**
+	 * Statistics object to generate useful info on the bundle
+	 */
+	boost::shared_ptr<utilities::Statistician> statistician;
 
 	/**
 	 * Mapping of fibre uuid to a corresponding pattern channel

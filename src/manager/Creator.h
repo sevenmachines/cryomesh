@@ -52,7 +52,15 @@ public:
 	 * @return boost::shared_ptr<structures::Bundle>
 	 * 	The created bundle
 	 */
-	boost::shared_ptr<structures::Bundle> getBundle();
+	const boost::shared_ptr<structures::Bundle> getBundle() const ;
+
+	/**
+	 * Get the mutable create bundle
+	 *
+	 * @return boost::shared_ptr<structures::Bundle>
+	 * 	The created bundle
+	 */
+	boost::shared_ptr<structures::Bundle> getMutableBundle();
 
 	/**
 	 * get the clusterIDMap

@@ -153,6 +153,17 @@ public:
 	const FibreType & getType() const;
 
 	/**
+	 * Count all connections of this fibre to a group of clusters
+	 *
+	 * @param std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> >
+	 * 	Cluster collection to search for connections to this fibre
+	 *
+	 * @return std::pair<int, int>
+	 * 	Pair of input/output connection count to this fibre within the supplied cluster collection
+	 */
+	const std::pair<int, int> countConnections(const std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> > & all_clusters) const;
+
+	/**
 	 * Return type of connection to cluster specified, null if none
 	 *
 	 * @param boost::shared_ptr<Cluster> cluster
