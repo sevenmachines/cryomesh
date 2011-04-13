@@ -16,7 +16,7 @@
 #include "state/PatternChannelMap.h"
 #include "common/Debuggable.h"
 #include "common/Tagged.h"
-
+#include "common/Loggable.h"
 #include "utilities/Statistician.h"
 
 namespace cryomesh {
@@ -26,7 +26,7 @@ namespace structures {
 /**
  * A Bundle is the collection of clusters and fibres, it represents the system as a whole
  */
-class Bundle: public common::Debuggable, public common::Tagged {
+class Bundle: public common::Debuggable, public common::Tagged, public common::Loggable {
 public:
 
 	/**
@@ -272,18 +272,27 @@ public:
 	virtual bool checkChannelStructure() const;
 
 	/**
-	 * To stream operator
-	 *
-	 *	@param std::ostream & os
-	 *		The output stream
-	 *	@param const Bundle & obj
-	 *		The object to stream
-	 *
-	 *	@return std::ostream &
-	 *		The output stream
+	 * Print the bundle to stream
 	 */
-	friend std::ostream & operator<<(std::ostream & os, const Bundle & bundle);
+	std::ostream& print(std::ostream & os, const common::Loggable::LoggingDepth depth=SUMMARY) const ;
 
+	/**
+	 * Print the channels to stream
+	 */
+	std::ostream& printChannels(std::ostream & os) const;
+
+	/**
+		 * To stream operator
+		 *
+		 *	@param std::ostream & os
+		 *		The output stream
+		 *	@param const Bundle & obj
+		 *		The object to stream
+		 *
+		 *	@return std::ostream &
+		 *		The output stream
+		 */
+		friend std::ostream& operator<<(std::ostream & os, const Bundle & obj);
 protected:
 
 	/**
@@ -305,13 +314,9 @@ protected:
 	/**
 	 * Print out a uuid search
 	 */
-	template < class T>
-	std::ostream & printSearch(std::ostream & os, const boost::uuids::uuid & uuid, const std::map<boost::uuids::uuid, boost::shared_ptr< T > >  & map);
-
-	/**
-	 * Print the channels to stream
-	 */
-	std::ostream& printChannels(std::ostream & os);
+	template<class T>
+	std::ostream & printSearch(std::ostream & os, const boost::uuids::uuid & uuid,
+			const std::map<boost::uuids::uuid, boost::shared_ptr<T> > & map);
 
 private:
 

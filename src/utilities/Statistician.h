@@ -80,6 +80,9 @@ private:
 	int inputChannelsCount;
 	int outputChannelsCount;
 	std::string bundleuuid;
+	int nodesTotal;
+	int nodesTriggered;
+	int nodesActive;
 };
 
 }//NAMESPACE

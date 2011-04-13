@@ -143,13 +143,13 @@ int Cluster::getTriggeredNodeCount(const int indicator) const {
 		const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator it_all_nodes_end =
 				all_nodes.end();
 		while (it_all_nodes != it_all_nodes_end) {
-			if (it_all_nodes->second->checkActivationState() != components::Node::None) {
+			if (it_all_nodes->second->getLastActivationState() != components::Node::None) {
 				++count;
 			}
 
-			if (it_all_nodes->second->checkActivationState() == components::Node::Positive) {
+			if (it_all_nodes->second->getLastActivationState() == components::Node::Positive) {
 				++positive_count;
-			} else if (it_all_nodes->second->checkActivationState() == components::Node::Negative) {
+			} else if (it_all_nodes->second->getLastActivationState() == components::Node::Negative) {
 				++negative_count;
 			}
 			++it_all_nodes;

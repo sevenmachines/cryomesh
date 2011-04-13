@@ -324,7 +324,7 @@ std::ostream& operator<<(std::ostream & os, const ImpulseCollection & obj) {
 		std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> >::const_iterator it_allobjs = allobjs.begin();
 		const std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> >::const_iterator it_allobjs_end = allobjs.end();
 		while (it_allobjs != it_allobjs_end) {
-			std::cout << *(it_allobjs->second) << std::endl;
+			os << *(it_allobjs->second) << std::endl;
 			++it_allobjs;
 		}
 	}

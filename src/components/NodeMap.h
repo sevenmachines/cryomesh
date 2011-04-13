@@ -71,7 +71,7 @@ public:
 			const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator it_objects_end =
 					obj.getCollection().end();
 			while (it_objects != it_objects_end) {
-				std::cout << "\t" << *(it_objects->second) << std::endl;
+				os << "\t" << *(it_objects->second) << std::endl;
 				++it_objects;
 			}
 		}

@@ -136,7 +136,7 @@ public:
 	 * 		The value found
 	 */
 	const T getByKey(U key) const {
-		T keyfound;
+		T keyfound(0);
 		typename std::map<U, T>::const_iterator it_found = valueMap.find(key);
 		typename std::map<U, T>::const_iterator it_end = valueMap.end();
 		if (it_found != it_end) {

@@ -9,6 +9,7 @@
 #define CRYOMANAGER_H_
 
 #include <iostream>
+#include <ctime>
 #include "Creator.h"
 
 namespace cryomesh {
@@ -32,6 +33,7 @@ public:
 	 */
 	CryoManager() :
 		currentState(EMPTY) {
+		srand(time(NULL));
 	}
 
 	/**
@@ -58,6 +60,23 @@ public:
 	void run() {
 		std::cout << "CryoManager::run: " << "" << std::endl;
 		currentState = RUNNING;
+	}
+
+	/**
+	 * Set manager state to run one cycle
+	 */
+	void runCycle() {
+		std::cout << "CryoManager::runCycle: " << "" << std::endl;
+		 boost::shared_ptr< structures::Bundle > bundle = creator->getBundle();
+		if (bundle != 0){
+			currentState = RUNNING;
+			bundle->update();
+			this->stop();
+		}else{
+			std::cout<<"CryoManager::runCycle: "<<"ERROR: Bundle is null..."<<std::endl;
+			assert(false);
+		}
+
 	}
 
 	/**

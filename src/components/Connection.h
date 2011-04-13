@@ -12,6 +12,7 @@
 #include "common/Connector.h"
 #include "common/Tagged.h"
 #include "manager/DatabaseObject.h"
+#include "common/Debuggable.h"
 
 namespace cryomesh {
 
@@ -33,7 +34,7 @@ namespace components {
  * a constant per-cycle reflection as the original Impulse 'moves along'
  * the Connection
  */
-class Connection: public common::Tagged {
+class Connection: public common::Tagged, public common::Debuggable {
 public:
 	/**
 	 * Constructor for Connection

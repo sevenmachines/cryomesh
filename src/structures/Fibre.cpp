@@ -338,7 +338,7 @@ const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > Fibre::
 }
 
 const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > Fibre::getOutputNodes() const {
-	return (this->getNodes(InputCluster));
+	return (this->getNodes(OutputCluster));
 }
 
 const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > Fibre::getNodes(
@@ -439,8 +439,9 @@ void Fibre::forceFireNodes(const state::Pattern & pattern,
 }
 
 std::ostream& operator<<(std::ostream & os, const Fibre & obj) {
-	os << "Fibre: " << obj.getConnections().getSize() << " :"
-			<< obj.getConnections().getActivityPattern()->toPlusBooleanString();
+	os << "Fibre: "<<"'" <<obj.getUUIDString()<<"'"<<" size: "<< obj.getConnections().getSize() << " :"
+			<< *(obj.getOutputNodesPattern());
+	//os<< obj.getConnections();
 	return os;
 }
 

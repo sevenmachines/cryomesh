@@ -76,14 +76,6 @@ public:
 	virtual void forceFire();
 
 	/**
-	 * Check level of impulses and decide whether to activate the node
-	 *
-	 * @return Node::ActivationState
-	 * 		Positive if activity is over threshold, negative if under -threshold, None otherwise
-	 */
-	virtual Node::ActivationState checkActivationState();
-
-	/**
 	 * Add incoming Impulse
 	 *
 	 * @param boost::shared_ptr<Impulse> impulse
@@ -257,6 +249,38 @@ public:
 	 */
 	void randomise();
 
+	// state checks
+	/**
+	 * Check if Node is currently triggered
+	 *
+	 * @param ActivationState
+	 * 	Positive for positive trigger test, Negative for negative
+	 * 	trigger test, None for any trigger test
+	 *
+	 * @return bool
+	 * 	True if triggered, false otherwise
+	 */
+	bool isTriggered(ActivationState state = None);
+
+	/**
+		 * Check if Node is currently activated
+		 *
+		 * @param ActivationState
+		 * 	Positive for positive activity test, Negative for negative
+		 * 	activity test, None for any activity test
+		 *
+		 * @return bool
+		 * 	True if activated, false otherwise
+		 */
+	bool isActive(const ActivationState state = None);
+	/**
+		 * Check if Node is live, ie active at any point in now or the future
+		 *
+		 * @return bool
+		 * 	True if live, false otherwise
+		 */
+	bool isLive();
+
 	/**
 	 * To stream operator
 	 *
@@ -305,6 +329,15 @@ public:
 	static boost::shared_ptr<Node> getRandom(const spacial::Point & max_point = MAX_BOUNDING_BOX_POINT);
 
 protected:
+
+	/**
+	 * Check level of impulses and decide whether to activate the node
+	 *
+	 * @return Node::ActivationState
+	 * 		Positive if activity is over threshold, negative if under -threshold, None otherwise
+	 */
+	virtual Node::ActivationState checkActivationState();
+
 	/**
 	 * Check if the object is ready to fire off an impulse and carry it out
 	 *

@@ -49,6 +49,7 @@ public:
 	 */
 	bool connectInput(const boost::shared_ptr<T> obj) {
 		bool this_success = false;
+	//	std::cout<<"connectInput: boost::shared_ptr<T>("<<minputs.size()<<"/"<<maxInputs<<")"<<std::endl;
 		boost::shared_ptr<T> obj_returned = this->connect(obj, minputs, maxInputs);
 		if (obj_returned != 0) {
 			this_success = true;
@@ -116,6 +117,7 @@ public:
 	 *
 	 */
 	bool connectOutput(const boost::shared_ptr<T> & obj) {
+		//std::cout<<"connectOutput: boost::shared_ptr<T>("<<moutputs.size()<<"/"<<maxOutputs<<")"<<std::endl;
 		bool this_success = false;
 		boost::shared_ptr<T> obj_returned = this->connect(obj, moutputs, maxOutputs);
 		if (obj_returned != 0) {

@@ -52,7 +52,7 @@ public:
 	 *  @param const Cycle startCycle
 	 * 		Cycle to start activity on
 	 */
-	Impulse(const double max_y, const int length, const common::Cycle & startCycle =0);
+	Impulse(const double max_y, const int length, const common::Cycle & startCycle = 0);
 
 	/**
 	 * Construct a from a curve with max f(x) and length and
@@ -67,8 +67,8 @@ public:
 	 * 	@param boost::shared_ptr<ActivityTimer> timer
 	 * 		The activity timer associated with this
 	 */
-	Impulse(const double max_y, const int length, const common::Cycle & startCycle, boost::shared_ptr<
-			ActivityTimerDistance>);
+	Impulse(const double max_y, const int length, const common::Cycle & startCycle,
+			boost::shared_ptr<ActivityTimerDistance>);
 
 	/**
 	 * Destructor
@@ -80,8 +80,10 @@ public:
 	/*
 	 * Generate random state
 	 *
+	 *	@param double
+	 *		the (0,1) bias of a positive impulse outcome, 0 negative, 1, positive
 	 */
-	void randomise();
+	void randomise(double positive_bias = 0.5);
 
 	/**
 	 * Is the Impulse active on current cycle
@@ -216,6 +218,9 @@ public:
 	 */
 	void setActivityTimer(boost::shared_ptr<ActivityTimerDistance> timer);
 
+	common::Cycle getActivityDelay();
+
+	void getActivityDelay(const common::Cycle & delay);
 	/**
 	 * Non-destructive addition operator
 	 *
@@ -285,13 +290,13 @@ public:
 	friend std::ostream& operator<<(std::ostream & os, const Impulse & obj);
 
 	/*
-		 * Constant for forced trigger activity
-		 *
-		 * @var double
-		 * 		The forced trigger activity
-		 */
-		static const double FORCED_TRIGGER_ACTIVITY;
-		/*
+	 * Constant for forced trigger activity
+	 *
+	 * @var double
+	 * 		The forced trigger activity
+	 */
+	static const double FORCED_TRIGGER_ACTIVITY;
+	/*
 	 * Constant for maximum activity
 	 *
 	 * @var double
@@ -323,6 +328,14 @@ public:
 	 */
 	static const int MIN_ACTIVITY_LENGTH;
 
+	/*
+	 * The minimum impulse activity magnitude
+	 *
+	 * @var int
+	 * 		The minimum impulse activity magnitude
+	 */
+	static const double MIN_ACTIVITY_MAGNITUDE ;
+
 	/**
 	 * Get a 'trigger' impulse, a maximum impulse
 	 *
@@ -334,10 +347,13 @@ public:
 	/**
 	 * Get a randomised impulse
 	 *
+	 *	@param double
+	 *		the (0,1) bias of a positive impulse outcome, 0 negative, 1, positive
+	 *
 	 * @return boost::shared_ptr<Impulse>
-	 * 		The randomised impulse
+	 * The randomised impulse
 	 */
-	static boost::shared_ptr<Impulse> getRandom();
+	static boost::shared_ptr<Impulse> getRandom(double positive_bias = 0.5);
 
 protected:
 
@@ -368,6 +384,13 @@ private:
 	 * 		Return last active cycle
 	 */
 	common::Cycle lastActiveCycle;
+
+	/**
+	 * Delay on the impulse
+	 *
+	 * @var Cycle
+	 */
+	common::Cycle activityDelay;
 
 	/**
 	 * The timer component of the impulse

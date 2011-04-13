@@ -95,7 +95,7 @@ public:
 	 * @return bool
 	 * 	True if  the config translator passed all the tests for coherence, false otherwise.
 	 */
-	bool analyseConfig(const config::ConfigTranslator & conf_trans) const;
+	static bool analyseConfig(const config::ConfigTranslator & conf_trans) ;
 
 	/**
 	 * Analyse the config entry for coherence
@@ -106,7 +106,7 @@ public:
 	 * @return bool
 	 * 	True if the config entry passed all the tests for coherence, false otherwise.
 	 */
-	bool checkConfigEntry(const config::ConfigEntry & conf_entry) const;
+	static bool checkConfigEntry(const config::ConfigEntry & conf_entry) ;
 
 	/**
 	 * Analyse the config for structural coherence
@@ -117,7 +117,7 @@ public:
 	 * @return bool
 	 * 	True if the config entries passed all the tests for structural coherence, false otherwise.
 	 */
-	bool checkConfigStructure(const std::list<config::ConfigEntry> & conf_entries) const;
+	static bool checkConfigStructure(const std::list<config::ConfigEntry> & conf_entries) ;
 
 	// Creation function mappings
 

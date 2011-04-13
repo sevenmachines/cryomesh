@@ -32,7 +32,8 @@ boost::shared_ptr<Node> Node::getRandom(const spacial::Point & max_point) {
 	return node;
 }
 
-Node::Node() :lastActivationState(None) {
+Node::Node() :
+	lastActivationState(None) {
 	connector = boost::shared_ptr<common::Connector<Node, Connection> >(new common::Connector<Node, Connection>());
 	emittedImpulse = boost::shared_ptr<Impulse>(new Impulse());
 	emittedImpulse->randomise();
@@ -43,11 +44,17 @@ Node::~Node() {
 }
 
 void Node::update() {
-#ifdef NODE_DEBUG
-	std::cout << "Node::update: " << *this << std::endl;
-#endif
+	//std::cout << "Node::update: " << *this << std::endl;
 	ActivationState state = this->checkFire();
 	if (state != ActivationState::None) {
+		if (isDebugOn() == true) {
+			if (state == ActivationState::Positive) {
+				std::cout << "Node::update: " << "ActivationState::Positive" << std::endl;
+			} else if (state == ActivationState::Negative) {
+				std::cout << "Node::update: " << "ActivationState::Negative" << std::endl;
+			}
+		}
+
 		this->getMutableImpulses().clearActiveImpulses();
 	}
 
@@ -97,11 +104,13 @@ void Node::updateImpulses() {
 
 boost::shared_ptr<Impulse> Node::addImpulse(boost::shared_ptr<Impulse> impulse) {
 	// Update start to start+now
-	impulse->setFirstActiveCycle((*impulse).getFirstActiveCycle() + common::TimeKeeper::getTimeKeeper().getCycle());
+	impulse->setFirstActiveCycle( common::TimeKeeper::getTimeKeeper().getCycle());
 	if (this->isDebugOn() == true) {
 		std::cout << "Node::addImpulse: " << *impulse << std::endl;
 	}
-	return this->getMutableImpulses().add(impulse);
+	boost::shared_ptr<Impulse>  temp_imp = this->getMutableImpulses().add(impulse);
+
+	return temp_imp;
 }
 void Node::addImpulses(std::list<boost::shared_ptr<Impulse> > impulses) {
 	// forall in impulses
@@ -189,7 +198,7 @@ double Node::getActivity() const {
 }
 
 double Node::getActivity(const common::Cycle & cycle) const {
-	return activities.getByKey(cycle);
+	return this->getImpulses().getActivity(cycle);
 }
 
 double Node::updateActivity() {
@@ -232,12 +241,50 @@ void Node::setPosition(const spacial::Point & new_position) {
 	updatePosition();
 }
 
-Node::ActivationState Node::getLastActivationState() const{
+Node::ActivationState Node::getLastActivationState() const {
 	return lastActivationState;
 }
 
 void Node::randomise() {
 	emittedImpulse = Impulse::getRandom();
+}
+
+bool Node::isTriggered(ActivationState state) {
+	bool success = false;
+	if (state == Node::None) {
+		success = (this->getLastActivationState() != Node::None);
+	} else {
+		success = (this->getLastActivationState() == state);
+	}
+	return success;
+}
+
+bool Node::isActive(const ActivationState state) {
+	bool success = false;
+	double act = this->getActivity();
+	if (state == Node::None) {
+		int compare_doubles = common::Maths::compareDoubles(act, 0);
+		if (  compare_doubles != 0 ) {
+			success = true;
+		}
+	} else if (state == Node::Positive) {
+		if (act > 0) {
+			success = true;
+		}
+	} else if (state == Node::Negative) {
+		if (act < 0) {
+			success = true;
+		}
+	}
+	return success;
+}
+bool Node::isLive(){
+	bool success = false;
+
+	if (this->getImpulses().getSize() > 0){
+		success =  true;
+	}
+	return success;
 }
 
 void Node::updatePosition() {

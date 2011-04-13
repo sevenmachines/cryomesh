@@ -19,7 +19,9 @@ namespace components {
 const double Impulse::FORCED_TRIGGER_ACTIVITY = 1000;
 const double Impulse::MAX_ACTIVITY = 1;
 const double Impulse::MIN_ACTIVITY = -1;
-const int Impulse::MAX_ACTIVITY_LENGTH = 10;
+const double Impulse::MIN_ACTIVITY_MAGNITUDE = 0.01;
+
+const int Impulse::MAX_ACTIVITY_LENGTH = 20;
 const int Impulse::MIN_ACTIVITY_LENGTH = 1;
 
 // statics
@@ -28,21 +30,22 @@ boost::shared_ptr<Impulse> Impulse::getTriggerImpulse(){
 	return temp_pulse;
 }
 
-boost::shared_ptr<Impulse> Impulse::getRandom(){
+boost::shared_ptr<Impulse> Impulse::getRandom(double positive_bias){
+	common::Maths::clamp<double>(positive_bias, 0.0, 1.0);
 	boost::shared_ptr< Impulse > temp_pulse(new Impulse);
-	temp_pulse->randomise();
+	temp_pulse->randomise(positive_bias);
 	return temp_pulse;
 }
 
-Impulse::Impulse() {
+Impulse::Impulse() : activityDelay(0){
 	// set start to current time
 	this->generateCurve(0, MIN_ACTIVITY_LENGTH);
-	setFirstActiveCycle(TimeKeeper::getTimeKeeper().getCycle());
+	setFirstActiveCycle(TimeKeeper::getTimeKeeper().getCycle() );
 		boost::shared_ptr<ActivityTimerDistance> tempact(new ActivityTimerDistance(1,1));
 			this->setActivityTimer( tempact );
 }
 
-Impulse::Impulse(const double max_y, const int length, const common::Cycle & startCycle) {
+Impulse::Impulse(const double max_y, const int length, const common::Cycle & startCycle) : activityDelay(0) {
 	this->generateCurve(max_y, std::max(length, MIN_ACTIVITY_LENGTH));
 	// set start to current time
 	setFirstActiveCycle(startCycle);
@@ -51,7 +54,7 @@ Impulse::Impulse(const double max_y, const int length, const common::Cycle & sta
 
 }
 
-Impulse::Impulse(const double max_y, const int length, const common::Cycle & startCycle, boost::shared_ptr< ActivityTimerDistance > timer) {
+Impulse::Impulse(const double max_y, const int length, const common::Cycle & startCycle, boost::shared_ptr< ActivityTimerDistance > timer)  : activityDelay(0) {
 	this->generateCurve(max_y, std::max(length, MIN_ACTIVITY_LENGTH));
 	// set start to current time
 	setFirstActiveCycle(startCycle);
@@ -62,9 +65,19 @@ Impulse::Impulse(const double max_y, const int length, const common::Cycle & sta
 Impulse::~Impulse() {
 }
 
-void Impulse::randomise() {
-	double maxy = common::Maths::getRandomDouble(MIN_ACTIVITY, MAX_ACTIVITY);
-	double length = common::Maths::getRandomInteger(MIN_ACTIVITY_LENGTH, MAX_ACTIVITY_LENGTH);
+void Impulse::randomise(double positive_bias ) {
+
+	double maxy_positive = common::Maths::getRandomDouble(MIN_ACTIVITY_MAGNITUDE, MAX_ACTIVITY );
+	double maxy_negative = common::Maths::getRandomDouble(MIN_ACTIVITY, MIN_ACTIVITY_MAGNITUDE );
+	double random_bias = common::Maths::getRandomDouble(0, 1 );
+	double maxy ;
+	if (random_bias>( 1 - positive_bias) ){
+		maxy = maxy_positive;
+	}else{
+		maxy= maxy_negative;
+	}
+
+double length = common::Maths::getRandomInteger(MIN_ACTIVITY_LENGTH, MAX_ACTIVITY_LENGTH);
 	this->generateCurve(maxy, length);
 	lastActiveCycle = firstActiveCycle + this->getCollection().size();
 	boost::shared_ptr< ActivityTimerDistance > tempact = ActivityTimerDistance::getRandom() ;
@@ -139,7 +152,7 @@ void Impulse::setFirstActiveCycle(const Cycle cycle) {
 	//long int pre_fac = firstActiveCycle.toLInt();
 	//long int pre_lac = lastActiveCycle.toLInt();
 	//long int pre_col_sz = this->getCollection().size();
-	firstActiveCycle = cycle;
+	firstActiveCycle = cycle + this->getActivityDelay();
 	lastActiveCycle = firstActiveCycle + this->getCollection().size();
 
 	//long int post_fac = firstActiveCycle.toLInt();
@@ -168,6 +181,13 @@ void Impulse::setActivityTimer(const boost::shared_ptr< ActivityTimerDistance > 
 	activityTimer = boost::shared_ptr<ActivityTimerDistance> (new ActivityTimerDistance(*timer));
 }
 
+common::Cycle Impulse::getActivityDelay(){
+	return activityDelay;
+}
+
+void Impulse::getActivityDelay(const common::Cycle & delay){
+	activityDelay = delay;
+}
 const Impulse Impulse::operator+(const Impulse & obj) const {
 	Impulse imp = *this;
 	imp += obj;

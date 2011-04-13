@@ -44,7 +44,7 @@ public:
 
 		// forall in all_clusters
 		{
-			std::cout << tab << "ClusterMap:" << std::endl;
+			os << tab << "ClusterMap:" << std::endl;
 			std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> >::const_iterator it_all_clusters =
 					all_clusters.begin();
 			const std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> >::const_iterator it_all_clusters_end =

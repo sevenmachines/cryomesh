@@ -153,7 +153,7 @@ bool Creator::createFromConfig() {
 	return success;
 }
 
-bool Creator::analyseConfig(const config::ConfigTranslator & conf_trans) const {
+bool Creator::analyseConfig(const config::ConfigTranslator & conf_trans)  {
 	bool config_coherent = true;
 	// verify commands and options
 	const std::list<config::ConfigEntry> & conf_entries = conf_trans.getEntries();
@@ -162,18 +162,18 @@ bool Creator::analyseConfig(const config::ConfigTranslator & conf_trans) const {
 		std::list<config::ConfigEntry>::const_iterator it_conf_entries = conf_entries.begin();
 		const std::list<config::ConfigEntry>::const_iterator it_conf_entries_end = conf_entries.end();
 		while (it_conf_entries != it_conf_entries_end) {
-			bool good_entry = this->checkConfigEntry(*it_conf_entries);
+			bool good_entry = Creator::checkConfigEntry(*it_conf_entries);
 			config_coherent = config_coherent && good_entry;
 			++it_conf_entries;
 		}
 	}
 
-	config_coherent = config_coherent && this->checkConfigStructure(conf_entries);
+	config_coherent = config_coherent && Creator::checkConfigStructure(conf_entries);
 
 	return config_coherent;
 }
 
-bool Creator::checkConfigEntry(const config::ConfigEntry & conf_entry) const {
+bool Creator::checkConfigEntry(const config::ConfigEntry & conf_entry)  {
 	bool success = true;
 	// check command is a member
 	std::map<std::string, std::list<std::string> >::const_iterator it_found = Creator::acceptedCommandList.find(
@@ -203,7 +203,7 @@ bool Creator::checkConfigEntry(const config::ConfigEntry & conf_entry) const {
 	return success;
 }
 
-bool Creator::checkConfigStructure(const std::list<config::ConfigEntry> & conf_entries) const {
+bool Creator::checkConfigStructure(const std::list<config::ConfigEntry> & conf_entries)  {
 	bool success = true;
 	// check we have at least one cluster
 	bool create_cluster_found = false;
@@ -301,16 +301,16 @@ void Creator::loadData(std::string datafile) {
 
 }
 void Creator::connectPrimaryInputChannel(int channel_id, int outputid) {
-	std::cout << "Creator::connectPrimaryInputFibre: " << "(" << channel_id << ", " << outputid << ")" << std::endl;
-	std::cout << "Creator::connectPrimaryOutputFibre: " << "(" << this->getPatternChannelRealID(channel_id) << ", "
-			<< this->getClusterRealID(outputid) << ")" << std::endl;
+//	std::cout << "Creator::connectPrimaryInputFibre: " << "(" << channel_id << ", " << outputid << ")" << std::endl;
+//	std::cout << "Creator::connectPrimaryOutputFibre: " << "(" << this->getPatternChannelRealID(channel_id) << ", "
+//			<< this->getClusterRealID(outputid) << ")" << std::endl;
 	bundle->connectPrimaryInputCluster(this->getPatternChannelRealID(channel_id), this->getClusterRealID(outputid));
 
 }
 void Creator::connectPrimaryOutputChannel(int channel_id, int inputid) {
-	std::cout << "Creator::connectPrimaryOutputFibre: " << "(" << channel_id << ", " << inputid << ")" << std::endl;
-	std::cout << "Creator::connectPrimaryOutputFibre: " << "(" << this->getPatternChannelRealID(channel_id) << ", "
-			<< this->getClusterRealID(inputid) << ")" << std::endl;
+	//std::cout << "Creator::connectPrimaryOutputFibre: " << "(" << channel_id << ", " << inputid << ")" << std::endl;
+	//std::cout << "Creator::connectPrimaryOutputFibre: " << "(" << this->getPatternChannelRealID(channel_id) << ", "
+	//		<< this->getClusterRealID(inputid) << ")" << std::endl;
 	bundle->connectPrimaryOutputCluster(this->getPatternChannelRealID(channel_id), this->getClusterRealID(inputid));
 }
 boost::uuids::uuid Creator::getRealID(const int id, const std::map<int, boost::uuids::uuid> & idmap) const {
