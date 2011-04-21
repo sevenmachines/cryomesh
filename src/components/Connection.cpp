@@ -58,6 +58,7 @@ common::Connector<Connection, Node> & Connection::getMutableConnector() {
 boost::shared_ptr<Impulse> Connection::add(boost::shared_ptr<Impulse> impulse) {
 	// set the timer variables of added impulse
 	impulse->setActivityTimer(this->activityTimer);
+	std::cout<<"Connection::add: "<<*impulse<<std::endl;
 	return this->impulses.add(impulse);
 }
 
@@ -128,6 +129,12 @@ void Connection::updatePosition() {
 	}
 }
 
+void Connection::connectInput(boost::shared_ptr<Node> node) {
+	this->getMutableConnector().connectInput(node);
+}
+void Connection::connectOutput(boost::shared_ptr<Node> node) {
+	this->getMutableConnector().connectOutput(node);
+}
 
 std::ostream& operator<<(std::ostream & os, const Connection & obj) {
 	os << "Connection: " << "impulses:" << obj.getImpulses().getSize() << std::endl;

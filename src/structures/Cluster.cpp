@@ -27,9 +27,7 @@ Cluster::~Cluster() {
 }
 
 void Cluster::update() {
-#ifdef CLUSTER_DEBUG
 	std::cout<<"Cluster::update: "<<this<<std::endl;
-#endif
 	// update nodes
 	nodes.update();
 	// update connections

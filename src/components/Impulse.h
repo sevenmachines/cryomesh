@@ -49,10 +49,10 @@ public:
 	 * 		Boundary value of curve
 	 * 	@param const int length
 	 * 		Length of Impulse
-	 *  @param const Cycle startCycle
-	 * 		Cycle to start activity on
+	 *  @param  int
+	 * 		Delay before starting impulse
 	 */
-	Impulse(const double max_y, const int length, const common::Cycle & startCycle = 0);
+	Impulse(const double max_y, const int length, const int delay = 0);
 
 	/**
 	 * Construct a from a curve with max f(x) and length and
@@ -62,12 +62,12 @@ public:
 	 * 		Boundary value of curve
 	 * 	@param const int length
 	 * 		Length of Impulse
-	 *  @param const Cycle startCycle
-	 * 		Cycle to start activity on
+	 *  @param int
+	 * 		Delay before starting impulse
 	 * 	@param boost::shared_ptr<ActivityTimer> timer
 	 * 		The activity timer associated with this
 	 */
-	Impulse(const double max_y, const int length, const common::Cycle & startCycle,
+	Impulse(const double max_y, const int length, const int delay,
 			boost::shared_ptr<ActivityTimerDistance>);
 
 	/**
@@ -218,9 +218,9 @@ public:
 	 */
 	void setActivityTimer(boost::shared_ptr<ActivityTimerDistance> timer);
 
-	common::Cycle getActivityDelay();
+	int getActivityDelay() const ;
 
-	void getActivityDelay(const common::Cycle & delay);
+	void setActivityDelay(int delay);
 	/**
 	 * Non-destructive addition operator
 	 *
@@ -336,6 +336,22 @@ public:
 	 */
 	static const double MIN_ACTIVITY_MAGNITUDE ;
 
+	/*
+	 * Constant for minimum impulse delay
+	 *
+	 * @var int
+	 * 		The minimum impulse delay
+	 */
+	static const int MIN_ACTIVITY_DELAY;
+
+	/*
+	 * The maximum impulse activity delay
+	 *
+	 * @var Cycle
+	 * 		The maximum impulse activity magnitude
+	 */
+	static const int MAX_ACTIVITY_DELAY ;
+
 	/**
 	 * Get a 'trigger' impulse, a maximum impulse
 	 *
@@ -388,9 +404,9 @@ private:
 	/**
 	 * Delay on the impulse
 	 *
-	 * @var Cycle
+	 * @var int
 	 */
-	common::Cycle activityDelay;
+	int activityDelay;
 
 	/**
 	 * The timer component of the impulse

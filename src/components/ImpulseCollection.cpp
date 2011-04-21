@@ -53,7 +53,7 @@ void ImpulseCollection::clearImpulses(common::Cycle cycle) {
 
 std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > ImpulseCollection::clearImpulses(common::Cycle cycleStart,
 		common::Cycle cycleEnd) {
-//	std::cout << "ImpulseCollection::clearCycles: " <<"impulses:"<<this->getCollection().size()<< "(" << cycleStart << ", " << cycleEnd << ")" << std::endl;
+	//	std::cout << "ImpulseCollection::clearCycles: " <<"impulses:"<<this->getCollection().size()<< "(" << cycleStart << ", " << cycleEnd << ")" << std::endl;
 	// switch cycles if start>end
 	if (cycleStart > cycleEnd) {
 		common::Cycle temp = cycleEnd;
@@ -64,6 +64,9 @@ std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > ImpulseCollection::cle
 
 	std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > cleared_impulses;
 	std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > & impulses = this->getMutableCollection();
+
+	int impulse_pre_sz = impulses.size();
+
 	// forall in impulses
 	{
 		std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> >::const_iterator it_impulses = impulses.begin();
@@ -72,10 +75,10 @@ std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > ImpulseCollection::cle
 		while (it_impulses != it_impulses_end) {
 			common::Cycle first_cycle = it_impulses->second->getFirstActiveCycle();
 			common::Cycle second_cycle = it_impulses->second->getLastActiveCycle();
-	//		std::cout<<"ImpulseCollection::clearImpulses: "<<"Checking: ["<<first_cycle.toLInt()<<", "<<second_cycle<<"]"<<std::endl;
+			//		std::cout<<"ImpulseCollection::clearImpulses: "<<"Checking: ["<<first_cycle.toLInt()<<", "<<second_cycle<<"]"<<std::endl;
 
 			if ((first_cycle >= cycleStart && second_cycle < cycleEnd)) {
-		//		std::cout<<"ImpulseCollection::clearImpulses: "<<"Deleting: ["<<first_cycle.toLInt()<<", "<<second_cycle<<"]"<<std::endl;
+				//		std::cout<<"ImpulseCollection::clearImpulses: "<<"Deleting: ["<<first_cycle.toLInt()<<", "<<second_cycle<<"]"<<std::endl;
 				cleared_impulses[it_impulses->first] = it_impulses->second;
 			}
 			++it_impulses;
@@ -94,6 +97,13 @@ std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > ImpulseCollection::cle
 			++it_cleared_impulses;
 		}
 	}
+	int impulse_post_sz = impulses.size();
+
+	if (impulse_pre_sz > 0) {
+		std::cout << "ImpulseCollection::clearImpulses: " << "current: "
+				<< common::TimeKeeper::getTimeKeeper().getCycle() << " range: " << "(" << cycleStart << "," << cycleEnd
+				<< ") " << "deleted: " << impulse_pre_sz - impulse_post_sz <<" "<< *this << std::endl;
+	}
 	return cleared_impulses;
 }
 
@@ -108,7 +118,6 @@ std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > ImpulseCollection::cle
 
 std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > ImpulseCollection::clearActiveImpulses(
 		common::Cycle cycleStart, common::Cycle cycleEnd) {
-
 	// switch cycles if start>end
 	if (cycleStart > cycleEnd) {
 		common::Cycle temp = cycleEnd;
@@ -119,6 +128,7 @@ std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > ImpulseCollection::cle
 	// Impulses that are active
 	std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > cleared_impulses;
 	std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > & impulses = this->getMutableCollection();
+	int impulse_pre_sz = impulses.size();
 
 	// forall in impulses
 	{
@@ -149,6 +159,12 @@ std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > ImpulseCollection::cle
 			++it_cleared_impulses;
 		}
 	}
+	int impulse_post_sz = impulses.size();
+
+	std::cout << "ImpulseCollection::clearActiveImpulses: " << "current: "
+			<< common::TimeKeeper::getTimeKeeper().getCycle() << " range: " << "(" << cycleStart << "," << cycleEnd
+			<< ") " << "deleted: " << impulse_pre_sz - impulse_post_sz << std::endl;
+
 	return cleared_impulses;
 }
 
@@ -208,7 +224,7 @@ std::list<boost::shared_ptr<Impulse> > ImpulseCollection::removeByActivityTimerV
 }
 
 void ImpulseCollection::refreshDataObject() {
-//	std::cout<<"ImpulseCollection::refreshDataObject: "<<""<<std::endl;
+	//	std::cout<<"ImpulseCollection::refreshDataObject: "<<""<<std::endl;
 	if (dataObject.isLoggingEnabled() == true) {
 		dataObject.clear();
 
@@ -219,9 +235,9 @@ void ImpulseCollection::refreshDataObject() {
 
 		common::Cycle start_cycle(std::max(0, cycle_diff));
 
-	//	std::cout<<"ImpulseCollection::refreshDataObject: "<<"start:"<<start_cycle<<" end:"<<end_cycle<<std::endl;
+		//	std::cout<<"ImpulseCollection::refreshDataObject: "<<"start:"<<start_cycle<<" end:"<<end_cycle<<std::endl;
 		for (common::Cycle count = start_cycle; count < end_cycle; count++) {
-		//	std::cout<<"ImpulseCollection::refreshDataObject: "<<"count:"<<count<<std::endl;
+			//	std::cout<<"ImpulseCollection::refreshDataObject: "<<"count:"<<count<<std::endl;
 			dataObject.insert(count.toULInt(), this->getActivity(count));
 		}
 	}
@@ -315,7 +331,7 @@ bool ImpulseCollection::operator!=(const ImpulseCollection &obj) const {
 }
 
 std::ostream& operator<<(std::ostream & os, const ImpulseCollection & obj) {
-	os << "ImpulseCollection: " <<" size: " << obj.getCollection().size() << std::endl;
+	os << "ImpulseCollection: " << " size: " << obj.getCollection().size() << std::endl;
 
 	const std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > & allobjs = obj.getCollection();
 

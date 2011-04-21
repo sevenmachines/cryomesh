@@ -22,6 +22,7 @@ Bundle::~Bundle() {
 }
 
 void Bundle::update() {
+	std::cout<<"Bundle::update: "<<""<<std::endl;
 	// update the time
 	common::TimeKeeper::getTimeKeeper().update();
 	//update input primaries

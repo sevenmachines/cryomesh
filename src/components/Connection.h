@@ -179,6 +179,8 @@ public:
 	 */
 	void updatePosition();
 
+	void connectInput(boost::shared_ptr<Node> node) ;
+	void connectOutput(boost::shared_ptr<Node> node) ;
 	/**
 	 * To stream operator
 	 *

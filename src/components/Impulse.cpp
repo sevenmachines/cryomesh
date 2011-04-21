@@ -24,9 +24,12 @@ const double Impulse::MIN_ACTIVITY_MAGNITUDE = 0.01;
 const int Impulse::MAX_ACTIVITY_LENGTH = 20;
 const int Impulse::MIN_ACTIVITY_LENGTH = 1;
 
+ const int Impulse::MIN_ACTIVITY_DELAY=0;
+ const int Impulse::MAX_ACTIVITY_DELAY= 10;
+
 // statics
 boost::shared_ptr<Impulse> Impulse::getTriggerImpulse(){
-	boost::shared_ptr< Impulse > temp_pulse(new Impulse(Impulse::FORCED_TRIGGER_ACTIVITY, MAX_ACTIVITY_LENGTH, 1)) ;
+	boost::shared_ptr< Impulse > temp_pulse(new Impulse(Impulse::FORCED_TRIGGER_ACTIVITY, MAX_ACTIVITY_LENGTH, 0)) ;
 	return temp_pulse;
 }
 
@@ -45,19 +48,19 @@ Impulse::Impulse() : activityDelay(0){
 			this->setActivityTimer( tempact );
 }
 
-Impulse::Impulse(const double max_y, const int length, const common::Cycle & startCycle) : activityDelay(0) {
+Impulse::Impulse(const double max_y, const int length, const int delay) : activityDelay(delay) {
 	this->generateCurve(max_y, std::max(length, MIN_ACTIVITY_LENGTH));
 	// set start to current time
-	setFirstActiveCycle(startCycle);
+	setFirstActiveCycle(0);
 	boost::shared_ptr<ActivityTimerDistance> tempact(new ActivityTimerDistance(1,1));
 	this->setActivityTimer( tempact );
 
 }
 
-Impulse::Impulse(const double max_y, const int length, const common::Cycle & startCycle, boost::shared_ptr< ActivityTimerDistance > timer)  : activityDelay(0) {
+Impulse::Impulse(const double max_y, const int length, const int delay, boost::shared_ptr< ActivityTimerDistance > timer)  : activityDelay(delay) {
 	this->generateCurve(max_y, std::max(length, MIN_ACTIVITY_LENGTH));
 	// set start to current time
-	setFirstActiveCycle(startCycle);
+	setFirstActiveCycle(0);
 	this->setActivityTimer( timer );
 
 }
@@ -68,8 +71,11 @@ Impulse::~Impulse() {
 void Impulse::randomise(double positive_bias ) {
 
 	double maxy_positive = common::Maths::getRandomDouble(MIN_ACTIVITY_MAGNITUDE, MAX_ACTIVITY );
-	double maxy_negative = common::Maths::getRandomDouble(MIN_ACTIVITY, MIN_ACTIVITY_MAGNITUDE );
+	double maxy_negative = common::Maths::getRandomDouble(MIN_ACTIVITY, -MIN_ACTIVITY_MAGNITUDE );
 	double random_bias = common::Maths::getRandomDouble(0, 1 );
+	int random_delay = common::Maths::getRandomDouble(MIN_ACTIVITY_DELAY, MAX_ACTIVITY_DELAY );
+
+	this->setActivityDelay(random_delay);
 	double maxy ;
 	if (random_bias>( 1 - positive_bias) ){
 		maxy = maxy_positive;
@@ -154,6 +160,7 @@ void Impulse::setFirstActiveCycle(const Cycle cycle) {
 	//long int pre_col_sz = this->getCollection().size();
 	firstActiveCycle = cycle + this->getActivityDelay();
 	lastActiveCycle = firstActiveCycle + this->getCollection().size();
+	//std::cout<<"Impulse::setFirstActiveCycle: "<<"arg: "<<cycle<<" -> "<<firstActiveCycle<<":"<<lastActiveCycle<<std::endl;
 
 	//long int post_fac = firstActiveCycle.toLInt();
 	//long int post_lac = lastActiveCycle.toLInt();
@@ -181,11 +188,11 @@ void Impulse::setActivityTimer(const boost::shared_ptr< ActivityTimerDistance > 
 	activityTimer = boost::shared_ptr<ActivityTimerDistance> (new ActivityTimerDistance(*timer));
 }
 
-common::Cycle Impulse::getActivityDelay(){
+int Impulse::getActivityDelay() const{
 	return activityDelay;
 }
 
-void Impulse::getActivityDelay(const common::Cycle & delay){
+void Impulse::setActivityDelay(int delay){
 	activityDelay = delay;
 }
 const Impulse Impulse::operator+(const Impulse & obj) const {
@@ -312,7 +319,7 @@ bool Impulse::operator!=(const Impulse &obj) const {
 }
 
 std::ostream& operator<<(std::ostream & os, const Impulse & obj) {
-	os << "SimpleCollection: " << &obj << " objects: { ";
+	os << "Impulse: " << &obj << "delay="<< obj.getActivityDelay()<<" "<<*(obj.getActivityTimer())<< "objects: { ";
 	// forall in objects
 	{
 		std::list<double>::const_iterator it_objects = obj.getCollection().begin();

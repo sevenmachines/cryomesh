@@ -109,6 +109,11 @@ public:
 	 */
 	common::Connector<Node, Connection> & getMutableConnector();
 
+	bool isInputIsolated() const;
+	bool isOutputIsolated() const;
+	void connectInput(boost::shared_ptr<Connection> con);
+	void connectOutput(boost::shared_ptr<Connection> con);
+
 	/**
 	 * Get the collection of Impulses for this Node
 	 *
@@ -263,23 +268,29 @@ public:
 	bool isTriggered(ActivationState state = None);
 
 	/**
-		 * Check if Node is currently activated
-		 *
-		 * @param ActivationState
-		 * 	Positive for positive activity test, Negative for negative
-		 * 	activity test, None for any activity test
-		 *
-		 * @return bool
-		 * 	True if activated, false otherwise
-		 */
+	 * Check if Node is currently activated
+	 *
+	 * @param ActivationState
+	 * 	Positive for positive activity test, Negative for negative
+	 * 	activity test, None for any activity test
+	 *
+	 * @return bool
+	 * 	True if activated, false otherwise
+	 */
 	bool isActive(const ActivationState state = None);
 	/**
-		 * Check if Node is live, ie active at any point in now or the future
-		 *
-		 * @return bool
-		 * 	True if live, false otherwise
-		 */
+	 * Check if Node is live, ie active at any point in now or the future
+	 *
+	 * @return bool
+	 * 	True if live, false otherwise
+	 */
 	bool isLive();
+
+	bool isPrimaryInputAttachedNode() const;
+	bool isPrimaryOutputAttachedNode() const;
+
+	std::vector<boost::shared_ptr< Connection > > getPrimaryInputConnections();
+	std::vector<boost::shared_ptr< Connection > > getPrimaryOutputConnections();
 
 	/**
 	 * To stream operator

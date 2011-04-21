@@ -109,12 +109,26 @@ public:
 	double getDelay()const;
 
 	/**
+	 * Get the starting delay
+	 *
+	 * @return double
+	 * 		The starting distance delay
+	 */
+	double getStartingDelay()const;
+
+
+	/**
 	 * Get the decrement
 	 *
 	 * @return double
 	 * 		The decrement of the timer
 	 */
 	double getDecrement()const;
+
+	/**
+	 * Reset the countdown
+	 */
+	void reset();
 
 	/**
 	 * Get a random object
@@ -125,18 +139,18 @@ public:
 	static boost::shared_ptr<ActivityTimerDistance> getRandom();
 
 	/**
-	 * The Min decrement
+	 * The Min decrement fraction of the distance
 	 *
 	 * @var double
 	 */
-	static const double MIN_DECREMENT;
+	static const double MIN_DECREMENT_FRACTION;
 
 	/**
-	 * The Max decrement
+	 * The Max decrement fraction of the distance
 	 *
 	 * @var double
 	 */
-	static const double MAX_DECREMENT;
+	static const double MAX_DECREMENT_FRACTION;
 
 	/**
 	 * The Min distance
@@ -152,14 +166,24 @@ public:
 	 */
 	static const double MAX_DISTANCE;
 
+protected:
+	virtual std::ostream & print(std::ostream & os)const;
 
 private:
 	/**
-	 * Variable representing the abstract 'distance' until the end of the timer
+	 * Variable representing the abstract starting 'distance' until the end of the timer
 	 *
 	 * @var double
 	 */
 	double distance;
+
+	/**
+		 * Variable representing the abstract 'distance' until the end of the timer
+		 *
+		 * @var double
+		 */
+		double distance_remaining;
+
 
 	/**
 	 * The decrement to the distance each cycle

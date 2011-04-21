@@ -441,7 +441,7 @@ void Fibre::forceFireNodes(const state::Pattern & pattern,
 std::ostream& operator<<(std::ostream & os, const Fibre & obj) {
 	os << "Fibre: "<<"'" <<obj.getUUIDString()<<"'"<<" size: "<< obj.getConnections().getSize() << " :"
 			<< *(obj.getOutputNodesPattern());
-	//os<< obj.getConnections();
+	os<< obj.getConnections();
 	return os;
 }
 
