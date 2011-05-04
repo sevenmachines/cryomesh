@@ -22,7 +22,6 @@ public:
 	virtual ~ClusterMap() {
 	}
 	virtual void update() {
-		std::cout<<"ClusterMap::update: "<<this<<std::endl;
 		// forall in objects
 		{
 			std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> >::iterator it_objects = objects.begin();

@@ -5,6 +5,8 @@
  *      Author: niall
  */
 
+#define ACTIVITYTIMERDISTANCE_DEBUG
+
 #include "ActivityTimerDistance.h"
 #include "common/Maths.h"
 
@@ -12,15 +14,21 @@ namespace cryomesh {
 
 namespace components {
 
-const double ActivityTimerDistance::MIN_DECREMENT_FRACTION =  0.1;
+const double ActivityTimerDistance::MIN_DECREMENT_FRACTION = 0.1;
 const double ActivityTimerDistance::MAX_DECREMENT_FRACTION = 1;
 const double ActivityTimerDistance::MIN_DISTANCE = 1.0;
 const double ActivityTimerDistance::MAX_DISTANCE = 100.0;
 
 boost::shared_ptr<ActivityTimerDistance> ActivityTimerDistance::getRandom() {
 	double rand_dist = common::Maths::getRandomDouble(MIN_DISTANCE, MAX_DISTANCE);
-	double rand_dec = rand_dist * common::Maths::getRandomDouble(MIN_DECREMENT_FRACTION, MAX_DECREMENT_FRACTION);
+	// scale decrement as percentage of distance
+
+	//double rand_dec = rand_dist * common::Maths::getRandomDouble(MIN_DECREMENT_FRACTION, MAX_DECREMENT_FRACTION);
+	double rand_dec = MIN_DECREMENT_FRACTION;
 	boost::shared_ptr<ActivityTimerDistance> rand_acttimer(new ActivityTimerDistance(rand_dist, rand_dec));
+
+	rand_acttimer->checkConstraints();
+	//std::cout<<"ActivityTimerDistance::getRandom: "<<*rand_acttimer<<std::endl;
 	return rand_acttimer;
 }
 
@@ -87,12 +95,29 @@ double ActivityTimerDistance::getDecrement() const {
 	return decrement;
 }
 
-void ActivityTimerDistance::reset(){
+void ActivityTimerDistance::reset() {
 	distance_remaining = distance;
 }
- std::ostream & ActivityTimerDistance::print(std::ostream & os)const{
-	std::cout<<"ActivityTimerDistance: "<<"distance="<<this->getDelay()<<" decrement="<<this->getDecrement()<<std::endl;
-	 return os;
+std::ostream & ActivityTimerDistance::print(std::ostream & os) const {
+	std::cout << "ActivityTimerDistance: " << "distance=" << this->getDelay() <<"/"<<this->getStartingDelay()<< " decrement=" << this->getDecrement()
+			<< std::endl;
+	return os;
+}
+
+bool ActivityTimerDistance::checkConstraints()const{
+	bool decrement_good = (this->getDecrement()<this->getStartingDelay());
+#ifdef ACTIVITYTIMERDISTANCE_DEBUG
+	if (decrement_good ==false){
+		std::cout<<"ActivityTimerDistance::checkConstraints: "<<this->getDecrement()<<">"<<this->getStartingDelay()<<"this->getDecrement()>this->getStartingDelay()"<<std::endl;
+	}
+#endif
+	bool delay_good = (this->getStartingDelay()>ActivityTimerDistance::MIN_DISTANCE);
+#ifdef ACTIVITYTIMERDISTANCE_DEBUG
+	if (delay_good ==false){
+		std::cout<<"ActivityTimerDistance::checkConstraints: "<<this->getStartingDelay()<<">"<<MIN_DISTANCE<<"this->getStartingDelay()>MIN_DISTANCE"<<std::endl;
+	}
+#endif
+	return decrement_good && delay_good;
 }
 }//NAMESPACE
 

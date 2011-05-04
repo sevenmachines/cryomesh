@@ -99,10 +99,12 @@ std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > ImpulseCollection::cle
 	}
 	int impulse_post_sz = impulses.size();
 
-	if (impulse_pre_sz > 0) {
-		std::cout << "ImpulseCollection::clearImpulses: " << "current: "
-				<< common::TimeKeeper::getTimeKeeper().getCycle() << " range: " << "(" << cycleStart << "," << cycleEnd
-				<< ") " << "deleted: " << impulse_pre_sz - impulse_post_sz <<" "<< *this << std::endl;
+	if (this->isDebugOn() == true) {
+		if (impulse_pre_sz > 0) {
+			std::cout << "ImpulseCollection::clearImpulses: " << "current: "
+					<< common::TimeKeeper::getTimeKeeper().getCycle() << " range: " << "(" << cycleStart << ","
+					<< cycleEnd << ") " << "deleted: " << impulse_pre_sz - impulse_post_sz << " " << *this << std::endl;
+		}
 	}
 	return cleared_impulses;
 }
@@ -161,10 +163,11 @@ std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > ImpulseCollection::cle
 	}
 	int impulse_post_sz = impulses.size();
 
-	std::cout << "ImpulseCollection::clearActiveImpulses: " << "current: "
-			<< common::TimeKeeper::getTimeKeeper().getCycle() << " range: " << "(" << cycleStart << "," << cycleEnd
-			<< ") " << "deleted: " << impulse_pre_sz - impulse_post_sz << std::endl;
-
+	if (this->isDebugOn() == true) {
+		std::cout << "ImpulseCollection::clearActiveImpulses: " << "current: "
+				<< common::TimeKeeper::getTimeKeeper().getCycle() << " range: " << "(" << cycleStart << "," << cycleEnd
+				<< ") " << "deleted: " << impulse_pre_sz - impulse_post_sz << std::endl;
+	}
 	return cleared_impulses;
 }
 

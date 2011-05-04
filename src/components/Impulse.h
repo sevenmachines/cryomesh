@@ -69,7 +69,7 @@ public:
 	 */
 	Impulse(const double max_y, const int length, const int delay,
 			boost::shared_ptr<ActivityTimerDistance>);
-
+	Impulse (const Impulse & obj);
 	/**
 	 * Destructor
 	 *

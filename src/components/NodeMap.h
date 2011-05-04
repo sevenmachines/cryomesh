@@ -38,7 +38,6 @@ public:
 	 * Update all entries in the nodemap
 	 */
 	virtual void update() {
-		std::cout<<"NodeMap::update: "<<this<<std::endl;
 		// forall in objects
 		{
 			std::map<boost::uuids::uuid, boost::shared_ptr<Node> >::iterator it_objects = objects.begin();

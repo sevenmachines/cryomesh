@@ -15,10 +15,12 @@ namespace cryomesh {
 
 namespace structures {
 
-Cluster::Cluster() {
+const double Cluster::SELF_CONNECTED_NODES_FRACTION = 0.1;
+
+Cluster::Cluster() : common::Spacial(true){
 }
 
-Cluster::Cluster(int nodeCount, int connectivity) {
+Cluster::Cluster(int nodeCount, int connectivity) : common::Spacial(true){
 	this->createNodes(nodeCount);
 	this->createConnectivity(connectivity);
 }
@@ -27,7 +29,7 @@ Cluster::~Cluster() {
 }
 
 void Cluster::update() {
-	std::cout<<"Cluster::update: "<<this<<std::endl;
+	//std::cout << "Cluster::update: " << this << std::endl;
 	// update nodes
 	nodes.update();
 	// update connections
@@ -63,13 +65,33 @@ void Cluster::updateConnectivity(const int connectivity, ValueTypeSpecifier asVa
 		const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator it_allnodes_end =
 				allnodes.end();
 		while (it_allnodes != it_allnodes_end) {
+
 			if (asValue == AsIncrement) {
 				for (int i = 0; i < connectivity; i++) {
 					// add connection
 					if (it_shufflednodes == it_shufflednodes_end) {
 						it_shufflednodes = shufflednodes.begin();
 					}
-					this->createConnection(it_allnodes->second, *it_shufflednodes, 1);
+
+					bool dont_self_connect = false;
+					bool same_node = it_allnodes->second->getUUID() == (*it_shufflednodes)->getUUID();
+					if (same_node == true && shufflednodes.size() > 1) {
+						dont_self_connect = common::Maths::getRandomBool(Cluster::SELF_CONNECTED_NODES_FRACTION);
+					}
+
+					if (same_node == true && dont_self_connect == false) {
+						this->createConnection(it_allnodes->second, *it_shufflednodes, 1);
+					} else if (same_node == true && dont_self_connect == true) {
+						// add connection
+						++it_shufflednodes;
+						if (it_shufflednodes == it_shufflednodes_end) {
+							it_shufflednodes = shufflednodes.begin();
+						}
+						this->createConnection(it_allnodes->second, *it_shufflednodes, 1);
+
+					} else {
+						this->createConnection(it_allnodes->second, *it_shufflednodes, 1);
+					}
 					++it_shufflednodes;
 				}
 
@@ -79,7 +101,25 @@ void Cluster::updateConnectivity(const int connectivity, ValueTypeSpecifier asVa
 					if (it_shufflednodes == it_shufflednodes_end) {
 						it_shufflednodes = shufflednodes.begin();
 					}
-					this->createConnection(it_allnodes->second, *it_shufflednodes, 1);
+
+					bool dont_self_connect = false;
+					bool same_node = it_allnodes->second->getUUID() == (*it_shufflednodes)->getUUID();
+					if (same_node == true && shufflednodes.size() > 1) {
+						dont_self_connect = common::Maths::getRandomBool(Cluster::SELF_CONNECTED_NODES_FRACTION);
+					}
+					if (same_node == true && dont_self_connect == false) {
+						this->createConnection(it_allnodes->second, *it_shufflednodes, 1);
+					} else if (same_node == true && dont_self_connect == true) {
+						// add connection
+						++it_shufflednodes;
+						if (it_shufflednodes == it_shufflednodes_end) {
+							it_shufflednodes = shufflednodes.begin();
+						}
+						this->createConnection(it_allnodes->second, *it_shufflednodes, 1);
+
+					} else {
+						this->createConnection(it_allnodes->second, *it_shufflednodes, 1);
+					}
 					++it_shufflednodes;
 				}
 
@@ -90,6 +130,7 @@ void Cluster::updateConnectivity(const int connectivity, ValueTypeSpecifier asVa
 }
 void Cluster::createConnection(boost::shared_ptr<components::Node> nodeStart,
 		boost::shared_ptr<components::Node> nodeEnd, int connectivity) {
+
 	for (int i = 0; i < connectivity; i++) {
 
 		boost::shared_ptr<components::Connection> tempcon(new components::Connection);
@@ -177,21 +218,21 @@ int Cluster::getActiveNodeCount(const int indicator) const {
 				all_nodes.end();
 		while (it_all_nodes != it_all_nodes_end) {
 			double temp_act = it_all_nodes->second->getActivity();
-		//	std::cout << "Cluster::getActiveNodeCount: " << "indicator: " << indicator << " temp_act: " << temp_act
+			//	std::cout << "Cluster::getActiveNodeCount: " << "indicator: " << indicator << " temp_act: " << temp_act
 			//		<< std::endl;
 			if (indicator > 0) {
 				if (temp_act > 0)
-			//		std::cout << "Cluster::getActiveNodeCount: " << "POS: " << temp_act << std::endl;
-				++positive_count;
+					//		std::cout << "Cluster::getActiveNodeCount: " << "POS: " << temp_act << std::endl;
+					++positive_count;
 			} else if (indicator < 0) {
 				if (temp_act < 0)
-			//		std::cout << "Cluster::getActiveNodeCount: " << "NEG: " << temp_act << std::endl;
-				++negative_count;
+					//		std::cout << "Cluster::getActiveNodeCount: " << "NEG: " << temp_act << std::endl;
+					++negative_count;
 			} else if (indicator == 0) {
 				//std::cout<<"Cluster::getActiveNodeCount: "<<""<<std::endl;
-				if (temp_act < 0 || temp_act>0)
+				if (temp_act < 0 || temp_act > 0)
 					//std::cout << "Cluster::getActiveNodeCount: " << "ANY: " << it_all_nodes->second->getActivity() << std::endl;
-				++count;
+					++count;
 			}
 			++it_all_nodes;
 		}

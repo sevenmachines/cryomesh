@@ -5,6 +5,8 @@
  *      Author: SevenMachines<SevenMachines@yahoo.co.uk>
  */
 
+#define NODE_DEBUG
+
 #include "Node.h"
 #include "Mesh.h"
 
@@ -115,6 +117,10 @@ boost::shared_ptr<Impulse> Node::addImpulse(boost::shared_ptr<Impulse> impulse) 
 	return temp_imp;
 }
 void Node::addImpulses(std::list<boost::shared_ptr<Impulse> > impulses) {
+# ifdef NODE_DEBUG
+	int impulses_to_add = impulses.size();
+	int node_pre_impulses_count = this->getImpulses().getSize();
+#endif
 	// forall in impulses
 	{
 		std::list<boost::shared_ptr<Impulse> >::iterator it_impulses = impulses.begin();
@@ -124,6 +130,12 @@ void Node::addImpulses(std::list<boost::shared_ptr<Impulse> > impulses) {
 			++it_impulses;
 		}
 	}
+# ifdef NODE_DEBUG
+	int node_post_impulses_count = this->getImpulses().getSize();
+	assert(node_post_impulses_count == node_pre_impulses_count+impulses_to_add);
+	std::cout << "Node::addImpulses: " << node_post_impulses_count << "=" << node_pre_impulses_count << "+"
+			<< impulses_to_add << std::endl;
+#endif
 }
 
 Node::ActivationState Node::checkActivationState() {
@@ -160,17 +172,37 @@ void Node::emitImpulse(bool positive) {
 		std::map<boost::uuids::uuid, boost::shared_ptr<Connection> >::const_iterator it_objs = objs.begin();
 		const std::map<boost::uuids::uuid, boost::shared_ptr<Connection> >::const_iterator it_objs_end = objs.end();
 		while (it_objs != it_objs_end) {
+			Connection & temp_connection = *(it_objs->second);
+#ifdef NODE_DEBUG
+			int pre_con_impulses = temp_connection.getImpulses().getSize();
+#endif
 			if (positive == true) {
-				boost::shared_ptr<Impulse> temp_pulse = this->getMutableEmittedImpulse();
-				it_objs->second->add(temp_pulse);
-				std::cout << "Node::emitImpulse: " << "Positive: " << *temp_pulse << std::endl;
+				boost::shared_ptr<Impulse> temp_pulse(new Impulse(*(this->getMutableEmittedImpulse())));
+				temp_connection.add(temp_pulse);
+				assert(temp_pulse->getUUID() != this->getEmittedImpulse()->getUUID());
 			} else {
-				boost::shared_ptr<Impulse> temp_pulse = this->getMutableEmittedImpulse();
+				boost::shared_ptr<Impulse> temp_pulse(new Impulse(*(this->getMutableEmittedImpulse())));
 				temp_pulse->invert();
-				std::cout << "Node::emitImpulse: " << "Negative: " << *temp_pulse << std::endl;
-				it_objs->second->add(temp_pulse);
+				temp_connection.add(temp_pulse);
+				assert(temp_pulse->getUUID() != this->getEmittedImpulse()->getUUID());
 			}
 			++it_objs;
+#ifdef NODE_DEBUG
+			int post_con_impulses = temp_connection.getImpulses().getSize();
+			assert(post_con_impulses == pre_con_impulses +1);
+
+			// forall in all_impulses
+			{
+				std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> >::const_iterator it_all_impulses =
+						temp_connection.getImpulses().getCollection().begin();
+				const std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> >::const_iterator it_all_impulses_end =
+						temp_connection.getImpulses().getCollection().end();
+				while (it_all_impulses != it_all_impulses_end) {
+					assert(it_all_impulses->second->getActivityTimer()->checkConstraints());
+					++it_all_impulses;
+				}
+			}
+#endif
 		}
 	}
 }
@@ -317,8 +349,7 @@ bool Node::isPrimaryInputAttachedNode() const {
 			const std::map<boost::uuids::uuid, boost::shared_ptr<Connection> >::const_iterator it_all_connections_end =
 					all_connections.end();
 			while (it_all_connections != it_all_connections_end && found_primary == false) {
-				int input_nodes_to_connection = it_all_connections->second->getConnector().getInputs().size();
-				if (input_nodes_to_connection == 0) {
+				if (it_all_connections->second->isPrimaryInputConnection() == true) {
 					found_primary = true;
 					found_connection = it_all_connections->second;
 				}
@@ -343,8 +374,7 @@ bool Node::isPrimaryOutputAttachedNode() const {
 			const std::map<boost::uuids::uuid, boost::shared_ptr<Connection> >::const_iterator it_all_connections_end =
 					all_connections.end();
 			while (it_all_connections != it_all_connections_end && found_primary == false) {
-				int output_nodes_to_connection = it_all_connections->second->getConnector().getOutputs().size();
-				if (output_nodes_to_connection == 0) {
+				if (it_all_connections->second->isPrimaryOutputConnection() == true) {
 					found_primary = true;
 					found_connection = it_all_connections->second;
 				}
@@ -445,24 +475,39 @@ std::ostream& operator<<(std::ostream & os, const Node & obj) {
 	if (obj.isPrimaryOutputAttachedNode()) {
 		ss << "(POUT) ";
 	}
-	os << "Node: " << ss.str() << "connections:" << obj.getConnector().getInputs().size() << ">"
-			<< obj.getConnector().getOutputs().size();
-	os << std::endl;
-	os << obj.getImpulses() << std::endl;
-	if (obj.getConnector().getInputs().size() > 0) {
-		os << "\t Input Connection: " << *(obj.getConnector().getInputs().begin()->second) << std::endl;
-	}
-	if (obj.getConnector().getOutputs().size() > 0) {
-		os << "\t Output Connection: " << *(obj.getConnector().getOutputs().begin()->second) << std::endl;
-	}
+	os << "Node: " << obj.getUUIDSummary() << " " << ss.str() << "connections:"
+			<< obj.getConnector().getInputs().size() << ">" << obj.getConnector().getOutputs().size() << " impulses: "
+			<< obj.getImpulses().getSize();
+
 	if (obj.isDebugOn() == true) {
-		os << std::endl;
-		os << obj.getImpulses() << std::endl;
+		if (obj.getImpulses().getSize() > 0) {
+			os << std::endl << obj.getImpulses();
+		}
+		//	os<<obj.getConnector()<<std::endl;
 		if (obj.getConnector().getInputs().size() > 0) {
-			os << "\t Input Connection: " << *(obj.getConnector().getInputs().begin()->second) << std::endl;
+			os << std::endl << "\t Input Connections: " << obj.getConnector().getInputs().size() << std::endl;
+			obj.printConnections(os, obj.getConnector().getInputs(), "\t\t");
 		}
 		if (obj.getConnector().getOutputs().size() > 0) {
-			os << "\t Output Connection: " << *(obj.getConnector().getOutputs().begin()->second) << std::endl;
+			os << std::endl << "\t Output Connections: " << obj.getConnector().getOutputs().size() << std::endl;
+			obj.printConnections(os, obj.getConnector().getOutputs(), "\t\t");
+		}
+	}
+	return os;
+}
+
+std::ostream & Node::printConnections(std::ostream & os,
+		const std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > & all_cons, const std::string formatter) const {
+	// forall in all_cons
+	{
+		int count = 1;
+		std::map<boost::uuids::uuid, boost::shared_ptr<Connection> >::const_iterator it_all_cons = all_cons.begin();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<Connection> >::const_iterator it_all_cons_end =
+				all_cons.end();
+		while (it_all_cons != it_all_cons_end) {
+			os << formatter << count << ": " << *(it_all_cons->second) << std::endl;
+			++count;
+			++it_all_cons;
 		}
 	}
 	return os;

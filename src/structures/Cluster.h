@@ -10,6 +10,8 @@
 
 #include "components/NodeMap.h"
 #include "components/ConnectionMap.h"
+#include "common/Spacial.h"
+
 #include <boost/uuid/uuid.hpp>
 #include <boost/shared_ptr.hpp>
 
@@ -19,6 +21,7 @@
 
 #include "common/Connector.h"
 #include "common/Tagged.h"
+#include "common/Debuggable.h"
 
 namespace cryomesh {
 
@@ -30,7 +33,7 @@ class Fibre;
  * A Cluster is a collection of self-contained nodes and connections along with an associated Mesh,
  * that can be connected up to one another
  */
-class Cluster: public common::Tagged {
+class Cluster: public common::Tagged, public common::Spacial , public common::Debuggable{
 public:
 
 	/**
@@ -173,6 +176,8 @@ public:
 	 *		The output stream
 	 */
 	friend std::ostream& operator<<(std::ostream & os, const Cluster & obj);
+
+	static const double SELF_CONNECTED_NODES_FRACTION;
 
 protected:
 

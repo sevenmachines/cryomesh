@@ -22,17 +22,15 @@ Bundle::~Bundle() {
 }
 
 void Bundle::update() {
-	std::cout<<"Bundle::update: "<<""<<std::endl;
 	// update the time
 	common::TimeKeeper::getTimeKeeper().update();
-	//update input primaries
-	this->updatePrimaryInputFibres();
-
-	// update all fibres
-	fibres.update();
 	// update all clusters
 	clusters.update();
 
+	// set up for future
+	// update all fibres
+		fibres.update();
+		this->updatePrimaryInputFibres();
 	//update output fibres
 	this->updatePrimaryOutputFibres();
 
@@ -336,6 +334,7 @@ void Bundle::updatePrimaryInputFibres() {
 			if (temp_fib != 0) {
 				// apply firing pattern to fibre
 				temp_fib->trigger(*pattern);
+				std::cout << "Bundle::updatePrimaryInputFibres: " << pattern->getString() << std::endl;
 			} else {
 				std::cout << "Bundle::updatePrimaryInputFibres: "
 						<< "WARNING: getPrimaryInputFibreByChannel returned null, ignoring..." << std::endl;
@@ -510,9 +509,9 @@ std::ostream & Bundle::printSearch(std::ostream & os, const boost::uuids::uuid &
 std::ostream& Bundle::print(std::ostream & os, const common::Loggable::LoggingDepth depth) const {
 	std::string tab;
 	if (depth == SUMMARY) {
-		os << std::endl << "SUMMARY **************************************" << std::endl<< std::endl;
+		os << std::endl << "SUMMARY **************************************" << std::endl << std::endl;
 	} else if (depth == MAX) {
-		os << std::endl << "MAX *******************************************" << std::endl<< std::endl;
+		os << std::endl << "MAX *******************************************" << std::endl << std::endl;
 	}
 	if (depth == SUMMARY || depth == MAX) {
 
@@ -528,7 +527,7 @@ std::ostream& Bundle::print(std::ostream & os, const common::Loggable::LoggingDe
 		os << this->getFibres() << std::endl;
 		// connecting fibres patterns
 	}
-	os << std::endl << "***********************************************" << std::endl<< std::endl;
+	os << std::endl << "***********************************************" << std::endl << std::endl;
 	return os;
 }
 
@@ -576,7 +575,7 @@ std::ostream& Bundle::printChannels(std::ostream & os) const {
 }
 
 std::ostream& operator<<(std::ostream & os, const Bundle & obj) {
-	std::cout<<"Bundle::operator <<: "<<""<<std::endl;
+	std::cout << "Bundle::operator <<: " << "" << std::endl;
 	return obj.print(os, common::Loggable::MAX);
 }
 

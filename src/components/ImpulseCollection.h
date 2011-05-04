@@ -20,6 +20,7 @@
 #include "dataobjects/DataObjectController.h"
 
 #include <boost/uuid/uuid.hpp>
+#include "common/Debuggable.h"
 #include <map>
 
 namespace cryomesh {
@@ -32,7 +33,7 @@ namespace components {
  *      A collection of Impulses that allows for Impulses to be held,
  *      'moved forward' in time, and summated in some way
  */
-class ImpulseCollection: public common::KeyMappedCollection<boost::uuids::uuid, Impulse>, public dataobjects::DataObjectController <unsigned long int, double>{
+class ImpulseCollection: public common::Debuggable, public common::KeyMappedCollection<boost::uuids::uuid, Impulse>, public dataobjects::DataObjectController <unsigned long int, double>{
 public:
 
 	enum Comparison {

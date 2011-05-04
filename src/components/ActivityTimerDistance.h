@@ -9,13 +9,14 @@
 #define ACTIVITYTIMERDISTANCE_H_
 
 #include "ActivityTimer.h"
+#include "common/Debuggable.h"
 #include <boost/shared_ptr.hpp>
 
 namespace cryomesh {
 
 namespace components {
 
-class ActivityTimerDistance: public ActivityTimer {
+class ActivityTimerDistance: public ActivityTimer , public common::Debuggable{
 public:
 
 	/**
@@ -129,6 +130,7 @@ public:
 	 * Reset the countdown
 	 */
 	void reset();
+	virtual bool checkConstraints()const;
 
 	/**
 	 * Get a random object

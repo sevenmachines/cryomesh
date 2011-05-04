@@ -181,6 +181,10 @@ public:
 
 	void connectInput(boost::shared_ptr<Node> node) ;
 	void connectOutput(boost::shared_ptr<Node> node) ;
+
+	bool isPrimaryInputConnection() const ;
+	bool isPrimaryOutputConnection() const ;
+
 	/**
 	 * To stream operator
 	 *

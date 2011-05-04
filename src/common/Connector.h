@@ -49,7 +49,7 @@ public:
 	 */
 	bool connectInput(const boost::shared_ptr<T> obj) {
 		bool this_success = false;
-	//	std::cout<<"connectInput: boost::shared_ptr<T>("<<minputs.size()<<"/"<<maxInputs<<")"<<std::endl;
+		//	std::cout<<"connectInput: boost::shared_ptr<T>("<<minputs.size()<<"/"<<maxInputs<<")"<<std::endl;
 		boost::shared_ptr<T> obj_returned = this->connect(obj, minputs, maxInputs);
 		if (obj_returned != 0) {
 			this_success = true;
@@ -567,7 +567,7 @@ public:
 	 *		The output stream
 	 */
 	friend std::ostream& operator<<(std::ostream & os, const Connector<U, T> & obj) {
-		os << "Connector<>:" << obj << std::endl;
+		os << "Connector<>:" << std::endl;
 		os << "\tInputs:" << std::endl;
 		// forall in minputs
 		{
@@ -576,7 +576,10 @@ public:
 			const typename std::map<boost::uuids::uuid, boost::shared_ptr<T> >::const_iterator it_minputs_end =
 					obj.getOutputs().end();
 			while (it_minputs != it_minputs_end) {
-				os << "\tUUID:" << common::Misc::print(os, it_minputs->first);
+				boost::shared_ptr<T> temp_obj = it_minputs->second;
+				if (temp_obj != 0) {
+					os << "\tUUID:" << temp_obj->getUUIDString();
+				}
 				++it_minputs;
 			}
 		}
@@ -589,7 +592,10 @@ public:
 			const typename std::map<boost::uuids::uuid, boost::shared_ptr<T> >::const_iterator it_moutputs_end =
 					obj.getOutputs().end();
 			while (it_moutputs != it_moutputs_end) {
-				os << "\tUUID:" << common::Misc::print(os, it_moutputs->first);
+				boost::shared_ptr<T> temp_obj = it_moutputs->second;
+				if (temp_obj != 0) {
+					os << "\tUUID:" << temp_obj->getUUIDString();
+				}
 				++it_moutputs;
 			}
 		}
@@ -623,12 +629,12 @@ protected:
 				std::cout << "Connector::connect: " << "Warning, ignoring attempt to add to a full container. ("
 						<< objs.size() << " of " << max_connections << std::endl;
 			}
-		}else{
+		} else {
 			objs[temp_id] = obj;
 
 		}
 		return obj;
-}
+	}
 
 	/**
 	 * Disconnect an object using the supplied map

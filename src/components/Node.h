@@ -305,6 +305,8 @@ public:
 	 */
 	friend std::ostream& operator<<(std::ostream & os, const Node & obj);
 
+	std::ostream & printConnections(std::ostream & os, const std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > & all_cons, const std::string formatter="")const ;
+
 	// STATICS
 
 	/**
