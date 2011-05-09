@@ -23,8 +23,9 @@ boost::shared_ptr<ActivityTimerDistance> ActivityTimerDistance::getRandom() {
 	double rand_dist = common::Maths::getRandomDouble(MIN_DISTANCE, MAX_DISTANCE);
 	// scale decrement as percentage of distance
 
-	//double rand_dec = rand_dist * common::Maths::getRandomDouble(MIN_DECREMENT_FRACTION, MAX_DECREMENT_FRACTION);
-	double rand_dec = MIN_DECREMENT_FRACTION;
+	double min_decrement = MIN_DECREMENT_FRACTION * rand_dist;
+	double max_decrement = MAX_DECREMENT_FRACTION * rand_dist;
+	double rand_dec = common::Maths::getRandomDouble(min_decrement, max_decrement);
 	boost::shared_ptr<ActivityTimerDistance> rand_acttimer(new ActivityTimerDistance(rand_dist, rand_dec));
 
 	rand_acttimer->checkConstraints();
@@ -108,7 +109,7 @@ bool ActivityTimerDistance::checkConstraints()const{
 	bool decrement_good = (this->getDecrement()<this->getStartingDelay());
 #ifdef ACTIVITYTIMERDISTANCE_DEBUG
 	if (decrement_good ==false){
-		std::cout<<"ActivityTimerDistance::checkConstraints: "<<this->getDecrement()<<">"<<this->getStartingDelay()<<"this->getDecrement()>this->getStartingDelay()"<<std::endl;
+		std::cout<<"ActivityTimerDistance::checkConstraints: "<<this->getDecrement()<<"<"<<this->getStartingDelay()<<"this->getDecrement()>this->getStartingDelay()"<<std::endl;
 	}
 #endif
 	bool delay_good = (this->getStartingDelay()>ActivityTimerDistance::MIN_DISTANCE);

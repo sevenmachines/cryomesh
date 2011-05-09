@@ -47,6 +47,12 @@ public:
 		Positive, Negative, None
 	};
 
+	enum RecoverySetting{
+		CLEAR_ALL_IMPULSES =1,
+		CLEAR_ACTIVE_IMPULSES =2,
+		DEACTIVATE_DURING_RECOVERY=4
+	};
+
 	/**
 	 * Contructor
 	 *
@@ -390,6 +396,8 @@ protected:
 	 *
 	 */
 	virtual void updatePosition();
+
+	virtual void enterRecovery( const int recovery_settings = CLEAR_ALL_IMPULSES);
 
 private:
 	/**

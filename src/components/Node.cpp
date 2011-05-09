@@ -90,16 +90,38 @@ Node::ActivationState Node::checkFire() {
 	//and emit impulse if required
 	const ActivationState act_state = this->checkActivationState();
 	if (act_state == Positive) {
-		std::cout << "Node::checkFire: " << "FIRE_POSITIVE" << std::endl;
+		//std::cout << "Node::checkFire: " << "FIRE_POSITIVE" << std::endl;
 		this->emitImpulsePositive();
-
+		this->enterRecovery();
 	} else if (act_state == Negative) {
-		std::cout << "Node::checkFire: " << "FIRE_NEGATIVE" << std::endl;
+		//std::cout << "Node::checkFire: " << "FIRE_NEGATIVE" << std::endl;
 		this->emitImpulseNegative();
+		this->enterRecovery();
 	}
 	return act_state;
 
 }
+
+void Node::enterRecovery(const int recovery_settings) {
+#ifdef NODE_DEBUG
+	int pre_impulses_size = impulses.getSize();
+#endif
+	if (recovery_settings & CLEAR_ALL_IMPULSES){
+		impulses.clear();
+	} else if (recovery_settings & CLEAR_ACTIVE_IMPULSES){
+		impulses.clearActiveImpulses(common::TimeKeeper::getTimeKeeper().getCycle());
+	}
+
+#ifdef NODE_DEBUG
+	int post_impulses_size = impulses.getSize();
+	if (recovery_settings & CLEAR_ALL_IMPULSES){
+		assert(post_impulses_size==0);
+	} else if (recovery_settings & CLEAR_ACTIVE_IMPULSES){
+		assert(post_impulses_size<pre_impulses_size);
+	}
+#endif
+}
+
 void Node::updateImpulses() {
 	//std::cout<<"Node::updateImpulses: "<<"cycle:"<<common::TimeKeeper::getTimeKeeper().getCycle()<<" impulses:"<<impulses.getSize()<<std::endl;
 	// drop all impulses from collection before this cycle
