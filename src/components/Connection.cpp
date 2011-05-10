@@ -80,14 +80,19 @@ common::Connector<Connection, Node> & Connection::getMutableConnector() {
 boost::shared_ptr<Impulse> Connection::add(boost::shared_ptr<Impulse> impulse) {
 #ifdef CONNECTION_DEBUG
 	int pre_impulses = this->impulses.getSize();
+	bool impulse_found = this->impulses.getObjectByKey(impulse->getUUID()) != 0;
 #endif
 	// set the timer variables of added impulse
 	impulse->setActivityTimer(this->activityTimer);
 	//std::cout << "Connection::add: " << *impulse << std::endl;
-	boost::shared_ptr< Impulse > added_impulse = this->impulses.add(impulse);
+	boost::shared_ptr<Impulse> added_impulse = this->impulses.add(impulse);
 #ifdef CONNECTION_DEBUG
 	int post_impulses = this->impulses.getSize();
-	assert(post_impulses == pre_impulses +1);
+	if (impulse_found != true) {
+		assert(post_impulses == pre_impulses +1);
+	} else {
+		assert(post_impulses == pre_impulses);
+	}
 #endif
 	return added_impulse;
 }

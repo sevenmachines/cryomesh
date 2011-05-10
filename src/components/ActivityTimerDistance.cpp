@@ -61,6 +61,9 @@ bool ActivityTimerDistance::operator>(const ActivityTimerDistance & obj) const {
 
 ActivityTimerDistance & ActivityTimerDistance::operator--() {
 	this->distance_remaining -= this->decrement;
+	if (distance_remaining <0){
+		distance_remaining=0;
+	}
 	return *this;
 }
 
