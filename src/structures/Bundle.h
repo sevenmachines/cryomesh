@@ -106,19 +106,6 @@ public:
 	/**
 	 * Helper access function for specialised connection
 	 *
-	 * @param const Fibre::FibreType & type
-	 * 		Type of fibre connection to make
-	 *	@param  int width
-	 *		Width of fibre to create
-	 *
-	 * @return
-	 * 		The new fibre created, possible null
-	 */
-	virtual boost::shared_ptr<Fibre> connectPrimaryInputCluster(boost::uuids::uuid clusterUUID, int fibreWidth);
-
-	/**
-	 * Helper access function for specialised connection
-	 *
 	 *	@param boost::uuids::uuid
 	 *		PatternChannel to map the fibre to
 	 * @param const Fibre::FibreType & type
@@ -130,22 +117,12 @@ public:
 	virtual boost::shared_ptr<Fibre> connectPrimaryOutputCluster(boost::uuids::uuid patchanid,
 			boost::uuids::uuid clusterUUID);
 
-	/**
-	 * Helper access function for specialised connection
-	 *
-	 * @param const Fibre::FibreType & type
-	 * 		Type of fibre connection to make
-	 *	@param  int width
-	 *		Width of fibre to create
-	 *	@param boost::uuids::uuid
-	 *		PatternChannel to map the fibre to
-	 *
-	 * @return
-	 * 		The new fibre created, possible null
-	 */
-	virtual boost::shared_ptr<Fibre> connectPrimaryOutputCluster(boost::uuids::uuid clusterUUID, int fibreWidth);
+	virtual std::vector<boost::shared_ptr< Fibre > > autoConnectPrimaryInputClusters(std::vector<boost::shared_ptr<Cluster> >  list);
+	virtual std::vector<boost::shared_ptr< Fibre > > autoConnectPrimaryOutputClusters(std::vector<boost::shared_ptr<Cluster> >  list);
+	virtual std::vector<boost::shared_ptr< state::PatternChannel > > getDisconnectedRealInputPatternChannels();
+	virtual std::vector<boost::shared_ptr< state::PatternChannel > > getDisconnectedRealOutputPatternChannels();
 
-	/**
+/**
 	 * Helper access function for specialised connection
 	 *
 	 * @param const Fibre::FibreType & type
@@ -252,7 +229,8 @@ public:
 	 * @return std::map<boost::uuids::uuid, boost::uuids::uuid>
 	 * 	The map of fibres to their associated pattern channels
 	 */
-	const std::map<boost::uuids::uuid, boost::uuids::uuid> & getFibrePatternChannelMap() const ;
+	const std::map<boost::uuids::uuid, boost::uuids::uuid> & getRealFibrePatternChannelMap() const ;
+	const std::map<boost::uuids::uuid, boost::uuids::uuid> & getActualFibrePatternChannelMap() const ;
 
 	/**
 	 * Get the Statistician
@@ -269,7 +247,7 @@ public:
 	 * @return double
 	 * 	The last calculated energy
 	 */
-	double getEnergy()const;
+	double getEnergy() const;
 
 	/**
 	 * Run a system structure check
@@ -298,7 +276,7 @@ public:
 	/**
 	 * Print the bundle to stream
 	 */
-	std::ostream& print(std::ostream & os, const common::Loggable::LoggingDepth depth=SUMMARY) const ;
+	std::ostream& print(std::ostream & os, const common::Loggable::LoggingDepth depth = SUMMARY) const ;
 
 	/**
 	 * Print the channels to stream
@@ -306,17 +284,17 @@ public:
 	std::ostream& printChannels(std::ostream & os) const;
 
 	/**
-		 * To stream operator
-		 *
-		 *	@param std::ostream & os
-		 *		The output stream
-		 *	@param const Bundle & obj
-		 *		The object to stream
-		 *
-		 *	@return std::ostream &
-		 *		The output stream
-		 */
-		friend std::ostream& operator<<(std::ostream & os, const Bundle & obj);
+	 * To stream operator
+	 *
+	 *	@param std::ostream & os
+	 *		The output stream
+	 *	@param const Bundle & obj
+	 *		The object to stream
+	 *
+	 *	@return std::ostream &
+	 *		The output stream
+	 */
+	friend std::ostream& operator<<(std::ostream & os, const Bundle & obj);
 protected:
 
 	/**
@@ -428,20 +406,27 @@ private:
 	double energy;
 
 	/**
-	 * Mapping of fibre uuid to a corresponding pattern channel
+	 * Mapping of fibre uuid to a corresponding real pattern channel
 	 *
 	 * @var std::map<boost::uuids::uuid, boost::uuids::uuid>
 	 */
-	std::map<boost::uuids::uuid, boost::uuids::uuid> fibrePatternChannelMap;
+	std::map<boost::uuids::uuid, boost::uuids::uuid> realFibrePatternChannelMap;
 
-	const boost::shared_ptr<state::PatternChannel> getRealPrimaryInputChannelByFibre(const boost::uuids::uuid fibre_uuid);
-	const boost::shared_ptr<state::PatternChannel> getRealPrimaryOutputChannelByFibre(const boost::uuids::uuid fibre_uuid) ;
-	const boost::shared_ptr<state::PatternChannel> getActualPrimaryInputChannelByFibre(const boost::uuids::uuid fibre_uuid);
-	const boost::shared_ptr<state::PatternChannel> getActualPrimaryOutputChannelByFibre(const boost::uuids::uuid fibre_uuid) ;
-	const boost::shared_ptr<state::PatternChannel> getRealPrimaryInputChannelByFibre(const boost::uuids::uuid fibre_uuid)const ;
-	const boost::shared_ptr<state::PatternChannel> getRealPrimaryOutputChannelByFibre(const boost::uuids::uuid fibre_uuid)const  ;
-	const boost::shared_ptr<state::PatternChannel> getActualPrimaryInputChannelByFibre(const boost::uuids::uuid fibre_uuid)const ;
-	const 	boost::shared_ptr<state::PatternChannel> getActualPrimaryOutputChannelByFibre(const boost::uuids::uuid fibre_uuid) const ;
+	/**
+	 * Mapping of fibre uuid to a corresponding real pattern channel
+	 *
+	 * @var std::map<boost::uuids::uuid, boost::uuids::uuid>
+	 */
+	std::map<boost::uuids::uuid, boost::uuids::uuid> actualFibrePatternChannelMap;
+
+	const boost::shared_ptr<state::PatternChannel> getRealPrimaryInputChannelByFibre(
+			const boost::uuids::uuid fibre_uuid)const;
+	const boost::shared_ptr<state::PatternChannel> getRealPrimaryOutputChannelByFibre(
+			const boost::uuids::uuid fibre_uuid)const;
+	const boost::shared_ptr<state::PatternChannel> getActualPrimaryInputChannelByFibre(
+			const boost::uuids::uuid fibre_uuid) const;
+	const boost::shared_ptr<state::PatternChannel> getActualPrimaryOutputChannelByFibre(
+			const boost::uuids::uuid fibre_uuid)const;
 
 	/**
 	 * Helper method to take a uuid and find its correspondingly mapped  object
@@ -453,7 +438,7 @@ private:
 	 * @return boost::shared_ptr<Fibre>
 	 * 	The input  Fibre object the input PatternChannel with this uuid is mapped to, null if not found
 	 */
-	const boost::shared_ptr<Fibre> getPrimaryInputFibreByChannel(const boost::uuids::uuid pattern_channel_uuid)const;
+	const boost::shared_ptr<Fibre> getPrimaryInputFibreByRealChannel(const boost::uuids::uuid pattern_channel_uuid) const;
 
 	/**
 	 * Helper method to take a uuid and find its correspondingly mapped  object
@@ -465,8 +450,9 @@ private:
 	 * @return boost::shared_ptr<Fibre>
 	 * 	The output  Fibre object the output PatternChannel with this uuid is mapped to, null if not found
 	 */
-	const boost::shared_ptr<Fibre> getPrimaryOutputFibreByChannel(const boost::uuids::uuid pattern_channel_uuid)const;
-
+	const boost::shared_ptr<Fibre> getPrimaryOutputFibreByRealChannel(const boost::uuids::uuid pattern_channel_uuid) const;
+	const boost::shared_ptr<Fibre> getPrimaryInputFibreByActualChannel(const boost::uuids::uuid pattern_channel_uuid) const;
+	const boost::shared_ptr<Fibre> getPrimaryOutputFibreByActualChannel(const boost::uuids::uuid pattern_channel_uuid) const;
 	/**
 	 * Helper method to take a uuid and find its correspondingly mapped  object
 	 * Take an channel uuid and find the Fibre its mapped to inside the supplied map
@@ -479,7 +465,7 @@ private:
 	 * @return boost::shared_ptr<Fibre>
 	 * 	The Fibre object the PatternChannel with this uuid is mapped to, null if not found
 	 */
-	const boost::shared_ptr<Fibre> getPrimaryFibreByChannel(const boost::uuids::uuid id, const FibreMap & map)const;
+	const boost::shared_ptr<Fibre> getPrimaryFibreByChannel(const boost::uuids::uuid id, const FibreMap & map, const std::map<boost::uuids::uuid, boost::uuids::uuid> & fibrepattern_channelmap) const;
 
 	/**
 	 * Helper method to take a uuid and find its correspondingly mapped  object
@@ -493,8 +479,8 @@ private:
 	 * @return boost::shared_ptr<PatternChannel>
 	 * 	The PatternChannel object the Fibre with this uuid is mapped to, null if not found
 	 */
-	const 	boost::shared_ptr<state::PatternChannel> getPrimaryChannelByFibre(const boost::uuids::uuid id,
-			const state::PatternChannelMap & map)const ;
+	const boost::shared_ptr<state::PatternChannel> getPrimaryChannelByFibre(const boost::uuids::uuid id,
+			const state::PatternChannelMap & map, const std::map<boost::uuids::uuid, boost::uuids::uuid> & fibrepattern_channelmap) const ;
 };
 
 }
