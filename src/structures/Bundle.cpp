@@ -35,10 +35,13 @@ void Bundle::update() {
 	//update output fibres
 	this->updatePrimaryOutputFibres();
 
-	// TODO do evolution things
 	// match all output fibres pattern channels to expected pattern channels
+	this->setEnergy(this->matchOutputChannelsSum());
 	// set available energy for each bundles mesh warping
+	clusters.updateClusterEnergies(this->getEnergy());
 	// warp bundles mesh
+	clusters.warpClusterMeshes();
+
 	// TODO do things with storing output results from channels
 
 	// TODO Debugging things
@@ -404,23 +407,22 @@ double Bundle::matchOutputChannelsSum() const {
 			boost::shared_ptr<state::PatternChannel> real_out_channel = this->getRealPrimaryOutputChannelByFibre(
 					it_all_output_fibres->second->getUUID());
 			boost::shared_ptr<state::PatternChannel> actual_out_channel = this->getActualPrimaryOutputChannelByFibre(
-								it_all_output_fibres->second->getUUID());
-			double channel_match = actual_out_channel->matchGlobally(*real_out_channel);
-			sum += channel_match;
+					it_all_output_fibres->second->getUUID());
+			if ( real_out_channel !=0 ){
+				if (actual_out_channel !=0){
+					double channel_match = actual_out_channel->matchGlobally(*real_out_channel);
+								sum += channel_match;
+				}else{
+					std::cout<<"Bundle::matchOutputChannelsSum: "<<"ERROR: Actual Output Channel is Null..."<<std::endl;
+				}
+			}else{
+				std::cout<<"Bundle::matchOutputChannelsSum: "<<"ERROR: Real Output Channel is Null..."<<std::endl;
+			}
+
 			++it_all_output_fibres;
 		}
 	}
 	return sum;
-}
-
-void Bundle::setClusterEnergies() {
-	std::cout << "Bundle::setClusterEnergies: " << "TODO" << std::endl;
-	assert(false);
-}
-
-void Bundle::warpClusterMeshes() {
-	std::cout << "Bundle::warpClusterMeshes: " << "TODO" << std::endl;
-	assert(false);
 }
 
 void Bundle::setEnergy(double d) {
@@ -440,10 +442,12 @@ void Bundle::updateStatistician() {
 	}
 }
 
-const boost::shared_ptr<state::PatternChannel> Bundle::getRealPrimaryInputChannelByFibre(const boost::uuids::uuid fibre_uuid) {
+const boost::shared_ptr<state::PatternChannel> Bundle::getRealPrimaryInputChannelByFibre(
+		const boost::uuids::uuid fibre_uuid) {
 	return this->getPrimaryChannelByFibre(fibre_uuid, realInputChannelsMap);
 }
-const boost::shared_ptr<state::PatternChannel> Bundle::getRealPrimaryOutputChannelByFibre(const boost::uuids::uuid fibre_uuid) {
+const boost::shared_ptr<state::PatternChannel> Bundle::getRealPrimaryOutputChannelByFibre(
+		const boost::uuids::uuid fibre_uuid) {
 	return this->getPrimaryChannelByFibre(fibre_uuid, realOutputChannelsMap);
 }
 const boost::shared_ptr<state::PatternChannel> Bundle::getActualPrimaryInputChannelByFibre(
@@ -455,14 +459,16 @@ const boost::shared_ptr<state::PatternChannel> Bundle::getActualPrimaryOutputCha
 	return this->getPrimaryChannelByFibre(fibre_uuid, actualOutputChannelsMap);
 }
 
-const boost::shared_ptr<state::PatternChannel> Bundle::getRealPrimaryInputChannelByFibre(const boost::uuids::uuid fibre_uuid)const  {
+const boost::shared_ptr<state::PatternChannel> Bundle::getRealPrimaryInputChannelByFibre(
+		const boost::uuids::uuid fibre_uuid) const {
 	return this->getPrimaryChannelByFibre(fibre_uuid, realInputChannelsMap);
 }
-const boost::shared_ptr<state::PatternChannel> Bundle::getRealPrimaryOutputChannelByFibre(const boost::uuids::uuid fibre_uuid)const  {
+const boost::shared_ptr<state::PatternChannel> Bundle::getRealPrimaryOutputChannelByFibre(
+		const boost::uuids::uuid fibre_uuid) const {
 	return this->getPrimaryChannelByFibre(fibre_uuid, realOutputChannelsMap);
 }
 const boost::shared_ptr<state::PatternChannel> Bundle::getActualPrimaryInputChannelByFibre(
-		const boost::uuids::uuid fibre_uuid)const  {
+		const boost::uuids::uuid fibre_uuid) const {
 	return this->getPrimaryChannelByFibre(fibre_uuid, actualInputChannelsMap);
 }
 const boost::shared_ptr<state::PatternChannel> Bundle::getActualPrimaryOutputChannelByFibre(
@@ -470,13 +476,13 @@ const boost::shared_ptr<state::PatternChannel> Bundle::getActualPrimaryOutputCha
 	return this->getPrimaryChannelByFibre(fibre_uuid, actualOutputChannelsMap);
 }
 
-const boost::shared_ptr<Fibre> Bundle::getPrimaryInputFibreByChannel(const boost::uuids::uuid pattern_channel_uuid) const{
+const boost::shared_ptr<Fibre> Bundle::getPrimaryInputFibreByChannel(const boost::uuids::uuid pattern_channel_uuid) const {
 	//std::cout << "Bundle::getPrimaryInputFibreByChannel: " << "" << std::endl;
 	//	this->printSearch<state::PatternChannel> (std::cout, pattern_channel_uuid, inputChannelsMap.getCollection());
 	//this->printSearch<Fibre> (std::cout, pattern_channel_uuid, inputFibres.getCollection());
 	return this->getPrimaryFibreByChannel(pattern_channel_uuid, inputFibres);
 }
-const boost::shared_ptr<Fibre> Bundle::getPrimaryOutputFibreByChannel(const boost::uuids::uuid pattern_channel_uuid) const{
+const boost::shared_ptr<Fibre> Bundle::getPrimaryOutputFibreByChannel(const boost::uuids::uuid pattern_channel_uuid) const {
 	//std::cout << "Bundle::getPrimaryOutputFibreByChannel: " << "" << std::endl;
 	//this->printSearch<Fibre> (std::cout, pattern_channel_uuid, outputFibres.getCollection());
 
@@ -533,7 +539,7 @@ const boost::shared_ptr<Fibre> Bundle::getPrimaryFibreByChannel(const boost::uui
 	return found_fibre;
 }
 const boost::shared_ptr<state::PatternChannel> Bundle::getPrimaryChannelByFibre(const boost::uuids::uuid id,
-		const state::PatternChannelMap & map)const {
+		const state::PatternChannelMap & map) const {
 	boost::uuids::uuid pattern_channel_id;
 	boost::shared_ptr<state::PatternChannel> found_channel;
 
@@ -558,7 +564,7 @@ const boost::shared_ptr<state::PatternChannel> Bundle::getPrimaryChannelByFibre(
 
 template<class T>
 std::ostream & Bundle::printSearch(std::ostream & os, const boost::uuids::uuid & uuid,
-		const std::map<boost::uuids::uuid,  boost::shared_ptr<T> > & map)const  {
+		const std::map<boost::uuids::uuid, boost::shared_ptr<T> > & map) const {
 	os << uuid << " : " << "{";
 	// forall in temp_map
 	{

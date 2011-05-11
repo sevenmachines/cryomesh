@@ -17,10 +17,12 @@ namespace structures {
 
 const double Cluster::SELF_CONNECTED_NODES_FRACTION = 0.1;
 
-Cluster::Cluster() : common::Spacial(true){
+Cluster::Cluster() :
+	common::Spacial(true) , energy(0){
 }
 
-Cluster::Cluster(int nodeCount, int connectivity) : common::Spacial(true){
+Cluster::Cluster(int nodeCount, int connectivity) :
+	common::Spacial(true) , energy(0){
 	this->createNodes(nodeCount);
 	this->createConnectivity(connectivity);
 }
@@ -34,6 +36,17 @@ void Cluster::update() {
 	nodes.update();
 	// update connections
 	connections.update();
+}
+
+double Cluster::getEnergy() const {
+	return energy;
+}
+void Cluster::setEnergy(double total_energy) {
+	energy = total_energy;
+}
+
+void Cluster::warpMesh() {
+	std::cout << "Cluster::warpMesh: " << "TODO" << std::endl;
 }
 
 void Cluster::createNodes(const int number) {

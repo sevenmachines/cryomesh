@@ -340,16 +340,6 @@ protected:
 	virtual double matchOutputChannelsSum() const;
 
 	/**
-	 * For all clusters, calculate the allocation of the overall energy
-	 */
-	virtual void setClusterEnergies();
-
-	/**
-	 * Warp all the meshes of all the clusters
-	 */
-	virtual void warpClusterMeshes();
-
-	/**
 	 * Update the statistician if debugging is enabled
 	 */
 	virtual void updateStatistician();

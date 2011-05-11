@@ -68,6 +68,9 @@ public:
 	 * Update all elements
 	 */
 	void update();
+	void updateEnergy(double total_energy);
+
+	void warpMesh() ;
 
 	/**
 	 * Create a number of nodes in the cluster
@@ -164,6 +167,9 @@ public:
 	 */
 	int getLiveNodeCount() const;
 
+	double getEnergy()const;
+	void setEnergy(double d);
+
 	/**
 	 * To stream operator
 	 *
@@ -203,6 +209,8 @@ protected:
 			boost::shared_ptr<components::Node> nodeEnd, int connectivity = 1);
 
 private:
+	double energy;
+
 	/**
 	 * All the nodes of this cluster stored in a NodeMap
 	 *
