@@ -27,8 +27,8 @@ void Statistician::update() {
 	inputFibresCount = bundle.getInputFibres().getSize();
 	outputFibresCount = bundle.getOutputFibres().getSize();
 	normalFibresCount = bundle.getFibres().getSize();
-	inputChannelsCount = bundle.getInputChannelsMap().getSize();
-	outputChannelsCount = bundle.getOutputChannelsMap().getSize();
+	inputChannelsCount = bundle.getRealInputChannelsMap().getSize();
+	outputChannelsCount = bundle.getRealOutputChannelsMap().getSize();
 
 }
 

@@ -278,9 +278,9 @@ void Creator::loadData(std::string datafile) {
 	// map inputs
 	{
 		std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_chans =
-				bundle->getInputChannelsMap().begin();
+				bundle->getRealInputChannelsMap().begin();
 		const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_chans_end =
-				bundle->getInputChannelsMap().end();
+				bundle->getRealInputChannelsMap().end();
 		while (it_chans != it_chans_end) {
 			patternChannelIDMap[it_chans->second->getRefID()] = it_chans->first;
 			++it_chans;
@@ -290,9 +290,9 @@ void Creator::loadData(std::string datafile) {
 	// map outputs
 	{
 		std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_chans =
-				bundle->getOutputChannelsMap().begin();
+				bundle->getRealOutputChannelsMap().begin();
 		const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_chans_end =
-				bundle->getOutputChannelsMap().end();
+				bundle->getRealOutputChannelsMap().end();
 		while (it_chans != it_chans_end) {
 			patternChannelIDMap[it_chans->second->getRefID()] = it_chans->first;
 			++it_chans;

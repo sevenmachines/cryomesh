@@ -215,20 +215,36 @@ public:
 	FibreMap & getMutableOutputFibres();
 
 	/**
-	 * Get the input pattern channels of this bundle
+	 * Get the real input pattern channels of this bundle
 	 *
 	 * @return PatternChannelMap
-	 * 	The map of input pattern channels of this bundle
+	 * 	The map of real input pattern channels of this bundle
 	 */
-	const state::PatternChannelMap & getInputChannelsMap() const;
+	const state::PatternChannelMap & getRealInputChannelsMap() const;
 
 	/**
-	 * Get the output pattern channels of this bundle
+	 * Get the real output pattern channels of this bundle
 	 *
 	 * @return PatternChannelMap
-	 * 	The map of output pattern channels of this bundle
+	 * 	The map of real output pattern channels of this bundle
 	 */
-	const state::PatternChannelMap & getOutputChannelsMap() const;
+	const state::PatternChannelMap & getRealOutputChannelsMap() const;
+
+	/**
+	 * Get the actual input pattern channels of this bundle
+	 *
+	 * @return PatternChannelMap
+	 * 	The map of actual input pattern channels of this bundle
+	 */
+	const state::PatternChannelMap & getActualInputChannelsMap() const;
+
+	/**
+	 * Get the real output pattern channels of this bundle
+	 *
+	 * @return PatternChannelMap
+	 * 	The map of actual output pattern channels of this bundle
+	 */
+	const state::PatternChannelMap & getActualOutputChannelsMap() const;
 
 	/**
 	 * Get the map of fibres to their associated pattern channels
@@ -246,6 +262,14 @@ public:
 	 */
 	const boost::shared_ptr<utilities::Statistician> getStatistician() const;
 	boost::shared_ptr<utilities::Statistician> getMutableStatistician();
+
+	/**
+	 * Get the last calculated energy of the bundle
+	 *
+	 * @return double
+	 * 	The last calculated energy
+	 */
+	double getEnergy()const;
 
 	/**
 	 * Run a system structure check
@@ -307,16 +331,43 @@ protected:
 	virtual void updatePrimaryOutputFibres();
 
 	/**
+	 * Compare the output channels of primary output fibres to expected output
+	 * channel patterns.
+	 *
+	 * @return double
+	 * 	The double represesenting the accumulated 'energy' of all matches
+	 */
+	virtual double matchOutputChannelsSum() const;
+
+	/**
+	 * For all clusters, calculate the allocation of the overall energy
+	 */
+	virtual void setClusterEnergies();
+
+	/**
+	 * Warp all the meshes of all the clusters
+	 */
+	virtual void warpClusterMeshes();
+
+	/**
 	 * Update the statistician if debugging is enabled
 	 */
 	virtual void updateStatistician();
+
+	/**
+	 * Set the energy of the bundle
+	 *
+	 * @param double
+	 * 	The energy to set
+	 */
+	void setEnergy(double d);
 
 	/**
 	 * Print out a uuid search
 	 */
 	template<class T>
 	std::ostream & printSearch(std::ostream & os, const boost::uuids::uuid & uuid,
-			const std::map<boost::uuids::uuid, boost::shared_ptr<T> > & map);
+			const std::map<boost::uuids::uuid, boost::shared_ptr<T> > & map) const;
 
 private:
 
@@ -335,18 +386,32 @@ private:
 	FibreMap fibres;
 
 	/**
-	 * Map of all the input channels to this bundle
+	 * Map of all the real input channels to this bundle
 	 *
 	 * @var PatternChannelMap
 	 */
-	state::PatternChannelMap inputChannelsMap;
+	state::PatternChannelMap realInputChannelsMap;
 
 	/**
-	 * Map of all the output channels to this bundle
+	 * Map of all the real output channels to this bundle
 	 *
 	 * @var PatternChannelMap
 	 */
-	state::PatternChannelMap outputChannelsMap;
+	state::PatternChannelMap realOutputChannelsMap;
+
+	/**
+	 * Map of all the actual input channels to this bundle
+	 *
+	 * @var PatternChannelMap
+	 */
+	state::PatternChannelMap actualInputChannelsMap;
+
+	/**
+	 * Map of all the actual output channels to this bundle
+	 *
+	 * @var PatternChannelMap
+	 */
+	state::PatternChannelMap actualOutputChannelsMap;
 
 	/**
 	 * Map of all the input fibres to the bundle
@@ -368,11 +433,25 @@ private:
 	boost::shared_ptr<utilities::Statistician> statistician;
 
 	/**
+	 * Last energy calculation of the output channel matching
+	 */
+	double energy;
+
+	/**
 	 * Mapping of fibre uuid to a corresponding pattern channel
 	 *
 	 * @var std::map<boost::uuids::uuid, boost::uuids::uuid>
 	 */
 	std::map<boost::uuids::uuid, boost::uuids::uuid> fibrePatternChannelMap;
+
+	const boost::shared_ptr<state::PatternChannel> getRealPrimaryInputChannelByFibre(const boost::uuids::uuid fibre_uuid);
+	const boost::shared_ptr<state::PatternChannel> getRealPrimaryOutputChannelByFibre(const boost::uuids::uuid fibre_uuid) ;
+	const boost::shared_ptr<state::PatternChannel> getActualPrimaryInputChannelByFibre(const boost::uuids::uuid fibre_uuid);
+	const boost::shared_ptr<state::PatternChannel> getActualPrimaryOutputChannelByFibre(const boost::uuids::uuid fibre_uuid) ;
+	const boost::shared_ptr<state::PatternChannel> getRealPrimaryInputChannelByFibre(const boost::uuids::uuid fibre_uuid)const ;
+	const boost::shared_ptr<state::PatternChannel> getRealPrimaryOutputChannelByFibre(const boost::uuids::uuid fibre_uuid)const  ;
+	const boost::shared_ptr<state::PatternChannel> getActualPrimaryInputChannelByFibre(const boost::uuids::uuid fibre_uuid)const ;
+	const 	boost::shared_ptr<state::PatternChannel> getActualPrimaryOutputChannelByFibre(const boost::uuids::uuid fibre_uuid) const ;
 
 	/**
 	 * Helper method to take a uuid and find its correspondingly mapped  object
@@ -384,7 +463,7 @@ private:
 	 * @return boost::shared_ptr<Fibre>
 	 * 	The input  Fibre object the input PatternChannel with this uuid is mapped to, null if not found
 	 */
-	boost::shared_ptr<Fibre> getPrimaryInputFibreByChannel(const boost::uuids::uuid pattern_channel_uuid);
+	const boost::shared_ptr<Fibre> getPrimaryInputFibreByChannel(const boost::uuids::uuid pattern_channel_uuid)const;
 
 	/**
 	 * Helper method to take a uuid and find its correspondingly mapped  object
@@ -396,31 +475,7 @@ private:
 	 * @return boost::shared_ptr<Fibre>
 	 * 	The output  Fibre object the output PatternChannel with this uuid is mapped to, null if not found
 	 */
-	boost::shared_ptr<Fibre> getPrimaryOutputFibreByChannel(const boost::uuids::uuid pattern_channel_uuid);
-
-	/**
-	 * Helper method to take a uuid and find its correspondingly mapped  object
-	 * Take an input Fibre uuid and find the input PatternChannel its mapped to
-	 *
-	 * @param boost::uuids::uuid
-	 * 	The uuid of the input Fibre
-	 *
-	 * @return boost::shared_ptr<PatternChannel>
-	 * 	The input PatternChannel object the input Fibre with this uuid is mapped to, null if not found
-	 */
-	boost::shared_ptr<state::PatternChannel> getPrimaryInputChannelByFibre(const boost::uuids::uuid fibre_uuid);
-
-	/**
-	 * Helper method to take a uuid and find its correspondingly mapped  object
-	 * Take an output Fibre uuid and find the output PatternChannel its mapped to
-	 *
-	 * @param boost::uuids::uuid
-	 * 	The uuid of the output Fibre
-	 *
-	 * @return boost::shared_ptr<PatternChannel>
-	 * 	The output PatternChannel object the output Fibre with this uuid is mapped to, null if not found
-	 */
-	boost::shared_ptr<state::PatternChannel> getPrimaryOutputChannelByFibre(const boost::uuids::uuid fibre_uuid);
+	const boost::shared_ptr<Fibre> getPrimaryOutputFibreByChannel(const boost::uuids::uuid pattern_channel_uuid)const;
 
 	/**
 	 * Helper method to take a uuid and find its correspondingly mapped  object
@@ -434,7 +489,7 @@ private:
 	 * @return boost::shared_ptr<Fibre>
 	 * 	The Fibre object the PatternChannel with this uuid is mapped to, null if not found
 	 */
-	boost::shared_ptr<Fibre> getPrimaryFibreByChannel(const boost::uuids::uuid id, FibreMap & map);
+	const boost::shared_ptr<Fibre> getPrimaryFibreByChannel(const boost::uuids::uuid id, const FibreMap & map)const;
 
 	/**
 	 * Helper method to take a uuid and find its correspondingly mapped  object
@@ -448,8 +503,8 @@ private:
 	 * @return boost::shared_ptr<PatternChannel>
 	 * 	The PatternChannel object the Fibre with this uuid is mapped to, null if not found
 	 */
-	boost::shared_ptr<state::PatternChannel> getPrimaryChannelByFibre(const boost::uuids::uuid id,
-			state::PatternChannelMap & map);
+	const 	boost::shared_ptr<state::PatternChannel> getPrimaryChannelByFibre(const boost::uuids::uuid id,
+			const state::PatternChannelMap & map)const ;
 };
 
 }
