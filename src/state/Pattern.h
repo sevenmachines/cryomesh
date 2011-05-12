@@ -70,7 +70,6 @@ public:
 	std::vector<bool> getPattern() const;
 	std::string getString() const;
 	void setPattern(const std::vector<bool> &);
-	boost::uuids::uuid getUUID() const;
 	int getId() const;
 	void setId(int);
 	int getWidth() const;
@@ -119,7 +118,6 @@ private:
 	// identifying tag for this
 	boost::shared_ptr<PatternTag> patternTag;
 
-	boost::uuids::uuid tag;
 	/*
 	 * Common constructor jobs
 	 */

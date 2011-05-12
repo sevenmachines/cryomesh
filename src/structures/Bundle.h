@@ -283,7 +283,11 @@ public:
 	 */
 	std::ostream& printChannels(std::ostream & os) const;
 
-	/**
+	std::ostream &  printFibreMaps(std::ostream & os) const;
+
+	std::ostream & printFibreMap(std::ostream & os, const std::map<boost::uuids::uuid, boost::uuids::uuid> & fibre_map) const;
+
+		/**
 	 * To stream operator
 	 *
 	 *	@param std::ostream & os

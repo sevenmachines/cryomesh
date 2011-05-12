@@ -202,9 +202,6 @@ std::vector<bool> Pattern::stringToPattern(const std::string & str) {
 	}
 	return vec_bool;
 }
-boost::uuids::uuid Pattern::getUUID() const {
-	return tag;
-}
 const boost::shared_ptr<PatternTag> Pattern::getPatternTag() const {
 	return patternTag;
 }
@@ -233,9 +230,6 @@ boost::shared_ptr<manager::DatabaseObject> Pattern::getDatabaseObject() const {
 void Pattern::initialise() {
 	id = Pattern::getIds();
 	++ids;
-
-	//new uuid setup
-	tag = boost::uuids::random_generator()();
 
 	//default pattern tag by id
 	patternTag = boost::shared_ptr<PatternTag>(new PatternTagById(id));

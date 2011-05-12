@@ -40,6 +40,18 @@ public:
 	PatternChannel(const std::list<boost::shared_ptr<Pattern> > & pats, ChannelDataType dt);
 	virtual ~PatternChannel();
 
+	PatternChannel(const PatternChannel & obj);
+	/**
+	 * Assignment operator
+	 *
+	 * @param const PatternChannel & obj
+	 * 		RHS assignment
+	 *
+	 * @return PatternChannel &
+	 * 		This object after assignment
+	 */
+	PatternChannel & operator=(const PatternChannel & obj);
+
 	// add and remove patterns
 	/*
 	 * add single pattern to the end
@@ -119,7 +131,6 @@ const std::list<boost::uuids::uuid> & getPatternList() const;
 	int getPatternPosition() const;
 	int getWidth() const;
 	void setWidth(int w);
-	const boost::uuids::uuid getUUID(void) const;
 	int getRefID() const;
 	void setRefID(int r);
 
@@ -142,8 +153,6 @@ const std::list<boost::uuids::uuid> & getPatternList() const;
 private:
 	// reference id taken from xml file
 	int refID;
-	// Unique dentifier for channel
-	boost::uuids::uuid uuid;
 	// auto generated from pattern list using minimum element width
 	int width;
 	// auto generated from pattern list

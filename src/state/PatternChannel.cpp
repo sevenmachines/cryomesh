@@ -14,7 +14,7 @@ namespace state {
 
 const unsigned int PatternChannel::REFID_CREATE_START = 100000;
 unsigned int PatternChannel::refIDS = PatternChannel::REFID_CREATE_START;
-const int PatternChannel::DEFAULT_MAX_PATTERN_LIST_SIZE = 1000;
+const int PatternChannel::DEFAULT_MAX_PATTERN_LIST_SIZE = -1;
 
 unsigned int PatternChannel::getRefIDS() {
 	++PatternChannel::refIDS;
@@ -30,9 +30,14 @@ PatternChannel::PatternChannel(ChannelDataType dt) :
 	if (channelDataType == PatternChannel::Input) {
 		std::cout << "PatternChannel::PatternChannel: " << "WARNING: Empty pattern list but set as Input " << std::endl;
 	}
+#ifdef PATTERNCHANNEL_DEBUG
+	std::cout << "PatternChannel::PatternChannel(ChannelDataType): Created " << "uuid: " << this->getUUIDString()
+	<< std::endl;
+#endif
 }
 PatternChannel::PatternChannel(const std::list<boost::shared_ptr<Pattern> > & pats, ChannelDataType dt) :
 	width(0), length(0), patternPosition(0), channelDataType(dt) {
+	maxPatternListSize = DEFAULT_MAX_PATTERN_LIST_SIZE;
 	if (pats.size() > 0) {
 		this->addPatterns(pats);
 	}
@@ -40,18 +45,54 @@ PatternChannel::PatternChannel(const std::list<boost::shared_ptr<Pattern> > & pa
 	uuid = boost::uuids::random_generator()();
 	refID = PatternChannel::getRefIDS();
 
-	maxPatternListSize = DEFAULT_MAX_PATTERN_LIST_SIZE;
 	// warn if we have 0 size and Input or vice versa
 	if (pats.size() <= 0 && channelDataType == PatternChannel::Input) {
 		std::cout << "PatternChannel::PatternChannel: " << "WARNING: Empty pattern list but set as Input " << std::endl;
 	} else if (pats.size() > 0 && channelDataType == PatternChannel::Output) {
 		std::cout << "PatternChannel::PatternChannel: " << "WARNING: Have pattern list but set as Output " << std::endl;
 	}
-
+#ifdef PATTERNCHANNEL_DEBUG
+	std::cout << "PatternChannel::PatternChannel(std::list<boost::shared_ptr<Pattern> >, ChannelDataType): Created "
+	<< "uuid: " << this->getUUIDString() << std::endl;
+#endif
 }
 
 PatternChannel::~PatternChannel() {
+#ifdef PATTERNCHANNEL_DEBUG
+	std::cout << "PatternChannel::~PatternChannel: Destroying " << "uuid: " << this->getUUIDString() << std::endl;
+#endif
 }
+
+PatternChannel::PatternChannel(const PatternChannel & obj) {
+	this->refID = obj.refID;
+	this->uuid = obj.uuid;
+	this->width = obj.width;
+	this->length = obj.length;
+	this->maxPatternListSize = obj.maxPatternListSize;
+	this->patternList = obj.patternList;
+	this->patternMap = obj.patternMap;
+	this->patternListIterator = obj.patternListIterator;
+	this->patternPosition = obj.patternPosition;
+	this->patternByTagMap = obj.patternByTagMap;
+	this->channelDataType = obj.channelDataType;
+}
+PatternChannel & PatternChannel::operator=(const PatternChannel & obj) {
+	if (this != &obj) {
+		this->refID = obj.refID;
+		this->uuid = obj.uuid;
+		this->width = obj.width;
+		this->length = obj.length;
+		this->maxPatternListSize = obj.maxPatternListSize;
+		this->patternList = obj.patternList;
+		this->patternMap = obj.patternMap;
+		this->patternListIterator = obj.patternListIterator;
+		this->patternPosition = obj.patternPosition;
+		this->patternByTagMap = obj.patternByTagMap;
+		this->channelDataType = obj.channelDataType;
+	}
+	return *this;
+}
+
 void PatternChannel::addPattern(boost::shared_ptr<Pattern> pat) {
 	std::list<boost::shared_ptr<Pattern> > temp_list;
 	temp_list.push_back(pat);
@@ -106,6 +147,9 @@ void PatternChannel::addPatterns(const std::list<boost::shared_ptr<Pattern> > & 
 		// rearrange markers if they are after the insertion point
 		patternPosition += pats_added;
 	}
+
+	// force size
+	this->forcePatternListSize();
 }
 
 std::list<boost::shared_ptr<Pattern> > PatternChannel::removePatterns(
@@ -163,28 +207,31 @@ void PatternChannel::clearPatternList() {
 	patternListIterator = patternList.begin();
 }
 std::list<boost::shared_ptr<Pattern> > PatternChannel::forcePatternListSize(int sz) {
-	//uuids to delete
-	std::list<boost::uuids::uuid> del_uuids;
-	//check size
-	int overspill = patternList.size() - sz;
-	if (overspill > 0) {
-		std::list<boost::uuids::uuid>::const_iterator it_patternList = patternList.begin();
-		const std::list<boost::uuids::uuid>::const_iterator it_patternList_end = patternList.end();
+	if (sz >= 0) {
+		//uuids to delete
+		std::list<boost::uuids::uuid> del_uuids;
+		//check size
+		int overspill = patternList.size() - sz;
+		if (overspill > 0) {
+			std::list<boost::uuids::uuid>::const_iterator it_patternList = patternList.begin();
+			const std::list<boost::uuids::uuid>::const_iterator it_patternList_end = patternList.end();
 
-		while (overspill > 0 && it_patternList != it_patternList_end) {
-			//get enough uuids for earilest patterns
-			del_uuids.push_back(*it_patternList);
-			--overspill;
-			++it_patternList;
+			while (overspill > 0 && it_patternList != it_patternList_end) {
+				//get enough uuids for earilest patterns
+				del_uuids.push_back(*it_patternList);
+				--overspill;
+				++it_patternList;
+			}
+
+			// remove patterns and return those lost
+			return this->removePatterns(del_uuids);
 		}
-
-		// remove patterns and return those lost
-		return this->removePatterns(del_uuids);
 	}
 	std::list<boost::shared_ptr<Pattern> > empty_list;
 	return empty_list;
 }
 std::list<boost::shared_ptr<Pattern> > PatternChannel::forcePatternListSize() {
+	std::cout << "PatternChannel::forcePatternListSize: " << this->getMaxPatternListSize() << std::endl;
 	return (this->forcePatternListSize(this->getMaxPatternListSize()));
 }
 // Manipulation
@@ -416,10 +463,6 @@ void PatternChannel::setWidth(int w) {
 
 }
 
-const boost::uuids::uuid PatternChannel::getUUID(void) const {
-	return uuid;
-}
-
 int PatternChannel::getRefID() const {
 	return refID;
 }
@@ -442,7 +485,7 @@ void PatternChannel::setMaxPatternListSize(int sz) {
 	maxPatternListSize = sz;
 }
 
-const boost::shared_ptr<Pattern> PatternChannel::getPatternByUUID(const boost::uuids::uuid & id) const{
+const boost::shared_ptr<Pattern> PatternChannel::getPatternByUUID(const boost::uuids::uuid & id) const {
 	boost::shared_ptr<Pattern> temppat;
 	std::map<boost::uuids::uuid, boost::shared_ptr<Pattern> >::const_iterator it_patternMap_found = patternMap.find(id);
 	std::map<boost::uuids::uuid, boost::shared_ptr<Pattern> >::const_iterator it_patternMap_found_end =
@@ -465,7 +508,7 @@ boost::shared_ptr<Pattern> PatternChannel::getMutablePatternByUUID(const boost::
 	}
 	return temppat;
 }
-std::ostream & PatternChannel::printPatternList(std::ostream & os, bool reversed)const {
+std::ostream & PatternChannel::printPatternList(std::ostream & os, bool reversed) const {
 	if (reversed == false) {
 		// forall in patternList
 		{
@@ -498,13 +541,13 @@ std::ostream & PatternChannel::printTextFormattedPatternList(std::ostream & os, 
 	return this->printFormattedPatternList(os, TEXT, reversed);
 
 }
-std::ostream & PatternChannel::printIntegerFormattedPatternList(std::ostream & os, bool reversed) const{
+std::ostream & PatternChannel::printIntegerFormattedPatternList(std::ostream & os, bool reversed) const {
 	return this->printFormattedPatternList(os, INTEGER, reversed);
 }
-std::ostream & PatternChannel::printBinaryFormattedPatternList(std::ostream & os, bool reversed)const {
+std::ostream & PatternChannel::printBinaryFormattedPatternList(std::ostream & os, bool reversed) const {
 	return this->printFormattedPatternList(os, BINARY, reversed);
 }
-std::ostream & PatternChannel::printFormattedPatternList(std::ostream & os, const PrintFormat & pf, bool reversed) const  {
+std::ostream & PatternChannel::printFormattedPatternList(std::ostream & os, const PrintFormat & pf, bool reversed) const {
 	if (reversed == false) {
 		// forall in patternList
 		{
@@ -550,7 +593,7 @@ std::ostream & PatternChannel::printFormattedPatternList(std::ostream & os, cons
 					os << temppat->getBinaryString().toText() << std::endl;
 
 				} else if (pf == INTEGER) {
-				//	std::cout << "PatternChannel::printFormattedPatternList: " << "INTEGER" << std::endl;
+					//	std::cout << "PatternChannel::printFormattedPatternList: " << "INTEGER" << std::endl;
 					os << temppat->getBinaryString().toInt() << std::endl;
 				} else {
 					//default to raw binary
@@ -565,8 +608,8 @@ std::ostream & PatternChannel::printFormattedPatternList(std::ostream & os, cons
 }
 std::ostream & operator<<(std::ostream & os, const PatternChannel & obj) {
 	std::cout << "PatternChannel:: refid: " << obj.refID << " width: " << obj.width << " length: " << obj.length
-			<< " maxPatternSize: " << obj.maxPatternListSize << " patternPosition: " << obj.patternPosition << " patternMap: "
-			<< obj.patternMap.size() << std::endl;
+			<< " maxPatternSize: " << obj.maxPatternListSize << " patternPosition: " << obj.patternPosition
+			<< " patternMap: " << obj.patternMap.size() << std::endl;
 
 	obj.printBinaryFormattedPatternList(os, true);
 	return os;

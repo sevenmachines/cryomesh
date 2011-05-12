@@ -86,24 +86,10 @@ boost::shared_ptr<Fibre> Bundle::connectCluster(boost::uuids::uuid clusterUUID, 
 			cluster->getMutableConnector().connectInput(newfibre);
 			inputFibres.add(newfibre);
 
-			// make an actual pattern channel and
-			// add a fibre map to the actual channel
-			boost::shared_ptr<state::PatternChannel>
-					newpatchan(new state::PatternChannel(state::PatternChannel::Input));
-			actualInputChannelsMap.add(newpatchan);
-			actualFibrePatternChannelMap[newfibre->getUUID()] = newpatchan->getUUID();
-
 		} else if (type == Fibre::PrimaryOutputFibre) {
 			// create output fibre and add to list of fibres
 			cluster->getMutableConnector().connectOutput(newfibre);
 			outputFibres.add(newfibre);
-
-			// make an actual pattern channel and
-			// add a fibre map to the actual channel
-			boost::shared_ptr<state::PatternChannel> newpatchan(
-					new state::PatternChannel(state::PatternChannel::Output));
-			actualOutputChannelsMap.add(newpatchan);
-			actualFibrePatternChannelMap[newfibre->getUUID()] = newpatchan->getUUID();
 
 		} else if (type == Fibre::LoopbackFibre) {
 			cluster->getMutableConnector().connectInput(newfibre);
@@ -130,6 +116,21 @@ boost::shared_ptr<Fibre> Bundle::connectPrimaryInputCluster(boost::uuids::uuid p
 		// get created fibre and connect the cluster to it
 		newfib = this->connectCluster(clusterUUID, Fibre::PrimaryInputFibre, width);
 		realFibrePatternChannelMap[newfib->getUUID()] = patchanid;
+
+		// make an actual pattern channel and
+		// add a fibre map to the actual channel
+		boost::shared_ptr<state::PatternChannel> new_actual_patchan(
+				new state::PatternChannel(state::PatternChannel::Input));
+
+		// restrict actual input channel depth  to real channel depth
+		new_actual_patchan->setMaxPatternListSize(patchan->getPatternList().size());
+		actualInputChannelsMap.add(new_actual_patchan);
+		actualFibrePatternChannelMap[newfib->getUUID()] = new_actual_patchan->getUUID();
+
+		std::cout << "Bundle::connectPrimaryInputCluster: " << "Created Fibre: " << newfib->getUUID()
+				<< " PatternChannel: " << new_actual_patchan->getUUID() << " Set Depth: " << patchan->getPatternList().size()
+				<< std::endl;
+		this->printFibreMaps(std::cout)<<std::endl;
 
 		/*
 		 // connect fibre to cluster to
@@ -162,6 +163,24 @@ boost::shared_ptr<Fibre> Bundle::connectPrimaryOutputCluster(boost::uuids::uuid 
 		// get created fibre
 		newfib = this->connectCluster(clusterUUID, Fibre::PrimaryOutputFibre, width);
 		realFibrePatternChannelMap[newfib->getUUID()] = patchanid;
+
+		// make an actual pattern channel and
+		// add a fibre map to the actual channel
+		boost::shared_ptr<state::PatternChannel> new_actual_patchan(
+				new state::PatternChannel(state::PatternChannel::Output));
+		actualFibrePatternChannelMap[newfib->getUUID()] = new_actual_patchan->getUUID();
+		actualOutputChannelsMap.add(new_actual_patchan);
+
+		// restrict actual output channel depth  to real channel depth
+		new_actual_patchan->setMaxPatternListSize(patchan->getPatternList().size());
+		std::cout << "Bundle::connectPrimaryOutputCluster: " << "Created Fibre: " << newfib->getUUID()
+						<< " PatternChannel: " << new_actual_patchan->getUUID() << " Set Depth: " << patchan->getPatternList().size()
+						<< std::endl;
+		//std::cout<<"Bundle::connectPrimaryOutputCluster: "<<"Created Fibre UUID: "<<newfib->getUUIDString()<<std::endl;
+		//std::cout<<"Bundle::connectPrimaryOutputCluster: "<<"Created PatternChannel UUID: "<<actual_chan->getUUID()<<std::endl;
+		//std::cout<<"Bundle::connectPrimaryOutputCluster: "<<"Created PatternChannel (OLD) UUID: "<<newpatchan->getUUID()<<std::endl;
+		//this->printFibreMaps(std::cout)<<std::endl;
+
 		/*
 		 // connect fibre to cluster to
 		 boost::shared_ptr<Cluster> cluster = clusters.getObjectByKey(clusterUUID);
@@ -305,6 +324,7 @@ boost::shared_ptr<Fibre> Bundle::connectLoopbackCluster(boost::uuids::uuid clust
 }
 
 void Bundle::loadChannels(const std::string & ifstr) {
+	std::cout << "Bundle::loadChannels: " << "" << std::endl;
 	utilities::SequencerChannels seqchans;
 	seqchans.readSequences(ifstr, realInputChannelsMap, realOutputChannelsMap);
 	// get list of input channels
@@ -312,8 +332,7 @@ void Bundle::loadChannels(const std::string & ifstr) {
 
 	// ditto for output channels
 	//outputChannelsMap = seqchans.getOutputChannelsMap();
-	std::cout << "Bundle::loadChannels: " << "" << std::endl;
-	this->printChannels(std::cout);
+	//this->printChannels(std::cout);
 }
 
 const ClusterMap & Bundle::getClusters() const {
@@ -477,6 +496,21 @@ void Bundle::updatePrimaryInputFibres() {
 			// get the related fibre
 			boost::shared_ptr<Fibre> temp_fib = this->getPrimaryInputFibreByRealChannel(it_channels->second->getUUID());
 			if (temp_fib != 0) {
+				// find the channel
+				boost::shared_ptr<state::PatternChannel> patchan = this->getActualPrimaryInputChannelByFibre(
+						temp_fib->getUUID());
+				if (patchan != 0) {
+					// get pattern from fibre and add it to output channel
+					boost::shared_ptr<state::Pattern> temp_pattern = temp_fib->getInputNodesPattern();
+					patchan->addPattern(temp_pattern);
+					std::cout << "Bundle::updatePrimaryInputFibres: uuid: " << temp_fib->getUUID() << " pattern ("
+							<< patchan->getPatternMap().size() << "): " << temp_pattern->getString() << std::endl;
+				} else {
+					std::cout << "Bundle::updatePrimaryInputFibres: "
+							<< "WARNING: Ignoring primary input fibre since cannot find corresponding channel: "
+							<< temp_fib->getUUID() << std::endl;
+				}
+
 				// apply firing pattern to fibre
 				temp_fib->trigger(*pattern);
 				std::cout << "Bundle::updatePrimaryInputFibres: " << pattern->getString() << std::endl;
@@ -505,8 +539,9 @@ void Bundle::updatePrimaryOutputFibres() {
 			if (patchan != 0) {
 				// get pattern from fibre and add it to output channel
 				boost::shared_ptr<state::Pattern> temp_pattern = it_outputFibres->second->getInputNodesPattern();
-				std::cout << "Bundle::updatePrimaryOutputFibres: " << temp_pattern->getString() << std::endl;
 				patchan->addPattern(temp_pattern);
+				std::cout << "Bundle::updatePrimaryOutputFibres: uuid: " << it_outputFibres->first << " pattern ("
+						<< patchan->getPatternMap().size() << "): " << temp_pattern->getString() << std::endl;
 			} else {
 				std::cout << "Bundle::updatePrimaryOutputFibres: "
 						<< "WARNING: Ignoring primary output fibre since cannot find corresponding channel: "
@@ -514,6 +549,7 @@ void Bundle::updatePrimaryOutputFibres() {
 			}
 			++it_outputFibres;
 		}
+		//	std::cout << printFibreMaps(std::cout) << std::endl;
 	}
 
 	// and actually update fibres, not actually required at the moment since we're using the input nodes as the end result
@@ -670,6 +706,7 @@ const boost::shared_ptr<state::PatternChannel> Bundle::getPrimaryChannelByFibre(
 		} else {
 			std::cout << "Bundle::getPrimaryChannelByFibre: " << "WARNING: Cannot find pattern channel in map: "
 					<< pattern_channel_id << std::endl;
+			//	std::cout << printChannels(std::cout) << std::endl;
 		}
 	} else {
 		std::cout << "Bundle::getPrimaryChannelByFibre: " << "WARNING: Cannot find mapped fibre: " << id << std::endl;
@@ -721,6 +758,10 @@ std::ostream& Bundle::print(std::ostream & os, const common::Loggable::LoggingDe
 		// fibremap
 		os << this->getFibres() << std::endl;
 		// connecting fibres patterns
+
+		this->printFibreMaps(os) << std::endl << std::endl;
+		this->printChannels(os) << std::endl << std::endl;
+
 	}
 	os << std::endl << "***********************************************" << std::endl << std::endl;
 	return os;
@@ -805,6 +846,29 @@ std::ostream& Bundle::printChannels(std::ostream & os) const {
 		os << "}" << std::endl;
 	}
 
+	return os;
+}
+
+std::ostream & Bundle::printFibreMaps(std::ostream & os) const {
+
+	std::cout << "Bundle::printFibreMaps: " << "RealFibrePatternChannelMap" << std::endl;
+	printFibreMap(os, this->getRealFibrePatternChannelMap());
+	std::cout << "Bundle::printFibreMaps: " << "ActualFibrePatternChannelMap" << std::endl;
+	printFibreMap(os, this->getActualFibrePatternChannelMap());
+	return os;
+}
+
+std::ostream & Bundle::printFibreMap(std::ostream & os,
+		const std::map<boost::uuids::uuid, boost::uuids::uuid> & fibre_map) const {
+	// forall in fibre_map
+	{
+		std::map<boost::uuids::uuid, boost::uuids::uuid>::const_iterator it_fibre_map = fibre_map.begin();
+		const std::map<boost::uuids::uuid, boost::uuids::uuid>::const_iterator it_fibre_map_end = fibre_map.end();
+		while (it_fibre_map != it_fibre_map_end) {
+			os << it_fibre_map->first << " : " << it_fibre_map->second << std::endl;
+			++it_fibre_map;
+		}
+	}
 	return os;
 }
 
