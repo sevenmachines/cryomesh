@@ -179,6 +179,22 @@ public:
 	void connectPrimaryOutputChannel(int channel_id, int inputid);
 
 	/**
+	 * auto connect all the primary input channels to the list of clusters
+	 *
+	 * @param std::vector<int>
+	 * 	The fake ids of the clusters to connect
+	 */
+	void autoConnectPrimaryInputs(const std::vector<int> & cluster_ids);
+
+	/**
+	 * auto connect all the primary output channels to the list of clusters
+	 *
+	 * @param std::vector<int>
+	 * 	The fake ids of the clusters to connect
+	 */
+	void autoConnectPrimaryOutputs(const std::vector<int> & cluster_ids);
+
+	/**
 	 * The default database filename to use
 	 *
 	 * @var std::string

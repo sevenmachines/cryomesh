@@ -127,10 +127,10 @@ boost::shared_ptr<Fibre> Bundle::connectPrimaryInputCluster(boost::uuids::uuid p
 		actualInputChannelsMap.add(new_actual_patchan);
 		actualFibrePatternChannelMap[newfib->getUUID()] = new_actual_patchan->getUUID();
 
-		std::cout << "Bundle::connectPrimaryInputCluster: " << "Created Fibre: " << newfib->getUUID()
-				<< " PatternChannel: " << new_actual_patchan->getUUID() << " Set Depth: " << patchan->getPatternList().size()
-				<< std::endl;
-		this->printFibreMaps(std::cout)<<std::endl;
+		//	std::cout << "Bundle::connectPrimaryInputCluster: " << "Created Fibre: " << newfib->getUUID()
+		//			<< " PatternChannel: " << new_actual_patchan->getUUID() << " Set Depth: " << patchan->getPatternList().size()
+		//			<< std::endl;
+		//	this->printFibreMaps(std::cout)<<std::endl;
 
 		/*
 		 // connect fibre to cluster to
@@ -173,9 +173,9 @@ boost::shared_ptr<Fibre> Bundle::connectPrimaryOutputCluster(boost::uuids::uuid 
 
 		// restrict actual output channel depth  to real channel depth
 		new_actual_patchan->setMaxPatternListSize(patchan->getPatternList().size());
-		std::cout << "Bundle::connectPrimaryOutputCluster: " << "Created Fibre: " << newfib->getUUID()
-						<< " PatternChannel: " << new_actual_patchan->getUUID() << " Set Depth: " << patchan->getPatternList().size()
-						<< std::endl;
+		//std::cout << "Bundle::connectPrimaryOutputCluster: " << "Created Fibre: " << newfib->getUUID()
+		//				<< " PatternChannel: " << new_actual_patchan->getUUID() << " Set Depth: " << patchan->getPatternList().size()
+		//				<< std::endl;
 		//std::cout<<"Bundle::connectPrimaryOutputCluster: "<<"Created Fibre UUID: "<<newfib->getUUIDString()<<std::endl;
 		//std::cout<<"Bundle::connectPrimaryOutputCluster: "<<"Created PatternChannel UUID: "<<actual_chan->getUUID()<<std::endl;
 		//std::cout<<"Bundle::connectPrimaryOutputCluster: "<<"Created PatternChannel (OLD) UUID: "<<newpatchan->getUUID()<<std::endl;
@@ -199,6 +199,48 @@ boost::shared_ptr<Fibre> Bundle::connectPrimaryOutputCluster(boost::uuids::uuid 
 				<< "'" << std::endl;
 	}
 	return newfib;
+}
+
+std::vector<boost::shared_ptr<Fibre> > Bundle::autoConnectPrimaryInputClusters(
+		const std::vector<boost::uuids::uuid> & cluster_uuids) {
+	std::vector<boost::shared_ptr<Cluster> > cluster_list;
+	// forall in cluster__uuids
+	{
+		std::vector<boost::uuids::uuid>::const_iterator it_cluster_uuids = cluster_uuids.begin();
+		const std::vector<boost::uuids::uuid>::const_iterator it_cluster_uuids_end = cluster_uuids.end();
+		while (it_cluster_uuids != it_cluster_uuids_end) {
+			boost::shared_ptr<Cluster> temp_cluster = this->getMutableClusters().getMutableObjectByKey(*it_cluster_uuids);
+			if (temp_cluster != 0) {
+				cluster_list.push_back(temp_cluster);
+			} else {
+				std::cout << "Bundle::autoConnectPrimaryInputClusters: " << "WARNING: Cannot find cluster by uuid: "
+						<< *it_cluster_uuids << std::endl;
+			}
+			++it_cluster_uuids;
+		}
+	}
+	return (this->autoConnectPrimaryInputClusters(cluster_list));
+}
+
+std::vector<boost::shared_ptr<Fibre> > Bundle::autoConnectPrimaryOutputClusters(
+		const std::vector<boost::uuids::uuid> & cluster_uuids) {
+	std::vector<boost::shared_ptr<Cluster> > cluster_list;
+	// forall in cluster__uuids
+	{
+		std::vector<boost::uuids::uuid>::const_iterator it_cluster_uuids = cluster_uuids.begin();
+		const std::vector<boost::uuids::uuid>::const_iterator it_cluster_uuids_end = cluster_uuids.end();
+		while (it_cluster_uuids != it_cluster_uuids_end) {
+			boost::shared_ptr<Cluster> temp_cluster = this->getMutableClusters().getMutableObjectByKey(*it_cluster_uuids);
+			if (temp_cluster != 0) {
+				cluster_list.push_back(temp_cluster);
+			} else {
+				std::cout << "Bundle::autoConnectPrimaryOutputClusters: " << "WARNING: Cannot find cluster by uuid: "
+						<< *it_cluster_uuids << std::endl;
+			}
+			++it_cluster_uuids;
+		}
+	}
+	return (this->autoConnectPrimaryOutputClusters(cluster_list));
 }
 
 std::vector<boost::shared_ptr<Fibre> > Bundle::autoConnectPrimaryInputClusters(
@@ -338,7 +380,9 @@ void Bundle::loadChannels(const std::string & ifstr) {
 const ClusterMap & Bundle::getClusters() const {
 	return clusters;
 }
-
+ ClusterMap & Bundle::getMutableClusters()  {
+	return clusters;
+}
 const FibreMap & Bundle::getFibres() const {
 	return fibres;
 }

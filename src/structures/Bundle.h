@@ -117,6 +117,8 @@ public:
 	virtual boost::shared_ptr<Fibre> connectPrimaryOutputCluster(boost::uuids::uuid patchanid,
 			boost::uuids::uuid clusterUUID);
 
+	std::vector<boost::shared_ptr<Fibre> > autoConnectPrimaryInputClusters(const std::vector<boost::uuids::uuid> & cluster_uuids);
+	std::vector<boost::shared_ptr<Fibre> > autoConnectPrimaryOutputClusters(const std::vector<boost::uuids::uuid> & cluster_uuids);
 	virtual std::vector<boost::shared_ptr< Fibre > > autoConnectPrimaryInputClusters(std::vector<boost::shared_ptr<Cluster> >  list);
 	virtual std::vector<boost::shared_ptr< Fibre > > autoConnectPrimaryOutputClusters(std::vector<boost::shared_ptr<Cluster> >  list);
 	virtual std::vector<boost::shared_ptr< state::PatternChannel > > getDisconnectedRealInputPatternChannels();
@@ -333,6 +335,8 @@ protected:
 	 * 	The energy to set
 	 */
 	void setEnergy(double d);
+
+	 ClusterMap & getMutableClusters() ;
 
 	/**
 	 * Print out a uuid search

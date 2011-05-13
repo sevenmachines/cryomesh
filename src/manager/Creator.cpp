@@ -33,6 +33,12 @@ std::map<std::string, std::list<std::string> > Creator::getAcceptedCommandList()
 
 	// connect-primary-input id=2 outputid=2
 	commap["connect-primary-output"] = std::list<std::string>( { "id", "inputid" });
+
+	// autoconnect-input ids="1 2 3"
+	commap["autoconnect-input"] = std::list<std::string>( { "ids" });
+
+	// autoconnect-output ids="1 2 3"
+	commap["autoconnect-output"] = std::list<std::string>( { "ids" });
 	return commap;
 }
 
@@ -128,6 +134,14 @@ bool Creator::createFromConfig() {
 						int id = it_conf_entries->getIntegerFormattedOptionValue("id");
 						int outputid = it_conf_entries->getIntegerFormattedOptionValue("outputid");
 						this->connectPrimaryInputChannel(id, outputid);
+					} 	else if (command == "autoconnect-inputs") {
+						//autoconnect-inputs ids="1 2 3"
+						std::vector<int> ids = config::ConfigEntry::toIntegerMultipleValues(config::ConfigEntry::tokenizeMultipleValueString(it_conf_entries->getOptionValue("ids")));
+						this->autoConnectPrimaryInputs(ids);
+					}  	else if (command == "autoconnect-outputs") {
+						//autoconnect-outputs ids="1 2 3"
+						std::vector<int> ids = config::ConfigEntry::toIntegerMultipleValues(config::ConfigEntry::tokenizeMultipleValueString(it_conf_entries->getOptionValue("ids")));
+						this->autoConnectPrimaryOutputs(ids);
 					} else if (command == "connect-primary-output") {
 						// connect-primary-output id=2 outputid=2
 						int id = it_conf_entries->getIntegerFormattedOptionValue("id");
@@ -153,7 +167,7 @@ bool Creator::createFromConfig() {
 	return success;
 }
 
-bool Creator::analyseConfig(const config::ConfigTranslator & conf_trans)  {
+bool Creator::analyseConfig(const config::ConfigTranslator & conf_trans) {
 	bool config_coherent = true;
 	// verify commands and options
 	const std::list<config::ConfigEntry> & conf_entries = conf_trans.getEntries();
@@ -173,7 +187,7 @@ bool Creator::analyseConfig(const config::ConfigTranslator & conf_trans)  {
 	return config_coherent;
 }
 
-bool Creator::checkConfigEntry(const config::ConfigEntry & conf_entry)  {
+bool Creator::checkConfigEntry(const config::ConfigEntry & conf_entry) {
 	bool success = true;
 	// check command is a member
 	std::map<std::string, std::list<std::string> >::const_iterator it_found = Creator::acceptedCommandList.find(
@@ -203,7 +217,7 @@ bool Creator::checkConfigEntry(const config::ConfigEntry & conf_entry)  {
 	return success;
 }
 
-bool Creator::checkConfigStructure(const std::list<config::ConfigEntry> & conf_entries)  {
+bool Creator::checkConfigStructure(const std::list<config::ConfigEntry> & conf_entries) {
 	bool success = true;
 	// check we have at least one cluster
 	bool create_cluster_found = false;
@@ -301,9 +315,9 @@ void Creator::loadData(std::string datafile) {
 
 }
 void Creator::connectPrimaryInputChannel(int channel_id, int outputid) {
-//	std::cout << "Creator::connectPrimaryInputFibre: " << "(" << channel_id << ", " << outputid << ")" << std::endl;
-//	std::cout << "Creator::connectPrimaryOutputFibre: " << "(" << this->getPatternChannelRealID(channel_id) << ", "
-//			<< this->getClusterRealID(outputid) << ")" << std::endl;
+	//	std::cout << "Creator::connectPrimaryInputFibre: " << "(" << channel_id << ", " << outputid << ")" << std::endl;
+	//	std::cout << "Creator::connectPrimaryOutputFibre: " << "(" << this->getPatternChannelRealID(channel_id) << ", "
+	//			<< this->getClusterRealID(outputid) << ")" << std::endl;
 	bundle->connectPrimaryInputCluster(this->getPatternChannelRealID(channel_id), this->getClusterRealID(outputid));
 
 }
@@ -313,6 +327,37 @@ void Creator::connectPrimaryOutputChannel(int channel_id, int inputid) {
 	//		<< this->getClusterRealID(inputid) << ")" << std::endl;
 	bundle->connectPrimaryOutputCluster(this->getPatternChannelRealID(channel_id), this->getClusterRealID(inputid));
 }
+
+void Creator::autoConnectPrimaryInputs(const std::vector<int> & cluster_ids){
+	// get all real ids
+	std::vector<boost::uuids::uuid> real_ids;
+	// forall in cluster_ids
+		 {
+			 std::vector<int>::const_iterator it_cluster_ids = cluster_ids.begin();
+			 const  std::vector<int>::const_iterator it_cluster_ids_end = cluster_ids.end();
+			 while ( it_cluster_ids != it_cluster_ids_end){
+				real_ids.push_back(this->getClusterRealID(*it_cluster_ids));
+				 ++it_cluster_ids;
+			 }
+		 }
+		 bundle->autoConnectPrimaryInputClusters(real_ids);
+}
+
+void Creator::autoConnectPrimaryOutputs(const std::vector<int> & cluster_ids){
+	// get all real ids
+	std::vector<boost::uuids::uuid> real_ids;
+	// forall in cluster_ids
+		 {
+			 std::vector<int>::const_iterator it_cluster_ids = cluster_ids.begin();
+			 const  std::vector<int>::const_iterator it_cluster_ids_end = cluster_ids.end();
+			 while ( it_cluster_ids != it_cluster_ids_end){
+				real_ids.push_back(this->getClusterRealID(*it_cluster_ids));
+				 ++it_cluster_ids;
+			 }
+		 }
+		 bundle->autoConnectPrimaryOutputClusters(real_ids);
+}
+
 boost::uuids::uuid Creator::getRealID(const int id, const std::map<int, boost::uuids::uuid> & idmap) const {
 	boost::uuids::uuid found_id;
 	const std::map<int, boost::uuids::uuid>::const_iterator it_found = idmap.find(id);
