@@ -325,7 +325,9 @@ bool Impulse::operator==(const Impulse & obj) const {
 bool Impulse::operator!=(const Impulse &obj) const {
 	return !(*this == obj);
 }
-
+void Impulse::enableDebug(bool b){
+	 this->setDebug(b);
+ }
 std::ostream& operator<<(std::ostream & os, const Impulse & obj) {
 	os << "Impulse: " << &obj << " delay=" << obj.getActivityDelay() << " " << *(obj.getActivityTimer())
 			<< "objects: { ";

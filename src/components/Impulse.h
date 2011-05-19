@@ -13,6 +13,7 @@
 #include "common/Tagged.h"
 #include "common/Cycle.h"
 #include "common/TimeKeeper.h"
+#include <common/Debuggable.h>
 
 #include <list>
 
@@ -27,7 +28,7 @@ namespace components {
  * They are propagated along a connection
  * Can be modified by the overlying Mesh as they propagate
  */
-class Impulse: public common::Tagged, public common::SimpleCollection<double> {
+class Impulse: public common::Tagged, public common::SimpleCollection<double>, public common::Debuggable {
 public:
 
 	/**
@@ -275,6 +276,7 @@ public:
 	 * 		True if not equal, false otherwise
 	 */
 	bool operator!=(const Impulse &obj) const;
+	virtual void enableDebug(bool b);
 
 	/**
 	 * To stream operator

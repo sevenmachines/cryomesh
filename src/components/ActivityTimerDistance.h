@@ -131,6 +131,7 @@ public:
 	 */
 	void reset();
 	virtual bool checkConstraints()const;
+	virtual void enableDebug(bool b);
 
 	/**
 	 * Get a random object

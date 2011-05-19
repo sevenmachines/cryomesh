@@ -170,6 +170,7 @@ public:
 	double getEnergy()const;
 	void setEnergy(double d);
 
+	virtual void enableDebug(bool b) ;
 	/**
 	 * To stream operator
 	 *

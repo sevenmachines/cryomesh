@@ -1,7 +1,5 @@
 CURRENT---------------------------------------------------------------------------------
 
-* Bug: GUI display shows no impulses since bundle->connectPrimary* changes, investigate.
-
 * Test creater autoconnect from config file
 
 
@@ -41,6 +39,10 @@ WISHLIST -----------------------------------------------------------------------
 
 DONE -----------------------------------------------------------------------------------------
 
+* Bug: GUI display shows no impulses since bundle->connectPrimary* changes, investigate. (DONE)
+	- ImpulseCollection::getByActivityTimerValue was set to look for all <0, but impulses activity timers
+	were capped to 0
+	
 * Check that actual output pattern channel is updated (DONE)
 
 * Implement autoconnection of primary channels to clusters (DONE)

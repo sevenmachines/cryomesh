@@ -11,6 +11,7 @@
 #include "Pattern.h"
 #include "PatternTag.h"
 #include "common/Tagged.h"
+#include "common/Debuggable.h"
 #include <map>
 #include <list>
 #include <set>
@@ -21,7 +22,7 @@
 namespace cryomesh {
 namespace state {
 
-class PatternChannel : public common::Tagged{
+class PatternChannel : public common::Tagged, public common::Debuggable{
 public:
 	enum PrintFormat {
 		BINARY, TEXT, INTEGER
@@ -116,6 +117,7 @@ public:
 	 * pattern channel then proceed sequntally through both channels
 	 */
 	double matchSequentially(const PatternChannel &);
+	virtual void enableDebug(bool b);
 
 	// GETTERS/SETTERS
 	ChannelDataType getChannelDataType() const;

@@ -37,7 +37,7 @@ class ImpulseCollection: public common::Debuggable, public common::KeyMappedColl
 public:
 
 	enum Comparison {
-		GreaterThan, LessThan, EqualTo, NotEqualTo
+		GreaterThan, LessThan, EqualTo, NotEqualTo, LessThanOrEqualTo, GreaterThanOrEqualTo
 	};
 	/**
 	 * Contructor for ImpulseCollection
@@ -206,13 +206,14 @@ public:
 	 *	@return std::list<boost::shared_ptr< Impulse> >
 	 *		The  that meet the comparison and were removed
 	 */
-	std::list<boost::shared_ptr<Impulse> > removeByActivityTimerValue(double value=0, Comparison comp=LessThan);
+	std::list<boost::shared_ptr<Impulse> > removeByActivityTimerValue(double value=0, Comparison comp=LessThanOrEqualTo);
 
 	/**
 	 * Inherited from DataObjectController. Overriden to force refresh update on call
 	 */
 	virtual void refreshDataObject();
 
+	virtual void enableDebug(bool b);
 		//operators
 
 	/**

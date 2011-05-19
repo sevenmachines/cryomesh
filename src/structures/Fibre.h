@@ -24,7 +24,7 @@ class Cluster;
  * A Fibre is a collection of connections that connect one structure to another. For example,
  * two clusters.
  */
-class Fibre: public common::Tagged {
+class Fibre: public common::Tagged, common::Debuggable {
 public:
 
 	/**
@@ -263,6 +263,7 @@ public:
 	 */
 	void forceFireNodes(const state::Pattern & pattern,
 			std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > nodes);
+	virtual void enableDebug(bool b);
 
 	/**
 	 * Get the activity pattern of the Fibre, 0 for no activity, 1 otherwise

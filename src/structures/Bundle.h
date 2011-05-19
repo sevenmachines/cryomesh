@@ -275,6 +275,9 @@ public:
 	 */
 	virtual bool checkChannelStructure() const;
 
+	virtual void enableDebug(bool b);
+	virtual void enableDebugClusters(bool b);
+	virtual void enableDebugFibres(bool b);
 	/**
 	 * Print the bundle to stream
 	 */

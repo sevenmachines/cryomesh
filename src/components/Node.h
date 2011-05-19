@@ -259,6 +259,7 @@ public:
 	 * Randomise the nodes state
 	 */
 	void randomise();
+	virtual void enableDebug(bool b);
 
 	// state checks
 	/**

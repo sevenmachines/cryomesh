@@ -33,6 +33,8 @@ public:
 
 	virtual ~ClusterMap() {
 	}
+
+
 	virtual void update() {
 		totalNodeCount = 0;
 		// forall in objects

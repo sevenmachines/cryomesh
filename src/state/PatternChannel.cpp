@@ -508,6 +508,11 @@ boost::shared_ptr<Pattern> PatternChannel::getMutablePatternByUUID(const boost::
 	}
 	return temppat;
 }
+
+void PatternChannel::enableDebug(bool b){
+	 this->setDebug(b);
+ }
+
 std::ostream & PatternChannel::printPatternList(std::ostream & os, bool reversed) const {
 	if (reversed == false) {
 		// forall in patternList

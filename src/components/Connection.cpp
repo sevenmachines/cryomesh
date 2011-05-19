@@ -32,7 +32,7 @@ void Connection::update() {
 
 	// Get any finished impulses
 
-	std::list<boost::shared_ptr<Impulse> > done_impulses = this->impulses.removeByActivityTimerValue();
+	std::list<boost::shared_ptr<Impulse> > done_impulses = this->impulses.removeByActivityTimerValue(0, ImpulseCollection::LessThanOrEqualTo);
 
 	// Pass any finished impulses on to end node
 	if (done_impulses.size() > 0) {
@@ -67,6 +67,9 @@ void Connection::update() {
 	int post_done_impulses = done_impulses.size();
 	assert( post_impulse_count== pre_impulse_count - post_done_impulses);
 #endif
+	if (this->isDebugOn() == true) {
+		std::cout << "Connection::update: " << *this << std::endl;
+	}
 }
 
 const common::Connector<Connection, Node> & Connection::getConnector() const {
@@ -190,7 +193,9 @@ bool Connection::isPrimaryOutputConnection() const {
 	}
 	return false;
 }
-
+void Connection::enableDebug(bool b) {
+	this->setDebug(b);
+}
 std::ostream& operator<<(std::ostream & os, const Connection & obj) {
 	std::stringstream ss;
 	if (obj.isPrimaryInputConnection()) {

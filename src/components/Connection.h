@@ -184,6 +184,7 @@ public:
 
 	bool isPrimaryInputConnection() const ;
 	bool isPrimaryOutputConnection() const ;
+	virtual void enableDebug(bool b);
 
 	/**
 	 * To stream operator

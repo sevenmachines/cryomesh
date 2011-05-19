@@ -46,7 +46,9 @@ Node::~Node() {
 }
 
 void Node::update() {
-	//	std::cout << "Node::update: " << *this << std::endl;
+	if (isDebugOn() == true) {
+		std::cout << "Node::update: " << *this << std::endl;
+	}
 	ActivationState state = this->checkFire();
 	if (state != ActivationState::None) {
 		if (isDebugOn() == true) {
@@ -488,7 +490,9 @@ void Node::updatePosition() {
 		}
 	}
 }
-
+void Node::enableDebug(bool b){
+	 this->setDebug(b);
+ }
 std::ostream& operator<<(std::ostream & os, const Node & obj) {
 	std::stringstream ss;
 	if (obj.isPrimaryInputAttachedNode()) {

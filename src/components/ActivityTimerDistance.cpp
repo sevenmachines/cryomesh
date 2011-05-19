@@ -98,7 +98,9 @@ double ActivityTimerDistance::getStartingDelay() const {
 double ActivityTimerDistance::getDecrement() const {
 	return decrement;
 }
-
+void ActivityTimerDistance::enableDebug(bool b){
+	 this->setDebug(b);
+ }
 void ActivityTimerDistance::reset() {
 	distance_remaining = distance;
 }

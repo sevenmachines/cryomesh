@@ -438,6 +438,10 @@ void Fibre::forceFireNodes(const state::Pattern & pattern,
 	}
 }
 
+void Fibre::enableDebug(bool b){
+	 this->setDebug(b);
+ }
+
 std::ostream& operator<<(std::ostream & os, const Fibre & obj) {
 	os << "Fibre: "<<"'" <<obj.getUUIDString()<<"'"<<" size: "<< obj.getConnections().getSize() << " :"
 			<< *(obj.getOutputNodesPattern());

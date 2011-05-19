@@ -209,7 +209,8 @@ std::vector<boost::shared_ptr<Fibre> > Bundle::autoConnectPrimaryInputClusters(
 		std::vector<boost::uuids::uuid>::const_iterator it_cluster_uuids = cluster_uuids.begin();
 		const std::vector<boost::uuids::uuid>::const_iterator it_cluster_uuids_end = cluster_uuids.end();
 		while (it_cluster_uuids != it_cluster_uuids_end) {
-			boost::shared_ptr<Cluster> temp_cluster = this->getMutableClusters().getMutableObjectByKey(*it_cluster_uuids);
+			boost::shared_ptr<Cluster> temp_cluster = this->getMutableClusters().getMutableObjectByKey(
+					*it_cluster_uuids);
 			if (temp_cluster != 0) {
 				cluster_list.push_back(temp_cluster);
 			} else {
@@ -230,7 +231,8 @@ std::vector<boost::shared_ptr<Fibre> > Bundle::autoConnectPrimaryOutputClusters(
 		std::vector<boost::uuids::uuid>::const_iterator it_cluster_uuids = cluster_uuids.begin();
 		const std::vector<boost::uuids::uuid>::const_iterator it_cluster_uuids_end = cluster_uuids.end();
 		while (it_cluster_uuids != it_cluster_uuids_end) {
-			boost::shared_ptr<Cluster> temp_cluster = this->getMutableClusters().getMutableObjectByKey(*it_cluster_uuids);
+			boost::shared_ptr<Cluster> temp_cluster = this->getMutableClusters().getMutableObjectByKey(
+					*it_cluster_uuids);
 			if (temp_cluster != 0) {
 				cluster_list.push_back(temp_cluster);
 			} else {
@@ -380,7 +382,20 @@ void Bundle::loadChannels(const std::string & ifstr) {
 const ClusterMap & Bundle::getClusters() const {
 	return clusters;
 }
- ClusterMap & Bundle::getMutableClusters()  {
+
+void Bundle::enableDebug(bool b){
+	this->enableDebugClusters(b);
+	this->enableDebugFibres(b);
+}
+
+void Bundle::enableDebugClusters(bool b) {
+	clusters.enableDebug(b);
+}
+void Bundle::enableDebugFibres(bool b) {
+	fibres.enableDebug(b);
+}
+
+ClusterMap & Bundle::getMutableClusters() {
 	return clusters;
 }
 const FibreMap & Bundle::getFibres() const {

@@ -207,9 +207,35 @@ std::list<boost::shared_ptr<Impulse> > ImpulseCollection::getByActivityTimerValu
 				all_objs.end();
 		while (it_all_objs != it_all_objs_end) {
 			double val = it_all_objs->second->getActivityTimer()->getDelay();
-			bool match = (comp == GreaterThan && val > value) || (comp == LessThan && val < value) || (comp == EqualTo
-					&& common::Maths::compareDoubles(val, value)) || (comp == GreaterThan
-					&& !common::Maths::compareDoubles(val, value));
+
+			bool match = false;
+			switch (comp) {
+			case (GreaterThan):
+				match = val > value;
+				break;
+
+			case (LessThan):
+				match = val < value;
+				break;
+
+			case (EqualTo):
+				match = common::Maths::compareDoubles(val, value) ==0;
+				break;
+
+			case (GreaterThanOrEqualTo):
+				match = val > value || common::Maths::compareDoubles(val, value)==0;
+				break;
+
+			case (LessThanOrEqualTo):
+				match = val < value || common::Maths::compareDoubles(val, value)==0;
+				break;
+
+			default:
+				match = false;
+				assert(false);
+				break;
+			}
+
 			if (match == true) {
 				matched_impulses.push_back(it_all_objs->second);
 			}
@@ -279,6 +305,10 @@ const ImpulseCollection ImpulseCollection::operator+(const ImpulseCollection & o
 	ImpulseCollection imp = *this;
 	imp += obj;
 	return imp;
+}
+
+void ImpulseCollection::enableDebug(bool b) {
+	this->setDebug(b);
 }
 
 bool ImpulseCollection::operator==(const ImpulseCollection & obj) const {
@@ -361,7 +391,7 @@ std::ostream& operator<<(std::ostream & os, const ImpulseCollection & obj) {
 std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > ImpulseCollection::clearActivitiesByValue(double activity,
 		bool greater) {
 	std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > cleared_impulses;
-	std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > & impulses = this->getMutableCollection();
+	std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > &impulses = this->getMutableCollection();
 	// forall in impulses
 	{
 		std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> >::const_iterator it_impulses = impulses.begin();

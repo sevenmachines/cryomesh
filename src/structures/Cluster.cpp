@@ -260,6 +260,12 @@ int Cluster::getActiveNodeCount(const int indicator) const {
 	return return_count;
 }
 
+ void Cluster::enableDebug(bool b) {
+	 this->setDebug(b);
+	 nodes.enableDebug(b);
+	 connections.enableDebug(b);
+
+}
 int Cluster::getLiveNodeCount() const {
 	int count = 0;
 	const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > & all_nodes = this->getNodes();
