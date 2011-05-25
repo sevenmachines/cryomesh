@@ -40,6 +40,7 @@ public:
 	 * 	The name with full path of the database file
 	 */
 	Creator(const std::string & config_filename, const std::string & database_filename = DEFAULT_DATABASE_FILENAME);
+	Creator( std::istream & config_stream, const std::string & database_filename = DEFAULT_DATABASE_FILENAME);
 
 	/**
 	 * Deffault destructor
@@ -229,7 +230,8 @@ protected:
 	 * @return bool
 	 * 	True if running the config file was successful, false otherwise
 	 */
-	bool createFromConfig();
+	bool createFromConfigFile(const std::string config_filename);
+	bool createFromConfigStream(std::istream & is);
 
 private:
 	/**
@@ -237,7 +239,7 @@ private:
 	 *
 	 * @var std::string
 	 */
-	std::string configFilename;
+	//std::string configFilename;
 
 	/**
 	 * The full path name of the pattern data set file

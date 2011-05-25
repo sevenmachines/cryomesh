@@ -5,6 +5,8 @@
  *      Author: "SevenMachines <SevenMachines@yahoo.co.uk>"
  */
 
+#define CREATOR_DEBUG
+
 #include "Creator.h"
 #include <algorithm>
 #include "common/Containers.h"
@@ -43,16 +45,26 @@ std::map<std::string, std::list<std::string> > Creator::getAcceptedCommandList()
 }
 
 Creator::Creator(const std::string & config_filename, const std::string & database_filename) :
-	configFilename(config_filename), databaseFilename(Creator::DEFAULT_DATABASE_FILENAME) {
+	databaseFilename(Creator::DEFAULT_DATABASE_FILENAME) {
 	this->initialise();
 
 	// create from config
 	{
-		bool success = this->createFromConfig();
+		bool success = this->createFromConfigFile(config_filename);
 		if (success == false) {
-			std::cout << "Creator::Creator: " << "ERROR: Creating bundle from config file " << "'" << configFilename
+			std::cout << "Creator::Creator: " << "ERROR: Creating bundle from config file " << "'" << config_filename
 					<< "'" << std::endl;
 		}
+	}
+}
+
+Creator::Creator(std::istream & config_stream, const std::string & database_filename) :
+	databaseFilename(Creator::DEFAULT_DATABASE_FILENAME) {
+	this->initialise();
+
+	bool success = this->createFromConfigStream(config_stream);
+	if (success == false) {
+		std::cout << "Creator::Creator: " << "ERROR: Creating bundle from config stream " << std::endl;
 	}
 }
 
@@ -83,88 +95,97 @@ void Creator::initialise() {
 	bundle = boost::shared_ptr<structures::Bundle>(new structures::Bundle);
 }
 
-bool Creator::createFromConfig() {
+bool Creator::createFromConfigStream(std::istream & is) {
 	bool success = true;
-	std::ifstream ifs(configFilename.c_str());
-	if (ifs.is_open() != true) {
-		std::cout << "Creator::createFromConfig: " << "ERROR: File " << "'" << configFilename << "'"
-				<< "could not be opened... " << std::endl;
-		success = false;
-	} else {
-		config::ConfigTranslator conf_trans(configFilename);
-		bool config_coherent = this->analyseConfig(conf_trans);
+	config::ConfigTranslator conf_trans(is);
+	bool config_coherent = this->analyseConfig(conf_trans);
 
-		if (config_coherent == true) {
+	if (config_coherent == true) {
 
-			// iterate through list, running functions
-			const std::list<config::ConfigEntry> & conf_entries = conf_trans.getEntries();
-			// forall in conf_entries
-			{
-				std::list<config::ConfigEntry>::const_iterator it_conf_entries = conf_entries.begin();
-				const std::list<config::ConfigEntry>::const_iterator it_conf_entries_end = conf_entries.end();
-				while (it_conf_entries != it_conf_entries_end) {
-					std::string command = it_conf_entries->getCommand();
+		// iterate through list, running functions
+		const std::list<config::ConfigEntry> & conf_entries = conf_trans.getEntries();
+		// forall in conf_entries
+		{
+			std::list<config::ConfigEntry>::const_iterator it_conf_entries = conf_entries.begin();
+			const std::list<config::ConfigEntry>::const_iterator it_conf_entries_end = conf_entries.end();
+			while (it_conf_entries != it_conf_entries_end) {
+				std::string command = it_conf_entries->getCommand();
 
-					if (command == "create-cluster") {
-						//create-cluster id=1 size=100 connectivity=10
-						int id = it_conf_entries->getIntegerFormattedOptionValue("id");
-						int size = it_conf_entries->getIntegerFormattedOptionValue("size");
-						int connectivity = it_conf_entries->getIntegerFormattedOptionValue("connectivity");
-						this->createCluster(id, size, connectivity);
-					} else if (command == "connect-clusters") {
-						//connect-clusters inputid=1 outputid=2 width=10
-						int inputid = it_conf_entries->getIntegerFormattedOptionValue("inputid");
-						int outputid = it_conf_entries->getIntegerFormattedOptionValue("outputid");
-						int width = it_conf_entries->getIntegerFormattedOptionValue("width");
-						this->connectCluster(inputid, outputid, width);
-						//		} else if (command == "create-primary-input") {
-						//			//create-primary-input  id=2 outputid=1 width=10
-						//			int id = it_conf_entries->getIntegerFormattedOptionValue("id");
-						//				int outputid = it_conf_entries->getIntegerFormattedOptionValue("outputid");
-						//				int width = it_conf_entries->getIntegerFormattedOptionValue("width");
-						//				this->createPrimaryInputFibre(id, outputid, width);
-						//			} else if (command == "create-primary-output") {
-						//				//create-primary-output  id=4 inputid=1 width=10
-						//				int id = it_conf_entries->getIntegerFormattedOptionValue("id");
-						//				int inputid = it_conf_entries->getIntegerFormattedOptionValue("inputid");
-						//				int width = it_conf_entries->getIntegerFormattedOptionValue("width");
-						//				this->createPrimaryOutputFibre(id, inputid, width);
-					} else if (command == "connect-primary-input") {
-						// connect-primary-input id=1 outputid=1
-						int id = it_conf_entries->getIntegerFormattedOptionValue("id");
-						int outputid = it_conf_entries->getIntegerFormattedOptionValue("outputid");
-						this->connectPrimaryInputChannel(id, outputid);
-					} 	else if (command == "autoconnect-inputs") {
-						//autoconnect-inputs ids="1 2 3"
-						std::vector<int> ids = config::ConfigEntry::toIntegerMultipleValues(config::ConfigEntry::tokenizeMultipleValueString(it_conf_entries->getOptionValue("ids")));
-						this->autoConnectPrimaryInputs(ids);
-					}  	else if (command == "autoconnect-outputs") {
-						//autoconnect-outputs ids="1 2 3"
-						std::vector<int> ids = config::ConfigEntry::toIntegerMultipleValues(config::ConfigEntry::tokenizeMultipleValueString(it_conf_entries->getOptionValue("ids")));
-						this->autoConnectPrimaryOutputs(ids);
-					} else if (command == "connect-primary-output") {
-						// connect-primary-output id=2 outputid=2
-						int id = it_conf_entries->getIntegerFormattedOptionValue("id");
-						int inputid = it_conf_entries->getIntegerFormattedOptionValue("inputid");
-						this->connectPrimaryOutputChannel(id, inputid);
-					} else if (command == "loaddata") {
-						//loaddata datafile
-						std::string datafile = it_conf_entries->getOptionValue("file");
-						this->loadData(datafile);
-					} else {
-						std::cout << "Creator::createFromConfig: " << "ERROR: Unknown command " << "'" << command
-								<< "'" << std::endl;
-					}
-
-					++it_conf_entries;
+				if (command == "create-cluster") {
+					//create-cluster id=1 size=100 connectivity=10
+					int id = it_conf_entries->getIntegerFormattedOptionValue("id");
+					int size = it_conf_entries->getIntegerFormattedOptionValue("size");
+					int connectivity = it_conf_entries->getIntegerFormattedOptionValue("connectivity");
+					this->createCluster(id, size, connectivity);
+				} else if (command == "connect-clusters") {
+					//connect-clusters inputid=1 outputid=2 width=10
+					int inputid = it_conf_entries->getIntegerFormattedOptionValue("inputid");
+					int outputid = it_conf_entries->getIntegerFormattedOptionValue("outputid");
+					int width = it_conf_entries->getIntegerFormattedOptionValue("width");
+					this->connectCluster(inputid, outputid, width);
+					//		} else if (command == "create-primary-input") {
+					//			//create-primary-input  id=2 outputid=1 width=10
+					//			int id = it_conf_entries->getIntegerFormattedOptionValue("id");
+					//				int outputid = it_conf_entries->getIntegerFormattedOptionValue("outputid");
+					//				int width = it_conf_entries->getIntegerFormattedOptionValue("width");
+					//				this->createPrimaryInputFibre(id, outputid, width);
+					//			} else if (command == "create-primary-output") {
+					//				//create-primary-output  id=4 inputid=1 width=10
+					//				int id = it_conf_entries->getIntegerFormattedOptionValue("id");
+					//				int inputid = it_conf_entries->getIntegerFormattedOptionValue("inputid");
+					//				int width = it_conf_entries->getIntegerFormattedOptionValue("width");
+					//				this->createPrimaryOutputFibre(id, inputid, width);
+				} else if (command == "connect-primary-input") {
+					// connect-primary-input id=1 outputid=1
+					int id = it_conf_entries->getIntegerFormattedOptionValue("id");
+					int outputid = it_conf_entries->getIntegerFormattedOptionValue("outputid");
+					this->connectPrimaryInputChannel(id, outputid);
+				} else if (command == "autoconnect-inputs") {
+					//autoconnect-inputs ids="1 2 3"
+					std::vector<int> ids = config::ConfigEntry::toIntegerMultipleValues(
+							config::ConfigEntry::tokenizeMultipleValueString(it_conf_entries->getOptionValue("ids")));
+					this->autoConnectPrimaryInputs(ids);
+				} else if (command == "autoconnect-outputs") {
+					//autoconnect-outputs ids="1 2 3"
+					std::vector<int> ids = config::ConfigEntry::toIntegerMultipleValues(
+							config::ConfigEntry::tokenizeMultipleValueString(it_conf_entries->getOptionValue("ids")));
+					this->autoConnectPrimaryOutputs(ids);
+				} else if (command == "connect-primary-output") {
+					// connect-primary-output id=2 outputid=2
+					int id = it_conf_entries->getIntegerFormattedOptionValue("id");
+					int inputid = it_conf_entries->getIntegerFormattedOptionValue("inputid");
+					this->connectPrimaryOutputChannel(id, inputid);
+				} else if (command == "loaddata") {
+					//loaddata datafile
+					std::string datafile = it_conf_entries->getOptionValue("file");
+					this->loadData(datafile);
+				} else {
+					std::cout << "Creator::createFromConfig: " << "ERROR: Unknown command " << "'" << command << "'"
+							<< std::endl;
 				}
+
+				++it_conf_entries;
 			}
-		} else {
-			std::cout << "Creator::createFromConfig: " << "WARNING: Incoherent config" << std::endl;
-			success = false;
 		}
+	} else {
+		std::cout << "Creator::createFromConfig: " << "WARNING: Incoherent config" << std::endl;
+		success = false;
 	}
 	return success;
+}
+
+bool Creator::createFromConfigFile(const std::string config_filename) {
+	bool success = true;
+	std::ifstream ifs(config_filename.c_str());
+	if (ifs.is_open() != true) {
+		std::cout << "Creator::createFromConfig: " << "ERROR: File " << "'" << config_filename << "'"
+				<< "could not be opened... " << std::endl;
+		success = false;
+		return false;
+	} else {
+		success = this->createFromConfigStream(ifs);
+		return success;
+	}
 }
 
 bool Creator::analyseConfig(const config::ConfigTranslator & conf_trans) {
@@ -328,37 +349,44 @@ void Creator::connectPrimaryOutputChannel(int channel_id, int inputid) {
 	bundle->connectPrimaryOutputCluster(this->getPatternChannelRealID(channel_id), this->getClusterRealID(inputid));
 }
 
-void Creator::autoConnectPrimaryInputs(const std::vector<int> & cluster_ids){
+void Creator::autoConnectPrimaryInputs(const std::vector<int> & cluster_ids) {
+#ifdef CREATOR_DEBUG
+	std::cout << "Creator::autoConnectPrimaryInputs: " << "" << std::endl;
+#endif
 	// get all real ids
 	std::vector<boost::uuids::uuid> real_ids;
 	// forall in cluster_ids
-		 {
-			 std::vector<int>::const_iterator it_cluster_ids = cluster_ids.begin();
-			 const  std::vector<int>::const_iterator it_cluster_ids_end = cluster_ids.end();
-			 while ( it_cluster_ids != it_cluster_ids_end){
-				real_ids.push_back(this->getClusterRealID(*it_cluster_ids));
-				 ++it_cluster_ids;
-			 }
-		 }
-		 bundle->autoConnectPrimaryInputClusters(real_ids);
+	{
+		std::vector<int>::const_iterator it_cluster_ids = cluster_ids.begin();
+		const std::vector<int>::const_iterator it_cluster_ids_end = cluster_ids.end();
+		while (it_cluster_ids != it_cluster_ids_end) {
+			real_ids.push_back(this->getClusterRealID(*it_cluster_ids));
+			++it_cluster_ids;
+		}
+	}
+	bundle->autoConnectPrimaryInputClusters(real_ids);
 }
 
-void Creator::autoConnectPrimaryOutputs(const std::vector<int> & cluster_ids){
+void Creator::autoConnectPrimaryOutputs(const std::vector<int> & cluster_ids) {
+#ifdef CREATOR_DEBUG
+	std::cout << "Creator::autoConnectPrimaryOutputs: " << "" << std::endl;
+#endif
 	// get all real ids
 	std::vector<boost::uuids::uuid> real_ids;
 	// forall in cluster_ids
-		 {
-			 std::vector<int>::const_iterator it_cluster_ids = cluster_ids.begin();
-			 const  std::vector<int>::const_iterator it_cluster_ids_end = cluster_ids.end();
-			 while ( it_cluster_ids != it_cluster_ids_end){
-				real_ids.push_back(this->getClusterRealID(*it_cluster_ids));
-				 ++it_cluster_ids;
-			 }
-		 }
-		 bundle->autoConnectPrimaryOutputClusters(real_ids);
+	{
+		std::vector<int>::const_iterator it_cluster_ids = cluster_ids.begin();
+		const std::vector<int>::const_iterator it_cluster_ids_end = cluster_ids.end();
+		while (it_cluster_ids != it_cluster_ids_end) {
+			real_ids.push_back(this->getClusterRealID(*it_cluster_ids));
+			++it_cluster_ids;
+		}
+	}
+	bundle->autoConnectPrimaryOutputClusters(real_ids);
 }
 
 boost::uuids::uuid Creator::getRealID(const int id, const std::map<int, boost::uuids::uuid> & idmap) const {
+
 	boost::uuids::uuid found_id;
 	const std::map<int, boost::uuids::uuid>::const_iterator it_found = idmap.find(id);
 	if (it_found != idmap.end()) {
@@ -378,21 +406,30 @@ boost::uuids::uuid Creator::getRealID(const int id, const std::map<int, boost::u
 		}
 
 	}
+#ifdef CREATOR_DEBUG
+	std::cout << "Creator::getRealID: " << id << " -> " << found_id << std::endl;
+#endif
 	return found_id;
 }
 
 boost::uuids::uuid Creator::getClusterRealID(const int id) const {
-	//std::cout << "Creator::getClusterRealID: " << "id: " << id << std::endl;
+#ifdef CREATOR_DEBUG
+	std::cout << "Creator::getClusterRealID: " << "" << std::endl;
+#endif
 	return getRealID(id, clusterIDMap);
 }
 
 boost::uuids::uuid Creator::getFibreRealID(const int id) const {
-	//	std::cout << "Creator::getFibreRealID: " << "id: " << id << std::endl;
+#ifdef CREATOR_DEBUG
+	std::cout << "Creator::getFibreRealID: " << "" << std::endl;
+#endif
 	return getRealID(id, fibreIDMap);
 }
 
 boost::uuids::uuid Creator::getPatternChannelRealID(const int id) const {
-	//	std::cout << "Creator::getPatternChannelRealID: " << "id: " << id << std::endl;
+#ifdef CREATOR_DEBUG
+	std::cout << "Creator::getPatternChannelRealID: " << "" << std::endl;
+#endif
 	return getRealID(id, patternChannelIDMap);
 }
 

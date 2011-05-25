@@ -205,6 +205,9 @@ boost::shared_ptr<Fibre> Bundle::connectPrimaryOutputCluster(boost::uuids::uuid 
 
 std::vector<boost::shared_ptr<Fibre> > Bundle::autoConnectPrimaryInputClusters(
 		const std::vector<boost::uuids::uuid> & cluster_uuids) {
+#ifdef BUNDLE_DEBUG
+	std::cout<<"Bundle::autoConnectPrimaryInputClusters: "<<""<<std::endl;
+#endif
 	std::vector<boost::shared_ptr<Cluster> > cluster_list;
 	// forall in cluster__uuids
 	{
@@ -250,12 +253,18 @@ std::vector<boost::shared_ptr<Fibre> > Bundle::autoConnectPrimaryOutputClusters(
 
 std::vector<boost::shared_ptr<Fibre> > Bundle::autoConnectPrimaryInputClusters(
 		std::vector<boost::shared_ptr<Cluster> > list) {
+#ifdef BUNDLE_DEBUG
+	std::cout<<"Bundle::autoConnectPrimaryInputClusters(list): "<<""<<std::endl;
+#endif
 	std::vector<boost::shared_ptr<Fibre> > newfibres;
 
 	if (list.size() > 0) {
 		// get unconnected real pattern channels
 		std::vector<boost::shared_ptr<state::PatternChannel> > disconnected_channels =
 				this->getDisconnectedRealInputPatternChannels();
+		if (disconnected_channels.size()==0){
+		std::cout<<"Bundle::autoConnectPrimaryInputClusters: "<<"No disconnected real input channels"<<std::endl;
+		}
 		// forall in disconnected_channels
 		{
 			std::vector<boost::shared_ptr<Cluster> >::iterator it_list = list.begin();
@@ -350,6 +359,9 @@ std::vector<boost::shared_ptr<state::PatternChannel> > Bundle::getDisconnectedRe
 			++it_channel_map;
 		}
 	}
+#ifdef BUNDLE_DEBUG
+	std::cout<<"Bundle::getDisconnectedRealInputPatternChannels: "<<""<<std::endl;
+#endif
 	return disconnected_channels;
 }
 std::vector<boost::shared_ptr<state::PatternChannel> > Bundle::getDisconnectedRealOutputPatternChannels() {
