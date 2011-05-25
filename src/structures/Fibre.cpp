@@ -188,8 +188,8 @@ const std::pair<int, int> Fibre::countConnections(
 	}
 	return std::pair<int, int>(input_count, output_count);
 }
-const Fibre::ClusterConnectionType Fibre::isConnected(const boost::shared_ptr<Cluster> & cluster) const {
-	ClusterConnectionType contype = NullCluster;
+int Fibre::isConnected(const boost::shared_ptr<Cluster> & cluster) const {
+	int cluster_type = 0;
 	//std::cout<<"Fibre::isConnected: "<<common::Misc::print(std::cout, cluster->getUUID())<<std::endl;
 	//std::cout<<"Fibre::isConnected: "<<this->getConnector()<<std::endl;
 	// check for input
@@ -209,18 +209,22 @@ const Fibre::ClusterConnectionType Fibre::isConnected(const boost::shared_ptr<Cl
 	bool infound = it_input_found != it_input_end;
 	bool outfound = it_output_found != it_output_end;
 
+	std::cout<<"Fibre::isConnected: "<<"infound: "<<infound<<" outfound: "<<outfound<<std::endl;
 	if ((infound == true) && (outfound == true)) { // loopback case
-		contype = ClusterConnectionType::LoopbackCluster;
-		std::cout << "Fibre::isConnected: " << "LoopbackCluster" << std::endl;
-	} else if (infound == true) {
-		contype = ClusterConnectionType::InputCluster;
-		std::cout << "Fibre::isConnected: " << "InputCluster" << std::endl;
-	} else if (outfound == true) {
-		contype = ClusterConnectionType::OutputCluster;
-		std::cout << "Fibre::isConnected: " << "OutputCluster" << std::endl;
+		cluster_type = cluster_type | ClusterConnectionType::LoopbackCluster;
+		std::cout << "Fibre::isConnected: " << "LoopbackCluster" <<": "<<this->getUUIDString() <<"<->"<<cluster->getUUIDString()  <<" (cluster_type: "<<cluster_type<<")"<< std::endl;
 	}
+	if (infound == true) {
+		cluster_type = cluster_type |  ClusterConnectionType::InputCluster;
+		std::cout << "Fibre::isConnected: " << "InputCluster" <<": "<<this->getUUIDString() <<"<-"<<cluster->getUUIDString()  <<" (cluster_type: "<<cluster_type<<")"<< std::endl;
+	}
+	if (outfound == true) {
+		cluster_type = cluster_type | ClusterConnectionType::OutputCluster;
+		std::cout << "Fibre::isConnected: " << "OutputCluster"<<": "<<this->getUUIDString() <<"->"<<cluster->getUUIDString() <<" (cluster_type: "<<cluster_type<<")"<< std::endl;
+	}
+	std::cout<<"Fibre::isConnected: "<<""<<std::endl;
 
-	return contype;
+	return cluster_type;
 }
 
 void Fibre::createConnections(int number) {

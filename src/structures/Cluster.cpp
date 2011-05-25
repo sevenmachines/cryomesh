@@ -286,7 +286,7 @@ int Cluster::getLiveNodeCount() const {
 	return count;
 }
 std::ostream& operator<<(std::ostream & os, const Cluster & obj) {
-	os << "Cluster: " << "nodes:" << obj.getNodes().size() << " connections:" << obj.getConnections().size()
+	os << "Cluster: "<<obj.getUUIDString() << "nodes:" << obj.getNodes().size() << " connections:" << obj.getConnections().size()
 			<< std::endl;
 	os << obj.getNodeMap() << std::endl;
 	return os;

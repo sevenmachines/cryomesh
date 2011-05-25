@@ -31,7 +31,9 @@ public:
 	 * Enum representing the relation of a cluster to this fibre
 	 */
 	enum ClusterConnectionType {
-		NullCluster, InputCluster, OutputCluster, LoopbackCluster
+		NullCluster = 1,
+		InputCluster =2,
+		OutputCluster =4, LoopbackCluster =8
 	};
 
 	/**
@@ -172,7 +174,7 @@ public:
 	 * @return const ClusterConnectionType &
 	 * 		Connection type to cluster, Null if none
 	 */
-	const ClusterConnectionType isConnected(const boost::shared_ptr<Cluster> & cluster) const;
+	int isConnected(const boost::shared_ptr<Cluster> & cluster) const;
 
 	/**
 	 * Get width (number of connections) of fibre

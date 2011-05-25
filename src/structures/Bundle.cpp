@@ -5,6 +5,8 @@
  *      Author: niall
  */
 
+#define BUNDLE_DEBUG
+
 #include "Bundle.h"
 #include "utilities/SequencerChannels.h"
 #include <boost/uuid/uuid_io.hpp>
@@ -225,6 +227,7 @@ std::vector<boost::shared_ptr<Fibre> > Bundle::autoConnectPrimaryInputClusters(
 
 std::vector<boost::shared_ptr<Fibre> > Bundle::autoConnectPrimaryOutputClusters(
 		const std::vector<boost::uuids::uuid> & cluster_uuids) {
+
 	std::vector<boost::shared_ptr<Cluster> > cluster_list;
 	// forall in cluster__uuids
 	{
@@ -269,7 +272,10 @@ std::vector<boost::shared_ptr<Fibre> > Bundle::autoConnectPrimaryInputClusters(
 				const boost::uuids::uuid channel_uuid = (*it_disconnected_channels)->getUUID();
 				const boost::uuids::uuid cluster_uuid = (*it_list)->getUUID();
 				boost::shared_ptr<Fibre> newfibre = this->connectPrimaryInputCluster(channel_uuid, cluster_uuid);
-				newfibres.push_back(newfibre);
+#ifdef BUNDLE_DEBUG
+	std::cout<<"Bundle::autoConnectPrimaryInputClusters: Connecting channel "<<channel_uuid <<" to cluster "<<cluster_uuid<<std::endl;
+#endif
+	newfibres.push_back(newfibre);
 				++it_list;
 				++it_disconnected_channels;
 			}
@@ -277,7 +283,9 @@ std::vector<boost::shared_ptr<Fibre> > Bundle::autoConnectPrimaryInputClusters(
 	} else {
 		std::cout << "Bundle::autoConnectPrimaryInputClusters: " << "WARNING: No clusters to autoconnect" << std::endl;
 	}
-
+#ifdef BUNDLE_DEBUG
+	std::cout<<"Bundle::autoConnectPrimaryInputClusters: Created new fibres: "<<newfibres.size()<<std::endl;
+#endif
 	return newfibres;
 }
 std::vector<boost::shared_ptr<Fibre> > Bundle::autoConnectPrimaryOutputClusters(
@@ -304,7 +312,10 @@ std::vector<boost::shared_ptr<Fibre> > Bundle::autoConnectPrimaryOutputClusters(
 				const boost::uuids::uuid channel_uuid = (*it_disconnected_channels)->getUUID();
 				const boost::uuids::uuid cluster_uuid = (*it_list)->getUUID();
 				boost::shared_ptr<Fibre> newfibre = this->connectPrimaryOutputCluster(channel_uuid, cluster_uuid);
-				newfibres.push_back(newfibre);
+#ifdef BUNDLE_DEBUG
+	std::cout<<"Bundle::autoConnectPrimaryOutputClusters: Connecting channel "<<channel_uuid <<" to cluster "<<cluster_uuid<<std::endl;
+#endif
+	newfibres.push_back(newfibre);
 				++it_list;
 				++it_disconnected_channels;
 			}
@@ -312,7 +323,9 @@ std::vector<boost::shared_ptr<Fibre> > Bundle::autoConnectPrimaryOutputClusters(
 	} else {
 		std::cout << "Bundle::autoConnectPrimaryOutputClusters: " << "WARNING: No clusters to autoconnect" << std::endl;
 	}
-
+#ifdef BUNDLE_DEBUG
+	std::cout<<"Bundle::autoConnectPrimaryInputClusters: Created new fibres: "<<newfibres.size()<<std::endl;
+#endif
 	return newfibres;
 }
 
@@ -817,6 +830,9 @@ std::ostream& Bundle::print(std::ostream & os, const common::Loggable::LoggingDe
 		// fibremap
 		os << this->getFibres() << std::endl;
 		// connecting fibres patterns
+
+		os << this->getInputFibres() << std::endl;
+		os << this->getOutputFibres() << std::endl;
 
 		this->printFibreMaps(os) << std::endl << std::endl;
 		this->printChannels(os) << std::endl << std::endl;

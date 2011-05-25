@@ -1,7 +1,9 @@
 CURRENT---------------------------------------------------------------------------------
 
 * Test creater autoconnect from config file
-
+	- CreatorTest::testAutoConnect is failing, but output of bundle << looks ok ??
+	
+* Implement the underlying mesh structure
 
 HIGH ----------------------------------------------------------------------------------------
 
@@ -12,6 +14,11 @@ HIGH ---------------------------------------------------------------------------
 * Implement Impulse warping of mesh
 
 MEDIUM ------------------------------------------------------------------------------------
+
+
+	 
+* Cryoviewer: Sort out gl display, try fiddling with a camera
+* Cryoviewer: Implement statistics osgpicking
 
 * Write ImpulseTest::testRandom to check using bias
 
@@ -38,6 +45,22 @@ WISHLIST -----------------------------------------------------------------------
 * Dont clear past impulses from Nodes on every cycle if extra performance is needed
 
 DONE -----------------------------------------------------------------------------------------
+
+* Add cluster selector to StatisticsWindow (DONE)
+* Add cluster visualiser to StatisticsWindow (DONE)
+* Perform more tests on whether activity display is likely accurate (DONE)
+
+* Make primary nodes backgrounds diferent (DONE)
+* Finish connections viewing stuff (DONE)
+* Alter connections drawing area to actual draw connection data (impulses superimposed on connection length) (DONE)
+* Fix non-display of activities graph for nodes (DONE)
+* Import activity drawing areas, display per cluster,  have each  node disable-able (DONE)
+* Make statistics text display meaningful (Done)
+* Have statistics window show something (DONE)
+* Have structure show some basic openscengraph stuff (DONE)
+* Implement simple Main initialisation from command line config (DONE)
+* Implement simple gtk Main window to allow turning on/off displays (DONE)
+* Implement demo of Structure display of node objects (DONE)
 
 * Bug: GUI display shows no impulses since bundle->connectPrimary* changes, investigate. (DONE)
 	- ImpulseCollection::getByActivityTimerValue was set to look for all <0, but impulses activity timers

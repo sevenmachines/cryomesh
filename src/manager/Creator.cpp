@@ -35,10 +35,10 @@ std::map<std::string, std::list<std::string> > Creator::getAcceptedCommandList()
 	commap["connect-primary-output"] = std::list<std::string>( { "id", "inputid" });
 
 	// autoconnect-input ids="1 2 3"
-	commap["autoconnect-input"] = std::list<std::string>( { "ids" });
+	commap["autoconnect-inputs"] = std::list<std::string>( { "ids" });
 
 	// autoconnect-output ids="1 2 3"
-	commap["autoconnect-output"] = std::list<std::string>( { "ids" });
+	commap["autoconnect-outputs"] = std::list<std::string>( { "ids" });
 	return commap;
 }
 
