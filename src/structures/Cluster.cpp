@@ -5,6 +5,8 @@
  *      Author: niall
  */
 
+//#define CLUSTER_DEBUG
+
 #include "Cluster.h"
 #include <list>
 #include <algorithm>
@@ -18,11 +20,11 @@ namespace structures {
 const double Cluster::SELF_CONNECTED_NODES_FRACTION = 0.1;
 
 Cluster::Cluster() :
-	common::Spacial(true) , energy(0){
+	common::Spacial(true), energy(0) {
 }
 
 Cluster::Cluster(int nodeCount, int connectivity) :
-	common::Spacial(true) , energy(0){
+	common::Spacial(true), energy(0) {
 	this->createNodes(nodeCount);
 	this->createConnectivity(connectivity);
 }
@@ -65,10 +67,19 @@ void Cluster::updateConnectivity(const int connectivity, ValueTypeSpecifier asVa
 	std::vector<boost::shared_ptr<components::Node> > shufflednodes = nodes.getObjectList();
 	random_shuffle(shufflednodes.begin(), shufflednodes.end());
 
-	assert (allnodes.size() == shufflednodes.size());
+#ifdef CLUSTER_DEBUG
+	std::cout << "Cluster::updateConnectivity: " << "allnodes: " << allnodes.size() << " shuffled: "
+			<< shufflednodes.size() << std::endl;
+#endif
+
+	assert(allnodes.size() == shufflednodes.size());
 
 	// forall in allnodes
 	{
+#ifdef CLUSTER_DEBUG
+		int nodes_count = 0;
+		int shuffled_count = 0;
+#endif
 		std::vector<boost::shared_ptr<components::Node> >::const_iterator it_shufflednodes = shufflednodes.begin();
 		const std::vector<boost::shared_ptr<components::Node> >::const_iterator it_shufflednodes_end =
 				shufflednodes.end();
@@ -84,16 +95,27 @@ void Cluster::updateConnectivity(const int connectivity, ValueTypeSpecifier asVa
 					// add connection
 					if (it_shufflednodes == it_shufflednodes_end) {
 						it_shufflednodes = shufflednodes.begin();
+#ifdef CLUSTER_DEBUG
+						std::cout << "Cluster::updateConnectivity: " << nodes_count << " reshuffling" << std::endl;
+#endif
 					}
 
 					bool dont_self_connect = false;
 					bool same_node = it_allnodes->second->getUUID() == (*it_shufflednodes)->getUUID();
 					if (same_node == true && shufflednodes.size() > 1) {
 						dont_self_connect = common::Maths::getRandomBool(Cluster::SELF_CONNECTED_NODES_FRACTION);
+#ifdef CLUSTER_DEBUG
+						std::cout << "Cluster::updateConnectivity: " << nodes_count
+								<< " same node, dont self connect  " << dont_self_connect << std::endl;
+#endif
+
 					}
 
 					if (same_node == true && dont_self_connect == false) {
 						this->createConnection(it_allnodes->second, *it_shufflednodes, 1);
+#ifdef CLUSTER_DEBUG
+						std::cout << "Cluster::updateConnectivity: " << nodes_count << " self connect  " << std::endl;
+#endif
 					} else if (same_node == true && dont_self_connect == true) {
 						// add connection
 						++it_shufflednodes;
@@ -106,6 +128,11 @@ void Cluster::updateConnectivity(const int connectivity, ValueTypeSpecifier asVa
 						this->createConnection(it_allnodes->second, *it_shufflednodes, 1);
 					}
 					++it_shufflednodes;
+#ifdef CLUSTER_DEBUG
+					++nodes_count;
+					++shuffled_count;
+#endif
+
 				}
 
 			} else if (asValue == AsMinumum) {
@@ -260,10 +287,10 @@ int Cluster::getActiveNodeCount(const int indicator) const {
 	return return_count;
 }
 
- void Cluster::enableDebug(bool b) {
-	 this->setDebug(b);
-	 nodes.enableDebug(b);
-	 connections.enableDebug(b);
+void Cluster::enableDebug(bool b) {
+	this->setDebug(b);
+	nodes.enableDebug(b);
+	connections.enableDebug(b);
 
 }
 int Cluster::getLiveNodeCount() const {
@@ -286,8 +313,8 @@ int Cluster::getLiveNodeCount() const {
 	return count;
 }
 std::ostream& operator<<(std::ostream & os, const Cluster & obj) {
-	os << "Cluster: "<<obj.getUUIDString() << "nodes:" << obj.getNodes().size() << " connections:" << obj.getConnections().size()
-			<< std::endl;
+	os << "Cluster: " << obj.getUUIDString() << "nodes:" << obj.getNodes().size() << " connections:"
+			<< obj.getConnections().size() << std::endl;
 	os << obj.getNodeMap() << std::endl;
 	return os;
 }

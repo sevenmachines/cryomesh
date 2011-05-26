@@ -5,7 +5,7 @@
  *      Author: SevenMachines<SevenMachines@yahoo.co.uk>
  */
 
-#define CONNECTION_DEBUG
+//#define CONNECTION_DEBUG
 
 #include "Connection.h"
 #include "manager/ConnectionDatabaseObject.h"
@@ -36,7 +36,9 @@ void Connection::update() {
 
 	// Pass any finished impulses on to end node
 	if (done_impulses.size() > 0) {
+#ifdef CONNECTION_DEBUG
 		std::cout << "Connection::update: " << "size: " << done_impulses.size() << std::endl;
+#endif
 		std::map<boost::uuids::uuid, boost::shared_ptr<Node> > all_nodes = this->connector->getMutableOutputs();
 		// forall in all_nodes
 		{

@@ -157,6 +157,8 @@ public:
 	 */
 	void loadData(std::string datafile);
 
+	bool runCommand(const config::ConfigEntry & conf_entry);
+
 	/**
 	 * Translator from config command to actual command.
 	 * Create a fibre to connect a primary input pattern channel to a cluster output

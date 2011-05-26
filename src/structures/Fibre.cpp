@@ -209,7 +209,9 @@ int Fibre::isConnected(const boost::shared_ptr<Cluster> & cluster) const {
 	bool infound = it_input_found != it_input_end;
 	bool outfound = it_output_found != it_output_end;
 
+#ifdef FIBRE_DEBUG
 	std::cout<<"Fibre::isConnected: "<<"infound: "<<infound<<" outfound: "<<outfound<<std::endl;
+#endif
 	if ((infound == true) && (outfound == true)) { // loopback case
 		cluster_type = cluster_type | ClusterConnectionType::LoopbackCluster;
 		std::cout << "Fibre::isConnected: " << "LoopbackCluster" <<": "<<this->getUUIDString() <<"<->"<<cluster->getUUIDString()  <<" (cluster_type: "<<cluster_type<<")"<< std::endl;

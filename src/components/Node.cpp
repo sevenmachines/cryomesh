@@ -5,7 +5,7 @@
  *      Author: SevenMachines<SevenMachines@yahoo.co.uk>
  */
 
-#define NODE_DEBUG
+//#define NODE_DEBUG
 
 #include "Node.h"
 #include "Mesh.h"

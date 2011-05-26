@@ -231,7 +231,9 @@ std::list<boost::shared_ptr<Pattern> > PatternChannel::forcePatternListSize(int 
 	return empty_list;
 }
 std::list<boost::shared_ptr<Pattern> > PatternChannel::forcePatternListSize() {
-	std::cout << "PatternChannel::forcePatternListSize: " << this->getMaxPatternListSize() << std::endl;
+#ifdef PATTERNCHANNEL_DEBUG
+std::cout << "PatternChannel::forcePatternListSize: " << this->getMaxPatternListSize() << std::endl;
+#endif
 	return (this->forcePatternListSize(this->getMaxPatternListSize()));
 }
 // Manipulation
