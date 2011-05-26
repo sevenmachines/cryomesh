@@ -13,7 +13,6 @@
 #define IMPULSECOLLECTION_H_
 
 #include "Impulse.h"
-#include "Mesh.h"
 #include "common/Cycle.h"
 
 #include "common/KeyMappedCollection.h"

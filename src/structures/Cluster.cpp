@@ -20,11 +20,11 @@ namespace structures {
 const double Cluster::SELF_CONNECTED_NODES_FRACTION = 0.1;
 
 Cluster::Cluster() :
-	common::Spacial(true), energy(0) {
+	mesh(*this), spacial::Spacial(true), energy(0) {
 }
 
 Cluster::Cluster(int nodeCount, int connectivity) :
-	common::Spacial(true), energy(0) {
+		mesh(*this), spacial::Spacial(true), energy(0) {
 	this->createNodes(nodeCount);
 	this->createConnectivity(connectivity);
 }
@@ -69,7 +69,7 @@ void Cluster::updateConnectivity(const int connectivity, ValueTypeSpecifier asVa
 
 #ifdef CLUSTER_DEBUG
 	std::cout << "Cluster::updateConnectivity: " << "allnodes: " << allnodes.size() << " shuffled: "
-			<< shufflednodes.size() << std::endl;
+	<< shufflednodes.size() << std::endl;
 #endif
 
 	assert(allnodes.size() == shufflednodes.size());
@@ -106,7 +106,7 @@ void Cluster::updateConnectivity(const int connectivity, ValueTypeSpecifier asVa
 						dont_self_connect = common::Maths::getRandomBool(Cluster::SELF_CONNECTED_NODES_FRACTION);
 #ifdef CLUSTER_DEBUG
 						std::cout << "Cluster::updateConnectivity: " << nodes_count
-								<< " same node, dont self connect  " << dont_self_connect << std::endl;
+						<< " same node, dont self connect  " << dont_self_connect << std::endl;
 #endif
 
 					}

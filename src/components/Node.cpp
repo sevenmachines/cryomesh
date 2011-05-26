@@ -8,7 +8,7 @@
 //#define NODE_DEBUG
 
 #include "Node.h"
-#include "Mesh.h"
+#include "structures/Mesh.h"
 
 #include "components/Connection.h"
 #include "common/TimeKeeper.h"

@@ -10,12 +10,12 @@
 
 #include "components/NodeMap.h"
 #include "components/ConnectionMap.h"
-#include "common/Spacial.h"
+#include "spacial/Spacial.h"
+#include <structures/Mesh.h>
 
 #include <boost/uuid/uuid.hpp>
 #include <boost/shared_ptr.hpp>
 
-#include <components/Mesh.h>
 #include <components/Node.h>
 #include <components/Connection.h>
 
@@ -33,7 +33,7 @@ class Fibre;
  * A Cluster is a collection of self-contained nodes and connections along with an associated Mesh,
  * that can be connected up to one another
  */
-class Cluster: public common::Tagged, public common::Spacial , public common::Debuggable{
+class Cluster: public common::Tagged, public spacial::Spacial , public common::Debuggable{
 public:
 
 	/**
@@ -231,7 +231,7 @@ private:
 	 *
 	 * @var Mesh
 	 */
-	components::Mesh mesh;
+	Mesh mesh;
 
 	/**
 	 * The Cluster to Fibre connector for this cluster
