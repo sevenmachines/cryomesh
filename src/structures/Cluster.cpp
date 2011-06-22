@@ -20,13 +20,22 @@ namespace structures {
 const double Cluster::SELF_CONNECTED_NODES_FRACTION = 0.1;
 
 Cluster::Cluster() :
-	mesh(*this), spacial::Spacial(true), energy(0) {
+	spacial::Spacial(true), energy(0) {
+	mesh = boost::shared_ptr< Mesh > (new Mesh(*this));
+}
+
+Cluster::Cluster(int nodeCount, int connectivity, const spacial::Point bounding_box) :
+		 spacial::Spacial(bounding_box, true), energy(0) {
+	this->createNodes(nodeCount);
+	this->createConnectivity(connectivity);
+	mesh = boost::shared_ptr< Mesh > (new Mesh(*this));
 }
 
 Cluster::Cluster(int nodeCount, int connectivity) :
-		mesh(*this), spacial::Spacial(true), energy(0) {
+		 spacial::Spacial(true), energy(0) {
 	this->createNodes(nodeCount);
 	this->createConnectivity(connectivity);
+	mesh = boost::shared_ptr< Mesh > (new Mesh(*this));
 }
 
 Cluster::~Cluster() {
@@ -38,6 +47,7 @@ void Cluster::update() {
 	nodes.update();
 	// update connections
 	connections.update();
+	mesh->update();
 }
 
 double Cluster::getEnergy() const {
@@ -53,7 +63,7 @@ void Cluster::warpMesh() {
 
 void Cluster::createNodes(const int number) {
 	for (int i = 0; i < number; i++) {
-		boost::shared_ptr<components::Node> tempnode = components::Node::getRandom();
+		boost::shared_ptr<components::Node> tempnode = components::Node::getRandom(this->getMaxBoundingBox());
 		nodes.add(tempnode);
 	}
 }

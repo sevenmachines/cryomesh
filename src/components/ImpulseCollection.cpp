@@ -22,17 +22,20 @@ ImpulseCollection::~ImpulseCollection() {
 
 double ImpulseCollection::getActivity(common::Cycle cycle) const {
 	const std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > impulses = this->getCollection();
-	double total_activity = 0;
-	int sz = this->objects.size();
-	// forall in impulses
-	{
-		std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> >::const_iterator it_impulses = impulses.begin();
-		const std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> >::const_iterator it_impulses_end =
-				impulses.end();
-		while (it_impulses != it_impulses_end) {
-			double temp_act = it_impulses->second->getActivity(cycle);
-			total_activity += temp_act;
-			++it_impulses;
+	double total_activity;
+	if (this->objects.size() == 0) {
+		total_activity = 0;
+	} else {
+		// forall in impulses
+		{
+			std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> >::const_iterator it_impulses = impulses.begin();
+			const std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> >::const_iterator it_impulses_end =
+					impulses.end();
+			while (it_impulses != it_impulses_end) {
+				double temp_act = it_impulses->second->getActivity(cycle);
+				total_activity += temp_act;
+				++it_impulses;
+			}
 		}
 	}
 	return total_activity;
@@ -62,8 +65,8 @@ std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > ImpulseCollection::cle
 	}
 	// clear zeroed Impulses
 
-	std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > cleared_impulses;
-	std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > & impulses = this->getMutableCollection();
+	std::map < boost::uuids::uuid, boost::shared_ptr<Impulse> > cleared_impulses;
+	std::map < boost::uuids::uuid, boost::shared_ptr<Impulse> > &impulses = this->getMutableCollection();
 
 	int impulse_pre_sz = impulses.size();
 
@@ -128,8 +131,8 @@ std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > ImpulseCollection::cle
 	}
 
 	// Impulses that are active
-	std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > cleared_impulses;
-	std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > & impulses = this->getMutableCollection();
+	std::map < boost::uuids::uuid, boost::shared_ptr<Impulse> > cleared_impulses;
+	std::map < boost::uuids::uuid, boost::shared_ptr<Impulse> > &impulses = this->getMutableCollection();
 	int impulse_pre_sz = impulses.size();
 
 	// forall in impulses
@@ -180,7 +183,7 @@ std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > ImpulseCollection::cle
 }
 
 void ImpulseCollection::decrementActivityTimers() {
-	std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > & all_objs = this->getMutableCollection();
+	std::map < boost::uuids::uuid, boost::shared_ptr<Impulse> > &all_objs = this->getMutableCollection();
 	// forall in all_objs
 	{
 		std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> >::const_iterator it_all_objs = all_objs.begin();
@@ -188,7 +191,7 @@ void ImpulseCollection::decrementActivityTimers() {
 				all_objs.end();
 		while (it_all_objs != it_all_objs_end) {
 			boost::shared_ptr<ActivityTimerDistance> temp_timer = (it_all_objs->second->getMutableActivityTimer());
-			assert (temp_timer!=0);
+			assert(temp_timer != 0);
 			--(*temp_timer);
 			++it_all_objs;
 		}
@@ -198,8 +201,8 @@ void ImpulseCollection::decrementActivityTimers() {
 std::list<boost::shared_ptr<Impulse> > ImpulseCollection::getByActivityTimerValue(double value,
 		ImpulseCollection::Comparison comp) {
 
-	std::list<boost::shared_ptr<Impulse> > matched_impulses;
-	std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > & all_objs = this->getMutableCollection();
+	std::list < boost::shared_ptr<Impulse> > matched_impulses;
+	std::map < boost::uuids::uuid, boost::shared_ptr<Impulse> > &all_objs = this->getMutableCollection();
 	// forall in all_objs
 	{
 		std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> >::const_iterator it_all_objs = all_objs.begin();
@@ -219,15 +222,15 @@ std::list<boost::shared_ptr<Impulse> > ImpulseCollection::getByActivityTimerValu
 				break;
 
 			case (EqualTo):
-				match = common::Maths::compareDoubles(val, value) ==0;
+				match = common::Maths::compareDoubles(val, value) == 0;
 				break;
 
 			case (GreaterThanOrEqualTo):
-				match = val > value || common::Maths::compareDoubles(val, value)==0;
+				match = val > value || common::Maths::compareDoubles(val, value) == 0;
 				break;
 
 			case (LessThanOrEqualTo):
-				match = val < value || common::Maths::compareDoubles(val, value)==0;
+				match = val < value || common::Maths::compareDoubles(val, value) == 0;
 				break;
 
 			default:
@@ -247,7 +250,7 @@ std::list<boost::shared_ptr<Impulse> > ImpulseCollection::getByActivityTimerValu
 
 std::list<boost::shared_ptr<Impulse> > ImpulseCollection::removeByActivityTimerValue(double value,
 		ImpulseCollection::Comparison comp) {
-	std::list<boost::shared_ptr<Impulse> > matched_impulses = this->getByActivityTimerValue(value, comp);
+	std::list < boost::shared_ptr<Impulse> > matched_impulses = this->getByActivityTimerValue(value, comp);
 	this->remove(matched_impulses);
 	return matched_impulses;
 }
@@ -390,8 +393,8 @@ std::ostream& operator<<(std::ostream & os, const ImpulseCollection & obj) {
 
 std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > ImpulseCollection::clearActivitiesByValue(double activity,
 		bool greater) {
-	std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > cleared_impulses;
-	std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > &impulses = this->getMutableCollection();
+	std::map < boost::uuids::uuid, boost::shared_ptr<Impulse> > cleared_impulses;
+	std::map < boost::uuids::uuid, boost::shared_ptr<Impulse> > &impulses = this->getMutableCollection();
 	// forall in impulses
 	{
 		std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> >::const_iterator it_impulses = impulses.begin();

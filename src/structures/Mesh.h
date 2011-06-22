@@ -9,7 +9,7 @@
 #define MESH_H_
 
 #include "common/Cycle.h"
-
+#include "spacial/ActivityGrid.h"
 #include <boost/shared_ptr.hpp>
 
 namespace cryomesh {
@@ -33,6 +33,9 @@ class Cluster;
 class Mesh {
 public:
 
+	enum BlendingMethod {
+		BLEND_LINEAR
+	};
 	/**
 	 * Constructor
 	 *
@@ -116,11 +119,19 @@ public:
 	 * 		The warped Impulse
 	 */
 	cryomesh::components::Impulse & warp(cryomesh::components::Impulse & impulse);
+
+	const Cluster & getCluster() const;
+	const boost::shared_ptr<spacial::ActivityGrid> getActivityGrid() const;
+
 protected:
+	double getBlendedActivity(const double first_activity, const double second_activity,
+			const BlendingMethod blending_method = BLEND_LINEAR, double force = 0.5);
 
 private:
 	Cluster & cluster;
-
+	boost::shared_ptr<spacial::ActivityGrid> grid;
+	const int DEFAULT_MESH_GRANULARITY;
+	const int DEFAULT_BLEND_FORCE;
 };
 
 }

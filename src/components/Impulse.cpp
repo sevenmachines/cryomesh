@@ -5,6 +5,8 @@
  *      Author: SevenMachines<SevenMachines@yahoo.co.uk>
  */
 
+#define IMPULSE_DEBUG
+
 #include "Impulse.h"
 #include "ActivityTimerDistance.h"
 #include "common/Maths.h"
@@ -122,8 +124,10 @@ double Impulse::getActivity() const {
 }
 
 double Impulse::getActivity(Cycle cycle) const {
-	//	std::cout << "Impulse::getActivity: " << "cycle: " << cycle << " (" << firstActiveCycle << "," << lastActiveCycle
-	//		<< ")" << std::endl;
+#ifdef IMPULSE_DEBUG
+	std::cout << "Impulse::getActivity: " << "cycle: " << cycle << " (" << firstActiveCycle << "," << lastActiveCycle
+		<< ")" << std::endl;
+#endif
 	if (cycle < this->getFirstActiveCycle() || cycle > this->getLastActiveCycle()) {
 		return 0;
 	}

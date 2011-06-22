@@ -11,6 +11,7 @@
 #include "components/NodeMap.h"
 #include "components/ConnectionMap.h"
 #include "spacial/Spacial.h"
+#include "spacial/Point.h"
 #include <structures/Mesh.h>
 
 #include <boost/uuid/uuid.hpp>
@@ -33,7 +34,7 @@ class Fibre;
  * A Cluster is a collection of self-contained nodes and connections along with an associated Mesh,
  * that can be connected up to one another
  */
-class Cluster: public common::Tagged, public spacial::Spacial , public common::Debuggable{
+class Cluster: public common::Tagged, public spacial::Spacial, public common::Debuggable {
 public:
 
 	/**
@@ -58,6 +59,7 @@ public:
 	 * 		Connectivity to start with
 	 */
 	Cluster(int nodeCount, int connectivity);
+	Cluster(int nodeCount, int connectivity, const spacial::Point bounding_box);
 
 	/**
 	 * Destructor
@@ -70,7 +72,7 @@ public:
 	void update();
 	void updateEnergy(double total_energy);
 
-	void warpMesh() ;
+	void warpMesh();
 
 	/**
 	 * Create a number of nodes in the cluster
@@ -145,32 +147,36 @@ public:
 	 *@return int
 	 *		The total count of currently triggered nodes
 	 */
-	int getTriggeredNodeCount(const int indicator=0) const;
+	int getTriggeredNodeCount(const int indicator = 0) const;
 
 	/**
 	 * Get the total active nodes in this cluster currently
 	 *
 	 *@param int
 	 *		Set >0 for only positive active nodes, <0 for negative, 0 for all (default)
-	*
+	 *
 	 *@return int
 	 *		The total count of currently active nodes
 	 */
-	int getActiveNodeCount(const int indicator=0) const;
+	int getActiveNodeCount(const int indicator = 0) const;
 
 	/**
 	 * Get the total live nodes in this cluster currently, ie those with at least
 	 * one impulse
-	*
+	 *
 	 *@return int
 	 *		The total count of currently live nodes
 	 */
 	int getLiveNodeCount() const;
 
-	double getEnergy()const;
+	double getEnergy() const;
 	void setEnergy(double d);
 
-	virtual void enableDebug(bool b) ;
+	const boost::shared_ptr<Mesh> getMesh() const {
+		return mesh;
+	}
+
+	virtual void enableDebug(bool b);
 	/**
 	 * To stream operator
 	 *
@@ -231,7 +237,7 @@ private:
 	 *
 	 * @var Mesh
 	 */
-	Mesh mesh;
+	boost::shared_ptr<Mesh> mesh;
 
 	/**
 	 * The Cluster to Fibre connector for this cluster
