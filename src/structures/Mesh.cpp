@@ -33,7 +33,7 @@ Mesh::Mesh(Cluster & clus) :
 	cluster(clus), DEFAULT_MESH_GRANULARITY(10), DEFAULT_BLEND_FORCE(0.1) {
 	// make us the same side as the max bounding box
 	// Generate activity grid from custer
-	Point bounding_box = cluster.getMaxBoundingBox();
+	Point bounding_box = cluster.getMaxBoundingBox().getScaled(DEFAULT_MESH_GRANULARITY);
 	grid = boost::shared_ptr<spacial::ActivityGrid>(new spacial::ActivityGrid(bounding_box, DEFAULT_MESH_GRANULARITY));
 	this->update();
 }

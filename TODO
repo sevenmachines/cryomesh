@@ -1,17 +1,14 @@
 CURRENT---------------------------------------------------------------------------------
 
-* Mesh Structure: Integrate activity grid into mesh
-	
+	* Implement NodeMesh
+		- regenerate NodeMesh calculations when needed
+		- get interpolated activity sum from near neighbours
+		- use interpolated activity sum to apply push or pull to a connections activities
+		
 HIGH ----------------------------------------------------------------------------------------
 
-* Implement Mesh 
-
-* Implement Mesh warping in Cluster->warpMesh()
-
-* Implement Impulse warping of mesh
 
 MEDIUM ------------------------------------------------------------------------------------
-
 
 	 
 * Cryoviewer: Sort out gl display, try fiddling with a camera
@@ -42,6 +39,15 @@ WISHLIST -----------------------------------------------------------------------
 * Dont clear past impulses from Nodes on every cycle if extra performance is needed
 
 DONE -----------------------------------------------------------------------------------------
+
+
+* Mesh Structure: Integrate activity grid into mesh (DONE)
+
+* Implement Mesh (DONE)
+
+* Implement Mesh warping in Cluster->warpMesh() (DEFERRED)
+
+* Implement Impulse warping of mesh (DEFERRED)
 
 * Mesh Structure: testApplyPointActivityToGrid needs investigation and fixing (DONE)
 	
