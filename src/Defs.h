@@ -11,8 +11,9 @@
 #include <boost/shared_ptr.hpp>
 #include <boost/scoped_ptr.hpp>
 
-namespace cryomesh {
+typedef std::map<boost::shared_ptr< components::Node >, std::map<boost::shared_ptr< components::Node > > > NeighbourhoodMap;
 
+namespace cryomesh {
 
 
 /**
