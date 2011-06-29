@@ -5,7 +5,7 @@
  *      Author: SevenMachines<SevenMachines@yahoo.co.uk>
  */
 
-#define IMPULSE_DEBUG
+//#define IMPULSE_DEBUG
 
 #include "Impulse.h"
 #include "ActivityTimerDistance.h"

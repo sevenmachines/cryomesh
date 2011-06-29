@@ -130,7 +130,7 @@ double NodeMesh::getDecayRate() const {
 	return decayRate;
 }
 
-NodeMesh::NeighbourhoodRanges NodeMesh::getNeighbourRanges() const{
+NodeMesh::NeighbourhoodRanges NodeMesh::getNeighbourRanges() const {
 	NeighbourhoodRanges ranges;
 	int min_nbs = -1;
 	int max_nbs = -1;
@@ -168,6 +168,13 @@ NodeMesh::NeighbourhoodRanges NodeMesh::getNeighbourRanges() const{
 	return ranges;
 }
 
+const NeighbourhoodMap & NodeMesh::getNodeNeighbourhoodMap() const {
+	return nodeNeighbourhoodMap;
+}
+const std::map<boost::shared_ptr<components::Node>, double> & NodeMesh::getNeighbourhoodActivities() const {
+	return neighbourhoodActivities;
+}
+
 std::ostream & NodeMesh::printNeighbourhoods(std::ostream & os) const {
 	NeighbourhoodMapConstIterator it_nodeNeighbourhoodMap = nodeNeighbourhoodMap.begin();
 	const NeighbourhoodMapConstIterator it_nodeNeighbourhoodMap_end = nodeNeighbourhoodMap.end();
@@ -179,7 +186,7 @@ std::ostream & NodeMesh::printNeighbourhoods(std::ostream & os) const {
 		const std::map<boost::shared_ptr<cryomesh::components::Node>, double>::const_iterator it_neighbours_end =
 				it_nodeNeighbourhoodMap->second.end();
 		while (it_neighbours != it_neighbours_end) {
-			os << "(" << it_neighbours->first->getUUIDSummary() << ":" << it_neighbours->second << ")";
+			os << "(" << it_neighbours->first->getUUIDSummary() << ", " << it_neighbours->second << ") ";
 			++it_neighbours;
 		}
 		++it_nodeNeighbourhoodMap;
@@ -198,7 +205,7 @@ std::ostream & NodeMesh::printNeighbourhoodActivities(std::ostream & os) const {
 		const std::map<boost::shared_ptr<components::Node>, double>::const_iterator it_neighbourhoodActivities_end =
 				neighbourhoodActivities.end();
 		while (it_neighbourhoodActivities != it_neighbourhoodActivities_end) {
-			os << it_neighbourhoodActivities->first->getUUIDSummary() << ":" << it_neighbourhoodActivities->second;
+			os << it_neighbourhoodActivities->first->getUUIDSummary() << ", " << it_neighbourhoodActivities->second;
 
 			++it_neighbourhoodActivities;
 			if (it_neighbourhoodActivities != it_neighbourhoodActivities_end) {

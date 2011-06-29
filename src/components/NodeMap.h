@@ -48,6 +48,21 @@ public:
 			}
 		}
 	}
+
+	virtual void addRandomImpulses(double positive_bias = 0.5) {
+		// forall in objects
+		{
+			std::map<boost::uuids::uuid, boost::shared_ptr<Node> >::iterator it_objects = objects.begin();
+			const std::map<boost::uuids::uuid, boost::shared_ptr<Node> >::const_iterator it_objects_end = objects.end();
+			while (it_objects != it_objects_end) {
+				boost::shared_ptr< components::Impulse > random_impulse(components::Impulse::getRandom(positive_bias));
+				random_impulse->setActivityDelay(0);
+				it_objects->second->addImpulse(random_impulse);
+				++it_objects;
+			}
+		}
+	}
+
 	/**
 	 * To stream operator
 	 *
