@@ -12,7 +12,7 @@
 #include "components/ConnectionMap.h"
 #include "spacial/Spacial.h"
 #include "spacial/Point.h"
-#include <structures/Mesh.h>
+#include <structures/NodeMesh.h>
 
 #include <boost/uuid/uuid.hpp>
 #include <boost/shared_ptr.hpp>
@@ -172,7 +172,7 @@ public:
 	double getEnergy() const;
 	void setEnergy(double d);
 
-	const boost::shared_ptr<Mesh> getMesh() const {
+	const boost::shared_ptr<NodeMesh> getMesh() const {
 		return mesh;
 	}
 
@@ -237,7 +237,7 @@ private:
 	 *
 	 * @var Mesh
 	 */
-	boost::shared_ptr<Mesh> mesh;
+	boost::shared_ptr<NodeMesh> mesh;
 
 	/**
 	 * The Cluster to Fibre connector for this cluster

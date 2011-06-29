@@ -21,21 +21,21 @@ const double Cluster::SELF_CONNECTED_NODES_FRACTION = 0.1;
 
 Cluster::Cluster() :
 	spacial::Spacial(true), energy(0) {
-	mesh = boost::shared_ptr< Mesh > (new Mesh(*this));
+	mesh = boost::shared_ptr< NodeMesh > (new NodeMesh(*this));
 }
 
 Cluster::Cluster(int nodeCount, int connectivity, const spacial::Point bounding_box) :
 		 spacial::Spacial(bounding_box, true), energy(0) {
 	this->createNodes(nodeCount);
 	this->createConnectivity(connectivity);
-	mesh = boost::shared_ptr< Mesh > (new Mesh(*this));
+	mesh = boost::shared_ptr< NodeMesh > (new NodeMesh(*this));
 }
 
 Cluster::Cluster(int nodeCount, int connectivity) :
 		 spacial::Spacial(true), energy(0) {
 	this->createNodes(nodeCount);
 	this->createConnectivity(connectivity);
-	mesh = boost::shared_ptr< Mesh > (new Mesh(*this));
+	mesh = boost::shared_ptr< NodeMesh > (new NodeMesh(*this));
 }
 
 Cluster::~Cluster() {
