@@ -15,6 +15,15 @@ namespace cryomesh {
 namespace structures {
 
 const double NodeMesh::INTERPOLATED_ACTIVITY_SCALING_FACTOR = (1.0 / 100.0);
+const double NodeMesh::MAX_RADIUS_FRACTION_OF_BOUNDING_BOX = (1.0 / 100.0);
+
+NodeMesh::NodeMesh(Cluster & clus) :
+	cluster(clus), decayRate(1) {
+	// use clusters bounding box to generate max radius
+
+	double max_radius = cluster.getMaxBoundingBox().getDistance(spacial::Point(0, 0, 0));
+	maximumNeighbourhoodRadius(max_radius * MAX_RADIUS_FRACTION_OF_BOUNDING_BOX), this->regenerateNeighbourhoods();
+}
 
 NodeMesh::NodeMesh(Cluster & clus, double max_radius) :
 	cluster(clus), maximumNeighbourhoodRadius(max_radius), decayRate(1) {

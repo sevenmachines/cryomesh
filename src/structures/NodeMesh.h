@@ -52,6 +52,14 @@ public:
 	};
 
 	/**
+		 * Constructor to create a node mesh from  a cluster
+		 *
+		 * @param Cluster
+		 * 	The cluster associated with this node mesh
+		 */
+		NodeMesh(Cluster & clus);
+
+	/**
 	 * Constructor to create a node mesh from at minimum, a cluster
 	 * and an optional maximum neighbour radius
 	 *
@@ -60,7 +68,7 @@ public:
 	 * @param double
 	 * 	Maximum radius cutoff point for neighbourhood distance
 	 */
-	NodeMesh(Cluster & clus, double max_radius = 1);
+	NodeMesh(Cluster & clus, double max_radius);
 
 	/**
 	 * Default destructor
@@ -174,11 +182,19 @@ protected:
 	double getDecayRate() const;
 
 	/**
-	 * Scaling factro for applying interpolated activities to actual activities
+	 * Fraction of a clusters  bounding box to use as a max radius
 	 *
 	 * @var double
 	 */
-	static const double INTERPOLATED_ACTIVITY_SCALING_FACTOR;
+	static const double MAX_RADIUS_FRACTION_OF_BOUNDING_BOX;
+
+	/**
+		 * Scaling factor for applying interpolated activities to actual activities
+		 *
+		 * @var double
+		 */
+		static const double INTERPOLATED_ACTIVITY_SCALING_FACTOR;
+
 
 private:
 	/**
