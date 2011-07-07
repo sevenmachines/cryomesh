@@ -42,11 +42,10 @@ void Bundle::update() {
 	// set available energy for each bundles mesh warping
 	clusters.updateClusterEnergies(this->getEnergy());
 	// warp bundles mesh
-	clusters.warpClusterMeshes();
+	clusters.warpClusterNodes();
 
 	// TODO do things with storing output results from channels
 
-	// TODO Debugging things
 	if (this->isDebugOn() == true) {
 		this->updateStatistician();
 	}

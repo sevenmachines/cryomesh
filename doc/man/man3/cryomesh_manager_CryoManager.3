@@ -1,4 +1,4 @@
-.TH "cryomesh::manager::CryoManager" 3 "Fri Apr 1 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::manager::CryoManager" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -39,6 +39,10 @@ Control manager for cryomesh's.
 .br
 .RI "\fISet manager state to running. \fP"
 .ti -1c
+.RI "void \fBrunCycle\fP ()"
+.br
+.RI "\fISet manager state to run one cycle. \fP"
+.ti -1c
 .RI "void \fBpause\fP ()"
 .br
 .RI "\fISet manager state to paused. \fP"
@@ -54,6 +58,12 @@ Control manager for cryomesh's.
 .RI "const \fBManagerState\fP & \fBgetCurrentState\fP () const "
 .br
 .RI "\fIReturn the managers current state. \fP"
+.ti -1c
+.RI "const boost::shared_ptr< \fBstructures::Bundle\fP > \fBgetBundle\fP () const "
+.br
+.ti -1c
+.RI "boost::shared_ptr< \fBstructures::Bundle\fP > \fBgetMutableBundle\fP ()"
+.br
 .in -1c
 .SS "Private Attributes"
 
@@ -71,7 +81,7 @@ Control manager for cryomesh's.
 
 Should be the one point where clients/servers etc interact with the actual mesh, databases are managed, and the mesh is created and managed in general 
 .PP
-Definition at line 20 of file CryoManager.h.
+Definition at line 22 of file CryoManager.h.
 .SH "Member Enumeration Documentation"
 .PP 
 .SS "enum \fBcryomesh::manager::CryoManager::ManagerState\fP"
@@ -92,19 +102,19 @@ Enum to specify the actual state of the manager/cryomesh. The current state of t
 \fB\fINEW \fP\fP
 
 .PP
-Definition at line 25 of file CryoManager.h.
+Definition at line 27 of file CryoManager.h.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "cryomesh::manager::CryoManager::CryoManager ()\fC [inline]\fP"
 .PP
 Default contructor. 
 .PP
-Definition at line 32 of file CryoManager.h.
+Definition at line 34 of file CryoManager.h.
 .SS "virtual cryomesh::manager::CryoManager::~CryoManager ()\fC [inline, virtual]\fP"
 .PP
 Default destructor. 
 .PP
-Definition at line 39 of file CryoManager.h.
+Definition at line 42 of file CryoManager.h.
 .SH "Member Function Documentation"
 .PP 
 .SS "void cryomesh::manager::CryoManager::create (const std::stringconfigfile)\fC [inline]\fP"
@@ -116,16 +126,21 @@ Set manager state to create, load config from file. \fBParameters:\fP
 .PP
 
 .PP
-Definition at line 48 of file CryoManager.h.
+Definition at line 51 of file CryoManager.h.
 .PP
 References creator, currentState, and NEW.
 .SS "void cryomesh::manager::CryoManager::destroy ()\fC [inline]\fP"
 .PP
 Set manager state to destroy. 
 .PP
-Definition at line 81 of file CryoManager.h.
+Definition at line 101 of file CryoManager.h.
 .PP
 References creator, currentState, and EMPTY.
+.SS "const boost::shared_ptr<\fBstructures::Bundle\fP> cryomesh::manager::CryoManager::getBundle () const\fC [inline]\fP"
+.PP
+Definition at line 118 of file CryoManager.h.
+.PP
+References creator.
 .SS "const \fBManagerState\fP& cryomesh::manager::CryoManager::getCurrentState () const\fC [inline]\fP"
 .PP
 Return the managers current state. \fBReturns:\fP
@@ -135,42 +150,56 @@ ManagerState The current state of the manager
 .PP
 
 .PP
-Definition at line 93 of file CryoManager.h.
+Definition at line 113 of file CryoManager.h.
 .PP
 References currentState.
+.SS "boost::shared_ptr<\fBstructures::Bundle\fP> cryomesh::manager::CryoManager::getMutableBundle ()\fC [inline]\fP"
+.PP
+Definition at line 121 of file CryoManager.h.
+.PP
+References creator.
 .SS "void cryomesh::manager::CryoManager::pause ()\fC [inline]\fP"
 .PP
 Set manager state to paused. 
 .PP
-Definition at line 65 of file CryoManager.h.
+Definition at line 85 of file CryoManager.h.
 .PP
 References currentState, and PAUSED.
 .SS "void cryomesh::manager::CryoManager::run ()\fC [inline]\fP"
 .PP
 Set manager state to running. 
 .PP
-Definition at line 57 of file CryoManager.h.
+Definition at line 60 of file CryoManager.h.
 .PP
 References currentState, and RUNNING.
+.SS "void cryomesh::manager::CryoManager::runCycle ()\fC [inline]\fP"
+.PP
+Set manager state to run one cycle. 
+.PP
+Definition at line 68 of file CryoManager.h.
+.PP
+References creator, currentState, RUNNING, and stop().
 .SS "void cryomesh::manager::CryoManager::stop ()\fC [inline]\fP"
 .PP
 Set manager state to stopped. 
 .PP
-Definition at line 73 of file CryoManager.h.
+Definition at line 93 of file CryoManager.h.
 .PP
 References currentState, and STOPPED.
+.PP
+Referenced by runCycle().
 .SH "Member Data Documentation"
 .PP 
 .SS "boost::shared_ptr<\fBCreator\fP> \fBcryomesh::manager::CryoManager::creator\fP\fC [private]\fP"
 .PP
-Definition at line 110 of file CryoManager.h.
+Definition at line 137 of file CryoManager.h.
 .PP
-Referenced by create(), and destroy().
+Referenced by create(), destroy(), getBundle(), getMutableBundle(), and runCycle().
 .SS "\fBManagerState\fP \fBcryomesh::manager::CryoManager::currentState\fP\fC [private]\fP"
 .PP
-Definition at line 103 of file CryoManager.h.
+Definition at line 130 of file CryoManager.h.
 .PP
-Referenced by create(), destroy(), getCurrentState(), pause(), run(), and stop().
+Referenced by create(), destroy(), getCurrentState(), pause(), run(), runCycle(), and stop().
 
 .SH "Author"
 .PP 

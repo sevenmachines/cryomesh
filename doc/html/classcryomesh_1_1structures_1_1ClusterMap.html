@@ -69,7 +69,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a>  </div>
   <div class="headertitle">
 <h1>cryomesh::structures::ClusterMap Class Reference</h1>  </div>
@@ -80,19 +82,60 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p><a href="classcryomesh_1_1structures_1_1ClusterMap-members.html">List of all members.</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html#aac85abc139c13e3e5eb2278e27328e44">EnergyFractionMethod</a> { <a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html#aac85abc139c13e3e5eb2278e27328e44a7fcdb6fc525007d8b52e02d4e1fa08ad">ENERGY_FRACTION_BY_CLUSTER_COUNT</a>, 
+<a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html#aac85abc139c13e3e5eb2278e27328e44a450c9b2488100a80c38cd0359cf939b8">ENERGY_FRACTION_BY_NODE_COUNT</a>
+ }</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html#abc36d1e1824e750082a4e55581a046f5">ClusterMap</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html#ad018e352efa5f0b5aecbbaf6c1c416e1">setEnergyFractionMethod</a> (<a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html#aac85abc139c13e3e5eb2278e27328e44">EnergyFractionMethod</a> method)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html#a142419899f89ce33a2e0e04a31c3ce94">~ClusterMap</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html#ac62467033bbf1e31f0ab8ac5fb0d7d4b">update</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html#a269d3d82374cb89557bf552c1a0a16ac">updateClusterEnergies</a> (double total_energy)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html#a2f65003d8435f32a85f229886ba14712">getClusterEnergyByClusterCount</a> (const boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1structures_1_1Cluster.html">Cluster</a> &gt; &amp;cluster, double total_energy) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Take a total energy and split it evenly between clusters.  <a href="#a2f65003d8435f32a85f229886ba14712"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html#adf2d4dcb06b3435dd060be6051ca3b71">getClusterEnergyByNodeCount</a> (const boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1structures_1_1Cluster.html">Cluster</a> &gt; &amp;cluster, double total_energy) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Take a total energy and split it between clusters based on fraction of total nodes.  <a href="#adf2d4dcb06b3435dd060be6051ca3b71"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html#abd284fb4f3b369749c69ffaa67a18634">warpClusterNodes</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html#a052cec0a99b28ee102f218917a296d60">updateMapData</a> ()</td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html#a4b185b2d062fe8761e0851f47a5ca928">totalNodeCount</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html#aac85abc139c13e3e5eb2278e27328e44">EnergyFractionMethod</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html#a936de91287b0e2346fb820d30588b3c2">energyFractionMethod</a></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html#a92f473e122aa8f14c0e39a3bf3e99e0a">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html">ClusterMap</a> &amp;clustermap)</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="ClusterMap_8h_source.html#l00018">18</a> of file <a class="el" href="ClusterMap_8h_source.html">ClusterMap.h</a>.</p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<p>Definition at line <a class="el" href="ClusterMap_8h_source.html#l00020">20</a> of file <a class="el" href="ClusterMap_8h_source.html">ClusterMap.h</a>.</p>
+</div><hr/><h2>Member Enumeration Documentation</h2>
+<a class="anchor" id="aac85abc139c13e3e5eb2278e27328e44"></a><!-- doxytag: member="cryomesh::structures::ClusterMap::EnergyFractionMethod" ref="aac85abc139c13e3e5eb2278e27328e44" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html#aac85abc139c13e3e5eb2278e27328e44">cryomesh::structures::ClusterMap::EnergyFractionMethod</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="aac85abc139c13e3e5eb2278e27328e44a7fcdb6fc525007d8b52e02d4e1fa08ad"></a><!-- doxytag: member="ENERGY_FRACTION_BY_CLUSTER_COUNT" ref="aac85abc139c13e3e5eb2278e27328e44a7fcdb6fc525007d8b52e02d4e1fa08ad" args="" -->ENERGY_FRACTION_BY_CLUSTER_COUNT</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="aac85abc139c13e3e5eb2278e27328e44a450c9b2488100a80c38cd0359cf939b8"></a><!-- doxytag: member="ENERGY_FRACTION_BY_NODE_COUNT" ref="aac85abc139c13e3e5eb2278e27328e44a450c9b2488100a80c38cd0359cf939b8" args="" -->ENERGY_FRACTION_BY_NODE_COUNT</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>Definition at line <a class="el" href="ClusterMap_8h_source.html#l00023">23</a> of file <a class="el" href="ClusterMap_8h_source.html">ClusterMap.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="abc36d1e1824e750082a4e55581a046f5"></a><!-- doxytag: member="cryomesh::structures::ClusterMap::ClusterMap" ref="abc36d1e1824e750082a4e55581a046f5" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -107,7 +150,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ClusterMap_8h_source.html#l00020">20</a> of file <a class="el" href="ClusterMap_8h_source.html">ClusterMap.h</a>.</p>
+<p>Definition at line <a class="el" href="ClusterMap_8h_source.html#l00026">26</a> of file <a class="el" href="ClusterMap_8h_source.html">ClusterMap.h</a>.</p>
 
 </div>
 </div>
@@ -125,11 +168,100 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ClusterMap_8h_source.html#l00022">22</a> of file <a class="el" href="ClusterMap_8h_source.html">ClusterMap.h</a>.</p>
+<p>Definition at line <a class="el" href="ClusterMap_8h_source.html#l00034">34</a> of file <a class="el" href="ClusterMap_8h_source.html">ClusterMap.h</a>.</p>
 
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a2f65003d8435f32a85f229886ba14712"></a><!-- doxytag: member="cryomesh::structures::ClusterMap::getClusterEnergyByClusterCount" ref="a2f65003d8435f32a85f229886ba14712" args="(const boost::shared_ptr&lt; Cluster &gt; &amp;cluster, double total_energy) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double cryomesh::structures::ClusterMap::getClusterEnergyByClusterCount </td>
+          <td>(</td>
+          <td class="paramtype">const boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1structures_1_1Cluster.html">Cluster</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cluster</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>total_energy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Take a total energy and split it evenly between clusters. </p>
+
+<p>Definition at line <a class="el" href="ClusterMap_8h_source.html#l00091">91</a> of file <a class="el" href="ClusterMap_8h_source.html">ClusterMap.h</a>.</p>
+
+<p>Referenced by <a class="el" href="ClusterMap_8h_source.html#l00056">updateClusterEnergies()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adf2d4dcb06b3435dd060be6051ca3b71"></a><!-- doxytag: member="cryomesh::structures::ClusterMap::getClusterEnergyByNodeCount" ref="adf2d4dcb06b3435dd060be6051ca3b71" args="(const boost::shared_ptr&lt; Cluster &gt; &amp;cluster, double total_energy) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double cryomesh::structures::ClusterMap::getClusterEnergyByNodeCount </td>
+          <td>(</td>
+          <td class="paramtype">const boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1structures_1_1Cluster.html">Cluster</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cluster</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>total_energy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Take a total energy and split it between clusters based on fraction of total nodes. </p>
+
+<p>Definition at line <a class="el" href="ClusterMap_8h_source.html#l00100">100</a> of file <a class="el" href="ClusterMap_8h_source.html">ClusterMap.h</a>.</p>
+
+<p>References <a class="el" href="ClusterMap_8h_source.html#l00167">totalNodeCount</a>.</p>
+
+<p>Referenced by <a class="el" href="ClusterMap_8h_source.html#l00056">updateClusterEnergies()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad018e352efa5f0b5aecbbaf6c1c416e1"></a><!-- doxytag: member="cryomesh::structures::ClusterMap::setEnergyFractionMethod" ref="ad018e352efa5f0b5aecbbaf6c1c416e1" args="(EnergyFractionMethod method)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cryomesh::structures::ClusterMap::setEnergyFractionMethod </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html#aac85abc139c13e3e5eb2278e27328e44">EnergyFractionMethod</a>&#160;</td>
+          <td class="paramname"><em>method</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="ClusterMap_8h_source.html#l00030">30</a> of file <a class="el" href="ClusterMap_8h_source.html">ClusterMap.h</a>.</p>
+
+<p>References <a class="el" href="ClusterMap_8h_source.html#l00168">energyFractionMethod</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ac62467033bbf1e31f0ab8ac5fb0d7d4b"></a><!-- doxytag: member="cryomesh::structures::ClusterMap::update" ref="ac62467033bbf1e31f0ab8ac5fb0d7d4b" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -144,7 +276,68 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ClusterMap_8h_source.html#l00024">24</a> of file <a class="el" href="ClusterMap_8h_source.html">ClusterMap.h</a>.</p>
+<p>Definition at line <a class="el" href="ClusterMap_8h_source.html#l00038">38</a> of file <a class="el" href="ClusterMap_8h_source.html">ClusterMap.h</a>.</p>
+
+<p>References <a class="el" href="ClusterMap_8h_source.html#l00167">totalNodeCount</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a269d3d82374cb89557bf552c1a0a16ac"></a><!-- doxytag: member="cryomesh::structures::ClusterMap::updateClusterEnergies" ref="a269d3d82374cb89557bf552c1a0a16ac" args="(double total_energy)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cryomesh::structures::ClusterMap::updateClusterEnergies </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>total_energy</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="ClusterMap_8h_source.html#l00056">56</a> of file <a class="el" href="ClusterMap_8h_source.html">ClusterMap.h</a>.</p>
+
+<p>References <a class="el" href="ClusterMap_8h_source.html#l00024">ENERGY_FRACTION_BY_CLUSTER_COUNT</a>, <a class="el" href="ClusterMap_8h_source.html#l00024">ENERGY_FRACTION_BY_NODE_COUNT</a>, <a class="el" href="ClusterMap_8h_source.html#l00168">energyFractionMethod</a>, <a class="el" href="ClusterMap_8h_source.html#l00091">getClusterEnergyByClusterCount()</a>, and <a class="el" href="ClusterMap_8h_source.html#l00100">getClusterEnergyByNodeCount()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a052cec0a99b28ee102f218917a296d60"></a><!-- doxytag: member="cryomesh::structures::ClusterMap::updateMapData" ref="a052cec0a99b28ee102f218917a296d60" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cryomesh::structures::ClusterMap::updateMapData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="ClusterMap_8h_source.html#l00128">128</a> of file <a class="el" href="ClusterMap_8h_source.html">ClusterMap.h</a>.</p>
+
+<p>References <a class="el" href="ClusterMap_8h_source.html#l00167">totalNodeCount</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abd284fb4f3b369749c69ffaa67a18634"></a><!-- doxytag: member="cryomesh::structures::ClusterMap::warpClusterNodes" ref="abd284fb4f3b369749c69ffaa67a18634" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cryomesh::structures::ClusterMap::warpClusterNodes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="ClusterMap_8h_source.html#l00112">112</a> of file <a class="el" href="ClusterMap_8h_source.html">ClusterMap.h</a>.</p>
 
 </div>
 </div>
@@ -174,12 +367,47 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ClusterMap_8h_source.html#l00040">40</a> of file <a class="el" href="ClusterMap_8h_source.html">ClusterMap.h</a>.</p>
+<p>Definition at line <a class="el" href="ClusterMap_8h_source.html#l00144">144</a> of file <a class="el" href="ClusterMap_8h_source.html">ClusterMap.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a936de91287b0e2346fb820d30588b3c2"></a><!-- doxytag: member="cryomesh::structures::ClusterMap::energyFractionMethod" ref="a936de91287b0e2346fb820d30588b3c2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html#aac85abc139c13e3e5eb2278e27328e44">EnergyFractionMethod</a> <a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html#a936de91287b0e2346fb820d30588b3c2">cryomesh::structures::ClusterMap::energyFractionMethod</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="ClusterMap_8h_source.html#l00168">168</a> of file <a class="el" href="ClusterMap_8h_source.html">ClusterMap.h</a>.</p>
+
+<p>Referenced by <a class="el" href="ClusterMap_8h_source.html#l00030">setEnergyFractionMethod()</a>, and <a class="el" href="ClusterMap_8h_source.html#l00056">updateClusterEnergies()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4b185b2d062fe8761e0851f47a5ca928"></a><!-- doxytag: member="cryomesh::structures::ClusterMap::totalNodeCount" ref="a4b185b2d062fe8761e0851f47a5ca928" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html#a4b185b2d062fe8761e0851f47a5ca928">cryomesh::structures::ClusterMap::totalNodeCount</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="ClusterMap_8h_source.html#l00167">167</a> of file <a class="el" href="ClusterMap_8h_source.html">ClusterMap.h</a>.</p>
+
+<p>Referenced by <a class="el" href="ClusterMap_8h_source.html#l00100">getClusterEnergyByNodeCount()</a>, <a class="el" href="ClusterMap_8h_source.html#l00038">update()</a>, and <a class="el" href="ClusterMap_8h_source.html#l00128">updateMapData()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/niall/Projects/Eclipse/cryomesh/src/structures/<a class="el" href="ClusterMap_8h_source.html">ClusterMap.h</a></li>
+<li>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/<a class="el" href="ClusterMap_8h_source.html">ClusterMap.h</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -187,7 +415,7 @@ Friends</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -196,7 +424,7 @@ Friends</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:11 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:14 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

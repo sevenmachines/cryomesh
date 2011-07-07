@@ -1,4 +1,4 @@
-.TH "cryomesh::components::NodeMap" 3 "Fri Apr 1 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::components::NodeMap" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -26,6 +26,9 @@ Helper class for \fBNodeMap\fP to KeyMappedCollection mapping.
 .RI "virtual void \fBupdate\fP ()"
 .br
 .RI "\fIUpdate all entries in the nodemap. \fP"
+.ti -1c
+.RI "virtual void \fBaddRandomImpulses\fP (double positive_bias=0.5)"
+.br
 .in -1c
 .SS "Friends"
 
@@ -54,6 +57,11 @@ Default destructor.
 Definition at line 34 of file NodeMap.h.
 .SH "Member Function Documentation"
 .PP 
+.SS "virtual void cryomesh::components::NodeMap::addRandomImpulses (doublepositive_bias = \fC0.5\fP)\fC [inline, virtual]\fP"
+.PP
+Definition at line 52 of file NodeMap.h.
+.PP
+References cryomesh::components::Impulse::getRandom().
 .SS "virtual void cryomesh::components::NodeMap::update ()\fC [inline, virtual]\fP"
 .PP
 Update all entries in the nodemap. 
@@ -79,7 +87,7 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 65 of file NodeMap.h.
+Definition at line 77 of file NodeMap.h.
 
 .SH "Author"
 .PP 

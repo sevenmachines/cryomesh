@@ -106,8 +106,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#a1f0b3b6c97d353acc172da31ad9af99f">cryomesh::structures::Fibre</a>
 , <a class="el" href="classcryomesh_1_1components_1_1NodeMap.html#a6b643560dedac16f4b36d1ec73a2fcf0">cryomesh::components::NodeMap</a>
 , <a class="el" href="classcryomesh_1_1structures_1_1FibreMap.html#a9caf159d1ca71ed1046bd52167fe009f">cryomesh::structures::FibreMap</a>
+, <a class="el" href="classcryomesh_1_1structures_1_1Mesh.html#ab21a332badd5ccc36bc0f7d2ade2560b">cryomesh::structures::Mesh</a>
 , <a class="el" href="classcryomesh_1_1components_1_1ConnectionMap.html#aadb06c43b0eae37154fd7efb22a08949">cryomesh::components::ConnectionMap</a>
 , <a class="el" href="classcryomesh_1_1structures_1_1Bundle.html#add5af28ceb5c7722d267ba32810c5df7">cryomesh::structures::Bundle</a>
+, <a class="el" href="classcryomesh_1_1structures_1_1NodeMesh.html#a56acee3ddfaa6aad8cfcf4f135c18661">cryomesh::structures::NodeMesh</a>
+, <a class="el" href="classcryomesh_1_1utilities_1_1Statistician.html#a3b6005b898ef77ca2fa2724f069b2c25">cryomesh::utilities::Statistician</a>
 , <a class="el" href="classcryomesh_1_1structures_1_1Cluster.html#a933d1d7f51cc709ba4a891407b4885e3">cryomesh::structures::Cluster</a>
 </li>
 <li>updateActivity()
@@ -116,14 +119,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>updateByUUID()
 : <a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#a591a9f332c898ed4a49f388baccdf6aa">cryomesh::manager::DatabaseManager</a>
 </li>
+<li>updateClusterEnergies()
+: <a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html#a269d3d82374cb89557bf552c1a0a16ac">cryomesh::structures::ClusterMap</a>
+</li>
 <li>updateConnection()
 : <a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#a56bcdc411b12086ca0c7e652bb47efa0">cryomesh::manager::DatabaseManager</a>
 </li>
 <li>updateConnectivity()
 : <a class="el" href="classcryomesh_1_1structures_1_1Cluster.html#aee616cbf1d49223eb46ea32bfaadf8f0">cryomesh::structures::Cluster</a>
 </li>
+<li>updateEnergy()
+: <a class="el" href="classcryomesh_1_1structures_1_1Cluster.html#a7f44dac6fd0867af668d888e992dc1e2">cryomesh::structures::Cluster</a>
+</li>
 <li>updateImpulses()
 : <a class="el" href="classcryomesh_1_1components_1_1Node.html#ade03584e4db3f8e1eeddc9ad371b4658">cryomesh::components::Node</a>
+</li>
+<li>updateMapData()
+: <a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html#a052cec0a99b28ee102f218917a296d60">cryomesh::structures::ClusterMap</a>
 </li>
 <li>updateNode()
 : <a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#a9099aacdb6f8570c7b95364986e5e32a">cryomesh::manager::DatabaseManager</a>
@@ -138,6 +150,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>updatePrimaryOutputFibres()
 : <a class="el" href="classcryomesh_1_1structures_1_1Bundle.html#a7a95265553776d6216799e143134a59f">cryomesh::structures::Bundle</a>
 </li>
+<li>updateStatistician()
+: <a class="el" href="classcryomesh_1_1structures_1_1Bundle.html#a804c625c912657cebd3350c7c1b53c10">cryomesh::structures::Bundle</a>
+</li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -145,7 +160,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -154,7 +169,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:14 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

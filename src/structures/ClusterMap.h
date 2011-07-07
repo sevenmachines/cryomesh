@@ -109,7 +109,7 @@ public:
 		return energy_fraction;
 	}
 
-	void warpClusterMeshes() {
+	void warpClusterNodes() {
 
 		std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> > & all_clusters = this->getMutableCollection();
 		// forall in all_clusters
@@ -119,7 +119,7 @@ public:
 			const std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> >::const_iterator it_all_clusters_end =
 					all_clusters.end();
 			while (it_all_clusters != it_all_clusters_end) {
-				it_all_clusters->second->warpMesh();
+				it_all_clusters->second->warpNodes();
 				++it_all_clusters;
 			}
 		}
@@ -154,7 +154,6 @@ public:
 			const std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> >::const_iterator it_all_clusters_end =
 					all_clusters.end();
 
-			int count = 0;
 			tab = "\t";
 			while (it_all_clusters != it_all_clusters_end) {
 				os << tab << *(it_all_clusters->second) << std::endl;

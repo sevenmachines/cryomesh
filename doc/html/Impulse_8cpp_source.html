@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>cryomesh: /home/niall/Projects/Eclipse/cryomesh/src/components/Impulse.cpp Source File</title>
+<title>cryomesh: /home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Impulse.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -54,11 +54,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/niall/Projects/Eclipse/cryomesh/src/components/Impulse.cpp</h1>  </div>
+<h1>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Impulse.cpp</h1>  </div>
 </div>
 <div class="contents">
 <a href="Impulse_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
@@ -68,311 +69,353 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00005"></a>00005 <span class="comment"> *      Author: SevenMachines&lt;SevenMachines@yahoo.co.uk&gt;</span>
 <a name="l00006"></a>00006 <span class="comment"> */</span>
 <a name="l00007"></a>00007 
-<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="Impulse_8h.html">Impulse.h</a>&quot;</span>
-<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="ActivityTimerDistance_8h.html">ActivityTimerDistance.h</a>&quot;</span>
-<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;common/Maths.h&quot;</span>
-<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;common/TimeKeeper.h&quot;</span>
-<a name="l00012"></a>00012 <span class="preprocessor">#include &lt;algorithm&gt;</span>
-<a name="l00013"></a>00013 
-<a name="l00014"></a>00014 <span class="keyword">using namespace </span>cryomesh::common;
-<a name="l00015"></a>00015 <span class="keyword">namespace </span>cryomesh {
-<a name="l00016"></a>00016 
-<a name="l00017"></a>00017 <span class="keyword">namespace </span>components {
+<a name="l00008"></a>00008 <span class="comment">//#define IMPULSE_DEBUG</span>
+<a name="l00009"></a>00009 
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="Impulse_8h.html">Impulse.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="ActivityTimerDistance_8h.html">ActivityTimerDistance.h</a>&quot;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;common/Maths.h&quot;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include &quot;common/TimeKeeper.h&quot;</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include &lt;algorithm&gt;</span>
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016 <span class="keyword">using namespace </span>cryomesh::common;
+<a name="l00017"></a>00017 <span class="keyword">namespace </span>cryomesh {
 <a name="l00018"></a>00018 
-<a name="l00019"></a>00019 <span class="keyword">const</span> <span class="keywordtype">double</span> Impulse::FORCED_TRIGGER_ACTIVITY = 1000;
-<a name="l00020"></a>00020 <span class="keyword">const</span> <span class="keywordtype">double</span> Impulse::MAX_ACTIVITY = 1;
-<a name="l00021"></a>00021 <span class="keyword">const</span> <span class="keywordtype">double</span> Impulse::MIN_ACTIVITY = -1;
-<a name="l00022"></a>00022 <span class="keyword">const</span> <span class="keywordtype">int</span> Impulse::MAX_ACTIVITY_LENGTH = 10;
-<a name="l00023"></a>00023 <span class="keyword">const</span> <span class="keywordtype">int</span> Impulse::MIN_ACTIVITY_LENGTH = 1;
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="comment">// statics</span>
-<a name="l00026"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ae88e7ff0cacf1ca6f323f66c97819c7a">00026</a> boost::shared_ptr&lt;Impulse&gt; Impulse::getTriggerImpulse(){
-<a name="l00027"></a>00027         boost::shared_ptr&lt; Impulse &gt; temp_pulse(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a>(Impulse::FORCED_TRIGGER_ACTIVITY, Impulse::MIN_ACTIVITY_LENGTH, <a class="code" href="classcryomesh_1_1common_1_1TimeKeeper.html#afe7b229532e11119cb2653192615d679">TimeKeeper::getTimeKeeper</a>().getCycle())) ;
-<a name="l00028"></a>00028         <span class="keywordflow">return</span> temp_pulse;
-<a name="l00029"></a>00029 }
-<a name="l00030"></a>00030 
-<a name="l00031"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#afb337470d62f12f5e414b1bd7f09c6df">00031</a> boost::shared_ptr&lt;Impulse&gt; Impulse::getRandom(){
-<a name="l00032"></a>00032         boost::shared_ptr&lt; Impulse &gt; temp_pulse(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a>);
-<a name="l00033"></a>00033         temp_pulse-&gt;randomise();
-<a name="l00034"></a>00034         <span class="keywordflow">return</span> temp_pulse;
-<a name="l00035"></a>00035 }
-<a name="l00036"></a>00036 
-<a name="l00037"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aff44f52a706b48a74fc34b3dc2e26d38">00037</a> Impulse::Impulse() {
-<a name="l00038"></a>00038         <span class="comment">// set start to current time</span>
-<a name="l00039"></a>00039         this-&gt;generateCurve(0, MIN_ACTIVITY_LENGTH);
-<a name="l00040"></a>00040         setFirstActiveCycle(<a class="code" href="classcryomesh_1_1common_1_1TimeKeeper.html#afe7b229532e11119cb2653192615d679">TimeKeeper::getTimeKeeper</a>().getCycle());
-<a name="l00041"></a>00041                 boost::shared_ptr&lt;ActivityTimerDistance&gt; tempact(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a>(1,1));
-<a name="l00042"></a>00042                         this-&gt;setActivityTimer( tempact );
+<a name="l00019"></a>00019 <span class="keyword">namespace </span>components {
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021 <span class="keyword">const</span> <span class="keywordtype">double</span> Impulse::FORCED_TRIGGER_ACTIVITY = 1000;
+<a name="l00022"></a>00022 <span class="keyword">const</span> <span class="keywordtype">double</span> Impulse::MAX_ACTIVITY = 1;
+<a name="l00023"></a>00023 <span class="keyword">const</span> <span class="keywordtype">double</span> Impulse::MIN_ACTIVITY = -1;
+<a name="l00024"></a>00024 <span class="keyword">const</span> <span class="keywordtype">double</span> Impulse::MIN_ACTIVITY_MAGNITUDE = 0.01;
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 <span class="keyword">const</span> <span class="keywordtype">int</span> Impulse::MAX_ACTIVITY_LENGTH = 20;
+<a name="l00027"></a>00027 <span class="keyword">const</span> <span class="keywordtype">int</span> Impulse::MIN_ACTIVITY_LENGTH = 1;
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 <span class="keyword">const</span> <span class="keywordtype">int</span> Impulse::MIN_ACTIVITY_DELAY = 0;
+<a name="l00030"></a>00030 <span class="keyword">const</span> <span class="keywordtype">int</span> Impulse::MAX_ACTIVITY_DELAY = 10;
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032 <span class="comment">// statics</span>
+<a name="l00033"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ae88e7ff0cacf1ca6f323f66c97819c7a">00033</a> boost::shared_ptr&lt;Impulse&gt; Impulse::getTriggerImpulse() {
+<a name="l00034"></a>00034         boost::shared_ptr&lt;Impulse&gt; temp_pulse(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a>(Impulse::FORCED_TRIGGER_ACTIVITY, MAX_ACTIVITY_LENGTH, 0));
+<a name="l00035"></a>00035         <span class="keywordflow">return</span> temp_pulse;
+<a name="l00036"></a>00036 }
+<a name="l00037"></a>00037 
+<a name="l00038"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9433c8dbc841beb6e3bfa63dd99ed838">00038</a> boost::shared_ptr&lt;Impulse&gt; Impulse::getRandom(<span class="keywordtype">double</span> positive_bias) {
+<a name="l00039"></a>00039         common::Maths::clamp&lt;double&gt;(positive_bias, 0.0, 1.0);
+<a name="l00040"></a>00040         boost::shared_ptr&lt;Impulse&gt; temp_pulse(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a>);
+<a name="l00041"></a>00041         temp_pulse-&gt;randomise(positive_bias);
+<a name="l00042"></a>00042         <span class="keywordflow">return</span> temp_pulse;
 <a name="l00043"></a>00043 }
 <a name="l00044"></a>00044 
-<a name="l00045"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ab7a6652d341d3cdb813113e38e5d75a9">00045</a> Impulse::Impulse(<span class="keyword">const</span> <span class="keywordtype">double</span> max_y, <span class="keyword">const</span> <span class="keywordtype">int</span> length, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp; startCycle) {
-<a name="l00046"></a>00046         this-&gt;generateCurve(max_y, std::max(length, MIN_ACTIVITY_LENGTH));
+<a name="l00045"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aff44f52a706b48a74fc34b3dc2e26d38">00045</a> Impulse::Impulse() :
+<a name="l00046"></a>00046         activityDelay(0) {
 <a name="l00047"></a>00047         <span class="comment">// set start to current time</span>
-<a name="l00048"></a>00048         setFirstActiveCycle(startCycle);
-<a name="l00049"></a>00049         boost::shared_ptr&lt;ActivityTimerDistance&gt; tempact(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a>(1,1));
-<a name="l00050"></a>00050         this-&gt;setActivityTimer( tempact );
-<a name="l00051"></a>00051 
+<a name="l00048"></a>00048         this-&gt;generateCurve(0, <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac24594fb7419a2f3e9f4d753dfae562f">MIN_ACTIVITY_LENGTH</a>);
+<a name="l00049"></a>00049         <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#abe6cffbd621e68849bff60ce6799ff4b" title="Set the first active cycle.">setFirstActiveCycle</a>(TimeKeeper::getTimeKeeper().getCycle());
+<a name="l00050"></a>00050         boost::shared_ptr&lt;ActivityTimerDistance&gt; tempact(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a>(1, 1));
+<a name="l00051"></a>00051         this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a04ecc67f3bf21f922c29d9e8afd3d04d" title="Set activity timer.">setActivityTimer</a>(tempact);
 <a name="l00052"></a>00052 }
 <a name="l00053"></a>00053 
-<a name="l00054"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a902908174235b4fd3e754007bfb44fc8">00054</a> Impulse::Impulse(<span class="keyword">const</span> <span class="keywordtype">double</span> max_y, <span class="keyword">const</span> <span class="keywordtype">int</span> length, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp; startCycle, boost::shared_ptr&lt; ActivityTimerDistance &gt; timer) {
-<a name="l00055"></a>00055         this-&gt;generateCurve(max_y, std::max(length, MIN_ACTIVITY_LENGTH));
-<a name="l00056"></a>00056         <span class="comment">// set start to current time</span>
-<a name="l00057"></a>00057         setFirstActiveCycle(startCycle);
-<a name="l00058"></a>00058         this-&gt;setActivityTimer( timer );
-<a name="l00059"></a>00059 
-<a name="l00060"></a>00060 }
+<a name="l00054"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#afd7597df2534ba3d0b7d91d3c0b64a55">00054</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aff44f52a706b48a74fc34b3dc2e26d38" title="Constructor.">Impulse::Impulse</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> max_y, <span class="keyword">const</span> <span class="keywordtype">int</span> length, <span class="keyword">const</span> <span class="keywordtype">int</span> delay) :
+<a name="l00055"></a>00055         activityDelay(delay) {
+<a name="l00056"></a>00056         this-&gt;generateCurve(max_y, std::max(length, <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac24594fb7419a2f3e9f4d753dfae562f">MIN_ACTIVITY_LENGTH</a>));
+<a name="l00057"></a>00057         <span class="comment">// set start to current time</span>
+<a name="l00058"></a>00058         <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#abe6cffbd621e68849bff60ce6799ff4b" title="Set the first active cycle.">setFirstActiveCycle</a>(0);
+<a name="l00059"></a>00059         boost::shared_ptr&lt;ActivityTimerDistance&gt; tempact(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a>(1, 1));
+<a name="l00060"></a>00060         this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a04ecc67f3bf21f922c29d9e8afd3d04d" title="Set activity timer.">setActivityTimer</a>(tempact);
 <a name="l00061"></a>00061 
-<a name="l00062"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a3801df3c6dba70d0467f070fa346efa5">00062</a> Impulse::~Impulse() {
-<a name="l00063"></a>00063 }
-<a name="l00064"></a>00064 
-<a name="l00065"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a0f88203a7d85fc8c613e144ef302ea11">00065</a> <span class="keywordtype">void</span> Impulse::randomise() {
-<a name="l00066"></a>00066         <span class="keywordtype">double</span> maxy = common::Maths::getRandomDouble(MIN_ACTIVITY, MAX_ACTIVITY);
-<a name="l00067"></a>00067         <span class="keywordtype">double</span> length = common::Maths::getRandomInteger(MIN_ACTIVITY_LENGTH, MAX_ACTIVITY_LENGTH);
-<a name="l00068"></a>00068         this-&gt;generateCurve(maxy, length);
-<a name="l00069"></a>00069         lastActiveCycle = firstActiveCycle + this-&gt;getCollection().size();
-<a name="l00070"></a>00070         boost::shared_ptr&lt; ActivityTimerDistance &gt; tempact = ActivityTimerDistance::getRandom() ;
-<a name="l00071"></a>00071         this-&gt;setActivityTimer(tempact );
-<a name="l00072"></a>00072 }
-<a name="l00073"></a>00073 
-<a name="l00074"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9c87bdf033d68e93204704078860aef6">00074</a> <span class="keywordtype">bool</span> Impulse::isActive()<span class="keyword"> const </span>{
-<a name="l00075"></a>00075         <span class="keywordflow">return</span> this-&gt;isActive(<a class="code" href="classcryomesh_1_1common_1_1TimeKeeper.html#afe7b229532e11119cb2653192615d679">common::TimeKeeper::getTimeKeeper</a>().getCycle());
-<a name="l00076"></a>00076 }
-<a name="l00077"></a>00077 
-<a name="l00078"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a69f3c99fcbcaa31682ed42085608e476">00078</a> <span class="keywordtype">bool</span> Impulse::isActive(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp; cycle)<span class="keyword"> const </span>{
-<a name="l00079"></a>00079         <span class="keywordflow">return</span> this-&gt;isActive(cycle, cycle);
-<a name="l00080"></a>00080 }
-<a name="l00081"></a>00081 
-<a name="l00082"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a07543fdf1e3eb3e2cb8196259fae480a">00082</a> <span class="keywordtype">bool</span> Impulse::isActive(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp;startCycle, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp;endCycle)<span class="keyword"> const </span>{
-<a name="l00083"></a>00083         <span class="keywordflow">if</span> ((firstActiveCycle &lt;= startCycle &amp;&amp; lastActiveCycle &gt;= endCycle) <span class="comment">//spans interval</span>
-<a name="l00084"></a>00084                         || (firstActiveCycle &gt;= startCycle &amp;&amp; firstActiveCycle &lt;= endCycle) <span class="comment">// start is in interval</span>
-<a name="l00085"></a>00085                         || (lastActiveCycle &gt;= startCycle &amp;&amp; lastActiveCycle &lt;= endCycle)) { <span class="comment">// end is in interval</span>
-<a name="l00086"></a>00086                 <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00087"></a>00087         }
-<a name="l00088"></a>00088         <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00089"></a>00089 }
-<a name="l00090"></a>00090 
-<a name="l00091"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a73cb97b2371198e44f726de54c9c36fa">00091</a> <span class="keywordtype">double</span> Impulse::getActivity()<span class="keyword"> const </span>{
-<a name="l00092"></a>00092         <span class="keywordflow">return</span> this-&gt;getActivity(<a class="code" href="classcryomesh_1_1common_1_1TimeKeeper.html#afe7b229532e11119cb2653192615d679">common::TimeKeeper::getTimeKeeper</a>().getCycle());
-<a name="l00093"></a>00093 }
-<a name="l00094"></a>00094 
-<a name="l00095"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a50ff12cf26ce360c37ec6ed93aad2ea5">00095</a> <span class="keywordtype">double</span> Impulse::getActivity(<a class="code" href="classcryomesh_1_1common_1_1Cycle.html">Cycle</a> cycle)<span class="keyword"> const </span>{
-<a name="l00096"></a>00096         <span class="comment">//      std::cout &lt;&lt; &quot;Impulse::getActivity: &quot; &lt;&lt; &quot;cycle: &quot; &lt;&lt; cycle &lt;&lt; &quot; (&quot; &lt;&lt; firstActiveCycle &lt;&lt; &quot;,&quot; &lt;&lt; lastActiveCycle</span>
-<a name="l00097"></a>00097         <span class="comment">//              &lt;&lt; &quot;)&quot; &lt;&lt; std::endl;</span>
-<a name="l00098"></a>00098         <span class="keywordflow">if</span> (cycle &lt; this-&gt;getFirstActiveCycle() || cycle &gt; this-&gt;getLastActiveCycle()) {
-<a name="l00099"></a>00099                 <span class="keywordflow">return</span> 0;
-<a name="l00100"></a>00100         }
-<a name="l00101"></a>00101 
-<a name="l00102"></a>00102         <span class="keyword">const</span> std::list&lt;double&gt; &amp; allacts = this-&gt;getCollection();
-<a name="l00103"></a>00103         std::list&lt;double&gt;::const_iterator it_allacts = allacts.begin();
-<a name="l00104"></a>00104         <span class="keyword">const</span> std::list&lt;double&gt;::const_iterator it_allacts_end = allacts.end();
-<a name="l00105"></a>00105 
-<a name="l00106"></a>00106         <span class="keywordtype">long</span> <span class="keywordtype">int</span> index = (cycle.<a class="code" href="classcryomesh_1_1common_1_1Cycle.html#ad71494a74fe0dfdb7e470a091ee0906d" title="Return as an signed integer.">toLInt</a>() - firstActiveCycle.toLInt());
-<a name="l00107"></a>00107         <span class="keywordtype">long</span> <span class="keywordtype">int</span> end_index = (lastActiveCycle.toLInt() - cycle.<a class="code" href="classcryomesh_1_1common_1_1Cycle.html#ad71494a74fe0dfdb7e470a091ee0906d" title="Return as an signed integer.">toLInt</a>());
-<a name="l00108"></a>00108         assert(index&gt;=0);
-<a name="l00109"></a>00109         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; index &amp;&amp; i &lt; end_index; i++) {
-<a name="l00110"></a>00110 <span class="preprocessor">#ifdef IMPULSE_DEBUG</span>
-<a name="l00111"></a>00111 <span class="preprocessor"></span>                std::cout &lt;&lt; <span class="stringliteral">&quot;Impulse::getActivity: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;i:&quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; index &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; end_index &lt;&lt; <span class="stringliteral">&quot;) &quot;</span> &lt;&lt; <span class="stringliteral">&quot; = &quot;</span>
-<a name="l00112"></a>00112                 &lt;&lt; *it_allacts &lt;&lt; std::endl;
-<a name="l00113"></a>00113 <span class="preprocessor">#endif</span>
-<a name="l00114"></a>00114 <span class="preprocessor"></span>                ++it_allacts;
-<a name="l00115"></a>00115         }
-<a name="l00116"></a>00116         assert(it_allacts!=it_allacts_end);
-<a name="l00117"></a>00117         <span class="keywordflow">return</span> *it_allacts;
-<a name="l00118"></a>00118 }
-<a name="l00119"></a>00119 
-<a name="l00120"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9607961d67264b1431bc6f0871ab71e0">00120</a> <span class="keywordtype">double</span> Impulse::getActivityMaximum()<span class="keyword"> const </span>{
-<a name="l00121"></a>00121         <span class="keywordflow">return</span> (this-&gt;getMaximum());
-<a name="l00122"></a>00122 }
-<a name="l00123"></a>00123 
-<a name="l00124"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9ccf24929b1d73630bd02ead060a5b15">00124</a> <span class="keywordtype">double</span> Impulse::getActivityMinimum()<span class="keyword"> const </span>{
-<a name="l00125"></a>00125         <span class="keywordflow">return</span> (this-&gt;getMinimum());
-<a name="l00126"></a>00126 }
-<a name="l00127"></a>00127 
-<a name="l00128"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a21d17ce78d670cfc7082d5d09767c359">00128</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; Impulse::invert() {
-<a name="l00129"></a>00129         SimpleCollection::invert();
-<a name="l00130"></a>00130         <span class="keywordflow">return</span> *<span class="keyword">this</span>;
-<a name="l00131"></a>00131 }
-<a name="l00132"></a>00132 
-<a name="l00133"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a348598ef30bd651b94ebbc0cdc46cb28">00133</a> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">Cycle</a> Impulse::getFirstActiveCycle()<span class="keyword"> const </span>{
-<a name="l00134"></a>00134         <span class="keywordflow">return</span> firstActiveCycle;
-<a name="l00135"></a>00135 }
-<a name="l00136"></a>00136 
-<a name="l00137"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#abe6cffbd621e68849bff60ce6799ff4b">00137</a> <span class="keywordtype">void</span> Impulse::setFirstActiveCycle(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">Cycle</a> cycle) {
-<a name="l00138"></a>00138         <span class="comment">//long int cycle_int = cycle.toLInt();</span>
-<a name="l00139"></a>00139         <span class="comment">//long int pre_fac = firstActiveCycle.toLInt();</span>
-<a name="l00140"></a>00140         <span class="comment">//long int pre_lac = lastActiveCycle.toLInt();</span>
-<a name="l00141"></a>00141         <span class="comment">//long int pre_col_sz = this-&gt;getCollection().size();</span>
-<a name="l00142"></a>00142         firstActiveCycle = cycle;
-<a name="l00143"></a>00143         lastActiveCycle = firstActiveCycle + this-&gt;getCollection().size();
-<a name="l00144"></a>00144 
-<a name="l00145"></a>00145         <span class="comment">//long int post_fac = firstActiveCycle.toLInt();</span>
-<a name="l00146"></a>00146         <span class="comment">//long int post_lac = lastActiveCycle.toLInt();</span>
-<a name="l00147"></a>00147         <span class="comment">//long int post_col_sz = this-&gt;getCollection().size();</span>
-<a name="l00148"></a>00148         <span class="comment">//bool pause = true;</span>
-<a name="l00149"></a>00149 }
-<a name="l00150"></a>00150 
-<a name="l00151"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac91dae86e992103f921da77f0cfe0d02">00151</a> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">Cycle</a> Impulse::getLastActiveCycle()<span class="keyword"> const </span>{
-<a name="l00152"></a>00152         <span class="keywordflow">return</span> lastActiveCycle;
-<a name="l00153"></a>00153 }
-<a name="l00154"></a>00154 
-<a name="l00155"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a959076c6c59932abeaa73ca6de2e4167">00155</a> <span class="keyword">const</span> std::list&lt;double&gt; &amp; Impulse::getActivities()<span class="keyword"> const </span>{
-<a name="l00156"></a>00156         <span class="keywordflow">return</span> (this-&gt;getCollection());
-<a name="l00157"></a>00157 }
-<a name="l00158"></a>00158 
-<a name="l00159"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a356adeb4cebeb35ecef7231718fb20cd">00159</a> <span class="keyword">const</span> boost::shared_ptr&lt;ActivityTimerDistance&gt; Impulse::getActivityTimer()<span class="keyword"> const </span>{
-<a name="l00160"></a>00160         <span class="keywordflow">return</span> activityTimer;
-<a name="l00161"></a>00161 }
-<a name="l00162"></a>00162 
-<a name="l00163"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aac5460017f7adceba53aea31b1bc5bfe">00163</a> boost::shared_ptr&lt;ActivityTimerDistance&gt; Impulse::getMutableActivityTimer() {
-<a name="l00164"></a>00164         <span class="keywordflow">return</span> activityTimer;
-<a name="l00165"></a>00165 }
-<a name="l00166"></a>00166 
-<a name="l00167"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a04ecc67f3bf21f922c29d9e8afd3d04d">00167</a> <span class="keywordtype">void</span> Impulse::setActivityTimer(<span class="keyword">const</span> boost::shared_ptr&lt; ActivityTimerDistance &gt; timer){
-<a name="l00168"></a>00168         activityTimer = boost::shared_ptr&lt;ActivityTimerDistance&gt; (<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a>(*timer));
-<a name="l00169"></a>00169 }
-<a name="l00170"></a>00170 
-<a name="l00171"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aca088f62a2bf95978952633e530e601c">00171</a> <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> Impulse::operator+(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; obj)<span class="keyword"> const </span>{
-<a name="l00172"></a>00172         <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> imp = *<span class="keyword">this</span>;
-<a name="l00173"></a>00173         imp += obj;
-<a name="l00174"></a>00174         <span class="keywordflow">return</span> imp;
-<a name="l00175"></a>00175 }
-<a name="l00176"></a>00176 
-<a name="l00177"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a6f5351eea5c38586fe5bb3092b3626af">00177</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; Impulse::operator+=(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; obj) {
-<a name="l00178"></a>00178         <span class="keyword">const</span> std::list&lt;double&gt; all_objs(obj.getCollection());
-<a name="l00179"></a>00179         std::list&lt;double&gt; &amp; this_objs = this-&gt;getMutableCollection();
-<a name="l00180"></a>00180         <span class="comment">//int allsz_old = all_objs.size();</span>
-<a name="l00181"></a>00181         <span class="comment">//int thissz_old = this_objs.size();</span>
-<a name="l00182"></a>00182 
-<a name="l00183"></a>00183         <span class="comment">// make collections bug enough to merge</span>
-<a name="l00184"></a>00184         <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">Cycle</a> obj_fac = obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a348598ef30bd651b94ebbc0cdc46cb28" title="Get the first active cycle.">getFirstActiveCycle</a>();
-<a name="l00185"></a>00185         <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">Cycle</a> this_fac = this-&gt;getFirstActiveCycle();
-<a name="l00186"></a>00186         <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">Cycle</a> obj_lac = obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac91dae86e992103f921da77f0cfe0d02" title="Get the last active cycle.">getLastActiveCycle</a>();
-<a name="l00187"></a>00187         <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">Cycle</a> this_lac = this-&gt;getLastActiveCycle();
+<a name="l00062"></a>00062 }
+<a name="l00063"></a>00063 
+<a name="l00064"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a61915a9d92e7c7601be4a005794c0c89">00064</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aff44f52a706b48a74fc34b3dc2e26d38" title="Constructor.">Impulse::Impulse</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> max_y, <span class="keyword">const</span> <span class="keywordtype">int</span> length, <span class="keyword">const</span> <span class="keywordtype">int</span> delay, boost::shared_ptr&lt;ActivityTimerDistance&gt; timer) :
+<a name="l00065"></a>00065         activityDelay(delay) {
+<a name="l00066"></a>00066         this-&gt;generateCurve(max_y, std::max(length, <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac24594fb7419a2f3e9f4d753dfae562f">MIN_ACTIVITY_LENGTH</a>));
+<a name="l00067"></a>00067         <span class="comment">// set start to current time</span>
+<a name="l00068"></a>00068         <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#abe6cffbd621e68849bff60ce6799ff4b" title="Set the first active cycle.">setFirstActiveCycle</a>(0);
+<a name="l00069"></a>00069         this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a04ecc67f3bf21f922c29d9e8afd3d04d" title="Set activity timer.">setActivityTimer</a>(timer);
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071 }
+<a name="l00072"></a>00072 
+<a name="l00073"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#af9ec60048bf54aaf5ee3e93dd4b87f3d">00073</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aff44f52a706b48a74fc34b3dc2e26d38" title="Constructor.">Impulse::Impulse</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; obj) {
+<a name="l00074"></a>00074         this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a800479ed06132eb56d0bc15c8aa40d8a">setActivityDelay</a>(obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a6d0fd21f516b5182dd357b59f2112c64">getActivityDelay</a>());
+<a name="l00075"></a>00075         this-&gt;setCollection(obj.getCollection());
+<a name="l00076"></a>00076         this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a04ecc67f3bf21f922c29d9e8afd3d04d" title="Set activity timer.">setActivityTimer</a>(obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a356adeb4cebeb35ecef7231718fb20cd" title="Get activity timer.">getActivityTimer</a>());
+<a name="l00077"></a>00077         this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a1e60e9449535dde78c2a342b873022f7" title="The first cycle that this Impulse has activity.">firstActiveCycle</a> = obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a348598ef30bd651b94ebbc0cdc46cb28" title="Get the first active cycle.">getFirstActiveCycle</a>();
+<a name="l00078"></a>00078         this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#adc17d78b2127229c3acdaefb7b697f7e" title="The lase cycle that this Impulse has activity.">lastActiveCycle</a> = obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac91dae86e992103f921da77f0cfe0d02" title="Get the last active cycle.">getLastActiveCycle</a>();
+<a name="l00079"></a>00079 }
+<a name="l00080"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a3801df3c6dba70d0467f070fa346efa5">00080</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a3801df3c6dba70d0467f070fa346efa5" title="Destructor.">Impulse::~Impulse</a>() {
+<a name="l00081"></a>00081 }
+<a name="l00082"></a>00082 
+<a name="l00083"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a5da6ee1f9d1be136d23c36c377258a4d">00083</a> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a5da6ee1f9d1be136d23c36c377258a4d">Impulse::randomise</a>(<span class="keywordtype">double</span> positive_bias) {
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085         <span class="keywordtype">double</span> maxy_positive = common::Maths::getRandomDouble(<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a831758cc2e20d4a2d10b71f8c7698fd1">MIN_ACTIVITY_MAGNITUDE</a>, <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#af8e9eb795f1ea3cef81d6afeb7166ad2">MAX_ACTIVITY</a>);
+<a name="l00086"></a>00086         <span class="keywordtype">double</span> maxy_negative = common::Maths::getRandomDouble(<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a3cc162bae9213a65a6aa241b256e1a84">MIN_ACTIVITY</a>, -<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a831758cc2e20d4a2d10b71f8c7698fd1">MIN_ACTIVITY_MAGNITUDE</a>);
+<a name="l00087"></a>00087         <span class="keywordtype">double</span> random_bias = common::Maths::getRandomDouble(0, 1);
+<a name="l00088"></a>00088         <span class="keywordtype">int</span> random_delay = common::Maths::getRandomDouble(<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a7537a73569989ce84f0ab1b10e07ee94">MIN_ACTIVITY_DELAY</a>, <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#afc1ae22e801a9dbf9bbb170d97d3411b">MAX_ACTIVITY_DELAY</a>);
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090         this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a800479ed06132eb56d0bc15c8aa40d8a">setActivityDelay</a>(random_delay);
+<a name="l00091"></a>00091         <span class="keywordtype">double</span> maxy;
+<a name="l00092"></a>00092         <span class="keywordflow">if</span> (random_bias &gt; (1 - positive_bias)) {
+<a name="l00093"></a>00093                 maxy = maxy_positive;
+<a name="l00094"></a>00094         } <span class="keywordflow">else</span> {
+<a name="l00095"></a>00095                 maxy = maxy_negative;
+<a name="l00096"></a>00096         }
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098         <span class="keywordtype">double</span> length = common::Maths::getRandomInteger(<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac24594fb7419a2f3e9f4d753dfae562f">MIN_ACTIVITY_LENGTH</a>, <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a449f5f6a08af50b2e66703931ef3cd6c">MAX_ACTIVITY_LENGTH</a>);
+<a name="l00099"></a>00099         this-&gt;generateCurve(maxy, length);
+<a name="l00100"></a>00100         <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#adc17d78b2127229c3acdaefb7b697f7e" title="The lase cycle that this Impulse has activity.">lastActiveCycle</a> = <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a1e60e9449535dde78c2a342b873022f7" title="The first cycle that this Impulse has activity.">firstActiveCycle</a> + this-&gt;getCollection().size();
+<a name="l00101"></a>00101         boost::shared_ptr&lt;ActivityTimerDistance&gt; tempact = <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9433c8dbc841beb6e3bfa63dd99ed838" title="Get a randomised impulse.">ActivityTimerDistance::getRandom</a>();
+<a name="l00102"></a>00102         this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a04ecc67f3bf21f922c29d9e8afd3d04d" title="Set activity timer.">setActivityTimer</a>(tempact);
+<a name="l00103"></a>00103 }
+<a name="l00104"></a>00104 
+<a name="l00105"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9c87bdf033d68e93204704078860aef6">00105</a> <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9c87bdf033d68e93204704078860aef6" title="Is the Impulse active on current cycle.">Impulse::isActive</a>()<span class="keyword"> const </span>{
+<a name="l00106"></a>00106         <span class="keywordflow">return</span> this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9c87bdf033d68e93204704078860aef6" title="Is the Impulse active on current cycle.">isActive</a>(<a class="code" href="classcryomesh_1_1common_1_1TimeKeeper.html#afe7b229532e11119cb2653192615d679">common::TimeKeeper::getTimeKeeper</a>().getCycle());
+<a name="l00107"></a>00107 }
+<a name="l00108"></a>00108 
+<a name="l00109"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a69f3c99fcbcaa31682ed42085608e476">00109</a> <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9c87bdf033d68e93204704078860aef6" title="Is the Impulse active on current cycle.">Impulse::isActive</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp; cycle)<span class="keyword"> const </span>{
+<a name="l00110"></a>00110         <span class="keywordflow">return</span> this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9c87bdf033d68e93204704078860aef6" title="Is the Impulse active on current cycle.">isActive</a>(cycle, cycle);
+<a name="l00111"></a>00111 }
+<a name="l00112"></a>00112 
+<a name="l00113"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a07543fdf1e3eb3e2cb8196259fae480a">00113</a> <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9c87bdf033d68e93204704078860aef6" title="Is the Impulse active on current cycle.">Impulse::isActive</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp;startCycle, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp;endCycle)<span class="keyword"> const </span>{
+<a name="l00114"></a>00114         <span class="keywordflow">if</span> ((firstActiveCycle &lt;= startCycle &amp;&amp; lastActiveCycle &gt;= endCycle) <span class="comment">//spans interval</span>
+<a name="l00115"></a>00115                         || (<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a1e60e9449535dde78c2a342b873022f7" title="The first cycle that this Impulse has activity.">firstActiveCycle</a> &gt;= startCycle &amp;&amp; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a1e60e9449535dde78c2a342b873022f7" title="The first cycle that this Impulse has activity.">firstActiveCycle</a> &lt;= endCycle) <span class="comment">// start is in interval</span>
+<a name="l00116"></a>00116                         || (<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#adc17d78b2127229c3acdaefb7b697f7e" title="The lase cycle that this Impulse has activity.">lastActiveCycle</a> &gt;= startCycle &amp;&amp; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#adc17d78b2127229c3acdaefb7b697f7e" title="The lase cycle that this Impulse has activity.">lastActiveCycle</a> &lt;= endCycle)) { <span class="comment">// end is in interval</span>
+<a name="l00117"></a>00117                 <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00118"></a>00118         }
+<a name="l00119"></a>00119         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00120"></a>00120 }
+<a name="l00121"></a>00121 
+<a name="l00122"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a73cb97b2371198e44f726de54c9c36fa">00122</a> <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a73cb97b2371198e44f726de54c9c36fa" title="Get activity at current cycle.">Impulse::getActivity</a>()<span class="keyword"> const </span>{
+<a name="l00123"></a>00123         <span class="keywordflow">return</span> this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a73cb97b2371198e44f726de54c9c36fa" title="Get activity at current cycle.">getActivity</a>(<a class="code" href="classcryomesh_1_1common_1_1TimeKeeper.html#afe7b229532e11119cb2653192615d679">common::TimeKeeper::getTimeKeeper</a>().getCycle());
+<a name="l00124"></a>00124 }
+<a name="l00125"></a>00125 
+<a name="l00126"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a50ff12cf26ce360c37ec6ed93aad2ea5">00126</a> <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a73cb97b2371198e44f726de54c9c36fa" title="Get activity at current cycle.">Impulse::getActivity</a>(<a class="code" href="classcryomesh_1_1common_1_1Cycle.html">Cycle</a> cycle)<span class="keyword"> const </span>{
+<a name="l00127"></a>00127 <span class="preprocessor">#ifdef IMPULSE_DEBUG</span>
+<a name="l00128"></a>00128 <span class="preprocessor"></span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Impulse::getActivity: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;cycle: &quot;</span> &lt;&lt; cycle &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a1e60e9449535dde78c2a342b873022f7" title="The first cycle that this Impulse has activity.">firstActiveCycle</a> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#adc17d78b2127229c3acdaefb7b697f7e" title="The lase cycle that this Impulse has activity.">lastActiveCycle</a>
+<a name="l00129"></a>00129                 &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; std::endl;
+<a name="l00130"></a>00130 <span class="preprocessor">#endif</span>
+<a name="l00131"></a>00131 <span class="preprocessor"></span>        <span class="keywordflow">if</span> (cycle &lt; this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a348598ef30bd651b94ebbc0cdc46cb28" title="Get the first active cycle.">getFirstActiveCycle</a>() || cycle &gt; this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac91dae86e992103f921da77f0cfe0d02" title="Get the last active cycle.">getLastActiveCycle</a>()) {
+<a name="l00132"></a>00132                 <span class="keywordflow">return</span> 0;
+<a name="l00133"></a>00133         }
+<a name="l00134"></a>00134 
+<a name="l00135"></a>00135         <span class="keyword">const</span> std::list&lt;double&gt; &amp; allacts = this-&gt;getCollection();
+<a name="l00136"></a>00136         std::list&lt;double&gt;::const_iterator it_allacts = allacts.begin();
+<a name="l00137"></a>00137         <span class="keyword">const</span> std::list&lt;double&gt;::const_iterator it_allacts_end = allacts.end();
+<a name="l00138"></a>00138 
+<a name="l00139"></a>00139         <span class="keywordtype">long</span> <span class="keywordtype">int</span> index = (cycle.<a class="code" href="classcryomesh_1_1common_1_1Cycle.html#ad71494a74fe0dfdb7e470a091ee0906d" title="Return as an signed integer.">toLInt</a>() - <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a1e60e9449535dde78c2a342b873022f7" title="The first cycle that this Impulse has activity.">firstActiveCycle</a>.<a class="code" href="classcryomesh_1_1common_1_1Cycle.html#ad71494a74fe0dfdb7e470a091ee0906d" title="Return as an signed integer.">toLInt</a>());
+<a name="l00140"></a>00140         <span class="keywordtype">long</span> <span class="keywordtype">int</span> end_index = (<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#adc17d78b2127229c3acdaefb7b697f7e" title="The lase cycle that this Impulse has activity.">lastActiveCycle</a>.<a class="code" href="classcryomesh_1_1common_1_1Cycle.html#ad71494a74fe0dfdb7e470a091ee0906d" title="Return as an signed integer.">toLInt</a>() - cycle.<a class="code" href="classcryomesh_1_1common_1_1Cycle.html#ad71494a74fe0dfdb7e470a091ee0906d" title="Return as an signed integer.">toLInt</a>());
+<a name="l00141"></a>00141         assert(index&gt;=0);
+<a name="l00142"></a>00142         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; index &amp;&amp; i &lt; end_index; i++) {
+<a name="l00143"></a>00143 <span class="preprocessor">#ifdef IMPULSE_DEBUG</span>
+<a name="l00144"></a>00144 <span class="preprocessor"></span>                std::cout &lt;&lt; <span class="stringliteral">&quot;Impulse::getActivity: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;i:&quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; index &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; end_index &lt;&lt; <span class="stringliteral">&quot;) &quot;</span> &lt;&lt; <span class="stringliteral">&quot; = &quot;</span>
+<a name="l00145"></a>00145                                 &lt;&lt; *it_allacts &lt;&lt; std::endl;
+<a name="l00146"></a>00146 <span class="preprocessor">#endif</span>
+<a name="l00147"></a>00147 <span class="preprocessor"></span>                ++it_allacts;
+<a name="l00148"></a>00148         }
+<a name="l00149"></a>00149         assert(it_allacts!=it_allacts_end);
+<a name="l00150"></a>00150         <span class="keywordflow">return</span> *it_allacts;
+<a name="l00151"></a>00151 }
+<a name="l00152"></a>00152 
+<a name="l00153"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9607961d67264b1431bc6f0871ab71e0">00153</a> <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9607961d67264b1431bc6f0871ab71e0" title="Get maximum activity.">Impulse::getActivityMaximum</a>()<span class="keyword"> const </span>{
+<a name="l00154"></a>00154         <span class="keywordflow">return</span> (this-&gt;getMaximum());
+<a name="l00155"></a>00155 }
+<a name="l00156"></a>00156 
+<a name="l00157"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9ccf24929b1d73630bd02ead060a5b15">00157</a> <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9ccf24929b1d73630bd02ead060a5b15" title="Get minimum activity.">Impulse::getActivityMinimum</a>()<span class="keyword"> const </span>{
+<a name="l00158"></a>00158         <span class="keywordflow">return</span> (this-&gt;getMinimum());
+<a name="l00159"></a>00159 }
+<a name="l00160"></a>00160 
+<a name="l00161"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a21d17ce78d670cfc7082d5d09767c359">00161</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a21d17ce78d670cfc7082d5d09767c359" title="Invert the impulse.">Impulse::invert</a>() {
+<a name="l00162"></a>00162         <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a21d17ce78d670cfc7082d5d09767c359" title="Invert the impulse.">SimpleCollection::invert</a>();
+<a name="l00163"></a>00163         <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+<a name="l00164"></a>00164 }
+<a name="l00165"></a>00165 
+<a name="l00166"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a348598ef30bd651b94ebbc0cdc46cb28">00166</a> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">Cycle</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a348598ef30bd651b94ebbc0cdc46cb28" title="Get the first active cycle.">Impulse::getFirstActiveCycle</a>()<span class="keyword"> const </span>{
+<a name="l00167"></a>00167         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a1e60e9449535dde78c2a342b873022f7" title="The first cycle that this Impulse has activity.">firstActiveCycle</a>;
+<a name="l00168"></a>00168 }
+<a name="l00169"></a>00169 
+<a name="l00170"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#abe6cffbd621e68849bff60ce6799ff4b">00170</a> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#abe6cffbd621e68849bff60ce6799ff4b" title="Set the first active cycle.">Impulse::setFirstActiveCycle</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">Cycle</a> cycle) {
+<a name="l00171"></a>00171         <span class="comment">//long int cycle_int = cycle.toLInt();</span>
+<a name="l00172"></a>00172         <span class="comment">//long int pre_fac = firstActiveCycle.toLInt();</span>
+<a name="l00173"></a>00173         <span class="comment">//long int pre_lac = lastActiveCycle.toLInt();</span>
+<a name="l00174"></a>00174         <span class="comment">//long int pre_col_sz = this-&gt;getCollection().size();</span>
+<a name="l00175"></a>00175         <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a1e60e9449535dde78c2a342b873022f7" title="The first cycle that this Impulse has activity.">firstActiveCycle</a> = cycle + this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a6d0fd21f516b5182dd357b59f2112c64">getActivityDelay</a>();
+<a name="l00176"></a>00176         <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#adc17d78b2127229c3acdaefb7b697f7e" title="The lase cycle that this Impulse has activity.">lastActiveCycle</a> = <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a1e60e9449535dde78c2a342b873022f7" title="The first cycle that this Impulse has activity.">firstActiveCycle</a> + this-&gt;getCollection().size();
+<a name="l00177"></a>00177         <span class="comment">//std::cout&lt;&lt;&quot;Impulse::setFirstActiveCycle: &quot;&lt;&lt;&quot;arg: &quot;&lt;&lt;cycle&lt;&lt;&quot; -&gt; &quot;&lt;&lt;firstActiveCycle&lt;&lt;&quot;:&quot;&lt;&lt;lastActiveCycle&lt;&lt;std::endl;</span>
+<a name="l00178"></a>00178 
+<a name="l00179"></a>00179         <span class="comment">//long int post_fac = firstActiveCycle.toLInt();</span>
+<a name="l00180"></a>00180         <span class="comment">//long int post_lac = lastActiveCycle.toLInt();</span>
+<a name="l00181"></a>00181         <span class="comment">//long int post_col_sz = this-&gt;getCollection().size();</span>
+<a name="l00182"></a>00182         <span class="comment">//bool pause = true;</span>
+<a name="l00183"></a>00183 }
+<a name="l00184"></a>00184 
+<a name="l00185"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac91dae86e992103f921da77f0cfe0d02">00185</a> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">Cycle</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac91dae86e992103f921da77f0cfe0d02" title="Get the last active cycle.">Impulse::getLastActiveCycle</a>()<span class="keyword"> const </span>{
+<a name="l00186"></a>00186         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#adc17d78b2127229c3acdaefb7b697f7e" title="The lase cycle that this Impulse has activity.">lastActiveCycle</a>;
+<a name="l00187"></a>00187 }
 <a name="l00188"></a>00188 
-<a name="l00189"></a>00189         <span class="comment">//long int obj_fac_int = obj.getFirstActiveCycle().toLInt();</span>
-<a name="l00190"></a>00190         <span class="comment">//long int this_fac_int = this-&gt;getFirstActiveCycle().toLInt();</span>
-<a name="l00191"></a>00191         <span class="comment">//long int obj_lac_int = obj.getLastActiveCycle().toLInt();</span>
-<a name="l00192"></a>00192         <span class="comment">//long int this_lac_int = this-&gt;getLastActiveCycle().toLInt();</span>
-<a name="l00193"></a>00193 
-<a name="l00194"></a>00194         <span class="keywordtype">long</span> <span class="keywordtype">int</span> first_diff = (this_fac.<a class="code" href="classcryomesh_1_1common_1_1Cycle.html#a5168b76b3a3f20b5f6e38f96f8f9a8b5" title="Return as an unsigned integer.">toULInt</a>() - obj_fac.<a class="code" href="classcryomesh_1_1common_1_1Cycle.html#a5168b76b3a3f20b5f6e38f96f8f9a8b5" title="Return as an unsigned integer.">toULInt</a>());
-<a name="l00195"></a>00195         <span class="keywordtype">long</span> <span class="keywordtype">int</span> last_diff = (obj_lac.<a class="code" href="classcryomesh_1_1common_1_1Cycle.html#a5168b76b3a3f20b5f6e38f96f8f9a8b5" title="Return as an unsigned integer.">toULInt</a>() - this_lac.<a class="code" href="classcryomesh_1_1common_1_1Cycle.html#a5168b76b3a3f20b5f6e38f96f8f9a8b5" title="Return as an unsigned integer.">toULInt</a>());
+<a name="l00189"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a959076c6c59932abeaa73ca6de2e4167">00189</a> <span class="keyword">const</span> std::list&lt;double&gt; &amp; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a959076c6c59932abeaa73ca6de2e4167" title="Get activities.">Impulse::getActivities</a>()<span class="keyword"> const </span>{
+<a name="l00190"></a>00190         <span class="keywordflow">return</span> (this-&gt;getCollection());
+<a name="l00191"></a>00191 }
+<a name="l00192"></a>00192 
+<a name="l00193"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a356adeb4cebeb35ecef7231718fb20cd">00193</a> <span class="keyword">const</span> boost::shared_ptr&lt;ActivityTimerDistance&gt; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a356adeb4cebeb35ecef7231718fb20cd" title="Get activity timer.">Impulse::getActivityTimer</a>()<span class="keyword"> const </span>{
+<a name="l00194"></a>00194         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a6fc33296a0683cc08c5ea7404632a793">activityTimer</a>;
+<a name="l00195"></a>00195 }
 <a name="l00196"></a>00196 
-<a name="l00197"></a>00197         <span class="keywordtype">double</span> pad = 0.0;
-<a name="l00198"></a>00198         this-&gt;pad(first_diff, last_diff, pad);
-<a name="l00199"></a>00199         <span class="comment">//int thissz_new = this_objs.size();</span>
-<a name="l00200"></a>00200         std::list&lt;double&gt;::iterator it_this_objs = this_objs.begin();
-<a name="l00201"></a>00201         <span class="keyword">const</span> std::list&lt;double&gt;::const_iterator it_this_objs_end = this_objs.end();
-<a name="l00202"></a>00202         std::list&lt;double&gt;::const_iterator it_all_objs = all_objs.begin();
-<a name="l00203"></a>00203         <span class="keyword">const</span> std::list&lt;double&gt;::const_iterator it_all_objs_end = all_objs.end();
+<a name="l00197"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aac5460017f7adceba53aea31b1bc5bfe">00197</a> boost::shared_ptr&lt;ActivityTimerDistance&gt; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aac5460017f7adceba53aea31b1bc5bfe" title="Get mutable activity timer.">Impulse::getMutableActivityTimer</a>() {
+<a name="l00198"></a>00198         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a6fc33296a0683cc08c5ea7404632a793">activityTimer</a>;
+<a name="l00199"></a>00199 }
+<a name="l00200"></a>00200 
+<a name="l00201"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a04ecc67f3bf21f922c29d9e8afd3d04d">00201</a> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a04ecc67f3bf21f922c29d9e8afd3d04d" title="Set activity timer.">Impulse::setActivityTimer</a>(<span class="keyword">const</span> boost::shared_ptr&lt;ActivityTimerDistance&gt; timer) {
+<a name="l00202"></a>00202         <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a6fc33296a0683cc08c5ea7404632a793">activityTimer</a> = boost::shared_ptr&lt;ActivityTimerDistance&gt;(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a>(*timer));
+<a name="l00203"></a>00203 }
 <a name="l00204"></a>00204 
-<a name="l00205"></a>00205         <span class="keywordtype">int</span> count_before_obj = first_diff;
-<a name="l00206"></a>00206         <span class="keywordtype">int</span> count = 0;
-<a name="l00207"></a>00207         <span class="keywordflow">while</span> (it_this_objs != it_this_objs_end) {
-<a name="l00208"></a>00208                 <span class="comment">//std::cout&lt;&lt;&quot;Impulse::operator +=: &quot;&lt;&lt;&quot;count:&quot;&lt;&lt;count&lt;&lt;&quot; count_before_obj: &quot;&lt;&lt;count_before_obj&lt;&lt;std::endl;</span>
-<a name="l00209"></a>00209                 <span class="comment">//      std::cout&lt;&lt;&quot;Impulse::operator +=: &quot;&lt;&lt;&quot;this:&quot; &lt;&lt;*it_this_objs;</span>
-<a name="l00210"></a>00210                 <span class="keywordflow">if</span> (count_before_obj &gt; 0 &amp;&amp; it_all_objs != it_all_objs_end) {
-<a name="l00211"></a>00211                         <span class="comment">//      std::cout&lt;&lt;&quot;+&quot;&lt;&lt;*it_all_objs;</span>
-<a name="l00212"></a>00212                         *it_this_objs += *it_all_objs;
-<a name="l00213"></a>00213                         <span class="comment">//      std::cout&lt;&lt;&quot;=&quot;&lt;&lt;*it_all_objs;</span>
-<a name="l00214"></a>00214                         ++it_all_objs;
-<a name="l00215"></a>00215                 }
-<a name="l00216"></a>00216                 <span class="comment">//std::cout &lt;&lt;std::endl;</span>
+<a name="l00205"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a6d0fd21f516b5182dd357b59f2112c64">00205</a> <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a6d0fd21f516b5182dd357b59f2112c64">Impulse::getActivityDelay</a>()<span class="keyword"> const </span>{
+<a name="l00206"></a>00206         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ae491ccf924dc04674fb604a5258e0580">activityDelay</a>;
+<a name="l00207"></a>00207 }
+<a name="l00208"></a>00208 
+<a name="l00209"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a800479ed06132eb56d0bc15c8aa40d8a">00209</a> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a800479ed06132eb56d0bc15c8aa40d8a">Impulse::setActivityDelay</a>(<span class="keywordtype">int</span> delay) {
+<a name="l00210"></a>00210         <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ae491ccf924dc04674fb604a5258e0580">activityDelay</a> = delay;
+<a name="l00211"></a>00211 }
+<a name="l00212"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aca088f62a2bf95978952633e530e601c">00212</a> <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aca088f62a2bf95978952633e530e601c" title="Non-destructive addition operator.">Impulse::operator+</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; obj)<span class="keyword"> const </span>{
+<a name="l00213"></a>00213         <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> imp = *<span class="keyword">this</span>;
+<a name="l00214"></a>00214         imp += obj;
+<a name="l00215"></a>00215         <span class="keywordflow">return</span> imp;
+<a name="l00216"></a>00216 }
 <a name="l00217"></a>00217 
-<a name="l00218"></a>00218                 ++count;
-<a name="l00219"></a>00219                 ++count_before_obj;
-<a name="l00220"></a>00220                 ++it_this_objs;
-<a name="l00221"></a>00221         }
-<a name="l00222"></a>00222 
-<a name="l00223"></a>00223         <span class="comment">// set cycle bounds</span>
-<a name="l00224"></a>00224         <span class="keywordflow">if</span> (obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a348598ef30bd651b94ebbc0cdc46cb28" title="Get the first active cycle.">getFirstActiveCycle</a>() &lt; this-&gt;getFirstActiveCycle()) {
-<a name="l00225"></a>00225                 this-&gt;setFirstActiveCycle(obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a348598ef30bd651b94ebbc0cdc46cb28" title="Get the first active cycle.">getFirstActiveCycle</a>());
-<a name="l00226"></a>00226         }
-<a name="l00227"></a>00227 
-<a name="l00228"></a>00228         <span class="keywordflow">return</span> *<span class="keyword">this</span>;
-<a name="l00229"></a>00229 }
+<a name="l00218"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a6f5351eea5c38586fe5bb3092b3626af">00218</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a6f5351eea5c38586fe5bb3092b3626af" title="Destructive addition and assignment operator.">Impulse::operator+=</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; obj) {
+<a name="l00219"></a>00219         <span class="keyword">const</span> std::list&lt;double&gt; all_objs(obj.getCollection());
+<a name="l00220"></a>00220         std::list&lt;double&gt; &amp; this_objs = this-&gt;getMutableCollection();
+<a name="l00221"></a>00221 <span class="preprocessor">#ifdef IMPULSE_DEBUG</span>
+<a name="l00222"></a>00222 <span class="preprocessor"></span>        <span class="keywordtype">int</span> allsz_old = all_objs.size();
+<a name="l00223"></a>00223         <span class="keywordtype">int</span> thissz_old = this_objs.size();
+<a name="l00224"></a>00224 <span class="preprocessor">#endif</span>
+<a name="l00225"></a>00225 <span class="preprocessor"></span>        <span class="comment">// make collections big enough to merge</span>
+<a name="l00226"></a>00226         <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">Cycle</a> obj_fac = obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a348598ef30bd651b94ebbc0cdc46cb28" title="Get the first active cycle.">getFirstActiveCycle</a>();
+<a name="l00227"></a>00227         <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">Cycle</a> this_fac = this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a348598ef30bd651b94ebbc0cdc46cb28" title="Get the first active cycle.">getFirstActiveCycle</a>();
+<a name="l00228"></a>00228         <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">Cycle</a> obj_lac = obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac91dae86e992103f921da77f0cfe0d02" title="Get the last active cycle.">getLastActiveCycle</a>();
+<a name="l00229"></a>00229         <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">Cycle</a> this_lac = this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac91dae86e992103f921da77f0cfe0d02" title="Get the last active cycle.">getLastActiveCycle</a>();
 <a name="l00230"></a>00230 
-<a name="l00231"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a77e225470110ea77db3969cbaa2e276a">00231</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; Impulse::operator=(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; obj) {
-<a name="l00232"></a>00232         <span class="keywordflow">if</span> (*<span class="keyword">this</span> == obj) {
-<a name="l00233"></a>00233                 <span class="keywordflow">return</span> *<span class="keyword">this</span>;
-<a name="l00234"></a>00234         }
-<a name="l00235"></a>00235 
-<a name="l00236"></a>00236         this-&gt;getMutableCollection().clear();
-<a name="l00237"></a>00237         <span class="keyword">const</span> std::list&lt;double&gt; &amp; all_objs = obj.getCollection();
-<a name="l00238"></a>00238         <span class="comment">// forall in all_objs</span>
-<a name="l00239"></a>00239         {
-<a name="l00240"></a>00240                 <span class="keyword">typename</span> std::list&lt;double&gt;::const_iterator it_all_objs = all_objs.begin();
-<a name="l00241"></a>00241                 <span class="keyword">const</span> <span class="keyword">typename</span> std::list&lt;double&gt;::const_iterator it_all_objs_end = all_objs.end();
-<a name="l00242"></a>00242                 <span class="keywordflow">while</span> (it_all_objs != it_all_objs_end) {
-<a name="l00243"></a>00243                         this-&gt;getMutableCollection().push_back(*it_all_objs);
-<a name="l00244"></a>00244                         ++it_all_objs;
-<a name="l00245"></a>00245                 }
-<a name="l00246"></a>00246         }
-<a name="l00247"></a>00247         this-&gt;setFirstActiveCycle(obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a348598ef30bd651b94ebbc0cdc46cb28" title="Get the first active cycle.">getFirstActiveCycle</a>());
-<a name="l00248"></a>00248         boost::shared_ptr&lt; ActivityTimerDistance &gt; temptimer(obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a356adeb4cebeb35ecef7231718fb20cd" title="Get activity timer.">getActivityTimer</a>());
-<a name="l00249"></a>00249         this-&gt;setActivityTimer(temptimer);
-<a name="l00250"></a>00250         <span class="keywordflow">return</span> *<span class="keyword">this</span>;
-<a name="l00251"></a>00251 }
-<a name="l00252"></a>00252 
-<a name="l00253"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a8351a5a0e6afc72fa26ab306226ccab0">00253</a> <span class="keywordtype">bool</span> Impulse::operator==(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; obj)<span class="keyword"> const </span>{
-<a name="l00254"></a>00254         <span class="comment">//      std::cout&lt;&lt;&quot;Impulse::operator ==: &quot;&lt;&lt;&quot;&quot;&lt;&lt;std::endl;</span>
-<a name="l00255"></a>00255         <span class="comment">//      std::cout&lt;&lt; *this &lt;&lt;std::endl;</span>
-<a name="l00256"></a>00256         <span class="comment">//      std::cout&lt;&lt; obj &lt;&lt;std::endl;</span>
-<a name="l00257"></a>00257         <span class="keywordflow">if</span> (this-&gt;getFirstActiveCycle() != obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a348598ef30bd651b94ebbc0cdc46cb28" title="Get the first active cycle.">getFirstActiveCycle</a>()) {
-<a name="l00258"></a>00258                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00259"></a>00259         }
-<a name="l00260"></a>00260         <span class="keywordflow">if</span> (this-&gt;getLastActiveCycle() != obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac91dae86e992103f921da77f0cfe0d02" title="Get the last active cycle.">getLastActiveCycle</a>()) {
-<a name="l00261"></a>00261                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00231"></a>00231 <span class="comment">//      std::cout &lt;&lt; &quot;Impulse::operator +=: &quot; &lt;&lt; &quot;DEBUG 3 :&quot; &lt;&lt; &quot;obj_fac:&quot; &lt;&lt; obj_fac &lt;&lt; &quot; this_fac:&quot; &lt;&lt; this_fac</span>
+<a name="l00232"></a>00232         <span class="comment">//              &lt;&lt; &quot; obj_lac:&quot; &lt;&lt; obj_lac &lt;&lt; &quot; this_lac:&quot; &lt;&lt; this_lac &lt;&lt; std::endl;</span>
+<a name="l00233"></a>00233 
+<a name="l00234"></a>00234          <span class="keywordtype">long</span> <span class="keywordtype">int</span> first_diff = (this_fac -obj_fac).toLInt();
+<a name="l00235"></a>00235         <span class="keywordtype">long</span>  <span class="keywordtype">int</span> last_diff = (obj_lac - this_lac).toLInt();
+<a name="l00236"></a>00236 
+<a name="l00237"></a>00237         <span class="keywordtype">double</span> pad = 0.0;
+<a name="l00238"></a>00238         this-&gt;pad(first_diff, last_diff, pad);
+<a name="l00239"></a>00239         <span class="comment">//int thissz_new = this_objs.size();</span>
+<a name="l00240"></a>00240         std::list&lt;double&gt;::iterator it_this_objs = this_objs.begin();
+<a name="l00241"></a>00241         <span class="keyword">const</span> std::list&lt;double&gt;::const_iterator it_this_objs_end = this_objs.end();
+<a name="l00242"></a>00242         std::list&lt;double&gt;::const_iterator it_all_objs = all_objs.begin();
+<a name="l00243"></a>00243         <span class="keyword">const</span> std::list&lt;double&gt;::const_iterator it_all_objs_end = all_objs.end();
+<a name="l00244"></a>00244 
+<a name="l00245"></a>00245         <span class="keywordtype">int</span> count_before_obj = first_diff;
+<a name="l00246"></a>00246         <span class="keywordtype">int</span> count = 0;
+<a name="l00247"></a>00247         <span class="keywordflow">while</span> (it_this_objs != it_this_objs_end) {
+<a name="l00248"></a>00248                 <span class="comment">//std::cout &lt;&lt; &quot;Impulse::operator +=: &quot; &lt;&lt; &quot;count:&quot; &lt;&lt; count &lt;&lt; &quot; count_before_obj: &quot; &lt;&lt; count_before_obj</span>
+<a name="l00249"></a>00249                 <span class="comment">//              &lt;&lt; std::endl;</span>
+<a name="l00250"></a>00250                 <span class="comment">//std::cout &lt;&lt; &quot;Impulse::operator +=: &quot; &lt;&lt; &quot;this:&quot; &lt;&lt; *it_this_objs;</span>
+<a name="l00251"></a>00251                 <span class="keywordflow">if</span> (count_before_obj &gt; 0 &amp;&amp; it_all_objs != it_all_objs_end) {
+<a name="l00252"></a>00252                         std::cout &lt;&lt; <span class="stringliteral">&quot;+&quot;</span> &lt;&lt; *it_all_objs;
+<a name="l00253"></a>00253                         *it_this_objs += *it_all_objs;
+<a name="l00254"></a>00254                         std::cout &lt;&lt; <span class="stringliteral">&quot;=&quot;</span> &lt;&lt; *it_all_objs;
+<a name="l00255"></a>00255                         ++it_all_objs;
+<a name="l00256"></a>00256                 }
+<a name="l00257"></a>00257         <span class="comment">//      std::cout &lt;&lt; std::endl;</span>
+<a name="l00258"></a>00258 
+<a name="l00259"></a>00259                 ++count;
+<a name="l00260"></a>00260                 ++count_before_obj;
+<a name="l00261"></a>00261                 ++it_this_objs;
 <a name="l00262"></a>00262         }
 <a name="l00263"></a>00263 
-<a name="l00264"></a>00264         <span class="keyword">const</span> std::list&lt;double&gt; &amp; all_objs = obj.getCollection();
-<a name="l00265"></a>00265         <span class="keyword">const</span> std::list&lt;double&gt; &amp; this_objs = this-&gt;getCollection();
-<a name="l00266"></a>00266 
-<a name="l00267"></a>00267         <span class="keywordflow">if</span> (all_objs.size() != this_objs.size()) {
-<a name="l00268"></a>00268                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00269"></a>00269         }
-<a name="l00270"></a>00270 
-<a name="l00271"></a>00271         <span class="comment">// forall in all_objs</span>
-<a name="l00272"></a>00272         {
-<a name="l00273"></a>00273                 <span class="keyword">typename</span> std::list&lt;double&gt;::const_iterator it_all_objs = all_objs.begin();
-<a name="l00274"></a>00274                 <span class="keyword">const</span> <span class="keyword">typename</span> std::list&lt;double&gt;::const_iterator it_all_objs_end = all_objs.end();
-<a name="l00275"></a>00275                 <span class="keyword">typename</span> std::list&lt;double&gt;::const_iterator it_this_objs = this_objs.begin();
-<a name="l00276"></a>00276                 <span class="keyword">const</span> <span class="keyword">typename</span> std::list&lt;double&gt;::const_iterator it_this_objs_end = this_objs.end();
-<a name="l00277"></a>00277 
-<a name="l00278"></a>00278                 <span class="keywordflow">while</span> (it_all_objs != it_all_objs_end &amp;&amp; it_this_objs != it_this_objs_end) {
-<a name="l00279"></a>00279                         <span class="keywordflow">if</span> (common::Maths::compareDoubles(*it_all_objs, *it_this_objs)) {
-<a name="l00280"></a>00280                                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00281"></a>00281                         }
-<a name="l00282"></a>00282                         ++it_this_objs;
-<a name="l00283"></a>00283                         ++it_all_objs;
-<a name="l00284"></a>00284                 }
-<a name="l00285"></a>00285         }
-<a name="l00286"></a>00286         <span class="comment">//std::cout &lt;&lt; &quot;Impulse::operator ==: DEBUG: &quot; &lt;&lt; &quot;TRUE&quot; &lt;&lt; std::endl;</span>
-<a name="l00287"></a>00287         <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00288"></a>00288 }
-<a name="l00289"></a>00289 
-<a name="l00290"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac26da063e408d5493cd33f2014dfa875">00290</a> <span class="keywordtype">bool</span> Impulse::operator!=(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp;obj)<span class="keyword"> const </span>{
-<a name="l00291"></a>00291         <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == obj);
-<a name="l00292"></a>00292 }
-<a name="l00293"></a>00293 
-<a name="l00294"></a><a class="code" href="namespacecryomesh_1_1components.html#acda27209fe63cde02e1349a902e45d76">00294</a> std::ostream&amp; <a class="code" href="namespacecryomesh_1_1common.html#a09ffb633342203192e93c454f4dbd6f9">operator&lt;&lt;</a>(std::ostream &amp; os, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; obj) {
-<a name="l00295"></a>00295         os &lt;&lt; <span class="stringliteral">&quot;SimpleCollection: &quot;</span> &lt;&lt; &amp;obj &lt;&lt; <span class="stringliteral">&quot; objects: { &quot;</span>;
-<a name="l00296"></a>00296         <span class="comment">// forall in objects</span>
-<a name="l00297"></a>00297         {
-<a name="l00298"></a>00298                 std::list&lt;double&gt;::const_iterator it_objects = obj.getCollection().begin();
-<a name="l00299"></a>00299                 <span class="keyword">const</span> std::list&lt;double&gt;::const_iterator it_objects_end = obj.getCollection().end();
-<a name="l00300"></a>00300                 <span class="keywordflow">while</span> (it_objects != it_objects_end) {
-<a name="l00301"></a>00301                         os &lt;&lt; *it_objects &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;
-<a name="l00302"></a>00302                         ++it_objects;
-<a name="l00303"></a>00303                 }
-<a name="l00304"></a>00304         }
-<a name="l00305"></a>00305         os &lt;&lt; <span class="stringliteral">&quot;}&quot;</span>;
-<a name="l00306"></a>00306         os &lt;&lt; <span class="stringliteral">&quot; start/end: (&quot;</span> &lt;&lt; obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a348598ef30bd651b94ebbc0cdc46cb28" title="Get the first active cycle.">getFirstActiveCycle</a>() &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; obj.getLastActiveCycle() &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;
-<a name="l00307"></a>00307         <span class="keywordflow">return</span> os;
-<a name="l00308"></a>00308 }
+<a name="l00264"></a>00264         <span class="comment">// set cycle bounds</span>
+<a name="l00265"></a>00265         <span class="keywordflow">if</span> (obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a348598ef30bd651b94ebbc0cdc46cb28" title="Get the first active cycle.">getFirstActiveCycle</a>() &lt; this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a348598ef30bd651b94ebbc0cdc46cb28" title="Get the first active cycle.">getFirstActiveCycle</a>()) {
+<a name="l00266"></a>00266                 this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#abe6cffbd621e68849bff60ce6799ff4b" title="Set the first active cycle.">setFirstActiveCycle</a>(obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a348598ef30bd651b94ebbc0cdc46cb28" title="Get the first active cycle.">getFirstActiveCycle</a>());
+<a name="l00267"></a>00267         }
+<a name="l00268"></a>00268 
+<a name="l00269"></a>00269         <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+<a name="l00270"></a>00270 }
+<a name="l00271"></a>00271 
+<a name="l00272"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a77e225470110ea77db3969cbaa2e276a">00272</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a77e225470110ea77db3969cbaa2e276a" title="Assignment operator.">Impulse::operator=</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; obj) {
+<a name="l00273"></a>00273 <span class="preprocessor">#ifdef IMPULSE_DEBUG</span>
+<a name="l00274"></a>00274 <span class="preprocessor"></span>        <span class="keywordtype">long</span> <span class="keywordtype">int</span> this_fac_old = this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a1e60e9449535dde78c2a342b873022f7" title="The first cycle that this Impulse has activity.">firstActiveCycle</a>.<a class="code" href="classcryomesh_1_1common_1_1Cycle.html#ad71494a74fe0dfdb7e470a091ee0906d" title="Return as an signed integer.">toLInt</a>();
+<a name="l00275"></a>00275         <span class="keywordtype">long</span> <span class="keywordtype">int</span> obj_fac_old = obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a1e60e9449535dde78c2a342b873022f7" title="The first cycle that this Impulse has activity.">firstActiveCycle</a>.<a class="code" href="classcryomesh_1_1common_1_1Cycle.html#ad71494a74fe0dfdb7e470a091ee0906d" title="Return as an signed integer.">toLInt</a>();
+<a name="l00276"></a>00276 <span class="preprocessor">#endif</span>
+<a name="l00277"></a>00277 <span class="preprocessor"></span>        <span class="keywordflow">if</span> (*<span class="keyword">this</span> == obj) {
+<a name="l00278"></a>00278                 <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+<a name="l00279"></a>00279         }
+<a name="l00280"></a>00280         this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a800479ed06132eb56d0bc15c8aa40d8a">setActivityDelay</a>(obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a6d0fd21f516b5182dd357b59f2112c64">getActivityDelay</a>());
+<a name="l00281"></a>00281         this-&gt;setCollection(obj.getCollection());
+<a name="l00282"></a>00282         this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a04ecc67f3bf21f922c29d9e8afd3d04d" title="Set activity timer.">setActivityTimer</a>(obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a356adeb4cebeb35ecef7231718fb20cd" title="Get activity timer.">getActivityTimer</a>());
+<a name="l00283"></a>00283         this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a1e60e9449535dde78c2a342b873022f7" title="The first cycle that this Impulse has activity.">firstActiveCycle</a> = obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a348598ef30bd651b94ebbc0cdc46cb28" title="Get the first active cycle.">getFirstActiveCycle</a>();
+<a name="l00284"></a>00284         this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#adc17d78b2127229c3acdaefb7b697f7e" title="The lase cycle that this Impulse has activity.">lastActiveCycle</a> = obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac91dae86e992103f921da77f0cfe0d02" title="Get the last active cycle.">getLastActiveCycle</a>();
+<a name="l00285"></a>00285 <span class="preprocessor">#ifdef IMPULSE_DEBUG</span>
+<a name="l00286"></a>00286 <span class="preprocessor"></span>        <span class="keywordtype">long</span> <span class="keywordtype">int</span> this_fac_new = this-&gt;firstActiveCycle.<a class="code" href="classcryomesh_1_1common_1_1Cycle.html#ad71494a74fe0dfdb7e470a091ee0906d" title="Return as an signed integer.">toLInt</a>();
+<a name="l00287"></a>00287         <span class="keywordtype">long</span> <span class="keywordtype">int</span> obj_fac_new = obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a1e60e9449535dde78c2a342b873022f7" title="The first cycle that this Impulse has activity.">firstActiveCycle</a>.<a class="code" href="classcryomesh_1_1common_1_1Cycle.html#ad71494a74fe0dfdb7e470a091ee0906d" title="Return as an signed integer.">toLInt</a>();
+<a name="l00288"></a>00288 <span class="preprocessor">#endif</span>
+<a name="l00289"></a>00289 <span class="preprocessor"></span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+<a name="l00290"></a>00290 }
+<a name="l00291"></a>00291 
+<a name="l00292"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a8351a5a0e6afc72fa26ab306226ccab0">00292</a> <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a8351a5a0e6afc72fa26ab306226ccab0" title="Comparator operator.">Impulse::operator==</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; obj)<span class="keyword"> const </span>{
+<a name="l00293"></a>00293         <span class="comment">//      std::cout&lt;&lt;&quot;Impulse::operator ==: &quot;&lt;&lt;&quot;&quot;&lt;&lt;std::endl;</span>
+<a name="l00294"></a>00294         <span class="comment">//      std::cout&lt;&lt; *this &lt;&lt;std::endl;</span>
+<a name="l00295"></a>00295         <span class="comment">//      std::cout&lt;&lt; obj &lt;&lt;std::endl;</span>
+<a name="l00296"></a>00296         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a348598ef30bd651b94ebbc0cdc46cb28" title="Get the first active cycle.">getFirstActiveCycle</a>() != obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a348598ef30bd651b94ebbc0cdc46cb28" title="Get the first active cycle.">getFirstActiveCycle</a>()) {
+<a name="l00297"></a>00297                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00298"></a>00298         }
+<a name="l00299"></a>00299         <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac91dae86e992103f921da77f0cfe0d02" title="Get the last active cycle.">getLastActiveCycle</a>() != obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac91dae86e992103f921da77f0cfe0d02" title="Get the last active cycle.">getLastActiveCycle</a>()) {
+<a name="l00300"></a>00300                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00301"></a>00301         }
+<a name="l00302"></a>00302 
+<a name="l00303"></a>00303         <span class="keyword">const</span> std::list&lt;double&gt; &amp; all_objs = obj.getCollection();
+<a name="l00304"></a>00304         <span class="keyword">const</span> std::list&lt;double&gt; &amp; this_objs = this-&gt;getCollection();
+<a name="l00305"></a>00305 
+<a name="l00306"></a>00306         <span class="keywordflow">if</span> (all_objs.size() != this_objs.size()) {
+<a name="l00307"></a>00307                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00308"></a>00308         }
 <a name="l00309"></a>00309 
-<a name="l00310"></a>00310 } <span class="comment">//NAMESPACE</span>
-<a name="l00311"></a>00311 
-<a name="l00312"></a>00312 }<span class="comment">//NAMESPACE</span>
+<a name="l00310"></a>00310         <span class="comment">// forall in all_objs</span>
+<a name="l00311"></a>00311         {
+<a name="l00312"></a>00312                 <span class="keyword">typename</span> std::list&lt;double&gt;::const_iterator it_all_objs = all_objs.begin();
+<a name="l00313"></a>00313                 <span class="keyword">const</span> <span class="keyword">typename</span> std::list&lt;double&gt;::const_iterator it_all_objs_end = all_objs.end();
+<a name="l00314"></a>00314                 <span class="keyword">typename</span> std::list&lt;double&gt;::const_iterator it_this_objs = this_objs.begin();
+<a name="l00315"></a>00315                 <span class="keyword">const</span> <span class="keyword">typename</span> std::list&lt;double&gt;::const_iterator it_this_objs_end = this_objs.end();
+<a name="l00316"></a>00316 
+<a name="l00317"></a>00317                 <span class="keywordflow">while</span> (it_all_objs != it_all_objs_end &amp;&amp; it_this_objs != it_this_objs_end) {
+<a name="l00318"></a>00318                         <span class="keywordflow">if</span> (common::Maths::compareDoubles(*it_all_objs, *it_this_objs)) {
+<a name="l00319"></a>00319                                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00320"></a>00320                         }
+<a name="l00321"></a>00321                         ++it_this_objs;
+<a name="l00322"></a>00322                         ++it_all_objs;
+<a name="l00323"></a>00323                 }
+<a name="l00324"></a>00324         }
+<a name="l00325"></a>00325         <span class="comment">//std::cout &lt;&lt; &quot;Impulse::operator ==: DEBUG: &quot; &lt;&lt; &quot;TRUE&quot; &lt;&lt; std::endl;</span>
+<a name="l00326"></a>00326         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00327"></a>00327 }
+<a name="l00328"></a>00328 
+<a name="l00329"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac26da063e408d5493cd33f2014dfa875">00329</a> <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac26da063e408d5493cd33f2014dfa875" title="Not comparator operator.">Impulse::operator!=</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp;obj)<span class="keyword"> const </span>{
+<a name="l00330"></a>00330         <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == obj);
+<a name="l00331"></a>00331 }
+<a name="l00332"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ad3a3e47e23c5443a9df0df9c3c53a8ac">00332</a> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ad3a3e47e23c5443a9df0df9c3c53a8ac">Impulse::enableDebug</a>(<span class="keywordtype">bool</span> b){
+<a name="l00333"></a>00333          this-&gt;setDebug(b);
+<a name="l00334"></a>00334  }
+<a name="l00335"></a><a class="code" href="namespacecryomesh_1_1components.html#acda27209fe63cde02e1349a902e45d76">00335</a> std::ostream&amp; <a class="code" href="namespacecryomesh_1_1components.html#a2407f0942f1623e6cb795553fa4eec7b">operator&lt;&lt;</a>(std::ostream &amp; os, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; obj) {
+<a name="l00336"></a>00336         os &lt;&lt; <span class="stringliteral">&quot;Impulse: &quot;</span> &lt;&lt; &amp;obj &lt;&lt; <span class="stringliteral">&quot; delay=&quot;</span> &lt;&lt; obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a6d0fd21f516b5182dd357b59f2112c64">getActivityDelay</a>() &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; *(obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a356adeb4cebeb35ecef7231718fb20cd" title="Get activity timer.">getActivityTimer</a>())
+<a name="l00337"></a>00337                         &lt;&lt; <span class="stringliteral">&quot;objects: { &quot;</span>;
+<a name="l00338"></a>00338         <span class="comment">// forall in objects</span>
+<a name="l00339"></a>00339         {
+<a name="l00340"></a>00340                 std::list&lt;double&gt;::const_iterator it_objects = obj.getCollection().begin();
+<a name="l00341"></a>00341                 <span class="keyword">const</span> std::list&lt;double&gt;::const_iterator it_objects_end = obj.getCollection().end();
+<a name="l00342"></a>00342                 <span class="keywordflow">while</span> (it_objects != it_objects_end) {
+<a name="l00343"></a>00343                         os &lt;&lt; *it_objects &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;
+<a name="l00344"></a>00344                         ++it_objects;
+<a name="l00345"></a>00345                 }
+<a name="l00346"></a>00346         }
+<a name="l00347"></a>00347         os &lt;&lt; <span class="stringliteral">&quot;}&quot;</span>;
+<a name="l00348"></a>00348         os &lt;&lt; <span class="stringliteral">&quot; start/end: (&quot;</span> &lt;&lt; obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a348598ef30bd651b94ebbc0cdc46cb28" title="Get the first active cycle.">getFirstActiveCycle</a>() &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; obj.<a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac91dae86e992103f921da77f0cfe0d02" title="Get the last active cycle.">getLastActiveCycle</a>() &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;
+<a name="l00349"></a>00349         <span class="keywordflow">return</span> os;
+<a name="l00350"></a>00350 }
+<a name="l00351"></a>00351 
+<a name="l00352"></a>00352 } <span class="comment">//NAMESPACE</span>
+<a name="l00353"></a>00353 
+<a name="l00354"></a>00354 }<span class="comment">//NAMESPACE</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -380,7 +423,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -389,7 +432,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:13 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

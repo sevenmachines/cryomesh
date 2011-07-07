@@ -1,4 +1,4 @@
-.TH "cryomesh::components" 3 "Fri Apr 1 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::components" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -32,10 +32,6 @@ cryomesh::components \-
 .RI "class \fBImpulseCollection\fP"
 .br
 .RI "\fI\fBImpulseCollection\fP represents a collection of \fBImpulse\fP objects. \fP"
-.ti -1c
-.RI "class \fBMesh\fP"
-.br
-.RI "\fI\fBMesh\fP is the fabric of connection space and warps and is warped by it. \fP"
 .ti -1c
 .RI "class \fBNode\fP"
 .br
@@ -77,7 +73,7 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 132 of file Connection.cpp.
+Definition at line 202 of file Connection.cpp.
 .SS "std::ostream& cryomesh::components::operator<< (std::ostream &os, const Node &obj)"\fBParameters:\fP
 .RS 4
 \fIstd::ostream\fP & os The output stream 
@@ -92,9 +88,9 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 260 of file Node.cpp.
+Definition at line 496 of file Node.cpp.
 .PP
-References cryomesh::components::Node::getConnector(), and cryomesh::components::Node::getImpulses().
+References cryomesh::components::Node::getConnector(), cryomesh::components::Node::getImpulses(), cryomesh::components::Node::isPrimaryInputAttachedNode(), cryomesh::components::Node::isPrimaryOutputAttachedNode(), and cryomesh::components::Node::printConnections().
 .SS "std::ostream& cryomesh::components::operator<< (std::ostream &os, const ImpulseCollection &obj)"\fBParameters:\fP
 .RS 4
 \fIstd::ostream\fP & os The output stream 
@@ -109,7 +105,7 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 317 of file ImpulseCollection.cpp.
+Definition at line 369 of file ImpulseCollection.cpp.
 .SS "std::ostream& cryomesh::components::operator<< (std::ostream &os, const Impulse &obj)"\fBParameters:\fP
 .RS 4
 \fIstd::ostream\fP & os The output stream 
@@ -124,9 +120,9 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 294 of file Impulse.cpp.
+Definition at line 335 of file Impulse.cpp.
 .PP
-References cryomesh::components::Impulse::getFirstActiveCycle().
+References cryomesh::components::Impulse::getActivityDelay(), cryomesh::components::Impulse::getActivityTimer(), cryomesh::components::Impulse::getFirstActiveCycle(), and cryomesh::components::Impulse::getLastActiveCycle().
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for cryomesh from the source code.

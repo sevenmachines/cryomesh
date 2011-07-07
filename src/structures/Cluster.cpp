@@ -57,8 +57,8 @@ void Cluster::setEnergy(double total_energy) {
 	energy = total_energy;
 }
 
-void Cluster::warpMesh() {
-	std::cout << "Cluster::warpMesh: " << "TODO" << std::endl;
+void Cluster::warpNodes() {
+	mesh->warpNodes();
 }
 
 void Cluster::createNodes(const int number) {

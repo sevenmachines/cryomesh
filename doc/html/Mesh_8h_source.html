@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>cryomesh: /home/niall/Projects/Eclipse/cryomesh/src/components/Mesh.h Source File</title>
+<title>cryomesh: /home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Mesh.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -54,46 +54,50 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/niall/Projects/Eclipse/cryomesh/src/components/Mesh.h</h1>  </div>
+<h1>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Mesh.h</h1>  </div>
 </div>
 <div class="contents">
 <a href="Mesh_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
 <a name="l00008"></a>00008 <span class="preprocessor">#ifndef MESH_H_</span>
 <a name="l00009"></a>00009 <span class="preprocessor"></span><span class="preprocessor">#define MESH_H_</span>
 <a name="l00010"></a>00010 <span class="preprocessor"></span>
-<a name="l00011"></a>00011 
-<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;common/Cycle.h&quot;</span>
-<a name="l00013"></a>00013 
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;common/Cycle.h&quot;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;spacial/ActivityGrid.h&quot;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include &lt;boost/shared_ptr.hpp&gt;</span>
 <a name="l00014"></a>00014 
-<a name="l00015"></a>00015 <span class="preprocessor">#include &lt;boost/shared_ptr.hpp&gt;</span>
-<a name="l00016"></a>00016 
-<a name="l00017"></a>00017 <span class="keyword">namespace </span>cryomesh {
-<a name="l00018"></a>00018 
-<a name="l00019"></a>00019 <span class="keyword">namespace </span>components {
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021 <span class="comment">// Forward declare to avoid cyclical header dependencies</span>
-<a name="l00022"></a>00022 <span class="keyword">class </span>Impulse;
-<a name="l00023"></a>00023 <span class="keyword">class </span>ImpulseCollection;
-<a name="l00024"></a>00024 <span class="keyword">class </span>Node;
-<a name="l00025"></a>00025 
-<a name="l00034"></a><a class="code" href="classcryomesh_1_1components_1_1Mesh.html">00034</a> <span class="keyword">class </span><a class="code" href="classcryomesh_1_1components_1_1Mesh.html" title="Mesh is the fabric of connection space and warps and is warped by it.">Mesh</a> {
-<a name="l00035"></a>00035 <span class="keyword">public</span>:
-<a name="l00036"></a>00036 
-<a name="l00042"></a>00042         <a class="code" href="classcryomesh_1_1components_1_1Mesh.html#ac4993b016184c8c6ea9807b30d76d7f2" title="Constructor.">Mesh</a>();
-<a name="l00043"></a>00043 
-<a name="l00052"></a>00052         <a class="code" href="classcryomesh_1_1components_1_1Mesh.html#ac4993b016184c8c6ea9807b30d76d7f2" title="Constructor.">Mesh</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Mesh.html" title="Mesh is the fabric of connection space and warps and is warped by it.">Mesh</a> &amp;);
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054 
-<a name="l00058"></a>00058         <span class="keyword">virtual</span> <a class="code" href="classcryomesh_1_1components_1_1Mesh.html#abf98574cbdd4cf4040c400f96b8d522e" title="Destructor.">~Mesh</a>();
-<a name="l00059"></a>00059 
-<a name="l00060"></a>00060         <span class="comment">//DEPRECATED</span>
-<a name="l00095"></a>00095 <span class="comment"></span>
-<a name="l00105"></a>00105 <span class="comment"></span>
-<a name="l00115"></a>00115 <span class="comment"></span>
+<a name="l00015"></a>00015 <span class="keyword">namespace </span>cryomesh {
+<a name="l00016"></a>00016 <span class="keyword">namespace </span>components {
+<a name="l00017"></a>00017 <span class="comment">// Forward declare to avoid cyclical header dependencies</span>
+<a name="l00018"></a>00018 <span class="keyword">class </span>Impulse;
+<a name="l00019"></a>00019 <span class="keyword">class </span>ImpulseCollection;
+<a name="l00020"></a>00020 <span class="keyword">class </span>Node;
+<a name="l00021"></a>00021 }
+<a name="l00022"></a>00022 <span class="keyword">namespace </span>structures {
+<a name="l00023"></a>00023 <span class="keyword">class </span>Cluster;
+<a name="l00024"></a>00024 
+<a name="l00033"></a><a class="code" href="classcryomesh_1_1structures_1_1Mesh.html">00033</a> <span class="keyword">class </span><a class="code" href="classcryomesh_1_1structures_1_1Mesh.html" title="Mesh is the fabric of connection space and warps and is warped by it.">Mesh</a> {
+<a name="l00034"></a>00034 <span class="keyword">public</span>:
+<a name="l00035"></a>00035 
+<a name="l00036"></a><a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#a5899ce5c4ac651fe82d0bd7b25d4b743">00036</a>         <span class="keyword">enum</span> <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#a5899ce5c4ac651fe82d0bd7b25d4b743">BlendingMethod</a> {
+<a name="l00037"></a><a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#a5899ce5c4ac651fe82d0bd7b25d4b743a9e12dc9ac54b6b1eadbe806b90caf332">00037</a>                 <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#a5899ce5c4ac651fe82d0bd7b25d4b743a9e12dc9ac54b6b1eadbe806b90caf332">BLEND_LINEAR</a>
+<a name="l00038"></a>00038         };
+<a name="l00044"></a>00044         <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#abdc3f0f1976c80f177c2ed5ca05f87c4" title="Constructor.">Mesh</a>(<a class="code" href="classcryomesh_1_1structures_1_1Cluster.html" title="A Cluster is a collection of self-contained nodes and connections along with an associated Mesh...">Cluster</a> &amp; clus);
+<a name="l00045"></a>00045 
+<a name="l00054"></a>00054         <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#abdc3f0f1976c80f177c2ed5ca05f87c4" title="Constructor.">Mesh</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html" title="Mesh is the fabric of connection space and warps and is warped by it.">Mesh</a> &amp;);
+<a name="l00055"></a>00055 
+<a name="l00059"></a>00059         <span class="keyword">virtual</span> <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#aef373539eb9566c327ec33adb21dc631" title="Destructor.">~Mesh</a>();
+<a name="l00060"></a>00060 
+<a name="l00064"></a>00064         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#ab21a332badd5ccc36bc0f7d2ade2560b" title="Update mesh from cluster.">update</a>();
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066         <span class="comment">//DEPRECATED</span>
+<a name="l00101"></a>00101 <span class="comment"></span>
+<a name="l00111"></a>00111 <span class="comment"></span>
+<a name="l00121"></a>00121 <span class="comment"></span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -101,7 +105,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -110,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:14 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

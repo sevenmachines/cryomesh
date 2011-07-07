@@ -91,11 +91,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a4881650c49a273648a9bccddb9a832fc">Creator</a> (const std::string &amp;config_filename, const std::string &amp;database_filename=<a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a36ec491bb68e6a595086c239af7bd989">DEFAULT_DATABASE_FILENAME</a>)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor to create a bundle from a config file name with option to specify the database file name that will be used.  <a href="#a4881650c49a273648a9bccddb9a832fc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a6479ea01aa020c99899198f08ef558b6">Creator</a> (std::istream &amp;config_stream, const std::string &amp;database_filename=<a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a36ec491bb68e6a595086c239af7bd989">DEFAULT_DATABASE_FILENAME</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a8eea37df1f5fc6c94a97c42ce4d9a5d0">~Creator</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deffault destructor.  <a href="#a8eea37df1f5fc6c94a97c42ce4d9a5d0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const boost::shared_ptr<br class="typebreak"/>
+&lt; <a class="el" href="classcryomesh_1_1structures_1_1Bundle.html">structures::Bundle</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a10d07b373f504e7a479acb16abacb713">getBundle</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the create bundle.  <a href="#a10d07b373f504e7a479acb16abacb713"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr<br class="typebreak"/>
-&lt; <a class="el" href="classcryomesh_1_1structures_1_1Bundle.html">structures::Bundle</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a376ca7e9149fc78c3845a3a8f041e473">getBundle</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the create bundle.  <a href="#a376ca7e9149fc78c3845a3a8f041e473"></a><br/></td></tr>
+&lt; <a class="el" href="classcryomesh_1_1structures_1_1Bundle.html">structures::Bundle</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a2155dae515aa5d360a577ef82437f338">getMutableBundle</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the mutable create bundle.  <a href="#a2155dae515aa5d360a577ef82437f338"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const std::map&lt; int, <br class="typebreak"/>
 boost::uuids::uuid &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#adf060224477ba4086f7e4aab30b60cf6">getClusterIDMap</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get the clusterIDMap  <a href="#adf060224477ba4086f7e4aab30b60cf6"></a><br/></td></tr>
@@ -105,24 +109,29 @@ boost::uuids::uuid &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"
 <tr><td class="memItemLeft" align="right" valign="top">const std::map&lt; int, <br class="typebreak"/>
 boost::uuids::uuid &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a6721fe152f65ef7040b3dfa0cd143dc2">getPatternChannelIDMap</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get the patternChannelIDMap  <a href="#a6721fe152f65ef7040b3dfa0cd143dc2"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a052ab74ee560101065fe02245ac22c52">analyseConfig</a> (const config::ConfigTranslator &amp;conf_trans) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Analyse the config translator for coherence.  <a href="#a052ab74ee560101065fe02245ac22c52"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a51b122ef2933f2a945925d445e98be14">checkConfigEntry</a> (const config::ConfigEntry &amp;conf_entry) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Analyse the config entry for coherence.  <a href="#a51b122ef2933f2a945925d445e98be14"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a2ab1589946fe5764e1cbec621b84b565">checkConfigStructure</a> (const std::list&lt; config::ConfigEntry &gt; &amp;conf_entries) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Analyse the config for structural coherence.  <a href="#a2ab1589946fe5764e1cbec621b84b565"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#af1395df65f66b2e1af4fdba9afe15cbc">createCluster</a> (int id, int size, int connectivity)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Translator from config command to actual command.  <a href="#af1395df65f66b2e1af4fdba9afe15cbc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a66333bb0409b2e6de38a58eaddeeb7b1">connectCluster</a> (int input_cluster_id, int ouput_cluster_id, int width)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Translator from config command to actual command.  <a href="#a66333bb0409b2e6de38a58eaddeeb7b1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a73a74e5e35b5c969108a99cdf31c5108">loadData</a> (std::string datafile)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Translator from config command to actual command.  <a href="#a73a74e5e35b5c969108a99cdf31c5108"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#ad6eb863eb6f8278979e07ef97e9140b5">runCommand</a> (const config::ConfigEntry &amp;conf_entry)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a074c92de2d06664b5d9d9fa5f96aa5ee">connectPrimaryInputChannel</a> (int channel_id, int outputid)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Translator from config command to actual command.  <a href="#a074c92de2d06664b5d9d9fa5f96aa5ee"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a0977991d6697d06a104aacf40c07f5b4">connectPrimaryOutputChannel</a> (int channel_id, int inputid)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Translator from config command to actual command.  <a href="#a0977991d6697d06a104aacf40c07f5b4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a8c773b097b7b4db87a46f749a2606a2b">autoConnectPrimaryInputs</a> (const std::vector&lt; int &gt; &amp;cluster_ids)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">auto connect all the primary input channels to the list of clusters  <a href="#a8c773b097b7b4db87a46f749a2606a2b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a7ad46f5b3864cc596f0f36b55f884ce7">autoConnectPrimaryOutputs</a> (const std::vector&lt; int &gt; &amp;cluster_ids)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">auto connect all the primary output channels to the list of clusters  <a href="#a7ad46f5b3864cc596f0f36b55f884ce7"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a69a825d7856c367e400b2ff6e2cefe68">analyseConfig</a> (const config::ConfigTranslator &amp;conf_trans)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Analyse the config translator for coherence.  <a href="#a69a825d7856c367e400b2ff6e2cefe68"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#ae3d7dd77beadb0d05bbbe5f0c67e8292">checkConfigEntry</a> (const config::ConfigEntry &amp;conf_entry)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Analyse the config entry for coherence.  <a href="#ae3d7dd77beadb0d05bbbe5f0c67e8292"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#add4748985eb8bc35a442a9e4e4c2a087">checkConfigStructure</a> (const std::list&lt; config::ConfigEntry &gt; &amp;conf_entries)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Analyse the config for structural coherence.  <a href="#add4748985eb8bc35a442a9e4e4c2a087"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::string, <br class="typebreak"/>
 std::list&lt; std::string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#aa6de6b79f746213f844b207518b1577a">getAcceptedCommandList</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate and return the accepted command list.  <a href="#aa6de6b79f746213f844b207518b1577a"></a><br/></td></tr>
@@ -135,8 +144,9 @@ std::list&lt; std::string &gt; &gt;&#160;</td><td class="memItemRight" valign="b
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a1cf96043a609df452620aba02370dd46">initialise</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to initialise the creator.  <a href="#a1cf96043a609df452620aba02370dd46"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a425d6ea59ef9e8600c060b5d02ce9c69">createFromConfig</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Run through the config file generating all commands.  <a href="#a425d6ea59ef9e8600c060b5d02ce9c69"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#ac25b12d7fcd727c0228e551732605e10">createFromConfigFile</a> (const std::string config_filename)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Run through the config file generating all commands.  <a href="#ac25b12d7fcd727c0228e551732605e10"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#ab816409b411aed0ceb2abe38afb8fef9">createFromConfigStream</a> (std::istream &amp;is)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">boost::uuids::uuid&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a1d848c7a78e970a49693434dad741880">getRealID</a> (const int id, const std::map&lt; int, boost::uuids::uuid &gt; &amp;idmap) const </td></tr>
@@ -149,7 +159,6 @@ Private Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to retrieve a uuid from a fake int id for pattern channels.  <a href="#aeb8b3b6fddffcefb7f81780a81f5f28c"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a1d09307b857cc5f7ab6f31af515a5af4">configFilename</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a5d5c9a8aafa817c49c0787d0dae91a3a">databaseFilename</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr<br class="typebreak"/>
 &lt; <a class="el" href="classcryomesh_1_1structures_1_1Bundle.html">structures::Bundle</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#ace9dd9da21fab7cf04f6681d332d40cc">bundle</a></td></tr>
@@ -201,7 +210,36 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00040">40</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00048">48</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6479ea01aa020c99899198f08ef558b6"></a><!-- doxytag: member="cryomesh::manager::Creator::Creator" ref="a6479ea01aa020c99899198f08ef558b6" args="(std::istream &amp;config_stream, const std::string &amp;database_filename=DEFAULT_DATABASE_FILENAME)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cryomesh::manager::Creator::Creator </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;&#160;</td>
+          <td class="paramname"><em>config_stream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>database_filename</em> = <code><a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a36ec491bb68e6a595086c239af7bd989">DEFAULT_DATABASE_FILENAME</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00062">62</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
 
 </div>
 </div>
@@ -221,12 +259,12 @@ Private Attributes</h2></td></tr>
 
 <p>Deffault destructor. </p>
 
-<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00054">54</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00072">72</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
 
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a052ab74ee560101065fe02245ac22c52"></a><!-- doxytag: member="cryomesh::manager::Creator::analyseConfig" ref="a052ab74ee560101065fe02245ac22c52" args="(const config::ConfigTranslator &amp;conf_trans) const " -->
+<a class="anchor" id="a69a825d7856c367e400b2ff6e2cefe68"></a><!-- doxytag: member="cryomesh::manager::Creator::analyseConfig" ref="a69a825d7856c367e400b2ff6e2cefe68" args="(const config::ConfigTranslator &amp;conf_trans)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -235,7 +273,7 @@ Private Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype">const config::ConfigTranslator &amp;&#160;</td>
           <td class="paramname"><em>conf_trans</em></td><td>)</td>
-          <td> const</td>
+          <td><code> [static]</code></td>
         </tr>
       </table>
 </div>
@@ -250,13 +288,71 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool True if the config translator passed all the tests for coherence, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00153">153</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00196">196</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
 
-<p>References <a class="el" href="Creator_8cpp_source.html#l00173">checkConfigEntry()</a>.</p>
+<p>References <a class="el" href="Creator_8cpp_source.html#l00216">checkConfigEntry()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a51b122ef2933f2a945925d445e98be14"></a><!-- doxytag: member="cryomesh::manager::Creator::checkConfigEntry" ref="a51b122ef2933f2a945925d445e98be14" args="(const config::ConfigEntry &amp;conf_entry) const " -->
+<a class="anchor" id="a8c773b097b7b4db87a46f749a2606a2b"></a><!-- doxytag: member="cryomesh::manager::Creator::autoConnectPrimaryInputs" ref="a8c773b097b7b4db87a46f749a2606a2b" args="(const std::vector&lt; int &gt; &amp;cluster_ids)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cryomesh::manager::Creator::autoConnectPrimaryInputs </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cluster_ids</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>auto connect all the primary input channels to the list of clusters </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">std::vector&lt;int&gt;</td><td>The fake ids of the clusters to connect </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00357">357</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+
+<p>References <a class="el" href="Creator_8cpp_source.html#l00420">getClusterRealID()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7ad46f5b3864cc596f0f36b55f884ce7"></a><!-- doxytag: member="cryomesh::manager::Creator::autoConnectPrimaryOutputs" ref="a7ad46f5b3864cc596f0f36b55f884ce7" args="(const std::vector&lt; int &gt; &amp;cluster_ids)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cryomesh::manager::Creator::autoConnectPrimaryOutputs </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cluster_ids</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>auto connect all the primary output channels to the list of clusters </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">std::vector&lt;int&gt;</td><td>The fake ids of the clusters to connect </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00375">375</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+
+<p>References <a class="el" href="Creator_8cpp_source.html#l00420">getClusterRealID()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae3d7dd77beadb0d05bbbe5f0c67e8292"></a><!-- doxytag: member="cryomesh::manager::Creator::checkConfigEntry" ref="ae3d7dd77beadb0d05bbbe5f0c67e8292" args="(const config::ConfigEntry &amp;conf_entry)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -265,7 +361,7 @@ Private Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype">const config::ConfigEntry &amp;&#160;</td>
           <td class="paramname"><em>conf_entry</em></td><td>)</td>
-          <td> const</td>
+          <td><code> [static]</code></td>
         </tr>
       </table>
 </div>
@@ -280,13 +376,13 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool True if the config entry passed all the tests for coherence, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00173">173</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00216">216</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="Creator_8cpp_source.html#l00153">analyseConfig()</a>.</p>
+<p>Referenced by <a class="el" href="Creator_8cpp_source.html#l00196">analyseConfig()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a2ab1589946fe5764e1cbec621b84b565"></a><!-- doxytag: member="cryomesh::manager::Creator::checkConfigStructure" ref="a2ab1589946fe5764e1cbec621b84b565" args="(const std::list&lt; config::ConfigEntry &gt; &amp;conf_entries) const " -->
+<a class="anchor" id="add4748985eb8bc35a442a9e4e4c2a087"></a><!-- doxytag: member="cryomesh::manager::Creator::checkConfigStructure" ref="add4748985eb8bc35a442a9e4e4c2a087" args="(const std::list&lt; config::ConfigEntry &gt; &amp;conf_entries)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -295,7 +391,7 @@ Private Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype">const std::list&lt; config::ConfigEntry &gt; &amp;&#160;</td>
           <td class="paramname"><em>conf_entries</em></td><td>)</td>
-          <td> const</td>
+          <td><code> [static]</code></td>
         </tr>
       </table>
 </div>
@@ -310,7 +406,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool True if the config entries passed all the tests for structural coherence, false otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00203">203</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00246">246</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
 
 </div>
 </div>
@@ -356,7 +452,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00237">237</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00285">285</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
 
 </div>
 </div>
@@ -395,7 +491,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00295">295</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00343">343</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
 
 </div>
 </div>
@@ -434,7 +530,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00300">300</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00350">350</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
 
 </div>
 </div>
@@ -480,18 +576,21 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00233">233</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00281">281</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="Creator_8cpp_source.html#l00099">runCommand()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a425d6ea59ef9e8600c060b5d02ce9c69"></a><!-- doxytag: member="cryomesh::manager::Creator::createFromConfig" ref="a425d6ea59ef9e8600c060b5d02ce9c69" args="()" -->
+<a class="anchor" id="ac25b12d7fcd727c0228e551732605e10"></a><!-- doxytag: member="cryomesh::manager::Creator::createFromConfigFile" ref="ac25b12d7fcd727c0228e551732605e10" args="(const std::string config_filename)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool cryomesh::manager::Creator::createFromConfig </td>
+          <td class="memname">bool cryomesh::manager::Creator::createFromConfigFile </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>config_filename</em></td><td>)</td>
           <td><code> [protected]</code></td>
         </tr>
       </table>
@@ -501,9 +600,26 @@ Private Attributes</h2></td></tr>
 <p>Run through the config file generating all commands. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool True if running the config file was successful, false otherwise </dd></dl>
 
-<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00077">77</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00182">182</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
 
-<p>References <a class="el" href="Creator_8h_source.html#l00216">configFilename</a>.</p>
+</div>
+</div>
+<a class="anchor" id="ab816409b411aed0ceb2abe38afb8fef9"></a><!-- doxytag: member="cryomesh::manager::Creator::createFromConfigStream" ref="ab816409b411aed0ceb2abe38afb8fef9" args="(std::istream &amp;is)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cryomesh::manager::Creator::createFromConfigStream </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;&#160;</td>
+          <td class="paramname"><em>is</em></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00157">157</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
 
 </div>
 </div>
@@ -524,19 +640,19 @@ Private Attributes</h2></td></tr>
 <p>Generate and return the accepted command list. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::map&lt;std::string, std::list&lt;std::string&gt; &gt; The accepted commands mapping </dd></dl>
 
-<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00021">21</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00023">23</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a376ca7e9149fc78c3845a3a8f041e473"></a><!-- doxytag: member="cryomesh::manager::Creator::getBundle" ref="a376ca7e9149fc78c3845a3a8f041e473" args="()" -->
+<a class="anchor" id="a10d07b373f504e7a479acb16abacb713"></a><!-- doxytag: member="cryomesh::manager::Creator::getBundle" ref="a10d07b373f504e7a479acb16abacb713" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1structures_1_1Bundle.html">structures::Bundle</a> &gt; cryomesh::manager::Creator::getBundle </td>
+          <td class="memname">const boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1structures_1_1Bundle.html">structures::Bundle</a> &gt; cryomesh::manager::Creator::getBundle </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div>
@@ -545,7 +661,7 @@ Private Attributes</h2></td></tr>
 <p>Get the create bundle. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>boost::shared_ptr&lt;structures::Bundle&gt; The created bundle </dd></dl>
 
-<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00057">57</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00075">75</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
 
 </div>
 </div>
@@ -566,7 +682,7 @@ Private Attributes</h2></td></tr>
 <p>get the clusterIDMap </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>const std::map&lt;int, boost::uuids::uuid&gt; the clusterIDMap </dd></dl>
 
-<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00061">61</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00083">83</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
 
 </div>
 </div>
@@ -594,7 +710,9 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>boost::uuids::uuid The corresponding real uuid to the fake one, null if it doesnt exist </dd></dl>
 
-<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00327">327</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00420">420</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="Creator_8cpp_source.html#l00357">autoConnectPrimaryInputs()</a>, and <a class="el" href="Creator_8cpp_source.html#l00375">autoConnectPrimaryOutputs()</a>.</p>
 
 </div>
 </div>
@@ -615,7 +733,7 @@ Private Attributes</h2></td></tr>
 <p>get the fibreIDMap </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>const std::map&lt;int, boost::uuids::uuid&gt; the fibreIDMap </dd></dl>
 
-<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00065">65</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00087">87</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
 
 </div>
 </div>
@@ -643,7 +761,28 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>boost::uuids::uuid The corresponding real uuid to the fake one, null if it doesnt exist </dd></dl>
 
-<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00332">332</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00427">427</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2155dae515aa5d360a577ef82437f338"></a><!-- doxytag: member="cryomesh::manager::Creator::getMutableBundle" ref="a2155dae515aa5d360a577ef82437f338" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1structures_1_1Bundle.html">structures::Bundle</a> &gt; cryomesh::manager::Creator::getMutableBundle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the mutable create bundle. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>boost::shared_ptr&lt;structures::Bundle&gt; The created bundle </dd></dl>
+
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00079">79</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
 
 </div>
 </div>
@@ -664,7 +803,7 @@ Private Attributes</h2></td></tr>
 <p>get the patternChannelIDMap </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>const std::map&lt;int, boost::uuids::uuid&gt; the patternChannelIDMap </dd></dl>
 
-<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00069">69</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00091">91</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
 
 </div>
 </div>
@@ -692,7 +831,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>boost::uuids::uuid The corresponding real uuid to the fake one, null if it doesnt exist </dd></dl>
 
-<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00337">337</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00434">434</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
 
 </div>
 </div>
@@ -731,7 +870,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>boost::uuids::uuid The corresponding real uuid to the fake one, null if it doesnt exist </dd></dl>
 
-<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00304">304</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00393">393</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
 
 </div>
 </div>
@@ -751,7 +890,7 @@ Private Attributes</h2></td></tr>
 
 <p>Helper to initialise the creator. </p>
 
-<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00073">73</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00095">95</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
 
 </div>
 </div>
@@ -779,9 +918,30 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00268">268</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00316">316</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
 
-<p>References <a class="el" href="Creator_8h_source.html#l00238">bundle</a>, and <a class="el" href="Creator_8h_source.html#l00259">patternChannelIDMap</a>.</p>
+<p>References <a class="el" href="Creator_8h_source.html#l00266">bundle</a>, and <a class="el" href="Creator_8h_source.html#l00287">patternChannelIDMap</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad6eb863eb6f8278979e07ef97e9140b5"></a><!-- doxytag: member="cryomesh::manager::Creator::runCommand" ref="ad6eb863eb6f8278979e07ef97e9140b5" args="(const config::ConfigEntry &amp;conf_entry)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cryomesh::manager::Creator::runCommand </td>
+          <td>(</td>
+          <td class="paramtype">const config::ConfigEntry &amp;&#160;</td>
+          <td class="paramname"><em>conf_entry</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Creator_8cpp_source.html#l00099">99</a> of file <a class="el" href="Creator_8cpp_source.html">Creator.cpp</a>.</p>
+
+<p>References <a class="el" href="Creator_8cpp_source.html#l00281">createCluster()</a>.</p>
 
 </div>
 </div>
@@ -797,7 +957,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Creator_8h_source.html#l00185">185</a> of file <a class="el" href="Creator_8h_source.html">Creator.h</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8h_source.html#l00212">212</a> of file <a class="el" href="Creator_8h_source.html">Creator.h</a>.</p>
 
 </div>
 </div>
@@ -812,9 +972,9 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Creator_8h_source.html#l00238">238</a> of file <a class="el" href="Creator_8h_source.html">Creator.h</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8h_source.html#l00266">266</a> of file <a class="el" href="Creator_8h_source.html">Creator.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Creator_8cpp_source.html#l00268">loadData()</a>.</p>
+<p>Referenced by <a class="el" href="Creator_8cpp_source.html#l00316">loadData()</a>.</p>
 
 </div>
 </div>
@@ -829,24 +989,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Creator_8h_source.html#l00245">245</a> of file <a class="el" href="Creator_8h_source.html">Creator.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a1d09307b857cc5f7ab6f31af515a5af4"></a><!-- doxytag: member="cryomesh::manager::Creator::configFilename" ref="a1d09307b857cc5f7ab6f31af515a5af4" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string <a class="el" href="classcryomesh_1_1manager_1_1Creator.html#a1d09307b857cc5f7ab6f31af515a5af4">cryomesh::manager::Creator::configFilename</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="Creator_8h_source.html#l00216">216</a> of file <a class="el" href="Creator_8h_source.html">Creator.h</a>.</p>
-
-<p>Referenced by <a class="el" href="Creator_8cpp_source.html#l00077">createFromConfig()</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8h_source.html#l00273">273</a> of file <a class="el" href="Creator_8h_source.html">Creator.h</a>.</p>
 
 </div>
 </div>
@@ -861,7 +1004,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Creator_8h_source.html#l00231">231</a> of file <a class="el" href="Creator_8h_source.html">Creator.h</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8h_source.html#l00259">259</a> of file <a class="el" href="Creator_8h_source.html">Creator.h</a>.</p>
 
 </div>
 </div>
@@ -876,7 +1019,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Creator_8h_source.html#l00178">178</a> of file <a class="el" href="Creator_8h_source.html">Creator.h</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8h_source.html#l00205">205</a> of file <a class="el" href="Creator_8h_source.html">Creator.h</a>.</p>
 
 </div>
 </div>
@@ -891,7 +1034,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Creator_8h_source.html#l00252">252</a> of file <a class="el" href="Creator_8h_source.html">Creator.h</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8h_source.html#l00280">280</a> of file <a class="el" href="Creator_8h_source.html">Creator.h</a>.</p>
 
 </div>
 </div>
@@ -906,15 +1049,15 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Creator_8h_source.html#l00259">259</a> of file <a class="el" href="Creator_8h_source.html">Creator.h</a>.</p>
+<p>Definition at line <a class="el" href="Creator_8h_source.html#l00287">287</a> of file <a class="el" href="Creator_8h_source.html">Creator.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Creator_8cpp_source.html#l00268">loadData()</a>.</p>
+<p>Referenced by <a class="el" href="Creator_8cpp_source.html#l00316">loadData()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/niall/Projects/Eclipse/cryomesh/src/manager/<a class="el" href="Creator_8h_source.html">Creator.h</a></li>
-<li>/home/niall/Projects/Eclipse/cryomesh/src/manager/<a class="el" href="Creator_8cpp_source.html">Creator.cpp</a></li>
+<li>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/<a class="el" href="Creator_8h_source.html">Creator.h</a></li>
+<li>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/<a class="el" href="Creator_8cpp_source.html">Creator.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -922,7 +1065,7 @@ Private Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -931,7 +1074,7 @@ Private Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:14 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -120,6 +120,11 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a database object for this object.  <a href="#afb641c5447546df8b54ff7ea7ea98275"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Connection.html#a7a12f7e30960796e481291041ca149b7">updatePosition</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Update position.  <a href="#a7a12f7e30960796e481291041ca149b7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Connection.html#a29a5c50130a5a34657d67cfb317131e0">connectInput</a> (boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Node.html">Node</a> &gt; node)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Connection.html#a87b1e2db44b157697b026a92dfa950de">connectOutput</a> (boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Node.html">Node</a> &gt; node)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Connection.html#a7455c6e4c45ffff9e7a64146bc5ff6e2">isPrimaryInputConnection</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Connection.html#a967fb5cafcd38f0ceec16437ea160d23">isPrimaryOutputConnection</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Connection.html#a276be807f8cf331e1965661a67100440">enableDebug</a> (bool b)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr<br class="typebreak"/>
@@ -135,9 +140,9 @@ Friends</h2></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classcryomesh_1_1components_1_1Connection.html" title="Connection class to manage the transfer of Impulses between Nodes.">Connection</a> class to manage the transfer of Impulses between Nodes. </p>
-<p>A <a class="el" href="classcryomesh_1_1components_1_1Connection.html" title="Connection class to manage the transfer of Impulses between Nodes.">Connection</a> represents the 'journey' made by Impulses as they travel between a start <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a> and an end <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a>. They can be spatially based or more abstract representations of this journey. As each clock moment passes Impulses are propagated in some way 'closer' to their end <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a>. Impulses can be altered by the <a class="el" href="classcryomesh_1_1components_1_1Mesh.html" title="Mesh is the fabric of connection space and warps and is warped by it.">Mesh</a> on each cycle. When Impulses reach the 'end' of their journey they are passed to the end <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a> for accumulation. Connections can also be bi-directional, an <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> from a start <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a> could be in some way 'reflected' back to that node. Perhaps once in a 'weighted' reflection to be accumulated by the start <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a>, or even in a constant per-cycle reflection as the original <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> 'moves along' the <a class="el" href="classcryomesh_1_1components_1_1Connection.html" title="Connection class to manage the transfer of Impulses between Nodes.">Connection</a> </p>
+<p>A <a class="el" href="classcryomesh_1_1components_1_1Connection.html" title="Connection class to manage the transfer of Impulses between Nodes.">Connection</a> represents the 'journey' made by Impulses as they travel between a start <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a> and an end <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a>. They can be spatially based or more abstract representations of this journey. As each clock moment passes Impulses are propagated in some way 'closer' to their end <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a>. Impulses can be altered by the Mesh on each cycle. When Impulses reach the 'end' of their journey they are passed to the end <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a> for accumulation. Connections can also be bi-directional, an <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> from a start <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a> could be in some way 'reflected' back to that node. Perhaps once in a 'weighted' reflection to be accumulated by the start <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a>, or even in a constant per-cycle reflection as the original <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> 'moves along' the <a class="el" href="classcryomesh_1_1components_1_1Connection.html" title="Connection class to manage the transfer of Impulses between Nodes.">Connection</a> </p>
 
-<p>Definition at line <a class="el" href="Connection_8h_source.html#l00036">36</a> of file <a class="el" href="Connection_8h_source.html">Connection.h</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8h_source.html#l00037">37</a> of file <a class="el" href="Connection_8h_source.html">Connection.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a4b779dbd6303cab9351375feb89046ff"></a><!-- doxytag: member="cryomesh::components::Connection::Connection" ref="a4b779dbd6303cab9351375feb89046ff" args="()" -->
 <div class="memitem">
@@ -156,7 +161,7 @@ Friends</h2></td></tr>
 <p>Constructor for <a class="el" href="classcryomesh_1_1components_1_1Connection.html" title="Connection class to manage the transfer of Impulses between Nodes.">Connection</a>. </p>
 <p>Constructor </p>
 
-<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00016">16</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00018">18</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
 
 </div>
 </div>
@@ -177,7 +182,7 @@ Friends</h2></td></tr>
 <p>Destructor for <a class="el" href="classcryomesh_1_1components_1_1Connection.html" title="Connection class to manage the transfer of Impulses between Nodes.">Connection</a>. </p>
 <p>Destructor </p>
 
-<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00021">21</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00023">23</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
 
 </div>
 </div>
@@ -206,7 +211,66 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>boost::shared_ptr&lt;Impulse&gt; The <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> added, null if none added </dd></dl>
 
-<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00059">59</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00086">86</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00190">cryomesh::components::Node::emitImpulse()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a29a5c50130a5a34657d67cfb317131e0"></a><!-- doxytag: member="cryomesh::components::Connection::connectInput" ref="a29a5c50130a5a34657d67cfb317131e0" args="(boost::shared_ptr&lt; Node &gt; node)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cryomesh::components::Connection::connectInput </td>
+          <td>(</td>
+          <td class="paramtype">boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Node.html">Node</a> &gt;&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00177">177</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a87b1e2db44b157697b026a92dfa950de"></a><!-- doxytag: member="cryomesh::components::Connection::connectOutput" ref="a87b1e2db44b157697b026a92dfa950de" args="(boost::shared_ptr&lt; Node &gt; node)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cryomesh::components::Connection::connectOutput </td>
+          <td>(</td>
+          <td class="paramtype">boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Node.html">Node</a> &gt;&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00180">180</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a276be807f8cf331e1965661a67100440"></a><!-- doxytag: member="cryomesh::components::Connection::enableDebug" ref="a276be807f8cf331e1965661a67100440" args="(bool b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cryomesh::components::Connection::enableDebug </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00199">199</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
 
 </div>
 </div>
@@ -234,7 +298,7 @@ Friends</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>boost::shared_ptr&lt;ActivityTimer&gt;</dd></dl>
 <p>ActiveImpulseCollection &amp; Connection::getMutableActiveImpulses() { return this-&gt;activeImpulses; } </p>
 
-<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00091">91</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00132">132</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
 
 </div>
 </div>
@@ -255,9 +319,9 @@ Friends</h2></td></tr>
 <p>Get the Connector object for this <a class="el" href="classcryomesh_1_1components_1_1Connection.html" title="Connection class to manage the transfer of Impulses between Nodes.">Connection</a> input. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>common::Connector&lt;Connection, Node&gt; The connector for this <a class="el" href="classcryomesh_1_1components_1_1Connection.html" title="Connection class to manage the transfer of Impulses between Nodes.">Connection</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00051">51</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00078">78</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="Connection_8cpp_source.html#l00099">getDatabaseObject()</a>.</p>
+<p>Referenced by <a class="el" href="Connection_8cpp_source.html#l00140">getDatabaseObject()</a>.</p>
 
 </div>
 </div>
@@ -278,9 +342,9 @@ Friends</h2></td></tr>
 <p>Return a database object for this object. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>DatabaseObject </dd></dl>
 
-<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00099">99</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00140">140</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
 
-<p>References <a class="el" href="Connection_8cpp_source.html#l00051">getConnector()</a>.</p>
+<p>References <a class="el" href="Connection_8cpp_source.html#l00078">getConnector()</a>.</p>
 
 </div>
 </div>
@@ -301,7 +365,9 @@ Friends</h2></td></tr>
 <p>Get the impulse collection. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>const <a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html" title="ImpulseCollection represents a collection of Impulse objects.">ImpulseCollection</a> &amp; The impulse collection </dd></dl>
 
-<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00073">73</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00114">114</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00190">cryomesh::components::Node::emitImpulse()</a>.</p>
 
 </div>
 </div>
@@ -322,7 +388,7 @@ Friends</h2></td></tr>
 <p>The get mutable activity timer for this object. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>boost::shared_ptr&lt;ActivityTimer&gt; </dd></dl>
 
-<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00095">95</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00136">136</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
 
 </div>
 </div>
@@ -343,7 +409,7 @@ Friends</h2></td></tr>
 <p>Get the mutable Connector object for this <a class="el" href="classcryomesh_1_1components_1_1Connection.html" title="Connection class to manage the transfer of Impulses between Nodes.">Connection</a>. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>common::Connector&lt;Connection, Node&gt; The connector for this <a class="el" href="classcryomesh_1_1components_1_1Connection.html" title="Connection class to manage the transfer of Impulses between Nodes.">Connection</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00055">55</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00082">82</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
 
 </div>
 </div>
@@ -364,7 +430,43 @@ Friends</h2></td></tr>
 <p>Get the mutable impulse collection. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html" title="ImpulseCollection represents a collection of Impulse objects.">ImpulseCollection</a> &amp; The mutable impulse collection </dd></dl>
 
-<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00077">77</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00118">118</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7455c6e4c45ffff9e7a64146bc5ff6e2"></a><!-- doxytag: member="cryomesh::components::Connection::isPrimaryInputConnection" ref="a7455c6e4c45ffff9e7a64146bc5ff6e2" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cryomesh::components::Connection::isPrimaryInputConnection </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00184">184</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a967fb5cafcd38f0ceec16437ea160d23"></a><!-- doxytag: member="cryomesh::components::Connection::isPrimaryOutputConnection" ref="a967fb5cafcd38f0ceec16437ea160d23" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cryomesh::components::Connection::isPrimaryOutputConnection </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00192">192</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
 
 </div>
 </div>
@@ -399,7 +501,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>boost::shared_ptr&lt;Impulse&gt; The <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> removed, null if none removed </dd></dl>
 
-<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00065">65</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00106">106</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
 
 </div>
 </div>
@@ -427,7 +529,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>boost::shared_ptr&lt;Impulse&gt; The <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> removed, null if none removed </dd></dl>
 
-<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00069">69</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00110">110</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
 
 </div>
 </div>
@@ -448,9 +550,9 @@ Friends</h2></td></tr>
 <p>Update the <a class="el" href="classcryomesh_1_1components_1_1Connection.html" title="Connection class to manage the transfer of Impulses between Nodes.">Connection</a>. </p>
 <p>Update our collection of impulses. If any reach the 'endpoint' of the connection then pass them on to our end Nodes </p>
 
-<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00024">24</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00026">26</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
 
-<p>References <a class="el" href="Connection_8h_source.html#l00202">connector</a>.</p>
+<p>References <a class="el" href="Connection_8h_source.html#l00210">connector</a>.</p>
 
 </div>
 </div>
@@ -470,9 +572,9 @@ Friends</h2></td></tr>
 
 <p>Update position. </p>
 
-<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00119">119</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00160">160</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
 
-<p>References <a class="el" href="Connection_8h_source.html#l00216">activityTimer</a>.</p>
+<p>References <a class="el" href="Connection_8h_source.html#l00224">activityTimer</a>, and <a class="el" href="ActivityTimerDistance_8h_source.html#l00163">cryomesh::components::ActivityTimerDistance::MIN_DISTANCE</a>.</p>
 
 </div>
 </div>
@@ -512,7 +614,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::ostream &amp; The output stream </dd></dl>
 
-<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00132">132</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00202">202</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
 
 </div>
 </div>
@@ -528,9 +630,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Connection_8h_source.html#l00216">216</a> of file <a class="el" href="Connection_8h_source.html">Connection.h</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8h_source.html#l00224">224</a> of file <a class="el" href="Connection_8h_source.html">Connection.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Connection_8cpp_source.html#l00119">updatePosition()</a>.</p>
+<p>Referenced by <a class="el" href="Connection_8cpp_source.html#l00160">updatePosition()</a>.</p>
 
 </div>
 </div>
@@ -545,9 +647,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Connection_8h_source.html#l00202">202</a> of file <a class="el" href="Connection_8h_source.html">Connection.h</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8h_source.html#l00210">210</a> of file <a class="el" href="Connection_8h_source.html">Connection.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Connection_8cpp_source.html#l00024">update()</a>.</p>
+<p>Referenced by <a class="el" href="Connection_8cpp_source.html#l00026">update()</a>.</p>
 
 </div>
 </div>
@@ -562,13 +664,13 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Connection_8h_source.html#l00209">209</a> of file <a class="el" href="Connection_8h_source.html">Connection.h</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8h_source.html#l00217">217</a> of file <a class="el" href="Connection_8h_source.html">Connection.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/niall/Projects/Eclipse/cryomesh/src/components/<a class="el" href="Connection_8h_source.html">Connection.h</a></li>
-<li>/home/niall/Projects/Eclipse/cryomesh/src/components/<a class="el" href="Connection_8cpp_source.html">Connection.cpp</a></li>
+<li>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/<a class="el" href="Connection_8h_source.html">Connection.h</a></li>
+<li>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/<a class="el" href="Connection_8cpp_source.html">Connection.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -576,7 +678,7 @@ Friends</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -585,7 +687,7 @@ Friends</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:14 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

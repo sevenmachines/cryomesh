@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>cryomesh: /home/niall/Projects/Eclipse/cryomesh/src/structures/Bundle.cpp Source File</title>
+<title>cryomesh: /home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -54,11 +54,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/niall/Projects/Eclipse/cryomesh/src/structures/Bundle.cpp</h1>  </div>
+<h1>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp</h1>  </div>
 </div>
 <div class="contents">
 <a href="Bundle_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
@@ -68,345 +69,967 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00005"></a>00005 <span class="comment"> *      Author: niall</span>
 <a name="l00006"></a>00006 <span class="comment"> */</span>
 <a name="l00007"></a>00007 
-<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="Bundle_8h.html">Bundle.h</a>&quot;</span>
-<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;utilities/SequencerChannels.h&quot;</span>
-<a name="l00010"></a>00010 <span class="preprocessor">#include &lt;boost/uuid/uuid_io.hpp&gt;</span>
-<a name="l00011"></a>00011 
-<a name="l00012"></a>00012 <span class="keyword">namespace </span>cryomesh {
+<a name="l00008"></a><a class="code" href="Bundle_8cpp.html#ad4d2dcfac820f14c92ee9762bff029d8">00008</a> <span class="preprocessor">#define BUNDLE_DEBUG</span>
+<a name="l00009"></a>00009 <span class="preprocessor"></span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="Bundle_8h.html">Bundle.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;utilities/SequencerChannels.h&quot;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include &lt;boost/uuid/uuid_io.hpp&gt;</span>
 <a name="l00013"></a>00013 
-<a name="l00014"></a>00014 <span class="keyword">namespace </span>structures {
-<a name="l00015"></a><a class="code" href="namespacecryomesh_1_1structures.html">00015</a> 
-<a name="l00016"></a>00016 <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a8d6b95207324291f919f1835b81b1640" title="Default contructor.">Bundle::Bundle</a>() {
-<a name="l00017"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a8d6b95207324291f919f1835b81b1640">00017</a> 
-<a name="l00018"></a>00018 }
-<a name="l00019"></a>00019 
-<a name="l00020"></a>00020 <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ab2ec2696336dddbae17166c056c2f038" title="Default destructor.">Bundle::~Bundle</a>() {
-<a name="l00021"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ab2ec2696336dddbae17166c056c2f038">00021</a> }
-<a name="l00022"></a>00022 
-<a name="l00023"></a>00023 <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#add5af28ceb5c7722d267ba32810c5df7" title="Update all bundle components.">Bundle::update</a>() {
-<a name="l00024"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#add5af28ceb5c7722d267ba32810c5df7">00024</a>         <span class="comment">// update the time</span>
-<a name="l00025"></a>00025         <a class="code" href="classcryomesh_1_1common_1_1TimeKeeper.html#afe7b229532e11119cb2653192615d679">common::TimeKeeper::getTimeKeeper</a>().update();
-<a name="l00026"></a>00026         <span class="comment">//update input primaries</span>
-<a name="l00027"></a>00027         this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#abe52d8718eeb7bb6a17211d4dfbed440" title="Get the next patterns from channels and apply them to their mapped fibres.">updatePrimaryInputFibres</a>();
-<a name="l00028"></a>00028 
-<a name="l00029"></a>00029         <span class="comment">// update all fibres</span>
-<a name="l00030"></a>00030         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a71b3308a867169b8e9af9ab71b8bdf98">fibres</a>.<a class="code" href="classcryomesh_1_1structures_1_1FibreMap.html#a9caf159d1ca71ed1046bd52167fe009f">update</a>();
-<a name="l00031"></a>00031         <span class="comment">// update all clusters</span>
-<a name="l00032"></a>00032         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a35a36d3305706f597f4c586fcd9f74b7">clusters</a>.<a class="code" href="classcryomesh_1_1structures_1_1ClusterMap.html#ac62467033bbf1e31f0ab8ac5fb0d7d4b">update</a>();
-<a name="l00033"></a>00033 
-<a name="l00034"></a>00034         <span class="comment">//update output fibres</span>
-<a name="l00035"></a>00035         this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a7a95265553776d6216799e143134a59f" title="Get the patterns from primary output fibres and apply them to their mapped pattern channels...">updatePrimaryOutputFibres</a>();
-<a name="l00036"></a>00036 
-<a name="l00037"></a>00037         <span class="comment">// TODO do evolution things</span>
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039         <span class="comment">// TODO do things with storing output results</span>
-<a name="l00040"></a>00040 }
-<a name="l00041"></a>00041 
-<a name="l00042"></a>00042 boost::shared_ptr&lt;Cluster&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a6228d35bd96caa191bd89096dd260ee2" title="Create a cluster with a size and connectivity.">Bundle::createCluster</a>(<span class="keywordtype">int</span> nodeSize, <span class="keywordtype">int</span> nodeConnectivity) {
-<a name="l00043"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a6228d35bd96caa191bd89096dd260ee2">00043</a>         boost::shared_ptr&lt;Cluster&gt; tempcluster(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html" title="A Cluster is a collection of self-contained nodes and connections along with an associated Mesh...">Cluster</a>(nodeSize, nodeConnectivity));
-<a name="l00044"></a>00044         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a35a36d3305706f597f4c586fcd9f74b7">clusters</a>.add(tempcluster);
-<a name="l00045"></a>00045         <span class="keywordflow">return</span> tempcluster;
-<a name="l00046"></a>00046 }
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048 boost::shared_ptr&lt;Fibre&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#af1884f99e746cdfa549b63f1589b5dac" title="Connect clusters specified by uuids with a fibre of width.">Bundle::connectCluster</a>(boost::uuids::uuid inputClusterUUID,
-<a name="l00049"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#af1884f99e746cdfa549b63f1589b5dac">00049</a>                 boost::uuids::uuid outputClusterUUID, <span class="keywordtype">int</span> fibreWidth) {
-<a name="l00050"></a>00050         boost::shared_ptr&lt;Cluster&gt; inputCluster = <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a35a36d3305706f597f4c586fcd9f74b7">clusters</a>.getObjectByKey(inputClusterUUID);
-<a name="l00051"></a>00051         boost::shared_ptr&lt;Cluster&gt; outputCluster = <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a35a36d3305706f597f4c586fcd9f74b7">clusters</a>.getObjectByKey(outputClusterUUID);
-<a name="l00052"></a>00052         boost::shared_ptr&lt;Fibre&gt; newfibre;
+<a name="l00014"></a>00014 <span class="keyword">namespace </span>cryomesh {
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016 <span class="keyword">namespace </span>structures {
+<a name="l00017"></a><a class="code" href="namespacecryomesh_1_1structures.html">00017</a> 
+<a name="l00018"></a>00018 <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a8d6b95207324291f919f1835b81b1640" title="Default contructor.">Bundle::Bundle</a>() :
+<a name="l00019"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a8d6b95207324291f919f1835b81b1640">00019</a>         energy(0) {
+<a name="l00020"></a>00020         statistician = boost::shared_ptr&lt;utilities::Statistician&gt;(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1utilities_1_1Statistician.html" title="Class to draw together lots of useful statistics and monitoring data for a Bundle and its components...">utilities::Statistician</a>(*<span class="keyword">this</span>));
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 }
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024 <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ab2ec2696336dddbae17166c056c2f038" title="Default destructor.">Bundle::~Bundle</a>() {
+<a name="l00025"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ab2ec2696336dddbae17166c056c2f038">00025</a> }
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#add5af28ceb5c7722d267ba32810c5df7" title="Update all bundle components.">Bundle::update</a>() {
+<a name="l00028"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#add5af28ceb5c7722d267ba32810c5df7">00028</a>         <span class="comment">// update the time</span>
+<a name="l00029"></a>00029         <a class="code" href="classcryomesh_1_1common_1_1TimeKeeper.html#afe7b229532e11119cb2653192615d679">common::TimeKeeper::getTimeKeeper</a>().update();
+<a name="l00030"></a>00030         <span class="comment">// update all clusters</span>
+<a name="l00031"></a>00031         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a35a36d3305706f597f4c586fcd9f74b7">clusters</a>.<a class="code" href="classcryomesh_1_1structures_1_1ClusterMap.html#ac62467033bbf1e31f0ab8ac5fb0d7d4b">update</a>();
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033         <span class="comment">// set up for future</span>
+<a name="l00034"></a>00034         <span class="comment">// update all fibres</span>
+<a name="l00035"></a>00035         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a71b3308a867169b8e9af9ab71b8bdf98">fibres</a>.<a class="code" href="classcryomesh_1_1structures_1_1FibreMap.html#a9caf159d1ca71ed1046bd52167fe009f">update</a>();
+<a name="l00036"></a>00036         this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#abe52d8718eeb7bb6a17211d4dfbed440" title="Get the next patterns from channels and apply them to their mapped fibres.">updatePrimaryInputFibres</a>();
+<a name="l00037"></a>00037         <span class="comment">//update output fibres</span>
+<a name="l00038"></a>00038         this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a7a95265553776d6216799e143134a59f" title="Get the patterns from primary output fibres and apply them to their mapped pattern channels...">updatePrimaryOutputFibres</a>();
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040         <span class="comment">// match all output fibres pattern channels to expected pattern channels</span>
+<a name="l00041"></a>00041         this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ae6a553eaab4ddf2b6bbd6bdeca9361ad" title="Set the energy of the bundle.">setEnergy</a>(this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a3a8a7cfb5d525ff59a52dd1a39909621" title="Compare the output channels of primary output fibres to expected output channel patterns.">matchOutputChannelsSum</a>());
+<a name="l00042"></a>00042         <span class="comment">// set available energy for each bundles mesh warping</span>
+<a name="l00043"></a>00043         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a35a36d3305706f597f4c586fcd9f74b7">clusters</a>.<a class="code" href="classcryomesh_1_1structures_1_1ClusterMap.html#a269d3d82374cb89557bf552c1a0a16ac">updateClusterEnergies</a>(this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aec88635d8c4fdc76b6c3c22b915ee459" title="Get the last calculated energy of the bundle.">getEnergy</a>());
+<a name="l00044"></a>00044         <span class="comment">// warp bundles mesh</span>
+<a name="l00045"></a>00045         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a35a36d3305706f597f4c586fcd9f74b7">clusters</a>.<a class="code" href="classcryomesh_1_1structures_1_1ClusterMap.html#abd284fb4f3b369749c69ffaa67a18634">warpClusterNodes</a>();
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047         <span class="comment">// TODO do things with storing output results from channels</span>
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049         <span class="keywordflow">if</span> (this-&gt;isDebugOn() == <span class="keyword">true</span>) {
+<a name="l00050"></a>00050                 this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a804c625c912657cebd3350c7c1b53c10" title="Update the statistician if debugging is enabled.">updateStatistician</a>();
+<a name="l00051"></a>00051         }
+<a name="l00052"></a>00052 }
 <a name="l00053"></a>00053 
-<a name="l00054"></a>00054         <span class="keywordflow">if</span> (inputCluster == 0 || outputCluster == 0) {
-<a name="l00055"></a>00055                 <span class="keywordflow">return</span> newfibre;
-<a name="l00056"></a>00056         } <span class="keywordflow">else</span> {
-<a name="l00057"></a>00057                 newfibre = boost::shared_ptr&lt;Fibre&gt;(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html" title="A Fibre is a collection of connections that connect one structure to another.">Fibre</a>(inputCluster, outputCluster, fibreWidth));
-<a name="l00058"></a>00058                 inputCluster-&gt;getMutableConnector().connectOutput(newfibre);
-<a name="l00059"></a>00059                 outputCluster-&gt;getMutableConnector().connectInput(newfibre);
-<a name="l00060"></a>00060         }
-<a name="l00061"></a>00061         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a71b3308a867169b8e9af9ab71b8bdf98">fibres</a>.add(newfibre);
-<a name="l00062"></a>00062         <span class="keywordflow">return</span> newfibre;
-<a name="l00063"></a>00063 }
-<a name="l00064"></a>00064 
-<a name="l00065"></a>00065 boost::shared_ptr&lt;Fibre&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#af1884f99e746cdfa549b63f1589b5dac" title="Connect clusters specified by uuids with a fibre of width.">Bundle::connectCluster</a>(boost::uuids::uuid clusterUUID, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4" title="Enum representing the type of this Fibre connection.">Fibre::FibreType</a> &amp; type,
-<a name="l00066"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#adc784bc4a171eb28b5a7d038fe73f2de">00066</a>                 <span class="keywordtype">int</span> fibreWidth) {
-<a name="l00067"></a>00067         boost::shared_ptr&lt;Cluster&gt; cluster = <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a35a36d3305706f597f4c586fcd9f74b7">clusters</a>.getObjectByKey(clusterUUID);
-<a name="l00068"></a>00068         boost::shared_ptr&lt;Fibre&gt; newfibre;
-<a name="l00069"></a>00069 
-<a name="l00070"></a>00070         <span class="keywordflow">if</span> (cluster == 0) {
-<a name="l00071"></a>00071                 <span class="keywordflow">return</span> newfibre;
-<a name="l00072"></a>00072         } <span class="keywordflow">else</span> {
-<a name="l00073"></a>00073                 newfibre = boost::shared_ptr&lt;Fibre&gt;(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html" title="A Fibre is a collection of connections that connect one structure to another.">Fibre</a>(cluster, type, fibreWidth));
-<a name="l00074"></a>00074                 <span class="keywordflow">if</span> (type == <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a04c484accec936ca5b35fed02fd3affd">Fibre::PrimaryInputFibre</a>) {
-<a name="l00075"></a>00075                         cluster-&gt;getMutableConnector().connectInput(newfibre);
-<a name="l00076"></a>00076                         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aa6a461295021bdfb4ef4cab0f136a2c1">inputFibres</a>.add(newfibre);
-<a name="l00077"></a>00077                 } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a09e0e43a8d02ccfe05dfe8c0b5cce1c6">Fibre::PrimaryOutputFibre</a>) {
-<a name="l00078"></a>00078                         cluster-&gt;getMutableConnector().connectOutput(newfibre);
-<a name="l00079"></a>00079                         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aa671193358b7aba173e45574def3d4c1">outputFibres</a>.add(newfibre);
-<a name="l00080"></a>00080                 } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4abb9c562751800615ea00d21c6d1a0dfe">Fibre::LoopbackFibre</a>) {
-<a name="l00081"></a>00081                         cluster-&gt;getMutableConnector().connectInput(newfibre);
-<a name="l00082"></a>00082                         cluster-&gt;getMutableConnector().connectOutput(newfibre);
-<a name="l00083"></a>00083                         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a71b3308a867169b8e9af9ab71b8bdf98">fibres</a>.add(newfibre);
-<a name="l00084"></a>00084                 } <span class="keywordflow">else</span> {
-<a name="l00085"></a>00085                         std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::connectCluster (uuid, FibreType, int ) : &quot;</span>
-<a name="l00086"></a>00086                                         &lt;&lt; <span class="stringliteral">&quot;WARNING: Ignoring improper FibreType connection call&quot;</span> &lt;&lt; std::endl;
-<a name="l00087"></a>00087                 }
-<a name="l00088"></a>00088         }
+<a name="l00054"></a>00054 boost::shared_ptr&lt;Cluster&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a6228d35bd96caa191bd89096dd260ee2" title="Create a cluster with a size and connectivity.">Bundle::createCluster</a>(<span class="keywordtype">int</span> nodeSize, <span class="keywordtype">int</span> nodeConnectivity) {
+<a name="l00055"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a6228d35bd96caa191bd89096dd260ee2">00055</a>         boost::shared_ptr&lt;Cluster&gt; tempcluster(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html" title="A Cluster is a collection of self-contained nodes and connections along with an associated Mesh...">Cluster</a>(nodeSize, nodeConnectivity));
+<a name="l00056"></a>00056         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a35a36d3305706f597f4c586fcd9f74b7">clusters</a>.add(tempcluster);
+<a name="l00057"></a>00057         <span class="keywordflow">return</span> tempcluster;
+<a name="l00058"></a>00058 }
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060 boost::shared_ptr&lt;Fibre&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#af1884f99e746cdfa549b63f1589b5dac" title="Connect clusters specified by uuids with a fibre of width.">Bundle::connectCluster</a>(boost::uuids::uuid inputClusterUUID,
+<a name="l00061"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#af1884f99e746cdfa549b63f1589b5dac">00061</a>                 boost::uuids::uuid outputClusterUUID, <span class="keywordtype">int</span> fibreWidth) {
+<a name="l00062"></a>00062         boost::shared_ptr&lt;Cluster&gt; inputCluster = <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a35a36d3305706f597f4c586fcd9f74b7">clusters</a>.getObjectByKey(inputClusterUUID);
+<a name="l00063"></a>00063         boost::shared_ptr&lt;Cluster&gt; outputCluster = <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a35a36d3305706f597f4c586fcd9f74b7">clusters</a>.getObjectByKey(outputClusterUUID);
+<a name="l00064"></a>00064         boost::shared_ptr&lt;Fibre&gt; newfibre;
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066         <span class="keywordflow">if</span> (inputCluster == 0 || outputCluster == 0) {
+<a name="l00067"></a>00067                 <span class="keywordflow">return</span> newfibre;
+<a name="l00068"></a>00068         } <span class="keywordflow">else</span> {
+<a name="l00069"></a>00069                 newfibre = boost::shared_ptr&lt;Fibre&gt;(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html" title="A Fibre is a collection of connections that connect one structure to another.">Fibre</a>(inputCluster, outputCluster, fibreWidth));
+<a name="l00070"></a>00070                 inputCluster-&gt;getMutableConnector().connectOutput(newfibre);
+<a name="l00071"></a>00071                 outputCluster-&gt;getMutableConnector().connectInput(newfibre);
+<a name="l00072"></a>00072         }
+<a name="l00073"></a>00073         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a71b3308a867169b8e9af9ab71b8bdf98">fibres</a>.add(newfibre);
+<a name="l00074"></a>00074         <span class="keywordflow">return</span> newfibre;
+<a name="l00075"></a>00075 }
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077 boost::shared_ptr&lt;Fibre&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#af1884f99e746cdfa549b63f1589b5dac" title="Connect clusters specified by uuids with a fibre of width.">Bundle::connectCluster</a>(boost::uuids::uuid clusterUUID, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4" title="Enum representing the type of this Fibre connection.">Fibre::FibreType</a> &amp; type,
+<a name="l00078"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#adc784bc4a171eb28b5a7d038fe73f2de">00078</a>                 <span class="keywordtype">int</span> fibreWidth) {
+<a name="l00079"></a>00079         boost::shared_ptr&lt;Cluster&gt; cluster = <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a35a36d3305706f597f4c586fcd9f74b7">clusters</a>.getObjectByKey(clusterUUID);
+<a name="l00080"></a>00080         boost::shared_ptr&lt;Fibre&gt; newfibre;
+<a name="l00081"></a>00081 
+<a name="l00082"></a>00082         <span class="keywordflow">if</span> (cluster == 0) {
+<a name="l00083"></a>00083                 <span class="keywordflow">return</span> newfibre;
+<a name="l00084"></a>00084         } <span class="keywordflow">else</span> {
+<a name="l00085"></a>00085                 newfibre = boost::shared_ptr&lt;Fibre&gt;(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html" title="A Fibre is a collection of connections that connect one structure to another.">Fibre</a>(cluster, type, fibreWidth));
+<a name="l00086"></a>00086                 <span class="keywordflow">if</span> (type == <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a04c484accec936ca5b35fed02fd3affd">Fibre::PrimaryInputFibre</a>) {
+<a name="l00087"></a>00087                         cluster-&gt;getMutableConnector().connectInput(newfibre);
+<a name="l00088"></a>00088                         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aa6a461295021bdfb4ef4cab0f136a2c1">inputFibres</a>.add(newfibre);
 <a name="l00089"></a>00089 
-<a name="l00090"></a>00090         <span class="comment">//fibres.add(newfibre);</span>
-<a name="l00091"></a>00091         <span class="keywordflow">return</span> newfibre;
-<a name="l00092"></a>00092 }
-<a name="l00093"></a>00093 
-<a name="l00094"></a>00094 boost::shared_ptr&lt;Fibre&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#abe23b17f35ef338df7db8d2903ee2bfd" title="Helper access function for specialised connection.">Bundle::connectPrimaryInputCluster</a>(boost::uuids::uuid patchanid,
-<a name="l00095"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#abe23b17f35ef338df7db8d2903ee2bfd">00095</a>                 boost::uuids::uuid clusterUUID) {
-<a name="l00096"></a>00096         boost::shared_ptr&lt;Fibre&gt; newfib;
-<a name="l00097"></a>00097         <span class="comment">// check for pattern channel uuid existence</span>
-<a name="l00098"></a>00098         boost::shared_ptr&lt;state::PatternChannel&gt; patchan = <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ae1c0cf7fd3138d6ec175599c6301d7a4">inputChannelsMap</a>.getObjectByKey(patchanid);
-<a name="l00099"></a>00099         <span class="keywordflow">if</span> (patchan != 0) {
-<a name="l00100"></a>00100                 <span class="comment">// get width from actual pattern channel</span>
-<a name="l00101"></a>00101                 <span class="keywordtype">int</span> width = patchan-&gt;getWidth();
-<a name="l00102"></a>00102                 <span class="comment">// get created fibre and connect the cluster to it</span>
-<a name="l00103"></a>00103                 newfib = this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#af1884f99e746cdfa549b63f1589b5dac" title="Connect clusters specified by uuids with a fibre of width.">connectCluster</a>(clusterUUID, <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a04c484accec936ca5b35fed02fd3affd">Fibre::PrimaryInputFibre</a>, width);
-<a name="l00104"></a>00104                 <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a9e5ee5aeca74592e120424e47edae970">fibrePatternChannelMap</a>[newfib-&gt;getUUID()] = patchanid;
-<a name="l00105"></a>00105 
-<a name="l00106"></a>00106                 <span class="comment">/*</span>
-<a name="l00107"></a>00107 <span class="comment">                 // connect fibre to cluster to</span>
-<a name="l00108"></a>00108 <span class="comment">                 boost::shared_ptr&lt;Cluster&gt; cluster = clusters.getObjectByKey(clusterUUID);</span>
-<a name="l00109"></a>00109 <span class="comment">                 if (cluster == 0) {</span>
-<a name="l00110"></a>00110 <span class="comment">                 std::cout &lt;&lt; &quot;Bundle::connectPrimaryInputCluster: &quot; &lt;&lt; &quot;ERROR: Cannot find cluster: &quot; &lt;&lt; clusterUUID</span>
-<a name="l00111"></a>00111 <span class="comment">                 &lt;&lt; std::endl;</span>
-<a name="l00112"></a>00112 <span class="comment">                 return newfib;</span>
-<a name="l00113"></a>00113 <span class="comment">                 } else {</span>
-<a name="l00114"></a>00114 <span class="comment">                 newfib -&gt;getMutableConnector().connectOutput(cluster);</span>
-<a name="l00115"></a>00115 <span class="comment">                 // map it to pattern channel</span>
-<a name="l00116"></a>00116 <span class="comment">                 fibrePatternChannelMap[newfib-&gt;getUUID()] = patchanid;</span>
-<a name="l00117"></a>00117 <span class="comment">                 }*/</span>
-<a name="l00118"></a>00118         } <span class="keywordflow">else</span> {
-<a name="l00119"></a>00119                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::connectPrimaryInputCluster: &quot;</span>
-<a name="l00120"></a>00120                                 &lt;&lt; <span class="stringliteral">&quot;ERROR: PatternChannel does not exist, not creating primary input fibre. &quot;</span> &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span> &lt;&lt; patchanid
-<a name="l00121"></a>00121                                 &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span> &lt;&lt; std::endl;
-<a name="l00122"></a>00122         }
-<a name="l00123"></a>00123         <span class="keywordflow">return</span> newfib;
-<a name="l00124"></a>00124 }
+<a name="l00090"></a>00090                 } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a09e0e43a8d02ccfe05dfe8c0b5cce1c6">Fibre::PrimaryOutputFibre</a>) {
+<a name="l00091"></a>00091                         <span class="comment">// create output fibre and add to list of fibres</span>
+<a name="l00092"></a>00092                         cluster-&gt;getMutableConnector().connectOutput(newfibre);
+<a name="l00093"></a>00093                         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aa671193358b7aba173e45574def3d4c1">outputFibres</a>.add(newfibre);
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095                 } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4abb9c562751800615ea00d21c6d1a0dfe">Fibre::LoopbackFibre</a>) {
+<a name="l00096"></a>00096                         cluster-&gt;getMutableConnector().connectInput(newfibre);
+<a name="l00097"></a>00097                         cluster-&gt;getMutableConnector().connectOutput(newfibre);
+<a name="l00098"></a>00098                         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a71b3308a867169b8e9af9ab71b8bdf98">fibres</a>.add(newfibre);
+<a name="l00099"></a>00099                 } <span class="keywordflow">else</span> {
+<a name="l00100"></a>00100                         std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::connectCluster (uuid, FibreType, int ) : &quot;</span>
+<a name="l00101"></a>00101                                         &lt;&lt; <span class="stringliteral">&quot;WARNING: Ignoring improper FibreType connection call&quot;</span> &lt;&lt; std::endl;
+<a name="l00102"></a>00102                 }
+<a name="l00103"></a>00103         }
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105         <span class="comment">//fibres.add(newfibre);</span>
+<a name="l00106"></a>00106         <span class="keywordflow">return</span> newfibre;
+<a name="l00107"></a>00107 }
+<a name="l00108"></a>00108 
+<a name="l00109"></a>00109 boost::shared_ptr&lt;Fibre&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#abe23b17f35ef338df7db8d2903ee2bfd" title="Helper access function for specialised connection.">Bundle::connectPrimaryInputCluster</a>(boost::uuids::uuid patchanid,
+<a name="l00110"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#abe23b17f35ef338df7db8d2903ee2bfd">00110</a>                 boost::uuids::uuid clusterUUID) {
+<a name="l00111"></a>00111         boost::shared_ptr&lt;Fibre&gt; newfib;
+<a name="l00112"></a>00112         <span class="comment">// check for pattern channel uuid existence</span>
+<a name="l00113"></a>00113         boost::shared_ptr&lt;state::PatternChannel&gt; patchan = <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ac9bd1c696001ef8acb7291a5f9e81c8b">realInputChannelsMap</a>.getObjectByKey(patchanid);
+<a name="l00114"></a>00114         <span class="keywordflow">if</span> (patchan != 0) {
+<a name="l00115"></a>00115                 <span class="comment">// get width from actual pattern channel</span>
+<a name="l00116"></a>00116                 <span class="keywordtype">int</span> width = patchan-&gt;getWidth();
+<a name="l00117"></a>00117                 <span class="comment">// get created fibre and connect the cluster to it</span>
+<a name="l00118"></a>00118                 newfib = this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#af1884f99e746cdfa549b63f1589b5dac" title="Connect clusters specified by uuids with a fibre of width.">connectCluster</a>(clusterUUID, <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a04c484accec936ca5b35fed02fd3affd">Fibre::PrimaryInputFibre</a>, width);
+<a name="l00119"></a>00119                 <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#adaf7fa91209de01b9d42ae2d8228c3cd">realFibrePatternChannelMap</a>[newfib-&gt;getUUID()] = patchanid;
+<a name="l00120"></a>00120 
+<a name="l00121"></a>00121                 <span class="comment">// make an actual pattern channel and</span>
+<a name="l00122"></a>00122                 <span class="comment">// add a fibre map to the actual channel</span>
+<a name="l00123"></a>00123                 boost::shared_ptr&lt;state::PatternChannel&gt; new_actual_patchan(
+<a name="l00124"></a>00124                                 <span class="keyword">new</span> <a class="code" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a>(<a class="code" href="classcryomesh_1_1state_1_1PatternChannel.html#ac8a0ae515a221519890fc1181f2c895aab75202b529e4a7cfb8db3daa14b9f477">state::PatternChannel::Input</a>));
 <a name="l00125"></a>00125 
-<a name="l00126"></a>00126 boost::shared_ptr&lt;Fibre&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#abe23b17f35ef338df7db8d2903ee2bfd" title="Helper access function for specialised connection.">Bundle::connectPrimaryInputCluster</a>(boost::uuids::uuid clusterUUID, <span class="keywordtype">int</span> fibreWidth) {
-<a name="l00127"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#af008aa792aa333eb3f891e3fbac3624d">00127</a>         <span class="keywordflow">return</span> this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#af1884f99e746cdfa549b63f1589b5dac" title="Connect clusters specified by uuids with a fibre of width.">connectCluster</a>(clusterUUID, <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a04c484accec936ca5b35fed02fd3affd">Fibre::PrimaryInputFibre</a>, fibreWidth);
-<a name="l00128"></a>00128 }
-<a name="l00129"></a>00129 
-<a name="l00130"></a>00130 boost::shared_ptr&lt;Fibre&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a01dd3e844fe3332df9be5156e329f821" title="Helper access function for specialised connection.">Bundle::connectPrimaryOutputCluster</a>(boost::uuids::uuid patchanid,
-<a name="l00131"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a01dd3e844fe3332df9be5156e329f821">00131</a>                 boost::uuids::uuid clusterUUID) {
-<a name="l00132"></a>00132         boost::shared_ptr&lt;Fibre&gt; newfib;
-<a name="l00133"></a>00133         <span class="comment">// check for pattern channel uuid existence</span>
-<a name="l00134"></a>00134         boost::shared_ptr&lt;state::PatternChannel&gt; patchan = <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a966b690c76f33a754a75f81a85f6e018">outputChannelsMap</a>.getObjectByKey(patchanid);
-<a name="l00135"></a>00135         <span class="keywordflow">if</span> (patchan != 0) {
-<a name="l00136"></a>00136                 <span class="comment">// get width from actual pattern channel</span>
-<a name="l00137"></a>00137                 <span class="keywordtype">int</span> width = patchan-&gt;getWidth();
-<a name="l00138"></a>00138                 <span class="comment">// get created fibre</span>
-<a name="l00139"></a>00139                 newfib = this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#af1884f99e746cdfa549b63f1589b5dac" title="Connect clusters specified by uuids with a fibre of width.">connectCluster</a>(clusterUUID, <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a09e0e43a8d02ccfe05dfe8c0b5cce1c6">Fibre::PrimaryOutputFibre</a>, width);
-<a name="l00140"></a>00140                 <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a9e5ee5aeca74592e120424e47edae970">fibrePatternChannelMap</a>[newfib-&gt;getUUID()] = patchanid;
-<a name="l00141"></a>00141 
-<a name="l00142"></a>00142                 <span class="comment">/*</span>
-<a name="l00143"></a>00143 <span class="comment">                 // connect fibre to cluster to</span>
-<a name="l00144"></a>00144 <span class="comment">                 boost::shared_ptr&lt;Cluster&gt; cluster = clusters.getObjectByKey(clusterUUID);</span>
-<a name="l00145"></a>00145 <span class="comment">                 if (cluster == 0) {</span>
-<a name="l00146"></a>00146 <span class="comment">                 std::cout &lt;&lt; &quot;Bundle::connectPrimaryOutputCluster: &quot; &lt;&lt; &quot;ERROR: Cannot find cluster: &quot; &lt;&lt; clusterUUID</span>
-<a name="l00147"></a>00147 <span class="comment">                 &lt;&lt; std::endl;</span>
-<a name="l00148"></a>00148 <span class="comment">                 return newfib;</span>
-<a name="l00149"></a>00149 <span class="comment">                 } else {</span>
-<a name="l00150"></a>00150 <span class="comment">                 newfib -&gt;getMutableConnector().connectInput(cluster);</span>
-<a name="l00151"></a>00151 <span class="comment">                 // map it to pattern channel</span>
-<a name="l00152"></a>00152 <span class="comment">                 fibrePatternChannelMap[newfib-&gt;getUUID()] = patchanid;</span>
-<a name="l00153"></a>00153 <span class="comment">                 }*/</span>
-<a name="l00154"></a>00154         } <span class="keywordflow">else</span> {
-<a name="l00155"></a>00155                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::connectPrimaryOutputCluster: &quot;</span>
-<a name="l00156"></a>00156                                 &lt;&lt; <span class="stringliteral">&quot;ERROR: PatternChannel does not exist, not creating primary output fibre. &quot;</span> &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span> &lt;&lt; patchanid
-<a name="l00157"></a>00157                                 &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span> &lt;&lt; std::endl;
-<a name="l00158"></a>00158         }
-<a name="l00159"></a>00159         <span class="keywordflow">return</span> newfib;
-<a name="l00160"></a>00160 }
-<a name="l00161"></a>00161 
-<a name="l00162"></a>00162 boost::shared_ptr&lt;Fibre&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a01dd3e844fe3332df9be5156e329f821" title="Helper access function for specialised connection.">Bundle::connectPrimaryOutputCluster</a>(boost::uuids::uuid clusterUUID, <span class="keywordtype">int</span> fibreWidth) {
-<a name="l00163"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a933f629d63919d361efddd1872d5534b">00163</a>         <span class="keywordflow">return</span> this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#af1884f99e746cdfa549b63f1589b5dac" title="Connect clusters specified by uuids with a fibre of width.">connectCluster</a>(clusterUUID, <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a09e0e43a8d02ccfe05dfe8c0b5cce1c6">Fibre::PrimaryOutputFibre</a>, fibreWidth);
-<a name="l00164"></a>00164 }
-<a name="l00165"></a>00165 
-<a name="l00166"></a>00166 boost::shared_ptr&lt;Fibre&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a0aa4399de46de8ee753e3959fca2fb62" title="Helper access function for specialised connection.">Bundle::connectLoopbackCluster</a>(boost::uuids::uuid clusterUUID, <span class="keywordtype">int</span> fibreWidth) {
-<a name="l00167"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a0aa4399de46de8ee753e3959fca2fb62">00167</a>         <span class="keywordflow">return</span> this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#af1884f99e746cdfa549b63f1589b5dac" title="Connect clusters specified by uuids with a fibre of width.">connectCluster</a>(clusterUUID, <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4abb9c562751800615ea00d21c6d1a0dfe">Fibre::LoopbackFibre</a>, fibreWidth);
-<a name="l00168"></a>00168 }
-<a name="l00169"></a>00169 
-<a name="l00170"></a>00170 <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ad60a89acf924c5aebae3a5f816f358db" title="Load in the pattern channels from a filename of a pattern dataset.">Bundle::loadChannels</a>(<span class="keyword">const</span> std::string &amp; ifstr) {
-<a name="l00171"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ad60a89acf924c5aebae3a5f816f358db">00171</a>         <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html">utilities::SequencerChannels</a> seqchans;
-<a name="l00172"></a>00172         seqchans.<a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a92d162cb45c613bd78174eb2aaf6fdf5">readSequences</a>(ifstr);
-<a name="l00173"></a>00173 
-<a name="l00174"></a>00174         <span class="comment">// get list of input channels</span>
-<a name="l00175"></a>00175         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ae1c0cf7fd3138d6ec175599c6301d7a4">inputChannelsMap</a> = seqchans.<a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a5ab0a69ce23029a1332d1845b0e5adae">getInputChannelsMap</a>();
-<a name="l00176"></a>00176 
-<a name="l00177"></a>00177         <span class="comment">// ditto for output channels</span>
-<a name="l00178"></a>00178         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a966b690c76f33a754a75f81a85f6e018">outputChannelsMap</a> = seqchans.<a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a72134dda511a2f09f613dcafa6addb52">getOutputChannelsMap</a>();
-<a name="l00179"></a>00179 }
-<a name="l00180"></a>00180 
-<a name="l00181"></a>00181 <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1ClusterMap.html">ClusterMap</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a181e1f2aaa3b529b8609917d5b5315e0" title="Get the clusters in this bundle.">Bundle::getClusters</a>()<span class="keyword"> const </span>{
-<a name="l00182"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a181e1f2aaa3b529b8609917d5b5315e0">00182</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a35a36d3305706f597f4c586fcd9f74b7">clusters</a>;
-<a name="l00183"></a>00183 }
+<a name="l00126"></a>00126                 <span class="comment">// restrict actual input channel depth  to real channel depth</span>
+<a name="l00127"></a>00127                 new_actual_patchan-&gt;setMaxPatternListSize(patchan-&gt;getPatternList().size());
+<a name="l00128"></a>00128                 <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ae20b2f9819708971357148dd024db00d">actualInputChannelsMap</a>.add(new_actual_patchan);
+<a name="l00129"></a>00129                 <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a0f3e20833ce850f97ae450d27a4607dd">actualFibrePatternChannelMap</a>[newfib-&gt;getUUID()] = new_actual_patchan-&gt;getUUID();
+<a name="l00130"></a>00130 
+<a name="l00131"></a>00131                 <span class="comment">//      std::cout &lt;&lt; &quot;Bundle::connectPrimaryInputCluster: &quot; &lt;&lt; &quot;Created Fibre: &quot; &lt;&lt; newfib-&gt;getUUID()</span>
+<a name="l00132"></a>00132                 <span class="comment">//                      &lt;&lt; &quot; PatternChannel: &quot; &lt;&lt; new_actual_patchan-&gt;getUUID() &lt;&lt; &quot; Set Depth: &quot; &lt;&lt; patchan-&gt;getPatternList().size()</span>
+<a name="l00133"></a>00133                 <span class="comment">//                      &lt;&lt; std::endl;</span>
+<a name="l00134"></a>00134                 <span class="comment">//      this-&gt;printFibreMaps(std::cout)&lt;&lt;std::endl;</span>
+<a name="l00135"></a>00135 
+<a name="l00136"></a>00136                 <span class="comment">/*</span>
+<a name="l00137"></a>00137 <span class="comment">                 // connect fibre to cluster to</span>
+<a name="l00138"></a>00138 <span class="comment">                 boost::shared_ptr&lt;Cluster&gt; cluster = clusters.getObjectByKey(clusterUUID);</span>
+<a name="l00139"></a>00139 <span class="comment">                 if (cluster == 0) {</span>
+<a name="l00140"></a>00140 <span class="comment">                 std::cout &lt;&lt; &quot;Bundle::connectPrimaryInputCluster: &quot; &lt;&lt; &quot;ERROR: Cannot find cluster: &quot; &lt;&lt; clusterUUID</span>
+<a name="l00141"></a>00141 <span class="comment">                 &lt;&lt; std::endl;</span>
+<a name="l00142"></a>00142 <span class="comment">                 return newfib;</span>
+<a name="l00143"></a>00143 <span class="comment">                 } else {</span>
+<a name="l00144"></a>00144 <span class="comment">                 newfib -&gt;getMutableConnector().connectOutput(cluster);</span>
+<a name="l00145"></a>00145 <span class="comment">                 // map it to pattern channel</span>
+<a name="l00146"></a>00146 <span class="comment">                 fibrePatternChannelMap[newfib-&gt;getUUID()] = patchanid;</span>
+<a name="l00147"></a>00147 <span class="comment">                 }*/</span>
+<a name="l00148"></a>00148         } <span class="keywordflow">else</span> {
+<a name="l00149"></a>00149                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::connectPrimaryInputCluster: &quot;</span>
+<a name="l00150"></a>00150                                 &lt;&lt; <span class="stringliteral">&quot;ERROR: PatternChannel does not exist, not creating primary input fibre. &quot;</span> &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span> &lt;&lt; patchanid
+<a name="l00151"></a>00151                                 &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span> &lt;&lt; std::endl;
+<a name="l00152"></a>00152         }
+<a name="l00153"></a>00153         <span class="keywordflow">return</span> newfib;
+<a name="l00154"></a>00154 }
+<a name="l00155"></a>00155 
+<a name="l00156"></a>00156 boost::shared_ptr&lt;Fibre&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a01dd3e844fe3332df9be5156e329f821" title="Helper access function for specialised connection.">Bundle::connectPrimaryOutputCluster</a>(boost::uuids::uuid patchanid,
+<a name="l00157"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a01dd3e844fe3332df9be5156e329f821">00157</a>                 boost::uuids::uuid clusterUUID) {
+<a name="l00158"></a>00158         boost::shared_ptr&lt;Fibre&gt; newfib;
+<a name="l00159"></a>00159         <span class="comment">// check for pattern channel uuid existence</span>
+<a name="l00160"></a>00160         boost::shared_ptr&lt;state::PatternChannel&gt; patchan = <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a4043d8bfeb8b066418029864f51d92de">realOutputChannelsMap</a>.getObjectByKey(patchanid);
+<a name="l00161"></a>00161         <span class="keywordflow">if</span> (patchan != 0) {
+<a name="l00162"></a>00162                 <span class="comment">// get width from actual pattern channel</span>
+<a name="l00163"></a>00163                 <span class="keywordtype">int</span> width = patchan-&gt;getWidth();
+<a name="l00164"></a>00164                 <span class="comment">// get created fibre</span>
+<a name="l00165"></a>00165                 newfib = this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#af1884f99e746cdfa549b63f1589b5dac" title="Connect clusters specified by uuids with a fibre of width.">connectCluster</a>(clusterUUID, <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4a09e0e43a8d02ccfe05dfe8c0b5cce1c6">Fibre::PrimaryOutputFibre</a>, width);
+<a name="l00166"></a>00166                 <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#adaf7fa91209de01b9d42ae2d8228c3cd">realFibrePatternChannelMap</a>[newfib-&gt;getUUID()] = patchanid;
+<a name="l00167"></a>00167 
+<a name="l00168"></a>00168                 <span class="comment">// make an actual pattern channel and</span>
+<a name="l00169"></a>00169                 <span class="comment">// add a fibre map to the actual channel</span>
+<a name="l00170"></a>00170                 boost::shared_ptr&lt;state::PatternChannel&gt; new_actual_patchan(
+<a name="l00171"></a>00171                                 <span class="keyword">new</span> <a class="code" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a>(<a class="code" href="classcryomesh_1_1state_1_1PatternChannel.html#ac8a0ae515a221519890fc1181f2c895aa981b9873565a0888e43eef95b4d003bf">state::PatternChannel::Output</a>));
+<a name="l00172"></a>00172                 <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a0f3e20833ce850f97ae450d27a4607dd">actualFibrePatternChannelMap</a>[newfib-&gt;getUUID()] = new_actual_patchan-&gt;getUUID();
+<a name="l00173"></a>00173                 <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ac67a6d7b29b37b8927c93350e8bcf6e5">actualOutputChannelsMap</a>.add(new_actual_patchan);
+<a name="l00174"></a>00174 
+<a name="l00175"></a>00175                 <span class="comment">// restrict actual output channel depth  to real channel depth</span>
+<a name="l00176"></a>00176                 new_actual_patchan-&gt;setMaxPatternListSize(patchan-&gt;getPatternList().size());
+<a name="l00177"></a>00177                 <span class="comment">//std::cout &lt;&lt; &quot;Bundle::connectPrimaryOutputCluster: &quot; &lt;&lt; &quot;Created Fibre: &quot; &lt;&lt; newfib-&gt;getUUID()</span>
+<a name="l00178"></a>00178                 <span class="comment">//                              &lt;&lt; &quot; PatternChannel: &quot; &lt;&lt; new_actual_patchan-&gt;getUUID() &lt;&lt; &quot; Set Depth: &quot; &lt;&lt; patchan-&gt;getPatternList().size()</span>
+<a name="l00179"></a>00179                 <span class="comment">//                              &lt;&lt; std::endl;</span>
+<a name="l00180"></a>00180                 <span class="comment">//std::cout&lt;&lt;&quot;Bundle::connectPrimaryOutputCluster: &quot;&lt;&lt;&quot;Created Fibre UUID: &quot;&lt;&lt;newfib-&gt;getUUIDString()&lt;&lt;std::endl;</span>
+<a name="l00181"></a>00181                 <span class="comment">//std::cout&lt;&lt;&quot;Bundle::connectPrimaryOutputCluster: &quot;&lt;&lt;&quot;Created PatternChannel UUID: &quot;&lt;&lt;actual_chan-&gt;getUUID()&lt;&lt;std::endl;</span>
+<a name="l00182"></a>00182                 <span class="comment">//std::cout&lt;&lt;&quot;Bundle::connectPrimaryOutputCluster: &quot;&lt;&lt;&quot;Created PatternChannel (OLD) UUID: &quot;&lt;&lt;newpatchan-&gt;getUUID()&lt;&lt;std::endl;</span>
+<a name="l00183"></a>00183                 <span class="comment">//this-&gt;printFibreMaps(std::cout)&lt;&lt;std::endl;</span>
 <a name="l00184"></a>00184 
-<a name="l00185"></a>00185 <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1FibreMap.html">FibreMap</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a8f112d3b34f84511781879217b15c6d2" title="Get the mutable clusters in this bundle.">Bundle::getFibres</a>()<span class="keyword"> const </span>{
-<a name="l00186"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a8f112d3b34f84511781879217b15c6d2">00186</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a71b3308a867169b8e9af9ab71b8bdf98">fibres</a>;
-<a name="l00187"></a>00187 }
-<a name="l00188"></a>00188 
-<a name="l00189"></a>00189 <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1FibreMap.html">FibreMap</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a5c6496d00065462122a71c812fa7a4e8" title="Get the input fibres of this bundle.">Bundle::getInputFibres</a>()<span class="keyword"> const </span>{
-<a name="l00190"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a5c6496d00065462122a71c812fa7a4e8">00190</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aa6a461295021bdfb4ef4cab0f136a2c1">inputFibres</a>;
-<a name="l00191"></a>00191 }
-<a name="l00192"></a>00192 <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1FibreMap.html">FibreMap</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a2c14a3f2cc96236bff6548e5103183de" title="Get the output fibres of this bundle.">Bundle::getOutputFibres</a>()<span class="keyword"> const </span>{
-<a name="l00193"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a2c14a3f2cc96236bff6548e5103183de">00193</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aa671193358b7aba173e45574def3d4c1">outputFibres</a>;
-<a name="l00194"></a>00194 }
-<a name="l00195"></a>00195 
-<a name="l00196"></a>00196 <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aff0efa47b4021a793df61acc08c83c5d" title="Get the input pattern channels of this bundle.">Bundle::getInputChannelsMap</a>()<span class="keyword"> const </span>{
-<a name="l00197"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aff0efa47b4021a793df61acc08c83c5d">00197</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ae1c0cf7fd3138d6ec175599c6301d7a4">inputChannelsMap</a>;
-<a name="l00198"></a>00198 }
-<a name="l00199"></a>00199 <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a7c18cf0f3a5894ff268c4d54c72bdded" title="Get the output pattern channels of this bundle.">Bundle::getOutputChannelsMap</a>()<span class="keyword"> const </span>{
-<a name="l00200"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a7c18cf0f3a5894ff268c4d54c72bdded">00200</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a966b690c76f33a754a75f81a85f6e018">outputChannelsMap</a>;
-<a name="l00201"></a>00201 }
-<a name="l00202"></a>00202 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::uuids::uuid&gt; &amp; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ad9df009118b5834d1bdd0d260b271553" title="Get the map of fibres to their associated pattern channels.">Bundle::getFibrePatternChannelMap</a>()<span class="keyword"> const </span>{
-<a name="l00203"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ad9df009118b5834d1bdd0d260b271553">00203</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a9e5ee5aeca74592e120424e47edae970">fibrePatternChannelMap</a>;
-<a name="l00204"></a>00204 }
-<a name="l00205"></a>00205 
-<a name="l00206"></a>00206 std::ostream &amp; <a class="code" href="namespacecryomesh_1_1structures.html#ac0de245f5d4e0c56559736d69f3139ec">operator&lt;&lt;</a>(std::ostream &amp; os, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html" title="A Bundle is the collection of clusters and fibres, it represents the system as a whole.">Bundle</a> &amp; bundle) {
-<a name="l00207"></a><a class="code" href="namespacecryomesh_1_1structures.html#ac0de245f5d4e0c56559736d69f3139ec">00207</a>         std::string tab;
-<a name="l00208"></a>00208         <span class="comment">// bundle general details</span>
-<a name="l00209"></a>00209         os &lt;&lt; <span class="stringliteral">&quot;Bundle: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;clusters:&quot;</span> &lt;&lt; bundle.<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a181e1f2aaa3b529b8609917d5b5315e0" title="Get the clusters in this bundle.">getClusters</a>().getSize() &lt;&lt; <span class="stringliteral">&quot; fibres:&quot;</span> &lt;&lt; bundle.<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a8f112d3b34f84511781879217b15c6d2" title="Get the mutable clusters in this bundle.">getFibres</a>().getSize()
-<a name="l00210"></a>00210                         &lt;&lt; std::endl;
-<a name="l00211"></a>00211 
-<a name="l00212"></a>00212         <span class="comment">// Clustermap</span>
-<a name="l00213"></a>00213         os &lt;&lt; bundle.<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a181e1f2aaa3b529b8609917d5b5315e0" title="Get the clusters in this bundle.">getClusters</a>() &lt;&lt; std::endl;
-<a name="l00214"></a>00214         <span class="comment">// fibremap</span>
-<a name="l00215"></a>00215         os &lt;&lt; bundle.<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a8f112d3b34f84511781879217b15c6d2" title="Get the mutable clusters in this bundle.">getFibres</a>() &lt;&lt; std::endl;
-<a name="l00216"></a>00216         <span class="comment">// connecting fibres patterns</span>
-<a name="l00217"></a>00217 
-<a name="l00218"></a>00218         <span class="keywordflow">return</span> os;
-<a name="l00219"></a>00219 }
-<a name="l00220"></a>00220 
-<a name="l00221"></a>00221 <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#abe52d8718eeb7bb6a17211d4dfbed440" title="Get the next patterns from channels and apply them to their mapped fibres.">Bundle::updatePrimaryInputFibres</a>() {
-<a name="l00222"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#abe52d8718eeb7bb6a17211d4dfbed440">00222</a>         std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt; &amp; channels =
-<a name="l00223"></a>00223                         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ae1c0cf7fd3138d6ec175599c6301d7a4">inputChannelsMap</a>.getMutableCollection();
-<a name="l00224"></a>00224 
-<a name="l00225"></a>00225         <span class="comment">// forall in channels</span>
-<a name="l00226"></a>00226         {
-<a name="l00227"></a>00227                 std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt;::const_iterator it_channels =
-<a name="l00228"></a>00228                                 channels.begin();
-<a name="l00229"></a>00229                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt;::const_iterator it_channels_end =
-<a name="l00230"></a>00230                                 channels.end();
-<a name="l00231"></a>00231                 <span class="keywordflow">while</span> (it_channels != it_channels_end) {
-<a name="l00232"></a>00232                         <span class="comment">// get the next pattern</span>
-<a name="l00233"></a>00233                         boost::shared_ptr&lt;state::Pattern&gt; pattern = it_channels-&gt;second-&gt;nextPattern();
-<a name="l00234"></a>00234                         <span class="comment">// get the related fibre</span>
-<a name="l00235"></a>00235                         boost::shared_ptr&lt;Fibre&gt; temp_fib = this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a9de0a2a4e346a1e9621a0283ef1f4662" title="Helper method to take a uuid and find its correspondingly mapped object Take an input PatternChannel ...">getPrimaryInputFibreByChannel</a>(it_channels-&gt;second-&gt;getUUID());
-<a name="l00236"></a>00236 
-<a name="l00237"></a>00237                         <span class="comment">// apply firing pattern to fibre</span>
-<a name="l00238"></a>00238                         temp_fib-&gt;trigger(*pattern);
-<a name="l00239"></a>00239                         ++it_channels;
-<a name="l00240"></a>00240                 }
-<a name="l00241"></a>00241         }
-<a name="l00242"></a>00242 
-<a name="l00243"></a>00243         <span class="comment">// actual update the input fibres</span>
-<a name="l00244"></a>00244         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aa6a461295021bdfb4ef4cab0f136a2c1">inputFibres</a>.<a class="code" href="classcryomesh_1_1structures_1_1FibreMap.html#a9caf159d1ca71ed1046bd52167fe009f">update</a>();
-<a name="l00245"></a>00245 }
-<a name="l00246"></a>00246 
-<a name="l00247"></a>00247 <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a7a95265553776d6216799e143134a59f" title="Get the patterns from primary output fibres and apply them to their mapped pattern channels...">Bundle::updatePrimaryOutputFibres</a>() {
-<a name="l00248"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a7a95265553776d6216799e143134a59f">00248</a>         <span class="comment">// forall in outputFibres</span>
-<a name="l00249"></a>00249         {
-<a name="l00250"></a>00250                 std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Fibre&gt; &gt;::const_iterator it_outputFibres = <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aa671193358b7aba173e45574def3d4c1">outputFibres</a>.begin();
-<a name="l00251"></a>00251                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Fibre&gt; &gt;::const_iterator it_outputFibres_end =
-<a name="l00252"></a>00252                                 <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aa671193358b7aba173e45574def3d4c1">outputFibres</a>.end();
-<a name="l00253"></a>00253                 <span class="keywordflow">while</span> (it_outputFibres != it_outputFibres_end) {
-<a name="l00254"></a>00254                         <span class="comment">// find the channel</span>
-<a name="l00255"></a>00255                         boost::shared_ptr&lt;state::PatternChannel&gt; patchan = this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a86a3c7aa8800c64a8fe49928d7f3e175" title="Helper method to take a uuid and find its correspondingly mapped object Take an output Fibre uuid and...">getPrimaryOutputChannelByFibre</a>(
-<a name="l00256"></a>00256                                         it_outputFibres-&gt;first);
-<a name="l00257"></a>00257                         <span class="keywordflow">if</span> (patchan != 0) {
-<a name="l00258"></a>00258                                 <span class="comment">// get pattern from fibre and add it to output channel</span>
-<a name="l00259"></a>00259                                 patchan-&gt;addPattern(it_outputFibres-&gt;second-&gt;getInputNodesPattern());
-<a name="l00260"></a>00260                         } <span class="keywordflow">else</span> {
-<a name="l00261"></a>00261                                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::updatePrimaryOutputFibres: &quot;</span>
-<a name="l00262"></a>00262                                                 &lt;&lt; <span class="stringliteral">&quot;WARNING: Ignoring primary output fibre since cannot find corresponding channel: &quot;</span>
-<a name="l00263"></a>00263                                                 &lt;&lt; it_outputFibres-&gt;first &lt;&lt; std::endl;
-<a name="l00264"></a>00264                         }
-<a name="l00265"></a>00265                         ++it_outputFibres;
+<a name="l00185"></a>00185                 <span class="comment">/*</span>
+<a name="l00186"></a>00186 <span class="comment">                 // connect fibre to cluster to</span>
+<a name="l00187"></a>00187 <span class="comment">                 boost::shared_ptr&lt;Cluster&gt; cluster = clusters.getObjectByKey(clusterUUID);</span>
+<a name="l00188"></a>00188 <span class="comment">                 if (cluster == 0) {</span>
+<a name="l00189"></a>00189 <span class="comment">                 std::cout &lt;&lt; &quot;Bundle::connectPrimaryOutputCluster: &quot; &lt;&lt; &quot;ERROR: Cannot find cluster: &quot; &lt;&lt; clusterUUID</span>
+<a name="l00190"></a>00190 <span class="comment">                 &lt;&lt; std::endl;</span>
+<a name="l00191"></a>00191 <span class="comment">                 return newfib;</span>
+<a name="l00192"></a>00192 <span class="comment">                 } else {</span>
+<a name="l00193"></a>00193 <span class="comment">                 newfib -&gt;getMutableConnector().connectInput(cluster);</span>
+<a name="l00194"></a>00194 <span class="comment">                 // map it to pattern channel</span>
+<a name="l00195"></a>00195 <span class="comment">                 fibrePatternChannelMap[newfib-&gt;getUUID()] = patchanid;</span>
+<a name="l00196"></a>00196 <span class="comment">                 }*/</span>
+<a name="l00197"></a>00197         } <span class="keywordflow">else</span> {
+<a name="l00198"></a>00198                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::connectPrimaryOutputCluster: &quot;</span>
+<a name="l00199"></a>00199                                 &lt;&lt; <span class="stringliteral">&quot;ERROR: PatternChannel does not exist, not creating primary output fibre. &quot;</span> &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span> &lt;&lt; patchanid
+<a name="l00200"></a>00200                                 &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span> &lt;&lt; std::endl;
+<a name="l00201"></a>00201         }
+<a name="l00202"></a>00202         <span class="keywordflow">return</span> newfib;
+<a name="l00203"></a>00203 }
+<a name="l00204"></a>00204 
+<a name="l00205"></a>00205 std::vector&lt;boost::shared_ptr&lt;Fibre&gt; &gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a31fef59219384dafb4d250eae65f3574">Bundle::autoConnectPrimaryInputClusters</a>(
+<a name="l00206"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a31fef59219384dafb4d250eae65f3574">00206</a>                 <span class="keyword">const</span> std::vector&lt;boost::uuids::uuid&gt; &amp; cluster_uuids) {
+<a name="l00207"></a>00207 <span class="preprocessor">#ifdef BUNDLE_DEBUG</span>
+<a name="l00208"></a>00208 <span class="preprocessor"></span>        std::cout&lt;&lt;<span class="stringliteral">&quot;Bundle::autoConnectPrimaryInputClusters: &quot;</span>&lt;&lt;<span class="stringliteral">&quot;&quot;</span>&lt;&lt;std::endl;
+<a name="l00209"></a>00209 <span class="preprocessor">#endif</span>
+<a name="l00210"></a>00210 <span class="preprocessor"></span>        std::vector&lt;boost::shared_ptr&lt;Cluster&gt; &gt; cluster_list;
+<a name="l00211"></a>00211         <span class="comment">// forall in cluster__uuids</span>
+<a name="l00212"></a>00212         {
+<a name="l00213"></a>00213                 std::vector&lt;boost::uuids::uuid&gt;::const_iterator it_cluster_uuids = cluster_uuids.begin();
+<a name="l00214"></a>00214                 <span class="keyword">const</span> std::vector&lt;boost::uuids::uuid&gt;::const_iterator it_cluster_uuids_end = cluster_uuids.end();
+<a name="l00215"></a>00215                 <span class="keywordflow">while</span> (it_cluster_uuids != it_cluster_uuids_end) {
+<a name="l00216"></a>00216                         boost::shared_ptr&lt;Cluster&gt; temp_cluster = this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a14990ba8cec7b9c18426ae8c2fdd0dcf">getMutableClusters</a>().getMutableObjectByKey(
+<a name="l00217"></a>00217                                         *it_cluster_uuids);
+<a name="l00218"></a>00218                         <span class="keywordflow">if</span> (temp_cluster != 0) {
+<a name="l00219"></a>00219                                 cluster_list.push_back(temp_cluster);
+<a name="l00220"></a>00220                         } <span class="keywordflow">else</span> {
+<a name="l00221"></a>00221                                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::autoConnectPrimaryInputClusters: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;WARNING: Cannot find cluster by uuid: &quot;</span>
+<a name="l00222"></a>00222                                                 &lt;&lt; *it_cluster_uuids &lt;&lt; std::endl;
+<a name="l00223"></a>00223                         }
+<a name="l00224"></a>00224                         ++it_cluster_uuids;
+<a name="l00225"></a>00225                 }
+<a name="l00226"></a>00226         }
+<a name="l00227"></a>00227         <span class="keywordflow">return</span> (this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a31fef59219384dafb4d250eae65f3574">autoConnectPrimaryInputClusters</a>(cluster_list));
+<a name="l00228"></a>00228 }
+<a name="l00229"></a>00229 
+<a name="l00230"></a>00230 std::vector&lt;boost::shared_ptr&lt;Fibre&gt; &gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a53f6a455e7cb553352dbef64d3a1ec04">Bundle::autoConnectPrimaryOutputClusters</a>(
+<a name="l00231"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a53f6a455e7cb553352dbef64d3a1ec04">00231</a>                 <span class="keyword">const</span> std::vector&lt;boost::uuids::uuid&gt; &amp; cluster_uuids) {
+<a name="l00232"></a>00232 
+<a name="l00233"></a>00233         std::vector&lt;boost::shared_ptr&lt;Cluster&gt; &gt; cluster_list;
+<a name="l00234"></a>00234         <span class="comment">// forall in cluster__uuids</span>
+<a name="l00235"></a>00235         {
+<a name="l00236"></a>00236                 std::vector&lt;boost::uuids::uuid&gt;::const_iterator it_cluster_uuids = cluster_uuids.begin();
+<a name="l00237"></a>00237                 <span class="keyword">const</span> std::vector&lt;boost::uuids::uuid&gt;::const_iterator it_cluster_uuids_end = cluster_uuids.end();
+<a name="l00238"></a>00238                 <span class="keywordflow">while</span> (it_cluster_uuids != it_cluster_uuids_end) {
+<a name="l00239"></a>00239                         boost::shared_ptr&lt;Cluster&gt; temp_cluster = this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a14990ba8cec7b9c18426ae8c2fdd0dcf">getMutableClusters</a>().getMutableObjectByKey(
+<a name="l00240"></a>00240                                         *it_cluster_uuids);
+<a name="l00241"></a>00241                         <span class="keywordflow">if</span> (temp_cluster != 0) {
+<a name="l00242"></a>00242                                 cluster_list.push_back(temp_cluster);
+<a name="l00243"></a>00243                         } <span class="keywordflow">else</span> {
+<a name="l00244"></a>00244                                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::autoConnectPrimaryOutputClusters: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;WARNING: Cannot find cluster by uuid: &quot;</span>
+<a name="l00245"></a>00245                                                 &lt;&lt; *it_cluster_uuids &lt;&lt; std::endl;
+<a name="l00246"></a>00246                         }
+<a name="l00247"></a>00247                         ++it_cluster_uuids;
+<a name="l00248"></a>00248                 }
+<a name="l00249"></a>00249         }
+<a name="l00250"></a>00250         <span class="keywordflow">return</span> (this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a53f6a455e7cb553352dbef64d3a1ec04">autoConnectPrimaryOutputClusters</a>(cluster_list));
+<a name="l00251"></a>00251 }
+<a name="l00252"></a>00252 
+<a name="l00253"></a>00253 std::vector&lt;boost::shared_ptr&lt;Fibre&gt; &gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a31fef59219384dafb4d250eae65f3574">Bundle::autoConnectPrimaryInputClusters</a>(
+<a name="l00254"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aae9fb3393c44f4aeff03ecb8bfa5316e">00254</a>                 std::vector&lt;boost::shared_ptr&lt;Cluster&gt; &gt; list) {
+<a name="l00255"></a>00255 <span class="preprocessor">#ifdef BUNDLE_DEBUG</span>
+<a name="l00256"></a>00256 <span class="preprocessor"></span>        std::cout&lt;&lt;<span class="stringliteral">&quot;Bundle::autoConnectPrimaryInputClusters(list): &quot;</span>&lt;&lt;<span class="stringliteral">&quot;&quot;</span>&lt;&lt;std::endl;
+<a name="l00257"></a>00257 <span class="preprocessor">#endif</span>
+<a name="l00258"></a>00258 <span class="preprocessor"></span>        std::vector&lt;boost::shared_ptr&lt;Fibre&gt; &gt; newfibres;
+<a name="l00259"></a>00259 
+<a name="l00260"></a>00260         <span class="keywordflow">if</span> (list.size() &gt; 0) {
+<a name="l00261"></a>00261                 <span class="comment">// get unconnected real pattern channels</span>
+<a name="l00262"></a>00262                 std::vector&lt;boost::shared_ptr&lt;state::PatternChannel&gt; &gt; disconnected_channels =
+<a name="l00263"></a>00263                                 this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a6f400ee92f49fed82ca9ef5b48cde285">getDisconnectedRealInputPatternChannels</a>();
+<a name="l00264"></a>00264                 <span class="keywordflow">if</span> (disconnected_channels.size()==0){
+<a name="l00265"></a>00265                 std::cout&lt;&lt;<span class="stringliteral">&quot;Bundle::autoConnectPrimaryInputClusters: &quot;</span>&lt;&lt;<span class="stringliteral">&quot;No disconnected real input channels&quot;</span>&lt;&lt;std::endl;
 <a name="l00266"></a>00266                 }
-<a name="l00267"></a>00267         }
-<a name="l00268"></a>00268 
-<a name="l00269"></a>00269         <span class="comment">// and actually update fibres, not actually required at the moment since we&#39;re using the input nodes as the end result</span>
-<a name="l00270"></a>00270         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aa671193358b7aba173e45574def3d4c1">outputFibres</a>.<a class="code" href="classcryomesh_1_1structures_1_1FibreMap.html#a9caf159d1ca71ed1046bd52167fe009f">update</a>();
-<a name="l00271"></a>00271 }
-<a name="l00272"></a>00272 
-<a name="l00273"></a>00273 boost::shared_ptr&lt;Fibre&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a9de0a2a4e346a1e9621a0283ef1f4662" title="Helper method to take a uuid and find its correspondingly mapped object Take an input PatternChannel ...">Bundle::getPrimaryInputFibreByChannel</a>(<span class="keyword">const</span> boost::uuids::uuid pattern_channel_uuid) {
-<a name="l00274"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a9de0a2a4e346a1e9621a0283ef1f4662">00274</a>         <span class="keywordflow">return</span> this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a6c94d5cede55f5afc86dcfcf902a8b23" title="Helper method to take a uuid and find its correspondingly mapped object Take an channel uuid and find...">getPrimaryFibreByChannel</a>(pattern_channel_uuid, <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aa6a461295021bdfb4ef4cab0f136a2c1">inputFibres</a>);
-<a name="l00275"></a>00275 }
-<a name="l00276"></a>00276 boost::shared_ptr&lt;Fibre&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a0e40068b8b2a68843b887c03292d1d85" title="Helper method to take a uuid and find its correspondingly mapped object Take an output PatternChannel...">Bundle::getPrimaryOutputFibreByChannel</a>(<span class="keyword">const</span> boost::uuids::uuid pattern_channel_uuid) {
-<a name="l00277"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a0e40068b8b2a68843b887c03292d1d85">00277</a>         <span class="keywordflow">return</span> this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a6c94d5cede55f5afc86dcfcf902a8b23" title="Helper method to take a uuid and find its correspondingly mapped object Take an channel uuid and find...">getPrimaryFibreByChannel</a>(pattern_channel_uuid, <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aa671193358b7aba173e45574def3d4c1">outputFibres</a>);
-<a name="l00278"></a>00278 }
-<a name="l00279"></a>00279 boost::shared_ptr&lt;state::PatternChannel&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a98e27d90eb54021f699a97f57c6a6c90" title="Helper method to take a uuid and find its correspondingly mapped object Take an input Fibre uuid and ...">Bundle::getPrimaryInputChannelByFibre</a>(<span class="keyword">const</span> boost::uuids::uuid fibre_uuid) {
-<a name="l00280"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a98e27d90eb54021f699a97f57c6a6c90">00280</a>         <span class="keywordflow">return</span> this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#af3115250375c3afbabe8faaa1124ab07" title="Helper method to take a uuid and find its correspondingly mapped object Take an Fibre uuid and find t...">getPrimaryChannelByFibre</a>(fibre_uuid, <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ae1c0cf7fd3138d6ec175599c6301d7a4">inputChannelsMap</a>);
-<a name="l00281"></a>00281 }
-<a name="l00282"></a>00282 boost::shared_ptr&lt;state::PatternChannel&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a86a3c7aa8800c64a8fe49928d7f3e175" title="Helper method to take a uuid and find its correspondingly mapped object Take an output Fibre uuid and...">Bundle::getPrimaryOutputChannelByFibre</a>(<span class="keyword">const</span> boost::uuids::uuid fibre_uuid) {
-<a name="l00283"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a86a3c7aa8800c64a8fe49928d7f3e175">00283</a>         <span class="keywordflow">return</span> this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#af3115250375c3afbabe8faaa1124ab07" title="Helper method to take a uuid and find its correspondingly mapped object Take an Fibre uuid and find t...">getPrimaryChannelByFibre</a>(fibre_uuid, <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a966b690c76f33a754a75f81a85f6e018">outputChannelsMap</a>);
-<a name="l00284"></a>00284 }
-<a name="l00285"></a>00285 boost::shared_ptr&lt;Fibre&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a6c94d5cede55f5afc86dcfcf902a8b23" title="Helper method to take a uuid and find its correspondingly mapped object Take an channel uuid and find...">Bundle::getPrimaryFibreByChannel</a>(<span class="keyword">const</span> boost::uuids::uuid <span class="keywordtype">id</span>, <a class="code" href="classcryomesh_1_1structures_1_1FibreMap.html">FibreMap</a> &amp; map) {
-<a name="l00286"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a6c94d5cede55f5afc86dcfcf902a8b23">00286</a>         boost::uuids::uuid fibre_id;
-<a name="l00287"></a>00287         boost::shared_ptr&lt;Fibre&gt; found_fibre;
-<a name="l00288"></a>00288         <span class="comment">// forall in fibrePatternChannelMap</span>
-<a name="l00289"></a>00289         {
-<a name="l00290"></a>00290                 <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;
-<a name="l00291"></a>00291                 std::map&lt;boost::uuids::uuid, boost::uuids::uuid&gt;::const_iterator it_fibrePatternChannelMap =
-<a name="l00292"></a>00292                                 <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a9e5ee5aeca74592e120424e47edae970">fibrePatternChannelMap</a>.begin();
-<a name="l00293"></a>00293                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::uuids::uuid&gt;::const_iterator it_fibrePatternChannelMap_end =
-<a name="l00294"></a>00294                                 <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a9e5ee5aeca74592e120424e47edae970">fibrePatternChannelMap</a>.end();
-<a name="l00295"></a>00295                 <span class="keywordflow">while</span> (it_fibrePatternChannelMap != it_fibrePatternChannelMap_end &amp;&amp; found != <span class="keyword">true</span>) {
-<a name="l00296"></a>00296                         <span class="keywordflow">if</span> (it_fibrePatternChannelMap-&gt;second == <span class="keywordtype">id</span>) {
-<a name="l00297"></a>00297                                 fibre_id = it_fibrePatternChannelMap-&gt;first;
-<a name="l00298"></a>00298                                 found = <span class="keyword">true</span>;
-<a name="l00299"></a>00299                         }
-<a name="l00300"></a>00300                         ++it_fibrePatternChannelMap;
-<a name="l00301"></a>00301                 }
-<a name="l00302"></a>00302         }
-<a name="l00303"></a>00303 
-<a name="l00304"></a>00304         <span class="keywordflow">if</span> (fibre_id != boost::uuids::nil_uuid()) {
-<a name="l00305"></a>00305                 std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Fibre&gt; &gt;::iterator it_fibre_found =
-<a name="l00306"></a>00306                                 map.getMutableCollection().find(fibre_id);
-<a name="l00307"></a>00307                 <span class="keywordflow">if</span> (it_fibre_found != map.getMutableCollection().end()) {
-<a name="l00308"></a>00308                         found_fibre = it_fibre_found-&gt;second;
-<a name="l00309"></a>00309                 } <span class="keywordflow">else</span> {
-<a name="l00310"></a>00310                         std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::getPrimaryFibreByChannel: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;WARNING: Cannot find primary fibre in map: &quot;</span>
-<a name="l00311"></a>00311                                         &lt;&lt; fibre_id &lt;&lt; std::endl;
-<a name="l00312"></a>00312                 }
-<a name="l00313"></a>00313         } <span class="keywordflow">else</span> {
-<a name="l00314"></a>00314                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::getPrimaryFibreByChannel: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;WARNING: Cannot find mapped pattern channel: &quot;</span> &lt;&lt; <span class="keywordtype">id</span>
-<a name="l00315"></a>00315                                 &lt;&lt; std::endl;
-<a name="l00316"></a>00316         }
-<a name="l00317"></a>00317         <span class="keywordflow">return</span> found_fibre;
-<a name="l00318"></a>00318 }
-<a name="l00319"></a>00319 boost::shared_ptr&lt;state::PatternChannel&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#af3115250375c3afbabe8faaa1124ab07" title="Helper method to take a uuid and find its correspondingly mapped object Take an Fibre uuid and find t...">Bundle::getPrimaryChannelByFibre</a>(<span class="keyword">const</span> boost::uuids::uuid <span class="keywordtype">id</span>,
-<a name="l00320"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#af3115250375c3afbabe8faaa1124ab07">00320</a>                 <a class="code" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> &amp; map) {
-<a name="l00321"></a>00321         boost::uuids::uuid pattern_channel_id;
-<a name="l00322"></a>00322         boost::shared_ptr&lt;state::PatternChannel&gt; found_channel;
-<a name="l00323"></a>00323 
-<a name="l00324"></a>00324         std::map&lt;boost::uuids::uuid, boost::uuids::uuid&gt;::iterator it_found = <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a9e5ee5aeca74592e120424e47edae970">fibrePatternChannelMap</a>.find(<span class="keywordtype">id</span>);
-<a name="l00325"></a>00325         <span class="keywordflow">if</span> (it_found != <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a9e5ee5aeca74592e120424e47edae970">fibrePatternChannelMap</a>.end()) {
-<a name="l00326"></a>00326                 pattern_channel_id = it_found-&gt;second;
-<a name="l00327"></a>00327 
-<a name="l00328"></a>00328                 std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt;::iterator it_patchan_found =
-<a name="l00329"></a>00329                                 map.getMutableCollection().find(pattern_channel_id);
-<a name="l00330"></a>00330                 <span class="keywordflow">if</span> (it_patchan_found != map.getCollection().end()) {
-<a name="l00331"></a>00331                         found_channel = it_patchan_found-&gt;second;
-<a name="l00332"></a>00332                 } <span class="keywordflow">else</span> {
-<a name="l00333"></a>00333                         std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::getPrimaryChannelByFibre: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;WARNING: Cannot find pattern channel in map: &quot;</span>
-<a name="l00334"></a>00334                                         &lt;&lt; pattern_channel_id &lt;&lt; std::endl;
-<a name="l00335"></a>00335                 }
-<a name="l00336"></a>00336         } <span class="keywordflow">else</span> {
-<a name="l00337"></a>00337                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::getPrimaryChannelByFibre: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;WARNING: Cannot find mapped fibre: &quot;</span> &lt;&lt; <span class="keywordtype">id</span> &lt;&lt; std::endl;
-<a name="l00338"></a>00338         }
+<a name="l00267"></a>00267                 <span class="comment">// forall in disconnected_channels</span>
+<a name="l00268"></a>00268                 {
+<a name="l00269"></a>00269                         std::vector&lt;boost::shared_ptr&lt;Cluster&gt; &gt;::iterator it_list = list.begin();
+<a name="l00270"></a>00270                         <span class="keyword">const</span> std::vector&lt;boost::shared_ptr&lt;Cluster&gt; &gt;::const_iterator it_list_end = list.end();
+<a name="l00271"></a>00271                         std::vector&lt;boost::shared_ptr&lt;state::PatternChannel&gt; &gt;::iterator it_disconnected_channels =
+<a name="l00272"></a>00272                                         disconnected_channels.begin();
+<a name="l00273"></a>00273                         <span class="keyword">const</span> std::vector&lt;boost::shared_ptr&lt;state::PatternChannel&gt; &gt;::const_iterator it_disconnected_channels_end =
+<a name="l00274"></a>00274                                         disconnected_channels.end();
+<a name="l00275"></a>00275                         <span class="keywordflow">while</span> (it_disconnected_channels != it_disconnected_channels_end) {
+<a name="l00276"></a>00276                                 <span class="comment">// cycle round the cluster list</span>
+<a name="l00277"></a>00277                                 <span class="keywordflow">if</span> (it_list == it_list_end) {
+<a name="l00278"></a>00278                                         it_list = list.begin();
+<a name="l00279"></a>00279                                 }
+<a name="l00280"></a>00280                                 <span class="keyword">const</span> boost::uuids::uuid channel_uuid = (*it_disconnected_channels)-&gt;getUUID();
+<a name="l00281"></a>00281                                 <span class="keyword">const</span> boost::uuids::uuid cluster_uuid = (*it_list)-&gt;getUUID();
+<a name="l00282"></a>00282                                 boost::shared_ptr&lt;Fibre&gt; newfibre = this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#abe23b17f35ef338df7db8d2903ee2bfd" title="Helper access function for specialised connection.">connectPrimaryInputCluster</a>(channel_uuid, cluster_uuid);
+<a name="l00283"></a>00283 <span class="preprocessor">#ifdef BUNDLE_DEBUG</span>
+<a name="l00284"></a>00284 <span class="preprocessor"></span>        std::cout&lt;&lt;<span class="stringliteral">&quot;Bundle::autoConnectPrimaryInputClusters: Connecting channel &quot;</span>&lt;&lt;channel_uuid &lt;&lt;<span class="stringliteral">&quot; to cluster &quot;</span>&lt;&lt;cluster_uuid&lt;&lt;std::endl;
+<a name="l00285"></a>00285 <span class="preprocessor">#endif</span>
+<a name="l00286"></a>00286 <span class="preprocessor"></span>        newfibres.push_back(newfibre);
+<a name="l00287"></a>00287                                 ++it_list;
+<a name="l00288"></a>00288                                 ++it_disconnected_channels;
+<a name="l00289"></a>00289                         }
+<a name="l00290"></a>00290                 }
+<a name="l00291"></a>00291         } <span class="keywordflow">else</span> {
+<a name="l00292"></a>00292                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::autoConnectPrimaryInputClusters: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;WARNING: No clusters to autoconnect&quot;</span> &lt;&lt; std::endl;
+<a name="l00293"></a>00293         }
+<a name="l00294"></a>00294 <span class="preprocessor">#ifdef BUNDLE_DEBUG</span>
+<a name="l00295"></a>00295 <span class="preprocessor"></span>        std::cout&lt;&lt;<span class="stringliteral">&quot;Bundle::autoConnectPrimaryInputClusters: Created new fibres: &quot;</span>&lt;&lt;newfibres.size()&lt;&lt;std::endl;
+<a name="l00296"></a>00296 <span class="preprocessor">#endif</span>
+<a name="l00297"></a>00297 <span class="preprocessor"></span>        <span class="keywordflow">return</span> newfibres;
+<a name="l00298"></a>00298 }
+<a name="l00299"></a>00299 std::vector&lt;boost::shared_ptr&lt;Fibre&gt; &gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a53f6a455e7cb553352dbef64d3a1ec04">Bundle::autoConnectPrimaryOutputClusters</a>(
+<a name="l00300"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a7e38b0167e7873fea9d768d3b096a9d8">00300</a>                 std::vector&lt;boost::shared_ptr&lt;Cluster&gt; &gt; list) {
+<a name="l00301"></a>00301         std::vector&lt;boost::shared_ptr&lt;Fibre&gt; &gt; newfibres;
+<a name="l00302"></a>00302 
+<a name="l00303"></a>00303         <span class="keywordflow">if</span> (list.size() &gt; 0) {
+<a name="l00304"></a>00304                 <span class="comment">// get unconnected real pattern channels</span>
+<a name="l00305"></a>00305                 std::vector&lt;boost::shared_ptr&lt;state::PatternChannel&gt; &gt; disconnected_channels =
+<a name="l00306"></a>00306                                 this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a5ce1e31c814ef83026c0dbda5ba04a24">getDisconnectedRealOutputPatternChannels</a>();
+<a name="l00307"></a>00307                 <span class="comment">// forall in disconnected_channels</span>
+<a name="l00308"></a>00308                 {
+<a name="l00309"></a>00309                         std::vector&lt;boost::shared_ptr&lt;Cluster&gt; &gt;::iterator it_list = list.begin();
+<a name="l00310"></a>00310                         <span class="keyword">const</span> std::vector&lt;boost::shared_ptr&lt;Cluster&gt; &gt;::const_iterator it_list_end = list.end();
+<a name="l00311"></a>00311                         std::vector&lt;boost::shared_ptr&lt;state::PatternChannel&gt; &gt;::iterator it_disconnected_channels =
+<a name="l00312"></a>00312                                         disconnected_channels.begin();
+<a name="l00313"></a>00313                         <span class="keyword">const</span> std::vector&lt;boost::shared_ptr&lt;state::PatternChannel&gt; &gt;::const_iterator it_disconnected_channels_end =
+<a name="l00314"></a>00314                                         disconnected_channels.end();
+<a name="l00315"></a>00315                         <span class="keywordflow">while</span> (it_disconnected_channels != it_disconnected_channels_end) {
+<a name="l00316"></a>00316                                 <span class="comment">// cycle round the cluster list</span>
+<a name="l00317"></a>00317                                 <span class="keywordflow">if</span> (it_list == it_list_end) {
+<a name="l00318"></a>00318                                         it_list = list.begin();
+<a name="l00319"></a>00319                                 }
+<a name="l00320"></a>00320                                 <span class="keyword">const</span> boost::uuids::uuid channel_uuid = (*it_disconnected_channels)-&gt;getUUID();
+<a name="l00321"></a>00321                                 <span class="keyword">const</span> boost::uuids::uuid cluster_uuid = (*it_list)-&gt;getUUID();
+<a name="l00322"></a>00322                                 boost::shared_ptr&lt;Fibre&gt; newfibre = this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a01dd3e844fe3332df9be5156e329f821" title="Helper access function for specialised connection.">connectPrimaryOutputCluster</a>(channel_uuid, cluster_uuid);
+<a name="l00323"></a>00323 <span class="preprocessor">#ifdef BUNDLE_DEBUG</span>
+<a name="l00324"></a>00324 <span class="preprocessor"></span>        std::cout&lt;&lt;<span class="stringliteral">&quot;Bundle::autoConnectPrimaryOutputClusters: Connecting channel &quot;</span>&lt;&lt;channel_uuid &lt;&lt;<span class="stringliteral">&quot; to cluster &quot;</span>&lt;&lt;cluster_uuid&lt;&lt;std::endl;
+<a name="l00325"></a>00325 <span class="preprocessor">#endif</span>
+<a name="l00326"></a>00326 <span class="preprocessor"></span>        newfibres.push_back(newfibre);
+<a name="l00327"></a>00327                                 ++it_list;
+<a name="l00328"></a>00328                                 ++it_disconnected_channels;
+<a name="l00329"></a>00329                         }
+<a name="l00330"></a>00330                 }
+<a name="l00331"></a>00331         } <span class="keywordflow">else</span> {
+<a name="l00332"></a>00332                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::autoConnectPrimaryOutputClusters: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;WARNING: No clusters to autoconnect&quot;</span> &lt;&lt; std::endl;
+<a name="l00333"></a>00333         }
+<a name="l00334"></a>00334 <span class="preprocessor">#ifdef BUNDLE_DEBUG</span>
+<a name="l00335"></a>00335 <span class="preprocessor"></span>        std::cout&lt;&lt;<span class="stringliteral">&quot;Bundle::autoConnectPrimaryInputClusters: Created new fibres: &quot;</span>&lt;&lt;newfibres.size()&lt;&lt;std::endl;
+<a name="l00336"></a>00336 <span class="preprocessor">#endif</span>
+<a name="l00337"></a>00337 <span class="preprocessor"></span>        <span class="keywordflow">return</span> newfibres;
+<a name="l00338"></a>00338 }
 <a name="l00339"></a>00339 
-<a name="l00340"></a>00340         <span class="keywordflow">return</span> found_channel;
-<a name="l00341"></a>00341 }
+<a name="l00340"></a>00340 std::vector&lt;boost::shared_ptr&lt;state::PatternChannel&gt; &gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a6f400ee92f49fed82ca9ef5b48cde285">Bundle::getDisconnectedRealInputPatternChannels</a>() {
+<a name="l00341"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a6f400ee92f49fed82ca9ef5b48cde285">00341</a>         std::vector&lt;boost::shared_ptr&lt;state::PatternChannel&gt; &gt; disconnected_channels;
 <a name="l00342"></a>00342 
-<a name="l00343"></a>00343 }<span class="comment">//NAMESPACE</span>
-<a name="l00344"></a>00344 
-<a name="l00345"></a>00345 }
-<a name="l00346"></a>00346 <span class="comment">//NAMESPACE</span>
+<a name="l00343"></a>00343         <span class="comment">// check if theres a mapping of a fibre to the pattern channel, if not, return it</span>
+<a name="l00344"></a>00344         std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt; &amp; channel_map =
+<a name="l00345"></a>00345                         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ac9bd1c696001ef8acb7291a5f9e81c8b">realInputChannelsMap</a>.getMutableCollection();
+<a name="l00346"></a>00346         <span class="comment">// forall in channel_map</span>
+<a name="l00347"></a>00347         {
+<a name="l00348"></a>00348                 std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt;::iterator it_channel_map =
+<a name="l00349"></a>00349                                 channel_map.begin();
+<a name="l00350"></a>00350                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt;::const_iterator
+<a name="l00351"></a>00351                                 it_channel_map_end = channel_map.end();
+<a name="l00352"></a>00352                 <span class="keywordflow">while</span> (it_channel_map != it_channel_map_end) {
+<a name="l00353"></a>00353                         boost::shared_ptr&lt;Fibre&gt; found_fibre = this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ae1259ecf25a6b140cad735defd9069f9" title="Helper method to take a uuid and find its correspondingly mapped object Take an input PatternChannel ...">getPrimaryInputFibreByRealChannel</a>(
+<a name="l00354"></a>00354                                         it_channel_map-&gt;second-&gt;getUUID());
+<a name="l00355"></a>00355                         <span class="keywordflow">if</span> (found_fibre == 0) {
+<a name="l00356"></a>00356                                 disconnected_channels.push_back(it_channel_map-&gt;second);
+<a name="l00357"></a>00357                         }
+<a name="l00358"></a>00358                         ++it_channel_map;
+<a name="l00359"></a>00359                 }
+<a name="l00360"></a>00360         }
+<a name="l00361"></a>00361 <span class="preprocessor">#ifdef BUNDLE_DEBUG</span>
+<a name="l00362"></a>00362 <span class="preprocessor"></span>        std::cout&lt;&lt;<span class="stringliteral">&quot;Bundle::getDisconnectedRealInputPatternChannels: &quot;</span>&lt;&lt;<span class="stringliteral">&quot;&quot;</span>&lt;&lt;std::endl;
+<a name="l00363"></a>00363 <span class="preprocessor">#endif</span>
+<a name="l00364"></a>00364 <span class="preprocessor"></span>        <span class="keywordflow">return</span> disconnected_channels;
+<a name="l00365"></a>00365 }
+<a name="l00366"></a>00366 std::vector&lt;boost::shared_ptr&lt;state::PatternChannel&gt; &gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a5ce1e31c814ef83026c0dbda5ba04a24">Bundle::getDisconnectedRealOutputPatternChannels</a>() {
+<a name="l00367"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a5ce1e31c814ef83026c0dbda5ba04a24">00367</a>         std::vector&lt;boost::shared_ptr&lt;state::PatternChannel&gt; &gt; disconnected_channels;
+<a name="l00368"></a>00368 
+<a name="l00369"></a>00369         <span class="comment">// check if theres a mapping of a fibre to the pattern channel, if not, return it</span>
+<a name="l00370"></a>00370         std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt; &amp; channel_map =
+<a name="l00371"></a>00371                         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a4043d8bfeb8b066418029864f51d92de">realOutputChannelsMap</a>.getMutableCollection();
+<a name="l00372"></a>00372         <span class="comment">// forall in channel_map</span>
+<a name="l00373"></a>00373         {
+<a name="l00374"></a>00374                 std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt;::iterator it_channel_map =
+<a name="l00375"></a>00375                                 channel_map.begin();
+<a name="l00376"></a>00376                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt;::const_iterator
+<a name="l00377"></a>00377                                 it_channel_map_end = channel_map.end();
+<a name="l00378"></a>00378                 <span class="keywordflow">while</span> (it_channel_map != it_channel_map_end) {
+<a name="l00379"></a>00379                         boost::shared_ptr&lt;Fibre&gt; found_fibre = this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a7ba3f747f8e164f0c0984fdb14922e7a" title="Helper method to take a uuid and find its correspondingly mapped object Take an output PatternChannel...">getPrimaryOutputFibreByRealChannel</a>(
+<a name="l00380"></a>00380                                         it_channel_map-&gt;second-&gt;getUUID());
+<a name="l00381"></a>00381                         <span class="keywordflow">if</span> (found_fibre == 0) {
+<a name="l00382"></a>00382                                 disconnected_channels.push_back(it_channel_map-&gt;second);
+<a name="l00383"></a>00383                         }
+<a name="l00384"></a>00384                         ++it_channel_map;
+<a name="l00385"></a>00385                 }
+<a name="l00386"></a>00386         }
+<a name="l00387"></a>00387         <span class="keywordflow">return</span> disconnected_channels;
+<a name="l00388"></a>00388 }
+<a name="l00389"></a>00389 
+<a name="l00390"></a>00390 boost::shared_ptr&lt;Fibre&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a0aa4399de46de8ee753e3959fca2fb62" title="Helper access function for specialised connection.">Bundle::connectLoopbackCluster</a>(boost::uuids::uuid clusterUUID, <span class="keywordtype">int</span> fibreWidth) {
+<a name="l00391"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a0aa4399de46de8ee753e3959fca2fb62">00391</a>         <span class="keywordflow">return</span> this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#af1884f99e746cdfa549b63f1589b5dac" title="Connect clusters specified by uuids with a fibre of width.">connectCluster</a>(clusterUUID, <a class="code" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4abb9c562751800615ea00d21c6d1a0dfe">Fibre::LoopbackFibre</a>, fibreWidth);
+<a name="l00392"></a>00392 }
+<a name="l00393"></a>00393 
+<a name="l00394"></a>00394 <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ad60a89acf924c5aebae3a5f816f358db" title="Load in the pattern channels from a filename of a pattern dataset.">Bundle::loadChannels</a>(<span class="keyword">const</span> std::string &amp; ifstr) {
+<a name="l00395"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ad60a89acf924c5aebae3a5f816f358db">00395</a>         std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::loadChannels: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;&quot;</span> &lt;&lt; std::endl;
+<a name="l00396"></a>00396         <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html">utilities::SequencerChannels</a> seqchans;
+<a name="l00397"></a>00397         seqchans.<a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a2099c0ea6a68acda477034425c0d599c">readSequences</a>(ifstr, <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ac9bd1c696001ef8acb7291a5f9e81c8b">realInputChannelsMap</a>, <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a4043d8bfeb8b066418029864f51d92de">realOutputChannelsMap</a>);
+<a name="l00398"></a>00398         <span class="comment">// get list of input channels</span>
+<a name="l00399"></a>00399         <span class="comment">//      inputChannelsMap = seqchans.getInputChannelsMap();</span>
+<a name="l00400"></a>00400 
+<a name="l00401"></a>00401         <span class="comment">// ditto for output channels</span>
+<a name="l00402"></a>00402         <span class="comment">//outputChannelsMap = seqchans.getOutputChannelsMap();</span>
+<a name="l00403"></a>00403         <span class="comment">//this-&gt;printChannels(std::cout);</span>
+<a name="l00404"></a>00404 }
+<a name="l00405"></a>00405 
+<a name="l00406"></a>00406 <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1ClusterMap.html">ClusterMap</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a181e1f2aaa3b529b8609917d5b5315e0" title="Get the clusters in this bundle.">Bundle::getClusters</a>()<span class="keyword"> const </span>{
+<a name="l00407"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a181e1f2aaa3b529b8609917d5b5315e0">00407</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a35a36d3305706f597f4c586fcd9f74b7">clusters</a>;
+<a name="l00408"></a>00408 }
+<a name="l00409"></a>00409 
+<a name="l00410"></a>00410 <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#abe63fcceae95f0ffb06db094076b42c5">Bundle::enableDebug</a>(<span class="keywordtype">bool</span> b){
+<a name="l00411"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#abe63fcceae95f0ffb06db094076b42c5">00411</a>         this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a8e7f1752b8b0112adf8939921eff4e50">enableDebugClusters</a>(b);
+<a name="l00412"></a>00412         this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a742597fd733573d8242966f89f8e6715">enableDebugFibres</a>(b);
+<a name="l00413"></a>00413 }
+<a name="l00414"></a>00414 
+<a name="l00415"></a>00415 <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a8e7f1752b8b0112adf8939921eff4e50">Bundle::enableDebugClusters</a>(<span class="keywordtype">bool</span> b) {
+<a name="l00416"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a8e7f1752b8b0112adf8939921eff4e50">00416</a>         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a35a36d3305706f597f4c586fcd9f74b7">clusters</a>.enableDebug(b);
+<a name="l00417"></a>00417 }
+<a name="l00418"></a>00418 <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a742597fd733573d8242966f89f8e6715">Bundle::enableDebugFibres</a>(<span class="keywordtype">bool</span> b) {
+<a name="l00419"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a742597fd733573d8242966f89f8e6715">00419</a>         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a71b3308a867169b8e9af9ab71b8bdf98">fibres</a>.enableDebug(b);
+<a name="l00420"></a>00420 }
+<a name="l00421"></a>00421 
+<a name="l00422"></a>00422 <a class="code" href="classcryomesh_1_1structures_1_1ClusterMap.html">ClusterMap</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a14990ba8cec7b9c18426ae8c2fdd0dcf">Bundle::getMutableClusters</a>() {
+<a name="l00423"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a14990ba8cec7b9c18426ae8c2fdd0dcf">00423</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a35a36d3305706f597f4c586fcd9f74b7">clusters</a>;
+<a name="l00424"></a>00424 }
+<a name="l00425"></a>00425 <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1FibreMap.html">FibreMap</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a8f112d3b34f84511781879217b15c6d2" title="Get the mutable clusters in this bundle.">Bundle::getFibres</a>()<span class="keyword"> const </span>{
+<a name="l00426"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a8f112d3b34f84511781879217b15c6d2">00426</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a71b3308a867169b8e9af9ab71b8bdf98">fibres</a>;
+<a name="l00427"></a>00427 }
+<a name="l00428"></a>00428 
+<a name="l00429"></a>00429 <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1FibreMap.html">FibreMap</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a5c6496d00065462122a71c812fa7a4e8" title="Get the input fibres of this bundle.">Bundle::getInputFibres</a>()<span class="keyword"> const </span>{
+<a name="l00430"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a5c6496d00065462122a71c812fa7a4e8">00430</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aa6a461295021bdfb4ef4cab0f136a2c1">inputFibres</a>;
+<a name="l00431"></a>00431 }
+<a name="l00432"></a>00432 
+<a name="l00433"></a>00433 <a class="code" href="classcryomesh_1_1structures_1_1FibreMap.html">FibreMap</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#af8b848abb7ec12997b09c63c0c10650d" title="Get the mutable input fibres of this bundle.">Bundle::getMutableInputFibres</a>() {
+<a name="l00434"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#af8b848abb7ec12997b09c63c0c10650d">00434</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aa6a461295021bdfb4ef4cab0f136a2c1">inputFibres</a>;
+<a name="l00435"></a>00435 }
+<a name="l00436"></a>00436 
+<a name="l00437"></a>00437 <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1FibreMap.html">FibreMap</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a2c14a3f2cc96236bff6548e5103183de" title="Get the output fibres of this bundle.">Bundle::getOutputFibres</a>()<span class="keyword"> const </span>{
+<a name="l00438"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a2c14a3f2cc96236bff6548e5103183de">00438</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aa671193358b7aba173e45574def3d4c1">outputFibres</a>;
+<a name="l00439"></a>00439 }
+<a name="l00440"></a>00440 
+<a name="l00441"></a>00441 <a class="code" href="classcryomesh_1_1structures_1_1FibreMap.html">FibreMap</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#af9fd12e753bab64750f5c32d5f17a554" title="Get the mutable output fibres of this bundle.">Bundle::getMutableOutputFibres</a>() {
+<a name="l00442"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#af9fd12e753bab64750f5c32d5f17a554">00442</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aa671193358b7aba173e45574def3d4c1">outputFibres</a>;
+<a name="l00443"></a>00443 }
+<a name="l00444"></a>00444 
+<a name="l00445"></a>00445 <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ada0ae8374d27d9b59ca82b8075fbd401" title="Get the real input pattern channels of this bundle.">Bundle::getRealInputChannelsMap</a>()<span class="keyword"> const </span>{
+<a name="l00446"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ada0ae8374d27d9b59ca82b8075fbd401">00446</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ac9bd1c696001ef8acb7291a5f9e81c8b">realInputChannelsMap</a>;
+<a name="l00447"></a>00447 }
+<a name="l00448"></a>00448 <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a893be908a14ecc2d07270273d3d127e2" title="Get the real output pattern channels of this bundle.">Bundle::getRealOutputChannelsMap</a>()<span class="keyword"> const </span>{
+<a name="l00449"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a893be908a14ecc2d07270273d3d127e2">00449</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a4043d8bfeb8b066418029864f51d92de">realOutputChannelsMap</a>;
+<a name="l00450"></a>00450 }
+<a name="l00451"></a>00451 <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a65bf0246390e7cb0e90caf4fb302fa41" title="Get the actual input pattern channels of this bundle.">Bundle::getActualInputChannelsMap</a>()<span class="keyword"> const </span>{
+<a name="l00452"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a65bf0246390e7cb0e90caf4fb302fa41">00452</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ae20b2f9819708971357148dd024db00d">actualInputChannelsMap</a>;
+<a name="l00453"></a>00453 }
+<a name="l00454"></a>00454 <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a382242e3b29b92b25edc9162aa810ebe" title="Get the real output pattern channels of this bundle.">Bundle::getActualOutputChannelsMap</a>()<span class="keyword"> const </span>{
+<a name="l00455"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a382242e3b29b92b25edc9162aa810ebe">00455</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ac67a6d7b29b37b8927c93350e8bcf6e5">actualOutputChannelsMap</a>;
+<a name="l00456"></a>00456 }
+<a name="l00457"></a>00457 
+<a name="l00458"></a>00458 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::uuids::uuid&gt; &amp; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a2e31be3bab4a15e4e9ba6aeac48b91df" title="Get the map of fibres to their associated pattern channels.">Bundle::getRealFibrePatternChannelMap</a>()<span class="keyword"> const </span>{
+<a name="l00459"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a2e31be3bab4a15e4e9ba6aeac48b91df">00459</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#adaf7fa91209de01b9d42ae2d8228c3cd">realFibrePatternChannelMap</a>;
+<a name="l00460"></a>00460 }
+<a name="l00461"></a>00461 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::uuids::uuid&gt; &amp; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a872de96a76f772182eda2abbb98a99cc">Bundle::getActualFibrePatternChannelMap</a>()<span class="keyword"> const </span>{
+<a name="l00462"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a872de96a76f772182eda2abbb98a99cc">00462</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a0f3e20833ce850f97ae450d27a4607dd">actualFibrePatternChannelMap</a>;
+<a name="l00463"></a>00463 }
+<a name="l00464"></a>00464 <span class="keyword">const</span> boost::shared_ptr&lt;utilities::Statistician&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a5bfac318b9a6f9f651fad0657b9b9196" title="Get the Statistician.">Bundle::getStatistician</a>()<span class="keyword"> const </span>{
+<a name="l00465"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a5bfac318b9a6f9f651fad0657b9b9196">00465</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ad505cbda03b4e78399fd3a9568d79708" title="Statistics object to generate useful info on the bundle.">statistician</a>;
+<a name="l00466"></a>00466 }
+<a name="l00467"></a>00467 
+<a name="l00468"></a>00468 <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aec88635d8c4fdc76b6c3c22b915ee459" title="Get the last calculated energy of the bundle.">Bundle::getEnergy</a>()<span class="keyword"> const </span>{
+<a name="l00469"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aec88635d8c4fdc76b6c3c22b915ee459">00469</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aac5229c4c52e646767db2144ba745aa6" title="Last energy calculation of the output channel matching.">energy</a>;
+<a name="l00470"></a>00470 }
+<a name="l00471"></a>00471 boost::shared_ptr&lt;utilities::Statistician&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ae750ab1bd2b1a937f90d97e416aefced">Bundle::getMutableStatistician</a>() {
+<a name="l00472"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ae750ab1bd2b1a937f90d97e416aefced">00472</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ad505cbda03b4e78399fd3a9568d79708" title="Statistics object to generate useful info on the bundle.">statistician</a>;
+<a name="l00473"></a>00473 }
+<a name="l00474"></a>00474 
+<a name="l00475"></a>00475 <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a441eda1670224083d5efc20b3a6bb9ff" title="Check the structure of Fibres.">Bundle::checkFibreStructure</a>()<span class="keyword"> const </span>{
+<a name="l00476"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a441eda1670224083d5efc20b3a6bb9ff">00476</a>         <span class="keywordtype">bool</span> success = <span class="keyword">true</span>;
+<a name="l00477"></a>00477         <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Fibre&gt; &gt; &amp; all_fibres = this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a8f112d3b34f84511781879217b15c6d2" title="Get the mutable clusters in this bundle.">getFibres</a>().getCollection();
+<a name="l00478"></a>00478         <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Fibre&gt; &gt; &amp; all_input_fibres =
+<a name="l00479"></a>00479                         this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a5c6496d00065462122a71c812fa7a4e8" title="Get the input fibres of this bundle.">getInputFibres</a>().getCollection();
+<a name="l00480"></a>00480         <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Fibre&gt; &gt; &amp; all_output_fibres =
+<a name="l00481"></a>00481                         this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a2c14a3f2cc96236bff6548e5103183de" title="Get the output fibres of this bundle.">getOutputFibres</a>().getCollection();
+<a name="l00482"></a>00482         <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Cluster&gt; &gt; &amp; all_clusters =
+<a name="l00483"></a>00483                         this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a181e1f2aaa3b529b8609917d5b5315e0" title="Get the clusters in this bundle.">getClusters</a>().getCollection();
+<a name="l00484"></a>00484 
+<a name="l00485"></a>00485         <span class="comment">// check input fibres are all connected</span>
+<a name="l00486"></a>00486         <span class="comment">// forall in all_input_fibres</span>
+<a name="l00487"></a>00487         {
+<a name="l00488"></a>00488                 std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Fibre&gt; &gt;::const_iterator it_all_input_fibres =
+<a name="l00489"></a>00489                                 all_input_fibres.begin();
+<a name="l00490"></a>00490                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Fibre&gt; &gt;::const_iterator it_all_input_fibres_end =
+<a name="l00491"></a>00491                                 all_input_fibres.end();
+<a name="l00492"></a>00492                 <span class="keywordflow">while</span> (it_all_input_fibres != it_all_input_fibres_end) {
+<a name="l00493"></a>00493                         boost::shared_ptr&lt;Fibre&gt; fibre = it_all_input_fibres-&gt;second;
+<a name="l00494"></a>00494                         std::pair&lt;int, int&gt; concount = fibre-&gt;countConnections(all_clusters);
+<a name="l00495"></a>00495                         <span class="keywordflow">if</span> (concount.first != 0 || concount.second != 1) {
+<a name="l00496"></a>00496                                 success = <span class="keyword">false</span>;
+<a name="l00497"></a>00497                                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::checkStructure: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;WARNING: Input fibre has bad connection count (&quot;</span>
+<a name="l00498"></a>00498                                                 &lt;&lt; concount.first &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; concount.second &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; <span class="stringliteral">&quot; &#39;&quot;</span> &lt;&lt; fibre-&gt;getUUIDString() &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span>
+<a name="l00499"></a>00499                                                 &lt;&lt; std::endl;
+<a name="l00500"></a>00500                         } <span class="keywordflow">else</span> {
+<a name="l00501"></a>00501                                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::checkStructure: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;PASS: Input fibre has good connection count (&quot;</span>
+<a name="l00502"></a>00502                                                 &lt;&lt; concount.first &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; concount.second &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; <span class="stringliteral">&quot; &#39;&quot;</span> &lt;&lt; fibre-&gt;getUUIDString() &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span>
+<a name="l00503"></a>00503                                                 &lt;&lt; std::endl;
+<a name="l00504"></a>00504                         }
+<a name="l00505"></a>00505                         ++it_all_input_fibres;
+<a name="l00506"></a>00506                 }
+<a name="l00507"></a>00507         }
+<a name="l00508"></a>00508 
+<a name="l00509"></a>00509         <span class="comment">// forall in all_output_fibres</span>
+<a name="l00510"></a>00510         {
+<a name="l00511"></a>00511                 std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Fibre&gt; &gt;::const_iterator it_all_output_fibres =
+<a name="l00512"></a>00512                                 all_output_fibres.begin();
+<a name="l00513"></a>00513                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Fibre&gt; &gt;::const_iterator it_all_output_fibres_end =
+<a name="l00514"></a>00514                                 all_output_fibres.end();
+<a name="l00515"></a>00515                 <span class="keywordflow">while</span> (it_all_output_fibres != it_all_output_fibres_end) {
+<a name="l00516"></a>00516                         boost::shared_ptr&lt;Fibre&gt; fibre = it_all_output_fibres-&gt;second;
+<a name="l00517"></a>00517                         std::pair&lt;int, int&gt; concount = fibre-&gt;countConnections(all_clusters);
+<a name="l00518"></a>00518                         <span class="keywordflow">if</span> (concount.first != 1 || concount.second != 0) {
+<a name="l00519"></a>00519                                 success = <span class="keyword">false</span>;
+<a name="l00520"></a>00520                                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::checkStructure: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;WARNING: Output fibre has bad connection count (&quot;</span>
+<a name="l00521"></a>00521                                                 &lt;&lt; concount.first &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; concount.second &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; <span class="stringliteral">&quot; &#39;&quot;</span> &lt;&lt; fibre-&gt;getUUIDString() &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span>
+<a name="l00522"></a>00522                                                 &lt;&lt; std::endl;
+<a name="l00523"></a>00523                         } <span class="keywordflow">else</span> {
+<a name="l00524"></a>00524                                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::checkStructure: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;PASS: Output fibre has good connection count (&quot;</span>
+<a name="l00525"></a>00525                                                 &lt;&lt; concount.first &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; concount.second &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; <span class="stringliteral">&quot; &#39;&quot;</span> &lt;&lt; fibre-&gt;getUUIDString() &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span>
+<a name="l00526"></a>00526                                                 &lt;&lt; std::endl;
+<a name="l00527"></a>00527                         }
+<a name="l00528"></a>00528                         ++it_all_output_fibres;
+<a name="l00529"></a>00529                 }
+<a name="l00530"></a>00530         }
+<a name="l00531"></a>00531 
+<a name="l00532"></a>00532         <span class="comment">// forall in all_fibres</span>
+<a name="l00533"></a>00533         {
+<a name="l00534"></a>00534                 std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Fibre&gt; &gt;::const_iterator it_all_fibres = all_fibres.begin();
+<a name="l00535"></a>00535                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Fibre&gt; &gt;::const_iterator it_all_fibres_end =
+<a name="l00536"></a>00536                                 all_fibres.end();
+<a name="l00537"></a>00537                 <span class="keywordflow">while</span> (it_all_fibres != it_all_fibres_end) {
+<a name="l00538"></a>00538                         boost::shared_ptr&lt;Fibre&gt; fibre = it_all_fibres-&gt;second;
+<a name="l00539"></a>00539                         std::pair&lt;int, int&gt; concount = fibre-&gt;countConnections(all_clusters);
+<a name="l00540"></a>00540                         <span class="keywordflow">if</span> (concount.first != 1 || concount.second != 1) {
+<a name="l00541"></a>00541                                 success = <span class="keyword">false</span>;
+<a name="l00542"></a>00542                                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::checkStructure: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;WARNING: Intermediate fibre has bad connection count (&quot;</span>
+<a name="l00543"></a>00543                                                 &lt;&lt; concount.first &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; concount.second &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; <span class="stringliteral">&quot; &#39;&quot;</span> &lt;&lt; fibre-&gt;getUUIDString() &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span>
+<a name="l00544"></a>00544                                                 &lt;&lt; std::endl;
+<a name="l00545"></a>00545                         } <span class="keywordflow">else</span> {
+<a name="l00546"></a>00546                                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::checkStructure: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;PASS: Intermediate fibre has good connection count (&quot;</span>
+<a name="l00547"></a>00547                                                 &lt;&lt; concount.first &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; concount.second &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; <span class="stringliteral">&quot; &#39;&quot;</span> &lt;&lt; fibre-&gt;getUUIDString() &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span>
+<a name="l00548"></a>00548                                                 &lt;&lt; std::endl;
+<a name="l00549"></a>00549                         }
+<a name="l00550"></a>00550                         ++it_all_fibres;
+<a name="l00551"></a>00551                 }
+<a name="l00552"></a>00552         }
+<a name="l00553"></a>00553         <span class="keywordflow">return</span> success;
+<a name="l00554"></a>00554 }
+<a name="l00555"></a>00555 
+<a name="l00556"></a>00556 <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a1c1b3a4fe6d32259753d69c8a9b0deaa" title="Check the structure of Channels.">Bundle::checkChannelStructure</a>()<span class="keyword"> const </span>{
+<a name="l00557"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a1c1b3a4fe6d32259753d69c8a9b0deaa">00557</a>         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00558"></a>00558 }
+<a name="l00559"></a>00559 <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a5927b1a21111e6b78c143280c49a9701" title="Run a system structure check.">Bundle::checkStructure</a>()<span class="keyword"> const </span>{
+<a name="l00560"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a5927b1a21111e6b78c143280c49a9701">00560</a>         <span class="keywordtype">bool</span> success = <span class="keyword">true</span>;
+<a name="l00561"></a>00561         success = success &amp;&amp; this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a441eda1670224083d5efc20b3a6bb9ff" title="Check the structure of Fibres.">checkFibreStructure</a>();
+<a name="l00562"></a>00562         success = success &amp;&amp; this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a1c1b3a4fe6d32259753d69c8a9b0deaa" title="Check the structure of Channels.">checkChannelStructure</a>();
+<a name="l00563"></a>00563         <span class="keywordflow">return</span> success;
+<a name="l00564"></a>00564 }
+<a name="l00565"></a>00565 
+<a name="l00566"></a>00566 <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#abe52d8718eeb7bb6a17211d4dfbed440" title="Get the next patterns from channels and apply them to their mapped fibres.">Bundle::updatePrimaryInputFibres</a>() {
+<a name="l00567"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#abe52d8718eeb7bb6a17211d4dfbed440">00567</a>         <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt; &amp; channels =
+<a name="l00568"></a>00568                         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ac9bd1c696001ef8acb7291a5f9e81c8b">realInputChannelsMap</a>.getCollection();
+<a name="l00569"></a>00569 
+<a name="l00570"></a>00570         <span class="comment">// forall in channels</span>
+<a name="l00571"></a>00571         {
+<a name="l00572"></a>00572                 std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt;::const_iterator it_channels =
+<a name="l00573"></a>00573                                 channels.begin();
+<a name="l00574"></a>00574                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt;::const_iterator it_channels_end =
+<a name="l00575"></a>00575                                 channels.end();
+<a name="l00576"></a>00576                 <span class="keywordflow">while</span> (it_channels != it_channels_end) {
+<a name="l00577"></a>00577                         <span class="comment">// get the next pattern</span>
+<a name="l00578"></a>00578                         boost::shared_ptr&lt;state::Pattern&gt; pattern = it_channels-&gt;second-&gt;nextPattern();
+<a name="l00579"></a>00579                         <span class="comment">// get the related fibre</span>
+<a name="l00580"></a>00580                         boost::shared_ptr&lt;Fibre&gt; temp_fib = this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ae1259ecf25a6b140cad735defd9069f9" title="Helper method to take a uuid and find its correspondingly mapped object Take an input PatternChannel ...">getPrimaryInputFibreByRealChannel</a>(it_channels-&gt;second-&gt;getUUID());
+<a name="l00581"></a>00581                         <span class="keywordflow">if</span> (temp_fib != 0) {
+<a name="l00582"></a>00582                                 <span class="comment">// find the channel</span>
+<a name="l00583"></a>00583                                 boost::shared_ptr&lt;state::PatternChannel&gt; patchan = this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a101bda3e32c34cf8e0cff4526446af02">getActualPrimaryInputChannelByFibre</a>(
+<a name="l00584"></a>00584                                                 temp_fib-&gt;getUUID());
+<a name="l00585"></a>00585                                 <span class="keywordflow">if</span> (patchan != 0) {
+<a name="l00586"></a>00586                                         <span class="comment">// get pattern from fibre and add it to output channel</span>
+<a name="l00587"></a>00587                                         boost::shared_ptr&lt;state::Pattern&gt; temp_pattern = temp_fib-&gt;getInputNodesPattern();
+<a name="l00588"></a>00588                                         patchan-&gt;addPattern(temp_pattern);
+<a name="l00589"></a>00589                                         std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::updatePrimaryInputFibres: uuid: &quot;</span> &lt;&lt; temp_fib-&gt;getUUID() &lt;&lt; <span class="stringliteral">&quot; pattern (&quot;</span>
+<a name="l00590"></a>00590                                                         &lt;&lt; patchan-&gt;getPatternMap().size() &lt;&lt; <span class="stringliteral">&quot;): &quot;</span> &lt;&lt; temp_pattern-&gt;getString() &lt;&lt; std::endl;
+<a name="l00591"></a>00591                                 } <span class="keywordflow">else</span> {
+<a name="l00592"></a>00592                                         std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::updatePrimaryInputFibres: &quot;</span>
+<a name="l00593"></a>00593                                                         &lt;&lt; <span class="stringliteral">&quot;WARNING: Ignoring primary input fibre since cannot find corresponding channel: &quot;</span>
+<a name="l00594"></a>00594                                                         &lt;&lt; temp_fib-&gt;getUUID() &lt;&lt; std::endl;
+<a name="l00595"></a>00595                                 }
+<a name="l00596"></a>00596 
+<a name="l00597"></a>00597                                 <span class="comment">// apply firing pattern to fibre</span>
+<a name="l00598"></a>00598                                 temp_fib-&gt;trigger(*pattern);
+<a name="l00599"></a>00599                                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::updatePrimaryInputFibres: &quot;</span> &lt;&lt; pattern-&gt;getString() &lt;&lt; std::endl;
+<a name="l00600"></a>00600                         } <span class="keywordflow">else</span> {
+<a name="l00601"></a>00601                                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::updatePrimaryInputFibres: &quot;</span>
+<a name="l00602"></a>00602                                                 &lt;&lt; <span class="stringliteral">&quot;WARNING: getPrimaryInputFibreByChannel returned null, ignoring...&quot;</span> &lt;&lt; std::endl;
+<a name="l00603"></a>00603                         }
+<a name="l00604"></a>00604                         ++it_channels;
+<a name="l00605"></a>00605                 }
+<a name="l00606"></a>00606         }
+<a name="l00607"></a>00607 
+<a name="l00608"></a>00608         <span class="comment">// actual update the input fibres</span>
+<a name="l00609"></a>00609         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aa6a461295021bdfb4ef4cab0f136a2c1">inputFibres</a>.<a class="code" href="classcryomesh_1_1structures_1_1FibreMap.html#a9caf159d1ca71ed1046bd52167fe009f">update</a>();
+<a name="l00610"></a>00610 }
+<a name="l00611"></a>00611 
+<a name="l00612"></a>00612 <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a7a95265553776d6216799e143134a59f" title="Get the patterns from primary output fibres and apply them to their mapped pattern channels...">Bundle::updatePrimaryOutputFibres</a>() {
+<a name="l00613"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a7a95265553776d6216799e143134a59f">00613</a>         <span class="comment">// forall in outputFibres</span>
+<a name="l00614"></a>00614         {
+<a name="l00615"></a>00615                 std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Fibre&gt; &gt;::const_iterator it_outputFibres = <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aa671193358b7aba173e45574def3d4c1">outputFibres</a>.begin();
+<a name="l00616"></a>00616                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Fibre&gt; &gt;::const_iterator it_outputFibres_end =
+<a name="l00617"></a>00617                                 <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aa671193358b7aba173e45574def3d4c1">outputFibres</a>.end();
+<a name="l00618"></a>00618                 <span class="keywordflow">while</span> (it_outputFibres != it_outputFibres_end) {
+<a name="l00619"></a>00619                         <span class="comment">// find the channel</span>
+<a name="l00620"></a>00620                         boost::shared_ptr&lt;state::PatternChannel&gt; patchan = this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a13dcea26d3379199f9e993caa5e132d7">getActualPrimaryOutputChannelByFibre</a>(
+<a name="l00621"></a>00621                                         it_outputFibres-&gt;first);
+<a name="l00622"></a>00622                         <span class="keywordflow">if</span> (patchan != 0) {
+<a name="l00623"></a>00623                                 <span class="comment">// get pattern from fibre and add it to output channel</span>
+<a name="l00624"></a>00624                                 boost::shared_ptr&lt;state::Pattern&gt; temp_pattern = it_outputFibres-&gt;second-&gt;getInputNodesPattern();
+<a name="l00625"></a>00625                                 patchan-&gt;addPattern(temp_pattern);
+<a name="l00626"></a>00626                                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::updatePrimaryOutputFibres: uuid: &quot;</span> &lt;&lt; it_outputFibres-&gt;first &lt;&lt; <span class="stringliteral">&quot; pattern (&quot;</span>
+<a name="l00627"></a>00627                                                 &lt;&lt; patchan-&gt;getPatternMap().size() &lt;&lt; <span class="stringliteral">&quot;): &quot;</span> &lt;&lt; temp_pattern-&gt;getString() &lt;&lt; std::endl;
+<a name="l00628"></a>00628                         } <span class="keywordflow">else</span> {
+<a name="l00629"></a>00629                                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::updatePrimaryOutputFibres: &quot;</span>
+<a name="l00630"></a>00630                                                 &lt;&lt; <span class="stringliteral">&quot;WARNING: Ignoring primary output fibre since cannot find corresponding channel: &quot;</span>
+<a name="l00631"></a>00631                                                 &lt;&lt; it_outputFibres-&gt;first &lt;&lt; std::endl;
+<a name="l00632"></a>00632                         }
+<a name="l00633"></a>00633                         ++it_outputFibres;
+<a name="l00634"></a>00634                 }
+<a name="l00635"></a>00635                 <span class="comment">//      std::cout &lt;&lt; printFibreMaps(std::cout) &lt;&lt; std::endl;</span>
+<a name="l00636"></a>00636         }
+<a name="l00637"></a>00637 
+<a name="l00638"></a>00638         <span class="comment">// and actually update fibres, not actually required at the moment since we&#39;re using the input nodes as the end result</span>
+<a name="l00639"></a>00639         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aa671193358b7aba173e45574def3d4c1">outputFibres</a>.<a class="code" href="classcryomesh_1_1structures_1_1FibreMap.html#a9caf159d1ca71ed1046bd52167fe009f">update</a>();
+<a name="l00640"></a>00640 }
+<a name="l00641"></a>00641 
+<a name="l00642"></a>00642 <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a3a8a7cfb5d525ff59a52dd1a39909621" title="Compare the output channels of primary output fibres to expected output channel patterns.">Bundle::matchOutputChannelsSum</a>()<span class="keyword"> const </span>{
+<a name="l00643"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a3a8a7cfb5d525ff59a52dd1a39909621">00643</a>         <span class="comment">// just sum the total of all output channels</span>
+<a name="l00644"></a>00644         <span class="keywordtype">double</span> sum = 0;
+<a name="l00645"></a>00645         <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Fibre&gt; &gt; &amp; all_output_fibres =
+<a name="l00646"></a>00646                         this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a2c14a3f2cc96236bff6548e5103183de" title="Get the output fibres of this bundle.">getOutputFibres</a>().getCollection();
+<a name="l00647"></a>00647         <span class="comment">// forall in all_output_fibres</span>
+<a name="l00648"></a>00648         {
+<a name="l00649"></a>00649                 std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Fibre&gt; &gt;::const_iterator it_all_output_fibres =
+<a name="l00650"></a>00650                                 all_output_fibres.begin();
+<a name="l00651"></a>00651                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Fibre&gt; &gt;::const_iterator it_all_output_fibres_end =
+<a name="l00652"></a>00652                                 all_output_fibres.end();
+<a name="l00653"></a>00653                 <span class="keywordflow">while</span> (it_all_output_fibres != it_all_output_fibres_end) {
+<a name="l00654"></a>00654                         boost::shared_ptr&lt;state::PatternChannel&gt; real_out_channel = this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a00eb0f18cc3331a4e6d0ed4698e92cb5">getRealPrimaryOutputChannelByFibre</a>(
+<a name="l00655"></a>00655                                         it_all_output_fibres-&gt;second-&gt;getUUID());
+<a name="l00656"></a>00656                         boost::shared_ptr&lt;state::PatternChannel&gt; actual_out_channel = this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a13dcea26d3379199f9e993caa5e132d7">getActualPrimaryOutputChannelByFibre</a>(
+<a name="l00657"></a>00657                                         it_all_output_fibres-&gt;second-&gt;getUUID());
+<a name="l00658"></a>00658                         <span class="keywordflow">if</span> (real_out_channel != 0) {
+<a name="l00659"></a>00659                                 <span class="keywordflow">if</span> (actual_out_channel != 0) {
+<a name="l00660"></a>00660                                         <span class="keywordtype">double</span> channel_match = actual_out_channel-&gt;matchGlobally(*real_out_channel);
+<a name="l00661"></a>00661                                         sum += channel_match;
+<a name="l00662"></a>00662                                 } <span class="keywordflow">else</span> {
+<a name="l00663"></a>00663                                         std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::matchOutputChannelsSum: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;ERROR: Actual Output Channel is Null...&quot;</span>
+<a name="l00664"></a>00664                                                         &lt;&lt; std::endl;
+<a name="l00665"></a>00665                                 }
+<a name="l00666"></a>00666                         } <span class="keywordflow">else</span> {
+<a name="l00667"></a>00667                                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::matchOutputChannelsSum: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;ERROR: Real Output Channel is Null...&quot;</span> &lt;&lt; std::endl;
+<a name="l00668"></a>00668                         }
+<a name="l00669"></a>00669 
+<a name="l00670"></a>00670                         ++it_all_output_fibres;
+<a name="l00671"></a>00671                 }
+<a name="l00672"></a>00672         }
+<a name="l00673"></a>00673         <span class="keywordflow">return</span> sum;
+<a name="l00674"></a>00674 }
+<a name="l00675"></a>00675 
+<a name="l00676"></a>00676 <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ae6a553eaab4ddf2b6bbd6bdeca9361ad" title="Set the energy of the bundle.">Bundle::setEnergy</a>(<span class="keywordtype">double</span> d) {
+<a name="l00677"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ae6a553eaab4ddf2b6bbd6bdeca9361ad">00677</a>         this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aac5229c4c52e646767db2144ba745aa6" title="Last energy calculation of the output channel matching.">energy</a> = d;
+<a name="l00678"></a>00678 }
+<a name="l00679"></a>00679 
+<a name="l00680"></a>00680 <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a804c625c912657cebd3350c7c1b53c10" title="Update the statistician if debugging is enabled.">Bundle::updateStatistician</a>() {
+<a name="l00681"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a804c625c912657cebd3350c7c1b53c10">00681</a>         <span class="keywordflow">if</span> (this-&gt;isDebugOn() == <span class="keyword">true</span>) {
+<a name="l00682"></a>00682                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::updateStatistician: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;&quot;</span> &lt;&lt; std::endl;
+<a name="l00683"></a>00683                 <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ad505cbda03b4e78399fd3a9568d79708" title="Statistics object to generate useful info on the bundle.">statistician</a> == 0) {
+<a name="l00684"></a>00684                         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ad505cbda03b4e78399fd3a9568d79708" title="Statistics object to generate useful info on the bundle.">statistician</a> = boost::shared_ptr&lt;utilities::Statistician&gt;(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1utilities_1_1Statistician.html" title="Class to draw together lots of useful statistics and monitoring data for a Bundle and its components...">utilities::Statistician</a>(*<span class="keyword">this</span>));
+<a name="l00685"></a>00685                 }
+<a name="l00686"></a>00686                 <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ad505cbda03b4e78399fd3a9568d79708" title="Statistics object to generate useful info on the bundle.">statistician</a>-&gt;update();
+<a name="l00687"></a>00687         } <span class="keywordflow">else</span> {
+<a name="l00688"></a>00688                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::updateStatistician: &quot;</span>
+<a name="l00689"></a>00689                                 &lt;&lt; <span class="stringliteral">&quot;WARNING: Ignoring update statistician, debugging isnt enabled. &quot;</span> &lt;&lt; std::endl;
+<a name="l00690"></a>00690         }
+<a name="l00691"></a>00691 }
+<a name="l00692"></a>00692 
+<a name="l00693"></a>00693 <span class="keyword">const</span> boost::shared_ptr&lt;state::PatternChannel&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a51eb35ecb02094016f0f3a74fd07f6e9">Bundle::getRealPrimaryInputChannelByFibre</a>(
+<a name="l00694"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a51eb35ecb02094016f0f3a74fd07f6e9">00694</a>                 <span class="keyword">const</span> boost::uuids::uuid fibre_uuid)<span class="keyword"> const </span>{
+<a name="l00695"></a>00695         <span class="keywordflow">return</span> this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a237b9698b966c6498fb723f685292599" title="Helper method to take a uuid and find its correspondingly mapped object Take an Fibre uuid and find t...">getPrimaryChannelByFibre</a>(fibre_uuid, <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ac9bd1c696001ef8acb7291a5f9e81c8b">realInputChannelsMap</a>, <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#adaf7fa91209de01b9d42ae2d8228c3cd">realFibrePatternChannelMap</a>);
+<a name="l00696"></a>00696 }
+<a name="l00697"></a>00697 <span class="keyword">const</span> boost::shared_ptr&lt;state::PatternChannel&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a00eb0f18cc3331a4e6d0ed4698e92cb5">Bundle::getRealPrimaryOutputChannelByFibre</a>(
+<a name="l00698"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a00eb0f18cc3331a4e6d0ed4698e92cb5">00698</a>                 <span class="keyword">const</span> boost::uuids::uuid fibre_uuid)<span class="keyword"> const </span>{
+<a name="l00699"></a>00699         <span class="keywordflow">return</span> this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a237b9698b966c6498fb723f685292599" title="Helper method to take a uuid and find its correspondingly mapped object Take an Fibre uuid and find t...">getPrimaryChannelByFibre</a>(fibre_uuid, <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a4043d8bfeb8b066418029864f51d92de">realOutputChannelsMap</a>, <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#adaf7fa91209de01b9d42ae2d8228c3cd">realFibrePatternChannelMap</a>);
+<a name="l00700"></a>00700 }
+<a name="l00701"></a>00701 <span class="keyword">const</span> boost::shared_ptr&lt;state::PatternChannel&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a101bda3e32c34cf8e0cff4526446af02">Bundle::getActualPrimaryInputChannelByFibre</a>(
+<a name="l00702"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a101bda3e32c34cf8e0cff4526446af02">00702</a>                 <span class="keyword">const</span> boost::uuids::uuid fibre_uuid)<span class="keyword"> const </span>{
+<a name="l00703"></a>00703         <span class="keywordflow">return</span> this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a237b9698b966c6498fb723f685292599" title="Helper method to take a uuid and find its correspondingly mapped object Take an Fibre uuid and find t...">getPrimaryChannelByFibre</a>(fibre_uuid, <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ae20b2f9819708971357148dd024db00d">actualInputChannelsMap</a>, <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a0f3e20833ce850f97ae450d27a4607dd">actualFibrePatternChannelMap</a>);
+<a name="l00704"></a>00704 }
+<a name="l00705"></a>00705 <span class="keyword">const</span> boost::shared_ptr&lt;state::PatternChannel&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a13dcea26d3379199f9e993caa5e132d7">Bundle::getActualPrimaryOutputChannelByFibre</a>(
+<a name="l00706"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a13dcea26d3379199f9e993caa5e132d7">00706</a>                 <span class="keyword">const</span> boost::uuids::uuid fibre_uuid)<span class="keyword"> const </span>{
+<a name="l00707"></a>00707         <span class="keywordflow">return</span> this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a237b9698b966c6498fb723f685292599" title="Helper method to take a uuid and find its correspondingly mapped object Take an Fibre uuid and find t...">getPrimaryChannelByFibre</a>(fibre_uuid, <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ac67a6d7b29b37b8927c93350e8bcf6e5">actualOutputChannelsMap</a>, <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a0f3e20833ce850f97ae450d27a4607dd">actualFibrePatternChannelMap</a>);
+<a name="l00708"></a>00708 }
+<a name="l00709"></a>00709 
+<a name="l00710"></a>00710 <span class="keyword">const</span> boost::shared_ptr&lt;Fibre&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ae1259ecf25a6b140cad735defd9069f9" title="Helper method to take a uuid and find its correspondingly mapped object Take an input PatternChannel ...">Bundle::getPrimaryInputFibreByRealChannel</a>(<span class="keyword">const</span> boost::uuids::uuid pattern_channel_uuid)<span class="keyword"> const </span>{
+<a name="l00711"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ae1259ecf25a6b140cad735defd9069f9">00711</a>         <span class="keywordflow">return</span> this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aecdb1fc4017f4e4aa954b4158e99c86f" title="Helper method to take a uuid and find its correspondingly mapped object Take an channel uuid and find...">getPrimaryFibreByChannel</a>(pattern_channel_uuid, <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aa6a461295021bdfb4ef4cab0f136a2c1">inputFibres</a>, <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#adaf7fa91209de01b9d42ae2d8228c3cd">realFibrePatternChannelMap</a>);
+<a name="l00712"></a>00712 }
+<a name="l00713"></a>00713 <span class="keyword">const</span> boost::shared_ptr&lt;Fibre&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a7ba3f747f8e164f0c0984fdb14922e7a" title="Helper method to take a uuid and find its correspondingly mapped object Take an output PatternChannel...">Bundle::getPrimaryOutputFibreByRealChannel</a>(<span class="keyword">const</span> boost::uuids::uuid pattern_channel_uuid)<span class="keyword"> const </span>{
+<a name="l00714"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a7ba3f747f8e164f0c0984fdb14922e7a">00714</a>         <span class="keywordflow">return</span> this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aecdb1fc4017f4e4aa954b4158e99c86f" title="Helper method to take a uuid and find its correspondingly mapped object Take an channel uuid and find...">getPrimaryFibreByChannel</a>(pattern_channel_uuid, <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aa671193358b7aba173e45574def3d4c1">outputFibres</a>, <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#adaf7fa91209de01b9d42ae2d8228c3cd">realFibrePatternChannelMap</a>);
+<a name="l00715"></a>00715 }
+<a name="l00716"></a>00716 <span class="keyword">const</span> boost::shared_ptr&lt;Fibre&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ad80f4bbb8bdc379e156282bf0b17fbc3">Bundle::getPrimaryInputFibreByActualChannel</a>(
+<a name="l00717"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ad80f4bbb8bdc379e156282bf0b17fbc3">00717</a>                 <span class="keyword">const</span> boost::uuids::uuid pattern_channel_uuid)<span class="keyword"> const </span>{
+<a name="l00718"></a>00718         <span class="keywordflow">return</span> this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aecdb1fc4017f4e4aa954b4158e99c86f" title="Helper method to take a uuid and find its correspondingly mapped object Take an channel uuid and find...">getPrimaryFibreByChannel</a>(pattern_channel_uuid, <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aa6a461295021bdfb4ef4cab0f136a2c1">inputFibres</a>, <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a0f3e20833ce850f97ae450d27a4607dd">actualFibrePatternChannelMap</a>);
+<a name="l00719"></a>00719 }
+<a name="l00720"></a>00720 <span class="keyword">const</span> boost::shared_ptr&lt;Fibre&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ae6ccd53821a90466d96ebcbf171549a2">Bundle::getPrimaryOutputFibreByActualChannel</a>(
+<a name="l00721"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ae6ccd53821a90466d96ebcbf171549a2">00721</a>                 <span class="keyword">const</span> boost::uuids::uuid pattern_channel_uuid)<span class="keyword"> const </span>{
+<a name="l00722"></a>00722         <span class="keywordflow">return</span> this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aecdb1fc4017f4e4aa954b4158e99c86f" title="Helper method to take a uuid and find its correspondingly mapped object Take an channel uuid and find...">getPrimaryFibreByChannel</a>(pattern_channel_uuid, <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aa671193358b7aba173e45574def3d4c1">outputFibres</a>, <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a0f3e20833ce850f97ae450d27a4607dd">actualFibrePatternChannelMap</a>);
+<a name="l00723"></a>00723 }
+<a name="l00724"></a>00724 <span class="keyword">const</span> boost::shared_ptr&lt;Fibre&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aecdb1fc4017f4e4aa954b4158e99c86f" title="Helper method to take a uuid and find its correspondingly mapped object Take an channel uuid and find...">Bundle::getPrimaryFibreByChannel</a>(<span class="keyword">const</span> boost::uuids::uuid <span class="keywordtype">id</span>, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1FibreMap.html">FibreMap</a> &amp; map,
+<a name="l00725"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#aecdb1fc4017f4e4aa954b4158e99c86f">00725</a>                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::uuids::uuid&gt; &amp; fibrepattern_channelmap)<span class="keyword"> const </span>{
+<a name="l00726"></a>00726         boost::uuids::uuid fibre_id;
+<a name="l00727"></a>00727         boost::shared_ptr&lt;Fibre&gt; found_fibre;
+<a name="l00728"></a>00728         <span class="comment">// forall in fibrePatternChannelMap</span>
+<a name="l00729"></a>00729         {
+<a name="l00730"></a>00730                 <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;
+<a name="l00731"></a>00731                 std::map&lt;boost::uuids::uuid, boost::uuids::uuid&gt;::const_iterator it_fibrePatternChannelMap =
+<a name="l00732"></a>00732                                 fibrepattern_channelmap.begin();
+<a name="l00733"></a>00733                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::uuids::uuid&gt;::const_iterator it_fibrePatternChannelMap_end =
+<a name="l00734"></a>00734                                 fibrepattern_channelmap.end();
+<a name="l00735"></a>00735                 <span class="keywordflow">while</span> (it_fibrePatternChannelMap != it_fibrePatternChannelMap_end &amp;&amp; found != <span class="keyword">true</span>) {
+<a name="l00736"></a>00736                         <span class="keywordflow">if</span> (it_fibrePatternChannelMap-&gt;second == <span class="keywordtype">id</span>) {
+<a name="l00737"></a>00737                                 fibre_id = it_fibrePatternChannelMap-&gt;first;
+<a name="l00738"></a>00738                                 found = <span class="keyword">true</span>;
+<a name="l00739"></a>00739                         }
+<a name="l00740"></a>00740                         ++it_fibrePatternChannelMap;
+<a name="l00741"></a>00741                 }
+<a name="l00742"></a>00742         }
+<a name="l00743"></a>00743 
+<a name="l00744"></a>00744         <span class="keywordflow">if</span> (fibre_id != boost::uuids::nil_uuid()) {
+<a name="l00745"></a>00745                 std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Fibre&gt; &gt;::const_iterator it_fibre_found =
+<a name="l00746"></a>00746                                 map.getCollection().find(fibre_id);
+<a name="l00747"></a>00747                 <span class="keywordflow">if</span> (it_fibre_found != map.getCollection().end()) {
+<a name="l00748"></a>00748                         found_fibre = it_fibre_found-&gt;second;
+<a name="l00749"></a>00749                 } <span class="keywordflow">else</span> {
+<a name="l00750"></a>00750                         std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::getPrimaryFibreByChannel: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;WARNING: Cannot find primary fibre in map: &quot;</span>
+<a name="l00751"></a>00751                                         &lt;&lt; fibre_id &lt;&lt; std::endl;
+<a name="l00752"></a>00752                         std::cout &lt;&lt; <span class="stringliteral">&quot;{&quot;</span>;
+<a name="l00753"></a>00753                         <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Fibre&gt; &gt; &amp; temp_map = map.getCollection();
+<a name="l00754"></a>00754                         <span class="comment">// forall in temp_map</span>
+<a name="l00755"></a>00755                         {
+<a name="l00756"></a>00756                                 std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Fibre&gt; &gt;::const_iterator it_temp_map = temp_map.begin();
+<a name="l00757"></a>00757                                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Fibre&gt; &gt;::const_iterator it_temp_map_end =
+<a name="l00758"></a>00758                                                 temp_map.end();
+<a name="l00759"></a>00759                                 <span class="keywordflow">while</span> (it_temp_map != it_temp_map_end) {
+<a name="l00760"></a>00760                                         std::cout &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; it_temp_map-&gt;first;
+<a name="l00761"></a>00761                                         ++it_temp_map;
+<a name="l00762"></a>00762                                         <span class="keywordflow">if</span> (it_temp_map != it_temp_map_end) {
+<a name="l00763"></a>00763                                                 std::cout &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;
+<a name="l00764"></a>00764                                         }
+<a name="l00765"></a>00765                                 }
+<a name="l00766"></a>00766                         }
+<a name="l00767"></a>00767                         std::cout &lt;&lt; <span class="stringliteral">&quot; }&quot;</span> &lt;&lt; std::endl;
+<a name="l00768"></a>00768                 }
+<a name="l00769"></a>00769         } <span class="keywordflow">else</span> {
+<a name="l00770"></a>00770                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::getPrimaryFibreByChannel: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;WARNING: Cannot find mapped pattern channel: &quot;</span> &lt;&lt; <span class="keywordtype">id</span>
+<a name="l00771"></a>00771                                 &lt;&lt; std::endl;
+<a name="l00772"></a>00772         }
+<a name="l00773"></a>00773         <span class="keywordflow">return</span> found_fibre;
+<a name="l00774"></a>00774 }
+<a name="l00775"></a>00775 <span class="keyword">const</span> boost::shared_ptr&lt;state::PatternChannel&gt; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a237b9698b966c6498fb723f685292599" title="Helper method to take a uuid and find its correspondingly mapped object Take an Fibre uuid and find t...">Bundle::getPrimaryChannelByFibre</a>(<span class="keyword">const</span> boost::uuids::uuid <span class="keywordtype">id</span>,
+<a name="l00776"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a237b9698b966c6498fb723f685292599">00776</a>                 <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> &amp; map,
+<a name="l00777"></a>00777                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::uuids::uuid&gt; &amp; fibrepattern_channelmap)<span class="keyword"> const </span>{
+<a name="l00778"></a>00778         boost::uuids::uuid pattern_channel_id;
+<a name="l00779"></a>00779         boost::shared_ptr&lt;state::PatternChannel&gt; found_channel;
+<a name="l00780"></a>00780 
+<a name="l00781"></a>00781         <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::uuids::uuid&gt;::const_iterator it_found = fibrepattern_channelmap.find(<span class="keywordtype">id</span>);
+<a name="l00782"></a>00782         <span class="keywordflow">if</span> (it_found != fibrepattern_channelmap.end()) {
+<a name="l00783"></a>00783                 pattern_channel_id = it_found-&gt;second;
+<a name="l00784"></a>00784 
+<a name="l00785"></a>00785                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt;::const_iterator it_patchan_found =
+<a name="l00786"></a>00786                                 map.getCollection().find(pattern_channel_id);
+<a name="l00787"></a>00787                 <span class="keywordflow">if</span> (it_patchan_found != map.getCollection().end()) {
+<a name="l00788"></a>00788                         found_channel = it_patchan_found-&gt;second;
+<a name="l00789"></a>00789                 } <span class="keywordflow">else</span> {
+<a name="l00790"></a>00790                         std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::getPrimaryChannelByFibre: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;WARNING: Cannot find pattern channel in map: &quot;</span>
+<a name="l00791"></a>00791                                         &lt;&lt; pattern_channel_id &lt;&lt; std::endl;
+<a name="l00792"></a>00792                         <span class="comment">//      std::cout &lt;&lt; printChannels(std::cout) &lt;&lt; std::endl;</span>
+<a name="l00793"></a>00793                 }
+<a name="l00794"></a>00794         } <span class="keywordflow">else</span> {
+<a name="l00795"></a>00795                 std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::getPrimaryChannelByFibre: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;WARNING: Cannot find mapped fibre: &quot;</span> &lt;&lt; <span class="keywordtype">id</span> &lt;&lt; std::endl;
+<a name="l00796"></a>00796         }
+<a name="l00797"></a>00797 
+<a name="l00798"></a>00798         <span class="keywordflow">return</span> found_channel;
+<a name="l00799"></a>00799 }
+<a name="l00800"></a>00800 
+<a name="l00801"></a>00801 <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;
+<a name="l00802"></a>00802 std::ostream &amp; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ae188295d5ab2d7bbc1c98ed68825c461" title="Print out a uuid search.">Bundle::printSearch</a>(std::ostream &amp; os, <span class="keyword">const</span> boost::uuids::uuid &amp; uuid,
+<a name="l00803"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ae188295d5ab2d7bbc1c98ed68825c461">00803</a>                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt; &amp; map)<span class="keyword"> const </span>{
+<a name="l00804"></a>00804         os &lt;&lt; uuid &lt;&lt; <span class="stringliteral">&quot; : &quot;</span> &lt;&lt; <span class="stringliteral">&quot;{&quot;</span>;
+<a name="l00805"></a>00805         <span class="comment">// forall in temp_map</span>
+<a name="l00806"></a>00806         {
+<a name="l00807"></a>00807                 <span class="keyword">typename</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt;::const_iterator it_temp_map = map.begin();
+<a name="l00808"></a>00808                 <span class="keyword">const</span> <span class="keyword">typename</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt;::const_iterator it_temp_map_end = map.end();
+<a name="l00809"></a>00809                 <span class="keywordflow">while</span> (it_temp_map != it_temp_map_end) {
+<a name="l00810"></a>00810                         os &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; it_temp_map-&gt;first
+<a name="l00811"></a>00811                         <span class="comment">//&lt;&lt; &quot; : &quot;&lt;&lt;it_temp_map-&gt;second-&gt;getUUIDString()</span>
+<a name="l00812"></a>00812                                         &lt;&lt; <span class="stringliteral">&quot;) &quot;</span>;
+<a name="l00813"></a>00813                         ++it_temp_map;
+<a name="l00814"></a>00814                         <span class="keywordflow">if</span> (it_temp_map != it_temp_map_end) {
+<a name="l00815"></a>00815                                 os &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;
+<a name="l00816"></a>00816                         }
+<a name="l00817"></a>00817                 }
+<a name="l00818"></a>00818         }
+<a name="l00819"></a>00819 
+<a name="l00820"></a>00820         os &lt;&lt; <span class="stringliteral">&quot; }&quot;</span> &lt;&lt; std::endl;
+<a name="l00821"></a>00821         <span class="keywordflow">return</span> os;
+<a name="l00822"></a>00822 }
+<a name="l00823"></a>00823 
+<a name="l00824"></a>00824 std::ostream&amp; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a1b2bdda71a78b4e89af23f21e7611ee4" title="Print the bundle to stream.">Bundle::print</a>(std::ostream &amp; os, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Loggable.html#a4d85401f6c81bc8ed94e49d66ae574c5" title="Enum representing print detail.">common::Loggable::LoggingDepth</a> depth)<span class="keyword"> const </span>{
+<a name="l00825"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a1b2bdda71a78b4e89af23f21e7611ee4">00825</a>         std::string tab;
+<a name="l00826"></a>00826         <span class="keywordflow">if</span> (depth == <a class="code" href="classcryomesh_1_1common_1_1Loggable.html#a4d85401f6c81bc8ed94e49d66ae574c5a51f5abcf5a53a8930a09b065fc64a44f">SUMMARY</a>) {
+<a name="l00827"></a>00827                 os &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;SUMMARY **************************************&quot;</span> &lt;&lt; std::endl &lt;&lt; std::endl;
+<a name="l00828"></a>00828         } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (depth == <a class="code" href="classcryomesh_1_1common_1_1Loggable.html#a4d85401f6c81bc8ed94e49d66ae574c5ae496af0b41e3b64530b61e315822cc51">MAX</a>) {
+<a name="l00829"></a>00829                 os &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;MAX *******************************************&quot;</span> &lt;&lt; std::endl &lt;&lt; std::endl;
+<a name="l00830"></a>00830         }
+<a name="l00831"></a>00831         <span class="keywordflow">if</span> (depth == <a class="code" href="classcryomesh_1_1common_1_1Loggable.html#a4d85401f6c81bc8ed94e49d66ae574c5a51f5abcf5a53a8930a09b065fc64a44f">SUMMARY</a> || depth == <a class="code" href="classcryomesh_1_1common_1_1Loggable.html#a4d85401f6c81bc8ed94e49d66ae574c5ae496af0b41e3b64530b61e315822cc51">MAX</a>) {
+<a name="l00832"></a>00832 
+<a name="l00833"></a>00833                 <span class="comment">// bundle general details</span>
+<a name="l00834"></a>00834                 os &lt;&lt; <span class="stringliteral">&quot;Bundle: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;cycle: &quot;</span> &lt;&lt; <a class="code" href="classcryomesh_1_1common_1_1TimeKeeper.html#afe7b229532e11119cb2653192615d679">common::TimeKeeper::getTimeKeeper</a>().getCycle() &lt;&lt; <span class="stringliteral">&quot; clusters:&quot;</span>
+<a name="l00835"></a>00835                                 &lt;&lt; this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a181e1f2aaa3b529b8609917d5b5315e0" title="Get the clusters in this bundle.">getClusters</a>().getSize() &lt;&lt; <span class="stringliteral">&quot; fibres:&quot;</span> &lt;&lt; this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a8f112d3b34f84511781879217b15c6d2" title="Get the mutable clusters in this bundle.">getFibres</a>().getSize() &lt;&lt; std::endl;
+<a name="l00836"></a>00836         }
+<a name="l00837"></a>00837         <span class="keywordflow">if</span> (depth == <a class="code" href="classcryomesh_1_1common_1_1Loggable.html#a4d85401f6c81bc8ed94e49d66ae574c5ae496af0b41e3b64530b61e315822cc51">MAX</a>) {
+<a name="l00838"></a>00838 
+<a name="l00839"></a>00839                 <span class="comment">// Clustermap</span>
+<a name="l00840"></a>00840                 os &lt;&lt; this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a181e1f2aaa3b529b8609917d5b5315e0" title="Get the clusters in this bundle.">getClusters</a>() &lt;&lt; std::endl;
+<a name="l00841"></a>00841                 <span class="comment">// fibremap</span>
+<a name="l00842"></a>00842                 os &lt;&lt; this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a8f112d3b34f84511781879217b15c6d2" title="Get the mutable clusters in this bundle.">getFibres</a>() &lt;&lt; std::endl;
+<a name="l00843"></a>00843                 <span class="comment">// connecting fibres patterns</span>
+<a name="l00844"></a>00844 
+<a name="l00845"></a>00845                 os &lt;&lt; this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a5c6496d00065462122a71c812fa7a4e8" title="Get the input fibres of this bundle.">getInputFibres</a>() &lt;&lt; std::endl;
+<a name="l00846"></a>00846                 os &lt;&lt; this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a2c14a3f2cc96236bff6548e5103183de" title="Get the output fibres of this bundle.">getOutputFibres</a>() &lt;&lt; std::endl;
+<a name="l00847"></a>00847 
+<a name="l00848"></a>00848                 this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ab7308eec882450980ebfbb7167a3538d">printFibreMaps</a>(os) &lt;&lt; std::endl &lt;&lt; std::endl;
+<a name="l00849"></a>00849                 this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ad794a923f68c51c5c1ac4588586b6be7" title="Print the channels to stream.">printChannels</a>(os) &lt;&lt; std::endl &lt;&lt; std::endl;
+<a name="l00850"></a>00850 
+<a name="l00851"></a>00851         }
+<a name="l00852"></a>00852         os &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;***********************************************&quot;</span> &lt;&lt; std::endl &lt;&lt; std::endl;
+<a name="l00853"></a>00853         <span class="keywordflow">return</span> os;
+<a name="l00854"></a>00854 }
+<a name="l00855"></a>00855 
+<a name="l00856"></a>00856 std::ostream&amp; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ad794a923f68c51c5c1ac4588586b6be7" title="Print the channels to stream.">Bundle::printChannels</a>(std::ostream &amp; os)<span class="keyword"> const </span>{
+<a name="l00857"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ad794a923f68c51c5c1ac4588586b6be7">00857</a>         std::cout &lt;&lt; <span class="stringliteral">&quot; Bundle::printChannels: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;&quot;</span> &lt;&lt; std::endl;
+<a name="l00858"></a>00858 
+<a name="l00859"></a>00859         <span class="comment">// forall in in_channels</span>
+<a name="l00860"></a>00860         {
+<a name="l00861"></a>00861                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt; in_channels =
+<a name="l00862"></a>00862                                 <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ac9bd1c696001ef8acb7291a5f9e81c8b">realInputChannelsMap</a>.getCollection();
+<a name="l00863"></a>00863                 os &lt;&lt; <span class="stringliteral">&quot;Real Input Channels -&gt; {&quot;</span>;
+<a name="l00864"></a>00864                 std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt;::const_iterator it_in_channels =
+<a name="l00865"></a>00865                                 in_channels.begin();
+<a name="l00866"></a>00866                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt;::const_iterator
+<a name="l00867"></a>00867                                 it_in_channels_end = in_channels.end();
+<a name="l00868"></a>00868                 <span class="keywordflow">while</span> (it_in_channels != it_in_channels_end) {
+<a name="l00869"></a>00869                         os &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; it_in_channels-&gt;first &lt;&lt; <span class="stringliteral">&quot; : &quot;</span> &lt;&lt; it_in_channels-&gt;second-&gt;getRefID() &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;
+<a name="l00870"></a>00870                         ++it_in_channels;
+<a name="l00871"></a>00871                         <span class="keywordflow">if</span> (it_in_channels != it_in_channels_end) {
+<a name="l00872"></a>00872                                 os &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; std::endl;
+<a name="l00873"></a>00873                         }
+<a name="l00874"></a>00874                 }
+<a name="l00875"></a>00875                 os &lt;&lt; <span class="stringliteral">&quot;}&quot;</span> &lt;&lt; std::endl;
+<a name="l00876"></a>00876         }
+<a name="l00877"></a>00877 
+<a name="l00878"></a>00878         <span class="comment">// forall in out_channels</span>
+<a name="l00879"></a>00879         {
+<a name="l00880"></a>00880                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt; out_channels =
+<a name="l00881"></a>00881                                 <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a4043d8bfeb8b066418029864f51d92de">realOutputChannelsMap</a>.getCollection();
+<a name="l00882"></a>00882                 os &lt;&lt; <span class="stringliteral">&quot;Real Output Channels -&gt; {&quot;</span>;
+<a name="l00883"></a>00883                 std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt;::const_iterator it_out_channels =
+<a name="l00884"></a>00884                                 out_channels.begin();
+<a name="l00885"></a>00885                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt;::const_iterator
+<a name="l00886"></a>00886                                 it_out_channels_end = out_channels.end();
+<a name="l00887"></a>00887                 <span class="keywordflow">while</span> (it_out_channels != it_out_channels_end) {
+<a name="l00888"></a>00888                         os &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; it_out_channels-&gt;first &lt;&lt; <span class="stringliteral">&quot; : &quot;</span> &lt;&lt; it_out_channels-&gt;second-&gt;getRefID() &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;
+<a name="l00889"></a>00889                         ++it_out_channels;
+<a name="l00890"></a>00890                         <span class="keywordflow">if</span> (it_out_channels != it_out_channels_end) {
+<a name="l00891"></a>00891                                 os &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; std::endl;
+<a name="l00892"></a>00892                         }
+<a name="l00893"></a>00893                 }
+<a name="l00894"></a>00894                 os &lt;&lt; <span class="stringliteral">&quot;}&quot;</span> &lt;&lt; std::endl;
+<a name="l00895"></a>00895         }
+<a name="l00896"></a>00896 
+<a name="l00897"></a>00897         <span class="comment">// forall in in_channels</span>
+<a name="l00898"></a>00898         {
+<a name="l00899"></a>00899                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt; actual_in_channels =
+<a name="l00900"></a>00900                                 <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ae20b2f9819708971357148dd024db00d">actualInputChannelsMap</a>.getCollection();
+<a name="l00901"></a>00901                 os &lt;&lt; <span class="stringliteral">&quot;Actual Input Channels -&gt; {&quot;</span>;
+<a name="l00902"></a>00902                 std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt;::const_iterator it_in_channels =
+<a name="l00903"></a>00903                                 actual_in_channels.begin();
+<a name="l00904"></a>00904                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt;::const_iterator
+<a name="l00905"></a>00905                                 it_in_channels_end = actual_in_channels.end();
+<a name="l00906"></a>00906                 <span class="keywordflow">while</span> (it_in_channels != it_in_channels_end) {
+<a name="l00907"></a>00907                         os &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; it_in_channels-&gt;first &lt;&lt; <span class="stringliteral">&quot; : &quot;</span> &lt;&lt; it_in_channels-&gt;second-&gt;getRefID() &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;
+<a name="l00908"></a>00908                         ++it_in_channels;
+<a name="l00909"></a>00909                         <span class="keywordflow">if</span> (it_in_channels != it_in_channels_end) {
+<a name="l00910"></a>00910                                 os &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; std::endl;
+<a name="l00911"></a>00911                         }
+<a name="l00912"></a>00912                 }
+<a name="l00913"></a>00913                 os &lt;&lt; <span class="stringliteral">&quot;}&quot;</span> &lt;&lt; std::endl;
+<a name="l00914"></a>00914         }
+<a name="l00915"></a>00915 
+<a name="l00916"></a>00916         <span class="comment">// forall in out_channels</span>
+<a name="l00917"></a>00917         {
+<a name="l00918"></a>00918                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt; actual_out_channels =
+<a name="l00919"></a>00919                                 <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ac67a6d7b29b37b8927c93350e8bcf6e5">actualOutputChannelsMap</a>.getCollection();
+<a name="l00920"></a>00920                 os &lt;&lt; <span class="stringliteral">&quot;Actual Output Channels -&gt; {&quot;</span>;
+<a name="l00921"></a>00921                 std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt;::const_iterator it_out_channels =
+<a name="l00922"></a>00922                                 actual_out_channels.begin();
+<a name="l00923"></a>00923                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt;::const_iterator
+<a name="l00924"></a>00924                                 it_out_channels_end = actual_out_channels.end();
+<a name="l00925"></a>00925                 <span class="keywordflow">while</span> (it_out_channels != it_out_channels_end) {
+<a name="l00926"></a>00926                         os &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; it_out_channels-&gt;first &lt;&lt; <span class="stringliteral">&quot; : &quot;</span> &lt;&lt; it_out_channels-&gt;second-&gt;getRefID() &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;
+<a name="l00927"></a>00927                         ++it_out_channels;
+<a name="l00928"></a>00928                         <span class="keywordflow">if</span> (it_out_channels != it_out_channels_end) {
+<a name="l00929"></a>00929                                 os &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; std::endl;
+<a name="l00930"></a>00930                         }
+<a name="l00931"></a>00931                 }
+<a name="l00932"></a>00932                 os &lt;&lt; <span class="stringliteral">&quot;}&quot;</span> &lt;&lt; std::endl;
+<a name="l00933"></a>00933         }
+<a name="l00934"></a>00934 
+<a name="l00935"></a>00935         <span class="keywordflow">return</span> os;
+<a name="l00936"></a>00936 }
+<a name="l00937"></a>00937 
+<a name="l00938"></a>00938 std::ostream &amp; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ab7308eec882450980ebfbb7167a3538d">Bundle::printFibreMaps</a>(std::ostream &amp; os)<span class="keyword"> const </span>{
+<a name="l00939"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#ab7308eec882450980ebfbb7167a3538d">00939</a> 
+<a name="l00940"></a>00940         std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::printFibreMaps: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;RealFibrePatternChannelMap&quot;</span> &lt;&lt; std::endl;
+<a name="l00941"></a>00941         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a6a6110f318167f4cc82ab6736e291628">printFibreMap</a>(os, this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a2e31be3bab4a15e4e9ba6aeac48b91df" title="Get the map of fibres to their associated pattern channels.">getRealFibrePatternChannelMap</a>());
+<a name="l00942"></a>00942         std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::printFibreMaps: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;ActualFibrePatternChannelMap&quot;</span> &lt;&lt; std::endl;
+<a name="l00943"></a>00943         <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a6a6110f318167f4cc82ab6736e291628">printFibreMap</a>(os, this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a872de96a76f772182eda2abbb98a99cc">getActualFibrePatternChannelMap</a>());
+<a name="l00944"></a>00944         <span class="keywordflow">return</span> os;
+<a name="l00945"></a>00945 }
+<a name="l00946"></a>00946 
+<a name="l00947"></a>00947 std::ostream &amp; <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a6a6110f318167f4cc82ab6736e291628">Bundle::printFibreMap</a>(std::ostream &amp; os,
+<a name="l00948"></a><a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a6a6110f318167f4cc82ab6736e291628">00948</a>                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::uuids::uuid&gt; &amp; fibre_map)<span class="keyword"> const </span>{
+<a name="l00949"></a>00949         <span class="comment">// forall in fibre_map</span>
+<a name="l00950"></a>00950         {
+<a name="l00951"></a>00951                 std::map&lt;boost::uuids::uuid, boost::uuids::uuid&gt;::const_iterator it_fibre_map = fibre_map.begin();
+<a name="l00952"></a>00952                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::uuids::uuid&gt;::const_iterator it_fibre_map_end = fibre_map.end();
+<a name="l00953"></a>00953                 <span class="keywordflow">while</span> (it_fibre_map != it_fibre_map_end) {
+<a name="l00954"></a>00954                         os &lt;&lt; it_fibre_map-&gt;first &lt;&lt; <span class="stringliteral">&quot; : &quot;</span> &lt;&lt; it_fibre_map-&gt;second &lt;&lt; std::endl;
+<a name="l00955"></a>00955                         ++it_fibre_map;
+<a name="l00956"></a>00956                 }
+<a name="l00957"></a>00957         }
+<a name="l00958"></a>00958         <span class="keywordflow">return</span> os;
+<a name="l00959"></a>00959 }
+<a name="l00960"></a>00960 
+<a name="l00961"></a>00961 std::ostream&amp; <a class="code" href="namespacecryomesh_1_1structures.html#a2e1e77e062248b853cfcfc84d5451ca7">operator&lt;&lt;</a>(std::ostream &amp; os, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1Bundle.html" title="A Bundle is the collection of clusters and fibres, it represents the system as a whole.">Bundle</a> &amp; obj) {
+<a name="l00962"></a><a class="code" href="namespacecryomesh_1_1structures.html#a2e1e77e062248b853cfcfc84d5451ca7">00962</a>         std::cout &lt;&lt; <span class="stringliteral">&quot;Bundle::operator &lt;&lt;: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;&quot;</span> &lt;&lt; std::endl;
+<a name="l00963"></a>00963         <span class="keywordflow">return</span> obj.<a class="code" href="classcryomesh_1_1structures_1_1Bundle.html#a1b2bdda71a78b4e89af23f21e7611ee4" title="Print the bundle to stream.">print</a>(os, <a class="code" href="classcryomesh_1_1common_1_1Loggable.html#a4d85401f6c81bc8ed94e49d66ae574c5ae496af0b41e3b64530b61e315822cc51">common::Loggable::MAX</a>);
+<a name="l00964"></a>00964 }
+<a name="l00965"></a>00965 
+<a name="l00966"></a>00966 }<span class="comment">//NAMESPACE</span>
+<a name="l00967"></a>00967 
+<a name="l00968"></a>00968 }<span class="comment">//NAMESPACE</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -414,7 +1037,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -423,7 +1046,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:14 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

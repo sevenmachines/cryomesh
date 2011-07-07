@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>cryomesh: /home/niall/Projects/Eclipse/cryomesh/src/state/Pattern.h Source File</title>
+<title>cryomesh: /home/niall/Projects/Eclipse/CPP/cryomesh/src/state/Pattern.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -54,11 +54,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/niall/Projects/Eclipse/cryomesh/src/state/Pattern.h</h1>  </div>
+<h1>/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/Pattern.h</h1>  </div>
 </div>
 <div class="contents">
 <a href="Pattern_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
@@ -83,106 +84,108 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00020"></a>00020 <span class="preprocessor">#include &lt;boost/serialization/vector.hpp&gt;</span>
 <a name="l00021"></a>00021 <span class="preprocessor">#include &lt;boost/uuid/uuid.hpp&gt;</span>
 <a name="l00022"></a>00022 <span class="preprocessor">#include &lt;boost/uuid/uuid_generators.hpp&gt;</span>
-<a name="l00023"></a>00023 
-<a name="l00024"></a>00024 <span class="keyword">namespace </span>cryomesh {
-<a name="l00025"></a>00025 <span class="keyword">namespace </span>state {
-<a name="l00026"></a><a class="code" href="classcryomesh_1_1state_1_1Pattern.html">00026</a> <span class="keyword">class </span><a class="code" href="classcryomesh_1_1state_1_1Pattern.html">Pattern</a> :<span class="keyword">public</span> common::Tagged{
-<a name="l00027"></a><a class="code" href="classcryomesh_1_1state_1_1Pattern.html#ac98d07dd8f7b70e16ccb9a01abf56b9c">00027</a>         <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classcryomesh_1_1state_1_1Pattern.html#ac98d07dd8f7b70e16ccb9a01abf56b9c">boost::serialization::access</a>;
-<a name="l00028"></a>00028         <span class="keyword">template</span>&lt;<span class="keyword">class</span> Archive&gt;
-<a name="l00029"></a><a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a16858762b062c924331e895ffb31c4dc">00029</a>         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a16858762b062c924331e895ffb31c4dc">serialize</a>(Archive &amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> version) {
-<a name="l00030"></a>00030                 ar &amp; <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#aa8070cf7c7e5621164fcf389baeec552">id</a>;
-<a name="l00031"></a>00031                 ar &amp; <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a9a1488a4d6c293a0c5c5517fbcb47cb7">ids</a>;
-<a name="l00032"></a>00032                 ar &amp; <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a2ceffaffb21669b4712f9af5f5045e6e">binaryString</a>;
-<a name="l00033"></a>00033                 <span class="comment">//ar &amp; tag;</span>
-<a name="l00034"></a>00034         }
-<a name="l00035"></a>00035 <span class="keyword">public</span>:
-<a name="l00036"></a>00036         <span class="comment">/*</span>
-<a name="l00037"></a>00037 <span class="comment">         * Constructor to create an empty object</span>
-<a name="l00038"></a>00038 <span class="comment">         */</span>
-<a name="l00039"></a>00039         <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a5e9e2738edae7cd79164b834e1cdee6c">Pattern</a>();
-<a name="l00040"></a>00040         <span class="comment">/*</span>
-<a name="l00041"></a>00041 <span class="comment">         * Copy constructor</span>
-<a name="l00042"></a>00042 <span class="comment">         */</span>
-<a name="l00043"></a>00043         <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a5e9e2738edae7cd79164b834e1cdee6c">Pattern</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html">Pattern</a> &amp;);
-<a name="l00044"></a>00044         <span class="comment">/*</span>
-<a name="l00045"></a>00045 <span class="comment">         * Constructor to create an object from a bit string</span>
-<a name="l00046"></a>00046 <span class="comment">         */</span>
-<a name="l00047"></a>00047         <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a5e9e2738edae7cd79164b834e1cdee6c">Pattern</a>(<span class="keyword">const</span> std::string &amp;);
-<a name="l00048"></a>00048         <span class="comment">/*</span>
-<a name="l00049"></a>00049 <span class="comment">         * Constructor to create an object from a vector of bools</span>
-<a name="l00050"></a>00050 <span class="comment">         */</span>
-<a name="l00051"></a>00051         <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a5e9e2738edae7cd79164b834e1cdee6c">Pattern</a>(<span class="keyword">const</span> std::vector&lt;bool&gt; &amp;);
-<a name="l00052"></a>00052         <span class="comment">/*</span>
-<a name="l00053"></a>00053 <span class="comment">         * Constructor to create an object from a BinaryString</span>
-<a name="l00054"></a>00054 <span class="comment">         */</span>
-<a name="l00055"></a>00055         <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a5e9e2738edae7cd79164b834e1cdee6c">Pattern</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1state_1_1BinaryString.html">BinaryString</a> &amp; obj);
-<a name="l00056"></a>00056         <span class="keyword">virtual</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a6fd2a03ab3ee83afb5925b5eca5475e2">~Pattern</a>();
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058         <a class="code" href="classcryomesh_1_1state_1_1Pattern.html">Pattern</a>&amp; <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#ae160b228aff3b4bcc49792588b2fbee6">operator=</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html">Pattern</a> &amp;);
-<a name="l00059"></a>00059 
-<a name="l00060"></a>00060         <span class="comment">/*</span>
-<a name="l00061"></a>00061 <span class="comment">         * Compare one pattern to another using their vector&lt;bool&gt; return a match double(0,1)</span>
-<a name="l00062"></a>00062 <span class="comment">         */</span>
-<a name="l00063"></a>00063         <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#ad6f8afd23c5eaeb585d5690496d81c05">compare</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html">Pattern</a> &amp;) <span class="keyword">const</span>;
-<a name="l00064"></a>00064         <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a8dc6809b00c16358f993ac7e774d130a">isAllZeroes</a>() <span class="keyword">const</span>;
-<a name="l00065"></a>00065         <span class="comment">// worker methods</span>
-<a name="l00066"></a>00066         <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a4a9f45cfa7eec822e011b49036436369">operator==</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html">Pattern</a> &amp;) <span class="keyword">const</span>;
-<a name="l00067"></a>00067         <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#ad3fb10247785d26c3cf150f7e69df35a">operator&lt;</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html">Pattern</a> &amp;) <span class="keyword">const</span>;
-<a name="l00068"></a>00068         <span class="comment">// get/set</span>
-<a name="l00069"></a>00069         std::vector&lt;bool&gt; <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#ab6fe1d9bee48f3bdaffb0cf683de4d17">getPattern</a>() <span class="keyword">const</span>;
-<a name="l00070"></a>00070         std::string <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a963b252435300f16df7599c56751555b">getString</a>() <span class="keyword">const</span>;
-<a name="l00071"></a>00071         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#acf193a66c3a2e41d99f40b2666687ad9">setPattern</a>(<span class="keyword">const</span> std::vector&lt;bool&gt; &amp;);
-<a name="l00072"></a>00072         boost::uuids::uuid <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a2f8c838a53fc654b5e3f4af06a1d88e9">getUUID</a>() <span class="keyword">const</span>;
+<a name="l00023"></a>00023 <span class="preprocessor">#include &quot;manager/PatternDatabaseObject.h&quot;</span>
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="keyword">namespace </span>cryomesh {
+<a name="l00026"></a>00026 <span class="keyword">namespace </span>state {
+<a name="l00027"></a><a class="code" href="classcryomesh_1_1state_1_1Pattern.html">00027</a> <span class="keyword">class </span><a class="code" href="classcryomesh_1_1state_1_1Pattern.html">Pattern</a> :<span class="keyword">public</span> common::Tagged{
+<a name="l00028"></a><a class="code" href="classcryomesh_1_1state_1_1Pattern.html#ac98d07dd8f7b70e16ccb9a01abf56b9c">00028</a>         <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classcryomesh_1_1state_1_1Pattern.html#ac98d07dd8f7b70e16ccb9a01abf56b9c">boost::serialization::access</a>;
+<a name="l00029"></a>00029         <span class="keyword">template</span>&lt;<span class="keyword">class</span> Archive&gt;
+<a name="l00030"></a><a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a16858762b062c924331e895ffb31c4dc">00030</a>         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a16858762b062c924331e895ffb31c4dc">serialize</a>(Archive &amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> version) {
+<a name="l00031"></a>00031                 ar &amp; <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#aa8070cf7c7e5621164fcf389baeec552">id</a>;
+<a name="l00032"></a>00032                 ar &amp; <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a9a1488a4d6c293a0c5c5517fbcb47cb7">ids</a>;
+<a name="l00033"></a>00033                 ar &amp; <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a2ceffaffb21669b4712f9af5f5045e6e">binaryString</a>;
+<a name="l00034"></a>00034                 <span class="comment">//ar &amp; tag;</span>
+<a name="l00035"></a>00035         }
+<a name="l00036"></a>00036 <span class="keyword">public</span>:
+<a name="l00037"></a>00037         <span class="comment">/*</span>
+<a name="l00038"></a>00038 <span class="comment">         * Constructor to create an empty object</span>
+<a name="l00039"></a>00039 <span class="comment">         */</span>
+<a name="l00040"></a>00040         <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a5e9e2738edae7cd79164b834e1cdee6c">Pattern</a>();
+<a name="l00041"></a>00041         <span class="comment">/*</span>
+<a name="l00042"></a>00042 <span class="comment">         * Copy constructor</span>
+<a name="l00043"></a>00043 <span class="comment">         */</span>
+<a name="l00044"></a>00044         <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a5e9e2738edae7cd79164b834e1cdee6c">Pattern</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html">Pattern</a> &amp;);
+<a name="l00045"></a>00045         <span class="comment">/*</span>
+<a name="l00046"></a>00046 <span class="comment">         * Constructor to create an object from a bit string</span>
+<a name="l00047"></a>00047 <span class="comment">         */</span>
+<a name="l00048"></a>00048         <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a5e9e2738edae7cd79164b834e1cdee6c">Pattern</a>(<span class="keyword">const</span> std::string &amp;);
+<a name="l00049"></a>00049         <span class="comment">/*</span>
+<a name="l00050"></a>00050 <span class="comment">         * Constructor to create an object from a vector of bools</span>
+<a name="l00051"></a>00051 <span class="comment">         */</span>
+<a name="l00052"></a>00052         <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a5e9e2738edae7cd79164b834e1cdee6c">Pattern</a>(<span class="keyword">const</span> std::vector&lt;bool&gt; &amp;);
+<a name="l00053"></a>00053         <span class="comment">/*</span>
+<a name="l00054"></a>00054 <span class="comment">         * Constructor to create an object from a BinaryString</span>
+<a name="l00055"></a>00055 <span class="comment">         */</span>
+<a name="l00056"></a>00056         <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a5e9e2738edae7cd79164b834e1cdee6c">Pattern</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1state_1_1BinaryString.html">BinaryString</a> &amp; obj);
+<a name="l00057"></a>00057         <span class="keyword">virtual</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a6fd2a03ab3ee83afb5925b5eca5475e2">~Pattern</a>();
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059         <a class="code" href="classcryomesh_1_1state_1_1Pattern.html">Pattern</a>&amp; <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#ae160b228aff3b4bcc49792588b2fbee6">operator=</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html">Pattern</a> &amp;);
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061         <span class="comment">/*</span>
+<a name="l00062"></a>00062 <span class="comment">         * Compare one pattern to another using their vector&lt;bool&gt; return a match double(0,1)</span>
+<a name="l00063"></a>00063 <span class="comment">         */</span>
+<a name="l00064"></a>00064         <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#ad6f8afd23c5eaeb585d5690496d81c05">compare</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html">Pattern</a> &amp;) <span class="keyword">const</span>;
+<a name="l00065"></a>00065         <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a8dc6809b00c16358f993ac7e774d130a">isAllZeroes</a>() <span class="keyword">const</span>;
+<a name="l00066"></a>00066         <span class="comment">// worker methods</span>
+<a name="l00067"></a>00067         <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a4a9f45cfa7eec822e011b49036436369">operator==</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html">Pattern</a> &amp;) <span class="keyword">const</span>;
+<a name="l00068"></a>00068         <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#ad3fb10247785d26c3cf150f7e69df35a">operator&lt;</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html">Pattern</a> &amp;) <span class="keyword">const</span>;
+<a name="l00069"></a>00069         <span class="comment">// get/set</span>
+<a name="l00070"></a>00070         std::vector&lt;bool&gt; <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#ab6fe1d9bee48f3bdaffb0cf683de4d17">getPattern</a>() <span class="keyword">const</span>;
+<a name="l00071"></a>00071         std::string <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a963b252435300f16df7599c56751555b">getString</a>() <span class="keyword">const</span>;
+<a name="l00072"></a>00072         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#acf193a66c3a2e41d99f40b2666687ad9">setPattern</a>(<span class="keyword">const</span> std::vector&lt;bool&gt; &amp;);
 <a name="l00073"></a>00073         <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a34597e6294ffb843326b654991aceb2f">getId</a>() <span class="keyword">const</span>;
 <a name="l00074"></a>00074         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a8ca895dafdf58ae592f41be1d8d6173a">setId</a>(<span class="keywordtype">int</span>);
 <a name="l00075"></a>00075         <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a77793823c718ec5bacf59d3908950390">getWidth</a>() <span class="keyword">const</span>;
-<a name="l00076"></a>00076         <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1state_1_1BinaryString.html">BinaryString</a> &amp; <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a57b18a4b690c70821e7d84847a56d7b9">getBinaryString</a>() <span class="keyword">const</span>;
-<a name="l00077"></a>00077         <a class="code" href="classcryomesh_1_1state_1_1BinaryString.html">BinaryString</a> &amp; <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a22e7fa5faa704b0d95c022d1dc5d67aa">getMutableBinaryString</a>();
-<a name="l00078"></a>00078 
-<a name="l00079"></a>00079         <span class="keyword">const</span> boost::shared_ptr&lt;PatternTag&gt; <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#aec6c5defbc96290f03a2178bbd08a626">getPatternTag</a>() <span class="keyword">const</span>;
-<a name="l00080"></a>00080         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#afae212fb317cf86e70ee93b9a0c6ea21">setPatternTag</a>(boost::shared_ptr&lt;PatternTag&gt; pt);
-<a name="l00081"></a>00081 
-<a name="l00082"></a>00082         <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#aaf0fef8e434a2bf4e2a3de2146506e55">getIds</a>();
-<a name="l00083"></a>00083         <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#abe885f1239abb58a449d945d02513599">setIds</a>(<span class="keywordtype">int</span>);
+<a name="l00076"></a>00076         <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a448d14d09a39d35182bef8169511faf8">getSize</a>() <span class="keyword">const</span>;
+<a name="l00077"></a>00077 <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1state_1_1BinaryString.html">BinaryString</a> &amp; <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a57b18a4b690c70821e7d84847a56d7b9">getBinaryString</a>() <span class="keyword">const</span>;
+<a name="l00078"></a>00078         <a class="code" href="classcryomesh_1_1state_1_1BinaryString.html">BinaryString</a> &amp; <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a22e7fa5faa704b0d95c022d1dc5d67aa">getMutableBinaryString</a>();
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080         <span class="keyword">const</span> boost::shared_ptr&lt;PatternTag&gt; <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#aec6c5defbc96290f03a2178bbd08a626">getPatternTag</a>() <span class="keyword">const</span>;
+<a name="l00081"></a>00081         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#afae212fb317cf86e70ee93b9a0c6ea21">setPatternTag</a>(boost::shared_ptr&lt;PatternTag&gt; pt);
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083         boost::shared_ptr&lt;manager::DatabaseObject&gt; <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a2dd3aa753f926b674aa73688a932ebf7">getDatabaseObject</a>() <span class="keyword">const</span> ;
 <a name="l00084"></a>00084 
-<a name="l00085"></a>00085         <span class="comment">// some useful static methods</span>
-<a name="l00086"></a>00086         <span class="comment">/*</span>
-<a name="l00087"></a>00087 <span class="comment">         * Method to take a vector&lt;bool&gt; and turn it into a bit style string</span>
-<a name="l00088"></a>00088 <span class="comment">         */</span>
-<a name="l00089"></a>00089         <span class="keyword">static</span> std::string <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a8b72b4b8c76445cf788129ed5b6b42a5">patternToString</a>(<span class="keyword">const</span> std::vector&lt;bool&gt; &amp; vec);
-<a name="l00090"></a>00090         <span class="comment">/*</span>
-<a name="l00091"></a>00091 <span class="comment">         * Method to take a  bit style string  and turn it into a vector&lt;bool&gt;</span>
-<a name="l00092"></a>00092 <span class="comment">         */</span>
-<a name="l00093"></a>00093         <span class="keyword">static</span> std::vector&lt;bool&gt; <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a30238bc06f4cbf29d28adff1fd09b280">stringToPattern</a>(<span class="keyword">const</span> std::string &amp;);
-<a name="l00094"></a>00094 
-<a name="l00105"></a>00105         <span class="keyword">static</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html">Pattern</a> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#ad253bf9c3cb1997ce2f8db2ded5455ba" title="Generate a random pattern of width.">getRandom</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> width, <span class="keywordtype">double</span> fraction=0.5);
-<a name="l00106"></a>00106 
-<a name="l00107"></a>00107         <span class="keyword">friend</span> std::ostream &amp; <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#aade38e7e420a07b60712bd1891487f23">operator&lt;&lt;</a>(std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html">Pattern</a> &amp; obj);
-<a name="l00108"></a>00108 
-<a name="l00109"></a>00109 <span class="keyword">private</span>:
-<a name="l00110"></a>00110         <span class="comment">// vector to hold the actual pattern we represent</span>
-<a name="l00111"></a><a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a2ceffaffb21669b4712f9af5f5045e6e">00111</a>         <a class="code" href="classcryomesh_1_1state_1_1BinaryString.html">BinaryString</a> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a2ceffaffb21669b4712f9af5f5045e6e">binaryString</a>;
-<a name="l00112"></a>00112         <span class="comment">// unique-ish id</span>
-<a name="l00113"></a><a class="code" href="classcryomesh_1_1state_1_1Pattern.html#aa8070cf7c7e5621164fcf389baeec552">00113</a>         <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#aa8070cf7c7e5621164fcf389baeec552">id</a>;
-<a name="l00114"></a>00114 
-<a name="l00115"></a>00115         <span class="comment">// identifying tag for this</span>
-<a name="l00116"></a><a class="code" href="classcryomesh_1_1state_1_1Pattern.html#ae6138b7407f2e55de84a1c53fcc14a35">00116</a>         boost::shared_ptr&lt;PatternTag&gt; <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#ae6138b7407f2e55de84a1c53fcc14a35">patternTag</a>;
+<a name="l00085"></a>00085         <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#aaf0fef8e434a2bf4e2a3de2146506e55">getIds</a>();
+<a name="l00086"></a>00086         <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#abe885f1239abb58a449d945d02513599">setIds</a>(<span class="keywordtype">int</span>);
+<a name="l00087"></a>00087 
+<a name="l00088"></a>00088         <span class="comment">// some useful static methods</span>
+<a name="l00089"></a>00089         <span class="comment">/*</span>
+<a name="l00090"></a>00090 <span class="comment">         * Method to take a vector&lt;bool&gt; and turn it into a bit style string</span>
+<a name="l00091"></a>00091 <span class="comment">         */</span>
+<a name="l00092"></a>00092         <span class="keyword">static</span> std::string <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a8b72b4b8c76445cf788129ed5b6b42a5">patternToString</a>(<span class="keyword">const</span> std::vector&lt;bool&gt; &amp; vec);
+<a name="l00093"></a>00093         <span class="comment">/*</span>
+<a name="l00094"></a>00094 <span class="comment">         * Method to take a  bit style string  and turn it into a vector&lt;bool&gt;</span>
+<a name="l00095"></a>00095 <span class="comment">         */</span>
+<a name="l00096"></a>00096         <span class="keyword">static</span> std::vector&lt;bool&gt; <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a30238bc06f4cbf29d28adff1fd09b280">stringToPattern</a>(<span class="keyword">const</span> std::string &amp;);
+<a name="l00097"></a>00097 
+<a name="l00108"></a>00108         <span class="keyword">static</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html">Pattern</a> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#ad253bf9c3cb1997ce2f8db2ded5455ba" title="Generate a random pattern of width.">getRandom</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> width, <span class="keywordtype">double</span> fraction=0.5);
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110         <span class="keyword">friend</span> std::ostream &amp; <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#aade38e7e420a07b60712bd1891487f23">operator&lt;&lt;</a>(std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html">Pattern</a> &amp; obj);
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112 <span class="keyword">private</span>:
+<a name="l00113"></a>00113         <span class="comment">// vector to hold the actual pattern we represent</span>
+<a name="l00114"></a><a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a2ceffaffb21669b4712f9af5f5045e6e">00114</a>         <a class="code" href="classcryomesh_1_1state_1_1BinaryString.html">BinaryString</a> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a2ceffaffb21669b4712f9af5f5045e6e">binaryString</a>;
+<a name="l00115"></a>00115         <span class="comment">// unique-ish id</span>
+<a name="l00116"></a><a class="code" href="classcryomesh_1_1state_1_1Pattern.html#aa8070cf7c7e5621164fcf389baeec552">00116</a>         <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#aa8070cf7c7e5621164fcf389baeec552">id</a>;
 <a name="l00117"></a>00117 
-<a name="l00118"></a><a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a645e8d7690ddd76dfaf1cbc915b4c252">00118</a>         boost::uuids::uuid <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a645e8d7690ddd76dfaf1cbc915b4c252">tag</a>;
-<a name="l00119"></a>00119         <span class="comment">/*</span>
-<a name="l00120"></a>00120 <span class="comment">         * Common constructor jobs</span>
-<a name="l00121"></a>00121 <span class="comment">         */</span>
-<a name="l00122"></a>00122         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a5488a0554ecbcf4749ce79f5523972d9">initialise</a>();
-<a name="l00123"></a>00123 
-<a name="l00124"></a>00124         <span class="comment">// statics</span>
-<a name="l00125"></a><a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a9a1488a4d6c293a0c5c5517fbcb47cb7">00125</a>         <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a9a1488a4d6c293a0c5c5517fbcb47cb7">ids</a>;
-<a name="l00126"></a>00126 };
-<a name="l00127"></a>00127 
-<a name="l00128"></a>00128 }
+<a name="l00118"></a>00118         <span class="comment">// identifying tag for this</span>
+<a name="l00119"></a><a class="code" href="classcryomesh_1_1state_1_1Pattern.html#ae6138b7407f2e55de84a1c53fcc14a35">00119</a>         boost::shared_ptr&lt;PatternTag&gt; <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#ae6138b7407f2e55de84a1c53fcc14a35">patternTag</a>;
+<a name="l00120"></a>00120 
+<a name="l00121"></a>00121         <span class="comment">/*</span>
+<a name="l00122"></a>00122 <span class="comment">         * Common constructor jobs</span>
+<a name="l00123"></a>00123 <span class="comment">         */</span>
+<a name="l00124"></a>00124         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a5488a0554ecbcf4749ce79f5523972d9">initialise</a>();
+<a name="l00125"></a>00125 
+<a name="l00126"></a>00126         <span class="comment">// statics</span>
+<a name="l00127"></a><a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a9a1488a4d6c293a0c5c5517fbcb47cb7">00127</a>         <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html#a9a1488a4d6c293a0c5c5517fbcb47cb7">ids</a>;
+<a name="l00128"></a>00128 };
 <a name="l00129"></a>00129 
 <a name="l00130"></a>00130 }
 <a name="l00131"></a>00131 
-<a name="l00132"></a>00132 <span class="preprocessor">#endif </span><span class="comment">/* PATTERN_H_ */</span>
+<a name="l00132"></a>00132 }
+<a name="l00133"></a>00133 
+<a name="l00134"></a>00134 <span class="preprocessor">#endif </span><span class="comment">/* PATTERN_H_ */</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -190,7 +193,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -199,7 +202,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:14 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

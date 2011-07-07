@@ -88,10 +88,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061">ClusterConnectionType</a> { <a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061aabc802b96fdcb5b3652b911ba4b245dd">NullCluster</a>, 
-<a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061a6ba67168d6814daae19c08e089b9221e">InputCluster</a>, 
-<a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061aa7d846663457afd6da1e28d201f62656">OutputCluster</a>, 
-<a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061add322fb6cff1b80f969b078c59f97fce">LoopbackCluster</a>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061">ClusterConnectionType</a> { <a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061aabc802b96fdcb5b3652b911ba4b245dd">NullCluster</a> =  1, 
+<a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061a6ba67168d6814daae19c08e089b9221e">InputCluster</a> = 2, 
+<a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061aa7d846663457afd6da1e28d201f62656">OutputCluster</a> = 4, 
+<a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061add322fb6cff1b80f969b078c59f97fce">LoopbackCluster</a> = 8
  }</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><p>Enum representing the relation of a cluster to this fibre. </p>
  <a href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061">More...</a><br/></td></tr>
@@ -132,14 +132,44 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the mutable connector.  <a href="#ab38093272e6e7427b21bb6eb4ded1778"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classcryomesh_1_1components_1_1ConnectionMap.html">components::ConnectionMap</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#a95dbfb506308cab9c4d763f2dff66311">getConnections</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the connections.  <a href="#a95dbfb506308cab9c4d763f2dff66311"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcryomesh_1_1components_1_1ConnectionMap.html">components::ConnectionMap</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#a9c35ba56c134e32142cc552e059419d0">getMutableConnections</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the mutable connections.  <a href="#a9c35ba56c134e32142cc552e059419d0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4">FibreType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#ab1a8a60a116108041a1efea8fd6c35e7">getType</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the type of the fibre.  <a href="#ab1a8a60a116108041a1efea8fd6c35e7"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061">ClusterConnectionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#a082dc2100f17f78b138b5ccbe0dd8cfe">isConnected</a> (const boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1structures_1_1Cluster.html">Cluster</a> &gt; &amp;cluster) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return type of connection to cluster specified, null if none.  <a href="#a082dc2100f17f78b138b5ccbe0dd8cfe"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const std::pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#aa4b6fd784dad6f0e0ac48b33ac0c574a">countConnections</a> (const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1structures_1_1Cluster.html">Cluster</a> &gt; &gt; &amp;all_clusters) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Count all connections of this fibre to a group of clusters.  <a href="#aa4b6fd784dad6f0e0ac48b33ac0c574a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#af32b67f092190a1a0b3dcc1b4156aaf0">isConnected</a> (const boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1structures_1_1Cluster.html">Cluster</a> &gt; &amp;cluster) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return type of connection to cluster specified, null if none.  <a href="#af32b67f092190a1a0b3dcc1b4156aaf0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#a042a1f3fce5c5938eb229764a5754a0f">getWidth</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get width (number of connections) of fibre.  <a href="#a042a1f3fce5c5938eb229764a5754a0f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1state_1_1Pattern.html">state::Pattern</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#a690dd19606a0611d57cb70cd33810969">getNodesPattern</a> (const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Node.html">components::Node</a> &gt; &gt; all_nodes) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current pattern for firing state of nodes.  <a href="#a690dd19606a0611d57cb70cd33810969"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1state_1_1Pattern.html">state::Pattern</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#ac636d911ba83b83898d8a84e9e1cc7d6">getInputNodesPattern</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current pattern for firing state of input nodes to the fibre.  <a href="#ac636d911ba83b83898d8a84e9e1cc7d6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1state_1_1Pattern.html">state::Pattern</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#a0db7ff1c4bb7520f10cb680b7bd9e89e">getOutputNodesPattern</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current pattern for firing state of output nodes to the fibre.  <a href="#a0db7ff1c4bb7520f10cb680b7bd9e89e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const std::map<br class="typebreak"/>
+&lt; boost::uuids::uuid, <br class="typebreak"/>
+boost::shared_ptr<br class="typebreak"/>
+&lt; <a class="el" href="classcryomesh_1_1components_1_1Node.html">components::Node</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#ab4cd1906788d648c47db0675cdf19e22">getNodes</a> (const <a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061">ClusterConnectionType</a> type) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the map of nodes to this fibre.  <a href="#ab4cd1906788d648c47db0675cdf19e22"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const std::map<br class="typebreak"/>
+&lt; boost::uuids::uuid, <br class="typebreak"/>
+boost::shared_ptr<br class="typebreak"/>
+&lt; <a class="el" href="classcryomesh_1_1components_1_1Node.html">components::Node</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#a638dce6d194d2e30ce10fc1694c589b4">getInputNodes</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the map of input nodes to this fibre.  <a href="#a638dce6d194d2e30ce10fc1694c589b4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const std::map<br class="typebreak"/>
+&lt; boost::uuids::uuid, <br class="typebreak"/>
+boost::shared_ptr<br class="typebreak"/>
+&lt; <a class="el" href="classcryomesh_1_1components_1_1Node.html">components::Node</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#abd4b9cfb1609c78328c68f0328305da6">getOutputNodes</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the map of output nodes to this fibre.  <a href="#abd4b9cfb1609c78328c68f0328305da6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#aaaa3f6a37c969442df3934aa1b3a329d">forceFireInputNodes</a> (const <a class="el" href="classcryomesh_1_1state_1_1Pattern.html">state::Pattern</a> &amp;pattern)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Force fire input nodes using a pattern.  <a href="#aaaa3f6a37c969442df3934aa1b3a329d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#a74a3909fe54fb569f60e1236c43c2eec">forceFireOutputNodes</a> (const <a class="el" href="classcryomesh_1_1state_1_1Pattern.html">state::Pattern</a> &amp;pattern)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Force fire output nodes using a pattern.  <a href="#a74a3909fe54fb569f60e1236c43c2eec"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#a5e2e81cc368683f575a573416d4a4a09">forceFireNodes</a> (const <a class="el" href="classcryomesh_1_1state_1_1Pattern.html">state::Pattern</a> &amp;pattern, std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Node.html">components::Node</a> &gt; &gt; nodes)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Force fire nodes using a pattern.  <a href="#a5e2e81cc368683f575a573416d4a4a09"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#a2ee7eb11f1777688fd2b3c5fcb5349f3">enableDebug</a> (bool b)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#acdde6519103d56cb26d2c1274122622b">setType</a> (const <a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#aecbba6d46a76f888b3722491b674f5e4">FibreType</a> &amp;tp)</td></tr>
@@ -164,7 +194,7 @@ Friends</h2></td></tr>
 <div class="textblock"><p>A <a class="el" href="classcryomesh_1_1structures_1_1Fibre.html" title="A Fibre is a collection of connections that connect one structure to another.">Fibre</a> is a collection of connections that connect one structure to another. </p>
 <p>For example, two clusters. </p>
 
-<p>Definition at line <a class="el" href="Fibre_8h_source.html#l00026">26</a> of file <a class="el" href="Fibre_8h_source.html">Fibre.h</a>.</p>
+<p>Definition at line <a class="el" href="Fibre_8h_source.html#l00027">27</a> of file <a class="el" href="Fibre_8h_source.html">Fibre.h</a>.</p>
 </div><hr/><h2>Member Enumeration Documentation</h2>
 <a class="anchor" id="a1bae341ec1ee07bdc7855b287bee2061"></a><!-- doxytag: member="cryomesh::structures::Fibre::ClusterConnectionType" ref="a1bae341ec1ee07bdc7855b287bee2061" args="" -->
 <div class="memitem">
@@ -191,7 +221,7 @@ Friends</h2></td></tr>
 </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Fibre_8h_source.html#l00032">32</a> of file <a class="el" href="Fibre_8h_source.html">Fibre.h</a>.</p>
+<p>Definition at line <a class="el" href="Fibre_8h_source.html#l00033">33</a> of file <a class="el" href="Fibre_8h_source.html">Fibre.h</a>.</p>
 
 </div>
 </div>
@@ -223,7 +253,7 @@ Friends</h2></td></tr>
 </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Fibre_8h_source.html#l00039">39</a> of file <a class="el" href="Fibre_8h_source.html">Fibre.h</a>.</p>
+<p>Definition at line <a class="el" href="Fibre_8h_source.html#l00042">42</a> of file <a class="el" href="Fibre_8h_source.html">Fibre.h</a>.</p>
 
 </div>
 </div>
@@ -271,7 +301,7 @@ Friends</h2></td></tr>
 
 <p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00020">20</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
 
-<p>References <a class="el" href="Fibre_8cpp_source.html#l00211">connectAllConnections()</a>, <a class="el" href="Fibre_8cpp_source.html#l00181">createConnections()</a>, <a class="el" href="Fibre_8h_source.html#l00033">InputCluster</a>, <a class="el" href="Fibre_8h_source.html#l00041">IntermediateFibre</a>, <a class="el" href="Fibre_8h_source.html#l00044">LoopbackFibre</a>, <a class="el" href="Fibre_8h_source.html#l00033">OutputCluster</a>, and <a class="el" href="Fibre_8cpp_source.html#l00138">setType()</a>.</p>
+<p>References <a class="el" href="Fibre_8cpp_source.html#l00262">connectAllConnections()</a>, <a class="el" href="Fibre_8cpp_source.html#l00232">createConnections()</a>, <a class="el" href="Fibre_8h_source.html#l00035">InputCluster</a>, <a class="el" href="Fibre_8h_source.html#l00044">IntermediateFibre</a>, <a class="el" href="Fibre_8h_source.html#l00047">LoopbackFibre</a>, <a class="el" href="Fibre_8h_source.html#l00036">OutputCluster</a>, and <a class="el" href="Fibre_8cpp_source.html#l00142">setType()</a>.</p>
 
 </div>
 </div>
@@ -319,7 +349,7 @@ Friends</h2></td></tr>
 
 <p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00032">32</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
 
-<p>References <a class="el" href="Fibre_8cpp_source.html#l00211">connectAllConnections()</a>, <a class="el" href="Fibre_8cpp_source.html#l00181">createConnections()</a>, <a class="el" href="Fibre_8cpp_source.html#l00134">getType()</a>, <a class="el" href="Fibre_8h_source.html#l00033">InputCluster</a>, <a class="el" href="Fibre_8h_source.html#l00033">OutputCluster</a>, <a class="el" href="Fibre_8h_source.html#l00042">PrimaryInputFibre</a>, <a class="el" href="Fibre_8h_source.html#l00043">PrimaryOutputFibre</a>, and <a class="el" href="Fibre_8cpp_source.html#l00138">setType()</a>.</p>
+<p>References <a class="el" href="Fibre_8cpp_source.html#l00262">connectAllConnections()</a>, <a class="el" href="Fibre_8cpp_source.html#l00232">createConnections()</a>, <a class="el" href="Fibre_8cpp_source.html#l00138">getType()</a>, <a class="el" href="Fibre_8h_source.html#l00035">InputCluster</a>, <a class="el" href="Fibre_8h_source.html#l00036">OutputCluster</a>, <a class="el" href="Fibre_8h_source.html#l00045">PrimaryInputFibre</a>, <a class="el" href="Fibre_8h_source.html#l00046">PrimaryOutputFibre</a>, and <a class="el" href="Fibre_8cpp_source.html#l00142">setType()</a>.</p>
 
 </div>
 </div>
@@ -341,7 +371,7 @@ Friends</h2></td></tr>
 
 <p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00042">42</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
 
-<p>References <a class="el" href="Fibre_8cpp_source.html#l00193">disconnectAllConnections()</a>.</p>
+<p>References <a class="el" href="Fibre_8cpp_source.html#l00244">disconnectAllConnections()</a>.</p>
 
 </div>
 </div>
@@ -380,11 +410,41 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00211">211</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00262">262</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
 
-<p>References <a class="el" href="Connector_8h_source.html#l00050">cryomesh::common::Connector&lt; U, T &gt;::connectInput()</a>, <a class="el" href="Fibre_8h_source.html#l00237">connections</a>, <a class="el" href="Fibre_8h_source.html#l00230">connector</a>, <a class="el" href="Connector_8h_source.html#l00118">cryomesh::common::Connector&lt; U, T &gt;::connectOutput()</a>, <a class="el" href="Fibre_8h_source.html#l00033">InputCluster</a>, and <a class="el" href="Fibre_8h_source.html#l00033">OutputCluster</a>.</p>
+<p>References <a class="el" href="Connector_8h_source.html#l00050">cryomesh::common::Connector&lt; U, T &gt;::connectInput()</a>, <a class="el" href="Fibre_8h_source.html#l00334">connections</a>, <a class="el" href="Fibre_8h_source.html#l00327">connector</a>, <a class="el" href="Connector_8h_source.html#l00119">cryomesh::common::Connector&lt; U, T &gt;::connectOutput()</a>, <a class="el" href="Fibre_8h_source.html#l00035">InputCluster</a>, and <a class="el" href="Fibre_8h_source.html#l00036">OutputCluster</a>.</p>
 
 <p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00020">Fibre()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa4b6fd784dad6f0e0ac48b33ac0c574a"></a><!-- doxytag: member="cryomesh::structures::Fibre::countConnections" ref="aa4b6fd784dad6f0e0ac48b33ac0c574a" args="(const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; Cluster &gt; &gt; &amp;all_clusters) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::pair&lt; int, int &gt; cryomesh::structures::Fibre::countConnections </td>
+          <td>(</td>
+          <td class="paramtype">const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1structures_1_1Cluster.html">Cluster</a> &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>all_clusters</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Count all connections of this fibre to a group of clusters. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">std::map&lt;boost::uuids::uuid,boost::shared_ptr&lt;Cluster&gt;</td><td>&gt; <a class="el" href="classcryomesh_1_1structures_1_1Cluster.html" title="A Cluster is a collection of self-contained nodes and connections along with an associated Mesh...">Cluster</a> collection to search for connections to this fibre</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>std::pair&lt;int, int&gt; Pair of input/output connection count to this fibre within the supplied cluster collection </dd></dl>
+
+<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00150">150</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
+
+<p>References <a class="el" href="Fibre_8cpp_source.html#l00123">getConnector()</a>, <a class="el" href="Connector_8h_source.html#l00521">cryomesh::common::Connector&lt; U, T &gt;::getInputs()</a>, and <a class="el" href="Connector_8h_source.html#l00543">cryomesh::common::Connector&lt; U, T &gt;::getOutputs()</a>.</p>
 
 </div>
 </div>
@@ -411,9 +471,9 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00181">181</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00232">232</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
 
-<p>References <a class="el" href="Fibre_8h_source.html#l00237">connections</a>, and <a class="el" href="Fibre_8cpp_source.html#l00193">disconnectAllConnections()</a>.</p>
+<p>References <a class="el" href="Fibre_8h_source.html#l00334">connections</a>, and <a class="el" href="Fibre_8cpp_source.html#l00244">disconnectAllConnections()</a>.</p>
 
 <p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00020">Fibre()</a>.</p>
 
@@ -435,11 +495,130 @@ Friends</h2></td></tr>
 
 <p>Disconnect all the connections from clusters. </p>
 
-<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00193">193</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00244">244</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
 
-<p>References <a class="el" href="Fibre_8h_source.html#l00237">connections</a>, <a class="el" href="Fibre_8h_source.html#l00230">connector</a>, <a class="el" href="Connector_8h_source.html#l00327">cryomesh::common::Connector&lt; U, T &gt;::disconnectAllInputs()</a>, and <a class="el" href="Connector_8h_source.html#l00495">cryomesh::common::Connector&lt; U, T &gt;::disconnectAllOutputs()</a>.</p>
+<p>References <a class="el" href="Fibre_8h_source.html#l00334">connections</a>, <a class="el" href="Fibre_8h_source.html#l00327">connector</a>, <a class="el" href="Connector_8h_source.html#l00329">cryomesh::common::Connector&lt; U, T &gt;::disconnectAllInputs()</a>, and <a class="el" href="Connector_8h_source.html#l00497">cryomesh::common::Connector&lt; U, T &gt;::disconnectAllOutputs()</a>.</p>
 
-<p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00181">createConnections()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00042">~Fibre()</a>.</p>
+<p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00232">createConnections()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00042">~Fibre()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2ee7eb11f1777688fd2b3c5fcb5349f3"></a><!-- doxytag: member="cryomesh::structures::Fibre::enableDebug" ref="a2ee7eb11f1777688fd2b3c5fcb5349f3" args="(bool b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cryomesh::structures::Fibre::enableDebug </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00447">447</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaaa3f6a37c969442df3934aa1b3a329d"></a><!-- doxytag: member="cryomesh::structures::Fibre::forceFireInputNodes" ref="aaaa3f6a37c969442df3934aa1b3a329d" args="(const state::Pattern &amp;pattern)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cryomesh::structures::Fibre::forceFireInputNodes </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcryomesh_1_1state_1_1Pattern.html">state::Pattern</a> &amp;&#160;</td>
+          <td class="paramname"><em>pattern</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Force fire input nodes using a pattern. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Pattern</td><td>The pattern to fire </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00408">408</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
+
+<p>References <a class="el" href="Fibre_8cpp_source.html#l00416">forceFireNodes()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00342">getInputNodes()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5e2e81cc368683f575a573416d4a4a09"></a><!-- doxytag: member="cryomesh::structures::Fibre::forceFireNodes" ref="a5e2e81cc368683f575a573416d4a4a09" args="(const state::Pattern &amp;pattern, std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; components::Node &gt; &gt; nodes)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cryomesh::structures::Fibre::forceFireNodes </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcryomesh_1_1state_1_1Pattern.html">state::Pattern</a> &amp;&#160;</td>
+          <td class="paramname"><em>pattern</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Node.html">components::Node</a> &gt; &gt;&#160;</td>
+          <td class="paramname"><em>nodes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Force fire nodes using a pattern. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Pattern</td><td>The pattern to fire </td></tr>
+    <tr><td class="paramname">std::map&lt;boost::uuids::uuid,boost::shared_ptr&lt;components::Node&gt;</td><td>&gt; The nodes to fire the pattern on </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00416">416</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
+
+<p>References <a class="el" href="Pattern_8cpp_source.html#l00135">cryomesh::state::Pattern::getPattern()</a>, and <a class="el" href="Pattern_8cpp_source.html#l00157">cryomesh::state::Pattern::getSize()</a>.</p>
+
+<p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00408">forceFireInputNodes()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00412">forceFireOutputNodes()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a74a3909fe54fb569f60e1236c43c2eec"></a><!-- doxytag: member="cryomesh::structures::Fibre::forceFireOutputNodes" ref="a74a3909fe54fb569f60e1236c43c2eec" args="(const state::Pattern &amp;pattern)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cryomesh::structures::Fibre::forceFireOutputNodes </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcryomesh_1_1state_1_1Pattern.html">state::Pattern</a> &amp;&#160;</td>
+          <td class="paramname"><em>pattern</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Force fire output nodes using a pattern. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Pattern</td><td>The pattern to fire </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00412">412</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
+
+<p>References <a class="el" href="Fibre_8cpp_source.html#l00416">forceFireNodes()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00346">getOutputNodes()</a>.</p>
 
 </div>
 </div>
@@ -458,13 +637,13 @@ Friends</h2></td></tr>
 <div class="memdoc">
 
 <p>Get the connections. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>const <a class="el" href="classcryomesh_1_1components_1_1ConnectionMap.html" title="Helper class for ConnectionMap to KeyMappedCollection mapping.">components::ConnectionMap</a> &amp; The connection map for this <a class="el" href="classcryomesh_1_1structures_1_1Fibre.html" title="A Fibre is a collection of connections that connect one structure to another.">Fibre</a> </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classcryomesh_1_1components_1_1ConnectionMap.html" title="Helper class for ConnectionMap to KeyMappedCollection mapping.">components::ConnectionMap</a> The connection map for this <a class="el" href="classcryomesh_1_1structures_1_1Fibre.html" title="A Fibre is a collection of connections that connect one structure to another.">Fibre</a> </dd></dl>
 
 <p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00130">130</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
 
-<p>References <a class="el" href="Fibre_8h_source.html#l00237">connections</a>.</p>
+<p>References <a class="el" href="Fibre_8h_source.html#l00334">connections</a>.</p>
 
-<p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00142">getWidth()</a>, <a class="el" href="Fibre_8cpp_source.html#l00300">cryomesh::structures::operator&lt;&lt;()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00054">trigger()</a>.</p>
+<p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00146">getWidth()</a>, <a class="el" href="Fibre_8cpp_source.html#l00451">cryomesh::structures::operator&lt;&lt;()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00054">trigger()</a>.</p>
 
 </div>
 </div>
@@ -487,9 +666,34 @@ Friends</h2></td></tr>
 
 <p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00123">123</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
 
-<p>References <a class="el" href="Fibre_8h_source.html#l00230">connector</a>.</p>
+<p>References <a class="el" href="Fibre_8h_source.html#l00327">connector</a>.</p>
 
-<p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00146">isConnected()</a>.</p>
+<p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00150">countConnections()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00191">isConnected()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a638dce6d194d2e30ce10fc1694c589b4"></a><!-- doxytag: member="cryomesh::structures::Fibre::getInputNodes" ref="a638dce6d194d2e30ce10fc1694c589b4" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Node.html">components::Node</a> &gt; &gt; cryomesh::structures::Fibre::getInputNodes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the map of input nodes to this fibre. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>std::map&lt;boost::uuid, boost::shared_ptr&lt; components::Node &gt; &gt; The map of input nodes </dd></dl>
+
+<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00342">342</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
+
+<p>References <a class="el" href="Fibre_8cpp_source.html#l00350">getNodes()</a>, and <a class="el" href="Fibre_8h_source.html#l00035">InputCluster</a>.</p>
+
+<p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00408">forceFireInputNodes()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00333">getInputNodesPattern()</a>.</p>
 
 </div>
 </div>
@@ -510,9 +714,32 @@ Friends</h2></td></tr>
 <p>Get current pattern for firing state of input nodes to the fibre. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>boost::shared_ptr&lt; state::Pattern &gt; The current firing pattern of the input nodes to the fibre </dd></dl>
 
-<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00254">254</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00333">333</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
 
-<p>References <a class="el" href="Fibre_8h_source.html#l00237">connections</a>, and <a class="el" href="Node_8h_source.html#l00045">cryomesh::components::Node::Positive</a>.</p>
+<p>References <a class="el" href="Fibre_8cpp_source.html#l00342">getInputNodes()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00304">getNodesPattern()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9c35ba56c134e32142cc552e059419d0"></a><!-- doxytag: member="cryomesh::structures::Fibre::getMutableConnections" ref="a9c35ba56c134e32142cc552e059419d0" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcryomesh_1_1components_1_1ConnectionMap.html">components::ConnectionMap</a> &amp; cryomesh::structures::Fibre::getMutableConnections </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the mutable connections. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classcryomesh_1_1components_1_1ConnectionMap.html" title="Helper class for ConnectionMap to KeyMappedCollection mapping.">components::ConnectionMap</a> The mutable connection map for this <a class="el" href="classcryomesh_1_1structures_1_1Fibre.html" title="A Fibre is a collection of connections that connect one structure to another.">Fibre</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00134">134</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
+
+<p>References <a class="el" href="Fibre_8h_source.html#l00334">connections</a>.</p>
 
 </div>
 </div>
@@ -531,11 +758,125 @@ Friends</h2></td></tr>
 <div class="memdoc">
 
 <p>Get the mutable connector. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>common::Connector&lt;Fibre, Cluster&gt; &amp; The connector object </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>common::Connector&lt;Fibre, Cluster&gt; The connector object </dd></dl>
 
 <p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00127">127</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
 
-<p>References <a class="el" href="Fibre_8h_source.html#l00230">connector</a>.</p>
+<p>References <a class="el" href="Fibre_8h_source.html#l00327">connector</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab4cd1906788d648c47db0675cdf19e22"></a><!-- doxytag: member="cryomesh::structures::Fibre::getNodes" ref="ab4cd1906788d648c47db0675cdf19e22" args="(const ClusterConnectionType type) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Node.html">components::Node</a> &gt; &gt; cryomesh::structures::Fibre::getNodes </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061">ClusterConnectionType</a>&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the map of nodes to this fibre. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ClusterConnectionType</td><td>The cluster to get the nodes from, eg, InputCluster means get the input nodes</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>std::map&lt;boost::uuid, boost::shared_ptr&lt; components::Node &gt; &gt; The map of nodes </dd></dl>
+
+<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00350">350</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
+
+<p>References <a class="el" href="Fibre_8h_source.html#l00334">connections</a>, <a class="el" href="Fibre_8h_source.html#l00035">InputCluster</a>, and <a class="el" href="Fibre_8h_source.html#l00036">OutputCluster</a>.</p>
+
+<p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00342">getInputNodes()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00346">getOutputNodes()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a690dd19606a0611d57cb70cd33810969"></a><!-- doxytag: member="cryomesh::structures::Fibre::getNodesPattern" ref="a690dd19606a0611d57cb70cd33810969" args="(const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; components::Node &gt; &gt; all_nodes) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1state_1_1Pattern.html">state::Pattern</a> &gt; cryomesh::structures::Fibre::getNodesPattern </td>
+          <td>(</td>
+          <td class="paramtype">const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Node.html">components::Node</a> &gt; &gt;&#160;</td>
+          <td class="paramname"><em>all_nodes</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get current pattern for firing state of nodes. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;components::Node&gt; &gt; The nodes to check for firing pattern</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>boost::shared_ptr&lt; state::Pattern &gt; The current firing pattern of the input nodes to the fibre </dd></dl>
+
+<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00304">304</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
+
+<p>References <a class="el" href="Node_8h_source.html#l00047">cryomesh::components::Node::Positive</a>.</p>
+
+<p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00333">getInputNodesPattern()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00337">getOutputNodesPattern()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abd4b9cfb1609c78328c68f0328305da6"></a><!-- doxytag: member="cryomesh::structures::Fibre::getOutputNodes" ref="abd4b9cfb1609c78328c68f0328305da6" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Node.html">components::Node</a> &gt; &gt; cryomesh::structures::Fibre::getOutputNodes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the map of output nodes to this fibre. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>std::map&lt;boost::uuid, boost::shared_ptr&lt; components::Node &gt; &gt; The map of output nodes </dd></dl>
+
+<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00346">346</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
+
+<p>References <a class="el" href="Fibre_8cpp_source.html#l00350">getNodes()</a>, and <a class="el" href="Fibre_8h_source.html#l00036">OutputCluster</a>.</p>
+
+<p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00412">forceFireOutputNodes()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00337">getOutputNodesPattern()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0db7ff1c4bb7520f10cb680b7bd9e89e"></a><!-- doxytag: member="cryomesh::structures::Fibre::getOutputNodesPattern" ref="a0db7ff1c4bb7520f10cb680b7bd9e89e" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1state_1_1Pattern.html">state::Pattern</a> &gt; cryomesh::structures::Fibre::getOutputNodesPattern </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get current pattern for firing state of output nodes to the fibre. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>boost::shared_ptr&lt; state::Pattern &gt; The current firing pattern of the output nodes to the fibre </dd></dl>
+
+<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00337">337</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
+
+<p>References <a class="el" href="Fibre_8cpp_source.html#l00304">getNodesPattern()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00346">getOutputNodes()</a>.</p>
+
+<p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00451">cryomesh::structures::operator&lt;&lt;()</a>.</p>
 
 </div>
 </div>
@@ -556,9 +897,9 @@ Friends</h2></td></tr>
 <p>Get the type of the fibre. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>FibreType The type of the fibre connection </dd></dl>
 
-<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00134">134</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00138">138</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
 
-<p>References <a class="el" href="Fibre_8h_source.html#l00244">fibreType</a>.</p>
+<p>References <a class="el" href="Fibre_8h_source.html#l00341">fibreType</a>.</p>
 
 <p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00032">Fibre()</a>.</p>
 
@@ -581,7 +922,7 @@ Friends</h2></td></tr>
 <p>Get width (number of connections) of fibre. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>unsigned int Width of fibre </dd></dl>
 
-<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00142">142</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00146">146</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
 
 <p>References <a class="el" href="Fibre_8cpp_source.html#l00130">getConnections()</a>.</p>
 
@@ -589,12 +930,12 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a082dc2100f17f78b138b5ccbe0dd8cfe"></a><!-- doxytag: member="cryomesh::structures::Fibre::isConnected" ref="a082dc2100f17f78b138b5ccbe0dd8cfe" args="(const boost::shared_ptr&lt; Cluster &gt; &amp;cluster) const " -->
+<a class="anchor" id="af32b67f092190a1a0b3dcc1b4156aaf0"></a><!-- doxytag: member="cryomesh::structures::Fibre::isConnected" ref="af32b67f092190a1a0b3dcc1b4156aaf0" args="(const boost::shared_ptr&lt; Cluster &gt; &amp;cluster) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classcryomesh_1_1structures_1_1Fibre.html#a1bae341ec1ee07bdc7855b287bee2061">Fibre::ClusterConnectionType</a> cryomesh::structures::Fibre::isConnected </td>
+          <td class="memname">int cryomesh::structures::Fibre::isConnected </td>
           <td>(</td>
           <td class="paramtype">const boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1structures_1_1Cluster.html">Cluster</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>cluster</em></td><td>)</td>
@@ -613,9 +954,9 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>const ClusterConnectionType &amp; Connection type to cluster, Null if none </dd></dl>
 
-<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00146">146</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00191">191</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
 
-<p>References <a class="el" href="Fibre_8cpp_source.html#l00123">getConnector()</a>, <a class="el" href="Connector_8h_source.html#l00519">cryomesh::common::Connector&lt; U, T &gt;::getInputs()</a>, <a class="el" href="Connector_8h_source.html#l00541">cryomesh::common::Connector&lt; U, T &gt;::getOutputs()</a>, <a class="el" href="Fibre_8h_source.html#l00033">InputCluster</a>, <a class="el" href="Fibre_8h_source.html#l00033">LoopbackCluster</a>, <a class="el" href="Fibre_8h_source.html#l00033">NullCluster</a>, and <a class="el" href="Fibre_8h_source.html#l00033">OutputCluster</a>.</p>
+<p>References <a class="el" href="Fibre_8cpp_source.html#l00123">getConnector()</a>, <a class="el" href="Connector_8h_source.html#l00521">cryomesh::common::Connector&lt; U, T &gt;::getInputs()</a>, <a class="el" href="Connector_8h_source.html#l00543">cryomesh::common::Connector&lt; U, T &gt;::getOutputs()</a>, <a class="el" href="Fibre_8h_source.html#l00035">InputCluster</a>, <a class="el" href="Fibre_8h_source.html#l00036">LoopbackCluster</a>, and <a class="el" href="Fibre_8h_source.html#l00036">OutputCluster</a>.</p>
 
 </div>
 </div>
@@ -642,69 +983,11 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00138">138</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00142">142</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
 
-<p>References <a class="el" href="Fibre_8h_source.html#l00244">fibreType</a>.</p>
+<p>References <a class="el" href="Fibre_8h_source.html#l00341">fibreType</a>.</p>
 
 <p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00020">Fibre()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a84e9a5f2fe92ddbecc8321ad4bddf9a3"></a><!-- doxytag: member="cryomesh::structures::Fibre::trigger" ref="a84e9a5f2fe92ddbecc8321ad4bddf9a3" args="(double percentage)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void cryomesh::structures::Fibre::trigger </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>percentage</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Trigger a random pattern with percentage of the connections to fire. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">double</td><td>Fraction of connection to trigger randomly </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00063">63</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
-
-<p>References <a class="el" href="Pattern_8cpp_source.html#l00022">cryomesh::state::Pattern::getRandom()</a>, <a class="el" href="Fibre_8cpp_source.html#l00142">getWidth()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00054">trigger()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a09cd16b434cac26865e349f09a59f874"></a><!-- doxytag: member="cryomesh::structures::Fibre::trigger" ref="a09cd16b434cac26865e349f09a59f874" args="(std::vector&lt; boost::shared_ptr&lt; components::Impulse &gt; &gt; &amp;triggerImpulses)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void cryomesh::structures::Fibre::trigger </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Impulse.html">components::Impulse</a> &gt; &gt; &amp;&#160;</td>
-          <td class="paramname"><em>triggerImpulses</em></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Send impulses to the connections. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">const</td><td>std::vector&lt;boost::shared_ptr&lt; components::Impulse &gt; &gt; &amp; triggerImpulses The impulses to send to connections </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00090">90</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
-
-<p>References <a class="el" href="Fibre_8h_source.html#l00237">connections</a>.</p>
 
 </div>
 </div>
@@ -733,7 +1016,36 @@ Friends</h2></td></tr>
 
 <p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00069">69</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
 
-<p>References <a class="el" href="Fibre_8cpp_source.html#l00130">getConnections()</a>, <a class="el" href="Pattern_8cpp_source.html#l00134">cryomesh::state::Pattern::getPattern()</a>, <a class="el" href="Impulse_8cpp_source.html#l00026">cryomesh::components::Impulse::getTriggerImpulse()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00054">trigger()</a>.</p>
+<p>References <a class="el" href="Fibre_8cpp_source.html#l00130">getConnections()</a>, <a class="el" href="Pattern_8cpp_source.html#l00135">cryomesh::state::Pattern::getPattern()</a>, <a class="el" href="Impulse_8cpp_source.html#l00033">cryomesh::components::Impulse::getTriggerImpulse()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00054">trigger()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a09cd16b434cac26865e349f09a59f874"></a><!-- doxytag: member="cryomesh::structures::Fibre::trigger" ref="a09cd16b434cac26865e349f09a59f874" args="(std::vector&lt; boost::shared_ptr&lt; components::Impulse &gt; &gt; &amp;triggerImpulses)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cryomesh::structures::Fibre::trigger </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Impulse.html">components::Impulse</a> &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>triggerImpulses</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Send impulses to the connections. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>std::vector&lt;boost::shared_ptr&lt; components::Impulse &gt; &gt; &amp; triggerImpulses The impulses to send to connections </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00090">90</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
+
+<p>References <a class="el" href="Fibre_8h_source.html#l00334">connections</a>.</p>
 
 </div>
 </div>
@@ -755,9 +1067,38 @@ Friends</h2></td></tr>
 
 <p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00054">54</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
 
-<p>References <a class="el" href="Fibre_8cpp_source.html#l00130">getConnections()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00026">cryomesh::components::Impulse::getTriggerImpulse()</a>.</p>
+<p>References <a class="el" href="Fibre_8cpp_source.html#l00130">getConnections()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00033">cryomesh::components::Impulse::getTriggerImpulse()</a>.</p>
 
 <p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00063">trigger()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a84e9a5f2fe92ddbecc8321ad4bddf9a3"></a><!-- doxytag: member="cryomesh::structures::Fibre::trigger" ref="a84e9a5f2fe92ddbecc8321ad4bddf9a3" args="(double percentage)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cryomesh::structures::Fibre::trigger </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>percentage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Trigger a random pattern with percentage of the connections to fire. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">double</td><td>Fraction of connection to trigger randomly </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00063">63</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
+
+<p>References <a class="el" href="Pattern_8cpp_source.html#l00023">cryomesh::state::Pattern::getRandom()</a>, <a class="el" href="Fibre_8cpp_source.html#l00146">getWidth()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00054">trigger()</a>.</p>
 
 </div>
 </div>
@@ -779,7 +1120,7 @@ Friends</h2></td></tr>
 
 <p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00046">46</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
 
-<p>References <a class="el" href="Fibre_8h_source.html#l00237">connections</a>, and <a class="el" href="ConnectionMap_8h_source.html#l00043">cryomesh::components::ConnectionMap::update()</a>.</p>
+<p>References <a class="el" href="Fibre_8h_source.html#l00334">connections</a>, and <a class="el" href="ConnectionMap_8h_source.html#l00043">cryomesh::components::ConnectionMap::update()</a>.</p>
 
 </div>
 </div>
@@ -820,7 +1161,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::ostream &amp; The output stream </dd></dl>
 
-<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00300">300</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00451">451</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
 
 </div>
 </div>
@@ -836,9 +1177,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Fibre_8h_source.html#l00237">237</a> of file <a class="el" href="Fibre_8h_source.html">Fibre.h</a>.</p>
+<p>Definition at line <a class="el" href="Fibre_8h_source.html#l00334">334</a> of file <a class="el" href="Fibre_8h_source.html">Fibre.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00211">connectAllConnections()</a>, <a class="el" href="Fibre_8cpp_source.html#l00181">createConnections()</a>, <a class="el" href="Fibre_8cpp_source.html#l00193">disconnectAllConnections()</a>, <a class="el" href="Fibre_8cpp_source.html#l00130">getConnections()</a>, <a class="el" href="Fibre_8cpp_source.html#l00254">getInputNodesPattern()</a>, <a class="el" href="Fibre_8cpp_source.html#l00090">trigger()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00046">update()</a>.</p>
+<p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00262">connectAllConnections()</a>, <a class="el" href="Fibre_8cpp_source.html#l00232">createConnections()</a>, <a class="el" href="Fibre_8cpp_source.html#l00244">disconnectAllConnections()</a>, <a class="el" href="Fibre_8cpp_source.html#l00130">getConnections()</a>, <a class="el" href="Fibre_8cpp_source.html#l00134">getMutableConnections()</a>, <a class="el" href="Fibre_8cpp_source.html#l00350">getNodes()</a>, <a class="el" href="Fibre_8cpp_source.html#l00090">trigger()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00046">update()</a>.</p>
 
 </div>
 </div>
@@ -853,9 +1194,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Fibre_8h_source.html#l00230">230</a> of file <a class="el" href="Fibre_8h_source.html">Fibre.h</a>.</p>
+<p>Definition at line <a class="el" href="Fibre_8h_source.html#l00327">327</a> of file <a class="el" href="Fibre_8h_source.html">Fibre.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00211">connectAllConnections()</a>, <a class="el" href="Fibre_8cpp_source.html#l00193">disconnectAllConnections()</a>, <a class="el" href="Fibre_8cpp_source.html#l00123">getConnector()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00127">getMutableConnector()</a>.</p>
+<p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00262">connectAllConnections()</a>, <a class="el" href="Fibre_8cpp_source.html#l00244">disconnectAllConnections()</a>, <a class="el" href="Fibre_8cpp_source.html#l00123">getConnector()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00127">getMutableConnector()</a>.</p>
 
 </div>
 </div>
@@ -870,15 +1211,15 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Fibre_8h_source.html#l00244">244</a> of file <a class="el" href="Fibre_8h_source.html">Fibre.h</a>.</p>
+<p>Definition at line <a class="el" href="Fibre_8h_source.html#l00341">341</a> of file <a class="el" href="Fibre_8h_source.html">Fibre.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00134">getType()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00138">setType()</a>.</p>
+<p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00138">getType()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00142">setType()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/niall/Projects/Eclipse/cryomesh/src/structures/<a class="el" href="Fibre_8h_source.html">Fibre.h</a></li>
-<li>/home/niall/Projects/Eclipse/cryomesh/src/structures/<a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a></li>
+<li>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/<a class="el" href="Fibre_8h_source.html">Fibre.h</a></li>
+<li>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/<a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -886,7 +1227,7 @@ Friends</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -895,7 +1236,7 @@ Friends</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:11 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:14 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

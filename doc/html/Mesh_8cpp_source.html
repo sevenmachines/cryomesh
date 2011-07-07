@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>cryomesh: /home/niall/Projects/Eclipse/cryomesh/src/components/Mesh.cpp Source File</title>
+<title>cryomesh: /home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Mesh.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -54,11 +54,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/niall/Projects/Eclipse/cryomesh/src/components/Mesh.cpp</h1>  </div>
+<h1>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Mesh.cpp</h1>  </div>
 </div>
 <div class="contents">
 <a href="Mesh_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
@@ -69,54 +70,111 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00006"></a>00006 <span class="comment"> */</span>
 <a name="l00007"></a>00007 
 <a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="Mesh_8h.html">Mesh.h</a>&quot;</span>
-<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="Node_8h.html">Node.h</a>&quot;</span>
-<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="Impulse_8h.html">Impulse.h</a>&quot;</span>
-<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="ImpulseCollection_8h.html">ImpulseCollection.h</a>&quot;</span>
-<a name="l00012"></a>00012 
-<a name="l00013"></a>00013 <span class="keyword">namespace </span>cryomesh {
-<a name="l00014"></a>00014 
-<a name="l00015"></a>00015 <span class="keyword">namespace </span>components {
-<a name="l00016"></a>00016 
-<a name="l00017"></a>00017 <span class="comment">//DEPRECATED</span>
-<a name="l00018"></a>00018 <span class="comment">/*</span>
-<a name="l00019"></a>00019 <span class="comment">boost::shared_ptr&lt;Mesh&gt; Mesh::mesh;</span>
-<a name="l00020"></a>00020 <span class="comment"></span>
-<a name="l00021"></a>00021 <span class="comment">boost::shared_ptr&lt;Mesh&gt; Mesh::getMesh() {</span>
-<a name="l00022"></a>00022 <span class="comment">        if (mesh == 0) {</span>
-<a name="l00023"></a>00023 <span class="comment">                mesh = boost::shared_ptr&lt;Mesh&gt;(new Mesh());</span>
-<a name="l00024"></a>00024 <span class="comment">        }</span>
-<a name="l00025"></a>00025 <span class="comment">        return mesh;</span>
-<a name="l00026"></a>00026 <span class="comment">}</span>
-<a name="l00027"></a>00027 <span class="comment">*/</span>
-<a name="l00028"></a>00028 
-<a name="l00029"></a><a class="code" href="classcryomesh_1_1components_1_1Mesh.html#ac4993b016184c8c6ea9807b30d76d7f2">00029</a> <a class="code" href="classcryomesh_1_1components_1_1Mesh.html#ac4993b016184c8c6ea9807b30d76d7f2" title="Constructor.">Mesh::Mesh</a>() {
-<a name="l00030"></a>00030 
-<a name="l00031"></a>00031 }
-<a name="l00032"></a>00032 
-<a name="l00033"></a><a class="code" href="classcryomesh_1_1components_1_1Mesh.html#abf98574cbdd4cf4040c400f96b8d522e">00033</a> <a class="code" href="classcryomesh_1_1components_1_1Mesh.html#abf98574cbdd4cf4040c400f96b8d522e" title="Destructor.">Mesh::~Mesh</a>() {
-<a name="l00034"></a>00034 }
-<a name="l00035"></a>00035 
-<a name="l00036"></a><a class="code" href="classcryomesh_1_1components_1_1Mesh.html#a4c760dfcb78909cf4520e6dbbf63a351">00036</a> <a class="code" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a> &amp; <a class="code" href="classcryomesh_1_1components_1_1Mesh.html#a4c760dfcb78909cf4520e6dbbf63a351" title="Assignment Operator.">Mesh::warp</a>( <a class="code" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a> &amp; node) {
-<a name="l00037"></a>00037         <span class="comment">//TODO Mesh::warp (const Node&amp;)</span>
-<a name="l00038"></a>00038         std::cout&lt;&lt;<span class="stringliteral">&quot;Mesh::warp(Node &amp;): &quot;</span>&lt;&lt;<span class="stringliteral">&quot;TODO&quot;</span>&lt;&lt;std::endl;
-<a name="l00039"></a>00039         <span class="keywordflow">return</span> node;
-<a name="l00040"></a>00040 }
-<a name="l00041"></a>00041 
-<a name="l00042"></a><a class="code" href="classcryomesh_1_1components_1_1Mesh.html#a906562eddc67cfc2f8b49dcfe8a9b523">00042</a> <a class="code" href="classcryomesh_1_1components_1_1ImpulseCollection.html" title="ImpulseCollection represents a collection of Impulse objects.">ImpulseCollection</a> &amp; <a class="code" href="classcryomesh_1_1components_1_1Mesh.html#a4c760dfcb78909cf4520e6dbbf63a351" title="Assignment Operator.">Mesh::warp</a>(<a class="code" href="classcryomesh_1_1components_1_1ImpulseCollection.html" title="ImpulseCollection represents a collection of Impulse objects.">ImpulseCollection</a> &amp; impulseCollection){
-<a name="l00043"></a>00043         <span class="comment">//TODO Mesh::warp (ImpulseCollection&amp;)</span>
-<a name="l00044"></a>00044         std::cout&lt;&lt;<span class="stringliteral">&quot;Mesh::warp(ImpulseCollection &amp;): &quot;</span>&lt;&lt;<span class="stringliteral">&quot;TODO&quot;</span>&lt;&lt;std::endl;
-<a name="l00045"></a>00045         <span class="keywordflow">return</span> impulseCollection;
-<a name="l00046"></a>00046 }
-<a name="l00047"></a>00047 
-<a name="l00048"></a><a class="code" href="classcryomesh_1_1components_1_1Mesh.html#ae1c4a8cfe4b8c9b86c8416ae51a77cbe">00048</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; <a class="code" href="classcryomesh_1_1components_1_1Mesh.html#a4c760dfcb78909cf4520e6dbbf63a351" title="Assignment Operator.">Mesh::warp</a>(<a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; impulse){
-<a name="l00049"></a>00049         <span class="comment">//TODO Mesh::warp (Impulse&amp;)</span>
-<a name="l00050"></a>00050         std::cout&lt;&lt;<span class="stringliteral">&quot;Mesh::warp(Impulse &amp;): &quot;</span>&lt;&lt;<span class="stringliteral">&quot;TODO&quot;</span>&lt;&lt;std::endl;
-<a name="l00051"></a>00051         <span class="keywordflow">return</span> impulse;
-<a name="l00052"></a>00052 }
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054 }<span class="comment">//NAMESPACE</span>
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056 }<span class="comment">//NAMESPACE</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;components/Node.h&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;components/Impulse.h&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;components/ImpulseCollection.h&quot;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;<a class="code" href="Cluster_8h.html">Cluster.h</a>&quot;</span>
+<a name="l00013"></a>00013 
+<a name="l00014"></a>00014 <span class="keyword">using namespace </span>cryomesh::components;
+<a name="l00015"></a>00015 <span class="keyword">using namespace </span>cryomesh::spacial;
+<a name="l00016"></a>00016 <span class="keyword">namespace </span>cryomesh {
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 <span class="keyword">namespace </span>structures {
+<a name="l00019"></a>00019 
+<a name="l00020"></a>00020 <span class="comment">//DEPRECATED</span>
+<a name="l00021"></a>00021 <span class="comment">/*</span>
+<a name="l00022"></a>00022 <span class="comment"> boost::shared_ptr&lt;Mesh&gt; Mesh::mesh;</span>
+<a name="l00023"></a>00023 <span class="comment"></span>
+<a name="l00024"></a>00024 <span class="comment"> boost::shared_ptr&lt;Mesh&gt; Mesh::getMesh() {</span>
+<a name="l00025"></a>00025 <span class="comment"> if (mesh == 0) {</span>
+<a name="l00026"></a>00026 <span class="comment"> mesh = boost::shared_ptr&lt;Mesh&gt;(new Mesh());</span>
+<a name="l00027"></a>00027 <span class="comment"> }</span>
+<a name="l00028"></a>00028 <span class="comment"> return mesh;</span>
+<a name="l00029"></a>00029 <span class="comment"> }</span>
+<a name="l00030"></a>00030 <span class="comment"> */</span>
+<a name="l00031"></a>00031 
+<a name="l00032"></a><a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#abdc3f0f1976c80f177c2ed5ca05f87c4">00032</a> Mesh::Mesh(<a class="code" href="classcryomesh_1_1structures_1_1Cluster.html" title="A Cluster is a collection of self-contained nodes and connections along with an associated Mesh...">Cluster</a> &amp; clus) :
+<a name="l00033"></a>00033         cluster(clus), DEFAULT_MESH_GRANULARITY(10), DEFAULT_BLEND_FORCE(0.1) {
+<a name="l00034"></a>00034         <span class="comment">// make us the same side as the max bounding box</span>
+<a name="l00035"></a>00035         <span class="comment">// Generate activity grid from custer</span>
+<a name="l00036"></a>00036         Point bounding_box = <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#abcb6d0f863592f641cb5f8801d268fa2">cluster</a>.getMaxBoundingBox().getScaled(<a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#a3a748cc09c8a337d6cb4087a44255ece">DEFAULT_MESH_GRANULARITY</a>);
+<a name="l00037"></a>00037         <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#a6a93097e85b79b2b5073d1a580ffea25">grid</a> = boost::shared_ptr&lt;spacial::ActivityGrid&gt;(<span class="keyword">new</span> spacial::ActivityGrid(bounding_box, <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#a3a748cc09c8a337d6cb4087a44255ece">DEFAULT_MESH_GRANULARITY</a>));
+<a name="l00038"></a>00038         this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#ab21a332badd5ccc36bc0f7d2ade2560b" title="Update mesh from cluster.">update</a>();
+<a name="l00039"></a>00039 }
+<a name="l00040"></a>00040 
+<a name="l00041"></a><a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#aef373539eb9566c327ec33adb21dc631">00041</a> <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#aef373539eb9566c327ec33adb21dc631" title="Destructor.">Mesh::~Mesh</a>() {
+<a name="l00042"></a>00042 }
+<a name="l00043"></a>00043 
+<a name="l00044"></a><a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#ab21a332badd5ccc36bc0f7d2ade2560b">00044</a> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#ab21a332badd5ccc36bc0f7d2ade2560b" title="Update mesh from cluster.">Mesh::update</a>() {
+<a name="l00045"></a>00045         <span class="comment">// go over all nodes in cluster, affecting the mesh activities</span>
+<a name="l00046"></a>00046         <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;components::Node&gt; &gt; &amp; all_nodes = <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#abcb6d0f863592f641cb5f8801d268fa2">cluster</a>.<a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#ade4227c5a3f39b17a53c31e4aeb25bfc" title="Get all nodes.">getNodes</a>();
+<a name="l00047"></a>00047         <span class="comment">// forall in all_nodes</span>
+<a name="l00048"></a>00048         {
+<a name="l00049"></a>00049                 std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;components::Node&gt; &gt;::const_iterator it_all_nodes =
+<a name="l00050"></a>00050                                 all_nodes.begin();
+<a name="l00051"></a>00051                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;components::Node&gt; &gt;::const_iterator it_all_nodes_end =
+<a name="l00052"></a>00052                                 all_nodes.end();
+<a name="l00053"></a>00053                 <span class="keywordflow">while</span> (it_all_nodes != it_all_nodes_end) {
+<a name="l00054"></a>00054                         <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a> &amp; temp_node = *(it_all_nodes-&gt;second);
+<a name="l00055"></a>00055                         <span class="keyword">const</span> Point &amp; temp_point = temp_node.<a class="code" href="classcryomesh_1_1components_1_1Node.html#a313531f48e1ccc3902fdeb313d41bd7b" title="get the position of the node">getPosition</a>();
+<a name="l00056"></a>00056                         <span class="comment">// get current activity at point</span>
+<a name="l00057"></a>00057                         <span class="keywordtype">double</span> current_activity = <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#a6a93097e85b79b2b5073d1a580ffea25">grid</a>-&gt;getInterpolatedActivity(temp_point, 1);
+<a name="l00058"></a>00058                         <span class="keywordtype">double</span> new_activity = temp_node.<a class="code" href="classcryomesh_1_1components_1_1Node.html#a355e414f9a353883fd0f4b7cae24d6cc" title="Get the current activity of the node.">getActivity</a>();
+<a name="l00059"></a>00059 <span class="preprocessor">#ifdef MESH_DEBUG</span>
+<a name="l00060"></a>00060 <span class="preprocessor"></span>                        std::cout &lt;&lt; <span class="stringliteral">&quot;Mesh::update: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;grid-&gt;applyPointActivityToGrid(&quot;</span> &lt;&lt; temp_point &lt;&lt; <span class="stringliteral">&quot;, (&quot;</span> &lt;&lt; new_activity
+<a name="l00061"></a>00061                                         &lt;&lt; <span class="stringliteral">&quot; - &quot;</span> &lt;&lt; current_activity &lt;&lt; <span class="stringliteral">&quot;));&quot;</span> &lt;&lt; std::endl;
+<a name="l00062"></a>00062 <span class="preprocessor">#endif</span>
+<a name="l00063"></a>00063 <span class="preprocessor"></span>                        <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#a6a93097e85b79b2b5073d1a580ffea25">grid</a>-&gt;applyPointActivityToGrid(temp_point, (new_activity - current_activity));
+<a name="l00064"></a>00064                         ++it_all_nodes;
+<a name="l00065"></a>00065                 }
+<a name="l00066"></a>00066         }
+<a name="l00067"></a>00067 }
+<a name="l00068"></a>00068 
+<a name="l00069"></a><a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#a9e8d644176a116f998e7d2b904427564">00069</a> <a class="code" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#a9e8d644176a116f998e7d2b904427564" title="Assignment Operator.">Mesh::warp</a>(<a class="code" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a> &amp; node) {
+<a name="l00070"></a>00070         <span class="comment">// get activity value at grid point near node</span>
+<a name="l00071"></a>00071         <span class="keywordtype">double</span> interpolated = <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#a6a93097e85b79b2b5073d1a580ffea25">grid</a>-&gt;getInterpolatedActivity(node.<a class="code" href="classcryomesh_1_1components_1_1Node.html#a313531f48e1ccc3902fdeb313d41bd7b" title="get the position of the node">getPosition</a>());
+<a name="l00072"></a>00072         <span class="comment">// blend the activities</span>
+<a name="l00073"></a>00073         <span class="keywordtype">double</span> warped_activity = this-&gt;<a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#af42af644c8d5b4b46bf4006a4e3b0b21">getBlendedActivity</a>(node.<a class="code" href="classcryomesh_1_1components_1_1Node.html#a355e414f9a353883fd0f4b7cae24d6cc" title="Get the current activity of the node.">getActivity</a>(), interpolated, <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#a5899ce5c4ac651fe82d0bd7b25d4b743a9e12dc9ac54b6b1eadbe806b90caf332">Mesh::BLEND_LINEAR</a>,
+<a name="l00074"></a>00074                         <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#a1f56ed809a278be7c36d96a46e33549a">DEFAULT_BLEND_FORCE</a>);
+<a name="l00075"></a>00075         node.<a class="code" href="classcryomesh_1_1components_1_1Node.html#acf3b0de410fee4350390bd527c544187" title="Set the current activity of the node.">setActivity</a>(warped_activity);
+<a name="l00076"></a>00076         <span class="keywordflow">return</span> node;
+<a name="l00077"></a>00077 }
+<a name="l00078"></a>00078 
+<a name="l00079"></a><a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#a0dba481a327d8353b2c17f6174a750fe">00079</a> <a class="code" href="classcryomesh_1_1components_1_1ImpulseCollection.html" title="ImpulseCollection represents a collection of Impulse objects.">ImpulseCollection</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#a9e8d644176a116f998e7d2b904427564" title="Assignment Operator.">Mesh::warp</a>(<a class="code" href="classcryomesh_1_1components_1_1ImpulseCollection.html" title="ImpulseCollection represents a collection of Impulse objects.">ImpulseCollection</a> &amp; impulseCollection) {
+<a name="l00080"></a>00080         <span class="comment">//TODO Mesh::warp (ImpulseCollection&amp;)</span>
+<a name="l00081"></a>00081         std::cout &lt;&lt; <span class="stringliteral">&quot;Mesh::warp(ImpulseCollection &amp;): &quot;</span> &lt;&lt; <span class="stringliteral">&quot;TODO&quot;</span> &lt;&lt; std::endl;
+<a name="l00082"></a>00082         <span class="keywordflow">return</span> impulseCollection;
+<a name="l00083"></a>00083 }
+<a name="l00084"></a>00084 
+<a name="l00085"></a><a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#a8e04bfe94511b2532f7847db58443ff5">00085</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#a9e8d644176a116f998e7d2b904427564" title="Assignment Operator.">Mesh::warp</a>(<a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; impulse) {
+<a name="l00086"></a>00086         <span class="comment">//TODO Mesh::warp (Impulse&amp;)</span>
+<a name="l00087"></a>00087         std::cout &lt;&lt; <span class="stringliteral">&quot;Mesh::warp(Impulse &amp;): &quot;</span> &lt;&lt; <span class="stringliteral">&quot;TODO&quot;</span> &lt;&lt; std::endl;
+<a name="l00088"></a>00088         <span class="keywordflow">return</span> impulse;
+<a name="l00089"></a>00089 }
+<a name="l00090"></a>00090 
+<a name="l00091"></a><a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#af42af644c8d5b4b46bf4006a4e3b0b21">00091</a> <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#af42af644c8d5b4b46bf4006a4e3b0b21">Mesh::getBlendedActivity</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> first_activity, <span class="keyword">const</span> <span class="keywordtype">double</span> second_activity,
+<a name="l00092"></a>00092                 <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#a5899ce5c4ac651fe82d0bd7b25d4b743">BlendingMethod</a> blending_method, <span class="keywordtype">double</span> force) {
+<a name="l00093"></a>00093         common::Maths::clamp(force, 0.0, 1.0);
+<a name="l00094"></a>00094         <span class="keywordtype">double</span> result;
+<a name="l00095"></a>00095         <span class="keywordflow">if</span> (blending_method == <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#a5899ce5c4ac651fe82d0bd7b25d4b743a9e12dc9ac54b6b1eadbe806b90caf332">Mesh::BLEND_LINEAR</a>) {
+<a name="l00096"></a>00096                 result = first_activity + (force * (second_activity - first_activity));
+<a name="l00097"></a>00097         } <span class="keywordflow">else</span> {
+<a name="l00098"></a>00098                 result = first_activity + (force * (second_activity - first_activity));
+<a name="l00099"></a>00099         }
+<a name="l00100"></a>00100         <span class="keywordflow">return</span> result;
+<a name="l00101"></a>00101 }
+<a name="l00102"></a>00102 
+<a name="l00103"></a><a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#a4dd11ae677f2337314378338993d79f7">00103</a> <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html" title="A Cluster is a collection of self-contained nodes and connections along with an associated Mesh...">Cluster</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#a4dd11ae677f2337314378338993d79f7">Mesh::getCluster</a>()<span class="keyword"> const </span>{
+<a name="l00104"></a>00104         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#abcb6d0f863592f641cb5f8801d268fa2">cluster</a>;
+<a name="l00105"></a>00105 }
+<a name="l00106"></a>00106 
+<a name="l00107"></a><a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#a8e3ffde2dccc774da89e523fc2965333">00107</a> <span class="keyword">const</span> boost::shared_ptr&lt;spacial::ActivityGrid&gt; <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#a8e3ffde2dccc774da89e523fc2965333">Mesh::getActivityGrid</a>()<span class="keyword"> const </span>{
+<a name="l00108"></a>00108         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Mesh.html#a6a93097e85b79b2b5073d1a580ffea25">grid</a>;
+<a name="l00109"></a>00109 }
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111 }<span class="comment">//NAMESPACE</span>
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113 }<span class="comment">//NAMESPACE</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -124,7 +182,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -133,7 +191,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:14 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

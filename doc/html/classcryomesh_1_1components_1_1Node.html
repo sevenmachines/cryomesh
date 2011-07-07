@@ -106,6 +106,10 @@ Public Types</h2></td></tr>
  }</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><p>Enum representing posible activation states. </p>
  <a href="classcryomesh_1_1components_1_1Node.html#a291becdd589b5bd338d5c0dd28199798">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#adf36d853022d1b106766aefd3b9f3641">RecoverySetting</a> { <a class="el" href="classcryomesh_1_1components_1_1Node.html#adf36d853022d1b106766aefd3b9f3641a91a2a1e92850c99a22afb1574bd74574">CLEAR_ALL_IMPULSES</a> = 1, 
+<a class="el" href="classcryomesh_1_1components_1_1Node.html#adf36d853022d1b106766aefd3b9f3641a000e55e803e043c412dfbc2d222a34e6">CLEAR_ACTIVE_IMPULSES</a> = 2, 
+<a class="el" href="classcryomesh_1_1components_1_1Node.html#adf36d853022d1b106766aefd3b9f3641a3d8ee8e0f92053fa06eaa4184f1854b1">DEACTIVATE_DURING_RECOVERY</a> = 4
+ }</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#aa28b184629aa9412666b9674a10c45ab">Node</a> ()</td></tr>
@@ -113,14 +117,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#ae1ac5a2ed22ebc9b0cb7055b3e456097">~Node</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#ae1ac5a2ed22ebc9b0cb7055b3e456097"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a960b083db047bb1b860d4ed09f9ad583">update</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a291becdd589b5bd338d5c0dd28199798">Node::ActivationState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#ac4f969b7c236a6e910031101879c8da3">checkFire</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the object is ready to fire off an impulse and carry it out.  <a href="#ac4f969b7c236a6e910031101879c8da3"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classcryomesh_1_1components_1_1Node.html#a291becdd589b5bd338d5c0dd28199798">Node::ActivationState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#adeebae01197045204f1b9cda1ece3372">checkActivationState</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Check level of impulses and decide whether to activate the node.  <a href="#adeebae01197045204f1b9cda1ece3372"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a8fc7efcfff86d2ca72b54166f600b7d0">emitImpulsePositive</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Emit a positive impulse to outgoing connections.  <a href="#a8fc7efcfff86d2ca72b54166f600b7d0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a75addf25b1b16bf1476cf19f00d7513d">emitImpulseNegative</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Emit a negative impulse to outgoing connections.  <a href="#a75addf25b1b16bf1476cf19f00d7513d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#ac40f33e5d0986d208b21302232f8a165">forceFire</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Force the node to fire.  <a href="#ac40f33e5d0986d208b21302232f8a165"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual boost::shared_ptr<br class="typebreak"/>
 &lt; <a class="el" href="classcryomesh_1_1components_1_1Impulse.html">Impulse</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a1098a370eba39dce1388d657e3d3aef9">addImpulse</a> (boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Impulse.html">Impulse</a> &gt; impulse)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add incoming <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a>.  <a href="#a1098a370eba39dce1388d657e3d3aef9"></a><br/></td></tr>
@@ -132,12 +130,20 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcryomesh_1_1common_1_1Connector.html">common::Connector</a>&lt; <a class="el" href="classcryomesh_1_1components_1_1Node.html">Node</a>, <br class="typebreak"/>
 <a class="el" href="classcryomesh_1_1components_1_1Connection.html">Connection</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#ae28261bb67b7412a67b21a4e4adaa9b1">getMutableConnector</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the mutable Connector object for this <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a>.  <a href="#ae28261bb67b7412a67b21a4e4adaa9b1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a501c4e986a566a4e7fc5f9c87e9c4d8e">isInputIsolated</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a211678e84d71cb71e3721eb9725fa934">isOutputIsolated</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a4a7775d987020170538f059688ff4a1f">connectInput</a> (boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Connection.html">Connection</a> &gt; con)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a660adcc4e2b3b7a427ad4625e5279de4">connectOutput</a> (boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Connection.html">Connection</a> &gt; con)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html">ImpulseCollection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a63316f8a1ad0ffe3ee22f8b455ef27a4">getImpulses</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the collection of Impulses for this <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a>.  <a href="#a63316f8a1ad0ffe3ee22f8b455ef27a4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Impulse.html">Impulse</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a8a90b1faf2e6b633bbb4853e522c29b7">getEmittedImpulse</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> that is emitted.  <a href="#a8a90b1faf2e6b633bbb4853e522c29b7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Impulse.html">Impulse</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#aa6e0c0a0063e657053482aac777759d3">getMutableEmittedImpulse</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the mutable <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> that is emitted.  <a href="#aa6e0c0a0063e657053482aac777759d3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a8fc7efcfff86d2ca72b54166f600b7d0">emitImpulsePositive</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Emit a positive impulse to outgoing connections.  <a href="#a8fc7efcfff86d2ca72b54166f600b7d0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a75addf25b1b16bf1476cf19f00d7513d">emitImpulseNegative</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Emit a negative impulse to outgoing connections.  <a href="#a75addf25b1b16bf1476cf19f00d7513d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html">ImpulseCollection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#adaa0b9f4c9a6130525fce2e43f418bc3">getMutableImpulses</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the mutable collection of Impulses for this <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a>.  <a href="#adaa0b9f4c9a6130525fce2e43f418bc3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const std::map&lt; <a class="el" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a>, <br class="typebreak"/>
@@ -162,8 +168,24 @@ double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="e
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">get the position of the node  <a href="#a313531f48e1ccc3902fdeb313d41bd7b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a970e8e8ae18053bd9e087ce7faf720de">setPosition</a> (const spacial::Point &amp;new_position)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the spacial position of the node, remembering to update connections lengths.  <a href="#a970e8e8ae18053bd9e087ce7faf720de"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a291becdd589b5bd338d5c0dd28199798">ActivationState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#ac0f6e2c8823c98dc3d85091b2deef3f7">getLastActivationState</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the last activation state.  <a href="#ac0f6e2c8823c98dc3d85091b2deef3f7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a5ec290205a68a8635a740ae32608cebf">randomise</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Randomise the nodes state.  <a href="#a5ec290205a68a8635a740ae32608cebf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a42acc61b6b0d590433215535d3bc67cd">enableDebug</a> (bool b)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a83303fef90a3093807d76a59e4df5288">isTriggered</a> (<a class="el" href="classcryomesh_1_1components_1_1Node.html#a291becdd589b5bd338d5c0dd28199798">ActivationState</a> state=None)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a> is currently triggered.  <a href="#a83303fef90a3093807d76a59e4df5288"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#af2943ca887ce9c2b1a65297cae14d752">isActive</a> (const <a class="el" href="classcryomesh_1_1components_1_1Node.html#a291becdd589b5bd338d5c0dd28199798">ActivationState</a> state=None)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a> is currently activated.  <a href="#af2943ca887ce9c2b1a65297cae14d752"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a2309ba6b3ffa640410dfdc1630a66400">isLive</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a> is live, ie active at any point in now or the future.  <a href="#a2309ba6b3ffa640410dfdc1630a66400"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a2f55aa5adcac4a2f1aa1f0a7c8fc697d">isPrimaryInputAttachedNode</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a8466a252c7a4e6fb2d825826be53e218">isPrimaryOutputAttachedNode</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; boost::shared_ptr<br class="typebreak"/>
+&lt; <a class="el" href="classcryomesh_1_1components_1_1Connection.html">Connection</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a0f172d0f98de3d008d2d0a5efa15d3b2">getPrimaryInputConnections</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; boost::shared_ptr<br class="typebreak"/>
+&lt; <a class="el" href="classcryomesh_1_1components_1_1Connection.html">Connection</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#aa0ac6ca5e0d98261840760bdc07e4d3f">getPrimaryOutputConnections</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a036878d7028df14d1015c0ce413d4038">printConnections</a> (std::ostream &amp;os, const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Connection.html">Connection</a> &gt; &gt; &amp;all_cons, const std::string formatter=&quot;&quot;) const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#a3e510413675407ec0a6745345ca9a3a8">enableLogging</a> (bool enable)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether logging is enabled or not.  <a href="#a3e510413675407ec0a6745345ca9a3a8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual const std::map<br class="typebreak"/>
@@ -185,6 +207,10 @@ Static Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const spacial::Point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a3f4f3b7d2bba533fc0487b4f10c1efcd">MAX_BOUNDING_BOX_POINT</a> = spacial::Point(100, 100, 100)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classcryomesh_1_1components_1_1Node.html#a291becdd589b5bd338d5c0dd28199798">Node::ActivationState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#adeebae01197045204f1b9cda1ece3372">checkActivationState</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Check level of impulses and decide whether to activate the node.  <a href="#adeebae01197045204f1b9cda1ece3372"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classcryomesh_1_1components_1_1Node.html#a291becdd589b5bd338d5c0dd28199798">Node::ActivationState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#ac4f969b7c236a6e910031101879c8da3">checkFire</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the object is ready to fire off an impulse and carry it out.  <a href="#ac4f969b7c236a6e910031101879c8da3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#ade03584e4db3f8e1eeddc9ad371b4658">updateImpulses</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the collection of impulses by one cycle.  <a href="#ade03584e4db3f8e1eeddc9ad371b4658"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a3323a7f7e9958b78552746ddf374c4fc">emitImpulse</a> (bool positive)</td></tr>
@@ -193,6 +219,7 @@ Protected Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an activity to the list of activities.  <a href="#ab916e0beff2dcecd14c284dd63bd0585"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#ab769e1efe1fd3e0ae9ff0a7643dd473c">updatePosition</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Recalculate state of node and connections based on current position.  <a href="#ab769e1efe1fd3e0ae9ff0a7643dd473c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a92bbb37859ba4b810381bd733ad5d63c">enterRecovery</a> (const int recovery_settings=CLEAR_ALL_IMPULSES)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcryomesh_1_1dataobjects_1_1DataObject.html">dataobjects::DataObject</a><br class="typebreak"/>
@@ -207,6 +234,7 @@ Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcryomesh_1_1dataobjects_1_1DataObject.html">dataobjects::DataObject</a><br class="typebreak"/>
 &lt; <a class="el" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a>, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a39bf3a9c006d8ee03769d6b86127e7cf">activities</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">spacial::Point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#afad345a6d8cc1eacc555acde8c065b61">position</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a291becdd589b5bd338d5c0dd28199798">ActivationState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#ab94a09be9e58cc248f9d62ed5c45c83d">lastActivationState</a></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html#aa13c716dda529b01000661b942327bd6">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classcryomesh_1_1components_1_1Node.html">Node</a> &amp;obj)</td></tr>
@@ -230,6 +258,7 @@ Friends</h2></td></tr>
 <div class="memdoc">
 
 <p>Enum representing posible activation states. </p>
+<p>Last activation state. </p>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="a291becdd589b5bd338d5c0dd28199798af92c268dc627d5fed69c32d6f0d3d82e"></a><!-- doxytag: member="Positive" ref="a291becdd589b5bd338d5c0dd28199798af92c268dc627d5fed69c32d6f0d3d82e" args="" -->Positive</em>&nbsp;</td><td>
 </td></tr>
@@ -241,7 +270,32 @@ Friends</h2></td></tr>
 </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Node_8h_source.html#l00044">44</a> of file <a class="el" href="Node_8h_source.html">Node.h</a>.</p>
+<p>Definition at line <a class="el" href="Node_8h_source.html#l00046">46</a> of file <a class="el" href="Node_8h_source.html">Node.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adf36d853022d1b106766aefd3b9f3641"></a><!-- doxytag: member="cryomesh::components::Node::RecoverySetting" ref="adf36d853022d1b106766aefd3b9f3641" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classcryomesh_1_1components_1_1Node.html#adf36d853022d1b106766aefd3b9f3641">cryomesh::components::Node::RecoverySetting</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="adf36d853022d1b106766aefd3b9f3641a91a2a1e92850c99a22afb1574bd74574"></a><!-- doxytag: member="CLEAR_ALL_IMPULSES" ref="adf36d853022d1b106766aefd3b9f3641a91a2a1e92850c99a22afb1574bd74574" args="" -->CLEAR_ALL_IMPULSES</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="adf36d853022d1b106766aefd3b9f3641a000e55e803e043c412dfbc2d222a34e6"></a><!-- doxytag: member="CLEAR_ACTIVE_IMPULSES" ref="adf36d853022d1b106766aefd3b9f3641a000e55e803e043c412dfbc2d222a34e6" args="" -->CLEAR_ACTIVE_IMPULSES</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="adf36d853022d1b106766aefd3b9f3641a3d8ee8e0f92053fa06eaa4184f1854b1"></a><!-- doxytag: member="DEACTIVATE_DURING_RECOVERY" ref="adf36d853022d1b106766aefd3b9f3641a3d8ee8e0f92053fa06eaa4184f1854b1" args="" -->DEACTIVATE_DURING_RECOVERY</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>Definition at line <a class="el" href="Node_8h_source.html#l00050">50</a> of file <a class="el" href="Node_8h_source.html">Node.h</a>.</p>
 
 </div>
 </div>
@@ -263,9 +317,9 @@ Friends</h2></td></tr>
 <p>Contructor. </p>
 <p>Contructor for <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a> </p>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00035">35</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00037">37</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8h_source.html#l00362">activities</a>, <a class="el" href="Node_8h_source.html#l00341">connector</a>, <a class="el" href="Node_8h_source.html#l00355">emittedImpulse</a>, <a class="el" href="Node_8h_source.html#l00273">MAX_ACTIVITIES_LENGTH</a>, and <a class="el" href="DataObject_8h_source.html#l00217">cryomesh::dataobjects::DataObject&lt; U, T &gt;::setDatasetMaximumSize()</a>.</p>
+<p>References <a class="el" href="Node_8h_source.html#l00430">activities</a>, <a class="el" href="Node_8h_source.html#l00409">connector</a>, <a class="el" href="Node_8h_source.html#l00423">emittedImpulse</a>, <a class="el" href="Node_8h_source.html#l00324">MAX_ACTIVITIES_LENGTH</a>, and <a class="el" href="DataObject_8h_source.html#l00217">cryomesh::dataobjects::DataObject&lt; U, T &gt;::setDatasetMaximumSize()</a>.</p>
 
 </div>
 </div>
@@ -286,7 +340,7 @@ Friends</h2></td></tr>
 <p>Destructor. </p>
 <p>Destructor for <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a> </p>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00042">42</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00045">45</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
 </div>
 </div>
@@ -326,11 +380,11 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The current activity </dd></dl>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00202">202</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00278">278</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8h_source.html#l00362">activities</a>, and <a class="el" href="DataObject_8h_source.html#l00191">cryomesh::dataobjects::DataObject&lt; U, T &gt;::insert()</a>.</p>
+<p>References <a class="el" href="Node_8h_source.html#l00430">activities</a>, and <a class="el" href="DataObject_8h_source.html#l00191">cryomesh::dataobjects::DataObject&lt; U, T &gt;::insert()</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00198">setActivity()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00274">setActivity()</a>.</p>
 
 </div>
 </div>
@@ -358,11 +412,11 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>boost::shared_ptr&lt;Impulse&gt; The impulse added, null if none added </dd></dl>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00092">92</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00133">133</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8cpp_source.html#l00170">getMutableImpulses()</a>, and <a class="el" href="TimeKeeper_8cpp_source.html#l00020">cryomesh::common::TimeKeeper::getTimeKeeper()</a>.</p>
+<p>References <a class="el" href="Node_8cpp_source.html#l00246">getMutableImpulses()</a>, and <a class="el" href="TimeKeeper_8cpp_source.html#l00020">cryomesh::common::TimeKeeper::getTimeKeeper()</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00097">addImpulses()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00143">addImpulses()</a>, and <a class="el" href="Node_8cpp_source.html#l00079">forceFire()</a>.</p>
 
 </div>
 </div>
@@ -389,9 +443,9 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00097">97</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00143">143</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8cpp_source.html#l00092">addImpulse()</a>, and <a class="el" href="Node_8h_source.html#l00348">impulses</a>.</p>
+<p>References <a class="el" href="Node_8cpp_source.html#l00133">addImpulse()</a>, <a class="el" href="Node_8cpp_source.html#l00234">getImpulses()</a>, and <a class="el" href="Node_8h_source.html#l00416">impulses</a>.</p>
 
 </div>
 </div>
@@ -403,7 +457,7 @@ Friends</h2></td></tr>
           <td class="memname"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a291becdd589b5bd338d5c0dd28199798">Node::ActivationState</a> cryomesh::components::Node::checkActivationState </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td><code> [protected, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -412,11 +466,11 @@ Friends</h2></td></tr>
 <p>Check level of impulses and decide whether to activate the node. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classcryomesh_1_1components_1_1Node.html#a291becdd589b5bd338d5c0dd28199798" title="Enum representing posible activation states.">Node::ActivationState</a> Positive if activity is over threshold, negative if under -threshold, None otherwise </dd></dl>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00109">109</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00165">165</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8h_source.html#l00280">ACTIVITY_THRESHOLD</a>, <a class="el" href="Node_8h_source.html#l00045">Negative</a>, <a class="el" href="Node_8h_source.html#l00045">None</a>, <a class="el" href="Node_8h_source.html#l00045">Positive</a>, and <a class="el" href="Node_8cpp_source.html#l00186">updateActivity()</a>.</p>
+<p>References <a class="el" href="Node_8h_source.html#l00331">ACTIVITY_THRESHOLD</a>, <a class="el" href="Node_8h_source.html#l00047">Negative</a>, <a class="el" href="Node_8h_source.html#l00047">None</a>, <a class="el" href="Node_8h_source.html#l00047">Positive</a>, and <a class="el" href="Node_8cpp_source.html#l00262">updateActivity()</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00074">checkFire()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00091">checkFire()</a>.</p>
 
 </div>
 </div>
@@ -428,7 +482,7 @@ Friends</h2></td></tr>
           <td class="memname"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a291becdd589b5bd338d5c0dd28199798">Node::ActivationState</a> cryomesh::components::Node::checkFire </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td><code> [protected, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -437,11 +491,53 @@ Friends</h2></td></tr>
 <p>Check if the object is ready to fire off an impulse and carry it out. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>ActivationState Return the action that was taken </dd></dl>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00074">74</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00091">91</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8cpp_source.html#l00109">checkActivationState()</a>, <a class="el" href="Node_8cpp_source.html#l00130">emitImpulseNegative()</a>, <a class="el" href="Node_8cpp_source.html#l00126">emitImpulsePositive()</a>, <a class="el" href="Node_8h_source.html#l00045">Negative</a>, and <a class="el" href="Node_8h_source.html#l00045">Positive</a>.</p>
+<p>References <a class="el" href="Node_8cpp_source.html#l00165">checkActivationState()</a>, <a class="el" href="Node_8cpp_source.html#l00186">emitImpulseNegative()</a>, <a class="el" href="Node_8cpp_source.html#l00182">emitImpulsePositive()</a>, <a class="el" href="Node_8cpp_source.html#l00107">enterRecovery()</a>, <a class="el" href="Node_8h_source.html#l00047">Negative</a>, and <a class="el" href="Node_8h_source.html#l00047">Positive</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00045">update()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00048">update()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4a7775d987020170538f059688ff4a1f"></a><!-- doxytag: member="cryomesh::components::Node::connectInput" ref="a4a7775d987020170538f059688ff4a1f" args="(boost::shared_ptr&lt; Connection &gt; con)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cryomesh::components::Node::connectInput </td>
+          <td>(</td>
+          <td class="paramtype">boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Connection.html">Connection</a> &gt;&#160;</td>
+          <td class="paramname"><em>con</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00456">456</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+
+<p>References <a class="el" href="Node_8cpp_source.html#l00087">getMutableConnector()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a660adcc4e2b3b7a427ad4625e5279de4"></a><!-- doxytag: member="cryomesh::components::Node::connectOutput" ref="a660adcc4e2b3b7a427ad4625e5279de4" args="(boost::shared_ptr&lt; Connection &gt; con)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cryomesh::components::Node::connectOutput </td>
+          <td>(</td>
+          <td class="paramtype">boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Connection.html">Connection</a> &gt;&#160;</td>
+          <td class="paramname"><em>con</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00459">459</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+
+<p>References <a class="el" href="Node_8cpp_source.html#l00087">getMutableConnector()</a>.</p>
 
 </div>
 </div>
@@ -468,11 +564,11 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00134">134</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00190">190</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8cpp_source.html#l00070">getMutableConnector()</a>, and <a class="el" href="Node_8cpp_source.html#l00166">getMutableEmittedImpulse()</a>.</p>
+<p>References <a class="el" href="Connection_8cpp_source.html#l00086">cryomesh::components::Connection::add()</a>, <a class="el" href="Node_8cpp_source.html#l00238">getEmittedImpulse()</a>, <a class="el" href="Connection_8cpp_source.html#l00114">cryomesh::components::Connection::getImpulses()</a>, <a class="el" href="Node_8cpp_source.html#l00087">getMutableConnector()</a>, and <a class="el" href="Node_8cpp_source.html#l00242">getMutableEmittedImpulse()</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00130">emitImpulseNegative()</a>, and <a class="el" href="Node_8cpp_source.html#l00126">emitImpulsePositive()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00186">emitImpulseNegative()</a>, and <a class="el" href="Node_8cpp_source.html#l00182">emitImpulsePositive()</a>.</p>
 
 </div>
 </div>
@@ -492,11 +588,11 @@ Friends</h2></td></tr>
 
 <p>Emit a negative impulse to outgoing connections. </p>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00130">130</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00186">186</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8cpp_source.html#l00134">emitImpulse()</a>.</p>
+<p>References <a class="el" href="Node_8cpp_source.html#l00190">emitImpulse()</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00074">checkFire()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00091">checkFire()</a>.</p>
 
 </div>
 </div>
@@ -516,11 +612,30 @@ Friends</h2></td></tr>
 
 <p>Emit a positive impulse to outgoing connections. </p>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00126">126</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00182">182</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8cpp_source.html#l00134">emitImpulse()</a>.</p>
+<p>References <a class="el" href="Node_8cpp_source.html#l00190">emitImpulse()</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00074">checkFire()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00091">checkFire()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a42acc61b6b0d590433215535d3bc67cd"></a><!-- doxytag: member="cryomesh::components::Node::enableDebug" ref="a42acc61b6b0d590433215535d3bc67cd" args="(bool b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cryomesh::components::Node::enableDebug </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00493">493</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
 </div>
 </div>
@@ -551,6 +666,51 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a92bbb37859ba4b810381bd733ad5d63c"></a><!-- doxytag: member="cryomesh::components::Node::enterRecovery" ref="a92bbb37859ba4b810381bd733ad5d63c" args="(const int recovery_settings=CLEAR_ALL_IMPULSES)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cryomesh::components::Node::enterRecovery </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>recovery_settings</em> = <code>CLEAR_ALL_IMPULSES</code></td><td>)</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00107">107</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+
+<p>References <a class="el" href="Node_8h_source.html#l00052">CLEAR_ACTIVE_IMPULSES</a>, <a class="el" href="Node_8h_source.html#l00051">CLEAR_ALL_IMPULSES</a>, <a class="el" href="ImpulseCollection_8cpp_source.html#l00115">cryomesh::components::ImpulseCollection::clearActiveImpulses()</a>, <a class="el" href="TimeKeeper_8cpp_source.html#l00020">cryomesh::common::TimeKeeper::getTimeKeeper()</a>, and <a class="el" href="Node_8h_source.html#l00416">impulses</a>.</p>
+
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00091">checkFire()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac40f33e5d0986d208b21302232f8a165"></a><!-- doxytag: member="cryomesh::components::Node::forceFire" ref="ac40f33e5d0986d208b21302232f8a165" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cryomesh::components::Node::forceFire </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Force the node to fire. </p>
+
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00079">79</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+
+<p>References <a class="el" href="Node_8cpp_source.html#l00133">addImpulse()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00033">cryomesh::components::Impulse::getTriggerImpulse()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a98801c702bf6613f06880f7cc577ddd7"></a><!-- doxytag: member="cryomesh::components::Node::getActivities" ref="a98801c702bf6613f06880f7cc577ddd7" args="() const " -->
 <div class="memitem">
 <div class="memproto">
@@ -568,11 +728,11 @@ Friends</h2></td></tr>
 <p>Get the collection of all activities. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::list&lt;double&gt; &amp; List of activities </dd></dl>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00174">174</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00250">250</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8h_source.html#l00362">activities</a>, and <a class="el" href="DataObject_8h_source.html#l00081">cryomesh::dataobjects::DataObject&lt; U, T &gt;::getMap()</a>.</p>
+<p>References <a class="el" href="Node_8h_source.html#l00430">activities</a>, and <a class="el" href="DataObject_8h_source.html#l00081">cryomesh::dataobjects::DataObject&lt; U, T &gt;::getMap()</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00207">getDatabaseObject()</a>, and <a class="el" href="Node_8cpp_source.html#l00045">update()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00283">getDatabaseObject()</a>, and <a class="el" href="Node_8cpp_source.html#l00048">update()</a>.</p>
 
 </div>
 </div>
@@ -593,11 +753,11 @@ Friends</h2></td></tr>
 <p>Get the current activity of the node. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>double The current activity </dd></dl>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00178">178</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00254">254</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
 <p>References <a class="el" href="TimeKeeper_8cpp_source.html#l00020">cryomesh::common::TimeKeeper::getTimeKeeper()</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00207">getDatabaseObject()</a>, and <a class="el" href="Node_8cpp_source.html#l00186">updateActivity()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00283">getDatabaseObject()</a>, <a class="el" href="Node_8cpp_source.html#l00320">isActive()</a>, <a class="el" href="Mesh_8cpp_source.html#l00044">cryomesh::structures::Mesh::update()</a>, <a class="el" href="Node_8cpp_source.html#l00262">updateActivity()</a>, and <a class="el" href="Mesh_8cpp_source.html#l00069">cryomesh::structures::Mesh::warp()</a>.</p>
 
 </div>
 </div>
@@ -619,9 +779,9 @@ Friends</h2></td></tr>
 <p>Get the activity of the node on specific cycle. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>double The current activity </dd></dl>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00182">182</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00258">258</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8h_source.html#l00362">activities</a>, and <a class="el" href="DataObject_8h_source.html#l00138">cryomesh::dataobjects::DataObject&lt; U, T &gt;::getByKey()</a>.</p>
+<p>References <a class="el" href="ImpulseCollection_8cpp_source.html#l00023">cryomesh::components::ImpulseCollection::getActivity()</a>, and <a class="el" href="Node_8cpp_source.html#l00234">getImpulses()</a>.</p>
 
 </div>
 </div>
@@ -642,11 +802,11 @@ Friends</h2></td></tr>
 <p>Get the Connector object for this <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a>. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>const common::Connector&lt;Node, Connection&gt; &amp; The Connector for this object </dd></dl>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00066">66</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00083">83</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8h_source.html#l00341">connector</a>.</p>
+<p>References <a class="el" href="Node_8h_source.html#l00409">connector</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00260">cryomesh::components::operator&lt;&lt;()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00412">getPrimaryInputConnections()</a>, <a class="el" href="Node_8cpp_source.html#l00434">getPrimaryOutputConnections()</a>, <a class="el" href="Node_8cpp_source.html#l00348">isInputIsolated()</a>, <a class="el" href="Node_8cpp_source.html#l00355">isOutputIsolated()</a>, <a class="el" href="Node_8cpp_source.html#l00362">isPrimaryInputAttachedNode()</a>, <a class="el" href="Node_8cpp_source.html#l00387">isPrimaryOutputAttachedNode()</a>, and <a class="el" href="Node_8cpp_source.html#l00496">cryomesh::components::operator&lt;&lt;()</a>.</p>
 
 </div>
 </div>
@@ -667,9 +827,9 @@ Friends</h2></td></tr>
 <p>Return a database object for this node. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>DatabaseObject </dd></dl>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00207">207</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00283">283</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8cpp_source.html#l00174">getActivities()</a>, <a class="el" href="Node_8cpp_source.html#l00178">getActivity()</a>, <a class="el" href="Node_8cpp_source.html#l00216">getPosition()</a>, and <a class="el" href="TimeKeeper_8cpp_source.html#l00020">cryomesh::common::TimeKeeper::getTimeKeeper()</a>.</p>
+<p>References <a class="el" href="Node_8cpp_source.html#l00250">getActivities()</a>, <a class="el" href="Node_8cpp_source.html#l00254">getActivity()</a>, <a class="el" href="Node_8cpp_source.html#l00293">getPosition()</a>, and <a class="el" href="TimeKeeper_8cpp_source.html#l00020">cryomesh::common::TimeKeeper::getTimeKeeper()</a>.</p>
 
 </div>
 </div>
@@ -711,9 +871,11 @@ Friends</h2></td></tr>
 <p>Get the <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> that is emitted. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>const boost::shared_ptr&lt; Impulse &gt; The emitted <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00162">162</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00238">238</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8h_source.html#l00355">emittedImpulse</a>.</p>
+<p>References <a class="el" href="Node_8h_source.html#l00423">emittedImpulse</a>.</p>
+
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00190">emitImpulse()</a>.</p>
 
 </div>
 </div>
@@ -734,11 +896,36 @@ Friends</h2></td></tr>
 <p>Get the collection of Impulses for this <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a>. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>const <a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html" title="ImpulseCollection represents a collection of Impulse objects.">ImpulseCollection</a> &amp; The collection of Impulses for this <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00158">158</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00234">234</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8h_source.html#l00348">impulses</a>.</p>
+<p>References <a class="el" href="Node_8h_source.html#l00416">impulses</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00260">cryomesh::components::operator&lt;&lt;()</a>, and <a class="el" href="Node_8cpp_source.html#l00186">updateActivity()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00143">addImpulses()</a>, <a class="el" href="Node_8cpp_source.html#l00258">getActivity()</a>, <a class="el" href="Node_8cpp_source.html#l00339">isLive()</a>, <a class="el" href="Node_8cpp_source.html#l00496">cryomesh::components::operator&lt;&lt;()</a>, and <a class="el" href="Node_8cpp_source.html#l00262">updateActivity()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac0f6e2c8823c98dc3d85091b2deef3f7"></a><!-- doxytag: member="cryomesh::components::Node::getLastActivationState" ref="ac0f6e2c8823c98dc3d85091b2deef3f7" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a291becdd589b5bd338d5c0dd28199798">Node::ActivationState</a> cryomesh::components::Node::getLastActivationState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the last activation state. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>ActivationState Return the last activation state </dd></dl>
+
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00302">302</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+
+<p>References <a class="el" href="Node_8h_source.html#l00444">lastActivationState</a>.</p>
+
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00310">isTriggered()</a>.</p>
 
 </div>
 </div>
@@ -780,11 +967,11 @@ Friends</h2></td></tr>
 <p>Get the mutable Connector object for this <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a>. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>common::Connector&lt;Node, Connection&gt; &amp; The mutable Connector for this object </dd></dl>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00070">70</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00087">87</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8h_source.html#l00341">connector</a>.</p>
+<p>References <a class="el" href="Node_8h_source.html#l00409">connector</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00134">emitImpulse()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00456">connectInput()</a>, <a class="el" href="Node_8cpp_source.html#l00459">connectOutput()</a>, and <a class="el" href="Node_8cpp_source.html#l00190">emitImpulse()</a>.</p>
 
 </div>
 </div>
@@ -805,11 +992,11 @@ Friends</h2></td></tr>
 <p>Get the mutable <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> that is emitted. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>boost::shared_ptr&lt; Impulse &gt; The mutable emitted <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00166">166</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00242">242</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8h_source.html#l00355">emittedImpulse</a>.</p>
+<p>References <a class="el" href="Node_8h_source.html#l00423">emittedImpulse</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00134">emitImpulse()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00190">emitImpulse()</a>.</p>
 
 </div>
 </div>
@@ -830,11 +1017,11 @@ Friends</h2></td></tr>
 <p>Get the mutable collection of Impulses for this <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a>. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html" title="ImpulseCollection represents a collection of Impulse objects.">ImpulseCollection</a> &amp; The mutable collection of Impulses for this <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00170">170</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00246">246</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8h_source.html#l00348">impulses</a>.</p>
+<p>References <a class="el" href="Node_8h_source.html#l00416">impulses</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00092">addImpulse()</a>, and <a class="el" href="Node_8cpp_source.html#l00045">update()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00133">addImpulse()</a>, and <a class="el" href="Node_8cpp_source.html#l00048">update()</a>.</p>
 
 </div>
 </div>
@@ -855,11 +1042,51 @@ Friends</h2></td></tr>
 <p>get the position of the node </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>spacial::Point The spacial location of the node </dd></dl>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00216">216</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00293">293</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8h_source.html#l00369">position</a>.</p>
+<p>References <a class="el" href="Node_8h_source.html#l00437">position</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00207">getDatabaseObject()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00283">getDatabaseObject()</a>, <a class="el" href="Mesh_8cpp_source.html#l00044">cryomesh::structures::Mesh::update()</a>, and <a class="el" href="Mesh_8cpp_source.html#l00069">cryomesh::structures::Mesh::warp()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0f172d0f98de3d008d2d0a5efa15d3b2"></a><!-- doxytag: member="cryomesh::components::Node::getPrimaryInputConnections" ref="a0f172d0f98de3d008d2d0a5efa15d3b2" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Connection.html">Connection</a> &gt; &gt; cryomesh::components::Node::getPrimaryInputConnections </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00412">412</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+
+<p>References <a class="el" href="Node_8cpp_source.html#l00083">getConnector()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa0ac6ca5e0d98261840760bdc07e4d3f"></a><!-- doxytag: member="cryomesh::components::Node::getPrimaryOutputConnections" ref="aa0ac6ca5e0d98261840760bdc07e4d3f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Connection.html">Connection</a> &gt; &gt; cryomesh::components::Node::getPrimaryOutputConnections </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00434">434</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+
+<p>References <a class="el" href="Node_8cpp_source.html#l00083">getConnector()</a>.</p>
 
 </div>
 </div>
@@ -878,9 +1105,217 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00024">24</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00026">26</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00038">cryomesh::structures::Cluster::createNodes()</a>, and <a class="el" href="Node_8cpp_source.html#l00225">randomise()</a>.</p>
+<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00064">cryomesh::structures::Cluster::createNodes()</a>, and <a class="el" href="Node_8cpp_source.html#l00306">randomise()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af2943ca887ce9c2b1a65297cae14d752"></a><!-- doxytag: member="cryomesh::components::Node::isActive" ref="af2943ca887ce9c2b1a65297cae14d752" args="(const ActivationState state=None)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cryomesh::components::Node::isActive </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcryomesh_1_1components_1_1Node.html#a291becdd589b5bd338d5c0dd28199798">ActivationState</a>&#160;</td>
+          <td class="paramname"><em>state</em> = <code>None</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check if <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a> is currently activated. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ActivationState</td><td>Positive for positive activity test, Negative for negative activity test, None for any activity test</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>bool True if activated, false otherwise </dd></dl>
+
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00320">320</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+
+<p>References <a class="el" href="Node_8cpp_source.html#l00254">getActivity()</a>, <a class="el" href="Node_8h_source.html#l00047">Negative</a>, <a class="el" href="Node_8h_source.html#l00047">None</a>, and <a class="el" href="Node_8h_source.html#l00047">Positive</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a501c4e986a566a4e7fc5f9c87e9c4d8e"></a><!-- doxytag: member="cryomesh::components::Node::isInputIsolated" ref="a501c4e986a566a4e7fc5f9c87e9c4d8e" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cryomesh::components::Node::isInputIsolated </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00348">348</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+
+<p>References <a class="el" href="Node_8cpp_source.html#l00083">getConnector()</a>.</p>
+
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00362">isPrimaryInputAttachedNode()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2309ba6b3ffa640410dfdc1630a66400"></a><!-- doxytag: member="cryomesh::components::Node::isLive" ref="a2309ba6b3ffa640410dfdc1630a66400" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cryomesh::components::Node::isLive </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check if <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a> is live, ie active at any point in now or the future. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>bool True if live, false otherwise </dd></dl>
+
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00339">339</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+
+<p>References <a class="el" href="Node_8cpp_source.html#l00234">getImpulses()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a211678e84d71cb71e3721eb9725fa934"></a><!-- doxytag: member="cryomesh::components::Node::isOutputIsolated" ref="a211678e84d71cb71e3721eb9725fa934" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cryomesh::components::Node::isOutputIsolated </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00355">355</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+
+<p>References <a class="el" href="Node_8cpp_source.html#l00083">getConnector()</a>.</p>
+
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00387">isPrimaryOutputAttachedNode()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2f55aa5adcac4a2f1aa1f0a7c8fc697d"></a><!-- doxytag: member="cryomesh::components::Node::isPrimaryInputAttachedNode" ref="a2f55aa5adcac4a2f1aa1f0a7c8fc697d" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cryomesh::components::Node::isPrimaryInputAttachedNode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00362">362</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+
+<p>References <a class="el" href="Node_8cpp_source.html#l00083">getConnector()</a>, and <a class="el" href="Node_8cpp_source.html#l00348">isInputIsolated()</a>.</p>
+
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00496">cryomesh::components::operator&lt;&lt;()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8466a252c7a4e6fb2d825826be53e218"></a><!-- doxytag: member="cryomesh::components::Node::isPrimaryOutputAttachedNode" ref="a8466a252c7a4e6fb2d825826be53e218" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cryomesh::components::Node::isPrimaryOutputAttachedNode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00387">387</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+
+<p>References <a class="el" href="Node_8cpp_source.html#l00083">getConnector()</a>, and <a class="el" href="Node_8cpp_source.html#l00355">isOutputIsolated()</a>.</p>
+
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00496">cryomesh::components::operator&lt;&lt;()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a83303fef90a3093807d76a59e4df5288"></a><!-- doxytag: member="cryomesh::components::Node::isTriggered" ref="a83303fef90a3093807d76a59e4df5288" args="(ActivationState state=None)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cryomesh::components::Node::isTriggered </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a291becdd589b5bd338d5c0dd28199798">ActivationState</a>&#160;</td>
+          <td class="paramname"><em>state</em> = <code>None</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check if <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a> is currently triggered. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ActivationState</td><td>Positive for positive trigger test, Negative for negative trigger test, None for any trigger test</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>bool True if triggered, false otherwise </dd></dl>
+
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00310">310</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+
+<p>References <a class="el" href="Node_8cpp_source.html#l00302">getLastActivationState()</a>, and <a class="el" href="Node_8h_source.html#l00047">None</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a036878d7028df14d1015c0ce413d4038"></a><!-- doxytag: member="cryomesh::components::Node::printConnections" ref="a036878d7028df14d1015c0ce413d4038" args="(std::ostream &amp;os, const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; Connection &gt; &gt; &amp;all_cons, const std::string formatter=&quot;&quot;) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; cryomesh::components::Node::printConnections </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Connection.html">Connection</a> &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>all_cons</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>formatter</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00525">525</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00496">cryomesh::components::operator&lt;&lt;()</a>.</p>
 
 </div>
 </div>
@@ -900,9 +1335,9 @@ Friends</h2></td></tr>
 
 <p>Randomise the nodes state. </p>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00225">225</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00306">306</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8h_source.html#l00355">emittedImpulse</a>, and <a class="el" href="Node_8cpp_source.html#l00024">getRandom()</a>.</p>
+<p>References <a class="el" href="Node_8h_source.html#l00423">emittedImpulse</a>, and <a class="el" href="Node_8cpp_source.html#l00026">getRandom()</a>.</p>
 
 </div>
 </div>
@@ -952,11 +1387,11 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>double The activity set </dd></dl>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00194">194</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00270">270</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
 <p>References <a class="el" href="TimeKeeper_8cpp_source.html#l00020">cryomesh::common::TimeKeeper::getTimeKeeper()</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00186">updateActivity()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00262">updateActivity()</a>, and <a class="el" href="Mesh_8cpp_source.html#l00069">cryomesh::structures::Mesh::warp()</a>.</p>
 
 </div>
 </div>
@@ -995,9 +1430,9 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>double The activity set </dd></dl>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00198">198</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00274">274</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8cpp_source.html#l00202">addActivity()</a>.</p>
+<p>References <a class="el" href="Node_8cpp_source.html#l00278">addActivity()</a>.</p>
 
 </div>
 </div>
@@ -1024,9 +1459,9 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00220">220</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00297">297</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8h_source.html#l00369">position</a>, and <a class="el" href="Node_8cpp_source.html#l00229">updatePosition()</a>.</p>
+<p>References <a class="el" href="Node_8h_source.html#l00437">position</a>, and <a class="el" href="Node_8cpp_source.html#l00463">updatePosition()</a>.</p>
 
 </div>
 </div>
@@ -1044,9 +1479,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00045">45</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00048">48</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8cpp_source.html#l00074">checkFire()</a>, <a class="el" href="ImpulseCollection_8cpp_source.html#l00100">cryomesh::components::ImpulseCollection::clearActiveImpulses()</a>, <a class="el" href="DataObjectController_8h_source.html#l00086">cryomesh::dataobjects::DataObjectController&lt; unsigned long int, double &gt;::dataObject</a>, <a class="el" href="Node_8cpp_source.html#l00174">getActivities()</a>, <a class="el" href="Node_8cpp_source.html#l00170">getMutableImpulses()</a>, <a class="el" href="DataObject_8h_source.html#l00191">cryomesh::dataobjects::DataObject&lt; U, T &gt;::insert()</a>, <a class="el" href="DataObject_8h_source.html#l00071">cryomesh::dataobjects::DataObject&lt; U, T &gt;::isLoggingEnabled()</a>, and <a class="el" href="Node_8cpp_source.html#l00086">updateImpulses()</a>.</p>
+<p>References <a class="el" href="Node_8cpp_source.html#l00091">checkFire()</a>, <a class="el" href="ImpulseCollection_8cpp_source.html#l00115">cryomesh::components::ImpulseCollection::clearActiveImpulses()</a>, <a class="el" href="DataObjectController_8h_source.html#l00086">cryomesh::dataobjects::DataObjectController&lt; unsigned long int, double &gt;::dataObject</a>, <a class="el" href="Node_8cpp_source.html#l00250">getActivities()</a>, <a class="el" href="Node_8cpp_source.html#l00246">getMutableImpulses()</a>, <a class="el" href="DataObject_8h_source.html#l00191">cryomesh::dataobjects::DataObject&lt; U, T &gt;::insert()</a>, <a class="el" href="DataObject_8h_source.html#l00071">cryomesh::dataobjects::DataObject&lt; U, T &gt;::isLoggingEnabled()</a>, <a class="el" href="Node_8h_source.html#l00444">lastActivationState</a>, and <a class="el" href="Node_8cpp_source.html#l00127">updateImpulses()</a>.</p>
 
 </div>
 </div>
@@ -1067,11 +1502,11 @@ Friends</h2></td></tr>
 <p>Update and get the current activity of the node. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>double The current activity </dd></dl>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00186">186</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00262">262</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8cpp_source.html#l00178">getActivity()</a>, <a class="el" href="Node_8cpp_source.html#l00158">getImpulses()</a>, and <a class="el" href="Node_8cpp_source.html#l00194">setActivity()</a>.</p>
+<p>References <a class="el" href="Node_8cpp_source.html#l00254">getActivity()</a>, <a class="el" href="Node_8cpp_source.html#l00234">getImpulses()</a>, and <a class="el" href="Node_8cpp_source.html#l00270">setActivity()</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00109">checkActivationState()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00165">checkActivationState()</a>.</p>
 
 </div>
 </div>
@@ -1093,9 +1528,9 @@ Friends</h2></td></tr>
 <p>Update and get the activity of the node on specific cycle. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>double The current activity </dd></dl>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00190">190</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00266">266</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8cpp_source.html#l00178">getActivity()</a>, <a class="el" href="Node_8cpp_source.html#l00158">getImpulses()</a>, and <a class="el" href="Node_8cpp_source.html#l00194">setActivity()</a>.</p>
+<p>References <a class="el" href="Node_8cpp_source.html#l00254">getActivity()</a>, <a class="el" href="Node_8cpp_source.html#l00234">getImpulses()</a>, and <a class="el" href="Node_8cpp_source.html#l00270">setActivity()</a>.</p>
 
 </div>
 </div>
@@ -1115,11 +1550,11 @@ Friends</h2></td></tr>
 
 <p>Update the collection of impulses by one cycle. </p>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00086">86</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00127">127</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="ImpulseCollection_8cpp_source.html#l00046">cryomesh::components::ImpulseCollection::clearImpulses()</a>, and <a class="el" href="Node_8h_source.html#l00348">impulses</a>.</p>
+<p>References <a class="el" href="ImpulseCollection_8cpp_source.html#l00049">cryomesh::components::ImpulseCollection::clearImpulses()</a>, and <a class="el" href="Node_8h_source.html#l00416">impulses</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00045">update()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00048">update()</a>.</p>
 
 </div>
 </div>
@@ -1139,11 +1574,11 @@ Friends</h2></td></tr>
 
 <p>Recalculate state of node and connections based on current position. </p>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00229">229</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00463">463</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8h_source.html#l00341">connector</a>.</p>
+<p>References <a class="el" href="Node_8h_source.html#l00409">connector</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00220">setPosition()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00297">setPosition()</a>.</p>
 
 </div>
 </div>
@@ -1183,7 +1618,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::ostream &amp; The output stream </dd></dl>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00260">260</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00496">496</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
 </div>
 </div>
@@ -1199,9 +1634,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Node_8h_source.html#l00362">362</a> of file <a class="el" href="Node_8h_source.html">Node.h</a>.</p>
+<p>Definition at line <a class="el" href="Node_8h_source.html#l00430">430</a> of file <a class="el" href="Node_8h_source.html">Node.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00202">addActivity()</a>, <a class="el" href="Node_8cpp_source.html#l00174">getActivities()</a>, <a class="el" href="Node_8cpp_source.html#l00182">getActivity()</a>, and <a class="el" href="Node_8cpp_source.html#l00035">Node()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00278">addActivity()</a>, <a class="el" href="Node_8cpp_source.html#l00250">getActivities()</a>, and <a class="el" href="Node_8cpp_source.html#l00037">Node()</a>.</p>
 
 </div>
 </div>
@@ -1216,9 +1651,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Node_8h_source.html#l00280">280</a> of file <a class="el" href="Node_8h_source.html">Node.h</a>.</p>
+<p>Definition at line <a class="el" href="Node_8h_source.html#l00331">331</a> of file <a class="el" href="Node_8h_source.html">Node.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00109">checkActivationState()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00165">checkActivationState()</a>.</p>
 
 </div>
 </div>
@@ -1233,9 +1668,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Node_8h_source.html#l00341">341</a> of file <a class="el" href="Node_8h_source.html">Node.h</a>.</p>
+<p>Definition at line <a class="el" href="Node_8h_source.html#l00409">409</a> of file <a class="el" href="Node_8h_source.html">Node.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00066">getConnector()</a>, <a class="el" href="Node_8cpp_source.html#l00070">getMutableConnector()</a>, <a class="el" href="Node_8cpp_source.html#l00035">Node()</a>, and <a class="el" href="Node_8cpp_source.html#l00229">updatePosition()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00083">getConnector()</a>, <a class="el" href="Node_8cpp_source.html#l00087">getMutableConnector()</a>, <a class="el" href="Node_8cpp_source.html#l00037">Node()</a>, and <a class="el" href="Node_8cpp_source.html#l00463">updatePosition()</a>.</p>
 
 </div>
 </div>
@@ -1252,7 +1687,7 @@ Friends</h2></td></tr>
 
 <p>Definition at line <a class="el" href="DataObjectController_8h_source.html#l00086">86</a> of file <a class="el" href="DataObjectController_8h_source.html">DataObjectController.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ImpulseCollection_8cpp_source.html#l00210">cryomesh::components::ImpulseCollection::refreshDataObject()</a>, and <a class="el" href="Node_8cpp_source.html#l00045">update()</a>.</p>
+<p>Referenced by <a class="el" href="ImpulseCollection_8cpp_source.html#l00258">cryomesh::components::ImpulseCollection::refreshDataObject()</a>, and <a class="el" href="Node_8cpp_source.html#l00048">update()</a>.</p>
 
 </div>
 </div>
@@ -1267,9 +1702,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Node_8h_source.html#l00355">355</a> of file <a class="el" href="Node_8h_source.html">Node.h</a>.</p>
+<p>Definition at line <a class="el" href="Node_8h_source.html#l00423">423</a> of file <a class="el" href="Node_8h_source.html">Node.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00162">getEmittedImpulse()</a>, <a class="el" href="Node_8cpp_source.html#l00166">getMutableEmittedImpulse()</a>, <a class="el" href="Node_8cpp_source.html#l00035">Node()</a>, and <a class="el" href="Node_8cpp_source.html#l00225">randomise()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00238">getEmittedImpulse()</a>, <a class="el" href="Node_8cpp_source.html#l00242">getMutableEmittedImpulse()</a>, <a class="el" href="Node_8cpp_source.html#l00037">Node()</a>, and <a class="el" href="Node_8cpp_source.html#l00306">randomise()</a>.</p>
 
 </div>
 </div>
@@ -1284,9 +1719,26 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Node_8h_source.html#l00348">348</a> of file <a class="el" href="Node_8h_source.html">Node.h</a>.</p>
+<p>Definition at line <a class="el" href="Node_8h_source.html#l00416">416</a> of file <a class="el" href="Node_8h_source.html">Node.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00097">addImpulses()</a>, <a class="el" href="Node_8cpp_source.html#l00158">getImpulses()</a>, <a class="el" href="Node_8cpp_source.html#l00170">getMutableImpulses()</a>, and <a class="el" href="Node_8cpp_source.html#l00086">updateImpulses()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00143">addImpulses()</a>, <a class="el" href="Node_8cpp_source.html#l00107">enterRecovery()</a>, <a class="el" href="Node_8cpp_source.html#l00234">getImpulses()</a>, <a class="el" href="Node_8cpp_source.html#l00246">getMutableImpulses()</a>, and <a class="el" href="Node_8cpp_source.html#l00127">updateImpulses()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab94a09be9e58cc248f9d62ed5c45c83d"></a><!-- doxytag: member="cryomesh::components::Node::lastActivationState" ref="ab94a09be9e58cc248f9d62ed5c45c83d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcryomesh_1_1components_1_1Node.html#a291becdd589b5bd338d5c0dd28199798">ActivationState</a> <a class="el" href="classcryomesh_1_1components_1_1Node.html#ab94a09be9e58cc248f9d62ed5c45c83d">cryomesh::components::Node::lastActivationState</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Node_8h_source.html#l00444">444</a> of file <a class="el" href="Node_8h_source.html">Node.h</a>.</p>
+
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00302">getLastActivationState()</a>, and <a class="el" href="Node_8cpp_source.html#l00048">update()</a>.</p>
 
 </div>
 </div>
@@ -1301,9 +1753,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Node_8h_source.html#l00273">273</a> of file <a class="el" href="Node_8h_source.html">Node.h</a>.</p>
+<p>Definition at line <a class="el" href="Node_8h_source.html#l00324">324</a> of file <a class="el" href="Node_8h_source.html">Node.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00035">Node()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00037">Node()</a>.</p>
 
 </div>
 </div>
@@ -1318,7 +1770,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Node_8h_source.html#l00287">287</a> of file <a class="el" href="Node_8h_source.html">Node.h</a>.</p>
+<p>Definition at line <a class="el" href="Node_8h_source.html#l00338">338</a> of file <a class="el" href="Node_8h_source.html">Node.h</a>.</p>
 
 </div>
 </div>
@@ -1333,15 +1785,15 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Node_8h_source.html#l00369">369</a> of file <a class="el" href="Node_8h_source.html">Node.h</a>.</p>
+<p>Definition at line <a class="el" href="Node_8h_source.html#l00437">437</a> of file <a class="el" href="Node_8h_source.html">Node.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00216">getPosition()</a>, and <a class="el" href="Node_8cpp_source.html#l00220">setPosition()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00293">getPosition()</a>, and <a class="el" href="Node_8cpp_source.html#l00297">setPosition()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/niall/Projects/Eclipse/cryomesh/src/components/<a class="el" href="Node_8h_source.html">Node.h</a></li>
-<li>/home/niall/Projects/Eclipse/cryomesh/src/components/<a class="el" href="Node_8cpp_source.html">Node.cpp</a></li>
+<li>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/<a class="el" href="Node_8h_source.html">Node.h</a></li>
+<li>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/<a class="el" href="Node_8cpp_source.html">Node.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -1349,7 +1801,7 @@ Friends</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -1358,7 +1810,7 @@ Friends</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:14 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

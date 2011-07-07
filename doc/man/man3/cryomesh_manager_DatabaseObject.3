@@ -1,4 +1,4 @@
-.TH "cryomesh::manager::DatabaseObject" 3 "Fri Apr 1 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::manager::DatabaseObject" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -9,7 +9,7 @@ cryomesh::manager::DatabaseObject \-
 .PP
 \fC#include <DatabaseObject.h>\fP
 .PP
-Inherited by \fBcryomesh::manager::ConnectionDatabaseObject\fP, and \fBcryomesh::manager::NodeDatabaseObject\fP.
+Inherited by \fBcryomesh::manager::ConnectionDatabaseObject\fP, \fBcryomesh::manager::NodeDatabaseObject\fP, and \fBcryomesh::manager::PatternDatabaseObject\fP.
 .SS "Public Member Functions"
 
 .in +1c
@@ -99,7 +99,7 @@ the sql command string to insert into this table
 .PP
 
 .PP
-Implemented in \fBcryomesh::manager::ConnectionDatabaseObject\fP, and \fBcryomesh::manager::NodeDatabaseObject\fP.
+Implemented in \fBcryomesh::manager::ConnectionDatabaseObject\fP, \fBcryomesh::manager::NodeDatabaseObject\fP, and \fBcryomesh::manager::PatternDatabaseObject\fP.
 .SS "std::string cryomesh::manager::DatabaseObject::getKey (const std::string &key) const\fC [inline]\fP"
 .PP
 Return the string object associated with a key. ::string The key to search for

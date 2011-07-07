@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>cryomesh: /home/niall/Projects/Eclipse/cryomesh/src/components/Impulse.h Source File</title>
+<title>cryomesh: /home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Impulse.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -54,11 +54,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/niall/Projects/Eclipse/cryomesh/src/components/Impulse.h</h1>  </div>
+<h1>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Impulse.h</h1>  </div>
 </div>
 <div class="contents">
 <a href="Impulse_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
@@ -70,133 +71,166 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00013"></a>00013 <span class="preprocessor">#include &quot;common/Tagged.h&quot;</span>
 <a name="l00014"></a>00014 <span class="preprocessor">#include &quot;common/Cycle.h&quot;</span>
 <a name="l00015"></a>00015 <span class="preprocessor">#include &quot;common/TimeKeeper.h&quot;</span>
-<a name="l00016"></a>00016 
-<a name="l00017"></a>00017 <span class="preprocessor">#include &lt;list&gt;</span>
-<a name="l00018"></a>00018 
-<a name="l00019"></a>00019 <span class="keyword">namespace </span>cryomesh {
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021 <span class="keyword">namespace </span>components {
-<a name="l00022"></a>00022 
-<a name="l00030"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html">00030</a> <span class="keyword">class </span><a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a>: <span class="keyword">public</span> common::Tagged, <span class="keyword">public</span> common::SimpleCollection&lt;double&gt; {
-<a name="l00031"></a>00031 <span class="keyword">public</span>:
-<a name="l00032"></a>00032 
-<a name="l00041"></a>00041         <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aff44f52a706b48a74fc34b3dc2e26d38" title="Constructor.">Impulse</a>();
-<a name="l00042"></a>00042 
-<a name="l00055"></a>00055         <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aff44f52a706b48a74fc34b3dc2e26d38" title="Constructor.">Impulse</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> max_y, <span class="keyword">const</span> <span class="keywordtype">int</span> length, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp; startCycle =0);
-<a name="l00056"></a>00056 
-<a name="l00070"></a>00070         <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aff44f52a706b48a74fc34b3dc2e26d38" title="Constructor.">Impulse</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> max_y, <span class="keyword">const</span> <span class="keywordtype">int</span> length, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp; startCycle, boost::shared_ptr&lt;
-<a name="l00071"></a>00071                         <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a>&gt;);
-<a name="l00072"></a>00072 
-<a name="l00078"></a>00078         <span class="keyword">virtual</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a3801df3c6dba70d0467f070fa346efa5" title="Destructor.">~Impulse</a>();
-<a name="l00079"></a>00079 
-<a name="l00080"></a>00080         <span class="comment">/*</span>
-<a name="l00081"></a>00081 <span class="comment">         * Generate random state</span>
-<a name="l00082"></a>00082 <span class="comment">         *</span>
-<a name="l00083"></a>00083 <span class="comment">         */</span>
-<a name="l00084"></a>00084         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a0f88203a7d85fc8c613e144ef302ea11">randomise</a>();
-<a name="l00085"></a>00085 
-<a name="l00092"></a>00092         <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9c87bdf033d68e93204704078860aef6" title="Is the Impulse active on current cycle.">isActive</a>() <span class="keyword">const</span>;
-<a name="l00093"></a>00093 
-<a name="l00100"></a>00100         <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9c87bdf033d68e93204704078860aef6" title="Is the Impulse active on current cycle.">isActive</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp; cycle) <span class="keyword">const</span>;
-<a name="l00101"></a>00101 
-<a name="l00108"></a>00108         <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9c87bdf033d68e93204704078860aef6" title="Is the Impulse active on current cycle.">isActive</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp;startCycle, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp;endCycle) <span class="keyword">const</span>;
-<a name="l00109"></a>00109 
-<a name="l00122"></a>00122         <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a73cb97b2371198e44f726de54c9c36fa" title="Get activity at current cycle.">getActivity</a>(<a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> cycle) <span class="keyword">const</span>;
-<a name="l00123"></a>00123 
-<a name="l00133"></a>00133         <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a73cb97b2371198e44f726de54c9c36fa" title="Get activity at current cycle.">getActivity</a>() <span class="keyword">const</span>;
-<a name="l00134"></a>00134 
-<a name="l00143"></a>00143         <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9607961d67264b1431bc6f0871ab71e0" title="Get maximum activity.">getActivityMaximum</a>() <span class="keyword">const</span>;
-<a name="l00144"></a>00144 
-<a name="l00153"></a>00153         <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9ccf24929b1d73630bd02ead060a5b15" title="Get minimum activity.">getActivityMinimum</a>() <span class="keyword">const</span>;
-<a name="l00154"></a>00154 
-<a name="l00161"></a>00161         <span class="keyword">virtual</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a21d17ce78d670cfc7082d5d09767c359" title="Invert the impulse.">invert</a>();
-<a name="l00162"></a>00162 
-<a name="l00169"></a>00169         <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a348598ef30bd651b94ebbc0cdc46cb28" title="Get the first active cycle.">getFirstActiveCycle</a>() <span class="keyword">const</span>;
-<a name="l00170"></a>00170 
-<a name="l00177"></a>00177         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#abe6cffbd621e68849bff60ce6799ff4b" title="Set the first active cycle.">setFirstActiveCycle</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> cycle);
-<a name="l00178"></a>00178 
-<a name="l00185"></a>00185         <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac91dae86e992103f921da77f0cfe0d02" title="Get the last active cycle.">getLastActiveCycle</a>() <span class="keyword">const</span>;
-<a name="l00186"></a>00186 
-<a name="l00193"></a>00193         <span class="keyword">const</span> std::list&lt;double&gt; &amp; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a959076c6c59932abeaa73ca6de2e4167" title="Get activities.">getActivities</a>() <span class="keyword">const</span>;
-<a name="l00194"></a>00194 
-<a name="l00201"></a>00201         <span class="keyword">const</span> boost::shared_ptr&lt;ActivityTimerDistance&gt; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a356adeb4cebeb35ecef7231718fb20cd" title="Get activity timer.">getActivityTimer</a>() <span class="keyword">const</span>;
-<a name="l00202"></a>00202 
-<a name="l00209"></a>00209         boost::shared_ptr&lt;ActivityTimerDistance&gt; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aac5460017f7adceba53aea31b1bc5bfe" title="Get mutable activity timer.">getMutableActivityTimer</a>();
-<a name="l00210"></a>00210 
-<a name="l00217"></a>00217         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a04ecc67f3bf21f922c29d9e8afd3d04d" title="Set activity timer.">setActivityTimer</a>(boost::shared_ptr&lt;ActivityTimerDistance&gt; timer);
-<a name="l00218"></a>00218 
-<a name="l00228"></a>00228         <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aca088f62a2bf95978952633e530e601c" title="Non-destructive addition operator.">operator+</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; obj) <span class="keyword">const</span>;
-<a name="l00229"></a>00229 
-<a name="l00239"></a>00239         <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a6f5351eea5c38586fe5bb3092b3626af" title="Destructive addition and assignment operator.">operator+=</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; obj);
-<a name="l00240"></a>00240 
-<a name="l00250"></a>00250         <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a77e225470110ea77db3969cbaa2e276a" title="Assignment operator.">operator=</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; obj);
-<a name="l00251"></a>00251 
-<a name="l00261"></a>00261         <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a8351a5a0e6afc72fa26ab306226ccab0" title="Comparator operator.">operator==</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; obj) <span class="keyword">const</span>;
-<a name="l00262"></a>00262 
-<a name="l00272"></a>00272         <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac26da063e408d5493cd33f2014dfa875" title="Not comparator operator.">operator!=</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp;obj) <span class="keyword">const</span>;
-<a name="l00273"></a>00273 
-<a name="l00285"></a>00285         <span class="keyword">friend</span> std::ostream&amp; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ab7b2621039dab2cd363725afdf5d667a" title="To stream operator.">operator&lt;&lt;</a>(std::ostream &amp; os, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; obj);
-<a name="l00286"></a>00286 
-<a name="l00287"></a>00287         <span class="comment">/*</span>
-<a name="l00288"></a>00288 <span class="comment">                 * Constant for forced trigger activity</span>
-<a name="l00289"></a>00289 <span class="comment">                 *</span>
-<a name="l00290"></a>00290 <span class="comment">                 * @var double</span>
-<a name="l00291"></a>00291 <span class="comment">                 *              The forced trigger activity</span>
-<a name="l00292"></a>00292 <span class="comment">                 */</span>
-<a name="l00293"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aa581812f8f38b8a08d6f9ec9d301c455">00293</a>                 <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aa581812f8f38b8a08d6f9ec9d301c455">FORCED_TRIGGER_ACTIVITY</a>;
-<a name="l00294"></a>00294                 <span class="comment">/*</span>
-<a name="l00295"></a>00295 <span class="comment">         * Constant for maximum activity</span>
+<a name="l00016"></a>00016 <span class="preprocessor">#include &lt;common/Debuggable.h&gt;</span>
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 <span class="preprocessor">#include &lt;list&gt;</span>
+<a name="l00019"></a>00019 
+<a name="l00020"></a>00020 <span class="keyword">namespace </span>cryomesh {
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="keyword">namespace </span>components {
+<a name="l00023"></a>00023 
+<a name="l00031"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html">00031</a> <span class="keyword">class </span><a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a>: <span class="keyword">public</span> common::Tagged, <span class="keyword">public</span> common::SimpleCollection&lt;double&gt;, <span class="keyword">public</span> common::Debuggable {
+<a name="l00032"></a>00032 <span class="keyword">public</span>:
+<a name="l00033"></a>00033 
+<a name="l00042"></a>00042         <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aff44f52a706b48a74fc34b3dc2e26d38" title="Constructor.">Impulse</a>();
+<a name="l00043"></a>00043 
+<a name="l00056"></a>00056         <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aff44f52a706b48a74fc34b3dc2e26d38" title="Constructor.">Impulse</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> max_y, <span class="keyword">const</span> <span class="keywordtype">int</span> length, <span class="keyword">const</span> <span class="keywordtype">int</span> delay = 0);
+<a name="l00057"></a>00057 
+<a name="l00071"></a>00071         <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aff44f52a706b48a74fc34b3dc2e26d38" title="Constructor.">Impulse</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> max_y, <span class="keyword">const</span> <span class="keywordtype">int</span> length, <span class="keyword">const</span> <span class="keywordtype">int</span> delay,
+<a name="l00072"></a>00072                         boost::shared_ptr&lt;ActivityTimerDistance&gt;);
+<a name="l00073"></a>00073         <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aff44f52a706b48a74fc34b3dc2e26d38" title="Constructor.">Impulse</a> (<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; obj);
+<a name="l00079"></a>00079         <span class="keyword">virtual</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a3801df3c6dba70d0467f070fa346efa5" title="Destructor.">~Impulse</a>();
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081         <span class="comment">/*</span>
+<a name="l00082"></a>00082 <span class="comment">         * Generate random state</span>
+<a name="l00083"></a>00083 <span class="comment">         *</span>
+<a name="l00084"></a>00084 <span class="comment">         *      @param double</span>
+<a name="l00085"></a>00085 <span class="comment">         *              the (0,1) bias of a positive impulse outcome, 0 negative, 1, positive</span>
+<a name="l00086"></a>00086 <span class="comment">         */</span>
+<a name="l00087"></a>00087         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a5da6ee1f9d1be136d23c36c377258a4d">randomise</a>(<span class="keywordtype">double</span> positive_bias = 0.5);
+<a name="l00088"></a>00088 
+<a name="l00095"></a>00095         <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9c87bdf033d68e93204704078860aef6" title="Is the Impulse active on current cycle.">isActive</a>() <span class="keyword">const</span>;
+<a name="l00096"></a>00096 
+<a name="l00103"></a>00103         <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9c87bdf033d68e93204704078860aef6" title="Is the Impulse active on current cycle.">isActive</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp; cycle) <span class="keyword">const</span>;
+<a name="l00104"></a>00104 
+<a name="l00111"></a>00111         <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9c87bdf033d68e93204704078860aef6" title="Is the Impulse active on current cycle.">isActive</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp;startCycle, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp;endCycle) <span class="keyword">const</span>;
+<a name="l00112"></a>00112 
+<a name="l00125"></a>00125         <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a73cb97b2371198e44f726de54c9c36fa" title="Get activity at current cycle.">getActivity</a>(<a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> cycle) <span class="keyword">const</span>;
+<a name="l00126"></a>00126 
+<a name="l00136"></a>00136         <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a73cb97b2371198e44f726de54c9c36fa" title="Get activity at current cycle.">getActivity</a>() <span class="keyword">const</span>;
+<a name="l00137"></a>00137 
+<a name="l00146"></a>00146         <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9607961d67264b1431bc6f0871ab71e0" title="Get maximum activity.">getActivityMaximum</a>() <span class="keyword">const</span>;
+<a name="l00147"></a>00147 
+<a name="l00156"></a>00156         <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9ccf24929b1d73630bd02ead060a5b15" title="Get minimum activity.">getActivityMinimum</a>() <span class="keyword">const</span>;
+<a name="l00157"></a>00157 
+<a name="l00164"></a>00164         <span class="keyword">virtual</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a21d17ce78d670cfc7082d5d09767c359" title="Invert the impulse.">invert</a>();
+<a name="l00165"></a>00165 
+<a name="l00172"></a>00172         <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a348598ef30bd651b94ebbc0cdc46cb28" title="Get the first active cycle.">getFirstActiveCycle</a>() <span class="keyword">const</span>;
+<a name="l00173"></a>00173 
+<a name="l00180"></a>00180         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#abe6cffbd621e68849bff60ce6799ff4b" title="Set the first active cycle.">setFirstActiveCycle</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> cycle);
+<a name="l00181"></a>00181 
+<a name="l00188"></a>00188         <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac91dae86e992103f921da77f0cfe0d02" title="Get the last active cycle.">getLastActiveCycle</a>() <span class="keyword">const</span>;
+<a name="l00189"></a>00189 
+<a name="l00196"></a>00196         <span class="keyword">const</span> std::list&lt;double&gt; &amp; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a959076c6c59932abeaa73ca6de2e4167" title="Get activities.">getActivities</a>() <span class="keyword">const</span>;
+<a name="l00197"></a>00197 
+<a name="l00204"></a>00204         <span class="keyword">const</span> boost::shared_ptr&lt;ActivityTimerDistance&gt; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a356adeb4cebeb35ecef7231718fb20cd" title="Get activity timer.">getActivityTimer</a>() <span class="keyword">const</span>;
+<a name="l00205"></a>00205 
+<a name="l00212"></a>00212         boost::shared_ptr&lt;ActivityTimerDistance&gt; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aac5460017f7adceba53aea31b1bc5bfe" title="Get mutable activity timer.">getMutableActivityTimer</a>();
+<a name="l00213"></a>00213 
+<a name="l00220"></a>00220         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a04ecc67f3bf21f922c29d9e8afd3d04d" title="Set activity timer.">setActivityTimer</a>(boost::shared_ptr&lt;ActivityTimerDistance&gt; timer);
+<a name="l00221"></a>00221 
+<a name="l00222"></a>00222         <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a6d0fd21f516b5182dd357b59f2112c64">getActivityDelay</a>() <span class="keyword">const</span> ;
+<a name="l00223"></a>00223 
+<a name="l00224"></a>00224         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a800479ed06132eb56d0bc15c8aa40d8a">setActivityDelay</a>(<span class="keywordtype">int</span> delay);
+<a name="l00234"></a>00234         <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aca088f62a2bf95978952633e530e601c" title="Non-destructive addition operator.">operator+</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; obj) <span class="keyword">const</span>;
+<a name="l00235"></a>00235 
+<a name="l00245"></a>00245         <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a6f5351eea5c38586fe5bb3092b3626af" title="Destructive addition and assignment operator.">operator+=</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; obj);
+<a name="l00246"></a>00246 
+<a name="l00256"></a>00256         <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a77e225470110ea77db3969cbaa2e276a" title="Assignment operator.">operator=</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; obj);
+<a name="l00257"></a>00257 
+<a name="l00267"></a>00267         <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a8351a5a0e6afc72fa26ab306226ccab0" title="Comparator operator.">operator==</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; obj) <span class="keyword">const</span>;
+<a name="l00268"></a>00268 
+<a name="l00278"></a>00278         <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac26da063e408d5493cd33f2014dfa875" title="Not comparator operator.">operator!=</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp;obj) <span class="keyword">const</span>;
+<a name="l00279"></a>00279         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ad3a3e47e23c5443a9df0df9c3c53a8ac">enableDebug</a>(<span class="keywordtype">bool</span> b);
+<a name="l00280"></a>00280 
+<a name="l00292"></a>00292         <span class="keyword">friend</span> std::ostream&amp; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ab7b2621039dab2cd363725afdf5d667a" title="To stream operator.">operator&lt;&lt;</a>(std::ostream &amp; os, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; obj);
+<a name="l00293"></a>00293 
+<a name="l00294"></a>00294         <span class="comment">/*</span>
+<a name="l00295"></a>00295 <span class="comment">         * Constant for forced trigger activity</span>
 <a name="l00296"></a>00296 <span class="comment">         *</span>
 <a name="l00297"></a>00297 <span class="comment">         * @var double</span>
-<a name="l00298"></a>00298 <span class="comment">         *              The maximum activity</span>
+<a name="l00298"></a>00298 <span class="comment">         *              The forced trigger activity</span>
 <a name="l00299"></a>00299 <span class="comment">         */</span>
-<a name="l00300"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#af8e9eb795f1ea3cef81d6afeb7166ad2">00300</a>         <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#af8e9eb795f1ea3cef81d6afeb7166ad2">MAX_ACTIVITY</a>;
-<a name="l00301"></a>00301 
-<a name="l00302"></a>00302         <span class="comment">/*</span>
-<a name="l00303"></a>00303 <span class="comment">         * Constant for minimum activity</span>
-<a name="l00304"></a>00304 <span class="comment">         *</span>
-<a name="l00305"></a>00305 <span class="comment">         * @var double</span>
-<a name="l00306"></a>00306 <span class="comment">         *              The minimum activity</span>
-<a name="l00307"></a>00307 <span class="comment">         */</span>
-<a name="l00308"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a3cc162bae9213a65a6aa241b256e1a84">00308</a>         <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a3cc162bae9213a65a6aa241b256e1a84">MIN_ACTIVITY</a>;
-<a name="l00309"></a>00309 
-<a name="l00310"></a>00310         <span class="comment">/*</span>
-<a name="l00311"></a>00311 <span class="comment">         * Constant for maximum impulse length</span>
-<a name="l00312"></a>00312 <span class="comment">         *</span>
-<a name="l00313"></a>00313 <span class="comment">         * @var int</span>
-<a name="l00314"></a>00314 <span class="comment">         *              The maximum impulse length</span>
-<a name="l00315"></a>00315 <span class="comment">         */</span>
-<a name="l00316"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a449f5f6a08af50b2e66703931ef3cd6c">00316</a>         <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a449f5f6a08af50b2e66703931ef3cd6c">MAX_ACTIVITY_LENGTH</a>;
-<a name="l00317"></a>00317 
-<a name="l00318"></a>00318         <span class="comment">/*</span>
-<a name="l00319"></a>00319 <span class="comment">         * Constant for minimum impulse length</span>
-<a name="l00320"></a>00320 <span class="comment">         *</span>
-<a name="l00321"></a>00321 <span class="comment">         * @var int</span>
-<a name="l00322"></a>00322 <span class="comment">         *              The minimum impulse length</span>
-<a name="l00323"></a>00323 <span class="comment">         */</span>
-<a name="l00324"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac24594fb7419a2f3e9f4d753dfae562f">00324</a>         <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac24594fb7419a2f3e9f4d753dfae562f">MIN_ACTIVITY_LENGTH</a>;
-<a name="l00325"></a>00325 
-<a name="l00332"></a>00332         <span class="keyword">static</span> boost::shared_ptr&lt;Impulse&gt; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ae88e7ff0cacf1ca6f323f66c97819c7a" title="Get a &amp;#39;trigger&amp;#39; impulse, a maximum impulse.">getTriggerImpulse</a>();
-<a name="l00333"></a>00333 
-<a name="l00340"></a>00340         <span class="keyword">static</span> boost::shared_ptr&lt;Impulse&gt; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#afb337470d62f12f5e414b1bd7f09c6df" title="Get a randomised impulse.">getRandom</a>();
-<a name="l00341"></a>00341 
-<a name="l00342"></a>00342 <span class="keyword">protected</span>:
-<a name="l00343"></a>00343 
-<a name="l00353"></a>00353         <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a4bdb9cdab1998c670d3e7f46190fa45d" title="Get the boundary value of activity.">getActivityBoundary</a>(<span class="keywordtype">bool</span> maximal) <span class="keyword">const</span>;
-<a name="l00354"></a>00354 
-<a name="l00355"></a>00355 <span class="keyword">private</span>:
-<a name="l00362"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a1e60e9449535dde78c2a342b873022f7">00362</a>         <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a1e60e9449535dde78c2a342b873022f7" title="The first cycle that this Impulse has activity.">firstActiveCycle</a>;
-<a name="l00363"></a>00363 
-<a name="l00370"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#adc17d78b2127229c3acdaefb7b697f7e">00370</a>         <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#adc17d78b2127229c3acdaefb7b697f7e" title="The lase cycle that this Impulse has activity.">lastActiveCycle</a>;
-<a name="l00371"></a>00371 
-<a name="l00377"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a6fc33296a0683cc08c5ea7404632a793">00377</a>         boost::shared_ptr&lt;ActivityTimerDistance&gt; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a6fc33296a0683cc08c5ea7404632a793">activityTimer</a>;
-<a name="l00378"></a>00378 };
-<a name="l00379"></a>00379 
-<a name="l00380"></a>00380 }
-<a name="l00381"></a>00381 
-<a name="l00382"></a>00382 }
-<a name="l00383"></a>00383 
-<a name="l00384"></a>00384 <span class="preprocessor">#endif </span><span class="comment">/* IMPULSE_H_ */</span>
+<a name="l00300"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aa581812f8f38b8a08d6f9ec9d301c455">00300</a>         <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#aa581812f8f38b8a08d6f9ec9d301c455">FORCED_TRIGGER_ACTIVITY</a>;
+<a name="l00301"></a>00301         <span class="comment">/*</span>
+<a name="l00302"></a>00302 <span class="comment">         * Constant for maximum activity</span>
+<a name="l00303"></a>00303 <span class="comment">         *</span>
+<a name="l00304"></a>00304 <span class="comment">         * @var double</span>
+<a name="l00305"></a>00305 <span class="comment">         *              The maximum activity</span>
+<a name="l00306"></a>00306 <span class="comment">         */</span>
+<a name="l00307"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#af8e9eb795f1ea3cef81d6afeb7166ad2">00307</a>         <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#af8e9eb795f1ea3cef81d6afeb7166ad2">MAX_ACTIVITY</a>;
+<a name="l00308"></a>00308 
+<a name="l00309"></a>00309         <span class="comment">/*</span>
+<a name="l00310"></a>00310 <span class="comment">         * Constant for minimum activity</span>
+<a name="l00311"></a>00311 <span class="comment">         *</span>
+<a name="l00312"></a>00312 <span class="comment">         * @var double</span>
+<a name="l00313"></a>00313 <span class="comment">         *              The minimum activity</span>
+<a name="l00314"></a>00314 <span class="comment">         */</span>
+<a name="l00315"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a3cc162bae9213a65a6aa241b256e1a84">00315</a>         <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a3cc162bae9213a65a6aa241b256e1a84">MIN_ACTIVITY</a>;
+<a name="l00316"></a>00316 
+<a name="l00317"></a>00317         <span class="comment">/*</span>
+<a name="l00318"></a>00318 <span class="comment">         * Constant for maximum impulse length</span>
+<a name="l00319"></a>00319 <span class="comment">         *</span>
+<a name="l00320"></a>00320 <span class="comment">         * @var int</span>
+<a name="l00321"></a>00321 <span class="comment">         *              The maximum impulse length</span>
+<a name="l00322"></a>00322 <span class="comment">         */</span>
+<a name="l00323"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a449f5f6a08af50b2e66703931ef3cd6c">00323</a>         <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a449f5f6a08af50b2e66703931ef3cd6c">MAX_ACTIVITY_LENGTH</a>;
+<a name="l00324"></a>00324 
+<a name="l00325"></a>00325         <span class="comment">/*</span>
+<a name="l00326"></a>00326 <span class="comment">         * Constant for minimum impulse length</span>
+<a name="l00327"></a>00327 <span class="comment">         *</span>
+<a name="l00328"></a>00328 <span class="comment">         * @var int</span>
+<a name="l00329"></a>00329 <span class="comment">         *              The minimum impulse length</span>
+<a name="l00330"></a>00330 <span class="comment">         */</span>
+<a name="l00331"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac24594fb7419a2f3e9f4d753dfae562f">00331</a>         <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ac24594fb7419a2f3e9f4d753dfae562f">MIN_ACTIVITY_LENGTH</a>;
+<a name="l00332"></a>00332 
+<a name="l00333"></a>00333         <span class="comment">/*</span>
+<a name="l00334"></a>00334 <span class="comment">         * The minimum impulse activity magnitude</span>
+<a name="l00335"></a>00335 <span class="comment">         *</span>
+<a name="l00336"></a>00336 <span class="comment">         * @var int</span>
+<a name="l00337"></a>00337 <span class="comment">         *              The minimum impulse activity magnitude</span>
+<a name="l00338"></a>00338 <span class="comment">         */</span>
+<a name="l00339"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a831758cc2e20d4a2d10b71f8c7698fd1">00339</a>         <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a831758cc2e20d4a2d10b71f8c7698fd1">MIN_ACTIVITY_MAGNITUDE</a> ;
+<a name="l00340"></a>00340 
+<a name="l00341"></a>00341         <span class="comment">/*</span>
+<a name="l00342"></a>00342 <span class="comment">         * Constant for minimum impulse delay</span>
+<a name="l00343"></a>00343 <span class="comment">         *</span>
+<a name="l00344"></a>00344 <span class="comment">         * @var int</span>
+<a name="l00345"></a>00345 <span class="comment">         *              The minimum impulse delay</span>
+<a name="l00346"></a>00346 <span class="comment">         */</span>
+<a name="l00347"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a7537a73569989ce84f0ab1b10e07ee94">00347</a>         <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a7537a73569989ce84f0ab1b10e07ee94">MIN_ACTIVITY_DELAY</a>;
+<a name="l00348"></a>00348 
+<a name="l00349"></a>00349         <span class="comment">/*</span>
+<a name="l00350"></a>00350 <span class="comment">         * The maximum impulse activity delay</span>
+<a name="l00351"></a>00351 <span class="comment">         *</span>
+<a name="l00352"></a>00352 <span class="comment">         * @var Cycle</span>
+<a name="l00353"></a>00353 <span class="comment">         *              The maximum impulse activity magnitude</span>
+<a name="l00354"></a>00354 <span class="comment">         */</span>
+<a name="l00355"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#afc1ae22e801a9dbf9bbb170d97d3411b">00355</a>         <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#afc1ae22e801a9dbf9bbb170d97d3411b">MAX_ACTIVITY_DELAY</a> ;
+<a name="l00356"></a>00356 
+<a name="l00363"></a>00363         <span class="keyword">static</span> boost::shared_ptr&lt;Impulse&gt; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ae88e7ff0cacf1ca6f323f66c97819c7a" title="Get a &amp;#39;trigger&amp;#39; impulse, a maximum impulse.">getTriggerImpulse</a>();
+<a name="l00364"></a>00364 
+<a name="l00374"></a>00374         <span class="keyword">static</span> boost::shared_ptr&lt;Impulse&gt; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a9433c8dbc841beb6e3bfa63dd99ed838" title="Get a randomised impulse.">getRandom</a>(<span class="keywordtype">double</span> positive_bias = 0.5);
+<a name="l00375"></a>00375 
+<a name="l00376"></a>00376 <span class="keyword">protected</span>:
+<a name="l00377"></a>00377 
+<a name="l00387"></a>00387         <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a4bdb9cdab1998c670d3e7f46190fa45d" title="Get the boundary value of activity.">getActivityBoundary</a>(<span class="keywordtype">bool</span> maximal) <span class="keyword">const</span>;
+<a name="l00388"></a>00388 
+<a name="l00389"></a>00389 <span class="keyword">private</span>:
+<a name="l00396"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a1e60e9449535dde78c2a342b873022f7">00396</a>         <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a1e60e9449535dde78c2a342b873022f7" title="The first cycle that this Impulse has activity.">firstActiveCycle</a>;
+<a name="l00397"></a>00397 
+<a name="l00404"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#adc17d78b2127229c3acdaefb7b697f7e">00404</a>         <a class="code" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#adc17d78b2127229c3acdaefb7b697f7e" title="The lase cycle that this Impulse has activity.">lastActiveCycle</a>;
+<a name="l00405"></a>00405 
+<a name="l00411"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ae491ccf924dc04674fb604a5258e0580">00411</a>         <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#ae491ccf924dc04674fb604a5258e0580">activityDelay</a>;
+<a name="l00412"></a>00412 
+<a name="l00418"></a><a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a6fc33296a0683cc08c5ea7404632a793">00418</a>         boost::shared_ptr&lt;ActivityTimerDistance&gt; <a class="code" href="classcryomesh_1_1components_1_1Impulse.html#a6fc33296a0683cc08c5ea7404632a793">activityTimer</a>;
+<a name="l00419"></a>00419 };
+<a name="l00420"></a>00420 
+<a name="l00421"></a>00421 }
+<a name="l00422"></a>00422 
+<a name="l00423"></a>00423 }
+<a name="l00424"></a>00424 
+<a name="l00425"></a>00425 <span class="preprocessor">#endif </span><span class="comment">/* IMPULSE_H_ */</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -204,7 +238,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -213,7 +247,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:13 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

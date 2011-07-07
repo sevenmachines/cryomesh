@@ -1,8 +1,8 @@
-.TH "/home/niall/Projects/Eclipse/cryomesh/src/structures/Cluster.h" 3 "Fri Apr 1 2011" "cryomesh" \" -*- nroff -*-
+.TH "/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Cluster.h" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-/home/niall/Projects/Eclipse/cryomesh/src/structures/Cluster.h \- 
+/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Cluster.h \- 
 .SH SYNOPSIS
 .br
 .PP
@@ -10,11 +10,15 @@
 .br
 \fC#include 'components/ConnectionMap.h'\fP
 .br
+\fC#include 'spacial/Spacial.h'\fP
+.br
+\fC#include 'spacial/Point.h'\fP
+.br
+\fC#include <structures/NodeMesh.h>\fP
+.br
 \fC#include <boost/uuid/uuid.hpp>\fP
 .br
 \fC#include <boost/shared_ptr.hpp>\fP
-.br
-\fC#include <components/Mesh.h>\fP
 .br
 \fC#include <components/Node.h>\fP
 .br
@@ -24,6 +28,8 @@
 .br
 \fC#include 'common/Tagged.h'\fP
 .br
+\fC#include 'common/Debuggable.h'\fP
+.br
 
 .SS "Classes"
 
@@ -31,7 +37,7 @@
 .ti -1c
 .RI "class \fBcryomesh::structures::Cluster\fP"
 .br
-.RI "\fIA \fBCluster\fP is a collection of self-contained nodes and connections along with an associated Mesh, that can be connected up to one another. \fP"
+.RI "\fIA \fBCluster\fP is a collection of self-contained nodes and connections along with an associated \fBMesh\fP, that can be connected up to one another. \fP"
 .in -1c
 .SS "Namespaces"
 

@@ -1,4 +1,4 @@
-.TH "cryomesh::manager::TableFormat" 3 "Fri Apr 1 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::manager::TableFormat" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -12,7 +12,7 @@ General structure of a table.
 .PP
 \fC#include <TableFormats.h>\fP
 .PP
-Inherited by \fBcryomesh::manager::ConnectionTableFormat\fP, and \fBcryomesh::manager::NodeTableFormat\fP.
+Inherited by \fBcryomesh::manager::ConnectionTableFormat\fP, \fBcryomesh::manager::InputPatternsTableFormat\fP, \fBcryomesh::manager::NodeTableFormat\fP, and \fBcryomesh::manager::OutputPatternsTableFormat\fP.
 .SS "Public Member Functions"
 
 .in +1c
@@ -92,12 +92,12 @@ Referenced by getCreateTable().
 .PP
 Definition at line 91 of file TableFormats.h.
 .PP
-Referenced by cryomesh::manager::ConnectionTableFormat::ConnectionTableFormat(), getCreateTable(), getKey(), and cryomesh::manager::NodeTableFormat::NodeTableFormat().
+Referenced by cryomesh::manager::ConnectionTableFormat::ConnectionTableFormat(), getCreateTable(), getKey(), cryomesh::manager::InputPatternsTableFormat::InputPatternsTableFormat(), cryomesh::manager::NodeTableFormat::NodeTableFormat(), and cryomesh::manager::OutputPatternsTableFormat::OutputPatternsTableFormat().
 .SS "std::string \fBcryomesh::manager::TableFormat::name\fP\fC [protected]\fP"
 .PP
 Definition at line 84 of file TableFormats.h.
 .PP
-Referenced by cryomesh::manager::ConnectionTableFormat::ConnectionTableFormat(), getName(), and cryomesh::manager::NodeTableFormat::NodeTableFormat().
+Referenced by cryomesh::manager::ConnectionTableFormat::ConnectionTableFormat(), getName(), cryomesh::manager::InputPatternsTableFormat::InputPatternsTableFormat(), cryomesh::manager::NodeTableFormat::NodeTableFormat(), and cryomesh::manager::OutputPatternsTableFormat::OutputPatternsTableFormat().
 
 .SH "Author"
 .PP 

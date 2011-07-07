@@ -1,4 +1,4 @@
-.TH "cryomesh::manager::Creator" 3 "Fri Apr 1 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::manager::Creator" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -19,13 +19,20 @@ Class to take in a config file of ConfigTranslator form and parse the commands t
 .br
 .RI "\fIConstructor to create a bundle from a config file name with option to specify the database file name that will be used. \fP"
 .ti -1c
+.RI "\fBCreator\fP (std::istream &config_stream, const std::string &database_filename=\fBDEFAULT_DATABASE_FILENAME\fP)"
+.br
+.ti -1c
 .RI "virtual \fB~Creator\fP ()"
 .br
 .RI "\fIDeffault destructor. \fP"
 .ti -1c
-.RI "boost::shared_ptr< \fBstructures::Bundle\fP > \fBgetBundle\fP ()"
+.RI "const boost::shared_ptr< \fBstructures::Bundle\fP > \fBgetBundle\fP () const "
 .br
 .RI "\fIGet the create bundle. \fP"
+.ti -1c
+.RI "boost::shared_ptr< \fBstructures::Bundle\fP > \fBgetMutableBundle\fP ()"
+.br
+.RI "\fIGet the mutable create bundle. \fP"
 .ti -1c
 .RI "const std::map< int, boost::uuids::uuid > & \fBgetClusterIDMap\fP () const "
 .br
@@ -39,18 +46,6 @@ Class to take in a config file of ConfigTranslator form and parse the commands t
 .br
 .RI "\fIget the patternChannelIDMap \fP"
 .ti -1c
-.RI "bool \fBanalyseConfig\fP (const config::ConfigTranslator &conf_trans) const "
-.br
-.RI "\fIAnalyse the config translator for coherence. \fP"
-.ti -1c
-.RI "bool \fBcheckConfigEntry\fP (const config::ConfigEntry &conf_entry) const "
-.br
-.RI "\fIAnalyse the config entry for coherence. \fP"
-.ti -1c
-.RI "bool \fBcheckConfigStructure\fP (const std::list< config::ConfigEntry > &conf_entries) const "
-.br
-.RI "\fIAnalyse the config for structural coherence. \fP"
-.ti -1c
 .RI "void \fBcreateCluster\fP (int id, int size, int connectivity)"
 .br
 .RI "\fITranslator from config command to actual command. \fP"
@@ -63,6 +58,9 @@ Class to take in a config file of ConfigTranslator form and parse the commands t
 .br
 .RI "\fITranslator from config command to actual command. \fP"
 .ti -1c
+.RI "bool \fBrunCommand\fP (const config::ConfigEntry &conf_entry)"
+.br
+.ti -1c
 .RI "void \fBconnectPrimaryInputChannel\fP (int channel_id, int outputid)"
 .br
 .RI "\fITranslator from config command to actual command. \fP"
@@ -70,10 +68,30 @@ Class to take in a config file of ConfigTranslator form and parse the commands t
 .RI "void \fBconnectPrimaryOutputChannel\fP (int channel_id, int inputid)"
 .br
 .RI "\fITranslator from config command to actual command. \fP"
+.ti -1c
+.RI "void \fBautoConnectPrimaryInputs\fP (const std::vector< int > &cluster_ids)"
+.br
+.RI "\fIauto connect all the primary input channels to the list of clusters \fP"
+.ti -1c
+.RI "void \fBautoConnectPrimaryOutputs\fP (const std::vector< int > &cluster_ids)"
+.br
+.RI "\fIauto connect all the primary output channels to the list of clusters \fP"
 .in -1c
 .SS "Static Public Member Functions"
 
 .in +1c
+.ti -1c
+.RI "static bool \fBanalyseConfig\fP (const config::ConfigTranslator &conf_trans)"
+.br
+.RI "\fIAnalyse the config translator for coherence. \fP"
+.ti -1c
+.RI "static bool \fBcheckConfigEntry\fP (const config::ConfigEntry &conf_entry)"
+.br
+.RI "\fIAnalyse the config entry for coherence. \fP"
+.ti -1c
+.RI "static bool \fBcheckConfigStructure\fP (const std::list< config::ConfigEntry > &conf_entries)"
+.br
+.RI "\fIAnalyse the config for structural coherence. \fP"
 .ti -1c
 .RI "static std::map< std::string, std::list< std::string > > \fBgetAcceptedCommandList\fP ()"
 .br
@@ -97,9 +115,12 @@ Class to take in a config file of ConfigTranslator form and parse the commands t
 .br
 .RI "\fIHelper to initialise the creator. \fP"
 .ti -1c
-.RI "bool \fBcreateFromConfig\fP ()"
+.RI "bool \fBcreateFromConfigFile\fP (const std::string config_filename)"
 .br
 .RI "\fIRun through the config file generating all commands. \fP"
+.ti -1c
+.RI "bool \fBcreateFromConfigStream\fP (std::istream &is)"
+.br
 .in -1c
 .SS "Private Member Functions"
 
@@ -124,9 +145,6 @@ Class to take in a config file of ConfigTranslator form and parse the commands t
 .SS "Private Attributes"
 
 .in +1c
-.ti -1c
-.RI "std::string \fBconfigFilename\fP"
-.br
 .ti -1c
 .RI "std::string \fBdatabaseFilename\fP"
 .br
@@ -170,15 +188,18 @@ Constructor to create a bundle from a config file name with option to specify th
 .PP
 
 .PP
-Definition at line 40 of file Creator.cpp.
+Definition at line 48 of file Creator.cpp.
+.SS "cryomesh::manager::Creator::Creator (std::istream &config_stream, const std::string &database_filename = \fC\fBDEFAULT_DATABASE_FILENAME\fP\fP)"
+.PP
+Definition at line 62 of file Creator.cpp.
 .SS "cryomesh::manager::Creator::~Creator ()\fC [virtual]\fP"
 .PP
 Deffault destructor. 
 .PP
-Definition at line 54 of file Creator.cpp.
+Definition at line 72 of file Creator.cpp.
 .SH "Member Function Documentation"
 .PP 
-.SS "bool cryomesh::manager::Creator::analyseConfig (const config::ConfigTranslator &conf_trans) const"
+.SS "bool cryomesh::manager::Creator::analyseConfig (const config::ConfigTranslator &conf_trans)\fC [static]\fP"
 .PP
 Analyse the config translator for coherence. \fBParameters:\fP
 .RS 4
@@ -192,10 +213,34 @@ bool True if the config translator passed all the tests for coherence, false oth
 .PP
 
 .PP
-Definition at line 153 of file Creator.cpp.
+Definition at line 196 of file Creator.cpp.
 .PP
 References checkConfigEntry().
-.SS "bool cryomesh::manager::Creator::checkConfigEntry (const config::ConfigEntry &conf_entry) const"
+.SS "void cryomesh::manager::Creator::autoConnectPrimaryInputs (const std::vector< int > &cluster_ids)"
+.PP
+auto connect all the primary input channels to the list of clusters \fBParameters:\fP
+.RS 4
+\fIstd::vector<int>\fP The fake ids of the clusters to connect 
+.RE
+.PP
+
+.PP
+Definition at line 357 of file Creator.cpp.
+.PP
+References getClusterRealID().
+.SS "void cryomesh::manager::Creator::autoConnectPrimaryOutputs (const std::vector< int > &cluster_ids)"
+.PP
+auto connect all the primary output channels to the list of clusters \fBParameters:\fP
+.RS 4
+\fIstd::vector<int>\fP The fake ids of the clusters to connect 
+.RE
+.PP
+
+.PP
+Definition at line 375 of file Creator.cpp.
+.PP
+References getClusterRealID().
+.SS "bool cryomesh::manager::Creator::checkConfigEntry (const config::ConfigEntry &conf_entry)\fC [static]\fP"
 .PP
 Analyse the config entry for coherence. \fBParameters:\fP
 .RS 4
@@ -209,10 +254,10 @@ bool True if the config entry passed all the tests for coherence, false otherwis
 .PP
 
 .PP
-Definition at line 173 of file Creator.cpp.
+Definition at line 216 of file Creator.cpp.
 .PP
 Referenced by analyseConfig().
-.SS "bool cryomesh::manager::Creator::checkConfigStructure (const std::list< config::ConfigEntry > &conf_entries) const"
+.SS "bool cryomesh::manager::Creator::checkConfigStructure (const std::list< config::ConfigEntry > &conf_entries)\fC [static]\fP"
 .PP
 Analyse the config for structural coherence. \fBParameters:\fP
 .RS 4
@@ -226,7 +271,7 @@ bool True if the config entries passed all the tests for structural coherence, f
 .PP
 
 .PP
-Definition at line 203 of file Creator.cpp.
+Definition at line 246 of file Creator.cpp.
 .SS "void cryomesh::manager::Creator::connectCluster (intinput_cluster_id, intouput_cluster_id, intwidth)"
 .PP
 Translator from config command to actual command. Connect two clusters using there fake ids
@@ -242,7 +287,7 @@ Translator from config command to actual command. Connect two clusters using the
 .PP
 
 .PP
-Definition at line 237 of file Creator.cpp.
+Definition at line 285 of file Creator.cpp.
 .SS "void cryomesh::manager::Creator::connectPrimaryInputChannel (intchannel_id, intoutputid)"
 .PP
 Translator from config command to actual command. Create a fibre to connect a primary input pattern channel to a cluster output
@@ -256,7 +301,7 @@ Translator from config command to actual command. Create a fibre to connect a pr
 .PP
 
 .PP
-Definition at line 295 of file Creator.cpp.
+Definition at line 343 of file Creator.cpp.
 .SS "void cryomesh::manager::Creator::connectPrimaryOutputChannel (intchannel_id, intinputid)"
 .PP
 Translator from config command to actual command. Create a fibre to connect a primary output pattern channel to a cluster output
@@ -270,7 +315,7 @@ Translator from config command to actual command. Create a fibre to connect a pr
 .PP
 
 .PP
-Definition at line 300 of file Creator.cpp.
+Definition at line 350 of file Creator.cpp.
 .SS "void cryomesh::manager::Creator::createCluster (intid, intsize, intconnectivity)"
 .PP
 Translator from config command to actual command. Create a cluster using a fake id to map to a real one
@@ -286,8 +331,10 @@ Translator from config command to actual command. Create a cluster using a fake 
 .PP
 
 .PP
-Definition at line 233 of file Creator.cpp.
-.SS "bool cryomesh::manager::Creator::createFromConfig ()\fC [protected]\fP"
+Definition at line 281 of file Creator.cpp.
+.PP
+Referenced by runCommand().
+.SS "bool cryomesh::manager::Creator::createFromConfigFile (const std::stringconfig_filename)\fC [protected]\fP"
 .PP
 Run through the config file generating all commands. \fBReturns:\fP
 .RS 4
@@ -296,9 +343,10 @@ bool True if running the config file was successful, false otherwise
 .PP
 
 .PP
-Definition at line 77 of file Creator.cpp.
+Definition at line 182 of file Creator.cpp.
+.SS "bool cryomesh::manager::Creator::createFromConfigStream (std::istream &is)\fC [protected]\fP"
 .PP
-References configFilename.
+Definition at line 157 of file Creator.cpp.
 .SS "std::map< std::string, std::list< std::string > > cryomesh::manager::Creator::getAcceptedCommandList ()\fC [static]\fP"
 .PP
 Generate and return the accepted command list. \fBReturns:\fP
@@ -308,8 +356,8 @@ std::map<std::string, std::list<std::string> > The accepted commands mapping
 .PP
 
 .PP
-Definition at line 21 of file Creator.cpp.
-.SS "boost::shared_ptr< \fBstructures::Bundle\fP > cryomesh::manager::Creator::getBundle ()"
+Definition at line 23 of file Creator.cpp.
+.SS "const boost::shared_ptr< \fBstructures::Bundle\fP > cryomesh::manager::Creator::getBundle () const"
 .PP
 Get the create bundle. \fBReturns:\fP
 .RS 4
@@ -318,7 +366,7 @@ boost::shared_ptr<structures::Bundle> The created bundle
 .PP
 
 .PP
-Definition at line 57 of file Creator.cpp.
+Definition at line 75 of file Creator.cpp.
 .SS "const std::map< int, boost::uuids::uuid > & cryomesh::manager::Creator::getClusterIDMap () const"
 .PP
 get the clusterIDMap \fBReturns:\fP
@@ -328,7 +376,7 @@ const std::map<int, boost::uuids::uuid> the clusterIDMap
 .PP
 
 .PP
-Definition at line 61 of file Creator.cpp.
+Definition at line 83 of file Creator.cpp.
 .SS "boost::uuids::uuid cryomesh::manager::Creator::getClusterRealID (const intid) const\fC [private]\fP"
 .PP
 Helper to retrieve a uuid from a fake int id for clusters. \fBParameters:\fP
@@ -343,7 +391,9 @@ boost::uuids::uuid The corresponding real uuid to the fake one, null if it doesn
 .PP
 
 .PP
-Definition at line 327 of file Creator.cpp.
+Definition at line 420 of file Creator.cpp.
+.PP
+Referenced by autoConnectPrimaryInputs(), and autoConnectPrimaryOutputs().
 .SS "const std::map< int, boost::uuids::uuid > & cryomesh::manager::Creator::getFibreIDMap () const"
 .PP
 get the fibreIDMap \fBReturns:\fP
@@ -353,7 +403,7 @@ const std::map<int, boost::uuids::uuid> the fibreIDMap
 .PP
 
 .PP
-Definition at line 65 of file Creator.cpp.
+Definition at line 87 of file Creator.cpp.
 .SS "boost::uuids::uuid cryomesh::manager::Creator::getFibreRealID (const intid) const\fC [private]\fP"
 .PP
 Helper to retrieve a uuid from a fake int id for fibres. \fBParameters:\fP
@@ -368,7 +418,17 @@ boost::uuids::uuid The corresponding real uuid to the fake one, null if it doesn
 .PP
 
 .PP
-Definition at line 332 of file Creator.cpp.
+Definition at line 427 of file Creator.cpp.
+.SS "boost::shared_ptr< \fBstructures::Bundle\fP > cryomesh::manager::Creator::getMutableBundle ()"
+.PP
+Get the mutable create bundle. \fBReturns:\fP
+.RS 4
+boost::shared_ptr<structures::Bundle> The created bundle 
+.RE
+.PP
+
+.PP
+Definition at line 79 of file Creator.cpp.
 .SS "const std::map< int, boost::uuids::uuid > & cryomesh::manager::Creator::getPatternChannelIDMap () const"
 .PP
 get the patternChannelIDMap \fBReturns:\fP
@@ -378,7 +438,7 @@ const std::map<int, boost::uuids::uuid> the patternChannelIDMap
 .PP
 
 .PP
-Definition at line 69 of file Creator.cpp.
+Definition at line 91 of file Creator.cpp.
 .SS "boost::uuids::uuid cryomesh::manager::Creator::getPatternChannelRealID (const intid) const\fC [private]\fP"
 .PP
 Helper to retrieve a uuid from a fake int id for pattern channels. \fBParameters:\fP
@@ -393,7 +453,7 @@ boost::uuids::uuid The corresponding real uuid to the fake one, null if it doesn
 .PP
 
 .PP
-Definition at line 337 of file Creator.cpp.
+Definition at line 434 of file Creator.cpp.
 .SS "boost::uuids::uuid cryomesh::manager::Creator::getRealID (const intid, const std::map< int, boost::uuids::uuid > &idmap) const\fC [private]\fP"
 .PP
 Retreive a uuid from a fake int id inside a map. \fBParameters:\fP
@@ -410,12 +470,12 @@ boost::uuids::uuid The corresponding real uuid to the fake one, null if it doesn
 .PP
 
 .PP
-Definition at line 304 of file Creator.cpp.
+Definition at line 393 of file Creator.cpp.
 .SS "void cryomesh::manager::Creator::initialise ()\fC [protected]\fP"
 .PP
 Helper to initialise the creator. 
 .PP
-Definition at line 73 of file Creator.cpp.
+Definition at line 95 of file Creator.cpp.
 .SS "void cryomesh::manager::Creator::loadData (std::stringdatafile)"
 .PP
 Translator from config command to actual command. Load the pattern data in from a file
@@ -427,39 +487,39 @@ Translator from config command to actual command. Load the pattern data in from 
 .PP
 
 .PP
-Definition at line 268 of file Creator.cpp.
+Definition at line 316 of file Creator.cpp.
 .PP
 References bundle, and patternChannelIDMap.
+.SS "bool cryomesh::manager::Creator::runCommand (const config::ConfigEntry &conf_entry)"
+.PP
+Definition at line 99 of file Creator.cpp.
+.PP
+References createCluster().
 .SH "Member Data Documentation"
 .PP 
 .SS "std::map< std::string, std::list< std::string > > \fBcryomesh::manager::Creator::acceptedCommandList\fP = Creator::getAcceptedCommandList()\fC [static]\fP"
 .PP
-Definition at line 185 of file Creator.h.
+Definition at line 212 of file Creator.h.
 .SS "boost::shared_ptr<\fBstructures::Bundle\fP> \fBcryomesh::manager::Creator::bundle\fP\fC [private]\fP"
 .PP
-Definition at line 238 of file Creator.h.
+Definition at line 266 of file Creator.h.
 .PP
 Referenced by loadData().
 .SS "std::map<int, boost::uuids::uuid> \fBcryomesh::manager::Creator::clusterIDMap\fP\fC [private]\fP"
 .PP
-Definition at line 245 of file Creator.h.
-.SS "std::string \fBcryomesh::manager::Creator::configFilename\fP\fC [private]\fP"
-.PP
-Definition at line 216 of file Creator.h.
-.PP
-Referenced by createFromConfig().
+Definition at line 273 of file Creator.h.
 .SS "std::string \fBcryomesh::manager::Creator::databaseFilename\fP\fC [private]\fP"
 .PP
-Definition at line 231 of file Creator.h.
+Definition at line 259 of file Creator.h.
 .SS "const std::string \fBcryomesh::manager::Creator::DEFAULT_DATABASE_FILENAME\fP = 'cryomesh_default.db'\fC [static]\fP"
 .PP
-Definition at line 178 of file Creator.h.
+Definition at line 205 of file Creator.h.
 .SS "std::map<int, boost::uuids::uuid> \fBcryomesh::manager::Creator::fibreIDMap\fP\fC [private]\fP"
 .PP
-Definition at line 252 of file Creator.h.
+Definition at line 280 of file Creator.h.
 .SS "std::map<int, boost::uuids::uuid> \fBcryomesh::manager::Creator::patternChannelIDMap\fP\fC [private]\fP"
 .PP
-Definition at line 259 of file Creator.h.
+Definition at line 287 of file Creator.h.
 .PP
 Referenced by loadData().
 

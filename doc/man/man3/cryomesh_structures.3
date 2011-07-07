@@ -1,4 +1,4 @@
-.TH "cryomesh::structures" 3 "Fri Apr 1 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::structures" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -16,7 +16,7 @@ cryomesh::structures \-
 .ti -1c
 .RI "class \fBCluster\fP"
 .br
-.RI "\fIA \fBCluster\fP is a collection of self-contained nodes and connections along with an associated Mesh, that can be connected up to one another. \fP"
+.RI "\fIA \fBCluster\fP is a collection of self-contained nodes and connections along with an associated \fBMesh\fP, that can be connected up to one another. \fP"
 .ti -1c
 .RI "class \fBClusterMap\fP"
 .br
@@ -27,12 +27,32 @@ cryomesh::structures \-
 .ti -1c
 .RI "class \fBFibreMap\fP"
 .br
+.ti -1c
+.RI "class \fBMesh\fP"
+.br
+.RI "\fI\fBMesh\fP is the fabric of connection space and warps and is warped by it. \fP"
+.ti -1c
+.RI "class \fBNodeMesh\fP"
+.br
+.RI "\fI\fBMesh\fP of nodes and their neighbouring nodes and distances. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef std::map< boost::shared_ptr< \fBcryomesh::components::Node\fP >, std::map< boost::shared_ptr< \fBcryomesh::components::Node\fP >, double > > \fBNeighbourhoodMap\fP"
+.br
+.RI "\fITypedef to simplify neighbourhood map structure. \fP"
+.ti -1c
+.RI "typedef std::map< boost::shared_ptr< \fBcryomesh::components::Node\fP >, std::map< boost::shared_ptr< \fBcryomesh::components::Node\fP >, double > >::const_iterator \fBNeighbourhoodMapConstIterator\fP"
+.br
+.RI "\fITypdef for iterator to neighbourhood map. \fP"
 .in -1c
 .SS "Functions"
 
 .in +1c
 .ti -1c
-.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBBundle\fP &bundle)"
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBBundle\fP &obj)"
 .br
 .ti -1c
 .RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBCluster\fP &obj)"
@@ -40,10 +60,25 @@ cryomesh::structures \-
 .ti -1c
 .RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBFibre\fP &obj)"
 .br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBNodeMesh\fP &obj)"
+.br
 .in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "\fBcryomesh::structures::NodeMesh::NeighbourhoodMap\fP"
+.PP
+Typedef to simplify neighbourhood map structure. Map of Nodes to other nodes within their neighbourhood and the distances to them. 
+.PP
+Definition at line 19 of file NodeMesh.h.
+.SS "typedef std::map<boost::shared_ptr<\fBcryomesh::components::Node\fP>, std::map<boost::shared_ptr<\fBcryomesh::components::Node\fP>, double> >::const_iterator \fBcryomesh::structures::NeighbourhoodMapConstIterator\fP"
+.PP
+Typdef for iterator to neighbourhood map. 
+.PP
+Definition at line 30 of file NodeMesh.h.
 .SH "Function Documentation"
 .PP 
-.SS "std::ostream& cryomesh::structures::operator<< (std::ostream &os, const Bundle &bundle)"\fBParameters:\fP
+.SS "std::ostream& cryomesh::structures::operator<< (std::ostream &os, const Bundle &obj)"\fBParameters:\fP
 .RS 4
 \fIstd::ostream\fP & os The output stream 
 .br
@@ -57,7 +92,22 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 207 of file Bundle.cpp.
+Definition at line 962 of file Bundle.cpp.
+.SS "std::ostream& cryomesh::structures::operator<< (std::ostream &os, const NodeMesh &obj)"\fBParameters:\fP
+.RS 4
+\fIstd::ostream\fP & os The output stream 
+.br
+\fIconst\fP \fBNodeMesh\fP & obj The object to stream
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::ostream & The output stream 
+.RE
+.PP
+
+.PP
+Definition at line 240 of file NodeMesh.cpp.
 .SS "std::ostream& cryomesh::structures::operator<< (std::ostream &os, const Fibre &obj)"\fBReturns:\fP
 .RS 4
 Pattern To stream operator
@@ -77,9 +127,9 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 300 of file Fibre.cpp.
+Definition at line 451 of file Fibre.cpp.
 .PP
-References cryomesh::components::ConnectionMap::getActivityPattern(), and cryomesh::structures::Fibre::getConnections().
+References cryomesh::structures::Fibre::getConnections(), and cryomesh::structures::Fibre::getOutputNodesPattern().
 .SS "std::ostream& cryomesh::structures::operator<< (std::ostream &os, const Cluster &obj)"\fBParameters:\fP
 .RS 4
 \fIstd::ostream\fP & os The output stream 
@@ -94,7 +144,7 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 132 of file Cluster.cpp.
+Definition at line 325 of file Cluster.cpp.
 .PP
 References cryomesh::structures::Cluster::getConnections(), cryomesh::structures::Cluster::getNodeMap(), and cryomesh::structures::Cluster::getNodes().
 .SH "Author"

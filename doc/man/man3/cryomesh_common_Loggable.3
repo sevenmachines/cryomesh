@@ -1,0 +1,70 @@
+.TH "cryomesh::common::Loggable" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::common::Loggable \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Loggable.h>\fP
+.PP
+Inherited by \fBcryomesh::structures::Bundle\fP.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBLoggingDepth\fP { \fBSUMMARY\fP, \fBMAX\fP }"
+.br
+.RI "\fIEnum representing print detail. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLoggable\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Loggable\fP ()"
+.br
+.ti -1c
+.RI "std::ostream & \fBprint\fP (std::ostream &os, const \fBLoggable::LoggingDepth\fP depth=Loggable::SUMMARY) const "
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 17 of file Loggable.h.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBcryomesh::common::Loggable::LoggingDepth\fP"
+.PP
+Enum representing print detail. 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fISUMMARY \fP\fP
+.TP
+\fB\fIMAX \fP\fP
+
+.PP
+Definition at line 23 of file Loggable.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::common::Loggable::Loggable ()\fC [inline]\fP"
+.PP
+Definition at line 26 of file Loggable.h.
+.SS "virtual cryomesh::common::Loggable::~Loggable ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 27 of file Loggable.h.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::ostream& cryomesh::common::Loggable::print (std::ostream &os, const \fBLoggable::LoggingDepth\fPdepth = \fCLoggable::SUMMARY\fP) const\fC [inline]\fP"
+.PP
+Reimplemented in \fBcryomesh::structures::Bundle\fP.
+.PP
+Definition at line 29 of file Loggable.h.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

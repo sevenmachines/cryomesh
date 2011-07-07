@@ -1,4 +1,4 @@
-.TH "cryomesh::common::Cycle" 3 "Fri Apr 1 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::common::Cycle" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -369,7 +369,7 @@ signed int The cycle as an int
 .PP
 Definition at line 60 of file Cycle.cpp.
 .PP
-Referenced by cryomesh::manager::ConnectionDatabaseObject::ConnectionDatabaseObject(), cryomesh::components::Impulse::getActivity(), and cryomesh::manager::DatabaseManager::updateByUUID().
+Referenced by cryomesh::manager::ConnectionDatabaseObject::ConnectionDatabaseObject(), cryomesh::components::Impulse::getActivity(), cryomesh::components::Impulse::operator=(), cryomesh::manager::DatabaseManager::selectValue(), and cryomesh::manager::DatabaseManager::updateByUUID().
 .SS "unsigned long int cryomesh::common::Cycle::toULInt () const"
 .PP
 Return as an unsigned integer. \fBReturns:\fP
@@ -381,7 +381,7 @@ unsigned int The cycle as an int
 .PP
 Definition at line 56 of file Cycle.cpp.
 .PP
-Referenced by cryomesh::manager::NodeDatabaseObject::NodeDatabaseObject(), cryomesh::components::Impulse::operator+=(), and cryomesh::components::ImpulseCollection::refreshDataObject().
+Referenced by cryomesh::manager::NodeDatabaseObject::NodeDatabaseObject(), and cryomesh::components::ImpulseCollection::refreshDataObject().
 .SH "Friends And Related Function Documentation"
 .PP 
 .SS "std::ostream& operator<< (std::ostream &os, const \fBCycle\fP &obj)\fC [friend]\fP"

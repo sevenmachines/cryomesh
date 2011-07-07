@@ -69,7 +69,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#friends">Friends</a>  </div>
   <div class="headertitle">
 <h1>cryomesh::components::ActivityTimer Class Reference</h1>  </div>
 </div>
@@ -97,11 +99,19 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#abf1241a780f7c6fa5d626b4585afc017"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ActivityTimer.html#a8383004d633ae75433d3961bdec431cf">~ActivityTimer</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="#a8383004d633ae75433d3961bdec431cf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ActivityTimer.html#a8842b0b6e73ddf1d1809b79b7b239baf">reset</a> ()=0</td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ActivityTimer.html#a1a4fd82c20fdc2b17ebe4582222ab8a3">print</a> (std::ostream &amp;os) const =0</td></tr>
+<tr><td colspan="2"><h2><a name="friends"></a>
+Friends</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ActivityTimer.html#ac35779cd02eec3662a6cd9d75e1572cd">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classcryomesh_1_1components_1_1ActivityTimer.html">ActivityTimer</a> &amp;obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">To stream operator.  <a href="#ac35779cd02eec3662a6cd9d75e1572cd"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Simple interface class for activity timers. </p>
 
-<p>Definition at line <a class="el" href="ActivityTimer_8h_source.html#l00018">18</a> of file <a class="el" href="ActivityTimer_8h_source.html">ActivityTimer.h</a>.</p>
+<p>Definition at line <a class="el" href="ActivityTimer_8h_source.html#l00020">20</a> of file <a class="el" href="ActivityTimer_8h_source.html">ActivityTimer.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="abf1241a780f7c6fa5d626b4585afc017"></a><!-- doxytag: member="cryomesh::components::ActivityTimer::ActivityTimer" ref="abf1241a780f7c6fa5d626b4585afc017" args="()" -->
 <div class="memitem">
@@ -119,7 +129,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Default constructor. </p>
 
-<p>Definition at line <a class="el" href="ActivityTimer_8h_source.html#l00023">23</a> of file <a class="el" href="ActivityTimer_8h_source.html">ActivityTimer.h</a>.</p>
+<p>Definition at line <a class="el" href="ActivityTimer_8h_source.html#l00025">25</a> of file <a class="el" href="ActivityTimer_8h_source.html">ActivityTimer.h</a>.</p>
 
 </div>
 </div>
@@ -139,12 +149,90 @@ Public Member Functions</h2></td></tr>
 
 <p>Default destructor. </p>
 
-<p>Definition at line <a class="el" href="ActivityTimer_8h_source.html#l00029">29</a> of file <a class="el" href="ActivityTimer_8h_source.html">ActivityTimer.h</a>.</p>
+<p>Definition at line <a class="el" href="ActivityTimer_8h_source.html#l00031">31</a> of file <a class="el" href="ActivityTimer_8h_source.html">ActivityTimer.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a1a4fd82c20fdc2b17ebe4582222ab8a3"></a><!-- doxytag: member="cryomesh::components::ActivityTimer::print" ref="a1a4fd82c20fdc2b17ebe4582222ab8a3" args="(std::ostream &amp;os) const =0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::ostream&amp; cryomesh::components::ActivityTimer::print </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em></td><td>)</td>
+          <td> const<code> [protected, pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implemented in <a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a6e109b8f4ddcf6d4e24f0347d4060f78">cryomesh::components::ActivityTimerDistance</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8842b0b6e73ddf1d1809b79b7b239baf"></a><!-- doxytag: member="cryomesh::components::ActivityTimer::reset" ref="a8842b0b6e73ddf1d1809b79b7b239baf" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void cryomesh::components::ActivityTimer::reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implemented in <a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#aca048029f8ff311c7e215bb2d7689c7b">cryomesh::components::ActivityTimerDistance</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Friends And Related Function Documentation</h2>
+<a class="anchor" id="ac35779cd02eec3662a6cd9d75e1572cd"></a><!-- doxytag: member="cryomesh::components::ActivityTimer::operator&lt;&lt;" ref="ac35779cd02eec3662a6cd9d75e1572cd" args="(std::ostream &amp;os, const ActivityTimer &amp;obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcryomesh_1_1components_1_1ActivityTimer.html">ActivityTimer</a> &amp;&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [friend]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>To stream operator. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">std::ostream</td><td>&amp; os The output stream </td></tr>
+    <tr><td class="paramname">const</td><td><a class="el" href="classcryomesh_1_1components_1_1ActivityTimer.html" title="Simple interface class for activity timers.">ActivityTimer</a> &amp; obj The object to stream</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>std::ostream &amp; The output stream </dd></dl>
+
+<p>Definition at line <a class="el" href="ActivityTimer_8h_source.html#l00047">47</a> of file <a class="el" href="ActivityTimer_8h_source.html">ActivityTimer.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/niall/Projects/Eclipse/cryomesh/src/components/<a class="el" href="ActivityTimer_8h_source.html">ActivityTimer.h</a></li>
+<li>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/<a class="el" href="ActivityTimer_8h_source.html">ActivityTimer.h</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -152,7 +240,7 @@ Public Member Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -161,7 +249,7 @@ Public Member Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:14 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

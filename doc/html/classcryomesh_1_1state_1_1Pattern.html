@@ -100,15 +100,17 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1state_1_1Pattern.html#ab6fe1d9bee48f3bdaffb0cf683de4d17">getPattern</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1state_1_1Pattern.html#a963b252435300f16df7599c56751555b">getString</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1state_1_1Pattern.html#acf193a66c3a2e41d99f40b2666687ad9">setPattern</a> (const std::vector&lt; bool &gt; &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">boost::uuids::uuid&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1state_1_1Pattern.html#a2f8c838a53fc654b5e3f4af06a1d88e9">getUUID</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1state_1_1Pattern.html#a34597e6294ffb843326b654991aceb2f">getId</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1state_1_1Pattern.html#a8ca895dafdf58ae592f41be1d8d6173a">setId</a> (int)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1state_1_1Pattern.html#a77793823c718ec5bacf59d3908950390">getWidth</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1state_1_1Pattern.html#a448d14d09a39d35182bef8169511faf8">getSize</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classcryomesh_1_1state_1_1BinaryString.html">BinaryString</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1state_1_1Pattern.html#a57b18a4b690c70821e7d84847a56d7b9">getBinaryString</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcryomesh_1_1state_1_1BinaryString.html">BinaryString</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1state_1_1Pattern.html#a22e7fa5faa704b0d95c022d1dc5d67aa">getMutableBinaryString</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const boost::shared_ptr<br class="typebreak"/>
 &lt; <a class="el" href="classcryomesh_1_1state_1_1PatternTag.html">PatternTag</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1state_1_1Pattern.html#aec6c5defbc96290f03a2178bbd08a626">getPatternTag</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1state_1_1Pattern.html#afae212fb317cf86e70ee93b9a0c6ea21">setPatternTag</a> (boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1state_1_1PatternTag.html">PatternTag</a> &gt; pt)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr<br class="typebreak"/>
+&lt; <a class="el" href="classcryomesh_1_1manager_1_1DatabaseObject.html">manager::DatabaseObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1state_1_1Pattern.html#a2dd3aa753f926b674aa73688a932ebf7">getDatabaseObject</a> () const </td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1state_1_1Pattern.html#aaf0fef8e434a2bf4e2a3de2146506e55">getIds</a> ()</td></tr>
@@ -127,7 +129,6 @@ Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcryomesh_1_1state_1_1BinaryString.html">BinaryString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1state_1_1Pattern.html#a2ceffaffb21669b4712f9af5f5045e6e">binaryString</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1state_1_1Pattern.html#aa8070cf7c7e5621164fcf389baeec552">id</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1state_1_1PatternTag.html">PatternTag</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1state_1_1Pattern.html#ae6138b7407f2e55de84a1c53fcc14a35">patternTag</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">boost::uuids::uuid&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1state_1_1Pattern.html#a645e8d7690ddd76dfaf1cbc915b4c252">tag</a></td></tr>
 <tr><td colspan="2"><h2><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1state_1_1Pattern.html#a9a1488a4d6c293a0c5c5517fbcb47cb7">ids</a> = 1</td></tr>
@@ -138,7 +139,7 @@ Friends</h2></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="Pattern_8h_source.html#l00026">26</a> of file <a class="el" href="Pattern_8h_source.html">Pattern.h</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8h_source.html#l00027">27</a> of file <a class="el" href="Pattern_8h_source.html">Pattern.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a5e9e2738edae7cd79164b834e1cdee6c"></a><!-- doxytag: member="cryomesh::state::Pattern::Pattern" ref="a5e9e2738edae7cd79164b834e1cdee6c" args="()" -->
 <div class="memitem">
@@ -154,7 +155,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00032">32</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00033">33</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 </div>
 </div>
@@ -173,7 +174,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00035">35</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00036">36</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 </div>
 </div>
@@ -192,7 +193,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00044">44</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00045">45</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 </div>
 </div>
@@ -211,7 +212,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00040">40</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00041">41</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 </div>
 </div>
@@ -246,7 +247,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00048">48</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00049">49</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 </div>
 </div>
@@ -266,7 +267,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00064">64</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00065">65</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 </div>
 </div>
@@ -284,7 +285,25 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00156">156</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00161">161</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2dd3aa753f926b674aa73688a932ebf7"></a><!-- doxytag: member="cryomesh::state::Pattern::getDatabaseObject" ref="a2dd3aa753f926b674aa73688a932ebf7" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1manager_1_1DatabaseObject.html">manager::DatabaseObject</a> &gt; cryomesh::state::Pattern::getDatabaseObject </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00224">224</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 </div>
 </div>
@@ -302,7 +321,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00143">143</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00144">144</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 </div>
 </div>
@@ -320,7 +339,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00212">212</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00214">214</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="PatternTagById_8cpp_source.html#l00045">cryomesh::state::PatternTagById::getEndTag()</a>.</p>
 
@@ -340,7 +359,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00159">159</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00164">164</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 </div>
 </div>
@@ -358,9 +377,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00134">134</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00135">135</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00069">cryomesh::structures::Fibre::trigger()</a>.</p>
+<p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00416">cryomesh::structures::Fibre::forceFireNodes()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00069">cryomesh::structures::Fibre::trigger()</a>.</p>
 
 </div>
 </div>
@@ -378,7 +397,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00205">205</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00207">207</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 </div>
 </div>
@@ -417,9 +436,29 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classcryomesh_1_1state_1_1Pattern.html">Pattern</a> The random pattern </dd></dl>
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00022">22</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00023">23</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00063">cryomesh::structures::Fibre::trigger()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a448d14d09a39d35182bef8169511faf8"></a><!-- doxytag: member="cryomesh::state::Pattern::getSize" ref="a448d14d09a39d35182bef8169511faf8" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cryomesh::state::Pattern::getSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00157">157</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00416">cryomesh::structures::Fibre::forceFireNodes()</a>.</p>
 
 </div>
 </div>
@@ -437,25 +476,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00137">137</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a2f8c838a53fc654b5e3f4af06a1d88e9"></a><!-- doxytag: member="cryomesh::state::Pattern::getUUID" ref="a2f8c838a53fc654b5e3f4af06a1d88e9" args="() const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">boost::uuids::uuid cryomesh::state::Pattern::getUUID </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00202">202</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00138">138</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 </div>
 </div>
@@ -473,7 +494,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00152">152</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00153">153</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 </div>
 </div>
@@ -491,7 +512,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00222">222</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00232">232</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 </div>
 </div>
@@ -509,7 +530,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00061">61</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00062">62</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 </div>
 </div>
@@ -528,7 +549,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00130">130</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00131">131</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 </div>
 </div>
@@ -547,7 +568,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00052">52</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00053">53</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 </div>
 </div>
@@ -566,7 +587,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00116">116</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00117">117</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 </div>
 </div>
@@ -585,7 +606,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00163">163</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00168">168</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 </div>
 </div>
@@ -616,9 +637,9 @@ template&lt;class Archive &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8h_source.html#l00029">29</a> of file <a class="el" href="Pattern_8h_source.html">Pattern.h</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8h_source.html#l00030">30</a> of file <a class="el" href="Pattern_8h_source.html">Pattern.h</a>.</p>
 
-<p>References <a class="el" href="Pattern_8h_source.html#l00111">binaryString</a>, <a class="el" href="Pattern_8h_source.html#l00113">id</a>, and <a class="el" href="Pattern_8h_source.html#l00125">ids</a>.</p>
+<p>References <a class="el" href="Pattern_8h_source.html#l00114">binaryString</a>, <a class="el" href="Pattern_8h_source.html#l00116">id</a>, and <a class="el" href="Pattern_8h_source.html#l00127">ids</a>.</p>
 
 </div>
 </div>
@@ -637,7 +658,7 @@ template&lt;class Archive &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00146">146</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00147">147</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 </div>
 </div>
@@ -656,7 +677,7 @@ template&lt;class Archive &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00215">215</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00217">217</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 </div>
 </div>
@@ -675,7 +696,7 @@ template&lt;class Archive &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00140">140</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00141">141</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 </div>
 </div>
@@ -694,7 +715,7 @@ template&lt;class Archive &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00208">208</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00210">210</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 </div>
 </div>
@@ -713,7 +734,7 @@ template&lt;class Archive &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00181">181</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00186">186</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 </div>
 </div>
@@ -729,7 +750,7 @@ template&lt;class Archive &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8h_source.html#l00027">27</a> of file <a class="el" href="Pattern_8h_source.html">Pattern.h</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8h_source.html#l00028">28</a> of file <a class="el" href="Pattern_8h_source.html">Pattern.h</a>.</p>
 
 </div>
 </div>
@@ -758,7 +779,7 @@ template&lt;class Archive &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00233">233</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8cpp_source.html#l00240">240</a> of file <a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a>.</p>
 
 </div>
 </div>
@@ -774,9 +795,9 @@ template&lt;class Archive &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8h_source.html#l00111">111</a> of file <a class="el" href="Pattern_8h_source.html">Pattern.h</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8h_source.html#l00114">114</a> of file <a class="el" href="Pattern_8h_source.html">Pattern.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Pattern_8h_source.html#l00029">serialize()</a>.</p>
+<p>Referenced by <a class="el" href="Pattern_8h_source.html#l00030">serialize()</a>.</p>
 
 </div>
 </div>
@@ -791,9 +812,9 @@ template&lt;class Archive &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8h_source.html#l00113">113</a> of file <a class="el" href="Pattern_8h_source.html">Pattern.h</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8h_source.html#l00116">116</a> of file <a class="el" href="Pattern_8h_source.html">Pattern.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Pattern_8h_source.html#l00029">serialize()</a>.</p>
+<p>Referenced by <a class="el" href="Pattern_8h_source.html#l00030">serialize()</a>.</p>
 
 </div>
 </div>
@@ -808,9 +829,9 @@ template&lt;class Archive &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8h_source.html#l00125">125</a> of file <a class="el" href="Pattern_8h_source.html">Pattern.h</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8h_source.html#l00127">127</a> of file <a class="el" href="Pattern_8h_source.html">Pattern.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Pattern_8h_source.html#l00029">serialize()</a>.</p>
+<p>Referenced by <a class="el" href="Pattern_8h_source.html#l00030">serialize()</a>.</p>
 
 </div>
 </div>
@@ -825,28 +846,13 @@ template&lt;class Archive &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Pattern_8h_source.html#l00116">116</a> of file <a class="el" href="Pattern_8h_source.html">Pattern.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a645e8d7690ddd76dfaf1cbc915b4c252"></a><!-- doxytag: member="cryomesh::state::Pattern::tag" ref="a645e8d7690ddd76dfaf1cbc915b4c252" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">boost::uuids::uuid <a class="el" href="classcryomesh_1_1state_1_1Pattern.html#a645e8d7690ddd76dfaf1cbc915b4c252">cryomesh::state::Pattern::tag</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="Pattern_8h_source.html#l00118">118</a> of file <a class="el" href="Pattern_8h_source.html">Pattern.h</a>.</p>
+<p>Definition at line <a class="el" href="Pattern_8h_source.html#l00119">119</a> of file <a class="el" href="Pattern_8h_source.html">Pattern.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/niall/Projects/Eclipse/cryomesh/src/state/<a class="el" href="Pattern_8h_source.html">Pattern.h</a></li>
-<li>/home/niall/Projects/Eclipse/cryomesh/src/state/<a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a></li>
+<li>/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/<a class="el" href="Pattern_8h_source.html">Pattern.h</a></li>
+<li>/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/<a class="el" href="Pattern_8cpp_source.html">Pattern.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -854,7 +860,7 @@ template&lt;class Archive &gt; </div>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -863,7 +869,7 @@ template&lt;class Archive &gt; </div>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:11 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:14 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

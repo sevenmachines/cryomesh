@@ -1,4 +1,4 @@
-.TH "cryomesh::utilities" 3 "Fri Apr 1 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::utilities" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,12 +15,19 @@ cryomesh::utilities \-
 .ti -1c
 .RI "class \fBSequencerGeneric\fP"
 .br
+.ti -1c
+.RI "class \fBStatistician\fP"
+.br
+.RI "\fIClass to draw together lots of useful statistics and monitoring data for a Bundle and its components. \fP"
 .in -1c
 .SS "Functions"
 
 .in +1c
 .ti -1c
 .RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBSequencerGeneric\fP &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBStatistician\fP &obj)"
 .br
 .in -1c
 .SH "Function Documentation"
@@ -30,6 +37,21 @@ cryomesh::utilities \-
 Definition at line 126 of file SequencerGeneric.cpp.
 .PP
 References cryomesh::utilities::SequencerGeneric::nodeEntries.
+.SS "std::ostream& cryomesh::utilities::operator<< (std::ostream &os, const Statistician &obj)"\fBParameters:\fP
+.RS 4
+\fIstd::ostream\fP & os The output stream 
+.br
+\fIconst\fP \fBStatistician\fP & obj The object to stream
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::ostream & The output stream 
+.RE
+.PP
+
+.PP
+Definition at line 132 of file Statistician.cpp.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for cryomesh from the source code.

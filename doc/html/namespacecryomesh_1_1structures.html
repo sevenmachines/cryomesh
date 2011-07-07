@@ -67,6 +67,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <h1>cryomesh::structures Namespace Reference</h1>  </div>
@@ -78,19 +79,76 @@ Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1Bundle.html">Bundle</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="classcryomesh_1_1structures_1_1Bundle.html" title="A Bundle is the collection of clusters and fibres, it represents the system as a whole.">Bundle</a> is the collection of clusters and fibres, it represents the system as a whole.  <a href="classcryomesh_1_1structures_1_1Bundle.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1Cluster.html">Cluster</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="classcryomesh_1_1structures_1_1Cluster.html" title="A Cluster is a collection of self-contained nodes and connections along with an associated Mesh...">Cluster</a> is a collection of self-contained nodes and connections along with an associated Mesh, that can be connected up to one another.  <a href="classcryomesh_1_1structures_1_1Cluster.html#_details">More...</a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="classcryomesh_1_1structures_1_1Cluster.html" title="A Cluster is a collection of self-contained nodes and connections along with an associated Mesh...">Cluster</a> is a collection of self-contained nodes and connections along with an associated <a class="el" href="classcryomesh_1_1structures_1_1Mesh.html" title="Mesh is the fabric of connection space and warps and is warped by it.">Mesh</a>, that can be connected up to one another.  <a href="classcryomesh_1_1structures_1_1Cluster.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1ClusterMap.html">ClusterMap</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1Fibre.html">Fibre</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="classcryomesh_1_1structures_1_1Fibre.html" title="A Fibre is a collection of connections that connect one structure to another.">Fibre</a> is a collection of connections that connect one structure to another.  <a href="classcryomesh_1_1structures_1_1Fibre.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1FibreMap.html">FibreMap</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1Mesh.html">Mesh</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcryomesh_1_1structures_1_1Mesh.html" title="Mesh is the fabric of connection space and warps and is warped by it.">Mesh</a> is the fabric of connection space and warps and is warped by it.  <a href="classcryomesh_1_1structures_1_1Mesh.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1structures_1_1NodeMesh.html">NodeMesh</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcryomesh_1_1structures_1_1Mesh.html" title="Mesh is the fabric of connection space and warps and is warped by it.">Mesh</a> of nodes and their neighbouring nodes and distances.  <a href="classcryomesh_1_1structures_1_1NodeMesh.html#_details">More...</a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::map<br class="typebreak"/>
+&lt; boost::shared_ptr<br class="typebreak"/>
+&lt; <a class="el" href="classcryomesh_1_1components_1_1Node.html">cryomesh::components::Node</a> &gt;<br class="typebreak"/>
+, std::map&lt; boost::shared_ptr<br class="typebreak"/>
+&lt; <a class="el" href="classcryomesh_1_1components_1_1Node.html">cryomesh::components::Node</a> &gt;<br class="typebreak"/>
+, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecryomesh_1_1structures.html#a50c955c70377b1dc7d3fcf1364d5e33e">NeighbourhoodMap</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef to simplify neighbourhood map structure.  <a href="#a50c955c70377b1dc7d3fcf1364d5e33e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::map<br class="typebreak"/>
+&lt; boost::shared_ptr<br class="typebreak"/>
+&lt; <a class="el" href="classcryomesh_1_1components_1_1Node.html">cryomesh::components::Node</a> &gt;<br class="typebreak"/>
+, std::map&lt; boost::shared_ptr<br class="typebreak"/>
+&lt; <a class="el" href="classcryomesh_1_1components_1_1Node.html">cryomesh::components::Node</a> &gt;<br class="typebreak"/>
+, double &gt; &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecryomesh_1_1structures.html#a321983538b31d02a5bb7345c72c63769">NeighbourhoodMapConstIterator</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Typdef for iterator to neighbourhood map.  <a href="#a321983538b31d02a5bb7345c72c63769"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecryomesh_1_1structures.html#ac0de245f5d4e0c56559736d69f3139ec">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classcryomesh_1_1structures_1_1Bundle.html">Bundle</a> &amp;bundle)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecryomesh_1_1structures.html#a2e1e77e062248b853cfcfc84d5451ca7">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classcryomesh_1_1structures_1_1Bundle.html">Bundle</a> &amp;obj)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecryomesh_1_1structures.html#abcd04bbc637a047b78e8fe786d5849a0">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classcryomesh_1_1structures_1_1Cluster.html">Cluster</a> &amp;obj)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecryomesh_1_1structures.html#a5193b0012f22b1fd0663b95152c0347e">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classcryomesh_1_1structures_1_1Fibre.html">Fibre</a> &amp;obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecryomesh_1_1structures.html#ababe2609b3503ef7d3abf4e2b576ce88">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classcryomesh_1_1structures_1_1NodeMesh.html">NodeMesh</a> &amp;obj)</td></tr>
 </table>
+<hr/><h2>Typedef Documentation</h2>
+<a class="anchor" id="a50c955c70377b1dc7d3fcf1364d5e33e"></a><!-- doxytag: member="cryomesh::structures::NeighbourhoodMap" ref="a50c955c70377b1dc7d3fcf1364d5e33e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Defs_8h.html#ae55cf30deffa4b8f464ccc8dc2f9adba">cryomesh::structures::NodeMesh::NeighbourhoodMap</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Typedef to simplify neighbourhood map structure. </p>
+<p>Map of Nodes to other nodes within their neighbourhood and the distances to them. </p>
+
+<p>Definition at line <a class="el" href="NodeMesh_8h_source.html#l00019">19</a> of file <a class="el" href="NodeMesh_8h_source.html">NodeMesh.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a321983538b31d02a5bb7345c72c63769"></a><!-- doxytag: member="cryomesh::structures::NeighbourhoodMapConstIterator" ref="a321983538b31d02a5bb7345c72c63769" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::map&lt;boost::shared_ptr&lt;<a class="el" href="classcryomesh_1_1components_1_1Node.html">cryomesh::components::Node</a>&gt;, std::map&lt;boost::shared_ptr&lt;<a class="el" href="classcryomesh_1_1components_1_1Node.html">cryomesh::components::Node</a>&gt;, double&gt; &gt;::const_iterator <a class="el" href="namespacecryomesh_1_1structures.html#a321983538b31d02a5bb7345c72c63769">cryomesh::structures::NeighbourhoodMapConstIterator</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Typdef for iterator to neighbourhood map. </p>
+
+<p>Definition at line <a class="el" href="NodeMesh_8h_source.html#l00030">30</a> of file <a class="el" href="NodeMesh_8h_source.html">NodeMesh.h</a>.</p>
+
+</div>
+</div>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="ac0de245f5d4e0c56559736d69f3139ec"></a><!-- doxytag: member="cryomesh::structures::operator&lt;&lt;" ref="ac0de245f5d4e0c56559736d69f3139ec" args="(std::ostream &amp;os, const Bundle &amp;bundle)" -->
+<a class="anchor" id="a2e1e77e062248b853cfcfc84d5451ca7"></a><!-- doxytag: member="cryomesh::structures::operator&lt;&lt;" ref="a2e1e77e062248b853cfcfc84d5451ca7" args="(std::ostream &amp;os, const Bundle &amp;obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -104,7 +162,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const Bundle &amp;&#160;</td>
-          <td class="paramname"><em>bundle</em>&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -123,7 +181,44 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::ostream &amp; The output stream </dd></dl>
 
-<p>Definition at line <a class="el" href="Bundle_8cpp_source.html#l00207">207</a> of file <a class="el" href="Bundle_8cpp_source.html">Bundle.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Bundle_8cpp_source.html#l00962">962</a> of file <a class="el" href="Bundle_8cpp_source.html">Bundle.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ababe2609b3503ef7d3abf4e2b576ce88"></a><!-- doxytag: member="cryomesh::structures::operator&lt;&lt;" ref="ababe2609b3503ef7d3abf4e2b576ce88" args="(std::ostream &amp;os, const NodeMesh &amp;obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; cryomesh::structures::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const NodeMesh &amp;&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">std::ostream</td><td>&amp; os The output stream </td></tr>
+    <tr><td class="paramname">const</td><td><a class="el" href="classcryomesh_1_1structures_1_1NodeMesh.html" title="Mesh of nodes and their neighbouring nodes and distances.">NodeMesh</a> &amp; obj The object to stream</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>std::ostream &amp; The output stream </dd></dl>
+
+<p>Definition at line <a class="el" href="NodeMesh_8cpp_source.html#l00240">240</a> of file <a class="el" href="NodeMesh_8cpp_source.html">NodeMesh.cpp</a>.</p>
 
 </div>
 </div>
@@ -161,9 +256,9 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::ostream &amp; The output stream </dd></dl>
 
-<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00300">300</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Fibre_8cpp_source.html#l00451">451</a> of file <a class="el" href="Fibre_8cpp_source.html">Fibre.cpp</a>.</p>
 
-<p>References <a class="el" href="ConnectionMap_8h_source.html#l00065">cryomesh::components::ConnectionMap::getActivityPattern()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00130">cryomesh::structures::Fibre::getConnections()</a>.</p>
+<p>References <a class="el" href="Fibre_8cpp_source.html#l00130">cryomesh::structures::Fibre::getConnections()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00337">cryomesh::structures::Fibre::getOutputNodesPattern()</a>.</p>
 
 </div>
 </div>
@@ -200,9 +295,9 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::ostream &amp; The output stream </dd></dl>
 
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00132">132</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00325">325</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
 
-<p>References <a class="el" href="Cluster_8cpp_source.html#l00113">cryomesh::structures::Cluster::getConnections()</a>, <a class="el" href="Cluster_8cpp_source.html#l00125">cryomesh::structures::Cluster::getNodeMap()</a>, and <a class="el" href="Cluster_8cpp_source.html#l00109">cryomesh::structures::Cluster::getNodes()</a>.</p>
+<p>References <a class="el" href="Cluster_8cpp_source.html#l00203">cryomesh::structures::Cluster::getConnections()</a>, <a class="el" href="Cluster_8cpp_source.html#l00215">cryomesh::structures::Cluster::getNodeMap()</a>, and <a class="el" href="Cluster_8cpp_source.html#l00199">cryomesh::structures::Cluster::getNodes()</a>.</p>
 
 </div>
 </div>
@@ -212,7 +307,7 @@ Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -221,7 +316,7 @@ Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:11 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:14 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

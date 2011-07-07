@@ -1,4 +1,4 @@
-.TH "cryomesh::structures::ClusterMap" 3 "Fri Apr 1 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::structures::ClusterMap" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -8,6 +8,13 @@ cryomesh::structures::ClusterMap \-
 .PP
 .PP
 \fC#include <ClusterMap.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBEnergyFractionMethod\fP { \fBENERGY_FRACTION_BY_CLUSTER_COUNT\fP, \fBENERGY_FRACTION_BY_NODE_COUNT\fP }"
+.br
+.in -1c
 .SS "Public Member Functions"
 
 .in +1c
@@ -15,10 +22,40 @@ cryomesh::structures::ClusterMap \-
 .RI "\fBClusterMap\fP ()"
 .br
 .ti -1c
+.RI "void \fBsetEnergyFractionMethod\fP (\fBEnergyFractionMethod\fP method)"
+.br
+.ti -1c
 .RI "virtual \fB~ClusterMap\fP ()"
 .br
 .ti -1c
 .RI "virtual void \fBupdate\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdateClusterEnergies\fP (double total_energy)"
+.br
+.ti -1c
+.RI "double \fBgetClusterEnergyByClusterCount\fP (const boost::shared_ptr< \fBCluster\fP > &cluster, double total_energy) const "
+.br
+.RI "\fITake a total energy and split it evenly between clusters. \fP"
+.ti -1c
+.RI "double \fBgetClusterEnergyByNodeCount\fP (const boost::shared_ptr< \fBCluster\fP > &cluster, double total_energy) const "
+.br
+.RI "\fITake a total energy and split it between clusters based on fraction of total nodes. \fP"
+.ti -1c
+.RI "void \fBwarpClusterNodes\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdateMapData\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBtotalNodeCount\fP"
+.br
+.ti -1c
+.RI "\fBEnergyFractionMethod\fP \fBenergyFractionMethod\fP"
 .br
 .in -1c
 .SS "Friends"
@@ -30,25 +67,86 @@ cryomesh::structures::ClusterMap \-
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 18 of file ClusterMap.h.
+Definition at line 20 of file ClusterMap.h.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBcryomesh::structures::ClusterMap::EnergyFractionMethod\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIENERGY_FRACTION_BY_CLUSTER_COUNT \fP\fP
+.TP
+\fB\fIENERGY_FRACTION_BY_NODE_COUNT \fP\fP
+
+.PP
+Definition at line 23 of file ClusterMap.h.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "cryomesh::structures::ClusterMap::ClusterMap ()\fC [inline]\fP"
 .PP
-Definition at line 20 of file ClusterMap.h.
+Definition at line 26 of file ClusterMap.h.
 .SS "virtual cryomesh::structures::ClusterMap::~ClusterMap ()\fC [inline, virtual]\fP"
 .PP
-Definition at line 22 of file ClusterMap.h.
+Definition at line 34 of file ClusterMap.h.
 .SH "Member Function Documentation"
 .PP 
+.SS "double cryomesh::structures::ClusterMap::getClusterEnergyByClusterCount (const boost::shared_ptr< \fBCluster\fP > &cluster, doubletotal_energy) const\fC [inline]\fP"
+.PP
+Take a total energy and split it evenly between clusters. 
+.PP
+Definition at line 91 of file ClusterMap.h.
+.PP
+Referenced by updateClusterEnergies().
+.SS "double cryomesh::structures::ClusterMap::getClusterEnergyByNodeCount (const boost::shared_ptr< \fBCluster\fP > &cluster, doubletotal_energy) const\fC [inline]\fP"
+.PP
+Take a total energy and split it between clusters based on fraction of total nodes. 
+.PP
+Definition at line 100 of file ClusterMap.h.
+.PP
+References totalNodeCount.
+.PP
+Referenced by updateClusterEnergies().
+.SS "void cryomesh::structures::ClusterMap::setEnergyFractionMethod (\fBEnergyFractionMethod\fPmethod)\fC [inline]\fP"
+.PP
+Definition at line 30 of file ClusterMap.h.
+.PP
+References energyFractionMethod.
 .SS "virtual void cryomesh::structures::ClusterMap::update ()\fC [inline, virtual]\fP"
 .PP
-Definition at line 24 of file ClusterMap.h.
+Definition at line 38 of file ClusterMap.h.
+.PP
+References totalNodeCount.
+.SS "void cryomesh::structures::ClusterMap::updateClusterEnergies (doubletotal_energy)\fC [inline]\fP"
+.PP
+Definition at line 56 of file ClusterMap.h.
+.PP
+References ENERGY_FRACTION_BY_CLUSTER_COUNT, ENERGY_FRACTION_BY_NODE_COUNT, energyFractionMethod, getClusterEnergyByClusterCount(), and getClusterEnergyByNodeCount().
+.SS "void cryomesh::structures::ClusterMap::updateMapData ()\fC [inline]\fP"
+.PP
+Definition at line 128 of file ClusterMap.h.
+.PP
+References totalNodeCount.
+.SS "void cryomesh::structures::ClusterMap::warpClusterNodes ()\fC [inline]\fP"
+.PP
+Definition at line 112 of file ClusterMap.h.
 .SH "Friends And Related Function Documentation"
 .PP 
 .SS "std::ostream& operator<< (std::ostream &os, const \fBClusterMap\fP &clustermap)\fC [friend]\fP"
 .PP
-Definition at line 40 of file ClusterMap.h.
+Definition at line 144 of file ClusterMap.h.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBEnergyFractionMethod\fP \fBcryomesh::structures::ClusterMap::energyFractionMethod\fP\fC [private]\fP"
+.PP
+Definition at line 168 of file ClusterMap.h.
+.PP
+Referenced by setEnergyFractionMethod(), and updateClusterEnergies().
+.SS "int \fBcryomesh::structures::ClusterMap::totalNodeCount\fP\fC [private]\fP"
+.PP
+Definition at line 167 of file ClusterMap.h.
+.PP
+Referenced by getClusterEnergyByNodeCount(), update(), and updateMapData().
 
 .SH "Author"
 .PP 

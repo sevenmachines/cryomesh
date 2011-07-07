@@ -1,0 +1,244 @@
+.TH "cryomesh::structures::Mesh" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::structures::Mesh \- 
+.PP
+\fBMesh\fP is the fabric of connection space and warps and is warped by it.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Mesh.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBBlendingMethod\fP { \fBBLEND_LINEAR\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMesh\fP (\fBCluster\fP &clus)"
+.br
+.RI "\fIConstructor. \fP"
+.ti -1c
+.RI "\fBMesh\fP (const \fBMesh\fP &)"
+.br
+.RI "\fICopy Constructor. \fP"
+.ti -1c
+.RI "virtual \fB~Mesh\fP ()"
+.br
+.RI "\fIDestructor. \fP"
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.RI "\fIUpdate mesh from cluster. \fP"
+.ti -1c
+.RI "\fBcomponents::Node\fP & \fBwarp\fP (\fBcomponents::Node\fP &node)"
+.br
+.RI "\fIAssignment Operator. \fP"
+.ti -1c
+.RI "\fBcomponents::ImpulseCollection\fP & \fBwarp\fP (\fBcomponents::ImpulseCollection\fP &impulseCollection)"
+.br
+.RI "\fIWarp an ImpulseCollection using the mesh. \fP"
+.ti -1c
+.RI "\fBcryomesh::components::Impulse\fP & \fBwarp\fP (\fBcryomesh::components::Impulse\fP &impulse)"
+.br
+.RI "\fIWarp an Impulse using the mesh. \fP"
+.ti -1c
+.RI "const \fBCluster\fP & \fBgetCluster\fP () const "
+.br
+.ti -1c
+.RI "const boost::shared_ptr< spacial::ActivityGrid > \fBgetActivityGrid\fP () const "
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBgetBlendedActivity\fP (const double first_activity, const double second_activity, const \fBBlendingMethod\fP blending_method=BLEND_LINEAR, double force=0.5)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBCluster\fP & \fBcluster\fP"
+.br
+.ti -1c
+.RI "boost::shared_ptr< spacial::ActivityGrid > \fBgrid\fP"
+.br
+.ti -1c
+.RI "const int \fBDEFAULT_MESH_GRANULARITY\fP"
+.br
+.ti -1c
+.RI "const int \fBDEFAULT_BLEND_FORCE\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBMesh\fP is the fabric of connection space and warps and is warped by it. 
+
+The \fBMesh\fP is an overlying structure on top of Connections space that can be used to warp the underlying space, Impulses, Connections, Nodes, etc based on spacial criteria on any other criteria that can be applied to the underlying data objects 
+.PP
+Definition at line 33 of file Mesh.h.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBcryomesh::structures::Mesh::BlendingMethod\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIBLEND_LINEAR \fP\fP
+
+.PP
+Definition at line 36 of file Mesh.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::structures::Mesh::Mesh (\fBCluster\fP &clus)"
+.PP
+Constructor. Constructor for \fBMesh\fP. Inaccessible to force singleton class 
+.PP
+Definition at line 32 of file Mesh.cpp.
+.PP
+References cluster, DEFAULT_MESH_GRANULARITY, grid, and update().
+.SS "cryomesh::structures::Mesh::Mesh (const \fBMesh\fP &)"
+.PP
+Copy Constructor. Overridden Copy Contructor for \fBMesh\fP. Inaccessible to force singleton class
+.PP
+\fBParameters:\fP
+.RS 4
+\fI\fBMesh\fP\fP Object to Copy Construct from 
+.RE
+.PP
+
+.SS "cryomesh::structures::Mesh::~Mesh ()\fC [virtual]\fP"
+.PP
+Destructor. 
+.PP
+Definition at line 41 of file Mesh.cpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "const boost::shared_ptr< spacial::ActivityGrid > cryomesh::structures::Mesh::getActivityGrid () const"
+.PP
+Definition at line 107 of file Mesh.cpp.
+.PP
+References grid.
+.SS "double cryomesh::structures::Mesh::getBlendedActivity (const doublefirst_activity, const doublesecond_activity, const \fBBlendingMethod\fPblending_method = \fCBLEND_LINEAR\fP, doubleforce = \fC0.5\fP)\fC [protected]\fP"
+.PP
+Definition at line 91 of file Mesh.cpp.
+.PP
+References BLEND_LINEAR.
+.PP
+Referenced by warp().
+.SS "const \fBCluster\fP & cryomesh::structures::Mesh::getCluster () const"
+.PP
+Definition at line 103 of file Mesh.cpp.
+.PP
+References cluster.
+.SS "void cryomesh::structures::Mesh::update ()"
+.PP
+Update mesh from cluster. 
+.PP
+Definition at line 44 of file Mesh.cpp.
+.PP
+References cluster, cryomesh::components::Node::getActivity(), cryomesh::structures::Cluster::getNodes(), cryomesh::components::Node::getPosition(), and grid.
+.PP
+Referenced by Mesh().
+.SS "\fBImpulse\fP & cryomesh::structures::Mesh::warp (\fBcryomesh::components::Impulse\fP &impulse)"
+.PP
+Warp an Impulse using the mesh. \fBParameters:\fP
+.RS 4
+\fIImpulse\fP & Impulse
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Impulse & The warped Impulse 
+.RE
+.PP
+
+.PP
+Definition at line 85 of file Mesh.cpp.
+.SS "\fBImpulseCollection\fP & cryomesh::structures::Mesh::warp (\fBcomponents::ImpulseCollection\fP &impulseCollection)"
+.PP
+Warp an ImpulseCollection using the mesh. \fBParameters:\fP
+.RS 4
+\fIImpulseCollection\fP & ImpulseCollection
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+ImpulseCollection & The warped collection 
+.RE
+.PP
+
+.PP
+Definition at line 79 of file Mesh.cpp.
+.SS "\fBNode\fP & cryomesh::structures::Mesh::warp (\fBcomponents::Node\fP &node)"
+.PP
+Assignment Operator. Overridden Assignment Operator for \fBMesh\fP. Inaccessible to force singleton class
+.PP
+\fBParameters:\fP
+.RS 4
+\fI\fBMesh\fP\fP Object to Assign this to
+.RE
+.PP
+\fBMesh\fP & operator=(const Mesh &); /** Singleton accessor for object
+.PP
+Returns the single instance of a mesh, creating it if it doesn't exist yet
+.PP
+\fBReturns:\fP
+.RS 4
+boost::shared_ptr<Mesh> The singleton instance of the mesh
+.RE
+.PP
+static boost::shared_ptr< Mesh > getMesh(); Warp the a Node using the mesh
+.PP
+This function will use any values of the node, such as position in space for example, to apply a warp to the node. In practice this might be to suppress or increase the activity threshold, or to scale the activites at that node in some way. Note that this is an permanent change, ie, the node is warped 'in place'
+.PP
+\fBParameters:\fP
+.RS 4
+\fINode\fP & node The node to be warped
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Node & The warped node 
+.RE
+.PP
+
+.PP
+Definition at line 69 of file Mesh.cpp.
+.PP
+References BLEND_LINEAR, DEFAULT_BLEND_FORCE, cryomesh::components::Node::getActivity(), getBlendedActivity(), cryomesh::components::Node::getPosition(), grid, and cryomesh::components::Node::setActivity().
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBCluster\fP& \fBcryomesh::structures::Mesh::cluster\fP\fC [private]\fP"
+.PP
+Definition at line 131 of file Mesh.h.
+.PP
+Referenced by getCluster(), Mesh(), and update().
+.SS "const int \fBcryomesh::structures::Mesh::DEFAULT_BLEND_FORCE\fP\fC [private]\fP"
+.PP
+Definition at line 134 of file Mesh.h.
+.PP
+Referenced by warp().
+.SS "const int \fBcryomesh::structures::Mesh::DEFAULT_MESH_GRANULARITY\fP\fC [private]\fP"
+.PP
+Definition at line 133 of file Mesh.h.
+.PP
+Referenced by Mesh().
+.SS "boost::shared_ptr<spacial::ActivityGrid> \fBcryomesh::structures::Mesh::grid\fP\fC [private]\fP"
+.PP
+Definition at line 132 of file Mesh.h.
+.PP
+Referenced by getActivityGrid(), Mesh(), update(), and warp().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

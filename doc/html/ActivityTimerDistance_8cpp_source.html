@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>cryomesh: /home/niall/Projects/Eclipse/cryomesh/src/components/ActivityTimerDistance.cpp Source File</title>
+<title>cryomesh: /home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -54,11 +54,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/niall/Projects/Eclipse/cryomesh/src/components/ActivityTimerDistance.cpp</h1>  </div>
+<h1>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.cpp</h1>  </div>
 </div>
 <div class="contents">
 <a href="ActivityTimerDistance_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
@@ -68,84 +69,129 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00005"></a>00005 <span class="comment"> *      Author: niall</span>
 <a name="l00006"></a>00006 <span class="comment"> */</span>
 <a name="l00007"></a>00007 
-<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="ActivityTimerDistance_8h.html">ActivityTimerDistance.h</a>&quot;</span>
-<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;common/Maths.h&quot;</span>
-<a name="l00010"></a>00010 
-<a name="l00011"></a>00011 <span class="keyword">namespace </span>cryomesh {
+<a name="l00008"></a><a class="code" href="ActivityTimerDistance_8cpp.html#a074363eb56aa84ca8cccaf94aa76409c">00008</a> <span class="preprocessor">#define ACTIVITYTIMERDISTANCE_DEBUG</span>
+<a name="l00009"></a>00009 <span class="preprocessor"></span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="ActivityTimerDistance_8h.html">ActivityTimerDistance.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;common/Maths.h&quot;</span>
 <a name="l00012"></a>00012 
-<a name="l00013"></a>00013 <span class="keyword">namespace </span>components {
+<a name="l00013"></a>00013 <span class="keyword">namespace </span>cryomesh {
 <a name="l00014"></a>00014 
-<a name="l00015"></a>00015 <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a7e718e48c0f4f7f6c1f4e3c073c757de">ActivityTimerDistance::MIN_DECREMENT</a> = 1.0;
-<a name="l00016"></a>00016 <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a0371befb94140d81f0660bf76c2520d3">ActivityTimerDistance::MAX_DECREMENT</a> = 10.0;
-<a name="l00017"></a>00017 <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a549f2e016df32a594092179570ae742d">ActivityTimerDistance::MIN_DISTANCE</a> = 1.0;
-<a name="l00018"></a>00018 <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a87e36fd0ad252132017fa1c9664cf2ca">ActivityTimerDistance::MAX_DISTANCE</a> = 100.0;
-<a name="l00019"></a>00019 
-<a name="l00020"></a>00020 boost::shared_ptr&lt;ActivityTimerDistance&gt; <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#ad82f62afe5a34af54ff4c4ec8d1c2344" title="Get a random object.">ActivityTimerDistance::getRandom</a>() {
-<a name="l00021"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#ad82f62afe5a34af54ff4c4ec8d1c2344">00021</a>         <span class="keywordtype">double</span> rand_dist = common::Maths::getRandomDouble(<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a549f2e016df32a594092179570ae742d">MIN_DISTANCE</a>, <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a87e36fd0ad252132017fa1c9664cf2ca">MAX_DISTANCE</a>);
-<a name="l00022"></a>00022         <span class="keywordtype">double</span> rand_dec = common::Maths::getRandomDouble(<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a7e718e48c0f4f7f6c1f4e3c073c757de">MIN_DECREMENT</a>, <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a0371befb94140d81f0660bf76c2520d3">MAX_DECREMENT</a>);
-<a name="l00023"></a>00023         boost::shared_ptr&lt;ActivityTimerDistance&gt; rand_acttimer(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a3da36944fccd3512740a63fdae13de20" title="Constructor.">ActivityTimerDistance</a>(rand_dist, rand_dec));
-<a name="l00024"></a>00024         <span class="keywordflow">return</span> rand_acttimer;
-<a name="l00025"></a>00025 }
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027 <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a3da36944fccd3512740a63fdae13de20" title="Constructor.">ActivityTimerDistance::ActivityTimerDistance</a>() :
-<a name="l00028"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a3da36944fccd3512740a63fdae13de20">00028</a>         distance(0), decrement(0) {
-<a name="l00029"></a>00029 }
+<a name="l00015"></a>00015 <span class="keyword">namespace </span>components {
+<a name="l00016"></a>00016 
+<a name="l00017"></a>00017 <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#afb9cf33e702747ecd42d1bfd0c3a3ce3">ActivityTimerDistance::MIN_DECREMENT_FRACTION</a> = 0.1;
+<a name="l00018"></a>00018 <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#ab24df04f889693641f609aa8f199455f">ActivityTimerDistance::MAX_DECREMENT_FRACTION</a> = 1;
+<a name="l00019"></a>00019 <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a549f2e016df32a594092179570ae742d">ActivityTimerDistance::MIN_DISTANCE</a> = 1.0;
+<a name="l00020"></a>00020 <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a87e36fd0ad252132017fa1c9664cf2ca">ActivityTimerDistance::MAX_DISTANCE</a> = 100.0;
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 boost::shared_ptr&lt;ActivityTimerDistance&gt; <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#ad82f62afe5a34af54ff4c4ec8d1c2344" title="Get a random object.">ActivityTimerDistance::getRandom</a>() {
+<a name="l00023"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#ad82f62afe5a34af54ff4c4ec8d1c2344">00023</a>         <span class="keywordtype">double</span> rand_dist = common::Maths::getRandomDouble(<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a549f2e016df32a594092179570ae742d">MIN_DISTANCE</a>, <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a87e36fd0ad252132017fa1c9664cf2ca">MAX_DISTANCE</a>);
+<a name="l00024"></a>00024         <span class="comment">// scale decrement as percentage of distance</span>
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026         <span class="keywordtype">double</span> min_decrement = <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#afb9cf33e702747ecd42d1bfd0c3a3ce3">MIN_DECREMENT_FRACTION</a> * rand_dist;
+<a name="l00027"></a>00027         <span class="keywordtype">double</span> max_decrement = <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#ab24df04f889693641f609aa8f199455f">MAX_DECREMENT_FRACTION</a> * rand_dist;
+<a name="l00028"></a>00028         <span class="keywordtype">double</span> rand_dec = common::Maths::getRandomDouble(min_decrement, max_decrement);
+<a name="l00029"></a>00029         boost::shared_ptr&lt;ActivityTimerDistance&gt; rand_acttimer(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a3da36944fccd3512740a63fdae13de20" title="Constructor.">ActivityTimerDistance</a>(rand_dist, rand_dec));
 <a name="l00030"></a>00030 
-<a name="l00031"></a>00031 <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a3da36944fccd3512740a63fdae13de20" title="Constructor.">ActivityTimerDistance::ActivityTimerDistance</a>(<span class="keywordtype">double</span> dist, <span class="keywordtype">double</span> dec) :
-<a name="l00032"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a09f1241cc4c1ddd4423ac288e534b1e1">00032</a>         distance(dist), decrement(dec) {
-<a name="l00033"></a>00033 }
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035 <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#ac31091719dbdcebb505a47a2ed99fc4e">ActivityTimerDistance::~ActivityTimerDistance</a>() {
-<a name="l00036"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#ac31091719dbdcebb505a47a2ed99fc4e">00036</a> }
-<a name="l00037"></a>00037 
-<a name="l00038"></a>00038 <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> &amp; <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a37992cab5a1bfde00c8f069fc47a7c2f" title="Assignment operator.">ActivityTimerDistance::operator=</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> &amp; obj) {
-<a name="l00039"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a37992cab5a1bfde00c8f069fc47a7c2f">00039</a>         <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a191b202e783b14973aa327c460cdc46e">distance</a> = obj.<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a191b202e783b14973aa327c460cdc46e">distance</a>;
-<a name="l00040"></a>00040         <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a81f6c8dffa1dbe89e7e3d67603f84b9a">decrement</a> = obj.<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a81f6c8dffa1dbe89e7e3d67603f84b9a">decrement</a>;
-<a name="l00041"></a>00041         <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+<a name="l00031"></a>00031         rand_acttimer-&gt;checkConstraints();
+<a name="l00032"></a>00032         <span class="comment">//std::cout&lt;&lt;&quot;ActivityTimerDistance::getRandom: &quot;&lt;&lt;*rand_acttimer&lt;&lt;std::endl;</span>
+<a name="l00033"></a>00033         <span class="keywordflow">return</span> rand_acttimer;
+<a name="l00034"></a>00034 }
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036 <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a3da36944fccd3512740a63fdae13de20" title="Constructor.">ActivityTimerDistance::ActivityTimerDistance</a>() :
+<a name="l00037"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a3da36944fccd3512740a63fdae13de20">00037</a>         distance(0), distance_remaining(0), decrement(0) {
+<a name="l00038"></a>00038 }
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040 <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a3da36944fccd3512740a63fdae13de20" title="Constructor.">ActivityTimerDistance::ActivityTimerDistance</a>(<span class="keywordtype">double</span> dist, <span class="keywordtype">double</span> dec) :
+<a name="l00041"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a09f1241cc4c1ddd4423ac288e534b1e1">00041</a>         distance(dist), distance_remaining(dist), decrement(dec) {
 <a name="l00042"></a>00042 }
 <a name="l00043"></a>00043 
-<a name="l00044"></a>00044 <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a36db36aad72526f4d1541213ed762c01" title="Less than operator.">ActivityTimerDistance::operator&lt;</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> &amp; obj)<span class="keyword"> const </span>{
-<a name="l00045"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a36db36aad72526f4d1541213ed762c01">00045</a>         <span class="keywordflow">return</span> (this-&gt;<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a191b202e783b14973aa327c460cdc46e">distance</a> &lt; obj.<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a191b202e783b14973aa327c460cdc46e">distance</a>);
-<a name="l00046"></a>00046 }
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048 <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#ae33ecef3ba181aec976ceb6304fc7935" title="Greater than operator.">ActivityTimerDistance::operator&gt;</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> &amp; obj)<span class="keyword"> const </span>{
-<a name="l00049"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#ae33ecef3ba181aec976ceb6304fc7935">00049</a>         <span class="keywordflow">return</span> (this-&gt;<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a191b202e783b14973aa327c460cdc46e">distance</a> &gt; obj.<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a191b202e783b14973aa327c460cdc46e">distance</a>);
-<a name="l00050"></a>00050 }
-<a name="l00051"></a>00051 
-<a name="l00052"></a>00052 <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> &amp; <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#adf508add943655664c792c93795406fd" title="Prefix increment operator.">ActivityTimerDistance::operator--</a>() {
-<a name="l00053"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#adf508add943655664c792c93795406fd">00053</a>         this-&gt;<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a191b202e783b14973aa327c460cdc46e">distance</a> -= this-&gt;<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a81f6c8dffa1dbe89e7e3d67603f84b9a">decrement</a>;
-<a name="l00054"></a>00054         <span class="keywordflow">return</span> *<span class="keyword">this</span>;
-<a name="l00055"></a>00055 }
-<a name="l00056"></a>00056 
-<a name="l00057"></a>00057 <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#adf508add943655664c792c93795406fd" title="Prefix increment operator.">ActivityTimerDistance::operator--</a>(<span class="keywordtype">int</span>) {
-<a name="l00058"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#aa8f2cf4dbabcc623aa7e0cf1f793f98a">00058</a>         <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> old = *<span class="keyword">this</span>;
-<a name="l00059"></a>00059         --(*this);
-<a name="l00060"></a>00060         <span class="keywordflow">return</span> old;
-<a name="l00061"></a>00061 }
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063 <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a7c91c5d5255899d6504cc3fe6669cbab" title="Non-destructive addition operator.">ActivityTimerDistance::operator+</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> &amp; obj)<span class="keyword"> const </span>{
-<a name="l00064"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a7c91c5d5255899d6504cc3fe6669cbab">00064</a>         <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> temp = *<span class="keyword">this</span>;
-<a name="l00065"></a>00065         temp += obj;
-<a name="l00066"></a>00066         <span class="keywordflow">return</span> temp;
-<a name="l00067"></a>00067 }
-<a name="l00068"></a>00068 
-<a name="l00069"></a>00069 <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> &amp; <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#aaf72572d1cb481f519132e7a17b8125b" title="Destructive addition and assignment operator.">ActivityTimerDistance::operator+=</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> &amp; obj) {
-<a name="l00070"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#aaf72572d1cb481f519132e7a17b8125b">00070</a>         this-&gt;<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a81f6c8dffa1dbe89e7e3d67603f84b9a">decrement</a> += obj.<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a81f6c8dffa1dbe89e7e3d67603f84b9a">decrement</a>;
-<a name="l00071"></a>00071         this-&gt;<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a191b202e783b14973aa327c460cdc46e">distance</a> += obj.<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a191b202e783b14973aa327c460cdc46e">distance</a>;
-<a name="l00072"></a>00072         <span class="keywordflow">return</span> *<span class="keyword">this</span>;
-<a name="l00073"></a>00073 }
-<a name="l00074"></a>00074 
-<a name="l00075"></a>00075 <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#aa0ded366836ca5bb7ce9db6abf7b4d51" title="Get the delay.">ActivityTimerDistance::getDelay</a>()<span class="keyword"> const </span>{
-<a name="l00076"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#aa0ded366836ca5bb7ce9db6abf7b4d51">00076</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a191b202e783b14973aa327c460cdc46e">distance</a>;
-<a name="l00077"></a>00077 }
-<a name="l00078"></a>00078 
-<a name="l00079"></a>00079 <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a3691132699928dc9f7089576ad0c12ce" title="Get the decrement.">ActivityTimerDistance::getDecrement</a>()<span class="keyword"> const </span>{
-<a name="l00080"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a3691132699928dc9f7089576ad0c12ce">00080</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a81f6c8dffa1dbe89e7e3d67603f84b9a">decrement</a>;
-<a name="l00081"></a>00081 }
-<a name="l00082"></a>00082 
-<a name="l00083"></a>00083 }
-<a name="l00084"></a>00084 
-<a name="l00085"></a>00085 }
+<a name="l00044"></a>00044 <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#ac31091719dbdcebb505a47a2ed99fc4e">ActivityTimerDistance::~ActivityTimerDistance</a>() {
+<a name="l00045"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#ac31091719dbdcebb505a47a2ed99fc4e">00045</a> }
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047 <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> &amp; <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a37992cab5a1bfde00c8f069fc47a7c2f" title="Assignment operator.">ActivityTimerDistance::operator=</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> &amp; obj) {
+<a name="l00048"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a37992cab5a1bfde00c8f069fc47a7c2f">00048</a>         <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a191b202e783b14973aa327c460cdc46e">distance</a> = obj.<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a191b202e783b14973aa327c460cdc46e">distance</a>;
+<a name="l00049"></a>00049         <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a0e793c735a10edd18fa12a019dcf8c22">distance_remaining</a> = <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a191b202e783b14973aa327c460cdc46e">distance</a>;
+<a name="l00050"></a>00050         <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a81f6c8dffa1dbe89e7e3d67603f84b9a">decrement</a> = obj.<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a81f6c8dffa1dbe89e7e3d67603f84b9a">decrement</a>;
+<a name="l00051"></a>00051         <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+<a name="l00052"></a>00052 }
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054 <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a36db36aad72526f4d1541213ed762c01" title="Less than operator.">ActivityTimerDistance::operator&lt;</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> &amp; obj)<span class="keyword"> const </span>{
+<a name="l00055"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a36db36aad72526f4d1541213ed762c01">00055</a>         <span class="keywordflow">return</span> (this-&gt;<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a191b202e783b14973aa327c460cdc46e">distance</a> &lt; obj.<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a191b202e783b14973aa327c460cdc46e">distance</a>);
+<a name="l00056"></a>00056 }
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058 <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#ae33ecef3ba181aec976ceb6304fc7935" title="Greater than operator.">ActivityTimerDistance::operator&gt;</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> &amp; obj)<span class="keyword"> const </span>{
+<a name="l00059"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#ae33ecef3ba181aec976ceb6304fc7935">00059</a>         <span class="keywordflow">return</span> (this-&gt;<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a0e793c735a10edd18fa12a019dcf8c22">distance_remaining</a> &gt; obj.<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a0e793c735a10edd18fa12a019dcf8c22">distance_remaining</a>);
+<a name="l00060"></a>00060 }
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062 <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> &amp; <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#adf508add943655664c792c93795406fd" title="Prefix increment operator.">ActivityTimerDistance::operator--</a>() {
+<a name="l00063"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#adf508add943655664c792c93795406fd">00063</a>         this-&gt;<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a0e793c735a10edd18fa12a019dcf8c22">distance_remaining</a> -= this-&gt;<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a81f6c8dffa1dbe89e7e3d67603f84b9a">decrement</a>;
+<a name="l00064"></a>00064         <span class="keywordflow">if</span> (<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a0e793c735a10edd18fa12a019dcf8c22">distance_remaining</a> &lt;0){
+<a name="l00065"></a>00065                 <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a0e793c735a10edd18fa12a019dcf8c22">distance_remaining</a>=0;
+<a name="l00066"></a>00066         }
+<a name="l00067"></a>00067         <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+<a name="l00068"></a>00068 }
+<a name="l00069"></a>00069 
+<a name="l00070"></a>00070 ActivityTimerDistance <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#adf508add943655664c792c93795406fd" title="Prefix increment operator.">ActivityTimerDistance::operator--</a>(<span class="keywordtype">int</span>) {
+<a name="l00071"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#aa8f2cf4dbabcc623aa7e0cf1f793f98a">00071</a>         <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> old = *<span class="keyword">this</span>;
+<a name="l00072"></a>00072         --(*this);
+<a name="l00073"></a>00073         <span class="keywordflow">return</span> old;
+<a name="l00074"></a>00074 }
+<a name="l00075"></a>00075 
+<a name="l00076"></a>00076 <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a7c91c5d5255899d6504cc3fe6669cbab" title="Non-destructive addition operator.">ActivityTimerDistance::operator+</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> &amp; obj)<span class="keyword"> const </span>{
+<a name="l00077"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a7c91c5d5255899d6504cc3fe6669cbab">00077</a>         <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> temp = *<span class="keyword">this</span>;
+<a name="l00078"></a>00078         temp += obj;
+<a name="l00079"></a>00079         <span class="keywordflow">return</span> temp;
+<a name="l00080"></a>00080 }
+<a name="l00081"></a>00081 
+<a name="l00082"></a>00082 <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> &amp; <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#aaf72572d1cb481f519132e7a17b8125b" title="Destructive addition and assignment operator.">ActivityTimerDistance::operator+=</a>(<span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> &amp; obj) {
+<a name="l00083"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#aaf72572d1cb481f519132e7a17b8125b">00083</a>         this-&gt;<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a81f6c8dffa1dbe89e7e3d67603f84b9a">decrement</a> += obj.<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a81f6c8dffa1dbe89e7e3d67603f84b9a">decrement</a>;
+<a name="l00084"></a>00084         this-&gt;<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a191b202e783b14973aa327c460cdc46e">distance</a> += obj.<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a191b202e783b14973aa327c460cdc46e">distance</a>;
+<a name="l00085"></a>00085         this-&gt;<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a0e793c735a10edd18fa12a019dcf8c22">distance_remaining</a> += obj.<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a0e793c735a10edd18fa12a019dcf8c22">distance_remaining</a>;
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087         <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+<a name="l00088"></a>00088 }
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090 <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#aa0ded366836ca5bb7ce9db6abf7b4d51" title="Get the delay.">ActivityTimerDistance::getDelay</a>()<span class="keyword"> const </span>{
+<a name="l00091"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#aa0ded366836ca5bb7ce9db6abf7b4d51">00091</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a0e793c735a10edd18fa12a019dcf8c22">distance_remaining</a>;
+<a name="l00092"></a>00092 }
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094 <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a7da9fc6bc83657837f90ad3a6158e3a5" title="Get the starting delay.">ActivityTimerDistance::getStartingDelay</a>()<span class="keyword"> const </span>{
+<a name="l00095"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a7da9fc6bc83657837f90ad3a6158e3a5">00095</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a191b202e783b14973aa327c460cdc46e">distance</a>;
+<a name="l00096"></a>00096 }
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098 <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a3691132699928dc9f7089576ad0c12ce" title="Get the decrement.">ActivityTimerDistance::getDecrement</a>()<span class="keyword"> const </span>{
+<a name="l00099"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a3691132699928dc9f7089576ad0c12ce">00099</a>         <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a81f6c8dffa1dbe89e7e3d67603f84b9a">decrement</a>;
+<a name="l00100"></a>00100 }
+<a name="l00101"></a>00101 <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a54d73b877fd99ece736c7352a09688ad">ActivityTimerDistance::enableDebug</a>(<span class="keywordtype">bool</span> b){
+<a name="l00102"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a54d73b877fd99ece736c7352a09688ad">00102</a>          this-&gt;setDebug(b);
+<a name="l00103"></a>00103  }
+<a name="l00104"></a>00104 <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#aca048029f8ff311c7e215bb2d7689c7b" title="Reset the countdown.">ActivityTimerDistance::reset</a>() {
+<a name="l00105"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#aca048029f8ff311c7e215bb2d7689c7b">00105</a>         <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a0e793c735a10edd18fa12a019dcf8c22">distance_remaining</a> = <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a191b202e783b14973aa327c460cdc46e">distance</a>;
+<a name="l00106"></a>00106 }
+<a name="l00107"></a>00107 std::ostream &amp; <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a6e109b8f4ddcf6d4e24f0347d4060f78">ActivityTimerDistance::print</a>(std::ostream &amp; os)<span class="keyword"> const </span>{
+<a name="l00108"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a6e109b8f4ddcf6d4e24f0347d4060f78">00108</a>         std::cout &lt;&lt; <span class="stringliteral">&quot;ActivityTimerDistance: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;distance=&quot;</span> &lt;&lt; this-&gt;<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#aa0ded366836ca5bb7ce9db6abf7b4d51" title="Get the delay.">getDelay</a>() &lt;&lt;<span class="stringliteral">&quot;/&quot;</span>&lt;&lt;this-&gt;<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a7da9fc6bc83657837f90ad3a6158e3a5" title="Get the starting delay.">getStartingDelay</a>()&lt;&lt; <span class="stringliteral">&quot; decrement=&quot;</span> &lt;&lt; this-&gt;<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a3691132699928dc9f7089576ad0c12ce" title="Get the decrement.">getDecrement</a>()
+<a name="l00109"></a>00109                         &lt;&lt; std::endl;
+<a name="l00110"></a>00110         <span class="keywordflow">return</span> os;
+<a name="l00111"></a>00111 }
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113 <span class="keywordtype">bool</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a2e2ac1b8bc8d942346c1a758d7602a99">ActivityTimerDistance::checkConstraints</a>()<span class="keyword">const</span>{
+<a name="l00114"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a2e2ac1b8bc8d942346c1a758d7602a99">00114</a>         <span class="keywordtype">bool</span> decrement_good = (this-&gt;<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a3691132699928dc9f7089576ad0c12ce" title="Get the decrement.">getDecrement</a>()&lt;this-&gt;<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a7da9fc6bc83657837f90ad3a6158e3a5" title="Get the starting delay.">getStartingDelay</a>());
+<a name="l00115"></a>00115 <span class="preprocessor">#ifdef ACTIVITYTIMERDISTANCE_DEBUG</span>
+<a name="l00116"></a>00116 <span class="preprocessor"></span>        <span class="keywordflow">if</span> (decrement_good ==<span class="keyword">false</span>){
+<a name="l00117"></a>00117                 std::cout&lt;&lt;<span class="stringliteral">&quot;ActivityTimerDistance::checkConstraints: &quot;</span>&lt;&lt;this-&gt;<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a3691132699928dc9f7089576ad0c12ce" title="Get the decrement.">getDecrement</a>()&lt;&lt;<span class="stringliteral">&quot;&lt;&quot;</span>&lt;&lt;this-&gt;<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a7da9fc6bc83657837f90ad3a6158e3a5" title="Get the starting delay.">getStartingDelay</a>()&lt;&lt;<span class="stringliteral">&quot;this-&gt;getDecrement()&gt;this-&gt;getStartingDelay()&quot;</span>&lt;&lt;std::endl;
+<a name="l00118"></a>00118         }
+<a name="l00119"></a>00119 <span class="preprocessor">#endif</span>
+<a name="l00120"></a>00120 <span class="preprocessor"></span>        <span class="keywordtype">bool</span> delay_good = (this-&gt;<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a7da9fc6bc83657837f90ad3a6158e3a5" title="Get the starting delay.">getStartingDelay</a>()&gt;<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a549f2e016df32a594092179570ae742d">ActivityTimerDistance::MIN_DISTANCE</a>);
+<a name="l00121"></a>00121 <span class="preprocessor">#ifdef ACTIVITYTIMERDISTANCE_DEBUG</span>
+<a name="l00122"></a>00122 <span class="preprocessor"></span>        <span class="keywordflow">if</span> (delay_good ==<span class="keyword">false</span>){
+<a name="l00123"></a>00123                 std::cout&lt;&lt;<span class="stringliteral">&quot;ActivityTimerDistance::checkConstraints: &quot;</span>&lt;&lt;this-&gt;<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a7da9fc6bc83657837f90ad3a6158e3a5" title="Get the starting delay.">getStartingDelay</a>()&lt;&lt;<span class="stringliteral">&quot;&gt;&quot;</span>&lt;&lt;<a class="code" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a549f2e016df32a594092179570ae742d">MIN_DISTANCE</a>&lt;&lt;<span class="stringliteral">&quot;this-&gt;getStartingDelay()&gt;MIN_DISTANCE&quot;</span>&lt;&lt;std::endl;
+<a name="l00124"></a>00124         }
+<a name="l00125"></a>00125 <span class="preprocessor">#endif</span>
+<a name="l00126"></a>00126 <span class="preprocessor"></span>        <span class="keywordflow">return</span> decrement_good &amp;&amp; delay_good;
+<a name="l00127"></a>00127 }
+<a name="l00128"></a>00128 }<span class="comment">//NAMESPACE</span>
+<a name="l00129"></a>00129 
+<a name="l00130"></a>00130 }<span class="comment">//NAMESPACE</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -153,7 +199,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -162,7 +208,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:13 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

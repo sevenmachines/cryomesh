@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>cryomesh: /home/niall/Projects/Eclipse/cryomesh/src/structures/Cluster.h Source File</title>
+<title>cryomesh: /home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Cluster.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -54,11 +54,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/niall/Projects/Eclipse/cryomesh/src/structures/Cluster.h</h1>  </div>
+<h1>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Cluster.h</h1>  </div>
 </div>
 <div class="contents">
 <a href="Cluster_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
@@ -73,78 +74,104 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00010"></a>00010 <span class="preprocessor"></span>
 <a name="l00011"></a>00011 <span class="preprocessor">#include &quot;components/NodeMap.h&quot;</span>
 <a name="l00012"></a>00012 <span class="preprocessor">#include &quot;components/ConnectionMap.h&quot;</span>
-<a name="l00013"></a>00013 <span class="preprocessor">#include &lt;boost/uuid/uuid.hpp&gt;</span>
-<a name="l00014"></a>00014 <span class="preprocessor">#include &lt;boost/shared_ptr.hpp&gt;</span>
-<a name="l00015"></a>00015 
-<a name="l00016"></a>00016 <span class="preprocessor">#include &lt;components/Mesh.h&gt;</span>
-<a name="l00017"></a>00017 <span class="preprocessor">#include &lt;components/Node.h&gt;</span>
-<a name="l00018"></a>00018 <span class="preprocessor">#include &lt;components/Connection.h&gt;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include &quot;spacial/Spacial.h&quot;</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include &quot;spacial/Point.h&quot;</span>
+<a name="l00015"></a>00015 <span class="preprocessor">#include &lt;structures/NodeMesh.h&gt;</span>
+<a name="l00016"></a>00016 
+<a name="l00017"></a>00017 <span class="preprocessor">#include &lt;boost/uuid/uuid.hpp&gt;</span>
+<a name="l00018"></a>00018 <span class="preprocessor">#include &lt;boost/shared_ptr.hpp&gt;</span>
 <a name="l00019"></a>00019 
-<a name="l00020"></a>00020 <span class="preprocessor">#include &quot;common/Connector.h&quot;</span>
-<a name="l00021"></a>00021 <span class="preprocessor">#include &quot;common/Tagged.h&quot;</span>
+<a name="l00020"></a>00020 <span class="preprocessor">#include &lt;components/Node.h&gt;</span>
+<a name="l00021"></a>00021 <span class="preprocessor">#include &lt;components/Connection.h&gt;</span>
 <a name="l00022"></a>00022 
-<a name="l00023"></a>00023 <span class="keyword">namespace </span>cryomesh {
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="keyword">namespace </span>structures {
+<a name="l00023"></a>00023 <span class="preprocessor">#include &quot;common/Connector.h&quot;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;common/Tagged.h&quot;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;common/Debuggable.h&quot;</span>
 <a name="l00026"></a>00026 
-<a name="l00027"></a>00027 <span class="keyword">class </span>Fibre;
+<a name="l00027"></a>00027 <span class="keyword">namespace </span>cryomesh {
 <a name="l00028"></a>00028 
-<a name="l00033"></a><a class="code" href="classcryomesh_1_1structures_1_1Cluster.html">00033</a> <span class="keyword">class </span><a class="code" href="classcryomesh_1_1structures_1_1Cluster.html" title="A Cluster is a collection of self-contained nodes and connections along with an associated Mesh...">Cluster</a>: <span class="keyword">public</span> common::Tagged {
-<a name="l00034"></a>00034 <span class="keyword">public</span>:
-<a name="l00035"></a>00035 
-<a name="l00040"></a><a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#af2978a9bf2737e5e701600af095ea88f">00040</a>         <span class="keyword">enum</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#af2978a9bf2737e5e701600af095ea88f" title="Enum to force value type of a parameter.">ValueTypeSpecifier</a> {
-<a name="l00041"></a><a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#af2978a9bf2737e5e701600af095ea88fa8590425d1a96c9ede41311797af2d6b1">00041</a>                 <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#af2978a9bf2737e5e701600af095ea88fa98f7c71ef7e91da5a913638aa7d56945">AsIncrement</a>, <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#af2978a9bf2737e5e701600af095ea88fa8da8de0be3cbcc34f6ef93a3bdc1e372">AsDecrement</a>, <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#af2978a9bf2737e5e701600af095ea88fa8590425d1a96c9ede41311797af2d6b1">AsMinumum</a>, <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#af2978a9bf2737e5e701600af095ea88fa3e9eba07f0da7a18f9a7820f987ff82b">AsAbsolute</a>
-<a name="l00042"></a>00042         };
-<a name="l00043"></a>00043 
-<a name="l00047"></a>00047         <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#aacb0e32e4468478035aa56b25538157d" title="Default constructor.">Cluster</a>();
-<a name="l00048"></a>00048 
-<a name="l00057"></a>00057         <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#aacb0e32e4468478035aa56b25538157d" title="Default constructor.">Cluster</a>(<span class="keywordtype">int</span> nodeCount, <span class="keywordtype">int</span> connectivity);
-<a name="l00058"></a>00058 
-<a name="l00062"></a>00062         <span class="keyword">virtual</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#ae9d383e6e81f5e354b81d999fed20708" title="Destructor.">~Cluster</a>();
+<a name="l00029"></a>00029 <span class="keyword">namespace </span>structures {
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 <span class="keyword">class </span>Fibre;
+<a name="l00032"></a>00032 
+<a name="l00037"></a><a class="code" href="classcryomesh_1_1structures_1_1Cluster.html">00037</a> <span class="keyword">class </span><a class="code" href="classcryomesh_1_1structures_1_1Cluster.html" title="A Cluster is a collection of self-contained nodes and connections along with an associated Mesh...">Cluster</a>: <span class="keyword">public</span> common::Tagged, <span class="keyword">public</span> spacial::Spacial, <span class="keyword">public</span> common::Debuggable {
+<a name="l00038"></a>00038 <span class="keyword">public</span>:
+<a name="l00039"></a>00039 
+<a name="l00044"></a><a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#af2978a9bf2737e5e701600af095ea88f">00044</a>         <span class="keyword">enum</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#af2978a9bf2737e5e701600af095ea88f" title="Enum to force value type of a parameter.">ValueTypeSpecifier</a> {
+<a name="l00045"></a><a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#af2978a9bf2737e5e701600af095ea88fa8590425d1a96c9ede41311797af2d6b1">00045</a>                 <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#af2978a9bf2737e5e701600af095ea88fa98f7c71ef7e91da5a913638aa7d56945">AsIncrement</a>, <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#af2978a9bf2737e5e701600af095ea88fa8da8de0be3cbcc34f6ef93a3bdc1e372">AsDecrement</a>, <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#af2978a9bf2737e5e701600af095ea88fa8590425d1a96c9ede41311797af2d6b1">AsMinumum</a>, <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#af2978a9bf2737e5e701600af095ea88fa3e9eba07f0da7a18f9a7820f987ff82b">AsAbsolute</a>
+<a name="l00046"></a>00046         };
+<a name="l00047"></a>00047 
+<a name="l00051"></a>00051         <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#aacb0e32e4468478035aa56b25538157d" title="Default constructor.">Cluster</a>();
+<a name="l00052"></a>00052 
+<a name="l00061"></a>00061         <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#aacb0e32e4468478035aa56b25538157d" title="Default constructor.">Cluster</a>(<span class="keywordtype">int</span> nodeCount, <span class="keywordtype">int</span> connectivity);
+<a name="l00062"></a>00062         <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#aacb0e32e4468478035aa56b25538157d" title="Default constructor.">Cluster</a>(<span class="keywordtype">int</span> nodeCount, <span class="keywordtype">int</span> connectivity, <span class="keyword">const</span> spacial::Point bounding_box);
 <a name="l00063"></a>00063 
-<a name="l00067"></a>00067         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a933d1d7f51cc709ba4a891407b4885e3" title="Update all elements.">update</a>();
+<a name="l00067"></a>00067         <span class="keyword">virtual</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#ae9d383e6e81f5e354b81d999fed20708" title="Destructor.">~Cluster</a>();
 <a name="l00068"></a>00068 
-<a name="l00075"></a>00075         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a9a868824ec3e7894348f757f30240711" title="Create a number of nodes in the cluster.">createNodes</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> number = 1);
+<a name="l00072"></a>00072         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a933d1d7f51cc709ba4a891407b4885e3" title="Update all elements.">update</a>();
+<a name="l00073"></a>00073         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a7f44dac6fd0867af668d888e992dc1e2">updateEnergy</a>(<span class="keywordtype">double</span> total_energy);
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#aeb806fca24d012f929106cfe0efb0724">warpNodes</a>();
 <a name="l00076"></a>00076 
-<a name="l00083"></a>00083         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a4e3a7e4c28c8f154770ec6568959bc7c" title="Create connections between all nodes.">createConnectivity</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> connectivity = 1);
+<a name="l00083"></a>00083         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a9a868824ec3e7894348f757f30240711" title="Create a number of nodes in the cluster.">createNodes</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> number = 1);
 <a name="l00084"></a>00084 
-<a name="l00091"></a>00091         <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;components::Node&gt; &gt; &amp; <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#ade4227c5a3f39b17a53c31e4aeb25bfc" title="Get all nodes.">getNodes</a>() <span class="keyword">const</span>;
+<a name="l00091"></a>00091         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a4e3a7e4c28c8f154770ec6568959bc7c" title="Create connections between all nodes.">createConnectivity</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> connectivity = 1);
 <a name="l00092"></a>00092 
-<a name="l00099"></a>00099         <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;components::Connection&gt; &gt; &amp; <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#aa015d026b0903772780b964fece2cd56" title="Get all connections.">getConnections</a>() <span class="keyword">const</span>;
+<a name="l00099"></a>00099         <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;components::Node&gt; &gt; &amp; <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#ade4227c5a3f39b17a53c31e4aeb25bfc" title="Get all nodes.">getNodes</a>() <span class="keyword">const</span>;
 <a name="l00100"></a>00100 
-<a name="l00107"></a>00107         <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Connector.html">common::Connector&lt;Cluster, Fibre&gt;</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a8822fd5e77bbbaa3900fe6da3acae1a8" title="Get the connector for this Cluster.">getConnector</a>() <span class="keyword">const</span>;
+<a name="l00107"></a>00107         <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;components::Connection&gt; &gt; &amp; <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#aa015d026b0903772780b964fece2cd56" title="Get all connections.">getConnections</a>() <span class="keyword">const</span>;
 <a name="l00108"></a>00108 
-<a name="l00115"></a>00115         <a class="code" href="classcryomesh_1_1common_1_1Connector.html">common::Connector&lt;Cluster, Fibre&gt;</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a1490fcafd9e673af89be342def2660cb" title="Get the mutable connector for this Cluster.">getMutableConnector</a>();
+<a name="l00115"></a>00115         <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1common_1_1Connector.html">common::Connector&lt;Cluster, Fibre&gt;</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a8822fd5e77bbbaa3900fe6da3acae1a8" title="Get the connector for this Cluster.">getConnector</a>() <span class="keyword">const</span>;
 <a name="l00116"></a>00116 
-<a name="l00123"></a>00123         <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1NodeMap.html" title="Helper class for NodeMap to KeyMappedCollection mapping.">components::NodeMap</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#adebc5a93681278631cfb2d70fa579005" title="Get the NodeMap for this Cluster.">getNodeMap</a>() <span class="keyword">const</span>;
+<a name="l00123"></a>00123         <a class="code" href="classcryomesh_1_1common_1_1Connector.html">common::Connector&lt;Cluster, Fibre&gt;</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a1490fcafd9e673af89be342def2660cb" title="Get the mutable connector for this Cluster.">getMutableConnector</a>();
 <a name="l00124"></a>00124 
-<a name="l00131"></a>00131         <a class="code" href="classcryomesh_1_1components_1_1NodeMap.html" title="Helper class for NodeMap to KeyMappedCollection mapping.">components::NodeMap</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a118bf56f54720d1eb922fe8893a73e78" title="Get the mutable NodeMap for this Cluster.">getMutableNodeMap</a>();
+<a name="l00131"></a>00131         <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1NodeMap.html" title="Helper class for NodeMap to KeyMappedCollection mapping.">components::NodeMap</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#adebc5a93681278631cfb2d70fa579005" title="Get the NodeMap for this Cluster.">getNodeMap</a>() <span class="keyword">const</span>;
 <a name="l00132"></a>00132 
-<a name="l00144"></a>00144         <span class="keyword">friend</span> std::ostream&amp; <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#adb5b48a591cc8d6f293b915068597a8a" title="To stream operator.">operator&lt;&lt;</a>(std::ostream &amp; os, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html" title="A Cluster is a collection of self-contained nodes and connections along with an associated Mesh...">Cluster</a> &amp; obj);
-<a name="l00145"></a>00145 
-<a name="l00146"></a>00146 <span class="keyword">protected</span>:
-<a name="l00147"></a>00147 
-<a name="l00154"></a>00154         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#aee616cbf1d49223eb46ea32bfaadf8f0" title="Update connectivity so that each node has at least param number of connections.">updateConnectivity</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> connectivity, <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#af2978a9bf2737e5e701600af095ea88f" title="Enum to force value type of a parameter.">ValueTypeSpecifier</a> asValue = <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#af2978a9bf2737e5e701600af095ea88fa98f7c71ef7e91da5a913638aa7d56945">AsIncrement</a>);
-<a name="l00155"></a>00155 
-<a name="l00166"></a>00166         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a9841651e371a8226209ba382d1b65f16" title="Create connection between an input node and output node.">createConnection</a>(boost::shared_ptr&lt;components::Node&gt; nodeStart,
-<a name="l00167"></a>00167                         boost::shared_ptr&lt;components::Node&gt; nodeEnd, <span class="keywordtype">int</span> connectivity = 1);
-<a name="l00168"></a>00168 
-<a name="l00169"></a>00169 <span class="keyword">private</span>:
-<a name="l00175"></a><a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#aebd26b5e561d3616ff3564cea8f6abfd">00175</a>         <a class="code" href="classcryomesh_1_1components_1_1NodeMap.html" title="Helper class for NodeMap to KeyMappedCollection mapping.">components::NodeMap</a> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#aebd26b5e561d3616ff3564cea8f6abfd">nodes</a>;
-<a name="l00176"></a>00176 
-<a name="l00182"></a><a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#ac614788bbfa9961f1f462d1caf7d0405">00182</a>         <a class="code" href="classcryomesh_1_1components_1_1ConnectionMap.html" title="Helper class for ConnectionMap to KeyMappedCollection mapping.">components::ConnectionMap</a> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#ac614788bbfa9961f1f462d1caf7d0405">connections</a>;
-<a name="l00183"></a>00183 
-<a name="l00189"></a><a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a05939fafb4754f1456f5ab98afcb0dbb">00189</a>         <a class="code" href="classcryomesh_1_1components_1_1Mesh.html" title="Mesh is the fabric of connection space and warps and is warped by it.">components::Mesh</a> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a05939fafb4754f1456f5ab98afcb0dbb">mesh</a>;
-<a name="l00190"></a>00190 
-<a name="l00196"></a><a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#aaaaac972efefc911d4550799c752730d">00196</a>         <a class="code" href="classcryomesh_1_1common_1_1Connector.html">common::Connector&lt;Cluster, Fibre&gt;</a> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#aaaaac972efefc911d4550799c752730d">connector</a>;
-<a name="l00197"></a>00197 
-<a name="l00198"></a>00198 };
-<a name="l00199"></a>00199 
-<a name="l00200"></a>00200 }
-<a name="l00201"></a>00201 
-<a name="l00202"></a>00202 }
-<a name="l00203"></a>00203 
-<a name="l00204"></a>00204 <span class="preprocessor">#endif </span><span class="comment">/* CLUSTER_H_ */</span>
+<a name="l00139"></a>00139         <a class="code" href="classcryomesh_1_1components_1_1NodeMap.html" title="Helper class for NodeMap to KeyMappedCollection mapping.">components::NodeMap</a> &amp; <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a118bf56f54720d1eb922fe8893a73e78" title="Get the mutable NodeMap for this Cluster.">getMutableNodeMap</a>();
+<a name="l00140"></a>00140 
+<a name="l00150"></a>00150         <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a44131126384d6e5217dc42285f6543be" title="Get the total fired nodes in this cluster currently.">getTriggeredNodeCount</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> indicator = 0) <span class="keyword">const</span>;
+<a name="l00151"></a>00151 
+<a name="l00161"></a>00161         <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a9978dcae127fd87e045ca0b25f338289" title="Get the total active nodes in this cluster currently.">getActiveNodeCount</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> indicator = 0) <span class="keyword">const</span>;
+<a name="l00162"></a>00162 
+<a name="l00170"></a>00170         <span class="keywordtype">int</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a3ce93f857f214d814600c24d3bbdadea" title="Get the total live nodes in this cluster currently, ie those with at least one impulse.">getLiveNodeCount</a>() <span class="keyword">const</span>;
+<a name="l00171"></a>00171 
+<a name="l00172"></a>00172         <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a458206d9c646f0f17c4764d82033e65e">getEnergy</a>() <span class="keyword">const</span>;
+<a name="l00173"></a>00173         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a4c0b2aaaf9c62c3c0ca44d89006ea875">setEnergy</a>(<span class="keywordtype">double</span> d);
+<a name="l00174"></a>00174 
+<a name="l00175"></a><a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a6021d2bd085ff3e500d3898b5fabdf88">00175</a>         <span class="keyword">const</span> boost::shared_ptr&lt;NodeMesh&gt; <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a6021d2bd085ff3e500d3898b5fabdf88">getMesh</a>()<span class="keyword"> const </span>{
+<a name="l00176"></a>00176                 <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a3f1688d1e47d783356c4d4705bd3f0b7">mesh</a>;
+<a name="l00177"></a>00177         }
+<a name="l00178"></a>00178 
+<a name="l00179"></a>00179         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a9e5abdfe3802c69b5cacc20b081fd90f">enableDebug</a>(<span class="keywordtype">bool</span> b);
+<a name="l00191"></a>00191         <span class="keyword">friend</span> std::ostream&amp; <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#adb5b48a591cc8d6f293b915068597a8a" title="To stream operator.">operator&lt;&lt;</a>(std::ostream &amp; os, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html" title="A Cluster is a collection of self-contained nodes and connections along with an associated Mesh...">Cluster</a> &amp; obj);
+<a name="l00192"></a>00192 
+<a name="l00193"></a><a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a42b6ded89948ab38383ce0b818c78b54">00193</a>         <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a42b6ded89948ab38383ce0b818c78b54">SELF_CONNECTED_NODES_FRACTION</a>;
+<a name="l00194"></a>00194 
+<a name="l00195"></a>00195 <span class="keyword">protected</span>:
+<a name="l00196"></a>00196 
+<a name="l00203"></a>00203         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#aee616cbf1d49223eb46ea32bfaadf8f0" title="Update connectivity so that each node has at least param number of connections.">updateConnectivity</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> connectivity, <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#af2978a9bf2737e5e701600af095ea88f" title="Enum to force value type of a parameter.">ValueTypeSpecifier</a> asValue = <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#af2978a9bf2737e5e701600af095ea88fa98f7c71ef7e91da5a913638aa7d56945">AsIncrement</a>);
+<a name="l00204"></a>00204 
+<a name="l00215"></a>00215         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a9841651e371a8226209ba382d1b65f16" title="Create connection between an input node and output node.">createConnection</a>(boost::shared_ptr&lt;components::Node&gt; nodeStart,
+<a name="l00216"></a>00216                         boost::shared_ptr&lt;components::Node&gt; nodeEnd, <span class="keywordtype">int</span> connectivity = 1);
+<a name="l00217"></a>00217 
+<a name="l00218"></a>00218 <span class="keyword">private</span>:
+<a name="l00219"></a><a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a28fb86dc636571345e27da1cb544a939">00219</a>         <span class="keywordtype">double</span> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a28fb86dc636571345e27da1cb544a939">energy</a>;
+<a name="l00220"></a>00220 
+<a name="l00226"></a><a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#aebd26b5e561d3616ff3564cea8f6abfd">00226</a>         <a class="code" href="classcryomesh_1_1components_1_1NodeMap.html" title="Helper class for NodeMap to KeyMappedCollection mapping.">components::NodeMap</a> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#aebd26b5e561d3616ff3564cea8f6abfd">nodes</a>;
+<a name="l00227"></a>00227 
+<a name="l00233"></a><a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#ac614788bbfa9961f1f462d1caf7d0405">00233</a>         <a class="code" href="classcryomesh_1_1components_1_1ConnectionMap.html" title="Helper class for ConnectionMap to KeyMappedCollection mapping.">components::ConnectionMap</a> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#ac614788bbfa9961f1f462d1caf7d0405">connections</a>;
+<a name="l00234"></a>00234 
+<a name="l00240"></a><a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a3f1688d1e47d783356c4d4705bd3f0b7">00240</a>         boost::shared_ptr&lt;NodeMesh&gt; <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#a3f1688d1e47d783356c4d4705bd3f0b7">mesh</a>;
+<a name="l00241"></a>00241 
+<a name="l00247"></a><a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#aaaaac972efefc911d4550799c752730d">00247</a>         <a class="code" href="classcryomesh_1_1common_1_1Connector.html">common::Connector&lt;Cluster, Fibre&gt;</a> <a class="code" href="classcryomesh_1_1structures_1_1Cluster.html#aaaaac972efefc911d4550799c752730d">connector</a>;
+<a name="l00248"></a>00248 
+<a name="l00249"></a>00249 };
+<a name="l00250"></a>00250 
+<a name="l00251"></a>00251 }
+<a name="l00252"></a>00252 
+<a name="l00253"></a>00253 }
+<a name="l00254"></a>00254 
+<a name="l00255"></a>00255 <span class="preprocessor">#endif </span><span class="comment">/* CLUSTER_H_ */</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -152,7 +179,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -161,7 +188,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:14 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>cryomesh: /home/niall/Projects/Eclipse/cryomesh/src/components/ActivityTimer.h Source File</title>
+<title>cryomesh: /home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimer.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -54,11 +54,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/niall/Projects/Eclipse/cryomesh/src/components/ActivityTimer.h</h1>  </div>
+<h1>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimer.h</h1>  </div>
 </div>
 <div class="contents">
 <a href="ActivityTimer_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
@@ -71,24 +72,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00008"></a>00008 <span class="preprocessor">#ifndef ACTIVITYTIMER_H_</span>
 <a name="l00009"></a>00009 <span class="preprocessor"></span><span class="preprocessor">#define ACTIVITYTIMER_H_</span>
 <a name="l00010"></a>00010 <span class="preprocessor"></span>
-<a name="l00011"></a>00011 <span class="keyword">namespace </span>cryomesh {
+<a name="l00011"></a>00011 <span class="preprocessor">#include &lt;ostream&gt;</span>
 <a name="l00012"></a>00012 
-<a name="l00013"></a><a class="code" href="namespacecryomesh_1_1components.html">00013</a> <span class="keyword">namespace </span>components {
+<a name="l00013"></a>00013 <span class="keyword">namespace </span>cryomesh {
 <a name="l00014"></a>00014 
-<a name="l00018"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimer.html">00018</a> <span class="keyword">class </span><a class="code" href="classcryomesh_1_1components_1_1ActivityTimer.html" title="Simple interface class for activity timers.">ActivityTimer</a> {
-<a name="l00019"></a>00019 <span class="keyword">public</span>:
-<a name="l00023"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimer.html#abf1241a780f7c6fa5d626b4585afc017">00023</a>         <a class="code" href="classcryomesh_1_1components_1_1ActivityTimer.html#abf1241a780f7c6fa5d626b4585afc017" title="Default constructor.">ActivityTimer</a>() {
-<a name="l00024"></a>00024         }
-<a name="l00025"></a>00025 
-<a name="l00029"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimer.html#a8383004d633ae75433d3961bdec431cf">00029</a>         <span class="keyword">virtual</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimer.html#a8383004d633ae75433d3961bdec431cf" title="Default destructor.">~ActivityTimer</a>() {
-<a name="l00030"></a>00030         }
-<a name="l00031"></a>00031 };
-<a name="l00032"></a>00032 
-<a name="l00033"></a>00033 }
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035 }
-<a name="l00036"></a>00036 
-<a name="l00037"></a>00037 <span class="preprocessor">#endif </span><span class="comment">/* ACTIVITYTIMER_H_ */</span>
+<a name="l00015"></a><a class="code" href="namespacecryomesh_1_1components.html">00015</a> <span class="keyword">namespace </span>components {
+<a name="l00016"></a>00016 
+<a name="l00020"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimer.html">00020</a> <span class="keyword">class </span><a class="code" href="classcryomesh_1_1components_1_1ActivityTimer.html" title="Simple interface class for activity timers.">ActivityTimer</a> {
+<a name="l00021"></a>00021 <span class="keyword">public</span>:
+<a name="l00025"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimer.html#abf1241a780f7c6fa5d626b4585afc017">00025</a>         <a class="code" href="classcryomesh_1_1components_1_1ActivityTimer.html#abf1241a780f7c6fa5d626b4585afc017" title="Default constructor.">ActivityTimer</a>() {
+<a name="l00026"></a>00026         }
+<a name="l00027"></a>00027 
+<a name="l00031"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimer.html#a8383004d633ae75433d3961bdec431cf">00031</a>         <span class="keyword">virtual</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimer.html#a8383004d633ae75433d3961bdec431cf" title="Default destructor.">~ActivityTimer</a>() {
+<a name="l00032"></a>00032         }
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimer.html#a8842b0b6e73ddf1d1809b79b7b239baf">reset</a>() = 0;
+<a name="l00035"></a>00035 
+<a name="l00047"></a><a class="code" href="classcryomesh_1_1components_1_1ActivityTimer.html#ac35779cd02eec3662a6cd9d75e1572cd">00047</a>                 <span class="keyword">friend</span> std::ostream&amp; <a class="code" href="classcryomesh_1_1components_1_1ActivityTimer.html#ac35779cd02eec3662a6cd9d75e1572cd" title="To stream operator.">operator&lt;&lt;</a>(std::ostream &amp; os, <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1components_1_1ActivityTimer.html" title="Simple interface class for activity timers.">ActivityTimer</a> &amp; obj){
+<a name="l00048"></a>00048                         os&lt;&lt;obj.<a class="code" href="classcryomesh_1_1components_1_1ActivityTimer.html#a1a4fd82c20fdc2b17ebe4582222ab8a3">print</a>(os);
+<a name="l00049"></a>00049                         <span class="keywordflow">return</span> os;
+<a name="l00050"></a>00050                 }
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052 <span class="keyword">protected</span>:
+<a name="l00053"></a>00053         <span class="keyword">virtual</span> std::ostream &amp; <a class="code" href="classcryomesh_1_1components_1_1ActivityTimer.html#a1a4fd82c20fdc2b17ebe4582222ab8a3">print</a>(std::ostream &amp; os) <span class="keyword">const</span> =0;
+<a name="l00054"></a>00054 };
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056 }
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058 }
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060 <span class="preprocessor">#endif </span><span class="comment">/* ACTIVITYTIMER_H_ */</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -96,7 +109,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -105,7 +118,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:13 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

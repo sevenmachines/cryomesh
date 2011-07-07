@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>cryomesh: /home/niall/Projects/Eclipse/cryomesh/src/manager/CryoManager.h Source File</title>
+<title>cryomesh: /home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -54,11 +54,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/niall/Projects/Eclipse/cryomesh/src/manager/CryoManager.h</h1>  </div>
+<h1>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.h</h1>  </div>
 </div>
 <div class="contents">
 <a href="CryoManager_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
@@ -72,64 +73,88 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00009"></a>00009 <span class="preprocessor"></span><span class="preprocessor">#define CRYOMANAGER_H_</span>
 <a name="l00010"></a>00010 <span class="preprocessor"></span>
 <a name="l00011"></a>00011 <span class="preprocessor">#include &lt;iostream&gt;</span>
-<a name="l00012"></a>00012 
-<a name="l00013"></a>00013 <span class="keyword">namespace </span>cryomesh {
-<a name="l00014"></a>00014 <span class="keyword">namespace </span>manager {
-<a name="l00015"></a>00015 
-<a name="l00020"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html">00020</a> <span class="keyword">class </span><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html" title="Control manager for cryomesh&amp;#39;s.">CryoManager</a> {
-<a name="l00021"></a>00021 <span class="keyword">public</span>:
-<a name="l00025"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175db">00025</a>         <span class="keyword">enum</span> <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175db" title="Enum to specify the actual state of the manager/cryomesh.">ManagerState</a> {
-<a name="l00026"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175dba2289131921456fcdb720dbd6377aeab5">00026</a>                 <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175dba088def21fbcaf9dfcae9b539737aff53">PAUSED</a>, <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175dba51b79d87f31da01ccec8cb1a8774a186">RUNNING</a>, <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175dba2289131921456fcdb720dbd6377aeab5">STOPPED</a>, <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175dbabf61bac25ab7e2e814af3cfc2cacc52b">EMPTY</a>, <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175dba5d5f65ef5162f587c94b0db2a7fa0dad">NEW</a>
-<a name="l00027"></a>00027         };
-<a name="l00028"></a>00028 
-<a name="l00032"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a6503de9d303b0d9fd094536b0eac1429">00032</a>         <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a6503de9d303b0d9fd094536b0eac1429" title="Default contructor.">CryoManager</a>() :
-<a name="l00033"></a>00033                 <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3cd8d62db5784d6f3ba212b434885897">currentState</a>(<a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175dbabf61bac25ab7e2e814af3cfc2cacc52b">EMPTY</a>) {
-<a name="l00034"></a>00034         }
-<a name="l00035"></a>00035 
-<a name="l00039"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a2991e8c23bf9aef0156ad003bbb71a7b">00039</a>         <span class="keyword">virtual</span> <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a2991e8c23bf9aef0156ad003bbb71a7b" title="Default destructor.">~CryoManager</a>() {
-<a name="l00040"></a>00040         }
-<a name="l00041"></a>00041 
-<a name="l00048"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a0977d4c49ec8ed7df367db5e55b780c2">00048</a>         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a0977d4c49ec8ed7df367db5e55b780c2" title="Set manager state to create, load config from file.">create</a>(<span class="keyword">const</span> std::string configfile) {
-<a name="l00049"></a>00049                 std::cout &lt;&lt; <span class="stringliteral">&quot;CryoManager::create: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;&quot;</span> &lt;&lt; std::endl;
-<a name="l00050"></a>00050                 <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3cd8d62db5784d6f3ba212b434885897">currentState</a> = <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175dba5d5f65ef5162f587c94b0db2a7fa0dad">NEW</a>;
-<a name="l00051"></a>00051                 <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a7b5b0303aeb5769e0c096fc48d121e39">creator</a> = boost::shared_ptr&lt;Creator&gt;(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1manager_1_1Creator.html" title="Class to take in a config file of ConfigTranslator form and parse the commands to create a full cryom...">Creator</a>(configfile));
-<a name="l00052"></a>00052         }
-<a name="l00053"></a>00053 
-<a name="l00057"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#adc13d73f8ae6c2d9b167929a33bcbc4e">00057</a>         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#adc13d73f8ae6c2d9b167929a33bcbc4e" title="Set manager state to running.">run</a>() {
-<a name="l00058"></a>00058                 std::cout &lt;&lt; <span class="stringliteral">&quot;CryoManager::run: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;&quot;</span> &lt;&lt; std::endl;
-<a name="l00059"></a>00059                 <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3cd8d62db5784d6f3ba212b434885897">currentState</a> = <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175dba51b79d87f31da01ccec8cb1a8774a186">RUNNING</a>;
-<a name="l00060"></a>00060         }
-<a name="l00061"></a>00061 
-<a name="l00065"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a17b9c7e0d23a3e1b96f75ebba533e512">00065</a>         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a17b9c7e0d23a3e1b96f75ebba533e512" title="Set manager state to paused.">pause</a>() {
-<a name="l00066"></a>00066                 std::cout &lt;&lt; <span class="stringliteral">&quot;CryoManager::pause: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;&quot;</span> &lt;&lt; std::endl;
-<a name="l00067"></a>00067                 <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3cd8d62db5784d6f3ba212b434885897">currentState</a> = <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175dba088def21fbcaf9dfcae9b539737aff53">PAUSED</a>;
-<a name="l00068"></a>00068         }
-<a name="l00069"></a>00069 
-<a name="l00073"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#aab043714f2aa51ede0bfcfce3b528742">00073</a>         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#aab043714f2aa51ede0bfcfce3b528742" title="Set manager state to stopped.">stop</a>() {
-<a name="l00074"></a>00074                 std::cout &lt;&lt; <span class="stringliteral">&quot;CryoManager::stop: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;&quot;</span> &lt;&lt; std::endl;
-<a name="l00075"></a>00075                 <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3cd8d62db5784d6f3ba212b434885897">currentState</a> = <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175dba2289131921456fcdb720dbd6377aeab5">STOPPED</a>;
-<a name="l00076"></a>00076         }
-<a name="l00077"></a>00077 
-<a name="l00081"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#ae6aaf89de219abd0ec13de28375ace57">00081</a>         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#ae6aaf89de219abd0ec13de28375ace57" title="Set manager state to destroy.">destroy</a>() {
-<a name="l00082"></a>00082                 std::cout &lt;&lt; <span class="stringliteral">&quot;CryoManager::destroy: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;&quot;</span> &lt;&lt; std::endl;
-<a name="l00083"></a>00083                 <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3cd8d62db5784d6f3ba212b434885897">currentState</a> = <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175dbabf61bac25ab7e2e814af3cfc2cacc52b">EMPTY</a>;
-<a name="l00084"></a>00084                 <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a7b5b0303aeb5769e0c096fc48d121e39">creator</a>.reset();
-<a name="l00085"></a>00085         }
-<a name="l00086"></a>00086 
-<a name="l00093"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a2e14e1fed0baa50d0d0c9b036686c9b7">00093</a>         <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175db" title="Enum to specify the actual state of the manager/cryomesh.">ManagerState</a> &amp; <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a2e14e1fed0baa50d0d0c9b036686c9b7" title="Return the managers current state.">getCurrentState</a>()<span class="keyword"> const </span>{
-<a name="l00094"></a>00094                 <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3cd8d62db5784d6f3ba212b434885897">currentState</a>;
-<a name="l00095"></a>00095         }
-<a name="l00096"></a>00096 
-<a name="l00097"></a>00097 <span class="keyword">private</span>:
-<a name="l00103"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3cd8d62db5784d6f3ba212b434885897">00103</a>         <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175db" title="Enum to specify the actual state of the manager/cryomesh.">ManagerState</a> <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3cd8d62db5784d6f3ba212b434885897">currentState</a>;
-<a name="l00104"></a>00104 
-<a name="l00110"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a7b5b0303aeb5769e0c096fc48d121e39">00110</a>         boost::shared_ptr&lt;Creator&gt; <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a7b5b0303aeb5769e0c096fc48d121e39">creator</a>;
-<a name="l00111"></a>00111 };
-<a name="l00112"></a>00112 
-<a name="l00113"></a>00113 }<span class="comment">//NAMESPACE</span>
-<a name="l00114"></a>00114 }<span class="comment">//NAMESPACE</span>
-<a name="l00115"></a>00115 
-<a name="l00116"></a>00116 <span class="preprocessor">#endif </span><span class="comment">/* CRYOMANAGER_H_ */</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include &lt;ctime&gt;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include &quot;<a class="code" href="Creator_8h.html">Creator.h</a>&quot;</span>
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015 <span class="keyword">namespace </span>cryomesh {
+<a name="l00016"></a>00016 <span class="keyword">namespace </span>manager {
+<a name="l00017"></a>00017 
+<a name="l00022"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html">00022</a> <span class="keyword">class </span><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html" title="Control manager for cryomesh&amp;#39;s.">CryoManager</a> {
+<a name="l00023"></a>00023 <span class="keyword">public</span>:
+<a name="l00027"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175db">00027</a>         <span class="keyword">enum</span> <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175db" title="Enum to specify the actual state of the manager/cryomesh.">ManagerState</a> {
+<a name="l00028"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175dba2289131921456fcdb720dbd6377aeab5">00028</a>                 <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175dba088def21fbcaf9dfcae9b539737aff53">PAUSED</a>, <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175dba51b79d87f31da01ccec8cb1a8774a186">RUNNING</a>, <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175dba2289131921456fcdb720dbd6377aeab5">STOPPED</a>, <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175dbabf61bac25ab7e2e814af3cfc2cacc52b">EMPTY</a>, <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175dba5d5f65ef5162f587c94b0db2a7fa0dad">NEW</a>
+<a name="l00029"></a>00029         };
+<a name="l00030"></a>00030 
+<a name="l00034"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a6503de9d303b0d9fd094536b0eac1429">00034</a>         <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a6503de9d303b0d9fd094536b0eac1429" title="Default contructor.">CryoManager</a>() :
+<a name="l00035"></a>00035                 <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3cd8d62db5784d6f3ba212b434885897">currentState</a>(<a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175dbabf61bac25ab7e2e814af3cfc2cacc52b">EMPTY</a>) {
+<a name="l00036"></a>00036                 srand(time(NULL));
+<a name="l00037"></a>00037         }
+<a name="l00038"></a>00038 
+<a name="l00042"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a2991e8c23bf9aef0156ad003bbb71a7b">00042</a>         <span class="keyword">virtual</span> <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a2991e8c23bf9aef0156ad003bbb71a7b" title="Default destructor.">~CryoManager</a>() {
+<a name="l00043"></a>00043         }
+<a name="l00044"></a>00044 
+<a name="l00051"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a0977d4c49ec8ed7df367db5e55b780c2">00051</a>         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a0977d4c49ec8ed7df367db5e55b780c2" title="Set manager state to create, load config from file.">create</a>(<span class="keyword">const</span> std::string configfile) {
+<a name="l00052"></a>00052                 std::cout &lt;&lt; <span class="stringliteral">&quot;CryoManager::create: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;&quot;</span> &lt;&lt; std::endl;
+<a name="l00053"></a>00053                 <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3cd8d62db5784d6f3ba212b434885897">currentState</a> = <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175dba5d5f65ef5162f587c94b0db2a7fa0dad">NEW</a>;
+<a name="l00054"></a>00054                 <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a7b5b0303aeb5769e0c096fc48d121e39">creator</a> = boost::shared_ptr&lt;manager::Creator&gt;(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1manager_1_1Creator.html" title="Class to take in a config file of ConfigTranslator form and parse the commands to create a full cryom...">manager::Creator</a>(configfile));
+<a name="l00055"></a>00055         }
+<a name="l00056"></a>00056 
+<a name="l00060"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#adc13d73f8ae6c2d9b167929a33bcbc4e">00060</a>         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#adc13d73f8ae6c2d9b167929a33bcbc4e" title="Set manager state to running.">run</a>() {
+<a name="l00061"></a>00061                 std::cout &lt;&lt; <span class="stringliteral">&quot;CryoManager::run: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;&quot;</span> &lt;&lt; std::endl;
+<a name="l00062"></a>00062                 <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3cd8d62db5784d6f3ba212b434885897">currentState</a> = <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175dba51b79d87f31da01ccec8cb1a8774a186">RUNNING</a>;
+<a name="l00063"></a>00063         }
+<a name="l00064"></a>00064 
+<a name="l00068"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a32edd218fb1ed02580fa1eef8609cacf">00068</a>         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a32edd218fb1ed02580fa1eef8609cacf" title="Set manager state to run one cycle.">runCycle</a>() {
+<a name="l00069"></a>00069                 std::cout &lt;&lt; <span class="stringliteral">&quot;CryoManager::runCycle: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;&quot;</span> &lt;&lt; std::endl;
+<a name="l00070"></a>00070                  boost::shared_ptr&lt; structures::Bundle &gt; bundle = <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a7b5b0303aeb5769e0c096fc48d121e39">creator</a>-&gt;getBundle();
+<a name="l00071"></a>00071                 <span class="keywordflow">if</span> (bundle != 0){
+<a name="l00072"></a>00072                         <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3cd8d62db5784d6f3ba212b434885897">currentState</a> = <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175dba51b79d87f31da01ccec8cb1a8774a186">RUNNING</a>;
+<a name="l00073"></a>00073                         bundle-&gt;update();
+<a name="l00074"></a>00074                         this-&gt;<a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#aab043714f2aa51ede0bfcfce3b528742" title="Set manager state to stopped.">stop</a>();
+<a name="l00075"></a>00075                 }<span class="keywordflow">else</span>{
+<a name="l00076"></a>00076                         std::cout&lt;&lt;<span class="stringliteral">&quot;CryoManager::runCycle: &quot;</span>&lt;&lt;<span class="stringliteral">&quot;ERROR: Bundle is null...&quot;</span>&lt;&lt;std::endl;
+<a name="l00077"></a>00077                         assert(<span class="keyword">false</span>);
+<a name="l00078"></a>00078                 }
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080         }
+<a name="l00081"></a>00081 
+<a name="l00085"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a17b9c7e0d23a3e1b96f75ebba533e512">00085</a>         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a17b9c7e0d23a3e1b96f75ebba533e512" title="Set manager state to paused.">pause</a>() {
+<a name="l00086"></a>00086                 std::cout &lt;&lt; <span class="stringliteral">&quot;CryoManager::pause: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;&quot;</span> &lt;&lt; std::endl;
+<a name="l00087"></a>00087                 <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3cd8d62db5784d6f3ba212b434885897">currentState</a> = <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175dba088def21fbcaf9dfcae9b539737aff53">PAUSED</a>;
+<a name="l00088"></a>00088         }
+<a name="l00089"></a>00089 
+<a name="l00093"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#aab043714f2aa51ede0bfcfce3b528742">00093</a>         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#aab043714f2aa51ede0bfcfce3b528742" title="Set manager state to stopped.">stop</a>() {
+<a name="l00094"></a>00094                 std::cout &lt;&lt; <span class="stringliteral">&quot;CryoManager::stop: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;&quot;</span> &lt;&lt; std::endl;
+<a name="l00095"></a>00095                 <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3cd8d62db5784d6f3ba212b434885897">currentState</a> = <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175dba2289131921456fcdb720dbd6377aeab5">STOPPED</a>;
+<a name="l00096"></a>00096         }
+<a name="l00097"></a>00097 
+<a name="l00101"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#ae6aaf89de219abd0ec13de28375ace57">00101</a>         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#ae6aaf89de219abd0ec13de28375ace57" title="Set manager state to destroy.">destroy</a>() {
+<a name="l00102"></a>00102                 std::cout &lt;&lt; <span class="stringliteral">&quot;CryoManager::destroy: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;&quot;</span> &lt;&lt; std::endl;
+<a name="l00103"></a>00103                 <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3cd8d62db5784d6f3ba212b434885897">currentState</a> = <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175dbabf61bac25ab7e2e814af3cfc2cacc52b">EMPTY</a>;
+<a name="l00104"></a>00104                 <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a7b5b0303aeb5769e0c096fc48d121e39">creator</a>.reset();
+<a name="l00105"></a>00105         }
+<a name="l00106"></a>00106 
+<a name="l00113"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a2e14e1fed0baa50d0d0c9b036686c9b7">00113</a>         <span class="keyword">const</span> <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175db" title="Enum to specify the actual state of the manager/cryomesh.">ManagerState</a> &amp; <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a2e14e1fed0baa50d0d0c9b036686c9b7" title="Return the managers current state.">getCurrentState</a>()<span class="keyword"> const </span>{
+<a name="l00114"></a>00114                 <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3cd8d62db5784d6f3ba212b434885897">currentState</a>;
+<a name="l00115"></a>00115         }
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117         <span class="comment">//TODO Temporary access, replace with database calls instead</span>
+<a name="l00118"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a0a954ae23a0a8e441b32e80a9fc2db49">00118</a>         <span class="keyword">const</span> boost::shared_ptr&lt;structures::Bundle&gt; <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a0a954ae23a0a8e441b32e80a9fc2db49">getBundle</a>()<span class="keyword"> const </span>{
+<a name="l00119"></a>00119                 <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a7b5b0303aeb5769e0c096fc48d121e39">creator</a>-&gt;getBundle();
+<a name="l00120"></a>00120         }
+<a name="l00121"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#aaa6bb016fce362314c54159d57a7330a">00121</a>         boost::shared_ptr&lt;structures::Bundle&gt; <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#aaa6bb016fce362314c54159d57a7330a">getMutableBundle</a>() {
+<a name="l00122"></a>00122                 <span class="keywordflow">return</span> <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a7b5b0303aeb5769e0c096fc48d121e39">creator</a>-&gt;getMutableBundle();
+<a name="l00123"></a>00123         }
+<a name="l00124"></a>00124 <span class="keyword">private</span>:
+<a name="l00130"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3cd8d62db5784d6f3ba212b434885897">00130</a>         <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3e6c92b56a69e9faf80c01c32fa175db" title="Enum to specify the actual state of the manager/cryomesh.">ManagerState</a> <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a3cd8d62db5784d6f3ba212b434885897">currentState</a>;
+<a name="l00131"></a>00131 
+<a name="l00137"></a><a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a7b5b0303aeb5769e0c096fc48d121e39">00137</a>         boost::shared_ptr&lt;Creator&gt; <a class="code" href="classcryomesh_1_1manager_1_1CryoManager.html#a7b5b0303aeb5769e0c096fc48d121e39">creator</a>;
+<a name="l00138"></a>00138 };
+<a name="l00139"></a>00139 
+<a name="l00140"></a>00140 }<span class="comment">//NAMESPACE</span>
+<a name="l00141"></a>00141 }<span class="comment">//NAMESPACE</span>
+<a name="l00142"></a>00142 
+<a name="l00143"></a>00143 <span class="preprocessor">#endif </span><span class="comment">/* CRYOMANAGER_H_ */</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -137,7 +162,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -146,7 +171,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:13 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

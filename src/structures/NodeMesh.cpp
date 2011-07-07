@@ -14,26 +14,62 @@ namespace cryomesh {
 
 namespace structures {
 
+const double NodeMesh::INTERPOLATED_ACTIVITY_SCALING_FACTOR = (1.0 / 100.0);
+
 NodeMesh::NodeMesh(Cluster & clus, double max_radius) :
 	cluster(clus), maximumNeighbourhoodRadius(max_radius), decayRate(1) {
-
+	this->regenerateNeighbourhoods();
 }
 
 NodeMesh::~NodeMesh() {
 }
 
 void NodeMesh::update() {
+#ifdef NODEMESH_DEBUG
+	std::cout << "NodeMesh::update: " << this << std::endl;
+#endif
 	this->regenerateActivities();
 }
 
-void NodeMesh::regenerateNeighbourhoods() {
+void NodeMesh::warpNodes() {
 #ifdef NODEMESH_DEBUG
-	std::cout << "NodeMesh::regenerateNeighbourhoods: " << "" << std::endl;
+	std::cout << "NodeMesh::warpNodes: " << this << " -> " << neighbourhoodActivities.size() << std::endl;
 #endif
+	// forall in neighbourhoodActivities
+	{
+		std::map<boost::shared_ptr<components::Node>, double>::iterator it_neighbourhoodActivities =
+				neighbourhoodActivities.begin();
+		const std::map<boost::shared_ptr<components::Node>, double>::const_iterator it_neighbourhoodActivities_end =
+				neighbourhoodActivities.end();
+		while (it_neighbourhoodActivities != it_neighbourhoodActivities_end) {
+			// generate an impulse based on the interpolated activity
+			double interpolated_activity = it_neighbourhoodActivities->second;
+			if (interpolated_activity > 0 || interpolated_activity < 0) {
+				boost::shared_ptr<components::Impulse> interpolated_impulse(
+						new components::Impulse(interpolated_activity * INTERPOLATED_ACTIVITY_SCALING_FACTOR, 1));
+#ifdef NODEMESH_DEBUG
+				std::cout << "NodeMesh::warpNodes: " << this << " -> "
+						<< "interpolated_activity * INTERPOLATED_ACTIVITY_SCALING_FACTOR = " << interpolated_activity
+						<< " * " << INTERPOLATED_ACTIVITY_SCALING_FACTOR << " = " << interpolated_activity
+						* INTERPOLATED_ACTIVITY_SCALING_FACTOR << std::endl;
+#endif
+				it_neighbourhoodActivities->first->addImpulse(interpolated_impulse);
+
+			}
+			++it_neighbourhoodActivities;
+		}
+	}
+}
+
+void NodeMesh::regenerateNeighbourhoods() {
 	nodeNeighbourhoodMap.clear();
 	neighbourhoodActivities.clear();
 
 	const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > & all_nodes = cluster.getNodes();
+#ifdef NODEMESH_DEBUG
+	std::cout << "NodeMesh::regenerateNeighbourhoods: " << this << " -> " << "all_nodes: " << all_nodes.size()
+			<< std::endl;
+#endif
 	// forall in all_nodes
 	{
 		std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator it_all_nodes =
@@ -61,9 +97,17 @@ void NodeMesh::regenerateNeighbourhoods() {
 		}
 
 	}
+#ifdef NODEMESH_DEBUG
+	std::cout << "NodeMesh::regenerateNeighbourhoods: " << this << " -> " << "nodeNeighbourhoodMap: "
+			<< nodeNeighbourhoodMap.size() << std::endl;
+#endif
 }
 
 void NodeMesh::regenerateActivities() {
+#ifdef NODEMESH_DEBUG
+	std::cout << "NodeMesh::regenerateActivities: " << this << " -> " << "nodeNeighbourhoodMap: "
+			<< nodeNeighbourhoodMap.size() << std::endl;
+#endif
 	// for each node
 	NeighbourhoodMapConstIterator it_neighbourhood = nodeNeighbourhoodMap.begin();
 	const NeighbourhoodMapConstIterator it_neighbourhood_end = nodeNeighbourhoodMap.end();
@@ -71,7 +115,10 @@ void NodeMesh::regenerateActivities() {
 		neighbourhoodActivities[it_neighbourhood->first] = this->getInterpolatedActivity(it_neighbourhood->second);
 		++it_neighbourhood;
 	}
-
+#ifdef NODEMESH_DEBUG
+	std::cout << "NodeMesh::regenerateActivities: " << this << " -> " << "neighbourhoodActivities: "
+			<< neighbourhoodActivities.size() << std::endl;
+#endif
 }
 
 double NodeMesh::getInterpolatedActivity(

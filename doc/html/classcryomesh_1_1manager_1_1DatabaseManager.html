@@ -108,20 +108,24 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a node data object into the table.  <a href="#a74b282e11bd8c59a1e620b89cfe95ab2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#a0e5eaf4c78e61a54e9ead0148d7e8851">insertConnection</a> (const <a class="el" href="classcryomesh_1_1manager_1_1DatabaseObject.html">DatabaseObject</a> &amp;db_object)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a connection data object into the table.  <a href="#a0e5eaf4c78e61a54e9ead0148d7e8851"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#a48308f572e1d87a7f44e1e9fbeaf132b">insertOutputPattern</a> (const <a class="el" href="classcryomesh_1_1manager_1_1DatabaseObject.html">DatabaseObject</a> &amp;db_object)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#a72e0ced2c0638556f66cbceb60123aa5">selectNode</a> (const std::string &amp;uuid, const <a class="el" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp;cycle)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Select unique node entry.  <a href="#a72e0ced2c0638556f66cbceb60123aa5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#ab24de957b5908a4dc7d0c9146b43488b">selectConnection</a> (const std::string &amp;uuid, const <a class="el" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp;cycle)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Select unique column entry.  <a href="#ab24de957b5908a4dc7d0c9146b43488b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#a04e8afc360e46b238415910dcafc2dd8">selectOutputPattern</a> (const std::string &amp;uuid, const <a class="el" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp;cycle)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#a2a37d932ea951b4a45d4452e8631c1b4">selectNodeValue</a> (const std::string &amp;uuid, const <a class="el" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp;cycle, const std::string &amp;column)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Select unique node column entry.  <a href="#a2a37d932ea951b4a45d4452e8631c1b4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#aaeb8756f7f7e62b152fa226cddbc191e">selectConnectionValue</a> (const std::string &amp;uuid, const <a class="el" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp;cycle, const std::string &amp;column)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Select unique column column entry.  <a href="#aaeb8756f7f7e62b152fa226cddbc191e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#a31be85012297a3c2cda1ab43f7730986">selectOutputPatternValue</a> (const std::string &amp;uuid, const <a class="el" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp;cycle, const std::string &amp;column)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#af2d4487c9955417740ecaeeb7e27db4f">selectValue</a> (const std::string &amp;table, const std::string &amp;uuid, const <a class="el" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp;cycle, const std::string &amp;column)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Select unique column column entry from table.  <a href="#af2d4487c9955417740ecaeeb7e27db4f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#abbdc677c45f6cf24e46f9ab4f1d15804">selectNodes</a> (const std::string &amp;criteria=&quot;&quot;)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Select nodes by a criteria string eg, 'id=erwrs324 AND cycle=1'.  <a href="#abbdc677c45f6cf24e46f9ab4f1d15804"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#a293d93aa671e648edb0dc8a47663e7d0">selectConnections</a> (const std::string &amp;criteria=&quot;&quot;)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Select connections by a criteria string eg, 'id=erwrs324 AND cycle=1'.  <a href="#a293d93aa671e648edb0dc8a47663e7d0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#a9a49d50bc76aa1686da01b9ebe3bbc8b">selectOutputPatterns</a> (const std::string &amp;criteria=&quot;&quot;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#a95b3a22e66f6803e9b9875fc9d522218">deleteNode</a> (const std::string &amp;id)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete node by uuid.  <a href="#a95b3a22e66f6803e9b9875fc9d522218"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#aae668efd45d2f48593e7e7810ecfa0c2">deleteNodes</a> (const std::string &amp;criteria=&quot;&quot;)</td></tr>
@@ -130,6 +134,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete connection by uuid.  <a href="#a9dcb39c5eda5a6aa91addb20b8090968"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#a15dfa7b9dbf0164d7f37e6546f368e38">deleteConnections</a> (const std::string &amp;criteria=&quot;&quot;)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete nodes by a criteria string eg, 'id=erwrs324 AND cycle=1'.  <a href="#a15dfa7b9dbf0164d7f37e6546f368e38"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#aa843bb7f909b2b47437a9597a8966786">deleteOutputPattern</a> (const std::string &amp;id)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#ae0bdd63971d6363c6525136264def2c9">deleteOutputPatterns</a> (const std::string &amp;criteria=&quot;&quot;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#ae7a0c296543488886e60e4cb73a4cf95">deleteSelected</a> (const std::string &amp;table, const std::string &amp;criteria=&quot;&quot;)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete objects from a table by a criteria string eg, 'id=erwrs324 AND cycle=1'.  <a href="#ae7a0c296543488886e60e4cb73a4cf95"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#a8c2a8fe55d1df17b9ed35bfa0a625390">countNodes</a> (const std::string &amp;criteria=&quot;&quot;)</td></tr>
@@ -170,6 +176,8 @@ Static Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structcryomesh_1_1manager_1_1NodeTableFormat.html">NodeTableFormat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#a012235d36d2c11662d1714723d70beb2">NODES_TABLE_FORMAT</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structcryomesh_1_1manager_1_1ConnectionTableFormat.html">ConnectionTableFormat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#ad318d1adc10df5e9ad8a55252b627456">CONNECTIONS_TABLE_FORMAT</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Default connection table format.  <a href="#ad318d1adc10df5e9ad8a55252b627456"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const <br class="typebreak"/>
+<a class="el" href="structcryomesh_1_1manager_1_1OutputPatternsTableFormat.html">OutputPatternsTableFormat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#a4e48c5624fa72f404f104c079e961b74">OUTPUT_PATTERNS_TABLE_FORMAT</a></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#a7a6bb580dd32e3af71670579e05663a1">sqlCommand</a> (const std::string &amp;command)</td></tr>
@@ -228,7 +236,7 @@ Static Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00057">57</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00058">58</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -248,7 +256,7 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Default destructor closes the database. </p>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00082">82</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00083">83</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -294,11 +302,11 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::multimap&lt;std::string, std::string&gt; Return the modified map </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00320">320</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00355">355</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
-<p>References <a class="el" href="TimeKeeper_8cpp_source.html#l00020">cryomesh::common::TimeKeeper::getTimeKeeper()</a>, and <a class="el" href="DatabaseManager_8h_source.html#l00522">MAX_COMMAND_HISTORY</a>.</p>
+<p>References <a class="el" href="TimeKeeper_8cpp_source.html#l00020">cryomesh::common::TimeKeeper::getTimeKeeper()</a>, and <a class="el" href="DatabaseManager_8h_source.html#l00535">MAX_COMMAND_HISTORY</a>.</p>
 
-<p>Referenced by <a class="el" href="DatabaseManager_8cpp_source.html#l00301">addHistoryEntry()</a>.</p>
+<p>Referenced by <a class="el" href="DatabaseManager_8cpp_source.html#l00336">addHistoryEntry()</a>.</p>
 
 </div>
 </div>
@@ -343,9 +351,9 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::multimap&lt;std::string, std::string&gt; Return the modified map </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00301">301</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00336">336</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
-<p>References <a class="el" href="DatabaseManager_8cpp_source.html#l00320">addHistoryEntry()</a>.</p>
+<p>References <a class="el" href="DatabaseManager_8cpp_source.html#l00355">addHistoryEntry()</a>.</p>
 
 </div>
 </div>
@@ -373,7 +381,7 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::string The result of the sql query </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00101">101</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00104">104</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -393,7 +401,7 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Clear all tables. </p>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00096">96</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00098">98</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -421,7 +429,7 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>int The result of the count </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00184">184</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00218">218</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -449,7 +457,7 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>int The result of the count </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00181">181</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00215">215</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -488,7 +496,7 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>int The result of the count </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00188">188</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00222">222</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -508,7 +516,7 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Create all needed tables. </p>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00091">91</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00092">92</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -551,7 +559,7 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Function that is called on finishing an sql command. </p>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00028">28</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00029">29</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -616,7 +624,7 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::string sql query results </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00235">235</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00270">270</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -662,7 +670,7 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::string sql query results </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00248">248</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00283">283</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -690,7 +698,7 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::string Result of sql query </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00165">165</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00189">189</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -718,7 +726,7 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::string Result of sql query </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00171">171</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00195">195</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -757,7 +765,7 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::string sql query results </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00244">244</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00279">279</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -785,7 +793,7 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::string Result of sql query </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00155">155</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00179">179</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -813,7 +821,7 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::string Result of sql query </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00161">161</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00185">185</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -852,7 +860,45 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::string sql query results </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00240">240</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00275">275</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa843bb7f909b2b47437a9597a8966786"></a><!-- doxytag: member="cryomesh::manager::DatabaseManager::deleteOutputPattern" ref="aa843bb7f909b2b47437a9597a8966786" args="(const std::string &amp;id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string cryomesh::manager::DatabaseManager::deleteOutputPattern </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00199">199</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae0bdd63971d6363c6525136264def2c9"></a><!-- doxytag: member="cryomesh::manager::DatabaseManager::deleteOutputPatterns" ref="ae0bdd63971d6363c6525136264def2c9" args="(const std::string &amp;criteria=&quot;&quot;)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string cryomesh::manager::DatabaseManager::deleteOutputPatterns </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>criteria</em> = <code>&quot;&quot;</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00205">205</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -891,7 +937,7 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::string Result of sql query </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00175">175</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00209">209</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -919,7 +965,7 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::string The result of the sql query </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00228">228</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00263">263</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -947,7 +993,7 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::string Result of sql query </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00110">110</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00113">113</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -975,7 +1021,26 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::string Result of sql query </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00107">107</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00110">110</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a48308f572e1d87a7f44e1e9fbeaf132b"></a><!-- doxytag: member="cryomesh::manager::DatabaseManager::insertOutputPattern" ref="a48308f572e1d87a7f44e1e9fbeaf132b" args="(const DatabaseObject &amp;db_object)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string cryomesh::manager::DatabaseManager::insertOutputPattern </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcryomesh_1_1manager_1_1DatabaseObject.html">DatabaseObject</a> &amp;&#160;</td>
+          <td class="paramname"><em>db_object</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00116">116</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -996,7 +1061,7 @@ Static Protected Attributes</h2></td></tr>
 <p>Check if the database is accessible. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool True if deemed accessible, false otherwise </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00087">87</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00088">88</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -1035,9 +1100,9 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::ostream Return the supplied output stream </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00343">343</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00378">378</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
-<p>References <a class="el" href="DatabaseManager_8h_source.html#l00508">sqlResults</a>.</p>
+<p>References <a class="el" href="DatabaseManager_8h_source.html#l00521">sqlResults</a>.</p>
 
 </div>
 </div>
@@ -1076,7 +1141,7 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::ostream Return the supplied output stream </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00333">333</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00368">368</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -1115,7 +1180,7 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::string sql query results </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00151">151</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00175">175</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -1154,7 +1219,7 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::string The value of the entry </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00120">120</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00125">125</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -1182,7 +1247,7 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::string Result of sql query </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00148">148</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00169">169</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -1228,7 +1293,9 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::string The value of the entry </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00131">131</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00144">144</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+
+<p>References <a class="el" href="DatabaseManager_8cpp_source.html#l00154">selectValue()</a>.</p>
 
 </div>
 </div>
@@ -1267,7 +1334,7 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::string The value of the entry </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00114">114</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00119">119</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -1295,7 +1362,7 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::string Result of sql query </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00145">145</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00166">166</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
 </div>
 </div>
@@ -1341,7 +1408,94 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::string The value of the entry </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00127">127</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00139">139</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+
+<p>References <a class="el" href="DatabaseManager_8cpp_source.html#l00154">selectValue()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a04e8afc360e46b238415910dcafc2dd8"></a><!-- doxytag: member="cryomesh::manager::DatabaseManager::selectOutputPattern" ref="a04e8afc360e46b238415910dcafc2dd8" args="(const std::string &amp;uuid, const common::Cycle &amp;cycle)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string cryomesh::manager::DatabaseManager::selectOutputPattern </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>uuid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp;&#160;</td>
+          <td class="paramname"><em>cycle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00132">132</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9a49d50bc76aa1686da01b9ebe3bbc8b"></a><!-- doxytag: member="cryomesh::manager::DatabaseManager::selectOutputPatterns" ref="a9a49d50bc76aa1686da01b9ebe3bbc8b" args="(const std::string &amp;criteria=&quot;&quot;)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string cryomesh::manager::DatabaseManager::selectOutputPatterns </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>criteria</em> = <code>&quot;&quot;</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00172">172</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a31be85012297a3c2cda1ab43f7730986"></a><!-- doxytag: member="cryomesh::manager::DatabaseManager::selectOutputPatternValue" ref="a31be85012297a3c2cda1ab43f7730986" args="(const std::string &amp;uuid, const common::Cycle &amp;cycle, const std::string &amp;column)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string cryomesh::manager::DatabaseManager::selectOutputPatternValue </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>uuid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp;&#160;</td>
+          <td class="paramname"><em>cycle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>column</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00149">149</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+
+<p>References <a class="el" href="DatabaseManager_8cpp_source.html#l00154">selectValue()</a>.</p>
 
 </div>
 </div>
@@ -1394,7 +1548,11 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::string The value of the entry </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00135">135</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00154">154</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+
+<p>References <a class="el" href="DatabaseManager_8cpp_source.html#l00299">sqlCommand()</a>, and <a class="el" href="Cycle_8cpp_source.html#l00060">cryomesh::common::Cycle::toLInt()</a>.</p>
+
+<p>Referenced by <a class="el" href="DatabaseManager_8cpp_source.html#l00144">selectConnectionValue()</a>, <a class="el" href="DatabaseManager_8cpp_source.html#l00139">selectNodeValue()</a>, and <a class="el" href="DatabaseManager_8cpp_source.html#l00149">selectOutputPatternValue()</a>.</p>
 
 </div>
 </div>
@@ -1422,9 +1580,9 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::vector&lt;std::string&gt; vector of results </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00264">264</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00299">299</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="DatabaseManager_8cpp_source.html#l00217">sqlCommandBySelection()</a>, and <a class="el" href="DatabaseManager_8cpp_source.html#l00210">updateByUUID()</a>.</p>
+<p>Referenced by <a class="el" href="DatabaseManager_8cpp_source.html#l00154">selectValue()</a>, <a class="el" href="DatabaseManager_8cpp_source.html#l00252">sqlCommandBySelection()</a>, and <a class="el" href="DatabaseManager_8cpp_source.html#l00244">updateByUUID()</a>.</p>
 
 </div>
 </div>
@@ -1459,9 +1617,9 @@ Static Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00217">217</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00252">252</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
-<p>References <a class="el" href="DatabaseManager_8cpp_source.html#l00264">sqlCommand()</a>.</p>
+<p>References <a class="el" href="DatabaseManager_8cpp_source.html#l00299">sqlCommand()</a>.</p>
 
 </div>
 </div>
@@ -1514,11 +1672,11 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>int The result of the count </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00210">210</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00244">244</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
-<p>References <a class="el" href="DatabaseManager_8cpp_source.html#l00264">sqlCommand()</a>, and <a class="el" href="Cycle_8cpp_source.html#l00060">cryomesh::common::Cycle::toLInt()</a>.</p>
+<p>References <a class="el" href="DatabaseManager_8cpp_source.html#l00299">sqlCommand()</a>, and <a class="el" href="Cycle_8cpp_source.html#l00060">cryomesh::common::Cycle::toLInt()</a>.</p>
 
-<p>Referenced by <a class="el" href="DatabaseManager_8cpp_source.html#l00206">updateConnection()</a>, and <a class="el" href="DatabaseManager_8cpp_source.html#l00202">updateNode()</a>.</p>
+<p>Referenced by <a class="el" href="DatabaseManager_8cpp_source.html#l00240">updateConnection()</a>, and <a class="el" href="DatabaseManager_8cpp_source.html#l00236">updateNode()</a>.</p>
 
 </div>
 </div>
@@ -1564,9 +1722,9 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>int The result of the count </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00206">206</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00240">240</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
-<p>References <a class="el" href="DatabaseManager_8cpp_source.html#l00210">updateByUUID()</a>.</p>
+<p>References <a class="el" href="DatabaseManager_8cpp_source.html#l00244">updateByUUID()</a>.</p>
 
 </div>
 </div>
@@ -1612,9 +1770,9 @@ Static Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>int The result of the count </dd></dl>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00202">202</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8cpp_source.html#l00236">236</a> of file <a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a>.</p>
 
-<p>References <a class="el" href="DatabaseManager_8cpp_source.html#l00210">updateByUUID()</a>.</p>
+<p>References <a class="el" href="DatabaseManager_8cpp_source.html#l00244">updateByUUID()</a>.</p>
 
 </div>
 </div>
@@ -1632,7 +1790,7 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Default connection table format. </p>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8h_source.html#l00471">471</a> of file <a class="el" href="DatabaseManager_8h_source.html">DatabaseManager.h</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8h_source.html#l00482">482</a> of file <a class="el" href="DatabaseManager_8h_source.html">DatabaseManager.h</a>.</p>
 
 </div>
 </div>
@@ -1647,7 +1805,7 @@ Static Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="DatabaseManager_8h_source.html#l00480">480</a> of file <a class="el" href="DatabaseManager_8h_source.html">DatabaseManager.h</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8h_source.html#l00493">493</a> of file <a class="el" href="DatabaseManager_8h_source.html">DatabaseManager.h</a>.</p>
 
 </div>
 </div>
@@ -1664,7 +1822,7 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Database accessable. </p>
 
-<p>Definition at line <a class="el" href="DatabaseManager_8h_source.html#l00501">501</a> of file <a class="el" href="DatabaseManager_8h_source.html">DatabaseManager.h</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8h_source.html#l00514">514</a> of file <a class="el" href="DatabaseManager_8h_source.html">DatabaseManager.h</a>.</p>
 
 </div>
 </div>
@@ -1679,7 +1837,7 @@ Static Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="DatabaseManager_8h_source.html#l00454">454</a> of file <a class="el" href="DatabaseManager_8h_source.html">DatabaseManager.h</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8h_source.html#l00465">465</a> of file <a class="el" href="DatabaseManager_8h_source.html">DatabaseManager.h</a>.</p>
 
 </div>
 </div>
@@ -1694,7 +1852,7 @@ Static Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="DatabaseManager_8h_source.html#l00487">487</a> of file <a class="el" href="DatabaseManager_8h_source.html">DatabaseManager.h</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8h_source.html#l00500">500</a> of file <a class="el" href="DatabaseManager_8h_source.html">DatabaseManager.h</a>.</p>
 
 </div>
 </div>
@@ -1709,7 +1867,7 @@ Static Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="DatabaseManager_8h_source.html#l00494">494</a> of file <a class="el" href="DatabaseManager_8h_source.html">DatabaseManager.h</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8h_source.html#l00507">507</a> of file <a class="el" href="DatabaseManager_8h_source.html">DatabaseManager.h</a>.</p>
 
 </div>
 </div>
@@ -1724,9 +1882,9 @@ Static Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="DatabaseManager_8h_source.html#l00522">522</a> of file <a class="el" href="DatabaseManager_8h_source.html">DatabaseManager.h</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8h_source.html#l00535">535</a> of file <a class="el" href="DatabaseManager_8h_source.html">DatabaseManager.h</a>.</p>
 
-<p>Referenced by <a class="el" href="DatabaseManager_8cpp_source.html#l00320">addHistoryEntry()</a>.</p>
+<p>Referenced by <a class="el" href="DatabaseManager_8cpp_source.html#l00355">addHistoryEntry()</a>.</p>
 
 </div>
 </div>
@@ -1741,7 +1899,22 @@ Static Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="DatabaseManager_8h_source.html#l00466">466</a> of file <a class="el" href="DatabaseManager_8h_source.html">DatabaseManager.h</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8h_source.html#l00477">477</a> of file <a class="el" href="DatabaseManager_8h_source.html">DatabaseManager.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4e48c5624fa72f404f104c079e961b74"></a><!-- doxytag: member="cryomesh::manager::DatabaseManager::OUTPUT_PATTERNS_TABLE_FORMAT" ref="a4e48c5624fa72f404f104c079e961b74" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structcryomesh_1_1manager_1_1OutputPatternsTableFormat.html">OutputPatternsTableFormat</a> <a class="el" href="classcryomesh_1_1manager_1_1DatabaseManager.html#a4e48c5624fa72f404f104c079e961b74">cryomesh::manager::DatabaseManager::OUTPUT_PATTERNS_TABLE_FORMAT</a><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="DatabaseManager_8h_source.html#l00484">484</a> of file <a class="el" href="DatabaseManager_8h_source.html">DatabaseManager.h</a>.</p>
 
 </div>
 </div>
@@ -1756,9 +1929,9 @@ Static Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="DatabaseManager_8h_source.html#l00508">508</a> of file <a class="el" href="DatabaseManager_8h_source.html">DatabaseManager.h</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8h_source.html#l00521">521</a> of file <a class="el" href="DatabaseManager_8h_source.html">DatabaseManager.h</a>.</p>
 
-<p>Referenced by <a class="el" href="DatabaseManager_8cpp_source.html#l00343">printHistory()</a>.</p>
+<p>Referenced by <a class="el" href="DatabaseManager_8cpp_source.html#l00378">printHistory()</a>.</p>
 
 </div>
 </div>
@@ -1773,13 +1946,13 @@ Static Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="DatabaseManager_8h_source.html#l00515">515</a> of file <a class="el" href="DatabaseManager_8h_source.html">DatabaseManager.h</a>.</p>
+<p>Definition at line <a class="el" href="DatabaseManager_8h_source.html#l00528">528</a> of file <a class="el" href="DatabaseManager_8h_source.html">DatabaseManager.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/niall/Projects/Eclipse/cryomesh/src/manager/<a class="el" href="DatabaseManager_8h_source.html">DatabaseManager.h</a></li>
-<li>/home/niall/Projects/Eclipse/cryomesh/src/manager/<a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a></li>
+<li>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/<a class="el" href="DatabaseManager_8h_source.html">DatabaseManager.h</a></li>
+<li>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/<a class="el" href="DatabaseManager_8cpp_source.html">DatabaseManager.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -1787,7 +1960,7 @@ Static Protected Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -1796,7 +1969,7 @@ Static Protected Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:14 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

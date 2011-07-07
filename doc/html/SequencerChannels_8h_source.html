@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>cryomesh: /home/niall/Projects/Eclipse/cryomesh/src/utilities/SequencerChannels.h Source File</title>
+<title>cryomesh: /home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerChannels.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -54,11 +54,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/niall/Projects/Eclipse/cryomesh/src/utilities/SequencerChannels.h</h1>  </div>
+<h1>/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerChannels.h</h1>  </div>
 </div>
 <div class="contents">
 <a href="SequencerChannels_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
@@ -89,59 +90,54 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00026"></a>00026         <span class="comment">/*</span>
 <a name="l00027"></a>00027 <span class="comment">         * read in a set of SequenceChannels from a file</span>
 <a name="l00028"></a>00028 <span class="comment">         */</span>
-<a name="l00029"></a>00029         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a92d162cb45c613bd78174eb2aaf6fdf5">readSequences</a>(<span class="keyword">const</span> std::string &amp; ifstr);
-<a name="l00030"></a>00030         <span class="comment">/*</span>
-<a name="l00031"></a>00031 <span class="comment">         * write out a set of sequences to a file</span>
-<a name="l00032"></a>00032 <span class="comment">         */</span>
-<a name="l00033"></a>00033         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#ab976bca72ec9b8206cc4a64529606ca8">writeSequences</a>(<span class="keyword">const</span> std::string &amp; ofstr,
-<a name="l00034"></a>00034                         std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;
-<a name="l00035"></a>00035                                         <a class="code" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a>&gt; &gt; &amp; <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#ae2cf4d14dbb870e7550d9e19d75b0430">in_channels</a>,
-<a name="l00036"></a>00036                         std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;
-<a name="l00037"></a>00037                                         <a class="code" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a>&gt; &gt; &amp; <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a54e05f0bb5ea33b194d76e2214bc2e6e">out_channels</a>) <span class="keyword">const</span>;
+<a name="l00029"></a>00029         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a2099c0ea6a68acda477034425c0d599c">readSequences</a>(<span class="keyword">const</span> std::string &amp; ifstr,
+<a name="l00030"></a>00030                         <a class="code" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> &amp; in_channels,
+<a name="l00031"></a>00031                         <a class="code" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> &amp; out_channels);
+<a name="l00032"></a>00032         <span class="comment">/*</span>
+<a name="l00033"></a>00033 <span class="comment">         * write out a set of sequences to a file</span>
+<a name="l00034"></a>00034 <span class="comment">         */</span>
+<a name="l00035"></a>00035         <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#ab976bca72ec9b8206cc4a64529606ca8">writeSequences</a>(<span class="keyword">const</span> std::string &amp; ofstr,
+<a name="l00036"></a>00036                         std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt; &amp; in_channels,
+<a name="l00037"></a>00037                         std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt; &amp; out_channels) <span class="keyword">const</span>;
 <a name="l00038"></a>00038 
-<a name="l00039"></a>00039          std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;
-<a name="l00040"></a>00040                                 <a class="code" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a>&gt; &gt;  <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a33680cf1ca73271c8f697790a7442bd3">getInputChannels</a>();
-<a name="l00041"></a>00041          std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;
-<a name="l00042"></a>00042                                         <a class="code" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a>&gt; &gt;  <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#adb62068ad825e1f1adf3464745382341">getOutputChannels</a>();
-<a name="l00043"></a>00043 
-<a name="l00044"></a>00044          <a class="code" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a>  <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a5ab0a69ce23029a1332d1845b0e5adae">getInputChannelsMap</a>() <span class="keyword">const</span>;
-<a name="l00045"></a>00045          <a class="code" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a>  <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a72134dda511a2f09f613dcafa6addb52">getOutputChannelsMap</a>() <span class="keyword">const</span>;
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047         <span class="comment">//statics</span>
-<a name="l00048"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a0a94a00246a8cb5052e20b273aa63ecc">00048</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a0a94a00246a8cb5052e20b273aa63ecc">PATTERN_CHANNEL_STRING</a>;
-<a name="l00049"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#ab69f3d411d94dee36c11a2134a637462">00049</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#ab69f3d411d94dee36c11a2134a637462">PATTERN_CHANNEL_TYPE_STRING</a>;
-<a name="l00050"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#ab72f25d6750d6254128f8d886418de2d">00050</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#ab72f25d6750d6254128f8d886418de2d">PATTERN_CHANNEL_INPUT_STRING</a>;
-<a name="l00051"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#aa4d6a5f2a37779ecac5bda7fb9fd24c0">00051</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#aa4d6a5f2a37779ecac5bda7fb9fd24c0">PATTERN_CHANNEL_OUTPUT_STRING</a>;
-<a name="l00052"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a4db3a0bf3a77b8c69ba2562a7a790d74">00052</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a4db3a0bf3a77b8c69ba2562a7a790d74">PATTERN_CHANNEL_REFID_STRING</a>;
-<a name="l00053"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#adc4ea1f64be75191056ad9e7d21e72ee">00053</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#adc4ea1f64be75191056ad9e7d21e72ee">PATTERN_STRING</a>;
-<a name="l00054"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#aa231bb9f26544bb55eb4c3b7135379c4">00054</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#aa231bb9f26544bb55eb4c3b7135379c4">PATTERN_BINARY_STRING</a>;
-<a name="l00055"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a57f20daf1718ac1e76bbafb1e5df6cf0">00055</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a57f20daf1718ac1e76bbafb1e5df6cf0">PATTERN_TAG_STRING</a>;
-<a name="l00056"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a8083e83370f3791b81930be9a00273c6">00056</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a8083e83370f3791b81930be9a00273c6">VERSION_STRING</a>;
-<a name="l00057"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#ac005d08c1b3f477558ec1ea16666d3c2">00057</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#ac005d08c1b3f477558ec1ea16666d3c2">DESCRIPTION_STRING</a>;
-<a name="l00058"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a225a1bbea4f6f0301c8e12e590be275b">00058</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a225a1bbea4f6f0301c8e12e590be275b">PATTERN_CHANNEL_WIDTH_STRING</a>;
-<a name="l00059"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a00cdeb8a6d92b863acf5c0b106dc3b86">00059</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a00cdeb8a6d92b863acf5c0b106dc3b86">PATTERN_CHANNEL_DEPTH_STRING</a>;
-<a name="l00060"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a9116cb771e1472d247d174cd3f56cbf7">00060</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a9116cb771e1472d247d174cd3f56cbf7">PATTERN_CHANNEL_NOTE_STRING</a>;
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062 <span class="keyword">protected</span>:
-<a name="l00063"></a>00063         <a class="code" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#aa0e31391cd42ff1a758d70b2b1c98845">getChannelMap</a>(<span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;
-<a name="l00064"></a>00064                                         <a class="code" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a>&gt; &gt; &amp; patchans) <span class="keyword">const</span>;
-<a name="l00065"></a>00065 <span class="keyword">private</span>:
-<a name="l00066"></a>00066         std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;
-<a name="l00067"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#ae2cf4d14dbb870e7550d9e19d75b0430">00067</a>                         <a class="code" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a>&gt; &gt; <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#ae2cf4d14dbb870e7550d9e19d75b0430">in_channels</a>;
-<a name="l00068"></a>00068         std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;
-<a name="l00069"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a54e05f0bb5ea33b194d76e2214bc2e6e">00069</a>                         <a class="code" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a>&gt; &gt; <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a54e05f0bb5ea33b194d76e2214bc2e6e">out_channels</a>;
-<a name="l00070"></a>00070         std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;
-<a name="l00071"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a058f1f40c295b40169c5586f029cf448">00071</a>                                 <a class="code" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a>&gt; &gt; <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a058f1f40c295b40169c5586f029cf448">in_channels_filtered</a>;
-<a name="l00072"></a>00072                 std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;
-<a name="l00073"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a8e78ef3f700cf2cdda54918aba64d21e">00073</a>                                 <a class="code" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a>&gt; &gt; <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a8e78ef3f700cf2cdda54918aba64d21e">out_channels_filtered</a>;
-<a name="l00074"></a>00074 };
+<a name="l00046"></a>00046         <span class="comment">//statics</span>
+<a name="l00047"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a0a94a00246a8cb5052e20b273aa63ecc">00047</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a0a94a00246a8cb5052e20b273aa63ecc" title="std::map&amp;lt;boost::uuids::uuid, boost::shared_ptr&amp;lt;state::PatternChannel&amp;gt; &amp;gt; getInputChannels(...">PATTERN_CHANNEL_STRING</a>;
+<a name="l00048"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#ab69f3d411d94dee36c11a2134a637462">00048</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#ab69f3d411d94dee36c11a2134a637462">PATTERN_CHANNEL_TYPE_STRING</a>;
+<a name="l00049"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#ab72f25d6750d6254128f8d886418de2d">00049</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#ab72f25d6750d6254128f8d886418de2d">PATTERN_CHANNEL_INPUT_STRING</a>;
+<a name="l00050"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#aa4d6a5f2a37779ecac5bda7fb9fd24c0">00050</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#aa4d6a5f2a37779ecac5bda7fb9fd24c0">PATTERN_CHANNEL_OUTPUT_STRING</a>;
+<a name="l00051"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a4db3a0bf3a77b8c69ba2562a7a790d74">00051</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a4db3a0bf3a77b8c69ba2562a7a790d74">PATTERN_CHANNEL_REFID_STRING</a>;
+<a name="l00052"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#adc4ea1f64be75191056ad9e7d21e72ee">00052</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#adc4ea1f64be75191056ad9e7d21e72ee">PATTERN_STRING</a>;
+<a name="l00053"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#aa231bb9f26544bb55eb4c3b7135379c4">00053</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#aa231bb9f26544bb55eb4c3b7135379c4">PATTERN_BINARY_STRING</a>;
+<a name="l00054"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a57f20daf1718ac1e76bbafb1e5df6cf0">00054</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a57f20daf1718ac1e76bbafb1e5df6cf0">PATTERN_TAG_STRING</a>;
+<a name="l00055"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a8083e83370f3791b81930be9a00273c6">00055</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a8083e83370f3791b81930be9a00273c6">VERSION_STRING</a>;
+<a name="l00056"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#ac005d08c1b3f477558ec1ea16666d3c2">00056</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#ac005d08c1b3f477558ec1ea16666d3c2">DESCRIPTION_STRING</a>;
+<a name="l00057"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a225a1bbea4f6f0301c8e12e590be275b">00057</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a225a1bbea4f6f0301c8e12e590be275b">PATTERN_CHANNEL_WIDTH_STRING</a>;
+<a name="l00058"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a00cdeb8a6d92b863acf5c0b106dc3b86">00058</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a00cdeb8a6d92b863acf5c0b106dc3b86">PATTERN_CHANNEL_DEPTH_STRING</a>;
+<a name="l00059"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a9116cb771e1472d247d174cd3f56cbf7">00059</a>         <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a9116cb771e1472d247d174cd3f56cbf7">PATTERN_CHANNEL_NOTE_STRING</a>;
+<a name="l00060"></a>00060 
+<a name="l00072"></a>00072         <span class="comment">/*</span>
+<a name="l00073"></a>00073 <span class="comment">        friend std::ostream&amp; operator&lt;&lt;(std::ostream &amp; os, const SequencerChannels &amp; obj);</span>
+<a name="l00074"></a>00074 <span class="comment">         */</span>
 <a name="l00075"></a>00075 
-<a name="l00076"></a>00076 }
-<a name="l00077"></a>00077 
-<a name="l00078"></a>00078 }
-<a name="l00079"></a>00079 
-<a name="l00080"></a>00080 
-<a name="l00081"></a>00081 <span class="preprocessor">#endif </span><span class="comment">/* SEQUENCERCHANNELS_H_ */</span>
+<a name="l00076"></a>00076 <span class="keyword">protected</span>:
+<a name="l00077"></a>00077         <span class="comment">/*</span>
+<a name="l00078"></a>00078 <span class="comment">        state::PatternChannelMap getChannelMap(</span>
+<a name="l00079"></a>00079 <span class="comment">                        const std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt; &amp; patchans) const;</span>
+<a name="l00080"></a>00080 <span class="comment">        */</span>
+<a name="l00081"></a>00081 <span class="keyword">private</span>:
+<a name="l00082"></a>00082         <span class="comment">//std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;</span>
+<a name="l00083"></a>00083         <span class="comment">//              state::PatternChannel&gt; &gt; in_channels;</span>
+<a name="l00084"></a>00084         <span class="comment">//std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;</span>
+<a name="l00085"></a>00085         <span class="comment">//              state::PatternChannel&gt; &gt; out_channels;</span>
+<a name="l00086"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a5c846c9a395100a4dae3dfb96e0b584c">00086</a>         std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt; <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a5c846c9a395100a4dae3dfb96e0b584c" title="To stream operator.">in_channels_filtered</a>;
+<a name="l00087"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a351a6f64e6aed5cb76304f98d8a0ebd8">00087</a>         std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt; <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a351a6f64e6aed5cb76304f98d8a0ebd8">out_channels_filtered</a>;
+<a name="l00088"></a>00088 };
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090 }
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092 }
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094 <span class="preprocessor">#endif </span><span class="comment">/* SEQUENCERCHANNELS_H_ */</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -149,7 +145,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -158,7 +154,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:14 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

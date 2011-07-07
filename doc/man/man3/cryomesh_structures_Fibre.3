@@ -1,4 +1,4 @@
-.TH "cryomesh::structures::Fibre" 3 "Fri Apr 1 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::structures::Fibre" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,7 +15,7 @@ A \fBFibre\fP is a collection of connections that connect one structure to anoth
 
 .in +1c
 .ti -1c
-.RI "enum \fBClusterConnectionType\fP { \fBNullCluster\fP, \fBInputCluster\fP, \fBOutputCluster\fP, \fBLoopbackCluster\fP }"
+.RI "enum \fBClusterConnectionType\fP { \fBNullCluster\fP =  1, \fBInputCluster\fP = 2, \fBOutputCluster\fP = 4, \fBLoopbackCluster\fP = 8 }"
 .br
 .RI "\fIEnum representing the relation of a cluster to this fibre. \fP"
 .ti -1c
@@ -71,11 +71,19 @@ A \fBFibre\fP is a collection of connections that connect one structure to anoth
 .br
 .RI "\fIGet the connections. \fP"
 .ti -1c
+.RI "\fBcomponents::ConnectionMap\fP & \fBgetMutableConnections\fP ()"
+.br
+.RI "\fIGet the mutable connections. \fP"
+.ti -1c
 .RI "const \fBFibreType\fP & \fBgetType\fP () const "
 .br
 .RI "\fIGet the type of the fibre. \fP"
 .ti -1c
-.RI "const \fBClusterConnectionType\fP \fBisConnected\fP (const boost::shared_ptr< \fBCluster\fP > &cluster) const "
+.RI "const std::pair< int, int > \fBcountConnections\fP (const std::map< boost::uuids::uuid, boost::shared_ptr< \fBCluster\fP > > &all_clusters) const "
+.br
+.RI "\fICount all connections of this fibre to a group of clusters. \fP"
+.ti -1c
+.RI "int \fBisConnected\fP (const boost::shared_ptr< \fBCluster\fP > &cluster) const "
 .br
 .RI "\fIReturn type of connection to cluster specified, null if none. \fP"
 .ti -1c
@@ -83,9 +91,44 @@ A \fBFibre\fP is a collection of connections that connect one structure to anoth
 .br
 .RI "\fIGet width (number of connections) of fibre. \fP"
 .ti -1c
+.RI "boost::shared_ptr< \fBstate::Pattern\fP > \fBgetNodesPattern\fP (const std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Node\fP > > all_nodes) const "
+.br
+.RI "\fIGet current pattern for firing state of nodes. \fP"
+.ti -1c
 .RI "boost::shared_ptr< \fBstate::Pattern\fP > \fBgetInputNodesPattern\fP () const "
 .br
 .RI "\fIGet current pattern for firing state of input nodes to the fibre. \fP"
+.ti -1c
+.RI "boost::shared_ptr< \fBstate::Pattern\fP > \fBgetOutputNodesPattern\fP () const "
+.br
+.RI "\fIGet current pattern for firing state of output nodes to the fibre. \fP"
+.ti -1c
+.RI "const std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Node\fP > > \fBgetNodes\fP (const \fBClusterConnectionType\fP type) const "
+.br
+.RI "\fIGet the map of nodes to this fibre. \fP"
+.ti -1c
+.RI "const std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Node\fP > > \fBgetInputNodes\fP () const "
+.br
+.RI "\fIGet the map of input nodes to this fibre. \fP"
+.ti -1c
+.RI "const std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Node\fP > > \fBgetOutputNodes\fP () const "
+.br
+.RI "\fIGet the map of output nodes to this fibre. \fP"
+.ti -1c
+.RI "void \fBforceFireInputNodes\fP (const \fBstate::Pattern\fP &pattern)"
+.br
+.RI "\fIForce fire input nodes using a pattern. \fP"
+.ti -1c
+.RI "void \fBforceFireOutputNodes\fP (const \fBstate::Pattern\fP &pattern)"
+.br
+.RI "\fIForce fire output nodes using a pattern. \fP"
+.ti -1c
+.RI "void \fBforceFireNodes\fP (const \fBstate::Pattern\fP &pattern, std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Node\fP > > nodes)"
+.br
+.RI "\fIForce fire nodes using a pattern. \fP"
+.ti -1c
+.RI "virtual void \fBenableDebug\fP (bool b)"
+.br
 .in -1c
 .SS "Protected Member Functions"
 
@@ -134,7 +177,7 @@ A \fBFibre\fP is a collection of connections that connect one structure to anoth
 
 For example, two clusters. 
 .PP
-Definition at line 26 of file Fibre.h.
+Definition at line 27 of file Fibre.h.
 .SH "Member Enumeration Documentation"
 .PP 
 .SS "enum \fBcryomesh::structures::Fibre::ClusterConnectionType\fP"
@@ -153,7 +196,7 @@ Enum representing the relation of a cluster to this fibre.
 \fB\fILoopbackCluster \fP\fP
 
 .PP
-Definition at line 32 of file Fibre.h.
+Definition at line 33 of file Fibre.h.
 .SS "enum \fBcryomesh::structures::Fibre::FibreType\fP"
 .PP
 Enum representing the type of this \fBFibre\fP connection. The type of this \fBFibre\fP. 
@@ -172,7 +215,7 @@ Enum representing the type of this \fBFibre\fP connection. The type of this \fBF
 \fB\fILoopbackFibre \fP\fP
 
 .PP
-Definition at line 39 of file Fibre.h.
+Definition at line 42 of file Fibre.h.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "cryomesh::structures::Fibre::Fibre (boost::shared_ptr< \fBCluster\fP >inputCluster, boost::shared_ptr< \fBCluster\fP >outputCluster, intwidth)"
@@ -232,11 +275,28 @@ Connect all the connections in this \fBFibre\fP to a cluster of a specified type
 .PP
 
 .PP
-Definition at line 211 of file Fibre.cpp.
+Definition at line 262 of file Fibre.cpp.
 .PP
 References cryomesh::common::Connector< U, T >::connectInput(), connections, connector, cryomesh::common::Connector< U, T >::connectOutput(), InputCluster, and OutputCluster.
 .PP
 Referenced by Fibre().
+.SS "const std::pair< int, int > cryomesh::structures::Fibre::countConnections (const std::map< boost::uuids::uuid, boost::shared_ptr< \fBCluster\fP > > &all_clusters) const"
+.PP
+Count all connections of this fibre to a group of clusters. \fBParameters:\fP
+.RS 4
+\fIstd::map<boost::uuids::uuid,boost::shared_ptr<Cluster>\fP > \fBCluster\fP collection to search for connections to this fibre
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::pair<int, int> Pair of input/output connection count to this fibre within the supplied cluster collection 
+.RE
+.PP
+
+.PP
+Definition at line 150 of file Fibre.cpp.
+.PP
+References getConnector(), cryomesh::common::Connector< U, T >::getInputs(), and cryomesh::common::Connector< U, T >::getOutputs().
 .SS "void cryomesh::structures::Fibre::createConnections (intnumber)\fC [protected, virtual]\fP"
 .PP
 Reset and create a number of connections in this \fBFibre\fP. \fBParameters:\fP
@@ -246,7 +306,7 @@ Reset and create a number of connections in this \fBFibre\fP. \fBParameters:\fP
 .PP
 
 .PP
-Definition at line 181 of file Fibre.cpp.
+Definition at line 232 of file Fibre.cpp.
 .PP
 References connections, and disconnectAllConnections().
 .PP
@@ -255,16 +315,59 @@ Referenced by Fibre().
 .PP
 Disconnect all the connections from clusters. 
 .PP
-Definition at line 193 of file Fibre.cpp.
+Definition at line 244 of file Fibre.cpp.
 .PP
 References connections, connector, cryomesh::common::Connector< U, T >::disconnectAllInputs(), and cryomesh::common::Connector< U, T >::disconnectAllOutputs().
 .PP
 Referenced by createConnections(), and ~Fibre().
+.SS "void cryomesh::structures::Fibre::enableDebug (boolb)\fC [virtual]\fP"
+.PP
+Definition at line 447 of file Fibre.cpp.
+.SS "void cryomesh::structures::Fibre::forceFireInputNodes (const \fBstate::Pattern\fP &pattern)"
+.PP
+Force fire input nodes using a pattern. \fBParameters:\fP
+.RS 4
+\fIPattern\fP The pattern to fire 
+.RE
+.PP
+
+.PP
+Definition at line 408 of file Fibre.cpp.
+.PP
+References forceFireNodes(), and getInputNodes().
+.SS "void cryomesh::structures::Fibre::forceFireNodes (const \fBstate::Pattern\fP &pattern, std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Node\fP > >nodes)"
+.PP
+Force fire nodes using a pattern. \fBParameters:\fP
+.RS 4
+\fIPattern\fP The pattern to fire 
+.br
+\fIstd::map<boost::uuids::uuid,boost::shared_ptr<components::Node>\fP > The nodes to fire the pattern on 
+.RE
+.PP
+
+.PP
+Definition at line 416 of file Fibre.cpp.
+.PP
+References cryomesh::state::Pattern::getPattern(), and cryomesh::state::Pattern::getSize().
+.PP
+Referenced by forceFireInputNodes(), and forceFireOutputNodes().
+.SS "void cryomesh::structures::Fibre::forceFireOutputNodes (const \fBstate::Pattern\fP &pattern)"
+.PP
+Force fire output nodes using a pattern. \fBParameters:\fP
+.RS 4
+\fIPattern\fP The pattern to fire 
+.RE
+.PP
+
+.PP
+Definition at line 412 of file Fibre.cpp.
+.PP
+References forceFireNodes(), and getOutputNodes().
 .SS "const \fBcomponents::ConnectionMap\fP & cryomesh::structures::Fibre::getConnections () const"
 .PP
 Get the connections. \fBReturns:\fP
 .RS 4
-const \fBcomponents::ConnectionMap\fP & The connection map for this \fBFibre\fP 
+\fBcomponents::ConnectionMap\fP The connection map for this \fBFibre\fP 
 .RE
 .PP
 
@@ -287,7 +390,21 @@ Definition at line 123 of file Fibre.cpp.
 .PP
 References connector.
 .PP
-Referenced by isConnected().
+Referenced by countConnections(), and isConnected().
+.SS "const std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Node\fP > > cryomesh::structures::Fibre::getInputNodes () const"
+.PP
+Get the map of input nodes to this fibre. \fBReturns:\fP
+.RS 4
+std::map<boost::uuid, boost::shared_ptr< components::Node > > The map of input nodes 
+.RE
+.PP
+
+.PP
+Definition at line 342 of file Fibre.cpp.
+.PP
+References getNodes(), and InputCluster.
+.PP
+Referenced by forceFireInputNodes(), and getInputNodesPattern().
 .SS "boost::shared_ptr< \fBstate::Pattern\fP > cryomesh::structures::Fibre::getInputNodesPattern () const"
 .PP
 Get current pattern for firing state of input nodes to the fibre. \fBReturns:\fP
@@ -297,14 +414,26 @@ boost::shared_ptr< state::Pattern > The current firing pattern of the input node
 .PP
 
 .PP
-Definition at line 254 of file Fibre.cpp.
+Definition at line 333 of file Fibre.cpp.
 .PP
-References connections, and cryomesh::components::Node::Positive.
+References getInputNodes(), and getNodesPattern().
+.SS "\fBcomponents::ConnectionMap\fP & cryomesh::structures::Fibre::getMutableConnections ()"
+.PP
+Get the mutable connections. \fBReturns:\fP
+.RS 4
+\fBcomponents::ConnectionMap\fP The mutable connection map for this \fBFibre\fP 
+.RE
+.PP
+
+.PP
+Definition at line 134 of file Fibre.cpp.
+.PP
+References connections.
 .SS "\fBcommon::Connector\fP< \fBFibre\fP, \fBCluster\fP > & cryomesh::structures::Fibre::getMutableConnector ()"
 .PP
 Get the mutable connector. \fBReturns:\fP
 .RS 4
-common::Connector<Fibre, Cluster> & The connector object 
+common::Connector<Fibre, Cluster> The connector object 
 .RE
 .PP
 
@@ -312,6 +441,72 @@ common::Connector<Fibre, Cluster> & The connector object
 Definition at line 127 of file Fibre.cpp.
 .PP
 References connector.
+.SS "const std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Node\fP > > cryomesh::structures::Fibre::getNodes (const \fBClusterConnectionType\fPtype) const"
+.PP
+Get the map of nodes to this fibre. \fBParameters:\fP
+.RS 4
+\fIClusterConnectionType\fP The cluster to get the nodes from, eg, InputCluster means get the input nodes
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::map<boost::uuid, boost::shared_ptr< components::Node > > The map of nodes 
+.RE
+.PP
+
+.PP
+Definition at line 350 of file Fibre.cpp.
+.PP
+References connections, InputCluster, and OutputCluster.
+.PP
+Referenced by getInputNodes(), and getOutputNodes().
+.SS "boost::shared_ptr< \fBstate::Pattern\fP > cryomesh::structures::Fibre::getNodesPattern (const std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Node\fP > >all_nodes) const"
+.PP
+Get current pattern for firing state of nodes. \fBParameters:\fP
+.RS 4
+\fIconst\fP std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > The nodes to check for firing pattern
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+boost::shared_ptr< state::Pattern > The current firing pattern of the input nodes to the fibre 
+.RE
+.PP
+
+.PP
+Definition at line 304 of file Fibre.cpp.
+.PP
+References cryomesh::components::Node::Positive.
+.PP
+Referenced by getInputNodesPattern(), and getOutputNodesPattern().
+.SS "const std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Node\fP > > cryomesh::structures::Fibre::getOutputNodes () const"
+.PP
+Get the map of output nodes to this fibre. \fBReturns:\fP
+.RS 4
+std::map<boost::uuid, boost::shared_ptr< components::Node > > The map of output nodes 
+.RE
+.PP
+
+.PP
+Definition at line 346 of file Fibre.cpp.
+.PP
+References getNodes(), and OutputCluster.
+.PP
+Referenced by forceFireOutputNodes(), and getOutputNodesPattern().
+.SS "boost::shared_ptr< \fBstate::Pattern\fP > cryomesh::structures::Fibre::getOutputNodesPattern () const"
+.PP
+Get current pattern for firing state of output nodes to the fibre. \fBReturns:\fP
+.RS 4
+boost::shared_ptr< state::Pattern > The current firing pattern of the output nodes to the fibre 
+.RE
+.PP
+
+.PP
+Definition at line 337 of file Fibre.cpp.
+.PP
+References getNodesPattern(), and getOutputNodes().
+.PP
+Referenced by cryomesh::structures::operator<<().
 .SS "const \fBFibre::FibreType\fP & cryomesh::structures::Fibre::getType () const"
 .PP
 Get the type of the fibre. \fBReturns:\fP
@@ -321,7 +516,7 @@ FibreType The type of the fibre connection
 .PP
 
 .PP
-Definition at line 134 of file Fibre.cpp.
+Definition at line 138 of file Fibre.cpp.
 .PP
 References fibreType.
 .PP
@@ -335,12 +530,12 @@ unsigned int Width of fibre
 .PP
 
 .PP
-Definition at line 142 of file Fibre.cpp.
+Definition at line 146 of file Fibre.cpp.
 .PP
 References getConnections().
 .PP
 Referenced by trigger().
-.SS "const \fBFibre::ClusterConnectionType\fP cryomesh::structures::Fibre::isConnected (const boost::shared_ptr< \fBCluster\fP > &cluster) const"
+.SS "int cryomesh::structures::Fibre::isConnected (const boost::shared_ptr< \fBCluster\fP > &cluster) const"
 .PP
 Return type of connection to cluster specified, null if none. \fBParameters:\fP
 .RS 4
@@ -354,9 +549,9 @@ const ClusterConnectionType & Connection type to cluster, Null if none
 .PP
 
 .PP
-Definition at line 146 of file Fibre.cpp.
+Definition at line 191 of file Fibre.cpp.
 .PP
-References getConnector(), cryomesh::common::Connector< U, T >::getInputs(), cryomesh::common::Connector< U, T >::getOutputs(), InputCluster, LoopbackCluster, NullCluster, and OutputCluster.
+References getConnector(), cryomesh::common::Connector< U, T >::getInputs(), cryomesh::common::Connector< U, T >::getOutputs(), InputCluster, LoopbackCluster, and OutputCluster.
 .SS "void cryomesh::structures::Fibre::setType (const \fBFibreType\fP &tp)\fC [protected, virtual]\fP"
 .PP
 Set the type of this fibre. \fBParameters:\fP
@@ -366,35 +561,11 @@ Set the type of this fibre. \fBParameters:\fP
 .PP
 
 .PP
-Definition at line 138 of file Fibre.cpp.
+Definition at line 142 of file Fibre.cpp.
 .PP
 References fibreType.
 .PP
 Referenced by Fibre().
-.SS "void cryomesh::structures::Fibre::trigger (doublepercentage)"
-.PP
-Trigger a random pattern with percentage of the connections to fire. \fBParameters:\fP
-.RS 4
-\fIdouble\fP Fraction of connection to trigger randomly 
-.RE
-.PP
-
-.PP
-Definition at line 63 of file Fibre.cpp.
-.PP
-References cryomesh::state::Pattern::getRandom(), getWidth(), and trigger().
-.SS "void cryomesh::structures::Fibre::trigger (std::vector< boost::shared_ptr< \fBcomponents::Impulse\fP > > &triggerImpulses)\fC [virtual]\fP"
-.PP
-Send impulses to the connections. \fBParameters:\fP
-.RS 4
-\fIconst\fP std::vector<boost::shared_ptr< components::Impulse > > & triggerImpulses The impulses to send to connections 
-.RE
-.PP
-
-.PP
-Definition at line 90 of file Fibre.cpp.
-.PP
-References connections.
 .SS "void cryomesh::structures::Fibre::trigger (const \fBstate::Pattern\fP &pattern)\fC [virtual]\fP"
 .PP
 Send impulses to the connections based on a pattern. \fBParameters:\fP
@@ -407,6 +578,18 @@ Send impulses to the connections based on a pattern. \fBParameters:\fP
 Definition at line 69 of file Fibre.cpp.
 .PP
 References getConnections(), cryomesh::state::Pattern::getPattern(), cryomesh::components::Impulse::getTriggerImpulse(), and trigger().
+.SS "void cryomesh::structures::Fibre::trigger (std::vector< boost::shared_ptr< \fBcomponents::Impulse\fP > > &triggerImpulses)\fC [virtual]\fP"
+.PP
+Send impulses to the connections. \fBParameters:\fP
+.RS 4
+\fIconst\fP std::vector<boost::shared_ptr< components::Impulse > > & triggerImpulses The impulses to send to connections 
+.RE
+.PP
+
+.PP
+Definition at line 90 of file Fibre.cpp.
+.PP
+References connections.
 .SS "void cryomesh::structures::Fibre::trigger ()\fC [virtual]\fP"
 .PP
 Send impulses to the connections based on a complete trigger of all of them. 
@@ -416,6 +599,18 @@ Definition at line 54 of file Fibre.cpp.
 References getConnections(), and cryomesh::components::Impulse::getTriggerImpulse().
 .PP
 Referenced by trigger().
+.SS "void cryomesh::structures::Fibre::trigger (doublepercentage)"
+.PP
+Trigger a random pattern with percentage of the connections to fire. \fBParameters:\fP
+.RS 4
+\fIdouble\fP Fraction of connection to trigger randomly 
+.RE
+.PP
+
+.PP
+Definition at line 63 of file Fibre.cpp.
+.PP
+References cryomesh::state::Pattern::getRandom(), getWidth(), and trigger().
 .SS "void cryomesh::structures::Fibre::update ()\fC [virtual]\fP"
 .PP
 Update all elements. 
@@ -446,22 +641,22 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 300 of file Fibre.cpp.
+Definition at line 451 of file Fibre.cpp.
 .SH "Member Data Documentation"
 .PP 
 .SS "\fBcomponents::ConnectionMap\fP \fBcryomesh::structures::Fibre::connections\fP\fC [private]\fP"
 .PP
-Definition at line 237 of file Fibre.h.
+Definition at line 334 of file Fibre.h.
 .PP
-Referenced by connectAllConnections(), createConnections(), disconnectAllConnections(), getConnections(), getInputNodesPattern(), trigger(), and update().
+Referenced by connectAllConnections(), createConnections(), disconnectAllConnections(), getConnections(), getMutableConnections(), getNodes(), trigger(), and update().
 .SS "\fBcommon::Connector\fP<\fBFibre\fP, \fBCluster\fP> \fBcryomesh::structures::Fibre::connector\fP\fC [private]\fP"
 .PP
-Definition at line 230 of file Fibre.h.
+Definition at line 327 of file Fibre.h.
 .PP
 Referenced by connectAllConnections(), disconnectAllConnections(), getConnector(), and getMutableConnector().
 .SS "\fBFibreType\fP \fBcryomesh::structures::Fibre::fibreType\fP\fC [private]\fP"
 .PP
-Definition at line 244 of file Fibre.h.
+Definition at line 341 of file Fibre.h.
 .PP
 Referenced by getType(), and setType().
 

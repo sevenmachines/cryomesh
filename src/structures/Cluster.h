@@ -72,7 +72,7 @@ public:
 	void update();
 	void updateEnergy(double total_energy);
 
-	void warpMesh();
+	void warpNodes();
 
 	/**
 	 * Create a number of nodes in the cluster
@@ -175,7 +175,9 @@ public:
 	const boost::shared_ptr<NodeMesh> getMesh() const {
 		return mesh;
 	}
-
+	boost::shared_ptr<NodeMesh> getMutableMesh() {
+		return mesh;
+	}
 	virtual void enableDebug(bool b);
 	/**
 	 * To stream operator

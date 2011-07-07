@@ -71,7 +71,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <h1>cryomesh::utilities::SequencerChannels Class Reference</h1>  </div>
@@ -86,19 +85,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a4658cf722fba08c77ed35501fa21c82e">SequencerChannels</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#af20240b8b2119bf87b578243826d2926">~SequencerChannels</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a92d162cb45c613bd78174eb2aaf6fdf5">readSequences</a> (const std::string &amp;ifstr)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#ab976bca72ec9b8206cc4a64529606ca8">writeSequences</a> (const std::string &amp;ofstr, std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a> &gt; &gt; &amp;<a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#ae2cf4d14dbb870e7550d9e19d75b0430">in_channels</a>, std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a> &gt; &gt; &amp;<a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a54e05f0bb5ea33b194d76e2214bc2e6e">out_channels</a>) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::map&lt; boost::uuids::uuid, <br class="typebreak"/>
-boost::shared_ptr<br class="typebreak"/>
-&lt; <a class="el" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a33680cf1ca73271c8f697790a7442bd3">getInputChannels</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::map&lt; boost::uuids::uuid, <br class="typebreak"/>
-boost::shared_ptr<br class="typebreak"/>
-&lt; <a class="el" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#adb62068ad825e1f1adf3464745382341">getOutputChannels</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a5ab0a69ce23029a1332d1845b0e5adae">getInputChannelsMap</a> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a72134dda511a2f09f613dcafa6addb52">getOutputChannelsMap</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a2099c0ea6a68acda477034425c0d599c">readSequences</a> (const std::string &amp;ifstr, <a class="el" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> &amp;in_channels, <a class="el" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> &amp;out_channels)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#ab976bca72ec9b8206cc4a64529606ca8">writeSequences</a> (const std::string &amp;ofstr, std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a> &gt; &gt; &amp;in_channels, std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a> &gt; &gt; &amp;out_channels) const </td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a0a94a00246a8cb5052e20b273aa63ecc">PATTERN_CHANNEL_STRING</a> = &quot;PatternChannel&quot;</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt; getInputChannels() const; std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt; getOutputChannels() const;  <a href="#a0a94a00246a8cb5052e20b273aa63ecc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#ab69f3d411d94dee36c11a2134a637462">PATTERN_CHANNEL_TYPE_STRING</a> = &quot;Type&quot;</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#ab72f25d6750d6254128f8d886418de2d">PATTERN_CHANNEL_INPUT_STRING</a> = &quot;Input&quot;</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#aa4d6a5f2a37779ecac5bda7fb9fd24c0">PATTERN_CHANNEL_OUTPUT_STRING</a> = &quot;Output&quot;</td></tr>
@@ -111,23 +103,15 @@ Static Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a225a1bbea4f6f0301c8e12e590be275b">PATTERN_CHANNEL_WIDTH_STRING</a> = &quot;Width&quot;</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a00cdeb8a6d92b863acf5c0b106dc3b86">PATTERN_CHANNEL_DEPTH_STRING</a> = &quot;Depth&quot;</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a9116cb771e1472d247d174cd3f56cbf7">PATTERN_CHANNEL_NOTE_STRING</a> = &quot;Note&quot;</td></tr>
-<tr><td colspan="2"><h2><a name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#aa0e31391cd42ff1a758d70b2b1c98845">getChannelMap</a> (const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a> &gt; &gt; &amp;patchans) const </td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::map&lt; boost::uuids::uuid, <br class="typebreak"/>
 boost::shared_ptr<br class="typebreak"/>
-&lt; <a class="el" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#ae2cf4d14dbb870e7550d9e19d75b0430">in_channels</a></td></tr>
+&lt; <a class="el" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a5c846c9a395100a4dae3dfb96e0b584c">in_channels_filtered</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">To stream operator.  <a href="#a5c846c9a395100a4dae3dfb96e0b584c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::map&lt; boost::uuids::uuid, <br class="typebreak"/>
 boost::shared_ptr<br class="typebreak"/>
-&lt; <a class="el" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a54e05f0bb5ea33b194d76e2214bc2e6e">out_channels</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::map&lt; boost::uuids::uuid, <br class="typebreak"/>
-boost::shared_ptr<br class="typebreak"/>
-&lt; <a class="el" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a058f1f40c295b40169c5586f029cf448">in_channels_filtered</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::map&lt; boost::uuids::uuid, <br class="typebreak"/>
-boost::shared_ptr<br class="typebreak"/>
-&lt; <a class="el" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a8e78ef3f700cf2cdda54918aba64d21e">out_channels_filtered</a></td></tr>
+&lt; <a class="el" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a351a6f64e6aed5cb76304f98d8a0ebd8">out_channels_filtered</a></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <div class="textblock">
@@ -170,98 +154,7 @@ boost::shared_ptr<br class="typebreak"/>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="aa0e31391cd42ff1a758d70b2b1c98845"></a><!-- doxytag: member="cryomesh::utilities::SequencerChannels::getChannelMap" ref="aa0e31391cd42ff1a758d70b2b1c98845" args="(const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; state::PatternChannel &gt; &gt; &amp;patchans) const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> cryomesh::utilities::SequencerChannels::getChannelMap </td>
-          <td>(</td>
-          <td class="paramtype">const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a> &gt; &gt; &amp;&#160;</td>
-          <td class="paramname"><em>patchans</em></td><td>)</td>
-          <td> const<code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="SequencerChannels_8cpp_source.html#l00140">140</a> of file <a class="el" href="SequencerChannels_8cpp_source.html">SequencerChannels.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a33680cf1ca73271c8f697790a7442bd3"></a><!-- doxytag: member="cryomesh::utilities::SequencerChannels::getInputChannels" ref="a33680cf1ca73271c8f697790a7442bd3" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a> &gt; &gt; cryomesh::utilities::SequencerChannels::getInputChannels </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="SequencerChannels_8cpp_source.html#l00126">126</a> of file <a class="el" href="SequencerChannels_8cpp_source.html">SequencerChannels.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a5ab0a69ce23029a1332d1845b0e5adae"></a><!-- doxytag: member="cryomesh::utilities::SequencerChannels::getInputChannelsMap" ref="a5ab0a69ce23029a1332d1845b0e5adae" args="() const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> cryomesh::utilities::SequencerChannels::getInputChannelsMap </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="SequencerChannels_8cpp_source.html#l00133">133</a> of file <a class="el" href="SequencerChannels_8cpp_source.html">SequencerChannels.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="adb62068ad825e1f1adf3464745382341"></a><!-- doxytag: member="cryomesh::utilities::SequencerChannels::getOutputChannels" ref="adb62068ad825e1f1adf3464745382341" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a> &gt; &gt; cryomesh::utilities::SequencerChannels::getOutputChannels </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="SequencerChannels_8cpp_source.html#l00129">129</a> of file <a class="el" href="SequencerChannels_8cpp_source.html">SequencerChannels.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a72134dda511a2f09f613dcafa6addb52"></a><!-- doxytag: member="cryomesh::utilities::SequencerChannels::getOutputChannelsMap" ref="a72134dda511a2f09f613dcafa6addb52" args="() const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> cryomesh::utilities::SequencerChannels::getOutputChannelsMap </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="SequencerChannels_8cpp_source.html#l00136">136</a> of file <a class="el" href="SequencerChannels_8cpp_source.html">SequencerChannels.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a92d162cb45c613bd78174eb2aaf6fdf5"></a><!-- doxytag: member="cryomesh::utilities::SequencerChannels::readSequences" ref="a92d162cb45c613bd78174eb2aaf6fdf5" args="(const std::string &amp;ifstr)" -->
+<a class="anchor" id="a2099c0ea6a68acda477034425c0d599c"></a><!-- doxytag: member="cryomesh::utilities::SequencerChannels::readSequences" ref="a2099c0ea6a68acda477034425c0d599c" args="(const std::string &amp;ifstr, state::PatternChannelMap &amp;in_channels, state::PatternChannelMap &amp;out_channels)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -269,14 +162,32 @@ boost::shared_ptr<br class="typebreak"/>
           <td class="memname">void cryomesh::utilities::SequencerChannels::readSequences </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>ifstr</em></td><td>)</td>
+          <td class="paramname"><em>ifstr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> &amp;&#160;</td>
+          <td class="paramname"><em>in_channels</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> &amp;&#160;</td>
+          <td class="paramname"><em>out_channels</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="SequencerChannels_8cpp_source.html#l00040">40</a> of file <a class="el" href="SequencerChannels_8cpp_source.html">SequencerChannels.cpp</a>.</p>
+
+<p>References <a class="el" href="SequencerGeneric_8h_source.html#l00020">cryomesh::utilities::SequencerGeneric::NodeEntry::childNodes</a>, <a class="el" href="SequencerGeneric_8cpp_source.html#l00123">cryomesh::utilities::SequencerGeneric::getNodeEntries()</a>, <a class="el" href="SequencerGeneric_8h_source.html#l00018">cryomesh::utilities::SequencerGeneric::NodeEntry::info</a>, <a class="el" href="PatternChannel_8h_source.html#l00031">cryomesh::state::PatternChannel::Input</a>, <a class="el" href="SequencerGeneric_8h_source.html#l00016">cryomesh::utilities::SequencerGeneric::NodeEntry::name</a>, and <a class="el" href="PatternChannel_8h_source.html#l00031">cryomesh::state::PatternChannel::Output</a>.</p>
 
 </div>
 </div>
@@ -325,67 +236,47 @@ boost::shared_ptr<br class="typebreak"/>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00057">57</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
+<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00056">56</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ae2cf4d14dbb870e7550d9e19d75b0430"></a><!-- doxytag: member="cryomesh::utilities::SequencerChannels::in_channels" ref="ae2cf4d14dbb870e7550d9e19d75b0430" args="" -->
+<a class="anchor" id="a5c846c9a395100a4dae3dfb96e0b584c"></a><!-- doxytag: member="cryomesh::utilities::SequencerChannels::in_channels_filtered" ref="a5c846c9a395100a4dae3dfb96e0b584c" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a>&gt; &gt; <a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#ae2cf4d14dbb870e7550d9e19d75b0430">cryomesh::utilities::SequencerChannels::in_channels</a><code> [private]</code></td>
+          <td class="memname">std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;<a class="el" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a>&gt; &gt; <a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a5c846c9a395100a4dae3dfb96e0b584c">cryomesh::utilities::SequencerChannels::in_channels_filtered</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00067">67</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
+<p>To stream operator. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">std::ostream</td><td>&amp; os The output stream </td></tr>
+    <tr><td class="paramname">const</td><td><a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html">SequencerChannels</a> &amp; obj The object to stream</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>std::ostream &amp; The output stream </dd></dl>
+
+<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00086">86</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a058f1f40c295b40169c5586f029cf448"></a><!-- doxytag: member="cryomesh::utilities::SequencerChannels::in_channels_filtered" ref="a058f1f40c295b40169c5586f029cf448" args="" -->
+<a class="anchor" id="a351a6f64e6aed5cb76304f98d8a0ebd8"></a><!-- doxytag: member="cryomesh::utilities::SequencerChannels::out_channels_filtered" ref="a351a6f64e6aed5cb76304f98d8a0ebd8" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a>&gt; &gt; <a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a058f1f40c295b40169c5586f029cf448">cryomesh::utilities::SequencerChannels::in_channels_filtered</a><code> [private]</code></td>
+          <td class="memname">std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;<a class="el" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a>&gt; &gt; <a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a351a6f64e6aed5cb76304f98d8a0ebd8">cryomesh::utilities::SequencerChannels::out_channels_filtered</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00071">71</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a54e05f0bb5ea33b194d76e2214bc2e6e"></a><!-- doxytag: member="cryomesh::utilities::SequencerChannels::out_channels" ref="a54e05f0bb5ea33b194d76e2214bc2e6e" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a>&gt; &gt; <a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a54e05f0bb5ea33b194d76e2214bc2e6e">cryomesh::utilities::SequencerChannels::out_channels</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00069">69</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a8e78ef3f700cf2cdda54918aba64d21e"></a><!-- doxytag: member="cryomesh::utilities::SequencerChannels::out_channels_filtered" ref="a8e78ef3f700cf2cdda54918aba64d21e" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1state_1_1PatternChannel.html">state::PatternChannel</a>&gt; &gt; <a class="el" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a8e78ef3f700cf2cdda54918aba64d21e">cryomesh::utilities::SequencerChannels::out_channels_filtered</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00073">73</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
+<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00087">87</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
 
 </div>
 </div>
@@ -400,7 +291,7 @@ boost::shared_ptr<br class="typebreak"/>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00054">54</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
+<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00053">53</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
 
 </div>
 </div>
@@ -415,7 +306,7 @@ boost::shared_ptr<br class="typebreak"/>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00059">59</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
+<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00058">58</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
 
 </div>
 </div>
@@ -430,7 +321,7 @@ boost::shared_ptr<br class="typebreak"/>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00050">50</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
+<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00049">49</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
 
 </div>
 </div>
@@ -445,7 +336,7 @@ boost::shared_ptr<br class="typebreak"/>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00060">60</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
+<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00059">59</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
 
 </div>
 </div>
@@ -460,7 +351,7 @@ boost::shared_ptr<br class="typebreak"/>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00051">51</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
+<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00050">50</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
 
 </div>
 </div>
@@ -475,7 +366,7 @@ boost::shared_ptr<br class="typebreak"/>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00052">52</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
+<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00051">51</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
 
 </div>
 </div>
@@ -490,7 +381,10 @@ boost::shared_ptr<br class="typebreak"/>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00048">48</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
+<p>std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt; getInputChannels() const; std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt; getOutputChannels() const; </p>
+<p><a class="el" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> getInputChannelsMap() const; <a class="el" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> getOutputChannelsMap() const; </p>
+
+<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00047">47</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
 
 </div>
 </div>
@@ -505,7 +399,7 @@ boost::shared_ptr<br class="typebreak"/>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00049">49</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
+<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00048">48</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
 
 </div>
 </div>
@@ -520,7 +414,7 @@ boost::shared_ptr<br class="typebreak"/>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00058">58</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
+<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00057">57</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
 
 </div>
 </div>
@@ -535,7 +429,7 @@ boost::shared_ptr<br class="typebreak"/>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00053">53</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
+<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00052">52</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
 
 </div>
 </div>
@@ -550,7 +444,7 @@ boost::shared_ptr<br class="typebreak"/>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00055">55</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
+<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00054">54</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
 
 </div>
 </div>
@@ -565,13 +459,13 @@ boost::shared_ptr<br class="typebreak"/>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00056">56</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
+<p>Definition at line <a class="el" href="SequencerChannels_8h_source.html#l00055">55</a> of file <a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/niall/Projects/Eclipse/cryomesh/src/utilities/<a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a></li>
-<li>/home/niall/Projects/Eclipse/cryomesh/src/utilities/<a class="el" href="SequencerChannels_8cpp_source.html">SequencerChannels.cpp</a></li>
+<li>/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/<a class="el" href="SequencerChannels_8h_source.html">SequencerChannels.h</a></li>
+<li>/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/<a class="el" href="SequencerChannels_8cpp_source.html">SequencerChannels.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -579,7 +473,7 @@ boost::shared_ptr<br class="typebreak"/>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -588,7 +482,7 @@ boost::shared_ptr<br class="typebreak"/>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:11 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:14 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>cryomesh: /home/niall/Projects/Eclipse/cryomesh/src/utilities/SequencerChannels.cpp Source File</title>
+<title>cryomesh: /home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerChannels.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -54,11 +54,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <div class="header">
   <div class="headertitle">
-<h1>/home/niall/Projects/Eclipse/cryomesh/src/utilities/SequencerChannels.cpp</h1>  </div>
+<h1>/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerChannels.cpp</h1>  </div>
 </div>
 <div class="contents">
 <a href="SequencerChannels_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
@@ -76,7 +77,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00013"></a><a class="code" href="namespacecryomesh_1_1utilities.html">00013</a> 
 <a name="l00014"></a>00014 <span class="keyword">using namespace </span>cryomesh::state;
 <a name="l00015"></a>00015 
-<a name="l00016"></a>00016 <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a0a94a00246a8cb5052e20b273aa63ecc">SequencerChannels::PATTERN_CHANNEL_STRING</a> = <span class="stringliteral">&quot;PatternChannel&quot;</span>;
+<a name="l00016"></a>00016 <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a0a94a00246a8cb5052e20b273aa63ecc" title="std::map&amp;lt;boost::uuids::uuid, boost::shared_ptr&amp;lt;state::PatternChannel&amp;gt; &amp;gt; getInputChannels(...">SequencerChannels::PATTERN_CHANNEL_STRING</a> = <span class="stringliteral">&quot;PatternChannel&quot;</span>;
 <a name="l00017"></a>00017 <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a8083e83370f3791b81930be9a00273c6">SequencerChannels::VERSION_STRING</a> = <span class="stringliteral">&quot;Version&quot;</span>;
 <a name="l00018"></a>00018 <span class="keyword">const</span> std::string <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#ac005d08c1b3f477558ec1ea16666d3c2">SequencerChannels::DESCRIPTION_STRING</a> = <span class="stringliteral">&quot;Description&quot;</span>;
 <a name="l00019"></a>00019 
@@ -99,128 +100,103 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00036"></a>00036 <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#af20240b8b2119bf87b578243826d2926">SequencerChannels::~SequencerChannels</a>() {
 <a name="l00037"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#af20240b8b2119bf87b578243826d2926">00037</a> }
 <a name="l00038"></a>00038 
-<a name="l00039"></a>00039 <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a92d162cb45c613bd78174eb2aaf6fdf5">SequencerChannels::readSequences</a>(<span class="keyword">const</span> std::string &amp; ifstr) {
-<a name="l00040"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a92d162cb45c613bd78174eb2aaf6fdf5">00040</a> <span class="preprocessor">#ifdef SEQUENCERCHANNELS_DEBUG</span>
-<a name="l00041"></a>00041 <span class="preprocessor"></span>        std::cout &lt;&lt; <span class="stringliteral">&quot;SequencerChannels::readSequences: &quot;</span> &lt;&lt; ifstr &lt;&lt; std::endl;
-<a name="l00042"></a>00042 <span class="preprocessor">#endif</span>
-<a name="l00043"></a>00043 <span class="preprocessor"></span>        in_channels.clear();
-<a name="l00044"></a>00044         out_channels.clear();
-<a name="l00045"></a>00045         <a class="code" href="classcryomesh_1_1utilities_1_1SequencerGeneric.html">SequencerGeneric</a> sg(ifstr);
-<a name="l00046"></a>00046         <span class="keyword">const</span> std::list&lt;boost::shared_ptr&lt;SequencerGeneric::NodeEntry&gt; &gt; &amp; node_entries = sg.getNodeEntries();
-<a name="l00047"></a>00047         <span class="comment">//try to process tree</span>
-<a name="l00048"></a>00048         <span class="comment">//for all in node_entries</span>
-<a name="l00049"></a>00049         {
-<a name="l00050"></a>00050                 std::list&lt;boost::shared_ptr&lt;SequencerGeneric::NodeEntry&gt; &gt;::const_iterator it_node_entries =
-<a name="l00051"></a>00051                                 node_entries.begin();
-<a name="l00052"></a>00052                 <span class="keyword">const</span> std::list&lt;boost::shared_ptr&lt;SequencerGeneric::NodeEntry&gt; &gt;::const_iterator it_node_entries_end =
-<a name="l00053"></a>00053                                 node_entries.end();
-<a name="l00054"></a>00054                 <span class="keywordflow">while</span> (it_node_entries != it_node_entries_end) {
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056                         <a class="code" href="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry.html">SequencerGeneric::NodeEntry</a> &amp; node = (**it_node_entries);
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058                         <span class="comment">// check for PatternChannel tag and node present</span>
-<a name="l00059"></a>00059                         <span class="keywordflow">if</span> ((node.<a class="code" href="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry.html#ac7bdacc33badb83a8599ac90a94b25aa">name</a> == PATTERN_CHANNEL_STRING) &amp;&amp; node.<a class="code" href="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry.html#aa81743684d922c5af1dca8c15923d272">childNodes</a>.size() &gt; 0) {
-<a name="l00060"></a>00060                                 std::list&lt;boost::shared_ptr&lt;Pattern&gt; &gt; pats;
-<a name="l00061"></a>00061                                 <span class="keyword">const</span> std::list&lt;boost::shared_ptr&lt;SequencerGeneric::NodeEntry&gt; &gt; &amp;pat_nodes = node.<a class="code" href="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry.html#aa81743684d922c5af1dca8c15923d272">childNodes</a>;
-<a name="l00062"></a>00062                                 <span class="comment">//for all in pat_nodes</span>
-<a name="l00063"></a>00063                                 {
-<a name="l00064"></a>00064                                         std::list&lt;boost::shared_ptr&lt;SequencerGeneric::NodeEntry&gt; &gt;::const_iterator it_pat_nodes =
-<a name="l00065"></a>00065                                                         pat_nodes.begin();
-<a name="l00066"></a>00066                                         <span class="keyword">const</span> std::list&lt;boost::shared_ptr&lt;SequencerGeneric::NodeEntry&gt; &gt;::const_iterator it_pat_nodes_end =
-<a name="l00067"></a>00067                                                         pat_nodes.end();
-<a name="l00068"></a>00068                                         <span class="keywordflow">while</span> (it_pat_nodes != it_pat_nodes_end) {
-<a name="l00069"></a>00069                                                 <span class="comment">// create the patterns associated with this</span>
-<a name="l00070"></a>00070                                                 <span class="comment">//TODO do something about PatternByTag</span>
-<a name="l00071"></a>00071                                                 std::map&lt;std::string, std::string&gt;::const_iterator it_found = (*it_pat_nodes)-&gt;info.find(
-<a name="l00072"></a>00072                                                                 PATTERN_BINARY_STRING);
-<a name="l00073"></a>00073 
-<a name="l00074"></a>00074                                                 std::string pat_string;
-<a name="l00075"></a>00075                                                 <span class="keywordflow">if</span> (it_found != (*it_pat_nodes)-&gt;info.end()) {
-<a name="l00076"></a>00076                                                         pat_string = it_found-&gt;second;
-<a name="l00077"></a>00077                                                         boost::shared_ptr&lt;Pattern&gt; temp_pat(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html">Pattern</a>(pat_string));
-<a name="l00078"></a>00078                                                         pats.push_back(temp_pat);
-<a name="l00079"></a>00079                                                 } <span class="keywordflow">else</span> {
-<a name="l00080"></a>00080                                                         std::cout &lt;&lt; <span class="stringliteral">&quot;SequencerChannels::readSequences: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;WARNING: Pattern string not found &quot;</span>
-<a name="l00081"></a>00081                                                                         &lt;&lt; std::endl;
-<a name="l00082"></a>00082                                                 }
-<a name="l00083"></a>00083                                                 ++it_pat_nodes;
-<a name="l00084"></a>00084                                         }
-<a name="l00085"></a>00085                                 }
-<a name="l00086"></a>00086 
-<a name="l00087"></a>00087                                 <span class="comment">//collected all pattern nodes so now create the pattern channel</span>
-<a name="l00088"></a>00088 
-<a name="l00089"></a>00089                                 <span class="comment">// get refid</span>
-<a name="l00090"></a>00090                                 std::map&lt;std::string, std::string&gt;::const_iterator it_refid = node.<a class="code" href="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry.html#a902d9ca7a5864a758bae3e9eb9de711a">info</a>.find(
-<a name="l00091"></a>00091                                                 PATTERN_CHANNEL_REFID_STRING);
-<a name="l00092"></a>00092                                 <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> refid = atoi((it_refid-&gt;second).c_str());
-<a name="l00093"></a>00093                                 std::map&lt;std::string, std::string&gt;::const_iterator it_type =
-<a name="l00094"></a>00094                                                 node.<a class="code" href="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry.html#a902d9ca7a5864a758bae3e9eb9de711a">info</a>.find(PATTERN_CHANNEL_TYPE_STRING);
-<a name="l00095"></a>00095 
-<a name="l00096"></a>00096                                 std::string type;
-<a name="l00097"></a>00097                                 <span class="keywordflow">if</span> (it_type != node.<a class="code" href="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry.html#a902d9ca7a5864a758bae3e9eb9de711a">info</a>.end()) {
-<a name="l00098"></a>00098                                         type = it_type-&gt;second;
-<a name="l00099"></a>00099                                         <span class="keywordflow">if</span> (type == PATTERN_CHANNEL_INPUT_STRING) {
-<a name="l00100"></a>00100                                                 boost::shared_ptr&lt;PatternChannel&gt; temp_pch(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1state_1_1PatternChannel.html">PatternChannel</a>(pats, <a class="code" href="classcryomesh_1_1state_1_1PatternChannel.html#ac8a0ae515a221519890fc1181f2c895aab75202b529e4a7cfb8db3daa14b9f477">PatternChannel::Input</a>));
-<a name="l00101"></a>00101                                                 temp_pch-&gt;setRefID(refid);
-<a name="l00102"></a>00102                                                 in_channels[temp_pch-&gt;getUUID()] = temp_pch;
-<a name="l00103"></a>00103                                         } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == PATTERN_CHANNEL_OUTPUT_STRING) {
-<a name="l00104"></a>00104                                                 boost::shared_ptr&lt;PatternChannel&gt; temp_pch(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1state_1_1PatternChannel.html">PatternChannel</a>(pats, <a class="code" href="classcryomesh_1_1state_1_1PatternChannel.html#ac8a0ae515a221519890fc1181f2c895aa981b9873565a0888e43eef95b4d003bf">PatternChannel::Output</a>));
-<a name="l00105"></a>00105                                                 temp_pch-&gt;setRefID(refid);
-<a name="l00106"></a>00106                                                 out_channels[temp_pch-&gt;getUUID()] = temp_pch;
-<a name="l00107"></a>00107                                         }
-<a name="l00108"></a>00108                                 } <span class="keywordflow">else</span> {
-<a name="l00109"></a>00109                                         std::cout &lt;&lt; <span class="stringliteral">&quot;SequencerChannels::readSequences: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;ERROR: Channel type not found &quot;</span> &lt;&lt; std::endl;
-<a name="l00110"></a>00110                                 }
-<a name="l00111"></a>00111 
-<a name="l00112"></a>00112                         } <span class="keywordflow">else</span> {
-<a name="l00113"></a>00113 <span class="preprocessor">#ifdef SEQUENCERCHANNELS_DEBUG</span>
-<a name="l00114"></a>00114 <span class="preprocessor"></span>                                std::cout &lt;&lt; <span class="stringliteral">&quot;SequencerChannels::readSequences: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;INFO: Skipping &quot;</span> &lt;&lt; node.<a class="code" href="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry.html#ac7bdacc33badb83a8599ac90a94b25aa">name</a> &lt;&lt; std::endl;
-<a name="l00115"></a>00115 <span class="preprocessor">#endif</span>
-<a name="l00116"></a>00116 <span class="preprocessor"></span>                        }
-<a name="l00117"></a>00117 
-<a name="l00118"></a>00118                         <span class="comment">// save to inputs or outputs</span>
-<a name="l00119"></a>00119                         ++it_node_entries;
-<a name="l00120"></a>00120                 }
-<a name="l00121"></a>00121         }
+<a name="l00039"></a>00039 <span class="keywordtype">void</span> <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a2099c0ea6a68acda477034425c0d599c">SequencerChannels::readSequences</a>(<span class="keyword">const</span> std::string &amp; ifstr, <a class="code" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> &amp; in_channels_map,
+<a name="l00040"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a2099c0ea6a68acda477034425c0d599c">00040</a>                 <a class="code" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> &amp; out_channels_map) {
+<a name="l00041"></a>00041 <span class="preprocessor">#ifdef SEQUENCERCHANNELS_DEBUG</span>
+<a name="l00042"></a>00042 <span class="preprocessor"></span>        std::cout &lt;&lt; <span class="stringliteral">&quot;SequencerChannels::readSequences: &quot;</span> &lt;&lt; ifstr &lt;&lt; std::endl;
+<a name="l00043"></a>00043 <span class="preprocessor">#endif</span>
+<a name="l00044"></a>00044 <span class="preprocessor"></span>        std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt; &amp; in_channels =
+<a name="l00045"></a>00045                         in_channels_map.getMutableCollection();
+<a name="l00046"></a>00046         std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt; &amp;out_channels =
+<a name="l00047"></a>00047                         out_channels_map.getMutableCollection();
+<a name="l00048"></a>00048         in_channels.clear();
+<a name="l00049"></a>00049         out_channels.clear();
+<a name="l00050"></a>00050         <a class="code" href="classcryomesh_1_1utilities_1_1SequencerGeneric.html">SequencerGeneric</a> sg(ifstr);
+<a name="l00051"></a>00051         <span class="keyword">const</span> std::list&lt;boost::shared_ptr&lt;SequencerGeneric::NodeEntry&gt; &gt; &amp; node_entries = sg.<a class="code" href="classcryomesh_1_1utilities_1_1SequencerGeneric.html#a5537ecb58c9308c82be295c871001efd">getNodeEntries</a>();
+<a name="l00052"></a>00052         <span class="comment">//try to process tree</span>
+<a name="l00053"></a>00053         <span class="comment">//for all in node_entries</span>
+<a name="l00054"></a>00054         {
+<a name="l00055"></a>00055                 std::list&lt;boost::shared_ptr&lt;SequencerGeneric::NodeEntry&gt; &gt;::const_iterator it_node_entries =
+<a name="l00056"></a>00056                                 node_entries.begin();
+<a name="l00057"></a>00057                 <span class="keyword">const</span> std::list&lt;boost::shared_ptr&lt;SequencerGeneric::NodeEntry&gt; &gt;::const_iterator it_node_entries_end =
+<a name="l00058"></a>00058                                 node_entries.end();
+<a name="l00059"></a>00059                 <span class="keywordflow">while</span> (it_node_entries != it_node_entries_end) {
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061                         <a class="code" href="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry.html">SequencerGeneric::NodeEntry</a> &amp; node = (**it_node_entries);
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063                         <span class="comment">// check for PatternChannel tag and node present</span>
+<a name="l00064"></a>00064                         <span class="keywordflow">if</span> ((node.<a class="code" href="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry.html#ac7bdacc33badb83a8599ac90a94b25aa">name</a> == PATTERN_CHANNEL_STRING) &amp;&amp; node.<a class="code" href="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry.html#aa81743684d922c5af1dca8c15923d272">childNodes</a>.size() &gt; 0) {
+<a name="l00065"></a>00065                                 std::list&lt;boost::shared_ptr&lt;Pattern&gt; &gt; pats;
+<a name="l00066"></a>00066                                 <span class="keyword">const</span> std::list&lt;boost::shared_ptr&lt;SequencerGeneric::NodeEntry&gt; &gt; &amp;pat_nodes = node.<a class="code" href="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry.html#aa81743684d922c5af1dca8c15923d272">childNodes</a>;
+<a name="l00067"></a>00067                                 <span class="comment">//for all in pat_nodes</span>
+<a name="l00068"></a>00068                                 {
+<a name="l00069"></a>00069                                         std::list&lt;boost::shared_ptr&lt;SequencerGeneric::NodeEntry&gt; &gt;::const_iterator it_pat_nodes =
+<a name="l00070"></a>00070                                                         pat_nodes.begin();
+<a name="l00071"></a>00071                                         <span class="keyword">const</span> std::list&lt;boost::shared_ptr&lt;SequencerGeneric::NodeEntry&gt; &gt;::const_iterator it_pat_nodes_end =
+<a name="l00072"></a>00072                                                         pat_nodes.end();
+<a name="l00073"></a>00073                                         <span class="keywordflow">while</span> (it_pat_nodes != it_pat_nodes_end) {
+<a name="l00074"></a>00074                                                 <span class="comment">// create the patterns associated with this</span>
+<a name="l00075"></a>00075                                                 <span class="comment">//TODO do something about PatternByTag</span>
+<a name="l00076"></a>00076                                                 std::map&lt;std::string, std::string&gt;::const_iterator it_found = (*it_pat_nodes)-&gt;info.find(
+<a name="l00077"></a>00077                                                                 PATTERN_BINARY_STRING);
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079                                                 std::string pat_string;
+<a name="l00080"></a>00080                                                 <span class="keywordflow">if</span> (it_found != (*it_pat_nodes)-&gt;info.end()) {
+<a name="l00081"></a>00081                                                         pat_string = it_found-&gt;second;
+<a name="l00082"></a>00082                                                         boost::shared_ptr&lt;Pattern&gt; temp_pat(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1state_1_1Pattern.html">Pattern</a>(pat_string));
+<a name="l00083"></a>00083                                                         pats.push_back(temp_pat);
+<a name="l00084"></a>00084                                                 } <span class="keywordflow">else</span> {
+<a name="l00085"></a>00085                                                         std::cout &lt;&lt; <span class="stringliteral">&quot;SequencerChannels::readSequences: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;WARNING: Pattern string not found &quot;</span>
+<a name="l00086"></a>00086                                                                         &lt;&lt; std::endl;
+<a name="l00087"></a>00087                                                 }
+<a name="l00088"></a>00088                                                 ++it_pat_nodes;
+<a name="l00089"></a>00089                                         }
+<a name="l00090"></a>00090                                 }
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092                                 <span class="comment">//collected all pattern nodes so now create the pattern channel</span>
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094                                 <span class="comment">// get refid</span>
+<a name="l00095"></a>00095                                 std::map&lt;std::string, std::string&gt;::const_iterator it_refid = node.<a class="code" href="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry.html#a902d9ca7a5864a758bae3e9eb9de711a">info</a>.find(
+<a name="l00096"></a>00096                                                 PATTERN_CHANNEL_REFID_STRING);
+<a name="l00097"></a>00097                                 <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> refid = atoi((it_refid-&gt;second).c_str());
+<a name="l00098"></a>00098                                 std::map&lt;std::string, std::string&gt;::const_iterator it_type =
+<a name="l00099"></a>00099                                                 node.<a class="code" href="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry.html#a902d9ca7a5864a758bae3e9eb9de711a">info</a>.find(PATTERN_CHANNEL_TYPE_STRING);
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101                                 std::string type;
+<a name="l00102"></a>00102                                 <span class="keywordflow">if</span> (it_type != node.<a class="code" href="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry.html#a902d9ca7a5864a758bae3e9eb9de711a">info</a>.end()) {
+<a name="l00103"></a>00103                                         type = it_type-&gt;second;
+<a name="l00104"></a>00104                                         <span class="keywordflow">if</span> (type == PATTERN_CHANNEL_INPUT_STRING) {
+<a name="l00105"></a>00105                                                 boost::shared_ptr&lt;PatternChannel&gt; temp_pch(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1state_1_1PatternChannel.html">PatternChannel</a>(pats, <a class="code" href="classcryomesh_1_1state_1_1PatternChannel.html#ac8a0ae515a221519890fc1181f2c895aab75202b529e4a7cfb8db3daa14b9f477">PatternChannel::Input</a>));
+<a name="l00106"></a>00106                                                 temp_pch-&gt;setRefID(refid);
+<a name="l00107"></a>00107                                                 in_channels[temp_pch-&gt;getUUID()] = temp_pch;
+<a name="l00108"></a>00108                                         } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == PATTERN_CHANNEL_OUTPUT_STRING) {
+<a name="l00109"></a>00109                                                 boost::shared_ptr&lt;PatternChannel&gt; temp_pch(<span class="keyword">new</span> <a class="code" href="classcryomesh_1_1state_1_1PatternChannel.html">PatternChannel</a>(pats, <a class="code" href="classcryomesh_1_1state_1_1PatternChannel.html#ac8a0ae515a221519890fc1181f2c895aa981b9873565a0888e43eef95b4d003bf">PatternChannel::Output</a>));
+<a name="l00110"></a>00110                                                 temp_pch-&gt;setRefID(refid);
+<a name="l00111"></a>00111                                                 out_channels[temp_pch-&gt;getUUID()] = temp_pch;
+<a name="l00112"></a>00112                                         }
+<a name="l00113"></a>00113                                 } <span class="keywordflow">else</span> {
+<a name="l00114"></a>00114                                         std::cout &lt;&lt; <span class="stringliteral">&quot;SequencerChannels::readSequences: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;ERROR: Channel type not found &quot;</span> &lt;&lt; std::endl;
+<a name="l00115"></a>00115                                 }
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117                         } <span class="keywordflow">else</span> {
+<a name="l00118"></a>00118 <span class="preprocessor">#ifdef SEQUENCERCHANNELS_DEBUG</span>
+<a name="l00119"></a>00119 <span class="preprocessor"></span>                                std::cout &lt;&lt; <span class="stringliteral">&quot;SequencerChannels::readSequences: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;INFO: Skipping &quot;</span> &lt;&lt; node.<a class="code" href="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry.html#ac7bdacc33badb83a8599ac90a94b25aa">name</a> &lt;&lt; std::endl;
+<a name="l00120"></a>00120 <span class="preprocessor">#endif</span>
+<a name="l00121"></a>00121 <span class="preprocessor"></span>                        }
 <a name="l00122"></a>00122 
-<a name="l00123"></a>00123 }
-<a name="l00124"></a>00124 
-<a name="l00125"></a>00125 std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt; <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a33680cf1ca73271c8f697790a7442bd3">SequencerChannels::getInputChannels</a>() {
-<a name="l00126"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a33680cf1ca73271c8f697790a7442bd3">00126</a>         <span class="keywordflow">return</span> in_channels;
-<a name="l00127"></a>00127 }
-<a name="l00128"></a>00128 std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt; <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#adb62068ad825e1f1adf3464745382341">SequencerChannels::getOutputChannels</a>() {
-<a name="l00129"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#adb62068ad825e1f1adf3464745382341">00129</a>         <span class="keywordflow">return</span> out_channels;
-<a name="l00130"></a>00130 }
-<a name="l00131"></a>00131 
-<a name="l00132"></a>00132 <a class="code" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a5ab0a69ce23029a1332d1845b0e5adae">SequencerChannels::getInputChannelsMap</a>()<span class="keyword"> const </span>{
-<a name="l00133"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a5ab0a69ce23029a1332d1845b0e5adae">00133</a>         <span class="keywordflow">return</span> getChannelMap(in_channels);
-<a name="l00134"></a>00134 }
-<a name="l00135"></a>00135 <a class="code" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a72134dda511a2f09f613dcafa6addb52">SequencerChannels::getOutputChannelsMap</a>()<span class="keyword"> const </span>{
-<a name="l00136"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#a72134dda511a2f09f613dcafa6addb52">00136</a>         <span class="keywordflow">return</span> getChannelMap(out_channels);
-<a name="l00137"></a>00137 }
-<a name="l00138"></a>00138 
-<a name="l00139"></a>00139 <a class="code" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> <a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#aa0e31391cd42ff1a758d70b2b1c98845">SequencerChannels::getChannelMap</a>(
-<a name="l00140"></a><a class="code" href="classcryomesh_1_1utilities_1_1SequencerChannels.html#aa0e31391cd42ff1a758d70b2b1c98845">00140</a>                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt; &amp; patchans)<span class="keyword"> const </span>{
-<a name="l00141"></a>00141 
-<a name="l00142"></a>00142         <a class="code" href="classcryomesh_1_1state_1_1PatternChannelMap.html">state::PatternChannelMap</a> patmap;
-<a name="l00143"></a>00143         <span class="comment">// forall in patchans</span>
-<a name="l00144"></a>00144         {
-<a name="l00145"></a>00145                 std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt;::const_iterator it_patchans =
-<a name="l00146"></a>00146                                 patchans.begin();
-<a name="l00147"></a>00147                 <span class="keyword">const</span> std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;state::PatternChannel&gt; &gt;::const_iterator it_patchans_end =
-<a name="l00148"></a>00148                                 patchans.end();
-<a name="l00149"></a>00149                 <span class="keywordflow">while</span> (it_patchans != it_patchans_end) {
-<a name="l00150"></a>00150                         patmap.add(it_patchans-&gt;second);
-<a name="l00151"></a>00151                         ++it_patchans;
-<a name="l00152"></a>00152                 }
-<a name="l00153"></a>00153         }
-<a name="l00154"></a>00154         <span class="keywordflow">return</span> patmap;
-<a name="l00155"></a>00155 }
-<a name="l00156"></a>00156 
-<a name="l00157"></a>00157 } <span class="comment">//NAMESPACE</span>
-<a name="l00158"></a>00158 
-<a name="l00159"></a>00159 
-<a name="l00160"></a>00160 } <span class="comment">//NAMESPACE</span>
+<a name="l00123"></a>00123                         <span class="comment">// save to inputs or outputs</span>
+<a name="l00124"></a>00124                         ++it_node_entries;
+<a name="l00125"></a>00125                 }
+<a name="l00126"></a>00126         }
+<a name="l00127"></a>00127 <span class="comment">//      std::cout &lt;&lt; &quot;SequencerChannels::readSequences: &quot; &lt;&lt; &quot;END&quot; &lt;&lt; std::endl;</span>
+<a name="l00128"></a>00128         <span class="comment">//std::cout &lt;&lt; *this &lt;&lt; std::endl;</span>
+<a name="l00129"></a>00129 }
+<a name="l00130"></a>00130 
+<a name="l00131"></a>00131 <span class="comment">//DEPRECATED</span>
+<a name="l00207"></a>00207 <span class="comment"></span>} <span class="comment">//NAMESPACE</span>
+<a name="l00208"></a>00208 
+<a name="l00209"></a>00209 
+<a name="l00210"></a>00210 } <span class="comment">//NAMESPACE</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -228,7 +204,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -237,7 +213,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:14 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -91,6 +91,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="#a0a69ff4da08fab9ce067c833287168cd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1NodeMap.html#a6b643560dedac16f4b36d1ec73a2fcf0">update</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Update all entries in the nodemap.  <a href="#a6b643560dedac16f4b36d1ec73a2fcf0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1NodeMap.html#a2671dd6120db07187bce08e5150578d1">addRandomImpulses</a> (double positive_bias=0.5)</td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1NodeMap.html#aa0d144f9e757f0af6219b8181a48d6da">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classcryomesh_1_1components_1_1NodeMap.html">NodeMap</a> &amp;obj)</td></tr>
@@ -142,6 +143,27 @@ Friends</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a2671dd6120db07187bce08e5150578d1"></a><!-- doxytag: member="cryomesh::components::NodeMap::addRandomImpulses" ref="a2671dd6120db07187bce08e5150578d1" args="(double positive_bias=0.5)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void cryomesh::components::NodeMap::addRandomImpulses </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>positive_bias</em> = <code>0.5</code></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="NodeMap_8h_source.html#l00052">52</a> of file <a class="el" href="NodeMap_8h_source.html">NodeMap.h</a>.</p>
+
+<p>References <a class="el" href="Impulse_8cpp_source.html#l00038">cryomesh::components::Impulse::getRandom()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a6b643560dedac16f4b36d1ec73a2fcf0"></a><!-- doxytag: member="cryomesh::components::NodeMap::update" ref="a6b643560dedac16f4b36d1ec73a2fcf0" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -160,7 +182,7 @@ Friends</h2></td></tr>
 
 <p>Definition at line <a class="el" href="NodeMap_8h_source.html#l00040">40</a> of file <a class="el" href="NodeMap_8h_source.html">NodeMap.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00028">cryomesh::structures::Cluster::update()</a>.</p>
+<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00044">cryomesh::structures::Cluster::update()</a>.</p>
 
 </div>
 </div>
@@ -200,12 +222,12 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::ostream &amp; The output stream </dd></dl>
 
-<p>Definition at line <a class="el" href="NodeMap_8h_source.html#l00065">65</a> of file <a class="el" href="NodeMap_8h_source.html">NodeMap.h</a>.</p>
+<p>Definition at line <a class="el" href="NodeMap_8h_source.html#l00077">77</a> of file <a class="el" href="NodeMap_8h_source.html">NodeMap.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/niall/Projects/Eclipse/cryomesh/src/components/<a class="el" href="NodeMap_8h_source.html">NodeMap.h</a></li>
+<li>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/<a class="el" href="NodeMap_8h_source.html">NodeMap.h</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -213,7 +235,7 @@ Friends</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -222,7 +244,7 @@ Friends</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:14 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

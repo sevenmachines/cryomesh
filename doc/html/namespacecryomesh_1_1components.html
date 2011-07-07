@@ -86,8 +86,6 @@ Classes</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> is a mobile information packet to be passed between Nodes.  <a href="classcryomesh_1_1components_1_1Impulse.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html">ImpulseCollection</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html" title="ImpulseCollection represents a collection of Impulse objects.">ImpulseCollection</a> represents a collection of <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> objects.  <a href="classcryomesh_1_1components_1_1ImpulseCollection.html#_details">More...</a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Mesh.html">Mesh</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcryomesh_1_1components_1_1Mesh.html" title="Mesh is the fabric of connection space and warps and is warped by it.">Mesh</a> is the fabric of connection space and warps and is warped by it.  <a href="classcryomesh_1_1components_1_1Mesh.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Node.html">Node</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a> is an accumulation and computational nodal point of impulses.  <a href="classcryomesh_1_1components_1_1Node.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1NodeMap.html">NodeMap</a></td></tr>
@@ -133,7 +131,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::ostream &amp; The output stream </dd></dl>
 
-<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00132">132</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00202">202</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
 
 </div>
 </div>
@@ -170,9 +168,9 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::ostream &amp; The output stream </dd></dl>
 
-<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00260">260</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Node_8cpp_source.html#l00496">496</a> of file <a class="el" href="Node_8cpp_source.html">Node.cpp</a>.</p>
 
-<p>References <a class="el" href="Node_8cpp_source.html#l00066">cryomesh::components::Node::getConnector()</a>, and <a class="el" href="Node_8cpp_source.html#l00158">cryomesh::components::Node::getImpulses()</a>.</p>
+<p>References <a class="el" href="Node_8cpp_source.html#l00083">cryomesh::components::Node::getConnector()</a>, <a class="el" href="Node_8cpp_source.html#l00234">cryomesh::components::Node::getImpulses()</a>, <a class="el" href="Node_8cpp_source.html#l00362">cryomesh::components::Node::isPrimaryInputAttachedNode()</a>, <a class="el" href="Node_8cpp_source.html#l00387">cryomesh::components::Node::isPrimaryOutputAttachedNode()</a>, and <a class="el" href="Node_8cpp_source.html#l00525">cryomesh::components::Node::printConnections()</a>.</p>
 
 </div>
 </div>
@@ -209,7 +207,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::ostream &amp; The output stream </dd></dl>
 
-<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00317">317</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00369">369</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
 
 </div>
 </div>
@@ -246,9 +244,9 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::ostream &amp; The output stream </dd></dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00294">294</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00335">335</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
 
-<p>References <a class="el" href="Impulse_8cpp_source.html#l00133">cryomesh::components::Impulse::getFirstActiveCycle()</a>.</p>
+<p>References <a class="el" href="Impulse_8cpp_source.html#l00205">cryomesh::components::Impulse::getActivityDelay()</a>, <a class="el" href="Impulse_8cpp_source.html#l00193">cryomesh::components::Impulse::getActivityTimer()</a>, <a class="el" href="Impulse_8cpp_source.html#l00166">cryomesh::components::Impulse::getFirstActiveCycle()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00185">cryomesh::components::Impulse::getLastActiveCycle()</a>.</p>
 
 </div>
 </div>
@@ -258,7 +256,7 @@ Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -267,7 +265,7 @@ Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:14 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

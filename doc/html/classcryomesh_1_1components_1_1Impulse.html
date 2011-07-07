@@ -91,13 +91,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#aff44f52a706b48a74fc34b3dc2e26d38">Impulse</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#aff44f52a706b48a74fc34b3dc2e26d38"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#ab7a6652d341d3cdb813113e38e5d75a9">Impulse</a> (const double max_y, const int length, const <a class="el" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp;startCycle=0)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a from a curve with max f(x) and length and set starting cycle to startCycle, which defaults to the present, 'now' cycle.  <a href="#ab7a6652d341d3cdb813113e38e5d75a9"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#a902908174235b4fd3e754007bfb44fc8">Impulse</a> (const double max_y, const int length, const <a class="el" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp;startCycle, boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> &gt;)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a from a curve with max f(x) and length and set starting cycle to startCycle, and an activity timer.  <a href="#a902908174235b4fd3e754007bfb44fc8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#afd7597df2534ba3d0b7d91d3c0b64a55">Impulse</a> (const double max_y, const int length, const int delay=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a from a curve with max f(x) and length and set starting cycle to startCycle, which defaults to the present, 'now' cycle.  <a href="#afd7597df2534ba3d0b7d91d3c0b64a55"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#a61915a9d92e7c7601be4a005794c0c89">Impulse</a> (const double max_y, const int length, const int delay, boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> &gt;)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a from a curve with max f(x) and length and set starting cycle to startCycle, and an activity timer.  <a href="#a61915a9d92e7c7601be4a005794c0c89"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#af9ec60048bf54aaf5ee3e93dd4b87f3d">Impulse</a> (const <a class="el" href="classcryomesh_1_1components_1_1Impulse.html">Impulse</a> &amp;obj)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#a3801df3c6dba70d0467f070fa346efa5">~Impulse</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a3801df3c6dba70d0467f070fa346efa5"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#a0f88203a7d85fc8c613e144ef302ea11">randomise</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#a5da6ee1f9d1be136d23c36c377258a4d">randomise</a> (double positive_bias=0.5)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#a9c87bdf033d68e93204704078860aef6">isActive</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> active on current cycle.  <a href="#a9c87bdf033d68e93204704078860aef6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#a69f3c99fcbcaa31682ed42085608e476">isActive</a> (const <a class="el" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp;cycle) const </td></tr>
@@ -130,6 +131,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get mutable activity timer.  <a href="#aac5460017f7adceba53aea31b1bc5bfe"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#a04ecc67f3bf21f922c29d9e8afd3d04d">setActivityTimer</a> (boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> &gt; timer)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set activity timer.  <a href="#a04ecc67f3bf21f922c29d9e8afd3d04d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#a6d0fd21f516b5182dd357b59f2112c64">getActivityDelay</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#a800479ed06132eb56d0bc15c8aa40d8a">setActivityDelay</a> (int delay)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classcryomesh_1_1components_1_1Impulse.html">Impulse</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#aca088f62a2bf95978952633e530e601c">operator+</a> (const <a class="el" href="classcryomesh_1_1components_1_1Impulse.html">Impulse</a> &amp;obj) const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-destructive addition operator.  <a href="#aca088f62a2bf95978952633e530e601c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html">Impulse</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#a6f5351eea5c38586fe5bb3092b3626af">operator+=</a> (const <a class="el" href="classcryomesh_1_1components_1_1Impulse.html">Impulse</a> &amp;obj)</td></tr>
@@ -140,19 +143,23 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Comparator operator.  <a href="#a8351a5a0e6afc72fa26ab306226ccab0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#ac26da063e408d5493cd33f2014dfa875">operator!=</a> (const <a class="el" href="classcryomesh_1_1components_1_1Impulse.html">Impulse</a> &amp;obj) const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Not comparator operator.  <a href="#ac26da063e408d5493cd33f2014dfa875"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#ad3a3e47e23c5443a9df0df9c3c53a8ac">enableDebug</a> (bool b)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Impulse.html">Impulse</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#ae88e7ff0cacf1ca6f323f66c97819c7a">getTriggerImpulse</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a 'trigger' impulse, a maximum impulse.  <a href="#ae88e7ff0cacf1ca6f323f66c97819c7a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Impulse.html">Impulse</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#afb337470d62f12f5e414b1bd7f09c6df">getRandom</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a randomised impulse.  <a href="#afb337470d62f12f5e414b1bd7f09c6df"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Impulse.html">Impulse</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#a9433c8dbc841beb6e3bfa63dd99ed838">getRandom</a> (double positive_bias=0.5)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a randomised impulse.  <a href="#a9433c8dbc841beb6e3bfa63dd99ed838"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#aa581812f8f38b8a08d6f9ec9d301c455">FORCED_TRIGGER_ACTIVITY</a> = 1000</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#af8e9eb795f1ea3cef81d6afeb7166ad2">MAX_ACTIVITY</a> = 1</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#a3cc162bae9213a65a6aa241b256e1a84">MIN_ACTIVITY</a> = -1</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#a449f5f6a08af50b2e66703931ef3cd6c">MAX_ACTIVITY_LENGTH</a> = 10</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#a449f5f6a08af50b2e66703931ef3cd6c">MAX_ACTIVITY_LENGTH</a> = 20</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#ac24594fb7419a2f3e9f4d753dfae562f">MIN_ACTIVITY_LENGTH</a> = 1</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#a831758cc2e20d4a2d10b71f8c7698fd1">MIN_ACTIVITY_MAGNITUDE</a> = 0.01</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#a7537a73569989ce84f0ab1b10e07ee94">MIN_ACTIVITY_DELAY</a> = 0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#afc1ae22e801a9dbf9bbb170d97d3411b">MAX_ACTIVITY_DELAY</a> = 10</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#a4bdb9cdab1998c670d3e7f46190fa45d">getActivityBoundary</a> (bool maximal) const </td></tr>
@@ -163,6 +170,7 @@ Private Attributes</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The first cycle that this <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> has activity.  <a href="#a1e60e9449535dde78c2a342b873022f7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#adc17d78b2127229c3acdaefb7b697f7e">lastActiveCycle</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The lase cycle that this <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> has activity.  <a href="#adc17d78b2127229c3acdaefb7b697f7e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#ae491ccf924dc04674fb604a5258e0580">activityDelay</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">boost::shared_ptr<br class="typebreak"/>
 &lt; <a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1Impulse.html#a6fc33296a0683cc08c5ea7404632a793">activityTimer</a></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
@@ -172,9 +180,9 @@ Friends</h2></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> is a mobile information packet to be passed between Nodes. </p>
-<p>Impulses represent information generated by a <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a> firing They are propagated along a connection Can be modified by the overlying <a class="el" href="classcryomesh_1_1components_1_1Mesh.html" title="Mesh is the fabric of connection space and warps and is warped by it.">Mesh</a> as they propagate </p>
+<p>Impulses represent information generated by a <a class="el" href="classcryomesh_1_1components_1_1Node.html" title="Node is an accumulation and computational nodal point of impulses.">Node</a> firing They are propagated along a connection Can be modified by the overlying Mesh as they propagate </p>
 
-<p>Definition at line <a class="el" href="Impulse_8h_source.html#l00030">30</a> of file <a class="el" href="Impulse_8h_source.html">Impulse.h</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8h_source.html#l00031">31</a> of file <a class="el" href="Impulse_8h_source.html">Impulse.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aff44f52a706b48a74fc34b3dc2e26d38"></a><!-- doxytag: member="cryomesh::components::Impulse::Impulse" ref="aff44f52a706b48a74fc34b3dc2e26d38" args="()" -->
 <div class="memitem">
@@ -199,13 +207,13 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00037">37</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00045">45</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
 
-<p>References <a class="el" href="TimeKeeper_8cpp_source.html#l00020">cryomesh::common::TimeKeeper::getTimeKeeper()</a>.</p>
+<p>References <a class="el" href="Impulse_8h_source.html#l00331">MIN_ACTIVITY_LENGTH</a>, <a class="el" href="Impulse_8cpp_source.html#l00201">setActivityTimer()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00170">setFirstActiveCycle()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ab7a6652d341d3cdb813113e38e5d75a9"></a><!-- doxytag: member="cryomesh::components::Impulse::Impulse" ref="ab7a6652d341d3cdb813113e38e5d75a9" args="(const double max_y, const int length, const common::Cycle &amp;startCycle=0)" -->
+<a class="anchor" id="afd7597df2534ba3d0b7d91d3c0b64a55"></a><!-- doxytag: member="cryomesh::components::Impulse::Impulse" ref="afd7597df2534ba3d0b7d91d3c0b64a55" args="(const double max_y, const int length, const int delay=0)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -224,8 +232,8 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp;&#160;</td>
-          <td class="paramname"><em>startCycle</em> = <code>0</code>&#160;</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>delay</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -241,16 +249,18 @@ Friends</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">const</td><td>int max_y Boundary value of curve </td></tr>
     <tr><td class="paramname">const</td><td>int length Length of <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> </td></tr>
-    <tr><td class="paramname">const</td><td>Cycle startCycle Cycle to start activity on </td></tr>
+    <tr><td class="paramname">int</td><td>Delay before starting impulse </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00045">45</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00054">54</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+
+<p>References <a class="el" href="Impulse_8h_source.html#l00331">MIN_ACTIVITY_LENGTH</a>, <a class="el" href="Impulse_8cpp_source.html#l00201">setActivityTimer()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00170">setFirstActiveCycle()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a902908174235b4fd3e754007bfb44fc8"></a><!-- doxytag: member="cryomesh::components::Impulse::Impulse" ref="a902908174235b4fd3e754007bfb44fc8" args="(const double max_y, const int length, const common::Cycle &amp;startCycle, boost::shared_ptr&lt; ActivityTimerDistance &gt;)" -->
+<a class="anchor" id="a61915a9d92e7c7601be4a005794c0c89"></a><!-- doxytag: member="cryomesh::components::Impulse::Impulse" ref="a61915a9d92e7c7601be4a005794c0c89" args="(const double max_y, const int length, const int delay, boost::shared_ptr&lt; ActivityTimerDistance &gt;)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -269,8 +279,8 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classcryomesh_1_1common_1_1Cycle.html">common::Cycle</a> &amp;&#160;</td>
-          <td class="paramname"><em>startCycle</em>, </td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>delay</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -292,13 +302,36 @@ Friends</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">const</td><td>int max_y Boundary value of curve </td></tr>
     <tr><td class="paramname">const</td><td>int length Length of <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> </td></tr>
-    <tr><td class="paramname">const</td><td>Cycle startCycle Cycle to start activity on </td></tr>
+    <tr><td class="paramname">int</td><td>Delay before starting impulse </td></tr>
     <tr><td class="paramname">boost::shared_ptr&lt;ActivityTimer&gt;</td><td>timer The activity timer associated with this </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00054">54</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00064">64</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+
+<p>References <a class="el" href="Impulse_8h_source.html#l00331">MIN_ACTIVITY_LENGTH</a>, <a class="el" href="Impulse_8cpp_source.html#l00201">setActivityTimer()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00170">setFirstActiveCycle()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af9ec60048bf54aaf5ee3e93dd4b87f3d"></a><!-- doxytag: member="cryomesh::components::Impulse::Impulse" ref="af9ec60048bf54aaf5ee3e93dd4b87f3d" args="(const Impulse &amp;obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cryomesh::components::Impulse::Impulse </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcryomesh_1_1components_1_1Impulse.html">Impulse</a> &amp;&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00073">73</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+
+<p>References <a class="el" href="Impulse_8h_source.html#l00396">firstActiveCycle</a>, <a class="el" href="Impulse_8cpp_source.html#l00205">getActivityDelay()</a>, <a class="el" href="Impulse_8cpp_source.html#l00193">getActivityTimer()</a>, <a class="el" href="Impulse_8cpp_source.html#l00166">getFirstActiveCycle()</a>, <a class="el" href="Impulse_8cpp_source.html#l00185">getLastActiveCycle()</a>, <a class="el" href="Impulse_8h_source.html#l00404">lastActiveCycle</a>, <a class="el" href="Impulse_8cpp_source.html#l00209">setActivityDelay()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00201">setActivityTimer()</a>.</p>
 
 </div>
 </div>
@@ -319,11 +352,30 @@ Friends</h2></td></tr>
 <p>Destructor. </p>
 <p>Destructor for <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> </p>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00062">62</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00080">80</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
 
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ad3a3e47e23c5443a9df0df9c3c53a8ac"></a><!-- doxytag: member="cryomesh::components::Impulse::enableDebug" ref="ad3a3e47e23c5443a9df0df9c3c53a8ac" args="(bool b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cryomesh::components::Impulse::enableDebug </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00332">332</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a959076c6c59932abeaa73ca6de2e4167"></a><!-- doxytag: member="cryomesh::components::Impulse::getActivities" ref="a959076c6c59932abeaa73ca6de2e4167" args="() const " -->
 <div class="memitem">
 <div class="memproto">
@@ -341,7 +393,7 @@ Friends</h2></td></tr>
 <p>Get activities. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>const std::list&lt;double&gt; &amp; The activities list </dd></dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00155">155</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00189">189</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
 
 </div>
 </div>
@@ -370,9 +422,9 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>double The activity on specified cycle </dd></dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00095">95</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00126">126</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
 
-<p>References <a class="el" href="Cycle_8cpp_source.html#l00060">cryomesh::common::Cycle::toLInt()</a>.</p>
+<p>References <a class="el" href="Impulse_8h_source.html#l00396">firstActiveCycle</a>, <a class="el" href="Impulse_8cpp_source.html#l00166">getFirstActiveCycle()</a>, <a class="el" href="Impulse_8cpp_source.html#l00185">getLastActiveCycle()</a>, <a class="el" href="Impulse_8h_source.html#l00404">lastActiveCycle</a>, and <a class="el" href="Cycle_8cpp_source.html#l00060">cryomesh::common::Cycle::toLInt()</a>.</p>
 
 </div>
 </div>
@@ -394,7 +446,7 @@ Friends</h2></td></tr>
 <p>Sum all the Impulses in the collection on the current cycle and return activity</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>double The activity on specified cycle </dd></dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00091">91</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00122">122</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
 
 <p>References <a class="el" href="TimeKeeper_8cpp_source.html#l00020">cryomesh::common::TimeKeeper::getTimeKeeper()</a>.</p>
 
@@ -426,6 +478,28 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a6d0fd21f516b5182dd357b59f2112c64"></a><!-- doxytag: member="cryomesh::components::Impulse::getActivityDelay" ref="a6d0fd21f516b5182dd357b59f2112c64" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cryomesh::components::Impulse::getActivityDelay </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00205">205</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+
+<p>References <a class="el" href="Impulse_8h_source.html#l00411">activityDelay</a>.</p>
+
+<p>Referenced by <a class="el" href="Impulse_8cpp_source.html#l00073">Impulse()</a>, <a class="el" href="Impulse_8cpp_source.html#l00335">cryomesh::components::operator&lt;&lt;()</a>, <a class="el" href="Impulse_8cpp_source.html#l00272">operator=()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00170">setFirstActiveCycle()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a9607961d67264b1431bc6f0871ab71e0"></a><!-- doxytag: member="cryomesh::components::Impulse::getActivityMaximum" ref="a9607961d67264b1431bc6f0871ab71e0" args="() const " -->
 <div class="memitem">
 <div class="memproto">
@@ -444,7 +518,7 @@ Friends</h2></td></tr>
 <p>Find the maximum activity between start and end cycles</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>double The maximum activity </dd></dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00120">120</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00153">153</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
 
 </div>
 </div>
@@ -466,7 +540,7 @@ Friends</h2></td></tr>
 <p>Find the minimum activity between start and end cycles</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>double The minimum activity </dd></dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00124">124</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00157">157</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
 
 </div>
 </div>
@@ -487,9 +561,11 @@ Friends</h2></td></tr>
 <p>Get activity timer. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>boost::shared_ptr&lt; ActivityTimer &gt; activityTimer; The activity timer </dd></dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00159">159</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00193">193</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="Impulse_8cpp_source.html#l00231">operator=()</a>.</p>
+<p>References <a class="el" href="Impulse_8h_source.html#l00418">activityTimer</a>.</p>
+
+<p>Referenced by <a class="el" href="Impulse_8cpp_source.html#l00073">Impulse()</a>, <a class="el" href="Impulse_8cpp_source.html#l00335">cryomesh::components::operator&lt;&lt;()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00272">operator=()</a>.</p>
 
 </div>
 </div>
@@ -510,9 +586,11 @@ Friends</h2></td></tr>
 <p>Get the first active cycle. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Cycle The first active cycle </dd></dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00133">133</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00166">166</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="ImpulseCollection_8cpp_source.html#l00109">cryomesh::components::ImpulseCollection::clearActiveImpulses()</a>, <a class="el" href="Impulse_8cpp_source.html#l00177">operator+=()</a>, <a class="el" href="Impulse_8cpp_source.html#l00294">cryomesh::components::operator&lt;&lt;()</a>, <a class="el" href="Impulse_8cpp_source.html#l00231">operator=()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00253">operator==()</a>.</p>
+<p>References <a class="el" href="Impulse_8h_source.html#l00396">firstActiveCycle</a>.</p>
+
+<p>Referenced by <a class="el" href="ImpulseCollection_8cpp_source.html#l00124">cryomesh::components::ImpulseCollection::clearActiveImpulses()</a>, <a class="el" href="Impulse_8cpp_source.html#l00126">getActivity()</a>, <a class="el" href="Impulse_8cpp_source.html#l00073">Impulse()</a>, <a class="el" href="Impulse_8cpp_source.html#l00218">operator+=()</a>, <a class="el" href="Impulse_8cpp_source.html#l00335">cryomesh::components::operator&lt;&lt;()</a>, <a class="el" href="Impulse_8cpp_source.html#l00272">operator=()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00292">operator==()</a>.</p>
 
 </div>
 </div>
@@ -533,9 +611,11 @@ Friends</h2></td></tr>
 <p>Get the last active cycle. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Cycle The last active cycle </dd></dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00151">151</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00185">185</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="ImpulseCollection_8cpp_source.html#l00109">cryomesh::components::ImpulseCollection::clearActiveImpulses()</a>, <a class="el" href="Impulse_8cpp_source.html#l00177">operator+=()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00253">operator==()</a>.</p>
+<p>References <a class="el" href="Impulse_8h_source.html#l00404">lastActiveCycle</a>.</p>
+
+<p>Referenced by <a class="el" href="ImpulseCollection_8cpp_source.html#l00124">cryomesh::components::ImpulseCollection::clearActiveImpulses()</a>, <a class="el" href="Impulse_8cpp_source.html#l00126">getActivity()</a>, <a class="el" href="Impulse_8cpp_source.html#l00073">Impulse()</a>, <a class="el" href="Impulse_8cpp_source.html#l00218">operator+=()</a>, <a class="el" href="Impulse_8cpp_source.html#l00335">cryomesh::components::operator&lt;&lt;()</a>, <a class="el" href="Impulse_8cpp_source.html#l00272">operator=()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00292">operator==()</a>.</p>
 
 </div>
 </div>
@@ -556,18 +636,21 @@ Friends</h2></td></tr>
 <p>Get mutable activity timer. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>boost::shared_ptr&lt; ActivityTimer &gt; activityTimer; The activity timer </dd></dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00163">163</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00197">197</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+
+<p>References <a class="el" href="Impulse_8h_source.html#l00418">activityTimer</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="afb337470d62f12f5e414b1bd7f09c6df"></a><!-- doxytag: member="cryomesh::components::Impulse::getRandom" ref="afb337470d62f12f5e414b1bd7f09c6df" args="()" -->
+<a class="anchor" id="a9433c8dbc841beb6e3bfa63dd99ed838"></a><!-- doxytag: member="cryomesh::components::Impulse::getRandom" ref="a9433c8dbc841beb6e3bfa63dd99ed838" args="(double positive_bias=0.5)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Impulse.html">Impulse</a> &gt; cryomesh::components::Impulse::getRandom </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>positive_bias</em> = <code>0.5</code></td><td>)</td>
           <td><code> [static]</code></td>
         </tr>
       </table>
@@ -575,9 +658,17 @@ Friends</h2></td></tr>
 <div class="memdoc">
 
 <p>Get a randomised impulse. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">double</td><td>the (0,1) bias of a positive impulse outcome, 0 negative, 1, positive</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>boost::shared_ptr&lt;Impulse&gt; The randomised impulse </dd></dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00031">31</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00038">38</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="NodeMap_8h_source.html#l00052">cryomesh::components::NodeMap::addRandomImpulses()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00083">randomise()</a>.</p>
 
 </div>
 </div>
@@ -598,11 +689,9 @@ Friends</h2></td></tr>
 <p>Get a 'trigger' impulse, a maximum impulse. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>boost::shared_ptr&lt;Impulse&gt; The trigger impulse </dd></dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00026">26</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00033">33</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
 
-<p>References <a class="el" href="TimeKeeper_8cpp_source.html#l00020">cryomesh::common::TimeKeeper::getTimeKeeper()</a>.</p>
-
-<p>Referenced by <a class="el" href="Fibre_8cpp_source.html#l00054">cryomesh::structures::Fibre::trigger()</a>.</p>
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00079">cryomesh::components::Node::forceFire()</a>, and <a class="el" href="Fibre_8cpp_source.html#l00054">cryomesh::structures::Fibre::trigger()</a>.</p>
 
 </div>
 </div>
@@ -623,7 +712,7 @@ Friends</h2></td></tr>
 <p>Invert the impulse. </p>
 <p>@ return <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; This object inverted </p>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00128">128</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00161">161</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
 
 </div>
 </div>
@@ -644,11 +733,11 @@ Friends</h2></td></tr>
 <p>Is the <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> active on current cycle. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool True if active, false otherwise </dd></dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00074">74</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00105">105</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
 
 <p>References <a class="el" href="TimeKeeper_8cpp_source.html#l00020">cryomesh::common::TimeKeeper::getTimeKeeper()</a>.</p>
 
-<p>Referenced by <a class="el" href="ImpulseCollection_8cpp_source.html#l00109">cryomesh::components::ImpulseCollection::clearActiveImpulses()</a>.</p>
+<p>Referenced by <a class="el" href="ImpulseCollection_8cpp_source.html#l00124">cryomesh::components::ImpulseCollection::clearActiveImpulses()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00109">isActive()</a>.</p>
 
 </div>
 </div>
@@ -680,7 +769,9 @@ Friends</h2></td></tr>
 <p>Is the <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> active at some point in cycle range. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool True if active, false otherwise </dd></dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00082">82</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00113">113</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+
+<p>References <a class="el" href="Impulse_8h_source.html#l00396">firstActiveCycle</a>, and <a class="el" href="Impulse_8h_source.html#l00404">lastActiveCycle</a>.</p>
 
 </div>
 </div>
@@ -702,7 +793,9 @@ Friends</h2></td></tr>
 <p>Is the <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> active on cycle. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool True if active, false otherwise </dd></dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00078">78</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00109">109</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+
+<p>References <a class="el" href="Impulse_8cpp_source.html#l00105">isActive()</a>.</p>
 
 </div>
 </div>
@@ -730,7 +823,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool True if not equal, false otherwise </dd></dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00290">290</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00329">329</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
 
 </div>
 </div>
@@ -758,7 +851,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> New object after addition </dd></dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00171">171</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00212">212</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
 
 </div>
 </div>
@@ -786,9 +879,9 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; This object after addition and assignment </dd></dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00177">177</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00218">218</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
 
-<p>References <a class="el" href="Impulse_8cpp_source.html#l00133">getFirstActiveCycle()</a>, <a class="el" href="Impulse_8cpp_source.html#l00151">getLastActiveCycle()</a>, and <a class="el" href="Cycle_8cpp_source.html#l00056">cryomesh::common::Cycle::toULInt()</a>.</p>
+<p>References <a class="el" href="Impulse_8cpp_source.html#l00166">getFirstActiveCycle()</a>, <a class="el" href="Impulse_8cpp_source.html#l00185">getLastActiveCycle()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00170">setFirstActiveCycle()</a>.</p>
 
 </div>
 </div>
@@ -816,9 +909,9 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> &amp; This object after assignment </dd></dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00231">231</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00272">272</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
 
-<p>References <a class="el" href="Impulse_8cpp_source.html#l00159">getActivityTimer()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00133">getFirstActiveCycle()</a>.</p>
+<p>References <a class="el" href="Impulse_8h_source.html#l00396">firstActiveCycle</a>, <a class="el" href="Impulse_8cpp_source.html#l00205">getActivityDelay()</a>, <a class="el" href="Impulse_8cpp_source.html#l00193">getActivityTimer()</a>, <a class="el" href="Impulse_8cpp_source.html#l00166">getFirstActiveCycle()</a>, <a class="el" href="Impulse_8cpp_source.html#l00185">getLastActiveCycle()</a>, <a class="el" href="Impulse_8h_source.html#l00404">lastActiveCycle</a>, <a class="el" href="Impulse_8cpp_source.html#l00209">setActivityDelay()</a>, <a class="el" href="Impulse_8cpp_source.html#l00201">setActivityTimer()</a>, and <a class="el" href="Cycle_8cpp_source.html#l00060">cryomesh::common::Cycle::toLInt()</a>.</p>
 
 </div>
 </div>
@@ -846,27 +939,53 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool True if equal, false otherwise </dd></dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00253">253</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00292">292</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
 
-<p>References <a class="el" href="Impulse_8cpp_source.html#l00133">getFirstActiveCycle()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00151">getLastActiveCycle()</a>.</p>
+<p>References <a class="el" href="Impulse_8cpp_source.html#l00166">getFirstActiveCycle()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00185">getLastActiveCycle()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a0f88203a7d85fc8c613e144ef302ea11"></a><!-- doxytag: member="cryomesh::components::Impulse::randomise" ref="a0f88203a7d85fc8c613e144ef302ea11" args="()" -->
+<a class="anchor" id="a5da6ee1f9d1be136d23c36c377258a4d"></a><!-- doxytag: member="cryomesh::components::Impulse::randomise" ref="a5da6ee1f9d1be136d23c36c377258a4d" args="(double positive_bias=0.5)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void cryomesh::components::Impulse::randomise </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>positive_bias</em> = <code>0.5</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00065">65</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00083">83</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+
+<p>References <a class="el" href="Impulse_8h_source.html#l00396">firstActiveCycle</a>, <a class="el" href="Impulse_8cpp_source.html#l00038">getRandom()</a>, <a class="el" href="Impulse_8h_source.html#l00404">lastActiveCycle</a>, <a class="el" href="Impulse_8h_source.html#l00307">MAX_ACTIVITY</a>, <a class="el" href="Impulse_8h_source.html#l00355">MAX_ACTIVITY_DELAY</a>, <a class="el" href="Impulse_8h_source.html#l00323">MAX_ACTIVITY_LENGTH</a>, <a class="el" href="Impulse_8h_source.html#l00315">MIN_ACTIVITY</a>, <a class="el" href="Impulse_8h_source.html#l00347">MIN_ACTIVITY_DELAY</a>, <a class="el" href="Impulse_8h_source.html#l00331">MIN_ACTIVITY_LENGTH</a>, <a class="el" href="Impulse_8h_source.html#l00339">MIN_ACTIVITY_MAGNITUDE</a>, <a class="el" href="Impulse_8cpp_source.html#l00209">setActivityDelay()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00201">setActivityTimer()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a800479ed06132eb56d0bc15c8aa40d8a"></a><!-- doxytag: member="cryomesh::components::Impulse::setActivityDelay" ref="a800479ed06132eb56d0bc15c8aa40d8a" args="(int delay)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cryomesh::components::Impulse::setActivityDelay </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>delay</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00209">209</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+
+<p>References <a class="el" href="Impulse_8h_source.html#l00411">activityDelay</a>.</p>
+
+<p>Referenced by <a class="el" href="Impulse_8cpp_source.html#l00073">Impulse()</a>, <a class="el" href="Impulse_8cpp_source.html#l00272">operator=()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00083">randomise()</a>.</p>
 
 </div>
 </div>
@@ -893,7 +1012,11 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00167">167</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00201">201</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+
+<p>References <a class="el" href="Impulse_8h_source.html#l00418">activityTimer</a>.</p>
+
+<p>Referenced by <a class="el" href="Impulse_8cpp_source.html#l00045">Impulse()</a>, <a class="el" href="Impulse_8cpp_source.html#l00272">operator=()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00083">randomise()</a>.</p>
 
 </div>
 </div>
@@ -920,7 +1043,11 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00137">137</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00170">170</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+
+<p>References <a class="el" href="Impulse_8h_source.html#l00396">firstActiveCycle</a>, <a class="el" href="Impulse_8cpp_source.html#l00205">getActivityDelay()</a>, and <a class="el" href="Impulse_8h_source.html#l00404">lastActiveCycle</a>.</p>
+
+<p>Referenced by <a class="el" href="Impulse_8cpp_source.html#l00045">Impulse()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00218">operator+=()</a>.</p>
 
 </div>
 </div>
@@ -960,11 +1087,28 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::ostream &amp; The output stream </dd></dl>
 
-<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00294">294</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8cpp_source.html#l00335">335</a> of file <a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a>.</p>
 
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="ae491ccf924dc04674fb604a5258e0580"></a><!-- doxytag: member="cryomesh::components::Impulse::activityDelay" ref="ae491ccf924dc04674fb604a5258e0580" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classcryomesh_1_1components_1_1Impulse.html#ae491ccf924dc04674fb604a5258e0580">cryomesh::components::Impulse::activityDelay</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Impulse_8h_source.html#l00411">411</a> of file <a class="el" href="Impulse_8h_source.html">Impulse.h</a>.</p>
+
+<p>Referenced by <a class="el" href="Impulse_8cpp_source.html#l00205">getActivityDelay()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00209">setActivityDelay()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a6fc33296a0683cc08c5ea7404632a793"></a><!-- doxytag: member="cryomesh::components::Impulse::activityTimer" ref="a6fc33296a0683cc08c5ea7404632a793" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -976,7 +1120,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Impulse_8h_source.html#l00377">377</a> of file <a class="el" href="Impulse_8h_source.html">Impulse.h</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8h_source.html#l00418">418</a> of file <a class="el" href="Impulse_8h_source.html">Impulse.h</a>.</p>
+
+<p>Referenced by <a class="el" href="Impulse_8cpp_source.html#l00193">getActivityTimer()</a>, <a class="el" href="Impulse_8cpp_source.html#l00197">getMutableActivityTimer()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00201">setActivityTimer()</a>.</p>
 
 </div>
 </div>
@@ -994,7 +1140,9 @@ Friends</h2></td></tr>
 <p>The first cycle that this <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> has activity. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Cycle Return first active cycle </dd></dl>
 
-<p>Definition at line <a class="el" href="Impulse_8h_source.html#l00362">362</a> of file <a class="el" href="Impulse_8h_source.html">Impulse.h</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8h_source.html#l00396">396</a> of file <a class="el" href="Impulse_8h_source.html">Impulse.h</a>.</p>
+
+<p>Referenced by <a class="el" href="Impulse_8cpp_source.html#l00126">getActivity()</a>, <a class="el" href="Impulse_8cpp_source.html#l00166">getFirstActiveCycle()</a>, <a class="el" href="Impulse_8cpp_source.html#l00073">Impulse()</a>, <a class="el" href="Impulse_8cpp_source.html#l00113">isActive()</a>, <a class="el" href="Impulse_8cpp_source.html#l00272">operator=()</a>, <a class="el" href="Impulse_8cpp_source.html#l00083">randomise()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00170">setFirstActiveCycle()</a>.</p>
 
 </div>
 </div>
@@ -1009,7 +1157,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Impulse_8h_source.html#l00293">293</a> of file <a class="el" href="Impulse_8h_source.html">Impulse.h</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8h_source.html#l00300">300</a> of file <a class="el" href="Impulse_8h_source.html">Impulse.h</a>.</p>
 
 </div>
 </div>
@@ -1027,7 +1175,9 @@ Friends</h2></td></tr>
 <p>The lase cycle that this <a class="el" href="classcryomesh_1_1components_1_1Impulse.html" title="Impulse is a mobile information packet to be passed between Nodes.">Impulse</a> has activity. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Cycle Return last active cycle </dd></dl>
 
-<p>Definition at line <a class="el" href="Impulse_8h_source.html#l00370">370</a> of file <a class="el" href="Impulse_8h_source.html">Impulse.h</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8h_source.html#l00404">404</a> of file <a class="el" href="Impulse_8h_source.html">Impulse.h</a>.</p>
+
+<p>Referenced by <a class="el" href="Impulse_8cpp_source.html#l00126">getActivity()</a>, <a class="el" href="Impulse_8cpp_source.html#l00185">getLastActiveCycle()</a>, <a class="el" href="Impulse_8cpp_source.html#l00073">Impulse()</a>, <a class="el" href="Impulse_8cpp_source.html#l00113">isActive()</a>, <a class="el" href="Impulse_8cpp_source.html#l00272">operator=()</a>, <a class="el" href="Impulse_8cpp_source.html#l00083">randomise()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00170">setFirstActiveCycle()</a>.</p>
 
 </div>
 </div>
@@ -1042,7 +1192,26 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Impulse_8h_source.html#l00300">300</a> of file <a class="el" href="Impulse_8h_source.html">Impulse.h</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8h_source.html#l00307">307</a> of file <a class="el" href="Impulse_8h_source.html">Impulse.h</a>.</p>
+
+<p>Referenced by <a class="el" href="Impulse_8cpp_source.html#l00083">randomise()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afc1ae22e801a9dbf9bbb170d97d3411b"></a><!-- doxytag: member="cryomesh::components::Impulse::MAX_ACTIVITY_DELAY" ref="afc1ae22e801a9dbf9bbb170d97d3411b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="classcryomesh_1_1components_1_1Impulse.html#afc1ae22e801a9dbf9bbb170d97d3411b">cryomesh::components::Impulse::MAX_ACTIVITY_DELAY</a> = 10<code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Impulse_8h_source.html#l00355">355</a> of file <a class="el" href="Impulse_8h_source.html">Impulse.h</a>.</p>
+
+<p>Referenced by <a class="el" href="Impulse_8cpp_source.html#l00083">randomise()</a>.</p>
 
 </div>
 </div>
@@ -1051,13 +1220,15 @@ Friends</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const int <a class="el" href="classcryomesh_1_1components_1_1Impulse.html#a449f5f6a08af50b2e66703931ef3cd6c">cryomesh::components::Impulse::MAX_ACTIVITY_LENGTH</a> = 10<code> [static]</code></td>
+          <td class="memname">const int <a class="el" href="classcryomesh_1_1components_1_1Impulse.html#a449f5f6a08af50b2e66703931ef3cd6c">cryomesh::components::Impulse::MAX_ACTIVITY_LENGTH</a> = 20<code> [static]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Impulse_8h_source.html#l00316">316</a> of file <a class="el" href="Impulse_8h_source.html">Impulse.h</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8h_source.html#l00323">323</a> of file <a class="el" href="Impulse_8h_source.html">Impulse.h</a>.</p>
+
+<p>Referenced by <a class="el" href="Impulse_8cpp_source.html#l00083">randomise()</a>.</p>
 
 </div>
 </div>
@@ -1072,7 +1243,26 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Impulse_8h_source.html#l00308">308</a> of file <a class="el" href="Impulse_8h_source.html">Impulse.h</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8h_source.html#l00315">315</a> of file <a class="el" href="Impulse_8h_source.html">Impulse.h</a>.</p>
+
+<p>Referenced by <a class="el" href="Impulse_8cpp_source.html#l00083">randomise()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7537a73569989ce84f0ab1b10e07ee94"></a><!-- doxytag: member="cryomesh::components::Impulse::MIN_ACTIVITY_DELAY" ref="a7537a73569989ce84f0ab1b10e07ee94" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="classcryomesh_1_1components_1_1Impulse.html#a7537a73569989ce84f0ab1b10e07ee94">cryomesh::components::Impulse::MIN_ACTIVITY_DELAY</a> = 0<code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Impulse_8h_source.html#l00347">347</a> of file <a class="el" href="Impulse_8h_source.html">Impulse.h</a>.</p>
+
+<p>Referenced by <a class="el" href="Impulse_8cpp_source.html#l00083">randomise()</a>.</p>
 
 </div>
 </div>
@@ -1087,13 +1277,32 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Impulse_8h_source.html#l00324">324</a> of file <a class="el" href="Impulse_8h_source.html">Impulse.h</a>.</p>
+<p>Definition at line <a class="el" href="Impulse_8h_source.html#l00331">331</a> of file <a class="el" href="Impulse_8h_source.html">Impulse.h</a>.</p>
+
+<p>Referenced by <a class="el" href="Impulse_8cpp_source.html#l00045">Impulse()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00083">randomise()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a831758cc2e20d4a2d10b71f8c7698fd1"></a><!-- doxytag: member="cryomesh::components::Impulse::MIN_ACTIVITY_MAGNITUDE" ref="a831758cc2e20d4a2d10b71f8c7698fd1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double <a class="el" href="classcryomesh_1_1components_1_1Impulse.html#a831758cc2e20d4a2d10b71f8c7698fd1">cryomesh::components::Impulse::MIN_ACTIVITY_MAGNITUDE</a> = 0.01<code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="Impulse_8h_source.html#l00339">339</a> of file <a class="el" href="Impulse_8h_source.html">Impulse.h</a>.</p>
+
+<p>Referenced by <a class="el" href="Impulse_8cpp_source.html#l00083">randomise()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/niall/Projects/Eclipse/cryomesh/src/components/<a class="el" href="Impulse_8h_source.html">Impulse.h</a></li>
-<li>/home/niall/Projects/Eclipse/cryomesh/src/components/<a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a></li>
+<li>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/<a class="el" href="Impulse_8h_source.html">Impulse.h</a></li>
+<li>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/<a class="el" href="Impulse_8cpp_source.html">Impulse.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -1101,7 +1310,7 @@ Friends</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -1110,7 +1319,7 @@ Friends</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:14 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

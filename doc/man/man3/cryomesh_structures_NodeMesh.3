@@ -1,0 +1,338 @@
+.TH "cryomesh::structures::NodeMesh" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::structures::NodeMesh \- 
+.PP
+\fBMesh\fP of nodes and their neighbouring nodes and distances.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <NodeMesh.h>\fP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBNeighbourhoodRanges\fP"
+.br
+.RI "\fIStruct to capture some statistics data on a nodes neighbourhood. \fP"
+.in -1c
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBInterpolationStyle\fP { \fBINVERSE_R\fP, \fBINVERSE_R2\fP }"
+.br
+.RI "\fIStype to use when interpolating values. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBNodeMesh\fP (\fBCluster\fP &clus, double max_radius=1)"
+.br
+.RI "\fIConstructor to create a node mesh from at minimum, a cluster and an optional maximum neighbour radius. \fP"
+.ti -1c
+.RI "virtual \fB~NodeMesh\fP ()"
+.br
+.RI "\fIDefault destructor. \fP"
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.RI "\fIPer cycle update calls. \fP"
+.ti -1c
+.RI "void \fBwarpNodes\fP ()"
+.br
+.RI "\fIMerge the interpolated activities with the actual node activities. \fP"
+.ti -1c
+.RI "void \fBregenerateNeighbourhoods\fP ()"
+.br
+.RI "\fIRegenerate the neighbourhood nodes and distances. \fP"
+.ti -1c
+.RI "void \fBregenerateActivities\fP ()"
+.br
+.RI "\fIRecalculate the applied interpolated activity at all nodes from their neighbours. \fP"
+.ti -1c
+.RI "\fBNeighbourhoodRanges\fP \fBgetNeighbourRanges\fP () const "
+.br
+.RI "\fIReturn a pair of pairs. \fP"
+.ti -1c
+.RI "const \fBNeighbourhoodMap\fP & \fBgetNodeNeighbourhoodMap\fP () const "
+.br
+.RI "\fIGet the neighbourhood map. \fP"
+.ti -1c
+.RI "const std::map< boost::shared_ptr< \fBcomponents::Node\fP >, double > & \fBgetNeighbourhoodActivities\fP () const "
+.br
+.RI "\fIGet the neighbourhood activities. \fP"
+.ti -1c
+.RI "std::ostream & \fBprintNeighbourhoods\fP (std::ostream &os) const "
+.br
+.RI "\fIPrint the neighbourhood map. \fP"
+.ti -1c
+.RI "std::ostream & \fBprintNeighbourhoodActivities\fP (std::ostream &os) const "
+.br
+.RI "\fIPrint the neighbourhood activities. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBgetInterpolatedActivity\fP (const std::map< boost::shared_ptr< \fBcryomesh::components::Node\fP >, double > &all_neighbours, const \fBInterpolationStyle\fP style=INVERSE_R) const "
+.br
+.RI "\fIUse a list of neighbours and their distances to generated an interpolated activity value at the central node. \fP"
+.ti -1c
+.RI "double \fBgetDecayRate\fP () const "
+.br
+.RI "\fIGet the spacial decay rate for activities. \fP"
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const double \fBINTERPOLATED_ACTIVITY_SCALING_FACTOR\fP = (1.0 / 100.0)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBNeighbourhoodMap\fP \fBnodeNeighbourhoodMap\fP"
+.br
+.ti -1c
+.RI "std::map< boost::shared_ptr< \fBcomponents::Node\fP >, double > \fBneighbourhoodActivities\fP"
+.br
+.ti -1c
+.RI "\fBCluster\fP & \fBcluster\fP"
+.br
+.ti -1c
+.RI "double \fBmaximumNeighbourhoodRadius\fP"
+.br
+.ti -1c
+.RI "const double \fBdecayRate\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBNodeMesh\fP &obj)"
+.br
+.RI "\fITo stream operator. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBMesh\fP of nodes and their neighbouring nodes and distances. 
+.PP
+Definition at line 34 of file NodeMesh.h.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBcryomesh::structures::NodeMesh::InterpolationStyle\fP"
+.PP
+Stype to use when interpolating values. 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIINVERSE_R \fP\fP
+.TP
+\fB\fIINVERSE_R2 \fP\fP
+
+.PP
+Definition at line 50 of file NodeMesh.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "cryomesh::structures::NodeMesh::NodeMesh (\fBCluster\fP &clus, doublemax_radius = \fC1\fP)"
+.PP
+Constructor to create a node mesh from at minimum, a cluster and an optional maximum neighbour radius. \fBParameters:\fP
+.RS 4
+\fI\fBCluster\fP\fP The cluster associated with this node mesh 
+.br
+\fIdouble\fP Maximum radius cutoff point for neighbourhood distance 
+.RE
+.PP
+
+.PP
+Definition at line 20 of file NodeMesh.cpp.
+.SS "cryomesh::structures::NodeMesh::~NodeMesh ()\fC [virtual]\fP"
+.PP
+Default destructor. 
+.PP
+Definition at line 25 of file NodeMesh.cpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "double cryomesh::structures::NodeMesh::getDecayRate () const\fC [protected]\fP"
+.PP
+Get the spacial decay rate for activities. \fBReturns:\fP
+.RS 4
+double The spacial decay rate 
+.RE
+.PP
+
+.PP
+Definition at line 150 of file NodeMesh.cpp.
+.PP
+Referenced by getInterpolatedActivity().
+.SS "double cryomesh::structures::NodeMesh::getInterpolatedActivity (const std::map< boost::shared_ptr< \fBcryomesh::components::Node\fP >, double > &all_neighbours, const \fBInterpolationStyle\fPstyle = \fCINVERSE_R\fP) const\fC [protected]\fP"
+.PP
+Use a list of neighbours and their distances to generated an interpolated activity value at the central node. \fBParameters:\fP
+.RS 4
+\fIstd::map<boost::shared_ptr<cryomesh::components::Node>,double>\fP List of all the neighbour nodes and their distances to their central node 
+.br
+\fIInterpolationStyle\fP Which method to use to interpolate the central activity
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+double The interpolated activity 
+.RE
+.PP
+
+.PP
+Definition at line 98 of file NodeMesh.cpp.
+.PP
+References getDecayRate().
+.PP
+Referenced by regenerateActivities().
+.SS "const std::map< boost::shared_ptr< \fBcomponents::Node\fP >, double > & cryomesh::structures::NodeMesh::getNeighbourhoodActivities () const"
+.PP
+Get the neighbourhood activities. \fBReturns:\fP
+.RS 4
+std::map<boost::shared_ptr<components::Node>, double> The neighbourhood activities 
+.RE
+.PP
+
+.PP
+Definition at line 195 of file NodeMesh.cpp.
+.SS "\fBNodeMesh::NeighbourhoodRanges\fP cryomesh::structures::NodeMesh::getNeighbourRanges () const"
+.PP
+Return a pair of pairs. the first representing the min/max of neighbour counts, the second the min/max of distances
+.PP
+\fBReturns:\fP
+.RS 4
+\fBNeighbourhoodRanges\fP min/max of neighbour counts and min/max of distances 
+.RE
+.PP
+
+.PP
+Definition at line 154 of file NodeMesh.cpp.
+.SS "const \fBNeighbourhoodMap\fP & cryomesh::structures::NodeMesh::getNodeNeighbourhoodMap () const"
+.PP
+Get the neighbourhood map. \fBReturns:\fP
+.RS 4
+NeighbourhoodMap The neighbourhood map 
+.RE
+.PP
+
+.PP
+Definition at line 192 of file NodeMesh.cpp.
+.SS "std::ostream & cryomesh::structures::NodeMesh::printNeighbourhoodActivities (std::ostream &os) const"
+.PP
+Print the neighbourhood activities. \fBParameters:\fP
+.RS 4
+\fIstd::ostream\fP The output stream
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::ostream The output stream 
+.RE
+.PP
+
+.PP
+Definition at line 221 of file NodeMesh.cpp.
+.PP
+References neighbourhoodActivities.
+.SS "std::ostream & cryomesh::structures::NodeMesh::printNeighbourhoods (std::ostream &os) const"
+.PP
+Print the neighbourhood map. \fBParameters:\fP
+.RS 4
+\fIstd::ostream\fP The output stream
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::ostream The output stream 
+.RE
+.PP
+
+.PP
+Definition at line 199 of file NodeMesh.cpp.
+.SS "void cryomesh::structures::NodeMesh::regenerateActivities ()"
+.PP
+Recalculate the applied interpolated activity at all nodes from their neighbours. 
+.PP
+Definition at line 87 of file NodeMesh.cpp.
+.PP
+References getInterpolatedActivity(), and neighbourhoodActivities.
+.SS "void cryomesh::structures::NodeMesh::regenerateNeighbourhoods ()"
+.PP
+Regenerate the neighbourhood nodes and distances. 
+.PP
+Definition at line 50 of file NodeMesh.cpp.
+.PP
+References maximumNeighbourhoodRadius, neighbourhoodActivities, and nodeNeighbourhoodMap.
+.SS "void cryomesh::structures::NodeMesh::update ()"
+.PP
+Per cycle update calls. 
+.PP
+Definition at line 28 of file NodeMesh.cpp.
+.SS "void cryomesh::structures::NodeMesh::warpNodes ()"
+.PP
+Merge the interpolated activities with the actual node activities. 
+.PP
+Definition at line 32 of file NodeMesh.cpp.
+.PP
+References INTERPOLATED_ACTIVITY_SCALING_FACTOR, and neighbourhoodActivities.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream &os, const \fBNodeMesh\fP &obj)\fC [friend]\fP"
+.PP
+To stream operator. \fBParameters:\fP
+.RS 4
+\fIstd::ostream\fP & os The output stream 
+.br
+\fIconst\fP \fBNodeMesh\fP & obj The object to stream
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::ostream & The output stream 
+.RE
+.PP
+
+.PP
+Definition at line 240 of file NodeMesh.cpp.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBCluster\fP& \fBcryomesh::structures::NodeMesh::cluster\fP\fC [private]\fP"
+.PP
+Definition at line 203 of file NodeMesh.h.
+.SS "const double \fBcryomesh::structures::NodeMesh::decayRate\fP\fC [private]\fP"
+.PP
+Definition at line 217 of file NodeMesh.h.
+.SS "const double \fBcryomesh::structures::NodeMesh::INTERPOLATED_ACTIVITY_SCALING_FACTOR\fP = (1.0 / 100.0)\fC [static, protected]\fP"
+.PP
+Definition at line 181 of file NodeMesh.h.
+.PP
+Referenced by warpNodes().
+.SS "double \fBcryomesh::structures::NodeMesh::maximumNeighbourhoodRadius\fP\fC [private]\fP"
+.PP
+Definition at line 210 of file NodeMesh.h.
+.PP
+Referenced by regenerateNeighbourhoods().
+.SS "std::map<boost::shared_ptr<\fBcomponents::Node\fP>, double> \fBcryomesh::structures::NodeMesh::neighbourhoodActivities\fP\fC [private]\fP"
+.PP
+Definition at line 196 of file NodeMesh.h.
+.PP
+Referenced by printNeighbourhoodActivities(), regenerateActivities(), regenerateNeighbourhoods(), and warpNodes().
+.SS "\fBNeighbourhoodMap\fP \fBcryomesh::structures::NodeMesh::nodeNeighbourhoodMap\fP\fC [private]\fP"
+.PP
+Definition at line 189 of file NodeMesh.h.
+.PP
+Referenced by regenerateNeighbourhoods().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code.

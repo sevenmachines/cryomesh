@@ -97,10 +97,15 @@ Inheritance diagram for cryomesh::components::ImpulseCollection:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html#a3682719f1c0bd471e8c5a19b39cc285d">Comparison</a> { <a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html#a3682719f1c0bd471e8c5a19b39cc285da5288e1792a76693414517164a2289ec8">GreaterThan</a>, 
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html#a3682719f1c0bd471e8c5a19b39cc285d">Comparison</a> { <br/>
+&#160;&#160;<a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html#a3682719f1c0bd471e8c5a19b39cc285da5288e1792a76693414517164a2289ec8">GreaterThan</a>, 
 <a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html#a3682719f1c0bd471e8c5a19b39cc285da049307d079370521e85998e7141ec3af">LessThan</a>, 
 <a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html#a3682719f1c0bd471e8c5a19b39cc285da591330a7a512ed11c4429536a5d1e6d5">EqualTo</a>, 
-<a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html#a3682719f1c0bd471e8c5a19b39cc285da1402ae2e51bdcd9c25fae0dbb70e0b7a">NotEqualTo</a>
+<a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html#a3682719f1c0bd471e8c5a19b39cc285da1402ae2e51bdcd9c25fae0dbb70e0b7a">NotEqualTo</a>, 
+<br/>
+&#160;&#160;<a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html#a3682719f1c0bd471e8c5a19b39cc285dabb82adff3882cdd74faaef695b6bc82d">LessThanOrEqualTo</a>, 
+<a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html#a3682719f1c0bd471e8c5a19b39cc285da5c716b8625dde68ad195d063f37be1d1">GreaterThanOrEqualTo</a>
+<br/>
  }</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -140,10 +145,11 @@ boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Impulse
 &lt; <a class="el" href="classcryomesh_1_1components_1_1Impulse.html">Impulse</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html#aea52c674f13597d808ad3e5f4f4bb9c1">getByActivityTimerValue</a> (double value, <a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html#a3682719f1c0bd471e8c5a19b39cc285d">Comparison</a> comp)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get impulse list by activity timer value.  <a href="#aea52c674f13597d808ad3e5f4f4bb9c1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::list&lt; boost::shared_ptr<br class="typebreak"/>
-&lt; <a class="el" href="classcryomesh_1_1components_1_1Impulse.html">Impulse</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html#aeae2b4e8d9e9357560227660dbe7d926">removeByActivityTimerValue</a> (double value=0, <a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html#a3682719f1c0bd471e8c5a19b39cc285d">Comparison</a> comp=LessThan)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">remove impulses by activity timer value  <a href="#aeae2b4e8d9e9357560227660dbe7d926"></a><br/></td></tr>
+&lt; <a class="el" href="classcryomesh_1_1components_1_1Impulse.html">Impulse</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html#a317b84fe238bd4ff6bb8eda97b35cf1a">removeByActivityTimerValue</a> (double value=0, <a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html#a3682719f1c0bd471e8c5a19b39cc285d">Comparison</a> comp=LessThanOrEqualTo)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">remove impulses by activity timer value  <a href="#a317b84fe238bd4ff6bb8eda97b35cf1a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html#a892cc1028a9539de15668c39511adba3">refreshDataObject</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inherited from DataObjectController.  <a href="#a892cc1028a9539de15668c39511adba3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html#a3e6df4eb108bd6e5acc6abe4184912b8">enableDebug</a> (bool b)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html">ImpulseCollection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html#af2f41361cb06d4e6a4028e7ad9ba4792">operator=</a> (const <a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html">ImpulseCollection</a> &amp;obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator.  <a href="#af2f41361cb06d4e6a4028e7ad9ba4792"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html">ImpulseCollection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html#a92954d37e3ef80ead5205fc5b288925e">operator+=</a> (const <a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html">ImpulseCollection</a> &amp;obj)</td></tr>
@@ -167,7 +173,7 @@ boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Impulse
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::map&lt; boost::uuids::uuid, <br class="typebreak"/>
 boost::shared_ptr&lt; <a class="el" href="classcryomesh_1_1components_1_1Impulse.html">Impulse</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html#a3d5bac577752316e38d0d54715b85dca">clearActivitiesByValue</a> (double activity, bool greater)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the associated <a class="el" href="classcryomesh_1_1components_1_1Mesh.html" title="Mesh is the fabric of connection space and warps and is warped by it.">Mesh</a>.  <a href="#a3d5bac577752316e38d0d54715b85dca"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the associated Mesh.  <a href="#a3d5bac577752316e38d0d54715b85dca"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcryomesh_1_1dataobjects_1_1DataObject.html">dataobjects::DataObject</a><br class="typebreak"/>
@@ -202,6 +208,10 @@ Friends</h2></td></tr>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="a3682719f1c0bd471e8c5a19b39cc285da1402ae2e51bdcd9c25fae0dbb70e0b7a"></a><!-- doxytag: member="NotEqualTo" ref="a3682719f1c0bd471e8c5a19b39cc285da1402ae2e51bdcd9c25fae0dbb70e0b7a" args="" -->NotEqualTo</em>&nbsp;</td><td>
 </td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a3682719f1c0bd471e8c5a19b39cc285dabb82adff3882cdd74faaef695b6bc82d"></a><!-- doxytag: member="LessThanOrEqualTo" ref="a3682719f1c0bd471e8c5a19b39cc285dabb82adff3882cdd74faaef695b6bc82d" args="" -->LessThanOrEqualTo</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a3682719f1c0bd471e8c5a19b39cc285da5c716b8625dde68ad195d063f37be1d1"></a><!-- doxytag: member="GreaterThanOrEqualTo" ref="a3682719f1c0bd471e8c5a19b39cc285da5c716b8625dde68ad195d063f37be1d1" args="" -->GreaterThanOrEqualTo</em>&nbsp;</td><td>
+</td></tr>
 </table>
 </dd>
 </dl>
@@ -226,7 +236,7 @@ Friends</h2></td></tr>
 <div class="memdoc">
 
 <p>Contructor for <a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html" title="ImpulseCollection represents a collection of Impulse objects.">ImpulseCollection</a>. </p>
-<p>Contruct using default <a class="el" href="classcryomesh_1_1components_1_1Mesh.html" title="Mesh is the fabric of connection space and warps and is warped by it.">Mesh</a> </p>
+<p>Contruct using default Mesh </p>
 
 <p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00016">16</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
 
@@ -272,11 +282,11 @@ Friends</h2></td></tr>
 <p>Update the collection to by dropping all impulses that are active on this cycle</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Impulse&gt; &gt; The collection of deleted impulses </dd></dl>
 
-<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00100">100</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00115">115</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
 
 <p>References <a class="el" href="TimeKeeper_8cpp_source.html#l00020">cryomesh::common::TimeKeeper::getTimeKeeper()</a>.</p>
 
-<p>Referenced by <a class="el" href="ImpulseCollection_8cpp_source.html#l00105">clearActiveImpulses()</a>, and <a class="el" href="Node_8cpp_source.html#l00045">cryomesh::components::Node::update()</a>.</p>
+<p>Referenced by <a class="el" href="ImpulseCollection_8cpp_source.html#l00120">clearActiveImpulses()</a>, <a class="el" href="Node_8cpp_source.html#l00107">cryomesh::components::Node::enterRecovery()</a>, and <a class="el" href="Node_8cpp_source.html#l00048">cryomesh::components::Node::update()</a>.</p>
 
 </div>
 </div>
@@ -317,9 +327,9 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Impulse&gt; &gt; The collection of deleted impulses </dd></dl>
 
-<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00109">109</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00124">124</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
 
-<p>References <a class="el" href="Impulse_8cpp_source.html#l00133">cryomesh::components::Impulse::getFirstActiveCycle()</a>, <a class="el" href="Impulse_8cpp_source.html#l00151">cryomesh::components::Impulse::getLastActiveCycle()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00074">cryomesh::components::Impulse::isActive()</a>.</p>
+<p>References <a class="el" href="Impulse_8cpp_source.html#l00166">cryomesh::components::Impulse::getFirstActiveCycle()</a>, <a class="el" href="Impulse_8cpp_source.html#l00185">cryomesh::components::Impulse::getLastActiveCycle()</a>, <a class="el" href="TimeKeeper_8cpp_source.html#l00020">cryomesh::common::TimeKeeper::getTimeKeeper()</a>, and <a class="el" href="Impulse_8cpp_source.html#l00105">cryomesh::components::Impulse::isActive()</a>.</p>
 
 </div>
 </div>
@@ -348,9 +358,9 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Impulse&gt; &gt; The collection of deleted impulses </dd></dl>
 
-<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00105">105</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00120">120</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
 
-<p>References <a class="el" href="ImpulseCollection_8cpp_source.html#l00100">clearActiveImpulses()</a>.</p>
+<p>References <a class="el" href="ImpulseCollection_8cpp_source.html#l00115">clearActiveImpulses()</a>.</p>
 
 </div>
 </div>
@@ -378,9 +388,9 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Impulse&gt; &gt; The deleted collection of impulses </dd></dl>
 
-<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00159">159</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00181">181</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
 
-<p>References <a class="el" href="ImpulseCollection_8cpp_source.html#l00342">clearActivitiesByValue()</a>.</p>
+<p>References <a class="el" href="ImpulseCollection_8cpp_source.html#l00394">clearActivitiesByValue()</a>.</p>
 
 </div>
 </div>
@@ -408,9 +418,9 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Impulse&gt; &gt; The deleted collection of impulses </dd></dl>
 
-<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00155">155</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00177">177</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
 
-<p>References <a class="el" href="ImpulseCollection_8cpp_source.html#l00342">clearActivitiesByValue()</a>.</p>
+<p>References <a class="el" href="ImpulseCollection_8cpp_source.html#l00394">clearActivitiesByValue()</a>.</p>
 
 </div>
 </div>
@@ -439,8 +449,8 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Get the associated <a class="el" href="classcryomesh_1_1components_1_1Mesh.html" title="Mesh is the fabric of connection space and warps and is warped by it.">Mesh</a>. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classcryomesh_1_1components_1_1Mesh.html" title="Mesh is the fabric of connection space and warps and is warped by it.">Mesh</a></dd></dl>
+<p>Get the associated Mesh. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Mesh</dd></dl>
 <p>const boost::shared_ptr&lt;Mesh&gt; getMesh() const; Clear the Impulses that have activities greater or less than parameter</p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -451,9 +461,9 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Impulse&gt; &gt; The deleted collection of impulses </dd></dl>
 
-<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00342">342</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00394">394</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="ImpulseCollection_8cpp_source.html#l00159">clearActivitiesByMaximum()</a>, and <a class="el" href="ImpulseCollection_8cpp_source.html#l00155">clearActivitiesByMinimum()</a>.</p>
+<p>Referenced by <a class="el" href="ImpulseCollection_8cpp_source.html#l00181">clearActivitiesByMaximum()</a>, and <a class="el" href="ImpulseCollection_8cpp_source.html#l00177">clearActivitiesByMinimum()</a>.</p>
 
 </div>
 </div>
@@ -481,9 +491,9 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00050">50</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00053">53</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
 
-<p>References <a class="el" href="ImpulseCollection_8cpp_source.html#l00046">clearImpulses()</a>.</p>
+<p>References <a class="el" href="ImpulseCollection_8cpp_source.html#l00049">clearImpulses()</a>.</p>
 
 </div>
 </div>
@@ -523,7 +533,9 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Impulse&gt; &gt; The deleted collection of impulses </dd></dl>
 
-<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00054">54</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00057">57</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
+
+<p>References <a class="el" href="TimeKeeper_8cpp_source.html#l00020">cryomesh::common::TimeKeeper::getTimeKeeper()</a>.</p>
 
 </div>
 </div>
@@ -544,11 +556,11 @@ Friends</h2></td></tr>
 <p>Clear collection up to present cycle. </p>
 <p>Update the collection to present cycle (non-inclusive) by dropping all impulses that are 'in the past' relative to that cycle. Interval is [0,present_cycle) </p>
 
-<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00046">46</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00049">49</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
 
 <p>References <a class="el" href="TimeKeeper_8cpp_source.html#l00020">cryomesh::common::TimeKeeper::getTimeKeeper()</a>.</p>
 
-<p>Referenced by <a class="el" href="ImpulseCollection_8cpp_source.html#l00050">clearImpulses()</a>, and <a class="el" href="Node_8cpp_source.html#l00086">cryomesh::components::Node::updateImpulses()</a>.</p>
+<p>Referenced by <a class="el" href="ImpulseCollection_8cpp_source.html#l00053">clearImpulses()</a>, and <a class="el" href="Node_8cpp_source.html#l00127">cryomesh::components::Node::updateImpulses()</a>.</p>
 
 </div>
 </div>
@@ -568,7 +580,26 @@ Friends</h2></td></tr>
 
 <p>Decrement the activity timers of all impulses. </p>
 
-<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00163">163</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00185">185</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3e6df4eb108bd6e5acc6abe4184912b8"></a><!-- doxytag: member="cryomesh::components::ImpulseCollection::enableDebug" ref="a3e6df4eb108bd6e5acc6abe4184912b8" args="(bool b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cryomesh::components::ImpulseCollection::enableDebug </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00313">313</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
 
 </div>
 </div>
@@ -617,11 +648,11 @@ Friends</h2></td></tr>
 <p>Sum all the Impulses in the collection on the current cycle and return activity</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>double The activity on specified cycle </dd></dl>
 
-<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00041">41</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00044">44</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
 
 <p>References <a class="el" href="TimeKeeper_8cpp_source.html#l00020">cryomesh::common::TimeKeeper::getTimeKeeper()</a>.</p>
 
-<p>Referenced by <a class="el" href="ImpulseCollection_8cpp_source.html#l00210">refreshDataObject()</a>.</p>
+<p>Referenced by <a class="el" href="ImpulseCollection_8cpp_source.html#l00258">refreshDataObject()</a>.</p>
 
 </div>
 </div>
@@ -651,6 +682,8 @@ Friends</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>double The activity on specified cycle </dd></dl>
 
 <p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00023">23</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="Node_8cpp_source.html#l00258">cryomesh::components::Node::getActivity()</a>.</p>
 
 </div>
 </div>
@@ -689,11 +722,11 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::list&lt;boost::shared_ptr&lt; Impulse&gt; &gt; The list of impulses that meet the comparison </dd></dl>
 
-<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00179">179</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00201">201</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
 
-<p>References <a class="el" href="ImpulseCollection_8h_source.html#l00039">EqualTo</a>, <a class="el" href="ImpulseCollection_8h_source.html#l00039">GreaterThan</a>, and <a class="el" href="ImpulseCollection_8h_source.html#l00039">LessThan</a>.</p>
+<p>References <a class="el" href="ImpulseCollection_8h_source.html#l00039">EqualTo</a>, <a class="el" href="ImpulseCollection_8h_source.html#l00039">GreaterThan</a>, <a class="el" href="ImpulseCollection_8h_source.html#l00039">GreaterThanOrEqualTo</a>, <a class="el" href="ImpulseCollection_8h_source.html#l00039">LessThan</a>, and <a class="el" href="ImpulseCollection_8h_source.html#l00039">LessThanOrEqualTo</a>.</p>
 
-<p>Referenced by <a class="el" href="ImpulseCollection_8cpp_source.html#l00203">removeByActivityTimerValue()</a>.</p>
+<p>Referenced by <a class="el" href="ImpulseCollection_8cpp_source.html#l00251">removeByActivityTimerValue()</a>.</p>
 
 </div>
 </div>
@@ -763,7 +796,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool True if not equal, false otherwise </dd></dl>
 
-<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00313">313</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00365">365</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
 
 </div>
 </div>
@@ -791,7 +824,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html" title="ImpulseCollection represents a collection of Impulse objects.">ImpulseCollection</a> New object after addition </dd></dl>
 
-<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00259">259</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00307">307</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
 
 </div>
 </div>
@@ -819,7 +852,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html" title="ImpulseCollection represents a collection of Impulse objects.">ImpulseCollection</a> &amp; This object after addition and assignment </dd></dl>
 
-<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00239">239</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00287">287</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
 
 </div>
 </div>
@@ -847,7 +880,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html" title="ImpulseCollection represents a collection of Impulse objects.">ImpulseCollection</a> &amp; This object after assignment </dd></dl>
 
-<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00230">230</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00278">278</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
 
 </div>
 </div>
@@ -875,7 +908,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool True if equal, false otherwise </dd></dl>
 
-<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00265">265</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00317">317</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
 
 </div>
 </div>
@@ -898,13 +931,13 @@ Friends</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classcryomesh_1_1dataobjects_1_1DataObjectController.html#ae015efe3d10cced82d5043f560cbe04f">cryomesh::dataobjects::DataObjectController&lt; unsigned long int, double &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00210">210</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00258">258</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
 
-<p>References <a class="el" href="DataObject_8h_source.html#l00178">cryomesh::dataobjects::DataObject&lt; U, T &gt;::clear()</a>, <a class="el" href="DataObjectController_8h_source.html#l00086">cryomesh::dataobjects::DataObjectController&lt; unsigned long int, double &gt;::dataObject</a>, <a class="el" href="ImpulseCollection_8cpp_source.html#l00041">getActivity()</a>, <a class="el" href="DataObject_8h_source.html#l00213">cryomesh::dataobjects::DataObject&lt; U, T &gt;::getDatasetMaximumSize()</a>, <a class="el" href="TimeKeeper_8cpp_source.html#l00020">cryomesh::common::TimeKeeper::getTimeKeeper()</a>, <a class="el" href="DataObject_8h_source.html#l00191">cryomesh::dataobjects::DataObject&lt; U, T &gt;::insert()</a>, <a class="el" href="DataObject_8h_source.html#l00071">cryomesh::dataobjects::DataObject&lt; U, T &gt;::isLoggingEnabled()</a>, and <a class="el" href="Cycle_8cpp_source.html#l00056">cryomesh::common::Cycle::toULInt()</a>.</p>
+<p>References <a class="el" href="DataObject_8h_source.html#l00178">cryomesh::dataobjects::DataObject&lt; U, T &gt;::clear()</a>, <a class="el" href="DataObjectController_8h_source.html#l00086">cryomesh::dataobjects::DataObjectController&lt; unsigned long int, double &gt;::dataObject</a>, <a class="el" href="ImpulseCollection_8cpp_source.html#l00044">getActivity()</a>, <a class="el" href="DataObject_8h_source.html#l00213">cryomesh::dataobjects::DataObject&lt; U, T &gt;::getDatasetMaximumSize()</a>, <a class="el" href="TimeKeeper_8cpp_source.html#l00020">cryomesh::common::TimeKeeper::getTimeKeeper()</a>, <a class="el" href="DataObject_8h_source.html#l00191">cryomesh::dataobjects::DataObject&lt; U, T &gt;::insert()</a>, <a class="el" href="DataObject_8h_source.html#l00071">cryomesh::dataobjects::DataObject&lt; U, T &gt;::isLoggingEnabled()</a>, and <a class="el" href="Cycle_8cpp_source.html#l00056">cryomesh::common::Cycle::toULInt()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aeae2b4e8d9e9357560227660dbe7d926"></a><!-- doxytag: member="cryomesh::components::ImpulseCollection::removeByActivityTimerValue" ref="aeae2b4e8d9e9357560227660dbe7d926" args="(double value=0, Comparison comp=LessThan)" -->
+<a class="anchor" id="a317b84fe238bd4ff6bb8eda97b35cf1a"></a><!-- doxytag: member="cryomesh::components::ImpulseCollection::removeByActivityTimerValue" ref="a317b84fe238bd4ff6bb8eda97b35cf1a" args="(double value=0, Comparison comp=LessThanOrEqualTo)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -918,7 +951,7 @@ Friends</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classcryomesh_1_1components_1_1ImpulseCollection.html#a3682719f1c0bd471e8c5a19b39cc285d">ImpulseCollection::Comparison</a>&#160;</td>
-          <td class="paramname"><em>comp</em> = <code>LessThan</code>&#160;</td>
+          <td class="paramname"><em>comp</em> = <code>LessThanOrEqualTo</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -939,9 +972,9 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::list&lt;boost::shared_ptr&lt; Impulse&gt; &gt; The that meet the comparison and were removed </dd></dl>
 
-<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00203">203</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00251">251</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
 
-<p>References <a class="el" href="ImpulseCollection_8cpp_source.html#l00179">getByActivityTimerValue()</a>.</p>
+<p>References <a class="el" href="ImpulseCollection_8cpp_source.html#l00201">getByActivityTimerValue()</a>.</p>
 
 </div>
 </div>
@@ -981,7 +1014,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::ostream &amp; The output stream </dd></dl>
 
-<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00317">317</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ImpulseCollection_8cpp_source.html#l00369">369</a> of file <a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a>.</p>
 
 </div>
 </div>
@@ -999,13 +1032,13 @@ Friends</h2></td></tr>
 
 <p>Definition at line <a class="el" href="DataObjectController_8h_source.html#l00086">86</a> of file <a class="el" href="DataObjectController_8h_source.html">DataObjectController.h</a>.</p>
 
-<p>Referenced by <a class="el" href="ImpulseCollection_8cpp_source.html#l00210">refreshDataObject()</a>, and <a class="el" href="Node_8cpp_source.html#l00045">cryomesh::components::Node::update()</a>.</p>
+<p>Referenced by <a class="el" href="ImpulseCollection_8cpp_source.html#l00258">refreshDataObject()</a>, and <a class="el" href="Node_8cpp_source.html#l00048">cryomesh::components::Node::update()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/niall/Projects/Eclipse/cryomesh/src/components/<a class="el" href="ImpulseCollection_8h_source.html">ImpulseCollection.h</a></li>
-<li>/home/niall/Projects/Eclipse/cryomesh/src/components/<a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a></li>
+<li>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/<a class="el" href="ImpulseCollection_8h_source.html">ImpulseCollection.h</a></li>
+<li>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/<a class="el" href="ImpulseCollection_8cpp_source.html">ImpulseCollection.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -1013,7 +1046,7 @@ Friends</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -1022,7 +1055,7 @@ Friends</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:14 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

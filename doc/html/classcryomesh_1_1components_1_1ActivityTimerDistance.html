@@ -72,7 +72,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
-<a href="#pri-attribs">Private Attributes</a>  </div>
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#friends">Friends</a>  </div>
   <div class="headertitle">
 <h1>cryomesh::components::ActivityTimerDistance Class Reference</h1>  </div>
 </div>
@@ -114,8 +116,14 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructive addition and assignment operator.  <a href="#aaf72572d1cb481f519132e7a17b8125b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#aa0ded366836ca5bb7ce9db6abf7b4d51">getDelay</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the delay.  <a href="#aa0ded366836ca5bb7ce9db6abf7b4d51"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a7da9fc6bc83657837f90ad3a6158e3a5">getStartingDelay</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the starting delay.  <a href="#a7da9fc6bc83657837f90ad3a6158e3a5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a3691132699928dc9f7089576ad0c12ce">getDecrement</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the decrement.  <a href="#a3691132699928dc9f7089576ad0c12ce"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#aca048029f8ff311c7e215bb2d7689c7b">reset</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the countdown.  <a href="#aca048029f8ff311c7e215bb2d7689c7b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a2e2ac1b8bc8d942346c1a758d7602a99">checkConstraints</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a54d73b877fd99ece736c7352a09688ad">enableDebug</a> (bool b)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static boost::shared_ptr<br class="typebreak"/>
@@ -123,18 +131,26 @@ Static Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a random object.  <a href="#ad82f62afe5a34af54ff4c4ec8d1c2344"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a7e718e48c0f4f7f6c1f4e3c073c757de">MIN_DECREMENT</a> = 1.0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a0371befb94140d81f0660bf76c2520d3">MAX_DECREMENT</a> = 10.0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#afb9cf33e702747ecd42d1bfd0c3a3ce3">MIN_DECREMENT_FRACTION</a> = 0.1</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#ab24df04f889693641f609aa8f199455f">MAX_DECREMENT_FRACTION</a> = 1</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a549f2e016df32a594092179570ae742d">MIN_DISTANCE</a> = 1.0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a87e36fd0ad252132017fa1c9664cf2ca">MAX_DISTANCE</a> = 100.0</td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a6e109b8f4ddcf6d4e24f0347d4060f78">print</a> (std::ostream &amp;os) const </td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a191b202e783b14973aa327c460cdc46e">distance</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a0e793c735a10edd18fa12a019dcf8c22">distance_remaining</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a81f6c8dffa1dbe89e7e3d67603f84b9a">decrement</a></td></tr>
+<tr><td colspan="2"><h2><a name="friends"></a>
+Friends</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcryomesh_1_1components_1_1ActivityTimer.html#ac35779cd02eec3662a6cd9d75e1572cd">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classcryomesh_1_1components_1_1ActivityTimer.html">ActivityTimer</a> &amp;obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">To stream operator.  <a href="#ac35779cd02eec3662a6cd9d75e1572cd"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="ActivityTimerDistance_8h_source.html#l00018">18</a> of file <a class="el" href="ActivityTimerDistance_8h_source.html">ActivityTimerDistance.h</a>.</p>
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8h_source.html#l00019">19</a> of file <a class="el" href="ActivityTimerDistance_8h_source.html">ActivityTimerDistance.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a3da36944fccd3512740a63fdae13de20"></a><!-- doxytag: member="cryomesh::components::ActivityTimerDistance::ActivityTimerDistance" ref="a3da36944fccd3512740a63fdae13de20" args="()" -->
 <div class="memitem">
@@ -152,7 +168,7 @@ Private Attributes</h2></td></tr>
 
 <p>Constructor. </p>
 
-<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00028">28</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00037">37</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
 
 </div>
 </div>
@@ -183,7 +199,7 @@ Private Attributes</h2></td></tr>
 
 <p>Construct from an initial distance, and a rate of decrement. </p>
 
-<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00032">32</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00041">41</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
 
 </div>
 </div>
@@ -201,11 +217,50 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00036">36</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00045">45</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
 
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a2e2ac1b8bc8d942346c1a758d7602a99"></a><!-- doxytag: member="cryomesh::components::ActivityTimerDistance::checkConstraints" ref="a2e2ac1b8bc8d942346c1a758d7602a99" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cryomesh::components::ActivityTimerDistance::checkConstraints </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00114">114</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
+
+<p>References <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00099">getDecrement()</a>, and <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00095">getStartingDelay()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a54d73b877fd99ece736c7352a09688ad"></a><!-- doxytag: member="cryomesh::components::ActivityTimerDistance::enableDebug" ref="a54d73b877fd99ece736c7352a09688ad" args="(bool b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cryomesh::components::ActivityTimerDistance::enableDebug </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00102">102</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a3691132699928dc9f7089576ad0c12ce"></a><!-- doxytag: member="cryomesh::components::ActivityTimerDistance::getDecrement" ref="a3691132699928dc9f7089576ad0c12ce" args="() const " -->
 <div class="memitem">
 <div class="memproto">
@@ -223,7 +278,9 @@ Private Attributes</h2></td></tr>
 <p>Get the decrement. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>double The decrement of the timer </dd></dl>
 
-<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00080">80</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00099">99</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00114">checkConstraints()</a>.</p>
 
 </div>
 </div>
@@ -244,7 +301,7 @@ Private Attributes</h2></td></tr>
 <p>Get the delay. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>double The distance delay </dd></dl>
 
-<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00076">76</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00091">91</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
 
 </div>
 </div>
@@ -265,7 +322,30 @@ Private Attributes</h2></td></tr>
 <p>Get a random object. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>boost::shared_ptr&lt;ActivityTimerDistance&gt; The random object </dd></dl>
 
-<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00021">21</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00023">23</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7da9fc6bc83657837f90ad3a6158e3a5"></a><!-- doxytag: member="cryomesh::components::ActivityTimerDistance::getStartingDelay" ref="a7da9fc6bc83657837f90ad3a6158e3a5" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double cryomesh::components::ActivityTimerDistance::getStartingDelay </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the starting delay. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>double The starting distance delay </dd></dl>
+
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00095">95</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00114">checkConstraints()</a>.</p>
 
 </div>
 </div>
@@ -293,7 +373,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> New object after addition </dd></dl>
 
-<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00064">64</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00077">77</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
 
 </div>
 </div>
@@ -321,7 +401,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> &amp; This object after addition and assignment </dd></dl>
 
-<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00070">70</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00083">83</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
 
 </div>
 </div>
@@ -343,7 +423,7 @@ Private Attributes</h2></td></tr>
 <p>Postfix decrement operator. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> &amp; Return this </dd></dl>
 
-<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00058">58</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00071">71</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
 
 </div>
 </div>
@@ -364,7 +444,9 @@ Private Attributes</h2></td></tr>
 <p>Prefix increment operator. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> &amp; Return this </dd></dl>
 
-<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00053">53</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00063">63</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
+
+<p>References <a class="el" href="ActivityTimerDistance_8h_source.html#l00188">distance_remaining</a>.</p>
 
 </div>
 </div>
@@ -392,7 +474,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool True if &lt; than obj, false otherwise </dd></dl>
 
-<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00045">45</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00055">55</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
 
 </div>
 </div>
@@ -420,7 +502,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html">ActivityTimerDistance</a> &amp; This object after assignment </dd></dl>
 
-<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00039">39</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00048">48</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
 
 </div>
 </div>
@@ -448,7 +530,90 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool True if &gt; than obj, false otherwise </dd></dl>
 
-<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00049">49</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00059">59</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6e109b8f4ddcf6d4e24f0347d4060f78"></a><!-- doxytag: member="cryomesh::components::ActivityTimerDistance::print" ref="a6e109b8f4ddcf6d4e24f0347d4060f78" args="(std::ostream &amp;os) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; cryomesh::components::ActivityTimerDistance::print </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em></td><td>)</td>
+          <td> const<code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implements <a class="el" href="classcryomesh_1_1components_1_1ActivityTimer.html#a1a4fd82c20fdc2b17ebe4582222ab8a3">cryomesh::components::ActivityTimer</a>.</p>
+
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00108">108</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aca048029f8ff311c7e215bb2d7689c7b"></a><!-- doxytag: member="cryomesh::components::ActivityTimerDistance::reset" ref="aca048029f8ff311c7e215bb2d7689c7b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cryomesh::components::ActivityTimerDistance::reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reset the countdown. </p>
+
+<p>Implements <a class="el" href="classcryomesh_1_1components_1_1ActivityTimer.html#a8842b0b6e73ddf1d1809b79b7b239baf">cryomesh::components::ActivityTimer</a>.</p>
+
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00105">105</a> of file <a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Friends And Related Function Documentation</h2>
+<a class="anchor" id="ac35779cd02eec3662a6cd9d75e1572cd"></a><!-- doxytag: member="cryomesh::components::ActivityTimerDistance::operator&lt;&lt;" ref="ac35779cd02eec3662a6cd9d75e1572cd" args="(std::ostream &amp;os, const ActivityTimer &amp;obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcryomesh_1_1components_1_1ActivityTimer.html">ActivityTimer</a> &amp;&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [friend, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>To stream operator. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">std::ostream</td><td>&amp; os The output stream </td></tr>
+    <tr><td class="paramname">const</td><td><a class="el" href="classcryomesh_1_1components_1_1ActivityTimer.html" title="Simple interface class for activity timers.">ActivityTimer</a> &amp; obj The object to stream</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>std::ostream &amp; The output stream </dd></dl>
+
+<p>Definition at line <a class="el" href="ActivityTimer_8h_source.html#l00047">47</a> of file <a class="el" href="ActivityTimer_8h_source.html">ActivityTimer.h</a>.</p>
 
 </div>
 </div>
@@ -464,7 +629,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ActivityTimerDistance_8h_source.html#l00169">169</a> of file <a class="el" href="ActivityTimerDistance_8h_source.html">ActivityTimerDistance.h</a>.</p>
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8h_source.html#l00196">196</a> of file <a class="el" href="ActivityTimerDistance_8h_source.html">ActivityTimerDistance.h</a>.</p>
 
 </div>
 </div>
@@ -479,22 +644,39 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ActivityTimerDistance_8h_source.html#l00162">162</a> of file <a class="el" href="ActivityTimerDistance_8h_source.html">ActivityTimerDistance.h</a>.</p>
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8h_source.html#l00181">181</a> of file <a class="el" href="ActivityTimerDistance_8h_source.html">ActivityTimerDistance.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a0371befb94140d81f0660bf76c2520d3"></a><!-- doxytag: member="cryomesh::components::ActivityTimerDistance::MAX_DECREMENT" ref="a0371befb94140d81f0660bf76c2520d3" args="" -->
+<a class="anchor" id="a0e793c735a10edd18fa12a019dcf8c22"></a><!-- doxytag: member="cryomesh::components::ActivityTimerDistance::distance_remaining" ref="a0e793c735a10edd18fa12a019dcf8c22" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const double <a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a0371befb94140d81f0660bf76c2520d3">cryomesh::components::ActivityTimerDistance::MAX_DECREMENT</a> = 10.0<code> [static]</code></td>
+          <td class="memname">double <a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a0e793c735a10edd18fa12a019dcf8c22">cryomesh::components::ActivityTimerDistance::distance_remaining</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ActivityTimerDistance_8h_source.html#l00139">139</a> of file <a class="el" href="ActivityTimerDistance_8h_source.html">ActivityTimerDistance.h</a>.</p>
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8h_source.html#l00188">188</a> of file <a class="el" href="ActivityTimerDistance_8h_source.html">ActivityTimerDistance.h</a>.</p>
+
+<p>Referenced by <a class="el" href="ActivityTimerDistance_8cpp_source.html#l00063">operator--()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab24df04f889693641f609aa8f199455f"></a><!-- doxytag: member="cryomesh::components::ActivityTimerDistance::MAX_DECREMENT_FRACTION" ref="ab24df04f889693641f609aa8f199455f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double <a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#ab24df04f889693641f609aa8f199455f">cryomesh::components::ActivityTimerDistance::MAX_DECREMENT_FRACTION</a> = 1<code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8h_source.html#l00156">156</a> of file <a class="el" href="ActivityTimerDistance_8h_source.html">ActivityTimerDistance.h</a>.</p>
 
 </div>
 </div>
@@ -509,22 +691,22 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ActivityTimerDistance_8h_source.html#l00153">153</a> of file <a class="el" href="ActivityTimerDistance_8h_source.html">ActivityTimerDistance.h</a>.</p>
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8h_source.html#l00170">170</a> of file <a class="el" href="ActivityTimerDistance_8h_source.html">ActivityTimerDistance.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a7e718e48c0f4f7f6c1f4e3c073c757de"></a><!-- doxytag: member="cryomesh::components::ActivityTimerDistance::MIN_DECREMENT" ref="a7e718e48c0f4f7f6c1f4e3c073c757de" args="" -->
+<a class="anchor" id="afb9cf33e702747ecd42d1bfd0c3a3ce3"></a><!-- doxytag: member="cryomesh::components::ActivityTimerDistance::MIN_DECREMENT_FRACTION" ref="afb9cf33e702747ecd42d1bfd0c3a3ce3" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const double <a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#a7e718e48c0f4f7f6c1f4e3c073c757de">cryomesh::components::ActivityTimerDistance::MIN_DECREMENT</a> = 1.0<code> [static]</code></td>
+          <td class="memname">const double <a class="el" href="classcryomesh_1_1components_1_1ActivityTimerDistance.html#afb9cf33e702747ecd42d1bfd0c3a3ce3">cryomesh::components::ActivityTimerDistance::MIN_DECREMENT_FRACTION</a> = 0.1<code> [static]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ActivityTimerDistance_8h_source.html#l00132">132</a> of file <a class="el" href="ActivityTimerDistance_8h_source.html">ActivityTimerDistance.h</a>.</p>
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8h_source.html#l00149">149</a> of file <a class="el" href="ActivityTimerDistance_8h_source.html">ActivityTimerDistance.h</a>.</p>
 
 </div>
 </div>
@@ -539,13 +721,15 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ActivityTimerDistance_8h_source.html#l00146">146</a> of file <a class="el" href="ActivityTimerDistance_8h_source.html">ActivityTimerDistance.h</a>.</p>
+<p>Definition at line <a class="el" href="ActivityTimerDistance_8h_source.html#l00163">163</a> of file <a class="el" href="ActivityTimerDistance_8h_source.html">ActivityTimerDistance.h</a>.</p>
+
+<p>Referenced by <a class="el" href="Connection_8cpp_source.html#l00160">cryomesh::components::Connection::updatePosition()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/niall/Projects/Eclipse/cryomesh/src/components/<a class="el" href="ActivityTimerDistance_8h_source.html">ActivityTimerDistance.h</a></li>
-<li>/home/niall/Projects/Eclipse/cryomesh/src/components/<a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a></li>
+<li>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/<a class="el" href="ActivityTimerDistance_8h_source.html">ActivityTimerDistance.h</a></li>
+<li>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/<a class="el" href="ActivityTimerDistance_8cpp_source.html">ActivityTimerDistance.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -553,7 +737,7 @@ Private Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -562,7 +746,7 @@ Private Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:14 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

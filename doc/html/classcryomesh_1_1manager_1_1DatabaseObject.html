@@ -86,6 +86,7 @@ Inheritance diagram for cryomesh::manager::DatabaseObject:</div>
   <map id="cryomesh::manager::DatabaseObject_map" name="cryomesh::manager::DatabaseObject_map">
 <area href="classcryomesh_1_1manager_1_1ConnectionDatabaseObject.html" alt="cryomesh::manager::ConnectionDatabaseObject" shape="rect" coords="0,56,282,80"/>
 <area href="classcryomesh_1_1manager_1_1NodeDatabaseObject.html" alt="cryomesh::manager::NodeDatabaseObject" shape="rect" coords="292,56,574,80"/>
+<area href="classcryomesh_1_1manager_1_1PatternDatabaseObject.html" alt="cryomesh::manager::PatternDatabaseObject" shape="rect" coords="584,56,866,80"/>
 </map>
  </div></div>
 
@@ -237,7 +238,7 @@ std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <p>Get the string that can be used to insert the sql data. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the sql command string to insert into this table </dd></dl>
 
-<p>Implemented in <a class="el" href="classcryomesh_1_1manager_1_1ConnectionDatabaseObject.html#ac7b22d25a4366175fd7d1578f476b125">cryomesh::manager::ConnectionDatabaseObject</a>, and <a class="el" href="classcryomesh_1_1manager_1_1NodeDatabaseObject.html#ac5512082d08fa59cbaa496b711f4c8c2">cryomesh::manager::NodeDatabaseObject</a>.</p>
+<p>Implemented in <a class="el" href="classcryomesh_1_1manager_1_1ConnectionDatabaseObject.html#ac7b22d25a4366175fd7d1578f476b125">cryomesh::manager::ConnectionDatabaseObject</a>, <a class="el" href="classcryomesh_1_1manager_1_1NodeDatabaseObject.html#ac5512082d08fa59cbaa496b711f4c8c2">cryomesh::manager::NodeDatabaseObject</a>, and <a class="el" href="classcryomesh_1_1manager_1_1PatternDatabaseObject.html#a0f4325cce7fd6c70017815ea50cd4fd6">cryomesh::manager::PatternDatabaseObject</a>.</p>
 
 </div>
 </div>
@@ -316,7 +317,7 @@ template&lt;class T &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/niall/Projects/Eclipse/cryomesh/src/manager/<a class="el" href="DatabaseObject_8h_source.html">DatabaseObject.h</a></li>
+<li>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/<a class="el" href="DatabaseObject_8h_source.html">DatabaseObject.h</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -324,7 +325,7 @@ template&lt;class T &gt; </div>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -333,7 +334,7 @@ template&lt;class T &gt; </div>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Apr 1 2011 17:33:10 for cryomesh by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 7 2011 08:39:14 for cryomesh by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
