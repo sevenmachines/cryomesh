@@ -375,13 +375,13 @@ double PatternChannel::matchSequentially(const PatternChannel & obj) {
 	unsigned int pat_count = 0;
 
 	const std::list<boost::uuids::uuid> & thislist = this->getPatternList();
-	const int this_pat_count = thislist.size();
+	const unsigned int this_pat_count = thislist.size();
 	const std::map<boost::uuids::uuid, boost::shared_ptr<Pattern> > & thismap = this->getPatternMap();
 	std::map<boost::uuids::uuid, boost::shared_ptr<Pattern> >::const_iterator it_thisfound = thismap.end();
 	const std::map<boost::uuids::uuid, boost::shared_ptr<Pattern> >::const_iterator it_thismap_end = thismap.end();
 
 	const std::list<boost::uuids::uuid> & objlist = obj.getPatternList();
-	const int obj_pat_count = objlist.size();
+	const unsigned int obj_pat_count = objlist.size();
 	const std::map<boost::uuids::uuid, boost::shared_ptr<Pattern> > & objmap = obj.getPatternMap();
 	std::map<boost::uuids::uuid, boost::shared_ptr<Pattern> >::const_iterator it_objfound = objmap.end();
 	const std::map<boost::uuids::uuid, boost::shared_ptr<Pattern> >::const_iterator it_objmap_end = objmap.end();

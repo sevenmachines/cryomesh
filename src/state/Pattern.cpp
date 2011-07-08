@@ -20,7 +20,7 @@ int Pattern::ids = 1;
 
 Pattern Pattern::getRandom(unsigned int width, double fraction) {
 	std::vector<bool> ranvec;
-	for (int i = 0; i < width; i++) {
+	for (unsigned int i = 0; i < width; i++) {
 		ranvec.push_back(common::Maths::getRandomBool(fraction));
 	}
 	assert(ranvec.size()==width);

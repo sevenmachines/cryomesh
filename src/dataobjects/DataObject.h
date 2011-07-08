@@ -228,7 +228,7 @@ public:
 	 * 		The result of the comparison
 	 */
 	T getValueComparison(ComparisonType type) const {
-		T val;
+		T val=T();
 		int count = 0;
 
 		// forall in valueMap
