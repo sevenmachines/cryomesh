@@ -5,6 +5,8 @@
  *      Author: SevenMachines<SevenMachines@yahoo.co.uk>
  */
 
+//#define IMPULSECOLLECTION_TEST
+
 #include "ImpulseCollection.h"
 #include "common/TimeKeeper.h"
 #include "common/Maths.h"
@@ -21,19 +23,24 @@ ImpulseCollection::~ImpulseCollection() {
 }
 
 double ImpulseCollection::getActivity(common::Cycle cycle) const {
+#ifdef IMPULSECOLLECTION_TEST
+	std::cout << "ImpulseCollection::getActivity: " << "objects=" << this->objects.size() << std::endl;
+#endif
 	const std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> > impulses = this->getCollection();
-	double total_activity;
-	if (this->objects.size() == 0) {
-		total_activity = 0;
-	} else {
+	double total_activity = 0;
+	if (this->objects.size() > 0) {
 		// forall in impulses
 		{
 			std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> >::const_iterator it_impulses = impulses.begin();
 			const std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> >::const_iterator it_impulses_end =
 					impulses.end();
 			while (it_impulses != it_impulses_end) {
-				double temp_act = it_impulses->second->getActivity(cycle);
-				total_activity += temp_act;
+				total_activity += it_impulses->second->getActivity(cycle);
+#ifdef IMPULSECOLLECTION_TEST
+				std::cout << "ImpulseCollection::getActivity: " << "total_activity=" << total_activity
+						<< " getActivity=" << it_impulses->second->getActivity(cycle) << " cycle=" << cycle
+						<< std::endl;
+#endif
 				++it_impulses;
 			}
 		}

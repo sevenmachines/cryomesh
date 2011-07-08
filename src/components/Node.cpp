@@ -89,14 +89,21 @@ common::Connector<Node, Connection> & Node::getMutableConnector() {
 }
 
 Node::ActivationState Node::checkFire() {
+#ifdef NODE_DEBUG
+std::cout<<"Node::checkFire: "<<""<<std::endl;
+#endif
 	//and emit impulse if required
 	const ActivationState act_state = this->checkActivationState();
 	if (act_state == Positive) {
-		//std::cout << "Node::checkFire: " << "FIRE_POSITIVE" << std::endl;
-		this->emitImpulsePositive();
+#ifdef NODE_DEBUG
+std::cout << "Node::checkFire: " << "FIRE_POSITIVE" << std::endl;
+#endif
+this->emitImpulsePositive();
 		this->enterRecovery();
 	} else if (act_state == Negative) {
-		//std::cout << "Node::checkFire: " << "FIRE_NEGATIVE" << std::endl;
+#ifdef NODE_DEBUG
+std::cout << "Node::checkFire: " << "FIRE_NEGATIVE" << std::endl;
+#endif
 		this->emitImpulseNegative();
 		this->enterRecovery();
 	}
@@ -166,8 +173,9 @@ Node::ActivationState Node::checkActivationState() {
 	Node::ActivationState act_state;
 	// check activity on this cycle
 	double current_activity = this->updateActivity();
-	//std::cout << "Node::checkActivation: " << "Current:" << current_activity << " Threshold:" << ACTIVITY_THRESHOLD<< std::endl;
-
+#ifdef NODE_DEBUG
+	std::cout << "Node::checkActivation: " << "Current:" << current_activity << " Threshold:" << ACTIVITY_THRESHOLD<< std::endl;
+#endif
 	// check activation against criteria
 	if (current_activity > ACTIVITY_THRESHOLD) {
 		act_state = Positive;

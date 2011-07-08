@@ -62,15 +62,17 @@ const Pattern & Sequence::getCurrentInputPattern() const {
 	return this->getCurrentIterator()->first;
 }
 const Pattern & Sequence::getAndAdvanceCurrentInputPattern()  {
-	return this->getCurrentIterator()->first;
+	const Pattern & retpat = this->getCurrentIterator()->first;
 	++it_patterns;
+	return retpat;
 }
 const Pattern & Sequence::getCurrentOutputPattern() const {
 	return this->getCurrentIterator()->second;
 }
 const Pattern & Sequence::getAndAdvanceCurrentOutputPattern()  {
-	return this->getCurrentIterator()->second;
+	const Pattern & retpat = this->getCurrentIterator()->second;
 	++it_patterns;
+	return retpat;
 }
 int Sequence::getCurrentInputPatternId() const {
 	return this->getCurrentIterator()->first.getId();

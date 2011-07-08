@@ -21,7 +21,6 @@ const double Cluster::SELF_CONNECTED_NODES_FRACTION = 0.1;
 
 Cluster::Cluster() :
 	spacial::Spacial(true), energy(0) {
-	double mesh_radius =
 	mesh = boost::shared_ptr< NodeMesh > (new NodeMesh(*this));
 }
 

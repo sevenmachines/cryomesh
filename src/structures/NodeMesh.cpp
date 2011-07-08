@@ -5,7 +5,8 @@
  *      Author: "SevenMachines <SevenMachines@yahoo.co.uk>"
  */
 
-#define NODEMESH_DEBUG
+//#define NODEMESH_DEBUG
+//#define NODEMESH_DEBUG_HIGH
 
 #include "NodeMesh.h"
 #include "Cluster.h"
@@ -21,8 +22,20 @@ NodeMesh::NodeMesh(Cluster & clus) :
 	cluster(clus), decayRate(1) {
 	// use clusters bounding box to generate max radius
 
-	double max_radius = cluster.getMaxBoundingBox().getDistance(spacial::Point(0, 0, 0));
-	maximumNeighbourhoodRadius(max_radius * MAX_RADIUS_FRACTION_OF_BOUNDING_BOX), this->regenerateNeighbourhoods();
+	int node_count = cluster.getNodes().size();
+	double volume = cluster.getMaxBoundingBox().getX() * cluster.getMaxBoundingBox().getY()
+			* cluster.getMaxBoundingBox().getZ();
+	double dimension_fraction = cluster.getMaxBoundingBox().getX() / (double) node_count;
+	double density_inverted = volume / (double) node_count;
+	double unit_density = std::cbrt(density_inverted);
+	maximumNeighbourhoodRadius = unit_density;
+#ifdef NODEMESH_DEBUG
+	std::cout << "NodeMesh::NodeMesh: " << "node_count = " << node_count << " dimension_fraction = "
+			<< dimension_fraction << " volume = " << volume << " density_inverted = " << density_inverted
+			<< " maximumNeighbourhoodRadius = "<< maximumNeighbourhoodRadius <<" unit_density = "<<unit_density << std::endl;
+#endif
+
+	this->regenerateNeighbourhoods();
 }
 
 NodeMesh::NodeMesh(Cluster & clus, double max_radius) :
@@ -38,6 +51,13 @@ void NodeMesh::update() {
 	std::cout << "NodeMesh::update: " << this << std::endl;
 #endif
 	this->regenerateActivities();
+
+#ifdef NODEMESH_DEBUG_HIGH
+	std::cout << "NodeMesh::update: " << std::endl;
+	std::cout<<this->printNeighbourhoods(std::cout)<<std::endl;
+	std::cout<<this->printNeighbourhoodActivities(std::cout)<<std::endl;
+#endif
+
 }
 
 void NodeMesh::warpNodes() {
@@ -96,6 +116,10 @@ void NodeMesh::regenerateNeighbourhoods() {
 			while (it_other_nodes != it_all_nodes_end) {
 				// get distance
 				double dist = it_all_nodes->second->getPosition().getDistance(it_other_nodes->second->getPosition());
+#ifdef NODEMESH_DEBUG_HIGH
+				//std::cout << "NodeMesh::regenerateNeighbourhoods: " << "dist: " << dist
+				//		<< " maximumNeighbourhoodRadius: " << maximumNeighbourhoodRadius << std::endl;
+#endif
 				if (dist < maximumNeighbourhoodRadius) {
 					nodeNeighbourhoodMap[it_all_nodes->second][it_other_nodes->second] = dist;
 					nodeNeighbourhoodMap[it_other_nodes->second][it_all_nodes->second] = dist;
@@ -106,9 +130,10 @@ void NodeMesh::regenerateNeighbourhoods() {
 		}
 
 	}
-#ifdef NODEMESH_DEBUG
-	std::cout << "NodeMesh::regenerateNeighbourhoods: " << this << " -> " << "nodeNeighbourhoodMap: "
-			<< nodeNeighbourhoodMap.size() << std::endl;
+#ifdef NODEMESH_DEBUG_HIGH
+	std::cout << "NodeMesh::regenerateNeighbourhoods: " << std::endl;
+	std::cout<<this->printNeighbourhoods(std::cout)<<std::endl;
+	std::cout<<this->printNeighbourhoodActivities(std::cout)<<std::endl;
 #endif
 }
 
