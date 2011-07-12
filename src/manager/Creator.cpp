@@ -5,7 +5,7 @@
  *      Author: "SevenMachines <SevenMachines@yahoo.co.uk>"
  */
 
-#define CREATOR_DEBUG
+//#define CREATOR_DEBUG
 
 #include "Creator.h"
 #include <algorithm>

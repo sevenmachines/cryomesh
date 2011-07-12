@@ -5,7 +5,7 @@
  *      Author: "SevenMachines <SevenMachines@yahoo.co.uk>"
  */
 
-//#define NODEMESH_DEBUG
+#define NODEMESH_DEBUG
 //#define NODEMESH_DEBUG_HIGH
 
 #include "NodeMesh.h"
@@ -25,14 +25,15 @@ NodeMesh::NodeMesh(Cluster & clus) :
 	int node_count = cluster.getNodes().size();
 	double volume = cluster.getMaxBoundingBox().getX() * cluster.getMaxBoundingBox().getY()
 			* cluster.getMaxBoundingBox().getZ();
-	double dimension_fraction = cluster.getMaxBoundingBox().getX() / (double) node_count;
+	//double dimension_fraction = cluster.getMaxBoundingBox().getX() / (double) node_count;
 	double density_inverted = volume / (double) node_count;
 	double unit_density = std::cbrt(density_inverted);
 	maximumNeighbourhoodRadius = unit_density;
 #ifdef NODEMESH_DEBUG
-	std::cout << "NodeMesh::NodeMesh: " << "node_count = " << node_count << " dimension_fraction = "
-			<< dimension_fraction << " volume = " << volume << " density_inverted = " << density_inverted
-			<< " maximumNeighbourhoodRadius = "<< maximumNeighbourhoodRadius <<" unit_density = "<<unit_density << std::endl;
+	std::cout << "NodeMesh::NodeMesh: " << "node_count = " << node_count
+	//<< " dimension_fraction = "<< dimension_fraction
+			<< " volume = " << volume << " density_inverted = " << density_inverted << " maximumNeighbourhoodRadius = "
+			<< maximumNeighbourhoodRadius << " unit_density = " << unit_density << std::endl;
 #endif
 
 	this->regenerateNeighbourhoods();
@@ -66,26 +67,30 @@ void NodeMesh::warpNodes() {
 #endif
 	// forall in neighbourhoodActivities
 	{
-		std::map<boost::shared_ptr<components::Node>, double>::iterator it_neighbourhoodActivities =
-				neighbourhoodActivities.begin();
-		const std::map<boost::shared_ptr<components::Node>, double>::const_iterator it_neighbourhoodActivities_end =
-				neighbourhoodActivities.end();
-		while (it_neighbourhoodActivities != it_neighbourhoodActivities_end) {
-			// generate an impulse based on the interpolated activity
-			double interpolated_activity = it_neighbourhoodActivities->second;
-			if (interpolated_activity > 0 || interpolated_activity < 0) {
-				boost::shared_ptr<components::Impulse> interpolated_impulse(
-						new components::Impulse(interpolated_activity * INTERPOLATED_ACTIVITY_SCALING_FACTOR, 1));
-#ifdef NODEMESH_DEBUG
-				std::cout << "NodeMesh::warpNodes: " << this << " -> "
-						<< "interpolated_activity * INTERPOLATED_ACTIVITY_SCALING_FACTOR = " << interpolated_activity
-						<< " * " << INTERPOLATED_ACTIVITY_SCALING_FACTOR << " = " << interpolated_activity
-						* INTERPOLATED_ACTIVITY_SCALING_FACTOR << std::endl;
-#endif
-				it_neighbourhoodActivities->first->addImpulse(interpolated_impulse);
+		double cluster_energy_fraction = cluster.getEnergy();
 
+		if (common::Maths::compareDoubles(cluster_energy_fraction, 0) != 0) {
+			std::map<boost::shared_ptr<components::Node>, double>::iterator it_neighbourhoodActivities =
+					neighbourhoodActivities.begin();
+			const std::map<boost::shared_ptr<components::Node>, double>::const_iterator it_neighbourhoodActivities_end =
+					neighbourhoodActivities.end();
+			while (it_neighbourhoodActivities != it_neighbourhoodActivities_end) {
+				// generate an impulse based on the interpolated activity
+				double interpolated_activity = it_neighbourhoodActivities->second;
+				if (interpolated_activity > 0 || interpolated_activity < 0) {
+					boost::shared_ptr<components::Impulse> interpolated_impulse(
+							new components::Impulse(interpolated_activity * cluster_energy_fraction, 1));
+#ifdef NODEMESH_DEBUG
+					std::cout << "NodeMesh::warpNodes: " << this << " -> "
+							<< "interpolated_activity * cluster_energy_fraction = " << interpolated_activity << " * "
+							<< cluster_energy_fraction << " = " << interpolated_activity * cluster_energy_fraction
+							<< std::endl;
+#endif
+					it_neighbourhoodActivities->first->addImpulse(interpolated_impulse);
+
+				}
+				++it_neighbourhoodActivities;
 			}
-			++it_neighbourhoodActivities;
 		}
 	}
 }

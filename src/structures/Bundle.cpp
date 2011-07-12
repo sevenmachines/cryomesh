@@ -5,7 +5,7 @@
  *      Author: niall
  */
 
-#define BUNDLE_DEBUG
+//#define BUNDLE_DEBUG
 
 #include "Bundle.h"
 #include "utilities/SequencerChannels.h"
@@ -261,8 +261,9 @@ std::vector<boost::shared_ptr<Fibre> > Bundle::autoConnectPrimaryInputClusters(
 		// get unconnected real pattern channels
 		std::vector<boost::shared_ptr<state::PatternChannel> > disconnected_channels =
 				this->getDisconnectedRealInputPatternChannels();
-		if (disconnected_channels.size()==0){
-		std::cout<<"Bundle::autoConnectPrimaryInputClusters: "<<"No disconnected real input channels"<<std::endl;
+		if (disconnected_channels.size() == 0) {
+			std::cout << "Bundle::autoConnectPrimaryInputClusters: " << "No disconnected real input channels"
+					<< std::endl;
 		}
 		// forall in disconnected_channels
 		{
@@ -281,9 +282,9 @@ std::vector<boost::shared_ptr<Fibre> > Bundle::autoConnectPrimaryInputClusters(
 				const boost::uuids::uuid cluster_uuid = (*it_list)->getUUID();
 				boost::shared_ptr<Fibre> newfibre = this->connectPrimaryInputCluster(channel_uuid, cluster_uuid);
 #ifdef BUNDLE_DEBUG
-	std::cout<<"Bundle::autoConnectPrimaryInputClusters: Connecting channel "<<channel_uuid <<" to cluster "<<cluster_uuid<<std::endl;
+				std::cout<<"Bundle::autoConnectPrimaryInputClusters: Connecting channel "<<channel_uuid <<" to cluster "<<cluster_uuid<<std::endl;
 #endif
-	newfibres.push_back(newfibre);
+				newfibres.push_back(newfibre);
 				++it_list;
 				++it_disconnected_channels;
 			}
@@ -321,9 +322,9 @@ std::vector<boost::shared_ptr<Fibre> > Bundle::autoConnectPrimaryOutputClusters(
 				const boost::uuids::uuid cluster_uuid = (*it_list)->getUUID();
 				boost::shared_ptr<Fibre> newfibre = this->connectPrimaryOutputCluster(channel_uuid, cluster_uuid);
 #ifdef BUNDLE_DEBUG
-	std::cout<<"Bundle::autoConnectPrimaryOutputClusters: Connecting channel "<<channel_uuid <<" to cluster "<<cluster_uuid<<std::endl;
+				std::cout<<"Bundle::autoConnectPrimaryOutputClusters: Connecting channel "<<channel_uuid <<" to cluster "<<cluster_uuid<<std::endl;
 #endif
-	newfibres.push_back(newfibre);
+				newfibres.push_back(newfibre);
 				++it_list;
 				++it_disconnected_channels;
 			}
@@ -407,7 +408,7 @@ const ClusterMap & Bundle::getClusters() const {
 	return clusters;
 }
 
-void Bundle::enableDebug(bool b){
+void Bundle::enableDebug(bool b) {
 	this->enableDebugClusters(b);
 	this->enableDebugFibres(b);
 }
@@ -586,8 +587,10 @@ void Bundle::updatePrimaryInputFibres() {
 					// get pattern from fibre and add it to output channel
 					boost::shared_ptr<state::Pattern> temp_pattern = temp_fib->getInputNodesPattern();
 					patchan->addPattern(temp_pattern);
+#ifdef BUNDLE_DEBUG
 					std::cout << "Bundle::updatePrimaryInputFibres: uuid: " << temp_fib->getUUID() << " pattern ("
-							<< patchan->getPatternMap().size() << "): " << temp_pattern->getString() << std::endl;
+					<< patchan->getPatternMap().size() << "): " << temp_pattern->getString() << std::endl;
+#endif
 				} else {
 					std::cout << "Bundle::updatePrimaryInputFibres: "
 							<< "WARNING: Ignoring primary input fibre since cannot find corresponding channel: "
@@ -596,7 +599,9 @@ void Bundle::updatePrimaryInputFibres() {
 
 				// apply firing pattern to fibre
 				temp_fib->trigger(*pattern);
+#ifdef BUNDLE_DEBUG
 				std::cout << "Bundle::updatePrimaryInputFibres: " << pattern->getString() << std::endl;
+#endif
 			} else {
 				std::cout << "Bundle::updatePrimaryInputFibres: "
 						<< "WARNING: getPrimaryInputFibreByChannel returned null, ignoring..." << std::endl;
@@ -623,8 +628,10 @@ void Bundle::updatePrimaryOutputFibres() {
 				// get pattern from fibre and add it to output channel
 				boost::shared_ptr<state::Pattern> temp_pattern = it_outputFibres->second->getInputNodesPattern();
 				patchan->addPattern(temp_pattern);
+#ifdef BUNDLE_DEBUG
 				std::cout << "Bundle::updatePrimaryOutputFibres: uuid: " << it_outputFibres->first << " pattern ("
-						<< patchan->getPatternMap().size() << "): " << temp_pattern->getString() << std::endl;
+				<< patchan->getPatternMap().size() << "): " << temp_pattern->getString() << std::endl;
+#endif
 			} else {
 				std::cout << "Bundle::updatePrimaryOutputFibres: "
 						<< "WARNING: Ignoring primary output fibre since cannot find corresponding channel: "
@@ -632,7 +639,9 @@ void Bundle::updatePrimaryOutputFibres() {
 			}
 			++it_outputFibres;
 		}
-		//	std::cout << printFibreMaps(std::cout) << std::endl;
+#ifdef BUNDLE_DEBUG
+		std::cout << printFibreMaps(std::cout) << std::endl;
+#endif
 	}
 
 	// and actually update fibres, not actually required at the moment since we're using the input nodes as the end result

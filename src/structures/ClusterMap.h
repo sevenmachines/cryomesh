@@ -5,7 +5,7 @@
  *      Author: niall
  */
 
-#define CLUSTERMAP_DEBUG
+//#define CLUSTERMAP_DEBUG
 
 #ifndef CLUSTERMAP_H_
 #define CLUSTERMAP_H_
@@ -34,7 +34,6 @@ public:
 	virtual ~ClusterMap() {
 	}
 
-
 	virtual void update() {
 		totalNodeCount = 0;
 		// forall in objects
@@ -55,7 +54,9 @@ public:
 
 	void updateClusterEnergies(double total_energy) {
 		std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> > & all_clusters = this->getMutableCollection();
+#ifdef CLUSTERMAP_DEBUG
 		double energy_expended = 0;
+#endif
 		// forall in all_clusters
 		{
 			std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> >::const_iterator it_all_clusters =
@@ -73,8 +74,10 @@ public:
 					assert(false);
 				}
 				it_all_clusters->second->setEnergy(energy_fraction);
-				energy_expended += energy_fraction;
 				++it_all_clusters;
+#ifdef CLUSTERMAP_DEBUG
+				energy_expended += energy_fraction;
+#endif
 			}
 		}
 #ifdef CLUSTERMAP_DEBUG
@@ -103,8 +106,8 @@ public:
 		if (totalNodeCount > 0) {
 			node_fraction = (double) current_cluster_node_count / (double) this->totalNodeCount;
 		}
-		assert(node_fraction>0);
-		assert(node_fraction<=1);
+		assert(node_fraction > 0);
+		assert(node_fraction <= 1);
 		double energy_fraction = total_energy * node_fraction;
 		return energy_fraction;
 	}
