@@ -200,6 +200,8 @@ public:
 	 */
 	double getActivity(const common::Cycle & cycle) const;
 
+	double getActivityThreshold() const;
+
 	/**
 	 * Set the current activity of the node
 	 *
@@ -324,11 +326,19 @@ public:
 	static const int MAX_ACTIVITIES_LENGTH;
 
 	/**
-	 * The activity threshold which triggers an impulse
+	 * The max activity threshold which triggers an impulse
 	 *
 	 * @var double
 	 */
-	static const double ACTIVITY_THRESHOLD;
+	static const double MAX_ACTIVITY_THRESHOLD;
+
+	/**
+		 * The min activity threshold which triggers an impulse
+		 *
+		 * @var double
+		 */
+		static const double MIN_ACTIVITY_THRESHOLD;
+
 
 	/*
 	 * The default max Point for the bounding box
@@ -401,6 +411,13 @@ protected:
 	virtual void enterRecovery( const int recovery_settings = CLEAR_ALL_IMPULSES);
 
 private:
+	/**
+	 * The activity threshold of the node
+	 *
+	 * @var double
+	 */
+	double activityThreshold;
+
 	/**
 	 * The Connector Object for the Node
 	 *

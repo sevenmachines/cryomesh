@@ -5,7 +5,7 @@
  *      Author: "SevenMachines <SevenMachines@yahoo.co.uk>"
  */
 
-#define NODEMESH_DEBUG
+//#define NODEMESH_DEBUG
 //#define NODEMESH_DEBUG_HIGH
 
 #include "NodeMesh.h"

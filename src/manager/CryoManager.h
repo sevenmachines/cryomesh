@@ -11,6 +11,7 @@
 #include <iostream>
 #include <ctime>
 #include "Creator.h"
+#include "common/TimeKeeper.h"
 
 namespace cryomesh {
 namespace manager {
@@ -58,7 +59,6 @@ public:
 	 * Set manager state to running
 	 */
 	void run() {
-		std::cout << "CryoManager::run: " << "" << std::endl;
 		currentState = RUNNING;
 	}
 
@@ -66,7 +66,7 @@ public:
 	 * Set manager state to run one cycle
 	 */
 	void runCycle() {
-		std::cout << "CryoManager::runCycle: " << "" << std::endl;
+		std::cout << "CryoManager::runCycle: " <<common::TimeKeeper::getTimeKeeper().getCycle()<< std::endl;
 		 boost::shared_ptr< structures::Bundle > bundle = creator->getBundle();
 		if (bundle != 0){
 			currentState = RUNNING;

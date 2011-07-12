@@ -19,7 +19,8 @@ namespace cryomesh {
 namespace components {
 
 const int Node::MAX_ACTIVITIES_LENGTH = 10;
-const double Node::ACTIVITY_THRESHOLD = 3 * Impulse::MAX_ACTIVITY;
+const double Node::MAX_ACTIVITY_THRESHOLD = 3 * Impulse::MAX_ACTIVITY;
+const double Node::MIN_ACTIVITY_THRESHOLD = 1 * Impulse::MAX_ACTIVITY;
 
 const spacial::Point Node::MAX_BOUNDING_BOX_POINT = spacial::Point(100, 100, 100);
 
@@ -35,7 +36,7 @@ boost::shared_ptr<Node> Node::getRandom(const spacial::Point & max_point) {
 }
 
 Node::Node() :
-	lastActivationState(None) {
+		activityThreshold(MAX_ACTIVITY_THRESHOLD), lastActivationState(None){
 	connector = boost::shared_ptr<common::Connector<Node, Connection> >(new common::Connector<Node, Connection>());
 	emittedImpulse = boost::shared_ptr<Impulse>(new Impulse());
 	emittedImpulse->randomise();
@@ -90,19 +91,19 @@ common::Connector<Node, Connection> & Node::getMutableConnector() {
 
 Node::ActivationState Node::checkFire() {
 #ifdef NODE_DEBUG
-std::cout<<"Node::checkFire: "<<""<<std::endl;
+	std::cout<<"Node::checkFire: "<<""<<std::endl;
 #endif
 	//and emit impulse if required
 	const ActivationState act_state = this->checkActivationState();
 	if (act_state == Positive) {
 #ifdef NODE_DEBUG
-std::cout << "Node::checkFire: " << "FIRE_POSITIVE" << std::endl;
+		std::cout << "Node::checkFire: " << "FIRE_POSITIVE" << std::endl;
 #endif
-this->emitImpulsePositive();
+		this->emitImpulsePositive();
 		this->enterRecovery();
 	} else if (act_state == Negative) {
 #ifdef NODE_DEBUG
-std::cout << "Node::checkFire: " << "FIRE_NEGATIVE" << std::endl;
+		std::cout << "Node::checkFire: " << "FIRE_NEGATIVE" << std::endl;
 #endif
 		this->emitImpulseNegative();
 		this->enterRecovery();
@@ -115,17 +116,17 @@ void Node::enterRecovery(const int recovery_settings) {
 #ifdef NODE_DEBUG
 	int pre_impulses_size = impulses.getSize();
 #endif
-	if (recovery_settings & CLEAR_ALL_IMPULSES){
+	if (recovery_settings & CLEAR_ALL_IMPULSES) {
 		impulses.clear();
-	} else if (recovery_settings & CLEAR_ACTIVE_IMPULSES){
+	} else if (recovery_settings & CLEAR_ACTIVE_IMPULSES) {
 		impulses.clearActiveImpulses(common::TimeKeeper::getTimeKeeper().getCycle());
 	}
 
 #ifdef NODE_DEBUG
 	int post_impulses_size = impulses.getSize();
-	if (recovery_settings & CLEAR_ALL_IMPULSES){
+	if (recovery_settings & CLEAR_ALL_IMPULSES) {
 		assert(post_impulses_size==0);
-	} else if (recovery_settings & CLEAR_ACTIVE_IMPULSES){
+	} else if (recovery_settings & CLEAR_ACTIVE_IMPULSES) {
 		assert(post_impulses_size<pre_impulses_size);
 	}
 #endif
@@ -165,7 +166,7 @@ void Node::addImpulses(std::list<boost::shared_ptr<Impulse> > impulses) {
 	int node_post_impulses_count = this->getImpulses().getSize();
 	assert(node_post_impulses_count == node_pre_impulses_count+impulses_to_add);
 	std::cout << "Node::addImpulses: " << node_post_impulses_count << "=" << node_pre_impulses_count << "+"
-			<< impulses_to_add << std::endl;
+	<< impulses_to_add << std::endl;
 #endif
 }
 
@@ -177,9 +178,9 @@ Node::ActivationState Node::checkActivationState() {
 	std::cout << "Node::checkActivation: " << "Current:" << current_activity << " Threshold:" << ACTIVITY_THRESHOLD<< std::endl;
 #endif
 	// check activation against criteria
-	if (current_activity > ACTIVITY_THRESHOLD) {
+	if (current_activity > this->getActivityThreshold()) {
 		act_state = Positive;
-	} else if (current_activity < -ACTIVITY_THRESHOLD) {
+	} else if (current_activity < -getActivityThreshold()) {
 		act_state = Negative;
 	} else {
 		act_state = None;
@@ -197,8 +198,8 @@ void Node::emitImpulseNegative() {
 
 void Node::emitImpulse(bool positive) {
 	// Add impulse to all outgoing connections
-	std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > & objs =
-			this->getMutableConnector().getMutableOutputs();
+	std::map < boost::uuids::uuid, boost::shared_ptr<Connection> > &objs
+			= this->getMutableConnector().getMutableOutputs();
 	// forall in objs
 	{
 		std::map<boost::uuids::uuid, boost::shared_ptr<Connection> >::const_iterator it_objs = objs.begin();
@@ -226,9 +227,9 @@ void Node::emitImpulse(bool positive) {
 			// forall in all_impulses
 			{
 				std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> >::const_iterator it_all_impulses =
-						temp_connection.getImpulses().getCollection().begin();
+				temp_connection.getImpulses().getCollection().begin();
 				const std::map<boost::uuids::uuid, boost::shared_ptr<Impulse> >::const_iterator it_all_impulses_end =
-						temp_connection.getImpulses().getCollection().end();
+				temp_connection.getImpulses().getCollection().end();
 				while (it_all_impulses != it_all_impulses_end) {
 					assert(it_all_impulses->second->getActivityTimer()->checkConstraints());
 					++it_all_impulses;
@@ -265,6 +266,10 @@ double Node::getActivity() const {
 
 double Node::getActivity(const common::Cycle & cycle) const {
 	return this->getImpulses().getActivity(cycle);
+}
+
+double Node::getActivityThreshold() const{
+	return activityThreshold;
 }
 
 double Node::updateActivity() {
@@ -313,6 +318,7 @@ Node::ActivationState Node::getLastActivationState() const {
 
 void Node::randomise() {
 	emittedImpulse = Impulse::getRandom(0.8);
+	activityThreshold = common::Maths::getRandomDouble(MIN_ACTIVITY_THRESHOLD, MAX_ACTIVITY_THRESHOLD);
 }
 
 bool Node::isTriggered(ActivationState state) {
@@ -418,7 +424,7 @@ bool Node::isPrimaryOutputAttachedNode() const {
 }
 
 std::vector<boost::shared_ptr<Connection> > Node::getPrimaryInputConnections() {
-	std::vector<boost::shared_ptr<Connection> > found_connections;
+	std::vector < boost::shared_ptr<Connection> > found_connections;
 
 	const std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > & all_connections =
 			this->getConnector().getInputs();
@@ -440,7 +446,7 @@ std::vector<boost::shared_ptr<Connection> > Node::getPrimaryInputConnections() {
 }
 
 std::vector<boost::shared_ptr<Connection> > Node::getPrimaryOutputConnections() {
-	std::vector<boost::shared_ptr<Connection> > found_connections;
+	std::vector < boost::shared_ptr<Connection> > found_connections;
 
 	const std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > & all_connections =
 			this->getConnector().getOutputs();
@@ -471,7 +477,7 @@ void Node::connectOutput(boost::shared_ptr<Connection> con) {
 void Node::updatePosition() {
 	// update input connections
 	{
-		std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > & connections = connector->getMutableInputs();
+		std::map < boost::uuids::uuid, boost::shared_ptr<Connection> > &connections = connector->getMutableInputs();
 		// forall in connections
 		{
 			std::map<boost::uuids::uuid, boost::shared_ptr<Connection> >::iterator it_connections = connections.begin();
@@ -485,7 +491,7 @@ void Node::updatePosition() {
 	}
 	// update output connections
 	{
-		std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > & connections = connector->getMutableOutputs();
+		std::map < boost::uuids::uuid, boost::shared_ptr<Connection> > &connections = connector->getMutableOutputs();
 		// forall in connections
 		{
 			std::map<boost::uuids::uuid, boost::shared_ptr<Connection> >::iterator it_connections = connections.begin();
@@ -498,9 +504,9 @@ void Node::updatePosition() {
 		}
 	}
 }
-void Node::enableDebug(bool b){
-	 this->setDebug(b);
- }
+void Node::enableDebug(bool b) {
+	this->setDebug(b);
+}
 std::ostream& operator<<(std::ostream & os, const Node & obj) {
 	std::stringstream ss;
 	if (obj.isPrimaryInputAttachedNode()) {
@@ -511,7 +517,7 @@ std::ostream& operator<<(std::ostream & os, const Node & obj) {
 	}
 	os << "Node: " << obj.getUUIDSummary() << " " << ss.str() << "connections:"
 			<< obj.getConnector().getInputs().size() << ">" << obj.getConnector().getOutputs().size() << " impulses: "
-			<< obj.getImpulses().getSize();
+			<< obj.getImpulses().getSize() << " activityThreshold: "<<obj.getActivityThreshold();
 
 	if (obj.isDebugOn() == true) {
 		if (obj.getImpulses().getSize() > 0) {
