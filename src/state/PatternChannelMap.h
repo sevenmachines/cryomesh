@@ -40,9 +40,11 @@ public:
 			const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator
 					it_all_patternchannels_end = all_patternchannels.end();
 			while (it_all_patternchannels != it_all_patternchannels_end) {
-				found_patterns[it_all_patternchannels->first]
-						= it_all_patternchannels->second->getPatternByCycle(cycle);
-				++it_all_patternchannels;
+				boost::shared_ptr<Pattern> temp_pattern = it_all_patternchannels->second->getPatternByCycle(cycle);
+				if (temp_pattern != 0) {
+					found_patterns[it_all_patternchannels->first] = temp_pattern;
+				}
+				 ++it_all_patternchannels;
 			}
 		}
 		return found_patterns;
