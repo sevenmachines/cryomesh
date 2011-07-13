@@ -91,6 +91,19 @@ public:
 	 * return current pattern
 	 */
 	const boost::shared_ptr<Pattern> getCurrentPattern();
+
+	/*
+	 * Return bactracked pattern using last entry in pattern list as that
+	 * of the current cycle
+	 *
+	 * @param Cycle
+	 * 	The cycle to retrieve relative to now
+	 *
+	 * @return boost::shared_ptr<Pattern>
+	 * 	The pattern found at the supplied cycle, null if none found
+	 */
+	const boost::shared_ptr<Pattern> getPatternByCycle(const common::Cycle & cycle);
+
 	/*
 	 * Return pattern from tag
 	 */

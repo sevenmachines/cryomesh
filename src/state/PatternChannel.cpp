@@ -8,6 +8,7 @@
 #include "PatternChannel.h"
 #include <boost/foreach.hpp>
 #include <boost/uuid/uuid_generators.hpp>
+#include "common/TimeKeeper.h"
 
 namespace cryomesh {
 namespace state {
@@ -239,8 +240,32 @@ std::cout << "PatternChannel::forcePatternListSize: " << this->getMaxPatternList
 // Manipulation
 
 const boost::shared_ptr<Pattern> PatternChannel::getCurrentPattern() {
-	return (patternMap.find(*patternListIterator))->second;
+	return patternMap.find(*patternListIterator)->second;
 }
+
+const boost::shared_ptr<Pattern> PatternChannel::getPatternByCycle(const common::Cycle & cycle){
+	boost::shared_ptr<Pattern> found_pattern;
+
+	std::list<boost::uuids::uuid>::const_reverse_iterator it_diff_iterator = patternList.rbegin();
+	const std::list<boost::uuids::uuid>::const_reverse_iterator it_diff_iterator_end = patternList.rend();
+
+	 common::Cycle cycle_diff = common::TimeKeeper::getTimeKeeper().getCycle() - cycle;
+#ifdef PATTERNCHANNEL_DEBUG
+	 std::cout<<"PatternChannel::getPatternByCycle: "<<"diff="<<cycle_diff <<" now="<< common::TimeKeeper::getTimeKeeper().getCycle() <<" get_cycle="<< cycle<<std::endl;
+#endif
+	while (cycle_diff > 0 && (it_diff_iterator != it_diff_iterator_end)){
+		--cycle_diff;
+		++it_diff_iterator;
+	}
+
+	if (it_diff_iterator != it_diff_iterator_end){
+		found_pattern =patternMap.find(*it_diff_iterator)->second;
+	}else{
+		std::cout<<"PatternChannel::getPatternByCycle: "<<"Warning: Cycle "<<cycle<<" not found in Pattern List size "<<patternList.size()<<std::endl;
+	}
+	return found_pattern;
+}
+
 const boost::shared_ptr<Pattern> PatternChannel::getPatternByTag(const boost::shared_ptr<PatternTag> tg) const {
 	boost::shared_ptr<Pattern> found_pat;
 	const std::map<boost::shared_ptr<PatternTag>, boost::uuids::uuid>::const_iterator it_find =

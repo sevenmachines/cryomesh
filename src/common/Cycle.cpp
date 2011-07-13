@@ -15,7 +15,7 @@ namespace common {
 Cycle::Cycle() {
 	cycle = 0;
 }
-Cycle::Cycle(const  long int it) :
+Cycle::Cycle(const long int it) :
 	cycle(it) {
 }
 
@@ -43,7 +43,9 @@ const Cycle Cycle::operator-(const Cycle & obj) const {
 	//std::cout<<"Cycle::operator -: "<<"START"<<std::endl;
 	Cycle cyc(*this);
 	cyc -= obj;
-	//	std::cout<<"Cycle::operator -: "<<"END"<<std::endl;
+#ifdef CYCLE_DEBUG
+	std::cout<<"Cycle::operator -: "<<*this <<" - " <<obj << " = "<<cyc<<std::endl;
+#endif
 	return cyc;
 }
 
@@ -56,7 +58,7 @@ unsigned long int Cycle::toULInt() const {
 	return cycle.get_ui();
 }
 
- long int Cycle::toLInt() const {
+long int Cycle::toLInt() const {
 	return cycle.get_si();
 }
 
@@ -106,10 +108,10 @@ Cycle & Cycle::operator--() {
 	return *this;
 }
 
- std::ostream& operator<<(std::ostream & os, const Cycle & obj){
-	 os<<obj.toLInt();
-	 return os;
- }
+std::ostream& operator<<(std::ostream & os, const Cycle & obj) {
+	os << obj.toLInt();
+	return os;
+}
 
 const mpz_class & Cycle::getMP() const {
 	return cycle;
