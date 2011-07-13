@@ -5,6 +5,8 @@
  *      Author: "SevenMachines <SevenMachines@yahoo.co.uk>"
  */
 
+#define CRYOMANAGER_DEBUG
+
 #ifndef CRYOMANAGER_H_
 #define CRYOMANAGER_H_
 
@@ -12,6 +14,10 @@
 #include <ctime>
 #include "Creator.h"
 #include "common/TimeKeeper.h"
+#include "PatternDatabaseObject.h"
+#include "DatabaseManager.h"
+#include <boost/uuid/uuid_io.hpp>
+#include <sstream>
 
 namespace cryomesh {
 namespace manager {
@@ -32,16 +38,12 @@ public:
 	/**
 	 * Default contructor
 	 */
-	CryoManager() :
-		currentState(EMPTY) {
-		srand(time(NULL));
-	}
+	CryoManager() ;
 
 	/**
 	 * Default destructor
 	 */
-	virtual ~CryoManager() {
-	}
+	virtual ~CryoManager();
 
 	/**
 	 * Set manager state to create, load config from file
@@ -49,60 +51,32 @@ public:
 	 * @param std::string
 	 * 	The config file to create from
 	 */
-	void create(const std::string configfile) {
-		std::cout << "CryoManager::create: " << "" << std::endl;
-		currentState = NEW;
-		creator = boost::shared_ptr<manager::Creator>(new manager::Creator(configfile));
-	}
+	void create(const std::string configfile) ;
 
 	/**
 	 * Set manager state to running
 	 */
-	void run() {
-		currentState = RUNNING;
-	}
+	void run() ;
 
 	/**
 	 * Set manager state to run one cycle
 	 */
-	void runCycle() {
-		std::cout << "CryoManager::runCycle: " <<common::TimeKeeper::getTimeKeeper().getCycle()<< std::endl;
-		 boost::shared_ptr< structures::Bundle > bundle = creator->getBundle();
-		if (bundle != 0){
-			currentState = RUNNING;
-			bundle->update();
-			this->stop();
-		}else{
-			std::cout<<"CryoManager::runCycle: "<<"ERROR: Bundle is null..."<<std::endl;
-			assert(false);
-		}
-
-	}
+	void runCycle() ;
 
 	/**
 	 * Set manager state to paused
 	 */
-	void pause() {
-		std::cout << "CryoManager::pause: " << "" << std::endl;
-		currentState = PAUSED;
-	}
+	void pause() ;
 
 	/**
 	 * Set manager state to stopped
 	 */
-	void stop() {
-		std::cout << "CryoManager::stop: " << "" << std::endl;
-		currentState = STOPPED;
-	}
+	void stop();
 
 	/**
 	 * Set manager state to destroy
 	 */
-	void destroy() {
-		std::cout << "CryoManager::destroy: " << "" << std::endl;
-		currentState = EMPTY;
-		creator.reset();
-	}
+	void destroy() ;
 
 	/**
 	 * Return the managers current state
@@ -110,17 +84,17 @@ public:
 	 * @return ManagerState
 	 * 	The current state of the manager
 	 */
-	const ManagerState & getCurrentState() const {
-		return currentState;
-	}
+	const ManagerState & getCurrentState() const ;
 
 	//TODO Temporary access, replace with database calls instead
-	const boost::shared_ptr<structures::Bundle> getBundle() const {
-		return creator->getBundle();
-	}
-	boost::shared_ptr<structures::Bundle> getMutableBundle() {
-		return creator->getMutableBundle();
-	}
+	const boost::shared_ptr<structures::Bundle> getBundle() const ;
+
+	boost::shared_ptr<structures::Bundle> getMutableBundle() ;
+
+protected:
+	void storeCurrentActualOutputPatterns(
+			const std::map<boost::uuids::uuid, boost::shared_ptr<state::Pattern> > & current_patterns) ;
+
 private:
 	/**
 	 * The current state of the manager
@@ -135,6 +109,8 @@ private:
 	 * @var boost::shared_ptr< Creator >
 	 */
 	boost::shared_ptr<Creator> creator;
+
+	boost::shared_ptr<DatabaseManager> database;
 };
 
 }//NAMESPACE

@@ -28,7 +28,7 @@ public:
 	 *
 	 */
 	const std::map<boost::uuids::uuid, boost::shared_ptr<state::Pattern> > getPatterns(
-			const common::Cycle & cycle = common::TimeKeeper::getTimeKeeper().getTimeKeeper().getCycle()) {
+			const common::Cycle & cycle = common::TimeKeeper::getTimeKeeper().getTimeKeeper().getCycle()) const {
 		std::map<boost::uuids::uuid, boost::shared_ptr<state::Pattern> > found_patterns;
 
 		const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> > & all_patternchannels =

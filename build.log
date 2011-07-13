@@ -2,4 +2,28 @@
 **** Build of configuration Release for project cryomesh ****
 
 make all 
-make: Nothing to be done for `all'.
+Building file: ../src/manager/CryoManager.cpp
+Invoking: GCC C++ Compiler
+/usr/bin/g++-4.5 -I"/home/niall/Projects/Eclipse/CPP/cryomesh-common/src" -I"/home/niall/Projects/Eclipse/CPP/cryomesh/src" -I/usr/include/boost -O2 -Wall -c -fmessage-length=0 -std=c++0x -fPIC `pkg-config --cflags sqlite3 libxml++-2.6` -MMD -MP -MF"src/manager/CryoManager.d" -MT"src/manager/CryoManager.d" -o"src/manager/CryoManager.o" "../src/manager/CryoManager.cpp"
+In file included from /home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ConnectionMap.h:17:0,
+                 from /home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Cluster.h:12,
+                 from /home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/ClusterMap.h:14,
+                 from /home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h:14,
+                 from ../src/manager/Creator.h:16,
+                 from ../src/manager/CryoManager.h:15,
+                 from ../src/manager/CryoManager.cpp:7:
+/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h:147:3: warning: "/*" within comment
+In file included from /home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Cluster.h:21:0,
+                 from /home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/ClusterMap.h:14,
+                 from /home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h:14,
+                 from ../src/manager/Creator.h:16,
+                 from ../src/manager/CryoManager.h:15,
+                 from ../src/manager/CryoManager.cpp:7:
+/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h:147:3: warning: "/*" within comment
+Finished building: ../src/manager/CryoManager.cpp
+ 
+Building target: libcryomesh.so
+Invoking: GCC C++ Linker
+/usr/bin/g++-4.5 -L"/home/niall/Projects/Eclipse/CPP/cryomesh-common/Release" -std=c++0x -fPIC `pkg-config --libs sqlite3 libxml++-2.6` -shared -o"libcryomesh.so"  ./src/utilities/SequencerChannels.o ./src/utilities/SequencerGeneric.o ./src/utilities/Statistician.o  ./src/structures/Bundle.o ./src/structures/Cluster.o ./src/structures/Fibre.o ./src/structures/Mesh.o ./src/structures/NodeMesh.o  ./src/state/ActivityPattern.o ./src/state/BinaryString.o ./src/state/Pattern.o ./src/state/PatternChannel.o ./src/state/PatternTagByDate.o ./src/state/PatternTagById.o ./src/state/Sequence.o  ./src/manager/ConnectionDatabaseObject.o ./src/manager/Creator.o ./src/manager/CryoManager.o ./src/manager/DatabaseManager.o ./src/manager/NodeDatabaseObject.o ./src/manager/PatternDatabaseObject.o  ./src/components/ActivityTimerDistance.o ./src/components/Connection.o ./src/components/Impulse.o ./src/components/ImpulseCollection.o ./src/components/Node.o  ./src/common/Cycle.o ./src/common/TimeKeeper.o   -lgmpxx -lboost_serialization -lgmp -lcryomesh-common
+Finished building target: libcryomesh.so
+ 

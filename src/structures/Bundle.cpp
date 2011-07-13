@@ -44,8 +44,6 @@ void Bundle::update() {
 	// warp bundles mesh
 	clusters.warpClusterNodes();
 
-	// TODO do things with storing output results from channels
-
 	if (this->isDebugOn() == true) {
 		this->updateStatistician();
 	}
