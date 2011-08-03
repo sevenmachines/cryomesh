@@ -15,8 +15,8 @@
 namespace cryomesh {
 namespace state {
 
-const unsigned int BinaryString::BINARY_CHAR_LENGTH = 8;
-const int BinaryString::MAX_BINARY_INTEGER_SIZE = 32;
+const  unsigned int BinaryString::BINARY_CHAR_LENGTH = 8;
+const  unsigned int BinaryString::MAX_BINARY_INTEGER_SIZE = 32;
 
 BinaryString::BinaryString() :
 	binaryString(""), signBit(false) {
@@ -183,7 +183,7 @@ int BinaryString::toInt() const {
 	//std::cout << "BinaryString::toInt: " << binaryString << std::endl;
 	// check if we need to chop to fit int size
 	std::string binstr_copy = binaryString;
-	if (binstr_copy.size()>MAX_BINARY_INTEGER_SIZE){
+	if ( binstr_copy.size()>MAX_BINARY_INTEGER_SIZE){
 		binstr_copy.resize(MAX_BINARY_INTEGER_SIZE);
 		std::cout<<"BinaryString::toInt: "<<"WARNING: Chopping BinaryString length "<< binaryString.size()<< " to fit maximum length "<<MAX_BINARY_INTEGER_SIZE<<std::endl;
 	}
@@ -250,7 +250,7 @@ std::string BinaryString::toText() const {
 			std::stringstream binss;
 			binss.clear();
 			binss.flush();
-			for (int i = 0; i < BINARY_CHAR_LENGTH && it_str != it_str_end; i++) {
+			for (int i = 0; i < (int)BINARY_CHAR_LENGTH && it_str != it_str_end; i++) {
 				//std::cout << "BinaryString::toText: i: " << i << " = " << *it_str << std::endl;
 				binss << *it_str;
 				++it_str;

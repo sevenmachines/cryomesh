@@ -59,7 +59,7 @@ public:
 	static std::list<BinaryString> formatTextToBinaryStrings(const std::string & str, std::string & allbins);
 	static std::string formatBinaryStringsToText(const std::list<std::string> & strs);
 	static const unsigned int BINARY_CHAR_LENGTH;
-	static const int MAX_BINARY_INTEGER_SIZE;
+	static const unsigned int MAX_BINARY_INTEGER_SIZE;
 private:
 	std::string binaryString;
 	bool signBit;

@@ -63,27 +63,6 @@ public:
 	 */
 	void update();
 
-	//DEPRECATED
-	/**
-	 * Assignment Operator
-	 *
-	 * 		Overridden Assignment Operator for Mesh. Inaccessible to force singleton class
-	 *
-	 *  @param Mesh
-	 * 		Object to Assign this to
-	 *
-	 Mesh & operator=(const Mesh &);
-	 /**
-	 * Singleton accessor for object
-	 *
-	 * 		Returns the single instance of a mesh, creating it if it doesn't exist yet
-	 *
-	 * @return boost::shared_ptr<Mesh>
-	 * 		The singleton instance of the mesh
-	 *
-	 static boost::shared_ptr< Mesh > getMesh();
-	 */
-
 	/**
 	 * Warp the a Node using the mesh
 	 *

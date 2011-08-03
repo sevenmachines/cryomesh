@@ -116,7 +116,7 @@ void PatternChannel::addPatterns(const std::list<boost::shared_ptr<Pattern> > & 
 		}
 	}
 
-	int pats_added = 0;
+	unsigned int pats_added = 0;
 	// copy objects
 	boost::shared_ptr<Pattern> pat(new Pattern());
 	BOOST_FOREACH(pat, pats)
