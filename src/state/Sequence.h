@@ -78,7 +78,7 @@ public:
 	/*
 	 * Setter for Patterns container
 	 */
-	const void setPatterns(const std::list<std::pair<Pattern, Pattern> > & pats);
+	 void setPatterns(const std::list<std::pair<Pattern, Pattern> > & pats);
 	/*
 	 * Save the sequence data to a file in plain text
 	 */

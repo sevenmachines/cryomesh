@@ -70,7 +70,8 @@ Impulse::Impulse(const double max_y, const int length, const int delay, boost::s
 
 }
 
-Impulse::Impulse(const Impulse & obj) {
+Impulse::Impulse(const Impulse & obj) : Tagged(obj.getUUID()), SimpleCollection<double>(obj.getActivities()){
+	SimpleCollection(*this);
 	this->setActivityDelay(obj.getActivityDelay());
 	this->setCollection(obj.getCollection());
 	this->setActivityTimer(obj.getActivityTimer());

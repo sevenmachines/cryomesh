@@ -40,18 +40,19 @@ std::string PatternTagById::moveTag(int i){
 std::string PatternTagById::getStartTag() const{
 	return "0";
 }
-void PatternTagById::setStartTag(std::string tg){
-}
 std::string PatternTagById::getEndTag() const{
 	std::stringstream ss;
 			ss<<Pattern::getIds();
 			return ss.str();
 
 }
-void PatternTagById::setEndTag(std::string tg){
 
+void PatternTagById::setStartTag(std::string tg){
+	std::cout<<"PatternTagById::setStartTag: "<<"WARNING: Not setting start tag of PatternTagById to "<<tg<< ", defaults to "<<this->getStartTag()<<std::endl;
 }
-
+void PatternTagById::setEndTag(std::string tg){
+	std::cout<<"PatternTagById::setEndTag: "<<"WARNING: Not setting end tag of PatternTagById to "<<tg<< ", defaults to "<<this->getEndTag()<<std::endl;
+}
 boost::shared_ptr<PatternTag> PatternTagById::getGlobalTag(){
 	return PatternTagById::globalTag;
 }

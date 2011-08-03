@@ -45,7 +45,7 @@ public:
 	 * 		True to enable logging, false otherwise
 	 */
 	virtual void enableLogging(bool enable) {
-		dataObject.enableLogging(true);
+		dataObject.enableLogging(enable);
 	}
 
 	/**

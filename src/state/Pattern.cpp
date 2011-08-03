@@ -31,7 +31,7 @@ Pattern Pattern::getRandom(unsigned int width, double fraction) {
 Pattern::Pattern() {
 	initialise();
 }
-Pattern::Pattern(const Pattern & pat) {
+Pattern::Pattern(const Pattern & pat) : Tagged(pat.getUUID()) {
 	initialise();
 	this->setId(pat.getId());
 	binaryString = BinaryString(pat.getBinaryString());
@@ -215,8 +215,8 @@ int Pattern::getIds() {
 void Pattern::setIds(int is) {
 #ifdef PATTERN_DEBUG
 	std::cout << "Pattern::setIds: setting ids may break uniqueness" << std::endl;
-	Pattern::ids = is;
 #endif //PATTERN_DEBUG
+	Pattern::ids = is;
 }
 
 boost::shared_ptr<manager::DatabaseObject> Pattern::getDatabaseObject() const {

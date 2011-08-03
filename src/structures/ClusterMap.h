@@ -6,7 +6,6 @@
  */
 
 //#define CLUSTERMAP_DEBUG
-
 #ifndef CLUSTERMAP_H_
 #define CLUSTERMAP_H_
 
@@ -24,7 +23,7 @@ public:
 		ENERGY_FRACTION_BY_CLUSTER_COUNT, ENERGY_FRACTION_BY_NODE_COUNT
 	};
 	ClusterMap() :
-		totalNodeCount(0), energyFractionMethod(ENERGY_FRACTION_BY_NODE_COUNT) {
+			totalNodeCount(0), energyFractionMethod(ENERGY_FRACTION_BY_NODE_COUNT) {
 	}
 
 	void setEnergyFractionMethod(EnergyFractionMethod method) {
@@ -63,13 +62,17 @@ public:
 					all_clusters.begin();
 			const std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> >::const_iterator it_all_clusters_end =
 					all_clusters.end();
+
+			double energy_fraction = 0;
+
+			if (energyFractionMethod == ENERGY_FRACTION_BY_CLUSTER_COUNT) {
+				energy_fraction = this->getClusterEnergyByClusterCount(total_energy);
+			}
 			while (it_all_clusters != it_all_clusters_end) {
-				double energy_fraction = 0;
-				if (energyFractionMethod == ENERGY_FRACTION_BY_CLUSTER_COUNT) {
-					energy_fraction = this->getClusterEnergyByClusterCount(it_all_clusters->second, total_energy);
-				} else if (energyFractionMethod == ENERGY_FRACTION_BY_NODE_COUNT) {
+
+				if (energyFractionMethod == ENERGY_FRACTION_BY_NODE_COUNT) {
 					energy_fraction = this->getClusterEnergyByNodeCount(it_all_clusters->second, total_energy);
-				} else {
+				} else if (energyFractionMethod != ENERGY_FRACTION_BY_CLUSTER_COUNT) {
 					std::cout << "updateClusterEnergies: " << "ERROR: No energy method found" << std::endl;
 					assert(false);
 				}
@@ -91,7 +94,7 @@ public:
 	/**
 	 * Take a total energy and split it evenly between clusters
 	 */
-	double getClusterEnergyByClusterCount(const boost::shared_ptr<Cluster> & cluster, double total_energy) const {
+	double getClusterEnergyByClusterCount(double total_energy) const {
 		double node_fraction = 1.0 / (double) this->getCollection().size();
 		double energy_fraction = total_energy * node_fraction;
 		return energy_fraction;
@@ -169,7 +172,8 @@ public:
 private:
 	int totalNodeCount;
 	EnergyFractionMethod energyFractionMethod;
-};
+}
+;
 
 }
 

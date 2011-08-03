@@ -95,7 +95,7 @@ const Pattern & Sequence::getNextInputPattern() {
 const std::list<std::pair<Pattern, Pattern> > & Sequence::getPatterns() const {
 	return patterns;
 }
-const void Sequence::setPatterns(const std::list<std::pair<Pattern, Pattern> > & pats) {
+ void Sequence::setPatterns(const std::list<std::pair<Pattern, Pattern> > & pats) {
 	patterns = std::list<std::pair<Pattern, Pattern> >(pats);
 	initialise();
 }

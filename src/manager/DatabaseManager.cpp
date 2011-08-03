@@ -212,16 +212,20 @@ std::string DatabaseManager::deleteSelected(const std::string & table, const std
 }
 
 int DatabaseManager::countNodes(const std::string & criteria) {
-	return (this->countRows("nodesTable"));
+	return (this->countRows("nodesTable", criteria));
 }
 int DatabaseManager::countConnections(const std::string & criteria) {
 
-	return (this->countRows("connectionsTable"));
+	return (this->countRows("connectionsTable", criteria));
 }
 int DatabaseManager::countRows(const std::string & table, const std::string & criteria) {
 	std::stringstream ss;
 	int number = 0;
-	ss << "SELECT count(*) FROM " << table << ";";
+	ss << "SELECT count(*) FROM " << table ;
+	if (criteria != ""){
+		ss <<" WHERE " <<criteria;
+	}
+	ss<< ";";
 	std::string result = sqlCommand(ss.str());
 	if (result.size() > 0) {
 		std::string numstr = result.substr(result.find(":") + 1, 1);

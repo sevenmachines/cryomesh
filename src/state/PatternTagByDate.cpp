@@ -17,16 +17,14 @@ std::string PatternTagByDate::DateFormat = "%S %M %H %d %m %Y %w %j ";
 std::string PatternTagByDate::GlobalStartTag = "";
 std::string PatternTagByDate::GlobalEndTag = "";
 std::string PatternTagByDate::GlobalCurrentTag = "";
-boost::shared_ptr<PatternTagByDate> PatternTagByDate::globalTag;//()=	boost::shared_ptr<PatternTagByDate>(new PatternTagByDate(ByDay));
+boost::shared_ptr<PatternTagByDate> PatternTagByDate::globalTag; //()=	boost::shared_ptr<PatternTagByDate>(new PatternTagByDate(ByDay));
 
 PatternTagByDate::PatternTagByDate(DateType dt) :
-	dateType(dt){
+		dateType(dt) {
 }
 
-PatternTagByDate::PatternTagByDate(DateType dt, std::tm start_time,
-		std::tm end_time, std::tm current_time) :
-	dateType(dt),startTime(
-			start_time), endTime(end_time), currentTime(current_time) {
+PatternTagByDate::PatternTagByDate(DateType dt, std::tm start_time, std::tm end_time, std::tm current_time) :
+		dateType(dt), startTime(start_time), endTime(end_time), currentTime(current_time) {
 	globalTag->setStartTag(GlobalStartTag);
 	globalTag->setEndTag(GlobalEndTag);
 	globalTag->setTag(GlobalStartTag);
@@ -57,7 +55,7 @@ std::string PatternTagByDate::moveTag() {
 	return PatternTagByDate::tmToTag(currentTime);
 }
 std::string PatternTagByDate::moveTag(int i) {
-	for (int j=0; j<i; j++){
+	for (int j = 0; j < i; j++) {
 		this->moveTag();
 	}
 	return PatternTagByDate::tmToTag(currentTime);
@@ -67,13 +65,13 @@ std::string PatternTagByDate::getStartTag() const {
 	return PatternTagByDate::tmToTag(startTime);
 }
 void PatternTagByDate::setStartTag(std::string tg) {
-	startTime =PatternTagByDate::tagToTm(tg);
+	startTime = PatternTagByDate::tagToTm(tg);
 }
 std::string PatternTagByDate::getEndTag() const {
 	return PatternTagByDate::tmToTag(endTime);
 }
 void PatternTagByDate::setEndTag(std::string tg) {
-	endTime=PatternTagByDate::tagToTm(tg);
+	endTime = PatternTagByDate::tagToTm(tg);
 }
 
 boost::shared_ptr<PatternTag> PatternTagByDate::getGlobalTag() {
@@ -124,8 +122,7 @@ std::tm PatternTagByDate::tagToTm(const std::string & tg) {
 		//temp_tm.tm_zone;
 		//temp_tm.tm_gmtoff;
 	} else {
-		std::cout << "PatternTagByDate::tagToTm: "
-				<< "ERROR: Tag doesnt have enough entries! " << std::endl;
+		std::cout << "PatternTagByDate::tagToTm: " << "ERROR: Tag doesnt have enough entries! " << std::endl;
 	}
 
 	return temp_tm;
@@ -177,13 +174,11 @@ std::tm PatternTagByDate::moveMonth(std::tm & tmtime, int i) {
 			bool past_feb = tmtime.tm_mon > 1;
 			month_days = 28;
 
-			if (past_feb == true && PatternTagByDate::isLeapYear(tmtime)
-					== true) {
+			if (past_feb == true && PatternTagByDate::isLeapYear(tmtime) == true) {
 				month_days += 1;
 			}
 		}
-		if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8
-				|| month == 10 || month == 12) {
+		if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
 			month_days = 31;
 		} else {
 			month_days = 30;
@@ -195,13 +190,18 @@ std::tm PatternTagByDate::moveMonth(std::tm & tmtime, int i) {
 
 	return PatternTagByDate::moveDay(month_tm, days);
 }
-std::tm PatternTagByDate::moveYear(std::tm & tmtime, int i) {
-	int days = 365;
+std::tm PatternTagByDate::moveYear(std::tm & tmtime, int years) {
+	std::tm presenttime (tmtime);
+	const int YEAR_DAYS = 365;
 
-	if (PatternTagByDate::isLeapYear(tmtime) == true) {
-		days += 1;
+	for (int i = 0; i < years; i++) {
+		if (PatternTagByDate::isLeapYear(tmtime) == true) {
+			presenttime = PatternTagByDate::moveDay(presenttime, YEAR_DAYS+1);
+		} else {
+			presenttime =PatternTagByDate::moveDay(presenttime, YEAR_DAYS);
+		}
 	}
-	return PatternTagByDate::moveDay(tmtime, days);
+	return presenttime;
 }
 bool PatternTagByDate::isLeapYear(const std::tm & tmtime) {
 	bool leap_year = false;
@@ -221,6 +221,6 @@ bool PatternTagByDate::isLeapYear(const std::tm & tmtime) {
 	}
 	return leap_year;
 }
-}//NAMESPACE
+} //NAMESPACE
 
-}//NAMESPACE
+} //NAMESPACE

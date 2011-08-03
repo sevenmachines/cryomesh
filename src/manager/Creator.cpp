@@ -45,7 +45,7 @@ std::map<std::string, std::list<std::string> > Creator::getAcceptedCommandList()
 }
 
 Creator::Creator(const std::string & config_filename, const std::string & database_filename) :
-	databaseFilename(Creator::DEFAULT_DATABASE_FILENAME) {
+	databaseFilename(database_filename) {
 	this->initialise();
 
 	// create from config
@@ -59,7 +59,7 @@ Creator::Creator(const std::string & config_filename, const std::string & databa
 }
 
 Creator::Creator(std::istream & config_stream, const std::string & database_filename) :
-	databaseFilename(Creator::DEFAULT_DATABASE_FILENAME) {
+	databaseFilename(database_filename) {
 	this->initialise();
 
 	bool success = this->createFromConfigStream(config_stream);

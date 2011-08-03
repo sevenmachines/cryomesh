@@ -281,8 +281,7 @@ public:
 	/**
 	 * Print the bundle to stream
 	 */
-	std::ostream& print(std::ostream & os, const common::Loggable::LoggingDepth depth = SUMMARY) const ;
-
+	virtual std::ostream& print(std::ostream & os, const common::Loggable::LoggingDepth depth = SUMMARY) const ;
 	/**
 	 * Print the channels to stream
 	 */

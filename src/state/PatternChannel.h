@@ -149,7 +149,7 @@ const std::list<boost::uuids::uuid> & getPatternList() const;
 	int getRefID() const;
 	void setRefID(int r);
 
-	const int getMaxPatternListSize() const;
+	 int getMaxPatternListSize() const;
 	void setMaxPatternListSize(int sz);
 	std::ostream & printPatternList(std::ostream & os, bool reversed = false)const;
 

@@ -62,7 +62,8 @@ PatternChannel::~PatternChannel() {
 #endif
 }
 
-PatternChannel::PatternChannel(const PatternChannel & obj) {
+PatternChannel::PatternChannel(const PatternChannel & obj)  : Tagged(obj.getUUID()){
+	Tagged(obj.getUUID());
 	this->refID = obj.refID;
 	this->uuid = obj.uuid;
 	this->width = obj.width;
@@ -498,7 +499,7 @@ PatternChannel::ChannelDataType PatternChannel::getChannelDataType() const {
 	return channelDataType;
 }
 
-const int PatternChannel::getMaxPatternListSize() const {
+ int PatternChannel::getMaxPatternListSize() const {
 	return maxPatternListSize;
 }
 void PatternChannel::setMaxPatternListSize(int sz) {

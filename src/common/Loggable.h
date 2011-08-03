@@ -26,7 +26,7 @@ public:
 	Loggable(){}
 	virtual ~Loggable(){}
 
-	std::ostream & print(std::ostream & os, const Loggable::LoggingDepth depth = Loggable::SUMMARY)const{return os;}
+	virtual std::ostream & print(std::ostream & os, const Loggable::LoggingDepth depth = Loggable::SUMMARY) const=0;
 };
 
 }

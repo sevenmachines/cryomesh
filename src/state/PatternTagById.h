@@ -20,10 +20,9 @@ public:
 	virtual std::string moveTag(); // Move to next tag and return implementation ie, if date this would be tomorrow
 	virtual std::string moveTag(int i); // Move to next tag x i and return implementation ie, if date this would be tomorrow
 	virtual std::string getStartTag() const; // return the default starting tag
-	virtual void setStartTag(std::string tg);
 	virtual std::string getEndTag() const; // return the default starting tag
+	virtual void setStartTag(std::string tg);
 	virtual void setEndTag(std::string tg);
-
 	virtual boost::shared_ptr<PatternTag> getGlobalTag();
 
 private:
