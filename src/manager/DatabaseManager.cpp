@@ -298,7 +298,6 @@ std::string DatabaseManager::deleteByCycle(const std::string & table, const comm
 std::string DatabaseManager::sqlCommand(const std::string & command) {
 	//std::cout<<"DatabaseManager::sqlCommand: "<<"COMMAND:"<<command<<std::endl;
 	sqlResultsBuffer.clear();
-	bool success = false;
 	std::string results;
 	errorCode = sqlite3_exec(database, command.c_str(), &databaseCallback, &sqlResultsBuffer, &errorMessage);
 	// do results
@@ -324,9 +323,6 @@ std::string DatabaseManager::sqlCommand(const std::string & command) {
 	if (errorCode != SQLITE_OK) {
 		std::cout << "DatabaseManager::sqlCommand: " << "ERROR: " << errorMessage << std::endl;
 		std::cout << "\t" << "Command: " << command << std::endl;
-		success = false;
-	} else {
-		success = true;
 	}
 	sqlite3_free(errorMessage);
 	return results;

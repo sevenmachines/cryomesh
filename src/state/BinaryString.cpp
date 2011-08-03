@@ -331,7 +331,6 @@ std::string BinaryString::charToBinaryString(const char & ch, bool sign_bit) {
 	int k = 0, n = 0;
 	int neg_flag = 0;
 	int remain;
-	int old_decimal; // for test
 	char temp[80];
 
 	// take care of negative input
@@ -340,7 +339,6 @@ std::string BinaryString::charToBinaryString(const char & ch, bool sign_bit) {
 		neg_flag = 1;
 	}
 	do {
-		old_decimal = decimal; // for test
 		remain = decimal % 2;
 		// whittle down the decimal number
 		decimal = decimal / 2;

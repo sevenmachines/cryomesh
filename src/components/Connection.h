@@ -137,23 +137,6 @@ public:
 	ImpulseCollection & getMutableImpulses();
 
 	/**
-	 * Get active impulse collection
-	 *
-	 * @return ActiveImpulseCollection &
-	 * 		The collection of active impulses
-	 *
-	 const ActiveImpulseCollection & getActiveImpulses() const;
-
-	 /**
-	 * Get mutable active impulse collection
-	 *
-	 * @return ActiveImpulseCollection &
-	 * 		The collection of active impulses
-	 *
-	 ImpulseCollection & getActiveImpulses();
-	 */
-
-	/**
 	 * The get activity timer for this object
 	 *
 	 * @return boost::shared_ptr<ActivityTimer>

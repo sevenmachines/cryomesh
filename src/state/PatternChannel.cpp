@@ -24,7 +24,6 @@ unsigned int PatternChannel::getRefIDS() {
 PatternChannel::PatternChannel(ChannelDataType dt) :
 	width(0), length(0), patternPosition(0), channelDataType(dt) {
 	patternListIterator = patternList.begin();
-	uuid = boost::uuids::random_generator()();
 	refID = PatternChannel::getRefIDS();
 	maxPatternListSize = DEFAULT_MAX_PATTERN_LIST_SIZE;
 	// warn if we have 0 size and Input or vice versa
@@ -43,7 +42,6 @@ PatternChannel::PatternChannel(const std::list<boost::shared_ptr<Pattern> > & pa
 		this->addPatterns(pats);
 	}
 	patternListIterator = patternList.begin();
-	uuid = boost::uuids::random_generator()();
 	refID = PatternChannel::getRefIDS();
 
 	// warn if we have 0 size and Input or vice versa
@@ -322,8 +320,6 @@ double PatternChannel::matchGlobally(const PatternChannel & obj) {
 	const std::map<boost::uuids::uuid, boost::shared_ptr<Pattern> > & objmap = obj.getPatternMap();
 	std::map<boost::uuids::uuid, boost::shared_ptr<Pattern> > objmapused;
 
-	std::map<boost::uuids::uuid, boost::shared_ptr<Pattern> >::const_iterator it_objfound = objmap.end();
-	const std::map<boost::uuids::uuid, boost::shared_ptr<Pattern> >::const_iterator it_objmap_end = objmap.end();
 
 	const unsigned int min_list_sz = std::min(this_pat_count, obj_pat_count);
 	// forall in thislist

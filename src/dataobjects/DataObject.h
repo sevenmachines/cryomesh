@@ -197,7 +197,6 @@ public:
 			typename std::map<U, T>::iterator it_valueMap = valueMap.begin();
 			typename std::map<U, T>::iterator it_valueMap_begin = valueMap.begin();
 
-			const typename std::map<U, T>::const_iterator it_valueMap_end = valueMap.end();
 
 			while (diff > 0) {
 				--diff;

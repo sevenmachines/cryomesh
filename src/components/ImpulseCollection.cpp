@@ -354,7 +354,6 @@ bool ImpulseCollection::operator==(const ImpulseCollection & obj) const {
 			while (it_collection_this != it_collection_this_end && it_collection_obj != it_collection_obj_end) {
 				Impulse & temp1 = *(it_collection_this->second);
 				Impulse & temp2 = *(it_collection_obj->second);
-				bool eq = (temp1 == temp2);
 				if (temp1 != temp2) {
 					return false;
 				}

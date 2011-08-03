@@ -294,7 +294,6 @@ double Node::addActivity(common::Cycle cycle, double activity) {
 }
 
 boost::shared_ptr<manager::DatabaseObject> Node::getDatabaseObject() const {
-	std::map<common::Cycle, double>::const_iterator it_act = this->getActivities().begin();
 	unsigned long int cycle = common::TimeKeeper::getTimeKeeper().getCycle().toULInt();
 	double activity = this->getActivity();
 

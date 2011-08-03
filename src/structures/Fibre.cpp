@@ -103,8 +103,6 @@ void Fibre::trigger(std::vector<boost::shared_ptr<components::Impulse> > & trigg
 	// forall in all_connections
 	{
 		std::vector<boost::shared_ptr<components::Impulse> >::iterator it_triggerimpulses = triggerImpulses.begin();
-		const std::vector<boost::shared_ptr<components::Impulse> >::const_iterator it_triggerimpulses_end =
-				triggerImpulses.end();
 		std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::iterator it_all_connections =
 				all_connections.begin();
 		const std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::const_iterator
