@@ -62,8 +62,8 @@ PatternChannel::~PatternChannel() {
 #endif
 }
 
-PatternChannel::PatternChannel(const PatternChannel & obj)  : Tagged(obj.getUUID()){
-	Tagged(obj.getUUID());
+PatternChannel::PatternChannel(const PatternChannel & obj)  : Tagged(){
+	// Note, not cloning uuid
 	this->refID = obj.refID;
 	this->uuid = obj.uuid;
 	this->width = obj.width;

@@ -70,10 +70,10 @@ Impulse::Impulse(const double max_y, const int length, const int delay, boost::s
 
 }
 
-Impulse::Impulse(const Impulse & obj) : Tagged(obj.getUUID()), SimpleCollection<double>(obj.getActivities()){
+Impulse::Impulse(const Impulse & obj) : Tagged(), SimpleCollection<double>(obj.getActivities()){
+	// Note, not cloning uuid
 	SimpleCollection(*this);
 	this->setActivityDelay(obj.getActivityDelay());
-	this->setCollection(obj.getCollection());
 	this->setActivityTimer(obj.getActivityTimer());
 	this->firstActiveCycle = obj.getFirstActiveCycle();
 	this->lastActiveCycle = obj.getLastActiveCycle();
@@ -278,6 +278,7 @@ Impulse & Impulse::operator=(const Impulse & obj) {
 	if (*this == obj) {
 		return *this;
 	}
+	// Note, not cloning uuid
 	this->setActivityDelay(obj.getActivityDelay());
 	this->setCollection(obj.getCollection());
 	this->setActivityTimer(obj.getActivityTimer());
