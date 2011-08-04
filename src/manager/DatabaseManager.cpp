@@ -19,6 +19,8 @@ namespace manager {
 
 //STATICS
 const std::string DatabaseManager::DEFAULT_DATABASE = "default.db";
+const std::string DatabaseManager::DEFAULT_DATABASE_PATH = "Output";
+
 const NodeTableFormat DatabaseManager::NODES_TABLE_FORMAT;
 const ConnectionTableFormat DatabaseManager::CONNECTIONS_TABLE_FORMAT;
 const OutputPatternsTableFormat DatabaseManager::OUTPUT_PATTERNS_TABLE_FORMAT;
@@ -54,9 +56,9 @@ int DatabaseManager::databaseCallback(void *results, int argc, char **argv, char
 	return 0;
 }
 
-DatabaseManager::DatabaseManager(const std::string & dbfile) :
+DatabaseManager::DatabaseManager(const std::string & dbfilename) :
 	errorCode(-1), errorMessage(0), databaseAccess(false) {
-
+	std::string dbfile=DEFAULT_DATABASE_PATH + "/" + dbfilename;
 	//try open already existing
 	char * null_ptr = 0;
 	errorCode = sqlite3_open_v2(dbfile.c_str(), &database, SQLITE_OPEN_READWRITE, null_ptr);

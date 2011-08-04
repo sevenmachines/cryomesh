@@ -67,15 +67,6 @@ void SequencerGeneric::on_end_element(const Glib::ustring& /* name */) {
 	//std::cout << "on_end_element()" << std::endl;
 }
 
-void SequencerGeneric::on_characters(const Glib::ustring& text) {
-	try {
-		std::cout << "SequencerGeneric::on_characters(): TODO" << text << std::endl;
-	} catch (const Glib::ConvertError& ex) {
-		std::cerr << "SequencerGeneric::on_characters(): Exception caught while converting text for std::cout: "
-				<< ex.what() << std::endl;
-	}
-}
-
 void SequencerGeneric::on_comment(const Glib::ustring& text) {
 	try {
 		std::cout << "SequencerGeneric::on_comment(): TODO" << text << std::endl;

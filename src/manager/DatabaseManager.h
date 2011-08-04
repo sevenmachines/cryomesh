@@ -463,6 +463,7 @@ public:
 	 *	@var std::string
 	 */
 	static const std::string DEFAULT_DATABASE;
+	static const std::string DEFAULT_DATABASE_PATH;
 
 	/**
 	 * Function that is called on finishing an sql command
