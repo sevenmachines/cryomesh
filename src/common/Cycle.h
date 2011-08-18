@@ -229,7 +229,7 @@ public:
 	 *
 	 *  @return mpz_class
 	 */
-	const mpz_class & getMP() const;
+	const   mpz_class & getMP() const;
 
 private:
 	/**

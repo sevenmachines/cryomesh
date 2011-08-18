@@ -65,7 +65,7 @@ public:
 	 * @return common::Connector<Connection, Node>
 	 * 		The connector for this Connection
 	 */
-	virtual const common::Connector<Connection, Node> & getConnector() const;
+	virtual  const common::Connector<Connection, Node> & getConnector() const;
 
 	/**
 	 * Get the mutable Connector object for this Connection
@@ -73,7 +73,7 @@ public:
 	 * @return common::Connector<Connection, Node>
 	 * 		The connector for this Connection
 	 */
-	virtual common::Connector<Connection, Node> & getMutableConnector();
+	virtual  common::Connector<Connection, Node> & getMutableConnector();
 
 	/**
 	 * Add an Impulse to this connection
@@ -126,7 +126,7 @@ public:
 	 * @return const ImpulseCollection &
 	 * 		The impulse collection
 	 */
-	const ImpulseCollection & getImpulses() const;
+	const  ImpulseCollection & getImpulses() const;
 
 	/**
 	 * Get the mutable impulse collection
@@ -134,21 +134,21 @@ public:
 	 * 	@return ImpulseCollection &
 	 * 		The mutable impulse collection
 	 */
-	ImpulseCollection & getMutableImpulses();
+	 ImpulseCollection & getMutableImpulses();
 
 	/**
 	 * The get activity timer for this object
 	 *
 	 * @return boost::shared_ptr<ActivityTimer>
 	 */
-	const boost::shared_ptr<components::ActivityTimerDistance> getActivityTimer() const;
+	const  boost::shared_ptr<components::ActivityTimerDistance> getActivityTimer() const;
 
 	/**
 	 * The get mutable activity timer for this object
 	 *
 	 * @return boost::shared_ptr<ActivityTimer>
 	 */
-	boost::shared_ptr<components::ActivityTimerDistance> getMutableActivityTimer();
+	 boost::shared_ptr<components::ActivityTimerDistance> getMutableActivityTimer();
 
 	/**
 	 * Return a database object for this object

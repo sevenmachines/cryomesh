@@ -52,7 +52,7 @@ public:
 	}
 #endif // ENABLE_SERIALISATION
 
-	static TimeKeeper & getTimeKeeper();
+	static  TimeKeeper & getTimeKeeper();
 
 	/**
 	 * Destructor
@@ -88,7 +88,7 @@ public:
 	 * @return Cycle
 	 * 		The cycle we're currently on
 	 */
-	Cycle getCycle() const;
+	Cycle  getCycle() const;
 
 	/**
 	 * Get the time we started cycling
@@ -96,7 +96,7 @@ public:
 	 * @return time_t
 	 * 		The start time
 	 */
-	std::time_t getStartTime()const;
+	std::time_t   getStartTime()const;
 
 	/**
 	 * Difference between the last time and now
@@ -104,14 +104,14 @@ public:
 	 * @return double
 	 * 		The difference between the clock now and the last clock
 	 */
-	double getTiming()const;
+	double  getTiming()const;
 
 	/**
 	 * Get the Timer
 	 *
 	 * @return boost::Timer
 	 */
-	const boost::timer & getTimer() const;
+	const   boost::timer & getTimer() const;
 protected:
 
 	/**
