@@ -33,7 +33,7 @@ public:
 	/**
 	 * Default contructor
 	 */
-	DataObject() :
+	DataObject() : valueMap(),
 		loggingEnabled(false), datasetMaximumSize(DEFAULT_DATASET_SIZE) {
 	}
 

@@ -28,7 +28,8 @@ ConnectionDatabaseObject::ConnectionDatabaseObject(const std::string & uuid_str,
 	columns[IMPULSE_COUNT_TAG] = toString<int> (impulse_count);
 }
 
-ConnectionDatabaseObject::ConnectionDatabaseObject(const std::string & connection_table_entry) {
+ConnectionDatabaseObject::ConnectionDatabaseObject(const std::string & connection_table_entry) : uuid(), inputNodeUUID(), outputNodeUUID(), cycle(0),
+		impulseCount(){
 	// TODO ConnectionDatabaseObject(const std::string & connection_table_entry)
 
 	std::map<std::string, std::string> entry_map = DatabaseObject::getColumnMapFromEntry(connection_table_entry);

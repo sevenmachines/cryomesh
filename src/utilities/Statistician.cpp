@@ -14,7 +14,7 @@ namespace utilities {
 
 Statistician::Statistician(const structures::Bundle & bun) :
 	bundle(bun), clusterCount(0), inputFibresCount(0), outputFibresCount(0), normalFibresCount(0),
-			inputChannelsCount(0), outputChannelsCount(0), bundleuuid(bun.getUUIDString()) {
+			inputChannelsCount(0), outputChannelsCount(0), bundleuuid(bun.getUUIDString()), nodesTotal(0), nodesTriggered(0),nodesActive(0) {
 	this->update();
 }
 

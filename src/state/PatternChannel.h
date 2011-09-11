@@ -22,7 +22,7 @@
 namespace cryomesh {
 namespace state {
 
-class PatternChannel : public common::Tagged, public common::Debuggable{
+class PatternChannel: public common::Tagged, public common::Debuggable {
 public:
 	enum PrintFormat {
 		BINARY, TEXT, INTEGER
@@ -139,7 +139,7 @@ public:
 	& getPatternByTagMap() const;
 	const boost::shared_ptr<Pattern> getPatternByUUID(const boost::uuids::uuid & id) const;
 	boost::shared_ptr<Pattern> getMutablePatternByUUID(const boost::uuids::uuid & id);
-const std::list<boost::uuids::uuid> & getPatternList() const;
+	const std::list<boost::uuids::uuid> & getPatternList() const;
 	std::list<boost::uuids::uuid>::iterator getPatternListIterator() const;
 	const std::map<boost::uuids::uuid, boost::shared_ptr<Pattern> >
 	& getPatternMap() const;
@@ -149,14 +149,14 @@ const std::list<boost::uuids::uuid> & getPatternList() const;
 	int getRefID() const;
 	void setRefID(int r);
 
-	 int getMaxPatternListSize() const;
+	int getMaxPatternListSize() const;
 	void setMaxPatternListSize(int sz);
-	std::ostream & printPatternList(std::ostream & os, bool reversed = false)const;
+	std::ostream & printPatternList(std::ostream & os, bool reversed = false) const;
 
-	std::ostream & printTextFormattedPatternList(std::ostream & os, bool reversed = false)const;
-	std::ostream & printIntegerFormattedPatternList(std::ostream & os, bool reversed)const;
-	std::ostream & printBinaryFormattedPatternList(std::ostream & os, bool reversed)const;
-	std::ostream & printFormattedPatternList(std::ostream & os, const PrintFormat & pf, bool reversed)const;
+	std::ostream & printTextFormattedPatternList(std::ostream & os, bool reversed = false) const;
+	std::ostream & printIntegerFormattedPatternList(std::ostream & os, bool reversed) const;
+	std::ostream & printBinaryFormattedPatternList(std::ostream & os, bool reversed) const;
+	std::ostream & printFormattedPatternList(std::ostream & os, const PrintFormat & pf, bool reversed) const;
 
 	static const int DEFAULT_MAX_PATTERN_LIST_SIZE;
 
@@ -164,27 +164,27 @@ const std::list<boost::uuids::uuid> & getPatternList() const;
 	static unsigned int refIDS;
 	static unsigned int getRefIDS();
 
-	friend std::ostream & operator<<(std::ostream & os,  const PatternChannel & obj);
+	friend std::ostream & operator<<(std::ostream & os, const PatternChannel & obj);
 private:
+	ChannelDataType channelDataType;
+	// auto generated from pattern list
+	int length;
+	int maxPatternListSize;
+	// Map of a useful pattern tag to an actual pattern, for example, date
+	std::map<boost::shared_ptr<PatternTag>, boost::uuids::uuid> patternByTagMap;
+	// Ordered sequential list of Pattern uuids
+	std::list<boost::uuids::uuid> patternList;
+	// Current position in patternList
+	std::list<boost::uuids::uuid>::iterator patternListIterator;
+	// Contains map of Pattern uuids to actual Patterns
+	std::map<boost::uuids::uuid, boost::shared_ptr<Pattern> > patternMap;
+	// Position count of patternList
+	int patternPosition;
 	// reference id taken from xml file
 	int refID;
 	// auto generated from pattern list using minimum element width
 	int width;
-	// auto generated from pattern list
-	int length;
-	int maxPatternListSize;
-	// Ordered sequential list of Pattern uuids
-	std::list<boost::uuids::uuid> patternList;
-	// Contains map of Pattern uuids to actual Patterns
-	std::map<boost::uuids::uuid, boost::shared_ptr<Pattern> > patternMap;
-	// Current position in patternList
-	std::list<boost::uuids::uuid>::iterator patternListIterator;
-	// Position count of patternList
-	int patternPosition;
-	// Map of a useful pattern tag to an actual pattern, for example, date
-	std::map<boost::shared_ptr<PatternTag>, boost::uuids::uuid> patternByTagMap;
 
-	ChannelDataType channelDataType;
 };
 
 }

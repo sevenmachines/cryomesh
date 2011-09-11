@@ -50,25 +50,26 @@ int DatabaseManager::databaseCallback(void *results, int argc, char **argv, char
 	//ss << ")" << std::endl;
 
 	// add entry to history
-	std::vector<std::string> * vec_ptr = static_cast<std::vector<std::string> *> (results);
+	std::vector<std::string> * vec_ptr = static_cast<std::vector<std::string> *>(results);
 	vec_ptr->push_back(ss.str());
 	//std::cout << ss.str() << std::endl;
 	return 0;
 }
 
 DatabaseManager::DatabaseManager(const std::string & dbfilename) :
-	errorCode(-1), errorMessage(0), databaseAccess(false) {
-	std::string dbfile=DEFAULT_DATABASE_PATH + "/" + dbfilename;
+		database(), errorCode(-1), errorMessage(0), databaseAccess(false), sqlResults(), sqlResultsBuffer() {
+	std::string dbfile = DEFAULT_DATABASE_PATH + "/" + dbfilename;
 	//try open already existing
 	char * null_ptr = 0;
-	errorCode = sqlite3_open_v2(dbfile.c_str(), &database, SQLITE_OPEN_READWRITE, null_ptr);
+	sqlite3 * temp_db_ptr = database.get();
+	errorCode = sqlite3_open_v2(dbfile.c_str(), &temp_db_ptr, SQLITE_OPEN_READWRITE, null_ptr);
 	if (errorCode != 0) {
 		// open failed to force creation
-		errorCode = sqlite3_open(dbfile.c_str(), &database);
+		errorCode = sqlite3_open(dbfile.c_str(), &temp_db_ptr);
 		if (errorCode != 0) {
-			sqlite3_close(database);
+			sqlite3_close(temp_db_ptr);
 			std::cout << "DatabaseManager::DatabaseManager: " << "ERROR creating new database " << dbfile << std::endl;
-			std::cout << sqlite3_errmsg(database) << std::endl;
+			std::cout << sqlite3_errmsg(temp_db_ptr) << std::endl;
 			databaseAccess = false;
 		} else {
 			std::cout << "DatabaseManager::DatabaseManager: " << "Created new database " << dbfile << std::endl;
@@ -80,10 +81,27 @@ DatabaseManager::DatabaseManager(const std::string & dbfilename) :
 		databaseAccess = true;
 	}
 }
-
+DatabaseManager::DatabaseManager(const DatabaseManager & obj) :
+		database(), errorCode(-1), errorMessage(0), databaseAccess(false), sqlResults(), sqlResultsBuffer() {
+	this->database = obj.database;
+	this->errorCode = obj.errorCode;
+	this->errorMessage = obj.errorMessage;
+	this->databaseAccess = obj.databaseAccess;
+	this->sqlResults = obj.sqlResults;
+}
 DatabaseManager::~DatabaseManager() {
-	sqlite3_close(database);
+	sqlite3 * temp_db_ptr = database.get();
+	sqlite3_close(temp_db_ptr);
 	databaseAccess = false;
+}
+
+DatabaseManager & DatabaseManager::operator=(const DatabaseManager & obj) {
+	this->database = obj.database;
+	this->errorCode = obj.errorCode;
+	this->errorMessage = obj.errorMessage;
+	this->databaseAccess = obj.databaseAccess;
+	this->sqlResults = obj.sqlResults;
+	return  *this;
 }
 
 bool DatabaseManager::isDatabaseAccessable() const {
@@ -223,11 +241,11 @@ int DatabaseManager::countConnections(const std::string & criteria) {
 int DatabaseManager::countRows(const std::string & table, const std::string & criteria) {
 	std::stringstream ss;
 	int number = 0;
-	ss << "SELECT count(*) FROM " << table ;
-	if (criteria != ""){
-		ss <<" WHERE " <<criteria;
+	ss << "SELECT count(*) FROM " << table;
+	if (criteria != "") {
+		ss << " WHERE " << criteria;
 	}
-	ss<< ";";
+	ss << ";";
 	std::string result = sqlCommand(ss.str());
 	if (result.size() > 0) {
 		std::string numstr = result.substr(result.find(":") + 1, 1);
@@ -285,7 +303,8 @@ std::string DatabaseManager::deleteConnectionsByCycle(const common::Cycle & cycl
 	return (deleteByCycle("connectionsTable", cycle, comparison_type));
 }
 
-std::string DatabaseManager::deleteByCycle(const std::string & table, const common::Cycle & cycle, int comparison_type) {
+std::string DatabaseManager::deleteByCycle(const std::string & table, const common::Cycle & cycle,
+		int comparison_type) {
 	long int cycleint = cycle.toLInt();
 	std::stringstream ss;
 	ss << "DELETE FROM " << table << " WHERE cycle";
@@ -305,7 +324,8 @@ std::string DatabaseManager::sqlCommand(const std::string & command) {
 	//std::cout<<"DatabaseManager::sqlCommand: "<<"COMMAND:"<<command<<std::endl;
 	sqlResultsBuffer.clear();
 	std::string results;
-	errorCode = sqlite3_exec(database, command.c_str(), &databaseCallback, &sqlResultsBuffer, &errorMessage);
+	sqlite3 * temp_db_ptr = database.get();
+	errorCode = sqlite3_exec(temp_db_ptr, command.c_str(), &databaseCallback, &sqlResultsBuffer, &errorMessage);
 	// do results
 	{
 		std::stringstream ss;
@@ -423,6 +443,6 @@ std::ostream & DatabaseManager::printHistory(std::ostream & os, const common::Cy
 	 */
 	return os;
 }
-}//NAMESPACE
+} //NAMESPACE
 
-}//NAMESPACE
+} //NAMESPACE

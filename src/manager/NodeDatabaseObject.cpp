@@ -20,7 +20,7 @@ NodeDatabaseObject::NodeDatabaseObject(std::string uuid_str, spacial::Point pt, 
 	columns[ACTIVITY_TAG] = toString<double> (activity);
 }
 
-NodeDatabaseObject::NodeDatabaseObject(const std::string & node_table_entry) {
+NodeDatabaseObject::NodeDatabaseObject(const std::string & node_table_entry) :uuid(), point(0,0,0),  cycle(), activity(0){
 	//std::cout << "TODO NodeDatabaseObject::NodeDatabaseObject(const std::string & node_table_entry)" << std::endl;
 
 	std::map<std::string, std::string> entry_map = DatabaseObject::getColumnMapFromEntry(node_table_entry);

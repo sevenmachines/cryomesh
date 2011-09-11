@@ -13,6 +13,7 @@ class SequencerGeneric: public xmlpp::SaxParser {
 public:
 	struct NodeEntry {
 	public:
+		NodeEntry() : name(), info(), parentNode(), childNodes(){}
 		std::string name;
 		// map of string entry names to values held by the node
 		std::map<std::string, std::string> info;

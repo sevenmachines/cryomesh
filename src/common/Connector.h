@@ -30,7 +30,7 @@ template<class U, class T>
 class Connector {
 public:
 	Connector(const unsigned int max_inputs = 0, const unsigned int max_outputs = 0) :
-		maxInputs(max_inputs), maxOutputs(max_outputs) {
+		minputs(), moutputs(),maxInputs(max_inputs), maxOutputs(max_outputs) {
 	}
 
 	virtual ~Connector() {

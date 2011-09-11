@@ -21,6 +21,8 @@ namespace manager {
  */
 struct TableFormat {
 public:
+	TableFormat():name(), columns(){}
+	virtual ~TableFormat(){}
 	/**
 	 * Return the name of the table
 	 *

@@ -5,7 +5,7 @@ namespace cryomesh {
 namespace utilities {
 
 SequencerGeneric::SequencerGeneric(const std::string & ifstr) :
-		xmlpp::SaxParser() {
+		xmlpp::SaxParser(), nodeEntries() , nodeStack(), elementCount() {
 	std::ifstream ifs(ifstr);
 	if (ifs.is_open() != true) {
 		std::cout << "SequencerGeneric::SequencerGeneric: " << "ERROR: Cannot open file " << "'" << ifstr << "'"

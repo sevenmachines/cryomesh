@@ -6,7 +6,6 @@
  */
 
 //#define CLUSTER_DEBUG
-
 #include "Cluster.h"
 #include <list>
 #include <algorithm>
@@ -20,22 +19,22 @@ namespace structures {
 const double Cluster::SELF_CONNECTED_NODES_FRACTION = 0.1;
 
 Cluster::Cluster() :
-	spacial::Spacial(true), energy(0) {
-	mesh = boost::shared_ptr< NodeMesh > (new NodeMesh(*this));
+		spacial::Spacial(true), energy(0), nodes(), connections(), mesh(
+				boost::shared_ptr<NodeMesh>(new NodeMesh(*this))), connector() {
 }
 
 Cluster::Cluster(int nodeCount, int connectivity, const spacial::Point bounding_box) :
-		 spacial::Spacial(bounding_box, true), energy(0) {
+		spacial::Spacial(bounding_box, true), energy(0), nodes(), connections(), mesh(
+				boost::shared_ptr<NodeMesh>(new NodeMesh(*this))), connector()  {
 	this->createNodes(nodeCount);
 	this->createConnectivity(connectivity);
-	mesh = boost::shared_ptr< NodeMesh > (new NodeMesh(*this));
 }
 
 Cluster::Cluster(int nodeCount, int connectivity) :
-		 spacial::Spacial(true), energy(0) {
+		spacial::Spacial(true), energy(0) , nodes(), connections(), mesh(
+				boost::shared_ptr<NodeMesh>(new NodeMesh(*this))), connector() {
 	this->createNodes(nodeCount);
 	this->createConnectivity(connectivity);
-	mesh = boost::shared_ptr< NodeMesh > (new NodeMesh(*this));
 }
 
 Cluster::~Cluster() {
@@ -329,6 +328,6 @@ std::ostream& operator<<(std::ostream & os, const Cluster & obj) {
 	return os;
 }
 
-}//NAMESPACE
+} //NAMESPACE
 
-}//NAMESPACE
+} //NAMESPACE

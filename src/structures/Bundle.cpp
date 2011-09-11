@@ -6,7 +6,6 @@
  */
 
 //#define BUNDLE_DEBUG
-
 #include "Bundle.h"
 #include "utilities/SequencerChannels.h"
 #include <boost/uuid/uuid_io.hpp>
@@ -16,8 +15,7 @@ namespace cryomesh {
 namespace structures {
 
 Bundle::Bundle() :
-	energy(0) {
-	statistician = boost::shared_ptr<utilities::Statistician>(new utilities::Statistician(*this));
+		clusters(), fibres(), realInputChannelsMap(),  realOutputChannelsMap(), actualInputChannelsMap(), actualOutputChannelsMap(), inputFibres(), outputFibres(), statistician(boost::shared_ptr<utilities::Statistician>(new utilities::Statistician(*this))), energy(0) , realFibrePatternChannelMap(),actualFibrePatternChannelMap(){
 
 }
 
@@ -145,8 +143,8 @@ boost::shared_ptr<Fibre> Bundle::connectPrimaryInputCluster(boost::uuids::uuid p
 		 }*/
 	} else {
 		std::cout << "Bundle::connectPrimaryInputCluster: "
-				<< "ERROR: PatternChannel does not exist, not creating primary input fibre. " << "'" << patchanid
-				<< "'" << std::endl;
+				<< "ERROR: PatternChannel does not exist, not creating primary input fibre. " << "'" << patchanid << "'"
+				<< std::endl;
 	}
 	return newfib;
 }
@@ -346,8 +344,8 @@ std::vector<boost::shared_ptr<state::PatternChannel> > Bundle::getDisconnectedRe
 	{
 		std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::iterator it_channel_map =
 				channel_map.begin();
-		const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator
-				it_channel_map_end = channel_map.end();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_channel_map_end =
+				channel_map.end();
 		while (it_channel_map != it_channel_map_end) {
 			boost::shared_ptr<Fibre> found_fibre = this->getPrimaryInputFibreByRealChannel(
 					it_channel_map->second->getUUID());
@@ -372,8 +370,8 @@ std::vector<boost::shared_ptr<state::PatternChannel> > Bundle::getDisconnectedRe
 	{
 		std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::iterator it_channel_map =
 				channel_map.begin();
-		const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator
-				it_channel_map_end = channel_map.end();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_channel_map_end =
+				channel_map.end();
 		while (it_channel_map != it_channel_map_end) {
 			boost::shared_ptr<Fibre> found_fibre = this->getPrimaryOutputFibreByRealChannel(
 					it_channel_map->second->getUUID());
@@ -692,8 +690,8 @@ void Bundle::updateStatistician() {
 		}
 		statistician->update();
 	} else {
-		std::cout << "Bundle::updateStatistician: "
-				<< "WARNING: Ignoring update statistician, debugging isnt enabled. " << std::endl;
+		std::cout << "Bundle::updateStatistician: " << "WARNING: Ignoring update statistician, debugging isnt enabled. "
+				<< std::endl;
 	}
 }
 
@@ -714,10 +712,12 @@ const boost::shared_ptr<state::PatternChannel> Bundle::getActualPrimaryOutputCha
 	return this->getPrimaryChannelByFibre(fibre_uuid, actualOutputChannelsMap, actualFibrePatternChannelMap);
 }
 
-const boost::shared_ptr<Fibre> Bundle::getPrimaryInputFibreByRealChannel(const boost::uuids::uuid pattern_channel_uuid) const {
+const boost::shared_ptr<Fibre> Bundle::getPrimaryInputFibreByRealChannel(
+		const boost::uuids::uuid pattern_channel_uuid) const {
 	return this->getPrimaryFibreByChannel(pattern_channel_uuid, inputFibres, realFibrePatternChannelMap);
 }
-const boost::shared_ptr<Fibre> Bundle::getPrimaryOutputFibreByRealChannel(const boost::uuids::uuid pattern_channel_uuid) const {
+const boost::shared_ptr<Fibre> Bundle::getPrimaryOutputFibreByRealChannel(
+		const boost::uuids::uuid pattern_channel_uuid) const {
 	return this->getPrimaryFibreByChannel(pattern_channel_uuid, outputFibres, realFibrePatternChannelMap);
 }
 const boost::shared_ptr<Fibre> Bundle::getPrimaryInputFibreByActualChannel(
@@ -870,8 +870,8 @@ std::ostream& Bundle::printChannels(std::ostream & os) const {
 		os << "Real Input Channels -> {";
 		std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_in_channels =
 				in_channels.begin();
-		const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator
-				it_in_channels_end = in_channels.end();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_in_channels_end =
+				in_channels.end();
 		while (it_in_channels != it_in_channels_end) {
 			os << " (" << it_in_channels->first << " : " << it_in_channels->second->getRefID() << ")";
 			++it_in_channels;
@@ -889,8 +889,8 @@ std::ostream& Bundle::printChannels(std::ostream & os) const {
 		os << "Real Output Channels -> {";
 		std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_out_channels =
 				out_channels.begin();
-		const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator
-				it_out_channels_end = out_channels.end();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_out_channels_end =
+				out_channels.end();
 		while (it_out_channels != it_out_channels_end) {
 			os << " (" << it_out_channels->first << " : " << it_out_channels->second->getRefID() << ")";
 			++it_out_channels;
@@ -908,8 +908,8 @@ std::ostream& Bundle::printChannels(std::ostream & os) const {
 		os << "Actual Input Channels -> {";
 		std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_in_channels =
 				actual_in_channels.begin();
-		const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator
-				it_in_channels_end = actual_in_channels.end();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_in_channels_end =
+				actual_in_channels.end();
 		while (it_in_channels != it_in_channels_end) {
 			os << " (" << it_in_channels->first << " : " << it_in_channels->second->getRefID() << ")";
 			++it_in_channels;
@@ -927,8 +927,8 @@ std::ostream& Bundle::printChannels(std::ostream & os) const {
 		os << "Actual Output Channels -> {";
 		std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_out_channels =
 				actual_out_channels.begin();
-		const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator
-				it_out_channels_end = actual_out_channels.end();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<state::PatternChannel> >::const_iterator it_out_channels_end =
+				actual_out_channels.end();
 		while (it_out_channels != it_out_channels_end) {
 			os << " (" << it_out_channels->first << " : " << it_out_channels->second->getRefID() << ")";
 			++it_out_channels;
@@ -970,6 +970,6 @@ std::ostream& operator<<(std::ostream & os, const Bundle & obj) {
 	return obj.print(os, common::Loggable::MAX);
 }
 
-}//NAMESPACE
+} //NAMESPACE
 
-}//NAMESPACE
+} //NAMESPACE

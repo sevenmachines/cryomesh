@@ -23,7 +23,7 @@ PatternDatabaseObject::PatternDatabaseObject(const std::string uuid_str, const c
 	columns[PATTERN_TAG] =pattern->getString();
 }
 
-PatternDatabaseObject::PatternDatabaseObject(const std::string & node_table_entry) {
+PatternDatabaseObject::PatternDatabaseObject(const std::string & node_table_entry) : uuid() , cycle(),pattern(){
 	std::map<std::string, std::string> entry_map = DatabaseObject::getColumnMapFromEntry(node_table_entry);
 	std::string uuid_str = DatabaseObject::findValue(ID_TAG, entry_map);
 	std::string pattern_str = DatabaseObject::findValue(PATTERN_TAG, entry_map);

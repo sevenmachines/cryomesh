@@ -20,7 +20,7 @@ namespace manager {
 
 class DatabaseObject {
 public:
-	DatabaseObject() {
+	DatabaseObject():columns() {
 	}
 	virtual ~DatabaseObject() {
 	}

@@ -12,8 +12,7 @@ namespace cryomesh {
 
 namespace common {
 
-Cycle::Cycle() {
-	cycle = 0;
+Cycle::Cycle() : cycle (0) {
 }
 Cycle::Cycle(const long int it) :
 	cycle(it) {

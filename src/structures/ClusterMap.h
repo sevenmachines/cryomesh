@@ -95,7 +95,7 @@ public:
 	 * Take a total energy and split it evenly between clusters
 	 */
 	double getClusterEnergyByClusterCount(double total_energy) const {
-		double node_fraction = 1.0 / (double) this->getCollection().size();
+		double node_fraction = 1.0 / static_cast<double>(this->getCollection().size());
 		double energy_fraction = total_energy * node_fraction;
 		return energy_fraction;
 	}
@@ -107,7 +107,7 @@ public:
 		int current_cluster_node_count = cluster->getNodeMap().getSize();
 		double node_fraction = 0;
 		if (totalNodeCount > 0) {
-			node_fraction = (double) current_cluster_node_count / (double) this->totalNodeCount;
+			node_fraction = static_cast<double>(current_cluster_node_count) / static_cast<double>(this->totalNodeCount);
 		}
 		assert(node_fraction > 0);
 		assert(node_fraction <= 1);

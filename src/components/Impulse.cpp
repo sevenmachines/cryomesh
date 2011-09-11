@@ -43,7 +43,7 @@ boost::shared_ptr<Impulse> Impulse::getRandom(double positive_bias) {
 }
 
 Impulse::Impulse() :
-	activityDelay(0) {
+	firstActiveCycle(0), lastActiveCycle(0), activityDelay(0) , activityTimer(){
 	// set start to current time
 	this->generateCurve(0, MIN_ACTIVITY_LENGTH);
 	setFirstActiveCycle(TimeKeeper::getTimeKeeper().getCycle());
@@ -52,25 +52,27 @@ Impulse::Impulse() :
 }
 
 Impulse::Impulse(const double max_y, const int length, const int delay) :
-	activityDelay(delay) {
+		firstActiveCycle(0), lastActiveCycle(0), activityDelay(0) , activityTimer() {
 	this->generateCurve(max_y, std::max(length, MIN_ACTIVITY_LENGTH));
 	// set start to current time
 	setFirstActiveCycle(0);
 	boost::shared_ptr<ActivityTimerDistance> tempact(new ActivityTimerDistance(1, 1));
 	this->setActivityTimer(tempact);
+	this->setActivityDelay(delay);
 
 }
 
 Impulse::Impulse(const double max_y, const int length, const int delay, boost::shared_ptr<ActivityTimerDistance> timer) :
-	activityDelay(delay) {
+		firstActiveCycle(0), lastActiveCycle(0), activityDelay(0) , activityTimer(){
 	this->generateCurve(max_y, std::max(length, MIN_ACTIVITY_LENGTH));
 	// set start to current time
 	setFirstActiveCycle(0);
 	this->setActivityTimer(timer);
+	this->setActivityDelay(delay);
 
 }
 
-Impulse::Impulse(const Impulse & obj) : Tagged(), SimpleCollection<double>(obj.getActivities()){
+Impulse::Impulse(const Impulse & obj) : Tagged(), SimpleCollection<double>(obj.getActivities()), firstActiveCycle(0), lastActiveCycle(0), activityDelay(0) , activityTimer(){
 	// Note, not cloning uuid
 	SimpleCollection(*this);
 	this->setActivityDelay(obj.getActivityDelay());

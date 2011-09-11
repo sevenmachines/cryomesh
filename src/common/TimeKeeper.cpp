@@ -31,7 +31,7 @@ void TimeKeeper::reset() {
 	timer.restart();
 }
 
-TimeKeeper::TimeKeeper() {
+TimeKeeper::TimeKeeper() : cycle (Cycle(0)), start_time(), timer(),this_timing (0), last_timing ( 0){
 	this->reset();
 }
 TimeKeeper::~TimeKeeper() {

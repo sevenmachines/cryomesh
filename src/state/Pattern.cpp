@@ -23,26 +23,26 @@ Pattern Pattern::getRandom(unsigned int width, double fraction) {
 	for (unsigned int i = 0; i < width; i++) {
 		ranvec.push_back(common::Maths::getRandomBool(fraction));
 	}
-	assert(ranvec.size()==width);
+	assert(ranvec.size() == width);
 	return Pattern(ranvec);
 }
 //END statics
 
-Pattern::Pattern() {
+Pattern::Pattern() :
+		binaryString(""), id(this->getIds()), patternTag() {
 	initialise();
 }
-Pattern::Pattern(const Pattern & pat) : Tagged(pat.getUUID()) {
+Pattern::Pattern(const Pattern & pat) :
+		Tagged(pat.getUUID()), binaryString(BinaryString(pat.getBinaryString())), id(pat.getId()), patternTag() {
 	initialise();
-	this->setId(pat.getId());
-	binaryString = BinaryString(pat.getBinaryString());
 }
-Pattern::Pattern(const std::vector<bool> & pat) {
+Pattern::Pattern(const std::vector<bool> & pat) :
+		binaryString(BinaryString(pat, false)), id(this->getIds()), patternTag() {
 	initialise();
-	binaryString = BinaryString(pat, false);
 }
-Pattern::Pattern(const std::string & str) {
+Pattern::Pattern(const std::string & str) :
+		binaryString(BinaryString(str, false, BinaryString::BIN)), id(this->getIds()), patternTag() {
 	initialise();
-	binaryString = BinaryString(str, false, BinaryString::BIN);
 }
 Pattern::~Pattern() {
 
@@ -89,7 +89,7 @@ double Pattern::compare(const Pattern & obj) const {
 		std::cout << "Pattern::compare: size mismatch " << std::endl;
 		return 0;
 	}
-	double fraction = (double) 1 / (double) this_sz;
+	double fraction = static_cast<double>(1) / static_cast<double>(this_sz);
 	double match = 0;
 
 	std::vector<bool>::const_iterator it_this_vec = this_pat.begin();
@@ -210,7 +210,9 @@ void Pattern::setPatternTag(boost::shared_ptr<PatternTag> pt) {
 }
 
 int Pattern::getIds() {
-	return Pattern::ids;
+	int temp=Pattern::ids;
+	++ids;
+	return temp;
 }
 void Pattern::setIds(int is) {
 #ifdef PATTERN_DEBUG

@@ -24,7 +24,7 @@ public:
 	/**
 	 * Default constructor
 	 */
-	DataObjectController() {
+	DataObjectController():dataObject(){
 	}
 
 	/**

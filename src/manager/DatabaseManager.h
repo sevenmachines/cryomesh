@@ -38,6 +38,18 @@ public:
 	 * 	The name of the database to open/create
 	 */
 	DatabaseManager(const std::string & dbfile = DEFAULT_DATABASE);
+	DatabaseManager(const DatabaseManager & obj) ;
+
+	/**
+	 * Assignment operator
+	 *
+	 * @param const DatabaseManager & obj
+	 * 		RHS assignment
+	 *
+	 * @return DatabaseManager &
+	 * 		This object after assignment
+	 */
+	DatabaseManager & operator=(const DatabaseManager & obj);
 
 	/**
 	 * Default destructor closes the database
@@ -50,7 +62,7 @@ public:
 	 * @return bool
 	 * 	True if deemed accessible, false otherwise
 	 */
-	bool isDatabaseAccessable() const ;
+	bool isDatabaseAccessable() const;
 
 	/**
 	 * Create all needed tables
@@ -106,7 +118,7 @@ public:
 	 */
 	std::string insertConnection(const DatabaseObject & db_object);
 
-	std::string insertOutputPattern(const DatabaseObject & db_object) ;
+	std::string insertOutputPattern(const DatabaseObject & db_object);
 
 	/**
 	 * Select unique node  entry
@@ -166,7 +178,8 @@ public:
 	 */
 	std::string selectConnectionValue(const std::string &uuid, const common::Cycle & cycle, const std::string & column);
 
-	std::string selectOutputPatternValue(const std::string &uuid, const common::Cycle & cycle, const std::string & column);
+	std::string selectOutputPatternValue(const std::string &uuid, const common::Cycle & cycle,
+			const std::string & column);
 
 	/**
 	 * Select unique column column entry from table
@@ -485,13 +498,12 @@ public:
 	static const OutputPatternsTableFormat OUTPUT_PATTERNS_TABLE_FORMAT;
 
 protected:
-
 	/**
 	 * Database
 	 *
 	 *	@var sqlite *
 	 */
-	sqlite3 * database;
+	boost::shared_ptr<sqlite3> database;
 
 	/**
 	 * Record error codes

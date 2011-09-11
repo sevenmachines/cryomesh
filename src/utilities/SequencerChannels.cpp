@@ -29,7 +29,7 @@ const std::string SequencerChannels::PATTERN_CHANNEL_WIDTH_STRING = "Width";
 const std::string SequencerChannels::PATTERN_CHANNEL_DEPTH_STRING = "Depth";
 const std::string SequencerChannels::PATTERN_CHANNEL_NOTE_STRING = "Note";
 
-SequencerChannels::SequencerChannels() {
+SequencerChannels::SequencerChannels() : in_channels_filtered(), out_channels_filtered(){
 
 }
 

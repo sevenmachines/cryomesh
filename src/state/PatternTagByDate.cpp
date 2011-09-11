@@ -20,7 +20,7 @@ std::string PatternTagByDate::GlobalCurrentTag = "";
 boost::shared_ptr<PatternTagByDate> PatternTagByDate::globalTag; //()=	boost::shared_ptr<PatternTagByDate>(new PatternTagByDate(ByDay));
 
 PatternTagByDate::PatternTagByDate(DateType dt) :
-		dateType(dt) {
+		 dateType(dt),startTime() , endTime(), currentTime(){
 }
 
 PatternTagByDate::PatternTagByDate(DateType dt, std::tm start_time, std::tm end_time, std::tm current_time) :

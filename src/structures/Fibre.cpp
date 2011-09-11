@@ -17,7 +17,7 @@ namespace cryomesh {
 
 namespace structures {
 
-Fibre::Fibre(boost::shared_ptr<Cluster> inputCluster, boost::shared_ptr<Cluster> outputCluster, int width) {
+Fibre::Fibre(boost::shared_ptr<Cluster> inputCluster, boost::shared_ptr<Cluster> outputCluster, int width) : connector(), connections(),  fibreType(FibreType::NullFibre){
 	this->createConnections(width);
 	this->connectAllConnections(inputCluster, InputCluster);
 	this->connectAllConnections(outputCluster, OutputCluster);
@@ -29,7 +29,7 @@ Fibre::Fibre(boost::shared_ptr<Cluster> inputCluster, boost::shared_ptr<Cluster>
 	}
 }
 
-Fibre::Fibre(boost::shared_ptr<Cluster> cluster, const FibreType & tp, int width) {
+Fibre::Fibre(boost::shared_ptr<Cluster> cluster, const FibreType & tp, int width)  : connector(), connections(),  fibreType(tp) {
 	this->setType(tp);
 	this->createConnections(width);
 	if (this->getType() == PrimaryInputFibre) {

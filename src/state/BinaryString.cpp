@@ -23,7 +23,7 @@ BinaryString::BinaryString() :
 
 }
 BinaryString::BinaryString(const std::string & str, bool sign_bit, Type tp) :
-	signBit(sign_bit) {
+		 binaryString(), signBit(sign_bit) {
 
 	// if its just a seeries of 1 and 0's
 	if (tp == BIN) {
@@ -57,7 +57,7 @@ BinaryString::BinaryString(const std::string & str, bool sign_bit, Type tp) :
 
 }
 BinaryString::BinaryString(const std::vector<bool> & binvec, bool sign_bit) :
-	signBit(sign_bit) {
+	binaryString(), signBit(sign_bit) {
 	std::stringstream ss;
 	// forall in binvec
 	{
@@ -75,7 +75,7 @@ BinaryString::BinaryString(const std::vector<bool> & binvec, bool sign_bit) :
 	binaryString = ss.str();
 }
 
-BinaryString::BinaryString(const BinaryString & obj) {
+BinaryString::BinaryString(const BinaryString & obj) : binaryString(), signBit(0) {
 	binaryString = obj.getBinaryString();
 	signBit = obj.getSignBit();
 }
@@ -250,7 +250,8 @@ std::string BinaryString::toText() const {
 			std::stringstream binss;
 			binss.clear();
 			binss.flush();
-			for (int i = 0; i < (int)BINARY_CHAR_LENGTH && it_str != it_str_end; i++) {
+			const int BINCHAR=static_cast<int>(BINARY_CHAR_LENGTH);
+			for (int i = 0; i < BINCHAR && it_str != it_str_end; i++) {
 				//std::cout << "BinaryString::toText: i: " << i << " = " << *it_str << std::endl;
 				binss << *it_str;
 				++it_str;

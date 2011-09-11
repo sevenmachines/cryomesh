@@ -36,7 +36,7 @@ boost::shared_ptr<Node> Node::getRandom(const spacial::Point & max_point) {
 }
 
 Node::Node() :
-		activityThreshold(MAX_ACTIVITY_THRESHOLD), lastActivationState(None){
+		activityThreshold(MAX_ACTIVITY_THRESHOLD), connector(), impulses(),emittedImpulse(), activities(), position(0,0,0) , lastActivationState(None){
 	connector = boost::shared_ptr<common::Connector<Node, Connection> >(new common::Connector<Node, Connection>());
 	emittedImpulse = boost::shared_ptr<Impulse>(new Impulse());
 	emittedImpulse->randomise();

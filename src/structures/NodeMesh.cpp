@@ -19,14 +19,14 @@ const double NodeMesh::INTERPOLATED_ACTIVITY_SCALING_FACTOR = (1.0 / 100.0);
 const double NodeMesh::MAX_RADIUS_FRACTION_OF_BOUNDING_BOX = (1.0 / 100.0);
 
 NodeMesh::NodeMesh(Cluster & clus) :
-	cluster(clus), decayRate(1) {
+	nodeNeighbourhoodMap(), neighbourhoodActivities(), cluster(clus), maximumNeighbourhoodRadius(0.0),decayRate(1.0) {
 	// use clusters bounding box to generate max radius
 
 	int node_count = cluster.getNodes().size();
 	double volume = cluster.getMaxBoundingBox().getX() * cluster.getMaxBoundingBox().getY()
 			* cluster.getMaxBoundingBox().getZ();
 	//double dimension_fraction = cluster.getMaxBoundingBox().getX() / (double) node_count;
-	double density_inverted = volume / (double) node_count;
+	double density_inverted = volume /static_cast<double>( node_count);
 	double unit_density = std::cbrt(density_inverted);
 	maximumNeighbourhoodRadius = unit_density;
 #ifdef NODEMESH_DEBUG
@@ -40,7 +40,7 @@ NodeMesh::NodeMesh(Cluster & clus) :
 }
 
 NodeMesh::NodeMesh(Cluster & clus, double max_radius) :
-	cluster(clus), maximumNeighbourhoodRadius(max_radius), decayRate(1) {
+		nodeNeighbourhoodMap(), neighbourhoodActivities(), cluster(clus), maximumNeighbourhoodRadius(max_radius), decayRate(1.0) {
 	this->regenerateNeighbourhoods();
 }
 

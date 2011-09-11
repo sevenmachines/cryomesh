@@ -6,7 +6,6 @@
  */
 
 //#define CONNECTION_DEBUG
-
 #include "Connection.h"
 #include "manager/ConnectionDatabaseObject.h"
 
@@ -14,9 +13,9 @@ namespace cryomesh {
 
 namespace components {
 
-Connection::Connection() {
-	connector = boost::shared_ptr<common::Connector<Connection, Node> >(new common::Connector<Connection, Node>(1, 1));
-	activityTimer = components::ActivityTimerDistance::getRandom();
+Connection::Connection() :
+		connector(	boost::shared_ptr<common::Connector<Connection, Node> >(new common::Connector<Connection, Node>(1, 1))), impulses(),
+		activityTimer(components::ActivityTimerDistance::getRandom()) {
 }
 
 Connection::~Connection() {
@@ -32,7 +31,8 @@ void Connection::update() {
 
 	// Get any finished impulses
 
-	std::list<boost::shared_ptr<Impulse> > done_impulses = this->impulses.removeByActivityTimerValue(0, ImpulseCollection::LessThanOrEqualTo);
+	std::list<boost::shared_ptr<Impulse> > done_impulses = this->impulses.removeByActivityTimerValue(0,
+			ImpulseCollection::LessThanOrEqualTo);
 
 	// Pass any finished impulses on to end node
 	if (done_impulses.size() > 0) {
@@ -53,11 +53,11 @@ void Connection::update() {
 #ifdef CONNECTION_DEBUG
 				int post_node_impulse_count = it_all_nodes->second->getImpulses().getSize();
 				std::cout << "Connection::update: " << post_node_impulse_count << "==" << pre_node_impulse_count << "+"
-						<< done_impulses.size() << std::endl;
+				<< done_impulses.size() << std::endl;
 				;
 				assert(post_node_impulse_count == pre_node_impulse_count+done_impulses.size());
 				std::cout << "Connection::update: " << "Adding Impulse to Node '"
-						<< it_all_nodes->second->getUUIDSummary() << "'" << std::endl;
+				<< it_all_nodes->second->getUUIDSummary() << "'" << std::endl;
 				std::cout << "Connection::update: " << *this << std::endl;
 #endif
 				++it_all_nodes;
@@ -164,11 +164,11 @@ void Connection::updatePosition() {
 		spacial::Point startp = innode.begin()->second->getPosition();
 		spacial::Point endp = outnode.begin()->second->getPosition();
 		double dist = startp.getDistance(endp);
-		assert (dist>0);
+		assert(dist > 0);
 		boost::shared_ptr<ActivityTimerDistance> temptimer(new ActivityTimerDistance(dist, activityTimer->getDelay()));
 		activityTimer = temptimer;
-		assert(activityTimer->getDelay()>ActivityTimerDistance::MIN_DISTANCE);
-		assert(activityTimer->getDelay()>ActivityTimerDistance::MIN_DISTANCE);
+		assert(activityTimer->getDelay() > ActivityTimerDistance::MIN_DISTANCE);
+		assert(activityTimer->getDelay() > ActivityTimerDistance::MIN_DISTANCE);
 
 	}
 }
@@ -221,8 +221,8 @@ std::ostream& operator<<(std::ostream & os, const Connection & obj) {
 	} else {
 		out_node = "POUT";
 	}
-	os << "Connection: " << obj.getUUIDSummary() << " " << ss.str() << " node {" << in_node << " -> " << out_node
-			<< "}" << " impulses:" << obj.getImpulses().getSize();
+	os << "Connection: " << obj.getUUIDSummary() << " " << ss.str() << " node {" << in_node << " -> " << out_node << "}"
+			<< " impulses:" << obj.getImpulses().getSize();
 	if (obj.isDebugOn() == true) {
 		if (obj.getImpulses().getSize() > 0) {
 			os << std::endl << "\t" << obj.getImpulses() << std::endl;
@@ -231,6 +231,6 @@ std::ostream& operator<<(std::ostream & os, const Connection & obj) {
 	return os;
 }
 
-}//NAMESPACE
+} //NAMESPACE
 
-}//NAMESPACE
+} //NAMESPACE

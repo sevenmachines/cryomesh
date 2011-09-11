@@ -14,18 +14,16 @@ namespace state {
 const std::string Sequence::INPUT_TAG = "<input>";
 const std::string Sequence::OUTPUT_TAG = "<output>";
 
-Sequence::Sequence() {
+Sequence::Sequence(): patterns(), it_patterns(patterns.begin()){
 	initialise();
 }
 Sequence::~Sequence() {
 }
-Sequence::Sequence(const Sequence & seq) {
-
-	this->patterns = std::list<std::pair<Pattern, Pattern> >(seq.getPatterns());
+Sequence::Sequence(const Sequence & seq) : patterns(seq.getPatterns()), it_patterns(patterns.begin()) {
 	initialise();
 }
 Sequence::Sequence(const std::vector<Pattern> & input_pats,
-		const std::vector<Pattern> & output_pats) {
+		const std::vector<Pattern> & output_pats): patterns(), it_patterns(patterns.begin()) {
 	if (input_pats.size() == output_pats.size()) {
 		std::vector<Pattern>::const_iterator it_input_pats = input_pats.begin();
 		const std::vector<Pattern>::const_iterator it_input_pats_end = input_pats.end();
@@ -43,7 +41,7 @@ Sequence::Sequence(const std::vector<Pattern> & input_pats,
 		initialise();
 	}
 }
-Sequence::Sequence(std::ifstream & ifs) {
+Sequence::Sequence(std::ifstream & ifs) : patterns(), it_patterns(patterns.begin()){
 
 	loadFromFile(ifs);
 	initialise();
@@ -203,7 +201,7 @@ double Sequence::compareOutput(const Sequence & seq) const {
 			++it_this_patterns;
 		}
 	}
-	return (total_match / (double) pat_count);
+	return (total_match / static_cast<double>(pat_count));
 }
 /*
  * Match sequences inputs, return double (0,1)
@@ -249,7 +247,7 @@ double Sequence::compareInput(const Sequence & seq) const {
 			++it_this_patterns;
 		}
 	}
-	return (total_match / (double) pat_count);
+	return (total_match / (static_cast<double>(pat_count)));
 }
 
 double Sequence::compare(const Sequence & seq) const {
@@ -286,7 +284,7 @@ double Sequence::compare(const Sequence & seq) const {
 	} else {
 		max_size = seq.getPatterns().size();
 	}
-	double fraction = (double) 1 / (double) max_size;
+	double fraction = 1.0 / static_cast<double>(max_size);
 
 	// get  input pattern of sequence that matches the on each of our sequences,
 	// note we are allowing multiple matches on each input pattern

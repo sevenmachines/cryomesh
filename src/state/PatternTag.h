@@ -16,6 +16,8 @@ namespace state {
 
 class PatternTag {
 public:
+	PatternTag(){}
+	virtual ~PatternTag(){}
 	virtual std::string getTag() const=0; // get identifying tag
 	virtual void setTag(std::string tg)=0;
 	virtual std::string moveTag()=0; // Move to next tag and return implementation ie, if date this would be tomorrow
