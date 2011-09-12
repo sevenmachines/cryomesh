@@ -83,6 +83,7 @@ const BinaryString & getBinaryString() const;
 	boost::shared_ptr<manager::DatabaseObject> getDatabaseObject() const ;
 
 	static int getIds();
+	static int assignIds();
 	static void setIds(int);
 
 	// some useful static methods

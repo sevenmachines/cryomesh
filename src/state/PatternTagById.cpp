@@ -12,7 +12,7 @@ namespace cryomesh {
 namespace state {
 
 boost::shared_ptr<PatternTagById> PatternTagById::globalTag=	boost::shared_ptr<PatternTagById>(new PatternTagById(1));
-PatternTagById::PatternTagById(int d) : id(0) {
+PatternTagById::PatternTagById(int d) : id("") {
 	std::stringstream ss;
 	ss<<d;
 	id = ss.str();

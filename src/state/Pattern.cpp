@@ -29,7 +29,7 @@ Pattern Pattern::getRandom(unsigned int width, double fraction) {
 //END statics
 
 Pattern::Pattern() :
-		binaryString(""), id(this->getIds()), patternTag() {
+		binaryString(""), id(this->assignIds()), patternTag() {
 	initialise();
 }
 Pattern::Pattern(const Pattern & pat) :
@@ -37,11 +37,11 @@ Pattern::Pattern(const Pattern & pat) :
 	initialise();
 }
 Pattern::Pattern(const std::vector<bool> & pat) :
-		binaryString(BinaryString(pat, false)), id(this->getIds()), patternTag() {
+		binaryString(BinaryString(pat, false)), id(this->assignIds()), patternTag() {
 	initialise();
 }
 Pattern::Pattern(const std::string & str) :
-		binaryString(BinaryString(str, false, BinaryString::BIN)), id(this->getIds()), patternTag() {
+		binaryString(BinaryString(str, false, BinaryString::BIN)), id(this->assignIds()), patternTag() {
 	initialise();
 }
 Pattern::~Pattern() {
@@ -209,11 +209,16 @@ void Pattern::setPatternTag(boost::shared_ptr<PatternTag> pt) {
 	patternTag = pt;
 }
 
-int Pattern::getIds() {
+int Pattern::assignIds() {
 	int temp=Pattern::ids;
 	++ids;
 	return temp;
 }
+
+int Pattern::getIds() {
+	return ids;
+}
+
 void Pattern::setIds(int is) {
 #ifdef PATTERN_DEBUG
 	std::cout << "Pattern::setIds: setting ids may break uniqueness" << std::endl;
@@ -230,9 +235,6 @@ boost::shared_ptr<manager::DatabaseObject> Pattern::getDatabaseObject() const {
 }
 
 void Pattern::initialise() {
-	id = Pattern::getIds();
-	++ids;
-
 	//default pattern tag by id
 	patternTag = boost::shared_ptr<PatternTag>(new PatternTagById(id));
 }

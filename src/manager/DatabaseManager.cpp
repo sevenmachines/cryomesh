@@ -5,6 +5,8 @@
  *      Author: "SevenMachines <SevenMachines@yahoo.co.uk>"
  */
 
+//#define DATABASEMANAGER_DEBUG
+
 #include "DatabaseManager.h"
 #include "common/TimeKeeper.h"
 #include "common/Containers.h"
@@ -30,7 +32,9 @@ const common::Cycle DatabaseManager::MAX_COMMAND_HISTORY = common::Cycle(100);
 int DatabaseManager::databaseCallback(void *results, int argc, char **argv, char **columnName) {
 	int i;
 	std::stringstream ss;
-	//ss << "(";
+#ifdef DATABASEMANAGER_DEBUG
+	ss << "(";
+#endif
 	for (i = 0; i < argc; i++) {
 		std::string col_name = columnName[i];
 		std::string entry;
@@ -44,15 +48,19 @@ int DatabaseManager::databaseCallback(void *results, int argc, char **argv, char
 		if (i != argc - 1) {
 			ss << " ";
 		}
-		//	std::cout <<"databaseCallback: "<< ss.str()<<std::endl;
-
+#ifdef DATABASEMANAGER_DEBUG
+		std::cout <<"databaseCallback: "<< ss.str()<<std::endl;
+#endif
 	}
-	//ss << ")" << std::endl;
-
+#ifdef DATABASEMANAGER_DEBUG
+	ss << ")" << std::endl;
+#endif
 	// add entry to history
 	std::vector<std::string> * vec_ptr = static_cast<std::vector<std::string> *>(results);
 	vec_ptr->push_back(ss.str());
-	//std::cout << ss.str() << std::endl;
+#ifdef DATABASEMANAGER_DEBUG
+	std::cout << ss.str() << std::endl;
+#endif
 	return 0;
 }
 
@@ -61,15 +69,14 @@ DatabaseManager::DatabaseManager(const std::string & dbfilename) :
 	std::string dbfile = DEFAULT_DATABASE_PATH + "/" + dbfilename;
 	//try open already existing
 	char * null_ptr = 0;
-	sqlite3 * temp_db_ptr = database.get();
-	errorCode = sqlite3_open_v2(dbfile.c_str(), &temp_db_ptr, SQLITE_OPEN_READWRITE, null_ptr);
+	errorCode = sqlite3_open_v2(dbfile.c_str(), &(database), SQLITE_OPEN_READWRITE, null_ptr);
 	if (errorCode != 0) {
 		// open failed to force creation
-		errorCode = sqlite3_open(dbfile.c_str(), &temp_db_ptr);
+		errorCode = sqlite3_open(dbfile.c_str(), &database);
 		if (errorCode != 0) {
-			sqlite3_close(temp_db_ptr);
+			sqlite3_close(database);
 			std::cout << "DatabaseManager::DatabaseManager: " << "ERROR creating new database " << dbfile << std::endl;
-			std::cout << sqlite3_errmsg(temp_db_ptr) << std::endl;
+			std::cout << sqlite3_errmsg(database) << std::endl;
 			databaseAccess = false;
 		} else {
 			std::cout << "DatabaseManager::DatabaseManager: " << "Created new database " << dbfile << std::endl;
@@ -90,8 +97,7 @@ DatabaseManager::DatabaseManager(const DatabaseManager & obj) :
 	this->sqlResults = obj.sqlResults;
 }
 DatabaseManager::~DatabaseManager() {
-	sqlite3 * temp_db_ptr = database.get();
-	sqlite3_close(temp_db_ptr);
+	sqlite3_close(database);
 	databaseAccess = false;
 }
 
@@ -324,8 +330,7 @@ std::string DatabaseManager::sqlCommand(const std::string & command) {
 	//std::cout<<"DatabaseManager::sqlCommand: "<<"COMMAND:"<<command<<std::endl;
 	sqlResultsBuffer.clear();
 	std::string results;
-	sqlite3 * temp_db_ptr = database.get();
-	errorCode = sqlite3_exec(temp_db_ptr, command.c_str(), &databaseCallback, &sqlResultsBuffer, &errorMessage);
+	errorCode = sqlite3_exec(database, command.c_str(), &databaseCallback, &sqlResultsBuffer, &errorMessage);
 	// do results
 	{
 		std::stringstream ss;
@@ -344,7 +349,9 @@ std::string DatabaseManager::sqlCommand(const std::string & command) {
 		}
 
 	}
-	//std::cout<<"DatabaseManager::sqlCommand: "<<"RESULT: "<<results<<std::endl;
+#ifdef DATABASEMANAGER_DEBUG
+	std::cout<<"DatabaseManager::sqlCommand: "<<"RESULT: "<<results<<std::endl;
+#endif
 	DatabaseManager::addHistoryEntry(command, sqlResultsBuffer, sqlResults);
 	if (errorCode != SQLITE_OK) {
 		std::cout << "DatabaseManager::sqlCommand: " << "ERROR: " << errorMessage << std::endl;

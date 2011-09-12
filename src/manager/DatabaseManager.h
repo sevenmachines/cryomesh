@@ -503,7 +503,7 @@ protected:
 	 *
 	 *	@var sqlite *
 	 */
-	boost::shared_ptr<sqlite3> database;
+	sqlite3 * database;
 
 	/**
 	 * Record error codes
