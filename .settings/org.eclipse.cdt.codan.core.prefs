@@ -1,4 +1,4 @@
-#Fri Jul 08 08:48:33 BST 2011
+#Mon Sep 26 23:33:56 BST 2011
 ch.hsr.eclipse.cdt.codan.checkers.InvalidArguments_HSR=Error
 ch.hsr.eclipse.cdt.codan.checkers.InvalidArguments_HSR.params={}
 ch.hsr.ifs.cute.tdd.codan.checkers.FunctionResolutionProblem_HSR=Error
@@ -15,6 +15,8 @@ ch.hsr.ifs.cute.tdd.codan.checkers.MissingConstructorResolutionProblem_HSR=Error
 ch.hsr.ifs.cute.tdd.codan.checkers.MissingConstructorResolutionProblem_HSR.params={}
 ch.hsr.ifs.cute.tdd.codan.checkers.MissingOperatorResolutionProblem_HSR=Error
 ch.hsr.ifs.cute.tdd.codan.checkers.MissingOperatorResolutionProblem_HSR.params={}
+ch.hsr.ifs.cute.tdd.codan.checkers.NamespaceMemberResolutionProblem_HSR=Error
+ch.hsr.ifs.cute.tdd.codan.checkers.NamespaceMemberResolutionProblem_HSR.params={}
 ch.hsr.ifs.cute.tdd.codan.checkers.NamespaceResolutionProblem_HSR=Error
 ch.hsr.ifs.cute.tdd.codan.checkers.NamespaceResolutionProblem_HSR.params={}
 ch.hsr.ifs.cute.tdd.codan.checkers.PrivateMethodChecker_HSR=Error
@@ -85,11 +87,11 @@ org.eclipse.cdt.codan.internal.checkers.SuspiciousSemicolonProblem.params={else\
 org.eclipse.cdt.codan.internal.checkers.TypeResolutionProblem=-Error
 org.eclipse.cdt.codan.internal.checkers.TypeResolutionProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>false,RUN_ON_INC_BUILD\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true}}
 org.eclipse.cdt.codan.internal.checkers.UnusedFunctionDeclarationProblem=-Warning
-org.eclipse.cdt.codan.internal.checkers.UnusedFunctionDeclarationProblem.params={}
+org.eclipse.cdt.codan.internal.checkers.UnusedFunctionDeclarationProblem.params={macro\=>true}
 org.eclipse.cdt.codan.internal.checkers.UnusedStaticFunctionProblem=-Warning
-org.eclipse.cdt.codan.internal.checkers.UnusedStaticFunctionProblem.params={}
+org.eclipse.cdt.codan.internal.checkers.UnusedStaticFunctionProblem.params={macro\=>true}
 org.eclipse.cdt.codan.internal.checkers.UnusedVariableDeclarationProblem=-Warning
-org.eclipse.cdt.codan.internal.checkers.UnusedVariableDeclarationProblem.params={exceptions\=>("@(\#)","$Id")}
+org.eclipse.cdt.codan.internal.checkers.UnusedVariableDeclarationProblem.params={macro\=>true,exceptions\=>("@(\#)","$Id")}
 org.eclipse.cdt.codan.internal.checkers.VariableResolutionProblem=-Error
 org.eclipse.cdt.codan.internal.checkers.VariableResolutionProblem.params={launchModes\=>{RUN_ON_FULL_BUILD\=>false,RUN_ON_INC_BUILD\=>false,RUN_AS_YOU_TYPE\=>true,RUN_ON_DEMAND\=>true}}
 useParentScope=true

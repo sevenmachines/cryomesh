@@ -10,6 +10,7 @@
 
 #include "NodeMesh.h"
 #include "Cluster.h"
+#include <cmath>
 
 namespace cryomesh {
 
