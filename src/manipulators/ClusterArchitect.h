@@ -8,31 +8,32 @@
 #ifndef CLUSTERARCHITECT_H_
 #define CLUSTERARCHITECT_H_
 
+#include "ClusterAnalysisData.h"
 #include "structures/Cluster.h"
+
+#include <list>
 
 namespace cryomesh {
 namespace manipulators {
 
 class ClusterArchitect {
 public:
-	struct ClusterAnalysisData {
-		ClusterAnalysisData(int nodes_destroy, int cons_destroy, int nodes_create, int cons_create) :
-				nodesToDestroy(nodes_destroy), connectionsToDestroy(cons_destroy), nodesToCreate(nodes_create), connectionsToCreate(
-						cons_create) {
-		}
-		int nodesToDestroy;
-		int connectionsToDestroy;
-		int nodesToCreate;
-		int connectionsToCreate;
-	};
 
 	ClusterArchitect(structures::Cluster & clus);
 	virtual ~ClusterArchitect();
 	virtual void runAnalysis();
 
+	/**
+	 * Get the history of analysis
+	 *
+	 * @return	const common::SimpleCollection<ClusterAnalysisData> &
+	 * 	The container with the history of analysis
+	 */
+	virtual const std::list<ClusterAnalysisData> & getHistory() const ;
+
 protected:
 
-	structures::Cluster  & cluster;
+	structures::Cluster & cluster;
 
 	/**
 	 * Run an analysis on the cluster to decide what action to take on nodes and connections
@@ -61,8 +62,27 @@ protected:
 
 	/**
 	 * Get a collection of random nodes from the cluster
+	 *
+	 * @return std::list<ClusterAnalysisData> &
+	 * 	List of all the analysis data history
 	 */
-	virtual std::vector<components::Node> getRandomNodes(int count);
+	virtual std::list<ClusterAnalysisData>  getRandomNodes(int count);
+	int getMaxHistorySize()const;
+	void setMaxHistorySize(int sz);
+
+private:
+	std::list<ClusterAnalysisData> history;
+
+	ClusterAnalysisData currentClusterAnalysisData;
+	ClusterAnalysisData minClusterAnalysisData;
+	ClusterAnalysisData maxClusterAnalysisData;
+	ClusterAnalysisData averageClusterAnalysisData;
+
+	int maxHistorySize;
+
+	static const int DEFAULT_MAX_HISTORY_SIZE;
+	void addHistoryEntry(	ClusterAnalysisData entry);
+	void getHistoryStatistics(ClusterAnalysisData & minCad, ClusterAnalysisData & maxCad, ClusterAnalysisData & avCad);
 
 };
 
