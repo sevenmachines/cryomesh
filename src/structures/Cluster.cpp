@@ -21,19 +21,19 @@ const double Cluster::SELF_CONNECTED_NODES_FRACTION = 0.1;
 
 Cluster::Cluster() :
 		spacial::Spacial(true), energy(0), nodes(), connections(), mesh(
-				boost::shared_ptr<NodeMesh>(new NodeMesh(*this))), connector() {
+				boost::shared_ptr<NodeMesh>(new NodeMesh(*this))), connector(), clusterArchitect(new manipulators::ClusterArchitect(*this))  {
 }
 
 Cluster::Cluster(int nodeCount, int connectivity, const spacial::Point bounding_box) :
 		spacial::Spacial(bounding_box, true), energy(0), nodes(), connections(), mesh(
 				boost::shared_ptr<NodeMesh>(new NodeMesh(*this))), connector(), clusterArchitect(new manipulators::ClusterArchitect(*this))  {
-	clusterArchitect->birthRandomNodes(nodeCount, connectivity);
+	clusterArchitect->createRandomNodes(nodeCount, connectivity);
 }
 
 Cluster::Cluster(int nodeCount, int connectivity) :
 		spacial::Spacial(true), energy(0) , nodes(), connections(), mesh(
 				boost::shared_ptr<NodeMesh>(new NodeMesh(*this))), connector() , clusterArchitect(new manipulators::ClusterArchitect(*this)) {
-	clusterArchitect->birthRandomNodes(nodeCount, connectivity);
+	clusterArchitect->createRandomNodes(nodeCount, connectivity);
 }
 
 Cluster::~Cluster() {
@@ -53,6 +53,10 @@ double Cluster::getEnergy() const {
 }
 void Cluster::setEnergy(double total_energy) {
 	energy = total_energy;
+}
+
+boost::shared_ptr< manipulators::ClusterArchitect  > Cluster::getClusterArchitect(){
+	return clusterArchitect;
 }
 
 void Cluster::warpNodes() {

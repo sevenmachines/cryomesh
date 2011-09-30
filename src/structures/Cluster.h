@@ -170,6 +170,8 @@ public:
 	double getEnergy() const;
 	void setEnergy(double d);
 
+	boost::shared_ptr< manipulators::ClusterArchitect  >getClusterArchitect();
+
 	const boost::shared_ptr<NodeMesh> getMesh() const {
 		return mesh;
 	}

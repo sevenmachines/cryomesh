@@ -21,13 +21,9 @@ ClusterAnalysisData::ClusterAnalysisData(double cluster_energy, int nodes_destro
 }
 
 ClusterAnalysisData::ClusterAnalysisData(const ClusterAnalysisData & obj) :
-		Tagged() {
-	this->clusterEnergy = obj.getClusterEnergy();
-	this->nodesToDestroy = obj.getNodesToDestroy();
-	this->connectionsToDestroy = obj.getConnectionsToDestroy();
-	this->nodesToCreate = obj.getNodesToCreate();
-	this->connectionsToCreate = obj.getConnectionsToCreate();
-	this->cycle = obj.getCycle();
+		Tagged(), clusterEnergy(obj.getClusterEnergy()), nodesToDestroy(obj.getNodesToDestroy()), connectionsToDestroy(
+				obj.getConnectionsToDestroy()), nodesToCreate(obj.getNodesToCreate()), connectionsToCreate(
+				obj.getConnectionsToCreate()), cycle(obj.getCycle()) {
 }
 ClusterAnalysisData::~ClusterAnalysisData() {
 }
@@ -55,13 +51,13 @@ const ClusterAnalysisData ClusterAnalysisData::operator/(const double dbl) const
 }
 
 ClusterAnalysisData & ClusterAnalysisData::operator/=(const double dbl) {
-	if (dbl >0){
-	this->clusterEnergy /= dbl;
-	this->nodesToDestroy = static_cast<int>(ceil(static_cast<double>(this->nodesToDestroy) / dbl));
-	this->connectionsToDestroy = static_cast<int>(ceil(static_cast<double>(this->connectionsToDestroy) / dbl));
-	this->nodesToCreate = static_cast<int>(ceil(static_cast<double>(this->nodesToCreate) / dbl));
-	this->connectionsToCreate = static_cast<int>(ceil(static_cast<double>(this->connectionsToCreate) / dbl));
-	this->cycle = common::Cycle(static_cast<int>(  static_cast<double>(this->cycle.toULInt()) / dbl));
+	if (dbl > 0) {
+		this->clusterEnergy /= dbl;
+		this->nodesToDestroy = static_cast<int>(ceil(static_cast<double>(this->nodesToDestroy) / dbl));
+		this->connectionsToDestroy = static_cast<int>(ceil(static_cast<double>(this->connectionsToDestroy) / dbl));
+		this->nodesToCreate = static_cast<int>(ceil(static_cast<double>(this->nodesToCreate) / dbl));
+		this->connectionsToCreate = static_cast<int>(ceil(static_cast<double>(this->connectionsToCreate) / dbl));
+		this->cycle = common::Cycle(static_cast<int>(static_cast<double>(this->cycle.toULInt()) / dbl));
 
 	}
 	return (*this);
@@ -90,7 +86,7 @@ int ClusterAnalysisData::getConnectionsToCreate() const {
 	return connectionsToCreate;
 }
 
-common::Cycle ClusterAnalysisData::getCycle() const{
+common::Cycle ClusterAnalysisData::getCycle() const {
 	return cycle;
 }
 } /* namespace manipulators */

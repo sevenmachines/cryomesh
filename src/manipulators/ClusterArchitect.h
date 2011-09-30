@@ -44,12 +44,12 @@ public:
 	/**
 	 * Create a number of random nodes
 	 */
-	virtual void birthRandomNodes(int count, int connectivity = 0);
+	virtual void createRandomNodes(int count, int connectivity = 0);
 
 	/**
 	 * Create a number of random connections
 	 */
-	virtual void birthRandomConnections(int count);
+	virtual void createRandomConnections(int count);
 
 	/**
 	 * Destroy random nodes
