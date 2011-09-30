@@ -9,6 +9,8 @@
 #define CLUSTERANALYSISDATA_H_
 
 #include "common/Tagged.h"
+#include "common/Cycle.h"
+#include "common/TimeKeeper.h"
 
 namespace cryomesh {
 namespace manipulators {
@@ -16,7 +18,7 @@ namespace manipulators {
 class ClusterAnalysisData: public common::Tagged {
 public:
 	ClusterAnalysisData();
-	ClusterAnalysisData(double cluster_act, int nodes_destroy, int cons_destroy, int nodes_create, int cons_create);
+	ClusterAnalysisData(double cluster_energy, int nodes_destroy, int cons_destroy, int nodes_create, int cons_create);
 	ClusterAnalysisData(const ClusterAnalysisData & obj);
 	virtual ~ClusterAnalysisData();
 
@@ -65,18 +67,20 @@ public:
 	 */
 	bool operator>(const ClusterAnalysisData & obj) const;
 
-	double getClusterActivity() const;
+	double getClusterEnergy() const;
 	int getNodesToDestroy() const;
 	int getConnectionsToDestroy() const;
 	int getNodesToCreate() const;
 	int getConnectionsToCreate() const;
+	common::Cycle getCycle() const;
 
 private:
-	double clusterActivity;
+	double clusterEnergy;
 	int nodesToDestroy;
 	int connectionsToDestroy;
 	int nodesToCreate;
 	int connectionsToCreate;
+	common::Cycle cycle;
 
 };
 

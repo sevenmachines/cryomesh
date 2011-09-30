@@ -11,22 +11,23 @@ namespace cryomesh {
 namespace manipulators {
 
 ClusterAnalysisData::ClusterAnalysisData() :
-		clusterActivity(0), nodesToDestroy(0), connectionsToDestroy(0), nodesToCreate(0), connectionsToCreate(0) {
+		clusterEnergy(0), nodesToDestroy(0), connectionsToDestroy(0), nodesToCreate(0), connectionsToCreate(0), cycle(0) {
 }
 
-ClusterAnalysisData::ClusterAnalysisData(double cluster_act, int nodes_destroy, int cons_destroy, int nodes_create,
+ClusterAnalysisData::ClusterAnalysisData(double cluster_energy, int nodes_destroy, int cons_destroy, int nodes_create,
 		int cons_create) :
-		clusterActivity(cluster_act), nodesToDestroy(nodes_destroy), connectionsToDestroy(cons_destroy), nodesToCreate(
-				nodes_create), connectionsToCreate(cons_create) {
+		clusterEnergy(cluster_energy), nodesToDestroy(nodes_destroy), connectionsToDestroy(cons_destroy), nodesToCreate(
+				nodes_create), connectionsToCreate(cons_create), cycle(common::TimeKeeper::getTimeKeeper().getCycle()) {
 }
 
 ClusterAnalysisData::ClusterAnalysisData(const ClusterAnalysisData & obj) :
 		Tagged() {
-	this->clusterActivity = obj.getClusterActivity();
+	this->clusterEnergy = obj.getClusterEnergy();
 	this->nodesToDestroy = obj.getNodesToDestroy();
 	this->connectionsToDestroy = obj.getConnectionsToDestroy();
 	this->nodesToCreate = obj.getNodesToCreate();
 	this->connectionsToCreate = obj.getConnectionsToCreate();
+	this->cycle = obj.getCycle();
 }
 ClusterAnalysisData::~ClusterAnalysisData() {
 }
@@ -38,11 +39,12 @@ const ClusterAnalysisData ClusterAnalysisData::operator+(const ClusterAnalysisDa
 }
 
 ClusterAnalysisData & ClusterAnalysisData::operator+=(const ClusterAnalysisData & obj) {
-	this->clusterActivity += obj.getClusterActivity();
+	this->clusterEnergy += obj.getClusterEnergy();
 	this->nodesToDestroy += obj.getNodesToDestroy();
 	this->connectionsToDestroy += obj.getConnectionsToDestroy();
 	this->nodesToCreate += obj.getNodesToCreate();
 	this->connectionsToCreate += obj.getConnectionsToCreate();
+	this->cycle += obj.getCycle();
 	return *this;
 }
 
@@ -53,23 +55,27 @@ const ClusterAnalysisData ClusterAnalysisData::operator/(const double dbl) const
 }
 
 ClusterAnalysisData & ClusterAnalysisData::operator/=(const double dbl) {
-	this->clusterActivity /= dbl;
+	if (dbl >0){
+	this->clusterEnergy /= dbl;
 	this->nodesToDestroy = static_cast<int>(ceil(static_cast<double>(this->nodesToDestroy) / dbl));
 	this->connectionsToDestroy = static_cast<int>(ceil(static_cast<double>(this->connectionsToDestroy) / dbl));
 	this->nodesToCreate = static_cast<int>(ceil(static_cast<double>(this->nodesToCreate) / dbl));
 	this->connectionsToCreate = static_cast<int>(ceil(static_cast<double>(this->connectionsToCreate) / dbl));
+	this->cycle = common::Cycle(static_cast<int>(  static_cast<double>(this->cycle.toULInt()) / dbl));
+
+	}
 	return (*this);
 }
 
 bool ClusterAnalysisData::operator<(const ClusterAnalysisData & obj) const {
-	return this->clusterActivity > obj.getClusterActivity();
+	return this->clusterEnergy > obj.getClusterEnergy();
 }
 bool ClusterAnalysisData::operator>(const ClusterAnalysisData & obj) const {
-	return this->clusterActivity < obj.getClusterActivity();
+	return this->clusterEnergy < obj.getClusterEnergy();
 }
 
-double ClusterAnalysisData::getClusterActivity() const {
-	return clusterActivity;
+double ClusterAnalysisData::getClusterEnergy() const {
+	return clusterEnergy;
 }
 int ClusterAnalysisData::getNodesToDestroy() const {
 	return nodesToDestroy;
@@ -82,6 +88,10 @@ int ClusterAnalysisData::getNodesToCreate() const {
 }
 int ClusterAnalysisData::getConnectionsToCreate() const {
 	return connectionsToCreate;
+}
+
+common::Cycle ClusterAnalysisData::getCycle() const{
+	return cycle;
 }
 } /* namespace manipulators */
 } /* namespace cryomesh */

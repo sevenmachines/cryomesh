@@ -10,7 +10,8 @@
 
 #include "ClusterAnalysisData.h"
 #include "structures/Cluster.h"
-
+#include "common/Cycle.h"
+#include <map>
 #include <list>
 
 namespace cryomesh {
@@ -29,7 +30,7 @@ public:
 	 * @return	const common::SimpleCollection<ClusterAnalysisData> &
 	 * 	The container with the history of analysis
 	 */
-	virtual const std::list<ClusterAnalysisData> & getHistory() const ;
+	virtual const std::list<ClusterAnalysisData> & getHistory() const;
 
 protected:
 
@@ -66,8 +67,8 @@ protected:
 	 * @return std::list<ClusterAnalysisData> &
 	 * 	List of all the analysis data history
 	 */
-	virtual std::list<ClusterAnalysisData>  getRandomNodes(int count);
-	int getMaxHistorySize()const;
+	virtual std::vector<boost::shared_ptr<components::Node> > getRandomNodes(int count);
+	int getMaxHistorySize() const;
 	void setMaxHistorySize(int sz);
 
 private:
@@ -81,8 +82,28 @@ private:
 	int maxHistorySize;
 
 	static const int DEFAULT_MAX_HISTORY_SIZE;
-	void addHistoryEntry(	ClusterAnalysisData entry);
+	void addHistoryEntry(ClusterAnalysisData entry);
 	void getHistoryStatistics(ClusterAnalysisData & minCad, ClusterAnalysisData & maxCad, ClusterAnalysisData & avCad);
+
+	void splitHistoryByValue(double db, int countback, std::map<common::Cycle, ClusterAnalysisData> & below,
+			std::map<common::Cycle, ClusterAnalysisData> & above) const;
+
+
+	/**
+	 * Get the fraction of history entries from the past count entries
+	 * that are inside of a range, default is to check all of them
+	 *
+	 * @param double
+	 * 	Value for entries to be above
+	 * @param double
+	 * 	Value for entries to be below
+	 * @param int
+	 * 	Number of past entries to go back
+	 *
+	 * @return std::vector<ClusterAnalysisData>
+	 * 	Entries within range
+	 */
+	std::vector<ClusterAnalysisData> getHistoryEntriesInRange(double min_db, double max_db, int countback = 0) const;
 
 };
 
