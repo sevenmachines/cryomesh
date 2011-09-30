@@ -32,9 +32,9 @@ public:
 	 */
 	virtual const std::list<ClusterAnalysisData> & getHistory() const;
 
-protected:
+	void createConnection(boost::shared_ptr<components::Node> nodeStart,
+			boost::shared_ptr<components::Node> nodeEnd, int connectivity =1) ;
 
-	structures::Cluster & cluster;
 
 	/**
 	 * Run an analysis on the cluster to decide what action to take on nodes and connections
@@ -44,7 +44,7 @@ protected:
 	/**
 	 * Create a number of random nodes
 	 */
-	virtual void birthRandomNodes(int count);
+	virtual void birthRandomNodes(int count, int connectivity = 0);
 
 	/**
 	 * Create a number of random connections
@@ -71,6 +71,9 @@ protected:
 	int getMaxHistorySize() const;
 	void setMaxHistorySize(int sz);
 
+
+protected:
+	structures::Cluster & cluster;
 private:
 	std::list<ClusterAnalysisData> history;
 
@@ -81,7 +84,6 @@ private:
 
 	int maxHistorySize;
 
-	static const int DEFAULT_MAX_HISTORY_SIZE;
 	void addHistoryEntry(ClusterAnalysisData entry);
 	void getHistoryStatistics(ClusterAnalysisData & minCad, ClusterAnalysisData & maxCad, ClusterAnalysisData & avCad);
 
@@ -104,6 +106,9 @@ private:
 	 * 	Entries within range
 	 */
 	std::vector<ClusterAnalysisData> getHistoryEntriesInRange(double min_db, double max_db, int countback = 0) const;
+
+	static const int DEFAULT_MAX_HISTORY_SIZE;
+	static const double DEFAULT_CONNECTIVITY_FRACTION;
 
 };
 

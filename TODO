@@ -1,10 +1,19 @@
 CURRENT---------------------------------------------------------------------------------
 
-* Add history support to clusters or clusterArchitect by way of a generic history store
 
 * cryomesh: Automatic disconnection of 'bad' node connections and some method of 
 creating new connections to other nodes if required
+	 - Create ClusterArchitect to analyse then kill/birth nodes and connections (DONE)
+	 - Add history support to clusters or clusterArchitect by way of a generic history store (DONE)
+	 -implement ClusterArchitect::birthRandomNodes (DONE)
+	 -implement ClusterArchitect::birthRandomConnections (DONE)
+	 -implement ClusterArchitect::getHistoryEntriesInRange (DONE)
 
+	- Implement ClusterArchitect::analyseCluster()
+
+	- Redefine functions in Cluster to their new ClusterArchitect equivalents
+		- Moved Cluster::createConnection to ClusterArchitect::createConnection (DONE)
+	- Implement ClusterArchitect Test
 
 HIGH ----------------------------------------------------------------------------------------
 

@@ -6,6 +6,11 @@
  */
 
 #include "ClusterArchitect.h"
+#include <boost/shared_ptr.hpp>
+#include <vector>
+#include <components/Node.h>
+#include <components/NodeMap.h>
+
 #include <algorithm>
 
 namespace cryomesh {
@@ -13,6 +18,7 @@ namespace manipulators {
 
 //STATICS
 const int ClusterArchitect::DEFAULT_MAX_HISTORY_SIZE = 100;
+const double ClusterArchitect::DEFAULT_CONNECTIVITY_FRACTION = 0.01;
 
 ClusterArchitect::ClusterArchitect(structures::Cluster & clus) :
 		cluster(clus), currentClusterAnalysisData(), minClusterAnalysisData(), maxClusterAnalysisData(), averageClusterAnalysisData(), maxHistorySize(
@@ -40,16 +46,102 @@ const ClusterAnalysisData ClusterArchitect::analyseCluster() {
 	return ClusterAnalysisData(0, 0, 0, 0, 0);
 }
 
-void ClusterArchitect::birthRandomNodes(int count) {
+void ClusterArchitect::birthRandomNodes(int count, int connectivity) {
 	std::cout << "ClusterArchitect::birthRandomNodes: " << "count: " << count << std::endl;
-	if (count > 0) {
 
+	if (count > 0) {
+		components::NodeMap & nmap = cluster.getMutableNodeMap();
+		std::vector<boost::shared_ptr<cryomesh::components::Node> > new_nodes;
+		for (int i = 0; i < count; i++) {
+			boost::shared_ptr<components::Node> tempnode = components::Node::getRandom(cluster.getMaxBoundingBox());
+			new_nodes.push_back(tempnode);
+			nmap.add(tempnode);
+		}
+
+		//  now connect up new nodes
+		std::vector<boost::shared_ptr<cryomesh::components::Node> > node_range =
+				cluster.getMutableNodeMap().getRandomRange(new_nodes.size());
+
+		 unsigned int default_connectivity = connectivity;
+
+		// if connectivity is 0 then use default fraction
+		if (connectivity <= 0) {
+			double node_count_fraction = cluster.getNodeMap().getSize()
+					* ClusterArchitect::DEFAULT_CONNECTIVITY_FRACTION;
+			int node_count_fraction_ceil = static_cast<int>(std::ceil(node_count_fraction));
+			default_connectivity = std::max(1, node_count_fraction_ceil);
+		}
+		// forall in new_nodes
+		{
+			std::vector<boost::shared_ptr<cryomesh::components::Node> >::iterator it_new_nodes = new_nodes.begin();
+			const std::vector<boost::shared_ptr<cryomesh::components::Node> >::const_iterator it_new_nodes_end =
+					new_nodes.end();
+			std::vector<boost::shared_ptr<cryomesh::components::Node> >::iterator it_node_range = node_range.begin();
+			const std::vector<boost::shared_ptr<cryomesh::components::Node> >::const_iterator it_node_range_end =
+					node_range.end();
+			while (it_new_nodes != it_new_nodes_end) {
+				unsigned int new_in_count = 0;
+				unsigned int new_out_count = 0;
+
+				// make multiple input connections
+				while (new_in_count < default_connectivity) {
+					if (it_node_range == it_node_range_end) {
+						it_node_range = node_range.begin();
+					}
+					// connection multiplicity of 1
+					this->createConnection(*it_node_range, *it_new_nodes, 1);
+					++it_node_range;
+				}
+
+				// make multiple output connections
+				while (new_out_count < default_connectivity) {
+					if (it_node_range == it_node_range_end) {
+						it_node_range = node_range.begin();
+					}
+					// connection multiplicity of 1
+					this->createConnection(*it_new_nodes, *it_node_range, 1);
+					++it_node_range;
+				}
+
+				assert((*it_new_nodes)->getConnector().getInputs().size() == default_connectivity);
+				assert((*it_new_nodes)->getConnector().getOutputs().size() == default_connectivity);
+				++it_new_nodes;
+			}
+		}
 	}
 }
 
 void ClusterArchitect::birthRandomConnections(int count) {
 	std::cout << "ClusterArchitect::birthRandomConnections: " << "count: " << count << std::endl;
 	if (count > 0) {
+		components::NodeMap & nmap = cluster.getMutableNodeMap();
+		components::ConnectionMap & cmap = cluster.getMutableConnectionMap();
+
+		std::vector<boost::shared_ptr<components::Node> > source_nodes = nmap.getRandomRange(count);
+		std::vector<boost::shared_ptr<components::Node> > dest_nodes = nmap.getRandomRange(count);
+
+		assert(source_nodes.size() == dest_nodes.size());
+
+		// forall in source_nodes
+		{
+			std::vector<boost::shared_ptr<components::Node> >::iterator it_source_nodes = source_nodes.begin();
+			const std::vector<boost::shared_ptr<components::Node> >::const_iterator it_source_nodes_end =
+					source_nodes.end();
+			std::vector<boost::shared_ptr<components::Node> >::iterator it_dest_nodes = dest_nodes.begin();
+			while (it_source_nodes != it_source_nodes_end) {
+				boost::shared_ptr<components::Connection> tempcon(new components::Connection);
+
+				tempcon->getMutableConnector().connectInput(*it_source_nodes);
+				tempcon->getMutableConnector().connectOutput(*it_dest_nodes);
+
+				(*it_source_nodes)->getMutableConnector().connectOutput(tempcon);
+				(*it_dest_nodes)->getMutableConnector().connectInput(tempcon);
+
+				cmap.add(tempcon);
+				++it_source_nodes;
+				++it_dest_nodes;
+			}
+		}
 
 	}
 }
@@ -164,8 +256,39 @@ std::vector<ClusterAnalysisData> ClusterArchitect::getHistoryEntriesInRange(doub
 	this->splitHistoryByValue(max_db, count, below_max, above_max);
 
 	std::vector<ClusterAnalysisData> intersection;
-	std::set_intersection(above_min.begin(), above_min.end(), below_max.begin(), below_max.end(), intersection.begin());
+
+	// forall in above_min
+	{
+		std::map<common::Cycle, ClusterAnalysisData>::const_iterator it_above_min = above_min.begin();
+		const std::map<common::Cycle, ClusterAnalysisData>::const_iterator it_above_min_end = above_min.end();
+		while (it_above_min != it_above_min_end) {
+			std::map<common::Cycle, ClusterAnalysisData>::iterator it_found = below_max.find(it_above_min->first);
+			if (it_found != below_max.end()) {
+				assert(it_found->second.getUUID() == it_above_min->second.getUUID());
+				intersection.push_back(it_above_min->second);
+			}
+			++it_above_min;
+		}
+	}
 	return intersection;
+}
+
+void ClusterArchitect::createConnection(boost::shared_ptr<components::Node> nodeStart,
+		boost::shared_ptr<components::Node> nodeEnd, int connectivity) {
+
+	for (int i = 0; i < connectivity; i++) {
+
+		boost::shared_ptr<components::Connection> tempcon(new components::Connection);
+
+		tempcon->getMutableConnector().connectInput(nodeStart);
+		tempcon->getMutableConnector().connectOutput(nodeEnd);
+
+		nodeStart->getMutableConnector().connectOutput(tempcon);
+		nodeEnd->getMutableConnector().connectInput(tempcon);
+
+		cluster.getMutableConnectionMap().add(tempcon);
+
+	}
 }
 
 } /* namespace manipulators */

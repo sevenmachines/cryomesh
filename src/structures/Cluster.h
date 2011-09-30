@@ -26,6 +26,10 @@
 
 namespace cryomesh {
 
+namespace manipulators {
+	class ClusterArchitect;
+}
+
 namespace structures {
 
 class Fibre;
@@ -35,6 +39,7 @@ class Fibre;
  * that can be connected up to one another
  */
 class Cluster: public common::Tagged, public spacial::Spacial, public common::Debuggable {
+
 public:
 
 	/**
@@ -73,14 +78,6 @@ public:
 	void updateEnergy(double total_energy);
 
 	void warpNodes();
-
-	/**
-	 * Create a number of nodes in the cluster
-	 *
-	 * @param int number
-	 * 		Number of nodes to create
-	 */
-	virtual void createNodes(const int number = 1);
 
 	/**
 	 * Create connections between all nodes
@@ -137,6 +134,7 @@ public:
 	 * 	The mutable NodeMap for this Cluster
 	 */
 	components::NodeMap & getMutableNodeMap();
+	components::ConnectionMap & getMutableConnectionMap();
 
 	/**
 	 * Get the total fired nodes in this cluster currently
@@ -204,19 +202,6 @@ protected:
 	 */
 	virtual void updateConnectivity(const int connectivity, ValueTypeSpecifier asValue = AsIncrement);
 
-	/**
-	 * Create connection between an input node and output node
-	 *
-	 * @param boost::shared_ptr<Node> nodeStart
-	 * 		Input node to connect
-	 * @param boost::shared_ptr<Node> nodeEnd
-	 * 		Output node to connect
-	 * @param int connecticity
-	 * 		Number of connections to create between start and end nodes
-	 */
-	virtual void createConnection(boost::shared_ptr<components::Node> nodeStart,
-			boost::shared_ptr<components::Node> nodeEnd, int connectivity = 1);
-
 private:
 	double energy;
 
@@ -248,6 +233,7 @@ private:
 	 */
 	common::Connector<Cluster, Fibre> connector;
 
+	boost::shared_ptr< manipulators::ClusterArchitect  >clusterArchitect;
 };
 
 }

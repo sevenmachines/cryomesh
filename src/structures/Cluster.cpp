@@ -7,6 +7,7 @@
 
 //#define CLUSTER_DEBUG
 #include "Cluster.h"
+#include "manipulators/ClusterArchitect.h"
 #include <list>
 #include <algorithm>
 #include "common/Maths.h"
@@ -25,16 +26,14 @@ Cluster::Cluster() :
 
 Cluster::Cluster(int nodeCount, int connectivity, const spacial::Point bounding_box) :
 		spacial::Spacial(bounding_box, true), energy(0), nodes(), connections(), mesh(
-				boost::shared_ptr<NodeMesh>(new NodeMesh(*this))), connector()  {
-	this->createNodes(nodeCount);
-	this->createConnectivity(connectivity);
+				boost::shared_ptr<NodeMesh>(new NodeMesh(*this))), connector(), clusterArchitect(new manipulators::ClusterArchitect(*this))  {
+	clusterArchitect->birthRandomNodes(nodeCount, connectivity);
 }
 
 Cluster::Cluster(int nodeCount, int connectivity) :
 		spacial::Spacial(true), energy(0) , nodes(), connections(), mesh(
-				boost::shared_ptr<NodeMesh>(new NodeMesh(*this))), connector() {
-	this->createNodes(nodeCount);
-	this->createConnectivity(connectivity);
+				boost::shared_ptr<NodeMesh>(new NodeMesh(*this))), connector() , clusterArchitect(new manipulators::ClusterArchitect(*this)) {
+	clusterArchitect->birthRandomNodes(nodeCount, connectivity);
 }
 
 Cluster::~Cluster() {
@@ -60,12 +59,6 @@ void Cluster::warpNodes() {
 	mesh->warpNodes();
 }
 
-void Cluster::createNodes(const int number) {
-	for (int i = 0; i < number; i++) {
-		boost::shared_ptr<components::Node> tempnode = components::Node::getRandom(this->getMaxBoundingBox());
-		nodes.add(tempnode);
-	}
-}
 
 void Cluster::createConnectivity(const int connectivity) {
 	this->updateConnectivity(connectivity, AsIncrement);
@@ -121,7 +114,7 @@ void Cluster::updateConnectivity(const int connectivity, ValueTypeSpecifier asVa
 					}
 
 					if (same_node == true && dont_self_connect == false) {
-						this->createConnection(it_allnodes->second, *it_shufflednodes, 1);
+						clusterArchitect->createConnection(it_allnodes->second, *it_shufflednodes, 1);
 #ifdef CLUSTER_DEBUG
 						std::cout << "Cluster::updateConnectivity: " << nodes_count << " self connect  " << std::endl;
 #endif
@@ -131,10 +124,10 @@ void Cluster::updateConnectivity(const int connectivity, ValueTypeSpecifier asVa
 						if (it_shufflednodes == it_shufflednodes_end) {
 							it_shufflednodes = shufflednodes.begin();
 						}
-						this->createConnection(it_allnodes->second, *it_shufflednodes, 1);
+						clusterArchitect->createConnection(it_allnodes->second, *it_shufflednodes, 1);
 
 					} else {
-						this->createConnection(it_allnodes->second, *it_shufflednodes, 1);
+						clusterArchitect->createConnection(it_allnodes->second, *it_shufflednodes, 1);
 					}
 					++it_shufflednodes;
 #ifdef CLUSTER_DEBUG
@@ -157,17 +150,17 @@ void Cluster::updateConnectivity(const int connectivity, ValueTypeSpecifier asVa
 						dont_self_connect = common::Maths::getRandomBool(Cluster::SELF_CONNECTED_NODES_FRACTION);
 					}
 					if (same_node == true && dont_self_connect == false) {
-						this->createConnection(it_allnodes->second, *it_shufflednodes, 1);
+						clusterArchitect->createConnection(it_allnodes->second, *it_shufflednodes, 1);
 					} else if (same_node == true && dont_self_connect == true) {
 						// add connection
 						++it_shufflednodes;
 						if (it_shufflednodes == it_shufflednodes_end) {
 							it_shufflednodes = shufflednodes.begin();
 						}
-						this->createConnection(it_allnodes->second, *it_shufflednodes, 1);
+						clusterArchitect->createConnection(it_allnodes->second, *it_shufflednodes, 1);
 
 					} else {
-						this->createConnection(it_allnodes->second, *it_shufflednodes, 1);
+						clusterArchitect->createConnection(it_allnodes->second, *it_shufflednodes, 1);
 					}
 					++it_shufflednodes;
 				}
@@ -175,23 +168,6 @@ void Cluster::updateConnectivity(const int connectivity, ValueTypeSpecifier asVa
 			}
 			++it_allnodes;
 		}
-	}
-}
-void Cluster::createConnection(boost::shared_ptr<components::Node> nodeStart,
-		boost::shared_ptr<components::Node> nodeEnd, int connectivity) {
-
-	for (int i = 0; i < connectivity; i++) {
-
-		boost::shared_ptr<components::Connection> tempcon(new components::Connection);
-
-		tempcon->getMutableConnector().connectInput(nodeStart);
-		tempcon->getMutableConnector().connectOutput(nodeEnd);
-
-		nodeStart->getMutableConnector().connectOutput(tempcon);
-		nodeEnd->getMutableConnector().connectInput(tempcon);
-
-		connections.add(tempcon);
-
 	}
 }
 
@@ -217,7 +193,9 @@ const components::NodeMap & Cluster::getNodeMap() const {
 components::NodeMap & Cluster::getMutableNodeMap() {
 	return nodes;
 }
-
+components::ConnectionMap & Cluster::getMutableConnectionMap() {
+	return connections;
+}
 int Cluster::getTriggeredNodeCount(const int indicator) const {
 	int return_count = 0;
 	int count = 0;
