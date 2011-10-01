@@ -48,97 +48,210 @@ const ClusterAnalysisData ClusterArchitect::analyseCluster() {
 	return ClusterAnalysisData(0, 0, 0, 0, 0);
 }
 
-void ClusterArchitect::createRandomNodes(int count, int connectivity) {
-#ifdef CLUSTERARCHITECT_DEBUG
-	std::cout << "ClusterArchitect::createRandomNodes: " << "count: " << count << std::endl;
+std::list<boost::shared_ptr<cryomesh::components::Node> > ClusterArchitect::createRandomNodes(int count,
+		int connectivity, int strategy) {
 	unsigned int pre_nodes_sz = cluster.getNodeMap().getSize();
-#endif
+
+	// new nodes that will be created
+	std::list<boost::shared_ptr<cryomesh::components::Node> > new_nodes;
+
 	if (count > 0) {
+
+		// Acquire resources from cluster and create the new nodes
 		components::NodeMap & nmap = cluster.getMutableNodeMap();
-		std::list<boost::shared_ptr<cryomesh::components::Node> > new_nodes;
+
+		// if connectivity is <= 0 then use default fraction
+		if (connectivity <= 0) {
+			double node_count_fraction = nmap.getSize() * ClusterArchitect::DEFAULT_CONNECTIVITY_FRACTION;
+			int node_count_fraction_ceil = static_cast<int>(std::ceil(node_count_fraction));
+			connectivity = std::max(1, node_count_fraction_ceil);
+		}
+
 		for (int i = 0; i < count; i++) {
 			boost::shared_ptr<components::Node> tempnode = components::Node::getRandom(cluster.getMaxBoundingBox());
 			new_nodes.push_back(tempnode);
 		}
 
-		// now add the new nodes to the bulk
-		nmap.add(new_nodes);
+		// if there are enough nodes in the cluster bulk already then delay adding the new ones
+		// so we connect up only with the old. Else we add the new nodes to the bulk first then
+		// connect amongst themselves
 
-		//  now connect up new nodes
-		std::vector<boost::shared_ptr<cryomesh::components::Node> > node_range =
-				cluster.getMutableNodeMap().getRandomRange(new_nodes.size());
+		int nmap_sz = nmap.getSize();
+		bool new_in_bulk = (nmap_sz < (count * connectivity));
 
-		assert(new_nodes.size() == node_range.size());
-		unsigned int default_connectivity = connectivity;
-
-		// if connectivity is 0 then use default fraction
-		if (connectivity <= 0) {
-			double node_count_fraction = cluster.getNodeMap().getSize()
-					* ClusterArchitect::DEFAULT_CONNECTIVITY_FRACTION;
-			int node_count_fraction_ceil = static_cast<int>(std::ceil(node_count_fraction));
-			default_connectivity = std::max(1, node_count_fraction_ceil);
+		if (new_in_bulk == true) {
+			// now add the new nodes to the bulk
+			nmap.add(new_nodes);
 		}
-		// forall in new_nodes
+		assert(nmap.getSize() > 0);
+
+		// if we've only got one node, we need to self connect
+		if (nmap.getSize() == 1) {
+			strategy = strategy | ConnectionStrategy::ENABLE_SELF_CONNECT;
+			std::cout << "ClusterArchitect::createRandomNodes: "
+					<< "WARNING: Forced self connection on single node cluster..." << std::endl;
+		}
+
+		// Connect up new nodes
 		{
-			std::list<boost::shared_ptr<cryomesh::components::Node> >::iterator it_new_nodes = new_nodes.begin();
-			const std::list<boost::shared_ptr<cryomesh::components::Node> >::const_iterator it_new_nodes_end =
-					new_nodes.end();
-			std::vector<boost::shared_ptr<cryomesh::components::Node> >::iterator it_node_range = node_range.begin();
-			const std::vector<boost::shared_ptr<cryomesh::components::Node> >::const_iterator it_node_range_end =
-					node_range.end();
-			while (it_new_nodes != it_new_nodes_end) {
-				unsigned int current_in_count = (*it_new_nodes)->getConnector().getInputs().size();
+			// Get a range from the cluster bulk, attempt to get enough individuals for unique
+			// connections for both input and output for all new nodes
+			std::vector<boost::shared_ptr<cryomesh::components::Node> > node_range =
+					cluster.getMutableNodeMap().getRandomRange(2 * connectivity * new_nodes.size());
 
-				// make multiple input connections
-				while (current_in_count < default_connectivity) {
-					if (it_node_range == it_node_range_end) {
-						it_node_range = node_range.begin();
+			// forall in new_nodes
+			{
+				std::list<boost::shared_ptr<cryomesh::components::Node> >::iterator it_new_nodes = new_nodes.begin();
+				const std::list<boost::shared_ptr<cryomesh::components::Node> >::const_iterator it_new_nodes_end =
+						new_nodes.end();
+				std::vector<boost::shared_ptr<cryomesh::components::Node> >::iterator it_node_range =
+						node_range.begin();
+				const std::vector<boost::shared_ptr<cryomesh::components::Node> >::const_iterator it_node_range_end =
+						node_range.end();
+				while (it_new_nodes != it_new_nodes_end) {
+					// Get current input count, needed so that if a new node has been connected to other new nodes
+					// then that new connection is counted towards its connectivity
+					int current_in_count = (*it_new_nodes)->getConnector().getInputs().size();
+
+					// make multiple input connections
+					int range_cycled_count = 0;
+					while (current_in_count < connectivity) {
+						if (it_node_range == it_node_range_end) {
+							it_node_range = node_range.begin();
+							++range_cycled_count;
+						}
+						// connection multiplicity of 1
+						boost::shared_ptr<components::Node> temp_source_node = *it_node_range;
+						boost::shared_ptr<components::Node> temp_dest_node = *it_new_nodes;
+						assert(temp_source_node != 0);
+						assert(temp_dest_node != 0);
+
+						// if the new nodes arent in bulk then connect away
+
+						// if we're allowed to self connect or source and dest are not the same
+						bool self_connect = (strategy & ConnectionStrategy::ENABLE_SELF_CONNECT);
+						bool not_same = (temp_source_node->getUUID() != temp_dest_node->getUUID());
+
+						// if we dont need to connect evenly or the source has below connectivity
+						bool evenly_distribute = (strategy & ENABLE_EVEN_DISTRIBUTION);
+						bool node_has_capacity = (temp_source_node->getConnector().getOutputs().size()
+								< static_cast<unsigned int>(connectivity));
+#ifdef CLUSTERARCHITECT_DEBUG
+						if (strategy == 0) {
+							assert(!self_connect );
+							assert(!evenly_distribute);
+						}
+#endif
+						if (  (!self_connect  ||  not_same ) &&(!evenly_distribute || node_has_capacity) ) {
+							this->createConnection(temp_source_node, temp_dest_node, 1);
+							++current_in_count;
+						}
+
+						assert(range_cycled_count < (connectivity * count));
+						++it_node_range;
+
 					}
-					// connection multiplicity of 1
-					boost::shared_ptr<components::Node> temp_source_node = *it_node_range;
-					boost::shared_ptr<components::Node> temp_dest_node = *it_new_nodes;
-					assert(temp_source_node != 0);
-					assert(temp_dest_node != 0);
-					this->createConnection(temp_source_node, temp_dest_node, 1);
-					++current_in_count;
-					++it_node_range;
-				}
 
-				unsigned int current_out_count =  (*it_new_nodes)->getConnector().getOutputs().size();
+					// Get current output count, needed so that if a new node has been connected to other new nodes
+					// then that new connection is counted towards its connectivity
+					int current_out_count = (*it_new_nodes)->getConnector().getOutputs().size();
 
-				// make multiple output connections
-				while (current_out_count < default_connectivity) {
-					if (it_node_range == it_node_range_end) {
-						it_node_range = node_range.begin();
+					//reset range cycled count
+					range_cycled_count = 0;
+					// make multiple output connections
+					while (current_out_count < connectivity) {
+						if (it_node_range == it_node_range_end) {
+							it_node_range = node_range.begin();
+							++range_cycled_count;
+						}
+						// connection multiplicity of 1
+						boost::shared_ptr<components::Node> temp_source_node = *it_new_nodes;
+						boost::shared_ptr<components::Node> temp_dest_node = *it_node_range;
+						assert(temp_source_node != 0);
+						assert(temp_dest_node != 0);
+
+						// if we're allowed to self connect or source and dest are not the same
+						bool self_connect = (strategy & ConnectionStrategy::ENABLE_SELF_CONNECT);
+						bool not_same = (temp_source_node->getUUID() != temp_dest_node->getUUID());
+
+						// if we dont need to connect evenly or the source has below connectivity
+						bool evenly_distribute = (strategy & ENABLE_EVEN_DISTRIBUTION);
+						bool node_has_capacity = (temp_dest_node->getConnector().getInputs().size()
+								< static_cast<unsigned int>(connectivity));
+#ifdef CLUSTERARCHITECT_DEBUG
+						if (strategy == 0) {
+							assert(!self_connect );
+							assert(!evenly_distribute);
+						}
+#endif
+						if (  (!self_connect  ||  not_same ) &&(!evenly_distribute || node_has_capacity) ) {
+							this->createConnection(temp_source_node, temp_dest_node, 1);
+							++current_out_count;
+						}
+						assert(range_cycled_count < (connectivity * count));
+						++it_node_range;
 					}
-					// connection multiplicity of 1
-					boost::shared_ptr<components::Node> temp_source_node = *it_new_nodes;
-					boost::shared_ptr<components::Node> temp_dest_node = *it_node_range;
-					assert(temp_source_node != 0);
-					assert(temp_dest_node != 0);
-					this->createConnection(temp_source_node, temp_dest_node, 1);
-					++current_out_count;
-					++it_node_range;
+#ifdef CLUSTERARCHITECT_DEBUG
+					int post_inputs_sz = (*it_new_nodes)->getConnector().getInputs().size();
+					int post_outputs_sz = (*it_new_nodes)->getConnector().getOutputs().size();
+					if (new_in_bulk == false) {
+						assert(post_inputs_sz == connectivity);
+						assert(post_outputs_sz == connectivity);
+					} else {
+						assert(post_inputs_sz >= connectivity);
+						assert(post_outputs_sz >= connectivity);
+					}
+#endif
+					++it_new_nodes;
+
 				}
 #ifdef CLUSTERARCHITECT_DEBUG
-				unsigned int post_inputs_sz = (*it_new_nodes)->getConnector().getInputs().size();
-				unsigned int post_outputs_sz = (*it_new_nodes)->getConnector().getOutputs().size();
-				assert(post_inputs_sz >= default_connectivity);
-				assert(post_outputs_sz >= default_connectivity);
-#endif
-				++it_new_nodes;
+				{
+					if (new_in_bulk == true && pre_nodes_sz == 0) {
+						// forall in new_nodes
+						{
+							std::list<boost::shared_ptr<cryomesh::components::Node> >::const_iterator it_new_nodes =
+									new_nodes.begin();
+							const std::list<boost::shared_ptr<cryomesh::components::Node> >::const_iterator it_new_nodes_end =
+									new_nodes.end();
+							while (it_new_nodes != it_new_nodes_end) {
+								int post_inputs_sz = (*it_new_nodes)->getConnector().getInputs().size();
+								int post_outputs_sz = (*it_new_nodes)->getConnector().getOutputs().size();
+								std::cout << "ClusterArchitect::createRandomNodes: "
+										<< (*it_new_nodes)->getUUIDSummary() << " (" << post_inputs_sz << ", "
+										<< post_outputs_sz << ")" << std::endl;
+								//assert(
+								//		(*it_new_nodes)->getConnector().getInputs().size()
+								//				== static_cast<unsigned int>(connectivity));
+								//assert(post_outputs_sz == connectivity);
+								++it_new_nodes;
+							}
+						}
+					}
+
+				}
 			}
+#endif
 		}
 
+		// If we didnt add the new nodes to the bulk before connection then add them now
+		if (new_in_bulk == false) {
+			// now add the new nodes to the bulk
+			nmap.add(new_nodes);
+		}
 	}
 #ifdef CLUSTERARCHITECT_DEBUG
 	unsigned int post_nodes_sz = cluster.getNodeMap().getSize();
+	assert(new_nodes.size() == static_cast<unsigned int>(count));
 	assert(post_nodes_sz = pre_nodes_sz + count);
 #endif
+	return new_nodes;
 }
 
-void ClusterArchitect::createRandomConnections(int count) {
-	std::cout << "ClusterArchitect::createRandomConnections: " << "count: " << count << std::endl;
+std::list<boost::shared_ptr<components::Connection> > ClusterArchitect::createRandomConnections(int count) {
+
+	std::list<boost::shared_ptr<components::Connection> > new_connections;
+
 	if (count > 0) {
 		components::NodeMap & nmap = cluster.getMutableNodeMap();
 		components::ConnectionMap & cmap = cluster.getMutableConnectionMap();
@@ -164,26 +277,35 @@ void ClusterArchitect::createRandomConnections(int count) {
 				(*it_dest_nodes)->getMutableConnector().connectInput(tempcon);
 
 				cmap.add(tempcon);
+				new_connections.push_back(tempcon);
 				++it_source_nodes;
 				++it_dest_nodes;
 			}
 		}
 
 	}
+
+	assert(new_connections.size() == static_cast<unsigned int>(count));
+	return new_connections;
 }
 
-void ClusterArchitect::destroyRandomNodes(int count) {
+std::list<boost::shared_ptr<components::Node> > ClusterArchitect::destroyRandomNodes(int count) {
 	std::cout << "ClusterArchitect::destroyRandomNodes: " << "count: " << count << std::endl;
+	std::list<boost::shared_ptr<components::Node> > dead_nodes;
+
 	if (count > 0) {
 
 	}
+	return dead_nodes;
 }
 
-void ClusterArchitect::destroyRandomConnections(int count) {
+std::list<boost::shared_ptr<components::Connection> > ClusterArchitect::destroyRandomConnections(int count) {
 	std::cout << "ClusterArchitect::destroyRandomConnections: " << "count: " << count << std::endl;
+	std::list<boost::shared_ptr<components::Connection> > dead_connections;
 	if (count > 0) {
 
 	}
+	return dead_connections;
 }
 
 std::vector<boost::shared_ptr<components::Node> > ClusterArchitect::getRandomNodes(int count) {

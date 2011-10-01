@@ -1,3 +1,12 @@
+2011-10-01  SevenMachines  <SevenMachines@yahoo.co.uk>
+
+	* src/manipulators/ClusterArchitect.cpp (ClusterArchitect::createRandomNodes): Pre add new nodes to bulk if there are 
+	judged to be not enough old ones at present
+	(ClusterArchitect::createRandomConnections): return created connections
+	(ClusterArchitect::createRandomNodes): return created nodes
+	(ClusterArchitect::destroyRandomConnections): return killed connections
+	(ClusterArchitect::destroyRandomNodes): return killed nodes
+
 2011-05-25  SevenMachines  <SevenMachines@yahoo.co.uk>
 
 	* src/manager/Creator.cpp (Creator::createFromConfigFile): seperate config file from its stream

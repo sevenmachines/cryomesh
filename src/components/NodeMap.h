@@ -25,7 +25,8 @@ public:
 	/**
 	 * Default constructor
 	 */
-	NodeMap() {
+	NodeMap() :
+			common::KeyMappedCollection<boost::uuids::uuid, components::Node>() {
 	}
 
 	/**
@@ -37,7 +38,7 @@ public:
 	/**
 	 * Update all entries in the nodemap
 	 */
-	virtual void update() {
+	void update() {
 		// forall in objects
 		{
 			std::map<boost::uuids::uuid, boost::shared_ptr<Node> >::iterator it_objects = objects.begin();
@@ -49,18 +50,79 @@ public:
 		}
 	}
 
-	virtual void addRandomImpulses(double positive_bias = 0.5) {
+	void addRandomImpulses(double positive_bias = 0.5) {
 		// forall in objects
 		{
 			std::map<boost::uuids::uuid, boost::shared_ptr<Node> >::iterator it_objects = objects.begin();
 			const std::map<boost::uuids::uuid, boost::shared_ptr<Node> >::const_iterator it_objects_end = objects.end();
 			while (it_objects != it_objects_end) {
-				boost::shared_ptr< components::Impulse > random_impulse(components::Impulse::getRandom(positive_bias));
+				boost::shared_ptr<components::Impulse> random_impulse(components::Impulse::getRandom(positive_bias));
 				random_impulse->setActivityDelay(0);
 				it_objects->second->addImpulse(random_impulse);
 				++it_objects;
 			}
 		}
+	}
+
+	const std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > getAllInputConnections() const {
+		std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > all_connections;
+
+		if (objects.size() > 0) {
+
+			// forall in objects
+			{
+				std::map<boost::uuids::uuid, boost::shared_ptr<Node> >::const_iterator it_objects = objects.begin();
+				const std::map<boost::uuids::uuid, boost::shared_ptr<Node> >::const_iterator it_objects_end =
+						objects.end();
+				while (it_objects != it_objects_end) {
+					all_connections.insert(it_objects->second->getConnector().getInputs().begin(),
+							it_objects->second->getConnector().getInputs().end());
+					++it_objects;
+				}
+			}
+		}
+		return all_connections;
+	}
+
+	const std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > getAllOutputConnections() const {
+		std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > all_connections;
+		if (objects.size() > 0) {
+
+			// forall in objects
+			{
+				std::map<boost::uuids::uuid, boost::shared_ptr<Node> >::const_iterator it_objects = objects.begin();
+				const std::map<boost::uuids::uuid, boost::shared_ptr<Node> >::const_iterator it_objects_end =
+						objects.end();
+				while (it_objects != it_objects_end) {
+					//	int outputs_sz = it_objects->second->getConnector().getOutputs().size();
+					all_connections.insert(it_objects->second->getConnector().getOutputs().begin(),
+							it_objects->second->getConnector().getOutputs().end());
+					++it_objects;
+				}
+			}
+		}
+		return all_connections;
+	}
+
+	const std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > getAllConnections() const {
+		std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > all_connections;
+		if (objects.size() > 0) {
+
+			// forall in objects
+			{
+				std::map<boost::uuids::uuid, boost::shared_ptr<Node> >::const_iterator it_objects = objects.begin();
+				const std::map<boost::uuids::uuid, boost::shared_ptr<Node> >::const_iterator it_objects_end =
+						objects.end();
+				while (it_objects != it_objects_end) {
+					all_connections.insert(it_objects->second->getConnector().getInputs().begin(),
+							it_objects->second->getConnector().getInputs().end());
+					all_connections.insert(it_objects->second->getConnector().getOutputs().begin(),
+							it_objects->second->getConnector().getOutputs().end());
+					++it_objects;
+				}
+			}
+		}
+		return all_connections;
 	}
 
 	/**

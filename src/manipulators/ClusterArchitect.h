@@ -20,6 +20,10 @@ namespace manipulators {
 class ClusterArchitect {
 public:
 
+	enum ConnectionStrategy{
+		ENABLE_SELF_CONNECT=1, ENABLE_EVEN_DISTRIBUTION=2
+	};
+
 	ClusterArchitect(structures::Cluster & clus);
 	virtual ~ClusterArchitect();
 	virtual void runAnalysis();
@@ -44,22 +48,22 @@ public:
 	/**
 	 * Create a number of random nodes
 	 */
-	virtual void createRandomNodes(int count, int connectivity = 0);
+	virtual std::list<boost::shared_ptr<cryomesh::components::Node> >  createRandomNodes(int count, int connectivity = 0, int strategy = 0);
 
 	/**
 	 * Create a number of random connections
 	 */
-	virtual void createRandomConnections(int count);
+	virtual std::list <boost::shared_ptr<components::Connection> > createRandomConnections(int count);
 
 	/**
 	 * Destroy random nodes
 	 */
-	virtual void destroyRandomNodes(int count);
+	virtual std::list <boost::shared_ptr<components::Node> > destroyRandomNodes(int count);
 
 	/**
 	 * Destroy random connections
 	 */
-	virtual void destroyRandomConnections(int count);
+	virtual std::list <boost::shared_ptr<components::Connection> > destroyRandomConnections(int count);
 
 	/**
 	 * Get a collection of random nodes from the cluster

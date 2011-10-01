@@ -235,7 +235,7 @@ private:
 	 */
 	common::Connector<Cluster, Fibre> connector;
 
-	boost::shared_ptr< manipulators::ClusterArchitect  >clusterArchitect;
+	 boost::shared_ptr< manipulators::ClusterArchitect >  clusterArchitect;
 };
 
 }
