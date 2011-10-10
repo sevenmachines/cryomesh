@@ -55,7 +55,11 @@ void Cluster::setEnergy(double total_energy) {
 	energy = total_energy;
 }
 
-boost::shared_ptr< manipulators::ClusterArchitect  > Cluster::getClusterArchitect(){
+const boost::shared_ptr< manipulators::ClusterArchitect  > Cluster::getClusterArchitect() const{
+	return clusterArchitect;
+}
+
+boost::shared_ptr< manipulators::ClusterArchitect  > Cluster::getMutableClusterArchitect(){
 	return clusterArchitect;
 }
 

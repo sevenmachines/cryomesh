@@ -567,14 +567,14 @@ public:
 	 *		The output stream
 	 */
 	friend std::ostream& operator<<(std::ostream & os, const Connector<U, T> & obj) {
-		os << "Connector<>:" << std::endl;
+		os << "Connector< "<<obj.getInputs().size()<<", "<<obj.getOutputs().size()<<">:" << std::endl;
 		os << "\tInputs:" << std::endl;
 		// forall in minputs
 		{
 			typename std::map<boost::uuids::uuid, boost::shared_ptr<T> >::const_iterator it_minputs =
 					obj.getInputs().begin();
 			const typename std::map<boost::uuids::uuid, boost::shared_ptr<T> >::const_iterator it_minputs_end =
-					obj.getOutputs().end();
+					obj.getInputs().end();
 			while (it_minputs != it_minputs_end) {
 				boost::shared_ptr<T> temp_obj = it_minputs->second;
 				if (temp_obj != 0) {
