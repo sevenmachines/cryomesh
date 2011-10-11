@@ -14,8 +14,9 @@ namespace cryomesh {
 namespace components {
 
 Connection::Connection() :
-		connector(	boost::shared_ptr<common::Connector<Connection, Node> >(new common::Connector<Connection, Node>(1, 1))), impulses(),
-		activityTimer(components::ActivityTimerDistance::getRandom()) {
+		connector(
+				boost::shared_ptr<common::Connector<Connection, Node> >(new common::Connector<Connection, Node>(1, 1))), impulses(), activityTimer(
+				components::ActivityTimerDistance::getRandom()) {
 }
 
 Connection::~Connection() {
@@ -178,6 +179,33 @@ void Connection::connectInput(boost::shared_ptr<Node> node) {
 }
 void Connection::connectOutput(boost::shared_ptr<Node> node) {
 	this->getMutableConnector().connectOutput(node);
+}
+void Connection::disconnect() {
+	this->disconnectInput();
+	this->disconnectOutput();
+}
+
+void Connection::disconnectInput() {
+	//get input node
+	std::map<boost::uuids::uuid, boost::shared_ptr<Node> > & ins = this->getMutableConnector().getMutableInputs();
+	if (ins.size() > 0) {
+		boost::shared_ptr<Node> & nd = ins.begin()->second;
+		if (nd != 0) {
+			nd->getMutableConnector().disconnectOutput(this->getUUID());
+		}
+	}
+	assert(this->getConnector().getInputs().size() == 0);
+}
+void Connection::disconnectOutput() {
+	//get input node
+	std::map<boost::uuids::uuid, boost::shared_ptr<Node> > & outs = this->getMutableConnector().getMutableOutputs();
+	if (outs.size() > 0) {
+		boost::shared_ptr<Node> & nd = outs.begin()->second;
+		if (nd != 0) {
+			nd->getMutableConnector().disconnectInput(this->getUUID());
+		}
+	}
+	assert(this->getConnector().getOutputs().size() == 0);
 }
 
 bool Connection::isPrimaryInputConnection() const {

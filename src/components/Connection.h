@@ -165,6 +165,10 @@ public:
 	void connectInput(boost::shared_ptr<Node> node) ;
 	void connectOutput(boost::shared_ptr<Node> node) ;
 
+	void disconnect() ;
+	void disconnectInput() ;
+	void disconnectOutput() ;
+
 	bool isPrimaryInputConnection() const ;
 	bool isPrimaryOutputConnection() const ;
 	virtual void enableDebug(bool b);
