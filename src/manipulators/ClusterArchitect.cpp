@@ -425,6 +425,45 @@ std::list<boost::shared_ptr<components::Node> > ClusterArchitect::getRandomNodes
 	return random_nodes;
 }
 
+std::list<boost::shared_ptr<components::Connection> > ClusterArchitect::getRandomConnections(const int count,
+		const bool allow_primary) {
+	std::list<boost::shared_ptr<components::Connection> > rand_connections;
+
+	if (count > 0) {
+		std::list<boost::shared_ptr<components::Node> > rand_nodes = this->getRandomNodes(count, allow_primary);
+		const int RANDOM_INPUT_COUNT = common::Maths::getRandomInteger(0, count);
+		const int RANDOM_OUTPUT_COUNT = count - RANDOM_INPUT_COUNT;
+		assert(RANDOM_INPUT_COUNT >= 0);
+		assert(RANDOM_OUTPUT_COUNT >= 0);
+		assert(RANDOM_INPUT_COUNT + RANDOM_OUTPUT_COUNT == count);
+
+		// forall in rand_nodes
+		{
+			int temp_count = 0;
+			std::list<boost::shared_ptr<components::Node> >::const_iterator it_rand_nodes = rand_nodes.begin();
+			const std::list<boost::shared_ptr<components::Node> >::const_iterator it_rand_nodes_end = rand_nodes.end();
+			while (it_rand_nodes != it_rand_nodes_end) {
+				boost::shared_ptr<components::Connection> temp_conn;
+				const bool get_input = (temp_count < RANDOM_INPUT_COUNT)
+						&& ((*it_rand_nodes)->getConnector().getInputs().size() > 0);
+				const bool get_output = (temp_count >= RANDOM_INPUT_COUNT)
+						&& ((*it_rand_nodes)->getConnector().getOutputs().size() > 0);
+
+				if (get_input == true) {
+					temp_conn = (*it_rand_nodes)->getMutableConnector().getMutableInputs().begin()->second;
+					++temp_count;
+				} else if (get_output == true) {
+					temp_conn = (*it_rand_nodes)->getMutableConnector().getMutableInputs().begin()->second;
+					++temp_count;
+				}
+			}
+			++it_rand_nodes;
+		}
+	}
+
+	return rand_connections;
+}
+
 const std::list<ClusterAnalysisData> & ClusterArchitect::getHistory() const {
 	return history;
 }
@@ -549,8 +588,7 @@ void ClusterArchitect::createConnection(boost::shared_ptr<components::Node> node
 
 boost::shared_ptr<components::Connection> ClusterArchitect::deleteConnection(
 		boost::shared_ptr<components::Connection> conn) {
-	conn->getMutableConnector().disconnectAllInputs();
-	conn->getMutableConnector().disconnectAllOutputs();
+	conn->disconnect();
 	cluster.getMutableConnectionMap().remove(conn);
 	return conn;
 }
