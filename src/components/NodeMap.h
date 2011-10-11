@@ -50,6 +50,48 @@ public:
 		}
 	}
 
+	const std::map<boost::uuids::uuid, boost::shared_ptr<Node> > getAllPrimaryInputNodes() const {
+		std::map<boost::uuids::uuid, boost::shared_ptr<Node> > selected_nodes;
+
+		if (objects.size() > 0) {
+
+			// forall in objects
+			{
+				std::map<boost::uuids::uuid, boost::shared_ptr<Node> >::const_iterator it_objects = objects.begin();
+				const std::map<boost::uuids::uuid, boost::shared_ptr<Node> >::const_iterator it_objects_end =
+						objects.end();
+				while (it_objects != it_objects_end) {
+					if (it_objects->second->isPrimaryInputAttachedNode()){
+						selected_nodes[it_objects->first]= it_objects->second;
+					}
+					++it_objects;
+				}
+			}
+		}
+		return selected_nodes;
+	}
+
+	const std::map<boost::uuids::uuid, boost::shared_ptr<Node> > getAllPrimaryOutputNodes() const {
+			std::map<boost::uuids::uuid, boost::shared_ptr<Node> > selected_nodes;
+
+			if (objects.size() > 0) {
+
+				// forall in objects
+				{
+					std::map<boost::uuids::uuid, boost::shared_ptr<Node> >::const_iterator it_objects = objects.begin();
+					const std::map<boost::uuids::uuid, boost::shared_ptr<Node> >::const_iterator it_objects_end =
+							objects.end();
+					while (it_objects != it_objects_end) {
+						if (it_objects->second->isPrimaryOutputAttachedNode()){
+							selected_nodes[it_objects->first]= it_objects->second;
+						}
+						++it_objects;
+					}
+				}
+			}
+			return selected_nodes;
+		}
+
 	void addRandomImpulses(double positive_bias = 0.5) {
 		// forall in objects
 		{

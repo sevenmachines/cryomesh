@@ -79,10 +79,10 @@ public:
 				this->getCollection();
 		// forall in all_connections
 		{
-			std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::const_iterator
-					it_all_connections = all_connections.begin();
-			const std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::const_iterator
-					it_all_connections_end = all_connections.end();
+			std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::const_iterator it_all_connections =
+					all_connections.begin();
+			const std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::const_iterator it_all_connections_end =
+					all_connections.end();
 			while (it_all_connections != it_all_connections_end) {
 				all_activities.push_back(it_all_connections->second->getImpulses().getActivity(cycle));
 				++it_all_connections;
@@ -92,6 +92,50 @@ public:
 		boost::shared_ptr<state::ActivityPattern> newpat(new state::ActivityPattern);
 		newpat->add(all_activities);
 		return newpat;
+	}
+
+	const std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > getAllPrimaryInputConnections() const {
+		std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > selected_objs;
+
+		if (objects.size() > 0) {
+
+			// forall in objects
+			{
+				std::map<boost::uuids::uuid, boost::shared_ptr<Connection> >::const_iterator it_objects =
+						objects.begin();
+				const std::map<boost::uuids::uuid, boost::shared_ptr<Connection> >::const_iterator it_objects_end =
+						objects.end();
+				while (it_objects != it_objects_end) {
+					if (it_objects->second->isPrimaryInputConnection()) {
+						selected_objs[it_objects->first] = it_objects->second;
+					}
+					++it_objects;
+				}
+			}
+		}
+		return selected_objs;
+	}
+
+	const std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > getAllPrimaryOutputConnections() const {
+		std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > selected_objs;
+
+		if (objects.size() > 0) {
+
+			// forall in objects
+			{
+				std::map<boost::uuids::uuid, boost::shared_ptr<Connection> >::const_iterator it_objects =
+						objects.begin();
+				const std::map<boost::uuids::uuid, boost::shared_ptr<Connection> >::const_iterator it_objects_end =
+						objects.end();
+				while (it_objects != it_objects_end) {
+					if (it_objects->second->isPrimaryOutputConnection()) {
+						selected_objs[it_objects->first] = it_objects->second;
+					}
+					++it_objects;
+				}
+			}
+		}
+		return selected_objs;
 	}
 
 	/**
@@ -111,8 +155,8 @@ public:
 		{
 			std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::const_iterator it_objects =
 					obj.getCollection().begin();
-			const std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::const_iterator
-					it_objects_end = obj.getCollection().end();
+			const std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::const_iterator it_objects_end =
+					obj.getCollection().end();
 			while (it_objects != it_objects_end) {
 				os << "\t" << *(it_objects->second) << std::endl;
 				++it_objects;

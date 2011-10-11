@@ -5,7 +5,7 @@
  *      Author: SevenMachines<SevenMachines@yahoo.co.uk>
  */
 
-//#define CONNECTION_DEBUG
+#define CONNECTION_DEBUG
 #include "Connection.h"
 #include "manager/ConnectionDatabaseObject.h"
 
@@ -24,7 +24,7 @@ Connection::~Connection() {
 
 void Connection::update() {
 #ifdef CONNECTION_DEBUG
-	int pre_impulse_count = impulses.getSize();
+	unsigned int pre_impulse_count = impulses.getSize();
 #endif
 	// update all impulses
 	this->impulses.decrementActivityTimers();
@@ -48,17 +48,17 @@ void Connection::update() {
 					all_nodes.end();
 			while (it_all_nodes != it_all_nodes_end) {
 #ifdef CONNECTION_DEBUG
-				int pre_node_impulse_count = it_all_nodes->second->getImpulses().getSize();
+				unsigned 	int pre_node_impulse_count = it_all_nodes->second->getImpulses().getSize();
 #endif
 				it_all_nodes->second->addImpulses(done_impulses);
 #ifdef CONNECTION_DEBUG
-				int post_node_impulse_count = it_all_nodes->second->getImpulses().getSize();
+				unsigned int post_node_impulse_count = it_all_nodes->second->getImpulses().getSize();
 				std::cout << "Connection::update: " << post_node_impulse_count << "==" << pre_node_impulse_count << "+"
-				<< done_impulses.size() << std::endl;
+						<< done_impulses.size() << std::endl;
 				;
-				assert(post_node_impulse_count == pre_node_impulse_count+done_impulses.size());
+				assert(post_node_impulse_count == pre_node_impulse_count + done_impulses.size());
 				std::cout << "Connection::update: " << "Adding Impulse to Node '"
-				<< it_all_nodes->second->getUUIDSummary() << "'" << std::endl;
+						<< it_all_nodes->second->getUUIDSummary() << "'" << std::endl;
 				std::cout << "Connection::update: " << *this << std::endl;
 #endif
 				++it_all_nodes;
@@ -66,9 +66,9 @@ void Connection::update() {
 		}
 	}
 #ifdef CONNECTION_DEBUG
-	int post_impulse_count = impulses.getSize();
-	int post_done_impulses = done_impulses.size();
-	assert( post_impulse_count== pre_impulse_count - post_done_impulses);
+	unsigned int post_impulse_count = impulses.getSize();
+	unsigned int post_done_impulses = done_impulses.size();
+	assert(post_impulse_count == pre_impulse_count - post_done_impulses);
 #endif
 	if (this->isDebugOn() == true) {
 		std::cout << "Connection::update: " << *this << std::endl;
@@ -95,7 +95,7 @@ boost::shared_ptr<Impulse> Connection::add(boost::shared_ptr<Impulse> impulse) {
 #ifdef CONNECTION_DEBUG
 	int post_impulses = this->impulses.getSize();
 	if (impulse_found != true) {
-		assert(post_impulses == pre_impulses +1);
+		assert(post_impulses == pre_impulses + 1);
 	} else {
 		assert(post_impulses == pre_impulses);
 	}
@@ -191,10 +191,18 @@ void Connection::disconnectInput() {
 	if (ins.size() > 0) {
 		boost::shared_ptr<Node> & nd = ins.begin()->second;
 		if (nd != 0) {
+#ifdef CONNECTION_DEBUG
+			const int NODE_CONS_PRE_SZ = nd->getMutableConnector().getOutputs().size();
+#endif
 			nd->getMutableConnector().disconnectOutput(this->getUUID());
+#ifdef CONNECTION_DEBUG
+			const int NODE_CONS_POST_SZ = nd->getMutableConnector().getOutputs().size();
+			assert(NODE_CONS_PRE_SZ - 1 == NODE_CONS_POST_SZ);
+#endif
 		}
 	}
-	assert(this->getConnector().getInputs().size() == 0);
+	this->getMutableConnector().disconnectAllInputs();
+assert(this->getConnector().getInputs().size() == 0);
 }
 void Connection::disconnectOutput() {
 	//get input node
@@ -202,9 +210,17 @@ void Connection::disconnectOutput() {
 	if (outs.size() > 0) {
 		boost::shared_ptr<Node> & nd = outs.begin()->second;
 		if (nd != 0) {
+#ifdef CONNECTION_DEBUG
+			const int NODE_CONS_PRE_SZ = nd->getMutableConnector().getInputs().size();
+#endif
 			nd->getMutableConnector().disconnectInput(this->getUUID());
+#ifdef CONNECTION_DEBUG
+			const int NODE_CONS_POST_SZ = nd->getMutableConnector().getInputs().size();
+			assert(NODE_CONS_PRE_SZ - 1 == NODE_CONS_POST_SZ);
+#endif
 		}
 	}
+	this->getMutableConnector().disconnectAllOutputs();
 	assert(this->getConnector().getOutputs().size() == 0);
 }
 
