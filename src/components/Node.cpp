@@ -488,8 +488,8 @@ void Node::destroyAllInputConnections() {
 		const std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::const_iterator it_all_input_connections_end =
 				all_input_connections.end();
 		while (it_all_input_connections != it_all_input_connections_end) {
-			it_all_input_connections->second->getConnector().disconnectAllInputs();
-			it_all_input_connections->second->getConnector().disconnectAllOutputs();
+			it_all_input_connections->second->getMutableConnector().disconnectAllInputs();
+			it_all_input_connections->second->getMutableConnector().disconnectAllOutputs();
 			++it_all_input_connections;
 		}
 	}
@@ -505,8 +505,8 @@ void Node::destroyAllOutputConnections() {
 		const std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::const_iterator it_all_output_connections_end =
 				all_output_connections.end();
 		while (it_all_output_connections != it_all_output_connections_end) {
-			it_all_output_connections->second->getConnector().disconnectAllInputs();
-			it_all_output_connections->second->getConnector().disconnectAllOutputs();
+			it_all_output_connections->second->getMutableConnector().disconnectAllInputs();
+			it_all_output_connections->second->getMutableConnector().disconnectAllOutputs();
 			++it_all_output_connections;
 		}
 	}
