@@ -39,6 +39,7 @@ public:
 	void createConnection(boost::shared_ptr<components::Node> nodeStart,
 			boost::shared_ptr<components::Node> nodeEnd, int connectivity =1) ;
 
+	boost::shared_ptr< components::Connection > deleteConnection( boost::shared_ptr< components::Connection >  conn );
 
 	/**
 	 * Run an analysis on the cluster to decide what action to take on nodes and connections
@@ -68,10 +69,30 @@ public:
 	/**
 	 * Get a collection of random nodes from the cluster
 	 *
-	 * @return std::list<ClusterAnalysisData> &
-	 * 	List of all the analysis data history
+	 * @param const int
+	 * 	The number of random nodes to return
+	 * @param const bool
+	 * 	Allow the random nodes to be attached primaries, default false
+	 *
+	 * @return std::list<boost::shared_ptr<components::Node> >
+	 * 	List of random nodes
 	 */
-	virtual std::vector<boost::shared_ptr<components::Node> > getRandomNodes(int count);
+	virtual std::list<boost::shared_ptr<components::Node> > getRandomNodes(const int count, const bool allow_primary ) ;
+
+
+	/**
+	 * Get a collection of random connections from the cluster
+	 *
+	 * @param const int
+	 * 	The number of random connections to return
+	 * @param const bool
+	 * 	Allow the random connections to be attached primaries, default false
+	 *
+	 * @return std::list<boost::shared_ptr<components::Connection> >
+	 * 	List of random connections
+	 */
+	virtual std::list<boost::shared_ptr<components::Connection> > getRandomConnections(const int count, const bool allow_primary ) ;
+
 	int getMaxHistorySize() const;
 	void setMaxHistorySize(int sz);
 

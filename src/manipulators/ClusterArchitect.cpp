@@ -12,6 +12,7 @@
 #include <vector>
 #include <components/Node.h>
 #include <components/NodeMap.h>
+#include "structures/Fibre.h"
 
 #include <algorithm>
 
@@ -50,6 +51,16 @@ const ClusterAnalysisData ClusterArchitect::analyseCluster() {
 
 std::list<boost::shared_ptr<cryomesh::components::Node> > ClusterArchitect::createRandomNodes(int count,
 		int connectivity, int strategy) {
+#ifdef CLUSTERARCHITECT_DEBUG
+	std::cout << "ClusterArchitect::createRandomNodes: " << "( " << count << ", " << connectivity << ", ";
+	if (strategy & ClusterArchitect::ENABLE_SELF_CONNECT) {
+		std::cout << "ENABLE_SELF_CONNECT ";
+	}
+	if (strategy & ClusterArchitect::ENABLE_EVEN_DISTRIBUTION) {
+		std::cout << "ENABLE_EVEN_DISTRIBUTION ";
+	}
+	std::cout << ")" << std::endl;
+#endif
 	unsigned int pre_nodes_sz = cluster.getNodeMap().getSize();
 
 	// new nodes that will be created
@@ -232,239 +243,317 @@ std::list<boost::shared_ptr<cryomesh::components::Node> > ClusterArchitect::crea
 
 					}
 				} // FORALL NEW_NODES
-				} //CONNECT OUTPUTS
-			} // CONNECT UP NODES
+			} //CONNECT OUTPUTS
+		} // CONNECT UP NODES
 
 #ifdef CLUSTERARCHITECT_DEBUG
-			{
-				if (new_in_bulk == true && pre_nodes_sz == 0) {
-					// forall in new_nodes
-					{
-						std::list<boost::shared_ptr<cryomesh::components::Node> >::const_iterator it_new_nodes =
-								new_nodes.begin();
-						const std::list<boost::shared_ptr<cryomesh::components::Node> >::const_iterator it_new_nodes_end =
-								new_nodes.end();
-						while (it_new_nodes != it_new_nodes_end) {
-							int post_inputs_sz = (*it_new_nodes)->getConnector().getInputs().size();
-							int post_outputs_sz = (*it_new_nodes)->getConnector().getOutputs().size();
-							std::cout << "ClusterArchitect::createRandomNodes: " << (*it_new_nodes)->getUUIDSummary()
-									<< " (" << post_inputs_sz << ", " << post_outputs_sz << ")" << std::endl;
-							//assert(
-							//		(*it_new_nodes)->getConnector().getInputs().size()
-							//				== static_cast<unsigned int>(connectivity));
-							//assert(post_outputs_sz == connectivity);
-							++it_new_nodes;
-						}
+		{
+			if (new_in_bulk == true && pre_nodes_sz == 0) {
+				// forall in new_nodes
+				{
+					std::list<boost::shared_ptr<cryomesh::components::Node> >::const_iterator it_new_nodes =
+							new_nodes.begin();
+					const std::list<boost::shared_ptr<cryomesh::components::Node> >::const_iterator it_new_nodes_end =
+							new_nodes.end();
+					while (it_new_nodes != it_new_nodes_end) {
+						int post_inputs_sz = (*it_new_nodes)->getConnector().getInputs().size();
+						int post_outputs_sz = (*it_new_nodes)->getConnector().getOutputs().size();
+						std::cout << "ClusterArchitect::createRandomNodes: " << (*it_new_nodes)->getUUIDSummary()
+								<< " (" << post_inputs_sz << ", " << post_outputs_sz << ")" << std::endl;
+						//assert(
+						//		(*it_new_nodes)->getConnector().getInputs().size()
+						//				== static_cast<unsigned int>(connectivity));
+						//assert(post_outputs_sz == connectivity);
+						++it_new_nodes;
 					}
 				}
-
 			}
+
+		}
 #endif
 
 // If we didnt add the new nodes to the bulk before connection then add them now
-			if (new_in_bulk == false) {
-				// now add the new nodes to the bulk
-				nmap.add(new_nodes);
-			}
+		if (new_in_bulk == false) {
+			// now add the new nodes to the bulk
+			nmap.add(new_nodes);
+		}
 #ifdef CLUSTERARCHITECT_DEBUG
-			unsigned int post_nodes_sz = cluster.getNodeMap().getSize();
-			assert(new_nodes.size() == static_cast<unsigned int>(count));
-			assert(post_nodes_sz = pre_nodes_sz + count);
+		unsigned int post_nodes_sz = cluster.getNodeMap().getSize();
+		assert(new_nodes.size() == static_cast<unsigned int>(count));
+		assert(post_nodes_sz = pre_nodes_sz + count);
 #endif
+	}
+	return new_nodes;
+}
+
+std::list<boost::shared_ptr<components::Connection> > ClusterArchitect::createRandomConnections(int count) {
+
+	std::list<boost::shared_ptr<components::Connection> > new_connections;
+
+	if (count > 0) {
+		components::NodeMap & nmap = cluster.getMutableNodeMap();
+		components::ConnectionMap & cmap = cluster.getMutableConnectionMap();
+
+		std::vector<boost::shared_ptr<components::Node> > source_nodes = nmap.getRandomRange(count);
+		std::vector<boost::shared_ptr<components::Node> > dest_nodes = nmap.getRandomRange(count);
+
+		assert(source_nodes.size() == dest_nodes.size());
+
+		// forall in source_nodes
+		{
+			std::vector<boost::shared_ptr<components::Node> >::iterator it_source_nodes = source_nodes.begin();
+			const std::vector<boost::shared_ptr<components::Node> >::const_iterator it_source_nodes_end =
+					source_nodes.end();
+			std::vector<boost::shared_ptr<components::Node> >::iterator it_dest_nodes = dest_nodes.begin();
+			while (it_source_nodes != it_source_nodes_end) {
+				boost::shared_ptr<components::Connection> tempcon(new components::Connection);
+
+				tempcon->getMutableConnector().connectInput(*it_source_nodes);
+				tempcon->getMutableConnector().connectOutput(*it_dest_nodes);
+
+				(*it_source_nodes)->getMutableConnector().connectOutput(tempcon);
+				(*it_dest_nodes)->getMutableConnector().connectInput(tempcon);
+
+				cmap.add(tempcon);
+				new_connections.push_back(tempcon);
+				++it_source_nodes;
+				++it_dest_nodes;
+			}
 		}
-		return new_nodes;
+
 	}
 
-	std::list<boost::shared_ptr<components::Connection> > ClusterArchitect::createRandomConnections(int count) {
+	assert(new_connections.size() == static_cast<unsigned int>(count));
+	return new_connections;
+}
 
-		std::list<boost::shared_ptr<components::Connection> > new_connections;
+std::list<boost::shared_ptr<components::Node> > ClusterArchitect::destroyRandomNodes(int count) {
+	std::cout << "ClusterArchitect::destroyRandomNodes: " << "count: " << count << std::endl;
+	std::list<boost::shared_ptr<components::Node> > dead_nodes;
 
-		if (count > 0) {
-			components::NodeMap & nmap = cluster.getMutableNodeMap();
-			components::ConnectionMap & cmap = cluster.getMutableConnectionMap();
+	if (count > 0) {
 
-			std::vector<boost::shared_ptr<components::Node> > source_nodes = nmap.getRandomRange(count);
-			std::vector<boost::shared_ptr<components::Node> > dest_nodes = nmap.getRandomRange(count);
+		// get a random selection of nodes
+		std::list<boost::shared_ptr<components::Node> > source_nodes = this->getRandomNodes(count, false);
 
-			assert(source_nodes.size() == dest_nodes.size());
+		// forall in source_nodes
+		{
+			std::list<boost::shared_ptr<components::Node> >::const_iterator it_source_nodes = source_nodes.begin();
+			const std::list<boost::shared_ptr<components::Node> >::const_iterator it_source_nodes_end =
+					source_nodes.end();
+			while (it_source_nodes != it_source_nodes_end) {
+				// get inputs and delete them from cluster
+				cluster.getMutableConnectionMap().remove((*it_source_nodes)->getConnector().getInputsUUID());
+				// now disconnect node
+				(*it_source_nodes)->destroyAllConnections();
+				dead_nodes.push_back(*it_source_nodes);
+				++it_source_nodes;
+			}
+		}
+		// remove dead nodes from cluster
+		cluster.getMutableNodeMap().remove(dead_nodes);
+	}
 
-			// forall in source_nodes
-			{
-				std::vector<boost::shared_ptr<components::Node> >::iterator it_source_nodes = source_nodes.begin();
-				const std::vector<boost::shared_ptr<components::Node> >::const_iterator it_source_nodes_end =
-						source_nodes.end();
-				std::vector<boost::shared_ptr<components::Node> >::iterator it_dest_nodes = dest_nodes.begin();
-				while (it_source_nodes != it_source_nodes_end) {
-					boost::shared_ptr<components::Connection> tempcon(new components::Connection);
+	return dead_nodes;
+}
 
-					tempcon->getMutableConnector().connectInput(*it_source_nodes);
-					tempcon->getMutableConnector().connectOutput(*it_dest_nodes);
+std::list<boost::shared_ptr<components::Connection> > ClusterArchitect::destroyRandomConnections(int count) {
+	std::cout << "ClusterArchitect::destroyRandomConnections: " << "count: " << count << std::endl;
+	std::list<boost::shared_ptr<components::Connection> > dead_connections;
+	if (count > 0) {
+		std::list<boost::shared_ptr<components::Connection> > rand_conns = this->getRandomConnections(count, false);
+		// forall in rand_conns
+		{
+			std::list<boost::shared_ptr<components::Connection> >::iterator it_rand_conns = rand_conns.begin();
+			const std::list<boost::shared_ptr<components::Connection> >::const_iterator it_rand_conns_end =
+					rand_conns.end();
+			while (it_rand_conns != it_rand_conns_end) {
+				// delete
+				(*it_rand_conns)->disconnect();
+				++it_rand_conns;
+			}
+		}
+		// remove connections from cluster
+		cluster.getMutableConnectionMap().remove(dead_connections);
+	}
+	return dead_connections;
+}
 
-					(*it_source_nodes)->getMutableConnector().connectOutput(tempcon);
-					(*it_dest_nodes)->getMutableConnector().connectInput(tempcon);
+std::list<boost::shared_ptr<components::Node> > ClusterArchitect::getRandomNodes(const int count,
+		const bool allow_primary) {
+	std::list<boost::shared_ptr<components::Node> > random_nodes;
+	if (count > 0) {
 
-					cmap.add(tempcon);
-					new_connections.push_back(tempcon);
-					++it_source_nodes;
-					++it_dest_nodes;
+		// Amount of random nodes to grab, allowing that some may not be suitable for deletion so will be ignored
+		const unsigned int RANDOM_CHUNK_GRAB = 2 * count;
+		// Count the number of grabs we've made
+		unsigned int grab_count = 0;
+		const unsigned int CLUSTER_PRE_SZ = cluster.getNodeMap().getSize();
+		const unsigned int ui_count = static_cast<unsigned int>(count);
+
+		// Process actual deletion of nodes
+		{
+			while ((random_nodes.size() < ui_count) && ((RANDOM_CHUNK_GRAB * grab_count) < CLUSTER_PRE_SZ)) {
+				// get a random selection of nodes
+				std::list<boost::shared_ptr<components::Node> > source_nodes = this->getRandomNodes(RANDOM_CHUNK_GRAB,
+						false);
+				++grab_count;
+
+				// forall in source_nodes
+				{
+					std::list<boost::shared_ptr<components::Node> >::const_iterator it_source_nodes =
+							source_nodes.begin();
+					const std::list<boost::shared_ptr<components::Node> >::const_iterator it_source_nodes_end =
+							source_nodes.end();
+					while (it_source_nodes != it_source_nodes_end) {
+						// check if its attached to a fibre
+
+						if (allow_primary == true) {
+							random_nodes.push_back(*it_source_nodes);
+
+						} else if (((*it_source_nodes)->isPrimaryInputAttachedNode() == false)
+								&& ((*it_source_nodes)->isPrimaryOutputAttachedNode() == false)) {
+							random_nodes.push_back(*it_source_nodes);
+						}
+						++it_source_nodes;
+					}
 				}
 			}
 
 		}
-
-		assert(new_connections.size() == static_cast<unsigned int>(count));
-		return new_connections;
 	}
+	return random_nodes;
+}
 
-	std::list<boost::shared_ptr<components::Node> > ClusterArchitect::destroyRandomNodes(int count) {
-		std::cout << "ClusterArchitect::destroyRandomNodes: " << "count: " << count << std::endl;
-		std::list<boost::shared_ptr<components::Node> > dead_nodes;
+const std::list<ClusterAnalysisData> & ClusterArchitect::getHistory() const {
+	return history;
+}
 
-		if (count > 0) {
+int ClusterArchitect::getMaxHistorySize() const {
+	return maxHistorySize;
+}
 
-		}
-		return dead_nodes;
+void ClusterArchitect::setMaxHistorySize(int sz) {
+	if (sz > 0) {
+		maxHistorySize = sz;
+	} else {
+		maxHistorySize = 1;
 	}
+}
 
-	std::list<boost::shared_ptr<components::Connection> > ClusterArchitect::destroyRandomConnections(int count) {
-		std::cout << "ClusterArchitect::destroyRandomConnections: " << "count: " << count << std::endl;
-		std::list<boost::shared_ptr<components::Connection> > dead_connections;
-		if (count > 0) {
+void ClusterArchitect::addHistoryEntry(ClusterAnalysisData entry) {
+	const unsigned int max_sz = static_cast<unsigned int>(this->getMaxHistorySize());
 
-		}
-		return dead_connections;
+	history.push_back(entry);
+
+	while (history.size() > max_sz) {
+		history.pop_front();
 	}
+	currentClusterAnalysisData = entry;
 
-	std::vector<boost::shared_ptr<components::Node> > ClusterArchitect::getRandomNodes(int count) {
-		std::vector<boost::shared_ptr<components::Node> > cont;
-		if (count > 0) {
-			cont = cluster.getMutableNodeMap().getRandomRange(count);
-		}
-		return cont;
+	this->getHistoryStatistics(this->minClusterAnalysisData, this->maxClusterAnalysisData,
+			this->averageClusterAnalysisData);
+}
+void ClusterArchitect::getHistoryStatistics(ClusterAnalysisData & minCad, ClusterAnalysisData & maxCad,
+		ClusterAnalysisData & avCad) {
 
-	}
-
-	const std::list<ClusterAnalysisData> & ClusterArchitect::getHistory() const {
-		return history;
-	}
-
-	int ClusterArchitect::getMaxHistorySize() const {
-		return maxHistorySize;
-	}
-
-	void ClusterArchitect::setMaxHistorySize(int sz) {
-		if (sz > 0) {
-			maxHistorySize = sz;
-		} else {
-			maxHistorySize = 1;
-		}
-	}
-
-	void ClusterArchitect::addHistoryEntry(ClusterAnalysisData entry) {
-		const unsigned int max_sz = static_cast<unsigned int>(this->getMaxHistorySize());
-
-		history.push_back(entry);
-
-		while (history.size() > max_sz) {
-			history.pop_front();
-		}
-		currentClusterAnalysisData = entry;
-
-		this->getHistoryStatistics(this->minClusterAnalysisData, this->maxClusterAnalysisData,
-				this->averageClusterAnalysisData);
-	}
-	void ClusterArchitect::getHistoryStatistics(ClusterAnalysisData & minCad, ClusterAnalysisData & maxCad,
-			ClusterAnalysisData & avCad) {
-
-		ClusterAnalysisData sumCad;
+	ClusterAnalysisData sumCad;
 
 // forall in history
-		{
-			std::list<ClusterAnalysisData>::const_iterator it_history = history.begin();
-			const std::list<ClusterAnalysisData>::const_iterator it_history_end = history.end();
-			while (it_history != it_history_end) {
-				sumCad += *it_history;
-				if (minCad > *it_history) {
-					minCad = *it_history;
-				}
-				if (maxCad < *it_history) {
-					maxCad = *it_history;
-				}
-				++it_history;
+	{
+		std::list<ClusterAnalysisData>::const_iterator it_history = history.begin();
+		const std::list<ClusterAnalysisData>::const_iterator it_history_end = history.end();
+		while (it_history != it_history_end) {
+			sumCad += *it_history;
+			if (minCad > *it_history) {
+				minCad = *it_history;
 			}
+			if (maxCad < *it_history) {
+				maxCad = *it_history;
+			}
+			++it_history;
 		}
-
-		avCad = sumCad / history.size();
 	}
 
-	void ClusterArchitect::splitHistoryByValue(double db, int countback,
-			std::map<common::Cycle, ClusterAnalysisData> & below,
-			std::map<common::Cycle, ClusterAnalysisData> & above) const {
-		if (countback <= 0) {
-			countback = history.size();
-		}
+	avCad = sumCad / history.size();
+}
+
+void ClusterArchitect::splitHistoryByValue(double db, int countback,
+		std::map<common::Cycle, ClusterAnalysisData> & below,
+		std::map<common::Cycle, ClusterAnalysisData> & above) const {
+	if (countback <= 0) {
+		countback = history.size();
+	}
 
 // forall in history
-		{
-			std::list<ClusterAnalysisData>::const_reverse_iterator it_history = history.rbegin();
-			const std::list<ClusterAnalysisData>::const_reverse_iterator it_history_end = history.rend();
-			while ((it_history != it_history_end) && countback > 0) {
-				if (it_history->getClusterEnergy() > db) {
-					above[it_history->getCycle()] = *it_history;
-				} else {
-					below[it_history->getCycle()] = *it_history;
-				}
-				--countback;
-				++it_history;
+	{
+		std::list<ClusterAnalysisData>::const_reverse_iterator it_history = history.rbegin();
+		const std::list<ClusterAnalysisData>::const_reverse_iterator it_history_end = history.rend();
+		while ((it_history != it_history_end) && countback > 0) {
+			if (it_history->getClusterEnergy() > db) {
+				above[it_history->getCycle()] = *it_history;
+			} else {
+				below[it_history->getCycle()] = *it_history;
 			}
+			--countback;
+			++it_history;
 		}
-		assert(below.size() + above.size() == history.size());
 	}
+	assert(below.size() + above.size() == history.size());
+}
 
-	std::vector<ClusterAnalysisData> ClusterArchitect::getHistoryEntriesInRange(double min_db, double max_db,
-			int count) const {
-		std::map<common::Cycle, ClusterAnalysisData> above_max;
-		std::map<common::Cycle, ClusterAnalysisData> below_max;
-		std::map<common::Cycle, ClusterAnalysisData> above_min;
-		std::map<common::Cycle, ClusterAnalysisData> below_min;
-		this->splitHistoryByValue(min_db, count, below_min, above_min);
-		this->splitHistoryByValue(max_db, count, below_max, above_max);
+std::vector<ClusterAnalysisData> ClusterArchitect::getHistoryEntriesInRange(double min_db, double max_db,
+		int count) const {
+	std::map<common::Cycle, ClusterAnalysisData> above_max;
+	std::map<common::Cycle, ClusterAnalysisData> below_max;
+	std::map<common::Cycle, ClusterAnalysisData> above_min;
+	std::map<common::Cycle, ClusterAnalysisData> below_min;
+	this->splitHistoryByValue(min_db, count, below_min, above_min);
+	this->splitHistoryByValue(max_db, count, below_max, above_max);
 
-		std::vector<ClusterAnalysisData> intersection;
+	std::vector<ClusterAnalysisData> intersection;
 
 // forall in above_min
-		{
-			std::map<common::Cycle, ClusterAnalysisData>::const_iterator it_above_min = above_min.begin();
-			const std::map<common::Cycle, ClusterAnalysisData>::const_iterator it_above_min_end = above_min.end();
-			while (it_above_min != it_above_min_end) {
-				std::map<common::Cycle, ClusterAnalysisData>::iterator it_found = below_max.find(it_above_min->first);
-				if (it_found != below_max.end()) {
-					assert(it_found->second.getUUID() == it_above_min->second.getUUID());
-					intersection.push_back(it_above_min->second);
-				}
-				++it_above_min;
+	{
+		std::map<common::Cycle, ClusterAnalysisData>::const_iterator it_above_min = above_min.begin();
+		const std::map<common::Cycle, ClusterAnalysisData>::const_iterator it_above_min_end = above_min.end();
+		while (it_above_min != it_above_min_end) {
+			std::map<common::Cycle, ClusterAnalysisData>::iterator it_found = below_max.find(it_above_min->first);
+			if (it_found != below_max.end()) {
+				assert(it_found->second.getUUID() == it_above_min->second.getUUID());
+				intersection.push_back(it_above_min->second);
 			}
-		}
-		return intersection;
-	}
-
-	void ClusterArchitect::createConnection(boost::shared_ptr<components::Node> nodeStart,
-			boost::shared_ptr<components::Node> nodeEnd, int connectivity) {
-
-		for (int i = 0; i < connectivity; i++) {
-
-			boost::shared_ptr<components::Connection> tempcon(new components::Connection);
-
-			tempcon->getMutableConnector().connectInput(nodeStart);
-			tempcon->getMutableConnector().connectOutput(nodeEnd);
-
-			nodeStart->getMutableConnector().connectOutput(tempcon);
-			nodeEnd->getMutableConnector().connectInput(tempcon);
-
-			cluster.getMutableConnectionMap().add(tempcon);
-
+			++it_above_min;
 		}
 	}
+	return intersection;
+}
+
+void ClusterArchitect::createConnection(boost::shared_ptr<components::Node> nodeStart,
+		boost::shared_ptr<components::Node> nodeEnd, int connectivity) {
+
+	for (int i = 0; i < connectivity; i++) {
+
+		boost::shared_ptr<components::Connection> tempcon(new components::Connection);
+
+		tempcon->getMutableConnector().connectInput(nodeStart);
+		tempcon->getMutableConnector().connectOutput(nodeEnd);
+
+		nodeStart->getMutableConnector().connectOutput(tempcon);
+		nodeEnd->getMutableConnector().connectInput(tempcon);
+
+		cluster.getMutableConnectionMap().add(tempcon);
+
+	}
+}
+
+boost::shared_ptr<components::Connection> ClusterArchitect::deleteConnection(
+		boost::shared_ptr<components::Connection> conn) {
+	conn->getMutableConnector().disconnectAllInputs();
+	conn->getMutableConnector().disconnectAllOutputs();
+	cluster.getMutableConnectionMap().remove(conn);
+	return conn;
+}
 
 } /* namespace manipulators */
 } /* namespace cryomesh */
