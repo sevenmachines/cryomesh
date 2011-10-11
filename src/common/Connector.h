@@ -9,11 +9,14 @@
 #ifndef CONNECTOR_H_
 #define CONNECTOR_H_
 
+//#define CONNECTOR_DEBUG
+
 #include "common/Cycle.h"
 
 #include <map>
 #include <boost/shared_ptr.hpp>
 #include <boost/uuid/uuid.hpp>
+#include <boost/uuid/uuid_io.hpp>
 #include "common/Misc.h"
 
 namespace cryomesh {
@@ -681,6 +684,22 @@ protected:
 	 */
 	boost::shared_ptr<T> disconnect(const boost::shared_ptr<T> obj,
 			std::map<boost::uuids::uuid, boost::shared_ptr<T> > & objs) {
+#ifdef CONNECTOR_DEBUG
+		std::cout << "Connector::disconnect: " << obj->getUUID() << " -> " << "{ " << std::endl;
+		// forall in objs
+		{
+			typename std::map<boost::uuids::uuid, boost::shared_ptr<T> >::const_iterator it_objs = objs.begin();
+			const typename std::map<boost::uuids::uuid, boost::shared_ptr<T> >::const_iterator it_objs_end = objs.end();
+			while (it_objs != it_objs_end) {
+				std::cout << it_objs->first;
+				++it_objs;
+				if (it_objs != it_objs_end) {
+					std::cout << ", ";
+				}
+			}
+			std::cout<<" }"<<std::endl;
+		}
+#endif
 		boost::shared_ptr<T> deleted_obj;
 		typename std::map<boost::uuids::uuid, boost::shared_ptr<T> >::iterator it_found = objs.find(obj->getUUID());
 		if (it_found != objs.end()) {
@@ -704,6 +723,22 @@ protected:
 	 */
 	boost::shared_ptr<T> disconnect(const boost::uuids::uuid & id,
 			std::map<boost::uuids::uuid, boost::shared_ptr<T> > & objs) {
+#ifdef CONNECTOR_DEBUG
+		std::cout << "Connector::disconnect: " << id << " -> " << "{ " << std::endl;
+		// forall in objs
+		{
+			typename std::map<boost::uuids::uuid, boost::shared_ptr<T> >::const_iterator it_objs = objs.begin();
+			const typename std::map<boost::uuids::uuid, boost::shared_ptr<T> >::const_iterator it_objs_end = objs.end();
+			while (it_objs != it_objs_end) {
+				std::cout << it_objs->first;
+				++it_objs;
+				if (it_objs != it_objs_end) {
+					std::cout << ", ";
+				}
+			}
+			std::cout<<" }"<<std::endl;
+		}
+#endif
 		boost::shared_ptr<T> deleted_obj;
 		typename std::map<boost::uuids::uuid, boost::shared_ptr<T> >::iterator it_found = objs.find(id);
 		if (it_found != objs.end()) {
