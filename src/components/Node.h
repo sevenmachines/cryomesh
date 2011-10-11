@@ -35,9 +35,8 @@ class Connection;
  * Impulses are accumulated and new Impulses generated depending
  * on some determining criteria
  */
-class Node: public common::Tagged,
-		public dataobjects::DataObjectController<unsigned long int, double>,
-		public common::Debuggable {
+class Node: public common::Tagged, public dataobjects::DataObjectController<unsigned long int, double>,
+public common::Debuggable {
 public:
 
 	/**
@@ -47,10 +46,8 @@ public:
 		Positive, Negative, None
 	};
 
-	enum RecoverySetting{
-		CLEAR_ALL_IMPULSES =1,
-		CLEAR_ACTIVE_IMPULSES =2,
-		DEACTIVATE_DURING_RECOVERY=4
+	enum RecoverySetting {
+		CLEAR_ALL_IMPULSES = 1, CLEAR_ACTIVE_IMPULSES = 2, DEACTIVATE_DURING_RECOVERY = 4
 	};
 
 	/**
@@ -239,7 +236,7 @@ public:
 	 * @return spacial::Point
 	 * 	The spacial location of the node
 	 */
-	const spacial::Point & getPosition() const ;
+	const spacial::Point & getPosition() const;
 
 	/**
 	 * Set the spacial position of the node, remembering to update connections lengths
@@ -295,11 +292,27 @@ public:
 	 */
 	bool isLive();
 
+	/**
+	 * Destroy all connections
+	 */
+	void destroyAllConnections();
+
+	/**
+	 * Destroy Input connections by removing them all from both their attached
+	 * input and output nodes
+	 */
+	void destroyAllInputConnections();
+	/**
+	 * Destroy Output connections by removing them all from both their attached
+	 * input and output nodes
+	 */
+	void destroyAllOutputConnections();
+
 	bool isPrimaryInputAttachedNode() const;
 	bool isPrimaryOutputAttachedNode() const;
 
-	std::vector<boost::shared_ptr< Connection > > getPrimaryInputConnections();
-	std::vector<boost::shared_ptr< Connection > > getPrimaryOutputConnections();
+	std::vector<boost::shared_ptr<Connection> > getPrimaryInputConnections();
+	std::vector<boost::shared_ptr<Connection> > getPrimaryOutputConnections();
 
 	/**
 	 * To stream operator
@@ -314,7 +327,9 @@ public:
 	 */
 	friend std::ostream& operator<<(std::ostream & os, const Node & obj);
 
-	std::ostream & printConnections(std::ostream & os, const std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > & all_cons, const std::string formatter="")const ;
+	std::ostream & printConnections(std::ostream & os,
+			const std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > & all_cons, const std::string formatter =
+					"") const;
 
 	// STATICS
 
@@ -333,12 +348,11 @@ public:
 	static const double MAX_ACTIVITY_THRESHOLD;
 
 	/**
-		 * The min activity threshold which triggers an impulse
-		 *
-		 * @var double
-		 */
-		static const double MIN_ACTIVITY_THRESHOLD;
-
+	 * The min activity threshold which triggers an impulse
+	 *
+	 * @var double
+	 */
+	static const double MIN_ACTIVITY_THRESHOLD;
 
 	/*
 	 * The default max Point for the bounding box
@@ -408,7 +422,7 @@ protected:
 	 */
 	virtual void updatePosition();
 
-	virtual void enterRecovery( const int recovery_settings = CLEAR_ALL_IMPULSES);
+	virtual void enterRecovery(const int recovery_settings = CLEAR_ALL_IMPULSES);
 
 private:
 	/**

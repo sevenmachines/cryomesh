@@ -6,7 +6,6 @@
  */
 
 //#define NODE_DEBUG
-
 #include "Node.h"
 #include "structures/Mesh.h"
 
@@ -36,7 +35,8 @@ boost::shared_ptr<Node> Node::getRandom(const spacial::Point & max_point) {
 }
 
 Node::Node() :
-		activityThreshold(MAX_ACTIVITY_THRESHOLD), connector(), impulses(),emittedImpulse(), activities(), position(0,0,0) , lastActivationState(None){
+		activityThreshold(MAX_ACTIVITY_THRESHOLD), connector(), impulses(), emittedImpulse(), activities(), position(0,
+				0, 0), lastActivationState(None) {
 	connector = boost::shared_ptr<common::Connector<Node, Connection> >(new common::Connector<Node, Connection>());
 	emittedImpulse = boost::shared_ptr<Impulse>(new Impulse());
 	emittedImpulse->randomise();
@@ -198,8 +198,8 @@ void Node::emitImpulseNegative() {
 
 void Node::emitImpulse(bool positive) {
 	// Add impulse to all outgoing connections
-	std::map < boost::uuids::uuid, boost::shared_ptr<Connection> > &objs
-			= this->getMutableConnector().getMutableOutputs();
+	std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > &objs =
+			this->getMutableConnector().getMutableOutputs();
 	// forall in objs
 	{
 		std::map<boost::uuids::uuid, boost::shared_ptr<Connection> >::const_iterator it_objs = objs.begin();
@@ -268,7 +268,7 @@ double Node::getActivity(const common::Cycle & cycle) const {
 	return this->getImpulses().getActivity(cycle);
 }
 
-double Node::getActivityThreshold() const{
+double Node::getActivityThreshold() const {
 	return activityThreshold;
 }
 
@@ -423,7 +423,7 @@ bool Node::isPrimaryOutputAttachedNode() const {
 }
 
 std::vector<boost::shared_ptr<Connection> > Node::getPrimaryInputConnections() {
-	std::vector < boost::shared_ptr<Connection> > found_connections;
+	std::vector<boost::shared_ptr<Connection> > found_connections;
 
 	const std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > & all_connections =
 			this->getConnector().getInputs();
@@ -445,7 +445,7 @@ std::vector<boost::shared_ptr<Connection> > Node::getPrimaryInputConnections() {
 }
 
 std::vector<boost::shared_ptr<Connection> > Node::getPrimaryOutputConnections() {
-	std::vector < boost::shared_ptr<Connection> > found_connections;
+	std::vector<boost::shared_ptr<Connection> > found_connections;
 
 	const std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > & all_connections =
 			this->getConnector().getOutputs();
@@ -473,10 +473,49 @@ void Node::connectOutput(boost::shared_ptr<Connection> con) {
 	this->getMutableConnector().connectOutput(con);
 }
 
+void Node::destroyAllConnections() {
+	this->destroyAllInputConnections();
+	this->destroyAllOutputConnections();
+}
+
+void Node::destroyAllInputConnections() {
+	std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> > & all_input_connections =
+			this->getMutableConnector().getMutableInputs();
+	// forall in all_input_connections
+	{
+		std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::iterator it_all_input_connections =
+				all_input_connections.begin();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::const_iterator it_all_input_connections_end =
+				all_input_connections.end();
+		while (it_all_input_connections != it_all_input_connections_end) {
+			it_all_input_connections->second->getConnector().disconnectAllInputs();
+			it_all_input_connections->second->getConnector().disconnectAllOutputs();
+			++it_all_input_connections;
+		}
+	}
+}
+
+void Node::destroyAllOutputConnections() {
+	std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> > & all_output_connections =
+			this->getMutableConnector().getMutableInputs();
+	// forall in all_input_connections
+	{
+		std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::iterator it_all_output_connections =
+				all_output_connections.begin();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::const_iterator it_all_output_connections_end =
+				all_output_connections.end();
+		while (it_all_output_connections != it_all_output_connections_end) {
+			it_all_output_connections->second->getConnector().disconnectAllInputs();
+			it_all_output_connections->second->getConnector().disconnectAllOutputs();
+			++it_all_output_connections;
+		}
+	}
+}
+
 void Node::updatePosition() {
 	// update input connections
 	{
-		std::map < boost::uuids::uuid, boost::shared_ptr<Connection> > &connections = connector->getMutableInputs();
+		std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > &connections = connector->getMutableInputs();
 		// forall in connections
 		{
 			std::map<boost::uuids::uuid, boost::shared_ptr<Connection> >::iterator it_connections = connections.begin();
@@ -490,7 +529,7 @@ void Node::updatePosition() {
 	}
 	// update output connections
 	{
-		std::map < boost::uuids::uuid, boost::shared_ptr<Connection> > &connections = connector->getMutableOutputs();
+		std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > &connections = connector->getMutableOutputs();
 		// forall in connections
 		{
 			std::map<boost::uuids::uuid, boost::shared_ptr<Connection> >::iterator it_connections = connections.begin();
@@ -514,9 +553,9 @@ std::ostream& operator<<(std::ostream & os, const Node & obj) {
 	if (obj.isPrimaryOutputAttachedNode()) {
 		ss << "(POUT) ";
 	}
-	os << "Node: " << obj.getUUIDSummary() << " " << ss.str() << "connections:"
-			<< obj.getConnector().getInputs().size() << ">" << obj.getConnector().getOutputs().size() << " impulses: "
-			<< obj.getImpulses().getSize() << " activityThreshold: "<<obj.getActivityThreshold();
+	os << "Node: " << obj.getUUIDSummary() << " " << ss.str() << "connections:" << obj.getConnector().getInputs().size()
+			<< ">" << obj.getConnector().getOutputs().size() << " impulses: " << obj.getImpulses().getSize()
+			<< " activityThreshold: " << obj.getActivityThreshold();
 
 	if (obj.isDebugOn() == true) {
 		if (obj.getImpulses().getSize() > 0) {
@@ -536,7 +575,8 @@ std::ostream& operator<<(std::ostream & os, const Node & obj) {
 }
 
 std::ostream & Node::printConnections(std::ostream & os,
-		const std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > & all_cons, const std::string formatter) const {
+		const std::map<boost::uuids::uuid, boost::shared_ptr<Connection> > & all_cons
+		, const std::string formatter) const {
 	// forall in all_cons
 	{
 		int count = 1;
