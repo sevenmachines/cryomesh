@@ -30,7 +30,7 @@ template<class U, class T>
 class Connector {
 public:
 	Connector(const unsigned int max_inputs = 0, const unsigned int max_outputs = 0) :
-		minputs(), moutputs(),maxInputs(max_inputs), maxOutputs(max_outputs) {
+			minputs(), moutputs(), maxInputs(max_inputs), maxOutputs(max_outputs) {
 	}
 
 	virtual ~Connector() {
@@ -522,6 +522,37 @@ public:
 		return minputs;
 	}
 
+	const std::list<boost::uuids::uuid> getInputsUUID() const {
+		std::list<boost::uuids::uuid> uuids;
+		// forall in minputs
+		{
+			typename std::map<boost::uuids::uuid, boost::shared_ptr<T> >::const_iterator it_minputs = minputs.begin();
+			const typename std::map<boost::uuids::uuid, boost::shared_ptr<T> >::const_iterator it_minputs_end =
+					minputs.end();
+			while (it_minputs != it_minputs_end) {
+				uuids.push_back(it_minputs->first);
+				++it_minputs;
+			}
+		}
+		return uuids;
+	}
+
+	const std::list<boost::uuids::uuid> getOutputsUUID() const {
+		std::list<boost::uuids::uuid> uuids;
+
+		// forall in moutputs
+		{
+			typename std::map<boost::uuids::uuid, boost::shared_ptr<T> >::const_iterator it_moutputs = moutputs.begin();
+			const typename std::map<boost::uuids::uuid, boost::shared_ptr<T> >::const_iterator it_moutputs_end =
+					moutputs.end();
+			while (it_moutputs != it_moutputs_end) {
+				uuids.push_back(it_moutputs->first);
+				++it_moutputs;
+			}
+		}
+		return uuids;
+	}
+
 	/**
 	 * Get all inputs as mutable object
 	 *
@@ -567,7 +598,7 @@ public:
 	 *		The output stream
 	 */
 	friend std::ostream& operator<<(std::ostream & os, const Connector<U, T> & obj) {
-		os << "Connector< "<<obj.getInputs().size()<<", "<<obj.getOutputs().size()<<">:" << std::endl;
+		os << "Connector< " << obj.getInputs().size() << ", " << obj.getOutputs().size() << ">:" << std::endl;
 		os << "\tInputs:" << std::endl;
 		// forall in minputs
 		{
