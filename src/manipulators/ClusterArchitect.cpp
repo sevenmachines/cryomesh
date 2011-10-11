@@ -5,7 +5,7 @@
  *      Author: niall
  */
 
-#define CLUSTERARCHITECT_DEBUG
+//#define CLUSTERARCHITECT_DEBUG
 
 #include "ClusterArchitect.h"
 #include <boost/shared_ptr.hpp>
@@ -60,8 +60,8 @@ std::set<boost::shared_ptr<cryomesh::components::Node> > ClusterArchitect::creat
 		std::cout << "ENABLE_EVEN_DISTRIBUTION ";
 	}
 	std::cout << ")" << std::endl;
-#endif
 	unsigned int pre_nodes_sz = cluster.getNodeMap().getSize();
+#endif
 
 	// new nodes that will be created
 	std::set<boost::shared_ptr<cryomesh::components::Node> > new_nodes;
@@ -156,7 +156,7 @@ std::set<boost::shared_ptr<cryomesh::components::Node> > ClusterArchitect::creat
 								assert(!evenly_distribute);
 							}
 #endif
-							if ((!self_connect || not_same) && (!evenly_distribute || node_has_capacity)) {
+							if ((self_connect || not_same) && (!evenly_distribute || node_has_capacity)) {
 								this->createConnection(temp_source_node, temp_dest_node, 1);
 								++current_in_count;
 							}
@@ -219,7 +219,7 @@ std::set<boost::shared_ptr<cryomesh::components::Node> > ClusterArchitect::creat
 								assert(!evenly_distribute);
 							}
 #endif
-							if ((!self_connect || not_same) && (!evenly_distribute || node_has_capacity)) {
+							if ((self_connect || not_same) && (!evenly_distribute || node_has_capacity)) {
 								this->createConnection(temp_source_node, temp_dest_node, 1);
 								++current_out_count;
 							}

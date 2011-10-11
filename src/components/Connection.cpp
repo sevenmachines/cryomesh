@@ -5,7 +5,7 @@
  *      Author: SevenMachines<SevenMachines@yahoo.co.uk>
  */
 
-#define CONNECTION_DEBUG
+//#define CONNECTION_DEBUG
 #include "Connection.h"
 #include "manager/ConnectionDatabaseObject.h"
 
