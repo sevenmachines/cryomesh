@@ -201,6 +201,9 @@ const components::NodeMap & Cluster::getNodeMap() const {
 components::NodeMap & Cluster::getMutableNodeMap() {
 	return nodes;
 }
+const components::ConnectionMap & Cluster::getConnectionMap() const{
+	return connections;
+}
 components::ConnectionMap & Cluster::getMutableConnectionMap() {
 	return connections;
 }

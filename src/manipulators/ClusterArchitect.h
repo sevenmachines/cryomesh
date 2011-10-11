@@ -13,6 +13,7 @@
 #include "common/Cycle.h"
 #include <map>
 #include <list>
+#include <set>
 
 namespace cryomesh {
 namespace manipulators {
@@ -49,22 +50,22 @@ public:
 	/**
 	 * Create a number of random nodes
 	 */
-	virtual std::list<boost::shared_ptr<cryomesh::components::Node> >  createRandomNodes(int count, int connectivity = 0, int strategy = 0);
+	virtual std::set<boost::shared_ptr<cryomesh::components::Node> >  createRandomNodes(int count, int connectivity = 0, int strategy = 0);
 
 	/**
 	 * Create a number of random connections
 	 */
-	virtual std::list <boost::shared_ptr<components::Connection> > createRandomConnections(int count);
+	virtual std::map< boost::uuids::uuid, boost::shared_ptr<components::Connection> > createRandomConnections(int count);
 
 	/**
 	 * Destroy random nodes
 	 */
-	virtual std::list <boost::shared_ptr<components::Node> > destroyRandomNodes(int count);
+	virtual std::map< boost::uuids::uuid, boost::shared_ptr<components::Node> > destroyRandomNodes(int count);
 
 	/**
 	 * Destroy random connections
 	 */
-	virtual std::list <boost::shared_ptr<components::Connection> > destroyRandomConnections(int count);
+	virtual std::map< boost::uuids::uuid, boost::shared_ptr<components::Connection> > destroyRandomConnections(int count);
 
 	/**
 	 * Get a collection of random nodes from the cluster
@@ -77,7 +78,7 @@ public:
 	 * @return std::list<boost::shared_ptr<components::Node> >
 	 * 	List of random nodes
 	 */
-	virtual std::list<boost::shared_ptr<components::Node> > getRandomNodes(const int count, const bool allow_primary ) ;
+	virtual std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > getRandomNodes(const int count, const bool allow_primary ) ;
 
 
 	/**
@@ -91,7 +92,7 @@ public:
 	 * @return std::list<boost::shared_ptr<components::Connection> >
 	 * 	List of random connections
 	 */
-	virtual std::list<boost::shared_ptr<components::Connection> > getRandomConnections(const int count, const bool allow_primary ) ;
+	virtual std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection>  > getRandomConnections(const int count, const bool allow_primary ) ;
 
 	int getMaxHistorySize() const;
 	void setMaxHistorySize(int sz);

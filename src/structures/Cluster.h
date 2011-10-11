@@ -126,6 +126,7 @@ public:
 	 * 	The NodeMap for this Cluster
 	 */
 	const components::NodeMap & getNodeMap() const;
+	const components::ConnectionMap & getConnectionMap() const;
 
 	/**
 	 * Get the mutable NodeMap for this Cluster

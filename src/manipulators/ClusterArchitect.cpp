@@ -49,7 +49,7 @@ const ClusterAnalysisData ClusterArchitect::analyseCluster() {
 	return ClusterAnalysisData(0, 0, 0, 0, 0);
 }
 
-std::list<boost::shared_ptr<cryomesh::components::Node> > ClusterArchitect::createRandomNodes(int count,
+std::set<boost::shared_ptr<cryomesh::components::Node> > ClusterArchitect::createRandomNodes(int count,
 		int connectivity, int strategy) {
 #ifdef CLUSTERARCHITECT_DEBUG
 	std::cout << "ClusterArchitect::createRandomNodes: " << "( " << count << ", " << connectivity << ", ";
@@ -64,7 +64,7 @@ std::list<boost::shared_ptr<cryomesh::components::Node> > ClusterArchitect::crea
 	unsigned int pre_nodes_sz = cluster.getNodeMap().getSize();
 
 	// new nodes that will be created
-	std::list<boost::shared_ptr<cryomesh::components::Node> > new_nodes;
+	std::set<boost::shared_ptr<cryomesh::components::Node> > new_nodes;
 
 	if (count > 0) {
 
@@ -80,7 +80,7 @@ std::list<boost::shared_ptr<cryomesh::components::Node> > ClusterArchitect::crea
 
 		for (int i = 0; i < count; i++) {
 			boost::shared_ptr<components::Node> tempnode = components::Node::getRandom(cluster.getMaxBoundingBox());
-			new_nodes.push_back(tempnode);
+			new_nodes.insert(tempnode);
 		}
 
 		// if there are enough nodes in the cluster bulk already then delay adding the new ones
@@ -115,9 +115,8 @@ std::list<boost::shared_ptr<cryomesh::components::Node> > ClusterArchitect::crea
 
 				// forall in new_nodes
 				{
-					std::list<boost::shared_ptr<cryomesh::components::Node> >::iterator it_new_nodes =
-							new_nodes.begin();
-					const std::list<boost::shared_ptr<cryomesh::components::Node> >::const_iterator it_new_nodes_end =
+					std::set<boost::shared_ptr<cryomesh::components::Node> >::iterator it_new_nodes = new_nodes.begin();
+					const std::set<boost::shared_ptr<cryomesh::components::Node> >::const_iterator it_new_nodes_end =
 							new_nodes.end();
 					std::vector<boost::shared_ptr<cryomesh::components::Node> >::iterator it_node_range =
 							node_range.begin();
@@ -180,9 +179,8 @@ std::list<boost::shared_ptr<cryomesh::components::Node> > ClusterArchitect::crea
 
 				// forall in new_nodes
 				{
-					std::list<boost::shared_ptr<cryomesh::components::Node> >::iterator it_new_nodes =
-							new_nodes.begin();
-					const std::list<boost::shared_ptr<cryomesh::components::Node> >::const_iterator it_new_nodes_end =
+					std::set<boost::shared_ptr<cryomesh::components::Node> >::iterator it_new_nodes = new_nodes.begin();
+					const std::set<boost::shared_ptr<cryomesh::components::Node> >::const_iterator it_new_nodes_end =
 							new_nodes.end();
 					std::vector<boost::shared_ptr<cryomesh::components::Node> >::iterator it_node_range =
 							node_range.begin();
@@ -251,9 +249,9 @@ std::list<boost::shared_ptr<cryomesh::components::Node> > ClusterArchitect::crea
 			if (new_in_bulk == true && pre_nodes_sz == 0) {
 				// forall in new_nodes
 				{
-					std::list<boost::shared_ptr<cryomesh::components::Node> >::const_iterator it_new_nodes =
+					std::set<boost::shared_ptr<cryomesh::components::Node> >::const_iterator it_new_nodes =
 							new_nodes.begin();
-					const std::list<boost::shared_ptr<cryomesh::components::Node> >::const_iterator it_new_nodes_end =
+					const std::set<boost::shared_ptr<cryomesh::components::Node> >::const_iterator it_new_nodes_end =
 							new_nodes.end();
 					while (it_new_nodes != it_new_nodes_end) {
 						int post_inputs_sz = (*it_new_nodes)->getConnector().getInputs().size();
@@ -286,9 +284,10 @@ std::list<boost::shared_ptr<cryomesh::components::Node> > ClusterArchitect::crea
 	return new_nodes;
 }
 
-std::list<boost::shared_ptr<components::Connection> > ClusterArchitect::createRandomConnections(int count) {
+std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> > ClusterArchitect::createRandomConnections(
+		int count) {
 
-	std::list<boost::shared_ptr<components::Connection> > new_connections;
+	std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> > new_connections;
 
 	if (count > 0) {
 		components::NodeMap & nmap = cluster.getMutableNodeMap();
@@ -328,7 +327,7 @@ std::list<boost::shared_ptr<components::Connection> > ClusterArchitect::createRa
 				(*it_dest_nodes)->getMutableConnector().connectInput(tempcon);
 
 				cmap.add(tempcon);
-				new_connections.push_back(tempcon);
+				new_connections[tempcon->getUUID()] = (tempcon);
 				++it_source_nodes;
 				++it_dest_nodes;
 			}
@@ -343,26 +342,28 @@ std::list<boost::shared_ptr<components::Connection> > ClusterArchitect::createRa
 	return new_connections;
 }
 
-std::list<boost::shared_ptr<components::Node> > ClusterArchitect::destroyRandomNodes(int count) {
+std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > ClusterArchitect::destroyRandomNodes(int count) {
 	std::cout << "ClusterArchitect::destroyRandomNodes: " << "count: " << count << std::endl;
-	std::list<boost::shared_ptr<components::Node> > dead_nodes;
+	std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > dead_nodes;
 
 	if (count > 0) {
 
 		// get a random selection of nodes
-		std::list<boost::shared_ptr<components::Node> > source_nodes = this->getRandomNodes(count, false);
+		std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > source_nodes = this->getRandomNodes(count,
+				false);
 
 		// forall in source_nodes
 		{
-			std::list<boost::shared_ptr<components::Node> >::const_iterator it_source_nodes = source_nodes.begin();
-			const std::list<boost::shared_ptr<components::Node> >::const_iterator it_source_nodes_end =
+			std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator it_source_nodes =
+					source_nodes.begin();
+			const std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator it_source_nodes_end =
 					source_nodes.end();
 			while (it_source_nodes != it_source_nodes_end) {
 				// get inputs and delete them from cluster
-				cluster.getMutableConnectionMap().remove((*it_source_nodes)->getConnector().getInputsUUID());
+				cluster.getMutableConnectionMap().remove(it_source_nodes->second->getConnector().getInputsUUID());
 				// now disconnect node
-				(*it_source_nodes)->destroyAllConnections();
-				dead_nodes.push_back(*it_source_nodes);
+				it_source_nodes->second->destroyAllConnections();
+				dead_nodes.insert(*it_source_nodes);
 				++it_source_nodes;
 			}
 		}
@@ -380,50 +381,81 @@ std::list<boost::shared_ptr<components::Node> > ClusterArchitect::destroyRandomN
 	return dead_nodes;
 }
 
-std::list<boost::shared_ptr<components::Connection> > ClusterArchitect::destroyRandomConnections(int count) {
-	std::cout << "ClusterArchitect::destroyRandomConnections: " << "count: " << count << std::endl;
-	std::list<boost::shared_ptr<components::Connection> > dead_connections;
+std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> > ClusterArchitect::destroyRandomConnections(
+		int count) {
+	std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> > dead_connections;
 	if (count > 0) {
-		std::list<boost::shared_ptr<components::Connection> > rand_conns = this->getRandomConnections(count, false);
+		std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> > rand_conns =
+				this->getRandomConnections(count, false);
+#ifdef CLUSTERARCHITECT_DEBUG
+		std::cout << "ClusterArchitect::destroyRandomConnections: " << "count: " << count << " available: "
+				<< rand_conns.size() << std::endl;
+#endif
 		// forall in rand_conns
 		{
-			std::list<boost::shared_ptr<components::Connection> >::iterator it_rand_conns = rand_conns.begin();
-			const std::list<boost::shared_ptr<components::Connection> >::const_iterator it_rand_conns_end =
+			std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::iterator it_rand_conns =
+					rand_conns.begin();
+			const std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::const_iterator it_rand_conns_end =
 					rand_conns.end();
 			while (it_rand_conns != it_rand_conns_end) {
 				// delete
-				(*it_rand_conns)->disconnect();
+				it_rand_conns->second->disconnect();
+				dead_connections.insert(*it_rand_conns);
 				++it_rand_conns;
 			}
 		}
 		// remove connections from cluster
+#ifdef CLUSTERARCHITECT_DEBUG
+		std::cout << "ClusterArchitect::destroyRandomConnections: delete " << dead_connections.size() << " of "
+				<< cluster.getConnectionMap().getSize() << "in cluster" << std::endl;
+// forall in dead_connections
+		{
+			std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::const_iterator it_dead_connections =
+					dead_connections.begin();
+			const std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::const_iterator it_dead_connections_end =
+					dead_connections.end();
+			while (it_dead_connections != it_dead_connections_end) {
+				const std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::const_iterator it_found =
+						cluster.getConnections().find(it_dead_connections->first);
+				assert(it_found != cluster.getConnections().end());
+				++it_dead_connections;
+			}
+		}
+#endif
 		cluster.getMutableConnectionMap().remove(dead_connections);
 	}
 	return dead_connections;
 }
 
-std::list<boost::shared_ptr<components::Node> > ClusterArchitect::getRandomNodes(const int count,
+std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > ClusterArchitect::getRandomNodes(const int count,
 		const bool allow_primary) {
-	std::list<boost::shared_ptr<components::Node> > random_nodes;
+	std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > random_nodes;
 	if (count > 0) {
 
-		// Amount of random nodes to grab, allowing that some may not be suitable for deletion so will be ignored
-		const unsigned int RANDOM_CHUNK_GRAB = 2 * count;
-		// Count the number of grabs we've made
-		unsigned int grab_count = 0;
-		const unsigned int CLUSTER_PRE_SZ = cluster.getNodeMap().getSize();
-		const unsigned int ui_count = static_cast<unsigned int>(count);
+		unsigned int best_available_count;
+		if (allow_primary == true) {
+			const unsigned int available_nodes = cluster.getNodeMap().getSize();
+			const unsigned int ui_count = static_cast<unsigned int>(count);
+			best_available_count = (ui_count < available_nodes) ? count : available_nodes;
+		} else {
+			const unsigned int all_nodes = cluster.getNodeMap().getSize();
+			const unsigned int pin_nodes = cluster.getNodeMap().getAllPrimaryInputNodes().size();
+			const unsigned int pout_nodes = cluster.getNodeMap().getAllPrimaryOutputNodes().size();
 
-#ifdef CLUSTERARCHITECT_DEBUG
-		int primary_nodes_skipped_count = 0;
-#endif
-		// Process actual deletion of nodes
+			const unsigned int available_nodes = all_nodes - pin_nodes - pout_nodes;
+			const unsigned int ui_count = static_cast<unsigned int>(count);
+			best_available_count = (ui_count < available_nodes) ? count : available_nodes;
+		}
+
+		// Amount of random nodes to grab, allowing that some may not be suitableso will be ignored
+		const unsigned int RANDOM_CHUNK_GRAB = best_available_count + 0.1 * best_available_count;
+
+		// Process actual collection of nodes
 		{
-			while ((random_nodes.size() < ui_count) && ((RANDOM_CHUNK_GRAB * grab_count) < CLUSTER_PRE_SZ)) {
+			while (random_nodes.size() < best_available_count) {
 				// get a random selection of nodes
 				std::vector<boost::shared_ptr<components::Node> > source_nodes =
 						cluster.getMutableNodeMap().getRandomRange(RANDOM_CHUNK_GRAB);
-				++grab_count;
 
 				// forall in source_nodes
 				{
@@ -431,74 +463,79 @@ std::list<boost::shared_ptr<components::Node> > ClusterArchitect::getRandomNodes
 							source_nodes.begin();
 					const std::vector<boost::shared_ptr<components::Node> >::const_iterator it_source_nodes_end =
 							source_nodes.end();
-					while ((it_source_nodes != it_source_nodes_end) && (random_nodes.size() < ui_count)) {
+					while ((it_source_nodes != it_source_nodes_end) && (random_nodes.size() < best_available_count)) {
 						// check if its attached to a fibre
 
 						if (allow_primary == true) {
-							random_nodes.push_back(*it_source_nodes);
+							random_nodes[(*it_source_nodes)->getUUID()] = (*it_source_nodes);
 
 						} else if (((*it_source_nodes)->isPrimaryInputAttachedNode() == false)
 								&& ((*it_source_nodes)->isPrimaryOutputAttachedNode() == false)) {
-							random_nodes.push_back(*it_source_nodes);
+							random_nodes[(*it_source_nodes)->getUUID()] = (*it_source_nodes);
 						}
-#ifdef CLUSTERARCHITECT_DEBUG
-						else {
-							++primary_nodes_skipped_count;
-						}
-#endif
 						++it_source_nodes;
 					}
 				}
 			}
 
 		}
-#ifdef CLUSTERARCHITECT_DEBUG
-		const unsigned int random_nodes_sz = random_nodes.size();
-		const unsigned int nmap_sz = cluster.getNodeMap().getSize();
-		const unsigned int best_node_available_count = (static_cast<unsigned int>(count) > nmap_sz) ? nmap_sz : count;
-		assert(random_nodes_sz == best_node_available_count);
-#endif
 	}
 	return random_nodes;
 }
 
-std::list<boost::shared_ptr<components::Connection> > ClusterArchitect::getRandomConnections(const int count,
-		const bool allow_primary) {
-	std::list<boost::shared_ptr<components::Connection> > rand_connections;
-
+std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> > ClusterArchitect::getRandomConnections(
+		const int count, const bool allow_primary) {
+	std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> > random_selected;
 	if (count > 0) {
-		std::list<boost::shared_ptr<components::Node> > rand_nodes = this->getRandomNodes(count, allow_primary);
-		const int RANDOM_INPUT_COUNT = common::Maths::getRandomInteger(0, count);
-		const int RANDOM_OUTPUT_COUNT = count - RANDOM_INPUT_COUNT;
-		assert(RANDOM_INPUT_COUNT >= 0);
-		assert(RANDOM_OUTPUT_COUNT >= 0);
-		assert(RANDOM_INPUT_COUNT + RANDOM_OUTPUT_COUNT == count);
 
-		// forall in rand_nodes
+		unsigned int best_available_count;
+		if (allow_primary == true) {
+			const unsigned int available_nodes = cluster.getConnectionMap().getSize();
+			const unsigned int ui_count = static_cast<unsigned int>(count);
+			best_available_count = (ui_count < available_nodes) ? count : available_nodes;
+		} else {
+			const unsigned int all_nodes = cluster.getConnectionMap().getSize();
+			const unsigned int pin_nodes = cluster.getConnectionMap().getAllPrimaryInputConnections().size();
+			const unsigned int pout_nodes = cluster.getConnectionMap().getAllPrimaryOutputConnections().size();
+
+			const unsigned int available_nodes = all_nodes - pin_nodes - pout_nodes;
+			const unsigned int ui_count = static_cast<unsigned int>(count);
+			best_available_count = (ui_count < available_nodes) ? count : available_nodes;
+		}
+
+		// Amount of random nodes to grab, allowing that some may not be suitable so will be ignored
+		const unsigned int RANDOM_CHUNK_GRAB = best_available_count + 0.1 * best_available_count;
+
 		{
-			int temp_count = 0;
-			std::list<boost::shared_ptr<components::Node> >::const_iterator it_rand_nodes = rand_nodes.begin();
-			const std::list<boost::shared_ptr<components::Node> >::const_iterator it_rand_nodes_end = rand_nodes.end();
-			while (it_rand_nodes != it_rand_nodes_end) {
-				boost::shared_ptr<components::Connection> temp_conn;
-				const bool get_input = (temp_count < RANDOM_INPUT_COUNT)
-						&& ((*it_rand_nodes)->getConnector().getInputs().size() > 0);
-				const bool get_output = (temp_count >= RANDOM_INPUT_COUNT)
-						&& ((*it_rand_nodes)->getConnector().getOutputs().size() > 0);
+			while (random_selected.size() < best_available_count) {
+				// get a random selection of connections
+				std::vector<boost::shared_ptr<components::Connection> > sources =
+						cluster.getMutableConnectionMap().getRandomRange(RANDOM_CHUNK_GRAB);
 
-				if (get_input == true) {
-					temp_conn = (*it_rand_nodes)->getMutableConnector().getMutableInputs().begin()->second;
-					++temp_count;
-				} else if (get_output == true) {
-					temp_conn = (*it_rand_nodes)->getMutableConnector().getMutableInputs().begin()->second;
-					++temp_count;
+				// forall in source_nodes
+				{
+					std::vector<boost::shared_ptr<components::Connection> >::const_iterator it_sources =
+							sources.begin();
+					const std::vector<boost::shared_ptr<components::Connection> >::const_iterator it_sources_end =
+							sources.end();
+					while ((it_sources != it_sources_end) && (random_selected.size() < best_available_count)) {
+						// check if its attached to a fibre
+
+						if (allow_primary == true) {
+							random_selected[(*it_sources)->getUUID()] = (*it_sources);
+
+						} else if (((*it_sources)->isPrimaryInputConnection() == false)
+								&& ((*it_sources)->isPrimaryOutputConnection() == false)) {
+							random_selected[(*it_sources)->getUUID()] = (*it_sources);
+						}
+						++it_sources;
+					}
 				}
-				++it_rand_nodes;
 			}
+
 		}
 	}
-
-	return rand_connections;
+	return random_selected;
 }
 
 const std::list<ClusterAnalysisData> & ClusterArchitect::getHistory() const {

@@ -1,7 +1,11 @@
 2011-10-11  SevenMachines  <SevenMachines@yahoo.co.uk>
 
+	* src/components/ConnectionMap.h (ConnectionMap.getAllPrimaryOutputConnections): Implemented
+	(ConnectionMap.getAllPrimaryInputConnections): Implemented
+	* src/components/NodeMap.h (NodeMap.getAllPrimaryOutputNodes): Implemented
+	(NodeMap.getAllPrimaryInputNodes): Implemented 
 	* src/manipulators/ClusterArchitect.cpp (ClusterArchitect::createRandomConnections): Create correct amount of new connections. Re-randomise source and destination node groups if we reach the end 
-
+	(ClusterArchitect::getRandomConnections): actually add connections to the collected container
 2011-10-01  SevenMachines  <SevenMachines@yahoo.co.uk>
 
 	* src/manipulators/ClusterArchitect.cpp (ClusterArchitect::createRandomNodes): Pre add new nodes to bulk if there are 
