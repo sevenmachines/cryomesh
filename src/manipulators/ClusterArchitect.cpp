@@ -6,8 +6,8 @@
  */
 
 //#define CLUSTERARCHITECT_DEBUG
-
 #include "ClusterArchitect.h"
+#include "ClusterAnalyserBasic.h"
 #include <boost/shared_ptr.hpp>
 #include <vector>
 #include <components/Node.h>
@@ -22,10 +22,12 @@ namespace manipulators {
 //STATICS
 const int ClusterArchitect::DEFAULT_MAX_HISTORY_SIZE = 100;
 const double ClusterArchitect::DEFAULT_CONNECTIVITY_FRACTION = 0.01;
+const unsigned int ClusterArchitect::DEFAULT_HISTORY_STEPPING_FACTOR = 10;
 
-ClusterArchitect::ClusterArchitect(structures::Cluster & clus) :
-		cluster(clus), history(), currentClusterAnalysisData(), minClusterAnalysisData(), maxClusterAnalysisData(), averageClusterAnalysisData(), maxHistorySize(
-				ClusterArchitect::DEFAULT_MAX_HISTORY_SIZE) {
+ClusterArchitect::ClusterArchitect(structures::Cluster & clus, const  int max_history_sz, const  int history_stepping_factor) :
+		cluster(clus), histories(), historySteppingFactor(history_stepping_factor), clusterAnalyser(
+				new ClusterAnalyserBasic), currentClusterAnalysisData(), maxHistorySize(max_history_sz) {
+	histories[1] = std::list<ClusterAnalysisData>();
 }
 
 ClusterArchitect::~ClusterArchitect() {
@@ -33,20 +35,13 @@ ClusterArchitect::~ClusterArchitect() {
 
 void ClusterArchitect::runAnalysis() {
 	// update history
-	ClusterAnalysisData cad = this->analyseCluster();
+	ClusterAnalysisData cad = clusterAnalyser->analyseCluster(cluster, histories);
 	this->addHistoryEntry(cad);
 
 	this->destroyRandomNodes(cad.getNodesToDestroy());
 	this->createRandomNodes(cad.getNodesToCreate());
 	this->destroyRandomConnections(cad.getConnectionsToDestroy());
 	this->createRandomConnections(cad.getConnectionsToCreate());
-}
-
-const ClusterAnalysisData ClusterArchitect::analyseCluster() {
-	// do checks on cluster state and set births/deaths accordingly
-	//double current_energy = cluster.getEnergy();
-
-	return ClusterAnalysisData(0, 0, 0, 0, 0);
 }
 
 std::set<boost::shared_ptr<cryomesh::components::Node> > ClusterArchitect::createRandomNodes(int count,
@@ -250,14 +245,14 @@ std::set<boost::shared_ptr<cryomesh::components::Node> > ClusterArchitect::creat
 				// forall in new_nodes
 				{
 					std::set<boost::shared_ptr<cryomesh::components::Node> >::const_iterator it_new_nodes =
-							new_nodes.begin();
+					new_nodes.begin();
 					const std::set<boost::shared_ptr<cryomesh::components::Node> >::const_iterator it_new_nodes_end =
-							new_nodes.end();
+					new_nodes.end();
 					while (it_new_nodes != it_new_nodes_end) {
 						int post_inputs_sz = (*it_new_nodes)->getConnector().getInputs().size();
 						int post_outputs_sz = (*it_new_nodes)->getConnector().getOutputs().size();
 						std::cout << "ClusterArchitect::createRandomNodes: " << (*it_new_nodes)->getUUIDSummary()
-								<< " (" << post_inputs_sz << ", " << post_outputs_sz << ")" << std::endl;
+						<< " (" << post_inputs_sz << ", " << post_outputs_sz << ")" << std::endl;
 						//assert(
 						//		(*it_new_nodes)->getConnector().getInputs().size()
 						//				== static_cast<unsigned int>(connectivity));
@@ -389,7 +384,7 @@ std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> > Cluster
 				this->getRandomConnections(count, false);
 #ifdef CLUSTERARCHITECT_DEBUG
 		std::cout << "ClusterArchitect::destroyRandomConnections: " << "count: " << count << " available: "
-				<< rand_conns.size() << std::endl;
+		<< rand_conns.size() << std::endl;
 #endif
 		// forall in rand_conns
 		{
@@ -407,16 +402,16 @@ std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> > Cluster
 		// remove connections from cluster
 #ifdef CLUSTERARCHITECT_DEBUG
 		std::cout << "ClusterArchitect::destroyRandomConnections: delete " << dead_connections.size() << " of "
-				<< cluster.getConnectionMap().getSize() << "in cluster" << std::endl;
+		<< cluster.getConnectionMap().getSize() << "in cluster" << std::endl;
 // forall in dead_connections
 		{
 			std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::const_iterator it_dead_connections =
-					dead_connections.begin();
+			dead_connections.begin();
 			const std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::const_iterator it_dead_connections_end =
-					dead_connections.end();
+			dead_connections.end();
 			while (it_dead_connections != it_dead_connections_end) {
 				const std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::const_iterator it_found =
-						cluster.getConnections().find(it_dead_connections->first);
+				cluster.getConnections().find(it_dead_connections->first);
 				assert(it_found != cluster.getConnections().end());
 				++it_dead_connections;
 			}
@@ -538,8 +533,8 @@ std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> > Cluster
 	return random_selected;
 }
 
-const std::list<ClusterAnalysisData> & ClusterArchitect::getHistory() const {
-	return history;
+const std::map<int, std::list<ClusterAnalysisData> > & ClusterArchitect::getHistories() const {
+	return histories;
 }
 
 int ClusterArchitect::getMaxHistorySize() const {
@@ -557,43 +552,45 @@ void ClusterArchitect::setMaxHistorySize(int sz) {
 void ClusterArchitect::addHistoryEntry(ClusterAnalysisData entry) {
 	const unsigned int max_sz = static_cast<unsigned int>(this->getMaxHistorySize());
 
-	history.push_back(entry);
+	std::list<ClusterAnalysisData> & onestep_history = histories[1];
+	onestep_history.push_back(entry);
 
-	while (history.size() > max_sz) {
-		history.pop_front();
+	while (onestep_history.size() > max_sz) {
+		onestep_history.pop_front();
 	}
 	currentClusterAnalysisData = entry;
 
-	this->getHistoryStatistics(this->minClusterAnalysisData, this->maxClusterAnalysisData,
-			this->averageClusterAnalysisData);
-}
-void ClusterArchitect::getHistoryStatistics(ClusterAnalysisData & minCad, ClusterAnalysisData & maxCad,
-		ClusterAnalysisData & avCad) {
+	int present_step = 1;
+	bool do_history_calc = true;
 
-	ClusterAnalysisData sumCad;
+	while (do_history_calc == true) {
+// do recursive histories
+		int next_step = present_step * historySteppingFactor;
 
-// forall in history
-	{
-		std::list<ClusterAnalysisData>::const_iterator it_history = history.begin();
-		const std::list<ClusterAnalysisData>::const_iterator it_history_end = history.end();
-		while (it_history != it_history_end) {
-			sumCad += *it_history;
-			if (minCad > *it_history) {
-				minCad = *it_history;
-			}
-			if (maxCad < *it_history) {
-				maxCad = *it_history;
-			}
-			++it_history;
+		std::list<ClusterAnalysisData> & present_history = histories[present_step];
+		std::list<ClusterAnalysisData> & next_history = histories[next_step];
+
+		// do calculate history step average if,
+		// - present history is the right size
+		// - either theres no next_history entries or the present_history and next_histories last entry cycles have a diff
+		bool enough_entries_since_last_calc = (next_history.size() == 0)
+				|| ((present_history.rbegin()->getClusterRangeEnergy().endCycle - next_history.rbegin()->getClusterRangeEnergy().endCycle)
+						> (present_step * historySteppingFactor));
+		do_history_calc = (present_history.size() == max_sz) && enough_entries_since_last_calc;
+
+		if (do_history_calc) {
+			ClusterAnalysisData data = clusterAnalyser->calculateRangeEnergies(present_history);
+			next_history.push_back(data);
 		}
-	}
 
-	avCad = sumCad / history.size();
+		present_step = next_step;
+	}
 }
 
-void ClusterArchitect::splitHistoryByValue(double db, int countback,
+void ClusterArchitect::splitHistoryByValue(const std::list<ClusterAnalysisData> & history, double db, int countback,
 		std::map<common::Cycle, ClusterAnalysisData> & below,
 		std::map<common::Cycle, ClusterAnalysisData> & above) const {
+
 	if (countback <= 0) {
 		countback = history.size();
 	}
@@ -603,10 +600,10 @@ void ClusterArchitect::splitHistoryByValue(double db, int countback,
 		std::list<ClusterAnalysisData>::const_reverse_iterator it_history = history.rbegin();
 		const std::list<ClusterAnalysisData>::const_reverse_iterator it_history_end = history.rend();
 		while ((it_history != it_history_end) && countback > 0) {
-			if (it_history->getClusterEnergy() > db) {
-				above[it_history->getCycle()] = *it_history;
+			if (it_history->getClusterRangeEnergy().energy > db) {
+				above[it_history->getClusterRangeEnergy().endCycle] = *it_history;
 			} else {
-				below[it_history->getCycle()] = *it_history;
+				below[it_history->getClusterRangeEnergy().endCycle] = *it_history;
 			}
 			--countback;
 			++it_history;
@@ -615,14 +612,14 @@ void ClusterArchitect::splitHistoryByValue(double db, int countback,
 	assert(below.size() + above.size() == history.size());
 }
 
-std::vector<ClusterAnalysisData> ClusterArchitect::getHistoryEntriesInRange(double min_db, double max_db,
-		int count) const {
+std::vector<ClusterAnalysisData> ClusterArchitect::getHistoryEntriesInRange(
+		const std::list<ClusterAnalysisData> & history, double min_db, double max_db, int count) const {
 	std::map<common::Cycle, ClusterAnalysisData> above_max;
 	std::map<common::Cycle, ClusterAnalysisData> below_max;
 	std::map<common::Cycle, ClusterAnalysisData> above_min;
 	std::map<common::Cycle, ClusterAnalysisData> below_min;
-	this->splitHistoryByValue(min_db, count, below_min, above_min);
-	this->splitHistoryByValue(max_db, count, below_max, above_max);
+	this->splitHistoryByValue(history, min_db, count, below_min, above_min);
+	this->splitHistoryByValue(history, max_db, count, below_max, above_max);
 
 	std::vector<ClusterAnalysisData> intersection;
 

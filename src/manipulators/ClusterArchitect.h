@@ -9,6 +9,8 @@
 #define CLUSTERARCHITECT_H_
 
 #include "ClusterAnalysisData.h"
+#include "IClusterAnalyser.h"
+
 #include "structures/Cluster.h"
 #include "common/Cycle.h"
 #include <map>
@@ -25,7 +27,7 @@ public:
 		ENABLE_SELF_CONNECT=1, ENABLE_EVEN_DISTRIBUTION=2
 	};
 
-	ClusterArchitect(structures::Cluster & clus);
+	ClusterArchitect(structures::Cluster & clus, const  int max_history_sz = DEFAULT_MAX_HISTORY_SIZE, const  int history_stepping_factor = DEFAULT_HISTORY_STEPPING_FACTOR );
 	virtual ~ClusterArchitect();
 	virtual void runAnalysis();
 
@@ -35,17 +37,12 @@ public:
 	 * @return	const common::SimpleCollection<ClusterAnalysisData> &
 	 * 	The container with the history of analysis
 	 */
-	virtual const std::list<ClusterAnalysisData> & getHistory() const;
+	virtual const  std::map<int, std::list<ClusterAnalysisData> > & getHistories() const;
 
 	void createConnection(boost::shared_ptr<components::Node> nodeStart,
 			boost::shared_ptr<components::Node> nodeEnd, int connectivity =1) ;
 
 	boost::shared_ptr< components::Connection > deleteConnection( boost::shared_ptr< components::Connection >  conn );
-
-	/**
-	 * Run an analysis on the cluster to decide what action to take on nodes and connections
-	 */
-	virtual const ClusterAnalysisData analyseCluster();
 
 	/**
 	 * Create a number of random nodes
@@ -100,20 +97,38 @@ public:
 
 protected:
 	structures::Cluster & cluster;
-private:
-	std::list<ClusterAnalysisData> history;
 
+	/**
+	 * Default value multiple for history stepping
+	 *
+	 * @var const unsigned int
+	 */
+	static const unsigned int DEFAULT_HISTORY_STEPPING_FACTOR;
+	static const int DEFAULT_MAX_HISTORY_SIZE;
+	static const double DEFAULT_CONNECTIVITY_FRACTION;
+
+private:
+	/**
+	 * Map of all histories, the int represents the cycle seperation, the list is the
+	 * resultant values/averages. eg
+	 * - mapping of 1 to a list of ClusterAnalysisData is the standard save of every cycles history (up to cutoff)
+	 * - mapping of 10 means that every 10 cycles are averaged and the result added to the mapped list
+	 *
+	 * Note that mapping steps are recursive, we can only have int keys as multiples of each other, eg
+	 * {1, 2, 4, 8, etc} or {1, 10, 100, ... } , so { 1, a, a^2, a^3, ... }
+	 *
+	 */
+	std::map<int, std::list<ClusterAnalysisData> > histories;
+	const  int historySteppingFactor;
+
+	boost::shared_ptr< IClusterAnalyser > clusterAnalyser;
 	ClusterAnalysisData currentClusterAnalysisData;
-	ClusterAnalysisData minClusterAnalysisData;
-	ClusterAnalysisData maxClusterAnalysisData;
-	ClusterAnalysisData averageClusterAnalysisData;
 
 	int maxHistorySize;
 
 	void addHistoryEntry(ClusterAnalysisData entry);
-	void getHistoryStatistics(ClusterAnalysisData & minCad, ClusterAnalysisData & maxCad, ClusterAnalysisData & avCad);
 
-	void splitHistoryByValue(double db, int countback, std::map<common::Cycle, ClusterAnalysisData> & below,
+	void splitHistoryByValue(const std::list<ClusterAnalysisData> & history, double db, int countback, std::map<common::Cycle, ClusterAnalysisData> & below,
 			std::map<common::Cycle, ClusterAnalysisData> & above) const;
 
 
@@ -131,10 +146,8 @@ private:
 	 * @return std::vector<ClusterAnalysisData>
 	 * 	Entries within range
 	 */
-	std::vector<ClusterAnalysisData> getHistoryEntriesInRange(double min_db, double max_db, int countback = 0) const;
+	std::vector<ClusterAnalysisData> getHistoryEntriesInRange(const std::list<ClusterAnalysisData> & history, double min_db, double max_db, int countback = 0) const;
 
-	static const int DEFAULT_MAX_HISTORY_SIZE;
-	static const double DEFAULT_CONNECTIVITY_FRACTION;
 
 };
 
