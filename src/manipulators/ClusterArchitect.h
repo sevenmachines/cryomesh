@@ -37,34 +37,26 @@ public:
 	 * @return	const common::SimpleCollection<ClusterAnalysisData> &
 	 * 	The container with the history of analysis
 	 */
-	virtual const  std::map<int, std::list<ClusterAnalysisData> > & getHistories() const;
-
-	void createConnection(boost::shared_ptr<components::Node> nodeStart,
-			boost::shared_ptr<components::Node> nodeEnd, int connectivity =1) ;
-
-	boost::shared_ptr< components::Connection > deleteConnection( boost::shared_ptr< components::Connection >  conn );
-
-	/**
+    const virtual std::map<int,std::list<ClusterAnalysisData> > & getHistories() const;
+    void createConnection(boost::shared_ptr<components::Node> nodeStart, boost::shared_ptr<components::Node> nodeEnd, int connectivity = 1);
+    boost::shared_ptr<components::Connection> deleteConnection(boost::shared_ptr<components::Connection> conn);
+    /**
 	 * Create a number of random nodes
 	 */
-	virtual std::set<boost::shared_ptr<cryomesh::components::Node> >  createRandomNodes(int count, int connectivity = 0, int strategy = 0);
-
-	/**
+    virtual std::set<boost::shared_ptr<cryomesh::components::Node> > createRandomNodes(int count, int connectivity = 0, int strategy = 0);
+    /**
 	 * Create a number of random connections
 	 */
-	virtual std::map< boost::uuids::uuid, boost::shared_ptr<components::Connection> > createRandomConnections(int count);
-
-	/**
+    virtual std::map<boost::uuids::uuid,boost::shared_ptr<components::Connection> > createRandomConnections(int count);
+    /**
 	 * Destroy random nodes
 	 */
-	virtual std::map< boost::uuids::uuid, boost::shared_ptr<components::Node> > destroyRandomNodes(int count);
-
-	/**
+    virtual std::map<boost::uuids::uuid,boost::shared_ptr<components::Node> > destroyRandomNodes(int count);
+    /**
 	 * Destroy random connections
 	 */
-	virtual std::map< boost::uuids::uuid, boost::shared_ptr<components::Connection> > destroyRandomConnections(int count);
-
-	/**
+    virtual std::map<boost::uuids::uuid,boost::shared_ptr<components::Connection> > destroyRandomConnections(int count);
+    /**
 	 * Get a collection of random nodes from the cluster
 	 *
 	 * @param const int
@@ -75,10 +67,8 @@ public:
 	 * @return std::list<boost::shared_ptr<components::Node> >
 	 * 	List of random nodes
 	 */
-	virtual std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > getRandomNodes(const int count, const bool allow_primary ) ;
-
-
-	/**
+    virtual std::map<boost::uuids::uuid,boost::shared_ptr<components::Node> > getRandomNodes(const int count, const bool allow_primary);
+    /**
 	 * Get a collection of random connections from the cluster
 	 *
 	 * @param const int
@@ -89,11 +79,16 @@ public:
 	 * @return std::list<boost::shared_ptr<components::Connection> >
 	 * 	List of random connections
 	 */
-	virtual std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection>  > getRandomConnections(const int count, const bool allow_primary ) ;
+    virtual std::map<boost::uuids::uuid,boost::shared_ptr<components::Connection> > getRandomConnections(const int count, const bool allow_primary);
+    int getMaxHistorySize() const;
+    void setMaxHistorySize(int sz);
+    ClusterAnalysisData getCurrentClusterAnalysisData() const;
+    const std::list<ClusterAnalysisData> & getCurrentHistory() const;
+     int getHistorySteppingFactor() const;
+    void setCurrentClusterAnalysisData(ClusterAnalysisData currentClusterAnalysisData);
+    void setCurrentHistory(std::list<ClusterAnalysisData> currentHistory);
 
-	int getMaxHistorySize() const;
-	void setMaxHistorySize(int sz);
-
+    std::ostream & printAllHistory(std::ostream & os);
 
 protected:
 	structures::Cluster & cluster;
@@ -108,6 +103,13 @@ protected:
 	static const double DEFAULT_CONNECTIVITY_FRACTION;
 
 private:
+	/**
+	 * The current active history set
+	 *
+	 * @var std::list<ClusterAnalysisData >
+	 */
+	std::list<ClusterAnalysisData > currentHistory;
+
 	/**
 	 * Map of all histories, the int represents the cycle seperation, the list is the
 	 * resultant values/averages. eg

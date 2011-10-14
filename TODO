@@ -4,9 +4,9 @@ CURRENT-------------------------------------------------------------------------
 * cryomesh: Automatic disconnection of 'bad' node connections and some method of 
 creating new connections to other nodes if required
 	- Implement ClusterArchitect::analyseCluster()
-		- TODO ClusterAnalyserBasicTest::analyseCluster 
+		- TODO ClusterAnalyserBasicTest::analyseCluster (PARTIAL)
 		- TODO ClusterAnalyserBasicTest::calculateRangeEnergies
-	
+		
 HIGH ----------------------------------------------------------------------------------------
 
 * GraphWindow: Allow multiple sets of data each with their own dataset and colour
@@ -47,13 +47,14 @@ DONE ---------------------------------------------------------------------------
 
 * cryomesh: Automatic disconnection of 'bad' node connections and some method of 
 creating new connections to other nodes if required
-	 - Create ClusterArchitect to analyse then kill/birth nodes and connections (DONE)
-	 - Add history support to clusters or clusterArchitect by way of a generic history store (DONE)
-	 - Implement ClusterArchitect::birthRandomNodes (DONE)
-	 - Implement ClusterArchitect::birthRandomConnections (DONE)
-	 - Implement ClusterArchitect::getHistoryEntriesInRange (DONE)
+	- Create ClusterArchitect to analyse then kill/birth nodes and connections (DONE)
+	- Add history support to clusters or clusterArchitect by way of a generic history store (DONE)
+	- Implement ClusterArchitect::birthRandomNodes (DONE)
+	- Implement ClusterArchitect::birthRandomConnections (DONE)
+	- Implement ClusterArchitect::getHistoryEntriesInRange (DONE)
 	- Implement ClusterArchitect Test (done)
-
+	- Implement  ClusterArchitectTest::testAddHistoryEntry (DONE)
+	
 	- Redefine functions in Cluster to their new ClusterArchitect equivalents (DONE)
 		- Moved Cluster::createConnection to ClusterArchitect::createConnection (DONE)
 		- Moved Cluster::createNodes to ClusterArchitect::birthRandomNodes (DONE)

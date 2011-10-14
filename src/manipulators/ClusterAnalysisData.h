@@ -73,15 +73,30 @@ public:
 		}
 
 		const RangeEnergy operator/(double div) const {
-			std::cout << "operator /: " << div << std::endl;
 			RangeEnergy temp_this(*this);
 			temp_this /= div;
 			return temp_this;
 		}
 		RangeEnergy & operator/=(double div) {
-			std::cout << "operator /=: " << div << std::endl;
 			this->energy /= div;
 			return *this;
+		}
+
+		/**
+		 * To stream operator
+		 *
+		 *	@param std::ostream & os
+		 *		The output stream
+		 *	@param const RangeEnergy & obj
+		 *		The object to stream
+		 *
+		 *	@return std::ostream &
+		 *		The output stream
+		 */
+		friend std::ostream& operator<<(std::ostream & os, const RangeEnergy & obj) {
+			os << "RangeEnergy: { " << "energy=" << obj.energy << " startCycle=" <<  obj.startCycle << " endCycle=" <<  obj.endCycle
+					<< " energyMin=" <<  obj.energyMin << " energyMax=" <<  obj.energyMax<<" }";
+			return os;
 		}
 		double energy;
 		common::Cycle startCycle;
@@ -116,6 +131,26 @@ public:
 	void setNodesToCreate(int nodesToCreate);
 	void setNodesToDestroy(int nodesToDestroy);
 
+	/**
+	 * To stream operator
+	 *
+	 *	@param std::ostream & os
+	 *		The output stream
+	 *	@param const ClusterAnalysisData & obj
+	 *		The object to stream
+	 *
+	 *	@return std::ostream &
+	 *		The output stream
+	 */
+	friend std::ostream& operator<<(std::ostream & os, const ClusterAnalysisData & obj) {
+		os << "ClusterAnalysisData: " << "{ " << "clusterRangeEnergy=" <<  obj.clusterRangeEnergy << " nodeCreationWeight="
+				<<  obj.nodeCreationWeight << " nodeDestructionWeight=" <<  obj.nodeDestructionWeight
+				<< " connectionCreationWeight=" <<  obj.connectionCreationWeight << " connectionDestructionWeight="
+				<<  obj.connectionDestructionWeight << " nodesToCreate=" <<  obj.nodesToCreate << " nodesToDestroy="
+				<< obj. nodesToDestroy << " connectionsToCreate=" <<  obj.connectionsToCreate << " connectionsToDestroy="
+				<<  obj.connectionsToDestroy << " }";
+		return os;
+	}
 private:
 	RangeEnergy clusterRangeEnergy;
 	/**

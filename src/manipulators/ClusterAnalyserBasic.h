@@ -17,10 +17,10 @@ class ClusterAnalyserBasic: public cryomesh::manipulators::IClusterAnalyser {
 public:
 	ClusterAnalyserBasic();
 	virtual ~ClusterAnalyserBasic();
-	virtual ClusterAnalysisData analyseCluster(const structures::Cluster & cluster, const std::map<int, std::list<ClusterAnalysisData> > & histories) const;
+	virtual ClusterAnalysisData analyseCluster(const structures::Cluster & cluster,
+			const std::map<int, std::list<ClusterAnalysisData> > & histories)const;
+	virtual ClusterAnalysisData calculateRangeEnergies(const std::list<ClusterAnalysisData> & history)const;
 
-protected:
-	ClusterAnalysisData calculateRangeEnergies(const std::list<ClusterAnalysisData> & history) const;
 };
 
 } /* namespace manipulators */

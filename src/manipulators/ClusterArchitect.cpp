@@ -8,6 +8,8 @@
 //#define CLUSTERARCHITECT_DEBUG
 #include "ClusterArchitect.h"
 #include "ClusterAnalyserBasic.h"
+#include "common/Containers.h"
+
 #include <boost/shared_ptr.hpp>
 #include <vector>
 #include <components/Node.h>
@@ -24,10 +26,10 @@ const int ClusterArchitect::DEFAULT_MAX_HISTORY_SIZE = 100;
 const double ClusterArchitect::DEFAULT_CONNECTIVITY_FRACTION = 0.01;
 const unsigned int ClusterArchitect::DEFAULT_HISTORY_STEPPING_FACTOR = 10;
 
-ClusterArchitect::ClusterArchitect(structures::Cluster & clus, const  int max_history_sz, const  int history_stepping_factor) :
-		cluster(clus), histories(), historySteppingFactor(history_stepping_factor), clusterAnalyser(
+ClusterArchitect::ClusterArchitect(structures::Cluster & clus, const int max_history_sz,
+		const int history_stepping_factor) :
+		cluster(clus), currentHistory(), histories(), historySteppingFactor(history_stepping_factor), clusterAnalyser(
 				new ClusterAnalyserBasic), currentClusterAnalysisData(), maxHistorySize(max_history_sz) {
-	histories[1] = std::list<ClusterAnalysisData>();
 }
 
 ClusterArchitect::~ClusterArchitect() {
@@ -37,7 +39,6 @@ void ClusterArchitect::runAnalysis() {
 	// update history
 	ClusterAnalysisData cad = clusterAnalyser->analyseCluster(cluster, histories);
 	this->addHistoryEntry(cad);
-
 	this->destroyRandomNodes(cad.getNodesToDestroy());
 	this->createRandomNodes(cad.getNodesToCreate());
 	this->destroyRandomConnections(cad.getConnectionsToDestroy());
@@ -46,26 +47,16 @@ void ClusterArchitect::runAnalysis() {
 
 std::set<boost::shared_ptr<cryomesh::components::Node> > ClusterArchitect::createRandomNodes(int count,
 		int connectivity, int strategy) {
-#ifdef CLUSTERARCHITECT_DEBUG
-	std::cout << "ClusterArchitect::createRandomNodes: " << "( " << count << ", " << connectivity << ", ";
-	if (strategy & ClusterArchitect::ENABLE_SELF_CONNECT) {
-		std::cout << "ENABLE_SELF_CONNECT ";
-	}
-	if (strategy & ClusterArchitect::ENABLE_EVEN_DISTRIBUTION) {
-		std::cout << "ENABLE_EVEN_DISTRIBUTION ";
-	}
-	std::cout << ")" << std::endl;
-	unsigned int pre_nodes_sz = cluster.getNodeMap().getSize();
-#endif
-
 	// new nodes that will be created
 	std::set<boost::shared_ptr<cryomesh::components::Node> > new_nodes;
-
 	if (count > 0) {
 
 		// Acquire resources from cluster and create the new nodes
 		components::NodeMap & nmap = cluster.getMutableNodeMap();
 
+#ifdef CLUSTERARCHITECT_DEBUG
+		unsigned int pre_nodes_sz = nmap.getSize();
+#endif
 		// if connectivity is <= 0 then use default fraction
 		if (connectivity <= 0) {
 			double node_count_fraction = nmap.getSize() * ClusterArchitect::DEFAULT_CONNECTIVITY_FRACTION;
@@ -281,9 +272,7 @@ std::set<boost::shared_ptr<cryomesh::components::Node> > ClusterArchitect::creat
 
 std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> > ClusterArchitect::createRandomConnections(
 		int count) {
-
 	std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> > new_connections;
-
 	if (count > 0) {
 		components::NodeMap & nmap = cluster.getMutableNodeMap();
 		components::ConnectionMap & cmap = cluster.getMutableConnectionMap();
@@ -329,24 +318,15 @@ std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> > Cluster
 		}
 
 	}
-
-#ifdef CLUSTERARCHITECT_DEBUG
-	const int new_connections_size = new_connections.size();
-	assert(new_connections_size == static_cast<unsigned int>(count));
-#endif
 	return new_connections;
 }
 
 std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > ClusterArchitect::destroyRandomNodes(int count) {
-	std::cout << "ClusterArchitect::destroyRandomNodes: " << "count: " << count << std::endl;
 	std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > dead_nodes;
-
 	if (count > 0) {
-
 		// get a random selection of nodes
 		std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > source_nodes = this->getRandomNodes(count,
 				false);
-
 		// forall in source_nodes
 		{
 			std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> >::const_iterator it_source_nodes =
@@ -362,15 +342,8 @@ std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > ClusterArchit
 				++it_source_nodes;
 			}
 		}
-#ifdef CLUSTERARCHITECT_DEBUG
-		const unsigned int PRE_CLUSTER_NODES_SZ = cluster.getNodeMap().getSize();
-#endif
 		// remove dead nodes from cluster
 		cluster.getMutableNodeMap().remove(dead_nodes);
-#ifdef CLUSTERARCHITECT_DEBUG
-		const unsigned int POST_CLUSTER_NODES_SZ = cluster.getNodeMap().getSize();
-		assert(PRE_CLUSTER_NODES_SZ - dead_nodes.size() == POST_CLUSTER_NODES_SZ);
-#endif
 	}
 
 	return dead_nodes;
@@ -382,10 +355,6 @@ std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> > Cluster
 	if (count > 0) {
 		std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> > rand_conns =
 				this->getRandomConnections(count, false);
-#ifdef CLUSTERARCHITECT_DEBUG
-		std::cout << "ClusterArchitect::destroyRandomConnections: " << "count: " << count << " available: "
-		<< rand_conns.size() << std::endl;
-#endif
 		// forall in rand_conns
 		{
 			std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::iterator it_rand_conns =
@@ -400,25 +369,10 @@ std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> > Cluster
 			}
 		}
 		// remove connections from cluster
-#ifdef CLUSTERARCHITECT_DEBUG
-		std::cout << "ClusterArchitect::destroyRandomConnections: delete " << dead_connections.size() << " of "
-		<< cluster.getConnectionMap().getSize() << "in cluster" << std::endl;
-// forall in dead_connections
-		{
-			std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::const_iterator it_dead_connections =
-			dead_connections.begin();
-			const std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::const_iterator it_dead_connections_end =
-			dead_connections.end();
-			while (it_dead_connections != it_dead_connections_end) {
-				const std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> >::const_iterator it_found =
-				cluster.getConnections().find(it_dead_connections->first);
-				assert(it_found != cluster.getConnections().end());
-				++it_dead_connections;
-			}
-		}
-#endif
+		// forall in dead_connections
 		cluster.getMutableConnectionMap().remove(dead_connections);
 	}
+
 	return dead_connections;
 }
 
@@ -426,7 +380,6 @@ std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > ClusterArchit
 		const bool allow_primary) {
 	std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > random_nodes;
 	if (count > 0) {
-
 		unsigned int best_available_count;
 		if (allow_primary == true) {
 			const unsigned int available_nodes = cluster.getNodeMap().getSize();
@@ -436,22 +389,18 @@ std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > ClusterArchit
 			const unsigned int all_nodes = cluster.getNodeMap().getSize();
 			const unsigned int pin_nodes = cluster.getNodeMap().getAllPrimaryInputNodes().size();
 			const unsigned int pout_nodes = cluster.getNodeMap().getAllPrimaryOutputNodes().size();
-
 			const unsigned int available_nodes = all_nodes - pin_nodes - pout_nodes;
 			const unsigned int ui_count = static_cast<unsigned int>(count);
 			best_available_count = (ui_count < available_nodes) ? count : available_nodes;
 		}
-
 		// Amount of random nodes to grab, allowing that some may not be suitableso will be ignored
 		const unsigned int RANDOM_CHUNK_GRAB = best_available_count + 0.1 * best_available_count;
-
 		// Process actual collection of nodes
 		{
 			while (random_nodes.size() < best_available_count) {
 				// get a random selection of nodes
 				std::vector<boost::shared_ptr<components::Node> > source_nodes =
 						cluster.getMutableNodeMap().getRandomRange(RANDOM_CHUNK_GRAB);
-
 				// forall in source_nodes
 				{
 					std::vector<boost::shared_ptr<components::Node> >::const_iterator it_source_nodes =
@@ -460,21 +409,22 @@ std::map<boost::uuids::uuid, boost::shared_ptr<components::Node> > ClusterArchit
 							source_nodes.end();
 					while ((it_source_nodes != it_source_nodes_end) && (random_nodes.size() < best_available_count)) {
 						// check if its attached to a fibre
-
 						if (allow_primary == true) {
 							random_nodes[(*it_source_nodes)->getUUID()] = (*it_source_nodes);
-
 						} else if (((*it_source_nodes)->isPrimaryInputAttachedNode() == false)
 								&& ((*it_source_nodes)->isPrimaryOutputAttachedNode() == false)) {
 							random_nodes[(*it_source_nodes)->getUUID()] = (*it_source_nodes);
 						}
+
 						++it_source_nodes;
 					}
+
 				}
 			}
 
 		}
 	}
+
 	return random_nodes;
 }
 
@@ -482,7 +432,6 @@ std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> > Cluster
 		const int count, const bool allow_primary) {
 	std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> > random_selected;
 	if (count > 0) {
-
 		unsigned int best_available_count;
 		if (allow_primary == true) {
 			const unsigned int available_nodes = cluster.getConnectionMap().getSize();
@@ -492,21 +441,17 @@ std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> > Cluster
 			const unsigned int all_nodes = cluster.getConnectionMap().getSize();
 			const unsigned int pin_nodes = cluster.getConnectionMap().getAllPrimaryInputConnections().size();
 			const unsigned int pout_nodes = cluster.getConnectionMap().getAllPrimaryOutputConnections().size();
-
 			const unsigned int available_nodes = all_nodes - pin_nodes - pout_nodes;
 			const unsigned int ui_count = static_cast<unsigned int>(count);
 			best_available_count = (ui_count < available_nodes) ? count : available_nodes;
 		}
-
 		// Amount of random nodes to grab, allowing that some may not be suitable so will be ignored
 		const unsigned int RANDOM_CHUNK_GRAB = best_available_count + 0.1 * best_available_count;
-
 		{
 			while (random_selected.size() < best_available_count) {
 				// get a random selection of connections
 				std::vector<boost::shared_ptr<components::Connection> > sources =
 						cluster.getMutableConnectionMap().getRandomRange(RANDOM_CHUNK_GRAB);
-
 				// forall in source_nodes
 				{
 					std::vector<boost::shared_ptr<components::Connection> >::const_iterator it_sources =
@@ -515,21 +460,22 @@ std::map<boost::uuids::uuid, boost::shared_ptr<components::Connection> > Cluster
 							sources.end();
 					while ((it_sources != it_sources_end) && (random_selected.size() < best_available_count)) {
 						// check if its attached to a fibre
-
 						if (allow_primary == true) {
 							random_selected[(*it_sources)->getUUID()] = (*it_sources);
-
 						} else if (((*it_sources)->isPrimaryInputConnection() == false)
 								&& ((*it_sources)->isPrimaryOutputConnection() == false)) {
 							random_selected[(*it_sources)->getUUID()] = (*it_sources);
 						}
+
 						++it_sources;
 					}
+
 				}
 			}
 
 		}
 	}
+
 	return random_selected;
 }
 
@@ -551,51 +497,111 @@ void ClusterArchitect::setMaxHistorySize(int sz) {
 
 void ClusterArchitect::addHistoryEntry(ClusterAnalysisData entry) {
 	const unsigned int max_sz = static_cast<unsigned int>(this->getMaxHistorySize());
-
-	std::list<ClusterAnalysisData> & onestep_history = histories[1];
-	onestep_history.push_back(entry);
-
-	while (onestep_history.size() > max_sz) {
-		onestep_history.pop_front();
+	currentHistory.push_back(entry);
+	while (currentHistory.size() > max_sz) {
+		currentHistory.pop_front();
 	}
 	currentClusterAnalysisData = entry;
+	// do_histories
+#ifdef CLUSTERARCHITECT_DEBUG
+	std::cout << "ClusterArchitect::addHistoryEntry: " << std::endl;
+	std::cout << this->printAllHistory(std::cout) << std::endl;
+#endif
+	if (currentHistory.size() >= max_sz) {
 
-	int present_step = 1;
-	bool do_history_calc = true;
+		// do first histories step
+		{
+			std::list<ClusterAnalysisData> & first_history = histories[max_sz];
+			const unsigned int current_history_sz = currentHistory.size();
+			const unsigned int first_history_sz = first_history.size();
+			// do calculate history step average if,
+			// - present history is the right size
+			// - either theres no next_history entries or the present_history and next_histories last entry cycles have a diff
+			bool first_history_exists = (first_history_sz > 0);
+			bool current_history_full = (current_history_sz >= max_sz);
 
-	while (do_history_calc == true) {
-// do recursive histories
-		int next_step = present_step * historySteppingFactor;
+			bool enough_entries_since_last_calc = false;
+			if (first_history_exists == false) {
+				enough_entries_since_last_calc = true;
+			} else {
+#ifdef CLUSTERARCHITECT_DEBUG
+				unsigned long int cur_end_cyc = currentHistory.rbegin()->getClusterRangeEnergy().endCycle.toULInt();
+				unsigned long int first_end_cyc = first_history.rbegin()->getClusterRangeEnergy().endCycle.toULInt();
+				unsigned long int diff_end_cyc = cur_end_cyc - cur_end_cyc;
+				std::cout << "ClusterArchitect::addHistoryEntry: " << "cur_end_cyc: " << cur_end_cyc
+				<< " first_end_cyc: " << first_end_cyc << " diff_end_cyc: " << diff_end_cyc << std::endl;
+#endif
+				enough_entries_since_last_calc = (currentHistory.rbegin()->getClusterRangeEnergy().endCycle
+						- first_history.rbegin()->getClusterRangeEnergy().endCycle) >= max_sz;
+			}
+			if (current_history_full && enough_entries_since_last_calc) {
+				ClusterAnalysisData data = clusterAnalyser->calculateRangeEnergies(currentHistory);
+				first_history.push_back(data);
+			}
 
-		std::list<ClusterAnalysisData> & present_history = histories[present_step];
-		std::list<ClusterAnalysisData> & next_history = histories[next_step];
-
-		// do calculate history step average if,
-		// - present history is the right size
-		// - either theres no next_history entries or the present_history and next_histories last entry cycles have a diff
-		bool enough_entries_since_last_calc = (next_history.size() == 0)
-				|| ((present_history.rbegin()->getClusterRangeEnergy().endCycle - next_history.rbegin()->getClusterRangeEnergy().endCycle)
-						> (present_step * historySteppingFactor));
-		do_history_calc = (present_history.size() == max_sz) && enough_entries_since_last_calc;
-
-		if (do_history_calc) {
-			ClusterAnalysisData data = clusterAnalyser->calculateRangeEnergies(present_history);
-			next_history.push_back(data);
+			while (first_history.size() > static_cast<unsigned int>(historySteppingFactor)) {
+				first_history.pop_front();
+			}
 		}
 
-		present_step = next_step;
-	}
+		// calculate rest of histories steps
+		{
+			int present_step = max_sz;
+			bool do_history_calc = true;
+			while (do_history_calc == true) {
+				// do recursive histories
+				const int next_step = historySteppingFactor * present_step;
+
+				std::list<ClusterAnalysisData> present_history = histories[present_step];
+				const unsigned int present_history_sz = present_history.size();
+				bool present_history_full = (present_history_sz >= static_cast<unsigned int>(historySteppingFactor));
+
+				if (present_history_full == true) {
+					std::list<ClusterAnalysisData> & next_history = histories[next_step];
+					const unsigned int next_history_sz = next_history.size();
+					// do calculate history step average if,
+					// - present history is the right size
+					// - either theres no next_history entries or the present_history and next_histories last entry cycles have a diff
+					bool next_history_exists = (next_history_sz > 0);
+
+					bool enough_entries_since_last_calc = false;
+					if (next_history_exists == false) {
+						enough_entries_since_last_calc = true;
+					} else {
+						enough_entries_since_last_calc = (present_history.rbegin()->getClusterRangeEnergy().endCycle
+								- next_history.rbegin()->getClusterRangeEnergy().endCycle) >= max_sz;
+					}
+					do_history_calc = present_history_full && enough_entries_since_last_calc;
+					if (do_history_calc) {
+						ClusterAnalysisData data = clusterAnalyser->calculateRangeEnergies(present_history);
+						next_history.push_back(data);
+						while (next_history.size() > static_cast<unsigned int>(historySteppingFactor)) {
+							next_history.pop_front();
+						}
+					}
+#ifdef CLUSTERARCHITECT_DEBUG
+					std::cout << "ClusterArchitect::addHistoryEntry: " << "histories[" << present_step << "]: "
+					<< present_history.size() << " histories[" << next_step << "]: " << next_history.size()
+					<< std::endl;
+#endif
+					present_step = next_step;
+				} else {
+					do_history_calc = false;
+				}
+			}
+		} //present_history_full ==true
+
+	} // end currentHistory.size()>max_sz
+
 }
 
 void ClusterArchitect::splitHistoryByValue(const std::list<ClusterAnalysisData> & history, double db, int countback,
-		std::map<common::Cycle, ClusterAnalysisData> & below,
-		std::map<common::Cycle, ClusterAnalysisData> & above) const {
-
+		std::map<common::Cycle, ClusterAnalysisData> & below
+		, std::map<common::Cycle, ClusterAnalysisData> & above) const {
 	if (countback <= 0) {
 		countback = history.size();
 	}
-
-// forall in history
+	// forall in history
 	{
 		std::list<ClusterAnalysisData>::const_reverse_iterator it_history = history.rbegin();
 		const std::list<ClusterAnalysisData>::const_reverse_iterator it_history_end = history.rend();
@@ -608,8 +614,29 @@ void ClusterArchitect::splitHistoryByValue(const std::list<ClusterAnalysisData> 
 			--countback;
 			++it_history;
 		}
+
 	}
 	assert(below.size() + above.size() == history.size());
+}
+
+ClusterAnalysisData ClusterArchitect::getCurrentClusterAnalysisData() const {
+	return currentClusterAnalysisData;
+}
+
+const std::list<ClusterAnalysisData> & ClusterArchitect::getCurrentHistory() const {
+	return currentHistory;
+}
+
+int ClusterArchitect::getHistorySteppingFactor() const {
+	return historySteppingFactor;
+}
+
+void ClusterArchitect::setCurrentClusterAnalysisData(ClusterAnalysisData currentClusterAnalysisData) {
+	this->currentClusterAnalysisData = currentClusterAnalysisData;
+}
+
+void ClusterArchitect::setCurrentHistory(std::list<ClusterAnalysisData> currentHistory) {
+	this->currentHistory = currentHistory;
 }
 
 std::vector<ClusterAnalysisData> ClusterArchitect::getHistoryEntriesInRange(
@@ -662,6 +689,25 @@ boost::shared_ptr<components::Connection> ClusterArchitect::deleteConnection(
 	conn->disconnect();
 	cluster.getMutableConnectionMap().remove(conn);
 	return conn;
+}
+
+std::ostream & ClusterArchitect::printAllHistory(std::ostream & os) {
+	os << "ClusterArchitect::currentHistory: ";
+	common::Containers::print(os, currentHistory);
+	os << std::endl;
+	os << "ClusterArchitect::histories: " << std::endl;
+	// forall in histories
+	{
+		std::map<int, std::list<ClusterAnalysisData> >::const_iterator it_histories = histories.begin();
+		const std::map<int, std::list<ClusterAnalysisData> >::const_iterator it_histories_end = histories.end();
+		while (it_histories != it_histories_end) {
+			os << "\t" << it_histories->first << " -> ";
+			common::Containers::print(os, it_histories->second);
+			os << std::endl;
+			++it_histories;
+		}
+	}
+	return os;
 }
 
 } /* namespace manipulators */

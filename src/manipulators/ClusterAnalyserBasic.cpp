@@ -13,36 +13,38 @@ namespace cryomesh {
 namespace manipulators {
 
 ClusterAnalyserBasic::ClusterAnalyserBasic() {
-	// TODO Auto-generated constructor stub
-
 }
 
 ClusterAnalyserBasic::~ClusterAnalyserBasic() {
-	// TODO Auto-generated destructor stub
 }
 
 ClusterAnalysisData ClusterAnalyserBasic::analyseCluster(const structures::Cluster & cluster,
-		const std::map<int, std::list<ClusterAnalysisData> > & histories)  const{
+		const std::map<int, std::list<ClusterAnalysisData> > & histories) const {
 
 	const int cluster_node_count = cluster.getNodeMap().getSize();
 	const int cluster_conn_count = cluster.getConnectionMap().getSize();
 
-	// the current health
-	double cluster_energy = cluster.getEnergy();
 	// current cycle
-	common::Cycle cycle = common::TimeKeeper::getTimeKeeper().getCycle();
-
-	std::map<int, std::list<ClusterAnalysisData> >::const_iterator it_histories = histories.begin();
+	ClusterAnalysisData::RangeEnergy current_range_energy(cluster.getEnergy());
 	const std::map<int, std::list<ClusterAnalysisData> >::const_iterator it_histories_end = histories.end();
-	std::map<int, std::list<ClusterAnalysisData> >::const_iterator it_current_history = it_histories;
-	++it_histories;
-	std::map<int, std::list<ClusterAnalysisData> >::const_iterator it_short_range_history = it_histories;
-	++it_histories;
-	std::map<int, std::list<ClusterAnalysisData> >::const_iterator it_medium_range_history = it_histories;
-	++it_histories;
-	std::map<int, std::list<ClusterAnalysisData> >::const_iterator it_long_range_history = it_histories;
+	std::map<int, std::list<ClusterAnalysisData> >::const_iterator it_histories = histories.begin();
 
-	assert(it_current_history != it_histories_end);
+	std::map<int, std::list<ClusterAnalysisData> >::const_iterator it_short_range_history = it_histories_end;
+	std::map<int, std::list<ClusterAnalysisData> >::const_iterator it_medium_range_history = it_histories_end;
+	std::map<int, std::list<ClusterAnalysisData> >::const_iterator it_long_range_history = it_histories_end;
+
+	if (it_histories != it_histories_end) {
+		it_short_range_history = it_histories;
+		++it_histories;
+		if (it_histories != it_histories_end) {
+
+			it_medium_range_history = it_histories;
+			++it_histories;
+			if (it_histories != it_histories_end) {
+				it_long_range_history = it_histories;
+			}
+		}
+	}
 
 	double node_creation_weight = 0;
 	double node_destruction_weight = 0;
@@ -58,8 +60,6 @@ ClusterAnalysisData ClusterAnalyserBasic::analyseCluster(const structures::Clust
 	//progressive calculation of creation/destruction weights depending on history availability
 
 	if (it_short_range_history != it_histories_end) {
-		ClusterAnalysisData::RangeEnergy current_history_average_energy =
-				it_short_range_history->second.rbegin()->getClusterRangeEnergy();
 		// if short term trend is large + then
 		// if short term trend is small + then
 		// if short term trend is small - then
@@ -101,13 +101,13 @@ ClusterAnalysisData ClusterAnalyserBasic::analyseCluster(const structures::Clust
 		assert(conn_destroy == 0);
 	}
 #endif
-	return ClusterAnalysisData(cluster_energy, node_creation_weight, node_destruction_weight, conn_creation_weight,
-			conn_destruction_weight, node_create, nodes_destroy, conn_create, conn_destroy);
+	return ClusterAnalysisData(current_range_energy, node_creation_weight, node_destruction_weight,
+			conn_creation_weight, conn_destruction_weight, node_create, nodes_destroy, conn_create, conn_destroy);
 }
 
-ClusterAnalysisData ClusterAnalyserBasic::calculateRangeEnergies(const std::list<ClusterAnalysisData> & history) const{
+ClusterAnalysisData ClusterAnalyserBasic::calculateRangeEnergies(const std::list<ClusterAnalysisData> & history) const {
 	// get averages of these
-	ClusterAnalysisData::RangeEnergy cluster_energy;
+	ClusterAnalysisData::RangeEnergy cluster_range_energy;
 	double node_creation_weight = 0;
 	double node_destruction_weight = 0;
 	double conn_creation_weight = 0;
@@ -124,10 +124,14 @@ ClusterAnalysisData ClusterAnalyserBasic::calculateRangeEnergies(const std::list
 		int count = 0;
 		std::list<ClusterAnalysisData>::const_iterator it_history = history.begin();
 		const std::list<ClusterAnalysisData>::const_iterator it_history_end = history.end();
+		if (it_history != it_history_end) {
+			cluster_range_energy = it_history->getClusterRangeEnergy();
+		}
+		++it_history;
 		while (it_history != it_history_end) {
 			const ClusterAnalysisData & ad = *it_history;
 
-			cluster_energy += ad.getClusterRangeEnergy();
+			cluster_range_energy += ad.getClusterRangeEnergy();
 
 			node_creation_weight += ad.getNodeCreationWeight();
 			node_destruction_weight += ad.getNodeDestructionWeight();
@@ -142,14 +146,14 @@ ClusterAnalysisData ClusterAnalyserBasic::calculateRangeEnergies(const std::list
 			++count;
 			++it_history;
 		}
-		cluster_energy = cluster_energy / static_cast<double>(count);
+		cluster_range_energy = cluster_range_energy / static_cast<double>(count);
 		node_creation_weight = node_creation_weight / static_cast<double>(count);
 		node_destruction_weight = node_destruction_weight / static_cast<double>(count);
 		conn_creation_weight = conn_creation_weight / static_cast<double>(count);
 		conn_destruction_weight = conn_destruction_weight / static_cast<double>(count);
 	}
-	return ClusterAnalysisData(cluster_energy, node_creation_weight, node_destruction_weight, conn_creation_weight,
-			conn_destruction_weight, node_create, nodes_destroy, conn_create, conn_destroy);
+	return ClusterAnalysisData(cluster_range_energy, node_creation_weight, node_destruction_weight,
+			conn_creation_weight, conn_destruction_weight, node_create, nodes_destroy, conn_create, conn_destroy);
 }
 
 } /* namespace manipulators */
