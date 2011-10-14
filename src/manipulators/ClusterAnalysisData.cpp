@@ -11,68 +11,45 @@ namespace cryomesh {
 namespace manipulators {
 
 ClusterAnalysisData::ClusterAnalysisData() :
-		clusterEnergy(0), nodesToDestroy(0), connectionsToDestroy(0), nodesToCreate(0), connectionsToCreate(0), cycle(0) {
+		clusterRangeEnergy(), nodeCreationWeight(0), nodeDestructionWeight(0), connectionCreationWeight(0), connectionDestructionWeight(
+				0), nodesToCreate(0), nodesToDestroy(0), connectionsToCreate(0), connectionsToDestroy(0){
 }
 
-ClusterAnalysisData::ClusterAnalysisData(double cluster_energy, int nodes_destroy, int cons_destroy, int nodes_create,
-		int cons_create) :
-		clusterEnergy(cluster_energy), nodesToDestroy(nodes_destroy), connectionsToDestroy(cons_destroy), nodesToCreate(
-				nodes_create), connectionsToCreate(cons_create), cycle(common::TimeKeeper::getTimeKeeper().getCycle()) {
+ClusterAnalysisData::ClusterAnalysisData(RangeEnergy range_energy, double node_creation_weight,
+		double node_destruction_weight, double conn_creation_weight, double conn_destruction_weight, int node_create,
+		int nodes_destroy, int conn_create, int conn_destroy) :
+		clusterRangeEnergy(range_energy), nodeCreationWeight(node_creation_weight), nodeDestructionWeight(
+				node_destruction_weight), connectionCreationWeight(conn_creation_weight), connectionDestructionWeight(
+				conn_destruction_weight), nodesToCreate(node_create), nodesToDestroy(nodes_destroy), connectionsToCreate(
+				conn_create), connectionsToDestroy(conn_destroy) {
 }
 
 ClusterAnalysisData::ClusterAnalysisData(const ClusterAnalysisData & obj) :
-		Tagged(), clusterEnergy(obj.getClusterEnergy()), nodesToDestroy(obj.getNodesToDestroy()), connectionsToDestroy(
-				obj.getConnectionsToDestroy()), nodesToCreate(obj.getNodesToCreate()), connectionsToCreate(
-				obj.getConnectionsToCreate()), cycle(obj.getCycle()) {
+		Tagged(), clusterRangeEnergy(obj.getClusterRangeEnergy()), nodeCreationWeight(obj.getNodeCreationWeight()), nodeDestructionWeight(
+				obj.getNodeDestructionWeight()), connectionCreationWeight(obj.getConnectionCreationWeight()), connectionDestructionWeight(
+				obj.getConnectionDestructionWeight()), nodesToCreate(obj.getNodesToCreate()), nodesToDestroy(
+				obj.getNodesToDestroy()), connectionsToCreate(obj.getConnectionsToCreate()), connectionsToDestroy(
+				obj.getConnectionsToDestroy()) {
 }
 ClusterAnalysisData::~ClusterAnalysisData() {
 }
 
-const ClusterAnalysisData ClusterAnalysisData::operator+(const ClusterAnalysisData & obj) const {
-	ClusterAnalysisData temp_obj(*this);
-	temp_obj += obj;
-	return temp_obj;
+ClusterAnalysisData::RangeEnergy ClusterAnalysisData::getClusterRangeEnergy() const {
+	return clusterRangeEnergy;
+}
+double ClusterAnalysisData::getNodeCreationWeight() const {
+	return nodeCreationWeight;
+}
+double ClusterAnalysisData::getNodeDestructionWeight() const {
+	return nodeDestructionWeight;
+}
+double ClusterAnalysisData::getConnectionCreationWeight() const {
+	return connectionCreationWeight;
+}
+double ClusterAnalysisData::getConnectionDestructionWeight() const {
+	return connectionDestructionWeight;
 }
 
-ClusterAnalysisData & ClusterAnalysisData::operator+=(const ClusterAnalysisData & obj) {
-	this->clusterEnergy += obj.getClusterEnergy();
-	this->nodesToDestroy += obj.getNodesToDestroy();
-	this->connectionsToDestroy += obj.getConnectionsToDestroy();
-	this->nodesToCreate += obj.getNodesToCreate();
-	this->connectionsToCreate += obj.getConnectionsToCreate();
-	this->cycle += obj.getCycle();
-	return *this;
-}
-
-const ClusterAnalysisData ClusterAnalysisData::operator/(const double dbl) const {
-	ClusterAnalysisData temp_cad(*this);
-	temp_cad /= dbl;
-	return temp_cad;
-}
-
-ClusterAnalysisData & ClusterAnalysisData::operator/=(const double dbl) {
-	if (dbl > 0) {
-		this->clusterEnergy /= dbl;
-		this->nodesToDestroy = static_cast<int>(ceil(static_cast<double>(this->nodesToDestroy) / dbl));
-		this->connectionsToDestroy = static_cast<int>(ceil(static_cast<double>(this->connectionsToDestroy) / dbl));
-		this->nodesToCreate = static_cast<int>(ceil(static_cast<double>(this->nodesToCreate) / dbl));
-		this->connectionsToCreate = static_cast<int>(ceil(static_cast<double>(this->connectionsToCreate) / dbl));
-		this->cycle = common::Cycle(static_cast<int>(static_cast<double>(this->cycle.toULInt()) / dbl));
-
-	}
-	return (*this);
-}
-
-bool ClusterAnalysisData::operator<(const ClusterAnalysisData & obj) const {
-	return this->clusterEnergy > obj.getClusterEnergy();
-}
-bool ClusterAnalysisData::operator>(const ClusterAnalysisData & obj) const {
-	return this->clusterEnergy < obj.getClusterEnergy();
-}
-
-double ClusterAnalysisData::getClusterEnergy() const {
-	return clusterEnergy;
-}
 int ClusterAnalysisData::getNodesToDestroy() const {
 	return nodesToDestroy;
 }
@@ -86,8 +63,42 @@ int ClusterAnalysisData::getConnectionsToCreate() const {
 	return connectionsToCreate;
 }
 
-common::Cycle ClusterAnalysisData::getCycle() const {
-	return cycle;
+void ClusterAnalysisData::setClusterRangeEnergy(RangeEnergy range_energy) {
+	this->clusterRangeEnergy = range_energy;
 }
+
+void ClusterAnalysisData::setConnectionCreationWeight(double connectionCreationWeight) {
+	this->connectionCreationWeight = connectionCreationWeight;
+}
+
+void ClusterAnalysisData::setConnectionDestructionWeight(double connectionDestructionWeight) {
+	this->connectionDestructionWeight = connectionDestructionWeight;
+}
+
+void ClusterAnalysisData::setConnectionsToCreate(int connectionsToCreate) {
+	this->connectionsToCreate = connectionsToCreate;
+}
+
+void ClusterAnalysisData::setConnectionsToDestroy(int connectionsToDestroy) {
+	this->connectionsToDestroy = connectionsToDestroy;
+}
+
+void ClusterAnalysisData::setNodeCreationWeight(double nodeCreationWeight) {
+	this->nodeCreationWeight = nodeCreationWeight;
+}
+
+void ClusterAnalysisData::setNodeDestructionWeight(double nodeDestructionWeight) {
+	this->nodeDestructionWeight = nodeDestructionWeight;
+}
+
+void ClusterAnalysisData::setNodesToCreate(int nodesToCreate) {
+	this->nodesToCreate = nodesToCreate;
+}
+
+void ClusterAnalysisData::setNodesToDestroy(int nodesToDestroy) {
+	this->nodesToDestroy = nodesToDestroy;
+}
+
 } /* namespace manipulators */
-} /* namespace cryomesh */
+}
+/* namespace cryomesh */
