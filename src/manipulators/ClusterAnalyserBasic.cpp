@@ -125,9 +125,20 @@ ClusterAnalysisData ClusterAnalyserBasic::calculateRangeEnergies(const std::list
 		std::list<ClusterAnalysisData>::const_iterator it_history = history.begin();
 		const std::list<ClusterAnalysisData>::const_iterator it_history_end = history.end();
 		if (it_history != it_history_end) {
-			cluster_range_energy = it_history->getClusterRangeEnergy();
+			const ClusterAnalysisData & ad = *it_history;
+			cluster_range_energy = ad.getClusterRangeEnergy();
+			node_creation_weight = ad.getNodeCreationWeight();
+			node_destruction_weight = ad.getNodeDestructionWeight();
+			conn_creation_weight = ad.getConnectionCreationWeight();
+			conn_destruction_weight = ad.getConnectionDestructionWeight();
+
+			node_create = ad.getNodesToCreate();
+			nodes_destroy = ad.getNodesToDestroy();
+			conn_create = ad.getConnectionsToCreate();
+			conn_destroy = ad.getConnectionsToDestroy();
 		}
 		++it_history;
+		++count;
 		while (it_history != it_history_end) {
 			const ClusterAnalysisData & ad = *it_history;
 
