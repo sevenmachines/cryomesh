@@ -15,19 +15,37 @@ namespace manipulators {
 
 class ClusterAnalyserBasic: public cryomesh::manipulators::IClusterAnalyser {
 public:
-	enum EnergyVariation{
-		OUT_OF_RANGE_POSITIVE = 5,
-		HIGH_POSITIVE = 4,
-		MEDIUM_POSITIVE = 3,
-		SMALL_POSITIVE = 2,
-		STAGNANT_POSITIVE = 1,
-		ZERO = 0,
-		STAGNANT_NEGATIVE  = -1,
-		SMALL_NEGATIVE = -2,
-		MEDIUM_NEGATIVE = -3,
-		HIGH_NEGATIVE  = -4,
-		OUT_OF_RANGE_NEGATIVE = -5
+	enum EnergyVariation {
+		NONE= 2048,
+		OUT_OF_RANGE_POSITIVE = 1024,
+		HIGH_POSITIVE = 512,
+		MEDIUM_POSITIVE = 256,
+		SMALL_POSITIVE = 128,
+		STAGNANT_POSITIVE = 64,
+		ZERO = 32,
+		STAGNANT_NEGATIVE = 16,
+		SMALL_NEGATIVE = 8,
+		MEDIUM_NEGATIVE = 4,
+		HIGH_NEGATIVE = 2,
+		OUT_OF_RANGE_NEGATIVE = 1
 	};
+	struct EnergyVariationWeightingMap {
+		EnergyVariationWeightingMap():variationMap(){
+			variationMap[OUT_OF_RANGE_POSITIVE] = 0.0;
+			variationMap[HIGH_POSITIVE] = 0.0;
+			variationMap[MEDIUM_POSITIVE] = 0.0;
+			variationMap[SMALL_POSITIVE] = 0.0;
+			variationMap[STAGNANT_POSITIVE] = 0.0;
+			variationMap[ZERO] = 0.0;
+			variationMap[STAGNANT_NEGATIVE] = 0.0;
+			variationMap[SMALL_NEGATIVE] = 0.0;
+			variationMap[MEDIUM_NEGATIVE] = 0.0;
+			variationMap[HIGH_NEGATIVE] = 0.0;
+			variationMap[OUT_OF_RANGE_NEGATIVE] = 0.0;
+		}
+		std::map<EnergyVariation, double> variationMap;
+	};
+
 	ClusterAnalyserBasic();
 	virtual ~ClusterAnalyserBasic();
 	virtual ClusterAnalysisData analyseCluster(const structures::Cluster & cluster,
@@ -35,8 +53,7 @@ public:
 	virtual ClusterAnalysisData calculateRangeEnergies(const std::list<ClusterAnalysisData> & history) const;
 
 protected:
-	virtual EnergyVariation getFuzzyEnergyVariation(double d, double range,  double fuzz_factor)const;
-	virtual EnergyVariation getEnergyVariation(double d, double range)const;
+	virtual EnergyVariationWeightingMap getEnergyVariationMap(const double energy_input, double range) const;
 };
 
 } /* namespace manipulators */

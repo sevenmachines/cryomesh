@@ -14,6 +14,10 @@ ClusterAnalysisData::ClusterAnalysisData() :
 		clusterRangeEnergy(), nodeCreationWeight(0), nodeDestructionWeight(0), connectionCreationWeight(0), connectionDestructionWeight(
 				0), nodesToCreate(0), nodesToDestroy(0), connectionsToCreate(0), connectionsToDestroy(0){
 }
+ClusterAnalysisData::ClusterAnalysisData(RangeEnergy cre) :
+		clusterRangeEnergy(cre), nodeCreationWeight(0), nodeDestructionWeight(0), connectionCreationWeight(0), connectionDestructionWeight(
+				0), nodesToCreate(0), nodesToDestroy(0), connectionsToCreate(0), connectionsToDestroy(0){
+}
 
 ClusterAnalysisData::ClusterAnalysisData(RangeEnergy range_energy, double node_creation_weight,
 		double node_destruction_weight, double conn_creation_weight, double conn_destruction_weight, int node_create,

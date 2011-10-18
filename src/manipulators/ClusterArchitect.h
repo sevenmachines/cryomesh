@@ -89,6 +89,10 @@ public:
     void setCurrentHistory(std::list<ClusterAnalysisData> currentHistory);
 
     std::ostream & printAllHistory(std::ostream & os);
+    const structures::Cluster & getCluster() const;
+    const boost::shared_ptr<IClusterAnalyser> getClusterAnalyser() const;
+    void setClusterAnalyser(boost::shared_ptr<IClusterAnalyser> clusterAnalyser);
+    void setHistories(std::map<int,std::list<ClusterAnalysisData> > histories);
 
 protected:
 	structures::Cluster & cluster;

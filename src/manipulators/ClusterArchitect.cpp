@@ -503,12 +503,7 @@ void ClusterArchitect::addHistoryEntry(ClusterAnalysisData entry) {
 	}
 	currentClusterAnalysisData = entry;
 	// do_histories
-#ifdef CLUSTERARCHITECT_DEBUG
-	std::cout << "ClusterArchitect::addHistoryEntry: " << std::endl;
-	std::cout << this->printAllHistory(std::cout) << std::endl;
-#endif
 	if (currentHistory.size() >= max_sz) {
-
 		// do first histories step
 		{
 			std::list<ClusterAnalysisData> & first_history = histories[max_sz];
@@ -519,18 +514,10 @@ void ClusterArchitect::addHistoryEntry(ClusterAnalysisData entry) {
 			// - either theres no next_history entries or the present_history and next_histories last entry cycles have a diff
 			bool first_history_exists = (first_history_sz > 0);
 			bool current_history_full = (current_history_sz >= max_sz);
-
 			bool enough_entries_since_last_calc = false;
 			if (first_history_exists == false) {
 				enough_entries_since_last_calc = true;
 			} else {
-#ifdef CLUSTERARCHITECT_DEBUG
-				unsigned long int cur_end_cyc = currentHistory.rbegin()->getClusterRangeEnergy().endCycle.toULInt();
-				unsigned long int first_end_cyc = first_history.rbegin()->getClusterRangeEnergy().endCycle.toULInt();
-				unsigned long int diff_end_cyc = cur_end_cyc - cur_end_cyc;
-				std::cout << "ClusterArchitect::addHistoryEntry: " << "cur_end_cyc: " << cur_end_cyc
-				<< " first_end_cyc: " << first_end_cyc << " diff_end_cyc: " << diff_end_cyc << std::endl;
-#endif
 				enough_entries_since_last_calc = (currentHistory.rbegin()->getClusterRangeEnergy().endCycle
 						- first_history.rbegin()->getClusterRangeEnergy().endCycle) >= max_sz;
 			}
@@ -538,12 +525,10 @@ void ClusterArchitect::addHistoryEntry(ClusterAnalysisData entry) {
 				ClusterAnalysisData data = clusterAnalyser->calculateRangeEnergies(currentHistory);
 				first_history.push_back(data);
 			}
-
 			while (first_history.size() > static_cast<unsigned int>(historySteppingFactor)) {
 				first_history.pop_front();
 			}
 		}
-
 		// calculate rest of histories steps
 		{
 			int present_step = max_sz;
@@ -551,11 +536,9 @@ void ClusterArchitect::addHistoryEntry(ClusterAnalysisData entry) {
 			while (do_history_calc == true) {
 				// do recursive histories
 				const int next_step = historySteppingFactor * present_step;
-
 				std::list<ClusterAnalysisData> present_history = histories[present_step];
 				const unsigned int present_history_sz = present_history.size();
 				bool present_history_full = (present_history_sz >= static_cast<unsigned int>(historySteppingFactor));
-
 				if (present_history_full == true) {
 					std::list<ClusterAnalysisData> & next_history = histories[next_step];
 					const unsigned int next_history_sz = next_history.size();
@@ -563,7 +546,6 @@ void ClusterArchitect::addHistoryEntry(ClusterAnalysisData entry) {
 					// - present history is the right size
 					// - either theres no next_history entries or the present_history and next_histories last entry cycles have a diff
 					bool next_history_exists = (next_history_sz > 0);
-
 					bool enough_entries_since_last_calc = false;
 					if (next_history_exists == false) {
 						enough_entries_since_last_calc = true;
@@ -579,18 +561,14 @@ void ClusterArchitect::addHistoryEntry(ClusterAnalysisData entry) {
 							next_history.pop_front();
 						}
 					}
-#ifdef CLUSTERARCHITECT_DEBUG
-					std::cout << "ClusterArchitect::addHistoryEntry: " << "histories[" << present_step << "]: "
-					<< present_history.size() << " histories[" << next_step << "]: " << next_history.size()
-					<< std::endl;
-#endif
+
 					present_step = next_step;
 				} else {
 					do_history_calc = false;
 				}
 			}
-		} //present_history_full ==true
 
+		} //present_history_full ==true
 	} // end currentHistory.size()>max_sz
 
 }
@@ -637,6 +615,22 @@ void ClusterArchitect::setCurrentClusterAnalysisData(ClusterAnalysisData current
 
 void ClusterArchitect::setCurrentHistory(std::list<ClusterAnalysisData> currentHistory) {
 	this->currentHistory = currentHistory;
+}
+
+const structures::Cluster & ClusterArchitect::getCluster() const {
+	return cluster;
+}
+
+const boost::shared_ptr<IClusterAnalyser> ClusterArchitect::getClusterAnalyser() const {
+	return clusterAnalyser;
+}
+
+void ClusterArchitect::setClusterAnalyser(boost::shared_ptr<IClusterAnalyser> clusterAnalyser) {
+	this->clusterAnalyser = clusterAnalyser;
+}
+
+void ClusterArchitect::setHistories(std::map<int, std::list<ClusterAnalysisData> > histories) {
+	this->histories = histories;
 }
 
 std::vector<ClusterAnalysisData> ClusterArchitect::getHistoryEntriesInRange(

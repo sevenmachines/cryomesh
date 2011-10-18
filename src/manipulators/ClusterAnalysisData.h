@@ -106,6 +106,7 @@ public:
 	};
 
 	ClusterAnalysisData();
+	ClusterAnalysisData(RangeEnergy cre);
 	ClusterAnalysisData(RangeEnergy clusterRangeEnergy, double node_creation_weight, double node_destruction_weight,
 			double conn_creation_weight, double conn_destruction_weight, int node_create, int nodes_destroy,
 			int conn_create, int conn_destroy);
