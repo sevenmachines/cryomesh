@@ -78,7 +78,7 @@ public:
 	void updateEnergy(double total_energy);
 
 	void warpNodes();
-
+	void runAnalyser();
 	/**
 	 * Create connections between all nodes
 	 *

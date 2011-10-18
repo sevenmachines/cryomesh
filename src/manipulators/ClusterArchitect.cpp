@@ -22,7 +22,7 @@ namespace cryomesh {
 namespace manipulators {
 
 //STATICS
-const int ClusterArchitect::DEFAULT_MAX_HISTORY_SIZE = 100;
+const int ClusterArchitect::DEFAULT_MAX_HISTORY_SIZE = 10;
 const double ClusterArchitect::DEFAULT_CONNECTIVITY_FRACTION = 0.01;
 const unsigned int ClusterArchitect::DEFAULT_HISTORY_STEPPING_FACTOR = 10;
 
@@ -39,6 +39,7 @@ void ClusterArchitect::runAnalysis() {
 	// update history
 	ClusterAnalysisData cad = clusterAnalyser->analyseCluster(cluster, histories);
 	this->addHistoryEntry(cad);
+	std::cout<<"ClusterArchitect::runAnalysis: "<<cad<<std::endl;
 	this->destroyRandomNodes(cad.getNodesToDestroy());
 	this->createRandomNodes(cad.getNodesToCreate());
 	this->destroyRandomConnections(cad.getConnectionsToDestroy());

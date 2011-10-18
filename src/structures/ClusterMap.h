@@ -130,7 +130,21 @@ public:
 			}
 		}
 	}
+	void runAnalysers() {
 
+		std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> > & all_clusters = this->getMutableCollection();
+		// forall in all_clusters
+		{
+			std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> >::const_iterator it_all_clusters =
+					all_clusters.begin();
+			const std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> >::const_iterator it_all_clusters_end =
+					all_clusters.end();
+			while (it_all_clusters != it_all_clusters_end) {
+				it_all_clusters->second->runAnalyser();
+				++it_all_clusters;
+			}
+		}
+	}
 	void updateMapData() {
 		totalNodeCount = 0;
 		// forall in objects

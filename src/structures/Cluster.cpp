@@ -64,9 +64,13 @@ boost::shared_ptr< manipulators::ClusterArchitect  > Cluster::getMutableClusterA
 }
 
 void Cluster::warpNodes() {
+	std::cout<<"Cluster::warpNodes: "<<"cluster: "<<this->getUUIDString()<<std::endl;
 	mesh->warpNodes();
 }
 
+void Cluster::runAnalyser(){
+	clusterArchitect->runAnalysis();
+}
 
 void Cluster::createConnectivity(const int connectivity) {
 	this->updateConnectivity(connectivity, AsIncrement);

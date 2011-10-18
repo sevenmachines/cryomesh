@@ -15,7 +15,8 @@ namespace cryomesh {
 namespace structures {
 
 Bundle::Bundle() :
-		clusters(), fibres(), realInputChannelsMap(),  realOutputChannelsMap(), actualInputChannelsMap(), actualOutputChannelsMap(), inputFibres(), outputFibres(), statistician(boost::shared_ptr<utilities::Statistician>(new utilities::Statistician(*this))), energy(0) , realFibrePatternChannelMap(),actualFibrePatternChannelMap(){
+		clusters(), fibres(), realInputChannelsMap(), realOutputChannelsMap(), actualInputChannelsMap(), actualOutputChannelsMap(), inputFibres(), outputFibres(), statistician(
+				boost::shared_ptr<utilities::Statistician>(new utilities::Statistician(*this))), energy(0), realFibrePatternChannelMap(), actualFibrePatternChannelMap() {
 
 }
 
@@ -23,6 +24,8 @@ Bundle::~Bundle() {
 }
 
 void Bundle::update() {
+	// warp bundles mesh
+	clusters.warpClusterNodes();
 	// update the time
 	common::TimeKeeper::getTimeKeeper().update();
 	// update all clusters
@@ -39,8 +42,9 @@ void Bundle::update() {
 	this->setEnergy(this->matchOutputChannelsSum());
 	// set available energy for each bundles mesh warping
 	clusters.updateClusterEnergies(this->getEnergy());
-	// warp bundles mesh
-	clusters.warpClusterNodes();
+
+	// Do possible cluster rearchitecture
+	clusters.runAnalysers();
 
 	if (this->isDebugOn() == true) {
 		this->updateStatistician();
