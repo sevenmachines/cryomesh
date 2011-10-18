@@ -29,7 +29,7 @@ const unsigned int ClusterArchitect::DEFAULT_HISTORY_STEPPING_FACTOR = 10;
 ClusterArchitect::ClusterArchitect(structures::Cluster & clus, const int max_history_sz,
 		const int history_stepping_factor) :
 		cluster(clus), currentHistory(), histories(), historySteppingFactor(history_stepping_factor), clusterAnalyser(
-				new ClusterAnalyserBasic), currentClusterAnalysisData(), maxHistorySize(max_history_sz) {
+				new ClusterAnalyserBasic(*this)), currentClusterAnalysisData(), maxHistorySize(max_history_sz) {
 }
 
 ClusterArchitect::~ClusterArchitect() {

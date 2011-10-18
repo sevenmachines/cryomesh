@@ -40,7 +40,7 @@ public:
 	 * 	The reulting analytical data
 	 */
 	virtual ClusterAnalysisData analyseCluster(const structures::Cluster & cluster,
-			const std::map<int, std::list<ClusterAnalysisData> > & histories) const =0;
+			const std::map<int, std::list<ClusterAnalysisData> > & histories)  =0;
 	/**
 	 * Calculate the range energies stats
 	 *
