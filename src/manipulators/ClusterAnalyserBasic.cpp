@@ -13,8 +13,8 @@
 namespace cryomesh {
 namespace manipulators {
 
-ClusterAnalyserBasic::ClusterAnalyserBasic(const ClusterArchitect & ca) :
-		clusterArchitect(ca), nodeRestructuring(), connectionRestructuring() {
+ClusterAnalyserBasic::ClusterAnalyserBasic(const ClusterArchitect & ca) : IClusterAnalyser(),
+		clusterArchitect(ca){
 }
 
 ClusterAnalyserBasic::~ClusterAnalyserBasic() {
@@ -451,5 +451,6 @@ ClusterAnalyserBasic::EnergyVariationWeightingMap ClusterAnalyserBasic::getEnerg
 	}
 	return evwp;
 }
+
 } /* namespace manipulators */
 }/* namespace cryomesh */

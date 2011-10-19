@@ -125,6 +125,7 @@ private:
 	 *
 	 */
 	std::map<int, std::list<ClusterAnalysisData> > histories;
+	std::map<int, unsigned int > historiesNewEntries;
 	const  int historySteppingFactor;
 
 	boost::shared_ptr< IClusterAnalyser > clusterAnalyser;
@@ -154,6 +155,7 @@ private:
 	 */
 	std::vector<ClusterAnalysisData> getHistoryEntriesInRange(const std::list<ClusterAnalysisData> & history, double min_db, double max_db, int countback = 0) const;
 
+	void reduceContainerSize(std::list<ClusterAnalysisData> & cont,const unsigned int sz);
 
 };
 

@@ -28,8 +28,11 @@ const unsigned int ClusterArchitect::DEFAULT_HISTORY_STEPPING_FACTOR = 10;
 
 ClusterArchitect::ClusterArchitect(structures::Cluster & clus, const int max_history_sz,
 		const int history_stepping_factor) :
-		cluster(clus), currentHistory(), histories(), historySteppingFactor(history_stepping_factor), clusterAnalyser(
-				new ClusterAnalyserBasic(*this)), currentClusterAnalysisData(), maxHistorySize(max_history_sz) {
+		cluster(clus), currentHistory(), histories(), historiesNewEntries(), historySteppingFactor(
+				history_stepping_factor), clusterAnalyser(new ClusterAnalyserBasic(*this)), currentClusterAnalysisData(), maxHistorySize(
+				max_history_sz) {
+	historiesNewEntries[maxHistorySize] = 0;
+
 }
 
 ClusterArchitect::~ClusterArchitect() {
@@ -39,7 +42,12 @@ void ClusterArchitect::runAnalysis() {
 	// update history
 	ClusterAnalysisData cad = clusterAnalyser->analyseCluster(cluster, histories);
 	this->addHistoryEntry(cad);
-	std::cout<<"ClusterArchitect::runAnalysis: "<<cad<<std::endl;
+
+	if ((cad.getNodesToCreate() + cad.getNodesToDestroy() + cad.getConnectionsToCreate() + cad.getConnectionsToDestroy())
+			> 0) {
+		std::cout << "ClusterArchitect::runAnalysis: Restructuring... " << cad << std::endl;
+	}
+
 	this->destroyRandomNodes(cad.getNodesToDestroy());
 	this->createRandomNodes(cad.getNodesToCreate());
 	this->destroyRandomConnections(cad.getConnectionsToDestroy());
@@ -497,81 +505,56 @@ void ClusterArchitect::setMaxHistorySize(int sz) {
 }
 
 void ClusterArchitect::addHistoryEntry(ClusterAnalysisData entry) {
-	const unsigned int max_sz = static_cast<unsigned int>(this->getMaxHistorySize());
-	currentHistory.push_back(entry);
-	while (currentHistory.size() > max_sz) {
-		currentHistory.pop_front();
-	}
+#ifdef CLUSTERARCHITECT_DEBUG
+	std::cout << "ClusterArchitect::addHistoryEntry: " << "BEFORE" << std::endl;
+	this->printAllHistory(std::cout);
+#endif
+	const unsigned int MAX_SZ = static_cast<unsigned int>(this->getMaxHistorySize());
+	const unsigned int STEP_SZ = static_cast<unsigned int>(this->getHistorySteppingFactor());
+
 	currentClusterAnalysisData = entry;
-	// do_histories
-	if (currentHistory.size() >= max_sz) {
-		// do first histories step
+
+	// add a current entry
+	currentHistory.push_back(entry);
+	this->reduceContainerSize(currentHistory, MAX_SZ);
+	++(historiesNewEntries[0]);
+
+	// check if we have enough new current entries
+	if (historiesNewEntries[0] >= MAX_SZ) {
+
+		ClusterAnalysisData new_data = clusterAnalyser->calculateRangeEnergies(currentHistory);
+		histories[MAX_SZ].push_back(new_data);
+		this->reduceContainerSize(histories[MAX_SZ], STEP_SZ);
+		++(historiesNewEntries[MAX_SZ]);
+		// And reset current entry count
+		historiesNewEntries[0] = 0;
+
+		// recursively do rest of histories
 		{
-			std::list<ClusterAnalysisData> & first_history = histories[max_sz];
-			const unsigned int current_history_sz = currentHistory.size();
-			const unsigned int first_history_sz = first_history.size();
-			// do calculate history step average if,
-			// - present history is the right size
-			// - either theres no next_history entries or the present_history and next_histories last entry cycles have a diff
-			bool first_history_exists = (first_history_sz > 0);
-			bool current_history_full = (current_history_sz >= max_sz);
-			bool enough_entries_since_last_calc = false;
-			if (first_history_exists == false) {
-				enough_entries_since_last_calc = true;
-			} else {
-				enough_entries_since_last_calc = (currentHistory.rbegin()->getClusterRangeEnergy().endCycle
-						- first_history.rbegin()->getClusterRangeEnergy().endCycle) >= max_sz;
-			}
-			if (current_history_full && enough_entries_since_last_calc) {
-				ClusterAnalysisData data = clusterAnalyser->calculateRangeEnergies(currentHistory);
-				first_history.push_back(data);
-			}
-			while (first_history.size() > static_cast<unsigned int>(historySteppingFactor)) {
-				first_history.pop_front();
+			std::map<int, std::list<ClusterAnalysisData> >::const_iterator it_histories = histories.find(MAX_SZ);
+			const std::map<int, std::list<ClusterAnalysisData> >::const_iterator it_histories_end = histories.end();
+			while (it_histories != it_histories_end) {
+				const int this_step = it_histories->first;
+				const std::list<ClusterAnalysisData> & this_data = it_histories->second;
+
+				if (historiesNewEntries[this_step] >= STEP_SZ) {
+					const int next_step = this_step * STEP_SZ;
+
+					ClusterAnalysisData new_data = clusterAnalyser->calculateRangeEnergies(this_data);
+					histories[next_step].push_back(new_data);
+					this->reduceContainerSize(histories[next_step], STEP_SZ);
+					++(historiesNewEntries[next_step]);
+					// And reset current entry count
+					historiesNewEntries[this_step] = 0;
+				}
+				++it_histories;
 			}
 		}
-		// calculate rest of histories steps
-		{
-			int present_step = max_sz;
-			bool do_history_calc = true;
-			while (do_history_calc == true) {
-				// do recursive histories
-				const int next_step = historySteppingFactor * present_step;
-				std::list<ClusterAnalysisData> present_history = histories[present_step];
-				const unsigned int present_history_sz = present_history.size();
-				bool present_history_full = (present_history_sz >= static_cast<unsigned int>(historySteppingFactor));
-				if (present_history_full == true) {
-					std::list<ClusterAnalysisData> & next_history = histories[next_step];
-					const unsigned int next_history_sz = next_history.size();
-					// do calculate history step average if,
-					// - present history is the right size
-					// - either theres no next_history entries or the present_history and next_histories last entry cycles have a diff
-					bool next_history_exists = (next_history_sz > 0);
-					bool enough_entries_since_last_calc = false;
-					if (next_history_exists == false) {
-						enough_entries_since_last_calc = true;
-					} else {
-						enough_entries_since_last_calc = (present_history.rbegin()->getClusterRangeEnergy().endCycle
-								- next_history.rbegin()->getClusterRangeEnergy().endCycle) >= max_sz;
-					}
-					do_history_calc = present_history_full && enough_entries_since_last_calc;
-					if (do_history_calc) {
-						ClusterAnalysisData data = clusterAnalyser->calculateRangeEnergies(present_history);
-						next_history.push_back(data);
-						while (next_history.size() > static_cast<unsigned int>(historySteppingFactor)) {
-							next_history.pop_front();
-						}
-					}
-
-					present_step = next_step;
-				} else {
-					do_history_calc = false;
-				}
-			}
-
-		} //present_history_full ==true
-	} // end currentHistory.size()>max_sz
-
+	}
+#ifdef CLUSTERARCHITECT_DEBUG
+	std::cout << "ClusterArchitect::addHistoryEntry: " << "AFTER" << std::endl;
+	this->printAllHistory(std::cout);
+#endif
 }
 
 void ClusterArchitect::splitHistoryByValue(const std::list<ClusterAnalysisData> & history, double db, int countback,
@@ -687,22 +670,28 @@ boost::shared_ptr<components::Connection> ClusterArchitect::deleteConnection(
 }
 
 std::ostream & ClusterArchitect::printAllHistory(std::ostream & os) {
-	os << "ClusterArchitect::currentHistory: ";
+	os << "ClusterArchitect::currentHistory: ( " << currentHistory.size() << " )";
 	common::Containers::print(os, currentHistory);
 	os << std::endl;
-	os << "ClusterArchitect::histories: " << std::endl;
+	os << "ClusterArchitect::histories: ( " << histories.size() << " )" << std::endl;
 	// forall in histories
 	{
 		std::map<int, std::list<ClusterAnalysisData> >::const_iterator it_histories = histories.begin();
 		const std::map<int, std::list<ClusterAnalysisData> >::const_iterator it_histories_end = histories.end();
 		while (it_histories != it_histories_end) {
-			os << "\t" << it_histories->first << " -> ";
+			os << "\t" << it_histories->first << " ( " << it_histories->second.size() << " )" << "  -> ";
 			common::Containers::print(os, it_histories->second);
 			os << std::endl;
 			++it_histories;
 		}
 	}
 	return os;
+}
+
+void ClusterArchitect::reduceContainerSize(std::list<ClusterAnalysisData> & cont, const unsigned int sz) {
+	while (cont.size() > sz) {
+		cont.pop_front();
+	}
 }
 
 } /* namespace manipulators */
