@@ -13,8 +13,8 @@
 namespace cryomesh {
 namespace manipulators {
 
-ClusterAnalyserBasic::ClusterAnalyserBasic(const ClusterArchitect & ca) : IClusterAnalyser(),
-		clusterArchitect(ca){
+ClusterAnalyserBasic::ClusterAnalyserBasic(const ClusterArchitect & ca) :
+		IClusterAnalyser(), clusterArchitect(ca) {
 }
 
 ClusterAnalyserBasic::~ClusterAnalyserBasic() {
@@ -142,9 +142,11 @@ ClusterAnalysisData ClusterAnalyserBasic::analyseCluster(const structures::Clust
 					// now reset the countdown
 					nodeRestructuring.setMediumCountdown(
 							clusterArchitect.getMaxHistorySize() * clusterArchitect.getHistorySteppingFactor());
+					connectionRestructuring.setMediumCountdown(
+							clusterArchitect.getMaxHistorySize() * clusterArchitect.getHistorySteppingFactor());
 				}
 
-				if (it_long_range_history != it_histories_end && (any_long_restructure_enabled)) {
+				if (it_long_range_history != it_histories_end) {
 					ClusterAnalysisData cad_long_summary = this->calculateRangeEnergies(it_long_range_history->second);
 					double val_diff_long_summary = cad_medium_summary.getClusterRangeEnergy().energy
 							- cad_long_summary.getClusterRangeEnergy().energy;
@@ -156,49 +158,54 @@ ClusterAnalysisData ClusterAnalyserBasic::analyseCluster(const structures::Clust
 					const double long_base_fraction = 0.1;
 					EnergyVariationWeightingMap long_variation = this->getEnergyVariationMap(val_diff_long_summary,
 							1.0);
-					if (long_variation.variationMap[EnergyVariation::HIGH_NEGATIVE] > 0) {
-						// kill/create a lot of nodes
-						node_destruction_weight += long_variation.variationMap[EnergyVariation::HIGH_NEGATIVE]
-								* long_base_fraction;
-						node_creation_weight += long_variation.variationMap[EnergyVariation::HIGH_NEGATIVE]
-								* long_base_fraction;
-					} else if (long_variation.variationMap[EnergyVariation::MEDIUM_NEGATIVE] > 0) {
-						// kill/create some nodes
-						node_destruction_weight += long_variation.variationMap[EnergyVariation::MEDIUM_NEGATIVE]
-								* long_base_fraction / 2.0;
-						node_creation_weight += long_variation.variationMap[EnergyVariation::MEDIUM_NEGATIVE]
-								* long_base_fraction / 2.0;
-					} else if (long_variation.variationMap[EnergyVariation::SMALL_NEGATIVE] > 0) {
-						// kill/create some connections
-						conn_destruction_weight += long_variation.variationMap[EnergyVariation::SMALL_NEGATIVE]
-								* long_base_fraction;
-						conn_creation_weight += long_variation.variationMap[EnergyVariation::SMALL_NEGATIVE]
-								* long_base_fraction;
-					} else if (long_variation.variationMap[EnergyVariation::STAGNANT_NEGATIVE] > 0) {
-						// kill/create a few connections
-						conn_destruction_weight += long_variation.variationMap[EnergyVariation::STAGNANT_NEGATIVE]
-								* long_base_fraction / 2.0;
-						conn_creation_weight += long_variation.variationMap[EnergyVariation::STAGNANT_NEGATIVE]
-								* long_base_fraction / 2.0;
-					} else if (long_variation.variationMap[EnergyVariation::STAGNANT_POSITIVE] > 0) {
-						//create a few nodes
-						node_creation_weight += long_variation.variationMap[EnergyVariation::STAGNANT_POSITIVE]
-								* long_base_fraction / 2.0;
-					} else if (long_variation.variationMap[EnergyVariation::SMALL_POSITIVE] > 0) {
-						// create a few connections
-						conn_creation_weight += long_variation.variationMap[EnergyVariation::SMALL_POSITIVE]
-								* long_base_fraction / 2.0;
-					} else if (long_variation.variationMap[EnergyVariation::MEDIUM_POSITIVE] > 0) {
-						// create a very few connections
-						conn_creation_weight += long_variation.variationMap[EnergyVariation::MEDIUM_POSITIVE]
-								* long_base_fraction / 4.0;
-					} else if (long_variation.variationMap[EnergyVariation::HIGH_POSITIVE] > 0) {
-						// everything good, do nothing
+					if (any_long_restructure_enabled == true) {
+						if (long_variation.variationMap[EnergyVariation::HIGH_NEGATIVE] > 0) {
+							// kill/create a lot of nodes
+							node_destruction_weight += long_variation.variationMap[EnergyVariation::HIGH_NEGATIVE]
+									* long_base_fraction;
+							node_creation_weight += long_variation.variationMap[EnergyVariation::HIGH_NEGATIVE]
+									* long_base_fraction;
+						} else if (long_variation.variationMap[EnergyVariation::MEDIUM_NEGATIVE] > 0) {
+							// kill/create some nodes
+							node_destruction_weight += long_variation.variationMap[EnergyVariation::MEDIUM_NEGATIVE]
+									* long_base_fraction / 2.0;
+							node_creation_weight += long_variation.variationMap[EnergyVariation::MEDIUM_NEGATIVE]
+									* long_base_fraction / 2.0;
+						} else if (long_variation.variationMap[EnergyVariation::SMALL_NEGATIVE] > 0) {
+							// kill/create some connections
+							conn_destruction_weight += long_variation.variationMap[EnergyVariation::SMALL_NEGATIVE]
+									* long_base_fraction;
+							conn_creation_weight += long_variation.variationMap[EnergyVariation::SMALL_NEGATIVE]
+									* long_base_fraction;
+						} else if (long_variation.variationMap[EnergyVariation::STAGNANT_NEGATIVE] > 0) {
+							// kill/create a few connections
+							conn_destruction_weight += long_variation.variationMap[EnergyVariation::STAGNANT_NEGATIVE]
+									* long_base_fraction / 2.0;
+							conn_creation_weight += long_variation.variationMap[EnergyVariation::STAGNANT_NEGATIVE]
+									* long_base_fraction / 2.0;
+						} else if (long_variation.variationMap[EnergyVariation::STAGNANT_POSITIVE] > 0) {
+							//create a few nodes
+							node_creation_weight += long_variation.variationMap[EnergyVariation::STAGNANT_POSITIVE]
+									* long_base_fraction / 2.0;
+						} else if (long_variation.variationMap[EnergyVariation::SMALL_POSITIVE] > 0) {
+							// create a few connections
+							conn_creation_weight += long_variation.variationMap[EnergyVariation::SMALL_POSITIVE]
+									* long_base_fraction / 2.0;
+						} else if (long_variation.variationMap[EnergyVariation::MEDIUM_POSITIVE] > 0) {
+							// create a very few connections
+							conn_creation_weight += long_variation.variationMap[EnergyVariation::MEDIUM_POSITIVE]
+									* long_base_fraction / 4.0;
+						} else if (long_variation.variationMap[EnergyVariation::HIGH_POSITIVE] > 0) {
+							// everything good, do nothing
+						}
+						// now reset the countdown
+						nodeRestructuring.setLongCountdown(
+								clusterArchitect.getMaxHistorySize() * clusterArchitect.getHistorySteppingFactor()
+										* clusterArchitect.getHistorySteppingFactor());
+						connectionRestructuring.setLongCountdown(
+								clusterArchitect.getMaxHistorySize() * clusterArchitect.getHistorySteppingFactor()
+										* clusterArchitect.getHistorySteppingFactor());
 					}
-					// now reset the countdown
-					nodeRestructuring.setLongCountdown(
-							clusterArchitect.getMaxHistorySize() * clusterArchitect.getHistorySteppingFactor()
-									* clusterArchitect.getHistorySteppingFactor());
 				} // it_long_range_history
 			} // it_medium_range_history
 		} // it_short_range_history

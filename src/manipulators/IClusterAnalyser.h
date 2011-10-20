@@ -50,21 +50,21 @@ public:
 		}
 
 		bool isAllShortRestructuringEnabled() const {
-				return (this->isRestructuringEnabled(this->shortCreation)
-						&& this->isRestructuringEnabled(this->shortDestruction));
-			}
-			bool isAllMediumRestructuringEnabled() const {
-				return (this->isRestructuringEnabled(this->mediumCreation)
-						&& this->isRestructuringEnabled(this->mediumDestruction));
-			}
-			bool isAllLongRestructuringEnabled() const {
-				return (this->isRestructuringEnabled(this->longDestruction)
-						&& this->isRestructuringEnabled(this->longCreation));
-			}
-			bool isAllRestructuringEnabled() const {
-				return ((this->isAnyShortRestructuringEnabled())
-						&& (this->isAnyMediumRestructuringEnabled() && this->isAnyLongRestructuringEnabled()));
-			}
+			return (this->isRestructuringEnabled(this->shortCreation)
+					&& this->isRestructuringEnabled(this->shortDestruction));
+		}
+		bool isAllMediumRestructuringEnabled() const {
+			return (this->isRestructuringEnabled(this->mediumCreation)
+					&& this->isRestructuringEnabled(this->mediumDestruction));
+		}
+		bool isAllLongRestructuringEnabled() const {
+			return (this->isRestructuringEnabled(this->longDestruction)
+					&& this->isRestructuringEnabled(this->longCreation));
+		}
+		bool isAllRestructuringEnabled() const {
+			return ((this->isAnyShortRestructuringEnabled())
+					&& (this->isAnyMediumRestructuringEnabled() && this->isAnyLongRestructuringEnabled()));
+		}
 
 		/**
 		 * Prefix decrement operator
@@ -107,6 +107,24 @@ public:
 			longDestruction = ct;
 		}
 
+		/**
+		 * To stream operator
+		 *
+		 *	@param std::ostream & os
+		 *		The output stream
+		 *	@param const RestructuringCountdown & obj
+		 *		The object to stream
+		 *
+		 *	@return std::ostream &
+		 *		The output stream
+		 */
+		friend std::ostream& operator<<(std::ostream & os, const RestructuringCountdown & obj) {
+			os << "RestructuringCountdown: ";
+			os << "{ ( " << obj.shortCreation << ", " << obj.shortDestruction << " )" ;
+			os << ", ( " << obj.mediumCreation << ", " << obj.mediumDestruction << " )" ;
+			os << ", ( " << obj.longCreation << ", " << obj.longDestruction << " )}" ;
+			return os;
+		}
 		int shortCreation;
 		int shortDestruction;
 		int mediumCreation;
@@ -147,7 +165,8 @@ public:
 		std::map<EnergyVariation, double> variationMap;
 	};
 
-	IClusterAnalyser(): nodeRestructuring(), connectionRestructuring() {
+	IClusterAnalyser() :
+			nodeRestructuring(), connectionRestructuring() {
 	}
 	virtual ~IClusterAnalyser() {
 	}
