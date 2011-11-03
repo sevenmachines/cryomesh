@@ -22,9 +22,9 @@ namespace cryomesh {
 namespace manipulators {
 
 //STATICS
-const int ClusterArchitect::DEFAULT_MAX_HISTORY_SIZE = 10;
+const int ClusterArchitect::DEFAULT_MAX_HISTORY_SIZE = 3;
 const double ClusterArchitect::DEFAULT_CONNECTIVITY_FRACTION = 0.01;
-const unsigned int ClusterArchitect::DEFAULT_HISTORY_STEPPING_FACTOR = 10;
+const unsigned int ClusterArchitect::DEFAULT_HISTORY_STEPPING_FACTOR = 2;
 
 ClusterArchitect::ClusterArchitect(structures::Cluster & clus, const int max_history_sz,
 		const int history_stepping_factor) :

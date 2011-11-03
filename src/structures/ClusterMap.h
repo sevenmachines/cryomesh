@@ -19,16 +19,10 @@ namespace structures {
 class ClusterMap: public common::KeyMappedCollection<boost::uuids::uuid, Cluster> {
 public:
 
-	enum EnergyFractionMethod {
-		ENERGY_FRACTION_BY_CLUSTER_COUNT, ENERGY_FRACTION_BY_NODE_COUNT
-	};
 	ClusterMap() :
-			totalNodeCount(0), energyFractionMethod(ENERGY_FRACTION_BY_NODE_COUNT) {
+			totalNodeCount(0) {
 	}
 
-	void setEnergyFractionMethod(EnergyFractionMethod method) {
-		energyFractionMethod = method;
-	}
 
 	virtual ~ClusterMap() {
 	}
@@ -65,14 +59,13 @@ public:
 
 			double energy_fraction = 0;
 
-			if (energyFractionMethod == ENERGY_FRACTION_BY_CLUSTER_COUNT) {
-				energy_fraction = this->getClusterEnergyByClusterCount(total_energy);
-			}
 			while (it_all_clusters != it_all_clusters_end) {
 
-				if (energyFractionMethod == ENERGY_FRACTION_BY_NODE_COUNT) {
+				if (it_all_clusters->second->getEnergyFractionMethod() == Cluster::ENERGY_FRACTION_BY_NODE_COUNT) {
 					energy_fraction = this->getClusterEnergyByNodeCount(it_all_clusters->second, total_energy);
-				} else if (energyFractionMethod != ENERGY_FRACTION_BY_CLUSTER_COUNT) {
+				} else if (it_all_clusters->second->getEnergyFractionMethod() == Cluster::ENERGY_FRACTION_BY_CLUSTER_COUNT) {
+					energy_fraction = this->getClusterEnergyByClusterCount(total_energy);
+				} else if (it_all_clusters->second->getEnergyFractionMethod() != Cluster::ENERGY_FRACTION_BY_CLUSTER_COUNT) {
 					std::cout << "updateClusterEnergies: " << "ERROR: No energy method found" << std::endl;
 					assert(false);
 				}
@@ -185,7 +178,6 @@ public:
 
 private:
 	int totalNodeCount;
-	EnergyFractionMethod energyFractionMethod;
 }
 ;
 

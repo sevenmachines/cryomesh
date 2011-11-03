@@ -21,18 +21,18 @@ const double Cluster::SELF_CONNECTED_NODES_FRACTION = 0.1;
 
 Cluster::Cluster() :
 		spacial::Spacial(true), energy(0), nodes(), connections(), mesh(
-				boost::shared_ptr<NodeMesh>(new NodeMesh(*this))), connector(), clusterArchitect(new manipulators::ClusterArchitect(*this))  {
+				boost::shared_ptr<NodeMesh>(new NodeMesh(*this))), connector(), clusterArchitect(new manipulators::ClusterArchitect(*this)),  energyFractionMethod(ENERGY_FRACTION_BY_NODE_COUNT)  {
 }
 
 Cluster::Cluster(int nodeCount, int connectivity, const spacial::Point bounding_box) :
 		spacial::Spacial(bounding_box, true), energy(0), nodes(), connections(), mesh(
-				boost::shared_ptr<NodeMesh>(new NodeMesh(*this))), connector(), clusterArchitect(new manipulators::ClusterArchitect(*this))  {
+				boost::shared_ptr<NodeMesh>(new NodeMesh(*this))), connector(), clusterArchitect(new manipulators::ClusterArchitect(*this)) ,  energyFractionMethod(ENERGY_FRACTION_BY_NODE_COUNT) {
 	clusterArchitect->createRandomNodes(nodeCount, connectivity);
 }
 
 Cluster::Cluster(int nodeCount, int connectivity) :
 		spacial::Spacial(true), energy(0) , nodes(), connections(), mesh(
-				boost::shared_ptr<NodeMesh>(new NodeMesh(*this))), connector() , clusterArchitect(new manipulators::ClusterArchitect(*this)) {
+				boost::shared_ptr<NodeMesh>(new NodeMesh(*this))), connector() , clusterArchitect(new manipulators::ClusterArchitect(*this)),  energyFractionMethod(ENERGY_FRACTION_BY_NODE_COUNT) {
 	clusterArchitect->createRandomNodes(nodeCount, connectivity);
 }
 
@@ -54,6 +54,14 @@ double Cluster::getEnergy() const {
 void Cluster::setEnergy(double total_energy) {
 	energy = total_energy;
 }
+void Cluster::setEnergyFractionMethod(EnergyFractionMethod method) {
+	energyFractionMethod = method;
+}
+
+Cluster::EnergyFractionMethod   Cluster::getEnergyFractionMethod() const {
+	return energyFractionMethod;
+}
+
 
 const boost::shared_ptr< manipulators::ClusterArchitect  > Cluster::getClusterArchitect() const{
 	return clusterArchitect;

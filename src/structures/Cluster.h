@@ -27,7 +27,7 @@
 namespace cryomesh {
 
 namespace manipulators {
-	class ClusterArchitect;
+class ClusterArchitect;
 }
 
 namespace structures {
@@ -41,6 +41,10 @@ class Fibre;
 class Cluster: public common::Tagged, public spacial::Spacial, public common::Debuggable {
 
 public:
+
+	enum EnergyFractionMethod {
+		ENERGY_FRACTION_BY_CLUSTER_COUNT, ENERGY_FRACTION_BY_NODE_COUNT
+	};
 
 	/**
 	 * Enum to force value type of a parameter
@@ -76,6 +80,8 @@ public:
 	 */
 	void update();
 	void updateEnergy(double total_energy);
+	void setEnergyFractionMethod(EnergyFractionMethod method) ;
+	EnergyFractionMethod  getEnergyFractionMethod() const ;
 
 	void warpNodes();
 	void runAnalyser();
@@ -171,8 +177,8 @@ public:
 	double getEnergy() const;
 	void setEnergy(double d);
 
-	const boost::shared_ptr< manipulators::ClusterArchitect  >getClusterArchitect() const;
-	boost::shared_ptr< manipulators::ClusterArchitect  >getMutableClusterArchitect();
+	const boost::shared_ptr<manipulators::ClusterArchitect> getClusterArchitect() const;
+	boost::shared_ptr<manipulators::ClusterArchitect> getMutableClusterArchitect();
 
 	const boost::shared_ptr<NodeMesh> getMesh() const {
 		return mesh;
@@ -237,7 +243,9 @@ private:
 	 */
 	common::Connector<Cluster, Fibre> connector;
 
-	 boost::shared_ptr< manipulators::ClusterArchitect >  clusterArchitect;
+	boost::shared_ptr<manipulators::ClusterArchitect> clusterArchitect;
+	EnergyFractionMethod energyFractionMethod;
+
 };
 
 }
