@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="ActivityTimerDistance_8cpp" kind="file">
+    <compoundname>ActivityTimerDistance.cpp</compoundname>
+    <includes refid="ActivityTimerDistance_8h" local="yes">ActivityTimerDistance.h</includes>
+    <includes local="yes">common/Maths.h</includes>
+    <incdepgraph>
+      <node id="213">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="210">
+        <label>ActivityTimer.h</label>
+        <link refid="ActivityTimer_8h"/>
+        <childnode refid="211" relation="include">
+        </childnode>
+      </node>
+      <node id="209">
+        <label>ActivityTimerDistance.h</label>
+        <link refid="ActivityTimerDistance_8h"/>
+        <childnode refid="210" relation="include">
+        </childnode>
+        <childnode refid="212" relation="include">
+        </childnode>
+        <childnode refid="213" relation="include">
+        </childnode>
+      </node>
+      <node id="212">
+        <label>common/Debuggable.h</label>
+      </node>
+      <node id="214">
+        <label>common/Maths.h</label>
+      </node>
+      <node id="211">
+        <label>ostream</label>
+      </node>
+      <node id="208">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.cpp</label>
+        <link refid="ActivityTimerDistance.cpp"/>
+        <childnode refid="209" relation="include">
+        </childnode>
+        <childnode refid="214" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacecryomesh">cryomesh</innernamespace>
+    <innernamespace refid="namespacecryomesh_1_1components">cryomesh::components</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="ActivityTimerDistance_8cpp_1a074363eb56aa84ca8cccaf94aa76409c" prot="public" static="no">
+        <name>ACTIVITYTIMERDISTANCE_DEBUG</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.cpp" line="8" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.cpp" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>ActivityTimerDistance.cpp</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>Created<sp/>on:<sp/>14<sp/>Feb<sp/>2011</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Author:<sp/>niall</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="ActivityTimerDistance_8cpp_1a074363eb56aa84ca8cccaf94aa76409c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ACTIVITYTIMERDISTANCE_DEBUG</highlight></codeline>
+<codeline lineno="9"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ActivityTimerDistance_8h" kindref="compound">ActivityTimerDistance.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;common/Maths.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">cryomesh<sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">components<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1afb9cf33e702747ecd42d1bfd0c3a3ce3" kindref="member">ActivityTimerDistance::MIN_DECREMENT_FRACTION</ref><sp/>=<sp/>0.1;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1ab24df04f889693641f609aa8f199455f" kindref="member">ActivityTimerDistance::MAX_DECREMENT_FRACTION</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a549f2e016df32a594092179570ae742d" kindref="member">ActivityTimerDistance::MIN_DISTANCE</ref><sp/>=<sp/>1.0;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a87e36fd0ad252132017fa1c9664cf2ca" kindref="member">ActivityTimerDistance::MAX_DISTANCE</ref><sp/>=<sp/>100.0;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1ad82f62afe5a34af54ff4c4ec8d1c2344" refkind="member"><highlight class="normal">boost::shared_ptr&lt;ActivityTimerDistance&gt;<sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1ad82f62afe5a34af54ff4c4ec8d1c2344" kindref="member" tooltip="Get a random object.">ActivityTimerDistance::getRandom</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>rand_dist<sp/>=<sp/>common::Maths::getRandomDouble(<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a549f2e016df32a594092179570ae742d" kindref="member">MIN_DISTANCE</ref>,<sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a87e36fd0ad252132017fa1c9664cf2ca" kindref="member">MAX_DISTANCE</ref>);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>scale<sp/>decrement<sp/>as<sp/>percentage<sp/>of<sp/>distance</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>min_decrement<sp/>=<sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1afb9cf33e702747ecd42d1bfd0c3a3ce3" kindref="member">MIN_DECREMENT_FRACTION</ref><sp/>*<sp/>rand_dist;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>max_decrement<sp/>=<sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1ab24df04f889693641f609aa8f199455f" kindref="member">MAX_DECREMENT_FRACTION</ref><sp/>*<sp/>rand_dist;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>rand_dec<sp/>=<sp/>common::Maths::getRandomDouble(min_decrement,<sp/>max_decrement);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::shared_ptr&lt;ActivityTimerDistance&gt;<sp/>rand_acttimer(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a3da36944fccd3512740a63fdae13de20" kindref="member" tooltip="Constructor.">ActivityTimerDistance</ref>(rand_dist,<sp/>rand_dec));</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rand_acttimer-&gt;checkConstraints();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout&lt;&lt;&quot;ActivityTimerDistance::getRandom:<sp/>&quot;&lt;&lt;*rand_acttimer&lt;&lt;std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rand_acttimer;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a3da36944fccd3512740a63fdae13de20" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a3da36944fccd3512740a63fdae13de20" kindref="member" tooltip="Constructor.">ActivityTimerDistance::ActivityTimerDistance</ref>()<sp/>:</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>distance(0),<sp/>distance_remaining(0),<sp/>decrement(0)<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a09f1241cc4c1ddd4423ac288e534b1e1" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a3da36944fccd3512740a63fdae13de20" kindref="member" tooltip="Constructor.">ActivityTimerDistance::ActivityTimerDistance</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dist,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dec)<sp/>:</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>distance(dist),<sp/>distance_remaining(dist),<sp/>decrement(dec)<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1ac31091719dbdcebb505a47a2ed99fc4e" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1ac31091719dbdcebb505a47a2ed99fc4e" kindref="member">ActivityTimerDistance::~ActivityTimerDistance</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a37992cab5a1bfde00c8f069fc47a7c2f" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a37992cab5a1bfde00c8f069fc47a7c2f" kindref="member" tooltip="Assignment operator.">ActivityTimerDistance::operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref><sp/>&amp;<sp/>obj)<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a191b202e783b14973aa327c460cdc46e" kindref="member">distance</ref><sp/>=<sp/>obj.<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a191b202e783b14973aa327c460cdc46e" kindref="member">distance</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a0e793c735a10edd18fa12a019dcf8c22" kindref="member">distance_remaining</ref><sp/>=<sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a191b202e783b14973aa327c460cdc46e" kindref="member">distance</ref>;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a81f6c8dffa1dbe89e7e3d67603f84b9a" kindref="member">decrement</ref><sp/>=<sp/>obj.<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a81f6c8dffa1dbe89e7e3d67603f84b9a" kindref="member">decrement</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a36db36aad72526f4d1541213ed762c01" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a36db36aad72526f4d1541213ed762c01" kindref="member" tooltip="Less than operator.">ActivityTimerDistance::operator&lt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref><sp/>&amp;<sp/>obj)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(this-&gt;<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a191b202e783b14973aa327c460cdc46e" kindref="member">distance</ref><sp/>&lt;<sp/>obj.<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a191b202e783b14973aa327c460cdc46e" kindref="member">distance</ref>);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1ae33ecef3ba181aec976ceb6304fc7935" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1ae33ecef3ba181aec976ceb6304fc7935" kindref="member" tooltip="Greater than operator.">ActivityTimerDistance::operator&gt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref><sp/>&amp;<sp/>obj)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(this-&gt;<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a0e793c735a10edd18fa12a019dcf8c22" kindref="member">distance_remaining</ref><sp/>&gt;<sp/>obj.<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a0e793c735a10edd18fa12a019dcf8c22" kindref="member">distance_remaining</ref>);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1adf508add943655664c792c93795406fd" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1adf508add943655664c792c93795406fd" kindref="member" tooltip="Prefix increment operator.">ActivityTimerDistance::operator--</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a0e793c735a10edd18fa12a019dcf8c22" kindref="member">distance_remaining</ref><sp/>-=<sp/>this-&gt;<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a81f6c8dffa1dbe89e7e3d67603f84b9a" kindref="member">decrement</ref>;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a0e793c735a10edd18fa12a019dcf8c22" kindref="member">distance_remaining</ref><sp/>&lt;0){</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a0e793c735a10edd18fa12a019dcf8c22" kindref="member">distance_remaining</ref>=0;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1aa8f2cf4dbabcc623aa7e0cf1f793f98a" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1adf508add943655664c792c93795406fd" kindref="member" tooltip="Prefix increment operator.">ActivityTimerDistance::operator--</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref><sp/>old<sp/>=<sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--(*this);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>old;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a7c91c5d5255899d6504cc3fe6669cbab" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a7c91c5d5255899d6504cc3fe6669cbab" kindref="member" tooltip="Non-destructive addition operator.">ActivityTimerDistance::operator+</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref><sp/>&amp;<sp/>obj)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref><sp/>temp<sp/>=<sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp<sp/>+=<sp/>obj;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>temp;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1aaf72572d1cb481f519132e7a17b8125b" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1aaf72572d1cb481f519132e7a17b8125b" kindref="member" tooltip="Destructive addition and assignment operator.">ActivityTimerDistance::operator+=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref><sp/>&amp;<sp/>obj)<sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a81f6c8dffa1dbe89e7e3d67603f84b9a" kindref="member">decrement</ref><sp/>+=<sp/>obj.<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a81f6c8dffa1dbe89e7e3d67603f84b9a" kindref="member">decrement</ref>;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a191b202e783b14973aa327c460cdc46e" kindref="member">distance</ref><sp/>+=<sp/>obj.<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a191b202e783b14973aa327c460cdc46e" kindref="member">distance</ref>;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a0e793c735a10edd18fa12a019dcf8c22" kindref="member">distance_remaining</ref><sp/>+=<sp/>obj.<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a0e793c735a10edd18fa12a019dcf8c22" kindref="member">distance_remaining</ref>;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1aa0ded366836ca5bb7ce9db6abf7b4d51" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1aa0ded366836ca5bb7ce9db6abf7b4d51" kindref="member" tooltip="Get the delay.">ActivityTimerDistance::getDelay</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a0e793c735a10edd18fa12a019dcf8c22" kindref="member">distance_remaining</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a7da9fc6bc83657837f90ad3a6158e3a5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a7da9fc6bc83657837f90ad3a6158e3a5" kindref="member" tooltip="Get the starting delay.">ActivityTimerDistance::getStartingDelay</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a191b202e783b14973aa327c460cdc46e" kindref="member">distance</ref>;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a3691132699928dc9f7089576ad0c12ce" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a3691132699928dc9f7089576ad0c12ce" kindref="member" tooltip="Get the decrement.">ActivityTimerDistance::getDecrement</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a81f6c8dffa1dbe89e7e3d67603f84b9a" kindref="member">decrement</ref>;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="101" refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a54d73b877fd99ece736c7352a09688ad" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a54d73b877fd99ece736c7352a09688ad" kindref="member">ActivityTimerDistance::enableDebug</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>b){</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;setDebug(b);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="104" refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1aca048029f8ff311c7e215bb2d7689c7b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1aca048029f8ff311c7e215bb2d7689c7b" kindref="member" tooltip="Reset the countdown.">ActivityTimerDistance::reset</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a0e793c735a10edd18fa12a019dcf8c22" kindref="member">distance_remaining</ref><sp/>=<sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a191b202e783b14973aa327c460cdc46e" kindref="member">distance</ref>;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="107" refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a6e109b8f4ddcf6d4e24f0347d4060f78" refkind="member"><highlight class="normal">std::ostream<sp/>&amp;<sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a6e109b8f4ddcf6d4e24f0347d4060f78" kindref="member">ActivityTimerDistance::print</ref>(std::ostream<sp/>&amp;<sp/>os)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;ActivityTimerDistance:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;distance=&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>this-&gt;<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1aa0ded366836ca5bb7ce9db6abf7b4d51" kindref="member" tooltip="Get the delay.">getDelay</ref>()<sp/>&lt;&lt;</highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal">&lt;&lt;this-&gt;<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a7da9fc6bc83657837f90ad3a6158e3a5" kindref="member" tooltip="Get the starting delay.">getStartingDelay</ref>()&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>decrement=&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>this-&gt;<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a3691132699928dc9f7089576ad0c12ce" kindref="member" tooltip="Get the decrement.">getDecrement</ref>()</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a2e2ac1b8bc8d942346c1a758d7602a99" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a2e2ac1b8bc8d942346c1a758d7602a99" kindref="member">ActivityTimerDistance::checkConstraints</ref>()</highlight><highlight class="keyword">const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>decrement_good<sp/>=<sp/>(this-&gt;<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a3691132699928dc9f7089576ad0c12ce" kindref="member" tooltip="Get the decrement.">getDecrement</ref>()&lt;this-&gt;<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a7da9fc6bc83657837f90ad3a6158e3a5" kindref="member" tooltip="Get the starting delay.">getStartingDelay</ref>());</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>ACTIVITYTIMERDISTANCE_DEBUG</highlight></codeline>
+<codeline lineno="116"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(decrement_good<sp/>==</highlight><highlight class="keyword">false</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;ActivityTimerDistance::checkConstraints:<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;this-&gt;<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a3691132699928dc9f7089576ad0c12ce" kindref="member" tooltip="Get the decrement.">getDecrement</ref>()&lt;&lt;</highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal">&lt;&lt;this-&gt;<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a7da9fc6bc83657837f90ad3a6158e3a5" kindref="member" tooltip="Get the starting delay.">getStartingDelay</ref>()&lt;&lt;</highlight><highlight class="stringliteral">&quot;this-&gt;getDecrement()&gt;this-&gt;getStartingDelay()&quot;</highlight><highlight class="normal">&lt;&lt;std::endl;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="120"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>delay_good<sp/>=<sp/>(this-&gt;<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a7da9fc6bc83657837f90ad3a6158e3a5" kindref="member" tooltip="Get the starting delay.">getStartingDelay</ref>()&gt;<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a549f2e016df32a594092179570ae742d" kindref="member">ActivityTimerDistance::MIN_DISTANCE</ref>);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>ACTIVITYTIMERDISTANCE_DEBUG</highlight></codeline>
+<codeline lineno="122"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(delay_good<sp/>==</highlight><highlight class="keyword">false</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;ActivityTimerDistance::checkConstraints:<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;this-&gt;<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a7da9fc6bc83657837f90ad3a6158e3a5" kindref="member" tooltip="Get the starting delay.">getStartingDelay</ref>()&lt;&lt;</highlight><highlight class="stringliteral">&quot;&gt;&quot;</highlight><highlight class="normal">&lt;&lt;<ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a549f2e016df32a594092179570ae742d" kindref="member">MIN_DISTANCE</ref>&lt;&lt;</highlight><highlight class="stringliteral">&quot;this-&gt;getStartingDelay()&gt;MIN_DISTANCE&quot;</highlight><highlight class="normal">&lt;&lt;std::endl;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="126"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>decrement_good<sp/>&amp;&amp;<sp/>delay_good;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal">}</highlight><highlight class="comment">//NAMESPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight><highlight class="comment">//NAMESPACE</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,603 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="classcryomesh_1_1common_1_1Cycle" kind="class" prot="public">
+    <compoundname>cryomesh::common::Cycle</compoundname>
+    <includes refid="Cycle_8h" local="no">Cycle.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" prot="private" static="no" mutable="no">
+        <type>mpz_class</type>
+        <definition>mpz_class cryomesh::common::Cycle::cycle</definition>
+        <argsstring></argsstring>
+        <name>cycle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" line="240" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" bodystart="240" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1common_1_1Cycle_1ae1d8058a487c48c4a1fe3fbf9f2c4f14" compoundref="Cycle_8cpp" startline="115" endline="117">getMP</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Cycle_1ae8ed3bd0a7d6dca37e6aff08cb18f1bb" compoundref="Cycle_8cpp" startline="88" endline="91">operator++</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Cycle_1aba766561a03d089461cf2f59c6a4e9b9" compoundref="Cycle_8cpp" startline="36" endline="39">operator+=</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Cycle_1a420ad7ce993fa00a92fc61f84f3142cf" compoundref="Cycle_8cpp" startline="105" endline="108">operator--</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Cycle_1a1486f852d2104c5fbf806c9f1ad783b1" compoundref="Cycle_8cpp" startline="51" endline="54">operator-=</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Cycle_1a7c81026bf214be012717ce71472b4d1d" compoundref="Cycle_8cpp" startline="76" endline="78">operator&lt;</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Cycle_1af4129a01aee0e3285d3d7354a02e9f8a" compoundref="Cycle_8cpp" startline="84" endline="86">operator&lt;=</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Cycle_1a5061bb5d219d7a0cc841e1ee7306942e" compoundref="Cycle_8cpp" startline="25" endline="28">operator=</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Cycle_1adeb27509ede9eebe8d39605b976f3ecd" compoundref="Cycle_8cpp" startline="64" endline="66">operator==</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Cycle_1afd820cd18549a6473004584e0ea20dc2" compoundref="Cycle_8cpp" startline="72" endline="74">operator&gt;</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Cycle_1a88304063eceb877cfefc5ce707a8e2a6" compoundref="Cycle_8cpp" startline="80" endline="82">operator&gt;=</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Cycle_1ad71494a74fe0dfdb7e470a091ee0906d" compoundref="Cycle_8cpp" startline="60" endline="62">toLInt</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Cycle_1a5168b76b3a3f20b5f6e38f96f8f9a8b5" compoundref="Cycle_8cpp" startline="56" endline="58">toULInt</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Cycle_1a3ec7b4684fc43ded87c53f497124d384" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::common::Cycle::Cycle</definition>
+        <argsstring>()</argsstring>
+        <name>Cycle</name>
+        <briefdescription>
+<para>Default Constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" line="26" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.cpp" bodystart="15" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Cycle_1af3feb1bcc151a49815a13950c2c2e786" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::common::Cycle::Cycle</definition>
+        <argsstring>(const long int it)</argsstring>
+        <name>Cycle</name>
+        <param>
+          <type>const long int</type>
+          <declname>it</declname>
+        </param>
+        <briefdescription>
+<para>Construct from unsigned long int. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>unsigned long int The ulong int to contruct from </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" line="34" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.cpp" bodystart="17" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Cycle_1a9187de66119f4f3f7e035ff9f961e60f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::common::Cycle::Cycle</definition>
+        <argsstring>(mpz_class mp)</argsstring>
+        <name>Cycle</name>
+        <param>
+          <type>mpz_class</type>
+          <declname>mp</declname>
+        </param>
+        <briefdescription>
+<para>Construct from mpz. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mpz_class</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>mp The multi-precision integer to contruct from </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" line="42" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.cpp" bodystart="21" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Cycle_1a5061bb5d219d7a0cc841e1ee7306942e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp;</type>
+        <definition>Cycle &amp; cryomesh::common::Cycle::operator=</definition>
+        <argsstring>(const Cycle &amp;obj)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>Assignment operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp; obj RHS assignment</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp; This object after assignment </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" line="54" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.cpp" bodystart="25" bodyend="28"/>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" compoundref="Cycle_8h" startline="240">cycle</references>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1ae1d8058a487c48c4a1fe3fbf9f2c4f14" compoundref="Cycle_8cpp" startline="115" endline="117">getMP</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Cycle_1abfb487638d7cbcb6dc7cc9b69c5bfbbc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref></type>
+        <definition>const Cycle cryomesh::common::Cycle::operator+</definition>
+        <argsstring>(const Cycle &amp;obj) const </argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>Non-destructive addition operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp; obj RHS addition</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> New object after addition </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" line="65" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.cpp" bodystart="30" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Cycle_1afd820cd18549a6473004584e0ea20dc2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Cycle::operator&gt;</definition>
+        <argsstring>(const Cycle &amp;obj) const </argsstring>
+        <name>operator&gt;</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>Greater than operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp; obj RHS addition</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True if &gt; than obj, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" line="76" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.cpp" bodystart="72" bodyend="74"/>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" compoundref="Cycle_8h" startline="240">cycle</references>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1ae1d8058a487c48c4a1fe3fbf9f2c4f14" compoundref="Cycle_8cpp" startline="115" endline="117">getMP</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Cycle_1a7c81026bf214be012717ce71472b4d1d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Cycle::operator&lt;</definition>
+        <argsstring>(const Cycle &amp;obj) const </argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>Less than operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp; obj RHS addition</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True if less than obj, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" line="87" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.cpp" bodystart="76" bodyend="78"/>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" compoundref="Cycle_8h" startline="240">cycle</references>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1ae1d8058a487c48c4a1fe3fbf9f2c4f14" compoundref="Cycle_8cpp" startline="115" endline="117">getMP</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Cycle_1a88304063eceb877cfefc5ce707a8e2a6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Cycle::operator&gt;=</definition>
+        <argsstring>(const Cycle &amp;obj) const </argsstring>
+        <name>operator&gt;=</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>&gt;= than operator </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp; obj RHS addition</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True if &gt; than obj, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" line="98" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.cpp" bodystart="80" bodyend="82"/>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" compoundref="Cycle_8h" startline="240">cycle</references>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1ae1d8058a487c48c4a1fe3fbf9f2c4f14" compoundref="Cycle_8cpp" startline="115" endline="117">getMP</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Cycle_1af4129a01aee0e3285d3d7354a02e9f8a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Cycle::operator&lt;=</definition>
+        <argsstring>(const Cycle &amp;obj) const </argsstring>
+        <name>operator&lt;=</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>&lt;= than operator </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp; obj RHS addition</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True if less than obj, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" line="109" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.cpp" bodystart="84" bodyend="86"/>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" compoundref="Cycle_8h" startline="240">cycle</references>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1ae1d8058a487c48c4a1fe3fbf9f2c4f14" compoundref="Cycle_8cpp" startline="115" endline="117">getMP</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Cycle_1aba766561a03d089461cf2f59c6a4e9b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp;</type>
+        <definition>Cycle &amp; cryomesh::common::Cycle::operator+=</definition>
+        <argsstring>(const Cycle &amp;obj)</argsstring>
+        <name>operator+=</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>Destructive addition and assignment operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp; obj RHS addition</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp; This object after addition and assignment </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" line="120" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.cpp" bodystart="36" bodyend="39"/>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" compoundref="Cycle_8h" startline="240">cycle</references>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1ae1d8058a487c48c4a1fe3fbf9f2c4f14" compoundref="Cycle_8cpp" startline="115" endline="117">getMP</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Cycle_1a2c8b5be6e8ce87e4994cf1aa5e5db104" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref></type>
+        <definition>const Cycle cryomesh::common::Cycle::operator-</definition>
+        <argsstring>(const Cycle &amp;obj) const </argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>Non-destructive addition operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp; obj RHS addition</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> New object after addition </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" line="131" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.cpp" bodystart="41" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Cycle_1a1486f852d2104c5fbf806c9f1ad783b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp;</type>
+        <definition>Cycle &amp; cryomesh::common::Cycle::operator-=</definition>
+        <argsstring>(const Cycle &amp;obj)</argsstring>
+        <name>operator-=</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>Destructive addition and assignment operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp; obj RHS addition</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp; This object after addition and assignment </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" line="142" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.cpp" bodystart="51" bodyend="54"/>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" compoundref="Cycle_8h" startline="240">cycle</references>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1ae1d8058a487c48c4a1fe3fbf9f2c4f14" compoundref="Cycle_8cpp" startline="115" endline="117">getMP</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Cycle_1adeb27509ede9eebe8d39605b976f3ecd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Cycle::operator==</definition>
+        <argsstring>(const Cycle &amp;obj) const </argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>Comparator operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp; obj RHS object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True if equal, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" line="153" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.cpp" bodystart="64" bodyend="66"/>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" compoundref="Cycle_8h" startline="240">cycle</references>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1ae1d8058a487c48c4a1fe3fbf9f2c4f14" compoundref="Cycle_8cpp" startline="115" endline="117">getMP</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Cycle_1a7a60d932e1b4b215ec6c5cfd829dba66" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Cycle::operator!=</definition>
+        <argsstring>(const Cycle &amp;obj) const </argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>Not comparator operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp; obj RHS object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True if not equal, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" line="164" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.cpp" bodystart="68" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Cycle_1ae8ed3bd0a7d6dca37e6aff08cb18f1bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp;</type>
+        <definition>Cycle &amp; cryomesh::common::Cycle::operator++</definition>
+        <argsstring>()</argsstring>
+        <name>operator++</name>
+        <briefdescription>
+<para>Prefix increment operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp; Return this </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" line="172" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.cpp" bodystart="88" bodyend="91"/>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" compoundref="Cycle_8h" startline="240">cycle</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Cycle_1adf4af828db11969f216159f7b6256a78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref></type>
+        <definition>Cycle cryomesh::common::Cycle::operator++</definition>
+        <argsstring>(int)</argsstring>
+        <name>operator++</name>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+<para>Postfix increment operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp; Return this </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" line="180" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.cpp" bodystart="93" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Cycle_1a57b60f46c0304d9980577e1dc096aea1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref></type>
+        <definition>Cycle cryomesh::common::Cycle::operator--</definition>
+        <argsstring>(int)</argsstring>
+        <name>operator--</name>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+<para>Postfix decrement operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp; Return this </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" line="188" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.cpp" bodystart="99" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Cycle_1a420ad7ce993fa00a92fc61f84f3142cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp;</type>
+        <definition>Cycle &amp; cryomesh::common::Cycle::operator--</definition>
+        <argsstring>()</argsstring>
+        <name>operator--</name>
+        <briefdescription>
+<para>Prefix increment operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp; Return this </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" line="196" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.cpp" bodystart="105" bodyend="108"/>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" compoundref="Cycle_8h" startline="240">cycle</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Cycle_1a5168b76b3a3f20b5f6e38f96f8f9a8b5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned long int</type>
+        <definition>unsigned long int cryomesh::common::Cycle::toULInt</definition>
+        <argsstring>() const </argsstring>
+        <name>toULInt</name>
+        <briefdescription>
+<para>Return as an unsigned integer. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>unsigned int The cycle as an int </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" line="217" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.cpp" bodystart="56" bodyend="58"/>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" compoundref="Cycle_8h" startline="240">cycle</references>
+        <referencedby refid="classcryomesh_1_1state_1_1Pattern_1a2dd3aa753f926b674aa73688a932ebf7" compoundref="Pattern_8cpp" startline="229" endline="235">cryomesh::state::Pattern::getDatabaseObject</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1Node_1a811e64601504ff99536c2680429c7582" compoundref="Node_8cpp" startline="296" endline="303">cryomesh::components::Node::getDatabaseObject</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a69cbe2fb91ca27e0b167165c52d11231" compoundref="NodeDatabaseObject_8cpp" startline="13" endline="21">cryomesh::manager::NodeDatabaseObject::NodeDatabaseObject</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1PatternDatabaseObject_1a880f682507abc648bf30ca5b0572a802" compoundref="PatternDatabaseObject_8cpp" startline="19" endline="24">cryomesh::manager::PatternDatabaseObject::PatternDatabaseObject</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1ImpulseCollection_1a892cc1028a9539de15668c39511adba3" compoundref="ImpulseCollection_8cpp" startline="265" endline="283">cryomesh::components::ImpulseCollection::refreshDataObject</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Cycle_1ad71494a74fe0dfdb7e470a091ee0906d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>long int</type>
+        <definition>long int cryomesh::common::Cycle::toLInt</definition>
+        <argsstring>() const </argsstring>
+        <name>toLInt</name>
+        <briefdescription>
+<para>Return as an signed integer. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>signed int The cycle as an int </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" line="225" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.cpp" bodystart="60" bodyend="62"/>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" compoundref="Cycle_8h" startline="240">cycle</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1a62f33a7c826d115aa981d3cca149e14b" compoundref="ConnectionDatabaseObject_8cpp" startline="20" endline="29">cryomesh::manager::ConnectionDatabaseObject::ConnectionDatabaseObject</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a8095a326205cb6bccf529291f3ecb372" compoundref="DatabaseManager_8cpp" startline="312" endline="327">cryomesh::manager::DatabaseManager::deleteByCycle</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1Impulse_1a50ff12cf26ce360c37ec6ed93aad2ea5" compoundref="Impulse_8cpp" startline="129" endline="154">cryomesh::components::Impulse::getActivity</referencedby>
+        <referencedby refid="namespacecryomesh_1_1common_1a09ffb633342203192e93c454f4dbd6f9" compoundref="Cycle_8cpp" startline="110" endline="113">cryomesh::common::operator&lt;&lt;</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1Impulse_1a77e225470110ea77db3969cbaa2e276a" compoundref="Impulse_8cpp" startline="275" endline="294">cryomesh::components::Impulse::operator=</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1ab24de957b5908a4dc7d0c9146b43488b" compoundref="DatabaseManager_8cpp" startline="150" endline="155">cryomesh::manager::DatabaseManager::selectConnection</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a72e0ced2c0638556f66cbceb60123aa5" compoundref="DatabaseManager_8cpp" startline="144" endline="149">cryomesh::manager::DatabaseManager::selectNode</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a04e8afc360e46b238415910dcafc2dd8" compoundref="DatabaseManager_8cpp" startline="157" endline="162">cryomesh::manager::DatabaseManager::selectOutputPattern</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1af2d4487c9955417740ecaeeb7e27db4f" compoundref="DatabaseManager_8cpp" startline="179" endline="189">cryomesh::manager::DatabaseManager::selectValue</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a591a9f332c898ed4a49f388baccdf6aa" compoundref="DatabaseManager_8cpp" startline="273" endline="279">cryomesh::manager::DatabaseManager::updateByUUID</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Cycle_1ae1d8058a487c48c4a1fe3fbf9f2c4f14" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const mpz_class &amp;</type>
+        <definition>const mpz_class &amp; cryomesh::common::Cycle::getMP</definition>
+        <argsstring>() const </argsstring>
+        <name>getMP</name>
+        <briefdescription>
+<para>Get multiprecision value. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>mpz_class </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" line="232" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.cpp" bodystart="115" bodyend="117"/>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" compoundref="Cycle_8h" startline="240">cycle</references>
+        <referencedby refid="classcryomesh_1_1common_1_1Cycle_1aba766561a03d089461cf2f59c6a4e9b9" compoundref="Cycle_8cpp" startline="36" endline="39">operator+=</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Cycle_1a1486f852d2104c5fbf806c9f1ad783b1" compoundref="Cycle_8cpp" startline="51" endline="54">operator-=</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Cycle_1a7c81026bf214be012717ce71472b4d1d" compoundref="Cycle_8cpp" startline="76" endline="78">operator&lt;</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Cycle_1af4129a01aee0e3285d3d7354a02e9f8a" compoundref="Cycle_8cpp" startline="84" endline="86">operator&lt;=</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Cycle_1a5061bb5d219d7a0cc841e1ee7306942e" compoundref="Cycle_8cpp" startline="25" endline="28">operator=</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Cycle_1adeb27509ede9eebe8d39605b976f3ecd" compoundref="Cycle_8cpp" startline="64" endline="66">operator==</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Cycle_1afd820cd18549a6473004584e0ea20dc2" compoundref="Cycle_8cpp" startline="72" endline="74">operator&gt;</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Cycle_1a88304063eceb877cfefc5ce707a8e2a6" compoundref="Cycle_8cpp" startline="80" endline="82">operator&gt;=</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classcryomesh_1_1common_1_1Cycle_1a19d20624a8c580da1b9ba42ecfa28b3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const Cycle &amp;obj)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>To stream operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::ostream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp; os The output stream </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref> &amp; obj The object to stream</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::ostream &amp; The output stream </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" line="209" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.cpp" bodystart="110" bodyend="113"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" line="20" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.h" bodystart="20" bodyend="241"/>
+    <listofallmembers>
+      <member refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" prot="private" virt="non-virtual"><scope>cryomesh::common::Cycle</scope><name>cycle</name></member>
+      <member refid="classcryomesh_1_1common_1_1Cycle_1a3ec7b4684fc43ded87c53f497124d384" prot="public" virt="non-virtual"><scope>cryomesh::common::Cycle</scope><name>Cycle</name></member>
+      <member refid="classcryomesh_1_1common_1_1Cycle_1af3feb1bcc151a49815a13950c2c2e786" prot="public" virt="non-virtual"><scope>cryomesh::common::Cycle</scope><name>Cycle</name></member>
+      <member refid="classcryomesh_1_1common_1_1Cycle_1a9187de66119f4f3f7e035ff9f961e60f" prot="public" virt="non-virtual"><scope>cryomesh::common::Cycle</scope><name>Cycle</name></member>
+      <member refid="classcryomesh_1_1common_1_1Cycle_1ae1d8058a487c48c4a1fe3fbf9f2c4f14" prot="public" virt="non-virtual"><scope>cryomesh::common::Cycle</scope><name>getMP</name></member>
+      <member refid="classcryomesh_1_1common_1_1Cycle_1a7a60d932e1b4b215ec6c5cfd829dba66" prot="public" virt="non-virtual"><scope>cryomesh::common::Cycle</scope><name>operator!=</name></member>
+      <member refid="classcryomesh_1_1common_1_1Cycle_1abfb487638d7cbcb6dc7cc9b69c5bfbbc" prot="public" virt="non-virtual"><scope>cryomesh::common::Cycle</scope><name>operator+</name></member>
+      <member refid="classcryomesh_1_1common_1_1Cycle_1ae8ed3bd0a7d6dca37e6aff08cb18f1bb" prot="public" virt="non-virtual"><scope>cryomesh::common::Cycle</scope><name>operator++</name></member>
+      <member refid="classcryomesh_1_1common_1_1Cycle_1adf4af828db11969f216159f7b6256a78" prot="public" virt="non-virtual"><scope>cryomesh::common::Cycle</scope><name>operator++</name></member>
+      <member refid="classcryomesh_1_1common_1_1Cycle_1aba766561a03d089461cf2f59c6a4e9b9" prot="public" virt="non-virtual"><scope>cryomesh::common::Cycle</scope><name>operator+=</name></member>
+      <member refid="classcryomesh_1_1common_1_1Cycle_1a2c8b5be6e8ce87e4994cf1aa5e5db104" prot="public" virt="non-virtual"><scope>cryomesh::common::Cycle</scope><name>operator-</name></member>
+      <member refid="classcryomesh_1_1common_1_1Cycle_1a57b60f46c0304d9980577e1dc096aea1" prot="public" virt="non-virtual"><scope>cryomesh::common::Cycle</scope><name>operator--</name></member>
+      <member refid="classcryomesh_1_1common_1_1Cycle_1a420ad7ce993fa00a92fc61f84f3142cf" prot="public" virt="non-virtual"><scope>cryomesh::common::Cycle</scope><name>operator--</name></member>
+      <member refid="classcryomesh_1_1common_1_1Cycle_1a1486f852d2104c5fbf806c9f1ad783b1" prot="public" virt="non-virtual"><scope>cryomesh::common::Cycle</scope><name>operator-=</name></member>
+      <member refid="classcryomesh_1_1common_1_1Cycle_1a7c81026bf214be012717ce71472b4d1d" prot="public" virt="non-virtual"><scope>cryomesh::common::Cycle</scope><name>operator&lt;</name></member>
+      <member refid="classcryomesh_1_1common_1_1Cycle_1a19d20624a8c580da1b9ba42ecfa28b3d" prot="public" virt="non-virtual"><scope>cryomesh::common::Cycle</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classcryomesh_1_1common_1_1Cycle_1af4129a01aee0e3285d3d7354a02e9f8a" prot="public" virt="non-virtual"><scope>cryomesh::common::Cycle</scope><name>operator&lt;=</name></member>
+      <member refid="classcryomesh_1_1common_1_1Cycle_1a5061bb5d219d7a0cc841e1ee7306942e" prot="public" virt="non-virtual"><scope>cryomesh::common::Cycle</scope><name>operator=</name></member>
+      <member refid="classcryomesh_1_1common_1_1Cycle_1adeb27509ede9eebe8d39605b976f3ecd" prot="public" virt="non-virtual"><scope>cryomesh::common::Cycle</scope><name>operator==</name></member>
+      <member refid="classcryomesh_1_1common_1_1Cycle_1afd820cd18549a6473004584e0ea20dc2" prot="public" virt="non-virtual"><scope>cryomesh::common::Cycle</scope><name>operator&gt;</name></member>
+      <member refid="classcryomesh_1_1common_1_1Cycle_1a88304063eceb877cfefc5ce707a8e2a6" prot="public" virt="non-virtual"><scope>cryomesh::common::Cycle</scope><name>operator&gt;=</name></member>
+      <member refid="classcryomesh_1_1common_1_1Cycle_1ad71494a74fe0dfdb7e470a091ee0906d" prot="public" virt="non-virtual"><scope>cryomesh::common::Cycle</scope><name>toLInt</name></member>
+      <member refid="classcryomesh_1_1common_1_1Cycle_1a5168b76b3a3f20b5f6e38f96f8f9a8b5" prot="public" virt="non-virtual"><scope>cryomesh::common::Cycle</scope><name>toULInt</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,590 @@
+\hypertarget{classcryomesh_1_1state_1_1BinaryString}{\section{cryomesh\-:\-:state\-:\-:\-Binary\-String \-Class \-Reference}
+\label{classcryomesh_1_1state_1_1BinaryString}\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}}
+}
+
+
+{\ttfamily \#include $<$\-Binary\-String.\-h$>$}
+
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classcryomesh_1_1state_1_1BinaryString_adaad1428a9b504122a82b03879748466}{\-Type} \{ \hyperlink{classcryomesh_1_1state_1_1BinaryString_adaad1428a9b504122a82b03879748466ae29b88acd457612271587fc8a11b252a}{\-T\-X\-T}, 
+\hyperlink{classcryomesh_1_1state_1_1BinaryString_adaad1428a9b504122a82b03879748466aa507e87a4889fddd05f3b03b0ba96ff7}{\-B\-I\-N}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \hyperlink{classcryomesh_1_1state_1_1BinaryString_af23aecbe6785a7e134aa6e247f4c160b}{serialize} (\-Archive \&ar, const unsigned int version)
+\item 
+\hyperlink{classcryomesh_1_1state_1_1BinaryString_a3e133c657f04c3ee2a895d2df988b306}{\-Binary\-String} ()
+\item 
+\hyperlink{classcryomesh_1_1state_1_1BinaryString_a023550e6e1753c5c1d64d308b55a9ff0}{\-Binary\-String} (const std\-::string \&str, bool sign\-\_\-bit=false, \hyperlink{classcryomesh_1_1state_1_1BinaryString_adaad1428a9b504122a82b03879748466}{\-Type} tp=\hyperlink{classcryomesh_1_1state_1_1BinaryString_adaad1428a9b504122a82b03879748466ae29b88acd457612271587fc8a11b252a}{\-T\-X\-T})
+\item 
+\hyperlink{classcryomesh_1_1state_1_1BinaryString_acd8030555e7e8962ba2f587f3712fb79}{\-Binary\-String} (const std\-::vector$<$ bool $>$ \&binvec, bool sign\-\_\-bit)
+\item 
+\hyperlink{classcryomesh_1_1state_1_1BinaryString_ac8de3e6cf11d94161865ae78e7494397}{\-Binary\-String} (const \hyperlink{classcryomesh_1_1state_1_1BinaryString}{\-Binary\-String} \&obj)
+\item 
+virtual \hyperlink{classcryomesh_1_1state_1_1BinaryString_a64283f9b44fe2216d66458f083d92e38}{$\sim$\-Binary\-String} ()
+\item 
+void \hyperlink{classcryomesh_1_1state_1_1BinaryString_a61f0e88355bd60fd6df43b418170ded6}{set\-Sign\-Bit} (bool b)
+\item 
+bool \hyperlink{classcryomesh_1_1state_1_1BinaryString_a01370c6d213baea734c41ee6225fb69c}{get\-Sign\-Bit} () const 
+\item 
+const std\-::string \& \hyperlink{classcryomesh_1_1state_1_1BinaryString_ad5f20b679d6ee977abf389f4cb252bbe}{get\-Binary\-String} () const 
+\item 
+const std\-::vector$<$ bool $>$ \hyperlink{classcryomesh_1_1state_1_1BinaryString_aed4c3e5869c8c62b8d189d59e731b8da}{get\-Bools} () const 
+\item 
+void \hyperlink{classcryomesh_1_1state_1_1BinaryString_aa1666a479090e4ad5aefb28a09f98476}{set\-Binary\-String} (const std\-::string \&str)
+\item 
+void \hyperlink{classcryomesh_1_1state_1_1BinaryString_a70507e3fb33fbe4cfe158981ead72ed9}{set\-Binary\-String} (const std\-::vector$<$ bool $>$ \&binvec)
+\item 
+bool \hyperlink{classcryomesh_1_1state_1_1BinaryString_a80d5b4b762ec09b2a7e3a6945c2dc2d6}{is\-Valid\-Binary} () const 
+\item 
+bool \hyperlink{classcryomesh_1_1state_1_1BinaryString_a48ca7c2319260b3317561ea71f48efca}{is\-All\-Zeroes} () const 
+\item 
+unsigned int \hyperlink{classcryomesh_1_1state_1_1BinaryString_a09c187077c863fe9782334db0de63139}{get\-Width} () const 
+\item 
+std\-::list$<$ int $>$ \hyperlink{classcryomesh_1_1state_1_1BinaryString_a0c3ad2bc0926b0c1131e23e1fca1ce7a}{to\-Ints} () const 
+\item 
+std\-::string \hyperlink{classcryomesh_1_1state_1_1BinaryString_a6bd5aaed5f90ab29c8e057fc015f1092}{to\-Text} () const 
+\item 
+std\-::string \hyperlink{classcryomesh_1_1state_1_1BinaryString_ae65ca7d94f44208ba7aec54d1e691f6a}{resize} (const unsigned int size)
+\item 
+int \hyperlink{classcryomesh_1_1state_1_1BinaryString_add005a118d9b10305b8790397c9aae0e}{to\-Int} () const 
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\-::list$<$ int $>$ \hyperlink{classcryomesh_1_1state_1_1BinaryString_a59b3856d1a5629a8c85734b5d226d102}{format\-Text\-To\-Ints} (const std\-::string \&str)
+\item 
+static std\-::string \hyperlink{classcryomesh_1_1state_1_1BinaryString_aa989d3c6ce4f5f155751628f091ee93a}{format\-Ints\-To\-Text} (const std\-::list$<$ int $>$ \&charints)
+\item 
+static std\-::list$<$ \hyperlink{classcryomesh_1_1state_1_1BinaryString}{\-Binary\-String} $>$ \hyperlink{classcryomesh_1_1state_1_1BinaryString_a78205804420ed2dc20fef3a81919bdff}{format\-Text\-To\-Binary\-Strings} (const std\-::string \&str, std\-::string \&allbins)
+\item 
+static std\-::string \hyperlink{classcryomesh_1_1state_1_1BinaryString_a3ce9e8a45b89bdf608249c5bfdeaea15}{format\-Binary\-Strings\-To\-Text} (const std\-::list$<$ std\-::string $>$ \&strs)
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int \hyperlink{classcryomesh_1_1state_1_1BinaryString_aa4d7d35e5b93d290dfe6f1bafa0e0cc2}{\-B\-I\-N\-A\-R\-Y\-\_\-\-C\-H\-A\-R\-\_\-\-L\-E\-N\-G\-T\-H} = 8
+\item 
+static const unsigned int \hyperlink{classcryomesh_1_1state_1_1BinaryString_abd1c70d0aef65ad2ba5af998a22b01ab}{\-M\-A\-X\-\_\-\-B\-I\-N\-A\-R\-Y\-\_\-\-I\-N\-T\-E\-G\-E\-R\-\_\-\-S\-I\-Z\-E} = 32
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\-::string \hyperlink{classcryomesh_1_1state_1_1BinaryString_af3b1fbe76e1adf6428bbe60a393cc1df}{char\-To\-Binary\-String} (const char \&ch, bool sign\-\_\-bit)
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{classcryomesh_1_1state_1_1BinaryString_ad125f434a2cb9693597aa8be05217d21}{binary\-String}
+\item 
+bool \hyperlink{classcryomesh_1_1state_1_1BinaryString_a82a7189edccf834f144e4717294bb505}{sign\-Bit}
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classcryomesh_1_1state_1_1BinaryString_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost\-::serialization\-::access}
+\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1state_1_1BinaryString_a734cab800f1e57aca6285cdcac48180d}{operator$<$$<$} (std\-::ostream \&os, const \hyperlink{classcryomesh_1_1state_1_1BinaryString}{\-Binary\-String} \&obj)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+
+
+\-Definition at line 21 of file \-Binary\-String.\-h.
+
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_adaad1428a9b504122a82b03879748466}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!\-Type@{\-Type}}
+\index{\-Type@{\-Type}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cryomesh\-::state\-::\-Binary\-String\-::\-Type}}}\label{classcryomesh_1_1state_1_1BinaryString_adaad1428a9b504122a82b03879748466}
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-T\-X\-T@{\-T\-X\-T}!cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}}\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!\-T\-X\-T@{\-T\-X\-T}}\item[{\em 
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_adaad1428a9b504122a82b03879748466ae29b88acd457612271587fc8a11b252a}{\-T\-X\-T}\label{classcryomesh_1_1state_1_1BinaryString_adaad1428a9b504122a82b03879748466ae29b88acd457612271587fc8a11b252a}
+}]\index{\-B\-I\-N@{\-B\-I\-N}!cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}}\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!\-B\-I\-N@{\-B\-I\-N}}\item[{\em 
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_adaad1428a9b504122a82b03879748466aa507e87a4889fddd05f3b03b0ba96ff7}{\-B\-I\-N}\label{classcryomesh_1_1state_1_1BinaryString_adaad1428a9b504122a82b03879748466aa507e87a4889fddd05f3b03b0ba96ff7}
+}]\end{description}
+\end{Desc}
+
+
+
+\-Definition at line 29 of file \-Binary\-String.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_a3e133c657f04c3ee2a895d2df988b306}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!\-Binary\-String@{\-Binary\-String}}
+\index{\-Binary\-String@{\-Binary\-String}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{\-Binary\-String}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::state\-::\-Binary\-String\-::\-Binary\-String} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1BinaryString_a3e133c657f04c3ee2a895d2df988b306}
+
+
+\-Definition at line 21 of file \-Binary\-String.\-cpp.
+
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_a023550e6e1753c5c1d64d308b55a9ff0}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!\-Binary\-String@{\-Binary\-String}}
+\index{\-Binary\-String@{\-Binary\-String}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{\-Binary\-String}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::state\-::\-Binary\-String\-::\-Binary\-String} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{str, }
+\item[{bool}]{sign\-\_\-bit = {\ttfamily false}, }
+\item[{{\bf \-Type}}]{tp = {\ttfamily {\bf \-T\-X\-T}}}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1BinaryString_a023550e6e1753c5c1d64d308b55a9ff0}
+
+
+\-Definition at line 25 of file \-Binary\-String.\-cpp.
+
+
+
+\-References \-B\-I\-N, \-B\-I\-N\-A\-R\-Y\-\_\-\-C\-H\-A\-R\-\_\-\-L\-E\-N\-G\-T\-H, binary\-String, char\-To\-Binary\-String(), format\-Text\-To\-Ints(), get\-Sign\-Bit(), and resize().
+
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_acd8030555e7e8962ba2f587f3712fb79}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!\-Binary\-String@{\-Binary\-String}}
+\index{\-Binary\-String@{\-Binary\-String}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{\-Binary\-String}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::state\-::\-Binary\-String\-::\-Binary\-String} (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ bool $>$ \&}]{binvec, }
+\item[{bool}]{sign\-\_\-bit}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1BinaryString_acd8030555e7e8962ba2f587f3712fb79}
+
+
+\-Definition at line 59 of file \-Binary\-String.\-cpp.
+
+
+
+\-References binary\-String.
+
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_ac8de3e6cf11d94161865ae78e7494397}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!\-Binary\-String@{\-Binary\-String}}
+\index{\-Binary\-String@{\-Binary\-String}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{\-Binary\-String}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::state\-::\-Binary\-String\-::\-Binary\-String} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Binary\-String} \&}]{obj}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1BinaryString_ac8de3e6cf11d94161865ae78e7494397}
+
+
+\-Definition at line 78 of file \-Binary\-String.\-cpp.
+
+
+
+\-References binary\-String, get\-Binary\-String(), get\-Sign\-Bit(), and sign\-Bit.
+
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_a64283f9b44fe2216d66458f083d92e38}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!$\sim$\-Binary\-String@{$\sim$\-Binary\-String}}
+\index{$\sim$\-Binary\-String@{$\sim$\-Binary\-String}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{$\sim$\-Binary\-String}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::state\-::\-Binary\-String\-::$\sim$\-Binary\-String} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1state_1_1BinaryString_a64283f9b44fe2216d66458f083d92e38}
+
+
+\-Definition at line 83 of file \-Binary\-String.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_af3b1fbe76e1adf6428bbe60a393cc1df}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!char\-To\-Binary\-String@{char\-To\-Binary\-String}}
+\index{char\-To\-Binary\-String@{char\-To\-Binary\-String}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{char\-To\-Binary\-String}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::state\-::\-Binary\-String\-::char\-To\-Binary\-String} (
+\begin{DoxyParamCaption}
+\item[{const char \&}]{ch, }
+\item[{bool}]{sign\-\_\-bit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classcryomesh_1_1state_1_1BinaryString_af3b1fbe76e1adf6428bbe60a393cc1df}
+
+
+\-Definition at line 327 of file \-Binary\-String.\-cpp.
+
+
+
+\-References \-B\-I\-N, \-B\-I\-N\-A\-R\-Y\-\_\-\-C\-H\-A\-R\-\_\-\-L\-E\-N\-G\-T\-H, and resize().
+
+
+
+\-Referenced by \-Binary\-String(), and format\-Text\-To\-Binary\-Strings().
+
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_a3ce9e8a45b89bdf608249c5bfdeaea15}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!format\-Binary\-Strings\-To\-Text@{format\-Binary\-Strings\-To\-Text}}
+\index{format\-Binary\-Strings\-To\-Text@{format\-Binary\-Strings\-To\-Text}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{format\-Binary\-Strings\-To\-Text}]{\setlength{\rightskip}{0pt plus 5cm}static std\-::string {\bf cryomesh\-::state\-::\-Binary\-String\-::format\-Binary\-Strings\-To\-Text} (
+\begin{DoxyParamCaption}
+\item[{const std\-::list$<$ std\-::string $>$ \&}]{strs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1state_1_1BinaryString_a3ce9e8a45b89bdf608249c5bfdeaea15}
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_aa989d3c6ce4f5f155751628f091ee93a}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!format\-Ints\-To\-Text@{format\-Ints\-To\-Text}}
+\index{format\-Ints\-To\-Text@{format\-Ints\-To\-Text}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{format\-Ints\-To\-Text}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::state\-::\-Binary\-String\-::format\-Ints\-To\-Text} (
+\begin{DoxyParamCaption}
+\item[{const std\-::list$<$ int $>$ \&}]{charints}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1state_1_1BinaryString_aa989d3c6ce4f5f155751628f091ee93a}
+
+
+\-Definition at line 290 of file \-Binary\-String.\-cpp.
+
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_a78205804420ed2dc20fef3a81919bdff}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!format\-Text\-To\-Binary\-Strings@{format\-Text\-To\-Binary\-Strings}}
+\index{format\-Text\-To\-Binary\-Strings@{format\-Text\-To\-Binary\-Strings}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{format\-Text\-To\-Binary\-Strings}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<$ {\bf \-Binary\-String} $>$ {\bf cryomesh\-::state\-::\-Binary\-String\-::format\-Text\-To\-Binary\-Strings} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{str, }
+\item[{std\-::string \&}]{allbins}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1state_1_1BinaryString_a78205804420ed2dc20fef3a81919bdff}
+
+
+\-Definition at line 304 of file \-Binary\-String.\-cpp.
+
+
+
+\-References \-B\-I\-N, and char\-To\-Binary\-String().
+
+
+
+\-Referenced by to\-Ints().
+
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_a59b3856d1a5629a8c85734b5d226d102}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!format\-Text\-To\-Ints@{format\-Text\-To\-Ints}}
+\index{format\-Text\-To\-Ints@{format\-Text\-To\-Ints}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{format\-Text\-To\-Ints}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<$ int $>$ {\bf cryomesh\-::state\-::\-Binary\-String\-::format\-Text\-To\-Ints} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1state_1_1BinaryString_a59b3856d1a5629a8c85734b5d226d102}
+
+
+\-Definition at line 277 of file \-Binary\-String.\-cpp.
+
+
+
+\-Referenced by \-Binary\-String().
+
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_ad5f20b679d6ee977abf389f4cb252bbe}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!get\-Binary\-String@{get\-Binary\-String}}
+\index{get\-Binary\-String@{get\-Binary\-String}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{get\-Binary\-String}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string \& {\bf cryomesh\-::state\-::\-Binary\-String\-::get\-Binary\-String} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1BinaryString_ad5f20b679d6ee977abf389f4cb252bbe}
+
+
+\-Definition at line 93 of file \-Binary\-String.\-cpp.
+
+
+
+\-References binary\-String.
+
+
+
+\-Referenced by \-Binary\-String(), cryomesh\-::state\-::operator$<$$<$(), resize(), to\-Ints(), and to\-Text().
+
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_aed4c3e5869c8c62b8d189d59e731b8da}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!get\-Bools@{get\-Bools}}
+\index{get\-Bools@{get\-Bools}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{get\-Bools}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::vector$<$ bool $>$ {\bf cryomesh\-::state\-::\-Binary\-String\-::get\-Bools} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1BinaryString_aed4c3e5869c8c62b8d189d59e731b8da}
+
+
+\-Definition at line 97 of file \-Binary\-String.\-cpp.
+
+
+
+\-References binary\-String, and is\-Valid\-Binary().
+
+
+
+\-Referenced by cryomesh\-::state\-::\-Pattern\-::get\-Pattern().
+
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_a01370c6d213baea734c41ee6225fb69c}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!get\-Sign\-Bit@{get\-Sign\-Bit}}
+\index{get\-Sign\-Bit@{get\-Sign\-Bit}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{get\-Sign\-Bit}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf cryomesh\-::state\-::\-Binary\-String\-::get\-Sign\-Bit} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1BinaryString_a01370c6d213baea734c41ee6225fb69c}
+
+
+\-Definition at line 90 of file \-Binary\-String.\-cpp.
+
+
+
+\-References sign\-Bit.
+
+
+
+\-Referenced by \-Binary\-String(), resize(), to\-Int(), and to\-Text().
+
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_a09c187077c863fe9782334db0de63139}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!get\-Width@{get\-Width}}
+\index{get\-Width@{get\-Width}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{get\-Width}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf cryomesh\-::state\-::\-Binary\-String\-::get\-Width} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1BinaryString_a09c187077c863fe9782334db0de63139}
+
+
+\-Definition at line 177 of file \-Binary\-String.\-cpp.
+
+
+
+\-References binary\-String.
+
+
+
+\-Referenced by cryomesh\-::state\-::\-Pattern\-::get\-Size().
+
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_a48ca7c2319260b3317561ea71f48efca}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!is\-All\-Zeroes@{is\-All\-Zeroes}}
+\index{is\-All\-Zeroes@{is\-All\-Zeroes}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{is\-All\-Zeroes}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf cryomesh\-::state\-::\-Binary\-String\-::is\-All\-Zeroes} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1BinaryString_a48ca7c2319260b3317561ea71f48efca}
+
+
+\-Definition at line 162 of file \-Binary\-String.\-cpp.
+
+
+
+\-References binary\-String.
+
+
+
+\-Referenced by cryomesh\-::state\-::\-Pattern\-::is\-All\-Zeroes().
+
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_a80d5b4b762ec09b2a7e3a6945c2dc2d6}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!is\-Valid\-Binary@{is\-Valid\-Binary}}
+\index{is\-Valid\-Binary@{is\-Valid\-Binary}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{is\-Valid\-Binary}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf cryomesh\-::state\-::\-Binary\-String\-::is\-Valid\-Binary} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1BinaryString_a80d5b4b762ec09b2a7e3a6945c2dc2d6}
+
+
+\-Definition at line 147 of file \-Binary\-String.\-cpp.
+
+
+
+\-References binary\-String.
+
+
+
+\-Referenced by get\-Bools(), and to\-Int().
+
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_ae65ca7d94f44208ba7aec54d1e691f6a}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!resize@{resize}}
+\index{resize@{resize}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{resize}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::state\-::\-Binary\-String\-::resize} (
+\begin{DoxyParamCaption}
+\item[{const unsigned int}]{size}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1BinaryString_ae65ca7d94f44208ba7aec54d1e691f6a}
+
+
+\-Definition at line 374 of file \-Binary\-String.\-cpp.
+
+
+
+\-References binary\-String, get\-Binary\-String(), and get\-Sign\-Bit().
+
+
+
+\-Referenced by \-Binary\-String(), char\-To\-Binary\-String(), and to\-Text().
+
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_af23aecbe6785a7e134aa6e247f4c160b}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!serialize@{serialize}}
+\index{serialize@{serialize}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Archive $>$ void {\bf cryomesh\-::state\-::\-Binary\-String\-::serialize} (
+\begin{DoxyParamCaption}
+\item[{\-Archive \&}]{ar, }
+\item[{const unsigned int}]{version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1state_1_1BinaryString_af23aecbe6785a7e134aa6e247f4c160b}
+
+
+\-Definition at line 25 of file \-Binary\-String.\-h.
+
+
+
+\-References binary\-String, and sign\-Bit.
+
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_aa1666a479090e4ad5aefb28a09f98476}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!set\-Binary\-String@{set\-Binary\-String}}
+\index{set\-Binary\-String@{set\-Binary\-String}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{set\-Binary\-String}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::state\-::\-Binary\-String\-::set\-Binary\-String} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{str}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1BinaryString_aa1666a479090e4ad5aefb28a09f98476}
+
+
+\-Definition at line 125 of file \-Binary\-String.\-cpp.
+
+
+
+\-References binary\-String.
+
+
+
+\-Referenced by cryomesh\-::state\-::\-Pattern\-::set\-Pattern().
+
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_a70507e3fb33fbe4cfe158981ead72ed9}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!set\-Binary\-String@{set\-Binary\-String}}
+\index{set\-Binary\-String@{set\-Binary\-String}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{set\-Binary\-String}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::state\-::\-Binary\-String\-::set\-Binary\-String} (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ bool $>$ \&}]{binvec}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1BinaryString_a70507e3fb33fbe4cfe158981ead72ed9}
+
+
+\-Definition at line 128 of file \-Binary\-String.\-cpp.
+
+
+
+\-References binary\-String.
+
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_a61f0e88355bd60fd6df43b418170ded6}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!set\-Sign\-Bit@{set\-Sign\-Bit}}
+\index{set\-Sign\-Bit@{set\-Sign\-Bit}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{set\-Sign\-Bit}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::state\-::\-Binary\-String\-::set\-Sign\-Bit} (
+\begin{DoxyParamCaption}
+\item[{bool}]{b}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1BinaryString_a61f0e88355bd60fd6df43b418170ded6}
+
+
+\-Definition at line 87 of file \-Binary\-String.\-cpp.
+
+
+
+\-References sign\-Bit.
+
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_add005a118d9b10305b8790397c9aae0e}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!to\-Int@{to\-Int}}
+\index{to\-Int@{to\-Int}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{to\-Int}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::state\-::\-Binary\-String\-::to\-Int} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1BinaryString_add005a118d9b10305b8790397c9aae0e}
+
+
+\-Definition at line 181 of file \-Binary\-String.\-cpp.
+
+
+
+\-References binary\-String, get\-Sign\-Bit(), is\-Valid\-Binary(), \-M\-A\-X\-\_\-\-B\-I\-N\-A\-R\-Y\-\_\-\-I\-N\-T\-E\-G\-E\-R\-\_\-\-S\-I\-Z\-E, and sign\-Bit.
+
+
+
+\-Referenced by to\-Text().
+
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_a0c3ad2bc0926b0c1131e23e1fca1ce7a}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!to\-Ints@{to\-Ints}}
+\index{to\-Ints@{to\-Ints}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{to\-Ints}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<$ int $>$ {\bf cryomesh\-::state\-::\-Binary\-String\-::to\-Ints} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1BinaryString_a0c3ad2bc0926b0c1131e23e1fca1ce7a}
+
+
+\-Definition at line 227 of file \-Binary\-String.\-cpp.
+
+
+
+\-References format\-Text\-To\-Binary\-Strings(), and get\-Binary\-String().
+
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_a6bd5aaed5f90ab29c8e057fc015f1092}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!to\-Text@{to\-Text}}
+\index{to\-Text@{to\-Text}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{to\-Text}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::state\-::\-Binary\-String\-::to\-Text} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1BinaryString_a6bd5aaed5f90ab29c8e057fc015f1092}
+
+
+\-Definition at line 242 of file \-Binary\-String.\-cpp.
+
+
+
+\-References \-B\-I\-N, \-B\-I\-N\-A\-R\-Y\-\_\-\-C\-H\-A\-R\-\_\-\-L\-E\-N\-G\-T\-H, binary\-String, get\-Binary\-String(), get\-Sign\-Bit(), resize(), and to\-Int().
+
+
+
+\subsection{\-Friends \-And \-Related \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_ac98d07dd8f7b70e16ccb9a01abf56b9c}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!boost\-::serialization\-::access@{boost\-::serialization\-::access}}
+\index{boost\-::serialization\-::access@{boost\-::serialization\-::access}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{boost\-::serialization\-::access}]{\setlength{\rightskip}{0pt plus 5cm}friend class boost\-::serialization\-::access\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{classcryomesh_1_1state_1_1BinaryString_ac98d07dd8f7b70e16ccb9a01abf56b9c}
+
+
+\-Definition at line 23 of file \-Binary\-String.\-h.
+
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_a734cab800f1e57aca6285cdcac48180d}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const {\bf \-Binary\-String} \&}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{classcryomesh_1_1state_1_1BinaryString_a734cab800f1e57aca6285cdcac48180d}
+
+
+\-Definition at line 223 of file \-Binary\-String.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_aa4d7d35e5b93d290dfe6f1bafa0e0cc2}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!\-B\-I\-N\-A\-R\-Y\-\_\-\-C\-H\-A\-R\-\_\-\-L\-E\-N\-G\-T\-H@{\-B\-I\-N\-A\-R\-Y\-\_\-\-C\-H\-A\-R\-\_\-\-L\-E\-N\-G\-T\-H}}
+\index{\-B\-I\-N\-A\-R\-Y\-\_\-\-C\-H\-A\-R\-\_\-\-L\-E\-N\-G\-T\-H@{\-B\-I\-N\-A\-R\-Y\-\_\-\-C\-H\-A\-R\-\_\-\-L\-E\-N\-G\-T\-H}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{\-B\-I\-N\-A\-R\-Y\-\_\-\-C\-H\-A\-R\-\_\-\-L\-E\-N\-G\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int {\bf cryomesh\-::state\-::\-Binary\-String\-::\-B\-I\-N\-A\-R\-Y\-\_\-\-C\-H\-A\-R\-\_\-\-L\-E\-N\-G\-T\-H} = 8\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1state_1_1BinaryString_aa4d7d35e5b93d290dfe6f1bafa0e0cc2}
+
+
+\-Definition at line 61 of file \-Binary\-String.\-h.
+
+
+
+\-Referenced by \-Binary\-String(), char\-To\-Binary\-String(), and to\-Text().
+
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_ad125f434a2cb9693597aa8be05217d21}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!binary\-String@{binary\-String}}
+\index{binary\-String@{binary\-String}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{binary\-String}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::state\-::\-Binary\-String\-::binary\-String}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1state_1_1BinaryString_ad125f434a2cb9693597aa8be05217d21}
+
+
+\-Definition at line 64 of file \-Binary\-String.\-h.
+
+
+
+\-Referenced by \-Binary\-String(), get\-Binary\-String(), get\-Bools(), get\-Width(), is\-All\-Zeroes(), is\-Valid\-Binary(), resize(), serialize(), set\-Binary\-String(), to\-Int(), and to\-Text().
+
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_abd1c70d0aef65ad2ba5af998a22b01ab}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!\-M\-A\-X\-\_\-\-B\-I\-N\-A\-R\-Y\-\_\-\-I\-N\-T\-E\-G\-E\-R\-\_\-\-S\-I\-Z\-E@{\-M\-A\-X\-\_\-\-B\-I\-N\-A\-R\-Y\-\_\-\-I\-N\-T\-E\-G\-E\-R\-\_\-\-S\-I\-Z\-E}}
+\index{\-M\-A\-X\-\_\-\-B\-I\-N\-A\-R\-Y\-\_\-\-I\-N\-T\-E\-G\-E\-R\-\_\-\-S\-I\-Z\-E@{\-M\-A\-X\-\_\-\-B\-I\-N\-A\-R\-Y\-\_\-\-I\-N\-T\-E\-G\-E\-R\-\_\-\-S\-I\-Z\-E}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{\-M\-A\-X\-\_\-\-B\-I\-N\-A\-R\-Y\-\_\-\-I\-N\-T\-E\-G\-E\-R\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int {\bf cryomesh\-::state\-::\-Binary\-String\-::\-M\-A\-X\-\_\-\-B\-I\-N\-A\-R\-Y\-\_\-\-I\-N\-T\-E\-G\-E\-R\-\_\-\-S\-I\-Z\-E} = 32\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1state_1_1BinaryString_abd1c70d0aef65ad2ba5af998a22b01ab}
+
+
+\-Definition at line 62 of file \-Binary\-String.\-h.
+
+
+
+\-Referenced by to\-Int().
+
+\hypertarget{classcryomesh_1_1state_1_1BinaryString_a82a7189edccf834f144e4717294bb505}{\index{cryomesh\-::state\-::\-Binary\-String@{cryomesh\-::state\-::\-Binary\-String}!sign\-Bit@{sign\-Bit}}
+\index{sign\-Bit@{sign\-Bit}!cryomesh::state::BinaryString@{cryomesh\-::state\-::\-Binary\-String}}
+\subsubsection[{sign\-Bit}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf cryomesh\-::state\-::\-Binary\-String\-::sign\-Bit}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1state_1_1BinaryString_a82a7189edccf834f144e4717294bb505}
+
+
+\-Definition at line 65 of file \-Binary\-String.\-h.
+
+
+
+\-Referenced by \-Binary\-String(), get\-Sign\-Bit(), serialize(), set\-Sign\-Bit(), and to\-Int().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/state/\hyperlink{BinaryString_8h}{\-Binary\-String.\-h}\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/state/\hyperlink{BinaryString_8cpp}{\-Binary\-String.\-cpp}\end{DoxyCompactItemize}

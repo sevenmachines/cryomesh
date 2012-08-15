@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="structcryomesh_1_1manager_1_1OutputPatternsTableFormat" kind="struct" prot="public">
+    <compoundname>cryomesh::manager::OutputPatternsTableFormat</compoundname>
+    <basecompoundref refid="structcryomesh_1_1manager_1_1TableFormat" prot="public" virt="non-virtual">cryomesh::manager::TableFormat</basecompoundref>
+    <includes refid="TableFormats_8h" local="no">TableFormats.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structcryomesh_1_1manager_1_1OutputPatternsTableFormat_1af0c661dee8b2943cbb369a2704fccbb9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::manager::OutputPatternsTableFormat::OutputPatternsTableFormat</definition>
+        <argsstring>()</argsstring>
+        <name>OutputPatternsTableFormat</name>
+        <briefdescription>
+<para>Default constructor will construct all the names and columns assiciated with a pattern table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/TableFormats.h" line="157" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/TableFormats.h" bodystart="157" bodyend="162"/>
+        <references refid="structcryomesh_1_1manager_1_1TableFormat_1a29ab6f4cfc0c56da1fa461ea665a1b61" compoundref="TableFormats_8h" startline="93">cryomesh::manager::TableFormat::columns</references>
+        <references refid="structcryomesh_1_1manager_1_1TableFormat_1ab49912897ccb7fd0f8d42f1cc21332e8" compoundref="TableFormats_8h" startline="86">cryomesh::manager::TableFormat::name</references>
+      </memberdef>
+      <memberdef kind="function" id="structcryomesh_1_1manager_1_1TableFormat_1a3e797d6130c6b0745a1fac799c25677a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::TableFormat::getName</definition>
+        <argsstring>() const </argsstring>
+        <name>getName</name>
+        <briefdescription>
+<para>Return the name of the table. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>std::string The name of the table </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/TableFormats.h" line="32" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/TableFormats.h" bodystart="32" bodyend="34"/>
+        <references refid="structcryomesh_1_1manager_1_1TableFormat_1ab49912897ccb7fd0f8d42f1cc21332e8" compoundref="TableFormats_8h" startline="86">cryomesh::manager::TableFormat::name</references>
+        <referencedby refid="structcryomesh_1_1manager_1_1TableFormat_1a898ae0d0c5490ccdf71aec5156b10fcc" compoundref="TableFormats_8h" startline="60" endline="78">cryomesh::manager::TableFormat::getCreateTable</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a0e5eaf4c78e61a54e9ead0148d7e8851" compoundref="DatabaseManager_8cpp" startline="138" endline="140">cryomesh::manager::DatabaseManager::insertConnection</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a74b282e11bd8c59a1e620b89cfe95ab2" compoundref="DatabaseManager_8cpp" startline="135" endline="137">cryomesh::manager::DatabaseManager::insertNode</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a48308f572e1d87a7f44e1e9fbeaf132b" compoundref="DatabaseManager_8cpp" startline="141" endline="143">cryomesh::manager::DatabaseManager::insertOutputPattern</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structcryomesh_1_1manager_1_1TableFormat_1a2256ce39471582b92bf7cbb6eec74d30" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::TableFormat::getKey</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>getKey</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Return the string object associated with a key. </para>        </briefdescription>
+        <detaileddescription>
+<para>::string The key to search for</para><para><simplesect kind="return"><para>std::string The object associated with the search key, &quot;&quot; if not found </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/TableFormats.h" line="45" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/TableFormats.h" bodystart="45" bodyend="52"/>
+        <references refid="structcryomesh_1_1manager_1_1TableFormat_1a29ab6f4cfc0c56da1fa461ea665a1b61" compoundref="TableFormats_8h" startline="93">cryomesh::manager::TableFormat::columns</references>
+      </memberdef>
+      <memberdef kind="function" id="structcryomesh_1_1manager_1_1TableFormat_1a898ae0d0c5490ccdf71aec5156b10fcc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::TableFormat::getCreateTable</definition>
+        <argsstring>() const </argsstring>
+        <name>getCreateTable</name>
+        <briefdescription>
+<para>Get the string that can be used to create the sql table. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the sql command string to create this table </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/TableFormats.h" line="60" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/TableFormats.h" bodystart="60" bodyend="78"/>
+        <references refid="structcryomesh_1_1manager_1_1TableFormat_1a29ab6f4cfc0c56da1fa461ea665a1b61" compoundref="TableFormats_8h" startline="93">cryomesh::manager::TableFormat::columns</references>
+        <references refid="structcryomesh_1_1manager_1_1TableFormat_1a3e797d6130c6b0745a1fac799c25677a" compoundref="TableFormats_8h" startline="32" endline="34">cryomesh::manager::TableFormat::getName</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="structcryomesh_1_1manager_1_1TableFormat_1ab49912897ccb7fd0f8d42f1cc21332e8" prot="protected" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::TableFormat::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/TableFormats.h" line="86" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/TableFormats.h" bodystart="86" bodyend="-1"/>
+        <referencedby refid="structcryomesh_1_1manager_1_1ConnectionTableFormat_1a3aa9a5ff9e56afbb489fcfbed4dda041" compoundref="TableFormats_8h" startline="123" endline="130">cryomesh::manager::ConnectionTableFormat::ConnectionTableFormat</referencedby>
+        <referencedby refid="structcryomesh_1_1manager_1_1TableFormat_1a3e797d6130c6b0745a1fac799c25677a" compoundref="TableFormats_8h" startline="32" endline="34">cryomesh::manager::TableFormat::getName</referencedby>
+        <referencedby refid="structcryomesh_1_1manager_1_1InputPatternsTableFormat_1a0e64ea9f3ebd45a2549b2edcfb226034" compoundref="TableFormats_8h" startline="141" endline="146">cryomesh::manager::InputPatternsTableFormat::InputPatternsTableFormat</referencedby>
+        <referencedby refid="structcryomesh_1_1manager_1_1NodeTableFormat_1a3fc3590dfb2aaca8658db8f66ca7b5e8" compoundref="TableFormats_8h" startline="104" endline="112">cryomesh::manager::NodeTableFormat::NodeTableFormat</referencedby>
+        <referencedby refid="structcryomesh_1_1manager_1_1OutputPatternsTableFormat_1af0c661dee8b2943cbb369a2704fccbb9" compoundref="TableFormats_8h" startline="157" endline="162">OutputPatternsTableFormat</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structcryomesh_1_1manager_1_1TableFormat_1a29ab6f4cfc0c56da1fa461ea665a1b61" prot="protected" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::string &gt;</type>
+        <definition>std::map&lt;std::string, std::string&gt; cryomesh::manager::TableFormat::columns</definition>
+        <argsstring></argsstring>
+        <name>columns</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/TableFormats.h" line="93" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/TableFormats.h" bodystart="93" bodyend="-1"/>
+        <referencedby refid="structcryomesh_1_1manager_1_1ConnectionTableFormat_1a3aa9a5ff9e56afbb489fcfbed4dda041" compoundref="TableFormats_8h" startline="123" endline="130">cryomesh::manager::ConnectionTableFormat::ConnectionTableFormat</referencedby>
+        <referencedby refid="structcryomesh_1_1manager_1_1TableFormat_1a898ae0d0c5490ccdf71aec5156b10fcc" compoundref="TableFormats_8h" startline="60" endline="78">cryomesh::manager::TableFormat::getCreateTable</referencedby>
+        <referencedby refid="structcryomesh_1_1manager_1_1TableFormat_1a2256ce39471582b92bf7cbb6eec74d30" compoundref="TableFormats_8h" startline="45" endline="52">cryomesh::manager::TableFormat::getKey</referencedby>
+        <referencedby refid="structcryomesh_1_1manager_1_1InputPatternsTableFormat_1a0e64ea9f3ebd45a2549b2edcfb226034" compoundref="TableFormats_8h" startline="141" endline="146">cryomesh::manager::InputPatternsTableFormat::InputPatternsTableFormat</referencedby>
+        <referencedby refid="structcryomesh_1_1manager_1_1NodeTableFormat_1a3fc3590dfb2aaca8658db8f66ca7b5e8" compoundref="TableFormats_8h" startline="104" endline="112">cryomesh::manager::NodeTableFormat::NodeTableFormat</referencedby>
+        <referencedby refid="structcryomesh_1_1manager_1_1OutputPatternsTableFormat_1af0c661dee8b2943cbb369a2704fccbb9" compoundref="TableFormats_8h" startline="157" endline="162">OutputPatternsTableFormat</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Struct representing output pattern table structure. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="690">
+        <label>cryomesh::manager::TableFormat</label>
+        <link refid="structcryomesh_1_1manager_1_1TableFormat"/>
+      </node>
+      <node id="689">
+        <label>cryomesh::manager::OutputPatternsTableFormat</label>
+        <link refid="structcryomesh_1_1manager_1_1OutputPatternsTableFormat"/>
+        <childnode refid="690" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="692">
+        <label>cryomesh::manager::TableFormat</label>
+        <link refid="structcryomesh_1_1manager_1_1TableFormat"/>
+        <childnode refid="693" relation="usage">
+          <edgelabel>columns</edgelabel>
+        </childnode>
+        <childnode refid="694" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="695">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="693">
+        <label>std::map&lt; std::string, std::string &gt;</label>
+        <childnode refid="694" relation="usage">
+          <edgelabel>keys</edgelabel>
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="691">
+        <label>cryomesh::manager::OutputPatternsTableFormat</label>
+        <link refid="structcryomesh_1_1manager_1_1OutputPatternsTableFormat"/>
+        <childnode refid="692" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="694">
+        <label>std::string</label>
+        <childnode refid="695" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/TableFormats.h" line="152" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/TableFormats.h" bodystart="152" bodyend="163"/>
+    <listofallmembers>
+      <member refid="structcryomesh_1_1manager_1_1TableFormat_1a29ab6f4cfc0c56da1fa461ea665a1b61" prot="protected" virt="non-virtual"><scope>cryomesh::manager::OutputPatternsTableFormat</scope><name>columns</name></member>
+      <member refid="structcryomesh_1_1manager_1_1TableFormat_1a898ae0d0c5490ccdf71aec5156b10fcc" prot="public" virt="non-virtual"><scope>cryomesh::manager::OutputPatternsTableFormat</scope><name>getCreateTable</name></member>
+      <member refid="structcryomesh_1_1manager_1_1TableFormat_1a2256ce39471582b92bf7cbb6eec74d30" prot="public" virt="non-virtual"><scope>cryomesh::manager::OutputPatternsTableFormat</scope><name>getKey</name></member>
+      <member refid="structcryomesh_1_1manager_1_1TableFormat_1a3e797d6130c6b0745a1fac799c25677a" prot="public" virt="non-virtual"><scope>cryomesh::manager::OutputPatternsTableFormat</scope><name>getName</name></member>
+      <member refid="structcryomesh_1_1manager_1_1TableFormat_1ab49912897ccb7fd0f8d42f1cc21332e8" prot="protected" virt="non-virtual"><scope>cryomesh::manager::OutputPatternsTableFormat</scope><name>name</name></member>
+      <member refid="structcryomesh_1_1manager_1_1OutputPatternsTableFormat_1af0c661dee8b2943cbb369a2704fccbb9" prot="public" virt="non-virtual"><scope>cryomesh::manager::OutputPatternsTableFormat</scope><name>OutputPatternsTableFormat</name></member>
+      <member refid="structcryomesh_1_1manager_1_1TableFormat_1ab19e1f6e34a67772918360f864e40913" prot="public" virt="non-virtual"><scope>cryomesh::manager::OutputPatternsTableFormat</scope><name>TableFormat</name></member>
+      <member refid="structcryomesh_1_1manager_1_1TableFormat_1a3dccdd11e7eb1ab2b7720fd8fdc6b019" prot="public" virt="virtual"><scope>cryomesh::manager::OutputPatternsTableFormat</scope><name>~TableFormat</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

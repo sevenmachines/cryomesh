@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="classcryomesh_1_1common_1_1Loggable" kind="class" prot="public">
+    <compoundname>cryomesh::common::Loggable</compoundname>
+    <derivedcompoundref refid="classcryomesh_1_1structures_1_1Bundle" prot="public" virt="non-virtual">cryomesh::structures::Bundle</derivedcompoundref>
+    <includes refid="Loggable_8h" local="no">Loggable.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classcryomesh_1_1common_1_1Loggable_1a4d85401f6c81bc8ed94e49d66ae574c5" prot="public" static="no">
+        <name>LoggingDepth</name>
+        <enumvalue id="classcryomesh_1_1common_1_1Loggable_1a4d85401f6c81bc8ed94e49d66ae574c5a51f5abcf5a53a8930a09b065fc64a44f" prot="public">
+          <name>SUMMARY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classcryomesh_1_1common_1_1Loggable_1a4d85401f6c81bc8ed94e49d66ae574c5ae496af0b41e3b64530b61e315822cc51" prot="public">
+          <name>MAX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum representing print detail. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Loggable.h" line="23" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Loggable.h" bodystart="23" bodyend="25"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Loggable_1a52e7934753ed7cc33972ed2fc57b571c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::common::Loggable::Loggable</definition>
+        <argsstring>()</argsstring>
+        <name>Loggable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Loggable.h" line="26" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Loggable.h" bodystart="26" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Loggable_1a8295792cec325f663f0d6c64ec960cb2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual cryomesh::common::Loggable::~Loggable</definition>
+        <argsstring>()</argsstring>
+        <name>~Loggable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Loggable.h" line="27" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Loggable.h" bodystart="27" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Loggable_1a8709b369a43141412e72786dba572dfd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>virtual std::ostream&amp; cryomesh::common::Loggable::print</definition>
+        <argsstring>(std::ostream &amp;os, const Loggable::LoggingDepth depth=Loggable::SUMMARY) const =0</argsstring>
+        <name>print</name>
+        <reimplementedby refid="classcryomesh_1_1structures_1_1Bundle_1a1b2bdda71a78b4e89af23f21e7611ee4">print</reimplementedby>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Loggable_1a4d85401f6c81bc8ed94e49d66ae574c5" kindref="member">Loggable::LoggingDepth</ref></type>
+          <declname>depth</declname>
+          <defval><ref refid="classcryomesh_1_1common_1_1Loggable_1a4d85401f6c81bc8ed94e49d66ae574c5a51f5abcf5a53a8930a09b065fc64a44f" kindref="member">Loggable::SUMMARY</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Loggable.h" line="29"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="582">
+        <label>cryomesh::common::Loggable</label>
+        <link refid="classcryomesh_1_1common_1_1Loggable"/>
+      </node>
+      <node id="583">
+        <label>cryomesh::structures::Bundle</label>
+        <link refid="classcryomesh_1_1structures_1_1Bundle"/>
+        <childnode refid="582" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Loggable.h" line="17" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Loggable.h" bodystart="17" bodyend="30"/>
+    <listofallmembers>
+      <member refid="classcryomesh_1_1common_1_1Loggable_1a52e7934753ed7cc33972ed2fc57b571c" prot="public" virt="non-virtual"><scope>cryomesh::common::Loggable</scope><name>Loggable</name></member>
+      <member refid="classcryomesh_1_1common_1_1Loggable_1a4d85401f6c81bc8ed94e49d66ae574c5" prot="public" virt="non-virtual"><scope>cryomesh::common::Loggable</scope><name>LoggingDepth</name></member>
+      <member refid="classcryomesh_1_1common_1_1Loggable_1a4d85401f6c81bc8ed94e49d66ae574c5ae496af0b41e3b64530b61e315822cc51" prot="public" virt="non-virtual"><scope>cryomesh::common::Loggable</scope><name>MAX</name></member>
+      <member refid="classcryomesh_1_1common_1_1Loggable_1a8709b369a43141412e72786dba572dfd" prot="public" virt="pure-virtual"><scope>cryomesh::common::Loggable</scope><name>print</name></member>
+      <member refid="classcryomesh_1_1common_1_1Loggable_1a4d85401f6c81bc8ed94e49d66ae574c5a51f5abcf5a53a8930a09b065fc64a44f" prot="public" virt="non-virtual"><scope>cryomesh::common::Loggable</scope><name>SUMMARY</name></member>
+      <member refid="classcryomesh_1_1common_1_1Loggable_1a8295792cec325f663f0d6c64ec960cb2" prot="public" virt="virtual"><scope>cryomesh::common::Loggable</scope><name>~Loggable</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,294 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="classcryomesh_1_1utilities_1_1SequencerGeneric" kind="class" prot="public">
+    <compoundname>cryomesh::utilities::SequencerGeneric</compoundname>
+    <includes refid="SequencerGeneric_8h" local="no">SequencerGeneric.h</includes>
+    <innerclass refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry" prot="public">cryomesh::utilities::SequencerGeneric::NodeEntry</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcryomesh_1_1utilities_1_1SequencerGeneric_1a72d9cc5d05add7cd271a6210f9164009" prot="private" static="no" mutable="no">
+        <type>std::list&lt; boost::shared_ptr&lt; <ref refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry" kindref="compound">NodeEntry</ref> &gt; &gt;</type>
+        <definition>std::list&lt; boost::shared_ptr&lt;NodeEntry&gt; &gt; cryomesh::utilities::SequencerGeneric::nodeEntries</definition>
+        <argsstring></argsstring>
+        <name>nodeEntries</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.h" line="54" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.h" bodystart="54" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1a5537ecb58c9308c82be295c871001efd" compoundref="SequencerGeneric_8cpp" startline="106" endline="108">getNodeEntries</referencedby>
+        <referencedby refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1ac9307acc5a461e9da6272a7aafcd0cf7" compoundref="SequencerGeneric_8cpp" startline="30" endline="63">on_start_element</referencedby>
+        <referencedby refid="namespacecryomesh_1_1utilities_1aeccbff80ac6fd380b48e91982e68677d" compoundref="SequencerGeneric_8cpp" startline="109" endline="123">cryomesh::utilities::operator&lt;&lt;</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1utilities_1_1SequencerGeneric_1abf4c1421712f9ffaf5ef731d66eec5fc" prot="private" static="no" mutable="no">
+        <type>std::list&lt; boost::shared_ptr&lt; <ref refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry" kindref="compound">NodeEntry</ref> &gt; &gt;</type>
+        <definition>std::list&lt; boost::shared_ptr&lt;NodeEntry&gt; &gt; cryomesh::utilities::SequencerGeneric::nodeStack</definition>
+        <argsstring></argsstring>
+        <name>nodeStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.h" line="55" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.h" bodystart="55" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1ad7d0c1c324c09ccbeba7c54caa6a77aa" compoundref="SequencerGeneric_8cpp" startline="65" endline="68">on_end_element</referencedby>
+        <referencedby refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1ac9307acc5a461e9da6272a7aafcd0cf7" compoundref="SequencerGeneric_8cpp" startline="30" endline="63">on_start_element</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1utilities_1_1SequencerGeneric_1a2c43386ba27825ca4a1ff17a00602a2f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cryomesh::utilities::SequencerGeneric::elementCount</definition>
+        <argsstring></argsstring>
+        <name>elementCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.h" line="56" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1SequencerGeneric_1ad0e50f0a304a248df61ca43e7bfd0717" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::utilities::SequencerGeneric::SequencerGeneric</definition>
+        <argsstring>(const std::string &amp;ifstr)</argsstring>
+        <name>SequencerGeneric</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>ifstr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.h" line="38" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.cpp" bodystart="7" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1SequencerGeneric_1aabe2ac353f7c805827a7a652cf1a8e23" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>cryomesh::utilities::SequencerGeneric::~SequencerGeneric</definition>
+        <argsstring>()</argsstring>
+        <name>~SequencerGeneric</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.h" line="39" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.cpp" bodystart="19" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1SequencerGeneric_1a5537ecb58c9308c82be295c871001efd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::list&lt; boost::shared_ptr&lt; <ref refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry" kindref="compound">SequencerGeneric::NodeEntry</ref> &gt; &gt; &amp;</type>
+        <definition>const std::list&lt; boost::shared_ptr&lt; SequencerGeneric::NodeEntry &gt; &gt; &amp; cryomesh::utilities::SequencerGeneric::getNodeEntries</definition>
+        <argsstring>() const </argsstring>
+        <name>getNodeEntries</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.h" line="40" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.cpp" bodystart="106" bodyend="108"/>
+        <references refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1a72d9cc5d05add7cd271a6210f9164009" compoundref="SequencerGeneric_8h" startline="54">nodeEntries</references>
+        <referencedby refid="classcryomesh_1_1utilities_1_1SequencerChannels_1a2099c0ea6a68acda477034425c0d599c" compoundref="SequencerChannels_8cpp" startline="39" endline="129">cryomesh::utilities::SequencerChannels::readSequences</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1SequencerGeneric_1a071c15286ad8aac33fa73ff5cc78136b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void cryomesh::utilities::SequencerGeneric::on_start_document</definition>
+        <argsstring>()</argsstring>
+        <name>on_start_document</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.h" line="42" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.cpp" bodystart="22" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1SequencerGeneric_1a5d38706a972e2037ba5a22cd04f273a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void cryomesh::utilities::SequencerGeneric::on_end_document</definition>
+        <argsstring>()</argsstring>
+        <name>on_end_document</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.h" line="43" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.cpp" bodystart="26" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1SequencerGeneric_1ac9307acc5a461e9da6272a7aafcd0cf7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void cryomesh::utilities::SequencerGeneric::on_start_element</definition>
+        <argsstring>(const Glib::ustring &amp;name, const AttributeList &amp;properties)</argsstring>
+        <name>on_start_element</name>
+        <param>
+          <type>const Glib::ustring &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const AttributeList &amp;</type>
+          <declname>properties</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.h" line="45" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.cpp" bodystart="30" bodyend="63"/>
+        <references refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1a72d9cc5d05add7cd271a6210f9164009" compoundref="SequencerGeneric_8h" startline="54">nodeEntries</references>
+        <references refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1abf4c1421712f9ffaf5ef731d66eec5fc" compoundref="SequencerGeneric_8h" startline="55">nodeStack</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1SequencerGeneric_1ad7d0c1c324c09ccbeba7c54caa6a77aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void cryomesh::utilities::SequencerGeneric::on_end_element</definition>
+        <argsstring>(const Glib::ustring &amp;name)</argsstring>
+        <name>on_end_element</name>
+        <param>
+          <type>const Glib::ustring &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.h" line="46" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.cpp" bodystart="65" bodyend="68"/>
+        <references refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1abf4c1421712f9ffaf5ef731d66eec5fc" compoundref="SequencerGeneric_8h" startline="55">nodeStack</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1SequencerGeneric_1a1db9b60c25849b178124e9761d0ded64" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void cryomesh::utilities::SequencerGeneric::on_comment</definition>
+        <argsstring>(const Glib::ustring &amp;text)</argsstring>
+        <name>on_comment</name>
+        <param>
+          <type>const Glib::ustring &amp;</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.h" line="47" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.cpp" bodystart="70" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1SequencerGeneric_1aa8f08fad1118ad8d2a787f2f8b50df47" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void cryomesh::utilities::SequencerGeneric::on_warning</definition>
+        <argsstring>(const Glib::ustring &amp;text)</argsstring>
+        <name>on_warning</name>
+        <param>
+          <type>const Glib::ustring &amp;</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.h" line="48" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.cpp" bodystart="79" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1SequencerGeneric_1a797f1cda33a8dfff5fdb4d5fa095a90b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void cryomesh::utilities::SequencerGeneric::on_error</definition>
+        <argsstring>(const Glib::ustring &amp;text)</argsstring>
+        <name>on_error</name>
+        <param>
+          <type>const Glib::ustring &amp;</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.h" line="49" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.cpp" bodystart="88" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1SequencerGeneric_1af464b348d68b6ae93f473c0e02a05ff2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void cryomesh::utilities::SequencerGeneric::on_fatal_error</definition>
+        <argsstring>(const Glib::ustring &amp;text)</argsstring>
+        <name>on_fatal_error</name>
+        <param>
+          <type>const Glib::ustring &amp;</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.h" line="50" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.cpp" bodystart="97" bodyend="104"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classcryomesh_1_1utilities_1_1SequencerGeneric_1ab85e57798daebe5b4c2e7979e216cd3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const SequencerGeneric &amp;obj)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1utilities_1_1SequencerGeneric" kindref="compound">SequencerGeneric</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.h" line="52" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.cpp" bodystart="109" bodyend="123"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="795">
+        <label>cryomesh::utilities::SequencerGeneric</label>
+        <link refid="classcryomesh_1_1utilities_1_1SequencerGeneric"/>
+        <childnode refid="796" relation="usage">
+          <edgelabel>nodeEntries</edgelabel>
+          <edgelabel>nodeStack</edgelabel>
+        </childnode>
+      </node>
+      <node id="796">
+        <label>std::list&lt; boost::shared_ptr&lt; NodeEntry &gt; &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.h" line="12" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.h" bodystart="12" bodyend="57"/>
+    <listofallmembers>
+      <member refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1a2c43386ba27825ca4a1ff17a00602a2f" prot="private" virt="non-virtual"><scope>cryomesh::utilities::SequencerGeneric</scope><name>elementCount</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1a5537ecb58c9308c82be295c871001efd" prot="public" virt="non-virtual"><scope>cryomesh::utilities::SequencerGeneric</scope><name>getNodeEntries</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1a72d9cc5d05add7cd271a6210f9164009" prot="private" virt="non-virtual"><scope>cryomesh::utilities::SequencerGeneric</scope><name>nodeEntries</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1abf4c1421712f9ffaf5ef731d66eec5fc" prot="private" virt="non-virtual"><scope>cryomesh::utilities::SequencerGeneric</scope><name>nodeStack</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1a1db9b60c25849b178124e9761d0ded64" prot="public" virt="virtual"><scope>cryomesh::utilities::SequencerGeneric</scope><name>on_comment</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1a5d38706a972e2037ba5a22cd04f273a0" prot="public" virt="virtual"><scope>cryomesh::utilities::SequencerGeneric</scope><name>on_end_document</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1ad7d0c1c324c09ccbeba7c54caa6a77aa" prot="public" virt="virtual"><scope>cryomesh::utilities::SequencerGeneric</scope><name>on_end_element</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1a797f1cda33a8dfff5fdb4d5fa095a90b" prot="public" virt="virtual"><scope>cryomesh::utilities::SequencerGeneric</scope><name>on_error</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1af464b348d68b6ae93f473c0e02a05ff2" prot="public" virt="virtual"><scope>cryomesh::utilities::SequencerGeneric</scope><name>on_fatal_error</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1a071c15286ad8aac33fa73ff5cc78136b" prot="public" virt="virtual"><scope>cryomesh::utilities::SequencerGeneric</scope><name>on_start_document</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1ac9307acc5a461e9da6272a7aafcd0cf7" prot="public" virt="virtual"><scope>cryomesh::utilities::SequencerGeneric</scope><name>on_start_element</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1aa8f08fad1118ad8d2a787f2f8b50df47" prot="public" virt="virtual"><scope>cryomesh::utilities::SequencerGeneric</scope><name>on_warning</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1ab85e57798daebe5b4c2e7979e216cd3d" prot="public" virt="non-virtual"><scope>cryomesh::utilities::SequencerGeneric</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1ad0e50f0a304a248df61ca43e7bfd0717" prot="public" virt="non-virtual"><scope>cryomesh::utilities::SequencerGeneric</scope><name>SequencerGeneric</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1aabe2ac353f7c805827a7a652cf1a8e23" prot="public" virt="virtual"><scope>cryomesh::utilities::SequencerGeneric</scope><name>~SequencerGeneric</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

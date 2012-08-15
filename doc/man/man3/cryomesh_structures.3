@@ -1,4 +1,4 @@
-.TH "cryomesh::structures" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::structures" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -12,41 +12,58 @@ cryomesh::structures \-
 .ti -1c
 .RI "class \fBBundle\fP"
 .br
-.RI "\fIA \fBBundle\fP is the collection of clusters and fibres, it represents the system as a whole. \fP"
+.RI "\fIA \fBBundle\fP is the collection of clusters and fibres, it represents the system as a whole\&. \fP"
 .ti -1c
 .RI "class \fBCluster\fP"
 .br
-.RI "\fIA \fBCluster\fP is a collection of self-contained nodes and connections along with an associated \fBMesh\fP, that can be connected up to one another. \fP"
-.ti -1c
-.RI "class \fBClusterMap\fP"
-.br
+.RI "\fIA \fBCluster\fP is a collection of self-contained nodes and connections along with an associated \fBMesh\fP, that can be connected up to one another\&. \fP"
 .ti -1c
 .RI "class \fBFibre\fP"
 .br
-.RI "\fIA \fBFibre\fP is a collection of connections that connect one structure to another. \fP"
+.RI "\fIA \fBFibre\fP is a collection of connections that connect one structure to another\&. \fP"
 .ti -1c
 .RI "class \fBFibreMap\fP"
 .br
 .ti -1c
 .RI "class \fBMesh\fP"
 .br
-.RI "\fI\fBMesh\fP is the fabric of connection space and warps and is warped by it. \fP"
+.RI "\fI\fBMesh\fP is the fabric of connection space and warps and is warped by it\&. \fP"
 .ti -1c
 .RI "class \fBNodeMesh\fP"
 .br
-.RI "\fI\fBMesh\fP of nodes and their neighbouring nodes and distances. \fP"
+.RI "\fI\fBMesh\fP of nodes and their neighbouring nodes and distances\&. \fP"
 .in -1c
 .SS "Typedefs"
 
 .in +1c
 .ti -1c
-.RI "typedef std::map< boost::shared_ptr< \fBcryomesh::components::Node\fP >, std::map< boost::shared_ptr< \fBcryomesh::components::Node\fP >, double > > \fBNeighbourhoodMap\fP"
+.RI "typedef std::map
 .br
-.RI "\fITypedef to simplify neighbourhood map structure. \fP"
+< boost::shared_ptr
+.br
+< \fBcryomesh::components::Node\fP >
+.br
+, std::map< boost::shared_ptr
+.br
+< \fBcryomesh::components::Node\fP >
+.br
+, double > > \fBNeighbourhoodMap\fP"
+.br
+.RI "\fITypedef to simplify neighbourhood map structure\&. \fP"
 .ti -1c
-.RI "typedef std::map< boost::shared_ptr< \fBcryomesh::components::Node\fP >, std::map< boost::shared_ptr< \fBcryomesh::components::Node\fP >, double > >::const_iterator \fBNeighbourhoodMapConstIterator\fP"
+.RI "typedef std::map
 .br
-.RI "\fITypdef for iterator to neighbourhood map. \fP"
+< boost::shared_ptr
+.br
+< \fBcryomesh::components::Node\fP >
+.br
+, std::map< boost::shared_ptr
+.br
+< \fBcryomesh::components::Node\fP >
+.br
+, double > >::const_iterator \fBNeighbourhoodMapConstIterator\fP"
+.br
+.RI "\fITypdef for iterator to neighbourhood map\&. \fP"
 .in -1c
 .SS "Functions"
 
@@ -68,31 +85,16 @@ cryomesh::structures \-
 .PP 
 .SS "\fBcryomesh::structures::NodeMesh::NeighbourhoodMap\fP"
 .PP
-Typedef to simplify neighbourhood map structure. Map of Nodes to other nodes within their neighbourhood and the distances to them. 
+Typedef to simplify neighbourhood map structure\&. Map of Nodes to other nodes within their neighbourhood and the distances to them\&. 
 .PP
-Definition at line 19 of file NodeMesh.h.
+Definition at line 19 of file NodeMesh\&.h\&.
 .SS "typedef std::map<boost::shared_ptr<\fBcryomesh::components::Node\fP>, std::map<boost::shared_ptr<\fBcryomesh::components::Node\fP>, double> >::const_iterator \fBcryomesh::structures::NeighbourhoodMapConstIterator\fP"
 .PP
-Typdef for iterator to neighbourhood map. 
+Typdef for iterator to neighbourhood map\&. 
 .PP
-Definition at line 30 of file NodeMesh.h.
+Definition at line 30 of file NodeMesh\&.h\&.
 .SH "Function Documentation"
 .PP 
-.SS "std::ostream& cryomesh::structures::operator<< (std::ostream &os, const Bundle &obj)"\fBParameters:\fP
-.RS 4
-\fIstd::ostream\fP & os The output stream 
-.br
-\fIconst\fP \fBBundle\fP & obj The object to stream
-.RE
-.PP
-\fBReturns:\fP
-.RS 4
-std::ostream & The output stream 
-.RE
-.PP
-
-.PP
-Definition at line 962 of file Bundle.cpp.
 .SS "std::ostream& cryomesh::structures::operator<< (std::ostream &os, const NodeMesh &obj)"\fBParameters:\fP
 .RS 4
 \fIstd::ostream\fP & os The output stream 
@@ -107,7 +109,26 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 240 of file NodeMesh.cpp.
+Definition at line 306 of file NodeMesh\&.cpp\&.
+.PP
+References cryomesh::structures::NodeMesh::printNeighbourhoodActivities(), and cryomesh::structures::NodeMesh::printNeighbourhoods()\&.
+.SS "std::ostream& cryomesh::structures::operator<< (std::ostream &os, const Cluster &obj)"\fBParameters:\fP
+.RS 4
+\fIstd::ostream\fP & os The output stream 
+.br
+\fIconst\fP \fBCluster\fP & obj The object to stream
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::ostream & The output stream 
+.RE
+.PP
+
+.PP
+Definition at line 331 of file Cluster\&.cpp\&.
+.PP
+References cryomesh::structures::Cluster::getConnections(), cryomesh::structures::Cluster::getNodeMap(), and cryomesh::structures::Cluster::getNodes()\&.
 .SS "std::ostream& cryomesh::structures::operator<< (std::ostream &os, const Fibre &obj)"\fBReturns:\fP
 .RS 4
 Pattern To stream operator
@@ -127,14 +148,14 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 451 of file Fibre.cpp.
+Definition at line 449 of file Fibre\&.cpp\&.
 .PP
-References cryomesh::structures::Fibre::getConnections(), and cryomesh::structures::Fibre::getOutputNodesPattern().
-.SS "std::ostream& cryomesh::structures::operator<< (std::ostream &os, const Cluster &obj)"\fBParameters:\fP
+References cryomesh::structures::Fibre::getConnections(), and cryomesh::structures::Fibre::getOutputNodesPattern()\&.
+.SS "std::ostream& cryomesh::structures::operator<< (std::ostream &os, const Bundle &obj)"\fBParameters:\fP
 .RS 4
 \fIstd::ostream\fP & os The output stream 
 .br
-\fIconst\fP \fBCluster\fP & obj The object to stream
+\fIconst\fP \fBBundle\fP & obj The object to stream
 .RE
 .PP
 \fBReturns:\fP
@@ -144,9 +165,9 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 325 of file Cluster.cpp.
+Definition at line 973 of file Bundle\&.cpp\&.
 .PP
-References cryomesh::structures::Cluster::getConnections(), cryomesh::structures::Cluster::getNodeMap(), and cryomesh::structures::Cluster::getNodes().
+References cryomesh::common::Loggable::MAX, and cryomesh::structures::Bundle::print()\&.
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for cryomesh from the source code.
+Generated automatically by Doxygen for cryomesh from the source code\&.

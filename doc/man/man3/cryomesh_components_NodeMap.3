@@ -1,33 +1,68 @@
-.TH "cryomesh::components::NodeMap" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::components::NodeMap" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 cryomesh::components::NodeMap \- 
 .PP
-Helper class for \fBNodeMap\fP to KeyMappedCollection mapping.  
+Helper class for \fBNodeMap\fP to KeyMappedCollection mapping\&.  
 
 .SH SYNOPSIS
 .br
 .PP
 .PP
-\fC#include <NodeMap.h>\fP
+\fC#include <NodeMap\&.h>\fP
 .SS "Public Member Functions"
 
 .in +1c
 .ti -1c
 .RI "\fBNodeMap\fP ()"
 .br
-.RI "\fIDefault constructor. \fP"
+.RI "\fIDefault constructor\&. \fP"
 .ti -1c
 .RI "virtual \fB~NodeMap\fP ()"
 .br
-.RI "\fIDefault destructor. \fP"
+.RI "\fIDefault destructor\&. \fP"
 .ti -1c
-.RI "virtual void \fBupdate\fP ()"
+.RI "void \fBupdate\fP ()"
 .br
-.RI "\fIUpdate all entries in the nodemap. \fP"
+.RI "\fIUpdate all entries in the nodemap\&. \fP"
 .ti -1c
-.RI "virtual void \fBaddRandomImpulses\fP (double positive_bias=0.5)"
+.RI "const std::map
+.br
+< boost::uuids::uuid, 
+.br
+boost::shared_ptr< \fBNode\fP > > \fBgetAllPrimaryInputNodes\fP () const "
+.br
+.ti -1c
+.RI "const std::map
+.br
+< boost::uuids::uuid, 
+.br
+boost::shared_ptr< \fBNode\fP > > \fBgetAllPrimaryOutputNodes\fP () const "
+.br
+.ti -1c
+.RI "void \fBaddRandomImpulses\fP (double positive_bias=0\&.5)"
+.br
+.ti -1c
+.RI "const std::map
+.br
+< boost::uuids::uuid, 
+.br
+boost::shared_ptr< \fBConnection\fP > > \fBgetAllInputConnections\fP () const "
+.br
+.ti -1c
+.RI "const std::map
+.br
+< boost::uuids::uuid, 
+.br
+boost::shared_ptr< \fBConnection\fP > > \fBgetAllOutputConnections\fP () const "
+.br
+.ti -1c
+.RI "const std::map
+.br
+< boost::uuids::uuid, 
+.br
+boost::shared_ptr< \fBConnection\fP > > \fBgetAllConnections\fP () const "
 .br
 .in -1c
 .SS "Friends"
@@ -36,44 +71,63 @@ Helper class for \fBNodeMap\fP to KeyMappedCollection mapping.
 .ti -1c
 .RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBNodeMap\fP &obj)"
 .br
-.RI "\fITo stream operator. \fP"
+.RI "\fITo stream operator\&. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
-Helper class for \fBNodeMap\fP to KeyMappedCollection mapping. 
+Helper class for \fBNodeMap\fP to KeyMappedCollection mapping\&. 
 .PP
-Definition at line 23 of file NodeMap.h.
+Definition at line 23 of file NodeMap\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "cryomesh::components::NodeMap::NodeMap ()\fC [inline]\fP"
+.SS "\fBcryomesh::components::NodeMap::NodeMap\fP ()\fC [inline]\fP"
 .PP
-Default constructor. 
+Default constructor\&. 
 .PP
-Definition at line 28 of file NodeMap.h.
-.SS "virtual cryomesh::components::NodeMap::~NodeMap ()\fC [inline, virtual]\fP"
+Definition at line 28 of file NodeMap\&.h\&.
+.SS "virtual \fBcryomesh::components::NodeMap::~NodeMap\fP ()\fC [inline, virtual]\fP"
 .PP
-Default destructor. 
+Default destructor\&. 
 .PP
-Definition at line 34 of file NodeMap.h.
+Definition at line 35 of file NodeMap\&.h\&.
 .SH "Member Function Documentation"
 .PP 
-.SS "virtual void cryomesh::components::NodeMap::addRandomImpulses (doublepositive_bias = \fC0.5\fP)\fC [inline, virtual]\fP"
+.SS "void \fBcryomesh::components::NodeMap::addRandomImpulses\fP (doublepositive_bias = \fC0\&.5\fP)\fC [inline]\fP"
 .PP
-Definition at line 52 of file NodeMap.h.
+Definition at line 95 of file NodeMap\&.h\&.
 .PP
-References cryomesh::components::Impulse::getRandom().
-.SS "virtual void cryomesh::components::NodeMap::update ()\fC [inline, virtual]\fP"
+References cryomesh::components::Impulse::getRandom()\&.
+.SS "const std::map<boost::uuids::uuid, boost::shared_ptr<\fBConnection\fP> > \fBcryomesh::components::NodeMap::getAllConnections\fP () const\fC [inline]\fP"
 .PP
-Update all entries in the nodemap. 
+Definition at line 149 of file NodeMap\&.h\&.
+.SS "const std::map<boost::uuids::uuid, boost::shared_ptr<\fBConnection\fP> > \fBcryomesh::components::NodeMap::getAllInputConnections\fP () const\fC [inline]\fP"
 .PP
-Definition at line 40 of file NodeMap.h.
+Definition at line 109 of file NodeMap\&.h\&.
+.SS "const std::map<boost::uuids::uuid, boost::shared_ptr<\fBConnection\fP> > \fBcryomesh::components::NodeMap::getAllOutputConnections\fP () const\fC [inline]\fP"
 .PP
-Referenced by cryomesh::structures::Cluster::update().
+Definition at line 129 of file NodeMap\&.h\&.
+.SS "const std::map<boost::uuids::uuid, boost::shared_ptr<\fBNode\fP> > \fBcryomesh::components::NodeMap::getAllPrimaryInputNodes\fP () const\fC [inline]\fP"
+.PP
+Definition at line 53 of file NodeMap\&.h\&.
+.PP
+Referenced by cryomesh::manipulators::ClusterArchitect::getRandomNodes()\&.
+.SS "const std::map<boost::uuids::uuid, boost::shared_ptr<\fBNode\fP> > \fBcryomesh::components::NodeMap::getAllPrimaryOutputNodes\fP () const\fC [inline]\fP"
+.PP
+Definition at line 74 of file NodeMap\&.h\&.
+.PP
+Referenced by cryomesh::manipulators::ClusterArchitect::getRandomNodes()\&.
+.SS "void \fBcryomesh::components::NodeMap::update\fP ()\fC [inline]\fP"
+.PP
+Update all entries in the nodemap\&. 
+.PP
+Definition at line 41 of file NodeMap\&.h\&.
+.PP
+Referenced by cryomesh::structures::Cluster::update()\&.
 .SH "Friends And Related Function Documentation"
 .PP 
 .SS "std::ostream& operator<< (std::ostream &os, const \fBNodeMap\fP &obj)\fC [friend]\fP"
 .PP
-To stream operator. \fBParameters:\fP
+To stream operator\&. \fBParameters:\fP
 .RS 4
 \fIstd::ostream\fP & os The output stream 
 .br
@@ -87,8 +141,8 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 77 of file NodeMap.h.
+Definition at line 181 of file NodeMap\&.h\&.
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for cryomesh from the source code.
+Generated automatically by Doxygen for cryomesh from the source code\&.

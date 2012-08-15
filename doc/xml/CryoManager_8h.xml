@@ -1,0 +1,703 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="CryoManager_8h" kind="file">
+    <compoundname>CryoManager.h</compoundname>
+    <includes local="no">iostream</includes>
+    <includes local="no">ctime</includes>
+    <includes refid="Creator_8h" local="yes">Creator.h</includes>
+    <includes refid="TimeKeeper_8h" local="yes">common/TimeKeeper.h</includes>
+    <includes refid="PatternDatabaseObject_8h" local="yes">PatternDatabaseObject.h</includes>
+    <includes refid="DatabaseManager_8h" local="yes">DatabaseManager.h</includes>
+    <includes local="no">boost/uuid/uuid_io.hpp</includes>
+    <includes local="no">sstream</includes>
+    <includedby refid="CryoManager_8cpp" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.cpp</includedby>
+    <incdepgraph>
+      <node id="1013">
+        <label>list</label>
+      </node>
+      <node id="1011">
+        <label>config/ConfigTranslator.h</label>
+      </node>
+      <node id="1010">
+        <label>Creator.h</label>
+        <link refid="Creator_8h"/>
+        <childnode refid="1011" relation="include">
+        </childnode>
+        <childnode refid="1012" relation="include">
+        </childnode>
+        <childnode refid="1013" relation="include">
+        </childnode>
+        <childnode refid="1014" relation="include">
+        </childnode>
+        <childnode refid="1015" relation="include">
+        </childnode>
+      </node>
+      <node id="1014">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="1062">
+        <label>boost/serialization/vector.hpp</label>
+      </node>
+      <node id="1069">
+        <label>utilities/Statistician.h</label>
+        <link refid="Statistician_8h"/>
+        <childnode refid="1008" relation="include">
+        </childnode>
+        <childnode refid="1039" relation="include">
+        </childnode>
+        <childnode refid="1012" relation="include">
+        </childnode>
+      </node>
+      <node id="1048">
+        <label>boost/tokenizer.hpp</label>
+      </node>
+      <node id="1025">
+        <label>ActivityTimer.h</label>
+        <link refid="ActivityTimer_8h"/>
+        <childnode refid="1026" relation="include">
+        </childnode>
+      </node>
+      <node id="1015">
+        <label>structures/Bundle.h</label>
+        <link refid="Bundle_8h"/>
+        <childnode refid="1014" relation="include">
+        </childnode>
+        <childnode refid="1016" relation="include">
+        </childnode>
+        <childnode refid="1008" relation="include">
+        </childnode>
+        <childnode refid="1017" relation="include">
+        </childnode>
+        <childnode refid="1054" relation="include">
+        </childnode>
+        <childnode refid="1065" relation="include">
+        </childnode>
+        <childnode refid="1027" relation="include">
+        </childnode>
+        <childnode refid="1029" relation="include">
+        </childnode>
+        <childnode refid="1068" relation="include">
+        </childnode>
+        <childnode refid="1069" relation="include">
+        </childnode>
+      </node>
+      <node id="1044">
+        <label>spacial/Point.h</label>
+      </node>
+      <node id="1021">
+        <label>Node.h</label>
+        <link refid="Node_8h"/>
+        <childnode refid="1022" relation="include">
+        </childnode>
+        <childnode refid="1030" relation="include">
+        </childnode>
+        <childnode refid="1040" relation="include">
+        </childnode>
+        <childnode refid="1029" relation="include">
+        </childnode>
+        <childnode refid="1027" relation="include">
+        </childnode>
+        <childnode refid="1043" relation="include">
+        </childnode>
+        <childnode refid="1044" relation="include">
+        </childnode>
+        <childnode refid="1037" relation="include">
+        </childnode>
+        <childnode refid="1045" relation="include">
+        </childnode>
+        <childnode refid="1013" relation="include">
+        </childnode>
+        <childnode refid="1039" relation="include">
+        </childnode>
+      </node>
+      <node id="1064">
+        <label>manager/PatternDatabaseObject.h</label>
+        <link refid="PatternDatabaseObject_8h"/>
+        <childnode refid="1046" relation="include">
+        </childnode>
+        <childnode refid="1030" relation="include">
+        </childnode>
+        <childnode refid="1012" relation="include">
+        </childnode>
+        <childnode refid="1014" relation="include">
+        </childnode>
+      </node>
+      <node id="1041">
+        <label>boost/uuid/uuid_io.hpp</label>
+      </node>
+      <node id="1040">
+        <label>common/Connector.h</label>
+        <link refid="Connector_8h"/>
+        <childnode refid="1030" relation="include">
+        </childnode>
+        <childnode refid="1039" relation="include">
+        </childnode>
+        <childnode refid="1014" relation="include">
+        </childnode>
+        <childnode refid="1016" relation="include">
+        </childnode>
+        <childnode refid="1041" relation="include">
+        </childnode>
+        <childnode refid="1042" relation="include">
+        </childnode>
+      </node>
+      <node id="1032">
+        <label>common/TimeKeeper.h</label>
+        <link refid="TimeKeeper_8h"/>
+        <childnode refid="1030" relation="include">
+        </childnode>
+        <childnode refid="1014" relation="include">
+        </childnode>
+        <childnode refid="1033" relation="include">
+        </childnode>
+        <childnode refid="1034" relation="include">
+        </childnode>
+        <childnode refid="1035" relation="include">
+        </childnode>
+        <childnode refid="1036" relation="include">
+        </childnode>
+      </node>
+      <node id="1031">
+        <label>gmpxx.h</label>
+      </node>
+      <node id="1024">
+        <label>ActivityTimerDistance.h</label>
+        <link refid="ActivityTimerDistance_8h"/>
+        <childnode refid="1025" relation="include">
+        </childnode>
+        <childnode refid="1027" relation="include">
+        </childnode>
+        <childnode refid="1014" relation="include">
+        </childnode>
+      </node>
+      <node id="1027">
+        <label>common/Debuggable.h</label>
+      </node>
+      <node id="1046">
+        <label>DatabaseObject.h</label>
+        <link refid="DatabaseObject_8h"/>
+        <childnode refid="1039" relation="include">
+        </childnode>
+        <childnode refid="1012" relation="include">
+        </childnode>
+        <childnode refid="1047" relation="include">
+        </childnode>
+        <childnode refid="1008" relation="include">
+        </childnode>
+        <childnode refid="1048" relation="include">
+        </childnode>
+      </node>
+      <node id="1012">
+        <label>string</label>
+      </node>
+      <node id="1057">
+        <label>PatternTag.h</label>
+        <link refid="PatternTag_8h"/>
+        <childnode refid="1012" relation="include">
+        </childnode>
+        <childnode refid="1014" relation="include">
+        </childnode>
+      </node>
+      <node id="1055">
+        <label>Fibre.h</label>
+        <link refid="Fibre_8h"/>
+        <childnode refid="1049" relation="include">
+        </childnode>
+        <childnode refid="1021" relation="include">
+        </childnode>
+        <childnode refid="1040" relation="include">
+        </childnode>
+        <childnode refid="1056" relation="include">
+        </childnode>
+        <childnode refid="1014" relation="include">
+        </childnode>
+        <childnode refid="1029" relation="include">
+        </childnode>
+      </node>
+      <node id="1039">
+        <label>map</label>
+      </node>
+      <node id="1029">
+        <label>common/Tagged.h</label>
+      </node>
+      <node id="1053">
+        <label>structures/NodeMesh.h</label>
+        <link refid="NodeMesh_8h"/>
+        <childnode refid="1021" relation="include">
+        </childnode>
+        <childnode refid="1039" relation="include">
+        </childnode>
+        <childnode refid="1014" relation="include">
+        </childnode>
+      </node>
+      <node id="1073">
+        <label>sqlite3.h</label>
+      </node>
+      <node id="1038">
+        <label>DataObject.h</label>
+        <link refid="DataObject_8h"/>
+        <childnode refid="1039" relation="include">
+        </childnode>
+        <childnode refid="1026" relation="include">
+        </childnode>
+      </node>
+      <node id="1071">
+        <label>TableFormats.h</label>
+        <link refid="TableFormats_8h"/>
+        <childnode refid="1012" relation="include">
+        </childnode>
+        <childnode refid="1039" relation="include">
+        </childnode>
+        <childnode refid="1047" relation="include">
+        </childnode>
+      </node>
+      <node id="1026">
+        <label>ostream</label>
+      </node>
+      <node id="1049">
+        <label>components/ConnectionMap.h</label>
+        <link refid="ConnectionMap_8h"/>
+        <childnode refid="1018" relation="include">
+        </childnode>
+        <childnode refid="1032" relation="include">
+        </childnode>
+        <childnode refid="1050" relation="include">
+        </childnode>
+        <childnode refid="1030" relation="include">
+        </childnode>
+        <childnode refid="1016" relation="include">
+        </childnode>
+        <childnode refid="1014" relation="include">
+        </childnode>
+        <childnode refid="1051" relation="include">
+        </childnode>
+      </node>
+      <node id="1060">
+        <label>boost/serialization/string.hpp</label>
+      </node>
+      <node id="1019">
+        <label>Cluster.h</label>
+        <link refid="Cluster_8h"/>
+        <childnode refid="1020" relation="include">
+        </childnode>
+        <childnode refid="1049" relation="include">
+        </childnode>
+        <childnode refid="1052" relation="include">
+        </childnode>
+        <childnode refid="1044" relation="include">
+        </childnode>
+        <childnode refid="1053" relation="include">
+        </childnode>
+        <childnode refid="1016" relation="include">
+        </childnode>
+        <childnode refid="1014" relation="include">
+        </childnode>
+        <childnode refid="1021" relation="include">
+        </childnode>
+        <childnode refid="1051" relation="include">
+        </childnode>
+        <childnode refid="1040" relation="include">
+        </childnode>
+        <childnode refid="1029" relation="include">
+        </childnode>
+        <childnode refid="1027" relation="include">
+        </childnode>
+      </node>
+      <node id="1035">
+        <label>boost/timer.hpp</label>
+      </node>
+      <node id="1018">
+        <label>common/KeyMappedCollection.h</label>
+      </node>
+      <node id="1034">
+        <label>boost/date_time/posix_time/posix_time.hpp</label>
+      </node>
+      <node id="1050">
+        <label>state/ActivityPattern.h</label>
+        <link refid="ActivityPattern_8h"/>
+        <childnode refid="1028" relation="include">
+        </childnode>
+      </node>
+      <node id="1052">
+        <label>spacial/Spacial.h</label>
+      </node>
+      <node id="1009">
+        <label>ctime</label>
+      </node>
+      <node id="1037">
+        <label>dataobjects/DataObjectController.h</label>
+        <link refid="DataObjectController_8h"/>
+        <childnode refid="1038" relation="include">
+        </childnode>
+      </node>
+      <node id="1028">
+        <label>common/SimpleCollection.h</label>
+      </node>
+      <node id="1054">
+        <label>FibreMap.h</label>
+        <link refid="FibreMap_8h"/>
+        <childnode refid="1018" relation="include">
+        </childnode>
+        <childnode refid="1055" relation="include">
+        </childnode>
+      </node>
+      <node id="1059">
+        <label>vector</label>
+      </node>
+      <node id="1063">
+        <label>boost/uuid/uuid_generators.hpp</label>
+      </node>
+      <node id="1020">
+        <label>components/NodeMap.h</label>
+        <link refid="NodeMap_8h"/>
+        <childnode refid="1018" relation="include">
+        </childnode>
+        <childnode refid="1016" relation="include">
+        </childnode>
+        <childnode refid="1014" relation="include">
+        </childnode>
+        <childnode refid="1021" relation="include">
+        </childnode>
+      </node>
+      <node id="1047">
+        <label>sstream</label>
+      </node>
+      <node id="1066">
+        <label>PatternChannel.h</label>
+        <link refid="PatternChannel_8h"/>
+        <childnode refid="1056" relation="include">
+        </childnode>
+        <childnode refid="1057" relation="include">
+        </childnode>
+        <childnode refid="1029" relation="include">
+        </childnode>
+        <childnode refid="1027" relation="include">
+        </childnode>
+        <childnode refid="1039" relation="include">
+        </childnode>
+        <childnode refid="1013" relation="include">
+        </childnode>
+        <childnode refid="1067" relation="include">
+        </childnode>
+        <childnode refid="1016" relation="include">
+        </childnode>
+        <childnode refid="1014" relation="include">
+        </childnode>
+      </node>
+      <node id="1043">
+        <label>common/Defs.h</label>
+      </node>
+      <node id="1042">
+        <label>common/Misc.h</label>
+      </node>
+      <node id="1068">
+        <label>common/Loggable.h</label>
+        <link refid="Loggable_8h"/>
+        <childnode refid="1008" relation="include">
+        </childnode>
+      </node>
+      <node id="1036">
+        <label>time.h</label>
+      </node>
+      <node id="1008">
+        <label>iostream</label>
+      </node>
+      <node id="1033">
+        <label>boost/serialization/shared_ptr.hpp</label>
+      </node>
+      <node id="1070">
+        <label>DatabaseManager.h</label>
+        <link refid="DatabaseManager_8h"/>
+        <childnode refid="1071" relation="include">
+        </childnode>
+        <childnode refid="1045" relation="include">
+        </childnode>
+        <childnode refid="1072" relation="include">
+        </childnode>
+        <childnode refid="1030" relation="include">
+        </childnode>
+        <childnode refid="1032" relation="include">
+        </childnode>
+        <childnode refid="1073" relation="include">
+        </childnode>
+        <childnode refid="1012" relation="include">
+        </childnode>
+        <childnode refid="1014" relation="include">
+        </childnode>
+        <childnode refid="1039" relation="include">
+        </childnode>
+        <childnode refid="1047" relation="include">
+        </childnode>
+      </node>
+      <node id="1023">
+        <label>Impulse.h</label>
+        <link refid="Impulse_8h"/>
+        <childnode refid="1024" relation="include">
+        </childnode>
+        <childnode refid="1028" relation="include">
+        </childnode>
+        <childnode refid="1029" relation="include">
+        </childnode>
+        <childnode refid="1030" relation="include">
+        </childnode>
+        <childnode refid="1032" relation="include">
+        </childnode>
+        <childnode refid="1027" relation="include">
+        </childnode>
+        <childnode refid="1013" relation="include">
+        </childnode>
+      </node>
+      <node id="1045">
+        <label>manager/NodeDatabaseObject.h</label>
+        <link refid="NodeDatabaseObject_8h"/>
+        <childnode refid="1046" relation="include">
+        </childnode>
+        <childnode refid="1044" relation="include">
+        </childnode>
+        <childnode refid="1030" relation="include">
+        </childnode>
+        <childnode refid="1012" relation="include">
+        </childnode>
+        <childnode refid="1047" relation="include">
+        </childnode>
+      </node>
+      <node id="1030">
+        <label>common/Cycle.h</label>
+        <link refid="Cycle_8h"/>
+        <childnode refid="1031" relation="include">
+        </childnode>
+      </node>
+      <node id="1016">
+        <label>boost/uuid/uuid.hpp</label>
+      </node>
+      <node id="1065">
+        <label>state/PatternChannelMap.h</label>
+        <link refid="PatternChannelMap_8h"/>
+        <childnode refid="1066" relation="include">
+        </childnode>
+        <childnode refid="1018" relation="include">
+        </childnode>
+        <childnode refid="1032" relation="include">
+        </childnode>
+      </node>
+      <node id="1072">
+        <label>ConnectionDatabaseObject.h</label>
+        <link refid="ConnectionDatabaseObject_8h"/>
+        <childnode refid="1046" relation="include">
+        </childnode>
+        <childnode refid="1044" relation="include">
+        </childnode>
+        <childnode refid="1030" relation="include">
+        </childnode>
+        <childnode refid="1012" relation="include">
+        </childnode>
+        <childnode refid="1047" relation="include">
+        </childnode>
+      </node>
+      <node id="1067">
+        <label>set</label>
+      </node>
+      <node id="1017">
+        <label>ClusterMap.h</label>
+        <link refid="ClusterMap_8h"/>
+        <childnode refid="1018" relation="include">
+        </childnode>
+        <childnode refid="1019" relation="include">
+        </childnode>
+      </node>
+      <node id="1061">
+        <label>boost/serialization/serialization.hpp</label>
+      </node>
+      <node id="1056">
+        <label>state/Pattern.h</label>
+        <link refid="Pattern_8h"/>
+        <childnode refid="1057" relation="include">
+        </childnode>
+        <childnode refid="1058" relation="include">
+        </childnode>
+        <childnode refid="1029" relation="include">
+        </childnode>
+        <childnode refid="1059" relation="include">
+        </childnode>
+        <childnode refid="1012" relation="include">
+        </childnode>
+        <childnode refid="1062" relation="include">
+        </childnode>
+        <childnode refid="1016" relation="include">
+        </childnode>
+        <childnode refid="1063" relation="include">
+        </childnode>
+        <childnode refid="1064" relation="include">
+        </childnode>
+      </node>
+      <node id="1058">
+        <label>BinaryString.h</label>
+        <link refid="BinaryString_8h"/>
+        <childnode refid="1013" relation="include">
+        </childnode>
+        <childnode refid="1012" relation="include">
+        </childnode>
+        <childnode refid="1047" relation="include">
+        </childnode>
+        <childnode refid="1059" relation="include">
+        </childnode>
+        <childnode refid="1060" relation="include">
+        </childnode>
+        <childnode refid="1061" relation="include">
+        </childnode>
+      </node>
+      <node id="1007">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.h</label>
+        <link refid="CryoManager.h"/>
+        <childnode refid="1008" relation="include">
+        </childnode>
+        <childnode refid="1009" relation="include">
+        </childnode>
+        <childnode refid="1010" relation="include">
+        </childnode>
+        <childnode refid="1032" relation="include">
+        </childnode>
+        <childnode refid="1064" relation="include">
+        </childnode>
+        <childnode refid="1070" relation="include">
+        </childnode>
+        <childnode refid="1041" relation="include">
+        </childnode>
+        <childnode refid="1047" relation="include">
+        </childnode>
+      </node>
+      <node id="1051">
+        <label>Connection.h</label>
+        <link refid="Connection_8h"/>
+        <childnode refid="1021" relation="include">
+        </childnode>
+        <childnode refid="1040" relation="include">
+        </childnode>
+        <childnode refid="1029" relation="include">
+        </childnode>
+        <childnode refid="1046" relation="include">
+        </childnode>
+        <childnode refid="1027" relation="include">
+        </childnode>
+      </node>
+      <node id="1022">
+        <label>ImpulseCollection.h</label>
+        <link refid="ImpulseCollection_8h"/>
+        <childnode refid="1023" relation="include">
+        </childnode>
+        <childnode refid="1030" relation="include">
+        </childnode>
+        <childnode refid="1018" relation="include">
+        </childnode>
+        <childnode refid="1037" relation="include">
+        </childnode>
+        <childnode refid="1016" relation="include">
+        </childnode>
+        <childnode refid="1027" relation="include">
+        </childnode>
+        <childnode refid="1039" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1075">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.cpp</label>
+        <link refid="CryoManager_8cpp"/>
+      </node>
+      <node id="1074">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.h</label>
+        <link refid="CryoManager.h"/>
+        <childnode refid="1075" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="CryoManager_8h_1a7be5939407c0882fc9f2d841eea73cd6" prot="public" static="no">
+        <name>CRYOMANAGER_DEBUG</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.h" line="8" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>CryoManager.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>Created<sp/>on:<sp/>13<sp/>Mar<sp/>2011</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Author:<sp/>&quot;SevenMachines<sp/>&lt;SevenMachines@yahoo.co.uk&gt;&quot;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="CryoManager_8h_1a7be5939407c0882fc9f2d841eea73cd6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CRYOMANAGER_DEBUG</highlight></codeline>
+<codeline lineno="9"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>CRYOMANAGER_H_</highlight></codeline>
+<codeline lineno="11"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>CRYOMANAGER_H_</highlight></codeline>
+<codeline lineno="12"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ctime&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Creator_8h" kindref="compound">Creator.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TimeKeeper_8h" kindref="compound">common/TimeKeeper.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="PatternDatabaseObject_8h" kindref="compound">PatternDatabaseObject.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="DatabaseManager_8h" kindref="compound">DatabaseManager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/uuid/uuid_io.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">cryomesh<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">manager<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="keyword">class<sp/></highlight><highlight class="normal">CryoManager<sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>ManagerState<sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PAUSED,<sp/>RUNNING,<sp/>STOPPED,<sp/>EMPTY,<sp/>NEW</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CryoManager()<sp/>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~CryoManager();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>create(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>configfile)<sp/>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>run()<sp/>;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>runCycle()<sp/>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>pause()<sp/>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>stop();</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>destroy()<sp/>;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ManagerState<sp/>&amp;<sp/>getCurrentState()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//TODO<sp/>Temporary<sp/>access,<sp/>replace<sp/>with<sp/>database<sp/>calls<sp/>instead</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;structures::Bundle&gt;<sp/>getBundle()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::shared_ptr&lt;structures::Bundle&gt;<sp/>getMutableBundle()<sp/>;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>storeCurrentActualOutputPatterns(</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;boost::uuids::uuid,<sp/>boost::shared_ptr&lt;state::Pattern&gt;<sp/>&gt;<sp/>&amp;<sp/>current_patterns)<sp/>;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ManagerState<sp/>currentState;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::shared_ptr&lt;Creator&gt;<sp/>creator;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::shared_ptr&lt;DatabaseManager&gt;<sp/>database;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal">}</highlight><highlight class="comment">//NAMESPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight><highlight class="comment">//NAMESPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>CRYOMANAGER_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.h"/>
+  </compounddef>
+</doxygen>

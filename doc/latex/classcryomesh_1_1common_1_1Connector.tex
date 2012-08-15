@@ -1,0 +1,892 @@
+\hypertarget{classcryomesh_1_1common_1_1Connector}{\section{cryomesh\-:\-:common\-:\-:\-Connector$<$ \-U, \-T $>$ \-Class \-Template \-Reference}
+\label{classcryomesh_1_1common_1_1Connector}\index{cryomesh\-::common\-::\-Connector$<$ U, T $>$@{cryomesh\-::common\-::\-Connector$<$ U, T $>$}}
+}
+
+
+\hyperlink{classcryomesh_1_1common_1_1Connector}{\-Connector} is a template to add connectable functionality between two classes.  
+
+
+
+
+{\ttfamily \#include $<$\-Connector.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1common_1_1Connector_a44c721dbd4fbf74f4b71528e440cbbac}{\-Connector} (const unsigned int max\-\_\-inputs=0, const unsigned int max\-\_\-outputs=0)
+\item 
+virtual \hyperlink{classcryomesh_1_1common_1_1Connector_adf967a4426097b1f8152711ba9e8edb7}{$\sim$\-Connector} ()
+\item 
+bool \hyperlink{classcryomesh_1_1common_1_1Connector_aa8eab10d81bfa921ad1341ad1fbc9a4d}{connect\-Input} (const boost\-::shared\-\_\-ptr$<$ \-T $>$ obj)
+\begin{DoxyCompactList}\small\item\em \-Connect a unit to this one as an input. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1common_1_1Connector_a94c014ba589b22076c84fd8394b96c8d}{connect\-Inputs} (const std\-::vector$<$ boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \&list)
+\begin{DoxyCompactList}\small\item\em \-Connect a list of units to this one as inputs. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1common_1_1Connector_ad3287ece677524300b761e57ecb109de}{connect\-Inputs} (const std\-::initializer\-\_\-list$<$ boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \&list)
+\begin{DoxyCompactList}\small\item\em \-Connect an initialiser list of units to this one as inputs. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1common_1_1Connector_a1fa0ff922e03cbb5654a2de468af9d41}{connect\-Output} (const boost\-::shared\-\_\-ptr$<$ \-T $>$ \&obj)
+\begin{DoxyCompactList}\small\item\em \-Connect a unit to this one as an output. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1common_1_1Connector_a4c962f5b074b2d81e4952cfbb11ab974}{connect\-Outputs} (const std\-::vector$<$ boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \&list)
+\begin{DoxyCompactList}\small\item\em \-Connect a list of units to this one as outputs. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1common_1_1Connector_a8fca74791240e711bdd6c89b26759390}{connect\-Outputs} (const std\-::initializer\-\_\-list$<$ boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \&list)
+\begin{DoxyCompactList}\small\item\em \-Connect an initialiser list of units to this one as outputs. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1common_1_1Connector_a6726db121456485ea580ba7f9365bb37}{disconnect\-Input} (const boost\-::shared\-\_\-ptr$<$ \-T $>$ \&obj)
+\begin{DoxyCompactList}\small\item\em \-Disconnect an input to this unit. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1common_1_1Connector_a9de5eb37810b4d1563bff904b5bc545e}{disconnect\-Input} (const boost\-::uuids\-::uuid \&id)
+\begin{DoxyCompactList}\small\item\em \-Disconnect an input to this unit. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1common_1_1Connector_af37d582516d355642f6a14544f21e1b3}{disconnect\-Inputs} (const std\-::vector$<$ boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \&list)
+\begin{DoxyCompactList}\small\item\em \-Disconnect a list of input units from this one. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1common_1_1Connector_aa6eb7d8ec6d50abeb7942ca4d3955927}{disconnect\-Inputs} (const std\-::initializer\-\_\-list$<$ boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \&list)
+\begin{DoxyCompactList}\small\item\em \-Disconnect an initialiser list of input units from this one. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1common_1_1Connector_a8df62ec2ead7b69453c74398d8182a39}{disconnect\-Inputs} (const std\-::vector$<$ boost\-::uuids\-::uuid $>$ \&list)
+\begin{DoxyCompactList}\small\item\em \-Disconnect a list of input units from this one. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1common_1_1Connector_aebc08e7a92cec11c1353391f9145d841}{disconnect\-Inputs} (const std\-::initializer\-\_\-list$<$ boost\-::uuids\-::uuid $>$ \&list)
+\begin{DoxyCompactList}\small\item\em \-Disconnect an initialiser list of input units from this one. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1common_1_1Connector_ae158782ad5bf70ce2913be421ace2e4d}{disconnect\-All\-Inputs} ()
+\begin{DoxyCompactList}\small\item\em \-Disconnect all input units from this one. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1common_1_1Connector_ab0c0f68c11aa53c3b407f613ffa212f1}{disconnect\-Output} (const boost\-::shared\-\_\-ptr$<$ \-T $>$ \&obj)
+\begin{DoxyCompactList}\small\item\em \-Disconnect an output to this unit. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1common_1_1Connector_a12a36aef140f4a58c688d899d086f8d1}{disconnect\-Output} (const boost\-::uuids\-::uuid \&id)
+\begin{DoxyCompactList}\small\item\em \-Disconnect an output to this unit. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1common_1_1Connector_a680ddbd6bd137f05b5a8ab9e28b73f48}{disconnect\-Outputs} (const std\-::vector$<$ boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \&list)
+\begin{DoxyCompactList}\small\item\em \-Disconnect a list of \-Output units from this one. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1common_1_1Connector_a5b3daf294a8f5e808b7cada38cbd1cfd}{disconnect\-Outputs} (const std\-::initializer\-\_\-list$<$ boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \&list)
+\begin{DoxyCompactList}\small\item\em \-Disconnect an initialiser list of \-Output units from this one. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1common_1_1Connector_a5a6ab355b767129f60f4042a734e1db0}{disconnect\-Outputs} (const std\-::vector$<$ boost\-::uuids\-::uuid $>$ \&list)
+\begin{DoxyCompactList}\small\item\em \-Disconnect a uuid list of \-Output units from this one. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1common_1_1Connector_adb34713ed33984fef703a8a1ad342624}{disconnect\-Outputs} (const std\-::initializer\-\_\-list$<$ boost\-::uuids\-::uuid $>$ \&list)
+\begin{DoxyCompactList}\small\item\em \-Disconnect an uuid initiaialiser list of \-Output units from this one. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1common_1_1Connector_afff7a004da2146ab0fca902204bd62ee}{disconnect\-All\-Outputs} ()
+\begin{DoxyCompactList}\small\item\em \-Disconnect all \-Output units from this one. \end{DoxyCompactList}\item 
+const std\-::map\*
+$<$ boost\-::uuids\-::uuid, \*
+boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \& \hyperlink{classcryomesh_1_1common_1_1Connector_af294647fe03f03108b2edd81c11aaa0a}{get\-Inputs} () const 
+\begin{DoxyCompactList}\small\item\em \-Get all inputs. \end{DoxyCompactList}\item 
+const std\-::list\*
+$<$ boost\-::uuids\-::uuid $>$ \hyperlink{classcryomesh_1_1common_1_1Connector_acd6f00383ee6fd73ef8374494ce09865}{get\-Inputs\-U\-U\-I\-D} () const 
+\item 
+const std\-::list\*
+$<$ boost\-::uuids\-::uuid $>$ \hyperlink{classcryomesh_1_1common_1_1Connector_acccc3d12685c44062af17cf5d7d78b6a}{get\-Outputs\-U\-U\-I\-D} () const 
+\item 
+std\-::map$<$ boost\-::uuids\-::uuid, \*
+boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \& \hyperlink{classcryomesh_1_1common_1_1Connector_a673488ae2b7b9c00658bf4e4b99b26f2}{get\-Mutable\-Inputs} ()
+\begin{DoxyCompactList}\small\item\em \-Get all inputs as mutable object. \end{DoxyCompactList}\item 
+const std\-::map\*
+$<$ boost\-::uuids\-::uuid, \*
+boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \& \hyperlink{classcryomesh_1_1common_1_1Connector_af108b3bdc8adee1d2f6ce34c6b7781e6}{get\-Outputs} () const 
+\begin{DoxyCompactList}\small\item\em \-Get all outputs. \end{DoxyCompactList}\item 
+std\-::map$<$ boost\-::uuids\-::uuid, \*
+boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \& \hyperlink{classcryomesh_1_1common_1_1Connector_a974b1c610f3c949d64560f2d0d44f5eb}{get\-Mutable\-Outputs} ()
+\begin{DoxyCompactList}\small\item\em \-Get all outputs as mutable object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+boost\-::shared\-\_\-ptr$<$ \-T $>$ \hyperlink{classcryomesh_1_1common_1_1Connector_a1adff096f822eee244c7c26cd7f3fc3f}{connect} (const boost\-::shared\-\_\-ptr$<$ \-T $>$ obj, std\-::map$<$ boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \&objs, unsigned int max\-\_\-connections)
+\begin{DoxyCompactList}\small\item\em \-Connect up an object using the supplied map. \end{DoxyCompactList}\item 
+boost\-::shared\-\_\-ptr$<$ \-T $>$ \hyperlink{classcryomesh_1_1common_1_1Connector_abdabb88b660f2f71a25a15f81fe5b683}{disconnect} (const boost\-::shared\-\_\-ptr$<$ \-T $>$ obj, std\-::map$<$ boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \&objs)
+\begin{DoxyCompactList}\small\item\em \-Disconnect an object using the supplied map. \end{DoxyCompactList}\item 
+boost\-::shared\-\_\-ptr$<$ \-T $>$ \hyperlink{classcryomesh_1_1common_1_1Connector_a3ddc25ebd1129d2d5d93126f768fd1ee}{disconnect} (const boost\-::uuids\-::uuid \&id, std\-::map$<$ boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \&objs)
+\begin{DoxyCompactList}\small\item\em \-Disconnect an object using the supplied map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::map$<$ boost\-::uuids\-::uuid, \*
+boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \hyperlink{classcryomesh_1_1common_1_1Connector_a4b53045b5f70f35b9cf8838474bdbc97}{minputs}
+\item 
+std\-::map$<$ boost\-::uuids\-::uuid, \*
+boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \hyperlink{classcryomesh_1_1common_1_1Connector_a3a7175d8c33a8f5cd72592748c6dc15f}{moutputs}
+\item 
+unsigned int \hyperlink{classcryomesh_1_1common_1_1Connector_aed34a9f056b3f718cbf5669717d46694}{max\-Inputs}
+\item 
+unsigned int \hyperlink{classcryomesh_1_1common_1_1Connector_aa30303b7f79bab1364ff8ba53ea3fb25}{max\-Outputs}
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1common_1_1Connector_a821dbf25de8022d484c33728df5a69f5}{operator$<$$<$} (std\-::ostream \&os, const \hyperlink{classcryomesh_1_1common_1_1Connector}{\-Connector}$<$ \-U, \-T $>$ \&obj)
+\begin{DoxyCompactList}\small\item\em \-To stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\subsubsection*{template$<$class \-U, class \-T$>$class cryomesh\-::common\-::\-Connector$<$ U, T $>$}
+
+\hyperlink{classcryomesh_1_1common_1_1Connector}{\-Connector} is a template to add connectable functionality between two classes. 
+
+\-Represents a template to add connectable funtionality between class \-U as the central connectable and class \-T as those objects it can be connected to 
+
+\-Definition at line 33 of file \-Connector.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcryomesh_1_1common_1_1Connector_a44c721dbd4fbf74f4b71528e440cbbac}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!\-Connector@{\-Connector}}
+\index{\-Connector@{\-Connector}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{\-Connector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf \-Connector} (
+\begin{DoxyParamCaption}
+\item[{const unsigned int}]{max\-\_\-inputs = {\ttfamily 0}, }
+\item[{const unsigned int}]{max\-\_\-outputs = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_a44c721dbd4fbf74f4b71528e440cbbac}
+
+
+\-Definition at line 35 of file \-Connector.\-h.
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_adf967a4426097b1f8152711ba9e8edb7}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!$\sim$\-Connector@{$\sim$\-Connector}}
+\index{$\sim$\-Connector@{$\sim$\-Connector}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{$\sim$\-Connector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ virtual {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::$\sim${\bf \-Connector} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_adf967a4426097b1f8152711ba9e8edb7}
+
+
+\-Definition at line 39 of file \-Connector.\-h.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1common_1_1Connector_a1adff096f822eee244c7c26cd7f3fc3f}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!connect@{connect}}
+\index{connect@{connect}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ boost\-::shared\-\_\-ptr$<$\-T$>$ {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf connect} (
+\begin{DoxyParamCaption}
+\item[{const boost\-::shared\-\_\-ptr$<$ \-T $>$}]{obj, }
+\item[{std\-::map$<$ boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \&}]{objs, }
+\item[{unsigned int}]{max\-\_\-connections}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_a1adff096f822eee244c7c26cd7f3fc3f}
+
+
+\-Connect up an object using the supplied map. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em boost\-::shared\-\_\-ptr$<$\-T$>$} & obj \hyperlink{structcryomesh_1_1Pointer}{\-Pointer} to the object that is to be connected \\
+\hline
+{\em std\-::map$<$boost\-::uuids\-::uuid,boost\-::shared\-\_\-ptr$<$\-T$>$} & $>$ objs \-The map that will be used to connect the object \\
+\hline
+{\em unsinged} & int \-Maximum connections to allow\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{structcryomesh_1_1Pointer}{\-Pointer} to the connected object 
+\end{DoxyReturn}
+
+
+\-Definition at line 655 of file \-Connector.\-h.
+
+
+
+\-Referenced by cryomesh\-::common\-::\-Connector$<$ Fibre, Cluster $>$\-::connect\-Input(), and cryomesh\-::common\-::\-Connector$<$ Fibre, Cluster $>$\-::connect\-Output().
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_aa8eab10d81bfa921ad1341ad1fbc9a4d}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!connect\-Input@{connect\-Input}}
+\index{connect\-Input@{connect\-Input}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{connect\-Input}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ bool {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf connect\-Input} (
+\begin{DoxyParamCaption}
+\item[{const boost\-::shared\-\_\-ptr$<$ \-T $>$}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_aa8eab10d81bfa921ad1341ad1fbc9a4d}
+
+
+\-Connect a unit to this one as an input. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em boost\-::shared\-\_\-ptr$<$\-T$>$} & obj \hyperlink{structcryomesh_1_1Pointer}{\-Pointer} to the object to be connected as input\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if connection succeeds, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 53 of file \-Connector.\-h.
+
+
+
+\-Referenced by cryomesh\-::structures\-::\-Fibre\-::connect\-All\-Connections(), and cryomesh\-::common\-::\-Connector$<$ Fibre, Cluster $>$\-::connect\-Inputs().
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_a94c014ba589b22076c84fd8394b96c8d}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!connect\-Inputs@{connect\-Inputs}}
+\index{connect\-Inputs@{connect\-Inputs}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{connect\-Inputs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ bool {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf connect\-Inputs} (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \&}]{list}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_a94c014ba589b22076c84fd8394b96c8d}
+
+
+\-Connect a list of units to this one as inputs. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::vector$<$boost\-::shared\-\_\-ptr$<$\-T$>$} & $>$ list \-List of pointers to objects to be connected as inputs\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if all connections succeed, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 73 of file \-Connector.\-h.
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_ad3287ece677524300b761e57ecb109de}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!connect\-Inputs@{connect\-Inputs}}
+\index{connect\-Inputs@{connect\-Inputs}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{connect\-Inputs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ bool {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf connect\-Inputs} (
+\begin{DoxyParamCaption}
+\item[{const std\-::initializer\-\_\-list$<$ boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \&}]{list}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_ad3287ece677524300b761e57ecb109de}
+
+
+\-Connect an initialiser list of units to this one as inputs. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::initializer\-\_\-list$<$boost\-::shared\-\_\-ptr$<$} & \-T $>$ $>$ list \-Initialiser list of pointers to objects to be connected as input\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if all connections succeed, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 97 of file \-Connector.\-h.
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_a1fa0ff922e03cbb5654a2de468af9d41}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!connect\-Output@{connect\-Output}}
+\index{connect\-Output@{connect\-Output}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{connect\-Output}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ bool {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf connect\-Output} (
+\begin{DoxyParamCaption}
+\item[{const boost\-::shared\-\_\-ptr$<$ \-T $>$ \&}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_a1fa0ff922e03cbb5654a2de468af9d41}
+
+
+\-Connect a unit to this one as an output. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em boost\-::shared\-\_\-ptr$<$\-T$>$} & obj \hyperlink{structcryomesh_1_1Pointer}{\-Pointer} to the object to be connected as output\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if connection succeeds, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 122 of file \-Connector.\-h.
+
+
+
+\-Referenced by cryomesh\-::structures\-::\-Fibre\-::connect\-All\-Connections(), and cryomesh\-::common\-::\-Connector$<$ Fibre, Cluster $>$\-::connect\-Outputs().
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_a4c962f5b074b2d81e4952cfbb11ab974}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!connect\-Outputs@{connect\-Outputs}}
+\index{connect\-Outputs@{connect\-Outputs}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{connect\-Outputs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ bool {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf connect\-Outputs} (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \&}]{list}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_a4c962f5b074b2d81e4952cfbb11ab974}
+
+
+\-Connect a list of units to this one as outputs. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::vector$<$boost\-::shared\-\_\-ptr$<$\-T$>$} & $>$ list \-List of pointers to objects to be connected as outputs\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if all connections succeed, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 142 of file \-Connector.\-h.
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_a8fca74791240e711bdd6c89b26759390}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!connect\-Outputs@{connect\-Outputs}}
+\index{connect\-Outputs@{connect\-Outputs}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{connect\-Outputs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ bool {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf connect\-Outputs} (
+\begin{DoxyParamCaption}
+\item[{const std\-::initializer\-\_\-list$<$ boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \&}]{list}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_a8fca74791240e711bdd6c89b26759390}
+
+
+\-Connect an initialiser list of units to this one as outputs. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::initializer\-\_\-list$<$boost\-::shared\-\_\-ptr$<$} & \-T $>$ $>$ list \-Initialiser list of pointers to objects to be connected as outputs\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if all connections succeed, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 167 of file \-Connector.\-h.
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_abdabb88b660f2f71a25a15f81fe5b683}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{disconnect}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ boost\-::shared\-\_\-ptr$<$\-T$>$ {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf disconnect} (
+\begin{DoxyParamCaption}
+\item[{const boost\-::shared\-\_\-ptr$<$ \-T $>$}]{obj, }
+\item[{std\-::map$<$ boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \&}]{objs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_abdabb88b660f2f71a25a15f81fe5b683}
+
+
+\-Disconnect an object using the supplied map. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em boost\-::shared\-\_\-ptr$<$\-T$>$} & obj \hyperlink{structcryomesh_1_1Pointer}{\-Pointer} to the object that is to be disconnected \\
+\hline
+{\em std\-::map$<$boost\-::uuids\-::uuid,boost\-::shared\-\_\-ptr$<$\-T$>$} & $>$ objs \-The map that will be used to disconnect the object\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{structcryomesh_1_1Pointer}{\-Pointer} to the disconnected object, pointer is 0 is object was not found 
+\end{DoxyReturn}
+
+
+\-Definition at line 685 of file \-Connector.\-h.
+
+
+
+\-Referenced by cryomesh\-::common\-::\-Connector$<$ Fibre, Cluster $>$\-::disconnect\-Input(), and cryomesh\-::common\-::\-Connector$<$ Fibre, Cluster $>$\-::disconnect\-Output().
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_a3ddc25ebd1129d2d5d93126f768fd1ee}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{disconnect}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ boost\-::shared\-\_\-ptr$<$\-T$>$ {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf disconnect} (
+\begin{DoxyParamCaption}
+\item[{const boost\-::uuids\-::uuid \&}]{id, }
+\item[{std\-::map$<$ boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \&}]{objs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_a3ddc25ebd1129d2d5d93126f768fd1ee}
+
+
+\-Disconnect an object using the supplied map. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em boost\-::uuids\-::uuid} & id \-The uuid of the object that is to be disconnected \\
+\hline
+{\em std\-::map$<$boost\-::uuids\-::uuid,boost\-::shared\-\_\-ptr$<$\-T$>$} & $>$ \& objs \-The map that will be used to disconnect the object\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{structcryomesh_1_1Pointer}{\-Pointer} to the disconnected object, pointer is null is object was not found 
+\end{DoxyReturn}
+
+
+\-Definition at line 724 of file \-Connector.\-h.
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_ae158782ad5bf70ce2913be421ace2e4d}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!disconnect\-All\-Inputs@{disconnect\-All\-Inputs}}
+\index{disconnect\-All\-Inputs@{disconnect\-All\-Inputs}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{disconnect\-All\-Inputs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ bool {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf disconnect\-All\-Inputs} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_ae158782ad5bf70ce2913be421ace2e4d}
+
+
+\-Disconnect all input units from this one. 
+
+\begin{DoxyReturn}{\-Returns}
+true if all disconnections succeed, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 332 of file \-Connector.\-h.
+
+
+
+\-Referenced by cryomesh\-::structures\-::\-Fibre\-::disconnect\-All\-Connections().
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_afff7a004da2146ab0fca902204bd62ee}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!disconnect\-All\-Outputs@{disconnect\-All\-Outputs}}
+\index{disconnect\-All\-Outputs@{disconnect\-All\-Outputs}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{disconnect\-All\-Outputs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ bool {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf disconnect\-All\-Outputs} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_afff7a004da2146ab0fca902204bd62ee}
+
+
+\-Disconnect all \-Output units from this one. 
+
+\begin{DoxyReturn}{\-Returns}
+true if all disconnections succeed, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 500 of file \-Connector.\-h.
+
+
+
+\-Referenced by cryomesh\-::structures\-::\-Fibre\-::disconnect\-All\-Connections().
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_a6726db121456485ea580ba7f9365bb37}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!disconnect\-Input@{disconnect\-Input}}
+\index{disconnect\-Input@{disconnect\-Input}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{disconnect\-Input}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ bool {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf disconnect\-Input} (
+\begin{DoxyParamCaption}
+\item[{const boost\-::shared\-\_\-ptr$<$ \-T $>$ \&}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_a6726db121456485ea580ba7f9365bb37}
+
+
+\-Disconnect an input to this unit. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em boost\-::shared\-\_\-ptr$<$\-T$>$} & obj \hyperlink{structcryomesh_1_1Pointer}{\-Pointer} to the object to be disconnected from input\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if disconnection succeeds, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 193 of file \-Connector.\-h.
+
+
+
+\-Referenced by cryomesh\-::common\-::\-Connector$<$ Fibre, Cluster $>$\-::disconnect\-All\-Inputs(), and cryomesh\-::common\-::\-Connector$<$ Fibre, Cluster $>$\-::disconnect\-Inputs().
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_a9de5eb37810b4d1563bff904b5bc545e}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!disconnect\-Input@{disconnect\-Input}}
+\index{disconnect\-Input@{disconnect\-Input}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{disconnect\-Input}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ bool {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf disconnect\-Input} (
+\begin{DoxyParamCaption}
+\item[{const boost\-::uuids\-::uuid \&}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_a9de5eb37810b4d1563bff904b5bc545e}
+
+
+\-Disconnect an input to this unit. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em boost\-::uuids\-::uuid} & id \-The unique identifier of the object to be disconnected\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if disconnection succeeds, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 212 of file \-Connector.\-h.
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_af37d582516d355642f6a14544f21e1b3}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!disconnect\-Inputs@{disconnect\-Inputs}}
+\index{disconnect\-Inputs@{disconnect\-Inputs}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{disconnect\-Inputs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ bool {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf disconnect\-Inputs} (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \&}]{list}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_af37d582516d355642f6a14544f21e1b3}
+
+
+\-Disconnect a list of input units from this one. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::vector$<$boost\-::shared\-\_\-ptr$<$\-T$>$} & $>$ list \-List of pointers to objects to be disconnected\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if all disconnections succeed, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 234 of file \-Connector.\-h.
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_aa6eb7d8ec6d50abeb7942ca4d3955927}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!disconnect\-Inputs@{disconnect\-Inputs}}
+\index{disconnect\-Inputs@{disconnect\-Inputs}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{disconnect\-Inputs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ bool {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf disconnect\-Inputs} (
+\begin{DoxyParamCaption}
+\item[{const std\-::initializer\-\_\-list$<$ boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \&}]{list}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_aa6eb7d8ec6d50abeb7942ca4d3955927}
+
+
+\-Disconnect an initialiser list of input units from this one. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::initializer\-\_\-list$<$boost\-::shared\-\_\-ptr$<$} & \-T $>$ $>$ list \-Initialiser list of pointers to objects to be disconnected as inputs\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if all disconnections succeed, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 259 of file \-Connector.\-h.
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_a8df62ec2ead7b69453c74398d8182a39}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!disconnect\-Inputs@{disconnect\-Inputs}}
+\index{disconnect\-Inputs@{disconnect\-Inputs}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{disconnect\-Inputs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ bool {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf disconnect\-Inputs} (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ boost\-::uuids\-::uuid $>$ \&}]{list}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_a8df62ec2ead7b69453c74398d8182a39}
+
+
+\-Disconnect a list of input units from this one. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em boost\-::uuids\-::uuid} & list \-List of uuids to objects to be disconnected\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if all disconnections succeed, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 284 of file \-Connector.\-h.
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_aebc08e7a92cec11c1353391f9145d841}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!disconnect\-Inputs@{disconnect\-Inputs}}
+\index{disconnect\-Inputs@{disconnect\-Inputs}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{disconnect\-Inputs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ bool {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf disconnect\-Inputs} (
+\begin{DoxyParamCaption}
+\item[{const std\-::initializer\-\_\-list$<$ boost\-::uuids\-::uuid $>$ \&}]{list}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_aebc08e7a92cec11c1353391f9145d841}
+
+
+\-Disconnect an initialiser list of input units from this one. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em boost\-::uuids\-::uuid} & list \-Initialiser list of uuids to objects to be disconnected as inputs\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if all disconnections succeed, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 309 of file \-Connector.\-h.
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_ab0c0f68c11aa53c3b407f613ffa212f1}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!disconnect\-Output@{disconnect\-Output}}
+\index{disconnect\-Output@{disconnect\-Output}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{disconnect\-Output}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ bool {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf disconnect\-Output} (
+\begin{DoxyParamCaption}
+\item[{const boost\-::shared\-\_\-ptr$<$ \-T $>$ \&}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_ab0c0f68c11aa53c3b407f613ffa212f1}
+
+
+\-Disconnect an output to this unit. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em boost\-::shared\-\_\-ptr$<$\-T$>$} & obj \hyperlink{structcryomesh_1_1Pointer}{\-Pointer} to the object to be disconnected from output\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if disconnection succeeds, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 358 of file \-Connector.\-h.
+
+
+
+\-Referenced by cryomesh\-::common\-::\-Connector$<$ Fibre, Cluster $>$\-::disconnect\-All\-Outputs(), and cryomesh\-::common\-::\-Connector$<$ Fibre, Cluster $>$\-::disconnect\-Outputs().
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_a12a36aef140f4a58c688d899d086f8d1}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!disconnect\-Output@{disconnect\-Output}}
+\index{disconnect\-Output@{disconnect\-Output}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{disconnect\-Output}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ bool {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf disconnect\-Output} (
+\begin{DoxyParamCaption}
+\item[{const boost\-::uuids\-::uuid \&}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_a12a36aef140f4a58c688d899d086f8d1}
+
+
+\-Disconnect an output to this unit. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em boost\-::uuids\-::uuid} & id \-The unique identifier of the object to be disconnected\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if disconnection succeeds, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 379 of file \-Connector.\-h.
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_a680ddbd6bd137f05b5a8ab9e28b73f48}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!disconnect\-Outputs@{disconnect\-Outputs}}
+\index{disconnect\-Outputs@{disconnect\-Outputs}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{disconnect\-Outputs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ bool {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf disconnect\-Outputs} (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \&}]{list}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_a680ddbd6bd137f05b5a8ab9e28b73f48}
+
+
+\-Disconnect a list of \-Output units from this one. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::vector$<$boost\-::shared\-\_\-ptr$<$\-T$>$} & $>$ list \-List of pointers to objects to be disconnected\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if all disconnections succeed, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 401 of file \-Connector.\-h.
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_a5b3daf294a8f5e808b7cada38cbd1cfd}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!disconnect\-Outputs@{disconnect\-Outputs}}
+\index{disconnect\-Outputs@{disconnect\-Outputs}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{disconnect\-Outputs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ bool {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf disconnect\-Outputs} (
+\begin{DoxyParamCaption}
+\item[{const std\-::initializer\-\_\-list$<$ boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \&}]{list}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_a5b3daf294a8f5e808b7cada38cbd1cfd}
+
+
+\-Disconnect an initialiser list of \-Output units from this one. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::initializer\-\_\-list$<$boost\-::shared\-\_\-ptr$<$} & \-T $>$ $>$ list \-Initialiser list of pointers to objects to be disconnected as \-Outputs\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if all disconnections succeed, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 426 of file \-Connector.\-h.
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_a5a6ab355b767129f60f4042a734e1db0}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!disconnect\-Outputs@{disconnect\-Outputs}}
+\index{disconnect\-Outputs@{disconnect\-Outputs}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{disconnect\-Outputs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ bool {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf disconnect\-Outputs} (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ boost\-::uuids\-::uuid $>$ \&}]{list}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_a5a6ab355b767129f60f4042a734e1db0}
+
+
+\-Disconnect a uuid list of \-Output units from this one. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em boost\-::uuids\-::uuid} & list \-List of uuids to objects to be disconnected\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if all disconnections succeed, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 452 of file \-Connector.\-h.
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_adb34713ed33984fef703a8a1ad342624}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!disconnect\-Outputs@{disconnect\-Outputs}}
+\index{disconnect\-Outputs@{disconnect\-Outputs}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{disconnect\-Outputs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ bool {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf disconnect\-Outputs} (
+\begin{DoxyParamCaption}
+\item[{const std\-::initializer\-\_\-list$<$ boost\-::uuids\-::uuid $>$ \&}]{list}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_adb34713ed33984fef703a8a1ad342624}
+
+
+\-Disconnect an uuid initiaialiser list of \-Output units from this one. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em boost\-::uuids\-::uuid} & list \-Initialiser list of uuids to objects to be disconnected as \-Outputs\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+true if all disconnections succeed, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 477 of file \-Connector.\-h.
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_af294647fe03f03108b2edd81c11aaa0a}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!get\-Inputs@{get\-Inputs}}
+\index{get\-Inputs@{get\-Inputs}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{get\-Inputs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ const std\-::map$<$boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$\-T$>$ $>$\& {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf get\-Inputs} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_af294647fe03f03108b2edd81c11aaa0a}
+
+
+\-Get all inputs. 
+
+\begin{DoxyReturn}{\-Returns}
+std\-::map$<$boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$\-T$>$ \-The map of inputs 
+\end{DoxyReturn}
+
+
+\-Definition at line 524 of file \-Connector.\-h.
+
+
+
+\-Referenced by cryomesh\-::structures\-::\-Fibre\-::count\-Connections(), and cryomesh\-::structures\-::\-Fibre\-::is\-Connected().
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_acd6f00383ee6fd73ef8374494ce09865}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!get\-Inputs\-U\-U\-I\-D@{get\-Inputs\-U\-U\-I\-D}}
+\index{get\-Inputs\-U\-U\-I\-D@{get\-Inputs\-U\-U\-I\-D}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{get\-Inputs\-U\-U\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ const std\-::list$<$boost\-::uuids\-::uuid$>$ {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf get\-Inputs\-U\-U\-I\-D} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_acd6f00383ee6fd73ef8374494ce09865}
+
+
+\-Definition at line 528 of file \-Connector.\-h.
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_a673488ae2b7b9c00658bf4e4b99b26f2}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!get\-Mutable\-Inputs@{get\-Mutable\-Inputs}}
+\index{get\-Mutable\-Inputs@{get\-Mutable\-Inputs}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{get\-Mutable\-Inputs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ std\-::map$<$boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$\-T$>$ $>$\& {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf get\-Mutable\-Inputs} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_a673488ae2b7b9c00658bf4e4b99b26f2}
+
+
+\-Get all inputs as mutable object. 
+
+\begin{DoxyReturn}{\-Returns}
+std\-::map$<$boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$\-T$>$ \-The map of inputs 
+\end{DoxyReturn}
+
+
+\-Definition at line 566 of file \-Connector.\-h.
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_a974b1c610f3c949d64560f2d0d44f5eb}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!get\-Mutable\-Outputs@{get\-Mutable\-Outputs}}
+\index{get\-Mutable\-Outputs@{get\-Mutable\-Outputs}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{get\-Mutable\-Outputs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ std\-::map$<$boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$\-T$>$ $>$\& {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf get\-Mutable\-Outputs} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_a974b1c610f3c949d64560f2d0d44f5eb}
+
+
+\-Get all outputs as mutable object. 
+
+\begin{DoxyReturn}{\-Returns}
+std\-::map$<$boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$\-T$>$ \-The map of outputs 
+\end{DoxyReturn}
+
+
+\-Definition at line 588 of file \-Connector.\-h.
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_af108b3bdc8adee1d2f6ce34c6b7781e6}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!get\-Outputs@{get\-Outputs}}
+\index{get\-Outputs@{get\-Outputs}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{get\-Outputs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ const std\-::map$<$boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$\-T$>$ $>$\& {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf get\-Outputs} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_af108b3bdc8adee1d2f6ce34c6b7781e6}
+
+
+\-Get all outputs. 
+
+\begin{DoxyReturn}{\-Returns}
+std\-::map$<$boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$\-T$>$ \-The map of outputs 
+\end{DoxyReturn}
+
+
+\-Definition at line 577 of file \-Connector.\-h.
+
+
+
+\-Referenced by cryomesh\-::structures\-::\-Fibre\-::count\-Connections(), and cryomesh\-::structures\-::\-Fibre\-::is\-Connected().
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_acccc3d12685c44062af17cf5d7d78b6a}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!get\-Outputs\-U\-U\-I\-D@{get\-Outputs\-U\-U\-I\-D}}
+\index{get\-Outputs\-U\-U\-I\-D@{get\-Outputs\-U\-U\-I\-D}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{get\-Outputs\-U\-U\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ const std\-::list$<$boost\-::uuids\-::uuid$>$ {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf get\-Outputs\-U\-U\-I\-D} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_acccc3d12685c44062af17cf5d7d78b6a}
+
+
+\-Definition at line 543 of file \-Connector.\-h.
+
+
+
+\subsection{\-Friends \-And \-Related \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1common_1_1Connector_a821dbf25de8022d484c33728df5a69f5}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ std\-::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const {\bf \-Connector}$<$ \-U, \-T $>$ \&}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_a821dbf25de8022d484c33728df5a69f5}
+
+
+\-To stream operator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::ostream} & \& os \-The output stream \\
+\hline
+{\em const} & \-Connector$<$\-U,\-T$>$ \& obj \-The object to stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::ostream \& \-The output stream 
+\end{DoxyReturn}
+
+
+\-Definition at line 603 of file \-Connector.\-h.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classcryomesh_1_1common_1_1Connector_aed34a9f056b3f718cbf5669717d46694}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!max\-Inputs@{max\-Inputs}}
+\index{max\-Inputs@{max\-Inputs}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{max\-Inputs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ unsigned int {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf max\-Inputs}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_aed34a9f056b3f718cbf5669717d46694}
+
+
+\-Definition at line 770 of file \-Connector.\-h.
+
+
+
+\-Referenced by cryomesh\-::common\-::\-Connector$<$ Fibre, Cluster $>$\-::connect\-Input().
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_aa30303b7f79bab1364ff8ba53ea3fb25}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!max\-Outputs@{max\-Outputs}}
+\index{max\-Outputs@{max\-Outputs}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{max\-Outputs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ unsigned int {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf max\-Outputs}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_aa30303b7f79bab1364ff8ba53ea3fb25}
+
+
+\-Definition at line 777 of file \-Connector.\-h.
+
+
+
+\-Referenced by cryomesh\-::common\-::\-Connector$<$ Fibre, Cluster $>$\-::connect\-Output().
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_a4b53045b5f70f35b9cf8838474bdbc97}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!minputs@{minputs}}
+\index{minputs@{minputs}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{minputs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ std\-::map$<$boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$\-T$>$ $>$ {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf minputs}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_a4b53045b5f70f35b9cf8838474bdbc97}
+
+
+\-Definition at line 756 of file \-Connector.\-h.
+
+
+
+\-Referenced by cryomesh\-::common\-::\-Connector$<$ Fibre, Cluster $>$\-::connect\-Input(), cryomesh\-::common\-::\-Connector$<$ Fibre, Cluster $>$\-::disconnect\-All\-Inputs(), cryomesh\-::common\-::\-Connector$<$ Fibre, Cluster $>$\-::disconnect\-Input(), cryomesh\-::common\-::\-Connector$<$ Fibre, Cluster $>$\-::get\-Inputs(), cryomesh\-::common\-::\-Connector$<$ Fibre, Cluster $>$\-::get\-Inputs\-U\-U\-I\-D(), and cryomesh\-::common\-::\-Connector$<$ Fibre, Cluster $>$\-::get\-Mutable\-Inputs().
+
+\hypertarget{classcryomesh_1_1common_1_1Connector_a3a7175d8c33a8f5cd72592748c6dc15f}{\index{cryomesh\-::common\-::\-Connector@{cryomesh\-::common\-::\-Connector}!moutputs@{moutputs}}
+\index{moutputs@{moutputs}!cryomesh::common::Connector@{cryomesh\-::common\-::\-Connector}}
+\subsubsection[{moutputs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ std\-::map$<$boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$\-T$>$ $>$ {\bf cryomesh\-::common\-::\-Connector}$<$ \-U, \-T $>$\-::{\bf moutputs}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1common_1_1Connector_a3a7175d8c33a8f5cd72592748c6dc15f}
+
+
+\-Definition at line 763 of file \-Connector.\-h.
+
+
+
+\-Referenced by cryomesh\-::common\-::\-Connector$<$ Fibre, Cluster $>$\-::connect\-Output(), cryomesh\-::common\-::\-Connector$<$ Fibre, Cluster $>$\-::disconnect\-All\-Outputs(), cryomesh\-::common\-::\-Connector$<$ Fibre, Cluster $>$\-::disconnect\-Output(), cryomesh\-::common\-::\-Connector$<$ Fibre, Cluster $>$\-::get\-Mutable\-Outputs(), cryomesh\-::common\-::\-Connector$<$ Fibre, Cluster $>$\-::get\-Outputs(), and cryomesh\-::common\-::\-Connector$<$ Fibre, Cluster $>$\-::get\-Outputs\-U\-U\-I\-D().
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/common/\hyperlink{Connector_8h}{\-Connector.\-h}\end{DoxyCompactItemize}

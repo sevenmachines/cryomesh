@@ -1,0 +1,306 @@
+\hypertarget{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy}{\section{cryomesh\-:\-:manipulators\-:\-:\-Cluster\-Analysis\-Data\-:\-:\-Range\-Energy \-Struct \-Reference}
+\label{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy}\index{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}}
+}
+
+
+\-Struct representing the value extrapolated over a history range.  
+
+
+
+
+{\ttfamily \#include $<$\-Cluster\-Analysis\-Data.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a2b748fd0dc43023c69f702c41553aceb}{\-Range\-Energy} ()
+\item 
+\hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_abf3ff2eb9a39171461d1137eda38f8d3}{\-Range\-Energy} (double en, double energy\-\_\-fraction)
+\item 
+\hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_aeea4ce3ee9e2b1fdbe7e11bca5054b59}{\-Range\-Energy} (double en, double energy\-\_\-fraction, \hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle} st, \hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle} ed, double min, double max)
+\item 
+\hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_afda1e98ceb489ddd22f557fbda270fed}{\-Range\-Energy} (const \hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy}{\-Range\-Energy} \&obj)
+\item 
+virtual \hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_aa586818fb71f316d9d031cc36eec2556}{$\sim$\-Range\-Energy} ()
+\item 
+const \hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy}{\-Range\-Energy} \hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a3e872ded9405bd8e1d994d8ebbd11ef3}{operator+} (const \hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy}{\-Range\-Energy} \&obj) const 
+\begin{DoxyCompactList}\small\item\em \-Non-\/destructive addition operator. \end{DoxyCompactList}\item 
+\hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy}{\-Range\-Energy} \& \hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a63e6c674d7f7e89a90f88d5462279f1e}{operator+=} (const \hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy}{\-Range\-Energy} \&obj)
+\begin{DoxyCompactList}\small\item\em \-Destructive addition and assignment operator. \end{DoxyCompactList}\item 
+const \hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy}{\-Range\-Energy} \hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a86f0ca22060ff3039d8df9457edae402}{operator/} (double div) const 
+\item 
+\hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy}{\-Range\-Energy} \& \hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a2bc35c2465673beb91fc67d0e5c595c1}{operator/=} (double div)
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a5ec0dd8061e8109c679fb03c46175f41}{energy}
+\item 
+double \hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a5b00be235f5ec97fc564a87b7a53e15f}{energy\-Fraction}
+\item 
+\hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle} \hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a4160dfffe32413f76e5effce2c95ae20}{start\-Cycle}
+\item 
+\hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle} \hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_afc1f6d068e8301e327981a578b83f981}{end\-Cycle}
+\item 
+double \hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_aca92fb70884ff9717e530d91130d5e8d}{energy\-Min}
+\item 
+double \hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a51770c52465ceb02f9d452a46bedff77}{energy\-Max}
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream \& \hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a99c9c1ea00dd9e77cfaa8ac83f560854}{operator$<$$<$} (std\-::ostream \&os, const \hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy}{\-Range\-Energy} \&obj)
+\begin{DoxyCompactList}\small\item\em \-To stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Struct representing the value extrapolated over a history range. 
+
+\-Definition at line 24 of file \-Cluster\-Analysis\-Data.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a2b748fd0dc43023c69f702c41553aceb}{\index{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}!\-Range\-Energy@{\-Range\-Energy}}
+\index{\-Range\-Energy@{\-Range\-Energy}!cryomesh::manipulators::ClusterAnalysisData::RangeEnergy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}}
+\subsubsection[{\-Range\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy\-::\-Range\-Energy} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a2b748fd0dc43023c69f702c41553aceb}
+
+
+\-Definition at line 25 of file \-Cluster\-Analysis\-Data.\-h.
+
+\hypertarget{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_abf3ff2eb9a39171461d1137eda38f8d3}{\index{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}!\-Range\-Energy@{\-Range\-Energy}}
+\index{\-Range\-Energy@{\-Range\-Energy}!cryomesh::manipulators::ClusterAnalysisData::RangeEnergy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}}
+\subsubsection[{\-Range\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy\-::\-Range\-Energy} (
+\begin{DoxyParamCaption}
+\item[{double}]{en, }
+\item[{double}]{energy\-\_\-fraction}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_abf3ff2eb9a39171461d1137eda38f8d3}
+
+
+\-Definition at line 28 of file \-Cluster\-Analysis\-Data.\-h.
+
+\hypertarget{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_aeea4ce3ee9e2b1fdbe7e11bca5054b59}{\index{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}!\-Range\-Energy@{\-Range\-Energy}}
+\index{\-Range\-Energy@{\-Range\-Energy}!cryomesh::manipulators::ClusterAnalysisData::RangeEnergy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}}
+\subsubsection[{\-Range\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy\-::\-Range\-Energy} (
+\begin{DoxyParamCaption}
+\item[{double}]{en, }
+\item[{double}]{energy\-\_\-fraction, }
+\item[{{\bf common\-::\-Cycle}}]{st, }
+\item[{{\bf common\-::\-Cycle}}]{ed, }
+\item[{double}]{min, }
+\item[{double}]{max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_aeea4ce3ee9e2b1fdbe7e11bca5054b59}
+
+
+\-Definition at line 32 of file \-Cluster\-Analysis\-Data.\-h.
+
+\hypertarget{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_afda1e98ceb489ddd22f557fbda270fed}{\index{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}!\-Range\-Energy@{\-Range\-Energy}}
+\index{\-Range\-Energy@{\-Range\-Energy}!cryomesh::manipulators::ClusterAnalysisData::RangeEnergy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}}
+\subsubsection[{\-Range\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy\-::\-Range\-Energy} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Range\-Energy} \&}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_afda1e98ceb489ddd22f557fbda270fed}
+
+
+\-Definition at line 36 of file \-Cluster\-Analysis\-Data.\-h.
+
+\hypertarget{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_aa586818fb71f316d9d031cc36eec2556}{\index{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}!$\sim$\-Range\-Energy@{$\sim$\-Range\-Energy}}
+\index{$\sim$\-Range\-Energy@{$\sim$\-Range\-Energy}!cryomesh::manipulators::ClusterAnalysisData::RangeEnergy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}}
+\subsubsection[{$\sim$\-Range\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy\-::$\sim$\-Range\-Energy} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_aa586818fb71f316d9d031cc36eec2556}
+
+
+\-Definition at line 40 of file \-Cluster\-Analysis\-Data.\-h.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a3e872ded9405bd8e1d994d8ebbd11ef3}{\index{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}!operator+@{operator+}}
+\index{operator+@{operator+}!cryomesh::manipulators::ClusterAnalysisData::RangeEnergy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Range\-Energy} cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy\-::operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Range\-Energy} \&}]{obj}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a3e872ded9405bd8e1d994d8ebbd11ef3}
+
+
+\-Non-\/destructive addition operator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em const} & \hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy}{\-Range\-Energy} \& obj \-R\-H\-S addition\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy}{\-Range\-Energy} \-New object after addition 
+\end{DoxyReturn}
+
+
+\-Definition at line 51 of file \-Cluster\-Analysis\-Data.\-h.
+
+\hypertarget{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a63e6c674d7f7e89a90f88d5462279f1e}{\index{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!cryomesh::manipulators::ClusterAnalysisData::RangeEnergy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Range\-Energy}\& cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Range\-Energy} \&}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a63e6c674d7f7e89a90f88d5462279f1e}
+
+
+\-Destructive addition and assignment operator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em const} & \hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy}{\-Range\-Energy} \& obj \-R\-H\-S addition\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy}{\-Range\-Energy} \& \-This object after addition and assignment 
+\end{DoxyReturn}
+
+
+\-Definition at line 65 of file \-Cluster\-Analysis\-Data.\-h.
+
+
+
+\-References end\-Cycle, energy, energy\-Max, energy\-Min, and start\-Cycle.
+
+\hypertarget{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a86f0ca22060ff3039d8df9457edae402}{\index{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}!operator/@{operator/}}
+\index{operator/@{operator/}!cryomesh::manipulators::ClusterAnalysisData::RangeEnergy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}}
+\subsubsection[{operator/}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Range\-Energy} cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy\-::operator/ (
+\begin{DoxyParamCaption}
+\item[{double}]{div}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a86f0ca22060ff3039d8df9457edae402}
+
+
+\-Definition at line 75 of file \-Cluster\-Analysis\-Data.\-h.
+
+\hypertarget{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a2bc35c2465673beb91fc67d0e5c595c1}{\index{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!cryomesh::manipulators::ClusterAnalysisData::RangeEnergy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}}
+\subsubsection[{operator/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Range\-Energy}\& cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy\-::operator/= (
+\begin{DoxyParamCaption}
+\item[{double}]{div}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a2bc35c2465673beb91fc67d0e5c595c1}
+
+
+\-Definition at line 80 of file \-Cluster\-Analysis\-Data.\-h.
+
+
+
+\-References energy.
+
+
+
+\subsection{\-Friends \-And \-Related \-Function \-Documentation}
+\hypertarget{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a99c9c1ea00dd9e77cfaa8ac83f560854}{\index{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cryomesh::manipulators::ClusterAnalysisData::RangeEnergy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const {\bf \-Range\-Energy} \&}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a99c9c1ea00dd9e77cfaa8ac83f560854}
+
+
+\-To stream operator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::ostream} & \& os \-The output stream \\
+\hline
+{\em const} & \hyperlink{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy}{\-Range\-Energy} \& obj \-The object to stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::ostream \& \-The output stream 
+\end{DoxyReturn}
+
+
+\-Definition at line 96 of file \-Cluster\-Analysis\-Data.\-h.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_afc1f6d068e8301e327981a578b83f981}{\index{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}!end\-Cycle@{end\-Cycle}}
+\index{end\-Cycle@{end\-Cycle}!cryomesh::manipulators::ClusterAnalysisData::RangeEnergy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}}
+\subsubsection[{end\-Cycle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf common\-::\-Cycle} {\bf cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy\-::end\-Cycle}}}\label{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_afc1f6d068e8301e327981a578b83f981}
+
+
+\-Definition at line 104 of file \-Cluster\-Analysis\-Data.\-h.
+
+
+
+\-Referenced by operator+=().
+
+\hypertarget{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a5ec0dd8061e8109c679fb03c46175f41}{\index{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}!energy@{energy}}
+\index{energy@{energy}!cryomesh::manipulators::ClusterAnalysisData::RangeEnergy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}}
+\subsubsection[{energy}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy\-::energy}}}\label{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a5ec0dd8061e8109c679fb03c46175f41}
+
+
+\-Definition at line 101 of file \-Cluster\-Analysis\-Data.\-h.
+
+
+
+\-Referenced by operator+=(), and operator/=().
+
+\hypertarget{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a5b00be235f5ec97fc564a87b7a53e15f}{\index{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}!energy\-Fraction@{energy\-Fraction}}
+\index{energy\-Fraction@{energy\-Fraction}!cryomesh::manipulators::ClusterAnalysisData::RangeEnergy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}}
+\subsubsection[{energy\-Fraction}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy\-::energy\-Fraction}}}\label{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a5b00be235f5ec97fc564a87b7a53e15f}
+
+
+\-Definition at line 102 of file \-Cluster\-Analysis\-Data.\-h.
+
+
+
+\-Referenced by cryomesh\-::manipulators\-::\-Cluster\-Analyser\-Basic\-::analyse\-Cluster().
+
+\hypertarget{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a51770c52465ceb02f9d452a46bedff77}{\index{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}!energy\-Max@{energy\-Max}}
+\index{energy\-Max@{energy\-Max}!cryomesh::manipulators::ClusterAnalysisData::RangeEnergy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}}
+\subsubsection[{energy\-Max}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy\-::energy\-Max}}}\label{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a51770c52465ceb02f9d452a46bedff77}
+
+
+\-Definition at line 106 of file \-Cluster\-Analysis\-Data.\-h.
+
+
+
+\-Referenced by operator+=().
+
+\hypertarget{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_aca92fb70884ff9717e530d91130d5e8d}{\index{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}!energy\-Min@{energy\-Min}}
+\index{energy\-Min@{energy\-Min}!cryomesh::manipulators::ClusterAnalysisData::RangeEnergy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}}
+\subsubsection[{energy\-Min}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy\-::energy\-Min}}}\label{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_aca92fb70884ff9717e530d91130d5e8d}
+
+
+\-Definition at line 105 of file \-Cluster\-Analysis\-Data.\-h.
+
+
+
+\-Referenced by operator+=().
+
+\hypertarget{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a4160dfffe32413f76e5effce2c95ae20}{\index{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}!start\-Cycle@{start\-Cycle}}
+\index{start\-Cycle@{start\-Cycle}!cryomesh::manipulators::ClusterAnalysisData::RangeEnergy@{cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy}}
+\subsubsection[{start\-Cycle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf common\-::\-Cycle} {\bf cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::\-Range\-Energy\-::start\-Cycle}}}\label{structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy_a4160dfffe32413f76e5effce2c95ae20}
+
+
+\-Definition at line 103 of file \-Cluster\-Analysis\-Data.\-h.
+
+
+
+\-Referenced by operator+=().
+
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/manipulators/\hyperlink{ClusterAnalysisData_8h}{\-Cluster\-Analysis\-Data.\-h}\end{DoxyCompactItemize}

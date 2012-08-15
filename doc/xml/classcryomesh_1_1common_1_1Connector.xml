@@ -1,0 +1,943 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="classcryomesh_1_1common_1_1Connector" kind="class" prot="public">
+    <compoundname>cryomesh::common::Connector</compoundname>
+    <includes refid="Connector_8h" local="no">Connector.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>U</declname>
+        <defname>U</defname>
+      </param>
+      <param>
+        <type>class</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classcryomesh_1_1common_1_1Connector_1a4b53045b5f70f35b9cf8838474bdbc97" prot="protected" static="no" mutable="no">
+        <type>std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; T &gt; &gt;</type>
+        <definition>std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt; cryomesh::common::Connector&lt; U, T &gt;::minputs</definition>
+        <argsstring></argsstring>
+        <name>minputs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="756" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="756" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1common_1_1Connector_1aa8eab10d81bfa921ad1341ad1fbc9a4d" compoundref="Connector_8h" startline="53" endline="61">cryomesh::common::Connector&lt; Fibre, Cluster &gt;::connectInput</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Connector_1ae158782ad5bf70ce2913be421ace2e4d" compoundref="Connector_8h" startline="332" endline="346">cryomesh::common::Connector&lt; Fibre, Cluster &gt;::disconnectAllInputs</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Connector_1a6726db121456485ea580ba7f9365bb37" compoundref="Connector_8h" startline="193" endline="200">cryomesh::common::Connector&lt; Fibre, Cluster &gt;::disconnectInput</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Connector_1af294647fe03f03108b2edd81c11aaa0a" compoundref="Connector_8h" startline="524" endline="526">cryomesh::common::Connector&lt; Fibre, Cluster &gt;::getInputs</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Connector_1acd6f00383ee6fd73ef8374494ce09865" compoundref="Connector_8h" startline="528" endline="541">cryomesh::common::Connector&lt; Fibre, Cluster &gt;::getInputsUUID</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Connector_1a673488ae2b7b9c00658bf4e4b99b26f2" compoundref="Connector_8h" startline="566" endline="568">cryomesh::common::Connector&lt; Fibre, Cluster &gt;::getMutableInputs</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1common_1_1Connector_1a3a7175d8c33a8f5cd72592748c6dc15f" prot="protected" static="no" mutable="no">
+        <type>std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; T &gt; &gt;</type>
+        <definition>std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt; cryomesh::common::Connector&lt; U, T &gt;::moutputs</definition>
+        <argsstring></argsstring>
+        <name>moutputs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="763" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="763" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1common_1_1Connector_1a1fa0ff922e03cbb5654a2de468af9d41" compoundref="Connector_8h" startline="122" endline="130">cryomesh::common::Connector&lt; Fibre, Cluster &gt;::connectOutput</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Connector_1afff7a004da2146ab0fca902204bd62ee" compoundref="Connector_8h" startline="500" endline="514">cryomesh::common::Connector&lt; Fibre, Cluster &gt;::disconnectAllOutputs</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Connector_1ab0c0f68c11aa53c3b407f613ffa212f1" compoundref="Connector_8h" startline="358" endline="367">cryomesh::common::Connector&lt; Fibre, Cluster &gt;::disconnectOutput</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Connector_1a974b1c610f3c949d64560f2d0d44f5eb" compoundref="Connector_8h" startline="588" endline="590">cryomesh::common::Connector&lt; Fibre, Cluster &gt;::getMutableOutputs</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Connector_1af108b3bdc8adee1d2f6ce34c6b7781e6" compoundref="Connector_8h" startline="577" endline="579">cryomesh::common::Connector&lt; Fibre, Cluster &gt;::getOutputs</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Connector_1acccc3d12685c44062af17cf5d7d78b6a" compoundref="Connector_8h" startline="543" endline="557">cryomesh::common::Connector&lt; Fibre, Cluster &gt;::getOutputsUUID</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1common_1_1Connector_1aed34a9f056b3f718cbf5669717d46694" prot="protected" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int cryomesh::common::Connector&lt; U, T &gt;::maxInputs</definition>
+        <argsstring></argsstring>
+        <name>maxInputs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="770" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="770" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1common_1_1Connector_1aa8eab10d81bfa921ad1341ad1fbc9a4d" compoundref="Connector_8h" startline="53" endline="61">cryomesh::common::Connector&lt; Fibre, Cluster &gt;::connectInput</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1common_1_1Connector_1aa30303b7f79bab1364ff8ba53ea3fb25" prot="protected" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int cryomesh::common::Connector&lt; U, T &gt;::maxOutputs</definition>
+        <argsstring></argsstring>
+        <name>maxOutputs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="777" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="777" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1common_1_1Connector_1a1fa0ff922e03cbb5654a2de468af9d41" compoundref="Connector_8h" startline="122" endline="130">cryomesh::common::Connector&lt; Fibre, Cluster &gt;::connectOutput</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1a44c721dbd4fbf74f4b71528e440cbbac" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::common::Connector&lt; U, T &gt;::Connector</definition>
+        <argsstring>(const unsigned int max_inputs=0, const unsigned int max_outputs=0)</argsstring>
+        <name>Connector</name>
+        <param>
+          <type>const unsigned int</type>
+          <declname>max_inputs</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>max_outputs</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="36" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="35" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1adf967a4426097b1f8152711ba9e8edb7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual cryomesh::common::Connector&lt; U, T &gt;::~Connector</definition>
+        <argsstring>()</argsstring>
+        <name>~Connector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="39" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="39" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1aa8eab10d81bfa921ad1341ad1fbc9a4d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Connector&lt; U, T &gt;::connectInput</definition>
+        <argsstring>(const boost::shared_ptr&lt; T &gt; obj)</argsstring>
+        <name>connectInput</name>
+        <param>
+          <type>const boost::shared_ptr&lt; T &gt;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>Connect a unit to this one as an input. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boost::shared_ptr&lt;T&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>obj <ref refid="structcryomesh_1_1Pointer" kindref="compound">Pointer</ref> to the object to be connected as input</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if connection succeeds, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="53" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="53" bodyend="61"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1Fibre_1a9d1f47fb7ce5c18234054fcee35fd42b" compoundref="Fibre_8cpp" startline="260" endline="301">cryomesh::structures::Fibre::connectAllConnections</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Connector_1a94c014ba589b22076c84fd8394b96c8d" compoundref="Connector_8h" startline="73" endline="86">cryomesh::common::Connector&lt; Fibre, Cluster &gt;::connectInputs</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1a94c014ba589b22076c84fd8394b96c8d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Connector&lt; U, T &gt;::connectInputs</definition>
+        <argsstring>(const std::vector&lt; boost::shared_ptr&lt; T &gt; &gt; &amp;list)</argsstring>
+        <name>connectInputs</name>
+        <param>
+          <type>const std::vector&lt; boost::shared_ptr&lt; T &gt; &gt; &amp;</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Connect a list of units to this one as inputs. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::vector&lt;boost::shared_ptr&lt;T&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&gt; list List of pointers to objects to be connected as inputs</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if all connections succeed, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="73" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="73" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1ad3287ece677524300b761e57ecb109de" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Connector&lt; U, T &gt;::connectInputs</definition>
+        <argsstring>(const std::initializer_list&lt; boost::shared_ptr&lt; T &gt; &gt; &amp;list)</argsstring>
+        <name>connectInputs</name>
+        <param>
+          <type>const std::initializer_list&lt; boost::shared_ptr&lt; T &gt; &gt; &amp;</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Connect an initialiser list of units to this one as inputs. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::initializer_list&lt;boost::shared_ptr&lt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>T &gt; &gt; list Initialiser list of pointers to objects to be connected as input</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if all connections succeed, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="97" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="97" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1a1fa0ff922e03cbb5654a2de468af9d41" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Connector&lt; U, T &gt;::connectOutput</definition>
+        <argsstring>(const boost::shared_ptr&lt; T &gt; &amp;obj)</argsstring>
+        <name>connectOutput</name>
+        <param>
+          <type>const boost::shared_ptr&lt; T &gt; &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>Connect a unit to this one as an output. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boost::shared_ptr&lt;T&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>obj <ref refid="structcryomesh_1_1Pointer" kindref="compound">Pointer</ref> to the object to be connected as output</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if connection succeeds, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="122" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="122" bodyend="130"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1Fibre_1a9d1f47fb7ce5c18234054fcee35fd42b" compoundref="Fibre_8cpp" startline="260" endline="301">cryomesh::structures::Fibre::connectAllConnections</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Connector_1a4c962f5b074b2d81e4952cfbb11ab974" compoundref="Connector_8h" startline="142" endline="155">cryomesh::common::Connector&lt; Fibre, Cluster &gt;::connectOutputs</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1a4c962f5b074b2d81e4952cfbb11ab974" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Connector&lt; U, T &gt;::connectOutputs</definition>
+        <argsstring>(const std::vector&lt; boost::shared_ptr&lt; T &gt; &gt; &amp;list)</argsstring>
+        <name>connectOutputs</name>
+        <param>
+          <type>const std::vector&lt; boost::shared_ptr&lt; T &gt; &gt; &amp;</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Connect a list of units to this one as outputs. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::vector&lt;boost::shared_ptr&lt;T&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&gt; list List of pointers to objects to be connected as outputs</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if all connections succeed, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="142" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="142" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1a8fca74791240e711bdd6c89b26759390" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Connector&lt; U, T &gt;::connectOutputs</definition>
+        <argsstring>(const std::initializer_list&lt; boost::shared_ptr&lt; T &gt; &gt; &amp;list)</argsstring>
+        <name>connectOutputs</name>
+        <param>
+          <type>const std::initializer_list&lt; boost::shared_ptr&lt; T &gt; &gt; &amp;</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Connect an initialiser list of units to this one as outputs. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::initializer_list&lt;boost::shared_ptr&lt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>T &gt; &gt; list Initialiser list of pointers to objects to be connected as outputs</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if all connections succeed, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="167" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="167" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1a6726db121456485ea580ba7f9365bb37" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Connector&lt; U, T &gt;::disconnectInput</definition>
+        <argsstring>(const boost::shared_ptr&lt; T &gt; &amp;obj)</argsstring>
+        <name>disconnectInput</name>
+        <param>
+          <type>const boost::shared_ptr&lt; T &gt; &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>Disconnect an input to this unit. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boost::shared_ptr&lt;T&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>obj <ref refid="structcryomesh_1_1Pointer" kindref="compound">Pointer</ref> to the object to be disconnected from input</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if disconnection succeeds, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="193" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="193" bodyend="200"/>
+        <referencedby refid="classcryomesh_1_1common_1_1Connector_1ae158782ad5bf70ce2913be421ace2e4d" compoundref="Connector_8h" startline="332" endline="346">cryomesh::common::Connector&lt; Fibre, Cluster &gt;::disconnectAllInputs</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Connector_1af37d582516d355642f6a14544f21e1b3" compoundref="Connector_8h" startline="234" endline="247">cryomesh::common::Connector&lt; Fibre, Cluster &gt;::disconnectInputs</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1a9de5eb37810b4d1563bff904b5bc545e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Connector&lt; U, T &gt;::disconnectInput</definition>
+        <argsstring>(const boost::uuids::uuid &amp;id)</argsstring>
+        <name>disconnectInput</name>
+        <param>
+          <type>const boost::uuids::uuid &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Disconnect an input to this unit. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boost::uuids::uuid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>id The unique identifier of the object to be disconnected</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if disconnection succeeds, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="212" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="212" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1af37d582516d355642f6a14544f21e1b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Connector&lt; U, T &gt;::disconnectInputs</definition>
+        <argsstring>(const std::vector&lt; boost::shared_ptr&lt; T &gt; &gt; &amp;list)</argsstring>
+        <name>disconnectInputs</name>
+        <param>
+          <type>const std::vector&lt; boost::shared_ptr&lt; T &gt; &gt; &amp;</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Disconnect a list of input units from this one. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::vector&lt;boost::shared_ptr&lt;T&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&gt; list List of pointers to objects to be disconnected</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if all disconnections succeed, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="234" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="234" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1aa6eb7d8ec6d50abeb7942ca4d3955927" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Connector&lt; U, T &gt;::disconnectInputs</definition>
+        <argsstring>(const std::initializer_list&lt; boost::shared_ptr&lt; T &gt; &gt; &amp;list)</argsstring>
+        <name>disconnectInputs</name>
+        <param>
+          <type>const std::initializer_list&lt; boost::shared_ptr&lt; T &gt; &gt; &amp;</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Disconnect an initialiser list of input units from this one. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::initializer_list&lt;boost::shared_ptr&lt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>T &gt; &gt; list Initialiser list of pointers to objects to be disconnected as inputs</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if all disconnections succeed, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="259" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="259" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1a8df62ec2ead7b69453c74398d8182a39" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Connector&lt; U, T &gt;::disconnectInputs</definition>
+        <argsstring>(const std::vector&lt; boost::uuids::uuid &gt; &amp;list)</argsstring>
+        <name>disconnectInputs</name>
+        <param>
+          <type>const std::vector&lt; boost::uuids::uuid &gt; &amp;</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Disconnect a list of input units from this one. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boost::uuids::uuid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list List of uuids to objects to be disconnected</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if all disconnections succeed, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="284" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="284" bodyend="297"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1aebc08e7a92cec11c1353391f9145d841" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Connector&lt; U, T &gt;::disconnectInputs</definition>
+        <argsstring>(const std::initializer_list&lt; boost::uuids::uuid &gt; &amp;list)</argsstring>
+        <name>disconnectInputs</name>
+        <param>
+          <type>const std::initializer_list&lt; boost::uuids::uuid &gt; &amp;</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Disconnect an initialiser list of input units from this one. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boost::uuids::uuid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list Initialiser list of uuids to objects to be disconnected as inputs</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if all disconnections succeed, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="309" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="309" bodyend="323"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1ae158782ad5bf70ce2913be421ace2e4d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Connector&lt; U, T &gt;::disconnectAllInputs</definition>
+        <argsstring>()</argsstring>
+        <name>disconnectAllInputs</name>
+        <briefdescription>
+<para>Disconnect all input units from this one. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if all disconnections succeed, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="332" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="332" bodyend="346"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1Fibre_1adb26abfba4fa239f8606afb71f6f7d61" compoundref="Fibre_8cpp" startline="242" endline="258">cryomesh::structures::Fibre::disconnectAllConnections</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1ab0c0f68c11aa53c3b407f613ffa212f1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Connector&lt; U, T &gt;::disconnectOutput</definition>
+        <argsstring>(const boost::shared_ptr&lt; T &gt; &amp;obj)</argsstring>
+        <name>disconnectOutput</name>
+        <param>
+          <type>const boost::shared_ptr&lt; T &gt; &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>Disconnect an output to this unit. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boost::shared_ptr&lt;T&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>obj <ref refid="structcryomesh_1_1Pointer" kindref="compound">Pointer</ref> to the object to be disconnected from output</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if disconnection succeeds, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="358" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="358" bodyend="367"/>
+        <referencedby refid="classcryomesh_1_1common_1_1Connector_1afff7a004da2146ab0fca902204bd62ee" compoundref="Connector_8h" startline="500" endline="514">cryomesh::common::Connector&lt; Fibre, Cluster &gt;::disconnectAllOutputs</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Connector_1a680ddbd6bd137f05b5a8ab9e28b73f48" compoundref="Connector_8h" startline="401" endline="414">cryomesh::common::Connector&lt; Fibre, Cluster &gt;::disconnectOutputs</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1a12a36aef140f4a58c688d899d086f8d1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Connector&lt; U, T &gt;::disconnectOutput</definition>
+        <argsstring>(const boost::uuids::uuid &amp;id)</argsstring>
+        <name>disconnectOutput</name>
+        <param>
+          <type>const boost::uuids::uuid &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Disconnect an output to this unit. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boost::uuids::uuid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>id The unique identifier of the object to be disconnected</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if disconnection succeeds, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="379" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="379" bodyend="389"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1a680ddbd6bd137f05b5a8ab9e28b73f48" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Connector&lt; U, T &gt;::disconnectOutputs</definition>
+        <argsstring>(const std::vector&lt; boost::shared_ptr&lt; T &gt; &gt; &amp;list)</argsstring>
+        <name>disconnectOutputs</name>
+        <param>
+          <type>const std::vector&lt; boost::shared_ptr&lt; T &gt; &gt; &amp;</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Disconnect a list of Output units from this one. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::vector&lt;boost::shared_ptr&lt;T&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&gt; list List of pointers to objects to be disconnected</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if all disconnections succeed, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="401" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="401" bodyend="414"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1a5b3daf294a8f5e808b7cada38cbd1cfd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Connector&lt; U, T &gt;::disconnectOutputs</definition>
+        <argsstring>(const std::initializer_list&lt; boost::shared_ptr&lt; T &gt; &gt; &amp;list)</argsstring>
+        <name>disconnectOutputs</name>
+        <param>
+          <type>const std::initializer_list&lt; boost::shared_ptr&lt; T &gt; &gt; &amp;</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Disconnect an initialiser list of Output units from this one. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::initializer_list&lt;boost::shared_ptr&lt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>T &gt; &gt; list Initialiser list of pointers to objects to be disconnected as Outputs</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if all disconnections succeed, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="426" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="426" bodyend="440"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1a5a6ab355b767129f60f4042a734e1db0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Connector&lt; U, T &gt;::disconnectOutputs</definition>
+        <argsstring>(const std::vector&lt; boost::uuids::uuid &gt; &amp;list)</argsstring>
+        <name>disconnectOutputs</name>
+        <param>
+          <type>const std::vector&lt; boost::uuids::uuid &gt; &amp;</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Disconnect a uuid list of Output units from this one. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boost::uuids::uuid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list List of uuids to objects to be disconnected</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if all disconnections succeed, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="452" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="452" bodyend="465"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1adb34713ed33984fef703a8a1ad342624" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Connector&lt; U, T &gt;::disconnectOutputs</definition>
+        <argsstring>(const std::initializer_list&lt; boost::uuids::uuid &gt; &amp;list)</argsstring>
+        <name>disconnectOutputs</name>
+        <param>
+          <type>const std::initializer_list&lt; boost::uuids::uuid &gt; &amp;</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Disconnect an uuid initiaialiser list of Output units from this one. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boost::uuids::uuid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list Initialiser list of uuids to objects to be disconnected as Outputs</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if all disconnections succeed, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="477" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="477" bodyend="491"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1afff7a004da2146ab0fca902204bd62ee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::common::Connector&lt; U, T &gt;::disconnectAllOutputs</definition>
+        <argsstring>()</argsstring>
+        <name>disconnectAllOutputs</name>
+        <briefdescription>
+<para>Disconnect all Output units from this one. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if all disconnections succeed, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="500" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="500" bodyend="514"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1Fibre_1adb26abfba4fa239f8606afb71f6f7d61" compoundref="Fibre_8cpp" startline="242" endline="258">cryomesh::structures::Fibre::disconnectAllConnections</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1af294647fe03f03108b2edd81c11aaa0a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; T &gt; &gt; &amp;</type>
+        <definition>const std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt;&amp; cryomesh::common::Connector&lt; U, T &gt;::getInputs</definition>
+        <argsstring>() const </argsstring>
+        <name>getInputs</name>
+        <briefdescription>
+<para>Get all inputs. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; The map of inputs </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="524" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="524" bodyend="526"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1Fibre_1aa4b6fd784dad6f0e0ac48b33ac0c574a" compoundref="Fibre_8cpp" startline="148" endline="188">cryomesh::structures::Fibre::countConnections</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Fibre_1af32b67f092190a1a0b3dcc1b4156aaf0" compoundref="Fibre_8cpp" startline="189" endline="228">cryomesh::structures::Fibre::isConnected</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1acd6f00383ee6fd73ef8374494ce09865" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::list&lt; boost::uuids::uuid &gt;</type>
+        <definition>const std::list&lt;boost::uuids::uuid&gt; cryomesh::common::Connector&lt; U, T &gt;::getInputsUUID</definition>
+        <argsstring>() const </argsstring>
+        <name>getInputsUUID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="528" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="528" bodyend="541"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1acccc3d12685c44062af17cf5d7d78b6a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::list&lt; boost::uuids::uuid &gt;</type>
+        <definition>const std::list&lt;boost::uuids::uuid&gt; cryomesh::common::Connector&lt; U, T &gt;::getOutputsUUID</definition>
+        <argsstring>() const </argsstring>
+        <name>getOutputsUUID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="543" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="543" bodyend="557"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1a673488ae2b7b9c00658bf4e4b99b26f2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; T &gt; &gt; &amp;</type>
+        <definition>std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt;&amp; cryomesh::common::Connector&lt; U, T &gt;::getMutableInputs</definition>
+        <argsstring>()</argsstring>
+        <name>getMutableInputs</name>
+        <briefdescription>
+<para>Get all inputs as mutable object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; The map of inputs </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="566" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="566" bodyend="568"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1af108b3bdc8adee1d2f6ce34c6b7781e6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; T &gt; &gt; &amp;</type>
+        <definition>const std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt;&amp; cryomesh::common::Connector&lt; U, T &gt;::getOutputs</definition>
+        <argsstring>() const </argsstring>
+        <name>getOutputs</name>
+        <briefdescription>
+<para>Get all outputs. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; The map of outputs </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="577" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="577" bodyend="579"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1Fibre_1aa4b6fd784dad6f0e0ac48b33ac0c574a" compoundref="Fibre_8cpp" startline="148" endline="188">cryomesh::structures::Fibre::countConnections</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Fibre_1af32b67f092190a1a0b3dcc1b4156aaf0" compoundref="Fibre_8cpp" startline="189" endline="228">cryomesh::structures::Fibre::isConnected</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1a974b1c610f3c949d64560f2d0d44f5eb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; T &gt; &gt; &amp;</type>
+        <definition>std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; &gt;&amp; cryomesh::common::Connector&lt; U, T &gt;::getMutableOutputs</definition>
+        <argsstring>()</argsstring>
+        <name>getMutableOutputs</name>
+        <briefdescription>
+<para>Get all outputs as mutable object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;T&gt; The map of outputs </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="588" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="588" bodyend="590"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classcryomesh_1_1common_1_1Connector_1a821dbf25de8022d484c33728df5a69f5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const Connector&lt; U, T &gt; &amp;obj)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Connector" kindref="compound">Connector</ref>&lt; U, T &gt; &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>To stream operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::ostream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp; os The output stream </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Connector&lt;U,T&gt; &amp; obj The object to stream</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::ostream &amp; The output stream </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="603" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="603" bodyend="637"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1a1adff096f822eee244c7c26cd7f3fc3f" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boost::shared_ptr&lt; T &gt;</type>
+        <definition>boost::shared_ptr&lt;T&gt; cryomesh::common::Connector&lt; U, T &gt;::connect</definition>
+        <argsstring>(const boost::shared_ptr&lt; T &gt; obj, std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; T &gt; &gt; &amp;objs, unsigned int max_connections)</argsstring>
+        <name>connect</name>
+        <param>
+          <type>const boost::shared_ptr&lt; T &gt;</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; T &gt; &gt; &amp;</type>
+          <declname>objs</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>max_connections</declname>
+        </param>
+        <briefdescription>
+<para>Connect up an object using the supplied map. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boost::shared_ptr&lt;T&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>obj <ref refid="structcryomesh_1_1Pointer" kindref="compound">Pointer</ref> to the object that is to be connected </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>std::map&lt;boost::uuids::uuid</parametername>
+<parametername>boost::shared_ptr&lt;T&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&gt; objs The map that will be used to connect the object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>unsinged</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>int Maximum connections to allow</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="structcryomesh_1_1Pointer" kindref="compound">Pointer</ref> to the connected object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="656" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="655" bodyend="671"/>
+        <referencedby refid="classcryomesh_1_1common_1_1Connector_1aa8eab10d81bfa921ad1341ad1fbc9a4d" compoundref="Connector_8h" startline="53" endline="61">cryomesh::common::Connector&lt; Fibre, Cluster &gt;::connectInput</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Connector_1a1fa0ff922e03cbb5654a2de468af9d41" compoundref="Connector_8h" startline="122" endline="130">cryomesh::common::Connector&lt; Fibre, Cluster &gt;::connectOutput</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1abdabb88b660f2f71a25a15f81fe5b683" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boost::shared_ptr&lt; T &gt;</type>
+        <definition>boost::shared_ptr&lt;T&gt; cryomesh::common::Connector&lt; U, T &gt;::disconnect</definition>
+        <argsstring>(const boost::shared_ptr&lt; T &gt; obj, std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; T &gt; &gt; &amp;objs)</argsstring>
+        <name>disconnect</name>
+        <param>
+          <type>const boost::shared_ptr&lt; T &gt;</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; T &gt; &gt; &amp;</type>
+          <declname>objs</declname>
+        </param>
+        <briefdescription>
+<para>Disconnect an object using the supplied map. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boost::shared_ptr&lt;T&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>obj <ref refid="structcryomesh_1_1Pointer" kindref="compound">Pointer</ref> to the object that is to be disconnected </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>std::map&lt;boost::uuids::uuid</parametername>
+<parametername>boost::shared_ptr&lt;T&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&gt; objs The map that will be used to disconnect the object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="structcryomesh_1_1Pointer" kindref="compound">Pointer</ref> to the disconnected object, pointer is 0 is object was not found </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="686" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="685" bodyend="710"/>
+        <referencedby refid="classcryomesh_1_1common_1_1Connector_1a6726db121456485ea580ba7f9365bb37" compoundref="Connector_8h" startline="193" endline="200">cryomesh::common::Connector&lt; Fibre, Cluster &gt;::disconnectInput</referencedby>
+        <referencedby refid="classcryomesh_1_1common_1_1Connector_1ab0c0f68c11aa53c3b407f613ffa212f1" compoundref="Connector_8h" startline="358" endline="367">cryomesh::common::Connector&lt; Fibre, Cluster &gt;::disconnectOutput</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1common_1_1Connector_1a3ddc25ebd1129d2d5d93126f768fd1ee" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boost::shared_ptr&lt; T &gt;</type>
+        <definition>boost::shared_ptr&lt;T&gt; cryomesh::common::Connector&lt; U, T &gt;::disconnect</definition>
+        <argsstring>(const boost::uuids::uuid &amp;id, std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; T &gt; &gt; &amp;objs)</argsstring>
+        <name>disconnect</name>
+        <param>
+          <type>const boost::uuids::uuid &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; T &gt; &gt; &amp;</type>
+          <declname>objs</declname>
+        </param>
+        <briefdescription>
+<para>Disconnect an object using the supplied map. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boost::uuids::uuid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>id The uuid of the object that is to be disconnected </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>std::map&lt;boost::uuids::uuid</parametername>
+<parametername>boost::shared_ptr&lt;T&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&gt; &amp; objs The map that will be used to disconnect the object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="structcryomesh_1_1Pointer" kindref="compound">Pointer</ref> to the disconnected object, pointer is null is object was not found </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="725" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="724" bodyend="749"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classcryomesh_1_1common_1_1Connector" kindref="compound">Connector</ref> is a template to add connectable functionality between two classes. </para>    </briefdescription>
+    <detaileddescription>
+<para>Represents a template to add connectable funtionality between class U as the central connectable and class T as those objects it can be connected to </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="313">
+        <label>cryomesh::common::Connector&lt; U, T &gt;</label>
+        <link refid="classcryomesh_1_1common_1_1Connector"/>
+        <childnode refid="314" relation="usage">
+          <edgelabel>minputs</edgelabel>
+          <edgelabel>moutputs</edgelabel>
+        </childnode>
+      </node>
+      <node id="314">
+        <label>std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; T &gt; &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" line="33" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Connector.h" bodystart="33" bodyend="779"/>
+    <listofallmembers>
+      <member refid="classcryomesh_1_1common_1_1Connector_1a1adff096f822eee244c7c26cd7f3fc3f" prot="protected" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>connect</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1aa8eab10d81bfa921ad1341ad1fbc9a4d" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>connectInput</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1a94c014ba589b22076c84fd8394b96c8d" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>connectInputs</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1ad3287ece677524300b761e57ecb109de" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>connectInputs</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1a44c721dbd4fbf74f4b71528e440cbbac" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>Connector</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1a1fa0ff922e03cbb5654a2de468af9d41" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>connectOutput</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1a4c962f5b074b2d81e4952cfbb11ab974" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>connectOutputs</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1a8fca74791240e711bdd6c89b26759390" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>connectOutputs</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1abdabb88b660f2f71a25a15f81fe5b683" prot="protected" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>disconnect</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1a3ddc25ebd1129d2d5d93126f768fd1ee" prot="protected" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>disconnect</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1ae158782ad5bf70ce2913be421ace2e4d" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>disconnectAllInputs</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1afff7a004da2146ab0fca902204bd62ee" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>disconnectAllOutputs</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1a6726db121456485ea580ba7f9365bb37" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>disconnectInput</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1a9de5eb37810b4d1563bff904b5bc545e" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>disconnectInput</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1af37d582516d355642f6a14544f21e1b3" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>disconnectInputs</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1aa6eb7d8ec6d50abeb7942ca4d3955927" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>disconnectInputs</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1a8df62ec2ead7b69453c74398d8182a39" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>disconnectInputs</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1aebc08e7a92cec11c1353391f9145d841" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>disconnectInputs</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1ab0c0f68c11aa53c3b407f613ffa212f1" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>disconnectOutput</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1a12a36aef140f4a58c688d899d086f8d1" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>disconnectOutput</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1a680ddbd6bd137f05b5a8ab9e28b73f48" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>disconnectOutputs</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1a5b3daf294a8f5e808b7cada38cbd1cfd" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>disconnectOutputs</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1a5a6ab355b767129f60f4042a734e1db0" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>disconnectOutputs</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1adb34713ed33984fef703a8a1ad342624" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>disconnectOutputs</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1af294647fe03f03108b2edd81c11aaa0a" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>getInputs</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1acd6f00383ee6fd73ef8374494ce09865" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>getInputsUUID</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1a673488ae2b7b9c00658bf4e4b99b26f2" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>getMutableInputs</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1a974b1c610f3c949d64560f2d0d44f5eb" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>getMutableOutputs</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1af108b3bdc8adee1d2f6ce34c6b7781e6" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>getOutputs</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1acccc3d12685c44062af17cf5d7d78b6a" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>getOutputsUUID</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1aed34a9f056b3f718cbf5669717d46694" prot="protected" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>maxInputs</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1aa30303b7f79bab1364ff8ba53ea3fb25" prot="protected" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>maxOutputs</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1a4b53045b5f70f35b9cf8838474bdbc97" prot="protected" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>minputs</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1a3a7175d8c33a8f5cd72592748c6dc15f" prot="protected" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>moutputs</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1a821dbf25de8022d484c33728df5a69f5" prot="public" virt="non-virtual"><scope>cryomesh::common::Connector</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classcryomesh_1_1common_1_1Connector_1adf967a4426097b1f8152711ba9e8edb7" prot="public" virt="virtual"><scope>cryomesh::common::Connector</scope><name>~Connector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

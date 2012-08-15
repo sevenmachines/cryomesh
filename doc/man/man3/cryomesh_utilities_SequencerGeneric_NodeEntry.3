@@ -1,4 +1,4 @@
-.TH "cryomesh::utilities::SequencerGeneric::NodeEntry" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::utilities::SequencerGeneric::NodeEntry" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -7,7 +7,14 @@ cryomesh::utilities::SequencerGeneric::NodeEntry \-
 .br
 .PP
 .PP
-\fC#include <SequencerGeneric.h>\fP
+\fC#include <SequencerGeneric\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBNodeEntry\fP ()"
+.br
+.in -1c
 .SS "Public Attributes"
 
 .in +1c
@@ -15,13 +22,17 @@ cryomesh::utilities::SequencerGeneric::NodeEntry \-
 .RI "std::string \fBname\fP"
 .br
 .ti -1c
-.RI "std::map< std::string, std::string > \fBinfo\fP"
+.RI "std::map< std::string, 
+.br
+std::string > \fBinfo\fP"
 .br
 .ti -1c
 .RI "boost::shared_ptr< \fBNodeEntry\fP > \fBparentNode\fP"
 .br
 .ti -1c
-.RI "std::list< boost::shared_ptr< \fBNodeEntry\fP > > \fBchildNodes\fP"
+.RI "std::list< boost::shared_ptr
+.br
+< \fBNodeEntry\fP > > \fBchildNodes\fP"
 .br
 .in -1c
 .SS "Friends"
@@ -33,33 +44,38 @@ cryomesh::utilities::SequencerGeneric::NodeEntry \-
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 14 of file SequencerGeneric.h.
+Definition at line 14 of file SequencerGeneric\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBcryomesh::utilities::SequencerGeneric::NodeEntry::NodeEntry\fP ()\fC [inline]\fP"
+.PP
+Definition at line 16 of file SequencerGeneric\&.h\&.
 .SH "Friends And Related Function Documentation"
 .PP 
 .SS "std::ostream& operator<< (std::ostream &os, const \fBNodeEntry\fP &obj)\fC [friend]\fP"
 .PP
-Definition at line 22 of file SequencerGeneric.h.
+Definition at line 23 of file SequencerGeneric\&.h\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "std::list<boost::shared_ptr<\fBNodeEntry\fP> > \fBcryomesh::utilities::SequencerGeneric::NodeEntry::childNodes\fP"
 .PP
-Definition at line 20 of file SequencerGeneric.h.
+Definition at line 21 of file SequencerGeneric\&.h\&.
 .PP
-Referenced by cryomesh::utilities::SequencerChannels::readSequences().
+Referenced by cryomesh::utilities::SequencerChannels::readSequences()\&.
 .SS "std::map<std::string, std::string> \fBcryomesh::utilities::SequencerGeneric::NodeEntry::info\fP"
 .PP
-Definition at line 18 of file SequencerGeneric.h.
+Definition at line 19 of file SequencerGeneric\&.h\&.
 .PP
-Referenced by cryomesh::utilities::SequencerChannels::readSequences().
+Referenced by cryomesh::utilities::SequencerChannels::readSequences()\&.
 .SS "std::string \fBcryomesh::utilities::SequencerGeneric::NodeEntry::name\fP"
 .PP
-Definition at line 16 of file SequencerGeneric.h.
+Definition at line 17 of file SequencerGeneric\&.h\&.
 .PP
-Referenced by cryomesh::utilities::SequencerChannels::readSequences().
+Referenced by cryomesh::utilities::SequencerChannels::readSequences()\&.
 .SS "boost::shared_ptr<\fBNodeEntry\fP> \fBcryomesh::utilities::SequencerGeneric::NodeEntry::parentNode\fP"
 .PP
-Definition at line 19 of file SequencerGeneric.h.
+Definition at line 20 of file SequencerGeneric\&.h\&.
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for cryomesh from the source code.
+Generated automatically by Doxygen for cryomesh from the source code\&.

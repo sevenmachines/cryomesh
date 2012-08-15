@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="namespacecryomesh_1_1structures" kind="namespace">
+    <compoundname>cryomesh::structures</compoundname>
+    <innerclass refid="classcryomesh_1_1structures_1_1Bundle" prot="public">cryomesh::structures::Bundle</innerclass>
+    <innerclass refid="classcryomesh_1_1structures_1_1Cluster" prot="public">cryomesh::structures::Cluster</innerclass>
+    <innerclass refid="classcryomesh_1_1structures_1_1Fibre" prot="public">cryomesh::structures::Fibre</innerclass>
+    <innerclass refid="classcryomesh_1_1structures_1_1FibreMap" prot="public">cryomesh::structures::FibreMap</innerclass>
+    <innerclass refid="classcryomesh_1_1structures_1_1Mesh" prot="public">cryomesh::structures::Mesh</innerclass>
+    <innerclass refid="classcryomesh_1_1structures_1_1NodeMesh" prot="public">cryomesh::structures::NodeMesh</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacecryomesh_1_1structures_1a50c955c70377b1dc7d3fcf1364d5e33e" prot="public" static="no">
+        <type>std::map&lt; boost::shared_ptr&lt; <ref refid="classcryomesh_1_1components_1_1Node" kindref="compound">cryomesh::components::Node</ref> &gt;, std::map&lt; boost::shared_ptr&lt; <ref refid="classcryomesh_1_1components_1_1Node" kindref="compound">cryomesh::components::Node</ref> &gt;, double &gt; &gt;</type>
+        <definition>cryomesh::structures::NodeMesh::NeighbourhoodMap</definition>
+        <argsstring></argsstring>
+        <name>NeighbourhoodMap</name>
+        <briefdescription>
+<para>Typedef to simplify neighbourhood map structure. </para>        </briefdescription>
+        <detaileddescription>
+<para>Map of Nodes to other nodes within their neighbourhood and the distances to them. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="25" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacecryomesh_1_1structures_1a321983538b31d02a5bb7345c72c63769" prot="public" static="no">
+        <type>std::map&lt; boost::shared_ptr&lt; <ref refid="classcryomesh_1_1components_1_1Node" kindref="compound">cryomesh::components::Node</ref> &gt;, std::map&lt; boost::shared_ptr&lt; <ref refid="classcryomesh_1_1components_1_1Node" kindref="compound">cryomesh::components::Node</ref> &gt;, double &gt; &gt;::const_iterator</type>
+        <definition>typedef std::map&lt;boost::shared_ptr&lt;cryomesh::components::Node&gt;, std::map&lt;boost::shared_ptr&lt;cryomesh::components::Node&gt;, double&gt; &gt;::const_iterator cryomesh::structures::NeighbourhoodMapConstIterator</definition>
+        <argsstring></argsstring>
+        <name>NeighbourhoodMapConstIterator</name>
+        <briefdescription>
+<para>Typdef for iterator to neighbourhood map. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="30" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacecryomesh_1_1structures_1a2e1e77e062248b853cfcfc84d5451ca7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; cryomesh::structures::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const Bundle &amp;obj)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1structures_1_1Bundle" kindref="compound">Bundle</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::ostream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp; os The output stream </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1structures_1_1Bundle" kindref="compound">Bundle</ref> &amp; obj The object to stream</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::ostream &amp; The output stream </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" line="973" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="973" bodyend="976"/>
+        <references refid="classcryomesh_1_1common_1_1Loggable_1a4d85401f6c81bc8ed94e49d66ae574c5ae496af0b41e3b64530b61e315822cc51" compoundref="Loggable_8h" startline="24">cryomesh::common::Loggable::MAX</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a1b2bdda71a78b4e89af23f21e7611ee4" compoundref="Bundle_8cpp" startline="836" endline="866">cryomesh::structures::Bundle::print</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacecryomesh_1_1structures_1abcd04bbc637a047b78e8fe786d5849a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; cryomesh::structures::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const Cluster &amp;obj)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1structures_1_1Cluster" kindref="compound">Cluster</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::ostream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp; os The output stream </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1structures_1_1Cluster" kindref="compound">Cluster</ref> &amp; obj The object to stream</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::ostream &amp; The output stream </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Cluster.cpp" line="331" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Cluster.cpp" bodystart="331" bodyend="336"/>
+        <references refid="classcryomesh_1_1structures_1_1Cluster_1aa015d026b0903772780b964fece2cd56" compoundref="Cluster_8cpp" startline="204" endline="206">cryomesh::structures::Cluster::getConnections</references>
+        <references refid="classcryomesh_1_1structures_1_1Cluster_1adebc5a93681278631cfb2d70fa579005" compoundref="Cluster_8cpp" startline="216" endline="218">cryomesh::structures::Cluster::getNodeMap</references>
+        <references refid="classcryomesh_1_1structures_1_1Cluster_1ade4227c5a3f39b17a53c31e4aeb25bfc" compoundref="Cluster_8cpp" startline="200" endline="202">cryomesh::structures::Cluster::getNodes</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacecryomesh_1_1structures_1a5193b0012f22b1fd0663b95152c0347e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; cryomesh::structures::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const Fibre &amp;obj)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1structures_1_1Fibre" kindref="compound">Fibre</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pattern To stream operator</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::ostream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp; os The output stream </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1structures_1_1Fibre" kindref="compound">Fibre</ref> &amp; obj The object to stream</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::ostream &amp; The output stream </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Fibre.cpp" line="449" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Fibre.cpp" bodystart="449" bodyend="454"/>
+        <references refid="classcryomesh_1_1structures_1_1Fibre_1a95dbfb506308cab9c4d763f2dff66311" compoundref="Fibre_8cpp" startline="128" endline="130">cryomesh::structures::Fibre::getConnections</references>
+        <references refid="classcryomesh_1_1structures_1_1Fibre_1a0db7ff1c4bb7520f10cb680b7bd9e89e" compoundref="Fibre_8cpp" startline="335" endline="338">cryomesh::structures::Fibre::getOutputNodesPattern</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacecryomesh_1_1structures_1ababe2609b3503ef7d3abf4e2b576ce88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; cryomesh::structures::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const NodeMesh &amp;obj)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1structures_1_1NodeMesh" kindref="compound">NodeMesh</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::ostream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp; os The output stream </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1structures_1_1NodeMesh" kindref="compound">NodeMesh</ref> &amp; obj The object to stream</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::ostream &amp; The output stream </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.cpp" line="306" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.cpp" bodystart="306" bodyend="311"/>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1a6a850e634ec14509ba12dd52fac8ff20" compoundref="NodeMesh_8cpp" startline="287" endline="304">cryomesh::structures::NodeMesh::printNeighbourhoodActivities</references>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1a712c2b1f420fc8f29926db9e609a0ee8" compoundref="NodeMesh_8cpp" startline="265" endline="285">cryomesh::structures::NodeMesh::printNeighbourhoods</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" line="15"/>
+  </compounddef>
+</doxygen>

@@ -1,4 +1,4 @@
-.TH "cryomesh::state::PatternTagById" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::state::PatternTagById" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -7,9 +7,9 @@ cryomesh::state::PatternTagById \-
 .br
 .PP
 .PP
-\fC#include <PatternTagById.h>\fP
+\fC#include <PatternTagById\&.h>\fP
 .PP
-Inherits \fBcryomesh::state::PatternTag\fP.
+Inherits \fBcryomesh::state::PatternTag\fP\&.
 .SS "Public Member Functions"
 
 .in +1c
@@ -35,16 +35,18 @@ Inherits \fBcryomesh::state::PatternTag\fP.
 .RI "virtual std::string \fBgetStartTag\fP () const "
 .br
 .ti -1c
-.RI "virtual void \fBsetStartTag\fP (std::string tg)"
+.RI "virtual std::string \fBgetEndTag\fP () const "
 .br
 .ti -1c
-.RI "virtual std::string \fBgetEndTag\fP () const "
+.RI "virtual void \fBsetStartTag\fP (std::string tg)"
 .br
 .ti -1c
 .RI "virtual void \fBsetEndTag\fP (std::string tg)"
 .br
 .ti -1c
-.RI "virtual boost::shared_ptr< \fBPatternTag\fP > \fBgetGlobalTag\fP ()"
+.RI "virtual boost::shared_ptr
+.br
+< \fBPatternTag\fP > \fBgetGlobalTag\fP ()"
 .br
 .in -1c
 .SS "Private Attributes"
@@ -58,90 +60,100 @@ Inherits \fBcryomesh::state::PatternTag\fP.
 
 .in +1c
 .ti -1c
-.RI "static boost::shared_ptr< \fBPatternTagById\fP > \fBglobalTag\fP = boost::shared_ptr<\fBPatternTagById\fP>(new \fBPatternTagById\fP(1))"
+.RI "static boost::shared_ptr
+.br
+< \fBPatternTagById\fP > \fBglobalTag\fP = boost::shared_ptr<\fBPatternTagById\fP>(new \fBPatternTagById\fP(1))"
 .br
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 14 of file PatternTagById.h.
+Definition at line 14 of file PatternTagById\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "cryomesh::state::PatternTagById::PatternTagById (intd)"
+.SS "\fBcryomesh::state::PatternTagById::PatternTagById\fP (intd)"
 .PP
-Definition at line 15 of file PatternTagById.cpp.
-.SS "cryomesh::state::PatternTagById::~PatternTagById ()\fC [virtual]\fP"
+Definition at line 15 of file PatternTagById\&.cpp\&.
+.SS "\fBcryomesh::state::PatternTagById::~PatternTagById\fP ()\fC [virtual]\fP"
 .PP
-Definition at line 21 of file PatternTagById.cpp.
+Definition at line 21 of file PatternTagById\&.cpp\&.
 .SH "Member Function Documentation"
 .PP 
-.SS "std::string cryomesh::state::PatternTagById::getEndTag () const\fC [virtual]\fP"
+.SS "std::string \fBcryomesh::state::PatternTagById::getEndTag\fP () const\fC [virtual]\fP"
 .PP
-Implements \fBcryomesh::state::PatternTag\fP.
+Implements \fBcryomesh::state::PatternTag\fP\&.
 .PP
-Definition at line 45 of file PatternTagById.cpp.
+Definition at line 43 of file PatternTagById\&.cpp\&.
 .PP
-References cryomesh::state::Pattern::getIds().
-.SS "boost::shared_ptr< \fBPatternTag\fP > cryomesh::state::PatternTagById::getGlobalTag ()\fC [virtual]\fP"
+References cryomesh::state::Pattern::getIds()\&.
 .PP
-Implements \fBcryomesh::state::PatternTag\fP.
+Referenced by setEndTag()\&.
+.SS "boost::shared_ptr< \fBPatternTag\fP > \fBcryomesh::state::PatternTagById::getGlobalTag\fP ()\fC [virtual]\fP"
 .PP
-Definition at line 55 of file PatternTagById.cpp.
+Implements \fBcryomesh::state::PatternTag\fP\&.
 .PP
-References globalTag.
-.SS "std::string cryomesh::state::PatternTagById::getStartTag () const\fC [virtual]\fP"
+Definition at line 56 of file PatternTagById\&.cpp\&.
 .PP
-Implements \fBcryomesh::state::PatternTag\fP.
+References globalTag\&.
+.SS "std::string \fBcryomesh::state::PatternTagById::getStartTag\fP () const\fC [virtual]\fP"
 .PP
-Definition at line 40 of file PatternTagById.cpp.
-.SS "std::string cryomesh::state::PatternTagById::getTag () const\fC [virtual]\fP"
+Implements \fBcryomesh::state::PatternTag\fP\&.
 .PP
-Implements \fBcryomesh::state::PatternTag\fP.
+Definition at line 40 of file PatternTagById\&.cpp\&.
 .PP
-Definition at line 23 of file PatternTagById.cpp.
+Referenced by setStartTag()\&.
+.SS "std::string \fBcryomesh::state::PatternTagById::getTag\fP () const\fC [virtual]\fP"
 .PP
-References id.
+Implements \fBcryomesh::state::PatternTag\fP\&.
 .PP
-Referenced by moveTag().
-.SS "std::string cryomesh::state::PatternTagById::moveTag (inti)\fC [virtual]\fP"
+Definition at line 23 of file PatternTagById\&.cpp\&.
 .PP
-Implements \fBcryomesh::state::PatternTag\fP.
+References id\&.
 .PP
-Definition at line 32 of file PatternTagById.cpp.
+Referenced by moveTag()\&.
+.SS "std::string \fBcryomesh::state::PatternTagById::moveTag\fP ()\fC [virtual]\fP"
 .PP
-References getTag().
-.SS "std::string cryomesh::state::PatternTagById::moveTag ()\fC [virtual]\fP"
+Implements \fBcryomesh::state::PatternTag\fP\&.
 .PP
-Implements \fBcryomesh::state::PatternTag\fP.
+Definition at line 29 of file PatternTagById\&.cpp\&.
+.SS "std::string \fBcryomesh::state::PatternTagById::moveTag\fP (inti)\fC [virtual]\fP"
 .PP
-Definition at line 29 of file PatternTagById.cpp.
-.SS "void cryomesh::state::PatternTagById::setEndTag (std::stringtg)\fC [virtual]\fP"
+Implements \fBcryomesh::state::PatternTag\fP\&.
 .PP
-Implements \fBcryomesh::state::PatternTag\fP.
+Definition at line 32 of file PatternTagById\&.cpp\&.
 .PP
-Definition at line 51 of file PatternTagById.cpp.
-.SS "void cryomesh::state::PatternTagById::setStartTag (std::stringtg)\fC [virtual]\fP"
+References getTag()\&.
+.SS "void \fBcryomesh::state::PatternTagById::setEndTag\fP (std::stringtg)\fC [virtual]\fP"
 .PP
-Implements \fBcryomesh::state::PatternTag\fP.
+Implements \fBcryomesh::state::PatternTag\fP\&.
 .PP
-Definition at line 43 of file PatternTagById.cpp.
-.SS "void cryomesh::state::PatternTagById::setTag (std::stringtg)\fC [virtual]\fP"
+Definition at line 53 of file PatternTagById\&.cpp\&.
 .PP
-Implements \fBcryomesh::state::PatternTag\fP.
+References getEndTag()\&.
+.SS "void \fBcryomesh::state::PatternTagById::setStartTag\fP (std::stringtg)\fC [virtual]\fP"
 .PP
-Definition at line 26 of file PatternTagById.cpp.
+Implements \fBcryomesh::state::PatternTag\fP\&.
+.PP
+Definition at line 50 of file PatternTagById\&.cpp\&.
+.PP
+References getStartTag()\&.
+.SS "void \fBcryomesh::state::PatternTagById::setTag\fP (std::stringtg)\fC [virtual]\fP"
+.PP
+Implements \fBcryomesh::state::PatternTag\fP\&.
+.PP
+Definition at line 26 of file PatternTagById\&.cpp\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "boost::shared_ptr< \fBPatternTagById\fP > \fBcryomesh::state::PatternTagById::globalTag\fP = boost::shared_ptr<\fBPatternTagById\fP>(new \fBPatternTagById\fP(1))\fC [static, private]\fP"
 .PP
-Definition at line 30 of file PatternTagById.h.
+Definition at line 29 of file PatternTagById\&.h\&.
 .PP
-Referenced by getGlobalTag().
+Referenced by getGlobalTag()\&.
 .SS "std::string \fBcryomesh::state::PatternTagById::id\fP\fC [private]\fP"
 .PP
-Definition at line 31 of file PatternTagById.h.
+Definition at line 30 of file PatternTagById\&.h\&.
 .PP
-Referenced by getTag().
+Referenced by getTag()\&.
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for cryomesh from the source code.
+Generated automatically by Doxygen for cryomesh from the source code\&.

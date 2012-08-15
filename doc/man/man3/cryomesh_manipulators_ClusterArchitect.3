@@ -1,0 +1,514 @@
+.TH "cryomesh::manipulators::ClusterArchitect" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::manipulators::ClusterArchitect \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ClusterArchitect\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBConnectionStrategy\fP { \fBENABLE_SELF_CONNECT\fP = 1, \fBENABLE_EVEN_DISTRIBUTION\fP = 2 }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBClusterArchitect\fP (\fBstructures::Cluster\fP &clus, const int max_history_sz=\fBDEFAULT_MAX_HISTORY_SIZE\fP, const int history_stepping_factor=\fBDEFAULT_HISTORY_STEPPING_FACTOR\fP)"
+.br
+.ti -1c
+.RI "virtual \fB~ClusterArchitect\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBrunAnalysis\fP ()"
+.br
+.ti -1c
+.RI "virtual const std::map< int, 
+.br
+std::list< \fBClusterAnalysisData\fP > > & \fBgetHistories\fP () const "
+.br
+.RI "\fIGet the history of analysis\&. \fP"
+.ti -1c
+.RI "void \fBcreateConnection\fP (boost::shared_ptr< \fBcomponents::Node\fP > nodeStart, boost::shared_ptr< \fBcomponents::Node\fP > nodeEnd, int connectivity=1)"
+.br
+.ti -1c
+.RI "boost::shared_ptr
+.br
+< \fBcomponents::Connection\fP > \fBdeleteConnection\fP (boost::shared_ptr< \fBcomponents::Connection\fP > conn)"
+.br
+.ti -1c
+.RI "virtual std::set
+.br
+< boost::shared_ptr
+.br
+< \fBcryomesh::components::Node\fP > > \fBcreateRandomNodes\fP (int count, int connectivity=0, int strategy=0)"
+.br
+.RI "\fICreate a number of random nodes\&. \fP"
+.ti -1c
+.RI "virtual std::map
+.br
+< boost::uuids::uuid, 
+.br
+boost::shared_ptr
+.br
+< \fBcomponents::Connection\fP > > \fBcreateRandomConnections\fP (int count)"
+.br
+.RI "\fICreate a number of random connections\&. \fP"
+.ti -1c
+.RI "virtual std::map
+.br
+< boost::uuids::uuid, 
+.br
+boost::shared_ptr
+.br
+< \fBcomponents::Node\fP > > \fBdestroyRandomNodes\fP (int count)"
+.br
+.RI "\fIDestroy random nodes\&. \fP"
+.ti -1c
+.RI "virtual std::map
+.br
+< boost::uuids::uuid, 
+.br
+boost::shared_ptr
+.br
+< \fBcomponents::Connection\fP > > \fBdestroyRandomConnections\fP (int count)"
+.br
+.RI "\fIDestroy random connections\&. \fP"
+.ti -1c
+.RI "virtual std::map
+.br
+< boost::uuids::uuid, 
+.br
+boost::shared_ptr
+.br
+< \fBcomponents::Node\fP > > \fBgetRandomNodes\fP (const int count, const bool allow_primary)"
+.br
+.RI "\fIGet a collection of random nodes from the cluster\&. \fP"
+.ti -1c
+.RI "virtual std::map
+.br
+< boost::uuids::uuid, 
+.br
+boost::shared_ptr
+.br
+< \fBcomponents::Connection\fP > > \fBgetRandomConnections\fP (const int count, const bool allow_primary)"
+.br
+.RI "\fIGet a collection of random connections from the cluster\&. \fP"
+.ti -1c
+.RI "int \fBgetMaxHistorySize\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetMaxHistorySize\fP (int sz)"
+.br
+.ti -1c
+.RI "\fBClusterAnalysisData\fP \fBgetCurrentClusterAnalysisData\fP () const "
+.br
+.ti -1c
+.RI "const std::list
+.br
+< \fBClusterAnalysisData\fP > & \fBgetCurrentHistory\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetHistorySteppingFactor\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetCurrentClusterAnalysisData\fP (\fBClusterAnalysisData\fP \fBcurrentClusterAnalysisData\fP)"
+.br
+.ti -1c
+.RI "void \fBsetCurrentHistory\fP (std::list< \fBClusterAnalysisData\fP > \fBcurrentHistory\fP)"
+.br
+.ti -1c
+.RI "std::ostream & \fBprintAllHistory\fP (std::ostream &os)"
+.br
+.ti -1c
+.RI "const \fBstructures::Cluster\fP & \fBgetCluster\fP () const "
+.br
+.ti -1c
+.RI "const boost::shared_ptr
+.br
+< \fBIClusterAnalyser\fP > \fBgetClusterAnalyser\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetClusterAnalyser\fP (boost::shared_ptr< \fBIClusterAnalyser\fP > \fBclusterAnalyser\fP)"
+.br
+.ti -1c
+.RI "void \fBsetHistories\fP (std::map< int, std::list< \fBClusterAnalysisData\fP > > \fBhistories\fP)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBstructures::Cluster\fP & \fBcluster\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const unsigned int \fBDEFAULT_HISTORY_STEPPING_FACTOR\fP = 2"
+.br
+.ti -1c
+.RI "static const int \fBDEFAULT_MAX_HISTORY_SIZE\fP = 3"
+.br
+.ti -1c
+.RI "static const double \fBDEFAULT_CONNECTIVITY_FRACTION\fP = 0\&.01"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBaddHistoryEntry\fP (\fBClusterAnalysisData\fP entry)"
+.br
+.ti -1c
+.RI "void \fBsplitHistoryByValue\fP (const std::list< \fBClusterAnalysisData\fP > &history, double db, int countback, std::map< \fBcommon::Cycle\fP, \fBClusterAnalysisData\fP > &below, std::map< \fBcommon::Cycle\fP, \fBClusterAnalysisData\fP > &above) const "
+.br
+.ti -1c
+.RI "std::vector< \fBClusterAnalysisData\fP > \fBgetHistoryEntriesInRange\fP (const std::list< \fBClusterAnalysisData\fP > &history, double min_db, double max_db, int countback=0) const "
+.br
+.RI "\fIGet the fraction of history entries from the past count entries that are inside of a range, default is to check all of them\&. \fP"
+.ti -1c
+.RI "void \fBreduceContainerSize\fP (std::list< \fBClusterAnalysisData\fP > &cont, const unsigned int sz)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::list< \fBClusterAnalysisData\fP > \fBcurrentHistory\fP"
+.br
+.ti -1c
+.RI "std::map< int, std::list
+.br
+< \fBClusterAnalysisData\fP > > \fBhistories\fP"
+.br
+.RI "\fIMap of all histories, the int represents the cycle seperation, the list is the resultant values/averages\&. \fP"
+.ti -1c
+.RI "std::map< int, unsigned int > \fBhistoriesNewEntries\fP"
+.br
+.ti -1c
+.RI "const int \fBhistorySteppingFactor\fP"
+.br
+.ti -1c
+.RI "boost::shared_ptr
+.br
+< \fBIClusterAnalyser\fP > \fBclusterAnalyser\fP"
+.br
+.ti -1c
+.RI "\fBClusterAnalysisData\fP \fBcurrentClusterAnalysisData\fP"
+.br
+.ti -1c
+.RI "int \fBmaxHistorySize\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 23 of file ClusterArchitect\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBcryomesh::manipulators::ClusterArchitect::ConnectionStrategy\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIENABLE_SELF_CONNECT \fP\fP
+.TP
+\fB\fIENABLE_EVEN_DISTRIBUTION \fP\fP
+
+.PP
+Definition at line 26 of file ClusterArchitect\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBcryomesh::manipulators::ClusterArchitect::ClusterArchitect\fP (\fBstructures::Cluster\fP &clus, const intmax_history_sz = \fC\fBDEFAULT_MAX_HISTORY_SIZE\fP\fP, const inthistory_stepping_factor = \fC\fBDEFAULT_HISTORY_STEPPING_FACTOR\fP\fP)"
+.PP
+Definition at line 29 of file ClusterArchitect\&.cpp\&.
+.PP
+References historiesNewEntries, and maxHistorySize\&.
+.SS "\fBcryomesh::manipulators::ClusterArchitect::~ClusterArchitect\fP ()\fC [virtual]\fP"
+.PP
+Definition at line 38 of file ClusterArchitect\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void \fBcryomesh::manipulators::ClusterArchitect::addHistoryEntry\fP (\fBClusterAnalysisData\fPentry)\fC [private]\fP"
+.PP
+Definition at line 507 of file ClusterArchitect\&.cpp\&.
+.PP
+References clusterAnalyser, currentClusterAnalysisData, currentHistory, getHistorySteppingFactor(), getMaxHistorySize(), histories, historiesNewEntries, printAllHistory(), and reduceContainerSize()\&.
+.PP
+Referenced by runAnalysis()\&.
+.SS "void \fBcryomesh::manipulators::ClusterArchitect::createConnection\fP (boost::shared_ptr< \fBcomponents::Node\fP >nodeStart, boost::shared_ptr< \fBcomponents::Node\fP >nodeEnd, intconnectivity = \fC1\fP)"
+.PP
+Definition at line 647 of file ClusterArchitect\&.cpp\&.
+.PP
+References cluster, and cryomesh::structures::Cluster::getMutableConnectionMap()\&.
+.PP
+Referenced by createRandomNodes()\&.
+.SS "std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Connection\fP > > \fBcryomesh::manipulators::ClusterArchitect::createRandomConnections\fP (intcount)\fC [virtual]\fP"
+.PP
+Create a number of random connections\&. 
+.PP
+Definition at line 282 of file ClusterArchitect\&.cpp\&.
+.PP
+References cluster, cryomesh::structures::Cluster::getMutableConnectionMap(), and cryomesh::structures::Cluster::getMutableNodeMap()\&.
+.PP
+Referenced by runAnalysis()\&.
+.SS "std::set< boost::shared_ptr< \fBcryomesh::components::Node\fP > > \fBcryomesh::manipulators::ClusterArchitect::createRandomNodes\fP (intcount, intconnectivity = \fC0\fP, intstrategy = \fC0\fP)\fC [virtual]\fP"
+.PP
+Create a number of random nodes\&. 
+.PP
+Definition at line 57 of file ClusterArchitect\&.cpp\&.
+.PP
+References cluster, createConnection(), DEFAULT_CONNECTIVITY_FRACTION, ENABLE_EVEN_DISTRIBUTION, ENABLE_SELF_CONNECT, cryomesh::structures::Cluster::getMutableNodeMap(), cryomesh::structures::Cluster::getNodeMap(), and cryomesh::components::Node::getRandom()\&.
+.PP
+Referenced by runAnalysis()\&.
+.SS "boost::shared_ptr< \fBcomponents::Connection\fP > \fBcryomesh::manipulators::ClusterArchitect::deleteConnection\fP (boost::shared_ptr< \fBcomponents::Connection\fP >conn)"
+.PP
+Definition at line 665 of file ClusterArchitect\&.cpp\&.
+.PP
+References cluster, and cryomesh::structures::Cluster::getMutableConnectionMap()\&.
+.SS "std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Connection\fP > > \fBcryomesh::manipulators::ClusterArchitect::destroyRandomConnections\fP (intcount)\fC [virtual]\fP"
+.PP
+Destroy random connections\&. 
+.PP
+Definition at line 361 of file ClusterArchitect\&.cpp\&.
+.PP
+References cluster, cryomesh::structures::Cluster::getMutableConnectionMap(), and getRandomConnections()\&.
+.PP
+Referenced by runAnalysis()\&.
+.SS "std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Node\fP > > \fBcryomesh::manipulators::ClusterArchitect::destroyRandomNodes\fP (intcount)\fC [virtual]\fP"
+.PP
+Destroy random nodes\&. 
+.PP
+Definition at line 333 of file ClusterArchitect\&.cpp\&.
+.PP
+References cluster, cryomesh::structures::Cluster::getMutableConnectionMap(), cryomesh::structures::Cluster::getMutableNodeMap(), and getRandomNodes()\&.
+.PP
+Referenced by runAnalysis()\&.
+.SS "const \fBstructures::Cluster\fP & \fBcryomesh::manipulators::ClusterArchitect::getCluster\fP () const"
+.PP
+Definition at line 604 of file ClusterArchitect\&.cpp\&.
+.PP
+References cluster\&.
+.SS "const boost::shared_ptr< \fBIClusterAnalyser\fP > \fBcryomesh::manipulators::ClusterArchitect::getClusterAnalyser\fP () const"
+.PP
+Definition at line 608 of file ClusterArchitect\&.cpp\&.
+.PP
+References clusterAnalyser\&.
+.SS "\fBClusterAnalysisData\fP \fBcryomesh::manipulators::ClusterArchitect::getCurrentClusterAnalysisData\fP () const"
+.PP
+Definition at line 584 of file ClusterArchitect\&.cpp\&.
+.PP
+References currentClusterAnalysisData\&.
+.SS "const std::list< \fBClusterAnalysisData\fP > & \fBcryomesh::manipulators::ClusterArchitect::getCurrentHistory\fP () const"
+.PP
+Definition at line 588 of file ClusterArchitect\&.cpp\&.
+.PP
+References currentHistory\&.
+.SS "const std::map< int, std::list< \fBClusterAnalysisData\fP > > & \fBcryomesh::manipulators::ClusterArchitect::getHistories\fP () const\fC [virtual]\fP"
+.PP
+Get the history of analysis\&. \fBReturns:\fP
+.RS 4
+const common::SimpleCollection<ClusterAnalysisData> & The container with the history of analysis 
+.RE
+.PP
+
+.PP
+Definition at line 491 of file ClusterArchitect\&.cpp\&.
+.PP
+References histories\&.
+.SS "std::vector< \fBClusterAnalysisData\fP > \fBcryomesh::manipulators::ClusterArchitect::getHistoryEntriesInRange\fP (const std::list< \fBClusterAnalysisData\fP > &history, doublemin_db, doublemax_db, intcountback = \fC0\fP) const\fC [private]\fP"
+.PP
+Get the fraction of history entries from the past count entries that are inside of a range, default is to check all of them\&. \fBParameters:\fP
+.RS 4
+\fIdouble\fP Value for entries to be above 
+.br
+\fIdouble\fP Value for entries to be below 
+.br
+\fIint\fP Number of past entries to go back
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::vector<ClusterAnalysisData> Entries within range 
+.RE
+.PP
+
+.PP
+Definition at line 620 of file ClusterArchitect\&.cpp\&.
+.PP
+References splitHistoryByValue()\&.
+.SS "int \fBcryomesh::manipulators::ClusterArchitect::getHistorySteppingFactor\fP () const"
+.PP
+Definition at line 592 of file ClusterArchitect\&.cpp\&.
+.PP
+References historySteppingFactor\&.
+.PP
+Referenced by addHistoryEntry(), and cryomesh::manipulators::ClusterAnalyserBasic::analyseCluster()\&.
+.SS "int \fBcryomesh::manipulators::ClusterArchitect::getMaxHistorySize\fP () const"
+.PP
+Definition at line 495 of file ClusterArchitect\&.cpp\&.
+.PP
+References maxHistorySize\&.
+.PP
+Referenced by addHistoryEntry(), and cryomesh::manipulators::ClusterAnalyserBasic::analyseCluster()\&.
+.SS "std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Connection\fP > > \fBcryomesh::manipulators::ClusterArchitect::getRandomConnections\fP (const intcount, const boolallow_primary)\fC [virtual]\fP"
+.PP
+Get a collection of random connections from the cluster\&. \fBParameters:\fP
+.RS 4
+\fIconst\fP int The number of random connections to return 
+.br
+\fIconst\fP bool Allow the random connections to be attached primaries, default false
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::list<boost::shared_ptr<components::Connection> > List of random connections 
+.RE
+.PP
+
+.PP
+Definition at line 440 of file ClusterArchitect\&.cpp\&.
+.PP
+References cluster, cryomesh::components::ConnectionMap::getAllPrimaryInputConnections(), cryomesh::components::ConnectionMap::getAllPrimaryOutputConnections(), cryomesh::structures::Cluster::getConnectionMap(), and cryomesh::structures::Cluster::getMutableConnectionMap()\&.
+.PP
+Referenced by destroyRandomConnections()\&.
+.SS "std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Node\fP > > \fBcryomesh::manipulators::ClusterArchitect::getRandomNodes\fP (const intcount, const boolallow_primary)\fC [virtual]\fP"
+.PP
+Get a collection of random nodes from the cluster\&. \fBParameters:\fP
+.RS 4
+\fIconst\fP int The number of random nodes to return 
+.br
+\fIconst\fP bool Allow the random nodes to be attached primaries, default false
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::list<boost::shared_ptr<components::Node> > List of random nodes 
+.RE
+.PP
+
+.PP
+Definition at line 388 of file ClusterArchitect\&.cpp\&.
+.PP
+References cluster, cryomesh::components::NodeMap::getAllPrimaryInputNodes(), cryomesh::components::NodeMap::getAllPrimaryOutputNodes(), cryomesh::structures::Cluster::getMutableNodeMap(), and cryomesh::structures::Cluster::getNodeMap()\&.
+.PP
+Referenced by destroyRandomNodes()\&.
+.SS "std::ostream & \fBcryomesh::manipulators::ClusterArchitect::printAllHistory\fP (std::ostream &os)"
+.PP
+Definition at line 672 of file ClusterArchitect\&.cpp\&.
+.PP
+References currentHistory, and histories\&.
+.PP
+Referenced by addHistoryEntry()\&.
+.SS "void \fBcryomesh::manipulators::ClusterArchitect::reduceContainerSize\fP (std::list< \fBClusterAnalysisData\fP > &cont, const unsigned intsz)\fC [private]\fP"
+.PP
+Definition at line 691 of file ClusterArchitect\&.cpp\&.
+.PP
+Referenced by addHistoryEntry()\&.
+.SS "void \fBcryomesh::manipulators::ClusterArchitect::runAnalysis\fP ()\fC [virtual]\fP"
+.PP
+Definition at line 41 of file ClusterArchitect\&.cpp\&.
+.PP
+References addHistoryEntry(), cluster, clusterAnalyser, createRandomConnections(), createRandomNodes(), destroyRandomConnections(), destroyRandomNodes(), cryomesh::manipulators::ClusterAnalysisData::getConnectionsToCreate(), cryomesh::manipulators::ClusterAnalysisData::getConnectionsToDestroy(), cryomesh::manipulators::ClusterAnalysisData::getNodesToCreate(), cryomesh::manipulators::ClusterAnalysisData::getNodesToDestroy(), and histories\&.
+.SS "void \fBcryomesh::manipulators::ClusterArchitect::setClusterAnalyser\fP (boost::shared_ptr< \fBIClusterAnalyser\fP >clusterAnalyser)"
+.PP
+Definition at line 612 of file ClusterArchitect\&.cpp\&.
+.PP
+References clusterAnalyser\&.
+.SS "void \fBcryomesh::manipulators::ClusterArchitect::setCurrentClusterAnalysisData\fP (\fBClusterAnalysisData\fPcurrentClusterAnalysisData)"
+.PP
+Definition at line 596 of file ClusterArchitect\&.cpp\&.
+.PP
+References currentClusterAnalysisData\&.
+.SS "void \fBcryomesh::manipulators::ClusterArchitect::setCurrentHistory\fP (std::list< \fBClusterAnalysisData\fP >currentHistory)"
+.PP
+Definition at line 600 of file ClusterArchitect\&.cpp\&.
+.PP
+References currentHistory\&.
+.SS "void \fBcryomesh::manipulators::ClusterArchitect::setHistories\fP (std::map< int, std::list< \fBClusterAnalysisData\fP > >histories)"
+.PP
+Definition at line 616 of file ClusterArchitect\&.cpp\&.
+.PP
+References histories\&.
+.SS "void \fBcryomesh::manipulators::ClusterArchitect::setMaxHistorySize\fP (intsz)"
+.PP
+Definition at line 499 of file ClusterArchitect\&.cpp\&.
+.PP
+References maxHistorySize\&.
+.SS "void \fBcryomesh::manipulators::ClusterArchitect::splitHistoryByValue\fP (const std::list< \fBClusterAnalysisData\fP > &history, doubledb, intcountback, std::map< \fBcommon::Cycle\fP, \fBClusterAnalysisData\fP > &below, std::map< \fBcommon::Cycle\fP, \fBClusterAnalysisData\fP > &above) const\fC [private]\fP"
+.PP
+Definition at line 560 of file ClusterArchitect\&.cpp\&.
+.PP
+Referenced by getHistoryEntriesInRange()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBstructures::Cluster\fP& \fBcryomesh::manipulators::ClusterArchitect::cluster\fP\fC [protected]\fP"
+.PP
+Definition at line 98 of file ClusterArchitect\&.h\&.
+.PP
+Referenced by createConnection(), createRandomConnections(), createRandomNodes(), deleteConnection(), destroyRandomConnections(), destroyRandomNodes(), getCluster(), getRandomConnections(), getRandomNodes(), and runAnalysis()\&.
+.SS "boost::shared_ptr< \fBIClusterAnalyser\fP > \fBcryomesh::manipulators::ClusterArchitect::clusterAnalyser\fP\fC [private]\fP"
+.PP
+Definition at line 131 of file ClusterArchitect\&.h\&.
+.PP
+Referenced by addHistoryEntry(), getClusterAnalyser(), runAnalysis(), and setClusterAnalyser()\&.
+.SS "\fBClusterAnalysisData\fP \fBcryomesh::manipulators::ClusterArchitect::currentClusterAnalysisData\fP\fC [private]\fP"
+.PP
+Definition at line 132 of file ClusterArchitect\&.h\&.
+.PP
+Referenced by addHistoryEntry(), getCurrentClusterAnalysisData(), and setCurrentClusterAnalysisData()\&.
+.SS "std::list<\fBClusterAnalysisData\fP > \fBcryomesh::manipulators::ClusterArchitect::currentHistory\fP\fC [private]\fP"
+.PP
+Definition at line 115 of file ClusterArchitect\&.h\&.
+.PP
+Referenced by addHistoryEntry(), getCurrentHistory(), printAllHistory(), and setCurrentHistory()\&.
+.SS "const double \fBcryomesh::manipulators::ClusterArchitect::DEFAULT_CONNECTIVITY_FRACTION\fP = 0\&.01\fC [static, protected]\fP"
+.PP
+Definition at line 107 of file ClusterArchitect\&.h\&.
+.PP
+Referenced by createRandomNodes()\&.
+.SS "const unsigned int \fBcryomesh::manipulators::ClusterArchitect::DEFAULT_HISTORY_STEPPING_FACTOR\fP = 2\fC [static, protected]\fP"
+.PP
+Definition at line 105 of file ClusterArchitect\&.h\&.
+.SS "const int \fBcryomesh::manipulators::ClusterArchitect::DEFAULT_MAX_HISTORY_SIZE\fP = 3\fC [static, protected]\fP"
+.PP
+Definition at line 106 of file ClusterArchitect\&.h\&.
+.SS "std::map<int, std::list<\fBClusterAnalysisData\fP> > \fBcryomesh::manipulators::ClusterArchitect::histories\fP\fC [private]\fP"
+.PP
+Map of all histories, the int represents the cycle seperation, the list is the resultant values/averages\&. eg
+.IP "\(bu" 2
+mapping of 1 to a list of \fBClusterAnalysisData\fP is the standard save of every cycles history (up to cutoff)
+.IP "\(bu" 2
+mapping of 10 means that every 10 cycles are averaged and the result added to the mapped list
+.PP
+.PP
+Note that mapping steps are recursive, we can only have int keys as multiples of each other, eg {1, 2, 4, 8, etc} or {1, 10, 100, \&.\&.\&. } , so { 1, a, a^2, a^3, \&.\&.\&. } 
+.PP
+Definition at line 127 of file ClusterArchitect\&.h\&.
+.PP
+Referenced by addHistoryEntry(), getHistories(), printAllHistory(), runAnalysis(), and setHistories()\&.
+.SS "std::map<int, unsigned int > \fBcryomesh::manipulators::ClusterArchitect::historiesNewEntries\fP\fC [private]\fP"
+.PP
+Definition at line 128 of file ClusterArchitect\&.h\&.
+.PP
+Referenced by addHistoryEntry(), and ClusterArchitect()\&.
+.SS "const int \fBcryomesh::manipulators::ClusterArchitect::historySteppingFactor\fP\fC [private]\fP"
+.PP
+Definition at line 129 of file ClusterArchitect\&.h\&.
+.PP
+Referenced by getHistorySteppingFactor()\&.
+.SS "int \fBcryomesh::manipulators::ClusterArchitect::maxHistorySize\fP\fC [private]\fP"
+.PP
+Definition at line 134 of file ClusterArchitect\&.h\&.
+.PP
+Referenced by ClusterArchitect(), getMaxHistorySize(), and setMaxHistorySize()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code\&.

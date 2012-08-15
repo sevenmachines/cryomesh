@@ -1,0 +1,174 @@
+.TH "cryomesh::manipulators::IClusterAnalyser" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::manipulators::IClusterAnalyser \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IClusterAnalyser\&.h>\fP
+.PP
+Inherited by \fBcryomesh::manipulators::ClusterAnalyserBasic\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBEnergyVariationWeightingMap\fP"
+.br
+.ti -1c
+.RI "struct \fBRestructuringCountdown\fP"
+.br
+.RI "\fIClass to hold together information on whether we can act to restructure items\&. \fP"
+.in -1c
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBEnergyVariation\fP { \fBNONE\fP =  2048, \fBOUT_OF_RANGE_POSITIVE\fP =  1024, \fBHIGH_POSITIVE\fP =  512, \fBMEDIUM_POSITIVE\fP =  256, \fBSMALL_POSITIVE\fP =  128, \fBSTAGNANT_POSITIVE\fP =  64, \fBZERO\fP =  32, \fBSTAGNANT_NEGATIVE\fP =  16, \fBSMALL_NEGATIVE\fP =  8, \fBMEDIUM_NEGATIVE\fP =  4, \fBHIGH_NEGATIVE\fP =  2, \fBOUT_OF_RANGE_NEGATIVE\fP =  1 }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIClusterAnalyser\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~IClusterAnalyser\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBClusterAnalysisData\fP \fBanalyseCluster\fP (const \fBstructures::Cluster\fP &cluster, const std::map< int, std::list< \fBClusterAnalysisData\fP > > &histories)=0"
+.br
+.RI "\fIRun an analysis on the cluster to decide what action to take on nodes and connections\&. \fP"
+.ti -1c
+.RI "virtual \fBClusterAnalysisData\fP \fBcalculateRangeEnergies\fP (const std::list< \fBClusterAnalysisData\fP > &history) const =0"
+.br
+.RI "\fICalculate the range energies stats\&. \fP"
+.ti -1c
+.RI "virtual \fBEnergyVariationWeightingMap\fP \fBgetEnergyVariationMap\fP (const double energy_input, double range) const =0"
+.br
+.ti -1c
+.RI "const \fBRestructuringCountdown\fP & \fBgetConnectionRestructuring\fP () const "
+.br
+.ti -1c
+.RI "const \fBRestructuringCountdown\fP & \fBgetNodeRestructuring\fP () const "
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBRestructuringCountdown\fP \fBnodeRestructuring\fP"
+.br
+.ti -1c
+.RI "\fBRestructuringCountdown\fP \fBconnectionRestructuring\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 17 of file IClusterAnalyser\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBcryomesh::manipulators::IClusterAnalyser::EnergyVariation\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fINONE \fP\fP
+.TP
+\fB\fIOUT_OF_RANGE_POSITIVE \fP\fP
+.TP
+\fB\fIHIGH_POSITIVE \fP\fP
+.TP
+\fB\fIMEDIUM_POSITIVE \fP\fP
+.TP
+\fB\fISMALL_POSITIVE \fP\fP
+.TP
+\fB\fISTAGNANT_POSITIVE \fP\fP
+.TP
+\fB\fIZERO \fP\fP
+.TP
+\fB\fISTAGNANT_NEGATIVE \fP\fP
+.TP
+\fB\fISMALL_NEGATIVE \fP\fP
+.TP
+\fB\fIMEDIUM_NEGATIVE \fP\fP
+.TP
+\fB\fIHIGH_NEGATIVE \fP\fP
+.TP
+\fB\fIOUT_OF_RANGE_NEGATIVE \fP\fP
+
+.PP
+Definition at line 136 of file IClusterAnalyser\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBcryomesh::manipulators::IClusterAnalyser::IClusterAnalyser\fP ()\fC [inline]\fP"
+.PP
+Definition at line 168 of file IClusterAnalyser\&.h\&.
+.SS "virtual \fBcryomesh::manipulators::IClusterAnalyser::~IClusterAnalyser\fP ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 171 of file IClusterAnalyser\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual \fBClusterAnalysisData\fP \fBcryomesh::manipulators::IClusterAnalyser::analyseCluster\fP (const \fBstructures::Cluster\fP &cluster, const std::map< int, std::list< \fBClusterAnalysisData\fP > > &histories)\fC [pure virtual]\fP"
+.PP
+Run an analysis on the cluster to decide what action to take on nodes and connections\&. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBstructures::Cluster\fP & The cluster to analyse 
+.br
+\fIconst\fP std::list<ClusterAnalysisData> The historical analysis data to use
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBClusterAnalysisData\fP The reulting analytical data 
+.RE
+.PP
+
+.PP
+Implemented in \fBcryomesh::manipulators::ClusterAnalyserBasic\fP\&.
+.SS "virtual \fBClusterAnalysisData\fP \fBcryomesh::manipulators::IClusterAnalyser::calculateRangeEnergies\fP (const std::list< \fBClusterAnalysisData\fP > &history) const\fC [pure virtual]\fP"
+.PP
+Calculate the range energies stats\&. \fBParameters:\fP
+.RS 4
+\fIconst\fP std::list<ClusterAnalysisData> & The history range to work with
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBClusterAnalysisData\fP The resulting cluster analysis data 
+.RE
+.PP
+
+.PP
+Implemented in \fBcryomesh::manipulators::ClusterAnalyserBasic\fP\&.
+.SS "const \fBRestructuringCountdown\fP& \fBcryomesh::manipulators::IClusterAnalyser::getConnectionRestructuring\fP () const\fC [inline]\fP"
+.PP
+Definition at line 198 of file IClusterAnalyser\&.h\&.
+.PP
+References connectionRestructuring\&.
+.SS "virtual \fBEnergyVariationWeightingMap\fP \fBcryomesh::manipulators::IClusterAnalyser::getEnergyVariationMap\fP (const doubleenergy_input, doublerange) const\fC [pure virtual]\fP"
+.PP
+Implemented in \fBcryomesh::manipulators::ClusterAnalyserBasic\fP\&.
+.SS "const \fBRestructuringCountdown\fP& \fBcryomesh::manipulators::IClusterAnalyser::getNodeRestructuring\fP () const\fC [inline]\fP"
+.PP
+Definition at line 201 of file IClusterAnalyser\&.h\&.
+.PP
+References nodeRestructuring\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBRestructuringCountdown\fP \fBcryomesh::manipulators::IClusterAnalyser::connectionRestructuring\fP\fC [protected]\fP"
+.PP
+Definition at line 206 of file IClusterAnalyser\&.h\&.
+.PP
+Referenced by cryomesh::manipulators::ClusterAnalyserBasic::analyseCluster(), and getConnectionRestructuring()\&.
+.SS "\fBRestructuringCountdown\fP \fBcryomesh::manipulators::IClusterAnalyser::nodeRestructuring\fP\fC [protected]\fP"
+.PP
+Definition at line 205 of file IClusterAnalyser\&.h\&.
+.PP
+Referenced by cryomesh::manipulators::ClusterAnalyserBasic::analyseCluster(), and getNodeRestructuring()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code\&.

@@ -16,7 +16,7 @@ namespace structures {
 
 Bundle::Bundle() :
 		clusters(), fibres(), realInputChannelsMap(), realOutputChannelsMap(), actualInputChannelsMap(), actualOutputChannelsMap(), inputFibres(), outputFibres(), statistician(
-				boost::shared_ptr<utilities::Statistician>(new utilities::Statistician(*this))), energy(0), realFibrePatternChannelMap(), actualFibrePatternChannelMap() {
+				boost::shared_ptr<utilities::Statistician>(new utilities::Statistician(*this))), energy(0), realFibrePatternChannelMap(), actualFibrePatternChannelMap() , energyFractionMethod(Cluster::EnergyFractionMethod::ENERGY_FRACTION_BY_NODE_COUNT){
 
 }
 
@@ -54,6 +54,7 @@ void Bundle::update() {
 boost::shared_ptr<Cluster> Bundle::createCluster(int nodeSize, int nodeConnectivity) {
 	boost::shared_ptr<Cluster> tempcluster(new Cluster(nodeSize, nodeConnectivity));
 	clusters.add(tempcluster);
+	clusters.updataEnergyFractionMethods(energyFractionMethod);
 	return tempcluster;
 }
 

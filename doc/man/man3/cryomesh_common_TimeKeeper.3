@@ -1,50 +1,50 @@
-.TH "cryomesh::common::TimeKeeper" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::common::TimeKeeper" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 cryomesh::common::TimeKeeper \- 
 .PP
-\fBTimeKeeper\fP is a class keep track of the cycle state and timing.  
+\fBTimeKeeper\fP is a class keep track of the cycle state and timing\&.  
 
 .SH SYNOPSIS
 .br
 .PP
 .PP
-\fC#include <TimeKeeper.h>\fP
+\fC#include <TimeKeeper\&.h>\fP
 .SS "Public Member Functions"
 
 .in +1c
 .ti -1c
 .RI "void \fBreset\fP ()"
 .br
-.RI "\fIDestructor. \fP"
+.RI "\fIDestructor\&. \fP"
 .ti -1c
 .RI "virtual \fB~TimeKeeper\fP ()"
 .br
 .ti -1c
 .RI "bool \fBoperator==\fP (const \fBTimeKeeper\fP &)"
 .br
-.RI "\fIEquality test override for object. \fP"
+.RI "\fIEquality test override for object\&. \fP"
 .ti -1c
 .RI "void \fBupdate\fP ()"
 .br
-.RI "\fIMove the timing on one cycle. \fP"
+.RI "\fIMove the timing on one cycle\&. \fP"
 .ti -1c
 .RI "\fBCycle\fP \fBgetCycle\fP () const "
 .br
-.RI "\fIGet the current cycle we're on as an \fBCycle\fP. \fP"
+.RI "\fIGet the current cycle we're on as an \fBCycle\fP\&. \fP"
 .ti -1c
 .RI "std::time_t \fBgetStartTime\fP () const "
 .br
-.RI "\fIGet the time we started cycling. \fP"
+.RI "\fIGet the time we started cycling\&. \fP"
 .ti -1c
 .RI "double \fBgetTiming\fP () const "
 .br
-.RI "\fIDifference between the last time and now. \fP"
+.RI "\fIDifference between the last time and now\&. \fP"
 .ti -1c
 .RI "const boost::timer & \fBgetTimer\fP () const "
 .br
-.RI "\fIGet the Timer. \fP"
+.RI "\fIGet the Timer\&. \fP"
 .in -1c
 .SS "Static Public Member Functions"
 
@@ -59,15 +59,15 @@ cryomesh::common::TimeKeeper \-
 .ti -1c
 .RI "\fBTimeKeeper\fP ()"
 .br
-.RI "\fIConstructor. \fP"
+.RI "\fIConstructor\&. \fP"
 .ti -1c
 .RI "\fBTimeKeeper\fP (const \fBTimeKeeper\fP &)"
 .br
-.RI "\fICopy Constructor. \fP"
+.RI "\fICopy Constructor\&. \fP"
 .ti -1c
 .RI "\fBTimeKeeper\fP & \fBoperator=\fP (const \fBTimeKeeper\fP &)"
 .br
-.RI "\fIAssignment Operator. \fP"
+.RI "\fIAssignment Operator\&. \fP"
 .in -1c
 .SS "Private Attributes"
 
@@ -92,31 +92,35 @@ cryomesh::common::TimeKeeper \-
 
 .in +1c
 .ti -1c
-.RI "static boost::shared_ptr< \fBTimeKeeper\fP > \fBtimekeeper\fP"
+.RI "static boost::shared_ptr
+.br
+< \fBTimeKeeper\fP > \fBtimekeeper\fP"
 .br
 .in -1c
 .SH "Detailed Description"
 .PP 
-\fBTimeKeeper\fP is a class keep track of the cycle state and timing. 
+\fBTimeKeeper\fP is a class keep track of the cycle state and timing\&. 
 
 \fBTimeKeeper\fP manages the 'tick' cycle and provides the means by which classes throughout the system can keep track of the cycle 
 .PP
-Definition at line 31 of file TimeKeeper.h.
+Definition at line 31 of file TimeKeeper\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "cryomesh::common::TimeKeeper::~TimeKeeper ()\fC [virtual]\fP"
+.SS "\fBcryomesh::common::TimeKeeper::~TimeKeeper\fP ()\fC [virtual]\fP"
 .PP
-Definition at line 38 of file TimeKeeper.cpp.
-.SS "cryomesh::common::TimeKeeper::TimeKeeper ()\fC [protected]\fP"
+Definition at line 37 of file TimeKeeper\&.cpp\&.
+.SS "\fBcryomesh::common::TimeKeeper::TimeKeeper\fP ()\fC [protected]\fP"
 .PP
-Constructor. Constructor for \fBTimeKeeper\fP. Inaccessible to force singleton class 
+Constructor\&. Constructor for \fBTimeKeeper\fP\&. Inaccessible to force singleton class 
 .PP
-Definition at line 35 of file TimeKeeper.cpp.
+Definition at line 34 of file TimeKeeper\&.cpp\&.
 .PP
-Referenced by getTimeKeeper().
-.SS "cryomesh::common::TimeKeeper::TimeKeeper (const \fBTimeKeeper\fP &)\fC [protected]\fP"
+References reset()\&.
 .PP
-Copy Constructor. Overridden Copy Contructor for \fBTimeKeeper\fP. Inaccessible to force singleton class
+Referenced by getTimeKeeper()\&.
+.SS "\fBcryomesh::common::TimeKeeper::TimeKeeper\fP (const \fBTimeKeeper\fP &)\fC [protected]\fP"
+.PP
+Copy Constructor\&. Overridden Copy Contructor for \fBTimeKeeper\fP\&. Inaccessible to force singleton class
 .PP
 \fBParameters:\fP
 .RS 4
@@ -126,56 +130,66 @@ Copy Constructor. Overridden Copy Contructor for \fBTimeKeeper\fP. Inaccessible 
 
 .SH "Member Function Documentation"
 .PP 
-.SS "\fBCycle\fP cryomesh::common::TimeKeeper::getCycle () const"
+.SS "\fBCycle\fP \fBcryomesh::common::TimeKeeper::getCycle\fP () const"
 .PP
-Get the current cycle we're on as an \fBCycle\fP. \fBReturns:\fP
+Get the current cycle we're on as an \fBCycle\fP\&. \fBReturns:\fP
 .RS 4
 \fBCycle\fP The cycle we're currently on 
 .RE
 .PP
 
 .PP
-Definition at line 77 of file TimeKeeper.cpp.
-.SS "std::time_t cryomesh::common::TimeKeeper::getStartTime () const"
+Definition at line 76 of file TimeKeeper\&.cpp\&.
 .PP
-Get the time we started cycling. \fBReturns:\fP
+References cycle\&.
+.PP
+Referenced by cryomesh::manager::DatabaseManager::addHistoryEntry(), cryomesh::components::ImpulseCollection::clearActiveImpulses(), cryomesh::components::ImpulseCollection::clearImpulses(), cryomesh::components::ImpulseCollection::getActivity(), cryomesh::state::Pattern::getDatabaseObject(), cryomesh::components::Connection::getDatabaseObject(), cryomesh::components::Node::getDatabaseObject(), cryomesh::state::PatternChannel::getPatternByCycle(), cryomesh::utilities::operator<<(), cryomesh::structures::Bundle::print(), cryomesh::manager::DatabaseManager::printHistory(), and cryomesh::components::ImpulseCollection::refreshDataObject()\&.
+.SS "std::time_t \fBcryomesh::common::TimeKeeper::getStartTime\fP () const"
+.PP
+Get the time we started cycling\&. \fBReturns:\fP
 .RS 4
 time_t The start time 
 .RE
 .PP
 
 .PP
-Definition at line 84 of file TimeKeeper.cpp.
-.SS "\fBTimeKeeper\fP & cryomesh::common::TimeKeeper::getTimeKeeper ()\fC [static]\fP"
+Definition at line 83 of file TimeKeeper\&.cpp\&.
 .PP
-Definition at line 20 of file TimeKeeper.cpp.
+References start_time\&.
+.SS "\fBTimeKeeper\fP & \fBcryomesh::common::TimeKeeper::getTimeKeeper\fP ()\fC [static]\fP"
 .PP
-References TimeKeeper(), and timekeeper.
+Definition at line 19 of file TimeKeeper\&.cpp\&.
 .PP
-Referenced by cryomesh::manager::DatabaseManager::addHistoryEntry(), cryomesh::components::Node::addImpulse(), cryomesh::components::ImpulseCollection::clearActiveImpulses(), cryomesh::components::ImpulseCollection::clearImpulses(), cryomesh::components::Node::enterRecovery(), cryomesh::components::Node::getActivity(), cryomesh::components::ImpulseCollection::getActivity(), cryomesh::components::Impulse::getActivity(), cryomesh::components::ConnectionMap::getActivityPattern(), cryomesh::components::Node::getDatabaseObject(), cryomesh::components::Impulse::isActive(), cryomesh::components::ImpulseCollection::refreshDataObject(), and cryomesh::components::Node::setActivity().
-.SS "const boost::timer & cryomesh::common::TimeKeeper::getTimer () const"
+References TimeKeeper(), and timekeeper\&.
 .PP
-Get the Timer. \fBReturns:\fP
+Referenced by cryomesh::manager::DatabaseManager::addHistoryEntry(), cryomesh::components::Node::addImpulse(), cryomesh::components::ImpulseCollection::clearActiveImpulses(), cryomesh::components::ImpulseCollection::clearImpulses(), cryomesh::components::Node::enterRecovery(), cryomesh::components::ImpulseCollection::getActivity(), cryomesh::components::Impulse::getActivity(), cryomesh::components::Node::getActivity(), cryomesh::components::ConnectionMap::getActivityPattern(), cryomesh::state::Pattern::getDatabaseObject(), cryomesh::components::Connection::getDatabaseObject(), cryomesh::components::Node::getDatabaseObject(), cryomesh::state::PatternChannel::getPatternByCycle(), cryomesh::components::Impulse::isActive(), cryomesh::utilities::operator<<(), cryomesh::structures::Bundle::print(), cryomesh::manager::DatabaseManager::printHistory(), cryomesh::components::ImpulseCollection::refreshDataObject(), cryomesh::components::Node::setActivity(), and cryomesh::structures::Bundle::update()\&.
+.SS "const boost::timer & \fBcryomesh::common::TimeKeeper::getTimer\fP () const"
+.PP
+Get the Timer\&. \fBReturns:\fP
 .RS 4
 boost::Timer 
 .RE
 .PP
 
 .PP
-Definition at line 88 of file TimeKeeper.cpp.
-.SS "double cryomesh::common::TimeKeeper::getTiming () const"
+Definition at line 87 of file TimeKeeper\&.cpp\&.
 .PP
-Difference between the last time and now. \fBReturns:\fP
+References timer\&.
+.SS "double \fBcryomesh::common::TimeKeeper::getTiming\fP () const"
+.PP
+Difference between the last time and now\&. \fBReturns:\fP
 .RS 4
 double The difference between the clock now and the last clock 
 .RE
 .PP
 
 .PP
-Definition at line 81 of file TimeKeeper.cpp.
+Definition at line 80 of file TimeKeeper\&.cpp\&.
+.PP
+References last_timing, and this_timing\&.
 .SS "\fBTimeKeeper\fP& cryomesh::common::TimeKeeper::operator= (const \fBTimeKeeper\fP &)\fC [protected]\fP"
 .PP
-Assignment Operator. Overridden Assignment Operator for \fBTimeKeeper\fP. Inaccessible to force singleton class
+Assignment Operator\&. Overridden Assignment Operator for \fBTimeKeeper\fP\&. Inaccessible to force singleton class
 .PP
 \fBParameters:\fP
 .RS 4
@@ -185,7 +199,7 @@ Assignment Operator. Overridden Assignment Operator for \fBTimeKeeper\fP. Inacce
 
 .SS "bool cryomesh::common::TimeKeeper::operator== (const \fBTimeKeeper\fP &obj)"
 .PP
-Equality test override for object. \fBParameters:\fP
+Equality test override for object\&. \fBParameters:\fP
 .RS 4
 \fI\fBTimeKeeper\fP\fP obj Object to compare this with
 .RE
@@ -197,40 +211,60 @@ bool True if equal, false otherwise
 .PP
 
 .PP
-Definition at line 41 of file TimeKeeper.cpp.
-.SS "void cryomesh::common::TimeKeeper::reset ()"
+Definition at line 40 of file TimeKeeper\&.cpp\&.
 .PP
-Destructor. Destructor for \fBTimeKeeper\fP Reset the timekeeper 
+References cycle, last_timing, start_time, and this_timing\&.
+.SS "void \fBcryomesh::common::TimeKeeper::reset\fP ()"
 .PP
-Definition at line 27 of file TimeKeeper.cpp.
-.SS "void cryomesh::common::TimeKeeper::update ()"
+Destructor\&. Destructor for \fBTimeKeeper\fP Reset the timekeeper 
 .PP
-Move the timing on one cycle. 
+Definition at line 26 of file TimeKeeper\&.cpp\&.
 .PP
-Definition at line 67 of file TimeKeeper.cpp.
+References cycle, last_timing, start_time, this_timing, and timer\&.
+.PP
+Referenced by TimeKeeper()\&.
+.SS "void \fBcryomesh::common::TimeKeeper::update\fP ()"
+.PP
+Move the timing on one cycle\&. 
+.PP
+Definition at line 66 of file TimeKeeper\&.cpp\&.
+.PP
+References cycle, last_timing, this_timing, and timer\&.
+.PP
+Referenced by cryomesh::structures::Bundle::update()\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "\fBCycle\fP \fBcryomesh::common::TimeKeeper::cycle\fP\fC [private]\fP"
 .PP
-Definition at line 159 of file TimeKeeper.h.
+Definition at line 159 of file TimeKeeper\&.h\&.
+.PP
+Referenced by getCycle(), operator==(), reset(), and update()\&.
 .SS "double \fBcryomesh::common::TimeKeeper::last_timing\fP\fC [private]\fP"
 .PP
-Definition at line 187 of file TimeKeeper.h.
+Definition at line 187 of file TimeKeeper\&.h\&.
+.PP
+Referenced by getTiming(), operator==(), reset(), and update()\&.
 .SS "std::time_t \fBcryomesh::common::TimeKeeper::start_time\fP\fC [private]\fP"
 .PP
-Definition at line 166 of file TimeKeeper.h.
+Definition at line 166 of file TimeKeeper\&.h\&.
+.PP
+Referenced by getStartTime(), operator==(), and reset()\&.
 .SS "double \fBcryomesh::common::TimeKeeper::this_timing\fP\fC [private]\fP"
 .PP
-Definition at line 180 of file TimeKeeper.h.
+Definition at line 180 of file TimeKeeper\&.h\&.
+.PP
+Referenced by getTiming(), operator==(), reset(), and update()\&.
 .SS "boost::shared_ptr< \fBTimeKeeper\fP > \fBcryomesh::common::TimeKeeper::timekeeper\fP\fC [static, private]\fP"
 .PP
-Definition at line 151 of file TimeKeeper.h.
+Definition at line 151 of file TimeKeeper\&.h\&.
 .PP
-Referenced by getTimeKeeper().
+Referenced by getTimeKeeper()\&.
 .SS "boost::timer \fBcryomesh::common::TimeKeeper::timer\fP\fC [private]\fP"
 .PP
-Definition at line 173 of file TimeKeeper.h.
+Definition at line 173 of file TimeKeeper\&.h\&.
+.PP
+Referenced by getTimer(), reset(), and update()\&.
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for cryomesh from the source code.
+Generated automatically by Doxygen for cryomesh from the source code\&.

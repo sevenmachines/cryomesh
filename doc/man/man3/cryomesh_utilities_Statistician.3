@@ -1,27 +1,27 @@
-.TH "cryomesh::utilities::Statistician" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::utilities::Statistician" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 cryomesh::utilities::Statistician \- 
 .PP
-Class to draw together lots of useful statistics and monitoring data for a Bundle and its components.  
+Class to draw together lots of useful statistics and monitoring data for a Bundle and its components\&.  
 
 .SH SYNOPSIS
 .br
 .PP
 .PP
-\fC#include <Statistician.h>\fP
+\fC#include <Statistician\&.h>\fP
 .SS "Public Member Functions"
 
 .in +1c
 .ti -1c
 .RI "\fBStatistician\fP (const \fBstructures::Bundle\fP &bun)"
 .br
-.RI "\fIContruct a statistician with a build in Bundle reference. \fP"
+.RI "\fIContruct a statistician with a build in Bundle reference\&. \fP"
 .ti -1c
 .RI "virtual \fB~Statistician\fP ()"
 .br
-.RI "\fIDefault destructor. \fP"
+.RI "\fIDefault destructor\&. \fP"
 .ti -1c
 .RI "void \fBupdate\fP ()"
 .br
@@ -105,71 +105,113 @@ Class to draw together lots of useful statistics and monitoring data for a Bundl
 .ti -1c
 .RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBStatistician\fP &obj)"
 .br
-.RI "\fITo stream operator. \fP"
+.RI "\fITo stream operator\&. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
-Class to draw together lots of useful statistics and monitoring data for a Bundle and its components. 
+Class to draw together lots of useful statistics and monitoring data for a Bundle and its components\&. 
 .PP
-Definition at line 28 of file Statistician.h.
+Definition at line 28 of file Statistician\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "cryomesh::utilities::Statistician::Statistician (const \fBstructures::Bundle\fP &bun)"
+.SS "\fBcryomesh::utilities::Statistician::Statistician\fP (const \fBstructures::Bundle\fP &bun)"
 .PP
-Contruct a statistician with a build in Bundle reference. 
+Contruct a statistician with a build in Bundle reference\&. 
 .PP
-Definition at line 16 of file Statistician.cpp.
-.SS "cryomesh::utilities::Statistician::~Statistician ()\fC [virtual]\fP"
+Definition at line 15 of file Statistician\&.cpp\&.
 .PP
-Default destructor. 
+References update()\&.
+.SS "\fBcryomesh::utilities::Statistician::~Statistician\fP ()\fC [virtual]\fP"
 .PP
-Definition at line 22 of file Statistician.cpp.
+Default destructor\&. 
+.PP
+Definition at line 21 of file Statistician\&.cpp\&.
 .SH "Member Function Documentation"
 .PP 
-.SS "std::map< std::string, int > cryomesh::utilities::Statistician::getActiveNodesPerCluster () const"
+.SS "std::map< std::string, int > \fBcryomesh::utilities::Statistician::getActiveNodesPerCluster\fP () const"
 .PP
-Definition at line 77 of file Statistician.cpp.
-.SS "int cryomesh::utilities::Statistician::getActiveNodesTotal () const"
+Definition at line 76 of file Statistician\&.cpp\&.
 .PP
-Definition at line 111 of file Statistician.cpp.
-.SS "const \fBstructures::Bundle\fP & cryomesh::utilities::Statistician::getBundle () const"
+References bundle, and cryomesh::structures::Bundle::getClusters()\&.
 .PP
-Definition at line 128 of file Statistician.cpp.
-.SS "std::string cryomesh::utilities::Statistician::getBundleUUID () const"
+Referenced by getActiveNodesTotal(), and cryomesh::utilities::operator<<()\&.
+.SS "int \fBcryomesh::utilities::Statistician::getActiveNodesTotal\fP () const"
 .PP
-Definition at line 54 of file Statistician.cpp.
-.SS "int cryomesh::utilities::Statistician::getClusterCount () const"
+Definition at line 110 of file Statistician\&.cpp\&.
 .PP
-Definition at line 36 of file Statistician.cpp.
-.SS "int cryomesh::utilities::Statistician::getInputChannelsCount () const"
+References getActiveNodesPerCluster()\&.
 .PP
-Definition at line 48 of file Statistician.cpp.
-.SS "int cryomesh::utilities::Statistician::getInputFibresCount () const"
+Referenced by cryomesh::utilities::operator<<()\&.
+.SS "const \fBstructures::Bundle\fP & \fBcryomesh::utilities::Statistician::getBundle\fP () const"
 .PP
-Definition at line 39 of file Statistician.cpp.
-.SS "int cryomesh::utilities::Statistician::getNormalFibresCount () const"
+Definition at line 127 of file Statistician\&.cpp\&.
 .PP
-Definition at line 45 of file Statistician.cpp.
-.SS "int cryomesh::utilities::Statistician::getOutputChannelsCount () const"
+References bundle\&.
+.SS "std::string \fBcryomesh::utilities::Statistician::getBundleUUID\fP () const"
 .PP
-Definition at line 51 of file Statistician.cpp.
-.SS "int cryomesh::utilities::Statistician::getOutputFibresCount () const"
+Definition at line 53 of file Statistician\&.cpp\&.
 .PP
-Definition at line 42 of file Statistician.cpp.
-.SS "std::map< std::string, int > cryomesh::utilities::Statistician::getTriggeredNodesPerCluster () const"
+References bundleuuid\&.
 .PP
-Definition at line 58 of file Statistician.cpp.
-.SS "int cryomesh::utilities::Statistician::getTriggeredNodesTotal () const"
+Referenced by cryomesh::utilities::operator<<()\&.
+.SS "int \fBcryomesh::utilities::Statistician::getClusterCount\fP () const"
 .PP
-Definition at line 96 of file Statistician.cpp.
-.SS "void cryomesh::utilities::Statistician::update ()"
+Definition at line 35 of file Statistician\&.cpp\&.
 .PP
-Definition at line 25 of file Statistician.cpp.
+References clusterCount\&.
+.PP
+Referenced by cryomesh::utilities::operator<<()\&.
+.SS "int \fBcryomesh::utilities::Statistician::getInputChannelsCount\fP () const"
+.PP
+Definition at line 47 of file Statistician\&.cpp\&.
+.PP
+References inputChannelsCount\&.
+.SS "int \fBcryomesh::utilities::Statistician::getInputFibresCount\fP () const"
+.PP
+Definition at line 38 of file Statistician\&.cpp\&.
+.PP
+References inputFibresCount\&.
+.SS "int \fBcryomesh::utilities::Statistician::getNormalFibresCount\fP () const"
+.PP
+Definition at line 44 of file Statistician\&.cpp\&.
+.PP
+References normalFibresCount\&.
+.SS "int \fBcryomesh::utilities::Statistician::getOutputChannelsCount\fP () const"
+.PP
+Definition at line 50 of file Statistician\&.cpp\&.
+.PP
+References outputChannelsCount\&.
+.SS "int \fBcryomesh::utilities::Statistician::getOutputFibresCount\fP () const"
+.PP
+Definition at line 41 of file Statistician\&.cpp\&.
+.PP
+References outputFibresCount\&.
+.SS "std::map< std::string, int > \fBcryomesh::utilities::Statistician::getTriggeredNodesPerCluster\fP () const"
+.PP
+Definition at line 57 of file Statistician\&.cpp\&.
+.PP
+References bundle, and cryomesh::structures::Bundle::getClusters()\&.
+.PP
+Referenced by getTriggeredNodesTotal()\&.
+.SS "int \fBcryomesh::utilities::Statistician::getTriggeredNodesTotal\fP () const"
+.PP
+Definition at line 95 of file Statistician\&.cpp\&.
+.PP
+References getTriggeredNodesPerCluster()\&.
+.PP
+Referenced by cryomesh::utilities::operator<<()\&.
+.SS "void \fBcryomesh::utilities::Statistician::update\fP ()"
+.PP
+Definition at line 24 of file Statistician\&.cpp\&.
+.PP
+References bundle, clusterCount, cryomesh::structures::Bundle::getClusters(), cryomesh::structures::Bundle::getFibres(), cryomesh::structures::Bundle::getInputFibres(), cryomesh::structures::Bundle::getOutputFibres(), cryomesh::structures::Bundle::getRealInputChannelsMap(), cryomesh::structures::Bundle::getRealOutputChannelsMap(), inputChannelsCount, inputFibresCount, normalFibresCount, outputChannelsCount, and outputFibresCount\&.
+.PP
+Referenced by Statistician()\&.
 .SH "Friends And Related Function Documentation"
 .PP 
 .SS "std::ostream& operator<< (std::ostream &os, const \fBStatistician\fP &obj)\fC [friend]\fP"
 .PP
-To stream operator. \fBParameters:\fP
+To stream operator\&. \fBParameters:\fP
 .RS 4
 \fIstd::ostream\fP & os The output stream 
 .br
@@ -183,43 +225,59 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 132 of file Statistician.cpp.
+Definition at line 131 of file Statistician\&.cpp\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "const \fBstructures::Bundle\fP& \fBcryomesh::utilities::Statistician::bundle\fP\fC [private]\fP"
 .PP
-Definition at line 74 of file Statistician.h.
+Definition at line 74 of file Statistician\&.h\&.
+.PP
+Referenced by getActiveNodesPerCluster(), getBundle(), getTriggeredNodesPerCluster(), and update()\&.
 .SS "std::string \fBcryomesh::utilities::Statistician::bundleuuid\fP\fC [private]\fP"
 .PP
-Definition at line 82 of file Statistician.h.
+Definition at line 82 of file Statistician\&.h\&.
+.PP
+Referenced by getBundleUUID()\&.
 .SS "int \fBcryomesh::utilities::Statistician::clusterCount\fP\fC [private]\fP"
 .PP
-Definition at line 76 of file Statistician.h.
+Definition at line 76 of file Statistician\&.h\&.
+.PP
+Referenced by getClusterCount(), and update()\&.
 .SS "int \fBcryomesh::utilities::Statistician::inputChannelsCount\fP\fC [private]\fP"
 .PP
-Definition at line 80 of file Statistician.h.
+Definition at line 80 of file Statistician\&.h\&.
+.PP
+Referenced by getInputChannelsCount(), cryomesh::utilities::operator<<(), and update()\&.
 .SS "int \fBcryomesh::utilities::Statistician::inputFibresCount\fP\fC [private]\fP"
 .PP
-Definition at line 77 of file Statistician.h.
+Definition at line 77 of file Statistician\&.h\&.
+.PP
+Referenced by getInputFibresCount(), cryomesh::utilities::operator<<(), and update()\&.
 .SS "int \fBcryomesh::utilities::Statistician::nodesActive\fP\fC [private]\fP"
 .PP
-Definition at line 85 of file Statistician.h.
+Definition at line 85 of file Statistician\&.h\&.
 .SS "int \fBcryomesh::utilities::Statistician::nodesTotal\fP\fC [private]\fP"
 .PP
-Definition at line 83 of file Statistician.h.
+Definition at line 83 of file Statistician\&.h\&.
 .SS "int \fBcryomesh::utilities::Statistician::nodesTriggered\fP\fC [private]\fP"
 .PP
-Definition at line 84 of file Statistician.h.
+Definition at line 84 of file Statistician\&.h\&.
 .SS "int \fBcryomesh::utilities::Statistician::normalFibresCount\fP\fC [private]\fP"
 .PP
-Definition at line 79 of file Statistician.h.
+Definition at line 79 of file Statistician\&.h\&.
+.PP
+Referenced by getNormalFibresCount(), cryomesh::utilities::operator<<(), and update()\&.
 .SS "int \fBcryomesh::utilities::Statistician::outputChannelsCount\fP\fC [private]\fP"
 .PP
-Definition at line 81 of file Statistician.h.
+Definition at line 81 of file Statistician\&.h\&.
+.PP
+Referenced by getOutputChannelsCount(), cryomesh::utilities::operator<<(), and update()\&.
 .SS "int \fBcryomesh::utilities::Statistician::outputFibresCount\fP\fC [private]\fP"
 .PP
-Definition at line 78 of file Statistician.h.
+Definition at line 78 of file Statistician\&.h\&.
+.PP
+Referenced by getOutputFibresCount(), cryomesh::utilities::operator<<(), and update()\&.
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for cryomesh from the source code.
+Generated automatically by Doxygen for cryomesh from the source code\&.

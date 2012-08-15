@@ -1,0 +1,181 @@
+\hypertarget{namespacecryomesh_1_1structures}{\section{cryomesh\-:\-:structures \-Namespace \-Reference}
+\label{namespacecryomesh_1_1structures}\index{cryomesh\-::structures@{cryomesh\-::structures}}
+}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classcryomesh_1_1structures_1_1Bundle}{\-Bundle}
+\begin{DoxyCompactList}\small\item\em \-A \hyperlink{classcryomesh_1_1structures_1_1Bundle}{\-Bundle} is the collection of clusters and fibres, it represents the system as a whole. \end{DoxyCompactList}\item 
+class \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster}
+\begin{DoxyCompactList}\small\item\em \-A \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster} is a collection of self-\/contained nodes and connections along with an associated \hyperlink{classcryomesh_1_1structures_1_1Mesh}{\-Mesh}, that can be connected up to one another. \end{DoxyCompactList}\item 
+class \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre}
+\begin{DoxyCompactList}\small\item\em \-A \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} is a collection of connections that connect one structure to another. \end{DoxyCompactList}\item 
+class \hyperlink{classcryomesh_1_1structures_1_1FibreMap}{\-Fibre\-Map}
+\item 
+class \hyperlink{classcryomesh_1_1structures_1_1Mesh}{\-Mesh}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classcryomesh_1_1structures_1_1Mesh}{\-Mesh} is the fabric of connection space and warps and is warped by it. \end{DoxyCompactList}\item 
+class \hyperlink{classcryomesh_1_1structures_1_1NodeMesh}{\-Node\-Mesh}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classcryomesh_1_1structures_1_1Mesh}{\-Mesh} of nodes and their neighbouring nodes and distances. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::map\*
+$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Node}{cryomesh\-::components\-::\-Node} $>$\*
+, std\-::map$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Node}{cryomesh\-::components\-::\-Node} $>$\*
+, double $>$ $>$ \hyperlink{namespacecryomesh_1_1structures_a50c955c70377b1dc7d3fcf1364d5e33e}{\-Neighbourhood\-Map}
+\begin{DoxyCompactList}\small\item\em \-Typedef to simplify neighbourhood map structure. \end{DoxyCompactList}\item 
+typedef std\-::map\*
+$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Node}{cryomesh\-::components\-::\-Node} $>$\*
+, std\-::map$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Node}{cryomesh\-::components\-::\-Node} $>$\*
+, double $>$ $>$\-::const\-\_\-iterator \hyperlink{namespacecryomesh_1_1structures_a321983538b31d02a5bb7345c72c63769}{\-Neighbourhood\-Map\-Const\-Iterator}
+\begin{DoxyCompactList}\small\item\em \-Typdef for iterator to neighbourhood map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream \& \hyperlink{namespacecryomesh_1_1structures_a2e1e77e062248b853cfcfc84d5451ca7}{operator$<$$<$} (std\-::ostream \&os, const \hyperlink{classcryomesh_1_1structures_1_1Bundle}{\-Bundle} \&obj)
+\item 
+std\-::ostream \& \hyperlink{namespacecryomesh_1_1structures_abcd04bbc637a047b78e8fe786d5849a0}{operator$<$$<$} (std\-::ostream \&os, const \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster} \&obj)
+\item 
+std\-::ostream \& \hyperlink{namespacecryomesh_1_1structures_a5193b0012f22b1fd0663b95152c0347e}{operator$<$$<$} (std\-::ostream \&os, const \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} \&obj)
+\item 
+std\-::ostream \& \hyperlink{namespacecryomesh_1_1structures_ababe2609b3503ef7d3abf4e2b576ce88}{operator$<$$<$} (std\-::ostream \&os, const \hyperlink{classcryomesh_1_1structures_1_1NodeMesh}{\-Node\-Mesh} \&obj)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Typedef \-Documentation}
+\hypertarget{namespacecryomesh_1_1structures_a50c955c70377b1dc7d3fcf1364d5e33e}{\index{cryomesh\-::structures@{cryomesh\-::structures}!\-Neighbourhood\-Map@{\-Neighbourhood\-Map}}
+\index{\-Neighbourhood\-Map@{\-Neighbourhood\-Map}!cryomesh::structures@{cryomesh\-::structures}}
+\subsubsection[{\-Neighbourhood\-Map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::structures\-::\-Node\-Mesh\-::\-Neighbourhood\-Map}}}\label{namespacecryomesh_1_1structures_a50c955c70377b1dc7d3fcf1364d5e33e}
+
+
+\-Typedef to simplify neighbourhood map structure. 
+
+\-Map of \-Nodes to other nodes within their neighbourhood and the distances to them. 
+
+\-Definition at line 19 of file \-Node\-Mesh.\-h.
+
+\hypertarget{namespacecryomesh_1_1structures_a321983538b31d02a5bb7345c72c63769}{\index{cryomesh\-::structures@{cryomesh\-::structures}!\-Neighbourhood\-Map\-Const\-Iterator@{\-Neighbourhood\-Map\-Const\-Iterator}}
+\index{\-Neighbourhood\-Map\-Const\-Iterator@{\-Neighbourhood\-Map\-Const\-Iterator}!cryomesh::structures@{cryomesh\-::structures}}
+\subsubsection[{\-Neighbourhood\-Map\-Const\-Iterator}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::map$<$boost\-::shared\-\_\-ptr$<${\bf cryomesh\-::components\-::\-Node}$>$, std\-::map$<$boost\-::shared\-\_\-ptr$<${\bf cryomesh\-::components\-::\-Node}$>$, double$>$ $>$\-::const\-\_\-iterator {\bf cryomesh\-::structures\-::\-Neighbourhood\-Map\-Const\-Iterator}}}\label{namespacecryomesh_1_1structures_a321983538b31d02a5bb7345c72c63769}
+
+
+\-Typdef for iterator to neighbourhood map. 
+
+
+
+\-Definition at line 30 of file \-Node\-Mesh.\-h.
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{namespacecryomesh_1_1structures_ababe2609b3503ef7d3abf4e2b576ce88}{\index{cryomesh\-::structures@{cryomesh\-::structures}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cryomesh::structures@{cryomesh\-::structures}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& cryomesh\-::structures\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const \-Node\-Mesh \&}]{obj}
+\end{DoxyParamCaption}
+)}}\label{namespacecryomesh_1_1structures_ababe2609b3503ef7d3abf4e2b576ce88}
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::ostream} & \& os \-The output stream \\
+\hline
+{\em const} & \hyperlink{classcryomesh_1_1structures_1_1NodeMesh}{\-Node\-Mesh} \& obj \-The object to stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::ostream \& \-The output stream 
+\end{DoxyReturn}
+
+
+\-Definition at line 306 of file \-Node\-Mesh.\-cpp.
+
+
+
+\-References cryomesh\-::structures\-::\-Node\-Mesh\-::print\-Neighbourhood\-Activities(), and cryomesh\-::structures\-::\-Node\-Mesh\-::print\-Neighbourhoods().
+
+\hypertarget{namespacecryomesh_1_1structures_abcd04bbc637a047b78e8fe786d5849a0}{\index{cryomesh\-::structures@{cryomesh\-::structures}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cryomesh::structures@{cryomesh\-::structures}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& cryomesh\-::structures\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const \-Cluster \&}]{obj}
+\end{DoxyParamCaption}
+)}}\label{namespacecryomesh_1_1structures_abcd04bbc637a047b78e8fe786d5849a0}
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::ostream} & \& os \-The output stream \\
+\hline
+{\em const} & \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster} \& obj \-The object to stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::ostream \& \-The output stream 
+\end{DoxyReturn}
+
+
+\-Definition at line 331 of file \-Cluster.\-cpp.
+
+
+
+\-References cryomesh\-::structures\-::\-Cluster\-::get\-Connections(), cryomesh\-::structures\-::\-Cluster\-::get\-Node\-Map(), and cryomesh\-::structures\-::\-Cluster\-::get\-Nodes().
+
+\hypertarget{namespacecryomesh_1_1structures_a5193b0012f22b1fd0663b95152c0347e}{\index{cryomesh\-::structures@{cryomesh\-::structures}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cryomesh::structures@{cryomesh\-::structures}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& cryomesh\-::structures\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const \-Fibre \&}]{obj}
+\end{DoxyParamCaption}
+)}}\label{namespacecryomesh_1_1structures_a5193b0012f22b1fd0663b95152c0347e}
+\begin{DoxyReturn}{\-Returns}
+\-Pattern \-To stream operator
+\end{DoxyReturn}
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::ostream} & \& os \-The output stream \\
+\hline
+{\em const} & \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} \& obj \-The object to stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::ostream \& \-The output stream 
+\end{DoxyReturn}
+
+
+\-Definition at line 449 of file \-Fibre.\-cpp.
+
+
+
+\-References cryomesh\-::structures\-::\-Fibre\-::get\-Connections(), and cryomesh\-::structures\-::\-Fibre\-::get\-Output\-Nodes\-Pattern().
+
+\hypertarget{namespacecryomesh_1_1structures_a2e1e77e062248b853cfcfc84d5451ca7}{\index{cryomesh\-::structures@{cryomesh\-::structures}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cryomesh::structures@{cryomesh\-::structures}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& cryomesh\-::structures\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const \-Bundle \&}]{obj}
+\end{DoxyParamCaption}
+)}}\label{namespacecryomesh_1_1structures_a2e1e77e062248b853cfcfc84d5451ca7}
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::ostream} & \& os \-The output stream \\
+\hline
+{\em const} & \hyperlink{classcryomesh_1_1structures_1_1Bundle}{\-Bundle} \& obj \-The object to stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::ostream \& \-The output stream 
+\end{DoxyReturn}
+
+
+\-Definition at line 973 of file \-Bundle.\-cpp.
+
+
+
+\-References cryomesh\-::common\-::\-Loggable\-::\-M\-A\-X, and cryomesh\-::structures\-::\-Bundle\-::print().
+

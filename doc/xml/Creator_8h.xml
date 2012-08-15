@@ -1,0 +1,665 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="Creator_8h" kind="file">
+    <compoundname>Creator.h</compoundname>
+    <includes local="yes">config/ConfigTranslator.h</includes>
+    <includes local="no">string</includes>
+    <includes local="no">list</includes>
+    <includes local="no">boost/shared_ptr.hpp</includes>
+    <includes refid="Bundle_8h" local="no">structures/Bundle.h</includes>
+    <includedby refid="Creator_8cpp" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp</includedby>
+    <includedby refid="CryoManager_8h" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.h</includedby>
+    <incdepgraph>
+      <node id="876">
+        <label>list</label>
+      </node>
+      <node id="874">
+        <label>config/ConfigTranslator.h</label>
+      </node>
+      <node id="873">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h</label>
+        <link refid="Creator.h"/>
+        <childnode refid="874" relation="include">
+        </childnode>
+        <childnode refid="875" relation="include">
+        </childnode>
+        <childnode refid="876" relation="include">
+        </childnode>
+        <childnode refid="877" relation="include">
+        </childnode>
+        <childnode refid="878" relation="include">
+        </childnode>
+      </node>
+      <node id="877">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="926">
+        <label>boost/serialization/vector.hpp</label>
+      </node>
+      <node id="933">
+        <label>utilities/Statistician.h</label>
+        <link refid="Statistician_8h"/>
+        <childnode refid="880" relation="include">
+        </childnode>
+        <childnode refid="903" relation="include">
+        </childnode>
+        <childnode refid="875" relation="include">
+        </childnode>
+      </node>
+      <node id="912">
+        <label>boost/tokenizer.hpp</label>
+      </node>
+      <node id="889">
+        <label>ActivityTimer.h</label>
+        <link refid="ActivityTimer_8h"/>
+        <childnode refid="890" relation="include">
+        </childnode>
+      </node>
+      <node id="878">
+        <label>structures/Bundle.h</label>
+        <link refid="Bundle_8h"/>
+        <childnode refid="877" relation="include">
+        </childnode>
+        <childnode refid="879" relation="include">
+        </childnode>
+        <childnode refid="880" relation="include">
+        </childnode>
+        <childnode refid="881" relation="include">
+        </childnode>
+        <childnode refid="918" relation="include">
+        </childnode>
+        <childnode refid="929" relation="include">
+        </childnode>
+        <childnode refid="891" relation="include">
+        </childnode>
+        <childnode refid="893" relation="include">
+        </childnode>
+        <childnode refid="932" relation="include">
+        </childnode>
+        <childnode refid="933" relation="include">
+        </childnode>
+      </node>
+      <node id="908">
+        <label>spacial/Point.h</label>
+      </node>
+      <node id="885">
+        <label>Node.h</label>
+        <link refid="Node_8h"/>
+        <childnode refid="886" relation="include">
+        </childnode>
+        <childnode refid="894" relation="include">
+        </childnode>
+        <childnode refid="904" relation="include">
+        </childnode>
+        <childnode refid="893" relation="include">
+        </childnode>
+        <childnode refid="891" relation="include">
+        </childnode>
+        <childnode refid="907" relation="include">
+        </childnode>
+        <childnode refid="908" relation="include">
+        </childnode>
+        <childnode refid="901" relation="include">
+        </childnode>
+        <childnode refid="909" relation="include">
+        </childnode>
+        <childnode refid="876" relation="include">
+        </childnode>
+        <childnode refid="903" relation="include">
+        </childnode>
+      </node>
+      <node id="928">
+        <label>manager/PatternDatabaseObject.h</label>
+        <link refid="PatternDatabaseObject_8h"/>
+        <childnode refid="910" relation="include">
+        </childnode>
+        <childnode refid="894" relation="include">
+        </childnode>
+        <childnode refid="875" relation="include">
+        </childnode>
+        <childnode refid="877" relation="include">
+        </childnode>
+      </node>
+      <node id="905">
+        <label>boost/uuid/uuid_io.hpp</label>
+      </node>
+      <node id="904">
+        <label>common/Connector.h</label>
+        <link refid="Connector_8h"/>
+        <childnode refid="894" relation="include">
+        </childnode>
+        <childnode refid="903" relation="include">
+        </childnode>
+        <childnode refid="877" relation="include">
+        </childnode>
+        <childnode refid="879" relation="include">
+        </childnode>
+        <childnode refid="905" relation="include">
+        </childnode>
+        <childnode refid="906" relation="include">
+        </childnode>
+      </node>
+      <node id="896">
+        <label>common/TimeKeeper.h</label>
+        <link refid="TimeKeeper_8h"/>
+        <childnode refid="894" relation="include">
+        </childnode>
+        <childnode refid="877" relation="include">
+        </childnode>
+        <childnode refid="897" relation="include">
+        </childnode>
+        <childnode refid="898" relation="include">
+        </childnode>
+        <childnode refid="899" relation="include">
+        </childnode>
+        <childnode refid="900" relation="include">
+        </childnode>
+      </node>
+      <node id="895">
+        <label>gmpxx.h</label>
+      </node>
+      <node id="888">
+        <label>ActivityTimerDistance.h</label>
+        <link refid="ActivityTimerDistance_8h"/>
+        <childnode refid="889" relation="include">
+        </childnode>
+        <childnode refid="891" relation="include">
+        </childnode>
+        <childnode refid="877" relation="include">
+        </childnode>
+      </node>
+      <node id="891">
+        <label>common/Debuggable.h</label>
+      </node>
+      <node id="910">
+        <label>DatabaseObject.h</label>
+        <link refid="DatabaseObject_8h"/>
+        <childnode refid="903" relation="include">
+        </childnode>
+        <childnode refid="875" relation="include">
+        </childnode>
+        <childnode refid="911" relation="include">
+        </childnode>
+        <childnode refid="880" relation="include">
+        </childnode>
+        <childnode refid="912" relation="include">
+        </childnode>
+      </node>
+      <node id="875">
+        <label>string</label>
+      </node>
+      <node id="921">
+        <label>PatternTag.h</label>
+        <link refid="PatternTag_8h"/>
+        <childnode refid="875" relation="include">
+        </childnode>
+        <childnode refid="877" relation="include">
+        </childnode>
+      </node>
+      <node id="919">
+        <label>Fibre.h</label>
+        <link refid="Fibre_8h"/>
+        <childnode refid="913" relation="include">
+        </childnode>
+        <childnode refid="885" relation="include">
+        </childnode>
+        <childnode refid="904" relation="include">
+        </childnode>
+        <childnode refid="920" relation="include">
+        </childnode>
+        <childnode refid="877" relation="include">
+        </childnode>
+        <childnode refid="893" relation="include">
+        </childnode>
+      </node>
+      <node id="903">
+        <label>map</label>
+      </node>
+      <node id="893">
+        <label>common/Tagged.h</label>
+      </node>
+      <node id="917">
+        <label>structures/NodeMesh.h</label>
+        <link refid="NodeMesh_8h"/>
+        <childnode refid="885" relation="include">
+        </childnode>
+        <childnode refid="903" relation="include">
+        </childnode>
+        <childnode refid="877" relation="include">
+        </childnode>
+      </node>
+      <node id="902">
+        <label>DataObject.h</label>
+        <link refid="DataObject_8h"/>
+        <childnode refid="903" relation="include">
+        </childnode>
+        <childnode refid="890" relation="include">
+        </childnode>
+      </node>
+      <node id="890">
+        <label>ostream</label>
+      </node>
+      <node id="913">
+        <label>components/ConnectionMap.h</label>
+        <link refid="ConnectionMap_8h"/>
+        <childnode refid="882" relation="include">
+        </childnode>
+        <childnode refid="896" relation="include">
+        </childnode>
+        <childnode refid="914" relation="include">
+        </childnode>
+        <childnode refid="894" relation="include">
+        </childnode>
+        <childnode refid="879" relation="include">
+        </childnode>
+        <childnode refid="877" relation="include">
+        </childnode>
+        <childnode refid="915" relation="include">
+        </childnode>
+      </node>
+      <node id="924">
+        <label>boost/serialization/string.hpp</label>
+      </node>
+      <node id="883">
+        <label>Cluster.h</label>
+        <link refid="Cluster_8h"/>
+        <childnode refid="884" relation="include">
+        </childnode>
+        <childnode refid="913" relation="include">
+        </childnode>
+        <childnode refid="916" relation="include">
+        </childnode>
+        <childnode refid="908" relation="include">
+        </childnode>
+        <childnode refid="917" relation="include">
+        </childnode>
+        <childnode refid="879" relation="include">
+        </childnode>
+        <childnode refid="877" relation="include">
+        </childnode>
+        <childnode refid="885" relation="include">
+        </childnode>
+        <childnode refid="915" relation="include">
+        </childnode>
+        <childnode refid="904" relation="include">
+        </childnode>
+        <childnode refid="893" relation="include">
+        </childnode>
+        <childnode refid="891" relation="include">
+        </childnode>
+      </node>
+      <node id="899">
+        <label>boost/timer.hpp</label>
+      </node>
+      <node id="882">
+        <label>common/KeyMappedCollection.h</label>
+      </node>
+      <node id="898">
+        <label>boost/date_time/posix_time/posix_time.hpp</label>
+      </node>
+      <node id="914">
+        <label>state/ActivityPattern.h</label>
+        <link refid="ActivityPattern_8h"/>
+        <childnode refid="892" relation="include">
+        </childnode>
+      </node>
+      <node id="916">
+        <label>spacial/Spacial.h</label>
+      </node>
+      <node id="901">
+        <label>dataobjects/DataObjectController.h</label>
+        <link refid="DataObjectController_8h"/>
+        <childnode refid="902" relation="include">
+        </childnode>
+      </node>
+      <node id="892">
+        <label>common/SimpleCollection.h</label>
+      </node>
+      <node id="918">
+        <label>FibreMap.h</label>
+        <link refid="FibreMap_8h"/>
+        <childnode refid="882" relation="include">
+        </childnode>
+        <childnode refid="919" relation="include">
+        </childnode>
+      </node>
+      <node id="923">
+        <label>vector</label>
+      </node>
+      <node id="927">
+        <label>boost/uuid/uuid_generators.hpp</label>
+      </node>
+      <node id="884">
+        <label>components/NodeMap.h</label>
+        <link refid="NodeMap_8h"/>
+        <childnode refid="882" relation="include">
+        </childnode>
+        <childnode refid="879" relation="include">
+        </childnode>
+        <childnode refid="877" relation="include">
+        </childnode>
+        <childnode refid="885" relation="include">
+        </childnode>
+      </node>
+      <node id="911">
+        <label>sstream</label>
+      </node>
+      <node id="930">
+        <label>PatternChannel.h</label>
+        <link refid="PatternChannel_8h"/>
+        <childnode refid="920" relation="include">
+        </childnode>
+        <childnode refid="921" relation="include">
+        </childnode>
+        <childnode refid="893" relation="include">
+        </childnode>
+        <childnode refid="891" relation="include">
+        </childnode>
+        <childnode refid="903" relation="include">
+        </childnode>
+        <childnode refid="876" relation="include">
+        </childnode>
+        <childnode refid="931" relation="include">
+        </childnode>
+        <childnode refid="879" relation="include">
+        </childnode>
+        <childnode refid="877" relation="include">
+        </childnode>
+      </node>
+      <node id="907">
+        <label>common/Defs.h</label>
+      </node>
+      <node id="906">
+        <label>common/Misc.h</label>
+      </node>
+      <node id="932">
+        <label>common/Loggable.h</label>
+        <link refid="Loggable_8h"/>
+        <childnode refid="880" relation="include">
+        </childnode>
+      </node>
+      <node id="900">
+        <label>time.h</label>
+      </node>
+      <node id="880">
+        <label>iostream</label>
+      </node>
+      <node id="897">
+        <label>boost/serialization/shared_ptr.hpp</label>
+      </node>
+      <node id="887">
+        <label>Impulse.h</label>
+        <link refid="Impulse_8h"/>
+        <childnode refid="888" relation="include">
+        </childnode>
+        <childnode refid="892" relation="include">
+        </childnode>
+        <childnode refid="893" relation="include">
+        </childnode>
+        <childnode refid="894" relation="include">
+        </childnode>
+        <childnode refid="896" relation="include">
+        </childnode>
+        <childnode refid="891" relation="include">
+        </childnode>
+        <childnode refid="876" relation="include">
+        </childnode>
+      </node>
+      <node id="909">
+        <label>manager/NodeDatabaseObject.h</label>
+        <link refid="NodeDatabaseObject_8h"/>
+        <childnode refid="910" relation="include">
+        </childnode>
+        <childnode refid="908" relation="include">
+        </childnode>
+        <childnode refid="894" relation="include">
+        </childnode>
+        <childnode refid="875" relation="include">
+        </childnode>
+        <childnode refid="911" relation="include">
+        </childnode>
+      </node>
+      <node id="894">
+        <label>common/Cycle.h</label>
+        <link refid="Cycle_8h"/>
+        <childnode refid="895" relation="include">
+        </childnode>
+      </node>
+      <node id="879">
+        <label>boost/uuid/uuid.hpp</label>
+      </node>
+      <node id="929">
+        <label>state/PatternChannelMap.h</label>
+        <link refid="PatternChannelMap_8h"/>
+        <childnode refid="930" relation="include">
+        </childnode>
+        <childnode refid="882" relation="include">
+        </childnode>
+        <childnode refid="896" relation="include">
+        </childnode>
+      </node>
+      <node id="931">
+        <label>set</label>
+      </node>
+      <node id="881">
+        <label>ClusterMap.h</label>
+        <link refid="ClusterMap_8h"/>
+        <childnode refid="882" relation="include">
+        </childnode>
+        <childnode refid="883" relation="include">
+        </childnode>
+      </node>
+      <node id="925">
+        <label>boost/serialization/serialization.hpp</label>
+      </node>
+      <node id="920">
+        <label>state/Pattern.h</label>
+        <link refid="Pattern_8h"/>
+        <childnode refid="921" relation="include">
+        </childnode>
+        <childnode refid="922" relation="include">
+        </childnode>
+        <childnode refid="893" relation="include">
+        </childnode>
+        <childnode refid="923" relation="include">
+        </childnode>
+        <childnode refid="875" relation="include">
+        </childnode>
+        <childnode refid="926" relation="include">
+        </childnode>
+        <childnode refid="879" relation="include">
+        </childnode>
+        <childnode refid="927" relation="include">
+        </childnode>
+        <childnode refid="928" relation="include">
+        </childnode>
+      </node>
+      <node id="922">
+        <label>BinaryString.h</label>
+        <link refid="BinaryString_8h"/>
+        <childnode refid="876" relation="include">
+        </childnode>
+        <childnode refid="875" relation="include">
+        </childnode>
+        <childnode refid="911" relation="include">
+        </childnode>
+        <childnode refid="923" relation="include">
+        </childnode>
+        <childnode refid="924" relation="include">
+        </childnode>
+        <childnode refid="925" relation="include">
+        </childnode>
+      </node>
+      <node id="915">
+        <label>Connection.h</label>
+        <link refid="Connection_8h"/>
+        <childnode refid="885" relation="include">
+        </childnode>
+        <childnode refid="904" relation="include">
+        </childnode>
+        <childnode refid="893" relation="include">
+        </childnode>
+        <childnode refid="910" relation="include">
+        </childnode>
+        <childnode refid="891" relation="include">
+        </childnode>
+      </node>
+      <node id="886">
+        <label>ImpulseCollection.h</label>
+        <link refid="ImpulseCollection_8h"/>
+        <childnode refid="887" relation="include">
+        </childnode>
+        <childnode refid="894" relation="include">
+        </childnode>
+        <childnode refid="882" relation="include">
+        </childnode>
+        <childnode refid="901" relation="include">
+        </childnode>
+        <childnode refid="879" relation="include">
+        </childnode>
+        <childnode refid="891" relation="include">
+        </childnode>
+        <childnode refid="903" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="934">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h</label>
+        <link refid="Creator.h"/>
+        <childnode refid="935" relation="include">
+        </childnode>
+        <childnode refid="936" relation="include">
+        </childnode>
+      </node>
+      <node id="937">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.cpp</label>
+        <link refid="CryoManager_8cpp"/>
+      </node>
+      <node id="936">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.h</label>
+        <link refid="CryoManager_8h"/>
+        <childnode refid="937" relation="include">
+        </childnode>
+      </node>
+      <node id="935">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp</label>
+        <link refid="Creator_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classcryomesh_1_1manager_1_1Creator" prot="public">cryomesh::manager::Creator</innerclass>
+    <innernamespace refid="namespacecryomesh">cryomesh</innernamespace>
+    <innernamespace refid="namespacecryomesh_1_1manager">cryomesh::manager</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Creator.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>Created<sp/>on:<sp/>29<sp/>Mar<sp/>2011</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Author:<sp/>&quot;SevenMachines<sp/>&lt;SevenMachines@yahoo.co.uk&gt;&quot;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>CREATOR_H_</highlight></codeline>
+<codeline lineno="9"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>CREATOR_H_</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;config/ConfigTranslator.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;list&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/shared_ptr.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="Bundle_8h" kindref="compound">structures/Bundle.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">cryomesh<sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">manager<sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="classcryomesh_1_1manager_1_1Creator" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcryomesh_1_1manager_1_1Creator" kindref="compound" tooltip="Class to take in a config file of ConfigTranslator form and parse the commands to create a full cryom...">Creator</ref><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1a4881650c49a273648a9bccddb9a832fc" kindref="member" tooltip="Constructor to create a bundle from a config file name with option to specify the database file name ...">Creator</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>config_filename,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>database_filename<sp/>=<sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1a36ec491bb68e6a595086c239af7bd989" kindref="member">DEFAULT_DATABASE_FILENAME</ref>);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1a4881650c49a273648a9bccddb9a832fc" kindref="member" tooltip="Constructor to create a bundle from a config file name with option to specify the database file name ...">Creator</ref>(<sp/>std::istream<sp/>&amp;<sp/>config_stream,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>database_filename<sp/>=<sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1a36ec491bb68e6a595086c239af7bd989" kindref="member">DEFAULT_DATABASE_FILENAME</ref>);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1a8eea37df1f5fc6c94a97c42ce4d9a5d0" kindref="member" tooltip="Deffault destructor.">~Creator</ref>();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;structures::Bundle&gt;<sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1a10d07b373f504e7a479acb16abacb713" kindref="member" tooltip="Get the create bundle.">getBundle</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::shared_ptr&lt;structures::Bundle&gt;<sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1a2155dae515aa5d360a577ef82437f338" kindref="member" tooltip="Get the mutable create bundle.">getMutableBundle</ref>();</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;int,<sp/>boost::uuids::uuid&gt;<sp/>&amp;<sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1adf060224477ba4086f7e4aab30b60cf6" kindref="member" tooltip="get the clusterIDMap">getClusterIDMap</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;int,<sp/>boost::uuids::uuid&gt;<sp/>&amp;<sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1ab4d9444e6760f1dd634db0f07db630bb" kindref="member" tooltip="get the fibreIDMap">getFibreIDMap</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;int,<sp/>boost::uuids::uuid&gt;<sp/>&amp;<sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1a6721fe152f65ef7040b3dfa0cd143dc2" kindref="member" tooltip="get the patternChannelIDMap">getPatternChannelIDMap</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1a69a825d7856c367e400b2ff6e2cefe68" kindref="member" tooltip="Analyse the config translator for coherence.">analyseConfig</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>config::ConfigTranslator<sp/>&amp;<sp/>conf_trans)<sp/>;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1ae3d7dd77beadb0d05bbbe5f0c67e8292" kindref="member" tooltip="Analyse the config entry for coherence.">checkConfigEntry</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>config::ConfigEntry<sp/>&amp;<sp/>conf_entry)<sp/>;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1add4748985eb8bc35a442a9e4e4c2a087" kindref="member" tooltip="Analyse the config for structural coherence.">checkConfigStructure</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::list&lt;config::ConfigEntry&gt;<sp/>&amp;<sp/>conf_entries)<sp/>;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Creation<sp/>function<sp/>mappings</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1af1395df65f66b2e1af4fdba9afe15cbc" kindref="member" tooltip="Translator from config command to actual command.">createCluster</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>connectivity);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1a66333bb0409b2e6de38a58eaddeeb7b1" kindref="member" tooltip="Translator from config command to actual command.">connectCluster</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>input_cluster_id,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ouput_cluster_id,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1a73a74e5e35b5c969108a99cdf31c5108" kindref="member" tooltip="Translator from config command to actual command.">loadData</ref>(std::string<sp/>datafile);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1ad6eb863eb6f8278979e07ef97e9140b5" kindref="member">runCommand</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>config::ConfigEntry<sp/>&amp;<sp/>conf_entry);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1a074c92de2d06664b5d9d9fa5f96aa5ee" kindref="member" tooltip="Translator from config command to actual command.">connectPrimaryInputChannel</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>channel_id,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>outputid);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1a0977991d6697d06a104aacf40c07f5b4" kindref="member" tooltip="Translator from config command to actual command.">connectPrimaryOutputChannel</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>channel_id,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>inputid);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1a8c773b097b7b4db87a46f749a2606a2b" kindref="member" tooltip="auto connect all the primary input channels to the list of clusters">autoConnectPrimaryInputs</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;int&gt;<sp/>&amp;<sp/>cluster_ids);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1a7ad46f5b3864cc596f0f36b55f884ce7" kindref="member" tooltip="auto connect all the primary output channels to the list of clusters">autoConnectPrimaryOutputs</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;int&gt;<sp/>&amp;<sp/>cluster_ids);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205" refid="classcryomesh_1_1manager_1_1Creator_1a36ec491bb68e6a595086c239af7bd989" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1a36ec491bb68e6a595086c239af7bd989" kindref="member">DEFAULT_DATABASE_FILENAME</ref>;</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212" refid="classcryomesh_1_1manager_1_1Creator_1ad0ddc3782c7fe0415181156fdeb6306b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::map&lt;std::string,<sp/>std::list&lt;std::string&gt;<sp/>&gt;<sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1ad0ddc3782c7fe0415181156fdeb6306b" kindref="member">acceptedCommandList</ref>;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::map&lt;std::string,<sp/>std::list&lt;std::string&gt;<sp/>&gt;<sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1aa6de6b79f746213f844b207518b1577a" kindref="member" tooltip="Generate and return the accepted command list.">getAcceptedCommandList</ref>();</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1a1cf96043a609df452620aba02370dd46" kindref="member" tooltip="Helper to initialise the creator.">initialise</ref>();</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1ac25b12d7fcd727c0228e551732605e10" kindref="member" tooltip="Run through the config file generating all commands.">createFromConfigFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>config_filename);</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1ab816409b411aed0ceb2abe38afb8fef9" kindref="member">createFromConfigStream</ref>(std::istream<sp/>&amp;<sp/>is);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::string<sp/>configFilename;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::string<sp/>inputDataFilename;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259" refid="classcryomesh_1_1manager_1_1Creator_1a5d5c9a8aafa817c49c0787d0dae91a3a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1a5d5c9a8aafa817c49c0787d0dae91a3a" kindref="member">databaseFilename</ref>;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266" refid="classcryomesh_1_1manager_1_1Creator_1ace9dd9da21fab7cf04f6681d332d40cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::shared_ptr&lt;structures::Bundle&gt;<sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1ace9dd9da21fab7cf04f6681d332d40cc" kindref="member">bundle</ref>;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273" refid="classcryomesh_1_1manager_1_1Creator_1a10123f4421b6231c863d86ebb219b545" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;int,<sp/>boost::uuids::uuid&gt;<sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1a10123f4421b6231c863d86ebb219b545" kindref="member">clusterIDMap</ref>;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280" refid="classcryomesh_1_1manager_1_1Creator_1aae2da58961bda370f9ec3498462a2411" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;int,<sp/>boost::uuids::uuid&gt;<sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1aae2da58961bda370f9ec3498462a2411" kindref="member">fibreIDMap</ref>;</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287" refid="classcryomesh_1_1manager_1_1Creator_1a23dfcdd559d8bdbb1d03aac2587feb3a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;int,<sp/>boost::uuids::uuid&gt;<sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1a23dfcdd559d8bdbb1d03aac2587feb3a" kindref="member">patternChannelIDMap</ref>;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::uuids::uuid<sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1a1d848c7a78e970a49693434dad741880" kindref="member" tooltip="Retreive a uuid from a fake int id inside a map.">getRealID</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;int,<sp/>boost::uuids::uuid&gt;<sp/>&amp;<sp/>idmap)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::uuids::uuid<sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1a1f8a19ce5f8e07015b3bbc7040ac2a8e" kindref="member" tooltip="Helper to retrieve a uuid from a fake int id for clusters.">getClusterRealID</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::uuids::uuid<sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1ab6987a15c0794e7cd651519c28ad7eec" kindref="member" tooltip="Helper to retrieve a uuid from a fake int id for fibres.">getFibreRealID</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::uuids::uuid<sp/><ref refid="classcryomesh_1_1manager_1_1Creator_1aeb8b3b6fddffcefb7f81780a81f5f28c" kindref="member" tooltip="Helper to retrieve a uuid from a fake int id for pattern channels.">getPatternChannelRealID</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="334"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>CREATOR_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h"/>
+  </compounddef>
+</doxygen>

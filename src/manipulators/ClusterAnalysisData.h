@@ -23,18 +23,18 @@ public:
 	 */
 	struct RangeEnergy {
 		RangeEnergy() :
-				energy(0), startCycle(0), endCycle(0), energyMin(0), energyMax(0) {
+				energy(0), energyFraction(0),  startCycle(0), endCycle(0), energyMin(0), energyMax(0) {
 		}
-		RangeEnergy(double en) :
-				energy(en), startCycle(common::TimeKeeper::getTimeKeeper().getCycle()), endCycle(
+		RangeEnergy(double en, double energy_fraction) :
+				energy(en), energyFraction(energy_fraction), startCycle(common::TimeKeeper::getTimeKeeper().getCycle()), endCycle(
 						common::TimeKeeper::getTimeKeeper().getCycle()), energyMin(en), energyMax(en) {
 		}
-		RangeEnergy(double en, common::Cycle st, common::Cycle ed, double min, double max) :
-				energy(en), startCycle(st), endCycle(ed), energyMin(min), energyMax(max) {
+		RangeEnergy(double en, double energy_fraction, common::Cycle st, common::Cycle ed, double min, double max) :
+				energy(en), energyFraction(energy_fraction), startCycle(st), endCycle(ed), energyMin(min), energyMax(max) {
 		}
 
 		RangeEnergy(const RangeEnergy & obj) :
-				energy(obj.energy), startCycle(obj.startCycle), endCycle(obj.endCycle), energyMin(obj.energyMin), energyMax(
+				energy(obj.energy), energyFraction(obj.energyFraction), startCycle(obj.startCycle), endCycle(obj.endCycle), energyMin(obj.energyMin), energyMax(
 						obj.energyMax) {
 		}
 		virtual ~RangeEnergy() {
@@ -94,11 +94,12 @@ public:
 		 *		The output stream
 		 */
 		friend std::ostream& operator<<(std::ostream & os, const RangeEnergy & obj) {
-			os << "RangeEnergy: { " << "energy=" << obj.energy << " startCycle=" <<  obj.startCycle << " endCycle=" <<  obj.endCycle
+			os << "RangeEnergy: { " << "energy=" << obj.energy <<" energyFraction="<<obj.energyFraction<< " startCycle=" <<  obj.startCycle << " endCycle=" <<  obj.endCycle
 					<< " energyMin=" <<  obj.energyMin << " energyMax=" <<  obj.energyMax<<" }";
 			return os;
 		}
 		double energy;
+		double energyFraction;
 		common::Cycle startCycle;
 		common::Cycle endCycle;
 		double energyMin;

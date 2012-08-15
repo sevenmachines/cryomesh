@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="classcryomesh_1_1components_1_1ConnectionMap" kind="class" prot="public">
+    <compoundname>cryomesh::components::ConnectionMap</compoundname>
+    <includes refid="ConnectionMap_8h" local="no">ConnectionMap.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ConnectionMap_1a512061797f1a737c674b6fae284295c7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::components::ConnectionMap::ConnectionMap</definition>
+        <argsstring>()</argsstring>
+        <name>ConnectionMap</name>
+        <briefdescription>
+<para>Default constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ConnectionMap.h" line="31" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ConnectionMap.h" bodystart="31" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ConnectionMap_1a7c22a125652d332da2d8ceb194ad925e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual cryomesh::components::ConnectionMap::~ConnectionMap</definition>
+        <argsstring>()</argsstring>
+        <name>~ConnectionMap</name>
+        <briefdescription>
+<para>Default destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ConnectionMap.h" line="37" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ConnectionMap.h" bodystart="37" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ConnectionMap_1aadb06c43b0eae37154fd7efb22a08949" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void cryomesh::components::ConnectionMap::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+<para>Update all entries in the map. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ConnectionMap.h" line="43" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ConnectionMap.h" bodystart="43" bodyend="57"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1Cluster_1a933d1d7f51cc709ba4a891407b4885e3" compoundref="Cluster_8cpp" startline="45" endline="52">cryomesh::structures::Cluster::update</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Fibre_1a1f0b3b6c97d353acc172da31ad9af99f" compoundref="Fibre_8cpp" startline="46" endline="52">cryomesh::structures::Fibre::update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ConnectionMap_1a6de4ccc8a4a85199329c0d2a884a0dba" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1state_1_1ActivityPattern" kindref="compound">state::ActivityPattern</ref> &gt;</type>
+        <definition>boost::shared_ptr&lt;state::ActivityPattern&gt; cryomesh::components::ConnectionMap::getActivityPattern</definition>
+        <argsstring>() const </argsstring>
+        <name>getActivityPattern</name>
+        <briefdescription>
+<para>Get activity pattern on current cycle. </para>        </briefdescription>
+        <detaileddescription>
+<para>@ param const Cycle &amp; cycle Cycle to get activity on </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ConnectionMap.h" line="65" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ConnectionMap.h" bodystart="65" bodyend="67"/>
+        <references refid="classcryomesh_1_1common_1_1TimeKeeper_1afe7b229532e11119cb2653192615d679" compoundref="TimeKeeper_8cpp" startline="19" endline="24">cryomesh::common::TimeKeeper::getTimeKeeper</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ConnectionMap_1aeb905313475043da7bff0739925b5483" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1state_1_1ActivityPattern" kindref="compound">state::ActivityPattern</ref> &gt;</type>
+        <definition>boost::shared_ptr&lt;state::ActivityPattern&gt; cryomesh::components::ConnectionMap::getActivityPattern</definition>
+        <argsstring>(const common::Cycle &amp;cycle) const </argsstring>
+        <name>getActivityPattern</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref> &amp;</type>
+          <declname>cycle</declname>
+        </param>
+        <briefdescription>
+<para>Get activity pattern on cycle. </para>        </briefdescription>
+        <detaileddescription>
+<para>@ param const Cycle &amp; cycle Cycle to get activity on </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ConnectionMap.h" line="75" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ConnectionMap.h" bodystart="75" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ConnectionMap_1afa08a6bd4894d7ff84db83a7eb15ad37" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <ref refid="classcryomesh_1_1components_1_1Connection" kindref="compound">Connection</ref> &gt; &gt;</type>
+        <definition>const std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Connection&gt; &gt; cryomesh::components::ConnectionMap::getAllPrimaryInputConnections</definition>
+        <argsstring>() const </argsstring>
+        <name>getAllPrimaryInputConnections</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ConnectionMap.h" line="97" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ConnectionMap.h" bodystart="97" bodyend="117"/>
+        <referencedby refid="classcryomesh_1_1manipulators_1_1ClusterArchitect_1a325de5c9d5a956af23b42da995b67c9a" compoundref="ClusterArchitect_8cpp" startline="440" endline="489">cryomesh::manipulators::ClusterArchitect::getRandomConnections</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ConnectionMap_1a9c6868c8f9b977ceb99e799fb6cc98eb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <ref refid="classcryomesh_1_1components_1_1Connection" kindref="compound">Connection</ref> &gt; &gt;</type>
+        <definition>const std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Connection&gt; &gt; cryomesh::components::ConnectionMap::getAllPrimaryOutputConnections</definition>
+        <argsstring>() const </argsstring>
+        <name>getAllPrimaryOutputConnections</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ConnectionMap.h" line="119" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ConnectionMap.h" bodystart="119" bodyend="139"/>
+        <referencedby refid="classcryomesh_1_1manipulators_1_1ClusterArchitect_1a325de5c9d5a956af23b42da995b67c9a" compoundref="ClusterArchitect_8cpp" startline="440" endline="489">cryomesh::manipulators::ClusterArchitect::getRandomConnections</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classcryomesh_1_1components_1_1ConnectionMap_1a192eef17246516228fc7665ff541ee53" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const ConnectionMap &amp;obj)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1components_1_1ConnectionMap" kindref="compound">ConnectionMap</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>To stream operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::ostream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp; os The output stream </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1components_1_1ConnectionMap" kindref="compound">ConnectionMap</ref> &amp; obj The object to stream</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::ostream &amp; The output stream </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ConnectionMap.h" line="152" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ConnectionMap.h" bodystart="152" bodyend="166"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Helper class for <ref refid="classcryomesh_1_1components_1_1ConnectionMap" kindref="compound">ConnectionMap</ref> to KeyMappedCollection mapping. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ConnectionMap.h" line="26" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ConnectionMap.h" bodystart="26" bodyend="167"/>
+    <listofallmembers>
+      <member refid="classcryomesh_1_1components_1_1ConnectionMap_1a512061797f1a737c674b6fae284295c7" prot="public" virt="non-virtual"><scope>cryomesh::components::ConnectionMap</scope><name>ConnectionMap</name></member>
+      <member refid="classcryomesh_1_1components_1_1ConnectionMap_1a6de4ccc8a4a85199329c0d2a884a0dba" prot="public" virt="non-virtual"><scope>cryomesh::components::ConnectionMap</scope><name>getActivityPattern</name></member>
+      <member refid="classcryomesh_1_1components_1_1ConnectionMap_1aeb905313475043da7bff0739925b5483" prot="public" virt="non-virtual"><scope>cryomesh::components::ConnectionMap</scope><name>getActivityPattern</name></member>
+      <member refid="classcryomesh_1_1components_1_1ConnectionMap_1afa08a6bd4894d7ff84db83a7eb15ad37" prot="public" virt="non-virtual"><scope>cryomesh::components::ConnectionMap</scope><name>getAllPrimaryInputConnections</name></member>
+      <member refid="classcryomesh_1_1components_1_1ConnectionMap_1a9c6868c8f9b977ceb99e799fb6cc98eb" prot="public" virt="non-virtual"><scope>cryomesh::components::ConnectionMap</scope><name>getAllPrimaryOutputConnections</name></member>
+      <member refid="classcryomesh_1_1components_1_1ConnectionMap_1a192eef17246516228fc7665ff541ee53" prot="public" virt="non-virtual"><scope>cryomesh::components::ConnectionMap</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classcryomesh_1_1components_1_1ConnectionMap_1aadb06c43b0eae37154fd7efb22a08949" prot="public" virt="virtual"><scope>cryomesh::components::ConnectionMap</scope><name>update</name></member>
+      <member refid="classcryomesh_1_1components_1_1ConnectionMap_1a7c22a125652d332da2d8ceb194ad925e" prot="public" virt="virtual"><scope>cryomesh::components::ConnectionMap</scope><name>~ConnectionMap</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

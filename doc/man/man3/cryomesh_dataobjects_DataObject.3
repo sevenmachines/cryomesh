@@ -1,23 +1,23 @@
-.TH "cryomesh::dataobjects::DataObject" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::dataobjects::DataObject< U, T >" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-cryomesh::dataobjects::DataObject \- 
+cryomesh::dataobjects::DataObject< U, T > \- 
 .PP
-Class to contain all the useful data about an object.  
+Class to contain all the useful data about an object\&.  
 
 .SH SYNOPSIS
 .br
 .PP
 .PP
-\fC#include <DataObject.h>\fP
+\fC#include <DataObject\&.h>\fP
 .SS "Public Types"
 
 .in +1c
 .ti -1c
 .RI "enum \fBComparisonType\fP { \fBMaximumValue\fP, \fBMinimumValue\fP, \fBEqualityValue\fP, \fBAverageValue\fP }"
 .br
-.RI "\fIEnum to signal the type of comparison to make. \fP"
+.RI "\fIEnum to signal the type of comparison to make\&. \fP"
 .in -1c
 .SS "Public Member Functions"
 
@@ -25,51 +25,51 @@ Class to contain all the useful data about an object.
 .ti -1c
 .RI "\fBDataObject\fP ()"
 .br
-.RI "\fIDefault contructor. \fP"
+.RI "\fIDefault contructor\&. \fP"
 .ti -1c
 .RI "\fBDataObject\fP (unsigned int sz)"
 .br
-.RI "\fIContructor with max size. \fP"
+.RI "\fIContructor with max size\&. \fP"
 .ti -1c
 .RI "virtual \fB~DataObject\fP ()"
 .br
-.RI "\fIDefault destructor. \fP"
+.RI "\fIDefault destructor\&. \fP"
 .ti -1c
 .RI "void \fBenableLogging\fP (bool enable)"
 .br
-.RI "\fIWhether logging is enabled or not. \fP"
+.RI "\fIWhether logging is enabled or not\&. \fP"
 .ti -1c
 .RI "bool \fBisLoggingEnabled\fP ()"
 .br
-.RI "\fICheck logging is enabled or not. \fP"
+.RI "\fICheck logging is enabled or not\&. \fP"
 .ti -1c
 .RI "const std::map< U, T > & \fBgetMap\fP () const "
 .br
-.RI "\fIGet all cycle values. \fP"
+.RI "\fIGet all cycle values\&. \fP"
 .ti -1c
 .RI "std::map< U, T > & \fBgetMutableMap\fP ()"
 .br
-.RI "\fIGet all mutable cycle values. \fP"
+.RI "\fIGet all mutable cycle values\&. \fP"
 .ti -1c
 .RI "const std::map< U, T > \fBgetMap\fP (U start, U end) const "
 .br
-.RI "\fIGet all values within a range [start, end]. \fP"
+.RI "\fIGet all values within a range [start, end]\&. \fP"
 .ti -1c
 .RI "const std::map< U, T > \fBgetMap\fP (U start) const "
 .br
-.RI "\fIGet all values within a range [start, ]. \fP"
+.RI "\fIGet all values within a range [start, ]\&. \fP"
 .ti -1c
 .RI "const T \fBgetByKey\fP (U key) const "
 .br
-.RI "\fIGet value from key. \fP"
+.RI "\fIGet value from key\&. \fP"
 .ti -1c
 .RI "void \fBclear\fP ()"
 .br
-.RI "\fIClear all data. \fP"
+.RI "\fIClear all data\&. \fP"
 .ti -1c
 .RI "void \fBinsert\fP (U key, T object)"
 .br
-.RI "\fIAdd entry. \fP"
+.RI "\fIAdd entry\&. \fP"
 .ti -1c
 .RI "unsigned int \fBgetDatasetMaximumSize\fP () const "
 .br
@@ -79,19 +79,19 @@ Class to contain all the useful data about an object.
 .ti -1c
 .RI "T \fBgetValueComparison\fP (\fBComparisonType\fP type) const "
 .br
-.RI "\fIGet comparison values. \fP"
+.RI "\fIGet comparison values\&. \fP"
 .ti -1c
 .RI "T \fBgetMaximumValue\fP () const "
 .br
-.RI "\fIGet maximum value. \fP"
+.RI "\fIGet maximum value\&. \fP"
 .ti -1c
 .RI "T \fBgetMinimumValue\fP () const "
 .br
-.RI "\fIGet minimum value. \fP"
+.RI "\fIGet minimum value\&. \fP"
 .ti -1c
 .RI "T \fBgetAverageValue\fP () const "
 .br
-.RI "\fIGet average value value. \fP"
+.RI "\fIGet average value value\&. \fP"
 .in -1c
 .SS "Protected Attributes"
 
@@ -119,22 +119,22 @@ Class to contain all the useful data about an object.
 .ti -1c
 .RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBDataObject\fP &obj)"
 .br
-.RI "\fITo stream operator. \fP"
+.RI "\fITo stream operator\&. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
 
-.SS "template<class U, class T> class cryomesh::dataobjects::DataObject< U, T >"
-Class to contain all the useful data about an object. 
+.SS "template<class U, class T>class cryomesh::dataobjects::DataObject< U, T >"
+Class to contain all the useful data about an object\&. 
 
 Useful for output and plotting 
 .PP
-Definition at line 22 of file DataObject.h.
+Definition at line 22 of file DataObject\&.h\&.
 .SH "Member Enumeration Documentation"
 .PP 
 .SS "template<class U, class T> enum \fBcryomesh::dataobjects::DataObject\fP< U, T >::\fBComparisonType\fP"
 .PP
-Enum to signal the type of comparison to make. 
+Enum to signal the type of comparison to make\&. 
 .PP
 \fBEnumerator: \fP
 .in +1c
@@ -148,61 +148,61 @@ Enum to signal the type of comparison to make.
 \fB\fIAverageValue \fP\fP
 
 .PP
-Definition at line 29 of file DataObject.h.
+Definition at line 29 of file DataObject\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "template<class U, class T> \fBcryomesh::dataobjects::DataObject\fP< U, T >::\fBDataObject\fP ()\fC [inline]\fP"
 .PP
-Default contructor. 
+Default contructor\&. 
 .PP
-Definition at line 36 of file DataObject.h.
+Definition at line 36 of file DataObject\&.h\&.
 .SS "template<class U, class T> \fBcryomesh::dataobjects::DataObject\fP< U, T >::\fBDataObject\fP (unsigned intsz)\fC [inline]\fP"
 .PP
-Contructor with max size. \fBParameters:\fP
+Contructor with max size\&. \fBParameters:\fP
 .RS 4
 \fIunsigned\fP int The maximum size of the data set 
 .RE
 .PP
 
 .PP
-Definition at line 46 of file DataObject.h.
+Definition at line 46 of file DataObject\&.h\&.
 .SS "template<class U, class T> virtual \fBcryomesh::dataobjects::DataObject\fP< U, T >::~\fBDataObject\fP ()\fC [inline, virtual]\fP"
 .PP
-Default destructor. 
+Default destructor\&. 
 .PP
-Definition at line 53 of file DataObject.h.
+Definition at line 53 of file DataObject\&.h\&.
 .SH "Member Function Documentation"
 .PP 
-.SS "template<class U, class T> void \fBcryomesh::dataobjects::DataObject\fP< U, T >::clear ()\fC [inline]\fP"
+.SS "template<class U, class T> void \fBcryomesh::dataobjects::DataObject\fP< U, T >::\fBclear\fP ()\fC [inline]\fP"
 .PP
-Clear all data. 
+Clear all data\&. 
 .PP
-Definition at line 178 of file DataObject.h.
+Definition at line 178 of file DataObject\&.h\&.
 .PP
-Referenced by cryomesh::components::ImpulseCollection::refreshDataObject().
-.SS "template<class U, class T> void \fBcryomesh::dataobjects::DataObject\fP< U, T >::enableLogging (boolenable)\fC [inline]\fP"
+Referenced by cryomesh::components::ImpulseCollection::refreshDataObject()\&.
+.SS "template<class U, class T> void \fBcryomesh::dataobjects::DataObject\fP< U, T >::\fBenableLogging\fP (boolenable)\fC [inline]\fP"
 .PP
-Whether logging is enabled or not. \fBParameters:\fP
+Whether logging is enabled or not\&. \fBParameters:\fP
 .RS 4
 \fIbool\fP enable True to enable logging, false otherwise 
 .RE
 .PP
 
 .PP
-Definition at line 62 of file DataObject.h.
-.SS "template<class U, class T> T \fBcryomesh::dataobjects::DataObject\fP< U, T >::getAverageValue () const\fC [inline]\fP"
+Definition at line 62 of file DataObject\&.h\&.
+.SS "template<class U, class T> T \fBcryomesh::dataobjects::DataObject\fP< U, T >::\fBgetAverageValue\fP () const\fC [inline]\fP"
 .PP
-Get average value value. \fBReturns:\fP
+Get average value value\&. \fBReturns:\fP
 .RS 4
 T The resultant value 
 .RE
 .PP
 
 .PP
-Definition at line 284 of file DataObject.h.
-.SS "template<class U, class T> const T \fBcryomesh::dataobjects::DataObject\fP< U, T >::getByKey (Ukey) const\fC [inline]\fP"
+Definition at line 283 of file DataObject\&.h\&.
+.SS "template<class U, class T> const T \fBcryomesh::dataobjects::DataObject\fP< U, T >::\fBgetByKey\fP (Ukey) const\fC [inline]\fP"
 .PP
-Get value from key. \fBParameters:\fP
+Get value from key\&. \fBParameters:\fP
 .RS 4
 \fIU\fP key The key to find
 .RE
@@ -214,15 +214,27 @@ T The value found
 .PP
 
 .PP
-Definition at line 138 of file DataObject.h.
-.SS "template<class U, class T> unsigned int \fBcryomesh::dataobjects::DataObject\fP< U, T >::getDatasetMaximumSize () const\fC [inline]\fP"
+Definition at line 138 of file DataObject\&.h\&.
+.SS "template<class U, class T> unsigned int \fBcryomesh::dataobjects::DataObject\fP< U, T >::\fBgetDatasetMaximumSize\fP () const\fC [inline]\fP"
 .PP
-Definition at line 213 of file DataObject.h.
+Definition at line 212 of file DataObject\&.h\&.
 .PP
-Referenced by cryomesh::dataobjects::DataObject< common::Cycle, double >::insert(), and cryomesh::components::ImpulseCollection::refreshDataObject().
-.SS "template<class U, class T> const std::map<U, T> \fBcryomesh::dataobjects::DataObject\fP< U, T >::getMap (Ustart, Uend) const\fC [inline]\fP"
+Referenced by cryomesh::dataobjects::DataObject< common::Cycle, double >::insert(), and cryomesh::components::ImpulseCollection::refreshDataObject()\&.
+.SS "template<class U, class T> const std::map<U, T>& \fBcryomesh::dataobjects::DataObject\fP< U, T >::\fBgetMap\fP () const\fC [inline]\fP"
 .PP
-Get all values within a range [start, end]. \fBParameters:\fP
+Get all cycle values\&. \fBReturns:\fP
+.RS 4
+std::map<unsigned long int, double> & The cycle values 
+.RE
+.PP
+
+.PP
+Definition at line 81 of file DataObject\&.h\&.
+.PP
+Referenced by cryomesh::components::Node::getActivities()\&.
+.SS "template<class U, class T> const std::map<U, T> \fBcryomesh::dataobjects::DataObject\fP< U, T >::\fBgetMap\fP (Ustart, Uend) const\fC [inline]\fP"
+.PP
+Get all values within a range [start, end]\&. \fBParameters:\fP
 .RS 4
 \fIU\fP start The start cycle of the range 
 .br
@@ -236,22 +248,10 @@ std::map<unsigned long int, double> The cycle values
 .PP
 
 .PP
-Definition at line 106 of file DataObject.h.
-.SS "template<class U, class T> const std::map<U, T>& \fBcryomesh::dataobjects::DataObject\fP< U, T >::getMap () const\fC [inline]\fP"
+Definition at line 106 of file DataObject\&.h\&.
+.SS "template<class U, class T> const std::map<U, T> \fBcryomesh::dataobjects::DataObject\fP< U, T >::\fBgetMap\fP (Ustart) const\fC [inline]\fP"
 .PP
-Get all cycle values. \fBReturns:\fP
-.RS 4
-std::map<unsigned long int, double> & The cycle values 
-.RE
-.PP
-
-.PP
-Definition at line 81 of file DataObject.h.
-.PP
-Referenced by cryomesh::components::Node::getActivities().
-.SS "template<class U, class T> const std::map<U, T> \fBcryomesh::dataobjects::DataObject\fP< U, T >::getMap (Ustart) const\fC [inline]\fP"
-.PP
-Get all values within a range [start, ]. \fBParameters:\fP
+Get all values within a range [start, ]\&. \fBParameters:\fP
 .RS 4
 \fIU\fP start The start cycle of the range
 .RE
@@ -263,40 +263,40 @@ std::map<unsigned long int, double> The cycle values
 .PP
 
 .PP
-Definition at line 122 of file DataObject.h.
-.SS "template<class U, class T> T \fBcryomesh::dataobjects::DataObject\fP< U, T >::getMaximumValue () const\fC [inline]\fP"
+Definition at line 122 of file DataObject\&.h\&.
+.SS "template<class U, class T> T \fBcryomesh::dataobjects::DataObject\fP< U, T >::\fBgetMaximumValue\fP () const\fC [inline]\fP"
 .PP
-Get maximum value. \fBReturns:\fP
+Get maximum value\&. \fBReturns:\fP
 .RS 4
 T The resultant value 
 .RE
 .PP
 
 .PP
-Definition at line 264 of file DataObject.h.
-.SS "template<class U, class T> T \fBcryomesh::dataobjects::DataObject\fP< U, T >::getMinimumValue () const\fC [inline]\fP"
+Definition at line 263 of file DataObject\&.h\&.
+.SS "template<class U, class T> T \fBcryomesh::dataobjects::DataObject\fP< U, T >::\fBgetMinimumValue\fP () const\fC [inline]\fP"
 .PP
-Get minimum value. \fBReturns:\fP
+Get minimum value\&. \fBReturns:\fP
 .RS 4
 T The resultant value 
 .RE
 .PP
 
 .PP
-Definition at line 274 of file DataObject.h.
-.SS "template<class U, class T> std::map<U, T>& \fBcryomesh::dataobjects::DataObject\fP< U, T >::getMutableMap ()\fC [inline]\fP"
+Definition at line 273 of file DataObject\&.h\&.
+.SS "template<class U, class T> std::map<U, T>& \fBcryomesh::dataobjects::DataObject\fP< U, T >::\fBgetMutableMap\fP ()\fC [inline]\fP"
 .PP
-Get all mutable cycle values. \fBReturns:\fP
+Get all mutable cycle values\&. \fBReturns:\fP
 .RS 4
 std::map<U, T> & The mutable cycle values 
 .RE
 .PP
 
 .PP
-Definition at line 91 of file DataObject.h.
-.SS "template<class U, class T> T \fBcryomesh::dataobjects::DataObject\fP< U, T >::getValueComparison (\fBComparisonType\fPtype) const\fC [inline]\fP"
+Definition at line 91 of file DataObject\&.h\&.
+.SS "template<class U, class T> T \fBcryomesh::dataobjects::DataObject\fP< U, T >::\fBgetValueComparison\fP (\fBComparisonType\fPtype) const\fC [inline]\fP"
 .PP
-Get comparison values. \fBParameters:\fP
+Get comparison values\&. \fBParameters:\fP
 .RS 4
 \fIComparisonType\fP type The type of comparison to make
 .RE
@@ -308,12 +308,12 @@ T The result of the comparison
 .PP
 
 .PP
-Definition at line 230 of file DataObject.h.
+Definition at line 229 of file DataObject\&.h\&.
 .PP
-Referenced by cryomesh::dataobjects::DataObject< common::Cycle, double >::getAverageValue(), cryomesh::dataobjects::DataObject< common::Cycle, double >::getMaximumValue(), and cryomesh::dataobjects::DataObject< common::Cycle, double >::getMinimumValue().
-.SS "template<class U, class T> void \fBcryomesh::dataobjects::DataObject\fP< U, T >::insert (Ukey, Tobject)\fC [inline]\fP"
+Referenced by cryomesh::dataobjects::DataObject< common::Cycle, double >::getAverageValue(), cryomesh::dataobjects::DataObject< common::Cycle, double >::getMaximumValue(), and cryomesh::dataobjects::DataObject< common::Cycle, double >::getMinimumValue()\&.
+.SS "template<class U, class T> void \fBcryomesh::dataobjects::DataObject\fP< U, T >::\fBinsert\fP (Ukey, Tobject)\fC [inline]\fP"
 .PP
-Add entry. \fBParameters:\fP
+Add entry\&. \fBParameters:\fP
 .RS 4
 \fIunsigned\fP int cycle The cycle the value is on 
 .br
@@ -322,31 +322,31 @@ Add entry. \fBParameters:\fP
 .PP
 
 .PP
-Definition at line 191 of file DataObject.h.
+Definition at line 191 of file DataObject\&.h\&.
 .PP
-Referenced by cryomesh::components::Node::addActivity(), cryomesh::components::ImpulseCollection::refreshDataObject(), and cryomesh::components::Node::update().
-.SS "template<class U, class T> bool \fBcryomesh::dataobjects::DataObject\fP< U, T >::isLoggingEnabled ()\fC [inline]\fP"
+Referenced by cryomesh::components::Node::addActivity(), cryomesh::components::ImpulseCollection::refreshDataObject(), and cryomesh::components::Node::update()\&.
+.SS "template<class U, class T> bool \fBcryomesh::dataobjects::DataObject\fP< U, T >::\fBisLoggingEnabled\fP ()\fC [inline]\fP"
 .PP
-Check logging is enabled or not. \fBReturns:\fP
+Check logging is enabled or not\&. \fBReturns:\fP
 .RS 4
 bool enable Trueif logging enabled, flase otherwise 
 .RE
 .PP
 
 .PP
-Definition at line 71 of file DataObject.h.
+Definition at line 71 of file DataObject\&.h\&.
 .PP
-Referenced by cryomesh::components::ImpulseCollection::refreshDataObject(), and cryomesh::components::Node::update().
-.SS "template<class U, class T> void \fBcryomesh::dataobjects::DataObject\fP< U, T >::setDatasetMaximumSize (unsigned intsz)\fC [inline]\fP"
+Referenced by cryomesh::components::ImpulseCollection::refreshDataObject(), and cryomesh::components::Node::update()\&.
+.SS "template<class U, class T> void \fBcryomesh::dataobjects::DataObject\fP< U, T >::\fBsetDatasetMaximumSize\fP (unsigned intsz)\fC [inline]\fP"
 .PP
-Definition at line 217 of file DataObject.h.
+Definition at line 216 of file DataObject\&.h\&.
 .PP
-Referenced by cryomesh::components::Node::Node().
+Referenced by cryomesh::components::Node::Node()\&.
 .SH "Friends And Related Function Documentation"
 .PP 
 .SS "template<class U, class T> std::ostream& operator<< (std::ostream &os, const \fBDataObject\fP< U, T > &obj)\fC [friend]\fP"
 .PP
-To stream operator. \fBParameters:\fP
+To stream operator\&. \fBParameters:\fP
 .RS 4
 \fIstd::ostream\fP & os The output stream 
 .br
@@ -360,28 +360,28 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 159 of file DataObject.h.
+Definition at line 159 of file DataObject\&.h\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "template<class U, class T> unsigned int \fBcryomesh::dataobjects::DataObject\fP< U, T >::\fBdatasetMaximumSize\fP\fC [protected]\fP"
 .PP
-Definition at line 307 of file DataObject.h.
+Definition at line 306 of file DataObject\&.h\&.
 .PP
-Referenced by cryomesh::dataobjects::DataObject< common::Cycle, double >::getDatasetMaximumSize(), and cryomesh::dataobjects::DataObject< common::Cycle, double >::setDatasetMaximumSize().
+Referenced by cryomesh::dataobjects::DataObject< common::Cycle, double >::getDatasetMaximumSize(), and cryomesh::dataobjects::DataObject< common::Cycle, double >::setDatasetMaximumSize()\&.
 .SS "template<class U, class T> const unsigned int \fBcryomesh::dataobjects::DataObject\fP< U, T >::\fBDEFAULT_DATASET_SIZE\fP = 100\fC [static, protected]\fP"
 .PP
-Definition at line 314 of file DataObject.h.
+Definition at line 313 of file DataObject\&.h\&.
 .SS "template<class U, class T> bool \fBcryomesh::dataobjects::DataObject\fP< U, T >::\fBloggingEnabled\fP\fC [protected]\fP"
 .PP
-Definition at line 300 of file DataObject.h.
+Definition at line 299 of file DataObject\&.h\&.
 .PP
-Referenced by cryomesh::dataobjects::DataObject< common::Cycle, double >::enableLogging(), and cryomesh::dataobjects::DataObject< common::Cycle, double >::isLoggingEnabled().
+Referenced by cryomesh::dataobjects::DataObject< common::Cycle, double >::enableLogging(), and cryomesh::dataobjects::DataObject< common::Cycle, double >::isLoggingEnabled()\&.
 .SS "template<class U, class T> std::map<U, T> \fBcryomesh::dataobjects::DataObject\fP< U, T >::\fBvalueMap\fP\fC [protected]\fP"
 .PP
-Definition at line 293 of file DataObject.h.
+Definition at line 292 of file DataObject\&.h\&.
 .PP
-Referenced by cryomesh::dataobjects::DataObject< common::Cycle, double >::clear(), cryomesh::dataobjects::DataObject< common::Cycle, double >::getByKey(), cryomesh::dataobjects::DataObject< common::Cycle, double >::getMap(), cryomesh::dataobjects::DataObject< common::Cycle, double >::getMutableMap(), cryomesh::dataobjects::DataObject< common::Cycle, double >::getValueComparison(), and cryomesh::dataobjects::DataObject< common::Cycle, double >::insert().
+Referenced by cryomesh::dataobjects::DataObject< common::Cycle, double >::clear(), cryomesh::dataobjects::DataObject< common::Cycle, double >::getByKey(), cryomesh::dataobjects::DataObject< common::Cycle, double >::getMap(), cryomesh::dataobjects::DataObject< common::Cycle, double >::getMutableMap(), cryomesh::dataobjects::DataObject< common::Cycle, double >::getValueComparison(), and cryomesh::dataobjects::DataObject< common::Cycle, double >::insert()\&.
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for cryomesh from the source code.
+Generated automatically by Doxygen for cryomesh from the source code\&.

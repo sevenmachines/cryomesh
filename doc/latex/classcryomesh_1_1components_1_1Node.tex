@@ -1,0 +1,1658 @@
+\hypertarget{classcryomesh_1_1components_1_1Node}{\section{cryomesh\-:\-:components\-:\-:\-Node \-Class \-Reference}
+\label{classcryomesh_1_1components_1_1Node}\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}}
+}
+
+
+\hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} is an accumulation and computational nodal point of impulses.  
+
+
+
+
+{\ttfamily \#include $<$\-Node.\-h$>$}
+
+\-Inheritance diagram for cryomesh\-:\-:components\-:\-:\-Node\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcryomesh_1_1components_1_1Node}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classcryomesh_1_1components_1_1Node_a291becdd589b5bd338d5c0dd28199798}{\-Activation\-State} \{ \hyperlink{classcryomesh_1_1components_1_1Node_a291becdd589b5bd338d5c0dd28199798af92c268dc627d5fed69c32d6f0d3d82e}{\-Positive}, 
+\hyperlink{classcryomesh_1_1components_1_1Node_a291becdd589b5bd338d5c0dd28199798ab3953601aa3c39f46155bba156a29fb6}{\-Negative}, 
+\hyperlink{classcryomesh_1_1components_1_1Node_a291becdd589b5bd338d5c0dd28199798a4b7d78598441d7b9fd51e7bb58415f4b}{\-None}
+ \}
+\begin{DoxyCompactList}\small\item\em \-Enum representing posible activation states. \end{DoxyCompactList}\item 
+enum \hyperlink{classcryomesh_1_1components_1_1Node_adf36d853022d1b106766aefd3b9f3641}{\-Recovery\-Setting} \{ \hyperlink{classcryomesh_1_1components_1_1Node_adf36d853022d1b106766aefd3b9f3641a91a2a1e92850c99a22afb1574bd74574}{\-C\-L\-E\-A\-R\-\_\-\-A\-L\-L\-\_\-\-I\-M\-P\-U\-L\-S\-E\-S} =  1, 
+\hyperlink{classcryomesh_1_1components_1_1Node_adf36d853022d1b106766aefd3b9f3641a000e55e803e043c412dfbc2d222a34e6}{\-C\-L\-E\-A\-R\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-I\-M\-P\-U\-L\-S\-E\-S} =  2, 
+\hyperlink{classcryomesh_1_1components_1_1Node_adf36d853022d1b106766aefd3b9f3641a3d8ee8e0f92053fa06eaa4184f1854b1}{\-D\-E\-A\-C\-T\-I\-V\-A\-T\-E\-\_\-\-D\-U\-R\-I\-N\-G\-\_\-\-R\-E\-C\-O\-V\-E\-R\-Y} =  4
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1components_1_1Node_aa28b184629aa9412666b9674a10c45ab}{\-Node} ()
+\begin{DoxyCompactList}\small\item\em \-Contructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classcryomesh_1_1components_1_1Node_ae1ac5a2ed22ebc9b0cb7055b3e456097}{$\sim$\-Node} ()
+\begin{DoxyCompactList}\small\item\em \-Destructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcryomesh_1_1components_1_1Node_a960b083db047bb1b860d4ed09f9ad583}{update} ()
+\item 
+virtual void \hyperlink{classcryomesh_1_1components_1_1Node_ac40f33e5d0986d208b21302232f8a165}{force\-Fire} ()
+\begin{DoxyCompactList}\small\item\em \-Force the node to fire. \end{DoxyCompactList}\item 
+virtual boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} $>$ \hyperlink{classcryomesh_1_1components_1_1Node_a1098a370eba39dce1388d657e3d3aef9}{add\-Impulse} (boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} $>$ impulse)
+\begin{DoxyCompactList}\small\item\em \-Add incoming \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse}. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcryomesh_1_1components_1_1Node_af8ab49ec82ff876549f75123d65c41b4}{add\-Impulses} (std\-::list$<$ boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} $>$ $>$ \hyperlink{classcryomesh_1_1components_1_1Node_a8e9ae8373052bb63f2f1e6e453a3c18d}{impulses})
+\begin{DoxyCompactList}\small\item\em \-Add a list of incoming \-Impulses. \end{DoxyCompactList}\item 
+const \hyperlink{classcryomesh_1_1common_1_1Connector}{common\-::\-Connector}$<$ \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node}, \*
+\hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection} $>$ \& \hyperlink{classcryomesh_1_1components_1_1Node_a28367d5dc76da04958ca22f6384f6073}{get\-Connector} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the \-Connector object for this \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node}. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1common_1_1Connector}{common\-::\-Connector}$<$ \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node}, \*
+\hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection} $>$ \& \hyperlink{classcryomesh_1_1components_1_1Node_ae28261bb67b7412a67b21a4e4adaa9b1}{get\-Mutable\-Connector} ()
+\begin{DoxyCompactList}\small\item\em \-Get the mutable \-Connector object for this \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node}. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1components_1_1Node_a501c4e986a566a4e7fc5f9c87e9c4d8e}{is\-Input\-Isolated} () const 
+\item 
+bool \hyperlink{classcryomesh_1_1components_1_1Node_a211678e84d71cb71e3721eb9725fa934}{is\-Output\-Isolated} () const 
+\item 
+void \hyperlink{classcryomesh_1_1components_1_1Node_a4a7775d987020170538f059688ff4a1f}{connect\-Input} (boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection} $>$ con)
+\item 
+void \hyperlink{classcryomesh_1_1components_1_1Node_a660adcc4e2b3b7a427ad4625e5279de4}{connect\-Output} (boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection} $>$ con)
+\item 
+const \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \& \hyperlink{classcryomesh_1_1components_1_1Node_a63316f8a1ad0ffe3ee22f8b455ef27a4}{get\-Impulses} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the collection of \-Impulses for this \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node}. \end{DoxyCompactList}\item 
+const boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} $>$ \hyperlink{classcryomesh_1_1components_1_1Node_a8a90b1faf2e6b633bbb4853e522c29b7}{get\-Emitted\-Impulse} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} that is emitted. \end{DoxyCompactList}\item 
+boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} $>$ \hyperlink{classcryomesh_1_1components_1_1Node_aa6e0c0a0063e657053482aac777759d3}{get\-Mutable\-Emitted\-Impulse} ()
+\begin{DoxyCompactList}\small\item\em \-Get the mutable \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} that is emitted. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcryomesh_1_1components_1_1Node_a8fc7efcfff86d2ca72b54166f600b7d0}{emit\-Impulse\-Positive} ()
+\begin{DoxyCompactList}\small\item\em \-Emit a positive impulse to outgoing connections. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcryomesh_1_1components_1_1Node_a75addf25b1b16bf1476cf19f00d7513d}{emit\-Impulse\-Negative} ()
+\begin{DoxyCompactList}\small\item\em \-Emit a negative impulse to outgoing connections. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \& \hyperlink{classcryomesh_1_1components_1_1Node_adaa0b9f4c9a6130525fce2e43f418bc3}{get\-Mutable\-Impulses} ()
+\begin{DoxyCompactList}\small\item\em \-Get the mutable collection of \-Impulses for this \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node}. \end{DoxyCompactList}\item 
+const std\-::map$<$ \hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle}, \*
+double $>$ \& \hyperlink{classcryomesh_1_1components_1_1Node_a98801c702bf6613f06880f7cc577ddd7}{get\-Activities} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the collection of all activities. \end{DoxyCompactList}\item 
+double \hyperlink{classcryomesh_1_1components_1_1Node_ab9f3406d26f50f3dcee4b19c30cfc893}{update\-Activity} ()
+\begin{DoxyCompactList}\small\item\em \-Update and get the current activity of the node. \end{DoxyCompactList}\item 
+double \hyperlink{classcryomesh_1_1components_1_1Node_a2074cbfe458cda6fc10997ae6965f168}{update\-Activity} (const \hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle} \&cycle)
+\begin{DoxyCompactList}\small\item\em \-Update and get the activity of the node on specific cycle. \end{DoxyCompactList}\item 
+double \hyperlink{classcryomesh_1_1components_1_1Node_a355e414f9a353883fd0f4b7cae24d6cc}{get\-Activity} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the current activity of the node. \end{DoxyCompactList}\item 
+double \hyperlink{classcryomesh_1_1components_1_1Node_a07c29936e9a695e32365708f8c381456}{get\-Activity} (const \hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle} \&cycle) const 
+\begin{DoxyCompactList}\small\item\em \-Get the activity of the node on specific cycle. \end{DoxyCompactList}\item 
+double \hyperlink{classcryomesh_1_1components_1_1Node_ab561d1b0b10339ad8ae2280a8063677b}{get\-Activity\-Threshold} () const 
+\item 
+double \hyperlink{classcryomesh_1_1components_1_1Node_acf3b0de410fee4350390bd527c544187}{set\-Activity} (double activity)
+\begin{DoxyCompactList}\small\item\em \-Set the current activity of the node. \end{DoxyCompactList}\item 
+double \hyperlink{classcryomesh_1_1components_1_1Node_aacac1b5adbafe83a7dcae288a607ee31}{set\-Activity} (const \hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle} \&cycle, double activity)
+\begin{DoxyCompactList}\small\item\em \-Set the activity at cycle of the node. \end{DoxyCompactList}\item 
+boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1manager_1_1DatabaseObject}{manager\-::\-Database\-Object} $>$ \hyperlink{classcryomesh_1_1components_1_1Node_a811e64601504ff99536c2680429c7582}{get\-Database\-Object} () const 
+\begin{DoxyCompactList}\small\item\em \-Return a database object for this node. \end{DoxyCompactList}\item 
+const spacial\-::\-Point \& \hyperlink{classcryomesh_1_1components_1_1Node_a313531f48e1ccc3902fdeb313d41bd7b}{get\-Position} () const 
+\begin{DoxyCompactList}\small\item\em get the position of the node \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1components_1_1Node_a970e8e8ae18053bd9e087ce7faf720de}{set\-Position} (const spacial\-::\-Point \&new\-\_\-position)
+\begin{DoxyCompactList}\small\item\em \-Set the spacial position of the node, remembering to update connections lengths. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1components_1_1Node_a291becdd589b5bd338d5c0dd28199798}{\-Activation\-State} \hyperlink{classcryomesh_1_1components_1_1Node_ac0f6e2c8823c98dc3d85091b2deef3f7}{get\-Last\-Activation\-State} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the last activation state. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1components_1_1Node_a5ec290205a68a8635a740ae32608cebf}{randomise} ()
+\begin{DoxyCompactList}\small\item\em \-Randomise the nodes state. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcryomesh_1_1components_1_1Node_a42acc61b6b0d590433215535d3bc67cd}{enable\-Debug} (bool b)
+\item 
+bool \hyperlink{classcryomesh_1_1components_1_1Node_a83303fef90a3093807d76a59e4df5288}{is\-Triggered} (\hyperlink{classcryomesh_1_1components_1_1Node_a291becdd589b5bd338d5c0dd28199798}{\-Activation\-State} state=\hyperlink{classcryomesh_1_1components_1_1Node_a291becdd589b5bd338d5c0dd28199798a4b7d78598441d7b9fd51e7bb58415f4b}{\-None})
+\begin{DoxyCompactList}\small\item\em \-Check if \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} is currently triggered. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1components_1_1Node_af2943ca887ce9c2b1a65297cae14d752}{is\-Active} (const \hyperlink{classcryomesh_1_1components_1_1Node_a291becdd589b5bd338d5c0dd28199798}{\-Activation\-State} state=\hyperlink{classcryomesh_1_1components_1_1Node_a291becdd589b5bd338d5c0dd28199798a4b7d78598441d7b9fd51e7bb58415f4b}{\-None})
+\begin{DoxyCompactList}\small\item\em \-Check if \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} is currently activated. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1components_1_1Node_a2309ba6b3ffa640410dfdc1630a66400}{is\-Live} ()
+\begin{DoxyCompactList}\small\item\em \-Check if \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} is live, ie active at any point in now or the future. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1components_1_1Node_ade4a1e563ab60b7d8ff8fa6830d2fcbf}{destroy\-All\-Connections} ()
+\begin{DoxyCompactList}\small\item\em \-Destroy all connections. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1components_1_1Node_ad61b50a382ae7d64cedb8f8f8a5d66cd}{destroy\-All\-Input\-Connections} ()
+\begin{DoxyCompactList}\small\item\em \-Destroy \-Input connections by removing them all from both their attached input and output nodes. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1components_1_1Node_a8147d9a370a680ffb6c847a0df276114}{destroy\-All\-Output\-Connections} ()
+\begin{DoxyCompactList}\small\item\em \-Destroy \-Output connections by removing them all from both their attached input and output nodes. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1components_1_1Node_a2f55aa5adcac4a2f1aa1f0a7c8fc697d}{is\-Primary\-Input\-Attached\-Node} () const 
+\item 
+bool \hyperlink{classcryomesh_1_1components_1_1Node_a8466a252c7a4e6fb2d825826be53e218}{is\-Primary\-Output\-Attached\-Node} () const 
+\item 
+std\-::vector$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection} $>$ $>$ \hyperlink{classcryomesh_1_1components_1_1Node_a0f172d0f98de3d008d2d0a5efa15d3b2}{get\-Primary\-Input\-Connections} ()
+\item 
+std\-::vector$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection} $>$ $>$ \hyperlink{classcryomesh_1_1components_1_1Node_aa0ac6ca5e0d98261840760bdc07e4d3f}{get\-Primary\-Output\-Connections} ()
+\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1components_1_1Node_a036878d7028df14d1015c0ce413d4038}{print\-Connections} (std\-::ostream \&os, const std\-::map$<$ boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection} $>$ $>$ \&all\-\_\-cons, const std\-::string formatter=\char`\"{}\char`\"{}) const 
+\item 
+virtual void \hyperlink{classcryomesh_1_1dataobjects_1_1DataObjectController_a3e510413675407ec0a6745345ca9a3a8}{enable\-Logging} (bool enable)
+\begin{DoxyCompactList}\small\item\em \-Whether logging is enabled or not. \end{DoxyCompactList}\item 
+virtual const std\-::map\*
+$<$ unsigned long int, double $>$ \& \hyperlink{classcryomesh_1_1dataobjects_1_1DataObjectController_a70a03ee28392ecf2e039702a18511f05}{get\-Map} ()
+\begin{DoxyCompactList}\small\item\em \-Get all cycle values. \end{DoxyCompactList}\item 
+virtual const \*
+\hyperlink{classcryomesh_1_1dataobjects_1_1DataObject}{dataobjects\-::\-Data\-Object}\*
+$<$ unsigned long int, double $>$ \& \hyperlink{classcryomesh_1_1dataobjects_1_1DataObjectController_aa919e8676a611028c6b6e6791c87f438}{get\-Data\-Object} ()
+\begin{DoxyCompactList}\small\item\em \-Get data object. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcryomesh_1_1dataobjects_1_1DataObjectController_ae015efe3d10cced82d5043f560cbe04f}{refresh\-Data\-Object} ()
+\begin{DoxyCompactList}\small\item\em \-Function to allow refreshing implementation if required by subclasses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} $>$ \hyperlink{classcryomesh_1_1components_1_1Node_a3ffbf4f53801b9e83c815e97e3072302}{get\-Random} (const spacial\-::\-Point \&max\-\_\-point=\hyperlink{classcryomesh_1_1components_1_1Node_a3f4f3b7d2bba533fc0487b4f10c1efcd}{\-M\-A\-X\-\_\-\-B\-O\-U\-N\-D\-I\-N\-G\-\_\-\-B\-O\-X\-\_\-\-P\-O\-I\-N\-T})
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{classcryomesh_1_1components_1_1Node_ae5b4fa1289a3ab819710ff7a40a77282}{\-M\-A\-X\-\_\-\-A\-C\-T\-I\-V\-I\-T\-I\-E\-S\-\_\-\-L\-E\-N\-G\-T\-H} = 10
+\item 
+static const double \hyperlink{classcryomesh_1_1components_1_1Node_adcfc8e07f6d216817a45f1c27190967b}{\-M\-A\-X\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D} = 3 $\ast$ \hyperlink{classcryomesh_1_1components_1_1Impulse_af8e9eb795f1ea3cef81d6afeb7166ad2}{\-Impulse\-::\-M\-A\-X\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y}
+\item 
+static const double \hyperlink{classcryomesh_1_1components_1_1Node_a5ed72f665cf7b32914e61b4655bd52ca}{\-M\-I\-N\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D} = 1 $\ast$ \hyperlink{classcryomesh_1_1components_1_1Impulse_af8e9eb795f1ea3cef81d6afeb7166ad2}{\-Impulse\-::\-M\-A\-X\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y}
+\item 
+static const spacial\-::\-Point \hyperlink{classcryomesh_1_1components_1_1Node_a3f4f3b7d2bba533fc0487b4f10c1efcd}{\-M\-A\-X\-\_\-\-B\-O\-U\-N\-D\-I\-N\-G\-\_\-\-B\-O\-X\-\_\-\-P\-O\-I\-N\-T} = spacial\-::\-Point(100, 100, 100)
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classcryomesh_1_1components_1_1Node_a291becdd589b5bd338d5c0dd28199798}{\-Node\-::\-Activation\-State} \hyperlink{classcryomesh_1_1components_1_1Node_adeebae01197045204f1b9cda1ece3372}{check\-Activation\-State} ()
+\begin{DoxyCompactList}\small\item\em \-Check level of impulses and decide whether to activate the node. \end{DoxyCompactList}\item 
+virtual \hyperlink{classcryomesh_1_1components_1_1Node_a291becdd589b5bd338d5c0dd28199798}{\-Node\-::\-Activation\-State} \hyperlink{classcryomesh_1_1components_1_1Node_ac4f969b7c236a6e910031101879c8da3}{check\-Fire} ()
+\begin{DoxyCompactList}\small\item\em \-Check if the object is ready to fire off an impulse and carry it out. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcryomesh_1_1components_1_1Node_ade03584e4db3f8e1eeddc9ad371b4658}{update\-Impulses} ()
+\begin{DoxyCompactList}\small\item\em \-Update the collection of impulses by one cycle. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcryomesh_1_1components_1_1Node_a3323a7f7e9958b78552746ddf374c4fc}{emit\-Impulse} (bool positive)
+\begin{DoxyCompactList}\small\item\em \-Emit an impulse to outgoing connections. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classcryomesh_1_1components_1_1Node_ab916e0beff2dcecd14c284dd63bd0585}{add\-Activity} (\hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle}, double activity)
+\begin{DoxyCompactList}\small\item\em \-Add an activity to the list of activities. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcryomesh_1_1components_1_1Node_ab769e1efe1fd3e0ae9ff0a7643dd473c}{update\-Position} ()
+\begin{DoxyCompactList}\small\item\em \-Recalculate state of node and connections based on current position. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcryomesh_1_1components_1_1Node_a92bbb37859ba4b810381bd733ad5d63c}{enter\-Recovery} (const int recovery\-\_\-settings=\hyperlink{classcryomesh_1_1components_1_1Node_adf36d853022d1b106766aefd3b9f3641a91a2a1e92850c99a22afb1574bd74574}{\-C\-L\-E\-A\-R\-\_\-\-A\-L\-L\-\_\-\-I\-M\-P\-U\-L\-S\-E\-S})
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1dataobjects_1_1DataObject}{dataobjects\-::\-Data\-Object}\*
+$<$ unsigned long int, double $>$ \hyperlink{classcryomesh_1_1dataobjects_1_1DataObjectController_aa13d30e9fa2f1caa0510635214d4bb26}{data\-Object}
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classcryomesh_1_1components_1_1Node_a270451d7286a4e6f344559a3d48d1193}{activity\-Threshold}
+\item 
+boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1common_1_1Connector}{common\-::\-Connector}$<$ \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node}, \*
+\hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection} $>$ $>$ \hyperlink{classcryomesh_1_1components_1_1Node_a43b68f9f1a83bca4d4fc4f55bb8dd8de}{connector}
+\item 
+\hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \hyperlink{classcryomesh_1_1components_1_1Node_a8e9ae8373052bb63f2f1e6e453a3c18d}{impulses}
+\item 
+boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} $>$ \hyperlink{classcryomesh_1_1components_1_1Node_a6b5e004fc2bbdbd8ec7173b44af8ffe5}{emitted\-Impulse}
+\item 
+\hyperlink{classcryomesh_1_1dataobjects_1_1DataObject}{dataobjects\-::\-Data\-Object}\*
+$<$ \hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle}, double $>$ \hyperlink{classcryomesh_1_1components_1_1Node_a39bf3a9c006d8ee03769d6b86127e7cf}{activities}
+\item 
+spacial\-::\-Point \hyperlink{classcryomesh_1_1components_1_1Node_afad345a6d8cc1eacc555acde8c065b61}{position}
+\item 
+\hyperlink{classcryomesh_1_1components_1_1Node_a291becdd589b5bd338d5c0dd28199798}{\-Activation\-State} \hyperlink{classcryomesh_1_1components_1_1Node_ab94a09be9e58cc248f9d62ed5c45c83d}{last\-Activation\-State}
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1components_1_1Node_aa13c716dda529b01000661b942327bd6}{operator$<$$<$} (std\-::ostream \&os, const \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} \&obj)
+\begin{DoxyCompactList}\small\item\em \-To stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} is an accumulation and computational nodal point of impulses. 
+
+\-A \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} represents the end point of one or many connections. \-Here, \-Impulses are accumulated and new \-Impulses generated depending on some determining criteria 
+
+\-Definition at line 38 of file \-Node.\-h.
+
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\hypertarget{classcryomesh_1_1components_1_1Node_a291becdd589b5bd338d5c0dd28199798}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!\-Activation\-State@{\-Activation\-State}}
+\index{\-Activation\-State@{\-Activation\-State}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{\-Activation\-State}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cryomesh\-::components\-::\-Node\-::\-Activation\-State}}}\label{classcryomesh_1_1components_1_1Node_a291becdd589b5bd338d5c0dd28199798}
+
+
+\-Enum representing posible activation states. 
+
+\-Last activation state. \begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-Positive@{\-Positive}!cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}}\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!\-Positive@{\-Positive}}\item[{\em 
+\hypertarget{classcryomesh_1_1components_1_1Node_a291becdd589b5bd338d5c0dd28199798af92c268dc627d5fed69c32d6f0d3d82e}{\-Positive}\label{classcryomesh_1_1components_1_1Node_a291becdd589b5bd338d5c0dd28199798af92c268dc627d5fed69c32d6f0d3d82e}
+}]\index{\-Negative@{\-Negative}!cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}}\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!\-Negative@{\-Negative}}\item[{\em 
+\hypertarget{classcryomesh_1_1components_1_1Node_a291becdd589b5bd338d5c0dd28199798ab3953601aa3c39f46155bba156a29fb6}{\-Negative}\label{classcryomesh_1_1components_1_1Node_a291becdd589b5bd338d5c0dd28199798ab3953601aa3c39f46155bba156a29fb6}
+}]\index{\-None@{\-None}!cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}}\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!\-None@{\-None}}\item[{\em 
+\hypertarget{classcryomesh_1_1components_1_1Node_a291becdd589b5bd338d5c0dd28199798a4b7d78598441d7b9fd51e7bb58415f4b}{\-None}\label{classcryomesh_1_1components_1_1Node_a291becdd589b5bd338d5c0dd28199798a4b7d78598441d7b9fd51e7bb58415f4b}
+}]\end{description}
+\end{Desc}
+
+
+
+\-Definition at line 45 of file \-Node.\-h.
+
+\hypertarget{classcryomesh_1_1components_1_1Node_adf36d853022d1b106766aefd3b9f3641}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!\-Recovery\-Setting@{\-Recovery\-Setting}}
+\index{\-Recovery\-Setting@{\-Recovery\-Setting}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{\-Recovery\-Setting}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cryomesh\-::components\-::\-Node\-::\-Recovery\-Setting}}}\label{classcryomesh_1_1components_1_1Node_adf36d853022d1b106766aefd3b9f3641}
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-C\-L\-E\-A\-R\-\_\-\-A\-L\-L\-\_\-\-I\-M\-P\-U\-L\-S\-E\-S@{\-C\-L\-E\-A\-R\-\_\-\-A\-L\-L\-\_\-\-I\-M\-P\-U\-L\-S\-E\-S}!cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}}\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!\-C\-L\-E\-A\-R\-\_\-\-A\-L\-L\-\_\-\-I\-M\-P\-U\-L\-S\-E\-S@{\-C\-L\-E\-A\-R\-\_\-\-A\-L\-L\-\_\-\-I\-M\-P\-U\-L\-S\-E\-S}}\item[{\em 
+\hypertarget{classcryomesh_1_1components_1_1Node_adf36d853022d1b106766aefd3b9f3641a91a2a1e92850c99a22afb1574bd74574}{\-C\-L\-E\-A\-R\-\_\-\-A\-L\-L\-\_\-\-I\-M\-P\-U\-L\-S\-E\-S}\label{classcryomesh_1_1components_1_1Node_adf36d853022d1b106766aefd3b9f3641a91a2a1e92850c99a22afb1574bd74574}
+}]\index{\-C\-L\-E\-A\-R\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-I\-M\-P\-U\-L\-S\-E\-S@{\-C\-L\-E\-A\-R\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-I\-M\-P\-U\-L\-S\-E\-S}!cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}}\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!\-C\-L\-E\-A\-R\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-I\-M\-P\-U\-L\-S\-E\-S@{\-C\-L\-E\-A\-R\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-I\-M\-P\-U\-L\-S\-E\-S}}\item[{\em 
+\hypertarget{classcryomesh_1_1components_1_1Node_adf36d853022d1b106766aefd3b9f3641a000e55e803e043c412dfbc2d222a34e6}{\-C\-L\-E\-A\-R\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-I\-M\-P\-U\-L\-S\-E\-S}\label{classcryomesh_1_1components_1_1Node_adf36d853022d1b106766aefd3b9f3641a000e55e803e043c412dfbc2d222a34e6}
+}]\index{\-D\-E\-A\-C\-T\-I\-V\-A\-T\-E\-\_\-\-D\-U\-R\-I\-N\-G\-\_\-\-R\-E\-C\-O\-V\-E\-R\-Y@{\-D\-E\-A\-C\-T\-I\-V\-A\-T\-E\-\_\-\-D\-U\-R\-I\-N\-G\-\_\-\-R\-E\-C\-O\-V\-E\-R\-Y}!cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}}\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!\-D\-E\-A\-C\-T\-I\-V\-A\-T\-E\-\_\-\-D\-U\-R\-I\-N\-G\-\_\-\-R\-E\-C\-O\-V\-E\-R\-Y@{\-D\-E\-A\-C\-T\-I\-V\-A\-T\-E\-\_\-\-D\-U\-R\-I\-N\-G\-\_\-\-R\-E\-C\-O\-V\-E\-R\-Y}}\item[{\em 
+\hypertarget{classcryomesh_1_1components_1_1Node_adf36d853022d1b106766aefd3b9f3641a3d8ee8e0f92053fa06eaa4184f1854b1}{\-D\-E\-A\-C\-T\-I\-V\-A\-T\-E\-\_\-\-D\-U\-R\-I\-N\-G\-\_\-\-R\-E\-C\-O\-V\-E\-R\-Y}\label{classcryomesh_1_1components_1_1Node_adf36d853022d1b106766aefd3b9f3641a3d8ee8e0f92053fa06eaa4184f1854b1}
+}]\end{description}
+\end{Desc}
+
+
+
+\-Definition at line 49 of file \-Node.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcryomesh_1_1components_1_1Node_aa28b184629aa9412666b9674a10c45ab}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!\-Node@{\-Node}}
+\index{\-Node@{\-Node}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::components\-::\-Node\-::\-Node} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Node_aa28b184629aa9412666b9674a10c45ab}
+
+
+\-Contructor. 
+
+\-Contructor for \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} 
+
+\-Definition at line 37 of file \-Node.\-cpp.
+
+
+
+\-References activities, connector, emitted\-Impulse, \-M\-A\-X\-\_\-\-A\-C\-T\-I\-V\-I\-T\-I\-E\-S\-\_\-\-L\-E\-N\-G\-T\-H, and cryomesh\-::dataobjects\-::\-Data\-Object$<$ U, T $>$\-::set\-Dataset\-Maximum\-Size().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_ae1ac5a2ed22ebc9b0cb7055b3e456097}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!$\sim$\-Node@{$\sim$\-Node}}
+\index{$\sim$\-Node@{$\sim$\-Node}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{$\sim$\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::components\-::\-Node\-::$\sim$\-Node} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_ae1ac5a2ed22ebc9b0cb7055b3e456097}
+
+
+\-Destructor. 
+
+\-Destructor for \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} 
+
+\-Definition at line 46 of file \-Node.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1components_1_1Node_ab916e0beff2dcecd14c284dd63bd0585}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!add\-Activity@{add\-Activity}}
+\index{add\-Activity@{add\-Activity}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{add\-Activity}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::components\-::\-Node\-::add\-Activity} (
+\begin{DoxyParamCaption}
+\item[{{\bf common\-::\-Cycle}}]{cycle, }
+\item[{double}]{activity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_ab916e0beff2dcecd14c284dd63bd0585}
+
+
+\-Add an activity to the list of activities. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Cycle} & cycle \-The cycle this activity is on \\
+\hline
+{\em double} & activity \-The activity to add\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The current activity 
+\end{DoxyReturn}
+
+
+\-Definition at line 291 of file \-Node.\-cpp.
+
+
+
+\-References activities, and cryomesh\-::dataobjects\-::\-Data\-Object$<$ U, T $>$\-::insert().
+
+
+
+\-Referenced by set\-Activity().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a1098a370eba39dce1388d657e3d3aef9}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!add\-Impulse@{add\-Impulse}}
+\index{add\-Impulse@{add\-Impulse}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{add\-Impulse}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$ {\bf \-Impulse} $>$ {\bf cryomesh\-::components\-::\-Node\-::add\-Impulse} (
+\begin{DoxyParamCaption}
+\item[{boost\-::shared\-\_\-ptr$<$ {\bf \-Impulse} $>$}]{impulse}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_a1098a370eba39dce1388d657e3d3aef9}
+
+
+\-Add incoming \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em boost\-::shared\-\_\-ptr$<$\-Impulse$>$} & impulse \-The \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} to add \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+boost\-::shared\-\_\-ptr$<$\-Impulse$>$ \-The impulse added, null if none added 
+\end{DoxyReturn}
+
+
+\-Definition at line 141 of file \-Node.\-cpp.
+
+
+
+\-References get\-Mutable\-Impulses(), and cryomesh\-::common\-::\-Time\-Keeper\-::get\-Time\-Keeper().
+
+
+
+\-Referenced by add\-Impulses(), and force\-Fire().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_af8ab49ec82ff876549f75123d65c41b4}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!add\-Impulses@{add\-Impulses}}
+\index{add\-Impulses@{add\-Impulses}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{add\-Impulses}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Node\-::add\-Impulses} (
+\begin{DoxyParamCaption}
+\item[{std\-::list$<$ boost\-::shared\-\_\-ptr$<$ {\bf \-Impulse} $>$ $>$}]{impulses}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_af8ab49ec82ff876549f75123d65c41b4}
+
+
+\-Add a list of incoming \-Impulses. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::list$<$boost\-::shared\-\_\-ptr$<$\-Impulse$>$} & $>$ impulses \-The \-Impulses to add \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 151 of file \-Node.\-cpp.
+
+
+
+\-References add\-Impulse(), get\-Impulses(), and impulses.
+
+\hypertarget{classcryomesh_1_1components_1_1Node_adeebae01197045204f1b9cda1ece3372}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!check\-Activation\-State@{check\-Activation\-State}}
+\index{check\-Activation\-State@{check\-Activation\-State}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{check\-Activation\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Node\-::\-Activation\-State} {\bf cryomesh\-::components\-::\-Node\-::check\-Activation\-State} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_adeebae01197045204f1b9cda1ece3372}
+
+
+\-Check level of impulses and decide whether to activate the node. 
+
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{classcryomesh_1_1components_1_1Node_a291becdd589b5bd338d5c0dd28199798}{\-Node\-::\-Activation\-State} \-Positive if activity is over threshold, negative if under -\/threshold, \-None otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 173 of file \-Node.\-cpp.
+
+
+
+\-References get\-Activity\-Threshold(), \-Negative, \-None, \-Positive, and update\-Activity().
+
+
+
+\-Referenced by check\-Fire().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_ac4f969b7c236a6e910031101879c8da3}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!check\-Fire@{check\-Fire}}
+\index{check\-Fire@{check\-Fire}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{check\-Fire}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Node\-::\-Activation\-State} {\bf cryomesh\-::components\-::\-Node\-::check\-Fire} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_ac4f969b7c236a6e910031101879c8da3}
+
+
+\-Check if the object is ready to fire off an impulse and carry it out. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Activation\-State \-Return the action that was taken 
+\end{DoxyReturn}
+
+
+\-Definition at line 92 of file \-Node.\-cpp.
+
+
+
+\-References check\-Activation\-State(), emit\-Impulse\-Negative(), emit\-Impulse\-Positive(), enter\-Recovery(), \-Negative, and \-Positive.
+
+
+
+\-Referenced by update().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a4a7775d987020170538f059688ff4a1f}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!connect\-Input@{connect\-Input}}
+\index{connect\-Input@{connect\-Input}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{connect\-Input}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Node\-::connect\-Input} (
+\begin{DoxyParamCaption}
+\item[{boost\-::shared\-\_\-ptr$<$ {\bf \-Connection} $>$}]{con}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Node_a4a7775d987020170538f059688ff4a1f}
+
+
+\-Definition at line 469 of file \-Node.\-cpp.
+
+
+
+\-References get\-Mutable\-Connector().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a660adcc4e2b3b7a427ad4625e5279de4}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!connect\-Output@{connect\-Output}}
+\index{connect\-Output@{connect\-Output}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{connect\-Output}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Node\-::connect\-Output} (
+\begin{DoxyParamCaption}
+\item[{boost\-::shared\-\_\-ptr$<$ {\bf \-Connection} $>$}]{con}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Node_a660adcc4e2b3b7a427ad4625e5279de4}
+
+
+\-Definition at line 472 of file \-Node.\-cpp.
+
+
+
+\-References get\-Mutable\-Connector().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_ade4a1e563ab60b7d8ff8fa6830d2fcbf}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!destroy\-All\-Connections@{destroy\-All\-Connections}}
+\index{destroy\-All\-Connections@{destroy\-All\-Connections}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{destroy\-All\-Connections}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Node\-::destroy\-All\-Connections} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Node_ade4a1e563ab60b7d8ff8fa6830d2fcbf}
+
+
+\-Destroy all connections. 
+
+
+
+\-Definition at line 476 of file \-Node.\-cpp.
+
+
+
+\-References destroy\-All\-Input\-Connections(), and destroy\-All\-Output\-Connections().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_ad61b50a382ae7d64cedb8f8f8a5d66cd}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!destroy\-All\-Input\-Connections@{destroy\-All\-Input\-Connections}}
+\index{destroy\-All\-Input\-Connections@{destroy\-All\-Input\-Connections}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{destroy\-All\-Input\-Connections}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Node\-::destroy\-All\-Input\-Connections} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Node_ad61b50a382ae7d64cedb8f8f8a5d66cd}
+
+
+\-Destroy \-Input connections by removing them all from both their attached input and output nodes. 
+
+
+
+\-Definition at line 481 of file \-Node.\-cpp.
+
+
+
+\-References get\-Mutable\-Connector().
+
+
+
+\-Referenced by destroy\-All\-Connections().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a8147d9a370a680ffb6c847a0df276114}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!destroy\-All\-Output\-Connections@{destroy\-All\-Output\-Connections}}
+\index{destroy\-All\-Output\-Connections@{destroy\-All\-Output\-Connections}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{destroy\-All\-Output\-Connections}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Node\-::destroy\-All\-Output\-Connections} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Node_a8147d9a370a680ffb6c847a0df276114}
+
+
+\-Destroy \-Output connections by removing them all from both their attached input and output nodes. 
+
+
+
+\-Definition at line 498 of file \-Node.\-cpp.
+
+
+
+\-References get\-Mutable\-Connector().
+
+
+
+\-Referenced by destroy\-All\-Connections().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a3323a7f7e9958b78552746ddf374c4fc}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!emit\-Impulse@{emit\-Impulse}}
+\index{emit\-Impulse@{emit\-Impulse}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{emit\-Impulse}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Node\-::emit\-Impulse} (
+\begin{DoxyParamCaption}
+\item[{bool}]{positive}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_a3323a7f7e9958b78552746ddf374c4fc}
+
+
+\-Emit an impulse to outgoing connections. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em bool} & positive \-Is the impulse to be emitted positive or negative \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 199 of file \-Node.\-cpp.
+
+
+
+\-References cryomesh\-::components\-::\-Connection\-::add(), get\-Emitted\-Impulse(), cryomesh\-::components\-::\-Connection\-::get\-Impulses(), get\-Mutable\-Connector(), and get\-Mutable\-Emitted\-Impulse().
+
+
+
+\-Referenced by emit\-Impulse\-Negative(), and emit\-Impulse\-Positive().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a75addf25b1b16bf1476cf19f00d7513d}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!emit\-Impulse\-Negative@{emit\-Impulse\-Negative}}
+\index{emit\-Impulse\-Negative@{emit\-Impulse\-Negative}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{emit\-Impulse\-Negative}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Node\-::emit\-Impulse\-Negative} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_a75addf25b1b16bf1476cf19f00d7513d}
+
+
+\-Emit a negative impulse to outgoing connections. 
+
+
+
+\-Definition at line 195 of file \-Node.\-cpp.
+
+
+
+\-References emit\-Impulse().
+
+
+
+\-Referenced by check\-Fire().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a8fc7efcfff86d2ca72b54166f600b7d0}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!emit\-Impulse\-Positive@{emit\-Impulse\-Positive}}
+\index{emit\-Impulse\-Positive@{emit\-Impulse\-Positive}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{emit\-Impulse\-Positive}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Node\-::emit\-Impulse\-Positive} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_a8fc7efcfff86d2ca72b54166f600b7d0}
+
+
+\-Emit a positive impulse to outgoing connections. 
+
+
+
+\-Definition at line 191 of file \-Node.\-cpp.
+
+
+
+\-References emit\-Impulse().
+
+
+
+\-Referenced by check\-Fire().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a42acc61b6b0d590433215535d3bc67cd}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!enable\-Debug@{enable\-Debug}}
+\index{enable\-Debug@{enable\-Debug}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{enable\-Debug}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Node\-::enable\-Debug} (
+\begin{DoxyParamCaption}
+\item[{bool}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_a42acc61b6b0d590433215535d3bc67cd}
+
+
+\-Definition at line 545 of file \-Node.\-cpp.
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObjectController_a3e510413675407ec0a6745345ca9a3a8}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!enable\-Logging@{enable\-Logging}}
+\index{enable\-Logging@{enable\-Logging}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{enable\-Logging}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}$<$ unsigned long int , double  $>$\-::{\bf enable\-Logging} (
+\begin{DoxyParamCaption}
+\item[{bool}]{enable}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual, inherited\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObjectController_a3e510413675407ec0a6745345ca9a3a8}
+
+
+\-Whether logging is enabled or not. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em bool} & enable \-True to enable logging, false otherwise \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 47 of file \-Data\-Object\-Controller.\-h.
+
+
+
+\-References cryomesh\-::dataobjects\-::\-Data\-Object\-Controller$<$ U, T $>$\-::data\-Object.
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a92bbb37859ba4b810381bd733ad5d63c}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!enter\-Recovery@{enter\-Recovery}}
+\index{enter\-Recovery@{enter\-Recovery}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{enter\-Recovery}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Node\-::enter\-Recovery} (
+\begin{DoxyParamCaption}
+\item[{const int}]{recovery\-\_\-settings = {\ttfamily {\bf \-C\-L\-E\-A\-R\-\_\-\-A\-L\-L\-\_\-\-I\-M\-P\-U\-L\-S\-E\-S}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_a92bbb37859ba4b810381bd733ad5d63c}
+
+
+\-Definition at line 115 of file \-Node.\-cpp.
+
+
+
+\-References \-C\-L\-E\-A\-R\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-I\-M\-P\-U\-L\-S\-E\-S, \-C\-L\-E\-A\-R\-\_\-\-A\-L\-L\-\_\-\-I\-M\-P\-U\-L\-S\-E\-S, cryomesh\-::components\-::\-Impulse\-Collection\-::clear\-Active\-Impulses(), cryomesh\-::common\-::\-Time\-Keeper\-::get\-Time\-Keeper(), and impulses.
+
+
+
+\-Referenced by check\-Fire().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_ac40f33e5d0986d208b21302232f8a165}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!force\-Fire@{force\-Fire}}
+\index{force\-Fire@{force\-Fire}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{force\-Fire}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Node\-::force\-Fire} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_ac40f33e5d0986d208b21302232f8a165}
+
+
+\-Force the node to fire. 
+
+
+
+\-Definition at line 80 of file \-Node.\-cpp.
+
+
+
+\-References add\-Impulse(), and cryomesh\-::components\-::\-Impulse\-::get\-Trigger\-Impulse().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a98801c702bf6613f06880f7cc577ddd7}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!get\-Activities@{get\-Activities}}
+\index{get\-Activities@{get\-Activities}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{get\-Activities}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::map$<$ {\bf common\-::\-Cycle}, double $>$ \& {\bf cryomesh\-::components\-::\-Node\-::get\-Activities} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1Node_a98801c702bf6613f06880f7cc577ddd7}
+
+
+\-Get the collection of all activities. 
+
+\begin{DoxyReturn}{\-Returns}
+std\-::list$<$double$>$ \& \-List of activities 
+\end{DoxyReturn}
+
+
+\-Definition at line 259 of file \-Node.\-cpp.
+
+
+
+\-References activities, and cryomesh\-::dataobjects\-::\-Data\-Object$<$ U, T $>$\-::get\-Map().
+
+
+
+\-Referenced by update().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a355e414f9a353883fd0f4b7cae24d6cc}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!get\-Activity@{get\-Activity}}
+\index{get\-Activity@{get\-Activity}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{get\-Activity}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::components\-::\-Node\-::get\-Activity} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1Node_a355e414f9a353883fd0f4b7cae24d6cc}
+
+
+\-Get the current activity of the node. 
+
+\begin{DoxyReturn}{\-Returns}
+double \-The current activity 
+\end{DoxyReturn}
+
+
+\-Definition at line 263 of file \-Node.\-cpp.
+
+
+
+\-References cryomesh\-::common\-::\-Time\-Keeper\-::get\-Time\-Keeper().
+
+
+
+\-Referenced by get\-Database\-Object(), is\-Active(), cryomesh\-::structures\-::\-Mesh\-::update(), update\-Activity(), and cryomesh\-::structures\-::\-Mesh\-::warp().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a07c29936e9a695e32365708f8c381456}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!get\-Activity@{get\-Activity}}
+\index{get\-Activity@{get\-Activity}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{get\-Activity}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::components\-::\-Node\-::get\-Activity} (
+\begin{DoxyParamCaption}
+\item[{const {\bf common\-::\-Cycle} \&}]{cycle}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1Node_a07c29936e9a695e32365708f8c381456}
+
+
+\-Get the activity of the node on specific cycle. 
+
+\begin{DoxyReturn}{\-Returns}
+double \-The current activity 
+\end{DoxyReturn}
+
+
+\-Definition at line 267 of file \-Node.\-cpp.
+
+
+
+\-References cryomesh\-::components\-::\-Impulse\-Collection\-::get\-Activity(), and get\-Impulses().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_ab561d1b0b10339ad8ae2280a8063677b}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!get\-Activity\-Threshold@{get\-Activity\-Threshold}}
+\index{get\-Activity\-Threshold@{get\-Activity\-Threshold}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{get\-Activity\-Threshold}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::components\-::\-Node\-::get\-Activity\-Threshold} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1Node_ab561d1b0b10339ad8ae2280a8063677b}
+
+
+\-Definition at line 271 of file \-Node.\-cpp.
+
+
+
+\-References activity\-Threshold.
+
+
+
+\-Referenced by check\-Activation\-State(), and cryomesh\-::components\-::operator$<$$<$().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a28367d5dc76da04958ca22f6384f6073}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!get\-Connector@{get\-Connector}}
+\index{get\-Connector@{get\-Connector}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{get\-Connector}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf common\-::\-Connector}$<$ {\bf \-Node}, {\bf \-Connection} $>$ \& {\bf cryomesh\-::components\-::\-Node\-::get\-Connector} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1Node_a28367d5dc76da04958ca22f6384f6073}
+
+
+\-Get the \-Connector object for this \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node}. 
+
+\begin{DoxyReturn}{\-Returns}
+const common\-::\-Connector$<$\-Node, Connection$>$ \& \-The \-Connector for this object 
+\end{DoxyReturn}
+
+
+\-Definition at line 84 of file \-Node.\-cpp.
+
+
+
+\-References connector.
+
+
+
+\-Referenced by get\-Primary\-Input\-Connections(), get\-Primary\-Output\-Connections(), is\-Input\-Isolated(), is\-Output\-Isolated(), is\-Primary\-Input\-Attached\-Node(), is\-Primary\-Output\-Attached\-Node(), and cryomesh\-::components\-::operator$<$$<$().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a811e64601504ff99536c2680429c7582}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!get\-Database\-Object@{get\-Database\-Object}}
+\index{get\-Database\-Object@{get\-Database\-Object}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{get\-Database\-Object}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$ {\bf manager\-::\-Database\-Object} $>$ {\bf cryomesh\-::components\-::\-Node\-::get\-Database\-Object} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1Node_a811e64601504ff99536c2680429c7582}
+
+
+\-Return a database object for this node. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Database\-Object 
+\end{DoxyReturn}
+
+
+\-Definition at line 296 of file \-Node.\-cpp.
+
+
+
+\-References get\-Activity(), cryomesh\-::common\-::\-Time\-Keeper\-::get\-Cycle(), get\-Position(), cryomesh\-::common\-::\-Time\-Keeper\-::get\-Time\-Keeper(), and cryomesh\-::common\-::\-Cycle\-::to\-U\-L\-Int().
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObjectController_aa919e8676a611028c6b6e6791c87f438}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!get\-Data\-Object@{get\-Data\-Object}}
+\index{get\-Data\-Object@{get\-Data\-Object}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{get\-Data\-Object}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf dataobjects\-::\-Data\-Object}$<$unsigned long int , double $>$\& {\bf cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}$<$ unsigned long int , double  $>$\-::{\bf get\-Data\-Object} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual, inherited\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObjectController_aa919e8676a611028c6b6e6791c87f438}
+
+
+\-Get data object. 
+
+\begin{DoxyReturn}{\-Returns}
+dataobjects\-::\-Data\-Object$<$\-U,\-T$>$ \& \-The data object 
+\end{DoxyReturn}
+
+
+\-Definition at line 68 of file \-Data\-Object\-Controller.\-h.
+
+
+
+\-References cryomesh\-::dataobjects\-::\-Data\-Object\-Controller$<$ U, T $>$\-::data\-Object, and cryomesh\-::dataobjects\-::\-Data\-Object\-Controller$<$ U, T $>$\-::refresh\-Data\-Object().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a8a90b1faf2e6b633bbb4853e522c29b7}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!get\-Emitted\-Impulse@{get\-Emitted\-Impulse}}
+\index{get\-Emitted\-Impulse@{get\-Emitted\-Impulse}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{get\-Emitted\-Impulse}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::shared\-\_\-ptr$<$ {\bf \-Impulse} $>$ {\bf cryomesh\-::components\-::\-Node\-::get\-Emitted\-Impulse} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1Node_a8a90b1faf2e6b633bbb4853e522c29b7}
+
+
+\-Get the \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} that is emitted. 
+
+\begin{DoxyReturn}{\-Returns}
+const boost\-::shared\-\_\-ptr$<$ Impulse $>$ \-The emitted \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} 
+\end{DoxyReturn}
+
+
+\-Definition at line 247 of file \-Node.\-cpp.
+
+
+
+\-References emitted\-Impulse.
+
+
+
+\-Referenced by emit\-Impulse().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a63316f8a1ad0ffe3ee22f8b455ef27a4}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!get\-Impulses@{get\-Impulses}}
+\index{get\-Impulses@{get\-Impulses}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{get\-Impulses}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Impulse\-Collection} \& {\bf cryomesh\-::components\-::\-Node\-::get\-Impulses} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1Node_a63316f8a1ad0ffe3ee22f8b455ef27a4}
+
+
+\-Get the collection of \-Impulses for this \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node}. 
+
+\begin{DoxyReturn}{\-Returns}
+const \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \& \-The collection of \-Impulses for this \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} 
+\end{DoxyReturn}
+
+
+\-Definition at line 243 of file \-Node.\-cpp.
+
+
+
+\-References impulses.
+
+
+
+\-Referenced by add\-Impulses(), get\-Activity(), is\-Live(), cryomesh\-::components\-::operator$<$$<$(), and update\-Activity().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_ac0f6e2c8823c98dc3d85091b2deef3f7}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!get\-Last\-Activation\-State@{get\-Last\-Activation\-State}}
+\index{get\-Last\-Activation\-State@{get\-Last\-Activation\-State}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{get\-Last\-Activation\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Node\-::\-Activation\-State} {\bf cryomesh\-::components\-::\-Node\-::get\-Last\-Activation\-State} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1Node_ac0f6e2c8823c98dc3d85091b2deef3f7}
+
+
+\-Get the last activation state. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Activation\-State \-Return the last activation state 
+\end{DoxyReturn}
+
+
+\-Definition at line 314 of file \-Node.\-cpp.
+
+
+
+\-References last\-Activation\-State.
+
+
+
+\-Referenced by is\-Triggered().
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObjectController_a70a03ee28392ecf2e039702a18511f05}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!get\-Map@{get\-Map}}
+\index{get\-Map@{get\-Map}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{get\-Map}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std\-::map$<$unsigned long int , double $>$\& {\bf cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}$<$ unsigned long int , double  $>$\-::{\bf get\-Map} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual, inherited\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObjectController_a70a03ee28392ecf2e039702a18511f05}
+
+
+\-Get all cycle values. 
+
+\begin{DoxyReturn}{\-Returns}
+std\-::map$<$unsigned long int, double$>$ \& \-The cycle values 
+\end{DoxyReturn}
+
+
+\-Definition at line 57 of file \-Data\-Object\-Controller.\-h.
+
+
+
+\-References cryomesh\-::dataobjects\-::\-Data\-Object\-Controller$<$ U, T $>$\-::data\-Object, and cryomesh\-::dataobjects\-::\-Data\-Object\-Controller$<$ U, T $>$\-::refresh\-Data\-Object().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_ae28261bb67b7412a67b21a4e4adaa9b1}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!get\-Mutable\-Connector@{get\-Mutable\-Connector}}
+\index{get\-Mutable\-Connector@{get\-Mutable\-Connector}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{get\-Mutable\-Connector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf common\-::\-Connector}$<$ {\bf \-Node}, {\bf \-Connection} $>$ \& {\bf cryomesh\-::components\-::\-Node\-::get\-Mutable\-Connector} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Node_ae28261bb67b7412a67b21a4e4adaa9b1}
+
+
+\-Get the mutable \-Connector object for this \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node}. 
+
+\begin{DoxyReturn}{\-Returns}
+common\-::\-Connector$<$\-Node, Connection$>$ \& \-The mutable \-Connector for this object 
+\end{DoxyReturn}
+
+
+\-Definition at line 88 of file \-Node.\-cpp.
+
+
+
+\-References connector.
+
+
+
+\-Referenced by connect\-Input(), connect\-Output(), destroy\-All\-Input\-Connections(), destroy\-All\-Output\-Connections(), and emit\-Impulse().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_aa6e0c0a0063e657053482aac777759d3}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!get\-Mutable\-Emitted\-Impulse@{get\-Mutable\-Emitted\-Impulse}}
+\index{get\-Mutable\-Emitted\-Impulse@{get\-Mutable\-Emitted\-Impulse}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{get\-Mutable\-Emitted\-Impulse}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$ {\bf \-Impulse} $>$ {\bf cryomesh\-::components\-::\-Node\-::get\-Mutable\-Emitted\-Impulse} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Node_aa6e0c0a0063e657053482aac777759d3}
+
+
+\-Get the mutable \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} that is emitted. 
+
+\begin{DoxyReturn}{\-Returns}
+boost\-::shared\-\_\-ptr$<$ Impulse $>$ \-The mutable emitted \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} 
+\end{DoxyReturn}
+
+
+\-Definition at line 251 of file \-Node.\-cpp.
+
+
+
+\-References emitted\-Impulse.
+
+
+
+\-Referenced by emit\-Impulse().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_adaa0b9f4c9a6130525fce2e43f418bc3}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!get\-Mutable\-Impulses@{get\-Mutable\-Impulses}}
+\index{get\-Mutable\-Impulses@{get\-Mutable\-Impulses}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{get\-Mutable\-Impulses}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Impulse\-Collection} \& {\bf cryomesh\-::components\-::\-Node\-::get\-Mutable\-Impulses} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Node_adaa0b9f4c9a6130525fce2e43f418bc3}
+
+
+\-Get the mutable collection of \-Impulses for this \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node}. 
+
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \& \-The mutable collection of \-Impulses for this \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} 
+\end{DoxyReturn}
+
+
+\-Definition at line 255 of file \-Node.\-cpp.
+
+
+
+\-References impulses.
+
+
+
+\-Referenced by add\-Impulse(), and update().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a313531f48e1ccc3902fdeb313d41bd7b}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!get\-Position@{get\-Position}}
+\index{get\-Position@{get\-Position}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{get\-Position}]{\setlength{\rightskip}{0pt plus 5cm}const spacial\-::\-Point \& {\bf cryomesh\-::components\-::\-Node\-::get\-Position} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1Node_a313531f48e1ccc3902fdeb313d41bd7b}
+
+
+get the position of the node 
+
+\begin{DoxyReturn}{\-Returns}
+spacial\-::\-Point \-The spacial location of the node 
+\end{DoxyReturn}
+
+
+\-Definition at line 305 of file \-Node.\-cpp.
+
+
+
+\-References position.
+
+
+
+\-Referenced by get\-Database\-Object(), cryomesh\-::structures\-::\-Mesh\-::update(), and cryomesh\-::structures\-::\-Mesh\-::warp().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a0f172d0f98de3d008d2d0a5efa15d3b2}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!get\-Primary\-Input\-Connections@{get\-Primary\-Input\-Connections}}
+\index{get\-Primary\-Input\-Connections@{get\-Primary\-Input\-Connections}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{get\-Primary\-Input\-Connections}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ boost\-::shared\-\_\-ptr$<$ {\bf \-Connection} $>$ $>$ {\bf cryomesh\-::components\-::\-Node\-::get\-Primary\-Input\-Connections} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Node_a0f172d0f98de3d008d2d0a5efa15d3b2}
+
+
+\-Definition at line 425 of file \-Node.\-cpp.
+
+
+
+\-References get\-Connector().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_aa0ac6ca5e0d98261840760bdc07e4d3f}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!get\-Primary\-Output\-Connections@{get\-Primary\-Output\-Connections}}
+\index{get\-Primary\-Output\-Connections@{get\-Primary\-Output\-Connections}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{get\-Primary\-Output\-Connections}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ boost\-::shared\-\_\-ptr$<$ {\bf \-Connection} $>$ $>$ {\bf cryomesh\-::components\-::\-Node\-::get\-Primary\-Output\-Connections} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Node_aa0ac6ca5e0d98261840760bdc07e4d3f}
+
+
+\-Definition at line 447 of file \-Node.\-cpp.
+
+
+
+\-References get\-Connector().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a3ffbf4f53801b9e83c815e97e3072302}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!get\-Random@{get\-Random}}
+\index{get\-Random@{get\-Random}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{get\-Random}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$ {\bf \-Node} $>$ {\bf cryomesh\-::components\-::\-Node\-::get\-Random} (
+\begin{DoxyParamCaption}
+\item[{const spacial\-::\-Point \&}]{max\-\_\-point = {\ttfamily {\bf \-M\-A\-X\-\_\-\-B\-O\-U\-N\-D\-I\-N\-G\-\_\-\-B\-O\-X\-\_\-\-P\-O\-I\-N\-T}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_a3ffbf4f53801b9e83c815e97e3072302}
+
+
+\-Definition at line 26 of file \-Node.\-cpp.
+
+
+
+\-Referenced by cryomesh\-::manipulators\-::\-Cluster\-Architect\-::create\-Random\-Nodes(), and randomise().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_af2943ca887ce9c2b1a65297cae14d752}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!is\-Active@{is\-Active}}
+\index{is\-Active@{is\-Active}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{is\-Active}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf cryomesh\-::components\-::\-Node\-::is\-Active} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Activation\-State}}]{state = {\ttfamily {\bf \-None}}}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Node_af2943ca887ce9c2b1a65297cae14d752}
+
+
+\-Check if \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} is currently activated. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Activation\-State} & \-Positive for positive activity test, \-Negative for negative activity test, \-None for any activity test\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+bool \-True if activated, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 333 of file \-Node.\-cpp.
+
+
+
+\-References get\-Activity(), \-Negative, \-None, and \-Positive.
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a501c4e986a566a4e7fc5f9c87e9c4d8e}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!is\-Input\-Isolated@{is\-Input\-Isolated}}
+\index{is\-Input\-Isolated@{is\-Input\-Isolated}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{is\-Input\-Isolated}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf cryomesh\-::components\-::\-Node\-::is\-Input\-Isolated} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1Node_a501c4e986a566a4e7fc5f9c87e9c4d8e}
+
+
+\-Definition at line 361 of file \-Node.\-cpp.
+
+
+
+\-References get\-Connector().
+
+
+
+\-Referenced by is\-Primary\-Input\-Attached\-Node().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a2309ba6b3ffa640410dfdc1630a66400}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!is\-Live@{is\-Live}}
+\index{is\-Live@{is\-Live}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{is\-Live}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf cryomesh\-::components\-::\-Node\-::is\-Live} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Node_a2309ba6b3ffa640410dfdc1630a66400}
+
+
+\-Check if \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} is live, ie active at any point in now or the future. 
+
+\begin{DoxyReturn}{\-Returns}
+bool \-True if live, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 352 of file \-Node.\-cpp.
+
+
+
+\-References get\-Impulses().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a211678e84d71cb71e3721eb9725fa934}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!is\-Output\-Isolated@{is\-Output\-Isolated}}
+\index{is\-Output\-Isolated@{is\-Output\-Isolated}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{is\-Output\-Isolated}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf cryomesh\-::components\-::\-Node\-::is\-Output\-Isolated} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1Node_a211678e84d71cb71e3721eb9725fa934}
+
+
+\-Definition at line 368 of file \-Node.\-cpp.
+
+
+
+\-References get\-Connector().
+
+
+
+\-Referenced by is\-Primary\-Output\-Attached\-Node().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a2f55aa5adcac4a2f1aa1f0a7c8fc697d}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!is\-Primary\-Input\-Attached\-Node@{is\-Primary\-Input\-Attached\-Node}}
+\index{is\-Primary\-Input\-Attached\-Node@{is\-Primary\-Input\-Attached\-Node}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{is\-Primary\-Input\-Attached\-Node}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf cryomesh\-::components\-::\-Node\-::is\-Primary\-Input\-Attached\-Node} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1Node_a2f55aa5adcac4a2f1aa1f0a7c8fc697d}
+
+
+\-Definition at line 375 of file \-Node.\-cpp.
+
+
+
+\-References get\-Connector(), and is\-Input\-Isolated().
+
+
+
+\-Referenced by cryomesh\-::components\-::operator$<$$<$().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a8466a252c7a4e6fb2d825826be53e218}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!is\-Primary\-Output\-Attached\-Node@{is\-Primary\-Output\-Attached\-Node}}
+\index{is\-Primary\-Output\-Attached\-Node@{is\-Primary\-Output\-Attached\-Node}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{is\-Primary\-Output\-Attached\-Node}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf cryomesh\-::components\-::\-Node\-::is\-Primary\-Output\-Attached\-Node} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1Node_a8466a252c7a4e6fb2d825826be53e218}
+
+
+\-Definition at line 400 of file \-Node.\-cpp.
+
+
+
+\-References get\-Connector(), and is\-Output\-Isolated().
+
+
+
+\-Referenced by cryomesh\-::components\-::operator$<$$<$().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a83303fef90a3093807d76a59e4df5288}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!is\-Triggered@{is\-Triggered}}
+\index{is\-Triggered@{is\-Triggered}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{is\-Triggered}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf cryomesh\-::components\-::\-Node\-::is\-Triggered} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Activation\-State}}]{state = {\ttfamily {\bf \-None}}}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Node_a83303fef90a3093807d76a59e4df5288}
+
+
+\-Check if \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} is currently triggered. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Activation\-State} & \-Positive for positive trigger test, \-Negative for negative trigger test, \-None for any trigger test\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+bool \-True if triggered, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 323 of file \-Node.\-cpp.
+
+
+
+\-References get\-Last\-Activation\-State(), and \-None.
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a036878d7028df14d1015c0ce413d4038}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!print\-Connections@{print\-Connections}}
+\index{print\-Connections@{print\-Connections}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{print\-Connections}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream \& {\bf cryomesh\-::components\-::\-Node\-::print\-Connections} (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const std\-::map$<$ boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ {\bf \-Connection} $>$ $>$ \&}]{all\-\_\-cons, }
+\item[{const std\-::string}]{formatter = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1Node_a036878d7028df14d1015c0ce413d4038}
+
+
+\-Definition at line 577 of file \-Node.\-cpp.
+
+
+
+\-Referenced by cryomesh\-::components\-::operator$<$$<$().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a5ec290205a68a8635a740ae32608cebf}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!randomise@{randomise}}
+\index{randomise@{randomise}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{randomise}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Node\-::randomise} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Node_a5ec290205a68a8635a740ae32608cebf}
+
+
+\-Randomise the nodes state. 
+
+
+
+\-Definition at line 318 of file \-Node.\-cpp.
+
+
+
+\-References activity\-Threshold, emitted\-Impulse, get\-Random(), \-M\-A\-X\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D, and \-M\-I\-N\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D.
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObjectController_ae015efe3d10cced82d5043f560cbe04f}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!refresh\-Data\-Object@{refresh\-Data\-Object}}
+\index{refresh\-Data\-Object@{refresh\-Data\-Object}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{refresh\-Data\-Object}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}$<$ unsigned long int , double  $>$\-::{\bf refresh\-Data\-Object} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual, inherited\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObjectController_ae015efe3d10cced82d5043f560cbe04f}
+
+
+\-Function to allow refreshing implementation if required by subclasses. 
+
+
+
+\-Reimplemented in \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a892cc1028a9539de15668c39511adba3}{cryomesh\-::components\-::\-Impulse\-Collection}.
+
+
+
+\-Definition at line 76 of file \-Data\-Object\-Controller.\-h.
+
+\hypertarget{classcryomesh_1_1components_1_1Node_acf3b0de410fee4350390bd527c544187}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!set\-Activity@{set\-Activity}}
+\index{set\-Activity@{set\-Activity}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{set\-Activity}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::components\-::\-Node\-::set\-Activity} (
+\begin{DoxyParamCaption}
+\item[{double}]{activity}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Node_acf3b0de410fee4350390bd527c544187}
+
+
+\-Set the current activity of the node. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em double} & \-The current activity value to be set\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+double \-The activity set 
+\end{DoxyReturn}
+
+
+\-Definition at line 283 of file \-Node.\-cpp.
+
+
+
+\-References cryomesh\-::common\-::\-Time\-Keeper\-::get\-Time\-Keeper().
+
+
+
+\-Referenced by update\-Activity(), and cryomesh\-::structures\-::\-Mesh\-::warp().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_aacac1b5adbafe83a7dcae288a607ee31}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!set\-Activity@{set\-Activity}}
+\index{set\-Activity@{set\-Activity}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{set\-Activity}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::components\-::\-Node\-::set\-Activity} (
+\begin{DoxyParamCaption}
+\item[{const {\bf common\-::\-Cycle} \&}]{cycle, }
+\item[{double}]{activity}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Node_aacac1b5adbafe83a7dcae288a607ee31}
+
+
+\-Set the activity at cycle of the node. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em const} & \-Cycle \& cycle \-The cycle the activty is on \\
+\hline
+{\em double} & \-The current activity value to be set\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+double \-The activity set 
+\end{DoxyReturn}
+
+
+\-Definition at line 287 of file \-Node.\-cpp.
+
+
+
+\-References add\-Activity().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a970e8e8ae18053bd9e087ce7faf720de}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!set\-Position@{set\-Position}}
+\index{set\-Position@{set\-Position}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{set\-Position}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Node\-::set\-Position} (
+\begin{DoxyParamCaption}
+\item[{const spacial\-::\-Point \&}]{new\-\_\-position}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Node_a970e8e8ae18053bd9e087ce7faf720de}
+
+
+\-Set the spacial position of the node, remembering to update connections lengths. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em spacial\-::\-Point} & \-The position to place this node at \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 309 of file \-Node.\-cpp.
+
+
+
+\-References position, and update\-Position().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a960b083db047bb1b860d4ed09f9ad583}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!update@{update}}
+\index{update@{update}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Node\-::update} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_a960b083db047bb1b860d4ed09f9ad583}
+
+
+\-Definition at line 49 of file \-Node.\-cpp.
+
+
+
+\-References check\-Fire(), cryomesh\-::components\-::\-Impulse\-Collection\-::clear\-Active\-Impulses(), cryomesh\-::dataobjects\-::\-Data\-Object\-Controller$<$ unsigned long int, double $>$\-::data\-Object, get\-Activities(), get\-Mutable\-Impulses(), cryomesh\-::dataobjects\-::\-Data\-Object$<$ U, T $>$\-::insert(), cryomesh\-::dataobjects\-::\-Data\-Object$<$ U, T $>$\-::is\-Logging\-Enabled(), last\-Activation\-State, and update\-Impulses().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_ab9f3406d26f50f3dcee4b19c30cfc893}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!update\-Activity@{update\-Activity}}
+\index{update\-Activity@{update\-Activity}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{update\-Activity}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::components\-::\-Node\-::update\-Activity} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Node_ab9f3406d26f50f3dcee4b19c30cfc893}
+
+
+\-Update and get the current activity of the node. 
+
+\begin{DoxyReturn}{\-Returns}
+double \-The current activity 
+\end{DoxyReturn}
+
+
+\-Definition at line 275 of file \-Node.\-cpp.
+
+
+
+\-References get\-Activity(), get\-Impulses(), and set\-Activity().
+
+
+
+\-Referenced by check\-Activation\-State().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a2074cbfe458cda6fc10997ae6965f168}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!update\-Activity@{update\-Activity}}
+\index{update\-Activity@{update\-Activity}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{update\-Activity}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::components\-::\-Node\-::update\-Activity} (
+\begin{DoxyParamCaption}
+\item[{const {\bf common\-::\-Cycle} \&}]{cycle}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Node_a2074cbfe458cda6fc10997ae6965f168}
+
+
+\-Update and get the activity of the node on specific cycle. 
+
+\begin{DoxyReturn}{\-Returns}
+double \-The current activity 
+\end{DoxyReturn}
+
+
+\-Definition at line 279 of file \-Node.\-cpp.
+
+
+
+\-References get\-Activity(), get\-Impulses(), and set\-Activity().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_ade03584e4db3f8e1eeddc9ad371b4658}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!update\-Impulses@{update\-Impulses}}
+\index{update\-Impulses@{update\-Impulses}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{update\-Impulses}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Node\-::update\-Impulses} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_ade03584e4db3f8e1eeddc9ad371b4658}
+
+
+\-Update the collection of impulses by one cycle. 
+
+
+
+\-Definition at line 135 of file \-Node.\-cpp.
+
+
+
+\-References cryomesh\-::components\-::\-Impulse\-Collection\-::clear\-Impulses(), and impulses.
+
+
+
+\-Referenced by update().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_ab769e1efe1fd3e0ae9ff0a7643dd473c}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!update\-Position@{update\-Position}}
+\index{update\-Position@{update\-Position}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{update\-Position}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Node\-::update\-Position} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_ab769e1efe1fd3e0ae9ff0a7643dd473c}
+
+
+\-Recalculate state of node and connections based on current position. 
+
+
+
+\-Definition at line 515 of file \-Node.\-cpp.
+
+
+
+\-References connector.
+
+
+
+\-Referenced by set\-Position().
+
+
+
+\subsection{\-Friends \-And \-Related \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1components_1_1Node_aa13c716dda529b01000661b942327bd6}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const {\bf \-Node} \&}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_aa13c716dda529b01000661b942327bd6}
+
+
+\-To stream operator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::ostream} & \& os \-The output stream \\
+\hline
+{\em const} & \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} \& obj \-The object to stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::ostream \& \-The output stream 
+\end{DoxyReturn}
+
+
+\-Definition at line 548 of file \-Node.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classcryomesh_1_1components_1_1Node_a39bf3a9c006d8ee03769d6b86127e7cf}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!activities@{activities}}
+\index{activities@{activities}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{activities}]{\setlength{\rightskip}{0pt plus 5cm}{\bf dataobjects\-::\-Data\-Object}$<${\bf common\-::\-Cycle}, double$>$ {\bf cryomesh\-::components\-::\-Node\-::activities}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_a39bf3a9c006d8ee03769d6b86127e7cf}
+
+
+\-Definition at line 461 of file \-Node.\-h.
+
+
+
+\-Referenced by add\-Activity(), get\-Activities(), and \-Node().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a270451d7286a4e6f344559a3d48d1193}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!activity\-Threshold@{activity\-Threshold}}
+\index{activity\-Threshold@{activity\-Threshold}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{activity\-Threshold}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::components\-::\-Node\-::activity\-Threshold}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_a270451d7286a4e6f344559a3d48d1193}
+
+
+\-Definition at line 433 of file \-Node.\-h.
+
+
+
+\-Referenced by get\-Activity\-Threshold(), and randomise().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a43b68f9f1a83bca4d4fc4f55bb8dd8de}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!connector@{connector}}
+\index{connector@{connector}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{connector}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<${\bf common\-::\-Connector}$<${\bf \-Node}, {\bf \-Connection}$>$ $>$ {\bf cryomesh\-::components\-::\-Node\-::connector}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_a43b68f9f1a83bca4d4fc4f55bb8dd8de}
+
+
+\-Definition at line 440 of file \-Node.\-h.
+
+
+
+\-Referenced by get\-Connector(), get\-Mutable\-Connector(), \-Node(), and update\-Position().
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObjectController_aa13d30e9fa2f1caa0510635214d4bb26}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!data\-Object@{data\-Object}}
+\index{data\-Object@{data\-Object}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{data\-Object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf dataobjects\-::\-Data\-Object}$<$unsigned long int , double $>$ {\bf cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}$<$ unsigned long int , double  $>$\-::{\bf data\-Object}\hspace{0.3cm}{\ttfamily  \mbox{[}protected, inherited\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObjectController_aa13d30e9fa2f1caa0510635214d4bb26}
+
+
+\-Definition at line 85 of file \-Data\-Object\-Controller.\-h.
+
+
+
+\-Referenced by cryomesh\-::components\-::\-Impulse\-Collection\-::refresh\-Data\-Object(), and update().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a6b5e004fc2bbdbd8ec7173b44af8ffe5}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!emitted\-Impulse@{emitted\-Impulse}}
+\index{emitted\-Impulse@{emitted\-Impulse}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{emitted\-Impulse}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<${\bf \-Impulse}$>$ {\bf cryomesh\-::components\-::\-Node\-::emitted\-Impulse}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_a6b5e004fc2bbdbd8ec7173b44af8ffe5}
+
+
+\-Definition at line 454 of file \-Node.\-h.
+
+
+
+\-Referenced by get\-Emitted\-Impulse(), get\-Mutable\-Emitted\-Impulse(), \-Node(), and randomise().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a8e9ae8373052bb63f2f1e6e453a3c18d}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!impulses@{impulses}}
+\index{impulses@{impulses}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{impulses}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Impulse\-Collection} {\bf cryomesh\-::components\-::\-Node\-::impulses}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_a8e9ae8373052bb63f2f1e6e453a3c18d}
+
+
+\-Definition at line 447 of file \-Node.\-h.
+
+
+
+\-Referenced by add\-Impulses(), enter\-Recovery(), get\-Impulses(), get\-Mutable\-Impulses(), and update\-Impulses().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_ab94a09be9e58cc248f9d62ed5c45c83d}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!last\-Activation\-State@{last\-Activation\-State}}
+\index{last\-Activation\-State@{last\-Activation\-State}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{last\-Activation\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Activation\-State} {\bf cryomesh\-::components\-::\-Node\-::last\-Activation\-State}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_ab94a09be9e58cc248f9d62ed5c45c83d}
+
+
+\-Definition at line 475 of file \-Node.\-h.
+
+
+
+\-Referenced by get\-Last\-Activation\-State(), and update().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_ae5b4fa1289a3ab819710ff7a40a77282}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!\-M\-A\-X\-\_\-\-A\-C\-T\-I\-V\-I\-T\-I\-E\-S\-\_\-\-L\-E\-N\-G\-T\-H@{\-M\-A\-X\-\_\-\-A\-C\-T\-I\-V\-I\-T\-I\-E\-S\-\_\-\-L\-E\-N\-G\-T\-H}}
+\index{\-M\-A\-X\-\_\-\-A\-C\-T\-I\-V\-I\-T\-I\-E\-S\-\_\-\-L\-E\-N\-G\-T\-H@{\-M\-A\-X\-\_\-\-A\-C\-T\-I\-V\-I\-T\-I\-E\-S\-\_\-\-L\-E\-N\-G\-T\-H}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{\-M\-A\-X\-\_\-\-A\-C\-T\-I\-V\-I\-T\-I\-E\-S\-\_\-\-L\-E\-N\-G\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf cryomesh\-::components\-::\-Node\-::\-M\-A\-X\-\_\-\-A\-C\-T\-I\-V\-I\-T\-I\-E\-S\-\_\-\-L\-E\-N\-G\-T\-H} = 10\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_ae5b4fa1289a3ab819710ff7a40a77282}
+
+
+\-Definition at line 341 of file \-Node.\-h.
+
+
+
+\-Referenced by \-Node().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_adcfc8e07f6d216817a45f1c27190967b}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!\-M\-A\-X\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D@{\-M\-A\-X\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}}
+\index{\-M\-A\-X\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D@{\-M\-A\-X\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{\-M\-A\-X\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}]{\setlength{\rightskip}{0pt plus 5cm}const double {\bf cryomesh\-::components\-::\-Node\-::\-M\-A\-X\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D} = 3 $\ast$ {\bf \-Impulse\-::\-M\-A\-X\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_adcfc8e07f6d216817a45f1c27190967b}
+
+
+\-Definition at line 348 of file \-Node.\-h.
+
+
+
+\-Referenced by randomise().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a3f4f3b7d2bba533fc0487b4f10c1efcd}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!\-M\-A\-X\-\_\-\-B\-O\-U\-N\-D\-I\-N\-G\-\_\-\-B\-O\-X\-\_\-\-P\-O\-I\-N\-T@{\-M\-A\-X\-\_\-\-B\-O\-U\-N\-D\-I\-N\-G\-\_\-\-B\-O\-X\-\_\-\-P\-O\-I\-N\-T}}
+\index{\-M\-A\-X\-\_\-\-B\-O\-U\-N\-D\-I\-N\-G\-\_\-\-B\-O\-X\-\_\-\-P\-O\-I\-N\-T@{\-M\-A\-X\-\_\-\-B\-O\-U\-N\-D\-I\-N\-G\-\_\-\-B\-O\-X\-\_\-\-P\-O\-I\-N\-T}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{\-M\-A\-X\-\_\-\-B\-O\-U\-N\-D\-I\-N\-G\-\_\-\-B\-O\-X\-\_\-\-P\-O\-I\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}const spacial\-::\-Point {\bf cryomesh\-::components\-::\-Node\-::\-M\-A\-X\-\_\-\-B\-O\-U\-N\-D\-I\-N\-G\-\_\-\-B\-O\-X\-\_\-\-P\-O\-I\-N\-T} = spacial\-::\-Point(100, 100, 100)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_a3f4f3b7d2bba533fc0487b4f10c1efcd}
+
+
+\-Definition at line 362 of file \-Node.\-h.
+
+\hypertarget{classcryomesh_1_1components_1_1Node_a5ed72f665cf7b32914e61b4655bd52ca}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!\-M\-I\-N\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D@{\-M\-I\-N\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}}
+\index{\-M\-I\-N\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D@{\-M\-I\-N\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{\-M\-I\-N\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}]{\setlength{\rightskip}{0pt plus 5cm}const double {\bf cryomesh\-::components\-::\-Node\-::\-M\-I\-N\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D} = 1 $\ast$ {\bf \-Impulse\-::\-M\-A\-X\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_a5ed72f665cf7b32914e61b4655bd52ca}
+
+
+\-Definition at line 355 of file \-Node.\-h.
+
+
+
+\-Referenced by randomise().
+
+\hypertarget{classcryomesh_1_1components_1_1Node_afad345a6d8cc1eacc555acde8c065b61}{\index{cryomesh\-::components\-::\-Node@{cryomesh\-::components\-::\-Node}!position@{position}}
+\index{position@{position}!cryomesh::components::Node@{cryomesh\-::components\-::\-Node}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}spacial\-::\-Point {\bf cryomesh\-::components\-::\-Node\-::position}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1components_1_1Node_afad345a6d8cc1eacc555acde8c065b61}
+
+
+\-Definition at line 468 of file \-Node.\-h.
+
+
+
+\-Referenced by get\-Position(), and set\-Position().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/components/\hyperlink{Node_8h}{\-Node.\-h}\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/components/\hyperlink{Node_8cpp}{\-Node.\-cpp}\end{DoxyCompactItemize}

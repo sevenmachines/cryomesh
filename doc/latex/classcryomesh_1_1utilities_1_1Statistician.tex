@@ -1,0 +1,492 @@
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician}{\section{cryomesh\-:\-:utilities\-:\-:\-Statistician \-Class \-Reference}
+\label{classcryomesh_1_1utilities_1_1Statistician}\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+}
+
+
+\-Class to draw together lots of useful statistics and monitoring data for a \-Bundle and its components.  
+
+
+
+
+{\ttfamily \#include $<$\-Statistician.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1utilities_1_1Statistician_aa382bfde65efb16fa02b9c9d7d39a1b7}{\-Statistician} (const \hyperlink{classcryomesh_1_1structures_1_1Bundle}{structures\-::\-Bundle} \&bun)
+\begin{DoxyCompactList}\small\item\em \-Contruct a statistician with a build in \-Bundle reference. \end{DoxyCompactList}\item 
+virtual \hyperlink{classcryomesh_1_1utilities_1_1Statistician_afbba60713cc3a96c8659d155d6f9c853}{$\sim$\-Statistician} ()
+\begin{DoxyCompactList}\small\item\em \-Default destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1utilities_1_1Statistician_a3b6005b898ef77ca2fa2724f069b2c25}{update} ()
+\item 
+const \hyperlink{classcryomesh_1_1structures_1_1Bundle}{structures\-::\-Bundle} \& \hyperlink{classcryomesh_1_1utilities_1_1Statistician_a5ce2aab91e03121c69aa23209fbe9c97}{get\-Bundle} () const 
+\item 
+int \hyperlink{classcryomesh_1_1utilities_1_1Statistician_a64ee08e16f1f42fc518ce2d1255f353e}{get\-Cluster\-Count} () const 
+\item 
+int \hyperlink{classcryomesh_1_1utilities_1_1Statistician_a55bf105c419acad376e9aafeb135be71}{get\-Input\-Fibres\-Count} () const 
+\item 
+int \hyperlink{classcryomesh_1_1utilities_1_1Statistician_aac6a1aeec3987386f175cc771e3e7a3a}{get\-Output\-Fibres\-Count} () const 
+\item 
+int \hyperlink{classcryomesh_1_1utilities_1_1Statistician_a5545756c254e28b165c806ddb8eb6780}{get\-Normal\-Fibres\-Count} () const 
+\item 
+int \hyperlink{classcryomesh_1_1utilities_1_1Statistician_a49864c3951b6aa8e1a263449bd0a0daf}{get\-Input\-Channels\-Count} () const 
+\item 
+int \hyperlink{classcryomesh_1_1utilities_1_1Statistician_ae1aed7da3340cbd51d31318f92794f4d}{get\-Output\-Channels\-Count} () const 
+\item 
+std\-::string \hyperlink{classcryomesh_1_1utilities_1_1Statistician_ab0d4863ff8c1962e56dfbab4eabfb6cf}{get\-Bundle\-U\-U\-I\-D} () const 
+\item 
+std\-::map$<$ std\-::string, int $>$ \hyperlink{classcryomesh_1_1utilities_1_1Statistician_ab38d0c6cfb206e6c331c6af95388faab}{get\-Triggered\-Nodes\-Per\-Cluster} () const 
+\item 
+std\-::map$<$ std\-::string, int $>$ \hyperlink{classcryomesh_1_1utilities_1_1Statistician_a9e6c8527426ae11edbedbc21b4215007}{get\-Active\-Nodes\-Per\-Cluster} () const 
+\item 
+int \hyperlink{classcryomesh_1_1utilities_1_1Statistician_a4a60fac1c7060a891feae84096109315}{get\-Triggered\-Nodes\-Total} () const 
+\item 
+int \hyperlink{classcryomesh_1_1utilities_1_1Statistician_af743b58d7a21f7c0056252d15c71016d}{get\-Active\-Nodes\-Total} () const 
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classcryomesh_1_1structures_1_1Bundle}{structures\-::\-Bundle} \& \hyperlink{classcryomesh_1_1utilities_1_1Statistician_a478ec1e4a9b68063f1422e97d8cbea99}{bundle}
+\item 
+int \hyperlink{classcryomesh_1_1utilities_1_1Statistician_af6b5d81fc1b6821e7fff8d4ccbcf15bb}{cluster\-Count}
+\item 
+int \hyperlink{classcryomesh_1_1utilities_1_1Statistician_a12780e2d450e3013d6a8a306a4b02bd7}{input\-Fibres\-Count}
+\item 
+int \hyperlink{classcryomesh_1_1utilities_1_1Statistician_a90aeaf6f65a5cad0b3936731378ea07a}{output\-Fibres\-Count}
+\item 
+int \hyperlink{classcryomesh_1_1utilities_1_1Statistician_a1540b6a7e491f9241f31fbcfd62bdd74}{normal\-Fibres\-Count}
+\item 
+int \hyperlink{classcryomesh_1_1utilities_1_1Statistician_a734a2d7317a2d1a08dfa64a6f5a7da8c}{input\-Channels\-Count}
+\item 
+int \hyperlink{classcryomesh_1_1utilities_1_1Statistician_aa13c9110a9a210b7656ec815166f20c2}{output\-Channels\-Count}
+\item 
+std\-::string \hyperlink{classcryomesh_1_1utilities_1_1Statistician_af2c7a19dfd7c305b1767a3abec4cb75e}{bundleuuid}
+\item 
+int \hyperlink{classcryomesh_1_1utilities_1_1Statistician_a4395675ddbfb598566faca1096bfe2da}{nodes\-Total}
+\item 
+int \hyperlink{classcryomesh_1_1utilities_1_1Statistician_a5a38000033e2405dcfac5ef48d2a6820}{nodes\-Triggered}
+\item 
+int \hyperlink{classcryomesh_1_1utilities_1_1Statistician_aab51af29476bb894d8f145b8ce3d80ce}{nodes\-Active}
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1utilities_1_1Statistician_a5898d288b67c44776f0d0e194601c628}{operator$<$$<$} (std\-::ostream \&os, const \hyperlink{classcryomesh_1_1utilities_1_1Statistician}{\-Statistician} \&obj)
+\begin{DoxyCompactList}\small\item\em \-To stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Class to draw together lots of useful statistics and monitoring data for a \-Bundle and its components. 
+
+\-Definition at line 28 of file \-Statistician.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_aa382bfde65efb16fa02b9c9d7d39a1b7}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!\-Statistician@{\-Statistician}}
+\index{\-Statistician@{\-Statistician}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{\-Statistician}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::utilities\-::\-Statistician\-::\-Statistician} (
+\begin{DoxyParamCaption}
+\item[{const {\bf structures\-::\-Bundle} \&}]{bun}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1utilities_1_1Statistician_aa382bfde65efb16fa02b9c9d7d39a1b7}
+
+
+\-Contruct a statistician with a build in \-Bundle reference. 
+
+
+
+\-Definition at line 15 of file \-Statistician.\-cpp.
+
+
+
+\-References update().
+
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_afbba60713cc3a96c8659d155d6f9c853}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!$\sim$\-Statistician@{$\sim$\-Statistician}}
+\index{$\sim$\-Statistician@{$\sim$\-Statistician}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{$\sim$\-Statistician}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::utilities\-::\-Statistician\-::$\sim$\-Statistician} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1Statistician_afbba60713cc3a96c8659d155d6f9c853}
+
+
+\-Default destructor. 
+
+
+
+\-Definition at line 21 of file \-Statistician.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_a9e6c8527426ae11edbedbc21b4215007}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!get\-Active\-Nodes\-Per\-Cluster@{get\-Active\-Nodes\-Per\-Cluster}}
+\index{get\-Active\-Nodes\-Per\-Cluster@{get\-Active\-Nodes\-Per\-Cluster}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{get\-Active\-Nodes\-Per\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$ std\-::string, int $>$ {\bf cryomesh\-::utilities\-::\-Statistician\-::get\-Active\-Nodes\-Per\-Cluster} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1utilities_1_1Statistician_a9e6c8527426ae11edbedbc21b4215007}
+
+
+\-Definition at line 76 of file \-Statistician.\-cpp.
+
+
+
+\-References bundle, and cryomesh\-::structures\-::\-Bundle\-::get\-Clusters().
+
+
+
+\-Referenced by get\-Active\-Nodes\-Total(), and cryomesh\-::utilities\-::operator$<$$<$().
+
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_af743b58d7a21f7c0056252d15c71016d}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!get\-Active\-Nodes\-Total@{get\-Active\-Nodes\-Total}}
+\index{get\-Active\-Nodes\-Total@{get\-Active\-Nodes\-Total}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{get\-Active\-Nodes\-Total}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::utilities\-::\-Statistician\-::get\-Active\-Nodes\-Total} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1utilities_1_1Statistician_af743b58d7a21f7c0056252d15c71016d}
+
+
+\-Definition at line 110 of file \-Statistician.\-cpp.
+
+
+
+\-References get\-Active\-Nodes\-Per\-Cluster().
+
+
+
+\-Referenced by cryomesh\-::utilities\-::operator$<$$<$().
+
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_a5ce2aab91e03121c69aa23209fbe9c97}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!get\-Bundle@{get\-Bundle}}
+\index{get\-Bundle@{get\-Bundle}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{get\-Bundle}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf structures\-::\-Bundle} \& {\bf cryomesh\-::utilities\-::\-Statistician\-::get\-Bundle} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1utilities_1_1Statistician_a5ce2aab91e03121c69aa23209fbe9c97}
+
+
+\-Definition at line 127 of file \-Statistician.\-cpp.
+
+
+
+\-References bundle.
+
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_ab0d4863ff8c1962e56dfbab4eabfb6cf}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!get\-Bundle\-U\-U\-I\-D@{get\-Bundle\-U\-U\-I\-D}}
+\index{get\-Bundle\-U\-U\-I\-D@{get\-Bundle\-U\-U\-I\-D}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{get\-Bundle\-U\-U\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::utilities\-::\-Statistician\-::get\-Bundle\-U\-U\-I\-D} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1utilities_1_1Statistician_ab0d4863ff8c1962e56dfbab4eabfb6cf}
+
+
+\-Definition at line 53 of file \-Statistician.\-cpp.
+
+
+
+\-References bundleuuid.
+
+
+
+\-Referenced by cryomesh\-::utilities\-::operator$<$$<$().
+
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_a64ee08e16f1f42fc518ce2d1255f353e}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!get\-Cluster\-Count@{get\-Cluster\-Count}}
+\index{get\-Cluster\-Count@{get\-Cluster\-Count}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{get\-Cluster\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::utilities\-::\-Statistician\-::get\-Cluster\-Count} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1utilities_1_1Statistician_a64ee08e16f1f42fc518ce2d1255f353e}
+
+
+\-Definition at line 35 of file \-Statistician.\-cpp.
+
+
+
+\-References cluster\-Count.
+
+
+
+\-Referenced by cryomesh\-::utilities\-::operator$<$$<$().
+
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_a49864c3951b6aa8e1a263449bd0a0daf}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!get\-Input\-Channels\-Count@{get\-Input\-Channels\-Count}}
+\index{get\-Input\-Channels\-Count@{get\-Input\-Channels\-Count}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{get\-Input\-Channels\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::utilities\-::\-Statistician\-::get\-Input\-Channels\-Count} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1utilities_1_1Statistician_a49864c3951b6aa8e1a263449bd0a0daf}
+
+
+\-Definition at line 47 of file \-Statistician.\-cpp.
+
+
+
+\-References input\-Channels\-Count.
+
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_a55bf105c419acad376e9aafeb135be71}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!get\-Input\-Fibres\-Count@{get\-Input\-Fibres\-Count}}
+\index{get\-Input\-Fibres\-Count@{get\-Input\-Fibres\-Count}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{get\-Input\-Fibres\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::utilities\-::\-Statistician\-::get\-Input\-Fibres\-Count} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1utilities_1_1Statistician_a55bf105c419acad376e9aafeb135be71}
+
+
+\-Definition at line 38 of file \-Statistician.\-cpp.
+
+
+
+\-References input\-Fibres\-Count.
+
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_a5545756c254e28b165c806ddb8eb6780}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!get\-Normal\-Fibres\-Count@{get\-Normal\-Fibres\-Count}}
+\index{get\-Normal\-Fibres\-Count@{get\-Normal\-Fibres\-Count}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{get\-Normal\-Fibres\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::utilities\-::\-Statistician\-::get\-Normal\-Fibres\-Count} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1utilities_1_1Statistician_a5545756c254e28b165c806ddb8eb6780}
+
+
+\-Definition at line 44 of file \-Statistician.\-cpp.
+
+
+
+\-References normal\-Fibres\-Count.
+
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_ae1aed7da3340cbd51d31318f92794f4d}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!get\-Output\-Channels\-Count@{get\-Output\-Channels\-Count}}
+\index{get\-Output\-Channels\-Count@{get\-Output\-Channels\-Count}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{get\-Output\-Channels\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::utilities\-::\-Statistician\-::get\-Output\-Channels\-Count} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1utilities_1_1Statistician_ae1aed7da3340cbd51d31318f92794f4d}
+
+
+\-Definition at line 50 of file \-Statistician.\-cpp.
+
+
+
+\-References output\-Channels\-Count.
+
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_aac6a1aeec3987386f175cc771e3e7a3a}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!get\-Output\-Fibres\-Count@{get\-Output\-Fibres\-Count}}
+\index{get\-Output\-Fibres\-Count@{get\-Output\-Fibres\-Count}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{get\-Output\-Fibres\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::utilities\-::\-Statistician\-::get\-Output\-Fibres\-Count} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1utilities_1_1Statistician_aac6a1aeec3987386f175cc771e3e7a3a}
+
+
+\-Definition at line 41 of file \-Statistician.\-cpp.
+
+
+
+\-References output\-Fibres\-Count.
+
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_ab38d0c6cfb206e6c331c6af95388faab}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!get\-Triggered\-Nodes\-Per\-Cluster@{get\-Triggered\-Nodes\-Per\-Cluster}}
+\index{get\-Triggered\-Nodes\-Per\-Cluster@{get\-Triggered\-Nodes\-Per\-Cluster}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{get\-Triggered\-Nodes\-Per\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$ std\-::string, int $>$ {\bf cryomesh\-::utilities\-::\-Statistician\-::get\-Triggered\-Nodes\-Per\-Cluster} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1utilities_1_1Statistician_ab38d0c6cfb206e6c331c6af95388faab}
+
+
+\-Definition at line 57 of file \-Statistician.\-cpp.
+
+
+
+\-References bundle, and cryomesh\-::structures\-::\-Bundle\-::get\-Clusters().
+
+
+
+\-Referenced by get\-Triggered\-Nodes\-Total().
+
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_a4a60fac1c7060a891feae84096109315}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!get\-Triggered\-Nodes\-Total@{get\-Triggered\-Nodes\-Total}}
+\index{get\-Triggered\-Nodes\-Total@{get\-Triggered\-Nodes\-Total}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{get\-Triggered\-Nodes\-Total}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::utilities\-::\-Statistician\-::get\-Triggered\-Nodes\-Total} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1utilities_1_1Statistician_a4a60fac1c7060a891feae84096109315}
+
+
+\-Definition at line 95 of file \-Statistician.\-cpp.
+
+
+
+\-References get\-Triggered\-Nodes\-Per\-Cluster().
+
+
+
+\-Referenced by cryomesh\-::utilities\-::operator$<$$<$().
+
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_a3b6005b898ef77ca2fa2724f069b2c25}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!update@{update}}
+\index{update@{update}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::utilities\-::\-Statistician\-::update} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1utilities_1_1Statistician_a3b6005b898ef77ca2fa2724f069b2c25}
+
+
+\-Definition at line 24 of file \-Statistician.\-cpp.
+
+
+
+\-References bundle, cluster\-Count, cryomesh\-::structures\-::\-Bundle\-::get\-Clusters(), cryomesh\-::structures\-::\-Bundle\-::get\-Fibres(), cryomesh\-::structures\-::\-Bundle\-::get\-Input\-Fibres(), cryomesh\-::structures\-::\-Bundle\-::get\-Output\-Fibres(), cryomesh\-::structures\-::\-Bundle\-::get\-Real\-Input\-Channels\-Map(), cryomesh\-::structures\-::\-Bundle\-::get\-Real\-Output\-Channels\-Map(), input\-Channels\-Count, input\-Fibres\-Count, normal\-Fibres\-Count, output\-Channels\-Count, and output\-Fibres\-Count.
+
+
+
+\-Referenced by \-Statistician().
+
+
+
+\subsection{\-Friends \-And \-Related \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_a5898d288b67c44776f0d0e194601c628}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const {\bf \-Statistician} \&}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1Statistician_a5898d288b67c44776f0d0e194601c628}
+
+
+\-To stream operator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::ostream} & \& os \-The output stream \\
+\hline
+{\em const} & \hyperlink{classcryomesh_1_1utilities_1_1Statistician}{\-Statistician} \& obj \-The object to stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::ostream \& \-The output stream 
+\end{DoxyReturn}
+
+
+\-Definition at line 131 of file \-Statistician.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_a478ec1e4a9b68063f1422e97d8cbea99}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!bundle@{bundle}}
+\index{bundle@{bundle}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{bundle}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf structures\-::\-Bundle}\& {\bf cryomesh\-::utilities\-::\-Statistician\-::bundle}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1Statistician_a478ec1e4a9b68063f1422e97d8cbea99}
+
+
+\-Definition at line 74 of file \-Statistician.\-h.
+
+
+
+\-Referenced by get\-Active\-Nodes\-Per\-Cluster(), get\-Bundle(), get\-Triggered\-Nodes\-Per\-Cluster(), and update().
+
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_af2c7a19dfd7c305b1767a3abec4cb75e}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!bundleuuid@{bundleuuid}}
+\index{bundleuuid@{bundleuuid}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{bundleuuid}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::utilities\-::\-Statistician\-::bundleuuid}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1Statistician_af2c7a19dfd7c305b1767a3abec4cb75e}
+
+
+\-Definition at line 82 of file \-Statistician.\-h.
+
+
+
+\-Referenced by get\-Bundle\-U\-U\-I\-D().
+
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_af6b5d81fc1b6821e7fff8d4ccbcf15bb}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!cluster\-Count@{cluster\-Count}}
+\index{cluster\-Count@{cluster\-Count}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{cluster\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::utilities\-::\-Statistician\-::cluster\-Count}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1Statistician_af6b5d81fc1b6821e7fff8d4ccbcf15bb}
+
+
+\-Definition at line 76 of file \-Statistician.\-h.
+
+
+
+\-Referenced by get\-Cluster\-Count(), and update().
+
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_a734a2d7317a2d1a08dfa64a6f5a7da8c}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!input\-Channels\-Count@{input\-Channels\-Count}}
+\index{input\-Channels\-Count@{input\-Channels\-Count}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{input\-Channels\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::utilities\-::\-Statistician\-::input\-Channels\-Count}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1Statistician_a734a2d7317a2d1a08dfa64a6f5a7da8c}
+
+
+\-Definition at line 80 of file \-Statistician.\-h.
+
+
+
+\-Referenced by get\-Input\-Channels\-Count(), cryomesh\-::utilities\-::operator$<$$<$(), and update().
+
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_a12780e2d450e3013d6a8a306a4b02bd7}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!input\-Fibres\-Count@{input\-Fibres\-Count}}
+\index{input\-Fibres\-Count@{input\-Fibres\-Count}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{input\-Fibres\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::utilities\-::\-Statistician\-::input\-Fibres\-Count}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1Statistician_a12780e2d450e3013d6a8a306a4b02bd7}
+
+
+\-Definition at line 77 of file \-Statistician.\-h.
+
+
+
+\-Referenced by get\-Input\-Fibres\-Count(), cryomesh\-::utilities\-::operator$<$$<$(), and update().
+
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_aab51af29476bb894d8f145b8ce3d80ce}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!nodes\-Active@{nodes\-Active}}
+\index{nodes\-Active@{nodes\-Active}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{nodes\-Active}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::utilities\-::\-Statistician\-::nodes\-Active}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1Statistician_aab51af29476bb894d8f145b8ce3d80ce}
+
+
+\-Definition at line 85 of file \-Statistician.\-h.
+
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_a4395675ddbfb598566faca1096bfe2da}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!nodes\-Total@{nodes\-Total}}
+\index{nodes\-Total@{nodes\-Total}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{nodes\-Total}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::utilities\-::\-Statistician\-::nodes\-Total}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1Statistician_a4395675ddbfb598566faca1096bfe2da}
+
+
+\-Definition at line 83 of file \-Statistician.\-h.
+
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_a5a38000033e2405dcfac5ef48d2a6820}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!nodes\-Triggered@{nodes\-Triggered}}
+\index{nodes\-Triggered@{nodes\-Triggered}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{nodes\-Triggered}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::utilities\-::\-Statistician\-::nodes\-Triggered}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1Statistician_a5a38000033e2405dcfac5ef48d2a6820}
+
+
+\-Definition at line 84 of file \-Statistician.\-h.
+
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_a1540b6a7e491f9241f31fbcfd62bdd74}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!normal\-Fibres\-Count@{normal\-Fibres\-Count}}
+\index{normal\-Fibres\-Count@{normal\-Fibres\-Count}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{normal\-Fibres\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::utilities\-::\-Statistician\-::normal\-Fibres\-Count}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1Statistician_a1540b6a7e491f9241f31fbcfd62bdd74}
+
+
+\-Definition at line 79 of file \-Statistician.\-h.
+
+
+
+\-Referenced by get\-Normal\-Fibres\-Count(), cryomesh\-::utilities\-::operator$<$$<$(), and update().
+
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_aa13c9110a9a210b7656ec815166f20c2}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!output\-Channels\-Count@{output\-Channels\-Count}}
+\index{output\-Channels\-Count@{output\-Channels\-Count}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{output\-Channels\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::utilities\-::\-Statistician\-::output\-Channels\-Count}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1Statistician_aa13c9110a9a210b7656ec815166f20c2}
+
+
+\-Definition at line 81 of file \-Statistician.\-h.
+
+
+
+\-Referenced by get\-Output\-Channels\-Count(), cryomesh\-::utilities\-::operator$<$$<$(), and update().
+
+\hypertarget{classcryomesh_1_1utilities_1_1Statistician_a90aeaf6f65a5cad0b3936731378ea07a}{\index{cryomesh\-::utilities\-::\-Statistician@{cryomesh\-::utilities\-::\-Statistician}!output\-Fibres\-Count@{output\-Fibres\-Count}}
+\index{output\-Fibres\-Count@{output\-Fibres\-Count}!cryomesh::utilities::Statistician@{cryomesh\-::utilities\-::\-Statistician}}
+\subsubsection[{output\-Fibres\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::utilities\-::\-Statistician\-::output\-Fibres\-Count}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1Statistician_a90aeaf6f65a5cad0b3936731378ea07a}
+
+
+\-Definition at line 78 of file \-Statistician.\-h.
+
+
+
+\-Referenced by get\-Output\-Fibres\-Count(), cryomesh\-::utilities\-::operator$<$$<$(), and update().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/utilities/\hyperlink{Statistician_8h}{\-Statistician.\-h}\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/utilities/\hyperlink{Statistician_8cpp}{\-Statistician.\-cpp}\end{DoxyCompactItemize}

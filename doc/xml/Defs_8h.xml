@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="Defs_8h" kind="file">
+    <compoundname>Defs.h</compoundname>
+    <includes local="no">boost/shared_ptr.hpp</includes>
+    <includes local="no">boost/scoped_ptr.hpp</includes>
+    <incdepgraph>
+      <node id="776">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="775">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/Defs.h</label>
+        <link refid="Defs.h"/>
+        <childnode refid="776" relation="include">
+        </childnode>
+        <childnode refid="777" relation="include">
+        </childnode>
+      </node>
+      <node id="777">
+        <label>boost/scoped_ptr.hpp</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structcryomesh_1_1Pointer" prot="public">cryomesh::Pointer</innerclass>
+    <innernamespace refid="namespacecryomesh">cryomesh</innernamespace>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="Defs_8h_1ae55cf30deffa4b8f464ccc8dc2f9adba" prot="public" static="no">
+        <type>std::map&lt; boost::shared_ptr&lt; components::Node &gt;, std::map&lt; boost::shared_ptr&lt; components::Node &gt; &gt; &gt;</type>
+        <definition>typedef std::map&lt;boost::shared_ptr&lt; components::Node &gt;, std::map&lt;boost::shared_ptr&lt; components::Node &gt; &gt; &gt; NeighbourhoodMap</definition>
+        <argsstring></argsstring>
+        <name>NeighbourhoodMap</name>
+        <briefdescription>
+<para><ref refid="Defs_8h" kindref="compound">Defs.h</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Created on: 26 Jan 2011 Author: SevenMachines&lt;<ulink url="mailto:SevenMachines@yahoo.co.uk">SevenMachines@yahoo.co.uk</ulink>&gt; </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/Defs.h" line="14" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/Defs.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="8"><highlight class="preprocessor">#ifndef<sp/>DEFS_H_</highlight></codeline>
+<codeline lineno="9"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DEFS_H_</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/shared_ptr.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/scoped_ptr.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="Defs_8h_1ae55cf30deffa4b8f464ccc8dc2f9adba" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::map&lt;boost::shared_ptr&lt;<sp/>components::Node<sp/>&gt;,<sp/>std::map&lt;boost::shared_ptr&lt;<sp/>components::Node<sp/>&gt;<sp/>&gt;<sp/>&gt;<sp/><ref refid="Defs_8h_1ae55cf30deffa4b8f464ccc8dc2f9adba" kindref="member" tooltip="Defs.h.">NeighbourhoodMap</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">cryomesh<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="23" refid="structcryomesh_1_1Pointer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structcryomesh_1_1Pointer" kindref="compound" tooltip="Pointer struct to allow typdef of templated smart pointers.">Pointer</ref><sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>CPP0X</highlight></codeline>
+<codeline lineno="25"><highlight class="preprocessor"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::scoped_ptr&lt;T&gt;<sp/><ref refid="structcryomesh_1_1Pointer_1a84794c15bea7c7dd8fceb679054cbdf8" kindref="member">scoped_ptr</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;T&gt;<sp/><ref refid="structcryomesh_1_1Pointer_1a825e9aaef4547bc1dd4c19424c162b89" kindref="member">shared_ptr</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="28" refid="structcryomesh_1_1Pointer_1a84794c15bea7c7dd8fceb679054cbdf8" refkind="member"><highlight class="preprocessor"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>boost::scoped_ptr&lt;T&gt;<sp/><ref refid="structcryomesh_1_1Pointer_1a84794c15bea7c7dd8fceb679054cbdf8" kindref="member">scoped_ptr</ref>;</highlight></codeline>
+<codeline lineno="29" refid="structcryomesh_1_1Pointer_1a825e9aaef4547bc1dd4c19424c162b89" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;T&gt;<sp/><ref refid="structcryomesh_1_1Pointer_1a825e9aaef4547bc1dd4c19424c162b89" kindref="member">shared_ptr</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="31"><highlight class="preprocessor"></highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DEFS_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/Defs.h"/>
+  </compounddef>
+</doxygen>

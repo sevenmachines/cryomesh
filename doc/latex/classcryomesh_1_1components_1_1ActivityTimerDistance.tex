@@ -1,0 +1,597 @@
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance}{\section{cryomesh\-:\-:components\-:\-:\-Activity\-Timer\-Distance \-Class \-Reference}
+\label{classcryomesh_1_1components_1_1ActivityTimerDistance}\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+}
+
+
+{\ttfamily \#include $<$\-Activity\-Timer\-Distance.\-h$>$}
+
+\-Inheritance diagram for cryomesh\-:\-:components\-:\-:\-Activity\-Timer\-Distance\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcryomesh_1_1components_1_1ActivityTimerDistance}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance_a3da36944fccd3512740a63fdae13de20}{\-Activity\-Timer\-Distance} ()
+\begin{DoxyCompactList}\small\item\em \-Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance_a09f1241cc4c1ddd4423ac288e534b1e1}{\-Activity\-Timer\-Distance} (double dist, double dec)
+\begin{DoxyCompactList}\small\item\em \-Construct from an initial distance, and a rate of decrement. \end{DoxyCompactList}\item 
+virtual \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance_ac31091719dbdcebb505a47a2ed99fc4e}{$\sim$\-Activity\-Timer\-Distance} ()
+\item 
+\hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance}{\-Activity\-Timer\-Distance} \& \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance_a37992cab5a1bfde00c8f069fc47a7c2f}{operator=} (const \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance}{\-Activity\-Timer\-Distance} \&obj)
+\begin{DoxyCompactList}\small\item\em \-Assignment operator. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance_a36db36aad72526f4d1541213ed762c01}{operator$<$} (const \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance}{\-Activity\-Timer\-Distance} \&obj) const 
+\begin{DoxyCompactList}\small\item\em \-Less than operator. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance_ae33ecef3ba181aec976ceb6304fc7935}{operator$>$} (const \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance}{\-Activity\-Timer\-Distance} \&obj) const 
+\begin{DoxyCompactList}\small\item\em \-Greater than operator. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance}{\-Activity\-Timer\-Distance} \& \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance_adf508add943655664c792c93795406fd}{operator-\/-\/} ()
+\begin{DoxyCompactList}\small\item\em \-Prefix increment operator. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance}{\-Activity\-Timer\-Distance} \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance_aa8f2cf4dbabcc623aa7e0cf1f793f98a}{operator-\/-\/} (int)
+\begin{DoxyCompactList}\small\item\em \-Postfix decrement operator. \end{DoxyCompactList}\item 
+const \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance}{\-Activity\-Timer\-Distance} \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance_a7c91c5d5255899d6504cc3fe6669cbab}{operator+} (const \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance}{\-Activity\-Timer\-Distance} \&obj) const 
+\begin{DoxyCompactList}\small\item\em \-Non-\/destructive addition operator. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance}{\-Activity\-Timer\-Distance} \& \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance_aaf72572d1cb481f519132e7a17b8125b}{operator+=} (const \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance}{\-Activity\-Timer\-Distance} \&obj)
+\begin{DoxyCompactList}\small\item\em \-Destructive addition and assignment operator. \end{DoxyCompactList}\item 
+double \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance_aa0ded366836ca5bb7ce9db6abf7b4d51}{get\-Delay} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the delay. \end{DoxyCompactList}\item 
+double \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance_a7da9fc6bc83657837f90ad3a6158e3a5}{get\-Starting\-Delay} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the starting delay. \end{DoxyCompactList}\item 
+double \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance_a3691132699928dc9f7089576ad0c12ce}{get\-Decrement} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the decrement. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance_aca048029f8ff311c7e215bb2d7689c7b}{reset} ()
+\begin{DoxyCompactList}\small\item\em \-Reset the countdown. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance_a2e2ac1b8bc8d942346c1a758d7602a99}{check\-Constraints} () const 
+\item 
+virtual void \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance_a54d73b877fd99ece736c7352a09688ad}{enable\-Debug} (bool b)
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance}{\-Activity\-Timer\-Distance} $>$ \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance_ad82f62afe5a34af54ff4c4ec8d1c2344}{get\-Random} ()
+\begin{DoxyCompactList}\small\item\em \-Get a random object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const double \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance_afb9cf33e702747ecd42d1bfd0c3a3ce3}{\-M\-I\-N\-\_\-\-D\-E\-C\-R\-E\-M\-E\-N\-T\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N} = 0.\-1
+\item 
+static const double \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance_ab24df04f889693641f609aa8f199455f}{\-M\-A\-X\-\_\-\-D\-E\-C\-R\-E\-M\-E\-N\-T\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N} = 1
+\item 
+static const double \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance_a549f2e016df32a594092179570ae742d}{\-M\-I\-N\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E} = 1.\-0
+\item 
+static const double \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance_a87e36fd0ad252132017fa1c9664cf2ca}{\-M\-A\-X\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E} = 100.\-0
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\-::ostream \& \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance_a6e109b8f4ddcf6d4e24f0347d4060f78}{print} (std\-::ostream \&os) const 
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance_a191b202e783b14973aa327c460cdc46e}{distance}
+\item 
+double \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance_a0e793c735a10edd18fa12a019dcf8c22}{distance\-\_\-remaining}
+\item 
+double \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance_a81f6c8dffa1dbe89e7e3d67603f84b9a}{decrement}
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1components_1_1ActivityTimer_ac35779cd02eec3662a6cd9d75e1572cd}{operator$<$$<$} (std\-::ostream \&os, const \hyperlink{classcryomesh_1_1components_1_1ActivityTimer}{\-Activity\-Timer} \&obj)
+\begin{DoxyCompactList}\small\item\em \-To stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+
+
+\-Definition at line 19 of file \-Activity\-Timer\-Distance.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance_a3da36944fccd3512740a63fdae13de20}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!\-Activity\-Timer\-Distance@{\-Activity\-Timer\-Distance}}
+\index{\-Activity\-Timer\-Distance@{\-Activity\-Timer\-Distance}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{\-Activity\-Timer\-Distance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::\-Activity\-Timer\-Distance} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1ActivityTimerDistance_a3da36944fccd3512740a63fdae13de20}
+
+
+\-Constructor. 
+
+
+
+\-Definition at line 36 of file \-Activity\-Timer\-Distance.\-cpp.
+
+
+
+\-Referenced by get\-Random().
+
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance_a09f1241cc4c1ddd4423ac288e534b1e1}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!\-Activity\-Timer\-Distance@{\-Activity\-Timer\-Distance}}
+\index{\-Activity\-Timer\-Distance@{\-Activity\-Timer\-Distance}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{\-Activity\-Timer\-Distance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::\-Activity\-Timer\-Distance} (
+\begin{DoxyParamCaption}
+\item[{double}]{dist, }
+\item[{double}]{dec}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1ActivityTimerDistance_a09f1241cc4c1ddd4423ac288e534b1e1}
+
+
+\-Construct from an initial distance, and a rate of decrement. 
+
+
+
+\-Definition at line 40 of file \-Activity\-Timer\-Distance.\-cpp.
+
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance_ac31091719dbdcebb505a47a2ed99fc4e}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!$\sim$\-Activity\-Timer\-Distance@{$\sim$\-Activity\-Timer\-Distance}}
+\index{$\sim$\-Activity\-Timer\-Distance@{$\sim$\-Activity\-Timer\-Distance}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{$\sim$\-Activity\-Timer\-Distance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::$\sim$\-Activity\-Timer\-Distance} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1ActivityTimerDistance_ac31091719dbdcebb505a47a2ed99fc4e}
+
+
+\-Definition at line 44 of file \-Activity\-Timer\-Distance.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance_a2e2ac1b8bc8d942346c1a758d7602a99}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!check\-Constraints@{check\-Constraints}}
+\index{check\-Constraints@{check\-Constraints}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{check\-Constraints}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::check\-Constraints} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1ActivityTimerDistance_a2e2ac1b8bc8d942346c1a758d7602a99}
+
+
+\-Definition at line 113 of file \-Activity\-Timer\-Distance.\-cpp.
+
+
+
+\-References get\-Decrement(), get\-Starting\-Delay(), and \-M\-I\-N\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E.
+
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance_a54d73b877fd99ece736c7352a09688ad}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!enable\-Debug@{enable\-Debug}}
+\index{enable\-Debug@{enable\-Debug}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{enable\-Debug}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::enable\-Debug} (
+\begin{DoxyParamCaption}
+\item[{bool}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1ActivityTimerDistance_a54d73b877fd99ece736c7352a09688ad}
+
+
+\-Definition at line 101 of file \-Activity\-Timer\-Distance.\-cpp.
+
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance_a3691132699928dc9f7089576ad0c12ce}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!get\-Decrement@{get\-Decrement}}
+\index{get\-Decrement@{get\-Decrement}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{get\-Decrement}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::get\-Decrement} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1ActivityTimerDistance_a3691132699928dc9f7089576ad0c12ce}
+
+
+\-Get the decrement. 
+
+\begin{DoxyReturn}{\-Returns}
+double \-The decrement of the timer 
+\end{DoxyReturn}
+
+
+\-Definition at line 98 of file \-Activity\-Timer\-Distance.\-cpp.
+
+
+
+\-References decrement.
+
+
+
+\-Referenced by check\-Constraints(), and print().
+
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance_aa0ded366836ca5bb7ce9db6abf7b4d51}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!get\-Delay@{get\-Delay}}
+\index{get\-Delay@{get\-Delay}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{get\-Delay}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::get\-Delay} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1ActivityTimerDistance_aa0ded366836ca5bb7ce9db6abf7b4d51}
+
+
+\-Get the delay. 
+
+\begin{DoxyReturn}{\-Returns}
+double \-The distance delay 
+\end{DoxyReturn}
+
+
+\-Definition at line 90 of file \-Activity\-Timer\-Distance.\-cpp.
+
+
+
+\-References distance\-\_\-remaining.
+
+
+
+\-Referenced by print().
+
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance_ad82f62afe5a34af54ff4c4ec8d1c2344}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!get\-Random@{get\-Random}}
+\index{get\-Random@{get\-Random}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{get\-Random}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$ {\bf \-Activity\-Timer\-Distance} $>$ {\bf cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::get\-Random} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1components_1_1ActivityTimerDistance_ad82f62afe5a34af54ff4c4ec8d1c2344}
+
+
+\-Get a random object. 
+
+\begin{DoxyReturn}{\-Returns}
+boost\-::shared\-\_\-ptr$<$\-Activity\-Timer\-Distance$>$ \-The random object 
+\end{DoxyReturn}
+
+
+\-Definition at line 22 of file \-Activity\-Timer\-Distance.\-cpp.
+
+
+
+\-References \-Activity\-Timer\-Distance(), \-M\-A\-X\-\_\-\-D\-E\-C\-R\-E\-M\-E\-N\-T\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N, \-M\-A\-X\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E, \-M\-I\-N\-\_\-\-D\-E\-C\-R\-E\-M\-E\-N\-T\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N, and \-M\-I\-N\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E.
+
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance_a7da9fc6bc83657837f90ad3a6158e3a5}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!get\-Starting\-Delay@{get\-Starting\-Delay}}
+\index{get\-Starting\-Delay@{get\-Starting\-Delay}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{get\-Starting\-Delay}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::get\-Starting\-Delay} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1ActivityTimerDistance_a7da9fc6bc83657837f90ad3a6158e3a5}
+
+
+\-Get the starting delay. 
+
+\begin{DoxyReturn}{\-Returns}
+double \-The starting distance delay 
+\end{DoxyReturn}
+
+
+\-Definition at line 94 of file \-Activity\-Timer\-Distance.\-cpp.
+
+
+
+\-References distance.
+
+
+
+\-Referenced by check\-Constraints(), and print().
+
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance_a7c91c5d5255899d6504cc3fe6669cbab}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!operator+@{operator+}}
+\index{operator+@{operator+}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Activity\-Timer\-Distance} cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Activity\-Timer\-Distance} \&}]{obj}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1ActivityTimerDistance_a7c91c5d5255899d6504cc3fe6669cbab}
+
+
+\-Non-\/destructive addition operator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em const} & \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance}{\-Activity\-Timer\-Distance} \& obj \-R\-H\-S addition\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance}{\-Activity\-Timer\-Distance} \-New object after addition 
+\end{DoxyReturn}
+
+
+\-Definition at line 76 of file \-Activity\-Timer\-Distance.\-cpp.
+
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance_aaf72572d1cb481f519132e7a17b8125b}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Activity\-Timer\-Distance} \& cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Activity\-Timer\-Distance} \&}]{obj}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1ActivityTimerDistance_aaf72572d1cb481f519132e7a17b8125b}
+
+
+\-Destructive addition and assignment operator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em const} & \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance}{\-Activity\-Timer\-Distance} \& obj \-R\-H\-S addition\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance}{\-Activity\-Timer\-Distance} \& \-This object after addition and assignment 
+\end{DoxyReturn}
+
+
+\-Definition at line 82 of file \-Activity\-Timer\-Distance.\-cpp.
+
+
+
+\-References decrement, distance, and distance\-\_\-remaining.
+
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance_adf508add943655664c792c93795406fd}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{operator-\/-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Activity\-Timer\-Distance} \& cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::operator-\/-\/ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1ActivityTimerDistance_adf508add943655664c792c93795406fd}
+
+
+\-Prefix increment operator. 
+
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance}{\-Activity\-Timer\-Distance} \& \-Return this 
+\end{DoxyReturn}
+
+
+\-Definition at line 62 of file \-Activity\-Timer\-Distance.\-cpp.
+
+
+
+\-References decrement, and distance\-\_\-remaining.
+
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance_aa8f2cf4dbabcc623aa7e0cf1f793f98a}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{operator-\/-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Activity\-Timer\-Distance} cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::operator-\/-\/ (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1ActivityTimerDistance_aa8f2cf4dbabcc623aa7e0cf1f793f98a}
+
+
+\-Postfix decrement operator. 
+
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance}{\-Activity\-Timer\-Distance} \& \-Return this 
+\end{DoxyReturn}
+
+
+\-Definition at line 70 of file \-Activity\-Timer\-Distance.\-cpp.
+
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance_a36db36aad72526f4d1541213ed762c01}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Activity\-Timer\-Distance} \&}]{obj}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1ActivityTimerDistance_a36db36aad72526f4d1541213ed762c01}
+
+
+\-Less than operator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em const} & \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance}{\-Activity\-Timer\-Distance} \& obj \-R\-H\-S\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+bool \-True if $<$ than obj, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 54 of file \-Activity\-Timer\-Distance.\-cpp.
+
+
+
+\-References distance.
+
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance_a37992cab5a1bfde00c8f069fc47a7c2f}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!operator=@{operator=}}
+\index{operator=@{operator=}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Activity\-Timer\-Distance} \& cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Activity\-Timer\-Distance} \&}]{obj}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1ActivityTimerDistance_a37992cab5a1bfde00c8f069fc47a7c2f}
+
+
+\-Assignment operator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em const} & \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance}{\-Activity\-Timer\-Distance} \& obj \-R\-H\-S assignment\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance}{\-Activity\-Timer\-Distance} \& \-This object after assignment 
+\end{DoxyReturn}
+
+
+\-Definition at line 47 of file \-Activity\-Timer\-Distance.\-cpp.
+
+
+
+\-References decrement, distance, and distance\-\_\-remaining.
+
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance_ae33ecef3ba181aec976ceb6304fc7935}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}bool cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::operator$>$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Activity\-Timer\-Distance} \&}]{obj}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1ActivityTimerDistance_ae33ecef3ba181aec976ceb6304fc7935}
+
+
+\-Greater than operator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em const} & \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance}{\-Activity\-Timer\-Distance} \& obj \-R\-H\-S\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+bool \-True if $>$ than obj, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 58 of file \-Activity\-Timer\-Distance.\-cpp.
+
+
+
+\-References distance\-\_\-remaining.
+
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance_a6e109b8f4ddcf6d4e24f0347d4060f78}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!print@{print}}
+\index{print@{print}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream \& {\bf cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::print} (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1ActivityTimerDistance_a6e109b8f4ddcf6d4e24f0347d4060f78}
+
+
+\-Implements \hyperlink{classcryomesh_1_1components_1_1ActivityTimer_a1a4fd82c20fdc2b17ebe4582222ab8a3}{cryomesh\-::components\-::\-Activity\-Timer}.
+
+
+
+\-Definition at line 107 of file \-Activity\-Timer\-Distance.\-cpp.
+
+
+
+\-References get\-Decrement(), get\-Delay(), and get\-Starting\-Delay().
+
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance_aca048029f8ff311c7e215bb2d7689c7b}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!reset@{reset}}
+\index{reset@{reset}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::reset} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1ActivityTimerDistance_aca048029f8ff311c7e215bb2d7689c7b}
+
+
+\-Reset the countdown. 
+
+
+
+\-Implements \hyperlink{classcryomesh_1_1components_1_1ActivityTimer_a8842b0b6e73ddf1d1809b79b7b239baf}{cryomesh\-::components\-::\-Activity\-Timer}.
+
+
+
+\-Definition at line 104 of file \-Activity\-Timer\-Distance.\-cpp.
+
+
+
+\-References distance, and distance\-\_\-remaining.
+
+
+
+\subsection{\-Friends \-And \-Related \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimer_ac35779cd02eec3662a6cd9d75e1572cd}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const {\bf \-Activity\-Timer} \&}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend, inherited\mbox{]}}}}\label{classcryomesh_1_1components_1_1ActivityTimer_ac35779cd02eec3662a6cd9d75e1572cd}
+
+
+\-To stream operator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::ostream} & \& os \-The output stream \\
+\hline
+{\em const} & \hyperlink{classcryomesh_1_1components_1_1ActivityTimer}{\-Activity\-Timer} \& obj \-The object to stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::ostream \& \-The output stream 
+\end{DoxyReturn}
+
+
+\-Definition at line 47 of file \-Activity\-Timer.\-h.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance_a81f6c8dffa1dbe89e7e3d67603f84b9a}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!decrement@{decrement}}
+\index{decrement@{decrement}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{decrement}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::decrement}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1components_1_1ActivityTimerDistance_a81f6c8dffa1dbe89e7e3d67603f84b9a}
+
+
+\-Definition at line 196 of file \-Activity\-Timer\-Distance.\-h.
+
+
+
+\-Referenced by get\-Decrement(), operator+=(), operator-\/-\/(), and operator=().
+
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance_a191b202e783b14973aa327c460cdc46e}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!distance@{distance}}
+\index{distance@{distance}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{distance}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::distance}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1components_1_1ActivityTimerDistance_a191b202e783b14973aa327c460cdc46e}
+
+
+\-Definition at line 181 of file \-Activity\-Timer\-Distance.\-h.
+
+
+
+\-Referenced by get\-Starting\-Delay(), operator+=(), operator$<$(), operator=(), and reset().
+
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance_a0e793c735a10edd18fa12a019dcf8c22}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!distance\-\_\-remaining@{distance\-\_\-remaining}}
+\index{distance\-\_\-remaining@{distance\-\_\-remaining}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{distance\-\_\-remaining}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::distance\-\_\-remaining}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1components_1_1ActivityTimerDistance_a0e793c735a10edd18fa12a019dcf8c22}
+
+
+\-Definition at line 188 of file \-Activity\-Timer\-Distance.\-h.
+
+
+
+\-Referenced by get\-Delay(), operator+=(), operator-\/-\/(), operator=(), operator$>$(), and reset().
+
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance_ab24df04f889693641f609aa8f199455f}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!\-M\-A\-X\-\_\-\-D\-E\-C\-R\-E\-M\-E\-N\-T\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N@{\-M\-A\-X\-\_\-\-D\-E\-C\-R\-E\-M\-E\-N\-T\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N}}
+\index{\-M\-A\-X\-\_\-\-D\-E\-C\-R\-E\-M\-E\-N\-T\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N@{\-M\-A\-X\-\_\-\-D\-E\-C\-R\-E\-M\-E\-N\-T\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{\-M\-A\-X\-\_\-\-D\-E\-C\-R\-E\-M\-E\-N\-T\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}const double {\bf cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::\-M\-A\-X\-\_\-\-D\-E\-C\-R\-E\-M\-E\-N\-T\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N} = 1\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1components_1_1ActivityTimerDistance_ab24df04f889693641f609aa8f199455f}
+
+
+\-Definition at line 156 of file \-Activity\-Timer\-Distance.\-h.
+
+
+
+\-Referenced by get\-Random().
+
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance_a87e36fd0ad252132017fa1c9664cf2ca}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!\-M\-A\-X\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E@{\-M\-A\-X\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}}
+\index{\-M\-A\-X\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E@{\-M\-A\-X\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{\-M\-A\-X\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}const double {\bf cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::\-M\-A\-X\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E} = 100.\-0\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1components_1_1ActivityTimerDistance_a87e36fd0ad252132017fa1c9664cf2ca}
+
+
+\-Definition at line 170 of file \-Activity\-Timer\-Distance.\-h.
+
+
+
+\-Referenced by get\-Random().
+
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance_afb9cf33e702747ecd42d1bfd0c3a3ce3}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!\-M\-I\-N\-\_\-\-D\-E\-C\-R\-E\-M\-E\-N\-T\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N@{\-M\-I\-N\-\_\-\-D\-E\-C\-R\-E\-M\-E\-N\-T\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N}}
+\index{\-M\-I\-N\-\_\-\-D\-E\-C\-R\-E\-M\-E\-N\-T\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N@{\-M\-I\-N\-\_\-\-D\-E\-C\-R\-E\-M\-E\-N\-T\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{\-M\-I\-N\-\_\-\-D\-E\-C\-R\-E\-M\-E\-N\-T\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}const double {\bf cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::\-M\-I\-N\-\_\-\-D\-E\-C\-R\-E\-M\-E\-N\-T\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N} = 0.\-1\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1components_1_1ActivityTimerDistance_afb9cf33e702747ecd42d1bfd0c3a3ce3}
+
+
+\-Definition at line 149 of file \-Activity\-Timer\-Distance.\-h.
+
+
+
+\-Referenced by get\-Random().
+
+\hypertarget{classcryomesh_1_1components_1_1ActivityTimerDistance_a549f2e016df32a594092179570ae742d}{\index{cryomesh\-::components\-::\-Activity\-Timer\-Distance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}!\-M\-I\-N\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E@{\-M\-I\-N\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}}
+\index{\-M\-I\-N\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E@{\-M\-I\-N\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}!cryomesh::components::ActivityTimerDistance@{cryomesh\-::components\-::\-Activity\-Timer\-Distance}}
+\subsubsection[{\-M\-I\-N\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}const double {\bf cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::\-M\-I\-N\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E} = 1.\-0\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1components_1_1ActivityTimerDistance_a549f2e016df32a594092179570ae742d}
+
+
+\-Definition at line 163 of file \-Activity\-Timer\-Distance.\-h.
+
+
+
+\-Referenced by check\-Constraints(), get\-Random(), and cryomesh\-::components\-::\-Connection\-::update\-Position().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/components/\hyperlink{ActivityTimerDistance_8h}{\-Activity\-Timer\-Distance.\-h}\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/components/\hyperlink{ActivityTimerDistance_8cpp}{\-Activity\-Timer\-Distance.\-cpp}\end{DoxyCompactItemize}

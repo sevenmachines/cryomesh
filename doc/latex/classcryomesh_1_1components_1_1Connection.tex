@@ -1,0 +1,629 @@
+\hypertarget{classcryomesh_1_1components_1_1Connection}{\section{cryomesh\-:\-:components\-:\-:\-Connection \-Class \-Reference}
+\label{classcryomesh_1_1components_1_1Connection}\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}}
+}
+
+
+\hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection} class to manage the transfer of \-Impulses between \-Nodes.  
+
+
+
+
+{\ttfamily \#include $<$\-Connection.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1components_1_1Connection_a4b779dbd6303cab9351375feb89046ff}{\-Connection} ()
+\begin{DoxyCompactList}\small\item\em \-Constructor for \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection}. \end{DoxyCompactList}\item 
+virtual \hyperlink{classcryomesh_1_1components_1_1Connection_a0fe48902242a29c73effddfd9250de32}{$\sim$\-Connection} ()
+\begin{DoxyCompactList}\small\item\em \-Destructor for \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection}. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcryomesh_1_1components_1_1Connection_acb0d89bb9d8f2e2a808f7181c308c267}{update} ()
+\begin{DoxyCompactList}\small\item\em \-Update the \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection}. \end{DoxyCompactList}\item 
+virtual const \*
+\hyperlink{classcryomesh_1_1common_1_1Connector}{common\-::\-Connector}$<$ \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection}, \*
+\hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} $>$ \& \hyperlink{classcryomesh_1_1components_1_1Connection_ad3a94443297c27fc9d52be81afb408e8}{get\-Connector} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the \-Connector object for this \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection} input. \end{DoxyCompactList}\item 
+virtual \hyperlink{classcryomesh_1_1common_1_1Connector}{common\-::\-Connector}\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection}, \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} $>$ \& \hyperlink{classcryomesh_1_1components_1_1Connection_a106759b683be9446b519eb8e3e75866e}{get\-Mutable\-Connector} ()
+\begin{DoxyCompactList}\small\item\em \-Get the mutable \-Connector object for this \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection}. \end{DoxyCompactList}\item 
+boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} $>$ \hyperlink{classcryomesh_1_1components_1_1Connection_a620d9f0f12df818c675c258470887240}{add} (boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} $>$ impulse)
+\begin{DoxyCompactList}\small\item\em \-Add an \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} to this connection. \end{DoxyCompactList}\item 
+boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} $>$ \hyperlink{classcryomesh_1_1components_1_1Connection_a6c38044760c9b4a677709c41c633dc4a}{remove} (boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} $>$ impulse)
+\begin{DoxyCompactList}\small\item\em \-Add an \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} to this connection. \end{DoxyCompactList}\item 
+boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} $>$ \hyperlink{classcryomesh_1_1components_1_1Connection_abaf8a91eab3a7b5d943fe3f5818f2a39}{remove} (\hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} \&impulse)
+\begin{DoxyCompactList}\small\item\em \-Remove an \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} from this connection. \end{DoxyCompactList}\item 
+const \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \& \hyperlink{classcryomesh_1_1components_1_1Connection_aacfec7d5bedc59b5b5bb72565767c705}{get\-Impulses} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the impulse collection. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \& \hyperlink{classcryomesh_1_1components_1_1Connection_a42ad2f54cf156ba270d4fb9ed10113db}{get\-Mutable\-Impulses} ()
+\begin{DoxyCompactList}\small\item\em \-Get the mutable impulse collection. \end{DoxyCompactList}\item 
+const boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance}{components\-::\-Activity\-Timer\-Distance} $>$ \hyperlink{classcryomesh_1_1components_1_1Connection_a1ff605cc45ba4cdaad44e5c68a52cadc}{get\-Activity\-Timer} () const 
+\begin{DoxyCompactList}\small\item\em \-The get activity timer for this object. \end{DoxyCompactList}\item 
+boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance}{components\-::\-Activity\-Timer\-Distance} $>$ \hyperlink{classcryomesh_1_1components_1_1Connection_a2013cc96ac34c8b4897e81cda18fe146}{get\-Mutable\-Activity\-Timer} ()
+\begin{DoxyCompactList}\small\item\em \-The get mutable activity timer for this object. \end{DoxyCompactList}\item 
+boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1manager_1_1DatabaseObject}{manager\-::\-Database\-Object} $>$ \hyperlink{classcryomesh_1_1components_1_1Connection_afb641c5447546df8b54ff7ea7ea98275}{get\-Database\-Object} () const 
+\begin{DoxyCompactList}\small\item\em \-Return a database object for this object. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1components_1_1Connection_a7a12f7e30960796e481291041ca149b7}{update\-Position} ()
+\begin{DoxyCompactList}\small\item\em \-Update position. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1components_1_1Connection_a29a5c50130a5a34657d67cfb317131e0}{connect\-Input} (boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} $>$ node)
+\item 
+void \hyperlink{classcryomesh_1_1components_1_1Connection_a87b1e2db44b157697b026a92dfa950de}{connect\-Output} (boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} $>$ node)
+\item 
+void \hyperlink{classcryomesh_1_1components_1_1Connection_acc48aedd2b98f080dc5cec1d229a1b24}{disconnect} ()
+\item 
+void \hyperlink{classcryomesh_1_1components_1_1Connection_aea5f7cbc5e732729b30611b31964a9f7}{disconnect\-Input} ()
+\item 
+void \hyperlink{classcryomesh_1_1components_1_1Connection_abbb25c5222aa18da00097e96b1c50a5f}{disconnect\-Output} ()
+\item 
+bool \hyperlink{classcryomesh_1_1components_1_1Connection_a7455c6e4c45ffff9e7a64146bc5ff6e2}{is\-Primary\-Input\-Connection} () const 
+\item 
+bool \hyperlink{classcryomesh_1_1components_1_1Connection_a967fb5cafcd38f0ceec16437ea160d23}{is\-Primary\-Output\-Connection} () const 
+\item 
+virtual void \hyperlink{classcryomesh_1_1components_1_1Connection_a276be807f8cf331e1965661a67100440}{enable\-Debug} (bool b)
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1common_1_1Connector}{common\-::\-Connector}\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection}, \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} $>$ $>$ \hyperlink{classcryomesh_1_1components_1_1Connection_ab6d2d5386a6fe3dc5e5797a0b131ea15}{connector}
+\item 
+\hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \hyperlink{classcryomesh_1_1components_1_1Connection_a00323e7080eba7a1bfae022915022f47}{impulses}
+\item 
+boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance}{components\-::\-Activity\-Timer\-Distance} $>$ \hyperlink{classcryomesh_1_1components_1_1Connection_aec487280dd02b018049b7a1dd6906861}{activity\-Timer}
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1components_1_1Connection_ac7d751fcf5dc9a4daa22cc6ad770f06b}{operator$<$$<$} (std\-::ostream \&os, const \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection} \&obj)
+\begin{DoxyCompactList}\small\item\em \-To stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection} class to manage the transfer of \-Impulses between \-Nodes. 
+
+\-A \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection} represents the 'journey' made by \-Impulses as they travel between a start \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} and an end \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node}. \-They can be spatially based or more abstract representations of this journey. \-As each clock moment passes \-Impulses are propagated in some way 'closer' to their end \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node}. \-Impulses can be altered by the \-Mesh on each cycle. \-When \-Impulses reach the 'end' of their journey they are passed to the end \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} for accumulation. \-Connections can also be bi-\/directional, an \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} from a start \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} could be in some way 'reflected' back to that node. \-Perhaps once in a 'weighted' reflection to be accumulated by the start \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node}, or even in a constant per-\/cycle reflection as the original \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} 'moves along' the \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection} 
+
+\-Definition at line 37 of file \-Connection.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcryomesh_1_1components_1_1Connection_a4b779dbd6303cab9351375feb89046ff}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!\-Connection@{\-Connection}}
+\index{\-Connection@{\-Connection}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::components\-::\-Connection\-::\-Connection} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Connection_a4b779dbd6303cab9351375feb89046ff}
+
+
+\-Constructor for \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection}. 
+
+\-Constructor 
+
+\-Definition at line 16 of file \-Connection.\-cpp.
+
+\hypertarget{classcryomesh_1_1components_1_1Connection_a0fe48902242a29c73effddfd9250de32}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!$\sim$\-Connection@{$\sim$\-Connection}}
+\index{$\sim$\-Connection@{$\sim$\-Connection}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{$\sim$\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::components\-::\-Connection\-::$\sim$\-Connection} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1Connection_a0fe48902242a29c73effddfd9250de32}
+
+
+\-Destructor for \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection}. 
+
+\-Destructor 
+
+\-Definition at line 22 of file \-Connection.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1components_1_1Connection_a620d9f0f12df818c675c258470887240}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!add@{add}}
+\index{add@{add}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$ {\bf \-Impulse} $>$ {\bf cryomesh\-::components\-::\-Connection\-::add} (
+\begin{DoxyParamCaption}
+\item[{boost\-::shared\-\_\-ptr$<$ {\bf \-Impulse} $>$}]{impulse}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Connection_a620d9f0f12df818c675c258470887240}
+
+
+\-Add an \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} to this connection. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em boost\-::shared\-\_\-ptr$<$\-Impulse$>$} & impulse \-The \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} to add\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+boost\-::shared\-\_\-ptr$<$\-Impulse$>$ \-The \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} added, null if none added 
+\end{DoxyReturn}
+
+
+\-Definition at line 86 of file \-Connection.\-cpp.
+
+
+
+\-References activity\-Timer, and impulses.
+
+
+
+\-Referenced by cryomesh\-::components\-::\-Node\-::emit\-Impulse().
+
+\hypertarget{classcryomesh_1_1components_1_1Connection_a29a5c50130a5a34657d67cfb317131e0}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!connect\-Input@{connect\-Input}}
+\index{connect\-Input@{connect\-Input}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{connect\-Input}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Connection\-::connect\-Input} (
+\begin{DoxyParamCaption}
+\item[{boost\-::shared\-\_\-ptr$<$ {\bf \-Node} $>$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Connection_a29a5c50130a5a34657d67cfb317131e0}
+
+
+\-Definition at line 177 of file \-Connection.\-cpp.
+
+
+
+\-References get\-Mutable\-Connector().
+
+\hypertarget{classcryomesh_1_1components_1_1Connection_a87b1e2db44b157697b026a92dfa950de}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!connect\-Output@{connect\-Output}}
+\index{connect\-Output@{connect\-Output}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{connect\-Output}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Connection\-::connect\-Output} (
+\begin{DoxyParamCaption}
+\item[{boost\-::shared\-\_\-ptr$<$ {\bf \-Node} $>$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Connection_a87b1e2db44b157697b026a92dfa950de}
+
+
+\-Definition at line 180 of file \-Connection.\-cpp.
+
+
+
+\-References get\-Mutable\-Connector().
+
+\hypertarget{classcryomesh_1_1components_1_1Connection_acc48aedd2b98f080dc5cec1d229a1b24}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{disconnect}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Connection\-::disconnect} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Connection_acc48aedd2b98f080dc5cec1d229a1b24}
+
+
+\-Definition at line 183 of file \-Connection.\-cpp.
+
+
+
+\-References disconnect\-Input(), and disconnect\-Output().
+
+\hypertarget{classcryomesh_1_1components_1_1Connection_aea5f7cbc5e732729b30611b31964a9f7}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!disconnect\-Input@{disconnect\-Input}}
+\index{disconnect\-Input@{disconnect\-Input}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{disconnect\-Input}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Connection\-::disconnect\-Input} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Connection_aea5f7cbc5e732729b30611b31964a9f7}
+
+
+\-Definition at line 188 of file \-Connection.\-cpp.
+
+
+
+\-References get\-Connector(), and get\-Mutable\-Connector().
+
+
+
+\-Referenced by disconnect().
+
+\hypertarget{classcryomesh_1_1components_1_1Connection_abbb25c5222aa18da00097e96b1c50a5f}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!disconnect\-Output@{disconnect\-Output}}
+\index{disconnect\-Output@{disconnect\-Output}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{disconnect\-Output}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Connection\-::disconnect\-Output} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Connection_abbb25c5222aa18da00097e96b1c50a5f}
+
+
+\-Definition at line 207 of file \-Connection.\-cpp.
+
+
+
+\-References get\-Connector(), and get\-Mutable\-Connector().
+
+
+
+\-Referenced by disconnect().
+
+\hypertarget{classcryomesh_1_1components_1_1Connection_a276be807f8cf331e1965661a67100440}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!enable\-Debug@{enable\-Debug}}
+\index{enable\-Debug@{enable\-Debug}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{enable\-Debug}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Connection\-::enable\-Debug} (
+\begin{DoxyParamCaption}
+\item[{bool}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1Connection_a276be807f8cf331e1965661a67100440}
+
+
+\-Definition at line 242 of file \-Connection.\-cpp.
+
+\hypertarget{classcryomesh_1_1components_1_1Connection_a1ff605cc45ba4cdaad44e5c68a52cadc}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!get\-Activity\-Timer@{get\-Activity\-Timer}}
+\index{get\-Activity\-Timer@{get\-Activity\-Timer}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{get\-Activity\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::shared\-\_\-ptr$<$ {\bf components\-::\-Activity\-Timer\-Distance} $>$ {\bf cryomesh\-::components\-::\-Connection\-::get\-Activity\-Timer} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1Connection_a1ff605cc45ba4cdaad44e5c68a52cadc}
+
+
+\-The get activity timer for this object. 
+
+const \-Active\-Impulse\-Collection \& \-Connection\-::get\-Active\-Impulses() const \{ return this-\/$>$active\-Impulses; \}
+
+\begin{DoxyReturn}{\-Returns}
+boost\-::shared\-\_\-ptr$<$\-Activity\-Timer$>$
+\end{DoxyReturn}
+\-Active\-Impulse\-Collection \& \-Connection\-::get\-Mutable\-Active\-Impulses() \{ return this-\/$>$active\-Impulses; \} 
+
+\-Definition at line 132 of file \-Connection.\-cpp.
+
+
+
+\-References activity\-Timer.
+
+\hypertarget{classcryomesh_1_1components_1_1Connection_ad3a94443297c27fc9d52be81afb408e8}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!get\-Connector@{get\-Connector}}
+\index{get\-Connector@{get\-Connector}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{get\-Connector}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf common\-::\-Connector}$<$ {\bf \-Connection}, {\bf \-Node} $>$ \& {\bf cryomesh\-::components\-::\-Connection\-::get\-Connector} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1Connection_ad3a94443297c27fc9d52be81afb408e8}
+
+
+\-Get the \-Connector object for this \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection} input. 
+
+\begin{DoxyReturn}{\-Returns}
+common\-::\-Connector$<$\-Connection, Node$>$ \-The connector for this \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection} 
+\end{DoxyReturn}
+
+
+\-Definition at line 78 of file \-Connection.\-cpp.
+
+
+
+\-References connector.
+
+
+
+\-Referenced by disconnect\-Input(), disconnect\-Output(), get\-Database\-Object(), is\-Primary\-Input\-Connection(), is\-Primary\-Output\-Connection(), and cryomesh\-::components\-::operator$<$$<$().
+
+\hypertarget{classcryomesh_1_1components_1_1Connection_afb641c5447546df8b54ff7ea7ea98275}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!get\-Database\-Object@{get\-Database\-Object}}
+\index{get\-Database\-Object@{get\-Database\-Object}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{get\-Database\-Object}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$ {\bf manager\-::\-Database\-Object} $>$ {\bf cryomesh\-::components\-::\-Connection\-::get\-Database\-Object} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1Connection_afb641c5447546df8b54ff7ea7ea98275}
+
+
+\-Return a database object for this object. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Database\-Object 
+\end{DoxyReturn}
+
+
+\-Definition at line 140 of file \-Connection.\-cpp.
+
+
+
+\-References get\-Connector(), cryomesh\-::common\-::\-Time\-Keeper\-::get\-Cycle(), get\-Impulses(), and cryomesh\-::common\-::\-Time\-Keeper\-::get\-Time\-Keeper().
+
+\hypertarget{classcryomesh_1_1components_1_1Connection_aacfec7d5bedc59b5b5bb72565767c705}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!get\-Impulses@{get\-Impulses}}
+\index{get\-Impulses@{get\-Impulses}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{get\-Impulses}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Impulse\-Collection} \& {\bf cryomesh\-::components\-::\-Connection\-::get\-Impulses} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1Connection_aacfec7d5bedc59b5b5bb72565767c705}
+
+
+\-Get the impulse collection. 
+
+\begin{DoxyReturn}{\-Returns}
+const \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \& \-The impulse collection 
+\end{DoxyReturn}
+
+
+\-Definition at line 114 of file \-Connection.\-cpp.
+
+
+
+\-References impulses.
+
+
+
+\-Referenced by cryomesh\-::components\-::\-Node\-::emit\-Impulse(), get\-Database\-Object(), and cryomesh\-::components\-::operator$<$$<$().
+
+\hypertarget{classcryomesh_1_1components_1_1Connection_a2013cc96ac34c8b4897e81cda18fe146}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!get\-Mutable\-Activity\-Timer@{get\-Mutable\-Activity\-Timer}}
+\index{get\-Mutable\-Activity\-Timer@{get\-Mutable\-Activity\-Timer}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{get\-Mutable\-Activity\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$ {\bf components\-::\-Activity\-Timer\-Distance} $>$ {\bf cryomesh\-::components\-::\-Connection\-::get\-Mutable\-Activity\-Timer} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Connection_a2013cc96ac34c8b4897e81cda18fe146}
+
+
+\-The get mutable activity timer for this object. 
+
+\begin{DoxyReturn}{\-Returns}
+boost\-::shared\-\_\-ptr$<$\-Activity\-Timer$>$ 
+\end{DoxyReturn}
+
+
+\-Definition at line 136 of file \-Connection.\-cpp.
+
+
+
+\-References activity\-Timer.
+
+\hypertarget{classcryomesh_1_1components_1_1Connection_a106759b683be9446b519eb8e3e75866e}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!get\-Mutable\-Connector@{get\-Mutable\-Connector}}
+\index{get\-Mutable\-Connector@{get\-Mutable\-Connector}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{get\-Mutable\-Connector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf common\-::\-Connector}$<$ {\bf \-Connection}, {\bf \-Node} $>$ \& {\bf cryomesh\-::components\-::\-Connection\-::get\-Mutable\-Connector} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1Connection_a106759b683be9446b519eb8e3e75866e}
+
+
+\-Get the mutable \-Connector object for this \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection}. 
+
+\begin{DoxyReturn}{\-Returns}
+common\-::\-Connector$<$\-Connection, Node$>$ \-The connector for this \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection} 
+\end{DoxyReturn}
+
+
+\-Definition at line 82 of file \-Connection.\-cpp.
+
+
+
+\-References connector.
+
+
+
+\-Referenced by connect\-Input(), connect\-Output(), disconnect\-Input(), and disconnect\-Output().
+
+\hypertarget{classcryomesh_1_1components_1_1Connection_a42ad2f54cf156ba270d4fb9ed10113db}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!get\-Mutable\-Impulses@{get\-Mutable\-Impulses}}
+\index{get\-Mutable\-Impulses@{get\-Mutable\-Impulses}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{get\-Mutable\-Impulses}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Impulse\-Collection} \& {\bf cryomesh\-::components\-::\-Connection\-::get\-Mutable\-Impulses} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Connection_a42ad2f54cf156ba270d4fb9ed10113db}
+
+
+\-Get the mutable impulse collection. 
+
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \& \-The mutable impulse collection 
+\end{DoxyReturn}
+
+
+\-Definition at line 118 of file \-Connection.\-cpp.
+
+
+
+\-References impulses.
+
+\hypertarget{classcryomesh_1_1components_1_1Connection_a7455c6e4c45ffff9e7a64146bc5ff6e2}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!is\-Primary\-Input\-Connection@{is\-Primary\-Input\-Connection}}
+\index{is\-Primary\-Input\-Connection@{is\-Primary\-Input\-Connection}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{is\-Primary\-Input\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf cryomesh\-::components\-::\-Connection\-::is\-Primary\-Input\-Connection} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1Connection_a7455c6e4c45ffff9e7a64146bc5ff6e2}
+
+
+\-Definition at line 227 of file \-Connection.\-cpp.
+
+
+
+\-References get\-Connector().
+
+
+
+\-Referenced by cryomesh\-::components\-::operator$<$$<$().
+
+\hypertarget{classcryomesh_1_1components_1_1Connection_a967fb5cafcd38f0ceec16437ea160d23}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!is\-Primary\-Output\-Connection@{is\-Primary\-Output\-Connection}}
+\index{is\-Primary\-Output\-Connection@{is\-Primary\-Output\-Connection}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{is\-Primary\-Output\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf cryomesh\-::components\-::\-Connection\-::is\-Primary\-Output\-Connection} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1Connection_a967fb5cafcd38f0ceec16437ea160d23}
+
+
+\-Definition at line 235 of file \-Connection.\-cpp.
+
+
+
+\-References get\-Connector().
+
+
+
+\-Referenced by cryomesh\-::components\-::operator$<$$<$().
+
+\hypertarget{classcryomesh_1_1components_1_1Connection_a6c38044760c9b4a677709c41c633dc4a}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!remove@{remove}}
+\index{remove@{remove}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$ {\bf \-Impulse} $>$ {\bf cryomesh\-::components\-::\-Connection\-::remove} (
+\begin{DoxyParamCaption}
+\item[{boost\-::shared\-\_\-ptr$<$ {\bf \-Impulse} $>$}]{impulse}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Connection_a6c38044760c9b4a677709c41c633dc4a}
+
+
+\-Add an \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} to this connection. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse}} & \& impulse \-The \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} to add\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+boost\-::shared\-\_\-ptr$<$\-Impulse$>$ \-The \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} added, null if none added boost\-::shared\-\_\-ptr$<$\-Impulse$>$ add(\-Impulse \& impulse); \-Remove an \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} from this connection
+\end{DoxyReturn}
+
+\begin{DoxyParams}{\-Parameters}
+{\em boost\-::shared\-\_\-ptr$<$\-Impulse$>$} & impulse \-The impulse to remove\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+boost\-::shared\-\_\-ptr$<$\-Impulse$>$ \-The \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} removed, null if none removed 
+\end{DoxyReturn}
+
+
+\-Definition at line 106 of file \-Connection.\-cpp.
+
+
+
+\-References impulses.
+
+\hypertarget{classcryomesh_1_1components_1_1Connection_abaf8a91eab3a7b5d943fe3f5818f2a39}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!remove@{remove}}
+\index{remove@{remove}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$ {\bf \-Impulse} $>$ {\bf cryomesh\-::components\-::\-Connection\-::remove} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Impulse} \&}]{impulse}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Connection_abaf8a91eab3a7b5d943fe3f5818f2a39}
+
+
+\-Remove an \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} from this connection. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse}} & \& impulse \-The impulse to remove\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+boost\-::shared\-\_\-ptr$<$\-Impulse$>$ \-The \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} removed, null if none removed 
+\end{DoxyReturn}
+
+
+\-Definition at line 110 of file \-Connection.\-cpp.
+
+
+
+\-References impulses.
+
+\hypertarget{classcryomesh_1_1components_1_1Connection_acb0d89bb9d8f2e2a808f7181c308c267}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!update@{update}}
+\index{update@{update}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Connection\-::update} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1Connection_acb0d89bb9d8f2e2a808f7181c308c267}
+
+
+\-Update the \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection}. 
+
+\-Update our collection of impulses. \-If any reach the 'endpoint' of the connection then pass them on to our end \-Nodes 
+
+\-Definition at line 25 of file \-Connection.\-cpp.
+
+
+
+\-References connector, cryomesh\-::components\-::\-Impulse\-Collection\-::decrement\-Activity\-Timers(), impulses, cryomesh\-::components\-::\-Impulse\-Collection\-::\-Less\-Than\-Or\-Equal\-To, and cryomesh\-::components\-::\-Impulse\-Collection\-::remove\-By\-Activity\-Timer\-Value().
+
+\hypertarget{classcryomesh_1_1components_1_1Connection_a7a12f7e30960796e481291041ca149b7}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!update\-Position@{update\-Position}}
+\index{update\-Position@{update\-Position}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{update\-Position}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Connection\-::update\-Position} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1Connection_a7a12f7e30960796e481291041ca149b7}
+
+
+\-Update position. 
+
+
+
+\-Definition at line 160 of file \-Connection.\-cpp.
+
+
+
+\-References activity\-Timer, connector, and cryomesh\-::components\-::\-Activity\-Timer\-Distance\-::\-M\-I\-N\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E.
+
+
+
+\subsection{\-Friends \-And \-Related \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1components_1_1Connection_ac7d751fcf5dc9a4daa22cc6ad770f06b}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const {\bf \-Connection} \&}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{classcryomesh_1_1components_1_1Connection_ac7d751fcf5dc9a4daa22cc6ad770f06b}
+
+
+\-To stream operator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::ostream} & \& os \-The output stream \\
+\hline
+{\em const} & \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection} \& obj \-The object to stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::ostream \& \-The output stream 
+\end{DoxyReturn}
+
+
+\-Definition at line 245 of file \-Connection.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classcryomesh_1_1components_1_1Connection_aec487280dd02b018049b7a1dd6906861}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!activity\-Timer@{activity\-Timer}}
+\index{activity\-Timer@{activity\-Timer}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{activity\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<${\bf components\-::\-Activity\-Timer\-Distance}$>$ {\bf cryomesh\-::components\-::\-Connection\-::activity\-Timer}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1components_1_1Connection_aec487280dd02b018049b7a1dd6906861}
+
+
+\-Definition at line 211 of file \-Connection.\-h.
+
+
+
+\-Referenced by add(), get\-Activity\-Timer(), get\-Mutable\-Activity\-Timer(), and update\-Position().
+
+\hypertarget{classcryomesh_1_1components_1_1Connection_ab6d2d5386a6fe3dc5e5797a0b131ea15}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!connector@{connector}}
+\index{connector@{connector}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{connector}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<${\bf common\-::\-Connector}$<${\bf \-Connection}, {\bf \-Node}$>$ $>$ {\bf cryomesh\-::components\-::\-Connection\-::connector}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1components_1_1Connection_ab6d2d5386a6fe3dc5e5797a0b131ea15}
+
+
+\-Definition at line 197 of file \-Connection.\-h.
+
+
+
+\-Referenced by get\-Connector(), get\-Mutable\-Connector(), update(), and update\-Position().
+
+\hypertarget{classcryomesh_1_1components_1_1Connection_a00323e7080eba7a1bfae022915022f47}{\index{cryomesh\-::components\-::\-Connection@{cryomesh\-::components\-::\-Connection}!impulses@{impulses}}
+\index{impulses@{impulses}!cryomesh::components::Connection@{cryomesh\-::components\-::\-Connection}}
+\subsubsection[{impulses}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Impulse\-Collection} {\bf cryomesh\-::components\-::\-Connection\-::impulses}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1components_1_1Connection_a00323e7080eba7a1bfae022915022f47}
+
+
+\-Definition at line 204 of file \-Connection.\-h.
+
+
+
+\-Referenced by add(), get\-Impulses(), get\-Mutable\-Impulses(), remove(), and update().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/components/\hyperlink{Connection_8h}{\-Connection.\-h}\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/components/\hyperlink{Connection_8cpp}{\-Connection.\-cpp}\end{DoxyCompactItemize}

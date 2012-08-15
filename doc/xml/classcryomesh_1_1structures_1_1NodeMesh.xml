@@ -1,0 +1,590 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="classcryomesh_1_1structures_1_1NodeMesh" kind="class" prot="public">
+    <compoundname>cryomesh::structures::NodeMesh</compoundname>
+    <includes refid="NodeMesh_8h" local="no">NodeMesh.h</includes>
+    <innerclass refid="structcryomesh_1_1structures_1_1NodeMesh_1_1NeighbourhoodRanges" prot="public">cryomesh::structures::NodeMesh::NeighbourhoodRanges</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classcryomesh_1_1structures_1_1NodeMesh_1a2abd31c9553e8eea47b2f48f4128baa1" prot="public" static="no">
+        <name>InterpolationStyle</name>
+        <enumvalue id="classcryomesh_1_1structures_1_1NodeMesh_1a2abd31c9553e8eea47b2f48f4128baa1a9c19702f5ebbdb27e8c729ea80ed4092" prot="public">
+          <name>INVERSE_R</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classcryomesh_1_1structures_1_1NodeMesh_1a2abd31c9553e8eea47b2f48f4128baa1a074487093091d0a9da3ab11454a3ae86" prot="public">
+          <name>INVERSE_R2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Stype to use when interpolating values. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="50" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" bodystart="50" bodyend="52"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="classcryomesh_1_1structures_1_1NodeMesh_1aede40ee5229b60fb8d2e516435e73027" prot="protected" static="yes" mutable="no">
+        <type>const double</type>
+        <definition>const double cryomesh::structures::NodeMesh::MAX_RADIUS_FRACTION_OF_BOUNDING_BOX</definition>
+        <argsstring></argsstring>
+        <name>MAX_RADIUS_FRACTION_OF_BOUNDING_BOX</name>
+        <initializer> (1.0 / 100.0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="189" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1structures_1_1NodeMesh_1aabeafa7c3195b23a5505b9a4b1feb99d" prot="protected" static="yes" mutable="no">
+        <type>const double</type>
+        <definition>const double cryomesh::structures::NodeMesh::INTERPOLATED_ACTIVITY_SCALING_FACTOR</definition>
+        <argsstring></argsstring>
+        <name>INTERPOLATED_ACTIVITY_SCALING_FACTOR</name>
+        <initializer> (1.0 / 100.0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="196" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcryomesh_1_1structures_1_1NodeMesh_1a506e0ef94a257773bdfa68ef52d57387" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacecryomesh_1_1structures_1a50c955c70377b1dc7d3fcf1364d5e33e" kindref="member">NeighbourhoodMap</ref></type>
+        <definition>NeighbourhoodMap cryomesh::structures::NodeMesh::nodeNeighbourhoodMap</definition>
+        <argsstring></argsstring>
+        <name>nodeNeighbourhoodMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="205" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" bodystart="205" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1NodeMesh_1a7ece5dde420fa8e11d5f341ae35b5ecf" compoundref="NodeMesh_8cpp" startline="220" endline="256">getNeighbourRanges</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1NodeMesh_1a18d54e3addac89800930d1f8eb2d3790" compoundref="NodeMesh_8cpp" startline="258" endline="260">getNodeNeighbourhoodMap</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1NodeMesh_1a712c2b1f420fc8f29926db9e609a0ee8" compoundref="NodeMesh_8cpp" startline="265" endline="285">printNeighbourhoods</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1NodeMesh_1a010992dff04f952fc2de43b12c2b0003" compoundref="NodeMesh_8cpp" startline="146" endline="162">regenerateActivities</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1NodeMesh_1ac3a3cada093a0114fe6eb1e8172f388b" compoundref="NodeMesh_8cpp" startline="99" endline="144">regenerateNeighbourhoods</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1structures_1_1NodeMesh_1a7fdce4472420f0b1b5fd30edf230bded" prot="private" static="no" mutable="no">
+        <type>std::map&lt; boost::shared_ptr&lt; <ref refid="classcryomesh_1_1components_1_1Node" kindref="compound">components::Node</ref> &gt;, double &gt;</type>
+        <definition>std::map&lt;boost::shared_ptr&lt;components::Node&gt;, double&gt; cryomesh::structures::NodeMesh::neighbourhoodActivities</definition>
+        <argsstring></argsstring>
+        <name>neighbourhoodActivities</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="212" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" bodystart="212" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1NodeMesh_1a6ba0bd71797a166ebc85375a5a366104" compoundref="NodeMesh_8cpp" startline="261" endline="263">getNeighbourhoodActivities</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1NodeMesh_1a6a850e634ec14509ba12dd52fac8ff20" compoundref="NodeMesh_8cpp" startline="287" endline="304">printNeighbourhoodActivities</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1NodeMesh_1a010992dff04f952fc2de43b12c2b0003" compoundref="NodeMesh_8cpp" startline="146" endline="162">regenerateActivities</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1NodeMesh_1ac3a3cada093a0114fe6eb1e8172f388b" compoundref="NodeMesh_8cpp" startline="99" endline="144">regenerateNeighbourhoods</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1NodeMesh_1a746174aeb591281f713a751b1eed25da" compoundref="NodeMesh_8cpp" startline="65" endline="97">warpNodes</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1structures_1_1NodeMesh_1a0f94d9777f9f9e2533b64881d59c225e" prot="private" static="no" mutable="no">
+        <type><ref refid="classcryomesh_1_1structures_1_1Cluster" kindref="compound">Cluster</ref> &amp;</type>
+        <definition>Cluster&amp; cryomesh::structures::NodeMesh::cluster</definition>
+        <argsstring></argsstring>
+        <name>cluster</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="219" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" bodystart="219" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1NodeMesh_1a3cd9e7d377076d678de79401650c492d" compoundref="NodeMesh_8cpp" startline="22" endline="41">NodeMesh</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1NodeMesh_1ac3a3cada093a0114fe6eb1e8172f388b" compoundref="NodeMesh_8cpp" startline="99" endline="144">regenerateNeighbourhoods</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1NodeMesh_1a746174aeb591281f713a751b1eed25da" compoundref="NodeMesh_8cpp" startline="65" endline="97">warpNodes</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1structures_1_1NodeMesh_1a33f53d06bade0255a23c615f4229a631" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double cryomesh::structures::NodeMesh::maximumNeighbourhoodRadius</definition>
+        <argsstring></argsstring>
+        <name>maximumNeighbourhoodRadius</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="226" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" bodystart="226" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1NodeMesh_1a3cd9e7d377076d678de79401650c492d" compoundref="NodeMesh_8cpp" startline="22" endline="41">NodeMesh</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1NodeMesh_1ac3a3cada093a0114fe6eb1e8172f388b" compoundref="NodeMesh_8cpp" startline="99" endline="144">regenerateNeighbourhoods</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1structures_1_1NodeMesh_1aa7ce39158d506dcda63859ca1afb08dc" prot="private" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double cryomesh::structures::NodeMesh::decayRate</definition>
+        <argsstring></argsstring>
+        <name>decayRate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="233" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" bodystart="233" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1NodeMesh_1a3f12c3d9d3a69a6edf1e04d37041af23" compoundref="NodeMesh_8cpp" startline="216" endline="218">getDecayRate</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1NodeMesh_1a3cd9e7d377076d678de79401650c492d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::structures::NodeMesh::NodeMesh</definition>
+        <argsstring>(Cluster &amp;clus)</argsstring>
+        <name>NodeMesh</name>
+        <param>
+          <type><ref refid="classcryomesh_1_1structures_1_1Cluster" kindref="compound">Cluster</ref> &amp;</type>
+          <declname>clus</declname>
+        </param>
+        <briefdescription>
+<para>Constructor to create a node mesh from a cluster. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classcryomesh_1_1structures_1_1Cluster" kindref="compound">Cluster</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The cluster associated with this node mesh </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="60" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.cpp" bodystart="22" bodyend="41"/>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1a0f94d9777f9f9e2533b64881d59c225e" compoundref="NodeMesh_8h" startline="219">cluster</references>
+        <references refid="classcryomesh_1_1structures_1_1Cluster_1ade4227c5a3f39b17a53c31e4aeb25bfc" compoundref="Cluster_8cpp" startline="200" endline="202">cryomesh::structures::Cluster::getNodes</references>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1a33f53d06bade0255a23c615f4229a631" compoundref="NodeMesh_8h" startline="226">maximumNeighbourhoodRadius</references>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1ac3a3cada093a0114fe6eb1e8172f388b" compoundref="NodeMesh_8cpp" startline="99" endline="144">regenerateNeighbourhoods</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1NodeMesh_1ac7846a95811e38ae6a89cb74e4acbe26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::structures::NodeMesh::NodeMesh</definition>
+        <argsstring>(Cluster &amp;clus, double max_radius)</argsstring>
+        <name>NodeMesh</name>
+        <param>
+          <type><ref refid="classcryomesh_1_1structures_1_1Cluster" kindref="compound">Cluster</ref> &amp;</type>
+          <declname>clus</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>max_radius</declname>
+        </param>
+        <briefdescription>
+<para>Constructor to create a node mesh from at minimum, a cluster and an optional maximum neighbour radius. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classcryomesh_1_1structures_1_1Cluster" kindref="compound">Cluster</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The cluster associated with this node mesh </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>double</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum radius cutoff point for neighbourhood distance </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="71" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.cpp" bodystart="43" bodyend="46"/>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1ac3a3cada093a0114fe6eb1e8172f388b" compoundref="NodeMesh_8cpp" startline="99" endline="144">regenerateNeighbourhoods</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1NodeMesh_1a3a40ab73f5130b83215bfd8f72d95eb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>cryomesh::structures::NodeMesh::~NodeMesh</definition>
+        <argsstring>()</argsstring>
+        <name>~NodeMesh</name>
+        <briefdescription>
+<para>Default destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="76" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.cpp" bodystart="48" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1NodeMesh_1a56acee3ddfaa6aad8cfcf4f135c18661" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::structures::NodeMesh::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+<para>Per cycle update calls. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="81" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.cpp" bodystart="51" bodyend="63"/>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1a6a850e634ec14509ba12dd52fac8ff20" compoundref="NodeMesh_8cpp" startline="287" endline="304">printNeighbourhoodActivities</references>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1a712c2b1f420fc8f29926db9e609a0ee8" compoundref="NodeMesh_8cpp" startline="265" endline="285">printNeighbourhoods</references>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1a010992dff04f952fc2de43b12c2b0003" compoundref="NodeMesh_8cpp" startline="146" endline="162">regenerateActivities</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1NodeMesh_1a746174aeb591281f713a751b1eed25da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::structures::NodeMesh::warpNodes</definition>
+        <argsstring>()</argsstring>
+        <name>warpNodes</name>
+        <briefdescription>
+<para>Merge the interpolated activities with the actual node activities. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="86" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.cpp" bodystart="65" bodyend="97"/>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1a0f94d9777f9f9e2533b64881d59c225e" compoundref="NodeMesh_8h" startline="219">cluster</references>
+        <references refid="classcryomesh_1_1structures_1_1Cluster_1a458206d9c646f0f17c4764d82033e65e" compoundref="Cluster_8cpp" startline="54" endline="56">cryomesh::structures::Cluster::getEnergy</references>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1a7fdce4472420f0b1b5fd30edf230bded" compoundref="NodeMesh_8h" startline="212">neighbourhoodActivities</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1NodeMesh_1ac3a3cada093a0114fe6eb1e8172f388b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::structures::NodeMesh::regenerateNeighbourhoods</definition>
+        <argsstring>()</argsstring>
+        <name>regenerateNeighbourhoods</name>
+        <briefdescription>
+<para>Regenerate the neighbourhood nodes and distances. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="91" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.cpp" bodystart="99" bodyend="144"/>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1a0f94d9777f9f9e2533b64881d59c225e" compoundref="NodeMesh_8h" startline="219">cluster</references>
+        <references refid="classcryomesh_1_1structures_1_1Cluster_1ade4227c5a3f39b17a53c31e4aeb25bfc" compoundref="Cluster_8cpp" startline="200" endline="202">cryomesh::structures::Cluster::getNodes</references>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1a33f53d06bade0255a23c615f4229a631" compoundref="NodeMesh_8h" startline="226">maximumNeighbourhoodRadius</references>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1a7fdce4472420f0b1b5fd30edf230bded" compoundref="NodeMesh_8h" startline="212">neighbourhoodActivities</references>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1a506e0ef94a257773bdfa68ef52d57387" compoundref="NodeMesh_8h" startline="205">nodeNeighbourhoodMap</references>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1a6a850e634ec14509ba12dd52fac8ff20" compoundref="NodeMesh_8cpp" startline="287" endline="304">printNeighbourhoodActivities</references>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1a712c2b1f420fc8f29926db9e609a0ee8" compoundref="NodeMesh_8cpp" startline="265" endline="285">printNeighbourhoods</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1NodeMesh_1a3cd9e7d377076d678de79401650c492d" compoundref="NodeMesh_8cpp" startline="22" endline="41">NodeMesh</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1NodeMesh_1a010992dff04f952fc2de43b12c2b0003" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::structures::NodeMesh::regenerateActivities</definition>
+        <argsstring>()</argsstring>
+        <name>regenerateActivities</name>
+        <briefdescription>
+<para>Recalculate the applied interpolated activity at all nodes from their neighbours. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="97" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.cpp" bodystart="146" bodyend="162"/>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1a518d312139ab92f1251cd387304e60fd" compoundref="NodeMesh_8cpp" startline="164" endline="214">getInterpolatedActivity</references>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1a7fdce4472420f0b1b5fd30edf230bded" compoundref="NodeMesh_8h" startline="212">neighbourhoodActivities</references>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1a506e0ef94a257773bdfa68ef52d57387" compoundref="NodeMesh_8h" startline="205">nodeNeighbourhoodMap</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1NodeMesh_1a56acee3ddfaa6aad8cfcf4f135c18661" compoundref="NodeMesh_8cpp" startline="51" endline="63">update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1NodeMesh_1a7ece5dde420fa8e11d5f341ae35b5ecf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcryomesh_1_1structures_1_1NodeMesh_1_1NeighbourhoodRanges" kindref="compound">NeighbourhoodRanges</ref></type>
+        <definition>NodeMesh::NeighbourhoodRanges cryomesh::structures::NodeMesh::getNeighbourRanges</definition>
+        <argsstring>() const </argsstring>
+        <name>getNeighbourRanges</name>
+        <briefdescription>
+<para>Return a pair of pairs. </para>        </briefdescription>
+        <detaileddescription>
+<para>the first representing the min/max of neighbour counts, the second the min/max of distances</para><para><simplesect kind="return"><para><ref refid="structcryomesh_1_1structures_1_1NodeMesh_1_1NeighbourhoodRanges" kindref="compound">NeighbourhoodRanges</ref> min/max of neighbour counts and min/max of distances </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="106" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.cpp" bodystart="220" bodyend="256"/>
+        <references refid="structcryomesh_1_1structures_1_1NodeMesh_1_1NeighbourhoodRanges_1a69233448f52c9718f855703f61509180" compoundref="NodeMesh_8h" startline="42">cryomesh::structures::NodeMesh::NeighbourhoodRanges::maximumNeighbourCount</references>
+        <references refid="structcryomesh_1_1structures_1_1NodeMesh_1_1NeighbourhoodRanges_1af4f46742b43f5284a702150f69853c0d" compoundref="NodeMesh_8h" startline="44">cryomesh::structures::NodeMesh::NeighbourhoodRanges::maximumNeighbourDistance</references>
+        <references refid="structcryomesh_1_1structures_1_1NodeMesh_1_1NeighbourhoodRanges_1a4b876991aee7092aef9aa67806aaa1ce" compoundref="NodeMesh_8h" startline="41">cryomesh::structures::NodeMesh::NeighbourhoodRanges::minimumNeighbourCount</references>
+        <references refid="structcryomesh_1_1structures_1_1NodeMesh_1_1NeighbourhoodRanges_1a7d36869bd701062cb4305cb5d55a4741" compoundref="NodeMesh_8h" startline="43">cryomesh::structures::NodeMesh::NeighbourhoodRanges::minimumNeighbourDistance</references>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1a506e0ef94a257773bdfa68ef52d57387" compoundref="NodeMesh_8h" startline="205">nodeNeighbourhoodMap</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1NodeMesh_1a18d54e3addac89800930d1f8eb2d3790" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="namespacecryomesh_1_1structures_1a50c955c70377b1dc7d3fcf1364d5e33e" kindref="member">NeighbourhoodMap</ref> &amp;</type>
+        <definition>const NeighbourhoodMap &amp; cryomesh::structures::NodeMesh::getNodeNeighbourhoodMap</definition>
+        <argsstring>() const </argsstring>
+        <name>getNodeNeighbourhoodMap</name>
+        <briefdescription>
+<para>Get the neighbourhood map. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>NeighbourhoodMap The neighbourhood map </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="114" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.cpp" bodystart="258" bodyend="260"/>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1a506e0ef94a257773bdfa68ef52d57387" compoundref="NodeMesh_8h" startline="205">nodeNeighbourhoodMap</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1NodeMesh_1a6ba0bd71797a166ebc85375a5a366104" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::map&lt; boost::shared_ptr&lt; <ref refid="classcryomesh_1_1components_1_1Node" kindref="compound">components::Node</ref> &gt;, double &gt; &amp;</type>
+        <definition>const std::map&lt; boost::shared_ptr&lt; components::Node &gt;, double &gt; &amp; cryomesh::structures::NodeMesh::getNeighbourhoodActivities</definition>
+        <argsstring>() const </argsstring>
+        <name>getNeighbourhoodActivities</name>
+        <briefdescription>
+<para>Get the neighbourhood activities. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>std::map&lt;boost::shared_ptr&lt;components::Node&gt;, double&gt; The neighbourhood activities </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="122" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.cpp" bodystart="261" bodyend="263"/>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1a7fdce4472420f0b1b5fd30edf230bded" compoundref="NodeMesh_8h" startline="212">neighbourhoodActivities</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1NodeMesh_1a712c2b1f420fc8f29926db9e609a0ee8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; cryomesh::structures::NodeMesh::printNeighbourhoods</definition>
+        <argsstring>(std::ostream &amp;os) const </argsstring>
+        <name>printNeighbourhoods</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <briefdescription>
+<para>Print the neighbourhood map. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::ostream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output stream</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::ostream The output stream </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="133" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.cpp" bodystart="265" bodyend="285"/>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1a506e0ef94a257773bdfa68ef52d57387" compoundref="NodeMesh_8h" startline="205">nodeNeighbourhoodMap</references>
+        <referencedby refid="namespacecryomesh_1_1structures_1ababe2609b3503ef7d3abf4e2b576ce88" compoundref="NodeMesh_8cpp" startline="306" endline="311">cryomesh::structures::operator&lt;&lt;</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1NodeMesh_1ac3a3cada093a0114fe6eb1e8172f388b" compoundref="NodeMesh_8cpp" startline="99" endline="144">regenerateNeighbourhoods</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1NodeMesh_1a56acee3ddfaa6aad8cfcf4f135c18661" compoundref="NodeMesh_8cpp" startline="51" endline="63">update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1NodeMesh_1a6a850e634ec14509ba12dd52fac8ff20" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; cryomesh::structures::NodeMesh::printNeighbourhoodActivities</definition>
+        <argsstring>(std::ostream &amp;os) const </argsstring>
+        <name>printNeighbourhoodActivities</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <briefdescription>
+<para>Print the neighbourhood activities. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::ostream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output stream</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::ostream The output stream </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="144" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.cpp" bodystart="287" bodyend="304"/>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1a7fdce4472420f0b1b5fd30edf230bded" compoundref="NodeMesh_8h" startline="212">neighbourhoodActivities</references>
+        <referencedby refid="namespacecryomesh_1_1structures_1ababe2609b3503ef7d3abf4e2b576ce88" compoundref="NodeMesh_8cpp" startline="306" endline="311">cryomesh::structures::operator&lt;&lt;</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1NodeMesh_1ac3a3cada093a0114fe6eb1e8172f388b" compoundref="NodeMesh_8cpp" startline="99" endline="144">regenerateNeighbourhoods</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1NodeMesh_1a56acee3ddfaa6aad8cfcf4f135c18661" compoundref="NodeMesh_8cpp" startline="51" endline="63">update</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classcryomesh_1_1structures_1_1NodeMesh_1acebf6afe649259a1e2eb991a8ee5167c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const NodeMesh &amp;obj)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1structures_1_1NodeMesh" kindref="compound">NodeMesh</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>To stream operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::ostream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp; os The output stream </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1structures_1_1NodeMesh" kindref="compound">NodeMesh</ref> &amp; obj The object to stream</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::ostream &amp; The output stream </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="157" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.cpp" bodystart="306" bodyend="311"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1NodeMesh_1a518d312139ab92f1251cd387304e60fd" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double cryomesh::structures::NodeMesh::getInterpolatedActivity</definition>
+        <argsstring>(const std::map&lt; boost::shared_ptr&lt; cryomesh::components::Node &gt;, double &gt; &amp;all_neighbours, const InterpolationStyle style=INVERSE_R) const </argsstring>
+        <name>getInterpolatedActivity</name>
+        <param>
+          <type>const std::map&lt; boost::shared_ptr&lt; <ref refid="classcryomesh_1_1components_1_1Node" kindref="compound">cryomesh::components::Node</ref> &gt;, double &gt; &amp;</type>
+          <declname>all_neighbours</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1structures_1_1NodeMesh_1a2abd31c9553e8eea47b2f48f4128baa1" kindref="member">InterpolationStyle</ref></type>
+          <declname>style</declname>
+          <defval><ref refid="classcryomesh_1_1structures_1_1NodeMesh_1a2abd31c9553e8eea47b2f48f4128baa1a9c19702f5ebbdb27e8c729ea80ed4092" kindref="member">INVERSE_R</ref></defval>
+        </param>
+        <briefdescription>
+<para>Use a list of neighbours and their distances to generated an interpolated activity value at the central node. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::map&lt;boost::shared_ptr&lt;cryomesh::components::Node&gt;</parametername>
+<parametername>double&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of all the neighbour nodes and their distances to their central node </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>InterpolationStyle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Which method to use to interpolate the central activity</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>double The interpolated activity </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="174" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.cpp" bodystart="164" bodyend="214"/>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1a3f12c3d9d3a69a6edf1e04d37041af23" compoundref="NodeMesh_8cpp" startline="216" endline="218">getDecayRate</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1NodeMesh_1a010992dff04f952fc2de43b12c2b0003" compoundref="NodeMesh_8cpp" startline="146" endline="162">regenerateActivities</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1NodeMesh_1a3f12c3d9d3a69a6edf1e04d37041af23" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double cryomesh::structures::NodeMesh::getDecayRate</definition>
+        <argsstring>() const </argsstring>
+        <name>getDecayRate</name>
+        <briefdescription>
+<para>Get the spacial decay rate for activities. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>double The spacial decay rate </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="182" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.cpp" bodystart="216" bodyend="218"/>
+        <references refid="classcryomesh_1_1structures_1_1NodeMesh_1aa7ce39158d506dcda63859ca1afb08dc" compoundref="NodeMesh_8h" startline="233">decayRate</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1NodeMesh_1a518d312139ab92f1251cd387304e60fd" compoundref="NodeMesh_8cpp" startline="164" endline="214">getInterpolatedActivity</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classcryomesh_1_1structures_1_1Mesh" kindref="compound">Mesh</ref> of nodes and their neighbouring nodes and distances. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="644">
+        <label>cryomesh::components::NodeMap</label>
+        <link refid="classcryomesh_1_1components_1_1NodeMap"/>
+      </node>
+      <node id="645">
+        <label>cryomesh::components::ConnectionMap</label>
+        <link refid="classcryomesh_1_1components_1_1ConnectionMap"/>
+      </node>
+      <node id="643">
+        <label>cryomesh::structures::Cluster</label>
+        <link refid="classcryomesh_1_1structures_1_1Cluster"/>
+        <childnode refid="644" relation="usage">
+          <edgelabel>nodes</edgelabel>
+        </childnode>
+        <childnode refid="645" relation="usage">
+          <edgelabel>connections</edgelabel>
+        </childnode>
+        <childnode refid="646" relation="usage">
+          <edgelabel>connector</edgelabel>
+        </childnode>
+      </node>
+      <node id="641">
+        <label>std::map&lt; boost::shared_ptr&lt; components::Node &gt;, double &gt;</label>
+      </node>
+      <node id="642">
+        <label>std::map&lt; boost::shared_ptr&lt; cryomesh::components::Node &gt;, std::map&lt; boost::shared_ptr&lt; cryomesh::components::Node &gt;, double &gt; &gt;</label>
+      </node>
+      <node id="646">
+        <label>cryomesh::common::Connector&lt; Cluster, Fibre &gt;</label>
+        <link refid="classcryomesh_1_1common_1_1Connector"/>
+        <childnode refid="647" relation="usage">
+          <edgelabel>minputs</edgelabel>
+          <edgelabel>moutputs</edgelabel>
+        </childnode>
+      </node>
+      <node id="640">
+        <label>cryomesh::structures::NodeMesh</label>
+        <link refid="classcryomesh_1_1structures_1_1NodeMesh"/>
+        <childnode refid="641" relation="usage">
+          <edgelabel>neighbourhoodActivities</edgelabel>
+        </childnode>
+        <childnode refid="642" relation="usage">
+          <edgelabel>nodeNeighbourhoodMap</edgelabel>
+        </childnode>
+        <childnode refid="643" relation="usage">
+          <edgelabel>cluster</edgelabel>
+        </childnode>
+      </node>
+      <node id="647">
+        <label>std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; Fibre &gt; &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" line="34" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h" bodystart="34" bodyend="234"/>
+    <listofallmembers>
+      <member refid="classcryomesh_1_1structures_1_1NodeMesh_1a0f94d9777f9f9e2533b64881d59c225e" prot="private" virt="non-virtual"><scope>cryomesh::structures::NodeMesh</scope><name>cluster</name></member>
+      <member refid="classcryomesh_1_1structures_1_1NodeMesh_1aa7ce39158d506dcda63859ca1afb08dc" prot="private" virt="non-virtual"><scope>cryomesh::structures::NodeMesh</scope><name>decayRate</name></member>
+      <member refid="classcryomesh_1_1structures_1_1NodeMesh_1a3f12c3d9d3a69a6edf1e04d37041af23" prot="protected" virt="non-virtual"><scope>cryomesh::structures::NodeMesh</scope><name>getDecayRate</name></member>
+      <member refid="classcryomesh_1_1structures_1_1NodeMesh_1a518d312139ab92f1251cd387304e60fd" prot="protected" virt="non-virtual"><scope>cryomesh::structures::NodeMesh</scope><name>getInterpolatedActivity</name></member>
+      <member refid="classcryomesh_1_1structures_1_1NodeMesh_1a6ba0bd71797a166ebc85375a5a366104" prot="public" virt="non-virtual"><scope>cryomesh::structures::NodeMesh</scope><name>getNeighbourhoodActivities</name></member>
+      <member refid="classcryomesh_1_1structures_1_1NodeMesh_1a7ece5dde420fa8e11d5f341ae35b5ecf" prot="public" virt="non-virtual"><scope>cryomesh::structures::NodeMesh</scope><name>getNeighbourRanges</name></member>
+      <member refid="classcryomesh_1_1structures_1_1NodeMesh_1a18d54e3addac89800930d1f8eb2d3790" prot="public" virt="non-virtual"><scope>cryomesh::structures::NodeMesh</scope><name>getNodeNeighbourhoodMap</name></member>
+      <member refid="classcryomesh_1_1structures_1_1NodeMesh_1aabeafa7c3195b23a5505b9a4b1feb99d" prot="protected" virt="non-virtual"><scope>cryomesh::structures::NodeMesh</scope><name>INTERPOLATED_ACTIVITY_SCALING_FACTOR</name></member>
+      <member refid="classcryomesh_1_1structures_1_1NodeMesh_1a2abd31c9553e8eea47b2f48f4128baa1" prot="public" virt="non-virtual"><scope>cryomesh::structures::NodeMesh</scope><name>InterpolationStyle</name></member>
+      <member refid="classcryomesh_1_1structures_1_1NodeMesh_1a2abd31c9553e8eea47b2f48f4128baa1a9c19702f5ebbdb27e8c729ea80ed4092" prot="public" virt="non-virtual"><scope>cryomesh::structures::NodeMesh</scope><name>INVERSE_R</name></member>
+      <member refid="classcryomesh_1_1structures_1_1NodeMesh_1a2abd31c9553e8eea47b2f48f4128baa1a074487093091d0a9da3ab11454a3ae86" prot="public" virt="non-virtual"><scope>cryomesh::structures::NodeMesh</scope><name>INVERSE_R2</name></member>
+      <member refid="classcryomesh_1_1structures_1_1NodeMesh_1aede40ee5229b60fb8d2e516435e73027" prot="protected" virt="non-virtual"><scope>cryomesh::structures::NodeMesh</scope><name>MAX_RADIUS_FRACTION_OF_BOUNDING_BOX</name></member>
+      <member refid="classcryomesh_1_1structures_1_1NodeMesh_1a33f53d06bade0255a23c615f4229a631" prot="private" virt="non-virtual"><scope>cryomesh::structures::NodeMesh</scope><name>maximumNeighbourhoodRadius</name></member>
+      <member refid="classcryomesh_1_1structures_1_1NodeMesh_1a7fdce4472420f0b1b5fd30edf230bded" prot="private" virt="non-virtual"><scope>cryomesh::structures::NodeMesh</scope><name>neighbourhoodActivities</name></member>
+      <member refid="classcryomesh_1_1structures_1_1NodeMesh_1a3cd9e7d377076d678de79401650c492d" prot="public" virt="non-virtual"><scope>cryomesh::structures::NodeMesh</scope><name>NodeMesh</name></member>
+      <member refid="classcryomesh_1_1structures_1_1NodeMesh_1ac7846a95811e38ae6a89cb74e4acbe26" prot="public" virt="non-virtual"><scope>cryomesh::structures::NodeMesh</scope><name>NodeMesh</name></member>
+      <member refid="classcryomesh_1_1structures_1_1NodeMesh_1a506e0ef94a257773bdfa68ef52d57387" prot="private" virt="non-virtual"><scope>cryomesh::structures::NodeMesh</scope><name>nodeNeighbourhoodMap</name></member>
+      <member refid="classcryomesh_1_1structures_1_1NodeMesh_1acebf6afe649259a1e2eb991a8ee5167c" prot="public" virt="non-virtual"><scope>cryomesh::structures::NodeMesh</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classcryomesh_1_1structures_1_1NodeMesh_1a6a850e634ec14509ba12dd52fac8ff20" prot="public" virt="non-virtual"><scope>cryomesh::structures::NodeMesh</scope><name>printNeighbourhoodActivities</name></member>
+      <member refid="classcryomesh_1_1structures_1_1NodeMesh_1a712c2b1f420fc8f29926db9e609a0ee8" prot="public" virt="non-virtual"><scope>cryomesh::structures::NodeMesh</scope><name>printNeighbourhoods</name></member>
+      <member refid="classcryomesh_1_1structures_1_1NodeMesh_1a010992dff04f952fc2de43b12c2b0003" prot="public" virt="non-virtual"><scope>cryomesh::structures::NodeMesh</scope><name>regenerateActivities</name></member>
+      <member refid="classcryomesh_1_1structures_1_1NodeMesh_1ac3a3cada093a0114fe6eb1e8172f388b" prot="public" virt="non-virtual"><scope>cryomesh::structures::NodeMesh</scope><name>regenerateNeighbourhoods</name></member>
+      <member refid="classcryomesh_1_1structures_1_1NodeMesh_1a56acee3ddfaa6aad8cfcf4f135c18661" prot="public" virt="non-virtual"><scope>cryomesh::structures::NodeMesh</scope><name>update</name></member>
+      <member refid="classcryomesh_1_1structures_1_1NodeMesh_1a746174aeb591281f713a751b1eed25da" prot="public" virt="non-virtual"><scope>cryomesh::structures::NodeMesh</scope><name>warpNodes</name></member>
+      <member refid="classcryomesh_1_1structures_1_1NodeMesh_1a3a40ab73f5130b83215bfd8f72d95eb4" prot="public" virt="virtual"><scope>cryomesh::structures::NodeMesh</scope><name>~NodeMesh</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

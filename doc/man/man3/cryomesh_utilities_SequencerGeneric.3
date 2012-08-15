@@ -1,4 +1,4 @@
-.TH "cryomesh::utilities::SequencerGeneric" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::utilities::SequencerGeneric" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -7,7 +7,7 @@ cryomesh::utilities::SequencerGeneric \-
 .br
 .PP
 .PP
-\fC#include <SequencerGeneric.h>\fP
+\fC#include <SequencerGeneric\&.h>\fP
 .SS "Classes"
 
 .in +1c
@@ -25,7 +25,11 @@ cryomesh::utilities::SequencerGeneric \-
 .RI "virtual \fB~SequencerGeneric\fP ()"
 .br
 .ti -1c
-.RI "const std::list< boost::shared_ptr< \fBSequencerGeneric::NodeEntry\fP > > & \fBgetNodeEntries\fP () const "
+.RI "const std::list
+.br
+< boost::shared_ptr
+.br
+< \fBSequencerGeneric::NodeEntry\fP > > & \fBgetNodeEntries\fP () const "
 .br
 .ti -1c
 .RI "virtual void \fBon_start_document\fP ()"
@@ -38,9 +42,6 @@ cryomesh::utilities::SequencerGeneric \-
 .br
 .ti -1c
 .RI "virtual void \fBon_end_element\fP (const Glib::ustring &name)"
-.br
-.ti -1c
-.RI "virtual void \fBon_characters\fP (const Glib::ustring &characters)"
 .br
 .ti -1c
 .RI "virtual void \fBon_comment\fP (const Glib::ustring &text)"
@@ -59,10 +60,14 @@ cryomesh::utilities::SequencerGeneric \-
 
 .in +1c
 .ti -1c
-.RI "std::list< boost::shared_ptr< \fBNodeEntry\fP > > \fBnodeEntries\fP"
+.RI "std::list< boost::shared_ptr
+.br
+< \fBNodeEntry\fP > > \fBnodeEntries\fP"
 .br
 .ti -1c
-.RI "std::list< boost::shared_ptr< \fBNodeEntry\fP > > \fBnodeStack\fP"
+.RI "std::list< boost::shared_ptr
+.br
+< \fBNodeEntry\fP > > \fBnodeStack\fP"
 .br
 .ti -1c
 .RI "int \fBelementCount\fP"
@@ -77,76 +82,73 @@ cryomesh::utilities::SequencerGeneric \-
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 12 of file SequencerGeneric.h.
+Definition at line 12 of file SequencerGeneric\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "cryomesh::utilities::SequencerGeneric::SequencerGeneric (const std::string &ifstr)"
+.SS "\fBcryomesh::utilities::SequencerGeneric::SequencerGeneric\fP (const std::string &ifstr)"
 .PP
-Definition at line 7 of file SequencerGeneric.cpp.
-.SS "cryomesh::utilities::SequencerGeneric::~SequencerGeneric ()\fC [virtual]\fP"
+Definition at line 7 of file SequencerGeneric\&.cpp\&.
+.SS "\fBcryomesh::utilities::SequencerGeneric::~SequencerGeneric\fP ()\fC [virtual]\fP"
 .PP
-Definition at line 18 of file SequencerGeneric.cpp.
+Definition at line 19 of file SequencerGeneric\&.cpp\&.
 .SH "Member Function Documentation"
 .PP 
-.SS "const std::list< boost::shared_ptr< \fBSequencerGeneric::NodeEntry\fP > > & cryomesh::utilities::SequencerGeneric::getNodeEntries () const"
+.SS "const std::list< boost::shared_ptr< \fBSequencerGeneric::NodeEntry\fP > > & \fBcryomesh::utilities::SequencerGeneric::getNodeEntries\fP () const"
 .PP
-Definition at line 123 of file SequencerGeneric.cpp.
+Definition at line 106 of file SequencerGeneric\&.cpp\&.
 .PP
-References nodeEntries.
+References nodeEntries\&.
 .PP
-Referenced by cryomesh::utilities::SequencerChannels::readSequences().
-.SS "void cryomesh::utilities::SequencerGeneric::on_characters (const Glib::ustring &characters)\fC [virtual]\fP"
+Referenced by cryomesh::utilities::SequencerChannels::readSequences()\&.
+.SS "void \fBcryomesh::utilities::SequencerGeneric::on_comment\fP (const Glib::ustring &text)\fC [virtual]\fP"
 .PP
-Definition at line 73 of file SequencerGeneric.cpp.
-.SS "void cryomesh::utilities::SequencerGeneric::on_comment (const Glib::ustring &text)\fC [virtual]\fP"
+Definition at line 70 of file SequencerGeneric\&.cpp\&.
+.SS "void \fBcryomesh::utilities::SequencerGeneric::on_end_document\fP ()\fC [virtual]\fP"
 .PP
-Definition at line 83 of file SequencerGeneric.cpp.
-.SS "void cryomesh::utilities::SequencerGeneric::on_end_document ()\fC [virtual]\fP"
+Definition at line 26 of file SequencerGeneric\&.cpp\&.
+.SS "void \fBcryomesh::utilities::SequencerGeneric::on_end_element\fP (const Glib::ustring &name)\fC [virtual]\fP"
 .PP
-Definition at line 25 of file SequencerGeneric.cpp.
-.SS "void cryomesh::utilities::SequencerGeneric::on_end_element (const Glib::ustring &name)\fC [virtual]\fP"
+Definition at line 65 of file SequencerGeneric\&.cpp\&.
 .PP
-Definition at line 68 of file SequencerGeneric.cpp.
+References nodeStack\&.
+.SS "void \fBcryomesh::utilities::SequencerGeneric::on_error\fP (const Glib::ustring &text)\fC [virtual]\fP"
 .PP
-References nodeStack.
-.SS "void cryomesh::utilities::SequencerGeneric::on_error (const Glib::ustring &text)\fC [virtual]\fP"
+Definition at line 88 of file SequencerGeneric\&.cpp\&.
+.SS "void \fBcryomesh::utilities::SequencerGeneric::on_fatal_error\fP (const Glib::ustring &text)\fC [virtual]\fP"
 .PP
-Definition at line 103 of file SequencerGeneric.cpp.
-.SS "void cryomesh::utilities::SequencerGeneric::on_fatal_error (const Glib::ustring &text)\fC [virtual]\fP"
+Definition at line 97 of file SequencerGeneric\&.cpp\&.
+.SS "void \fBcryomesh::utilities::SequencerGeneric::on_start_document\fP ()\fC [virtual]\fP"
 .PP
-Definition at line 113 of file SequencerGeneric.cpp.
-.SS "void cryomesh::utilities::SequencerGeneric::on_start_document ()\fC [virtual]\fP"
+Definition at line 22 of file SequencerGeneric\&.cpp\&.
+.SS "void \fBcryomesh::utilities::SequencerGeneric::on_start_element\fP (const Glib::ustring &name, const AttributeList &properties)\fC [virtual]\fP"
 .PP
-Definition at line 21 of file SequencerGeneric.cpp.
-.SS "void cryomesh::utilities::SequencerGeneric::on_start_element (const Glib::ustring &name, const AttributeList &properties)\fC [virtual]\fP"
+Definition at line 30 of file SequencerGeneric\&.cpp\&.
 .PP
-Definition at line 29 of file SequencerGeneric.cpp.
+References nodeEntries, and nodeStack\&.
+.SS "void \fBcryomesh::utilities::SequencerGeneric::on_warning\fP (const Glib::ustring &text)\fC [virtual]\fP"
 .PP
-References nodeEntries, and nodeStack.
-.SS "void cryomesh::utilities::SequencerGeneric::on_warning (const Glib::ustring &text)\fC [virtual]\fP"
-.PP
-Definition at line 93 of file SequencerGeneric.cpp.
+Definition at line 79 of file SequencerGeneric\&.cpp\&.
 .SH "Friends And Related Function Documentation"
 .PP 
 .SS "std::ostream& operator<< (std::ostream &os, const \fBSequencerGeneric\fP &obj)\fC [friend]\fP"
 .PP
-Definition at line 126 of file SequencerGeneric.cpp.
+Definition at line 109 of file SequencerGeneric\&.cpp\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "int \fBcryomesh::utilities::SequencerGeneric::elementCount\fP\fC [private]\fP"
 .PP
-Definition at line 56 of file SequencerGeneric.h.
+Definition at line 56 of file SequencerGeneric\&.h\&.
 .SS "std::list< boost::shared_ptr<\fBNodeEntry\fP> > \fBcryomesh::utilities::SequencerGeneric::nodeEntries\fP\fC [private]\fP"
 .PP
-Definition at line 54 of file SequencerGeneric.h.
+Definition at line 54 of file SequencerGeneric\&.h\&.
 .PP
-Referenced by getNodeEntries(), on_start_element(), and cryomesh::utilities::operator<<().
+Referenced by getNodeEntries(), on_start_element(), and cryomesh::utilities::operator<<()\&.
 .SS "std::list< boost::shared_ptr<\fBNodeEntry\fP> > \fBcryomesh::utilities::SequencerGeneric::nodeStack\fP\fC [private]\fP"
 .PP
-Definition at line 55 of file SequencerGeneric.h.
+Definition at line 55 of file SequencerGeneric\&.h\&.
 .PP
-Referenced by on_end_element(), and on_start_element().
+Referenced by on_end_element(), and on_start_element()\&.
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for cryomesh from the source code.
+Generated automatically by Doxygen for cryomesh from the source code\&.

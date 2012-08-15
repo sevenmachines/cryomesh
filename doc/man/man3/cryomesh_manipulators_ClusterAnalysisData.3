@@ -1,0 +1,330 @@
+.TH "cryomesh::manipulators::ClusterAnalysisData" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::manipulators::ClusterAnalysisData \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ClusterAnalysisData\&.h>\fP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBRangeEnergy\fP"
+.br
+.RI "\fIStruct representing the value extrapolated over a history range\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBClusterAnalysisData\fP ()"
+.br
+.ti -1c
+.RI "\fBClusterAnalysisData\fP (\fBRangeEnergy\fP cre)"
+.br
+.ti -1c
+.RI "\fBClusterAnalysisData\fP (\fBRangeEnergy\fP \fBclusterRangeEnergy\fP, double node_creation_weight, double node_destruction_weight, double conn_creation_weight, double conn_destruction_weight, int node_create, int nodes_destroy, int conn_create, int conn_destroy)"
+.br
+.ti -1c
+.RI "\fBClusterAnalysisData\fP (const \fBClusterAnalysisData\fP &obj)"
+.br
+.ti -1c
+.RI "virtual \fB~ClusterAnalysisData\fP ()"
+.br
+.ti -1c
+.RI "\fBRangeEnergy\fP \fBgetClusterRangeEnergy\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetNodeCreationWeight\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetNodeDestructionWeight\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetConnectionCreationWeight\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetConnectionDestructionWeight\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetNodesToDestroy\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetConnectionsToDestroy\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetNodesToCreate\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetConnectionsToCreate\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetClusterRangeEnergy\fP (\fBRangeEnergy\fP clusterEnergy)"
+.br
+.ti -1c
+.RI "void \fBsetConnectionCreationWeight\fP (double \fBconnectionCreationWeight\fP)"
+.br
+.ti -1c
+.RI "void \fBsetConnectionDestructionWeight\fP (double \fBconnectionDestructionWeight\fP)"
+.br
+.ti -1c
+.RI "void \fBsetConnectionsToCreate\fP (int \fBconnectionsToCreate\fP)"
+.br
+.ti -1c
+.RI "void \fBsetConnectionsToDestroy\fP (int \fBconnectionsToDestroy\fP)"
+.br
+.ti -1c
+.RI "void \fBsetNodeCreationWeight\fP (double \fBnodeCreationWeight\fP)"
+.br
+.ti -1c
+.RI "void \fBsetNodeDestructionWeight\fP (double \fBnodeDestructionWeight\fP)"
+.br
+.ti -1c
+.RI "void \fBsetNodesToCreate\fP (int \fBnodesToCreate\fP)"
+.br
+.ti -1c
+.RI "void \fBsetNodesToDestroy\fP (int \fBnodesToDestroy\fP)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBRangeEnergy\fP \fBclusterRangeEnergy\fP"
+.br
+.ti -1c
+.RI "double \fBnodeCreationWeight\fP"
+.br
+.ti -1c
+.RI "double \fBnodeDestructionWeight\fP"
+.br
+.ti -1c
+.RI "double \fBconnectionCreationWeight\fP"
+.br
+.ti -1c
+.RI "double \fBconnectionDestructionWeight\fP"
+.br
+.ti -1c
+.RI "int \fBnodesToCreate\fP"
+.br
+.ti -1c
+.RI "int \fBnodesToDestroy\fP"
+.br
+.ti -1c
+.RI "int \fBconnectionsToCreate\fP"
+.br
+.ti -1c
+.RI "int \fBconnectionsToDestroy\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBClusterAnalysisData\fP &obj)"
+.br
+.RI "\fITo stream operator\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 18 of file ClusterAnalysisData\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBcryomesh::manipulators::ClusterAnalysisData::ClusterAnalysisData\fP ()"
+.PP
+Definition at line 13 of file ClusterAnalysisData\&.cpp\&.
+.SS "\fBcryomesh::manipulators::ClusterAnalysisData::ClusterAnalysisData\fP (\fBRangeEnergy\fPcre)"
+.PP
+Definition at line 17 of file ClusterAnalysisData\&.cpp\&.
+.SS "\fBcryomesh::manipulators::ClusterAnalysisData::ClusterAnalysisData\fP (\fBRangeEnergy\fPclusterRangeEnergy, doublenode_creation_weight, doublenode_destruction_weight, doubleconn_creation_weight, doubleconn_destruction_weight, intnode_create, intnodes_destroy, intconn_create, intconn_destroy)"
+.PP
+Definition at line 22 of file ClusterAnalysisData\&.cpp\&.
+.SS "\fBcryomesh::manipulators::ClusterAnalysisData::ClusterAnalysisData\fP (const \fBClusterAnalysisData\fP &obj)"
+.PP
+Definition at line 31 of file ClusterAnalysisData\&.cpp\&.
+.SS "\fBcryomesh::manipulators::ClusterAnalysisData::~ClusterAnalysisData\fP ()\fC [virtual]\fP"
+.PP
+Definition at line 38 of file ClusterAnalysisData\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBClusterAnalysisData::RangeEnergy\fP \fBcryomesh::manipulators::ClusterAnalysisData::getClusterRangeEnergy\fP () const"
+.PP
+Definition at line 41 of file ClusterAnalysisData\&.cpp\&.
+.PP
+References clusterRangeEnergy\&.
+.PP
+Referenced by cryomesh::manipulators::ClusterAnalyserBasic::analyseCluster(), and cryomesh::manipulators::ClusterAnalyserBasic::calculateRangeEnergies()\&.
+.SS "double \fBcryomesh::manipulators::ClusterAnalysisData::getConnectionCreationWeight\fP () const"
+.PP
+Definition at line 50 of file ClusterAnalysisData\&.cpp\&.
+.PP
+References connectionCreationWeight\&.
+.PP
+Referenced by cryomesh::manipulators::ClusterAnalyserBasic::calculateRangeEnergies()\&.
+.SS "double \fBcryomesh::manipulators::ClusterAnalysisData::getConnectionDestructionWeight\fP () const"
+.PP
+Definition at line 53 of file ClusterAnalysisData\&.cpp\&.
+.PP
+References connectionDestructionWeight\&.
+.PP
+Referenced by cryomesh::manipulators::ClusterAnalyserBasic::calculateRangeEnergies()\&.
+.SS "int \fBcryomesh::manipulators::ClusterAnalysisData::getConnectionsToCreate\fP () const"
+.PP
+Definition at line 66 of file ClusterAnalysisData\&.cpp\&.
+.PP
+References connectionsToCreate\&.
+.PP
+Referenced by cryomesh::manipulators::ClusterAnalyserBasic::calculateRangeEnergies(), and cryomesh::manipulators::ClusterArchitect::runAnalysis()\&.
+.SS "int \fBcryomesh::manipulators::ClusterAnalysisData::getConnectionsToDestroy\fP () const"
+.PP
+Definition at line 60 of file ClusterAnalysisData\&.cpp\&.
+.PP
+References connectionsToDestroy\&.
+.PP
+Referenced by cryomesh::manipulators::ClusterAnalyserBasic::calculateRangeEnergies(), and cryomesh::manipulators::ClusterArchitect::runAnalysis()\&.
+.SS "double \fBcryomesh::manipulators::ClusterAnalysisData::getNodeCreationWeight\fP () const"
+.PP
+Definition at line 44 of file ClusterAnalysisData\&.cpp\&.
+.PP
+References nodeCreationWeight\&.
+.PP
+Referenced by cryomesh::manipulators::ClusterAnalyserBasic::calculateRangeEnergies()\&.
+.SS "double \fBcryomesh::manipulators::ClusterAnalysisData::getNodeDestructionWeight\fP () const"
+.PP
+Definition at line 47 of file ClusterAnalysisData\&.cpp\&.
+.PP
+References nodeDestructionWeight\&.
+.PP
+Referenced by cryomesh::manipulators::ClusterAnalyserBasic::calculateRangeEnergies()\&.
+.SS "int \fBcryomesh::manipulators::ClusterAnalysisData::getNodesToCreate\fP () const"
+.PP
+Definition at line 63 of file ClusterAnalysisData\&.cpp\&.
+.PP
+References nodesToCreate\&.
+.PP
+Referenced by cryomesh::manipulators::ClusterAnalyserBasic::calculateRangeEnergies(), and cryomesh::manipulators::ClusterArchitect::runAnalysis()\&.
+.SS "int \fBcryomesh::manipulators::ClusterAnalysisData::getNodesToDestroy\fP () const"
+.PP
+Definition at line 57 of file ClusterAnalysisData\&.cpp\&.
+.PP
+References nodesToDestroy\&.
+.PP
+Referenced by cryomesh::manipulators::ClusterAnalyserBasic::calculateRangeEnergies(), and cryomesh::manipulators::ClusterArchitect::runAnalysis()\&.
+.SS "void \fBcryomesh::manipulators::ClusterAnalysisData::setClusterRangeEnergy\fP (\fBRangeEnergy\fPclusterEnergy)"
+.PP
+Definition at line 70 of file ClusterAnalysisData\&.cpp\&.
+.PP
+References clusterRangeEnergy\&.
+.SS "void \fBcryomesh::manipulators::ClusterAnalysisData::setConnectionCreationWeight\fP (doubleconnectionCreationWeight)"
+.PP
+Definition at line 74 of file ClusterAnalysisData\&.cpp\&.
+.PP
+References connectionCreationWeight\&.
+.SS "void \fBcryomesh::manipulators::ClusterAnalysisData::setConnectionDestructionWeight\fP (doubleconnectionDestructionWeight)"
+.PP
+Definition at line 78 of file ClusterAnalysisData\&.cpp\&.
+.PP
+References connectionDestructionWeight\&.
+.SS "void \fBcryomesh::manipulators::ClusterAnalysisData::setConnectionsToCreate\fP (intconnectionsToCreate)"
+.PP
+Definition at line 82 of file ClusterAnalysisData\&.cpp\&.
+.PP
+References connectionsToCreate\&.
+.SS "void \fBcryomesh::manipulators::ClusterAnalysisData::setConnectionsToDestroy\fP (intconnectionsToDestroy)"
+.PP
+Definition at line 86 of file ClusterAnalysisData\&.cpp\&.
+.PP
+References connectionsToDestroy\&.
+.SS "void \fBcryomesh::manipulators::ClusterAnalysisData::setNodeCreationWeight\fP (doublenodeCreationWeight)"
+.PP
+Definition at line 90 of file ClusterAnalysisData\&.cpp\&.
+.PP
+References nodeCreationWeight\&.
+.SS "void \fBcryomesh::manipulators::ClusterAnalysisData::setNodeDestructionWeight\fP (doublenodeDestructionWeight)"
+.PP
+Definition at line 94 of file ClusterAnalysisData\&.cpp\&.
+.PP
+References nodeDestructionWeight\&.
+.SS "void \fBcryomesh::manipulators::ClusterAnalysisData::setNodesToCreate\fP (intnodesToCreate)"
+.PP
+Definition at line 98 of file ClusterAnalysisData\&.cpp\&.
+.PP
+References nodesToCreate\&.
+.SS "void \fBcryomesh::manipulators::ClusterAnalysisData::setNodesToDestroy\fP (intnodesToDestroy)"
+.PP
+Definition at line 102 of file ClusterAnalysisData\&.cpp\&.
+.PP
+References nodesToDestroy\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream &os, const \fBClusterAnalysisData\fP &obj)\fC [friend]\fP"
+.PP
+To stream operator\&. \fBParameters:\fP
+.RS 4
+\fIstd::ostream\fP & os The output stream 
+.br
+\fIconst\fP \fBClusterAnalysisData\fP & obj The object to stream
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::ostream & The output stream 
+.RE
+.PP
+
+.PP
+Definition at line 147 of file ClusterAnalysisData\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBRangeEnergy\fP \fBcryomesh::manipulators::ClusterAnalysisData::clusterRangeEnergy\fP\fC [private]\fP"
+.PP
+Definition at line 157 of file ClusterAnalysisData\&.h\&.
+.PP
+Referenced by getClusterRangeEnergy(), and setClusterRangeEnergy()\&.
+.SS "double \fBcryomesh::manipulators::ClusterAnalysisData::connectionCreationWeight\fP\fC [private]\fP"
+.PP
+Definition at line 175 of file ClusterAnalysisData\&.h\&.
+.PP
+Referenced by getConnectionCreationWeight(), and setConnectionCreationWeight()\&.
+.SS "double \fBcryomesh::manipulators::ClusterAnalysisData::connectionDestructionWeight\fP\fC [private]\fP"
+.PP
+Definition at line 181 of file ClusterAnalysisData\&.h\&.
+.PP
+Referenced by getConnectionDestructionWeight(), and setConnectionDestructionWeight()\&.
+.SS "int \fBcryomesh::manipulators::ClusterAnalysisData::connectionsToCreate\fP\fC [private]\fP"
+.PP
+Definition at line 185 of file ClusterAnalysisData\&.h\&.
+.PP
+Referenced by getConnectionsToCreate(), and setConnectionsToCreate()\&.
+.SS "int \fBcryomesh::manipulators::ClusterAnalysisData::connectionsToDestroy\fP\fC [private]\fP"
+.PP
+Definition at line 186 of file ClusterAnalysisData\&.h\&.
+.PP
+Referenced by getConnectionsToDestroy(), and setConnectionsToDestroy()\&.
+.SS "double \fBcryomesh::manipulators::ClusterAnalysisData::nodeCreationWeight\fP\fC [private]\fP"
+.PP
+Definition at line 163 of file ClusterAnalysisData\&.h\&.
+.PP
+Referenced by getNodeCreationWeight(), and setNodeCreationWeight()\&.
+.SS "double \fBcryomesh::manipulators::ClusterAnalysisData::nodeDestructionWeight\fP\fC [private]\fP"
+.PP
+Definition at line 169 of file ClusterAnalysisData\&.h\&.
+.PP
+Referenced by getNodeDestructionWeight(), and setNodeDestructionWeight()\&.
+.SS "int \fBcryomesh::manipulators::ClusterAnalysisData::nodesToCreate\fP\fC [private]\fP"
+.PP
+Definition at line 183 of file ClusterAnalysisData\&.h\&.
+.PP
+Referenced by getNodesToCreate(), and setNodesToCreate()\&.
+.SS "int \fBcryomesh::manipulators::ClusterAnalysisData::nodesToDestroy\fP\fC [private]\fP"
+.PP
+Definition at line 184 of file ClusterAnalysisData\&.h\&.
+.PP
+Referenced by getNodesToDestroy(), and setNodesToDestroy()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code\&.

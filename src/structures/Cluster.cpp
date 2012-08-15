@@ -21,18 +21,21 @@ const double Cluster::SELF_CONNECTED_NODES_FRACTION = 0.1;
 
 Cluster::Cluster() :
 		spacial::Spacial(true), energy(0), nodes(), connections(), mesh(
-				boost::shared_ptr<NodeMesh>(new NodeMesh(*this))), connector(), clusterArchitect(new manipulators::ClusterArchitect(*this)),  energyFractionMethod(ENERGY_FRACTION_BY_NODE_COUNT)  {
+				boost::shared_ptr<NodeMesh>(new NodeMesh(*this))), connector(), clusterArchitect(
+				new manipulators::ClusterArchitect(*this)), energyFractionMethod(ENERGY_FRACTION_NULL), maxEnergyFraction(0) {
 }
 
 Cluster::Cluster(int nodeCount, int connectivity, const spacial::Point bounding_box) :
 		spacial::Spacial(bounding_box, true), energy(0), nodes(), connections(), mesh(
-				boost::shared_ptr<NodeMesh>(new NodeMesh(*this))), connector(), clusterArchitect(new manipulators::ClusterArchitect(*this)) ,  energyFractionMethod(ENERGY_FRACTION_BY_NODE_COUNT) {
+				boost::shared_ptr<NodeMesh>(new NodeMesh(*this))), connector(), clusterArchitect(
+				new manipulators::ClusterArchitect(*this)), energyFractionMethod(ENERGY_FRACTION_NULL), maxEnergyFraction(0) {
 	clusterArchitect->createRandomNodes(nodeCount, connectivity);
 }
 
 Cluster::Cluster(int nodeCount, int connectivity) :
-		spacial::Spacial(true), energy(0) , nodes(), connections(), mesh(
-				boost::shared_ptr<NodeMesh>(new NodeMesh(*this))), connector() , clusterArchitect(new manipulators::ClusterArchitect(*this)),  energyFractionMethod(ENERGY_FRACTION_BY_NODE_COUNT) {
+		spacial::Spacial(true), energy(0), nodes(), connections(), mesh(
+				boost::shared_ptr<NodeMesh>(new NodeMesh(*this))), connector(), clusterArchitect(
+				new manipulators::ClusterArchitect(*this)), energyFractionMethod(ENERGY_FRACTION_NULL), maxEnergyFraction(0) {
 	clusterArchitect->createRandomNodes(nodeCount, connectivity);
 }
 
@@ -54,29 +57,32 @@ double Cluster::getEnergy() const {
 void Cluster::setEnergy(double total_energy) {
 	energy = total_energy;
 }
-void Cluster::setEnergyFractionMethod(EnergyFractionMethod method) {
+double Cluster::getMaxEnergyFraction() const {
+	return maxEnergyFraction;
+}
+void Cluster::setEnergyFractionMethod(EnergyFractionMethod method, double max_energy_fraction) {
 	energyFractionMethod = method;
+	maxEnergyFraction = max_energy_fraction;
 }
 
-Cluster::EnergyFractionMethod   Cluster::getEnergyFractionMethod() const {
+Cluster::EnergyFractionMethod Cluster::getEnergyFractionMethod() const {
 	return energyFractionMethod;
 }
 
-
-const boost::shared_ptr< manipulators::ClusterArchitect  > Cluster::getClusterArchitect() const{
+const boost::shared_ptr<manipulators::ClusterArchitect> Cluster::getClusterArchitect() const {
 	return clusterArchitect;
 }
 
-boost::shared_ptr< manipulators::ClusterArchitect  > Cluster::getMutableClusterArchitect(){
+boost::shared_ptr<manipulators::ClusterArchitect> Cluster::getMutableClusterArchitect() {
 	return clusterArchitect;
 }
 
 void Cluster::warpNodes() {
-	std::cout<<"Cluster::warpNodes: "<<"cluster: "<<this->getUUIDString()<<std::endl;
+	std::cout << "Cluster::warpNodes: " << "cluster: " << this->getUUIDString() << std::endl;
 	mesh->warpNodes();
 }
 
-void Cluster::runAnalyser(){
+void Cluster::runAnalyser() {
 	clusterArchitect->runAnalysis();
 }
 
@@ -213,7 +219,7 @@ const components::NodeMap & Cluster::getNodeMap() const {
 components::NodeMap & Cluster::getMutableNodeMap() {
 	return nodes;
 }
-const components::ConnectionMap & Cluster::getConnectionMap() const{
+const components::ConnectionMap & Cluster::getConnectionMap() const {
 	return connections;
 }
 components::ConnectionMap & Cluster::getMutableConnectionMap() {

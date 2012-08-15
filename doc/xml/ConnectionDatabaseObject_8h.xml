@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="ConnectionDatabaseObject_8h" kind="file">
+    <compoundname>ConnectionDatabaseObject.h</compoundname>
+    <includes refid="DatabaseObject_8h" local="yes">DatabaseObject.h</includes>
+    <includes local="yes">spacial/Point.h</includes>
+    <includes refid="Cycle_8h" local="yes">common/Cycle.h</includes>
+    <includes local="no">string</includes>
+    <includes local="no">sstream</includes>
+    <includedby refid="Connection_8cpp" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp</includedby>
+    <includedby refid="ConnectionDatabaseObject_8cpp" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/ConnectionDatabaseObject.cpp</includedby>
+    <includedby refid="DatabaseManager_8h" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h</includedby>
+    <incdepgraph>
+      <node id="797">
+        <label>boost/tokenizer.hpp</label>
+      </node>
+      <node id="798">
+        <label>spacial/Point.h</label>
+      </node>
+      <node id="800">
+        <label>gmpxx.h</label>
+      </node>
+      <node id="792">
+        <label>DatabaseObject.h</label>
+        <link refid="DatabaseObject_8h"/>
+        <childnode refid="793" relation="include">
+        </childnode>
+        <childnode refid="794" relation="include">
+        </childnode>
+        <childnode refid="795" relation="include">
+        </childnode>
+        <childnode refid="796" relation="include">
+        </childnode>
+        <childnode refid="797" relation="include">
+        </childnode>
+      </node>
+      <node id="794">
+        <label>string</label>
+      </node>
+      <node id="793">
+        <label>map</label>
+      </node>
+      <node id="795">
+        <label>sstream</label>
+      </node>
+      <node id="796">
+        <label>iostream</label>
+      </node>
+      <node id="799">
+        <label>common/Cycle.h</label>
+        <link refid="Cycle_8h"/>
+        <childnode refid="800" relation="include">
+        </childnode>
+      </node>
+      <node id="791">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/ConnectionDatabaseObject.h</label>
+        <link refid="ConnectionDatabaseObject.h"/>
+        <childnode refid="792" relation="include">
+        </childnode>
+        <childnode refid="798" relation="include">
+        </childnode>
+        <childnode refid="799" relation="include">
+        </childnode>
+        <childnode refid="794" relation="include">
+        </childnode>
+        <childnode refid="795" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="807">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp</label>
+        <link refid="DatabaseManager_8cpp"/>
+      </node>
+      <node id="803">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/ConnectionDatabaseObject.cpp</label>
+        <link refid="ConnectionDatabaseObject_8cpp"/>
+      </node>
+      <node id="802">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp</label>
+        <link refid="Connection_8cpp"/>
+      </node>
+      <node id="804">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h</label>
+        <link refid="DatabaseManager_8h"/>
+        <childnode refid="805" relation="include">
+        </childnode>
+        <childnode refid="807" relation="include">
+        </childnode>
+      </node>
+      <node id="801">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/ConnectionDatabaseObject.h</label>
+        <link refid="ConnectionDatabaseObject.h"/>
+        <childnode refid="802" relation="include">
+        </childnode>
+        <childnode refid="803" relation="include">
+        </childnode>
+        <childnode refid="804" relation="include">
+        </childnode>
+      </node>
+      <node id="806">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.cpp</label>
+        <link refid="CryoManager_8cpp"/>
+      </node>
+      <node id="805">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.h</label>
+        <link refid="CryoManager_8h"/>
+        <childnode refid="806" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject" prot="public">cryomesh::manager::ConnectionDatabaseObject</innerclass>
+    <innernamespace refid="namespacecryomesh">cryomesh</innernamespace>
+    <innernamespace refid="namespacecryomesh_1_1manager">cryomesh::manager</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>ConnectionDatabaseObject.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>Created<sp/>on:<sp/>16<sp/>Mar<sp/>2011</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Author:<sp/>&quot;SevenMachines<sp/>&lt;SevenMachines@yahoo.co.uk&gt;&quot;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>CONNECTIONDATABASEOBJECT_H_</highlight></codeline>
+<codeline lineno="9"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>CONNECTIONDATABASEOBJECT_H_</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="DatabaseObject_8h" kindref="compound">DatabaseObject.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;spacial/Point.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Cycle_8h" kindref="compound">common/Cycle.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">cryomesh<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">manager<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject" kindref="compound">ConnectionDatabaseObject</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject" kindref="compound">DatabaseObject</ref><sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1a62f33a7c826d115aa981d3cca149e14b" kindref="member" tooltip="Create database object from connection information.">ConnectionDatabaseObject</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>uuid_str,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>innode_uuid_str,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>outnode_uuid_str,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1a481ed7a285f11016e6f6182293cca49f" kindref="member">cycle</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>impulse_count);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1a62f33a7c826d115aa981d3cca149e14b" kindref="member" tooltip="Create database object from connection information.">ConnectionDatabaseObject</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>connection_table_entry);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1a1c34c6c64fcfc7c2aebc714b7b37d059" kindref="member" tooltip="Default Destructor.">~ConnectionDatabaseObject</ref>();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1ac7b22d25a4366175fd7d1578f476b125" kindref="member" tooltip="Get the string that can be used to insert the sql data.">getInsert</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>table)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/><ref refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1aa310082cf95a704640a068db4a328803" kindref="member" tooltip="Get uuid variable of this object.">getUUID</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/><ref refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1a2e8384fe932c699e146511a628f16cff" kindref="member" tooltip="Get inputNodeUUID variable of this object.">getInputNodeUUID</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/><ref refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1ab3488138917a89a2524c32d7999174c0" kindref="member" tooltip="Get outputNodeUUID variable of this object.">getOutputNodeUUID</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1acc8aa75ed2afb098ffba8cd79ed32b6b" kindref="member" tooltip="Get cycle variable of this object.">getCycle</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;<sp/><ref refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1a6fe71c5af6d5e8c58546768c11f662f0" kindref="member" tooltip="Get impulseCount variable of this object.">getImpulseCount</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1ad04bc9639dd0ceed8d559f63cdc0c025" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1ad04bc9639dd0ceed8d559f63cdc0c025" kindref="member">ID_TAG</ref>;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1a00720d641e03f298f88c5431d948fa1a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1a00720d641e03f298f88c5431d948fa1a" kindref="member">INPUT_ID_TAG</ref>;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1ac0ee0b21e1f626b12b125987283f7ebb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1ac0ee0b21e1f626b12b125987283f7ebb" kindref="member">OUTPUT_ID_TAG</ref>;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1a5e1505fdea7990278b9055b87d1071ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1a5e1505fdea7990278b9055b87d1071ef" kindref="member">IMPULSE_COUNT_TAG</ref>;</highlight></codeline>
+<codeline lineno="133" refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1a6af5ded40e1ecffc6dbe072b68a7a153" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1a6af5ded40e1ecffc6dbe072b68a7a153" kindref="member">CYCLE_TAG</ref>;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="141" refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1a31eb0b099470e77da0a89c5cef9d6f68" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1a31eb0b099470e77da0a89c5cef9d6f68" kindref="member">uuid</ref>;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148" refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1a06774523f087375aaf58b69006b2943d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1a06774523f087375aaf58b69006b2943d" kindref="member">inputNodeUUID</ref>;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155" refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1a0b7a3185c6ef946c0afe806a364d13d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1a0b7a3185c6ef946c0afe806a364d13d5" kindref="member">outputNodeUUID</ref>;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162" refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1a481ed7a285f11016e6f6182293cca49f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref><sp/><ref refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1a481ed7a285f11016e6f6182293cca49f" kindref="member">cycle</ref>;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169" refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1ae78ea47f996ccda8b67325edc74922c3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1ae78ea47f996ccda8b67325edc74922c3" kindref="member">impulseCount</ref>;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal">}</highlight><highlight class="comment">//NAMESPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal">}</highlight><highlight class="comment">//NAMESPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>CONNECTIONDATABASEOBJECT_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/ConnectionDatabaseObject.h"/>
+  </compounddef>
+</doxygen>

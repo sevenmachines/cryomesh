@@ -1,4 +1,4 @@
-.TH "cryomesh::state::PatternTag" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::state::PatternTag" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -7,12 +7,18 @@ cryomesh::state::PatternTag \-
 .br
 .PP
 .PP
-\fC#include <PatternTag.h>\fP
+\fC#include <PatternTag\&.h>\fP
 .PP
-Inherited by \fBcryomesh::state::PatternTagByDate\fP, and \fBcryomesh::state::PatternTagById\fP.
+Inherited by \fBcryomesh::state::PatternTagByDate\fP, and \fBcryomesh::state::PatternTagById\fP\&.
 .SS "Public Member Functions"
 
 .in +1c
+.ti -1c
+.RI "\fBPatternTag\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~PatternTag\fP ()"
+.br
 .ti -1c
 .RI "virtual std::string \fBgetTag\fP () const =0"
 .br
@@ -29,51 +35,61 @@ Inherited by \fBcryomesh::state::PatternTagByDate\fP, and \fBcryomesh::state::Pa
 .RI "virtual std::string \fBgetStartTag\fP () const =0"
 .br
 .ti -1c
-.RI "virtual void \fBsetStartTag\fP (std::string tg)=0"
+.RI "virtual std::string \fBgetEndTag\fP () const =0"
 .br
 .ti -1c
-.RI "virtual std::string \fBgetEndTag\fP () const =0"
+.RI "virtual void \fBsetStartTag\fP (std::string tg)=0"
 .br
 .ti -1c
 .RI "virtual void \fBsetEndTag\fP (std::string tg)=0"
 .br
 .ti -1c
-.RI "virtual boost::shared_ptr< \fBPatternTag\fP > \fBgetGlobalTag\fP ()=0"
+.RI "virtual boost::shared_ptr
+.br
+< \fBPatternTag\fP > \fBgetGlobalTag\fP ()=0"
 .br
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 17 of file PatternTag.h.
+Definition at line 17 of file PatternTag\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBcryomesh::state::PatternTag::PatternTag\fP ()\fC [inline]\fP"
+.PP
+Definition at line 19 of file PatternTag\&.h\&.
+.SS "virtual \fBcryomesh::state::PatternTag::~PatternTag\fP ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 20 of file PatternTag\&.h\&.
 .SH "Member Function Documentation"
 .PP 
-.SS "virtual std::string cryomesh::state::PatternTag::getEndTag () const\fC [pure virtual]\fP"
+.SS "virtual std::string \fBcryomesh::state::PatternTag::getEndTag\fP () const\fC [pure virtual]\fP"
 .PP
-Implemented in \fBcryomesh::state::PatternTagByDate\fP, and \fBcryomesh::state::PatternTagById\fP.
-.SS "virtual boost::shared_ptr<\fBPatternTag\fP> cryomesh::state::PatternTag::getGlobalTag ()\fC [pure virtual]\fP"
+Implemented in \fBcryomesh::state::PatternTagByDate\fP, and \fBcryomesh::state::PatternTagById\fP\&.
+.SS "virtual boost::shared_ptr<\fBPatternTag\fP> \fBcryomesh::state::PatternTag::getGlobalTag\fP ()\fC [pure virtual]\fP"
 .PP
-Implemented in \fBcryomesh::state::PatternTagByDate\fP, and \fBcryomesh::state::PatternTagById\fP.
-.SS "virtual std::string cryomesh::state::PatternTag::getStartTag () const\fC [pure virtual]\fP"
+Implemented in \fBcryomesh::state::PatternTagByDate\fP, and \fBcryomesh::state::PatternTagById\fP\&.
+.SS "virtual std::string \fBcryomesh::state::PatternTag::getStartTag\fP () const\fC [pure virtual]\fP"
 .PP
-Implemented in \fBcryomesh::state::PatternTagByDate\fP, and \fBcryomesh::state::PatternTagById\fP.
-.SS "virtual std::string cryomesh::state::PatternTag::getTag () const\fC [pure virtual]\fP"
+Implemented in \fBcryomesh::state::PatternTagByDate\fP, and \fBcryomesh::state::PatternTagById\fP\&.
+.SS "virtual std::string \fBcryomesh::state::PatternTag::getTag\fP () const\fC [pure virtual]\fP"
 .PP
-Implemented in \fBcryomesh::state::PatternTagByDate\fP, and \fBcryomesh::state::PatternTagById\fP.
-.SS "virtual std::string cryomesh::state::PatternTag::moveTag (inti)\fC [pure virtual]\fP"
+Implemented in \fBcryomesh::state::PatternTagByDate\fP, and \fBcryomesh::state::PatternTagById\fP\&.
+.SS "virtual std::string \fBcryomesh::state::PatternTag::moveTag\fP ()\fC [pure virtual]\fP"
 .PP
-Implemented in \fBcryomesh::state::PatternTagByDate\fP, and \fBcryomesh::state::PatternTagById\fP.
-.SS "virtual std::string cryomesh::state::PatternTag::moveTag ()\fC [pure virtual]\fP"
+Implemented in \fBcryomesh::state::PatternTagByDate\fP, and \fBcryomesh::state::PatternTagById\fP\&.
+.SS "virtual std::string \fBcryomesh::state::PatternTag::moveTag\fP (inti)\fC [pure virtual]\fP"
 .PP
-Implemented in \fBcryomesh::state::PatternTagByDate\fP, and \fBcryomesh::state::PatternTagById\fP.
-.SS "virtual void cryomesh::state::PatternTag::setEndTag (std::stringtg)\fC [pure virtual]\fP"
+Implemented in \fBcryomesh::state::PatternTagByDate\fP, and \fBcryomesh::state::PatternTagById\fP\&.
+.SS "virtual void \fBcryomesh::state::PatternTag::setEndTag\fP (std::stringtg)\fC [pure virtual]\fP"
 .PP
-Implemented in \fBcryomesh::state::PatternTagByDate\fP, and \fBcryomesh::state::PatternTagById\fP.
-.SS "virtual void cryomesh::state::PatternTag::setStartTag (std::stringtg)\fC [pure virtual]\fP"
+Implemented in \fBcryomesh::state::PatternTagByDate\fP, and \fBcryomesh::state::PatternTagById\fP\&.
+.SS "virtual void \fBcryomesh::state::PatternTag::setStartTag\fP (std::stringtg)\fC [pure virtual]\fP"
 .PP
-Implemented in \fBcryomesh::state::PatternTagByDate\fP, and \fBcryomesh::state::PatternTagById\fP.
-.SS "virtual void cryomesh::state::PatternTag::setTag (std::stringtg)\fC [pure virtual]\fP"
+Implemented in \fBcryomesh::state::PatternTagByDate\fP, and \fBcryomesh::state::PatternTagById\fP\&.
+.SS "virtual void \fBcryomesh::state::PatternTag::setTag\fP (std::stringtg)\fC [pure virtual]\fP"
 .PP
-Implemented in \fBcryomesh::state::PatternTagByDate\fP, and \fBcryomesh::state::PatternTagById\fP.
+Implemented in \fBcryomesh::state::PatternTagByDate\fP, and \fBcryomesh::state::PatternTagById\fP\&.
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for cryomesh from the source code.
+Generated automatically by Doxygen for cryomesh from the source code\&.

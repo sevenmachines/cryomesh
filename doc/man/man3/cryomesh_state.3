@@ -1,4 +1,4 @@
-.TH "cryomesh::state" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::state" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -12,7 +12,7 @@ cryomesh::state \-
 .ti -1c
 .RI "class \fBActivityPattern\fP"
 .br
-.RI "\fIA simple collection of doubles representing a pattern of activities. \fP"
+.RI "\fIA simple collection of doubles representing a pattern of activities\&. \fP"
 .ti -1c
 .RI "class \fBBinaryString\fP"
 .br
@@ -58,16 +58,24 @@ cryomesh::state \-
 .PP 
 .SS "std::ostream& cryomesh::state::operator<< (std::ostream &os, const BinaryString &obj)"
 .PP
-Definition at line 224 of file BinaryString.cpp.
-.SS "std::ostream& cryomesh::state::operator<< (std::ostream &os, const Sequence &obj)"
+Definition at line 223 of file BinaryString\&.cpp\&.
 .PP
-Definition at line 381 of file Sequence.cpp.
-.SS "std::ostream& cryomesh::state::operator<< (std::ostream &os, const PatternChannel &obj)"
-.PP
-Definition at line 617 of file PatternChannel.cpp.
+References cryomesh::state::BinaryString::getBinaryString()\&.
 .SS "std::ostream& cryomesh::state::operator<< (std::ostream &os, const Pattern &obj)"
 .PP
-Definition at line 240 of file Pattern.cpp.
+Definition at line 242 of file Pattern\&.cpp\&.
+.PP
+References cryomesh::state::Pattern::getId(), and cryomesh::state::Pattern::getString()\&.
+.SS "std::ostream& cryomesh::state::operator<< (std::ostream &os, const Sequence &obj)"
+.PP
+Definition at line 380 of file Sequence\&.cpp\&.
+.PP
+References cryomesh::state::Sequence::getPatterns()\&.
+.SS "std::ostream& cryomesh::state::operator<< (std::ostream &os, const PatternChannel &obj)"
+.PP
+Definition at line 639 of file PatternChannel\&.cpp\&.
+.PP
+References cryomesh::state::PatternChannel::length, cryomesh::state::PatternChannel::maxPatternListSize, cryomesh::state::PatternChannel::patternMap, cryomesh::state::PatternChannel::patternPosition, cryomesh::state::PatternChannel::printBinaryFormattedPatternList(), cryomesh::state::PatternChannel::refID, and cryomesh::state::PatternChannel::width\&.
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for cryomesh from the source code.
+Generated automatically by Doxygen for cryomesh from the source code\&.

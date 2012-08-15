@@ -1,0 +1,260 @@
+\hypertarget{classcryomesh_1_1manipulators_1_1IClusterAnalyser}{\section{cryomesh\-:\-:manipulators\-:\-:\-I\-Cluster\-Analyser \-Class \-Reference}
+\label{classcryomesh_1_1manipulators_1_1IClusterAnalyser}\index{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}}
+}
+
+
+{\ttfamily \#include $<$\-I\-Cluster\-Analyser.\-h$>$}
+
+\-Inheritance diagram for cryomesh\-:\-:manipulators\-:\-:\-I\-Cluster\-Analyser\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcryomesh_1_1manipulators_1_1IClusterAnalyser}
+\end{center}
+\end{figure}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcryomesh_1_1manipulators_1_1IClusterAnalyser_1_1EnergyVariationWeightingMap}{\-Energy\-Variation\-Weighting\-Map}
+\item 
+struct \hyperlink{structcryomesh_1_1manipulators_1_1IClusterAnalyser_1_1RestructuringCountdown}{\-Restructuring\-Countdown}
+\begin{DoxyCompactList}\small\item\em \-Class to hold together information on whether we can act to restructure items. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781b}{\-Energy\-Variation} \{ \*
+\hyperlink{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781ba5b6d113aa10f4f70e703a35a39f828d6}{\-N\-O\-N\-E} =  2048, 
+\hyperlink{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781ba1378201d3fdbeeb653457ffb75488e85}{\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E} =  1024, 
+\hyperlink{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781baef559139b3fe444fe2b3a24cd8ad0e4d}{\-H\-I\-G\-H\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E} =  512, 
+\hyperlink{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781baab792b24800c050c84be43dddc08e75c}{\-M\-E\-D\-I\-U\-M\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E} =  256, 
+\*
+\hyperlink{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781ba7d05576fa354d351682eb4fa4f7261e8}{\-S\-M\-A\-L\-L\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E} =  128, 
+\hyperlink{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781ba27c546877668dfb253e99b8985e4785e}{\-S\-T\-A\-G\-N\-A\-N\-T\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E} =  64, 
+\hyperlink{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781bae3634dc08cf07554af474b718a1e6b1a}{\-Z\-E\-R\-O} =  32, 
+\hyperlink{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781bae2174fd5cb8c0db340ffd78804b56947}{\-S\-T\-A\-G\-N\-A\-N\-T\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E} =  16, 
+\*
+\hyperlink{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781bafab77593c2979a49443331f74ed2ba3b}{\-S\-M\-A\-L\-L\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E} =  8, 
+\hyperlink{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781ba745d3d50f982c9db34f6b55d589ab24c}{\-M\-E\-D\-I\-U\-M\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E} =  4, 
+\hyperlink{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781bac5cc71ffb113077fb2d67cafb98210e0}{\-H\-I\-G\-H\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E} =  2, 
+\hyperlink{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781ba531a3f899bfdad545563f019093505c8}{\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E} =  1
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1manipulators_1_1IClusterAnalyser_aa3b46d3be5c9ab4eeaccd95316412b6a}{\-I\-Cluster\-Analyser} ()
+\item 
+virtual \hyperlink{classcryomesh_1_1manipulators_1_1IClusterAnalyser_af75850be2d49a54411cf5c9274c1ec76}{$\sim$\-I\-Cluster\-Analyser} ()
+\item 
+virtual \hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalysisData}{\-Cluster\-Analysis\-Data} \hyperlink{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a0b8594c4b41ed14d5a94d191d1ab11fd}{analyse\-Cluster} (const \hyperlink{classcryomesh_1_1structures_1_1Cluster}{structures\-::\-Cluster} \&cluster, const std\-::map$<$ int, std\-::list$<$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalysisData}{\-Cluster\-Analysis\-Data} $>$ $>$ \&histories)=0
+\begin{DoxyCompactList}\small\item\em \-Run an analysis on the cluster to decide what action to take on nodes and connections. \end{DoxyCompactList}\item 
+virtual \hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalysisData}{\-Cluster\-Analysis\-Data} \hyperlink{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a1f666c2ccf0a6564510c8b4f062e2e21}{calculate\-Range\-Energies} (const std\-::list$<$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalysisData}{\-Cluster\-Analysis\-Data} $>$ \&history) const =0
+\begin{DoxyCompactList}\small\item\em \-Calculate the range energies stats. \end{DoxyCompactList}\item 
+virtual \hyperlink{structcryomesh_1_1manipulators_1_1IClusterAnalyser_1_1EnergyVariationWeightingMap}{\-Energy\-Variation\-Weighting\-Map} \hyperlink{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a27db139b4aa43f0c008de165d2f22f5b}{get\-Energy\-Variation\-Map} (const double energy\-\_\-input, double range) const =0
+\item 
+const \hyperlink{structcryomesh_1_1manipulators_1_1IClusterAnalyser_1_1RestructuringCountdown}{\-Restructuring\-Countdown} \& \hyperlink{classcryomesh_1_1manipulators_1_1IClusterAnalyser_af8eb711949e1d69bbe31b564ff9ab340}{get\-Connection\-Restructuring} () const 
+\item 
+const \hyperlink{structcryomesh_1_1manipulators_1_1IClusterAnalyser_1_1RestructuringCountdown}{\-Restructuring\-Countdown} \& \hyperlink{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a72da7d8f63441671b8ebd1f4cd994347}{get\-Node\-Restructuring} () const 
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structcryomesh_1_1manipulators_1_1IClusterAnalyser_1_1RestructuringCountdown}{\-Restructuring\-Countdown} \hyperlink{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a78d90b9829e4188ded3d94da49c6887a}{node\-Restructuring}
+\item 
+\hyperlink{structcryomesh_1_1manipulators_1_1IClusterAnalyser_1_1RestructuringCountdown}{\-Restructuring\-Countdown} \hyperlink{classcryomesh_1_1manipulators_1_1IClusterAnalyser_ae0442c245ec17e22d51ffd05c3a2f86e}{connection\-Restructuring}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+
+
+\-Definition at line 17 of file \-I\-Cluster\-Analyser.\-h.
+
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\hypertarget{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781b}{\index{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}!\-Energy\-Variation@{\-Energy\-Variation}}
+\index{\-Energy\-Variation@{\-Energy\-Variation}!cryomesh::manipulators::IClusterAnalyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}}
+\subsubsection[{\-Energy\-Variation}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser\-::\-Energy\-Variation}}}\label{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781b}
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-N\-O\-N\-E@{\-N\-O\-N\-E}!cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}}\index{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}!\-N\-O\-N\-E@{\-N\-O\-N\-E}}\item[{\em 
+\hypertarget{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781ba5b6d113aa10f4f70e703a35a39f828d6}{\-N\-O\-N\-E}\label{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781ba5b6d113aa10f4f70e703a35a39f828d6}
+}]\index{\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E@{\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E}!cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}}\index{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}!\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E@{\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E}}\item[{\em 
+\hypertarget{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781ba1378201d3fdbeeb653457ffb75488e85}{\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E}\label{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781ba1378201d3fdbeeb653457ffb75488e85}
+}]\index{\-H\-I\-G\-H\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E@{\-H\-I\-G\-H\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E}!cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}}\index{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}!\-H\-I\-G\-H\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E@{\-H\-I\-G\-H\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E}}\item[{\em 
+\hypertarget{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781baef559139b3fe444fe2b3a24cd8ad0e4d}{\-H\-I\-G\-H\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E}\label{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781baef559139b3fe444fe2b3a24cd8ad0e4d}
+}]\index{\-M\-E\-D\-I\-U\-M\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E@{\-M\-E\-D\-I\-U\-M\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E}!cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}}\index{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}!\-M\-E\-D\-I\-U\-M\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E@{\-M\-E\-D\-I\-U\-M\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E}}\item[{\em 
+\hypertarget{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781baab792b24800c050c84be43dddc08e75c}{\-M\-E\-D\-I\-U\-M\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E}\label{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781baab792b24800c050c84be43dddc08e75c}
+}]\index{\-S\-M\-A\-L\-L\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E@{\-S\-M\-A\-L\-L\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E}!cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}}\index{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}!\-S\-M\-A\-L\-L\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E@{\-S\-M\-A\-L\-L\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E}}\item[{\em 
+\hypertarget{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781ba7d05576fa354d351682eb4fa4f7261e8}{\-S\-M\-A\-L\-L\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E}\label{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781ba7d05576fa354d351682eb4fa4f7261e8}
+}]\index{\-S\-T\-A\-G\-N\-A\-N\-T\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E@{\-S\-T\-A\-G\-N\-A\-N\-T\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E}!cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}}\index{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}!\-S\-T\-A\-G\-N\-A\-N\-T\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E@{\-S\-T\-A\-G\-N\-A\-N\-T\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E}}\item[{\em 
+\hypertarget{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781ba27c546877668dfb253e99b8985e4785e}{\-S\-T\-A\-G\-N\-A\-N\-T\-\_\-\-P\-O\-S\-I\-T\-I\-V\-E}\label{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781ba27c546877668dfb253e99b8985e4785e}
+}]\index{\-Z\-E\-R\-O@{\-Z\-E\-R\-O}!cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}}\index{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}!\-Z\-E\-R\-O@{\-Z\-E\-R\-O}}\item[{\em 
+\hypertarget{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781bae3634dc08cf07554af474b718a1e6b1a}{\-Z\-E\-R\-O}\label{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781bae3634dc08cf07554af474b718a1e6b1a}
+}]\index{\-S\-T\-A\-G\-N\-A\-N\-T\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E@{\-S\-T\-A\-G\-N\-A\-N\-T\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E}!cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}}\index{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}!\-S\-T\-A\-G\-N\-A\-N\-T\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E@{\-S\-T\-A\-G\-N\-A\-N\-T\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E}}\item[{\em 
+\hypertarget{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781bae2174fd5cb8c0db340ffd78804b56947}{\-S\-T\-A\-G\-N\-A\-N\-T\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E}\label{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781bae2174fd5cb8c0db340ffd78804b56947}
+}]\index{\-S\-M\-A\-L\-L\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E@{\-S\-M\-A\-L\-L\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E}!cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}}\index{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}!\-S\-M\-A\-L\-L\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E@{\-S\-M\-A\-L\-L\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E}}\item[{\em 
+\hypertarget{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781bafab77593c2979a49443331f74ed2ba3b}{\-S\-M\-A\-L\-L\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E}\label{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781bafab77593c2979a49443331f74ed2ba3b}
+}]\index{\-M\-E\-D\-I\-U\-M\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E@{\-M\-E\-D\-I\-U\-M\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E}!cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}}\index{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}!\-M\-E\-D\-I\-U\-M\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E@{\-M\-E\-D\-I\-U\-M\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E}}\item[{\em 
+\hypertarget{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781ba745d3d50f982c9db34f6b55d589ab24c}{\-M\-E\-D\-I\-U\-M\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E}\label{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781ba745d3d50f982c9db34f6b55d589ab24c}
+}]\index{\-H\-I\-G\-H\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E@{\-H\-I\-G\-H\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E}!cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}}\index{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}!\-H\-I\-G\-H\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E@{\-H\-I\-G\-H\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E}}\item[{\em 
+\hypertarget{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781bac5cc71ffb113077fb2d67cafb98210e0}{\-H\-I\-G\-H\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E}\label{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781bac5cc71ffb113077fb2d67cafb98210e0}
+}]\index{\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E@{\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E}!cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}}\index{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}!\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E@{\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E}}\item[{\em 
+\hypertarget{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781ba531a3f899bfdad545563f019093505c8}{\-O\-U\-T\-\_\-\-O\-F\-\_\-\-R\-A\-N\-G\-E\-\_\-\-N\-E\-G\-A\-T\-I\-V\-E}\label{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a28a17f8e1363cfb575bacdf213b0781ba531a3f899bfdad545563f019093505c8}
+}]\end{description}
+\end{Desc}
+
+
+
+\-Definition at line 136 of file \-I\-Cluster\-Analyser.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcryomesh_1_1manipulators_1_1IClusterAnalyser_aa3b46d3be5c9ab4eeaccd95316412b6a}{\index{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}!\-I\-Cluster\-Analyser@{\-I\-Cluster\-Analyser}}
+\index{\-I\-Cluster\-Analyser@{\-I\-Cluster\-Analyser}!cryomesh::manipulators::IClusterAnalyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}}
+\subsubsection[{\-I\-Cluster\-Analyser}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser\-::\-I\-Cluster\-Analyser} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1IClusterAnalyser_aa3b46d3be5c9ab4eeaccd95316412b6a}
+
+
+\-Definition at line 168 of file \-I\-Cluster\-Analyser.\-h.
+
+\hypertarget{classcryomesh_1_1manipulators_1_1IClusterAnalyser_af75850be2d49a54411cf5c9274c1ec76}{\index{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}!$\sim$\-I\-Cluster\-Analyser@{$\sim$\-I\-Cluster\-Analyser}}
+\index{$\sim$\-I\-Cluster\-Analyser@{$\sim$\-I\-Cluster\-Analyser}!cryomesh::manipulators::IClusterAnalyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}}
+\subsubsection[{$\sim$\-I\-Cluster\-Analyser}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser\-::$\sim$\-I\-Cluster\-Analyser} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1IClusterAnalyser_af75850be2d49a54411cf5c9274c1ec76}
+
+
+\-Definition at line 171 of file \-I\-Cluster\-Analyser.\-h.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a0b8594c4b41ed14d5a94d191d1ab11fd}{\index{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}!analyse\-Cluster@{analyse\-Cluster}}
+\index{analyse\-Cluster@{analyse\-Cluster}!cryomesh::manipulators::IClusterAnalyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}}
+\subsubsection[{analyse\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf \-Cluster\-Analysis\-Data} {\bf cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser\-::analyse\-Cluster} (
+\begin{DoxyParamCaption}
+\item[{const {\bf structures\-::\-Cluster} \&}]{cluster, }
+\item[{const std\-::map$<$ int, std\-::list$<$ {\bf \-Cluster\-Analysis\-Data} $>$ $>$ \&}]{histories}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a0b8594c4b41ed14d5a94d191d1ab11fd}
+
+
+\-Run an analysis on the cluster to decide what action to take on nodes and connections. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em const} & \hyperlink{classcryomesh_1_1structures_1_1Cluster}{structures\-::\-Cluster} \& \-The cluster to analyse \\
+\hline
+{\em const} & std\-::list$<$\-Cluster\-Analysis\-Data$>$ \-The historical analysis data to use\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalysisData}{\-Cluster\-Analysis\-Data} \-The reulting analytical data 
+\end{DoxyReturn}
+
+
+\-Implemented in \hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalyserBasic_ad98be2e316548236479ce5da459d530b}{cryomesh\-::manipulators\-::\-Cluster\-Analyser\-Basic}.
+
+\hypertarget{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a1f666c2ccf0a6564510c8b4f062e2e21}{\index{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}!calculate\-Range\-Energies@{calculate\-Range\-Energies}}
+\index{calculate\-Range\-Energies@{calculate\-Range\-Energies}!cryomesh::manipulators::IClusterAnalyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}}
+\subsubsection[{calculate\-Range\-Energies}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf \-Cluster\-Analysis\-Data} {\bf cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser\-::calculate\-Range\-Energies} (
+\begin{DoxyParamCaption}
+\item[{const std\-::list$<$ {\bf \-Cluster\-Analysis\-Data} $>$ \&}]{history}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a1f666c2ccf0a6564510c8b4f062e2e21}
+
+
+\-Calculate the range energies stats. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em const} & std\-::list$<$\-Cluster\-Analysis\-Data$>$ \& \-The history range to work with\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalysisData}{\-Cluster\-Analysis\-Data} \-The resulting cluster analysis data 
+\end{DoxyReturn}
+
+
+\-Implemented in \hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalyserBasic_ab4e344d193d764d0e60aaed87c9770b3}{cryomesh\-::manipulators\-::\-Cluster\-Analyser\-Basic}.
+
+\hypertarget{classcryomesh_1_1manipulators_1_1IClusterAnalyser_af8eb711949e1d69bbe31b564ff9ab340}{\index{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}!get\-Connection\-Restructuring@{get\-Connection\-Restructuring}}
+\index{get\-Connection\-Restructuring@{get\-Connection\-Restructuring}!cryomesh::manipulators::IClusterAnalyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}}
+\subsubsection[{get\-Connection\-Restructuring}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Restructuring\-Countdown}\& {\bf cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser\-::get\-Connection\-Restructuring} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1IClusterAnalyser_af8eb711949e1d69bbe31b564ff9ab340}
+
+
+\-Definition at line 198 of file \-I\-Cluster\-Analyser.\-h.
+
+
+
+\-References connection\-Restructuring.
+
+\hypertarget{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a27db139b4aa43f0c008de165d2f22f5b}{\index{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}!get\-Energy\-Variation\-Map@{get\-Energy\-Variation\-Map}}
+\index{get\-Energy\-Variation\-Map@{get\-Energy\-Variation\-Map}!cryomesh::manipulators::IClusterAnalyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}}
+\subsubsection[{get\-Energy\-Variation\-Map}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf \-Energy\-Variation\-Weighting\-Map} {\bf cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser\-::get\-Energy\-Variation\-Map} (
+\begin{DoxyParamCaption}
+\item[{const double}]{energy\-\_\-input, }
+\item[{double}]{range}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a27db139b4aa43f0c008de165d2f22f5b}
+
+
+\-Implemented in \hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalyserBasic_a8870233415221b9c971a30452fb9452a}{cryomesh\-::manipulators\-::\-Cluster\-Analyser\-Basic}.
+
+\hypertarget{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a72da7d8f63441671b8ebd1f4cd994347}{\index{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}!get\-Node\-Restructuring@{get\-Node\-Restructuring}}
+\index{get\-Node\-Restructuring@{get\-Node\-Restructuring}!cryomesh::manipulators::IClusterAnalyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}}
+\subsubsection[{get\-Node\-Restructuring}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Restructuring\-Countdown}\& {\bf cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser\-::get\-Node\-Restructuring} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a72da7d8f63441671b8ebd1f4cd994347}
+
+
+\-Definition at line 201 of file \-I\-Cluster\-Analyser.\-h.
+
+
+
+\-References node\-Restructuring.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classcryomesh_1_1manipulators_1_1IClusterAnalyser_ae0442c245ec17e22d51ffd05c3a2f86e}{\index{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}!connection\-Restructuring@{connection\-Restructuring}}
+\index{connection\-Restructuring@{connection\-Restructuring}!cryomesh::manipulators::IClusterAnalyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}}
+\subsubsection[{connection\-Restructuring}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Restructuring\-Countdown} {\bf cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser\-::connection\-Restructuring}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1IClusterAnalyser_ae0442c245ec17e22d51ffd05c3a2f86e}
+
+
+\-Definition at line 206 of file \-I\-Cluster\-Analyser.\-h.
+
+
+
+\-Referenced by cryomesh\-::manipulators\-::\-Cluster\-Analyser\-Basic\-::analyse\-Cluster(), and get\-Connection\-Restructuring().
+
+\hypertarget{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a78d90b9829e4188ded3d94da49c6887a}{\index{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}!node\-Restructuring@{node\-Restructuring}}
+\index{node\-Restructuring@{node\-Restructuring}!cryomesh::manipulators::IClusterAnalyser@{cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser}}
+\subsubsection[{node\-Restructuring}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Restructuring\-Countdown} {\bf cryomesh\-::manipulators\-::\-I\-Cluster\-Analyser\-::node\-Restructuring}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1IClusterAnalyser_a78d90b9829e4188ded3d94da49c6887a}
+
+
+\-Definition at line 205 of file \-I\-Cluster\-Analyser.\-h.
+
+
+
+\-Referenced by cryomesh\-::manipulators\-::\-Cluster\-Analyser\-Basic\-::analyse\-Cluster(), and get\-Node\-Restructuring().
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/manipulators/\hyperlink{IClusterAnalyser_8h}{\-I\-Cluster\-Analyser.\-h}\end{DoxyCompactItemize}

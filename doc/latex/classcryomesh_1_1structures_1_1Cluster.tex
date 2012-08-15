@@ -1,0 +1,935 @@
+\hypertarget{classcryomesh_1_1structures_1_1Cluster}{\section{cryomesh\-:\-:structures\-:\-:\-Cluster \-Class \-Reference}
+\label{classcryomesh_1_1structures_1_1Cluster}\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}}
+}
+
+
+\-A \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster} is a collection of self-\/contained nodes and connections along with an associated \hyperlink{classcryomesh_1_1structures_1_1Mesh}{\-Mesh}, that can be connected up to one another.  
+
+
+
+
+{\ttfamily \#include $<$\-Cluster.\-h$>$}
+
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classcryomesh_1_1structures_1_1Cluster_a69c420b79675c6ffc9a0df8381ca9497}{\-Energy\-Fraction\-Method} \{ \hyperlink{classcryomesh_1_1structures_1_1Cluster_a69c420b79675c6ffc9a0df8381ca9497a8e173b3ede8ac61e51f4bdb2a8195c5c}{\-E\-N\-E\-R\-G\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N\-\_\-\-B\-Y\-\_\-\-C\-L\-U\-S\-T\-E\-R\-\_\-\-C\-O\-U\-N\-T}, 
+\hyperlink{classcryomesh_1_1structures_1_1Cluster_a69c420b79675c6ffc9a0df8381ca9497a2ffacc4b354cd88e0d2c6779ec5ca278}{\-E\-N\-E\-R\-G\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N\-\_\-\-B\-Y\-\_\-\-N\-O\-D\-E\-\_\-\-C\-O\-U\-N\-T}, 
+\hyperlink{classcryomesh_1_1structures_1_1Cluster_a69c420b79675c6ffc9a0df8381ca9497a93f1a5c88cbcd70dd3bf5b5622e2bf6e}{\-E\-N\-E\-R\-G\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N\-\_\-\-N\-U\-L\-L}
+ \}
+\item 
+enum \hyperlink{classcryomesh_1_1structures_1_1Cluster_af2978a9bf2737e5e701600af095ea88f}{\-Value\-Type\-Specifier} \{ \hyperlink{classcryomesh_1_1structures_1_1Cluster_af2978a9bf2737e5e701600af095ea88fa98f7c71ef7e91da5a913638aa7d56945}{\-As\-Increment}, 
+\hyperlink{classcryomesh_1_1structures_1_1Cluster_af2978a9bf2737e5e701600af095ea88fa8da8de0be3cbcc34f6ef93a3bdc1e372}{\-As\-Decrement}, 
+\hyperlink{classcryomesh_1_1structures_1_1Cluster_af2978a9bf2737e5e701600af095ea88fa8590425d1a96c9ede41311797af2d6b1}{\-As\-Minumum}, 
+\hyperlink{classcryomesh_1_1structures_1_1Cluster_af2978a9bf2737e5e701600af095ea88fa3e9eba07f0da7a18f9a7820f987ff82b}{\-As\-Absolute}
+ \}
+\begin{DoxyCompactList}\small\item\em \-Enum to force value type of a parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1structures_1_1Cluster_aacb0e32e4468478035aa56b25538157d}{\-Cluster} ()
+\begin{DoxyCompactList}\small\item\em \-Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1structures_1_1Cluster_a090c3af0b1d8851663bf052b7dafc746}{\-Cluster} (int node\-Count, int connectivity)
+\begin{DoxyCompactList}\small\item\em \-Constructor with number of nodes and connectivity. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1structures_1_1Cluster_afcb3841cdbf61803b47b64fe8008e24c}{\-Cluster} (int node\-Count, int connectivity, const spacial\-::\-Point bounding\-\_\-box)
+\item 
+virtual \hyperlink{classcryomesh_1_1structures_1_1Cluster_ae9d383e6e81f5e354b81d999fed20708}{$\sim$\-Cluster} ()
+\begin{DoxyCompactList}\small\item\em \-Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1structures_1_1Cluster_a933d1d7f51cc709ba4a891407b4885e3}{update} ()
+\begin{DoxyCompactList}\small\item\em \-Update all elements. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1structures_1_1Cluster_a7f44dac6fd0867af668d888e992dc1e2}{update\-Energy} (double total\-\_\-energy)
+\item 
+void \hyperlink{classcryomesh_1_1structures_1_1Cluster_ac25c418e75f8f9baca1c99f1fe12e0c3}{set\-Energy\-Fraction\-Method} (\hyperlink{classcryomesh_1_1structures_1_1Cluster_a69c420b79675c6ffc9a0df8381ca9497}{\-Energy\-Fraction\-Method} method, double max\-\_\-energy\-\_\-fraction)
+\item 
+\hyperlink{classcryomesh_1_1structures_1_1Cluster_a69c420b79675c6ffc9a0df8381ca9497}{\-Energy\-Fraction\-Method} \hyperlink{classcryomesh_1_1structures_1_1Cluster_ad24253afeec070daf46182ecc0a85f36}{get\-Energy\-Fraction\-Method} () const 
+\item 
+void \hyperlink{classcryomesh_1_1structures_1_1Cluster_aeb806fca24d012f929106cfe0efb0724}{warp\-Nodes} ()
+\item 
+void \hyperlink{classcryomesh_1_1structures_1_1Cluster_a0ffe5e538e89059208adfbcc86be84fc}{run\-Analyser} ()
+\item 
+virtual void \hyperlink{classcryomesh_1_1structures_1_1Cluster_a4e3a7e4c28c8f154770ec6568959bc7c}{create\-Connectivity} (const int connectivity=1)
+\begin{DoxyCompactList}\small\item\em \-Create connections between all nodes. \end{DoxyCompactList}\item 
+const std\-::map\*
+$<$ boost\-::uuids\-::uuid, \*
+boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Node}{components\-::\-Node} $>$ $>$ \& \hyperlink{classcryomesh_1_1structures_1_1Cluster_ade4227c5a3f39b17a53c31e4aeb25bfc}{get\-Nodes} () const 
+\begin{DoxyCompactList}\small\item\em \-Get all nodes. \end{DoxyCompactList}\item 
+const std\-::map\*
+$<$ boost\-::uuids\-::uuid, \*
+boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Connection}{components\-::\-Connection} $>$ $>$ \& \hyperlink{classcryomesh_1_1structures_1_1Cluster_aa015d026b0903772780b964fece2cd56}{get\-Connections} () const 
+\begin{DoxyCompactList}\small\item\em \-Get all connections. \end{DoxyCompactList}\item 
+const \hyperlink{classcryomesh_1_1common_1_1Connector}{common\-::\-Connector}\*
+$<$ \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster}, \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} $>$ \& \hyperlink{classcryomesh_1_1structures_1_1Cluster_a8822fd5e77bbbaa3900fe6da3acae1a8}{get\-Connector} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the connector for this \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster}. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1common_1_1Connector}{common\-::\-Connector}$<$ \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster}, \*
+\hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} $>$ \& \hyperlink{classcryomesh_1_1structures_1_1Cluster_a1490fcafd9e673af89be342def2660cb}{get\-Mutable\-Connector} ()
+\begin{DoxyCompactList}\small\item\em \-Get the mutable connector for this \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster}. \end{DoxyCompactList}\item 
+const \hyperlink{classcryomesh_1_1components_1_1NodeMap}{components\-::\-Node\-Map} \& \hyperlink{classcryomesh_1_1structures_1_1Cluster_adebc5a93681278631cfb2d70fa579005}{get\-Node\-Map} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the \-Node\-Map for this \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster}. \end{DoxyCompactList}\item 
+const \hyperlink{classcryomesh_1_1components_1_1ConnectionMap}{components\-::\-Connection\-Map} \& \hyperlink{classcryomesh_1_1structures_1_1Cluster_aa6e654c50a4ef23d3fe5c1e22ca15b5d}{get\-Connection\-Map} () const 
+\item 
+\hyperlink{classcryomesh_1_1components_1_1NodeMap}{components\-::\-Node\-Map} \& \hyperlink{classcryomesh_1_1structures_1_1Cluster_a118bf56f54720d1eb922fe8893a73e78}{get\-Mutable\-Node\-Map} ()
+\begin{DoxyCompactList}\small\item\em \-Get the mutable \-Node\-Map for this \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster}. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1components_1_1ConnectionMap}{components\-::\-Connection\-Map} \& \hyperlink{classcryomesh_1_1structures_1_1Cluster_a2e40e205c29f3d68c6f6f1e7389ef2fe}{get\-Mutable\-Connection\-Map} ()
+\item 
+int \hyperlink{classcryomesh_1_1structures_1_1Cluster_a44131126384d6e5217dc42285f6543be}{get\-Triggered\-Node\-Count} (const int indicator=0) const 
+\begin{DoxyCompactList}\small\item\em \-Get the total fired nodes in this cluster currently. \end{DoxyCompactList}\item 
+int \hyperlink{classcryomesh_1_1structures_1_1Cluster_a9978dcae127fd87e045ca0b25f338289}{get\-Active\-Node\-Count} (const int indicator=0) const 
+\begin{DoxyCompactList}\small\item\em \-Get the total active nodes in this cluster currently. \end{DoxyCompactList}\item 
+int \hyperlink{classcryomesh_1_1structures_1_1Cluster_a3ce93f857f214d814600c24d3bbdadea}{get\-Live\-Node\-Count} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the total live nodes in this cluster currently, ie those with at least one impulse. \end{DoxyCompactList}\item 
+double \hyperlink{classcryomesh_1_1structures_1_1Cluster_a458206d9c646f0f17c4764d82033e65e}{get\-Energy} () const 
+\item 
+void \hyperlink{classcryomesh_1_1structures_1_1Cluster_a4c0b2aaaf9c62c3c0ca44d89006ea875}{set\-Energy} (double d)
+\item 
+double \hyperlink{classcryomesh_1_1structures_1_1Cluster_a85a5b8740ed63cb5774d286577974655}{get\-Max\-Energy\-Fraction} () const 
+\item 
+const boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect}{manipulators\-::\-Cluster\-Architect} $>$ \hyperlink{classcryomesh_1_1structures_1_1Cluster_a8fb496fec3516a3f8ae0ba4c8371b700}{get\-Cluster\-Architect} () const 
+\item 
+boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect}{manipulators\-::\-Cluster\-Architect} $>$ \hyperlink{classcryomesh_1_1structures_1_1Cluster_a05ce2914a0931b0554c85c390a003ca4}{get\-Mutable\-Cluster\-Architect} ()
+\item 
+const boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1structures_1_1NodeMesh}{\-Node\-Mesh} $>$ \hyperlink{classcryomesh_1_1structures_1_1Cluster_a6021d2bd085ff3e500d3898b5fabdf88}{get\-Mesh} () const 
+\item 
+boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1structures_1_1NodeMesh}{\-Node\-Mesh} $>$ \hyperlink{classcryomesh_1_1structures_1_1Cluster_a3ced101df9aaf02f8afa25cc55c16bfd}{get\-Mutable\-Mesh} ()
+\item 
+virtual void \hyperlink{classcryomesh_1_1structures_1_1Cluster_a9e5abdfe3802c69b5cacc20b081fd90f}{enable\-Debug} (bool b)
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const double \hyperlink{classcryomesh_1_1structures_1_1Cluster_a42b6ded89948ab38383ce0b818c78b54}{\-S\-E\-L\-F\-\_\-\-C\-O\-N\-N\-E\-C\-T\-E\-D\-\_\-\-N\-O\-D\-E\-S\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N} = 0.\-1
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classcryomesh_1_1structures_1_1Cluster_aee616cbf1d49223eb46ea32bfaadf8f0}{update\-Connectivity} (const int connectivity, \hyperlink{classcryomesh_1_1structures_1_1Cluster_af2978a9bf2737e5e701600af095ea88f}{\-Value\-Type\-Specifier} as\-Value=\hyperlink{classcryomesh_1_1structures_1_1Cluster_af2978a9bf2737e5e701600af095ea88fa98f7c71ef7e91da5a913638aa7d56945}{\-As\-Increment})
+\begin{DoxyCompactList}\small\item\em \-Update connectivity so that each node has at least param number of connections. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classcryomesh_1_1structures_1_1Cluster_a28fb86dc636571345e27da1cb544a939}{energy}
+\item 
+\hyperlink{classcryomesh_1_1components_1_1NodeMap}{components\-::\-Node\-Map} \hyperlink{classcryomesh_1_1structures_1_1Cluster_aebd26b5e561d3616ff3564cea8f6abfd}{nodes}
+\item 
+\hyperlink{classcryomesh_1_1components_1_1ConnectionMap}{components\-::\-Connection\-Map} \hyperlink{classcryomesh_1_1structures_1_1Cluster_ac614788bbfa9961f1f462d1caf7d0405}{connections}
+\item 
+boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1structures_1_1NodeMesh}{\-Node\-Mesh} $>$ \hyperlink{classcryomesh_1_1structures_1_1Cluster_a3f1688d1e47d783356c4d4705bd3f0b7}{mesh}
+\item 
+\hyperlink{classcryomesh_1_1common_1_1Connector}{common\-::\-Connector}$<$ \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster}, \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} $>$ \hyperlink{classcryomesh_1_1structures_1_1Cluster_aaaaac972efefc911d4550799c752730d}{connector}
+\item 
+boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect}{manipulators\-::\-Cluster\-Architect} $>$ \hyperlink{classcryomesh_1_1structures_1_1Cluster_a0cc03a8bb5375e90ad6a51e715c137a5}{cluster\-Architect}
+\item 
+\hyperlink{classcryomesh_1_1structures_1_1Cluster_a69c420b79675c6ffc9a0df8381ca9497}{\-Energy\-Fraction\-Method} \hyperlink{classcryomesh_1_1structures_1_1Cluster_a9faa149cba43092142147d8deaf0826c}{energy\-Fraction\-Method}
+\item 
+double \hyperlink{classcryomesh_1_1structures_1_1Cluster_aff9209e98a7a6aedad83dacaaf1b83a6}{max\-Energy\-Fraction}
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1structures_1_1Cluster_adb5b48a591cc8d6f293b915068597a8a}{operator$<$$<$} (std\-::ostream \&os, const \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster} \&obj)
+\begin{DoxyCompactList}\small\item\em \-To stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-A \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster} is a collection of self-\/contained nodes and connections along with an associated \hyperlink{classcryomesh_1_1structures_1_1Mesh}{\-Mesh}, that can be connected up to one another. 
+
+\-Definition at line 41 of file \-Cluster.\-h.
+
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a69c420b79675c6ffc9a0df8381ca9497}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!\-Energy\-Fraction\-Method@{\-Energy\-Fraction\-Method}}
+\index{\-Energy\-Fraction\-Method@{\-Energy\-Fraction\-Method}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{\-Energy\-Fraction\-Method}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cryomesh\-::structures\-::\-Cluster\-::\-Energy\-Fraction\-Method}}}\label{classcryomesh_1_1structures_1_1Cluster_a69c420b79675c6ffc9a0df8381ca9497}
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-E\-N\-E\-R\-G\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N\-\_\-\-B\-Y\-\_\-\-C\-L\-U\-S\-T\-E\-R\-\_\-\-C\-O\-U\-N\-T@{\-E\-N\-E\-R\-G\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N\-\_\-\-B\-Y\-\_\-\-C\-L\-U\-S\-T\-E\-R\-\_\-\-C\-O\-U\-N\-T}!cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}}\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!\-E\-N\-E\-R\-G\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N\-\_\-\-B\-Y\-\_\-\-C\-L\-U\-S\-T\-E\-R\-\_\-\-C\-O\-U\-N\-T@{\-E\-N\-E\-R\-G\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N\-\_\-\-B\-Y\-\_\-\-C\-L\-U\-S\-T\-E\-R\-\_\-\-C\-O\-U\-N\-T}}\item[{\em 
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a69c420b79675c6ffc9a0df8381ca9497a8e173b3ede8ac61e51f4bdb2a8195c5c}{\-E\-N\-E\-R\-G\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N\-\_\-\-B\-Y\-\_\-\-C\-L\-U\-S\-T\-E\-R\-\_\-\-C\-O\-U\-N\-T}\label{classcryomesh_1_1structures_1_1Cluster_a69c420b79675c6ffc9a0df8381ca9497a8e173b3ede8ac61e51f4bdb2a8195c5c}
+}]\index{\-E\-N\-E\-R\-G\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N\-\_\-\-B\-Y\-\_\-\-N\-O\-D\-E\-\_\-\-C\-O\-U\-N\-T@{\-E\-N\-E\-R\-G\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N\-\_\-\-B\-Y\-\_\-\-N\-O\-D\-E\-\_\-\-C\-O\-U\-N\-T}!cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}}\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!\-E\-N\-E\-R\-G\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N\-\_\-\-B\-Y\-\_\-\-N\-O\-D\-E\-\_\-\-C\-O\-U\-N\-T@{\-E\-N\-E\-R\-G\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N\-\_\-\-B\-Y\-\_\-\-N\-O\-D\-E\-\_\-\-C\-O\-U\-N\-T}}\item[{\em 
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a69c420b79675c6ffc9a0df8381ca9497a2ffacc4b354cd88e0d2c6779ec5ca278}{\-E\-N\-E\-R\-G\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N\-\_\-\-B\-Y\-\_\-\-N\-O\-D\-E\-\_\-\-C\-O\-U\-N\-T}\label{classcryomesh_1_1structures_1_1Cluster_a69c420b79675c6ffc9a0df8381ca9497a2ffacc4b354cd88e0d2c6779ec5ca278}
+}]\index{\-E\-N\-E\-R\-G\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N\-\_\-\-N\-U\-L\-L@{\-E\-N\-E\-R\-G\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N\-\_\-\-N\-U\-L\-L}!cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}}\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!\-E\-N\-E\-R\-G\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N\-\_\-\-N\-U\-L\-L@{\-E\-N\-E\-R\-G\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N\-\_\-\-N\-U\-L\-L}}\item[{\em 
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a69c420b79675c6ffc9a0df8381ca9497a93f1a5c88cbcd70dd3bf5b5622e2bf6e}{\-E\-N\-E\-R\-G\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N\-\_\-\-N\-U\-L\-L}\label{classcryomesh_1_1structures_1_1Cluster_a69c420b79675c6ffc9a0df8381ca9497a93f1a5c88cbcd70dd3bf5b5622e2bf6e}
+}]\end{description}
+\end{Desc}
+
+
+
+\-Definition at line 45 of file \-Cluster.\-h.
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_af2978a9bf2737e5e701600af095ea88f}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!\-Value\-Type\-Specifier@{\-Value\-Type\-Specifier}}
+\index{\-Value\-Type\-Specifier@{\-Value\-Type\-Specifier}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{\-Value\-Type\-Specifier}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cryomesh\-::structures\-::\-Cluster\-::\-Value\-Type\-Specifier}}}\label{classcryomesh_1_1structures_1_1Cluster_af2978a9bf2737e5e701600af095ea88f}
+
+
+\-Enum to force value type of a parameter. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-As\-Increment@{\-As\-Increment}!cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}}\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!\-As\-Increment@{\-As\-Increment}}\item[{\em 
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_af2978a9bf2737e5e701600af095ea88fa98f7c71ef7e91da5a913638aa7d56945}{\-As\-Increment}\label{classcryomesh_1_1structures_1_1Cluster_af2978a9bf2737e5e701600af095ea88fa98f7c71ef7e91da5a913638aa7d56945}
+}]\index{\-As\-Decrement@{\-As\-Decrement}!cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}}\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!\-As\-Decrement@{\-As\-Decrement}}\item[{\em 
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_af2978a9bf2737e5e701600af095ea88fa8da8de0be3cbcc34f6ef93a3bdc1e372}{\-As\-Decrement}\label{classcryomesh_1_1structures_1_1Cluster_af2978a9bf2737e5e701600af095ea88fa8da8de0be3cbcc34f6ef93a3bdc1e372}
+}]\index{\-As\-Minumum@{\-As\-Minumum}!cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}}\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!\-As\-Minumum@{\-As\-Minumum}}\item[{\em 
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_af2978a9bf2737e5e701600af095ea88fa8590425d1a96c9ede41311797af2d6b1}{\-As\-Minumum}\label{classcryomesh_1_1structures_1_1Cluster_af2978a9bf2737e5e701600af095ea88fa8590425d1a96c9ede41311797af2d6b1}
+}]\index{\-As\-Absolute@{\-As\-Absolute}!cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}}\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!\-As\-Absolute@{\-As\-Absolute}}\item[{\em 
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_af2978a9bf2737e5e701600af095ea88fa3e9eba07f0da7a18f9a7820f987ff82b}{\-As\-Absolute}\label{classcryomesh_1_1structures_1_1Cluster_af2978a9bf2737e5e701600af095ea88fa3e9eba07f0da7a18f9a7820f987ff82b}
+}]\end{description}
+\end{Desc}
+
+
+
+\-Definition at line 53 of file \-Cluster.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_aacb0e32e4468478035aa56b25538157d}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!\-Cluster@{\-Cluster}}
+\index{\-Cluster@{\-Cluster}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::structures\-::\-Cluster\-::\-Cluster} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Cluster_aacb0e32e4468478035aa56b25538157d}
+
+
+\-Default constructor. 
+
+
+
+\-Definition at line 22 of file \-Cluster.\-cpp.
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a090c3af0b1d8851663bf052b7dafc746}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!\-Cluster@{\-Cluster}}
+\index{\-Cluster@{\-Cluster}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::structures\-::\-Cluster\-::\-Cluster} (
+\begin{DoxyParamCaption}
+\item[{int}]{node\-Count, }
+\item[{int}]{connectivity}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Cluster_a090c3af0b1d8851663bf052b7dafc746}
+
+
+\-Constructor with number of nodes and connectivity. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em int} & node\-Count \-Number of nodes to make \\
+\hline
+{\em int} & connectivity \-Connectivity to start with \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 35 of file \-Cluster.\-cpp.
+
+
+
+\-References cluster\-Architect.
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_afcb3841cdbf61803b47b64fe8008e24c}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!\-Cluster@{\-Cluster}}
+\index{\-Cluster@{\-Cluster}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::structures\-::\-Cluster\-::\-Cluster} (
+\begin{DoxyParamCaption}
+\item[{int}]{node\-Count, }
+\item[{int}]{connectivity, }
+\item[{const spacial\-::\-Point}]{bounding\-\_\-box}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Cluster_afcb3841cdbf61803b47b64fe8008e24c}
+
+
+\-Definition at line 28 of file \-Cluster.\-cpp.
+
+
+
+\-References cluster\-Architect.
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_ae9d383e6e81f5e354b81d999fed20708}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!$\sim$\-Cluster@{$\sim$\-Cluster}}
+\index{$\sim$\-Cluster@{$\sim$\-Cluster}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{$\sim$\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::structures\-::\-Cluster\-::$\sim$\-Cluster} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Cluster_ae9d383e6e81f5e354b81d999fed20708}
+
+
+\-Destructor. 
+
+
+
+\-Definition at line 42 of file \-Cluster.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a4e3a7e4c28c8f154770ec6568959bc7c}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!create\-Connectivity@{create\-Connectivity}}
+\index{create\-Connectivity@{create\-Connectivity}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{create\-Connectivity}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::structures\-::\-Cluster\-::create\-Connectivity} (
+\begin{DoxyParamCaption}
+\item[{const int}]{connectivity = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Cluster_a4e3a7e4c28c8f154770ec6568959bc7c}
+
+
+\-Create connections between all nodes. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em int} & connectivity \-The number of connections between each node \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 89 of file \-Cluster.\-cpp.
+
+
+
+\-References \-As\-Increment, and update\-Connectivity().
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a9e5abdfe3802c69b5cacc20b081fd90f}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!enable\-Debug@{enable\-Debug}}
+\index{enable\-Debug@{enable\-Debug}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{enable\-Debug}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::structures\-::\-Cluster\-::enable\-Debug} (
+\begin{DoxyParamCaption}
+\item[{bool}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Cluster_a9e5abdfe3802c69b5cacc20b081fd90f}
+
+
+\-Definition at line 306 of file \-Cluster.\-cpp.
+
+
+
+\-References connections, and nodes.
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a9978dcae127fd87e045ca0b25f338289}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!get\-Active\-Node\-Count@{get\-Active\-Node\-Count}}
+\index{get\-Active\-Node\-Count@{get\-Active\-Node\-Count}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{get\-Active\-Node\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::structures\-::\-Cluster\-::get\-Active\-Node\-Count} (
+\begin{DoxyParamCaption}
+\item[{const int}]{indicator = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Cluster_a9978dcae127fd87e045ca0b25f338289}
+
+
+\-Get the total active nodes in this cluster currently. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em int} & \-Set $>$0 for only positive active nodes, $<$0 for negative, 0 for all (default)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+int \-The total count of currently active nodes 
+\end{DoxyReturn}
+
+
+\-Definition at line 263 of file \-Cluster.\-cpp.
+
+
+
+\-References get\-Nodes().
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a8fb496fec3516a3f8ae0ba4c8371b700}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!get\-Cluster\-Architect@{get\-Cluster\-Architect}}
+\index{get\-Cluster\-Architect@{get\-Cluster\-Architect}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{get\-Cluster\-Architect}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::shared\-\_\-ptr$<$ {\bf manipulators\-::\-Cluster\-Architect} $>$ {\bf cryomesh\-::structures\-::\-Cluster\-::get\-Cluster\-Architect} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Cluster_a8fb496fec3516a3f8ae0ba4c8371b700}
+
+
+\-Definition at line 72 of file \-Cluster.\-cpp.
+
+
+
+\-References cluster\-Architect.
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_aa6e654c50a4ef23d3fe5c1e22ca15b5d}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!get\-Connection\-Map@{get\-Connection\-Map}}
+\index{get\-Connection\-Map@{get\-Connection\-Map}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{get\-Connection\-Map}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf components\-::\-Connection\-Map} \& {\bf cryomesh\-::structures\-::\-Cluster\-::get\-Connection\-Map} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Cluster_aa6e654c50a4ef23d3fe5c1e22ca15b5d}
+
+
+\-Definition at line 222 of file \-Cluster.\-cpp.
+
+
+
+\-References connections.
+
+
+
+\-Referenced by cryomesh\-::manipulators\-::\-Cluster\-Analyser\-Basic\-::analyse\-Cluster(), and cryomesh\-::manipulators\-::\-Cluster\-Architect\-::get\-Random\-Connections().
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_aa015d026b0903772780b964fece2cd56}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!get\-Connections@{get\-Connections}}
+\index{get\-Connections@{get\-Connections}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{get\-Connections}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::map$<$ boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ {\bf components\-::\-Connection} $>$ $>$ \& {\bf cryomesh\-::structures\-::\-Cluster\-::get\-Connections} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Cluster_aa015d026b0903772780b964fece2cd56}
+
+
+\-Get all connections. 
+
+\begin{DoxyReturn}{\-Returns}
+std\-::map$<$boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ components\-::\-Connection $>$ $>$ \-Return all \-Connections 
+\end{DoxyReturn}
+
+
+\-Definition at line 204 of file \-Cluster.\-cpp.
+
+
+
+\-References connections.
+
+
+
+\-Referenced by cryomesh\-::structures\-::operator$<$$<$().
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a8822fd5e77bbbaa3900fe6da3acae1a8}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!get\-Connector@{get\-Connector}}
+\index{get\-Connector@{get\-Connector}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{get\-Connector}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf common\-::\-Connector}$<$ {\bf \-Cluster}, {\bf \-Fibre} $>$ \& {\bf cryomesh\-::structures\-::\-Cluster\-::get\-Connector} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Cluster_a8822fd5e77bbbaa3900fe6da3acae1a8}
+
+
+\-Get the connector for this \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster}. 
+
+\begin{DoxyReturn}{\-Returns}
+common\-::\-Connector$<$\-Cluster, Fibre$>$ \-The connector for this \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster} 
+\end{DoxyReturn}
+
+
+\-Definition at line 208 of file \-Cluster.\-cpp.
+
+
+
+\-References connector.
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a458206d9c646f0f17c4764d82033e65e}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!get\-Energy@{get\-Energy}}
+\index{get\-Energy@{get\-Energy}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{get\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::structures\-::\-Cluster\-::get\-Energy} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Cluster_a458206d9c646f0f17c4764d82033e65e}
+
+
+\-Definition at line 54 of file \-Cluster.\-cpp.
+
+
+
+\-References energy.
+
+
+
+\-Referenced by cryomesh\-::manipulators\-::\-Cluster\-Analyser\-Basic\-::analyse\-Cluster(), and cryomesh\-::structures\-::\-Node\-Mesh\-::warp\-Nodes().
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_ad24253afeec070daf46182ecc0a85f36}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!get\-Energy\-Fraction\-Method@{get\-Energy\-Fraction\-Method}}
+\index{get\-Energy\-Fraction\-Method@{get\-Energy\-Fraction\-Method}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{get\-Energy\-Fraction\-Method}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Cluster\-::\-Energy\-Fraction\-Method} {\bf cryomesh\-::structures\-::\-Cluster\-::get\-Energy\-Fraction\-Method} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Cluster_ad24253afeec070daf46182ecc0a85f36}
+
+
+\-Definition at line 68 of file \-Cluster.\-cpp.
+
+
+
+\-References energy\-Fraction\-Method.
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a3ce93f857f214d814600c24d3bbdadea}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!get\-Live\-Node\-Count@{get\-Live\-Node\-Count}}
+\index{get\-Live\-Node\-Count@{get\-Live\-Node\-Count}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{get\-Live\-Node\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::structures\-::\-Cluster\-::get\-Live\-Node\-Count} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Cluster_a3ce93f857f214d814600c24d3bbdadea}
+
+
+\-Get the total live nodes in this cluster currently, ie those with at least one impulse. 
+
+\begin{DoxyReturn}{\-Returns}
+int \-The total count of currently live nodes 
+\end{DoxyReturn}
+
+
+\-Definition at line 312 of file \-Cluster.\-cpp.
+
+
+
+\-References get\-Nodes().
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a85a5b8740ed63cb5774d286577974655}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!get\-Max\-Energy\-Fraction@{get\-Max\-Energy\-Fraction}}
+\index{get\-Max\-Energy\-Fraction@{get\-Max\-Energy\-Fraction}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{get\-Max\-Energy\-Fraction}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::structures\-::\-Cluster\-::get\-Max\-Energy\-Fraction} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Cluster_a85a5b8740ed63cb5774d286577974655}
+
+
+\-Definition at line 60 of file \-Cluster.\-cpp.
+
+
+
+\-References max\-Energy\-Fraction.
+
+
+
+\-Referenced by cryomesh\-::manipulators\-::\-Cluster\-Analyser\-Basic\-::analyse\-Cluster().
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a6021d2bd085ff3e500d3898b5fabdf88}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!get\-Mesh@{get\-Mesh}}
+\index{get\-Mesh@{get\-Mesh}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{get\-Mesh}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::shared\-\_\-ptr$<${\bf \-Node\-Mesh}$>$ {\bf cryomesh\-::structures\-::\-Cluster\-::get\-Mesh} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Cluster_a6021d2bd085ff3e500d3898b5fabdf88}
+
+
+\-Definition at line 184 of file \-Cluster.\-h.
+
+
+
+\-References mesh.
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a05ce2914a0931b0554c85c390a003ca4}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!get\-Mutable\-Cluster\-Architect@{get\-Mutable\-Cluster\-Architect}}
+\index{get\-Mutable\-Cluster\-Architect@{get\-Mutable\-Cluster\-Architect}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{get\-Mutable\-Cluster\-Architect}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$ {\bf manipulators\-::\-Cluster\-Architect} $>$ {\bf cryomesh\-::structures\-::\-Cluster\-::get\-Mutable\-Cluster\-Architect} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Cluster_a05ce2914a0931b0554c85c390a003ca4}
+
+
+\-Definition at line 76 of file \-Cluster.\-cpp.
+
+
+
+\-References cluster\-Architect.
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a2e40e205c29f3d68c6f6f1e7389ef2fe}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!get\-Mutable\-Connection\-Map@{get\-Mutable\-Connection\-Map}}
+\index{get\-Mutable\-Connection\-Map@{get\-Mutable\-Connection\-Map}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{get\-Mutable\-Connection\-Map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf components\-::\-Connection\-Map} \& {\bf cryomesh\-::structures\-::\-Cluster\-::get\-Mutable\-Connection\-Map} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Cluster_a2e40e205c29f3d68c6f6f1e7389ef2fe}
+
+
+\-Definition at line 225 of file \-Cluster.\-cpp.
+
+
+
+\-References connections.
+
+
+
+\-Referenced by cryomesh\-::manipulators\-::\-Cluster\-Architect\-::create\-Connection(), cryomesh\-::manipulators\-::\-Cluster\-Architect\-::create\-Random\-Connections(), cryomesh\-::manipulators\-::\-Cluster\-Architect\-::delete\-Connection(), cryomesh\-::manipulators\-::\-Cluster\-Architect\-::destroy\-Random\-Connections(), cryomesh\-::manipulators\-::\-Cluster\-Architect\-::destroy\-Random\-Nodes(), and cryomesh\-::manipulators\-::\-Cluster\-Architect\-::get\-Random\-Connections().
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a1490fcafd9e673af89be342def2660cb}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!get\-Mutable\-Connector@{get\-Mutable\-Connector}}
+\index{get\-Mutable\-Connector@{get\-Mutable\-Connector}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{get\-Mutable\-Connector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf common\-::\-Connector}$<$ {\bf \-Cluster}, {\bf \-Fibre} $>$ \& {\bf cryomesh\-::structures\-::\-Cluster\-::get\-Mutable\-Connector} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Cluster_a1490fcafd9e673af89be342def2660cb}
+
+
+\-Get the mutable connector for this \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster}. 
+
+\begin{DoxyReturn}{\-Returns}
+common\-::\-Connector$<$\-Cluster, Fibre$>$ \-The mutable onnector for this \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster} 
+\end{DoxyReturn}
+
+
+\-Definition at line 212 of file \-Cluster.\-cpp.
+
+
+
+\-References connector.
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a3ced101df9aaf02f8afa25cc55c16bfd}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!get\-Mutable\-Mesh@{get\-Mutable\-Mesh}}
+\index{get\-Mutable\-Mesh@{get\-Mutable\-Mesh}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{get\-Mutable\-Mesh}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<${\bf \-Node\-Mesh}$>$ {\bf cryomesh\-::structures\-::\-Cluster\-::get\-Mutable\-Mesh} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Cluster_a3ced101df9aaf02f8afa25cc55c16bfd}
+
+
+\-Definition at line 187 of file \-Cluster.\-h.
+
+
+
+\-References mesh.
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a118bf56f54720d1eb922fe8893a73e78}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!get\-Mutable\-Node\-Map@{get\-Mutable\-Node\-Map}}
+\index{get\-Mutable\-Node\-Map@{get\-Mutable\-Node\-Map}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{get\-Mutable\-Node\-Map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf components\-::\-Node\-Map} \& {\bf cryomesh\-::structures\-::\-Cluster\-::get\-Mutable\-Node\-Map} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Cluster_a118bf56f54720d1eb922fe8893a73e78}
+
+
+\-Get the mutable \-Node\-Map for this \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster}. 
+
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{classcryomesh_1_1components_1_1NodeMap}{components\-::\-Node\-Map} \-The mutable \-Node\-Map for this \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster} 
+\end{DoxyReturn}
+
+
+\-Definition at line 219 of file \-Cluster.\-cpp.
+
+
+
+\-References nodes.
+
+
+
+\-Referenced by cryomesh\-::manipulators\-::\-Cluster\-Architect\-::create\-Random\-Connections(), cryomesh\-::manipulators\-::\-Cluster\-Architect\-::create\-Random\-Nodes(), cryomesh\-::manipulators\-::\-Cluster\-Architect\-::destroy\-Random\-Nodes(), and cryomesh\-::manipulators\-::\-Cluster\-Architect\-::get\-Random\-Nodes().
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_adebc5a93681278631cfb2d70fa579005}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!get\-Node\-Map@{get\-Node\-Map}}
+\index{get\-Node\-Map@{get\-Node\-Map}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{get\-Node\-Map}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf components\-::\-Node\-Map} \& {\bf cryomesh\-::structures\-::\-Cluster\-::get\-Node\-Map} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Cluster_adebc5a93681278631cfb2d70fa579005}
+
+
+\-Get the \-Node\-Map for this \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster}. 
+
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{classcryomesh_1_1components_1_1NodeMap}{components\-::\-Node\-Map} \-The \-Node\-Map for this \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster} 
+\end{DoxyReturn}
+
+
+\-Definition at line 216 of file \-Cluster.\-cpp.
+
+
+
+\-References nodes.
+
+
+
+\-Referenced by cryomesh\-::manipulators\-::\-Cluster\-Analyser\-Basic\-::analyse\-Cluster(), cryomesh\-::manipulators\-::\-Cluster\-Architect\-::create\-Random\-Nodes(), cryomesh\-::manipulators\-::\-Cluster\-Architect\-::get\-Random\-Nodes(), and cryomesh\-::structures\-::operator$<$$<$().
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_ade4227c5a3f39b17a53c31e4aeb25bfc}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!get\-Nodes@{get\-Nodes}}
+\index{get\-Nodes@{get\-Nodes}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{get\-Nodes}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::map$<$ boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ {\bf components\-::\-Node} $>$ $>$ \& {\bf cryomesh\-::structures\-::\-Cluster\-::get\-Nodes} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Cluster_ade4227c5a3f39b17a53c31e4aeb25bfc}
+
+
+\-Get all nodes. 
+
+\begin{DoxyReturn}{\-Returns}
+std\-::map$<$boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ components\-::\-Node $>$ $>$ \-Return all nodes 
+\end{DoxyReturn}
+
+
+\-Definition at line 200 of file \-Cluster.\-cpp.
+
+
+
+\-References nodes.
+
+
+
+\-Referenced by get\-Active\-Node\-Count(), get\-Live\-Node\-Count(), get\-Triggered\-Node\-Count(), cryomesh\-::structures\-::\-Node\-Mesh\-::\-Node\-Mesh(), cryomesh\-::structures\-::operator$<$$<$(), cryomesh\-::structures\-::\-Node\-Mesh\-::regenerate\-Neighbourhoods(), and cryomesh\-::structures\-::\-Mesh\-::update().
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a44131126384d6e5217dc42285f6543be}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!get\-Triggered\-Node\-Count@{get\-Triggered\-Node\-Count}}
+\index{get\-Triggered\-Node\-Count@{get\-Triggered\-Node\-Count}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{get\-Triggered\-Node\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::structures\-::\-Cluster\-::get\-Triggered\-Node\-Count} (
+\begin{DoxyParamCaption}
+\item[{const int}]{indicator = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Cluster_a44131126384d6e5217dc42285f6543be}
+
+
+\-Get the total fired nodes in this cluster currently. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em int} & \-Set $>$0 for only positive triggered nodes, $<$0 for negative, 0 for all (default)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+int \-The total count of currently triggered nodes 
+\end{DoxyReturn}
+
+
+\-Definition at line 228 of file \-Cluster.\-cpp.
+
+
+
+\-References get\-Nodes(), cryomesh\-::components\-::\-Node\-::\-Negative, cryomesh\-::components\-::\-Node\-::\-None, and cryomesh\-::components\-::\-Node\-::\-Positive.
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a0ffe5e538e89059208adfbcc86be84fc}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!run\-Analyser@{run\-Analyser}}
+\index{run\-Analyser@{run\-Analyser}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{run\-Analyser}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::structures\-::\-Cluster\-::run\-Analyser} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Cluster_a0ffe5e538e89059208adfbcc86be84fc}
+
+
+\-Definition at line 85 of file \-Cluster.\-cpp.
+
+
+
+\-References cluster\-Architect.
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a4c0b2aaaf9c62c3c0ca44d89006ea875}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!set\-Energy@{set\-Energy}}
+\index{set\-Energy@{set\-Energy}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{set\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::structures\-::\-Cluster\-::set\-Energy} (
+\begin{DoxyParamCaption}
+\item[{double}]{d}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Cluster_a4c0b2aaaf9c62c3c0ca44d89006ea875}
+
+
+\-Definition at line 57 of file \-Cluster.\-cpp.
+
+
+
+\-References energy.
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_ac25c418e75f8f9baca1c99f1fe12e0c3}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!set\-Energy\-Fraction\-Method@{set\-Energy\-Fraction\-Method}}
+\index{set\-Energy\-Fraction\-Method@{set\-Energy\-Fraction\-Method}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{set\-Energy\-Fraction\-Method}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::structures\-::\-Cluster\-::set\-Energy\-Fraction\-Method} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Energy\-Fraction\-Method}}]{method, }
+\item[{double}]{max\-\_\-energy\-\_\-fraction}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Cluster_ac25c418e75f8f9baca1c99f1fe12e0c3}
+
+
+\-Definition at line 63 of file \-Cluster.\-cpp.
+
+
+
+\-References energy\-Fraction\-Method, and max\-Energy\-Fraction.
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a933d1d7f51cc709ba4a891407b4885e3}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!update@{update}}
+\index{update@{update}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::structures\-::\-Cluster\-::update} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Cluster_a933d1d7f51cc709ba4a891407b4885e3}
+
+
+\-Update all elements. 
+
+
+
+\-Definition at line 45 of file \-Cluster.\-cpp.
+
+
+
+\-References connections, mesh, nodes, cryomesh\-::components\-::\-Node\-Map\-::update(), and cryomesh\-::components\-::\-Connection\-Map\-::update().
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_aee616cbf1d49223eb46ea32bfaadf8f0}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!update\-Connectivity@{update\-Connectivity}}
+\index{update\-Connectivity@{update\-Connectivity}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{update\-Connectivity}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::structures\-::\-Cluster\-::update\-Connectivity} (
+\begin{DoxyParamCaption}
+\item[{const int}]{connectivity, }
+\item[{{\bf \-Value\-Type\-Specifier}}]{as\-Value = {\ttfamily {\bf \-As\-Increment}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Cluster_aee616cbf1d49223eb46ea32bfaadf8f0}
+
+
+\-Update connectivity so that each node has at least param number of connections. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em int} & connectivity \-The least connectivity to ensure \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 93 of file \-Cluster.\-cpp.
+
+
+
+\-References \-As\-Increment, \-As\-Minumum, cluster\-Architect, nodes, and \-S\-E\-L\-F\-\_\-\-C\-O\-N\-N\-E\-C\-T\-E\-D\-\_\-\-N\-O\-D\-E\-S\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N.
+
+
+
+\-Referenced by create\-Connectivity().
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a7f44dac6fd0867af668d888e992dc1e2}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!update\-Energy@{update\-Energy}}
+\index{update\-Energy@{update\-Energy}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{update\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::structures\-::\-Cluster\-::update\-Energy} (
+\begin{DoxyParamCaption}
+\item[{double}]{total\-\_\-energy}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Cluster_a7f44dac6fd0867af668d888e992dc1e2}
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_aeb806fca24d012f929106cfe0efb0724}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!warp\-Nodes@{warp\-Nodes}}
+\index{warp\-Nodes@{warp\-Nodes}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{warp\-Nodes}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::structures\-::\-Cluster\-::warp\-Nodes} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Cluster_aeb806fca24d012f929106cfe0efb0724}
+
+
+\-Definition at line 80 of file \-Cluster.\-cpp.
+
+
+
+\-References mesh.
+
+
+
+\subsection{\-Friends \-And \-Related \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_adb5b48a591cc8d6f293b915068597a8a}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const {\bf \-Cluster} \&}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Cluster_adb5b48a591cc8d6f293b915068597a8a}
+
+
+\-To stream operator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::ostream} & \& os \-The output stream \\
+\hline
+{\em const} & \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster} \& obj \-The object to stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::ostream \& \-The output stream 
+\end{DoxyReturn}
+
+
+\-Definition at line 331 of file \-Cluster.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a0cc03a8bb5375e90ad6a51e715c137a5}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!cluster\-Architect@{cluster\-Architect}}
+\index{cluster\-Architect@{cluster\-Architect}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{cluster\-Architect}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<${\bf manipulators\-::\-Cluster\-Architect}$>$ {\bf cryomesh\-::structures\-::\-Cluster\-::cluster\-Architect}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Cluster_a0cc03a8bb5375e90ad6a51e715c137a5}
+
+
+\-Definition at line 247 of file \-Cluster.\-h.
+
+
+
+\-Referenced by \-Cluster(), get\-Cluster\-Architect(), get\-Mutable\-Cluster\-Architect(), run\-Analyser(), and update\-Connectivity().
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_ac614788bbfa9961f1f462d1caf7d0405}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!connections@{connections}}
+\index{connections@{connections}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{connections}]{\setlength{\rightskip}{0pt plus 5cm}{\bf components\-::\-Connection\-Map} {\bf cryomesh\-::structures\-::\-Cluster\-::connections}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Cluster_ac614788bbfa9961f1f462d1caf7d0405}
+
+
+\-Definition at line 231 of file \-Cluster.\-h.
+
+
+
+\-Referenced by enable\-Debug(), get\-Connection\-Map(), get\-Connections(), get\-Mutable\-Connection\-Map(), and update().
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_aaaaac972efefc911d4550799c752730d}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!connector@{connector}}
+\index{connector@{connector}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{connector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf common\-::\-Connector}$<${\bf \-Cluster}, {\bf \-Fibre}$>$ {\bf cryomesh\-::structures\-::\-Cluster\-::connector}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Cluster_aaaaac972efefc911d4550799c752730d}
+
+
+\-Definition at line 245 of file \-Cluster.\-h.
+
+
+
+\-Referenced by get\-Connector(), and get\-Mutable\-Connector().
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a28fb86dc636571345e27da1cb544a939}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!energy@{energy}}
+\index{energy@{energy}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{energy}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::structures\-::\-Cluster\-::energy}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Cluster_a28fb86dc636571345e27da1cb544a939}
+
+
+\-Definition at line 217 of file \-Cluster.\-h.
+
+
+
+\-Referenced by get\-Energy(), and set\-Energy().
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a9faa149cba43092142147d8deaf0826c}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!energy\-Fraction\-Method@{energy\-Fraction\-Method}}
+\index{energy\-Fraction\-Method@{energy\-Fraction\-Method}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{energy\-Fraction\-Method}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Energy\-Fraction\-Method} {\bf cryomesh\-::structures\-::\-Cluster\-::energy\-Fraction\-Method}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Cluster_a9faa149cba43092142147d8deaf0826c}
+
+
+\-Definition at line 248 of file \-Cluster.\-h.
+
+
+
+\-Referenced by get\-Energy\-Fraction\-Method(), and set\-Energy\-Fraction\-Method().
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_aff9209e98a7a6aedad83dacaaf1b83a6}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!max\-Energy\-Fraction@{max\-Energy\-Fraction}}
+\index{max\-Energy\-Fraction@{max\-Energy\-Fraction}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{max\-Energy\-Fraction}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::structures\-::\-Cluster\-::max\-Energy\-Fraction}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Cluster_aff9209e98a7a6aedad83dacaaf1b83a6}
+
+
+\-Definition at line 249 of file \-Cluster.\-h.
+
+
+
+\-Referenced by get\-Max\-Energy\-Fraction(), and set\-Energy\-Fraction\-Method().
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a3f1688d1e47d783356c4d4705bd3f0b7}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!mesh@{mesh}}
+\index{mesh@{mesh}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{mesh}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<${\bf \-Node\-Mesh}$>$ {\bf cryomesh\-::structures\-::\-Cluster\-::mesh}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Cluster_a3f1688d1e47d783356c4d4705bd3f0b7}
+
+
+\-Definition at line 238 of file \-Cluster.\-h.
+
+
+
+\-Referenced by get\-Mesh(), get\-Mutable\-Mesh(), update(), and warp\-Nodes().
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_aebd26b5e561d3616ff3564cea8f6abfd}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!nodes@{nodes}}
+\index{nodes@{nodes}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{nodes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf components\-::\-Node\-Map} {\bf cryomesh\-::structures\-::\-Cluster\-::nodes}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Cluster_aebd26b5e561d3616ff3564cea8f6abfd}
+
+
+\-Definition at line 224 of file \-Cluster.\-h.
+
+
+
+\-Referenced by enable\-Debug(), get\-Mutable\-Node\-Map(), get\-Node\-Map(), get\-Nodes(), update(), and update\-Connectivity().
+
+\hypertarget{classcryomesh_1_1structures_1_1Cluster_a42b6ded89948ab38383ce0b818c78b54}{\index{cryomesh\-::structures\-::\-Cluster@{cryomesh\-::structures\-::\-Cluster}!\-S\-E\-L\-F\-\_\-\-C\-O\-N\-N\-E\-C\-T\-E\-D\-\_\-\-N\-O\-D\-E\-S\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N@{\-S\-E\-L\-F\-\_\-\-C\-O\-N\-N\-E\-C\-T\-E\-D\-\_\-\-N\-O\-D\-E\-S\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N}}
+\index{\-S\-E\-L\-F\-\_\-\-C\-O\-N\-N\-E\-C\-T\-E\-D\-\_\-\-N\-O\-D\-E\-S\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N@{\-S\-E\-L\-F\-\_\-\-C\-O\-N\-N\-E\-C\-T\-E\-D\-\_\-\-N\-O\-D\-E\-S\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N}!cryomesh::structures::Cluster@{cryomesh\-::structures\-::\-Cluster}}
+\subsubsection[{\-S\-E\-L\-F\-\_\-\-C\-O\-N\-N\-E\-C\-T\-E\-D\-\_\-\-N\-O\-D\-E\-S\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}const double {\bf cryomesh\-::structures\-::\-Cluster\-::\-S\-E\-L\-F\-\_\-\-C\-O\-N\-N\-E\-C\-T\-E\-D\-\_\-\-N\-O\-D\-E\-S\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N} = 0.\-1\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Cluster_a42b6ded89948ab38383ce0b818c78b54}
+
+
+\-Definition at line 204 of file \-Cluster.\-h.
+
+
+
+\-Referenced by update\-Connectivity().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/structures/\hyperlink{Cluster_8h}{\-Cluster.\-h}\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/structures/\hyperlink{Cluster_8cpp}{\-Cluster.\-cpp}\end{DoxyCompactItemize}

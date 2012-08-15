@@ -1,0 +1,743 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="Bundle_8h" kind="file">
+    <compoundname>Bundle.h</compoundname>
+    <includes local="no">boost/shared_ptr.hpp</includes>
+    <includes local="no">boost/uuid/uuid.hpp</includes>
+    <includes local="no">iostream</includes>
+    <includes refid="ClusterMap_8h" local="yes">ClusterMap.h</includes>
+    <includes refid="FibreMap_8h" local="yes">FibreMap.h</includes>
+    <includes refid="PatternChannelMap_8h" local="yes">state/PatternChannelMap.h</includes>
+    <includes local="yes">common/Debuggable.h</includes>
+    <includes local="yes">common/Tagged.h</includes>
+    <includes refid="Loggable_8h" local="yes">common/Loggable.h</includes>
+    <includes refid="Statistician_8h" local="yes">utilities/Statistician.h</includes>
+    <includedby refid="Creator_8h" local="no">/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h</includedby>
+    <includedby refid="Bundle_8cpp" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp</includedby>
+    <includedby refid="Statistician_8cpp" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp</includedby>
+    <incdepgraph>
+      <node id="2075">
+        <label>list</label>
+      </node>
+      <node id="2052">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="2102">
+        <label>boost/serialization/vector.hpp</label>
+      </node>
+      <node id="2109">
+        <label>utilities/Statistician.h</label>
+        <link refid="Statistician_8h"/>
+        <childnode refid="2054" relation="include">
+        </childnode>
+        <childnode refid="2078" relation="include">
+        </childnode>
+        <childnode refid="2086" relation="include">
+        </childnode>
+      </node>
+      <node id="2088">
+        <label>boost/tokenizer.hpp</label>
+      </node>
+      <node id="2063">
+        <label>ActivityTimer.h</label>
+        <link refid="ActivityTimer_8h"/>
+        <childnode refid="2064" relation="include">
+        </childnode>
+      </node>
+      <node id="2051">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h</label>
+        <link refid="Bundle.h"/>
+        <childnode refid="2052" relation="include">
+        </childnode>
+        <childnode refid="2053" relation="include">
+        </childnode>
+        <childnode refid="2054" relation="include">
+        </childnode>
+        <childnode refid="2055" relation="include">
+        </childnode>
+        <childnode refid="2094" relation="include">
+        </childnode>
+        <childnode refid="2105" relation="include">
+        </childnode>
+        <childnode refid="2065" relation="include">
+        </childnode>
+        <childnode refid="2067" relation="include">
+        </childnode>
+        <childnode refid="2108" relation="include">
+        </childnode>
+        <childnode refid="2109" relation="include">
+        </childnode>
+      </node>
+      <node id="2083">
+        <label>spacial/Point.h</label>
+      </node>
+      <node id="2059">
+        <label>Node.h</label>
+        <link refid="Node_8h"/>
+        <childnode refid="2060" relation="include">
+        </childnode>
+        <childnode refid="2068" relation="include">
+        </childnode>
+        <childnode refid="2079" relation="include">
+        </childnode>
+        <childnode refid="2067" relation="include">
+        </childnode>
+        <childnode refid="2065" relation="include">
+        </childnode>
+        <childnode refid="2082" relation="include">
+        </childnode>
+        <childnode refid="2083" relation="include">
+        </childnode>
+        <childnode refid="2076" relation="include">
+        </childnode>
+        <childnode refid="2084" relation="include">
+        </childnode>
+        <childnode refid="2075" relation="include">
+        </childnode>
+        <childnode refid="2078" relation="include">
+        </childnode>
+      </node>
+      <node id="2104">
+        <label>manager/PatternDatabaseObject.h</label>
+        <link refid="PatternDatabaseObject_8h"/>
+        <childnode refid="2085" relation="include">
+        </childnode>
+        <childnode refid="2068" relation="include">
+        </childnode>
+        <childnode refid="2086" relation="include">
+        </childnode>
+        <childnode refid="2052" relation="include">
+        </childnode>
+      </node>
+      <node id="2080">
+        <label>boost/uuid/uuid_io.hpp</label>
+      </node>
+      <node id="2079">
+        <label>common/Connector.h</label>
+        <link refid="Connector_8h"/>
+        <childnode refid="2068" relation="include">
+        </childnode>
+        <childnode refid="2078" relation="include">
+        </childnode>
+        <childnode refid="2052" relation="include">
+        </childnode>
+        <childnode refid="2053" relation="include">
+        </childnode>
+        <childnode refid="2080" relation="include">
+        </childnode>
+        <childnode refid="2081" relation="include">
+        </childnode>
+      </node>
+      <node id="2070">
+        <label>common/TimeKeeper.h</label>
+        <link refid="TimeKeeper_8h"/>
+        <childnode refid="2068" relation="include">
+        </childnode>
+        <childnode refid="2052" relation="include">
+        </childnode>
+        <childnode refid="2071" relation="include">
+        </childnode>
+        <childnode refid="2072" relation="include">
+        </childnode>
+        <childnode refid="2073" relation="include">
+        </childnode>
+        <childnode refid="2074" relation="include">
+        </childnode>
+      </node>
+      <node id="2069">
+        <label>gmpxx.h</label>
+      </node>
+      <node id="2062">
+        <label>ActivityTimerDistance.h</label>
+        <link refid="ActivityTimerDistance_8h"/>
+        <childnode refid="2063" relation="include">
+        </childnode>
+        <childnode refid="2065" relation="include">
+        </childnode>
+        <childnode refid="2052" relation="include">
+        </childnode>
+      </node>
+      <node id="2065">
+        <label>common/Debuggable.h</label>
+      </node>
+      <node id="2085">
+        <label>DatabaseObject.h</label>
+        <link refid="DatabaseObject_8h"/>
+        <childnode refid="2078" relation="include">
+        </childnode>
+        <childnode refid="2086" relation="include">
+        </childnode>
+        <childnode refid="2087" relation="include">
+        </childnode>
+        <childnode refid="2054" relation="include">
+        </childnode>
+        <childnode refid="2088" relation="include">
+        </childnode>
+      </node>
+      <node id="2086">
+        <label>string</label>
+      </node>
+      <node id="2097">
+        <label>PatternTag.h</label>
+        <link refid="PatternTag_8h"/>
+        <childnode refid="2086" relation="include">
+        </childnode>
+        <childnode refid="2052" relation="include">
+        </childnode>
+      </node>
+      <node id="2095">
+        <label>Fibre.h</label>
+        <link refid="Fibre_8h"/>
+        <childnode refid="2089" relation="include">
+        </childnode>
+        <childnode refid="2059" relation="include">
+        </childnode>
+        <childnode refid="2079" relation="include">
+        </childnode>
+        <childnode refid="2096" relation="include">
+        </childnode>
+        <childnode refid="2052" relation="include">
+        </childnode>
+        <childnode refid="2067" relation="include">
+        </childnode>
+      </node>
+      <node id="2078">
+        <label>map</label>
+      </node>
+      <node id="2067">
+        <label>common/Tagged.h</label>
+      </node>
+      <node id="2093">
+        <label>structures/NodeMesh.h</label>
+        <link refid="NodeMesh_8h"/>
+        <childnode refid="2059" relation="include">
+        </childnode>
+        <childnode refid="2078" relation="include">
+        </childnode>
+        <childnode refid="2052" relation="include">
+        </childnode>
+      </node>
+      <node id="2077">
+        <label>DataObject.h</label>
+        <link refid="DataObject_8h"/>
+        <childnode refid="2078" relation="include">
+        </childnode>
+        <childnode refid="2064" relation="include">
+        </childnode>
+      </node>
+      <node id="2064">
+        <label>ostream</label>
+      </node>
+      <node id="2089">
+        <label>components/ConnectionMap.h</label>
+        <link refid="ConnectionMap_8h"/>
+        <childnode refid="2056" relation="include">
+        </childnode>
+        <childnode refid="2070" relation="include">
+        </childnode>
+        <childnode refid="2090" relation="include">
+        </childnode>
+        <childnode refid="2068" relation="include">
+        </childnode>
+        <childnode refid="2053" relation="include">
+        </childnode>
+        <childnode refid="2052" relation="include">
+        </childnode>
+        <childnode refid="2091" relation="include">
+        </childnode>
+      </node>
+      <node id="2100">
+        <label>boost/serialization/string.hpp</label>
+      </node>
+      <node id="2057">
+        <label>Cluster.h</label>
+        <link refid="Cluster_8h"/>
+        <childnode refid="2058" relation="include">
+        </childnode>
+        <childnode refid="2089" relation="include">
+        </childnode>
+        <childnode refid="2092" relation="include">
+        </childnode>
+        <childnode refid="2083" relation="include">
+        </childnode>
+        <childnode refid="2093" relation="include">
+        </childnode>
+        <childnode refid="2053" relation="include">
+        </childnode>
+        <childnode refid="2052" relation="include">
+        </childnode>
+        <childnode refid="2059" relation="include">
+        </childnode>
+        <childnode refid="2091" relation="include">
+        </childnode>
+        <childnode refid="2079" relation="include">
+        </childnode>
+        <childnode refid="2067" relation="include">
+        </childnode>
+        <childnode refid="2065" relation="include">
+        </childnode>
+      </node>
+      <node id="2073">
+        <label>boost/timer.hpp</label>
+      </node>
+      <node id="2056">
+        <label>common/KeyMappedCollection.h</label>
+      </node>
+      <node id="2072">
+        <label>boost/date_time/posix_time/posix_time.hpp</label>
+      </node>
+      <node id="2090">
+        <label>state/ActivityPattern.h</label>
+        <link refid="ActivityPattern_8h"/>
+        <childnode refid="2066" relation="include">
+        </childnode>
+      </node>
+      <node id="2092">
+        <label>spacial/Spacial.h</label>
+      </node>
+      <node id="2076">
+        <label>dataobjects/DataObjectController.h</label>
+        <link refid="DataObjectController_8h"/>
+        <childnode refid="2077" relation="include">
+        </childnode>
+      </node>
+      <node id="2066">
+        <label>common/SimpleCollection.h</label>
+      </node>
+      <node id="2094">
+        <label>FibreMap.h</label>
+        <link refid="FibreMap_8h"/>
+        <childnode refid="2056" relation="include">
+        </childnode>
+        <childnode refid="2095" relation="include">
+        </childnode>
+      </node>
+      <node id="2099">
+        <label>vector</label>
+      </node>
+      <node id="2103">
+        <label>boost/uuid/uuid_generators.hpp</label>
+      </node>
+      <node id="2058">
+        <label>components/NodeMap.h</label>
+        <link refid="NodeMap_8h"/>
+        <childnode refid="2056" relation="include">
+        </childnode>
+        <childnode refid="2053" relation="include">
+        </childnode>
+        <childnode refid="2052" relation="include">
+        </childnode>
+        <childnode refid="2059" relation="include">
+        </childnode>
+      </node>
+      <node id="2087">
+        <label>sstream</label>
+      </node>
+      <node id="2106">
+        <label>PatternChannel.h</label>
+        <link refid="PatternChannel_8h"/>
+        <childnode refid="2096" relation="include">
+        </childnode>
+        <childnode refid="2097" relation="include">
+        </childnode>
+        <childnode refid="2067" relation="include">
+        </childnode>
+        <childnode refid="2065" relation="include">
+        </childnode>
+        <childnode refid="2078" relation="include">
+        </childnode>
+        <childnode refid="2075" relation="include">
+        </childnode>
+        <childnode refid="2107" relation="include">
+        </childnode>
+        <childnode refid="2053" relation="include">
+        </childnode>
+        <childnode refid="2052" relation="include">
+        </childnode>
+      </node>
+      <node id="2082">
+        <label>common/Defs.h</label>
+      </node>
+      <node id="2081">
+        <label>common/Misc.h</label>
+      </node>
+      <node id="2108">
+        <label>common/Loggable.h</label>
+        <link refid="Loggable_8h"/>
+        <childnode refid="2054" relation="include">
+        </childnode>
+      </node>
+      <node id="2074">
+        <label>time.h</label>
+      </node>
+      <node id="2054">
+        <label>iostream</label>
+      </node>
+      <node id="2071">
+        <label>boost/serialization/shared_ptr.hpp</label>
+      </node>
+      <node id="2061">
+        <label>Impulse.h</label>
+        <link refid="Impulse_8h"/>
+        <childnode refid="2062" relation="include">
+        </childnode>
+        <childnode refid="2066" relation="include">
+        </childnode>
+        <childnode refid="2067" relation="include">
+        </childnode>
+        <childnode refid="2068" relation="include">
+        </childnode>
+        <childnode refid="2070" relation="include">
+        </childnode>
+        <childnode refid="2065" relation="include">
+        </childnode>
+        <childnode refid="2075" relation="include">
+        </childnode>
+      </node>
+      <node id="2084">
+        <label>manager/NodeDatabaseObject.h</label>
+        <link refid="NodeDatabaseObject_8h"/>
+        <childnode refid="2085" relation="include">
+        </childnode>
+        <childnode refid="2083" relation="include">
+        </childnode>
+        <childnode refid="2068" relation="include">
+        </childnode>
+        <childnode refid="2086" relation="include">
+        </childnode>
+        <childnode refid="2087" relation="include">
+        </childnode>
+      </node>
+      <node id="2068">
+        <label>common/Cycle.h</label>
+        <link refid="Cycle_8h"/>
+        <childnode refid="2069" relation="include">
+        </childnode>
+      </node>
+      <node id="2053">
+        <label>boost/uuid/uuid.hpp</label>
+      </node>
+      <node id="2105">
+        <label>state/PatternChannelMap.h</label>
+        <link refid="PatternChannelMap_8h"/>
+        <childnode refid="2106" relation="include">
+        </childnode>
+        <childnode refid="2056" relation="include">
+        </childnode>
+        <childnode refid="2070" relation="include">
+        </childnode>
+      </node>
+      <node id="2107">
+        <label>set</label>
+      </node>
+      <node id="2055">
+        <label>ClusterMap.h</label>
+        <link refid="ClusterMap_8h"/>
+        <childnode refid="2056" relation="include">
+        </childnode>
+        <childnode refid="2057" relation="include">
+        </childnode>
+      </node>
+      <node id="2101">
+        <label>boost/serialization/serialization.hpp</label>
+      </node>
+      <node id="2096">
+        <label>state/Pattern.h</label>
+        <link refid="Pattern_8h"/>
+        <childnode refid="2097" relation="include">
+        </childnode>
+        <childnode refid="2098" relation="include">
+        </childnode>
+        <childnode refid="2067" relation="include">
+        </childnode>
+        <childnode refid="2099" relation="include">
+        </childnode>
+        <childnode refid="2086" relation="include">
+        </childnode>
+        <childnode refid="2102" relation="include">
+        </childnode>
+        <childnode refid="2053" relation="include">
+        </childnode>
+        <childnode refid="2103" relation="include">
+        </childnode>
+        <childnode refid="2104" relation="include">
+        </childnode>
+      </node>
+      <node id="2098">
+        <label>BinaryString.h</label>
+        <link refid="BinaryString_8h"/>
+        <childnode refid="2075" relation="include">
+        </childnode>
+        <childnode refid="2086" relation="include">
+        </childnode>
+        <childnode refid="2087" relation="include">
+        </childnode>
+        <childnode refid="2099" relation="include">
+        </childnode>
+        <childnode refid="2100" relation="include">
+        </childnode>
+        <childnode refid="2101" relation="include">
+        </childnode>
+      </node>
+      <node id="2091">
+        <label>Connection.h</label>
+        <link refid="Connection_8h"/>
+        <childnode refid="2059" relation="include">
+        </childnode>
+        <childnode refid="2079" relation="include">
+        </childnode>
+        <childnode refid="2067" relation="include">
+        </childnode>
+        <childnode refid="2085" relation="include">
+        </childnode>
+        <childnode refid="2065" relation="include">
+        </childnode>
+      </node>
+      <node id="2060">
+        <label>ImpulseCollection.h</label>
+        <link refid="ImpulseCollection_8h"/>
+        <childnode refid="2061" relation="include">
+        </childnode>
+        <childnode refid="2068" relation="include">
+        </childnode>
+        <childnode refid="2056" relation="include">
+        </childnode>
+        <childnode refid="2076" relation="include">
+        </childnode>
+        <childnode refid="2053" relation="include">
+        </childnode>
+        <childnode refid="2065" relation="include">
+        </childnode>
+        <childnode refid="2078" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2111">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h</label>
+        <link refid="Creator_8h"/>
+        <childnode refid="2112" relation="include">
+        </childnode>
+        <childnode refid="2113" relation="include">
+        </childnode>
+      </node>
+      <node id="2116">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp</label>
+        <link refid="Statistician_8cpp"/>
+      </node>
+      <node id="2110">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h</label>
+        <link refid="Bundle.h"/>
+        <childnode refid="2111" relation="include">
+        </childnode>
+        <childnode refid="2115" relation="include">
+        </childnode>
+        <childnode refid="2116" relation="include">
+        </childnode>
+      </node>
+      <node id="2115">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp</label>
+        <link refid="Bundle_8cpp"/>
+      </node>
+      <node id="2114">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.cpp</label>
+        <link refid="CryoManager_8cpp"/>
+      </node>
+      <node id="2113">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.h</label>
+        <link refid="CryoManager_8h"/>
+        <childnode refid="2114" relation="include">
+        </childnode>
+      </node>
+      <node id="2112">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp</label>
+        <link refid="Creator_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classcryomesh_1_1structures_1_1Bundle" prot="public">cryomesh::structures::Bundle</innerclass>
+    <innernamespace refid="namespacecryomesh">cryomesh</innernamespace>
+    <innernamespace refid="namespacecryomesh_1_1structures">cryomesh::structures</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Bundle.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>Created<sp/>on:<sp/>15<sp/>Feb<sp/>2011</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Author:<sp/>niall</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>BUNDLE_H_</highlight></codeline>
+<codeline lineno="9"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>BUNDLE_H_</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/shared_ptr.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/uuid/uuid.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ClusterMap_8h" kindref="compound">ClusterMap.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="FibreMap_8h" kindref="compound">FibreMap.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="PatternChannelMap_8h" kindref="compound">state/PatternChannelMap.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;common/Debuggable.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;common/Tagged.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Loggable_8h" kindref="compound">common/Loggable.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Statistician_8h" kindref="compound">utilities/Statistician.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">cryomesh<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">structures<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="classcryomesh_1_1structures_1_1Bundle" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcryomesh_1_1structures_1_1Bundle" kindref="compound" tooltip="A Bundle is the collection of clusters and fibres, it represents the system as a whole.">Bundle</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>common::Debuggable,<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>common::Tagged,<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>common::Loggable<sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a8d6b95207324291f919f1835b81b1640" kindref="member" tooltip="Default contructor.">Bundle</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1ab2ec2696336dddbae17166c056c2f038" kindref="member" tooltip="Default destructor.">~Bundle</ref>();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1add5af28ceb5c7722d267ba32810c5df7" kindref="member" tooltip="Update all bundle components.">update</ref>();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;Cluster&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a6228d35bd96caa191bd89096dd260ee2" kindref="member" tooltip="Create a cluster with a size and connectivity.">createCluster</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nodeSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nodeConnectivity);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;Fibre&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1af1884f99e746cdfa549b63f1589b5dac" kindref="member" tooltip="Connect clusters specified by uuids with a fibre of width.">connectCluster</ref>(boost::uuids::uuid<sp/>inputClusterUUID,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::uuids::uuid<sp/>outputClusterUUID,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fibreWidth);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;Fibre&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1af1884f99e746cdfa549b63f1589b5dac" kindref="member" tooltip="Connect clusters specified by uuids with a fibre of width.">connectCluster</ref>(boost::uuids::uuid<sp/>clusterUUID,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1structures_1_1Fibre_1aecbba6d46a76f888b3722491b674f5e4" kindref="member" tooltip="Enum representing the type of this Fibre connection.">Fibre::FibreType</ref><sp/>&amp;<sp/>type,</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fibreWidth);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;Fibre&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1abe23b17f35ef338df7db8d2903ee2bfd" kindref="member" tooltip="Helper access function for specialised connection.">connectPrimaryInputCluster</ref>(boost::uuids::uuid<sp/>patchanid,</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::uuids::uuid<sp/>clusterUUID);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;Fibre&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a01dd3e844fe3332df9be5156e329f821" kindref="member" tooltip="Helper access function for specialised connection.">connectPrimaryOutputCluster</ref>(boost::uuids::uuid<sp/>patchanid,</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::uuids::uuid<sp/>clusterUUID);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;boost::shared_ptr&lt;Fibre&gt;<sp/>&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a31fef59219384dafb4d250eae65f3574" kindref="member">autoConnectPrimaryInputClusters</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;boost::uuids::uuid&gt;<sp/>&amp;<sp/>cluster_uuids);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;boost::shared_ptr&lt;Fibre&gt;<sp/>&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a53f6a455e7cb553352dbef64d3a1ec04" kindref="member">autoConnectPrimaryOutputClusters</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;boost::uuids::uuid&gt;<sp/>&amp;<sp/>cluster_uuids);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::vector&lt;boost::shared_ptr&lt;<sp/>Fibre<sp/>&gt;<sp/>&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a31fef59219384dafb4d250eae65f3574" kindref="member">autoConnectPrimaryInputClusters</ref>(std::vector&lt;boost::shared_ptr&lt;Cluster&gt;<sp/>&gt;<sp/><sp/>list);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::vector&lt;boost::shared_ptr&lt;<sp/>Fibre<sp/>&gt;<sp/>&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a53f6a455e7cb553352dbef64d3a1ec04" kindref="member">autoConnectPrimaryOutputClusters</ref>(std::vector&lt;boost::shared_ptr&lt;Cluster&gt;<sp/>&gt;<sp/><sp/>list);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::vector&lt;boost::shared_ptr&lt;<sp/>state::PatternChannel<sp/>&gt;<sp/>&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a6f400ee92f49fed82ca9ef5b48cde285" kindref="member">getDisconnectedRealInputPatternChannels</ref>();</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::vector&lt;boost::shared_ptr&lt;<sp/>state::PatternChannel<sp/>&gt;<sp/>&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a5ce1e31c814ef83026c0dbda5ba04a24" kindref="member">getDisconnectedRealOutputPatternChannels</ref>();</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;Fibre&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a0aa4399de46de8ee753e3959fca2fb62" kindref="member" tooltip="Helper access function for specialised connection.">connectLoopbackCluster</ref>(boost::uuids::uuid<sp/>clusterUUID,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fibreWidth);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1ad60a89acf924c5aebae3a5f816f358db" kindref="member" tooltip="Load in the pattern channels from a filename of a pattern dataset.">loadChannels</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>ifstr);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ClusterMap<sp/>&amp;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a181e1f2aaa3b529b8609917d5b5315e0" kindref="member" tooltip="Get the clusters in this bundle.">getClusters</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1structures_1_1FibreMap" kindref="compound">FibreMap</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a8f112d3b34f84511781879217b15c6d2" kindref="member" tooltip="Get the mutable clusters in this bundle.">getFibres</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1structures_1_1FibreMap" kindref="compound">FibreMap</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a5c6496d00065462122a71c812fa7a4e8" kindref="member" tooltip="Get the input fibres of this bundle.">getInputFibres</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1structures_1_1FibreMap" kindref="compound">FibreMap</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1af8b848abb7ec12997b09c63c0c10650d" kindref="member" tooltip="Get the mutable input fibres of this bundle.">getMutableInputFibres</ref>();</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1structures_1_1FibreMap" kindref="compound">FibreMap</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a2c14a3f2cc96236bff6548e5103183de" kindref="member" tooltip="Get the output fibres of this bundle.">getOutputFibres</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1structures_1_1FibreMap" kindref="compound">FibreMap</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1af9fd12e753bab64750f5c32d5f17a554" kindref="member" tooltip="Get the mutable output fibres of this bundle.">getMutableOutputFibres</ref>();</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannelMap" kindref="compound">state::PatternChannelMap</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1ada0ae8374d27d9b59ca82b8075fbd401" kindref="member" tooltip="Get the real input pattern channels of this bundle.">getRealInputChannelsMap</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannelMap" kindref="compound">state::PatternChannelMap</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a893be908a14ecc2d07270273d3d127e2" kindref="member" tooltip="Get the real output pattern channels of this bundle.">getRealOutputChannelsMap</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannelMap" kindref="compound">state::PatternChannelMap</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a65bf0246390e7cb0e90caf4fb302fa41" kindref="member" tooltip="Get the actual input pattern channels of this bundle.">getActualInputChannelsMap</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannelMap" kindref="compound">state::PatternChannelMap</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a382242e3b29b92b25edc9162aa810ebe" kindref="member" tooltip="Get the real output pattern channels of this bundle.">getActualOutputChannelsMap</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;boost::uuids::uuid,<sp/>boost::uuids::uuid&gt;<sp/>&amp;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a2e31be3bab4a15e4e9ba6aeac48b91df" kindref="member" tooltip="Get the map of fibres to their associated pattern channels.">getRealFibrePatternChannelMap</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>;</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;boost::uuids::uuid,<sp/>boost::uuids::uuid&gt;<sp/>&amp;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a872de96a76f772182eda2abbb98a99cc" kindref="member">getActualFibrePatternChannelMap</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;utilities::Statistician&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a5bfac318b9a6f9f651fad0657b9b9196" kindref="member" tooltip="Get the Statistician.">getStatistician</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::shared_ptr&lt;utilities::Statistician&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1ae750ab1bd2b1a937f90d97e416aefced" kindref="member">getMutableStatistician</ref>();</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1aec88635d8c4fdc76b6c3c22b915ee459" kindref="member" tooltip="Get the last calculated energy of the bundle.">getEnergy</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a5927b1a21111e6b78c143280c49a9701" kindref="member" tooltip="Run a system structure check.">checkStructure</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a441eda1670224083d5efc20b3a6bb9ff" kindref="member" tooltip="Check the structure of Fibres.">checkFibreStructure</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a1c1b3a4fe6d32259753d69c8a9b0deaa" kindref="member" tooltip="Check the structure of Channels.">checkChannelStructure</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1abe63fcceae95f0ffb06db094076b42c5" kindref="member">enableDebug</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>b);</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a8e7f1752b8b0112adf8939921eff4e50" kindref="member">enableDebugClusters</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>b);</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a742597fd733573d8242966f89f8e6715" kindref="member">enableDebugFibres</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>b);</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::ostream&amp;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a1b2bdda71a78b4e89af23f21e7611ee4" kindref="member" tooltip="Print the bundle to stream.">print</ref>(std::ostream<sp/>&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Loggable_1a4d85401f6c81bc8ed94e49d66ae574c5" kindref="member" tooltip="Enum representing print detail.">common::Loggable::LoggingDepth</ref><sp/>depth<sp/>=<sp/><ref refid="classcryomesh_1_1common_1_1Loggable_1a4d85401f6c81bc8ed94e49d66ae574c5a51f5abcf5a53a8930a09b065fc64a44f" kindref="member">SUMMARY</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::ostream&amp;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1ad794a923f68c51c5c1ac4588586b6be7" kindref="member" tooltip="Print the channels to stream.">printChannels</ref>(std::ostream<sp/>&amp;<sp/>os)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::ostream<sp/>&amp;<sp/><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1ab7308eec882450980ebfbb7167a3538d" kindref="member">printFibreMaps</ref>(std::ostream<sp/>&amp;<sp/>os)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::ostream<sp/>&amp;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a6a6110f318167f4cc82ab6736e291628" kindref="member">printFibreMap</ref>(std::ostream<sp/>&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;boost::uuids::uuid,<sp/>boost::uuids::uuid&gt;<sp/>&amp;<sp/>fibre_map)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::ostream&amp;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a21e43a0b5ea3e93accc964e269c730bd" kindref="member" tooltip="To stream operator.">operator&lt;&lt;</ref>(std::ostream<sp/>&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle" kindref="compound" tooltip="A Bundle is the collection of clusters and fibres, it represents the system as a whole.">Bundle</ref><sp/>&amp;<sp/>obj);</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1abe52d8718eeb7bb6a17211d4dfbed440" kindref="member" tooltip="Get the next patterns from channels and apply them to their mapped fibres.">updatePrimaryInputFibres</ref>();</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a7a95265553776d6216799e143134a59f" kindref="member" tooltip="Get the patterns from primary output fibres and apply them to their mapped pattern channels...">updatePrimaryOutputFibres</ref>();</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a3a8a7cfb5d525ff59a52dd1a39909621" kindref="member" tooltip="Compare the output channels of primary output fibres to expected output channel patterns.">matchOutputChannelsSum</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a804c625c912657cebd3350c7c1b53c10" kindref="member" tooltip="Update the statistician if debugging is enabled.">updateStatistician</ref>();</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1ae6a553eaab4ddf2b6bbd6bdeca9361ad" kindref="member" tooltip="Set the energy of the bundle.">setEnergy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>d);</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ClusterMap<sp/>&amp;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a14990ba8cec7b9c18426ae8c2fdd0dcf" kindref="member">getMutableClusters</ref>()<sp/>;</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::ostream<sp/>&amp;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1af89da428bb056c8eea81a416783cf2ae" kindref="member" tooltip="Print out a uuid search.">printSearch</ref>(std::ostream<sp/>&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::uuids::uuid<sp/>&amp;<sp/>uuid,</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;boost::uuids::uuid,<sp/>boost::shared_ptr&lt;T&gt;<sp/>&gt;<sp/>&amp;<sp/>map)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"></highlight></codeline>
+<codeline lineno="357" refid="classcryomesh_1_1structures_1_1Bundle_1a35a36d3305706f597f4c586fcd9f74b7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ClusterMap<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a35a36d3305706f597f4c586fcd9f74b7" kindref="member">clusters</ref>;</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight></codeline>
+<codeline lineno="364" refid="classcryomesh_1_1structures_1_1Bundle_1a71b3308a867169b8e9af9ab71b8bdf98" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1structures_1_1FibreMap" kindref="compound">FibreMap</ref><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a71b3308a867169b8e9af9ab71b8bdf98" kindref="member">fibres</ref>;</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"></highlight></codeline>
+<codeline lineno="371" refid="classcryomesh_1_1structures_1_1Bundle_1ac9bd1c696001ef8acb7291a5f9e81c8b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannelMap" kindref="compound">state::PatternChannelMap</ref><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1ac9bd1c696001ef8acb7291a5f9e81c8b" kindref="member">realInputChannelsMap</ref>;</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight></codeline>
+<codeline lineno="378" refid="classcryomesh_1_1structures_1_1Bundle_1a4043d8bfeb8b066418029864f51d92de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannelMap" kindref="compound">state::PatternChannelMap</ref><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a4043d8bfeb8b066418029864f51d92de" kindref="member">realOutputChannelsMap</ref>;</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"></highlight></codeline>
+<codeline lineno="385" refid="classcryomesh_1_1structures_1_1Bundle_1ae20b2f9819708971357148dd024db00d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannelMap" kindref="compound">state::PatternChannelMap</ref><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1ae20b2f9819708971357148dd024db00d" kindref="member">actualInputChannelsMap</ref>;</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"></highlight></codeline>
+<codeline lineno="392" refid="classcryomesh_1_1structures_1_1Bundle_1ac67a6d7b29b37b8927c93350e8bcf6e5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannelMap" kindref="compound">state::PatternChannelMap</ref><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1ac67a6d7b29b37b8927c93350e8bcf6e5" kindref="member">actualOutputChannelsMap</ref>;</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"></highlight></codeline>
+<codeline lineno="399" refid="classcryomesh_1_1structures_1_1Bundle_1aa6a461295021bdfb4ef4cab0f136a2c1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1structures_1_1FibreMap" kindref="compound">FibreMap</ref><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1aa6a461295021bdfb4ef4cab0f136a2c1" kindref="member">inputFibres</ref>;</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"></highlight></codeline>
+<codeline lineno="406" refid="classcryomesh_1_1structures_1_1Bundle_1aa671193358b7aba173e45574def3d4c1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1structures_1_1FibreMap" kindref="compound">FibreMap</ref><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1aa671193358b7aba173e45574def3d4c1" kindref="member">outputFibres</ref>;</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"></highlight></codeline>
+<codeline lineno="411" refid="classcryomesh_1_1structures_1_1Bundle_1ad505cbda03b4e78399fd3a9568d79708" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::shared_ptr&lt;utilities::Statistician&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1ad505cbda03b4e78399fd3a9568d79708" kindref="member" tooltip="Statistics object to generate useful info on the bundle.">statistician</ref>;</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"></highlight></codeline>
+<codeline lineno="416" refid="classcryomesh_1_1structures_1_1Bundle_1aac5229c4c52e646767db2144ba745aa6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1aac5229c4c52e646767db2144ba745aa6" kindref="member" tooltip="Last energy calculation of the output channel matching.">energy</ref>;</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"></highlight></codeline>
+<codeline lineno="423" refid="classcryomesh_1_1structures_1_1Bundle_1adaf7fa91209de01b9d42ae2d8228c3cd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;boost::uuids::uuid,<sp/>boost::uuids::uuid&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1adaf7fa91209de01b9d42ae2d8228c3cd" kindref="member">realFibrePatternChannelMap</ref>;</highlight></codeline>
+<codeline lineno="424"><highlight class="normal"></highlight></codeline>
+<codeline lineno="430" refid="classcryomesh_1_1structures_1_1Bundle_1a0f3e20833ce850f97ae450d27a4607dd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;boost::uuids::uuid,<sp/>boost::uuids::uuid&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a0f3e20833ce850f97ae450d27a4607dd" kindref="member">actualFibrePatternChannelMap</ref>;</highlight></codeline>
+<codeline lineno="431"><highlight class="normal"></highlight></codeline>
+<codeline lineno="432" refid="classcryomesh_1_1structures_1_1Bundle_1abbd8555380ffa4c33a235636837bafaa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1structures_1_1Cluster_1a69c420b79675c6ffc9a0df8381ca9497" kindref="member">Cluster::EnergyFractionMethod</ref><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1abbd8555380ffa4c33a235636837bafaa" kindref="member">energyFractionMethod</ref>;</highlight></codeline>
+<codeline lineno="433"><highlight class="normal"></highlight></codeline>
+<codeline lineno="434"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;state::PatternChannel&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a51eb35ecb02094016f0f3a74fd07f6e9" kindref="member">getRealPrimaryInputChannelByFibre</ref>(</highlight></codeline>
+<codeline lineno="435"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::uuids::uuid<sp/>fibre_uuid)</highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="436"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;state::PatternChannel&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a00eb0f18cc3331a4e6d0ed4698e92cb5" kindref="member">getRealPrimaryOutputChannelByFibre</ref>(</highlight></codeline>
+<codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::uuids::uuid<sp/>fibre_uuid)</highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;state::PatternChannel&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a101bda3e32c34cf8e0cff4526446af02" kindref="member">getActualPrimaryInputChannelByFibre</ref>(</highlight></codeline>
+<codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::uuids::uuid<sp/>fibre_uuid)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;state::PatternChannel&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a13dcea26d3379199f9e993caa5e132d7" kindref="member">getActualPrimaryOutputChannelByFibre</ref>(</highlight></codeline>
+<codeline lineno="441"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::uuids::uuid<sp/>fibre_uuid)</highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="442"><highlight class="normal"></highlight></codeline>
+<codeline lineno="453"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;Fibre&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1ae1259ecf25a6b140cad735defd9069f9" kindref="member" tooltip="Helper method to take a uuid and find its correspondingly mapped object Take an input PatternChannel ...">getPrimaryInputFibreByRealChannel</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::uuids::uuid<sp/>pattern_channel_uuid)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"></highlight></codeline>
+<codeline lineno="465"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;Fibre&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a7ba3f747f8e164f0c0984fdb14922e7a" kindref="member" tooltip="Helper method to take a uuid and find its correspondingly mapped object Take an output PatternChannel...">getPrimaryOutputFibreByRealChannel</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::uuids::uuid<sp/>pattern_channel_uuid)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="466"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;Fibre&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1ad80f4bbb8bdc379e156282bf0b17fbc3" kindref="member">getPrimaryInputFibreByActualChannel</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::uuids::uuid<sp/>pattern_channel_uuid)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;Fibre&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1ae6ccd53821a90466d96ebcbf171549a2" kindref="member">getPrimaryOutputFibreByActualChannel</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::uuids::uuid<sp/>pattern_channel_uuid)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;Fibre&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1aecdb1fc4017f4e4aa954b4158e99c86f" kindref="member" tooltip="Helper method to take a uuid and find its correspondingly mapped object Take an channel uuid and find...">getPrimaryFibreByChannel</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::uuids::uuid<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1structures_1_1FibreMap" kindref="compound">FibreMap</ref><sp/>&amp;<sp/>map,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;boost::uuids::uuid,<sp/>boost::uuids::uuid&gt;<sp/>&amp;<sp/>fibrepattern_channelmap)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="481"><highlight class="normal"></highlight></codeline>
+<codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;state::PatternChannel&gt;<sp/><ref refid="classcryomesh_1_1structures_1_1Bundle_1a237b9698b966c6498fb723f685292599" kindref="member" tooltip="Helper method to take a uuid and find its correspondingly mapped object Take an Fibre uuid and find t...">getPrimaryChannelByFibre</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::uuids::uuid<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannelMap" kindref="compound">state::PatternChannelMap</ref><sp/>&amp;<sp/>map,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;boost::uuids::uuid,<sp/>boost::uuids::uuid&gt;<sp/>&amp;<sp/>fibrepattern_channelmap)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>;</highlight></codeline>
+<codeline lineno="496"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"></highlight></codeline>
+<codeline lineno="498"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="499"><highlight class="normal"></highlight></codeline>
+<codeline lineno="500"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="501"><highlight class="normal"></highlight></codeline>
+<codeline lineno="502"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>BUNDLE_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="classcryomesh_1_1components_1_1ActivityTimer" kind="class" prot="public">
+    <compoundname>cryomesh::components::ActivityTimer</compoundname>
+    <derivedcompoundref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" prot="public" virt="non-virtual">cryomesh::components::ActivityTimerDistance</derivedcompoundref>
+    <includes refid="ActivityTimer_8h" local="no">ActivityTimer.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ActivityTimer_1abf1241a780f7c6fa5d626b4585afc017" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::components::ActivityTimer::ActivityTimer</definition>
+        <argsstring>()</argsstring>
+        <name>ActivityTimer</name>
+        <briefdescription>
+<para>Default constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimer.h" line="25" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimer.h" bodystart="25" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ActivityTimer_1a8383004d633ae75433d3961bdec431cf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual cryomesh::components::ActivityTimer::~ActivityTimer</definition>
+        <argsstring>()</argsstring>
+        <name>~ActivityTimer</name>
+        <briefdescription>
+<para>Default destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimer.h" line="31" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimer.h" bodystart="31" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ActivityTimer_1a8842b0b6e73ddf1d1809b79b7b239baf" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void cryomesh::components::ActivityTimer::reset</definition>
+        <argsstring>()=0</argsstring>
+        <name>reset</name>
+        <reimplementedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1aca048029f8ff311c7e215bb2d7689c7b">reset</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimer.h" line="34"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classcryomesh_1_1components_1_1ActivityTimer_1ac35779cd02eec3662a6cd9d75e1572cd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const ActivityTimer &amp;obj)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1components_1_1ActivityTimer" kindref="compound">ActivityTimer</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>To stream operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::ostream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp; os The output stream </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1components_1_1ActivityTimer" kindref="compound">ActivityTimer</ref> &amp; obj The object to stream</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::ostream &amp; The output stream </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimer.h" line="47" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimer.h" bodystart="47" bodyend="50"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ActivityTimer_1a1a4fd82c20fdc2b17ebe4582222ab8a3" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>virtual std::ostream&amp; cryomesh::components::ActivityTimer::print</definition>
+        <argsstring>(std::ostream &amp;os) const =0</argsstring>
+        <name>print</name>
+        <reimplementedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a6e109b8f4ddcf6d4e24f0347d4060f78">print</reimplementedby>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimer.h" line="53"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Simple interface class for activity timers. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>cryomesh::components::ActivityTimer</label>
+        <link refid="classcryomesh_1_1components_1_1ActivityTimer"/>
+      </node>
+      <node id="3">
+        <label>cryomesh::components::ActivityTimerDistance</label>
+        <link refid="classcryomesh_1_1components_1_1ActivityTimerDistance"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimer.h" line="20" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimer.h" bodystart="20" bodyend="54"/>
+    <listofallmembers>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimer_1abf1241a780f7c6fa5d626b4585afc017" prot="public" virt="non-virtual"><scope>cryomesh::components::ActivityTimer</scope><name>ActivityTimer</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimer_1ac35779cd02eec3662a6cd9d75e1572cd" prot="public" virt="non-virtual"><scope>cryomesh::components::ActivityTimer</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimer_1a1a4fd82c20fdc2b17ebe4582222ab8a3" prot="protected" virt="pure-virtual"><scope>cryomesh::components::ActivityTimer</scope><name>print</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimer_1a8842b0b6e73ddf1d1809b79b7b239baf" prot="public" virt="pure-virtual"><scope>cryomesh::components::ActivityTimer</scope><name>reset</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimer_1a8383004d633ae75433d3961bdec431cf" prot="public" virt="virtual"><scope>cryomesh::components::ActivityTimer</scope><name>~ActivityTimer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

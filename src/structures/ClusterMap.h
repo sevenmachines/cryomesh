@@ -5,7 +5,7 @@
  *      Author: niall
  */
 
-//#define CLUSTERMAP_DEBUG
+#define CLUSTERMAP_DEBUG
 #ifndef CLUSTERMAP_H_
 #define CLUSTERMAP_H_
 
@@ -22,7 +22,6 @@ public:
 	ClusterMap() :
 			totalNodeCount(0) {
 	}
-
 
 	virtual ~ClusterMap() {
 	}
@@ -63,9 +62,10 @@ public:
 
 				if (it_all_clusters->second->getEnergyFractionMethod() == Cluster::ENERGY_FRACTION_BY_NODE_COUNT) {
 					energy_fraction = this->getClusterEnergyByNodeCount(it_all_clusters->second, total_energy);
-				} else if (it_all_clusters->second->getEnergyFractionMethod() == Cluster::ENERGY_FRACTION_BY_CLUSTER_COUNT) {
+				} else if (it_all_clusters->second->getEnergyFractionMethod()
+						== Cluster::ENERGY_FRACTION_BY_CLUSTER_COUNT) {
 					energy_fraction = this->getClusterEnergyByClusterCount(total_energy);
-				} else if (it_all_clusters->second->getEnergyFractionMethod() != Cluster::ENERGY_FRACTION_BY_CLUSTER_COUNT) {
+				} else if (it_all_clusters->second->getEnergyFractionMethod() == Cluster::ENERGY_FRACTION_NULL) {
 					std::cout << "updateClusterEnergies: " << "ERROR: No energy method found" << std::endl;
 					assert(false);
 				}
@@ -82,6 +82,46 @@ public:
 			assert(false);
 		}
 #endif
+	}
+
+	virtual int getTotalNodeCount() const {
+		int total_node_count = 0;
+		// forall in objects
+		{
+			std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> >::const_iterator it_objects = objects.begin();
+			const std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> >::const_iterator it_objects_end =
+					objects.end();
+			while (it_objects != it_objects_end) {
+				int current_node_count = it_objects->second->getNodeMap().getSize();
+				total_node_count += current_node_count;
+				++it_objects;
+			}
+		}
+		return total_node_count;
+	}
+	void updataEnergyFractionMethods(Cluster::EnergyFractionMethod method) {
+		std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> >::const_iterator it_all_clusters =
+				this->objects.begin();
+		const std::map<boost::uuids::uuid, boost::shared_ptr<Cluster> >::const_iterator it_all_clusters_end =
+				this->objects.end();
+		while (it_all_clusters != it_all_clusters_end) {
+
+			if (method == Cluster::ENERGY_FRACTION_BY_NODE_COUNT) {
+				totalNodeCount = this->getTotalNodeCount();
+
+				double max_energy_fraction = static_cast<double>(it_all_clusters->second->getNodeMap().getSize())
+						/ static_cast<double>(this->totalNodeCount);
+				it_all_clusters->second->setEnergyFractionMethod(method, max_energy_fraction);
+
+			} else if (method == Cluster::ENERGY_FRACTION_BY_CLUSTER_COUNT) {
+				double max_energy_fraction = 1.0 / static_cast<double>(this->getSize());
+				it_all_clusters->second->setEnergyFractionMethod(method, max_energy_fraction);
+			} else if (method == Cluster::ENERGY_FRACTION_NULL) {
+				std::cout << "updateClusterEnergies: " << "ERROR: No energy method found" << std::endl;
+				assert(false);
+			}
+			++it_all_clusters;
+		}
 	}
 
 	/**

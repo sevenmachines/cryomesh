@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="Statistician_8h" kind="file">
+    <compoundname>Statistician.h</compoundname>
+    <includes local="no">iostream</includes>
+    <includes local="no">map</includes>
+    <includes local="no">string</includes>
+    <includedby refid="Bundle_8h" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h</includedby>
+    <includedby refid="Statistician_8cpp" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp</includedby>
+    <incdepgraph>
+      <node id="2762">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h</label>
+        <link refid="Statistician.h"/>
+        <childnode refid="2763" relation="include">
+        </childnode>
+        <childnode refid="2764" relation="include">
+        </childnode>
+        <childnode refid="2765" relation="include">
+        </childnode>
+      </node>
+      <node id="2765">
+        <label>string</label>
+      </node>
+      <node id="2764">
+        <label>map</label>
+      </node>
+      <node id="2763">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2768">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h</label>
+        <link refid="Creator_8h"/>
+        <childnode refid="2769" relation="include">
+        </childnode>
+        <childnode refid="2770" relation="include">
+        </childnode>
+      </node>
+      <node id="2766">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h</label>
+        <link refid="Statistician.h"/>
+        <childnode refid="2767" relation="include">
+        </childnode>
+        <childnode refid="2773" relation="include">
+        </childnode>
+      </node>
+      <node id="2773">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp</label>
+        <link refid="Statistician_8cpp"/>
+      </node>
+      <node id="2767">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h</label>
+        <link refid="Bundle_8h"/>
+        <childnode refid="2768" relation="include">
+        </childnode>
+        <childnode refid="2772" relation="include">
+        </childnode>
+        <childnode refid="2773" relation="include">
+        </childnode>
+      </node>
+      <node id="2772">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp</label>
+        <link refid="Bundle_8cpp"/>
+      </node>
+      <node id="2771">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.cpp</label>
+        <link refid="CryoManager_8cpp"/>
+      </node>
+      <node id="2770">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.h</label>
+        <link refid="CryoManager_8h"/>
+        <childnode refid="2771" relation="include">
+        </childnode>
+      </node>
+      <node id="2769">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp</label>
+        <link refid="Creator_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classcryomesh_1_1utilities_1_1Statistician" prot="public">cryomesh::utilities::Statistician</innerclass>
+    <innernamespace refid="namespacecryomesh">cryomesh</innernamespace>
+    <innernamespace refid="namespacecryomesh_1_1structures">cryomesh::structures</innernamespace>
+    <innernamespace refid="namespacecryomesh_1_1utilities">cryomesh::utilities</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Statistician.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>Created<sp/>on:<sp/>6<sp/>Apr<sp/>2011</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Author:<sp/>&quot;SevenMachines<sp/>&lt;SevenMachines@yahoo.co.uk&gt;&quot;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>STATISTICIAN_H_</highlight></codeline>
+<codeline lineno="9"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>STATISTICIAN_H_</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">cryomesh<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Forward<sp/>declare<sp/>Bundle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">structures<sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Bundle;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">utilities<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="classcryomesh_1_1utilities_1_1Statistician" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcryomesh_1_1utilities_1_1Statistician" kindref="compound" tooltip="Class to draw together lots of useful statistics and monitoring data for a Bundle and its components...">Statistician</ref><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1aa382bfde65efb16fa02b9c9d7d39a1b7" kindref="member" tooltip="Contruct a statistician with a build in Bundle reference.">Statistician</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle" kindref="compound" tooltip="A Bundle is the collection of clusters and fibres, it represents the system as a whole.">structures::Bundle</ref><sp/>&amp;<sp/>bun);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1afbba60713cc3a96c8659d155d6f9c853" kindref="member" tooltip="Default destructor.">~Statistician</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1a3b6005b898ef77ca2fa2724f069b2c25" kindref="member">update</ref>();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle" kindref="compound" tooltip="A Bundle is the collection of clusters and fibres, it represents the system as a whole.">structures::Bundle</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1a5ce2aab91e03121c69aa23209fbe9c97" kindref="member">getBundle</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1a64ee08e16f1f42fc518ce2d1255f353e" kindref="member">getClusterCount</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1a55bf105c419acad376e9aafeb135be71" kindref="member">getInputFibresCount</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1aac6a1aeec3987386f175cc771e3e7a3a" kindref="member">getOutputFibresCount</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1a5545756c254e28b165c806ddb8eb6780" kindref="member">getNormalFibresCount</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1a49864c3951b6aa8e1a263449bd0a0daf" kindref="member">getInputChannelsCount</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1ae1aed7da3340cbd51d31318f92794f4d" kindref="member">getOutputChannelsCount</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1ab0d4863ff8c1962e56dfbab4eabfb6cf" kindref="member">getBundleUUID</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>int&gt;<sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1ab38d0c6cfb206e6c331c6af95388faab" kindref="member">getTriggeredNodesPerCluster</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>int&gt;<sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1a9e6c8527426ae11edbedbc21b4215007" kindref="member">getActiveNodesPerCluster</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1a4a60fac1c7060a891feae84096109315" kindref="member">getTriggeredNodesTotal</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1af743b58d7a21f7c0056252d15c71016d" kindref="member">getActiveNodesTotal</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::ostream&amp;<sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1a5898d288b67c44776f0d0e194601c628" kindref="member" tooltip="To stream operator.">operator&lt;&lt;</ref>(std::ostream<sp/>&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician" kindref="compound" tooltip="Class to draw together lots of useful statistics and monitoring data for a Bundle and its components...">Statistician</ref><sp/>&amp;<sp/>obj);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="74" refid="classcryomesh_1_1utilities_1_1Statistician_1a478ec1e4a9b68063f1422e97d8cbea99" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1structures_1_1Bundle" kindref="compound" tooltip="A Bundle is the collection of clusters and fibres, it represents the system as a whole.">structures::Bundle</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1a478ec1e4a9b68063f1422e97d8cbea99" kindref="member">bundle</ref>;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="classcryomesh_1_1utilities_1_1Statistician_1af6b5d81fc1b6821e7fff8d4ccbcf15bb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1af6b5d81fc1b6821e7fff8d4ccbcf15bb" kindref="member">clusterCount</ref>;</highlight></codeline>
+<codeline lineno="77" refid="classcryomesh_1_1utilities_1_1Statistician_1a12780e2d450e3013d6a8a306a4b02bd7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1a12780e2d450e3013d6a8a306a4b02bd7" kindref="member">inputFibresCount</ref>;</highlight></codeline>
+<codeline lineno="78" refid="classcryomesh_1_1utilities_1_1Statistician_1a90aeaf6f65a5cad0b3936731378ea07a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1a90aeaf6f65a5cad0b3936731378ea07a" kindref="member">outputFibresCount</ref>;</highlight></codeline>
+<codeline lineno="79" refid="classcryomesh_1_1utilities_1_1Statistician_1a1540b6a7e491f9241f31fbcfd62bdd74" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1a1540b6a7e491f9241f31fbcfd62bdd74" kindref="member">normalFibresCount</ref>;</highlight></codeline>
+<codeline lineno="80" refid="classcryomesh_1_1utilities_1_1Statistician_1a734a2d7317a2d1a08dfa64a6f5a7da8c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1a734a2d7317a2d1a08dfa64a6f5a7da8c" kindref="member">inputChannelsCount</ref>;</highlight></codeline>
+<codeline lineno="81" refid="classcryomesh_1_1utilities_1_1Statistician_1aa13c9110a9a210b7656ec815166f20c2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1aa13c9110a9a210b7656ec815166f20c2" kindref="member">outputChannelsCount</ref>;</highlight></codeline>
+<codeline lineno="82" refid="classcryomesh_1_1utilities_1_1Statistician_1af2c7a19dfd7c305b1767a3abec4cb75e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1af2c7a19dfd7c305b1767a3abec4cb75e" kindref="member">bundleuuid</ref>;</highlight></codeline>
+<codeline lineno="83" refid="classcryomesh_1_1utilities_1_1Statistician_1a4395675ddbfb598566faca1096bfe2da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1a4395675ddbfb598566faca1096bfe2da" kindref="member">nodesTotal</ref>;</highlight></codeline>
+<codeline lineno="84" refid="classcryomesh_1_1utilities_1_1Statistician_1a5a38000033e2405dcfac5ef48d2a6820" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1a5a38000033e2405dcfac5ef48d2a6820" kindref="member">nodesTriggered</ref>;</highlight></codeline>
+<codeline lineno="85" refid="classcryomesh_1_1utilities_1_1Statistician_1aab51af29476bb894d8f145b8ce3d80ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1Statistician_1aab51af29476bb894d8f145b8ce3d80ce" kindref="member">nodesActive</ref>;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight><highlight class="comment">//NAMESPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight><highlight class="comment">//NAMESPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>STATISTICIAN_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h"/>
+  </compounddef>
+</doxygen>

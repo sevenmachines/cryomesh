@@ -1,16 +1,16 @@
-.TH "cryomesh::common::Connector" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::common::Connector< U, T >" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-cryomesh::common::Connector \- 
+cryomesh::common::Connector< U, T > \- 
 .PP
-\fBConnector\fP is a template to add connectable functionality between two classes.  
+\fBConnector\fP is a template to add connectable functionality between two classes\&.  
 
 .SH SYNOPSIS
 .br
 .PP
 .PP
-\fC#include <Connector.h>\fP
+\fC#include <Connector\&.h>\fP
 .SS "Public Member Functions"
 
 .in +1c
@@ -23,99 +23,121 @@ cryomesh::common::Connector \-
 .ti -1c
 .RI "bool \fBconnectInput\fP (const boost::shared_ptr< T > obj)"
 .br
-.RI "\fIConnect a unit to this one as an input. \fP"
+.RI "\fIConnect a unit to this one as an input\&. \fP"
 .ti -1c
 .RI "bool \fBconnectInputs\fP (const std::vector< boost::shared_ptr< T > > &list)"
 .br
-.RI "\fIConnect a list of units to this one as inputs. \fP"
+.RI "\fIConnect a list of units to this one as inputs\&. \fP"
 .ti -1c
 .RI "bool \fBconnectInputs\fP (const std::initializer_list< boost::shared_ptr< T > > &list)"
 .br
-.RI "\fIConnect an initialiser list of units to this one as inputs. \fP"
+.RI "\fIConnect an initialiser list of units to this one as inputs\&. \fP"
 .ti -1c
 .RI "bool \fBconnectOutput\fP (const boost::shared_ptr< T > &obj)"
 .br
-.RI "\fIConnect a unit to this one as an output. \fP"
+.RI "\fIConnect a unit to this one as an output\&. \fP"
 .ti -1c
 .RI "bool \fBconnectOutputs\fP (const std::vector< boost::shared_ptr< T > > &list)"
 .br
-.RI "\fIConnect a list of units to this one as outputs. \fP"
+.RI "\fIConnect a list of units to this one as outputs\&. \fP"
 .ti -1c
 .RI "bool \fBconnectOutputs\fP (const std::initializer_list< boost::shared_ptr< T > > &list)"
 .br
-.RI "\fIConnect an initialiser list of units to this one as outputs. \fP"
+.RI "\fIConnect an initialiser list of units to this one as outputs\&. \fP"
 .ti -1c
 .RI "bool \fBdisconnectInput\fP (const boost::shared_ptr< T > &obj)"
 .br
-.RI "\fIDisconnect an input to this unit. \fP"
+.RI "\fIDisconnect an input to this unit\&. \fP"
 .ti -1c
 .RI "bool \fBdisconnectInput\fP (const boost::uuids::uuid &id)"
 .br
-.RI "\fIDisconnect an input to this unit. \fP"
+.RI "\fIDisconnect an input to this unit\&. \fP"
 .ti -1c
 .RI "bool \fBdisconnectInputs\fP (const std::vector< boost::shared_ptr< T > > &list)"
 .br
-.RI "\fIDisconnect a list of input units from this one. \fP"
+.RI "\fIDisconnect a list of input units from this one\&. \fP"
 .ti -1c
 .RI "bool \fBdisconnectInputs\fP (const std::initializer_list< boost::shared_ptr< T > > &list)"
 .br
-.RI "\fIDisconnect an initialiser list of input units from this one. \fP"
+.RI "\fIDisconnect an initialiser list of input units from this one\&. \fP"
 .ti -1c
 .RI "bool \fBdisconnectInputs\fP (const std::vector< boost::uuids::uuid > &list)"
 .br
-.RI "\fIDisconnect a list of input units from this one. \fP"
+.RI "\fIDisconnect a list of input units from this one\&. \fP"
 .ti -1c
 .RI "bool \fBdisconnectInputs\fP (const std::initializer_list< boost::uuids::uuid > &list)"
 .br
-.RI "\fIDisconnect an initialiser list of input units from this one. \fP"
+.RI "\fIDisconnect an initialiser list of input units from this one\&. \fP"
 .ti -1c
 .RI "bool \fBdisconnectAllInputs\fP ()"
 .br
-.RI "\fIDisconnect all input units from this one. \fP"
+.RI "\fIDisconnect all input units from this one\&. \fP"
 .ti -1c
 .RI "bool \fBdisconnectOutput\fP (const boost::shared_ptr< T > &obj)"
 .br
-.RI "\fIDisconnect an output to this unit. \fP"
+.RI "\fIDisconnect an output to this unit\&. \fP"
 .ti -1c
 .RI "bool \fBdisconnectOutput\fP (const boost::uuids::uuid &id)"
 .br
-.RI "\fIDisconnect an output to this unit. \fP"
+.RI "\fIDisconnect an output to this unit\&. \fP"
 .ti -1c
 .RI "bool \fBdisconnectOutputs\fP (const std::vector< boost::shared_ptr< T > > &list)"
 .br
-.RI "\fIDisconnect a list of Output units from this one. \fP"
+.RI "\fIDisconnect a list of Output units from this one\&. \fP"
 .ti -1c
 .RI "bool \fBdisconnectOutputs\fP (const std::initializer_list< boost::shared_ptr< T > > &list)"
 .br
-.RI "\fIDisconnect an initialiser list of Output units from this one. \fP"
+.RI "\fIDisconnect an initialiser list of Output units from this one\&. \fP"
 .ti -1c
 .RI "bool \fBdisconnectOutputs\fP (const std::vector< boost::uuids::uuid > &list)"
 .br
-.RI "\fIDisconnect a uuid list of Output units from this one. \fP"
+.RI "\fIDisconnect a uuid list of Output units from this one\&. \fP"
 .ti -1c
 .RI "bool \fBdisconnectOutputs\fP (const std::initializer_list< boost::uuids::uuid > &list)"
 .br
-.RI "\fIDisconnect an uuid initiaialiser list of Output units from this one. \fP"
+.RI "\fIDisconnect an uuid initiaialiser list of Output units from this one\&. \fP"
 .ti -1c
 .RI "bool \fBdisconnectAllOutputs\fP ()"
 .br
-.RI "\fIDisconnect all Output units from this one. \fP"
+.RI "\fIDisconnect all Output units from this one\&. \fP"
 .ti -1c
-.RI "const std::map< boost::uuids::uuid, boost::shared_ptr< T > > & \fBgetInputs\fP () const "
+.RI "const std::map
 .br
-.RI "\fIGet all inputs. \fP"
+< boost::uuids::uuid, 
+.br
+boost::shared_ptr< T > > & \fBgetInputs\fP () const "
+.br
+.RI "\fIGet all inputs\&. \fP"
 .ti -1c
-.RI "std::map< boost::uuids::uuid, boost::shared_ptr< T > > & \fBgetMutableInputs\fP ()"
+.RI "const std::list
 .br
-.RI "\fIGet all inputs as mutable object. \fP"
+< boost::uuids::uuid > \fBgetInputsUUID\fP () const "
+.br
 .ti -1c
-.RI "const std::map< boost::uuids::uuid, boost::shared_ptr< T > > & \fBgetOutputs\fP () const "
+.RI "const std::list
 .br
-.RI "\fIGet all outputs. \fP"
+< boost::uuids::uuid > \fBgetOutputsUUID\fP () const "
+.br
 .ti -1c
-.RI "std::map< boost::uuids::uuid, boost::shared_ptr< T > > & \fBgetMutableOutputs\fP ()"
+.RI "std::map< boost::uuids::uuid, 
 .br
-.RI "\fIGet all outputs as mutable object. \fP"
+boost::shared_ptr< T > > & \fBgetMutableInputs\fP ()"
+.br
+.RI "\fIGet all inputs as mutable object\&. \fP"
+.ti -1c
+.RI "const std::map
+.br
+< boost::uuids::uuid, 
+.br
+boost::shared_ptr< T > > & \fBgetOutputs\fP () const "
+.br
+.RI "\fIGet all outputs\&. \fP"
+.ti -1c
+.RI "std::map< boost::uuids::uuid, 
+.br
+boost::shared_ptr< T > > & \fBgetMutableOutputs\fP ()"
+.br
+.RI "\fIGet all outputs as mutable object\&. \fP"
 .in -1c
 .SS "Protected Member Functions"
 
@@ -123,24 +145,28 @@ cryomesh::common::Connector \-
 .ti -1c
 .RI "boost::shared_ptr< T > \fBconnect\fP (const boost::shared_ptr< T > obj, std::map< boost::uuids::uuid, boost::shared_ptr< T > > &objs, unsigned int max_connections)"
 .br
-.RI "\fIConnect up an object using the supplied map. \fP"
+.RI "\fIConnect up an object using the supplied map\&. \fP"
 .ti -1c
 .RI "boost::shared_ptr< T > \fBdisconnect\fP (const boost::shared_ptr< T > obj, std::map< boost::uuids::uuid, boost::shared_ptr< T > > &objs)"
 .br
-.RI "\fIDisconnect an object using the supplied map. \fP"
+.RI "\fIDisconnect an object using the supplied map\&. \fP"
 .ti -1c
 .RI "boost::shared_ptr< T > \fBdisconnect\fP (const boost::uuids::uuid &id, std::map< boost::uuids::uuid, boost::shared_ptr< T > > &objs)"
 .br
-.RI "\fIDisconnect an object using the supplied map. \fP"
+.RI "\fIDisconnect an object using the supplied map\&. \fP"
 .in -1c
 .SS "Protected Attributes"
 
 .in +1c
 .ti -1c
-.RI "std::map< boost::uuids::uuid, boost::shared_ptr< T > > \fBminputs\fP"
+.RI "std::map< boost::uuids::uuid, 
+.br
+boost::shared_ptr< T > > \fBminputs\fP"
 .br
 .ti -1c
-.RI "std::map< boost::uuids::uuid, boost::shared_ptr< T > > \fBmoutputs\fP"
+.RI "std::map< boost::uuids::uuid, 
+.br
+boost::shared_ptr< T > > \fBmoutputs\fP"
 .br
 .ti -1c
 .RI "unsigned int \fBmaxInputs\fP"
@@ -155,30 +181,30 @@ cryomesh::common::Connector \-
 .ti -1c
 .RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBConnector\fP< U, T > &obj)"
 .br
-.RI "\fITo stream operator. \fP"
+.RI "\fITo stream operator\&. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
 
-.SS "template<class U, class T> class cryomesh::common::Connector< U, T >"
-\fBConnector\fP is a template to add connectable functionality between two classes. 
+.SS "template<class U, class T>class cryomesh::common::Connector< U, T >"
+\fBConnector\fP is a template to add connectable functionality between two classes\&. 
 
 Represents a template to add connectable funtionality between class U as the central connectable and class T as those objects it can be connected to 
 .PP
-Definition at line 30 of file Connector.h.
+Definition at line 33 of file Connector\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "template<class U, class T> \fBcryomesh::common::Connector\fP< U, T >::\fBConnector\fP (const unsigned intmax_inputs = \fC0\fP, const unsigned intmax_outputs = \fC0\fP)\fC [inline]\fP"
 .PP
-Definition at line 32 of file Connector.h.
+Definition at line 35 of file Connector\&.h\&.
 .SS "template<class U, class T> virtual \fBcryomesh::common::Connector\fP< U, T >::~\fBConnector\fP ()\fC [inline, virtual]\fP"
 .PP
-Definition at line 36 of file Connector.h.
+Definition at line 39 of file Connector\&.h\&.
 .SH "Member Function Documentation"
 .PP 
-.SS "template<class U, class T> boost::shared_ptr<T> \fBcryomesh::common::Connector\fP< U, T >::connect (const boost::shared_ptr< T >obj, std::map< boost::uuids::uuid, boost::shared_ptr< T > > &objs, unsigned intmax_connections)\fC [inline, protected]\fP"
+.SS "template<class U, class T> boost::shared_ptr<T> \fBcryomesh::common::Connector\fP< U, T >::\fBconnect\fP (const boost::shared_ptr< T >obj, std::map< boost::uuids::uuid, boost::shared_ptr< T > > &objs, unsigned intmax_connections)\fC [inline, protected]\fP"
 .PP
-Connect up an object using the supplied map. \fBParameters:\fP
+Connect up an object using the supplied map\&. \fBParameters:\fP
 .RS 4
 \fIboost::shared_ptr<T>\fP obj \fBPointer\fP to the object that is to be connected 
 .br
@@ -194,12 +220,12 @@ Connect up an object using the supplied map. \fBParameters:\fP
 .PP
 
 .PP
-Definition at line 621 of file Connector.h.
+Definition at line 655 of file Connector\&.h\&.
 .PP
-Referenced by cryomesh::common::Connector< Fibre, Cluster >::connectInput(), and cryomesh::common::Connector< Fibre, Cluster >::connectOutput().
-.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::connectInput (const boost::shared_ptr< T >obj)\fC [inline]\fP"
+Referenced by cryomesh::common::Connector< Fibre, Cluster >::connectInput(), and cryomesh::common::Connector< Fibre, Cluster >::connectOutput()\&.
+.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::\fBconnectInput\fP (const boost::shared_ptr< T >obj)\fC [inline]\fP"
 .PP
-Connect a unit to this one as an input. \fBParameters:\fP
+Connect a unit to this one as an input\&. \fBParameters:\fP
 .RS 4
 \fIboost::shared_ptr<T>\fP obj \fBPointer\fP to the object to be connected as input
 .RE
@@ -211,12 +237,12 @@ true if connection succeeds, false otherwise
 .PP
 
 .PP
-Definition at line 50 of file Connector.h.
+Definition at line 53 of file Connector\&.h\&.
 .PP
-Referenced by cryomesh::structures::Fibre::connectAllConnections(), and cryomesh::common::Connector< Fibre, Cluster >::connectInputs().
-.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::connectInputs (const std::vector< boost::shared_ptr< T > > &list)\fC [inline]\fP"
+Referenced by cryomesh::structures::Fibre::connectAllConnections(), and cryomesh::common::Connector< Fibre, Cluster >::connectInputs()\&.
+.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::\fBconnectInputs\fP (const std::vector< boost::shared_ptr< T > > &list)\fC [inline]\fP"
 .PP
-Connect a list of units to this one as inputs. \fBParameters:\fP
+Connect a list of units to this one as inputs\&. \fBParameters:\fP
 .RS 4
 \fIstd::vector<boost::shared_ptr<T>\fP > list List of pointers to objects to be connected as inputs
 .RE
@@ -228,10 +254,10 @@ true if all connections succeed, false otherwise
 .PP
 
 .PP
-Definition at line 70 of file Connector.h.
-.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::connectInputs (const std::initializer_list< boost::shared_ptr< T > > &list)\fC [inline]\fP"
+Definition at line 73 of file Connector\&.h\&.
+.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::\fBconnectInputs\fP (const std::initializer_list< boost::shared_ptr< T > > &list)\fC [inline]\fP"
 .PP
-Connect an initialiser list of units to this one as inputs. \fBParameters:\fP
+Connect an initialiser list of units to this one as inputs\&. \fBParameters:\fP
 .RS 4
 \fIstd::initializer_list<boost::shared_ptr<\fP T > > list Initialiser list of pointers to objects to be connected as input
 .RE
@@ -243,10 +269,10 @@ true if all connections succeed, false otherwise
 .PP
 
 .PP
-Definition at line 94 of file Connector.h.
-.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::connectOutput (const boost::shared_ptr< T > &obj)\fC [inline]\fP"
+Definition at line 97 of file Connector\&.h\&.
+.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::\fBconnectOutput\fP (const boost::shared_ptr< T > &obj)\fC [inline]\fP"
 .PP
-Connect a unit to this one as an output. \fBParameters:\fP
+Connect a unit to this one as an output\&. \fBParameters:\fP
 .RS 4
 \fIboost::shared_ptr<T>\fP obj \fBPointer\fP to the object to be connected as output
 .RE
@@ -258,12 +284,12 @@ true if connection succeeds, false otherwise
 .PP
 
 .PP
-Definition at line 119 of file Connector.h.
+Definition at line 122 of file Connector\&.h\&.
 .PP
-Referenced by cryomesh::structures::Fibre::connectAllConnections(), and cryomesh::common::Connector< Fibre, Cluster >::connectOutputs().
-.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::connectOutputs (const std::vector< boost::shared_ptr< T > > &list)\fC [inline]\fP"
+Referenced by cryomesh::structures::Fibre::connectAllConnections(), and cryomesh::common::Connector< Fibre, Cluster >::connectOutputs()\&.
+.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::\fBconnectOutputs\fP (const std::vector< boost::shared_ptr< T > > &list)\fC [inline]\fP"
 .PP
-Connect a list of units to this one as outputs. \fBParameters:\fP
+Connect a list of units to this one as outputs\&. \fBParameters:\fP
 .RS 4
 \fIstd::vector<boost::shared_ptr<T>\fP > list List of pointers to objects to be connected as outputs
 .RE
@@ -275,10 +301,10 @@ true if all connections succeed, false otherwise
 .PP
 
 .PP
-Definition at line 139 of file Connector.h.
-.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::connectOutputs (const std::initializer_list< boost::shared_ptr< T > > &list)\fC [inline]\fP"
+Definition at line 142 of file Connector\&.h\&.
+.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::\fBconnectOutputs\fP (const std::initializer_list< boost::shared_ptr< T > > &list)\fC [inline]\fP"
 .PP
-Connect an initialiser list of units to this one as outputs. \fBParameters:\fP
+Connect an initialiser list of units to this one as outputs\&. \fBParameters:\fP
 .RS 4
 \fIstd::initializer_list<boost::shared_ptr<\fP T > > list Initialiser list of pointers to objects to be connected as outputs
 .RE
@@ -290,27 +316,10 @@ true if all connections succeed, false otherwise
 .PP
 
 .PP
-Definition at line 164 of file Connector.h.
-.SS "template<class U, class T> boost::shared_ptr<T> \fBcryomesh::common::Connector\fP< U, T >::disconnect (const boost::uuids::uuid &id, std::map< boost::uuids::uuid, boost::shared_ptr< T > > &objs)\fC [inline, protected]\fP"
+Definition at line 167 of file Connector\&.h\&.
+.SS "template<class U, class T> boost::shared_ptr<T> \fBcryomesh::common::Connector\fP< U, T >::\fBdisconnect\fP (const boost::shared_ptr< T >obj, std::map< boost::uuids::uuid, boost::shared_ptr< T > > &objs)\fC [inline, protected]\fP"
 .PP
-Disconnect an object using the supplied map. \fBParameters:\fP
-.RS 4
-\fIboost::uuids::uuid\fP id The uuid of the object that is to be disconnected 
-.br
-\fIstd::map<boost::uuids::uuid,boost::shared_ptr<T>\fP > & objs The map that will be used to disconnect the object
-.RE
-.PP
-\fBReturns:\fP
-.RS 4
-\fBPointer\fP to the disconnected object, pointer is null is object was not found 
-.RE
-.PP
-
-.PP
-Definition at line 674 of file Connector.h.
-.SS "template<class U, class T> boost::shared_ptr<T> \fBcryomesh::common::Connector\fP< U, T >::disconnect (const boost::shared_ptr< T >obj, std::map< boost::uuids::uuid, boost::shared_ptr< T > > &objs)\fC [inline, protected]\fP"
-.PP
-Disconnect an object using the supplied map. \fBParameters:\fP
+Disconnect an object using the supplied map\&. \fBParameters:\fP
 .RS 4
 \fIboost::shared_ptr<T>\fP obj \fBPointer\fP to the object that is to be disconnected 
 .br
@@ -324,51 +333,53 @@ Disconnect an object using the supplied map. \fBParameters:\fP
 .PP
 
 .PP
-Definition at line 651 of file Connector.h.
+Definition at line 685 of file Connector\&.h\&.
 .PP
-Referenced by cryomesh::common::Connector< Fibre, Cluster >::disconnectInput(), and cryomesh::common::Connector< Fibre, Cluster >::disconnectOutput().
-.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::disconnectAllInputs ()\fC [inline]\fP"
+Referenced by cryomesh::common::Connector< Fibre, Cluster >::disconnectInput(), and cryomesh::common::Connector< Fibre, Cluster >::disconnectOutput()\&.
+.SS "template<class U, class T> boost::shared_ptr<T> \fBcryomesh::common::Connector\fP< U, T >::\fBdisconnect\fP (const boost::uuids::uuid &id, std::map< boost::uuids::uuid, boost::shared_ptr< T > > &objs)\fC [inline, protected]\fP"
 .PP
-Disconnect all input units from this one. \fBReturns:\fP
+Disconnect an object using the supplied map\&. \fBParameters:\fP
 .RS 4
-true if all disconnections succeed, false otherwise 
-.RE
-.PP
-
-.PP
-Definition at line 329 of file Connector.h.
-.PP
-Referenced by cryomesh::structures::Fibre::disconnectAllConnections().
-.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::disconnectAllOutputs ()\fC [inline]\fP"
-.PP
-Disconnect all Output units from this one. \fBReturns:\fP
-.RS 4
-true if all disconnections succeed, false otherwise 
-.RE
-.PP
-
-.PP
-Definition at line 497 of file Connector.h.
-.PP
-Referenced by cryomesh::structures::Fibre::disconnectAllConnections().
-.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::disconnectInput (const boost::uuids::uuid &id)\fC [inline]\fP"
-.PP
-Disconnect an input to this unit. \fBParameters:\fP
-.RS 4
-\fIboost::uuids::uuid\fP id The unique identifier of the object to be disconnected
+\fIboost::uuids::uuid\fP id The uuid of the object that is to be disconnected 
+.br
+\fIstd::map<boost::uuids::uuid,boost::shared_ptr<T>\fP > & objs The map that will be used to disconnect the object
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-true if disconnection succeeds, false otherwise 
+\fBPointer\fP to the disconnected object, pointer is null is object was not found 
 .RE
 .PP
 
 .PP
-Definition at line 209 of file Connector.h.
-.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::disconnectInput (const boost::shared_ptr< T > &obj)\fC [inline]\fP"
+Definition at line 724 of file Connector\&.h\&.
+.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::\fBdisconnectAllInputs\fP ()\fC [inline]\fP"
 .PP
-Disconnect an input to this unit. \fBParameters:\fP
+Disconnect all input units from this one\&. \fBReturns:\fP
+.RS 4
+true if all disconnections succeed, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 332 of file Connector\&.h\&.
+.PP
+Referenced by cryomesh::structures::Fibre::disconnectAllConnections()\&.
+.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::\fBdisconnectAllOutputs\fP ()\fC [inline]\fP"
+.PP
+Disconnect all Output units from this one\&. \fBReturns:\fP
+.RS 4
+true if all disconnections succeed, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 500 of file Connector\&.h\&.
+.PP
+Referenced by cryomesh::structures::Fibre::disconnectAllConnections()\&.
+.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::\fBdisconnectInput\fP (const boost::shared_ptr< T > &obj)\fC [inline]\fP"
+.PP
+Disconnect an input to this unit\&. \fBParameters:\fP
 .RS 4
 \fIboost::shared_ptr<T>\fP obj \fBPointer\fP to the object to be disconnected from input
 .RE
@@ -380,72 +391,12 @@ true if disconnection succeeds, false otherwise
 .PP
 
 .PP
-Definition at line 190 of file Connector.h.
+Definition at line 193 of file Connector\&.h\&.
 .PP
-Referenced by cryomesh::common::Connector< Fibre, Cluster >::disconnectAllInputs(), and cryomesh::common::Connector< Fibre, Cluster >::disconnectInputs().
-.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::disconnectInputs (const std::vector< boost::shared_ptr< T > > &list)\fC [inline]\fP"
+Referenced by cryomesh::common::Connector< Fibre, Cluster >::disconnectAllInputs(), and cryomesh::common::Connector< Fibre, Cluster >::disconnectInputs()\&.
+.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::\fBdisconnectInput\fP (const boost::uuids::uuid &id)\fC [inline]\fP"
 .PP
-Disconnect a list of input units from this one. \fBParameters:\fP
-.RS 4
-\fIstd::vector<boost::shared_ptr<T>\fP > list List of pointers to objects to be disconnected
-.RE
-.PP
-\fBReturns:\fP
-.RS 4
-true if all disconnections succeed, false otherwise 
-.RE
-.PP
-
-.PP
-Definition at line 231 of file Connector.h.
-.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::disconnectInputs (const std::initializer_list< boost::shared_ptr< T > > &list)\fC [inline]\fP"
-.PP
-Disconnect an initialiser list of input units from this one. \fBParameters:\fP
-.RS 4
-\fIstd::initializer_list<boost::shared_ptr<\fP T > > list Initialiser list of pointers to objects to be disconnected as inputs
-.RE
-.PP
-\fBReturns:\fP
-.RS 4
-true if all disconnections succeed, false otherwise 
-.RE
-.PP
-
-.PP
-Definition at line 256 of file Connector.h.
-.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::disconnectInputs (const std::vector< boost::uuids::uuid > &list)\fC [inline]\fP"
-.PP
-Disconnect a list of input units from this one. \fBParameters:\fP
-.RS 4
-\fIboost::uuids::uuid\fP list List of uuids to objects to be disconnected
-.RE
-.PP
-\fBReturns:\fP
-.RS 4
-true if all disconnections succeed, false otherwise 
-.RE
-.PP
-
-.PP
-Definition at line 281 of file Connector.h.
-.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::disconnectInputs (const std::initializer_list< boost::uuids::uuid > &list)\fC [inline]\fP"
-.PP
-Disconnect an initialiser list of input units from this one. \fBParameters:\fP
-.RS 4
-\fIboost::uuids::uuid\fP list Initialiser list of uuids to objects to be disconnected as inputs
-.RE
-.PP
-\fBReturns:\fP
-.RS 4
-true if all disconnections succeed, false otherwise 
-.RE
-.PP
-
-.PP
-Definition at line 306 of file Connector.h.
-.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::disconnectOutput (const boost::uuids::uuid &id)\fC [inline]\fP"
-.PP
-Disconnect an output to this unit. \fBParameters:\fP
+Disconnect an input to this unit\&. \fBParameters:\fP
 .RS 4
 \fIboost::uuids::uuid\fP id The unique identifier of the object to be disconnected
 .RE
@@ -457,57 +408,10 @@ true if disconnection succeeds, false otherwise
 .PP
 
 .PP
-Definition at line 376 of file Connector.h.
-.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::disconnectOutput (const boost::shared_ptr< T > &obj)\fC [inline]\fP"
+Definition at line 212 of file Connector\&.h\&.
+.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::\fBdisconnectInputs\fP (const std::vector< boost::shared_ptr< T > > &list)\fC [inline]\fP"
 .PP
-Disconnect an output to this unit. \fBParameters:\fP
-.RS 4
-\fIboost::shared_ptr<T>\fP obj \fBPointer\fP to the object to be disconnected from output
-.RE
-.PP
-\fBReturns:\fP
-.RS 4
-true if disconnection succeeds, false otherwise 
-.RE
-.PP
-
-.PP
-Definition at line 355 of file Connector.h.
-.PP
-Referenced by cryomesh::common::Connector< Fibre, Cluster >::disconnectAllOutputs(), and cryomesh::common::Connector< Fibre, Cluster >::disconnectOutputs().
-.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::disconnectOutputs (const std::vector< boost::uuids::uuid > &list)\fC [inline]\fP"
-.PP
-Disconnect a uuid list of Output units from this one. \fBParameters:\fP
-.RS 4
-\fIboost::uuids::uuid\fP list List of uuids to objects to be disconnected
-.RE
-.PP
-\fBReturns:\fP
-.RS 4
-true if all disconnections succeed, false otherwise 
-.RE
-.PP
-
-.PP
-Definition at line 449 of file Connector.h.
-.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::disconnectOutputs (const std::initializer_list< boost::shared_ptr< T > > &list)\fC [inline]\fP"
-.PP
-Disconnect an initialiser list of Output units from this one. \fBParameters:\fP
-.RS 4
-\fIstd::initializer_list<boost::shared_ptr<\fP T > > list Initialiser list of pointers to objects to be disconnected as Outputs
-.RE
-.PP
-\fBReturns:\fP
-.RS 4
-true if all disconnections succeed, false otherwise 
-.RE
-.PP
-
-.PP
-Definition at line 423 of file Connector.h.
-.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::disconnectOutputs (const std::vector< boost::shared_ptr< T > > &list)\fC [inline]\fP"
-.PP
-Disconnect a list of Output units from this one. \fBParameters:\fP
+Disconnect a list of input units from this one\&. \fBParameters:\fP
 .RS 4
 \fIstd::vector<boost::shared_ptr<T>\fP > list List of pointers to objects to be disconnected
 .RE
@@ -519,10 +423,132 @@ true if all disconnections succeed, false otherwise
 .PP
 
 .PP
-Definition at line 398 of file Connector.h.
-.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::disconnectOutputs (const std::initializer_list< boost::uuids::uuid > &list)\fC [inline]\fP"
+Definition at line 234 of file Connector\&.h\&.
+.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::\fBdisconnectInputs\fP (const std::initializer_list< boost::shared_ptr< T > > &list)\fC [inline]\fP"
 .PP
-Disconnect an uuid initiaialiser list of Output units from this one. \fBParameters:\fP
+Disconnect an initialiser list of input units from this one\&. \fBParameters:\fP
+.RS 4
+\fIstd::initializer_list<boost::shared_ptr<\fP T > > list Initialiser list of pointers to objects to be disconnected as inputs
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if all disconnections succeed, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 259 of file Connector\&.h\&.
+.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::\fBdisconnectInputs\fP (const std::vector< boost::uuids::uuid > &list)\fC [inline]\fP"
+.PP
+Disconnect a list of input units from this one\&. \fBParameters:\fP
+.RS 4
+\fIboost::uuids::uuid\fP list List of uuids to objects to be disconnected
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if all disconnections succeed, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 284 of file Connector\&.h\&.
+.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::\fBdisconnectInputs\fP (const std::initializer_list< boost::uuids::uuid > &list)\fC [inline]\fP"
+.PP
+Disconnect an initialiser list of input units from this one\&. \fBParameters:\fP
+.RS 4
+\fIboost::uuids::uuid\fP list Initialiser list of uuids to objects to be disconnected as inputs
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if all disconnections succeed, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 309 of file Connector\&.h\&.
+.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::\fBdisconnectOutput\fP (const boost::shared_ptr< T > &obj)\fC [inline]\fP"
+.PP
+Disconnect an output to this unit\&. \fBParameters:\fP
+.RS 4
+\fIboost::shared_ptr<T>\fP obj \fBPointer\fP to the object to be disconnected from output
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if disconnection succeeds, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 358 of file Connector\&.h\&.
+.PP
+Referenced by cryomesh::common::Connector< Fibre, Cluster >::disconnectAllOutputs(), and cryomesh::common::Connector< Fibre, Cluster >::disconnectOutputs()\&.
+.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::\fBdisconnectOutput\fP (const boost::uuids::uuid &id)\fC [inline]\fP"
+.PP
+Disconnect an output to this unit\&. \fBParameters:\fP
+.RS 4
+\fIboost::uuids::uuid\fP id The unique identifier of the object to be disconnected
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if disconnection succeeds, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 379 of file Connector\&.h\&.
+.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::\fBdisconnectOutputs\fP (const std::vector< boost::shared_ptr< T > > &list)\fC [inline]\fP"
+.PP
+Disconnect a list of Output units from this one\&. \fBParameters:\fP
+.RS 4
+\fIstd::vector<boost::shared_ptr<T>\fP > list List of pointers to objects to be disconnected
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if all disconnections succeed, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 401 of file Connector\&.h\&.
+.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::\fBdisconnectOutputs\fP (const std::initializer_list< boost::shared_ptr< T > > &list)\fC [inline]\fP"
+.PP
+Disconnect an initialiser list of Output units from this one\&. \fBParameters:\fP
+.RS 4
+\fIstd::initializer_list<boost::shared_ptr<\fP T > > list Initialiser list of pointers to objects to be disconnected as Outputs
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if all disconnections succeed, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 426 of file Connector\&.h\&.
+.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::\fBdisconnectOutputs\fP (const std::vector< boost::uuids::uuid > &list)\fC [inline]\fP"
+.PP
+Disconnect a uuid list of Output units from this one\&. \fBParameters:\fP
+.RS 4
+\fIboost::uuids::uuid\fP list List of uuids to objects to be disconnected
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if all disconnections succeed, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 452 of file Connector\&.h\&.
+.SS "template<class U, class T> bool \fBcryomesh::common::Connector\fP< U, T >::\fBdisconnectOutputs\fP (const std::initializer_list< boost::uuids::uuid > &list)\fC [inline]\fP"
+.PP
+Disconnect an uuid initiaialiser list of Output units from this one\&. \fBParameters:\fP
 .RS 4
 \fIboost::uuids::uuid\fP list Initialiser list of uuids to objects to be disconnected as Outputs
 .RE
@@ -534,56 +560,62 @@ true if all disconnections succeed, false otherwise
 .PP
 
 .PP
-Definition at line 474 of file Connector.h.
-.SS "template<class U, class T> const std::map<boost::uuids::uuid, boost::shared_ptr<T> >& \fBcryomesh::common::Connector\fP< U, T >::getInputs () const\fC [inline]\fP"
+Definition at line 477 of file Connector\&.h\&.
+.SS "template<class U, class T> const std::map<boost::uuids::uuid, boost::shared_ptr<T> >& \fBcryomesh::common::Connector\fP< U, T >::\fBgetInputs\fP () const\fC [inline]\fP"
 .PP
-Get all inputs. \fBReturns:\fP
+Get all inputs\&. \fBReturns:\fP
 .RS 4
 std::map<boost::uuids::uuid, boost::shared_ptr<T> The map of inputs 
 .RE
 .PP
 
 .PP
-Definition at line 521 of file Connector.h.
+Definition at line 524 of file Connector\&.h\&.
 .PP
-Referenced by cryomesh::structures::Fibre::countConnections(), and cryomesh::structures::Fibre::isConnected().
-.SS "template<class U, class T> std::map<boost::uuids::uuid, boost::shared_ptr<T> >& \fBcryomesh::common::Connector\fP< U, T >::getMutableInputs ()\fC [inline]\fP"
+Referenced by cryomesh::structures::Fibre::countConnections(), and cryomesh::structures::Fibre::isConnected()\&.
+.SS "template<class U, class T> const std::list<boost::uuids::uuid> \fBcryomesh::common::Connector\fP< U, T >::\fBgetInputsUUID\fP () const\fC [inline]\fP"
 .PP
-Get all inputs as mutable object. \fBReturns:\fP
+Definition at line 528 of file Connector\&.h\&.
+.SS "template<class U, class T> std::map<boost::uuids::uuid, boost::shared_ptr<T> >& \fBcryomesh::common::Connector\fP< U, T >::\fBgetMutableInputs\fP ()\fC [inline]\fP"
+.PP
+Get all inputs as mutable object\&. \fBReturns:\fP
 .RS 4
 std::map<boost::uuids::uuid, boost::shared_ptr<T> The map of inputs 
 .RE
 .PP
 
 .PP
-Definition at line 532 of file Connector.h.
-.SS "template<class U, class T> std::map<boost::uuids::uuid, boost::shared_ptr<T> >& \fBcryomesh::common::Connector\fP< U, T >::getMutableOutputs ()\fC [inline]\fP"
+Definition at line 566 of file Connector\&.h\&.
+.SS "template<class U, class T> std::map<boost::uuids::uuid, boost::shared_ptr<T> >& \fBcryomesh::common::Connector\fP< U, T >::\fBgetMutableOutputs\fP ()\fC [inline]\fP"
 .PP
-Get all outputs as mutable object. \fBReturns:\fP
+Get all outputs as mutable object\&. \fBReturns:\fP
 .RS 4
 std::map<boost::uuids::uuid, boost::shared_ptr<T> The map of outputs 
 .RE
 .PP
 
 .PP
-Definition at line 554 of file Connector.h.
-.SS "template<class U, class T> const std::map<boost::uuids::uuid, boost::shared_ptr<T> >& \fBcryomesh::common::Connector\fP< U, T >::getOutputs () const\fC [inline]\fP"
+Definition at line 588 of file Connector\&.h\&.
+.SS "template<class U, class T> const std::map<boost::uuids::uuid, boost::shared_ptr<T> >& \fBcryomesh::common::Connector\fP< U, T >::\fBgetOutputs\fP () const\fC [inline]\fP"
 .PP
-Get all outputs. \fBReturns:\fP
+Get all outputs\&. \fBReturns:\fP
 .RS 4
 std::map<boost::uuids::uuid, boost::shared_ptr<T> The map of outputs 
 .RE
 .PP
 
 .PP
-Definition at line 543 of file Connector.h.
+Definition at line 577 of file Connector\&.h\&.
 .PP
-Referenced by cryomesh::structures::Fibre::countConnections(), and cryomesh::structures::Fibre::isConnected().
+Referenced by cryomesh::structures::Fibre::countConnections(), and cryomesh::structures::Fibre::isConnected()\&.
+.SS "template<class U, class T> const std::list<boost::uuids::uuid> \fBcryomesh::common::Connector\fP< U, T >::\fBgetOutputsUUID\fP () const\fC [inline]\fP"
+.PP
+Definition at line 543 of file Connector\&.h\&.
 .SH "Friends And Related Function Documentation"
 .PP 
 .SS "template<class U, class T> std::ostream& operator<< (std::ostream &os, const \fBConnector\fP< U, T > &obj)\fC [friend]\fP"
 .PP
-To stream operator. \fBParameters:\fP
+To stream operator\&. \fBParameters:\fP
 .RS 4
 \fIstd::ostream\fP & os The output stream 
 .br
@@ -597,30 +629,30 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 569 of file Connector.h.
+Definition at line 603 of file Connector\&.h\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "template<class U, class T> unsigned int \fBcryomesh::common::Connector\fP< U, T >::\fBmaxInputs\fP\fC [protected]\fP"
 .PP
-Definition at line 704 of file Connector.h.
+Definition at line 770 of file Connector\&.h\&.
 .PP
-Referenced by cryomesh::common::Connector< Fibre, Cluster >::connectInput().
+Referenced by cryomesh::common::Connector< Fibre, Cluster >::connectInput()\&.
 .SS "template<class U, class T> unsigned int \fBcryomesh::common::Connector\fP< U, T >::\fBmaxOutputs\fP\fC [protected]\fP"
 .PP
-Definition at line 711 of file Connector.h.
+Definition at line 777 of file Connector\&.h\&.
 .PP
-Referenced by cryomesh::common::Connector< Fibre, Cluster >::connectOutput().
+Referenced by cryomesh::common::Connector< Fibre, Cluster >::connectOutput()\&.
 .SS "template<class U, class T> std::map<boost::uuids::uuid, boost::shared_ptr<T> > \fBcryomesh::common::Connector\fP< U, T >::\fBminputs\fP\fC [protected]\fP"
 .PP
-Definition at line 690 of file Connector.h.
+Definition at line 756 of file Connector\&.h\&.
 .PP
-Referenced by cryomesh::common::Connector< Fibre, Cluster >::connectInput(), cryomesh::common::Connector< Fibre, Cluster >::disconnectAllInputs(), cryomesh::common::Connector< Fibre, Cluster >::disconnectInput(), cryomesh::common::Connector< Fibre, Cluster >::getInputs(), and cryomesh::common::Connector< Fibre, Cluster >::getMutableInputs().
+Referenced by cryomesh::common::Connector< Fibre, Cluster >::connectInput(), cryomesh::common::Connector< Fibre, Cluster >::disconnectAllInputs(), cryomesh::common::Connector< Fibre, Cluster >::disconnectInput(), cryomesh::common::Connector< Fibre, Cluster >::getInputs(), cryomesh::common::Connector< Fibre, Cluster >::getInputsUUID(), and cryomesh::common::Connector< Fibre, Cluster >::getMutableInputs()\&.
 .SS "template<class U, class T> std::map<boost::uuids::uuid, boost::shared_ptr<T> > \fBcryomesh::common::Connector\fP< U, T >::\fBmoutputs\fP\fC [protected]\fP"
 .PP
-Definition at line 697 of file Connector.h.
+Definition at line 763 of file Connector\&.h\&.
 .PP
-Referenced by cryomesh::common::Connector< Fibre, Cluster >::connectOutput(), cryomesh::common::Connector< Fibre, Cluster >::disconnectAllOutputs(), cryomesh::common::Connector< Fibre, Cluster >::disconnectOutput(), cryomesh::common::Connector< Fibre, Cluster >::getMutableOutputs(), and cryomesh::common::Connector< Fibre, Cluster >::getOutputs().
+Referenced by cryomesh::common::Connector< Fibre, Cluster >::connectOutput(), cryomesh::common::Connector< Fibre, Cluster >::disconnectAllOutputs(), cryomesh::common::Connector< Fibre, Cluster >::disconnectOutput(), cryomesh::common::Connector< Fibre, Cluster >::getMutableOutputs(), cryomesh::common::Connector< Fibre, Cluster >::getOutputs(), and cryomesh::common::Connector< Fibre, Cluster >::getOutputsUUID()\&.
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for cryomesh from the source code.
+Generated automatically by Doxygen for cryomesh from the source code\&.

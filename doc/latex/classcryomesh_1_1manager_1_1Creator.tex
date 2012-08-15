@@ -1,0 +1,909 @@
+\hypertarget{classcryomesh_1_1manager_1_1Creator}{\section{cryomesh\-:\-:manager\-:\-:\-Creator \-Class \-Reference}
+\label{classcryomesh_1_1manager_1_1Creator}\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}}
+}
+
+
+\-Class to take in a config file of \-Config\-Translator form and parse the commands to create a full cryomesh object.  
+
+
+
+
+{\ttfamily \#include $<$\-Creator.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1manager_1_1Creator_a4881650c49a273648a9bccddb9a832fc}{\-Creator} (const std\-::string \&config\-\_\-filename, const std\-::string \&database\-\_\-filename=\hyperlink{classcryomesh_1_1manager_1_1Creator_a36ec491bb68e6a595086c239af7bd989}{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-A\-B\-A\-S\-E\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E})
+\begin{DoxyCompactList}\small\item\em \-Constructor to create a bundle from a config file name with option to specify the database file name that will be used. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1manager_1_1Creator_a6479ea01aa020c99899198f08ef558b6}{\-Creator} (std\-::istream \&config\-\_\-stream, const std\-::string \&database\-\_\-filename=\hyperlink{classcryomesh_1_1manager_1_1Creator_a36ec491bb68e6a595086c239af7bd989}{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-A\-B\-A\-S\-E\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E})
+\item 
+virtual \hyperlink{classcryomesh_1_1manager_1_1Creator_a8eea37df1f5fc6c94a97c42ce4d9a5d0}{$\sim$\-Creator} ()
+\begin{DoxyCompactList}\small\item\em \-Deffault destructor. \end{DoxyCompactList}\item 
+const boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1structures_1_1Bundle}{structures\-::\-Bundle} $>$ \hyperlink{classcryomesh_1_1manager_1_1Creator_a10d07b373f504e7a479acb16abacb713}{get\-Bundle} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the create bundle. \end{DoxyCompactList}\item 
+boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1structures_1_1Bundle}{structures\-::\-Bundle} $>$ \hyperlink{classcryomesh_1_1manager_1_1Creator_a2155dae515aa5d360a577ef82437f338}{get\-Mutable\-Bundle} ()
+\begin{DoxyCompactList}\small\item\em \-Get the mutable create bundle. \end{DoxyCompactList}\item 
+const std\-::map$<$ int, \*
+boost\-::uuids\-::uuid $>$ \& \hyperlink{classcryomesh_1_1manager_1_1Creator_adf060224477ba4086f7e4aab30b60cf6}{get\-Cluster\-I\-D\-Map} () const 
+\begin{DoxyCompactList}\small\item\em get the cluster\-I\-D\-Map \end{DoxyCompactList}\item 
+const std\-::map$<$ int, \*
+boost\-::uuids\-::uuid $>$ \& \hyperlink{classcryomesh_1_1manager_1_1Creator_ab4d9444e6760f1dd634db0f07db630bb}{get\-Fibre\-I\-D\-Map} () const 
+\begin{DoxyCompactList}\small\item\em get the fibre\-I\-D\-Map \end{DoxyCompactList}\item 
+const std\-::map$<$ int, \*
+boost\-::uuids\-::uuid $>$ \& \hyperlink{classcryomesh_1_1manager_1_1Creator_a6721fe152f65ef7040b3dfa0cd143dc2}{get\-Pattern\-Channel\-I\-D\-Map} () const 
+\begin{DoxyCompactList}\small\item\em get the pattern\-Channel\-I\-D\-Map \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1manager_1_1Creator_af1395df65f66b2e1af4fdba9afe15cbc}{create\-Cluster} (int id, int size, int connectivity)
+\begin{DoxyCompactList}\small\item\em \-Translator from config command to actual command. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1manager_1_1Creator_a66333bb0409b2e6de38a58eaddeeb7b1}{connect\-Cluster} (int input\-\_\-cluster\-\_\-id, int ouput\-\_\-cluster\-\_\-id, int width)
+\begin{DoxyCompactList}\small\item\em \-Translator from config command to actual command. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1manager_1_1Creator_a73a74e5e35b5c969108a99cdf31c5108}{load\-Data} (std\-::string datafile)
+\begin{DoxyCompactList}\small\item\em \-Translator from config command to actual command. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1manager_1_1Creator_ad6eb863eb6f8278979e07ef97e9140b5}{run\-Command} (const config\-::\-Config\-Entry \&conf\-\_\-entry)
+\item 
+void \hyperlink{classcryomesh_1_1manager_1_1Creator_a074c92de2d06664b5d9d9fa5f96aa5ee}{connect\-Primary\-Input\-Channel} (int channel\-\_\-id, int outputid)
+\begin{DoxyCompactList}\small\item\em \-Translator from config command to actual command. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1manager_1_1Creator_a0977991d6697d06a104aacf40c07f5b4}{connect\-Primary\-Output\-Channel} (int channel\-\_\-id, int inputid)
+\begin{DoxyCompactList}\small\item\em \-Translator from config command to actual command. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1manager_1_1Creator_a8c773b097b7b4db87a46f749a2606a2b}{auto\-Connect\-Primary\-Inputs} (const std\-::vector$<$ int $>$ \&cluster\-\_\-ids)
+\begin{DoxyCompactList}\small\item\em auto connect all the primary input channels to the list of clusters \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1manager_1_1Creator_a7ad46f5b3864cc596f0f36b55f884ce7}{auto\-Connect\-Primary\-Outputs} (const std\-::vector$<$ int $>$ \&cluster\-\_\-ids)
+\begin{DoxyCompactList}\small\item\em auto connect all the primary output channels to the list of clusters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classcryomesh_1_1manager_1_1Creator_a69a825d7856c367e400b2ff6e2cefe68}{analyse\-Config} (const config\-::\-Config\-Translator \&conf\-\_\-trans)
+\begin{DoxyCompactList}\small\item\em \-Analyse the config translator for coherence. \end{DoxyCompactList}\item 
+static bool \hyperlink{classcryomesh_1_1manager_1_1Creator_ae3d7dd77beadb0d05bbbe5f0c67e8292}{check\-Config\-Entry} (const config\-::\-Config\-Entry \&conf\-\_\-entry)
+\begin{DoxyCompactList}\small\item\em \-Analyse the config entry for coherence. \end{DoxyCompactList}\item 
+static bool \hyperlink{classcryomesh_1_1manager_1_1Creator_add4748985eb8bc35a442a9e4e4c2a087}{check\-Config\-Structure} (const std\-::list$<$ config\-::\-Config\-Entry $>$ \&conf\-\_\-entries)
+\begin{DoxyCompactList}\small\item\em \-Analyse the config for structural coherence. \end{DoxyCompactList}\item 
+static std\-::map$<$ std\-::string, \*
+std\-::list$<$ std\-::string $>$ $>$ \hyperlink{classcryomesh_1_1manager_1_1Creator_aa6de6b79f746213f844b207518b1577a}{get\-Accepted\-Command\-List} ()
+\begin{DoxyCompactList}\small\item\em \-Generate and return the accepted command list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std\-::string \hyperlink{classcryomesh_1_1manager_1_1Creator_a36ec491bb68e6a595086c239af7bd989}{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-A\-B\-A\-S\-E\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E} = \char`\"{}cryomesh\-\_\-default.\-db\char`\"{}
+\item 
+static std\-::map$<$ std\-::string, \*
+std\-::list$<$ std\-::string $>$ $>$ \hyperlink{classcryomesh_1_1manager_1_1Creator_ad0ddc3782c7fe0415181156fdeb6306b}{accepted\-Command\-List} = \hyperlink{classcryomesh_1_1manager_1_1Creator_aa6de6b79f746213f844b207518b1577a}{\-Creator\-::get\-Accepted\-Command\-List}()
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcryomesh_1_1manager_1_1Creator_a1cf96043a609df452620aba02370dd46}{initialise} ()
+\begin{DoxyCompactList}\small\item\em \-Helper to initialise the creator. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1manager_1_1Creator_ac25b12d7fcd727c0228e551732605e10}{create\-From\-Config\-File} (const std\-::string config\-\_\-filename)
+\begin{DoxyCompactList}\small\item\em \-Run through the config file generating all commands. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1manager_1_1Creator_ab816409b411aed0ceb2abe38afb8fef9}{create\-From\-Config\-Stream} (std\-::istream \&is)
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+boost\-::uuids\-::uuid \hyperlink{classcryomesh_1_1manager_1_1Creator_a1d848c7a78e970a49693434dad741880}{get\-Real\-I\-D} (const int id, const std\-::map$<$ int, boost\-::uuids\-::uuid $>$ \&idmap) const 
+\begin{DoxyCompactList}\small\item\em \-Retreive a uuid from a fake int id inside a map. \end{DoxyCompactList}\item 
+boost\-::uuids\-::uuid \hyperlink{classcryomesh_1_1manager_1_1Creator_a1f8a19ce5f8e07015b3bbc7040ac2a8e}{get\-Cluster\-Real\-I\-D} (const int id) const 
+\begin{DoxyCompactList}\small\item\em \-Helper to retrieve a uuid from a fake int id for clusters. \end{DoxyCompactList}\item 
+boost\-::uuids\-::uuid \hyperlink{classcryomesh_1_1manager_1_1Creator_ab6987a15c0794e7cd651519c28ad7eec}{get\-Fibre\-Real\-I\-D} (const int id) const 
+\begin{DoxyCompactList}\small\item\em \-Helper to retrieve a uuid from a fake int id for fibres. \end{DoxyCompactList}\item 
+boost\-::uuids\-::uuid \hyperlink{classcryomesh_1_1manager_1_1Creator_aeb8b3b6fddffcefb7f81780a81f5f28c}{get\-Pattern\-Channel\-Real\-I\-D} (const int id) const 
+\begin{DoxyCompactList}\small\item\em \-Helper to retrieve a uuid from a fake int id for pattern channels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{classcryomesh_1_1manager_1_1Creator_a5d5c9a8aafa817c49c0787d0dae91a3a}{database\-Filename}
+\item 
+boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1structures_1_1Bundle}{structures\-::\-Bundle} $>$ \hyperlink{classcryomesh_1_1manager_1_1Creator_ace9dd9da21fab7cf04f6681d332d40cc}{bundle}
+\item 
+std\-::map$<$ int, boost\-::uuids\-::uuid $>$ \hyperlink{classcryomesh_1_1manager_1_1Creator_a10123f4421b6231c863d86ebb219b545}{cluster\-I\-D\-Map}
+\item 
+std\-::map$<$ int, boost\-::uuids\-::uuid $>$ \hyperlink{classcryomesh_1_1manager_1_1Creator_aae2da58961bda370f9ec3498462a2411}{fibre\-I\-D\-Map}
+\item 
+std\-::map$<$ int, boost\-::uuids\-::uuid $>$ \hyperlink{classcryomesh_1_1manager_1_1Creator_a23dfcdd559d8bdbb1d03aac2587feb3a}{pattern\-Channel\-I\-D\-Map}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Class to take in a config file of \-Config\-Translator form and parse the commands to create a full cryomesh object. 
+
+
+\begin{DoxyItemize}
+\item needs to hold a fakeid to realid mapping to facillitate using fake ids in config files before the objects ids are actually known
+\item holds a unique instance of any create cryomeshes
+\item holds other data from the config file or defaults such as database name, filename, data filename, etc 
+\end{DoxyItemize}
+
+\-Definition at line 31 of file \-Creator.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcryomesh_1_1manager_1_1Creator_a4881650c49a273648a9bccddb9a832fc}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!\-Creator@{\-Creator}}
+\index{\-Creator@{\-Creator}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{\-Creator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::manager\-::\-Creator\-::\-Creator} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{config\-\_\-filename, }
+\item[{const std\-::string \&}]{database\-\_\-filename = {\ttfamily {\bf \-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-A\-B\-A\-S\-E\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E}}}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1manager_1_1Creator_a4881650c49a273648a9bccddb9a832fc}
+
+
+\-Constructor to create a bundle from a config file name with option to specify the database file name that will be used. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::string} & \-The name with full path of the config file \\
+\hline
+{\em std\-::string} & \-The name with full path of the database file \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 47 of file \-Creator.\-cpp.
+
+
+
+\-References create\-From\-Config\-File(), and initialise().
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_a6479ea01aa020c99899198f08ef558b6}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!\-Creator@{\-Creator}}
+\index{\-Creator@{\-Creator}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{\-Creator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::manager\-::\-Creator\-::\-Creator} (
+\begin{DoxyParamCaption}
+\item[{std\-::istream \&}]{config\-\_\-stream, }
+\item[{const std\-::string \&}]{database\-\_\-filename = {\ttfamily {\bf \-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-A\-B\-A\-S\-E\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E}}}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1manager_1_1Creator_a6479ea01aa020c99899198f08ef558b6}
+
+
+\-Definition at line 61 of file \-Creator.\-cpp.
+
+
+
+\-References create\-From\-Config\-Stream(), and initialise().
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_a8eea37df1f5fc6c94a97c42ce4d9a5d0}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!$\sim$\-Creator@{$\sim$\-Creator}}
+\index{$\sim$\-Creator@{$\sim$\-Creator}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{$\sim$\-Creator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::manager\-::\-Creator\-::$\sim$\-Creator} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1manager_1_1Creator_a8eea37df1f5fc6c94a97c42ce4d9a5d0}
+
+
+\-Deffault destructor. 
+
+
+
+\-Definition at line 71 of file \-Creator.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1manager_1_1Creator_a69a825d7856c367e400b2ff6e2cefe68}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!analyse\-Config@{analyse\-Config}}
+\index{analyse\-Config@{analyse\-Config}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{analyse\-Config}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf cryomesh\-::manager\-::\-Creator\-::analyse\-Config} (
+\begin{DoxyParamCaption}
+\item[{const config\-::\-Config\-Translator \&}]{conf\-\_\-trans}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1manager_1_1Creator_a69a825d7856c367e400b2ff6e2cefe68}
+
+
+\-Analyse the config translator for coherence. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Config\-Translator} & \-The config translator to analyse\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+bool \-True if the config translator passed all the tests for coherence, false otherwise. 
+\end{DoxyReturn}
+
+
+\-Definition at line 195 of file \-Creator.\-cpp.
+
+
+
+\-References check\-Config\-Entry(), and check\-Config\-Structure().
+
+
+
+\-Referenced by create\-From\-Config\-Stream().
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_a8c773b097b7b4db87a46f749a2606a2b}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!auto\-Connect\-Primary\-Inputs@{auto\-Connect\-Primary\-Inputs}}
+\index{auto\-Connect\-Primary\-Inputs@{auto\-Connect\-Primary\-Inputs}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{auto\-Connect\-Primary\-Inputs}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::manager\-::\-Creator\-::auto\-Connect\-Primary\-Inputs} (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ int $>$ \&}]{cluster\-\_\-ids}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1manager_1_1Creator_a8c773b097b7b4db87a46f749a2606a2b}
+
+
+auto connect all the primary input channels to the list of clusters 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::vector$<$int$>$} & \-The fake ids of the clusters to connect \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 356 of file \-Creator.\-cpp.
+
+
+
+\-References bundle, and get\-Cluster\-Real\-I\-D().
+
+
+
+\-Referenced by run\-Command().
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_a7ad46f5b3864cc596f0f36b55f884ce7}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!auto\-Connect\-Primary\-Outputs@{auto\-Connect\-Primary\-Outputs}}
+\index{auto\-Connect\-Primary\-Outputs@{auto\-Connect\-Primary\-Outputs}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{auto\-Connect\-Primary\-Outputs}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::manager\-::\-Creator\-::auto\-Connect\-Primary\-Outputs} (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ int $>$ \&}]{cluster\-\_\-ids}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1manager_1_1Creator_a7ad46f5b3864cc596f0f36b55f884ce7}
+
+
+auto connect all the primary output channels to the list of clusters 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::vector$<$int$>$} & \-The fake ids of the clusters to connect \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 374 of file \-Creator.\-cpp.
+
+
+
+\-References bundle, and get\-Cluster\-Real\-I\-D().
+
+
+
+\-Referenced by run\-Command().
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_ae3d7dd77beadb0d05bbbe5f0c67e8292}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!check\-Config\-Entry@{check\-Config\-Entry}}
+\index{check\-Config\-Entry@{check\-Config\-Entry}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{check\-Config\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf cryomesh\-::manager\-::\-Creator\-::check\-Config\-Entry} (
+\begin{DoxyParamCaption}
+\item[{const config\-::\-Config\-Entry \&}]{conf\-\_\-entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1manager_1_1Creator_ae3d7dd77beadb0d05bbbe5f0c67e8292}
+
+
+\-Analyse the config entry for coherence. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Config\-Entry} & \-The config entry to analyse\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+bool \-True if the config entry passed all the tests for coherence, false otherwise. 
+\end{DoxyReturn}
+
+
+\-Definition at line 215 of file \-Creator.\-cpp.
+
+
+
+\-References accepted\-Command\-List.
+
+
+
+\-Referenced by analyse\-Config().
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_add4748985eb8bc35a442a9e4e4c2a087}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!check\-Config\-Structure@{check\-Config\-Structure}}
+\index{check\-Config\-Structure@{check\-Config\-Structure}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{check\-Config\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf cryomesh\-::manager\-::\-Creator\-::check\-Config\-Structure} (
+\begin{DoxyParamCaption}
+\item[{const std\-::list$<$ config\-::\-Config\-Entry $>$ \&}]{conf\-\_\-entries}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1manager_1_1Creator_add4748985eb8bc35a442a9e4e4c2a087}
+
+
+\-Analyse the config for structural coherence. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::list$<$config\-::\-Config\-Entry$>$} & \-The list of config entries to analyse for structure\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+bool \-True if the config entries passed all the tests for structural coherence, false otherwise. 
+\end{DoxyReturn}
+
+
+\-Definition at line 245 of file \-Creator.\-cpp.
+
+
+
+\-Referenced by analyse\-Config().
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_a66333bb0409b2e6de38a58eaddeeb7b1}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!connect\-Cluster@{connect\-Cluster}}
+\index{connect\-Cluster@{connect\-Cluster}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{connect\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::manager\-::\-Creator\-::connect\-Cluster} (
+\begin{DoxyParamCaption}
+\item[{int}]{input\-\_\-cluster\-\_\-id, }
+\item[{int}]{ouput\-\_\-cluster\-\_\-id, }
+\item[{int}]{width}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1manager_1_1Creator_a66333bb0409b2e6de38a58eaddeeb7b1}
+
+
+\-Translator from config command to actual command. 
+
+\-Connect two clusters using there fake ids
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em int} & \-The fake id of the input cluster \\
+\hline
+{\em int} & \-The fake id of the output cluster \\
+\hline
+{\em int} & \-The width of the new fibre connection \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 284 of file \-Creator.\-cpp.
+
+
+
+\-References bundle, and get\-Cluster\-Real\-I\-D().
+
+
+
+\-Referenced by run\-Command().
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_a074c92de2d06664b5d9d9fa5f96aa5ee}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!connect\-Primary\-Input\-Channel@{connect\-Primary\-Input\-Channel}}
+\index{connect\-Primary\-Input\-Channel@{connect\-Primary\-Input\-Channel}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{connect\-Primary\-Input\-Channel}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::manager\-::\-Creator\-::connect\-Primary\-Input\-Channel} (
+\begin{DoxyParamCaption}
+\item[{int}]{channel\-\_\-id, }
+\item[{int}]{outputid}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1manager_1_1Creator_a074c92de2d06664b5d9d9fa5f96aa5ee}
+
+
+\-Translator from config command to actual command. 
+
+\-Create a fibre to connect a primary input pattern channel to a cluster output
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em int} & \-The fake id of the pattern channel \\
+\hline
+{\em \-The} & fake id of the output cluster \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 342 of file \-Creator.\-cpp.
+
+
+
+\-References bundle, get\-Cluster\-Real\-I\-D(), and get\-Pattern\-Channel\-Real\-I\-D().
+
+
+
+\-Referenced by run\-Command().
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_a0977991d6697d06a104aacf40c07f5b4}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!connect\-Primary\-Output\-Channel@{connect\-Primary\-Output\-Channel}}
+\index{connect\-Primary\-Output\-Channel@{connect\-Primary\-Output\-Channel}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{connect\-Primary\-Output\-Channel}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::manager\-::\-Creator\-::connect\-Primary\-Output\-Channel} (
+\begin{DoxyParamCaption}
+\item[{int}]{channel\-\_\-id, }
+\item[{int}]{inputid}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1manager_1_1Creator_a0977991d6697d06a104aacf40c07f5b4}
+
+
+\-Translator from config command to actual command. 
+
+\-Create a fibre to connect a primary output pattern channel to a cluster output
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em int} & \-The fake id of the pattern channel \\
+\hline
+{\em \-The} & fake id of the input cluster \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 349 of file \-Creator.\-cpp.
+
+
+
+\-References bundle, get\-Cluster\-Real\-I\-D(), and get\-Pattern\-Channel\-Real\-I\-D().
+
+
+
+\-Referenced by run\-Command().
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_af1395df65f66b2e1af4fdba9afe15cbc}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!create\-Cluster@{create\-Cluster}}
+\index{create\-Cluster@{create\-Cluster}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{create\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::manager\-::\-Creator\-::create\-Cluster} (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{int}]{size, }
+\item[{int}]{connectivity}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1manager_1_1Creator_af1395df65f66b2e1af4fdba9afe15cbc}
+
+
+\-Translator from config command to actual command. 
+
+\-Create a cluster using a fake id to map to a real one
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em int} & \-The fake id of the cluster \\
+\hline
+{\em int} & \-The size of the cluster \\
+\hline
+{\em int} & \-The connetivity of the cluster \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 280 of file \-Creator.\-cpp.
+
+
+
+\-References bundle, and cluster\-I\-D\-Map.
+
+
+
+\-Referenced by run\-Command().
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_ac25b12d7fcd727c0228e551732605e10}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!create\-From\-Config\-File@{create\-From\-Config\-File}}
+\index{create\-From\-Config\-File@{create\-From\-Config\-File}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{create\-From\-Config\-File}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf cryomesh\-::manager\-::\-Creator\-::create\-From\-Config\-File} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string}]{config\-\_\-filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1manager_1_1Creator_ac25b12d7fcd727c0228e551732605e10}
+
+
+\-Run through the config file generating all commands. 
+
+\begin{DoxyReturn}{\-Returns}
+bool \-True if running the config file was successful, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 181 of file \-Creator.\-cpp.
+
+
+
+\-References create\-From\-Config\-Stream().
+
+
+
+\-Referenced by \-Creator().
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_ab816409b411aed0ceb2abe38afb8fef9}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!create\-From\-Config\-Stream@{create\-From\-Config\-Stream}}
+\index{create\-From\-Config\-Stream@{create\-From\-Config\-Stream}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{create\-From\-Config\-Stream}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf cryomesh\-::manager\-::\-Creator\-::create\-From\-Config\-Stream} (
+\begin{DoxyParamCaption}
+\item[{std\-::istream \&}]{is}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1manager_1_1Creator_ab816409b411aed0ceb2abe38afb8fef9}
+
+
+\-Definition at line 156 of file \-Creator.\-cpp.
+
+
+
+\-References analyse\-Config(), and run\-Command().
+
+
+
+\-Referenced by create\-From\-Config\-File(), and \-Creator().
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_aa6de6b79f746213f844b207518b1577a}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!get\-Accepted\-Command\-List@{get\-Accepted\-Command\-List}}
+\index{get\-Accepted\-Command\-List@{get\-Accepted\-Command\-List}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{get\-Accepted\-Command\-List}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$ std\-::string, std\-::list$<$ std\-::string $>$ $>$ {\bf cryomesh\-::manager\-::\-Creator\-::get\-Accepted\-Command\-List} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1manager_1_1Creator_aa6de6b79f746213f844b207518b1577a}
+
+
+\-Generate and return the accepted command list. 
+
+\begin{DoxyReturn}{\-Returns}
+std\-::map$<$std\-::string, std\-::list$<$std\-::string$>$ $>$ \-The accepted commands mapping 
+\end{DoxyReturn}
+
+
+\-Definition at line 22 of file \-Creator.\-cpp.
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_a10d07b373f504e7a479acb16abacb713}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!get\-Bundle@{get\-Bundle}}
+\index{get\-Bundle@{get\-Bundle}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{get\-Bundle}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::shared\-\_\-ptr$<$ {\bf structures\-::\-Bundle} $>$ {\bf cryomesh\-::manager\-::\-Creator\-::get\-Bundle} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1manager_1_1Creator_a10d07b373f504e7a479acb16abacb713}
+
+
+\-Get the create bundle. 
+
+\begin{DoxyReturn}{\-Returns}
+boost\-::shared\-\_\-ptr$<$structures\-::\-Bundle$>$ \-The created bundle 
+\end{DoxyReturn}
+
+
+\-Definition at line 74 of file \-Creator.\-cpp.
+
+
+
+\-References bundle.
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_adf060224477ba4086f7e4aab30b60cf6}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!get\-Cluster\-I\-D\-Map@{get\-Cluster\-I\-D\-Map}}
+\index{get\-Cluster\-I\-D\-Map@{get\-Cluster\-I\-D\-Map}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{get\-Cluster\-I\-D\-Map}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::map$<$ int, boost\-::uuids\-::uuid $>$ \& {\bf cryomesh\-::manager\-::\-Creator\-::get\-Cluster\-I\-D\-Map} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1manager_1_1Creator_adf060224477ba4086f7e4aab30b60cf6}
+
+
+get the cluster\-I\-D\-Map 
+
+\begin{DoxyReturn}{\-Returns}
+const std\-::map$<$int, boost\-::uuids\-::uuid$>$ the cluster\-I\-D\-Map 
+\end{DoxyReturn}
+
+
+\-Definition at line 82 of file \-Creator.\-cpp.
+
+
+
+\-References cluster\-I\-D\-Map.
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_a1f8a19ce5f8e07015b3bbc7040ac2a8e}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!get\-Cluster\-Real\-I\-D@{get\-Cluster\-Real\-I\-D}}
+\index{get\-Cluster\-Real\-I\-D@{get\-Cluster\-Real\-I\-D}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{get\-Cluster\-Real\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::uuids\-::uuid {\bf cryomesh\-::manager\-::\-Creator\-::get\-Cluster\-Real\-I\-D} (
+\begin{DoxyParamCaption}
+\item[{const int}]{id}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1manager_1_1Creator_a1f8a19ce5f8e07015b3bbc7040ac2a8e}
+
+
+\-Helper to retrieve a uuid from a fake int id for clusters. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em int} & \-The fake id to translate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+boost\-::uuids\-::uuid \-The corresponding real uuid to the fake one, null if it doesnt exist 
+\end{DoxyReturn}
+
+
+\-Definition at line 419 of file \-Creator.\-cpp.
+
+
+
+\-References cluster\-I\-D\-Map, and get\-Real\-I\-D().
+
+
+
+\-Referenced by auto\-Connect\-Primary\-Inputs(), auto\-Connect\-Primary\-Outputs(), connect\-Cluster(), connect\-Primary\-Input\-Channel(), and connect\-Primary\-Output\-Channel().
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_ab4d9444e6760f1dd634db0f07db630bb}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!get\-Fibre\-I\-D\-Map@{get\-Fibre\-I\-D\-Map}}
+\index{get\-Fibre\-I\-D\-Map@{get\-Fibre\-I\-D\-Map}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{get\-Fibre\-I\-D\-Map}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::map$<$ int, boost\-::uuids\-::uuid $>$ \& {\bf cryomesh\-::manager\-::\-Creator\-::get\-Fibre\-I\-D\-Map} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1manager_1_1Creator_ab4d9444e6760f1dd634db0f07db630bb}
+
+
+get the fibre\-I\-D\-Map 
+
+\begin{DoxyReturn}{\-Returns}
+const std\-::map$<$int, boost\-::uuids\-::uuid$>$ the fibre\-I\-D\-Map 
+\end{DoxyReturn}
+
+
+\-Definition at line 86 of file \-Creator.\-cpp.
+
+
+
+\-References fibre\-I\-D\-Map.
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_ab6987a15c0794e7cd651519c28ad7eec}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!get\-Fibre\-Real\-I\-D@{get\-Fibre\-Real\-I\-D}}
+\index{get\-Fibre\-Real\-I\-D@{get\-Fibre\-Real\-I\-D}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{get\-Fibre\-Real\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::uuids\-::uuid {\bf cryomesh\-::manager\-::\-Creator\-::get\-Fibre\-Real\-I\-D} (
+\begin{DoxyParamCaption}
+\item[{const int}]{id}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1manager_1_1Creator_ab6987a15c0794e7cd651519c28ad7eec}
+
+
+\-Helper to retrieve a uuid from a fake int id for fibres. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em int} & \-The fake id to translate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+boost\-::uuids\-::uuid \-The corresponding real uuid to the fake one, null if it doesnt exist 
+\end{DoxyReturn}
+
+
+\-Definition at line 426 of file \-Creator.\-cpp.
+
+
+
+\-References fibre\-I\-D\-Map, and get\-Real\-I\-D().
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_a2155dae515aa5d360a577ef82437f338}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!get\-Mutable\-Bundle@{get\-Mutable\-Bundle}}
+\index{get\-Mutable\-Bundle@{get\-Mutable\-Bundle}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{get\-Mutable\-Bundle}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$ {\bf structures\-::\-Bundle} $>$ {\bf cryomesh\-::manager\-::\-Creator\-::get\-Mutable\-Bundle} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1manager_1_1Creator_a2155dae515aa5d360a577ef82437f338}
+
+
+\-Get the mutable create bundle. 
+
+\begin{DoxyReturn}{\-Returns}
+boost\-::shared\-\_\-ptr$<$structures\-::\-Bundle$>$ \-The created bundle 
+\end{DoxyReturn}
+
+
+\-Definition at line 78 of file \-Creator.\-cpp.
+
+
+
+\-References bundle.
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_a6721fe152f65ef7040b3dfa0cd143dc2}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!get\-Pattern\-Channel\-I\-D\-Map@{get\-Pattern\-Channel\-I\-D\-Map}}
+\index{get\-Pattern\-Channel\-I\-D\-Map@{get\-Pattern\-Channel\-I\-D\-Map}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{get\-Pattern\-Channel\-I\-D\-Map}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::map$<$ int, boost\-::uuids\-::uuid $>$ \& {\bf cryomesh\-::manager\-::\-Creator\-::get\-Pattern\-Channel\-I\-D\-Map} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1manager_1_1Creator_a6721fe152f65ef7040b3dfa0cd143dc2}
+
+
+get the pattern\-Channel\-I\-D\-Map 
+
+\begin{DoxyReturn}{\-Returns}
+const std\-::map$<$int, boost\-::uuids\-::uuid$>$ the pattern\-Channel\-I\-D\-Map 
+\end{DoxyReturn}
+
+
+\-Definition at line 90 of file \-Creator.\-cpp.
+
+
+
+\-References pattern\-Channel\-I\-D\-Map.
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_aeb8b3b6fddffcefb7f81780a81f5f28c}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!get\-Pattern\-Channel\-Real\-I\-D@{get\-Pattern\-Channel\-Real\-I\-D}}
+\index{get\-Pattern\-Channel\-Real\-I\-D@{get\-Pattern\-Channel\-Real\-I\-D}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{get\-Pattern\-Channel\-Real\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::uuids\-::uuid {\bf cryomesh\-::manager\-::\-Creator\-::get\-Pattern\-Channel\-Real\-I\-D} (
+\begin{DoxyParamCaption}
+\item[{const int}]{id}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1manager_1_1Creator_aeb8b3b6fddffcefb7f81780a81f5f28c}
+
+
+\-Helper to retrieve a uuid from a fake int id for pattern channels. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em int} & \-The fake id to translate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+boost\-::uuids\-::uuid \-The corresponding real uuid to the fake one, null if it doesnt exist 
+\end{DoxyReturn}
+
+
+\-Definition at line 433 of file \-Creator.\-cpp.
+
+
+
+\-References get\-Real\-I\-D(), and pattern\-Channel\-I\-D\-Map.
+
+
+
+\-Referenced by connect\-Primary\-Input\-Channel(), and connect\-Primary\-Output\-Channel().
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_a1d848c7a78e970a49693434dad741880}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!get\-Real\-I\-D@{get\-Real\-I\-D}}
+\index{get\-Real\-I\-D@{get\-Real\-I\-D}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{get\-Real\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::uuids\-::uuid {\bf cryomesh\-::manager\-::\-Creator\-::get\-Real\-I\-D} (
+\begin{DoxyParamCaption}
+\item[{const int}]{id, }
+\item[{const std\-::map$<$ int, boost\-::uuids\-::uuid $>$ \&}]{idmap}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1manager_1_1Creator_a1d848c7a78e970a49693434dad741880}
+
+
+\-Retreive a uuid from a fake int id inside a map. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em int} & \-The fake id to translate \\
+\hline
+{\em std\-::map$<$int,boost\-::uuids\-::uuid$>$} & \-The map to use for translation\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+boost\-::uuids\-::uuid \-The corresponding real uuid to the fake one, null if it doesnt exist 
+\end{DoxyReturn}
+
+
+\-Definition at line 392 of file \-Creator.\-cpp.
+
+
+
+\-Referenced by get\-Cluster\-Real\-I\-D(), get\-Fibre\-Real\-I\-D(), and get\-Pattern\-Channel\-Real\-I\-D().
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_a1cf96043a609df452620aba02370dd46}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!initialise@{initialise}}
+\index{initialise@{initialise}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{initialise}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::manager\-::\-Creator\-::initialise} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1manager_1_1Creator_a1cf96043a609df452620aba02370dd46}
+
+
+\-Helper to initialise the creator. 
+
+
+
+\-Definition at line 94 of file \-Creator.\-cpp.
+
+
+
+\-References bundle.
+
+
+
+\-Referenced by \-Creator().
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_a73a74e5e35b5c969108a99cdf31c5108}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!load\-Data@{load\-Data}}
+\index{load\-Data@{load\-Data}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{load\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::manager\-::\-Creator\-::load\-Data} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{datafile}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1manager_1_1Creator_a73a74e5e35b5c969108a99cdf31c5108}
+
+
+\-Translator from config command to actual command. 
+
+\-Load the pattern data in from a file
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::string} & \-The full file path name of the pattern data file \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 315 of file \-Creator.\-cpp.
+
+
+
+\-References bundle, and pattern\-Channel\-I\-D\-Map.
+
+
+
+\-Referenced by run\-Command().
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_ad6eb863eb6f8278979e07ef97e9140b5}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!run\-Command@{run\-Command}}
+\index{run\-Command@{run\-Command}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{run\-Command}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf cryomesh\-::manager\-::\-Creator\-::run\-Command} (
+\begin{DoxyParamCaption}
+\item[{const config\-::\-Config\-Entry \&}]{conf\-\_\-entry}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1manager_1_1Creator_ad6eb863eb6f8278979e07ef97e9140b5}
+
+
+\-Definition at line 98 of file \-Creator.\-cpp.
+
+
+
+\-References auto\-Connect\-Primary\-Inputs(), auto\-Connect\-Primary\-Outputs(), connect\-Cluster(), connect\-Primary\-Input\-Channel(), connect\-Primary\-Output\-Channel(), create\-Cluster(), and load\-Data().
+
+
+
+\-Referenced by create\-From\-Config\-Stream().
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classcryomesh_1_1manager_1_1Creator_ad0ddc3782c7fe0415181156fdeb6306b}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!accepted\-Command\-List@{accepted\-Command\-List}}
+\index{accepted\-Command\-List@{accepted\-Command\-List}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{accepted\-Command\-List}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$ std\-::string, std\-::list$<$ std\-::string $>$ $>$ {\bf cryomesh\-::manager\-::\-Creator\-::accepted\-Command\-List} = {\bf \-Creator\-::get\-Accepted\-Command\-List}()\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1manager_1_1Creator_ad0ddc3782c7fe0415181156fdeb6306b}
+
+
+\-Definition at line 212 of file \-Creator.\-h.
+
+
+
+\-Referenced by check\-Config\-Entry().
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_ace9dd9da21fab7cf04f6681d332d40cc}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!bundle@{bundle}}
+\index{bundle@{bundle}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{bundle}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<${\bf structures\-::\-Bundle}$>$ {\bf cryomesh\-::manager\-::\-Creator\-::bundle}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1manager_1_1Creator_ace9dd9da21fab7cf04f6681d332d40cc}
+
+
+\-Definition at line 266 of file \-Creator.\-h.
+
+
+
+\-Referenced by auto\-Connect\-Primary\-Inputs(), auto\-Connect\-Primary\-Outputs(), connect\-Cluster(), connect\-Primary\-Input\-Channel(), connect\-Primary\-Output\-Channel(), create\-Cluster(), get\-Bundle(), get\-Mutable\-Bundle(), initialise(), and load\-Data().
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_a10123f4421b6231c863d86ebb219b545}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!cluster\-I\-D\-Map@{cluster\-I\-D\-Map}}
+\index{cluster\-I\-D\-Map@{cluster\-I\-D\-Map}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{cluster\-I\-D\-Map}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$int, boost\-::uuids\-::uuid$>$ {\bf cryomesh\-::manager\-::\-Creator\-::cluster\-I\-D\-Map}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1manager_1_1Creator_a10123f4421b6231c863d86ebb219b545}
+
+
+\-Definition at line 273 of file \-Creator.\-h.
+
+
+
+\-Referenced by create\-Cluster(), get\-Cluster\-I\-D\-Map(), and get\-Cluster\-Real\-I\-D().
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_a5d5c9a8aafa817c49c0787d0dae91a3a}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!database\-Filename@{database\-Filename}}
+\index{database\-Filename@{database\-Filename}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{database\-Filename}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::manager\-::\-Creator\-::database\-Filename}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1manager_1_1Creator_a5d5c9a8aafa817c49c0787d0dae91a3a}
+
+
+\-Definition at line 259 of file \-Creator.\-h.
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_a36ec491bb68e6a595086c239af7bd989}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-A\-B\-A\-S\-E\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E@{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-A\-B\-A\-S\-E\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E}}
+\index{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-A\-B\-A\-S\-E\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E@{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-A\-B\-A\-S\-E\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-A\-B\-A\-S\-E\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string {\bf cryomesh\-::manager\-::\-Creator\-::\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-A\-B\-A\-S\-E\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E} = \char`\"{}cryomesh\-\_\-default.\-db\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1manager_1_1Creator_a36ec491bb68e6a595086c239af7bd989}
+
+
+\-Definition at line 205 of file \-Creator.\-h.
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_aae2da58961bda370f9ec3498462a2411}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!fibre\-I\-D\-Map@{fibre\-I\-D\-Map}}
+\index{fibre\-I\-D\-Map@{fibre\-I\-D\-Map}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{fibre\-I\-D\-Map}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$int, boost\-::uuids\-::uuid$>$ {\bf cryomesh\-::manager\-::\-Creator\-::fibre\-I\-D\-Map}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1manager_1_1Creator_aae2da58961bda370f9ec3498462a2411}
+
+
+\-Definition at line 280 of file \-Creator.\-h.
+
+
+
+\-Referenced by get\-Fibre\-I\-D\-Map(), and get\-Fibre\-Real\-I\-D().
+
+\hypertarget{classcryomesh_1_1manager_1_1Creator_a23dfcdd559d8bdbb1d03aac2587feb3a}{\index{cryomesh\-::manager\-::\-Creator@{cryomesh\-::manager\-::\-Creator}!pattern\-Channel\-I\-D\-Map@{pattern\-Channel\-I\-D\-Map}}
+\index{pattern\-Channel\-I\-D\-Map@{pattern\-Channel\-I\-D\-Map}!cryomesh::manager::Creator@{cryomesh\-::manager\-::\-Creator}}
+\subsubsection[{pattern\-Channel\-I\-D\-Map}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$int, boost\-::uuids\-::uuid$>$ {\bf cryomesh\-::manager\-::\-Creator\-::pattern\-Channel\-I\-D\-Map}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1manager_1_1Creator_a23dfcdd559d8bdbb1d03aac2587feb3a}
+
+
+\-Definition at line 287 of file \-Creator.\-h.
+
+
+
+\-Referenced by get\-Pattern\-Channel\-I\-D\-Map(), get\-Pattern\-Channel\-Real\-I\-D(), and load\-Data().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/manager/\hyperlink{Creator_8h}{\-Creator.\-h}\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/manager/\hyperlink{Creator_8cpp}{\-Creator.\-cpp}\end{DoxyCompactItemize}

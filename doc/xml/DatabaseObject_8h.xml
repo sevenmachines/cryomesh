@@ -1,0 +1,478 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="DatabaseObject_8h" kind="file">
+    <compoundname>DatabaseObject.h</compoundname>
+    <includes local="no">map</includes>
+    <includes local="no">string</includes>
+    <includes local="no">sstream</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">boost/tokenizer.hpp</includes>
+    <includedby refid="Connection_8h" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h</includedby>
+    <includedby refid="ConnectionDatabaseObject_8h" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/ConnectionDatabaseObject.h</includedby>
+    <includedby refid="PatternDatabaseObject_8h" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/PatternDatabaseObject.h</includedby>
+    <includedby refid="NodeDatabaseObject_8h" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/NodeDatabaseObject.h</includedby>
+    <incdepgraph>
+      <node id="1130">
+        <label>boost/tokenizer.hpp</label>
+      </node>
+      <node id="1125">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseObject.h</label>
+        <link refid="DatabaseObject.h"/>
+        <childnode refid="1126" relation="include">
+        </childnode>
+        <childnode refid="1127" relation="include">
+        </childnode>
+        <childnode refid="1128" relation="include">
+        </childnode>
+        <childnode refid="1129" relation="include">
+        </childnode>
+        <childnode refid="1130" relation="include">
+        </childnode>
+      </node>
+      <node id="1127">
+        <label>string</label>
+      </node>
+      <node id="1126">
+        <label>map</label>
+      </node>
+      <node id="1128">
+        <label>sstream</label>
+      </node>
+      <node id="1129">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1144">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h</label>
+        <link refid="Creator_8h"/>
+        <childnode refid="1145" relation="include">
+        </childnode>
+        <childnode refid="1146" relation="include">
+        </childnode>
+      </node>
+      <node id="1136">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/IClusterAnalyser.h</label>
+        <link refid="IClusterAnalyser_8h"/>
+        <childnode refid="1137" relation="include">
+        </childnode>
+        <childnode refid="1140" relation="include">
+        </childnode>
+      </node>
+      <node id="1155">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Node.cpp</label>
+        <link refid="Node_8cpp"/>
+      </node>
+      <node id="1149">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp</label>
+        <link refid="Statistician_8cpp"/>
+      </node>
+      <node id="1163">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/Pattern.cpp</label>
+        <link refid="Pattern_8cpp"/>
+      </node>
+      <node id="1159">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp</label>
+        <link refid="DatabaseManager_8cpp"/>
+      </node>
+      <node id="1143">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h</label>
+        <link refid="Bundle_8h"/>
+        <childnode refid="1144" relation="include">
+        </childnode>
+        <childnode refid="1148" relation="include">
+        </childnode>
+        <childnode refid="1149" relation="include">
+        </childnode>
+      </node>
+      <node id="1173">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Node.h</label>
+        <link refid="Node_8h"/>
+        <childnode refid="1132" relation="include">
+        </childnode>
+        <childnode refid="1155" relation="include">
+        </childnode>
+        <childnode refid="1174" relation="include">
+        </childnode>
+        <childnode refid="1139" relation="include">
+        </childnode>
+        <childnode refid="1135" relation="include">
+        </childnode>
+        <childnode refid="1153" relation="include">
+        </childnode>
+        <childnode refid="1151" relation="include">
+        </childnode>
+        <childnode refid="1175" relation="include">
+        </childnode>
+      </node>
+      <node id="1160">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/PatternDatabaseObject.h</label>
+        <link refid="PatternDatabaseObject_8h"/>
+        <childnode refid="1146" relation="include">
+        </childnode>
+        <childnode refid="1161" relation="include">
+        </childnode>
+        <childnode refid="1162" relation="include">
+        </childnode>
+      </node>
+      <node id="1167">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerChannels.h</label>
+        <link refid="SequencerChannels_8h"/>
+        <childnode refid="1148" relation="include">
+        </childnode>
+        <childnode refid="1168" relation="include">
+        </childnode>
+      </node>
+      <node id="1157">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/ConnectionDatabaseObject.cpp</label>
+        <link refid="ConnectionDatabaseObject_8cpp"/>
+      </node>
+      <node id="1148">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp</label>
+        <link refid="Bundle_8cpp"/>
+      </node>
+      <node id="1150">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Fibre.cpp</label>
+        <link refid="Fibre_8cpp"/>
+      </node>
+      <node id="1131">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseObject.h</label>
+        <link refid="DatabaseObject.h"/>
+        <childnode refid="1132" relation="include">
+        </childnode>
+        <childnode refid="1156" relation="include">
+        </childnode>
+        <childnode refid="1160" relation="include">
+        </childnode>
+        <childnode refid="1172" relation="include">
+        </childnode>
+      </node>
+      <node id="1168">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerChannels.cpp</label>
+        <link refid="SequencerChannels_8cpp"/>
+      </node>
+      <node id="1138">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/ClusterAnalyserBasic.cpp</label>
+        <link refid="ClusterAnalyserBasic_8cpp"/>
+      </node>
+      <node id="1153">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Fibre.h</label>
+        <link refid="Fibre_8h"/>
+        <childnode refid="1139" relation="include">
+        </childnode>
+        <childnode refid="1154" relation="include">
+        </childnode>
+        <childnode refid="1141" relation="include">
+        </childnode>
+        <childnode refid="1150" relation="include">
+        </childnode>
+      </node>
+      <node id="1169">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.cpp</label>
+        <link refid="PatternTagById_8cpp"/>
+      </node>
+      <node id="1175">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h</label>
+        <link refid="NodeMesh_8h"/>
+        <childnode refid="1135" relation="include">
+        </childnode>
+        <childnode refid="1152" relation="include">
+        </childnode>
+      </node>
+      <node id="1165">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternChannel.cpp</label>
+        <link refid="PatternChannel_8cpp"/>
+      </node>
+      <node id="1133">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp</label>
+        <link refid="Connection_8cpp"/>
+      </node>
+      <node id="1134">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ConnectionMap.h</label>
+        <link refid="ConnectionMap_8h"/>
+        <childnode refid="1135" relation="include">
+        </childnode>
+        <childnode refid="1153" relation="include">
+        </childnode>
+      </node>
+      <node id="1135">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Cluster.h</label>
+        <link refid="Cluster_8h"/>
+        <childnode refid="1136" relation="include">
+        </childnode>
+        <childnode refid="1140" relation="include">
+        </childnode>
+        <childnode refid="1142" relation="include">
+        </childnode>
+        <childnode refid="1141" relation="include">
+        </childnode>
+        <childnode refid="1150" relation="include">
+        </childnode>
+        <childnode refid="1151" relation="include">
+        </childnode>
+        <childnode refid="1152" relation="include">
+        </childnode>
+      </node>
+      <node id="1152">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.cpp</label>
+        <link refid="NodeMesh_8cpp"/>
+      </node>
+      <node id="1154">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/FibreMap.h</label>
+        <link refid="FibreMap_8h"/>
+        <childnode refid="1143" relation="include">
+        </childnode>
+      </node>
+      <node id="1140">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/ClusterArchitect.h</label>
+        <link refid="ClusterArchitect_8h"/>
+        <childnode refid="1138" relation="include">
+        </childnode>
+        <childnode refid="1139" relation="include">
+        </childnode>
+        <childnode refid="1141" relation="include">
+        </childnode>
+      </node>
+      <node id="1174">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h</label>
+        <link refid="NodeMap_8h"/>
+        <childnode refid="1139" relation="include">
+        </childnode>
+        <childnode refid="1135" relation="include">
+        </childnode>
+      </node>
+      <node id="1164">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternChannel.h</label>
+        <link refid="PatternChannel_8h"/>
+        <childnode refid="1165" relation="include">
+        </childnode>
+        <childnode refid="1166" relation="include">
+        </childnode>
+        <childnode refid="1167" relation="include">
+        </childnode>
+      </node>
+      <node id="1170">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/Sequence.h</label>
+        <link refid="Sequence_8h"/>
+        <childnode refid="1171" relation="include">
+        </childnode>
+      </node>
+      <node id="1151">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Mesh.cpp</label>
+        <link refid="Mesh_8cpp"/>
+      </node>
+      <node id="1176">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/NodeDatabaseObject.cpp</label>
+        <link refid="NodeDatabaseObject_8cpp"/>
+      </node>
+      <node id="1137">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/ClusterAnalyserBasic.h</label>
+        <link refid="ClusterAnalyserBasic_8h"/>
+        <childnode refid="1138" relation="include">
+        </childnode>
+        <childnode refid="1139" relation="include">
+        </childnode>
+      </node>
+      <node id="1158">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h</label>
+        <link refid="DatabaseManager_8h"/>
+        <childnode refid="1146" relation="include">
+        </childnode>
+        <childnode refid="1159" relation="include">
+        </childnode>
+      </node>
+      <node id="1161">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/PatternDatabaseObject.cpp</label>
+        <link refid="PatternDatabaseObject_8cpp"/>
+      </node>
+      <node id="1172">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/NodeDatabaseObject.h</label>
+        <link refid="NodeDatabaseObject_8h"/>
+        <childnode refid="1173" relation="include">
+        </childnode>
+        <childnode refid="1158" relation="include">
+        </childnode>
+        <childnode refid="1176" relation="include">
+        </childnode>
+        <childnode refid="1161" relation="include">
+        </childnode>
+      </node>
+      <node id="1141">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Cluster.cpp</label>
+        <link refid="Cluster_8cpp"/>
+      </node>
+      <node id="1166">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternChannelMap.h</label>
+        <link refid="PatternChannelMap_8h"/>
+        <childnode refid="1143" relation="include">
+        </childnode>
+        <childnode refid="1167" relation="include">
+        </childnode>
+      </node>
+      <node id="1156">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/ConnectionDatabaseObject.h</label>
+        <link refid="ConnectionDatabaseObject_8h"/>
+        <childnode refid="1133" relation="include">
+        </childnode>
+        <childnode refid="1157" relation="include">
+        </childnode>
+        <childnode refid="1158" relation="include">
+        </childnode>
+      </node>
+      <node id="1142">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/ClusterMap.h</label>
+        <link refid="ClusterMap_8h"/>
+        <childnode refid="1143" relation="include">
+        </childnode>
+      </node>
+      <node id="1162">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/Pattern.h</label>
+        <link refid="Pattern_8h"/>
+        <childnode refid="1161" relation="include">
+        </childnode>
+        <childnode refid="1163" relation="include">
+        </childnode>
+        <childnode refid="1164" relation="include">
+        </childnode>
+        <childnode refid="1169" relation="include">
+        </childnode>
+        <childnode refid="1170" relation="include">
+        </childnode>
+        <childnode refid="1153" relation="include">
+        </childnode>
+        <childnode refid="1167" relation="include">
+        </childnode>
+      </node>
+      <node id="1171">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/Sequence.cpp</label>
+        <link refid="Sequence_8cpp"/>
+      </node>
+      <node id="1147">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.cpp</label>
+        <link refid="CryoManager_8cpp"/>
+      </node>
+      <node id="1146">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.h</label>
+        <link refid="CryoManager_8h"/>
+        <childnode refid="1147" relation="include">
+        </childnode>
+      </node>
+      <node id="1132">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h</label>
+        <link refid="Connection_8h"/>
+        <childnode refid="1133" relation="include">
+        </childnode>
+        <childnode refid="1134" relation="include">
+        </childnode>
+        <childnode refid="1155" relation="include">
+        </childnode>
+        <childnode refid="1135" relation="include">
+        </childnode>
+        <childnode refid="1150" relation="include">
+        </childnode>
+      </node>
+      <node id="1139">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/ClusterArchitect.cpp</label>
+        <link refid="ClusterArchitect_8cpp"/>
+      </node>
+      <node id="1145">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp</label>
+        <link refid="Creator_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classcryomesh_1_1manager_1_1DatabaseObject" prot="public">cryomesh::manager::DatabaseObject</innerclass>
+    <innernamespace refid="namespacecryomesh">cryomesh</innernamespace>
+    <innernamespace refid="namespacecryomesh_1_1manager">cryomesh::manager</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>DatabaseObject.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>Created<sp/>on:<sp/>15<sp/>Mar<sp/>2011</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Author:<sp/>&quot;SevenMachines<sp/>&lt;SevenMachines@yahoo.co.uk&gt;&quot;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DATABASEOBJECT_H_</highlight></codeline>
+<codeline lineno="9"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DATABASEOBJECT_H_</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/tokenizer.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">cryomesh<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">manager<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="classcryomesh_1_1manager_1_1DatabaseObject" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcryomesh_1_1manager_1_1DatabaseObject" kindref="compound">DatabaseObject</ref><sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23" refid="classcryomesh_1_1manager_1_1DatabaseObject_1a4806f6b018d86828c4251e06ac2634d9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1a4806f6b018d86828c4251e06ac2634d9" kindref="member">DatabaseObject</ref>():<ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1a9c648bf09b9fd8b4d599b0d4f4abf531" kindref="member">columns</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="25" refid="classcryomesh_1_1manager_1_1DatabaseObject_1a462e3eeb0610dc1e7e47661b86c862f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1a462e3eeb0610dc1e7e47661b86c862f6" kindref="member">~DatabaseObject</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="classcryomesh_1_1manager_1_1DatabaseObject_1a66ded4e1a1bccd65c94922648c7135c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1a66ded4e1a1bccd65c94922648c7135c5" kindref="member" tooltip="Return the string object associated with a key.">getKey</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>key)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>obj<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>std::string&gt;::const_iterator<sp/>it_found<sp/>=<sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1a9c648bf09b9fd8b4d599b0d4f4abf531" kindref="member">columns</ref>.find(key);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it_found<sp/>!=<sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1a9c648bf09b9fd8b4d599b0d4f4abf531" kindref="member">columns</ref>.end())<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>obj<sp/>=<sp/>it_found-&gt;second;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>obj;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="classcryomesh_1_1manager_1_1DatabaseObject_1aa4ef26ce91fea092f146e67add491e0f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1aa4ef26ce91fea092f146e67add491e0f" kindref="member" tooltip="Find entries value in map or return null.">findValue</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>entry,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;std::string,<sp/>std::string&gt;<sp/>&amp;<sp/>map){</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>val=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>std::string&gt;::const_iterator<sp/>it_found<sp/>=<sp/>map.find(entry);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it_found<sp/>!=<sp/>map.end()){</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>val<sp/>=<sp/>it_found-&gt;second;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>val;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="classcryomesh_1_1manager_1_1DatabaseObject_1a04ce7c34b51e3290c972121cf2f16565" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::map&lt;std::string,<sp/>std::string&gt;<sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1a04ce7c34b51e3290c972121cf2f16565" kindref="member" tooltip="Parse a string database entry, extract columns and values and return a map.">getColumnMapFromEntry</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>entry)<sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;getColumnMapFromEntry:<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;entry&lt;&lt;std::endl;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::char_separator&lt;char&gt;<sp/>sep(</highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>std::string&gt;<sp/>entry_map;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::tokenizer&lt;boost::char_separator&lt;char&gt;<sp/>&gt;<sp/>tokens(entry,<sp/>sep);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>forall<sp/>in<sp/>tokens</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::tokenizer&lt;boost::char_separator&lt;char&gt;<sp/>&gt;::const_iterator<sp/>it_tokens<sp/>=<sp/>tokens.begin();</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::tokenizer&lt;boost::char_separator&lt;char&gt;<sp/>&gt;::const_iterator<sp/>it_tokens_end<sp/>=<sp/>tokens.end();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(it_tokens<sp/>!=<sp/>it_tokens_end)<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>pairstr<sp/>=<sp/>*it_tokens;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>sep_pos<sp/>=<sp/>pairstr.find(</highlight><highlight class="stringliteral">&quot;:&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>key<sp/>=<sp/>pairstr.substr(0,<sp/>sep_pos);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>val<sp/>=<sp/>pairstr.substr(sep_pos+1);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>entry_map[key]<sp/>=<sp/>val;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;DatabaseObject::getColumnMapFromEntry:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(&quot;</highlight><highlight class="normal">&lt;&lt;key&lt;&lt;</highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal">&lt;&lt;val<sp/>&lt;&lt;</highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++it_tokens;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>entry_map;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1ad55c6e711341a652790b97f549b0dc63" kindref="member" tooltip="Get the string that can be used to insert the sql data.">getInsert</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>table)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=0;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="108" refid="classcryomesh_1_1manager_1_1DatabaseObject_1a1b37d9d07009ae1c71f644761d36b468" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1a1b37d9d07009ae1c71f644761d36b468" kindref="member" tooltip="Convert an templated object that can be piped to a stream to a string.">toString</ref>(T<sp/>obj)<sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::stringstream<sp/>ss;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ss<sp/>&lt;&lt;<sp/>obj;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ss.str();</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="119" refid="classcryomesh_1_1manager_1_1DatabaseObject_1a9c648bf09b9fd8b4d599b0d4f4abf531" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>std::string&gt;<sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1a9c648bf09b9fd8b4d599b0d4f4abf531" kindref="member">columns</ref>;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DATABASEOBJECT_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseObject.h"/>
+  </compounddef>
+</doxygen>

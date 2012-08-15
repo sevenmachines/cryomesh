@@ -1,0 +1,529 @@
+\hypertarget{classcryomesh_1_1manager_1_1ConnectionDatabaseObject}{\section{cryomesh\-:\-:manager\-:\-:\-Connection\-Database\-Object \-Class \-Reference}
+\label{classcryomesh_1_1manager_1_1ConnectionDatabaseObject}\index{cryomesh\-::manager\-::\-Connection\-Database\-Object@{cryomesh\-::manager\-::\-Connection\-Database\-Object}}
+}
+
+
+{\ttfamily \#include $<$\-Connection\-Database\-Object.\-h$>$}
+
+\-Inheritance diagram for cryomesh\-:\-:manager\-:\-:\-Connection\-Database\-Object\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcryomesh_1_1manager_1_1ConnectionDatabaseObject}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a62f33a7c826d115aa981d3cca149e14b}{\-Connection\-Database\-Object} (const std\-::string \&uuid\-\_\-str, const std\-::string \&innode\-\_\-uuid\-\_\-str, const std\-::string \&outnode\-\_\-uuid\-\_\-str, const \hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle} \&\hyperlink{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a481ed7a285f11016e6f6182293cca49f}{cycle}, const int impulse\-\_\-count)
+\begin{DoxyCompactList}\small\item\em \-Create database object from connection information. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a8e38ce2ee538fc20ce2c2f04b6abce79}{\-Connection\-Database\-Object} (const std\-::string \&connection\-\_\-table\-\_\-entry)
+\begin{DoxyCompactList}\small\item\em \-Create database object from a string database entry for a connection. \end{DoxyCompactList}\item 
+virtual \hyperlink{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a1c34c6c64fcfc7c2aebc714b7b37d059}{$\sim$\-Connection\-Database\-Object} ()
+\begin{DoxyCompactList}\small\item\em \-Default \-Destructor. \end{DoxyCompactList}\item 
+virtual std\-::string \hyperlink{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_ac7b22d25a4366175fd7d1578f476b125}{get\-Insert} (const std\-::string \&table) const 
+\begin{DoxyCompactList}\small\item\em \-Get the string that can be used to insert the sql data. \end{DoxyCompactList}\item 
+const std\-::string \& \hyperlink{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_aa310082cf95a704640a068db4a328803}{get\-U\-U\-I\-D} () const 
+\begin{DoxyCompactList}\small\item\em \-Get uuid variable of this object. \end{DoxyCompactList}\item 
+const std\-::string \& \hyperlink{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a2e8384fe932c699e146511a628f16cff}{get\-Input\-Node\-U\-U\-I\-D} () const 
+\begin{DoxyCompactList}\small\item\em \-Get input\-Node\-U\-U\-I\-D variable of this object. \end{DoxyCompactList}\item 
+const std\-::string \& \hyperlink{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_ab3488138917a89a2524c32d7999174c0}{get\-Output\-Node\-U\-U\-I\-D} () const 
+\begin{DoxyCompactList}\small\item\em \-Get output\-Node\-U\-U\-I\-D variable of this object. \end{DoxyCompactList}\item 
+const \hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle} \& \hyperlink{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_acc8aa75ed2afb098ffba8cd79ed32b6b}{get\-Cycle} () const 
+\begin{DoxyCompactList}\small\item\em \-Get cycle variable of this object. \end{DoxyCompactList}\item 
+const int \& \hyperlink{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a6fe71c5af6d5e8c58546768c11f662f0}{get\-Impulse\-Count} () const 
+\begin{DoxyCompactList}\small\item\em \-Get impulse\-Count variable of this object. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classcryomesh_1_1manager_1_1DatabaseObject_a66ded4e1a1bccd65c94922648c7135c5}{get\-Key} (const std\-::string \&key) const 
+\begin{DoxyCompactList}\small\item\em \-Return the string object associated with a key. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\-::string \hyperlink{classcryomesh_1_1manager_1_1DatabaseObject_aa4ef26ce91fea092f146e67add491e0f}{find\-Value} (const std\-::string \&entry, const std\-::map$<$ std\-::string, std\-::string $>$ \&map)
+\begin{DoxyCompactList}\small\item\em \-Find entries value in map or return null. \end{DoxyCompactList}\item 
+static std\-::map$<$ std\-::string, \*
+std\-::string $>$ \hyperlink{classcryomesh_1_1manager_1_1DatabaseObject_a04ce7c34b51e3290c972121cf2f16565}{get\-Column\-Map\-From\-Entry} (const std\-::string \&entry)
+\begin{DoxyCompactList}\small\item\em \-Parse a string database entry, extract columns and values and return a map. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\static std\-::string \hyperlink{classcryomesh_1_1manager_1_1DatabaseObject_a1b37d9d07009ae1c71f644761d36b468}{to\-String} (\-T obj)
+\begin{DoxyCompactList}\small\item\em \-Convert an templated object that can be piped to a stream to a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std\-::string \hyperlink{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_ad04bc9639dd0ceed8d559f63cdc0c025}{\-I\-D\-\_\-\-T\-A\-G} = \char`\"{}id\char`\"{}
+\item 
+static const std\-::string \hyperlink{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a00720d641e03f298f88c5431d948fa1a}{\-I\-N\-P\-U\-T\-\_\-\-I\-D\-\_\-\-T\-A\-G} = \char`\"{}inputid\char`\"{}
+\item 
+static const std\-::string \hyperlink{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_ac0ee0b21e1f626b12b125987283f7ebb}{\-O\-U\-T\-P\-U\-T\-\_\-\-I\-D\-\_\-\-T\-A\-G} = \char`\"{}outputid\char`\"{}
+\item 
+static const std\-::string \hyperlink{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a5e1505fdea7990278b9055b87d1071ef}{\-I\-M\-P\-U\-L\-S\-E\-\_\-\-C\-O\-U\-N\-T\-\_\-\-T\-A\-G} = \char`\"{}impulses\char`\"{}
+\item 
+static const std\-::string \hyperlink{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a6af5ded40e1ecffc6dbe072b68a7a153}{\-C\-Y\-C\-L\-E\-\_\-\-T\-A\-G} = \char`\"{}cycle\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::map$<$ std\-::string, \*
+std\-::string $>$ \hyperlink{classcryomesh_1_1manager_1_1DatabaseObject_a9c648bf09b9fd8b4d599b0d4f4abf531}{columns}
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a31eb0b099470e77da0a89c5cef9d6f68}{uuid}
+\item 
+std\-::string \hyperlink{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a06774523f087375aaf58b69006b2943d}{input\-Node\-U\-U\-I\-D}
+\item 
+std\-::string \hyperlink{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a0b7a3185c6ef946c0afe806a364d13d5}{output\-Node\-U\-U\-I\-D}
+\item 
+\hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle} \hyperlink{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a481ed7a285f11016e6f6182293cca49f}{cycle}
+\item 
+int \hyperlink{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_ae78ea47f996ccda8b67325edc74922c3}{impulse\-Count}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+
+
+\-Definition at line 21 of file \-Connection\-Database\-Object.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a62f33a7c826d115aa981d3cca149e14b}{\index{cryomesh\-::manager\-::\-Connection\-Database\-Object@{cryomesh\-::manager\-::\-Connection\-Database\-Object}!\-Connection\-Database\-Object@{\-Connection\-Database\-Object}}
+\index{\-Connection\-Database\-Object@{\-Connection\-Database\-Object}!cryomesh::manager::ConnectionDatabaseObject@{cryomesh\-::manager\-::\-Connection\-Database\-Object}}
+\subsubsection[{\-Connection\-Database\-Object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::manager\-::\-Connection\-Database\-Object\-::\-Connection\-Database\-Object} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{uuid\-\_\-str, }
+\item[{const std\-::string \&}]{innode\-\_\-uuid\-\_\-str, }
+\item[{const std\-::string \&}]{outnode\-\_\-uuid\-\_\-str, }
+\item[{const {\bf common\-::\-Cycle} \&}]{cycle, }
+\item[{const int}]{impulse\-\_\-count}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a62f33a7c826d115aa981d3cca149e14b}
+
+
+\-Create database object from connection information. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::string} & \-The uuid of the connection \\
+\hline
+{\em std\-::string} & \-The uuid of the input node \\
+\hline
+{\em std\-::string} & \-The uuid of the output node \\
+\hline
+{\em \hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle}} & \-The cycle of the entry \\
+\hline
+{\em int} & \-The impulse count of the connection on this entry \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 20 of file \-Connection\-Database\-Object.\-cpp.
+
+
+
+\-References cryomesh\-::manager\-::\-Database\-Object\-::columns, cycle, \-C\-Y\-C\-L\-E\-\_\-\-T\-A\-G, \-I\-D\-\_\-\-T\-A\-G, \-I\-M\-P\-U\-L\-S\-E\-\_\-\-C\-O\-U\-N\-T\-\_\-\-T\-A\-G, \-I\-N\-P\-U\-T\-\_\-\-I\-D\-\_\-\-T\-A\-G, \-O\-U\-T\-P\-U\-T\-\_\-\-I\-D\-\_\-\-T\-A\-G, and cryomesh\-::common\-::\-Cycle\-::to\-L\-Int().
+
+\hypertarget{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a8e38ce2ee538fc20ce2c2f04b6abce79}{\index{cryomesh\-::manager\-::\-Connection\-Database\-Object@{cryomesh\-::manager\-::\-Connection\-Database\-Object}!\-Connection\-Database\-Object@{\-Connection\-Database\-Object}}
+\index{\-Connection\-Database\-Object@{\-Connection\-Database\-Object}!cryomesh::manager::ConnectionDatabaseObject@{cryomesh\-::manager\-::\-Connection\-Database\-Object}}
+\subsubsection[{\-Connection\-Database\-Object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::manager\-::\-Connection\-Database\-Object\-::\-Connection\-Database\-Object} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{connection\-\_\-table\-\_\-entry}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a8e38ce2ee538fc20ce2c2f04b6abce79}
+
+
+\-Create database object from a string database entry for a connection. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::string} & \-The database entry of the connection \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 31 of file \-Connection\-Database\-Object.\-cpp.
+
+
+
+\-References cycle, cryomesh\-::manager\-::\-Database\-Object\-::find\-Value(), cryomesh\-::manager\-::\-Database\-Object\-::get\-Column\-Map\-From\-Entry(), impulse\-Count, input\-Node\-U\-U\-I\-D, output\-Node\-U\-U\-I\-D, and uuid.
+
+\hypertarget{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a1c34c6c64fcfc7c2aebc714b7b37d059}{\index{cryomesh\-::manager\-::\-Connection\-Database\-Object@{cryomesh\-::manager\-::\-Connection\-Database\-Object}!$\sim$\-Connection\-Database\-Object@{$\sim$\-Connection\-Database\-Object}}
+\index{$\sim$\-Connection\-Database\-Object@{$\sim$\-Connection\-Database\-Object}!cryomesh::manager::ConnectionDatabaseObject@{cryomesh\-::manager\-::\-Connection\-Database\-Object}}
+\subsubsection[{$\sim$\-Connection\-Database\-Object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::manager\-::\-Connection\-Database\-Object\-::$\sim$\-Connection\-Database\-Object} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a1c34c6c64fcfc7c2aebc714b7b37d059}
+
+
+\-Default \-Destructor. 
+
+
+
+\-Definition at line 66 of file \-Connection\-Database\-Object.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1manager_1_1DatabaseObject_aa4ef26ce91fea092f146e67add491e0f}{\index{cryomesh\-::manager\-::\-Connection\-Database\-Object@{cryomesh\-::manager\-::\-Connection\-Database\-Object}!find\-Value@{find\-Value}}
+\index{find\-Value@{find\-Value}!cryomesh::manager::ConnectionDatabaseObject@{cryomesh\-::manager\-::\-Connection\-Database\-Object}}
+\subsubsection[{find\-Value}]{\setlength{\rightskip}{0pt plus 5cm}static std\-::string {\bf cryomesh\-::manager\-::\-Database\-Object\-::find\-Value} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{entry, }
+\item[{const std\-::map$<$ std\-::string, std\-::string $>$ \&}]{map}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static, inherited\mbox{]}}}}\label{classcryomesh_1_1manager_1_1DatabaseObject_aa4ef26ce91fea092f146e67add491e0f}
+
+
+\-Find entries value in map or return null. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::string} & \-Entry to find \\
+\hline
+{\em std\-::map$<$std\-::string,std\-::string} & map to search\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Value of entry 
+\end{DoxyReturn}
+
+
+\-Definition at line 59 of file \-Database\-Object.\-h.
+
+
+
+\-Referenced by \-Connection\-Database\-Object(), cryomesh\-::manager\-::\-Node\-Database\-Object\-::\-Node\-Database\-Object(), and cryomesh\-::manager\-::\-Pattern\-Database\-Object\-::\-Pattern\-Database\-Object().
+
+\hypertarget{classcryomesh_1_1manager_1_1DatabaseObject_a04ce7c34b51e3290c972121cf2f16565}{\index{cryomesh\-::manager\-::\-Connection\-Database\-Object@{cryomesh\-::manager\-::\-Connection\-Database\-Object}!get\-Column\-Map\-From\-Entry@{get\-Column\-Map\-From\-Entry}}
+\index{get\-Column\-Map\-From\-Entry@{get\-Column\-Map\-From\-Entry}!cryomesh::manager::ConnectionDatabaseObject@{cryomesh\-::manager\-::\-Connection\-Database\-Object}}
+\subsubsection[{get\-Column\-Map\-From\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}static std\-::map$<$std\-::string, std\-::string$>$ {\bf cryomesh\-::manager\-::\-Database\-Object\-::get\-Column\-Map\-From\-Entry} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static, inherited\mbox{]}}}}\label{classcryomesh_1_1manager_1_1DatabaseObject_a04ce7c34b51e3290c972121cf2f16565}
+
+
+\-Parse a string database entry, extract columns and values and return a map. 
+
+
+
+\-Definition at line 72 of file \-Database\-Object.\-h.
+
+
+
+\-Referenced by \-Connection\-Database\-Object(), cryomesh\-::manager\-::\-Node\-Database\-Object\-::\-Node\-Database\-Object(), and cryomesh\-::manager\-::\-Pattern\-Database\-Object\-::\-Pattern\-Database\-Object().
+
+\hypertarget{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_acc8aa75ed2afb098ffba8cd79ed32b6b}{\index{cryomesh\-::manager\-::\-Connection\-Database\-Object@{cryomesh\-::manager\-::\-Connection\-Database\-Object}!get\-Cycle@{get\-Cycle}}
+\index{get\-Cycle@{get\-Cycle}!cryomesh::manager::ConnectionDatabaseObject@{cryomesh\-::manager\-::\-Connection\-Database\-Object}}
+\subsubsection[{get\-Cycle}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf common\-::\-Cycle} \& {\bf cryomesh\-::manager\-::\-Connection\-Database\-Object\-::get\-Cycle} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_acc8aa75ed2afb098ffba8cd79ed32b6b}
+
+
+\-Get cycle variable of this object. 
+
+\begin{DoxyReturn}{\-Returns}
+std\-::string \-The cycle variable 
+\end{DoxyReturn}
+
+
+\-Definition at line 92 of file \-Connection\-Database\-Object.\-cpp.
+
+
+
+\-References cycle.
+
+\hypertarget{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a6fe71c5af6d5e8c58546768c11f662f0}{\index{cryomesh\-::manager\-::\-Connection\-Database\-Object@{cryomesh\-::manager\-::\-Connection\-Database\-Object}!get\-Impulse\-Count@{get\-Impulse\-Count}}
+\index{get\-Impulse\-Count@{get\-Impulse\-Count}!cryomesh::manager::ConnectionDatabaseObject@{cryomesh\-::manager\-::\-Connection\-Database\-Object}}
+\subsubsection[{get\-Impulse\-Count}]{\setlength{\rightskip}{0pt plus 5cm}const int \& {\bf cryomesh\-::manager\-::\-Connection\-Database\-Object\-::get\-Impulse\-Count} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a6fe71c5af6d5e8c58546768c11f662f0}
+
+
+\-Get impulse\-Count variable of this object. 
+
+\begin{DoxyReturn}{\-Returns}
+std\-::string \-The impulse\-Count variable 
+\end{DoxyReturn}
+
+
+\-Definition at line 96 of file \-Connection\-Database\-Object.\-cpp.
+
+
+
+\-References impulse\-Count.
+
+\hypertarget{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a2e8384fe932c699e146511a628f16cff}{\index{cryomesh\-::manager\-::\-Connection\-Database\-Object@{cryomesh\-::manager\-::\-Connection\-Database\-Object}!get\-Input\-Node\-U\-U\-I\-D@{get\-Input\-Node\-U\-U\-I\-D}}
+\index{get\-Input\-Node\-U\-U\-I\-D@{get\-Input\-Node\-U\-U\-I\-D}!cryomesh::manager::ConnectionDatabaseObject@{cryomesh\-::manager\-::\-Connection\-Database\-Object}}
+\subsubsection[{get\-Input\-Node\-U\-U\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string \& {\bf cryomesh\-::manager\-::\-Connection\-Database\-Object\-::get\-Input\-Node\-U\-U\-I\-D} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a2e8384fe932c699e146511a628f16cff}
+
+
+\-Get input\-Node\-U\-U\-I\-D variable of this object. 
+
+\begin{DoxyReturn}{\-Returns}
+std\-::string \-The input\-Node\-U\-U\-I\-D variable 
+\end{DoxyReturn}
+
+
+\-Definition at line 84 of file \-Connection\-Database\-Object.\-cpp.
+
+
+
+\-References input\-Node\-U\-U\-I\-D.
+
+\hypertarget{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_ac7b22d25a4366175fd7d1578f476b125}{\index{cryomesh\-::manager\-::\-Connection\-Database\-Object@{cryomesh\-::manager\-::\-Connection\-Database\-Object}!get\-Insert@{get\-Insert}}
+\index{get\-Insert@{get\-Insert}!cryomesh::manager::ConnectionDatabaseObject@{cryomesh\-::manager\-::\-Connection\-Database\-Object}}
+\subsubsection[{get\-Insert}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::manager\-::\-Connection\-Database\-Object\-::get\-Insert} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{table}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_ac7b22d25a4366175fd7d1578f476b125}
+
+
+\-Get the string that can be used to insert the sql data. 
+
+\begin{DoxyReturn}{\-Returns}
+the sql command string to insert into this table 
+\end{DoxyReturn}
+
+
+\-Implements \hyperlink{classcryomesh_1_1manager_1_1DatabaseObject_ad55c6e711341a652790b97f549b0dc63}{cryomesh\-::manager\-::\-Database\-Object}.
+
+
+
+\-Definition at line 69 of file \-Connection\-Database\-Object.\-cpp.
+
+
+
+\-References \-C\-Y\-C\-L\-E\-\_\-\-T\-A\-G, cryomesh\-::manager\-::\-Database\-Object\-::get\-Key(), \-I\-D\-\_\-\-T\-A\-G, \-I\-M\-P\-U\-L\-S\-E\-\_\-\-C\-O\-U\-N\-T\-\_\-\-T\-A\-G, \-I\-N\-P\-U\-T\-\_\-\-I\-D\-\_\-\-T\-A\-G, and \-O\-U\-T\-P\-U\-T\-\_\-\-I\-D\-\_\-\-T\-A\-G.
+
+\hypertarget{classcryomesh_1_1manager_1_1DatabaseObject_a66ded4e1a1bccd65c94922648c7135c5}{\index{cryomesh\-::manager\-::\-Connection\-Database\-Object@{cryomesh\-::manager\-::\-Connection\-Database\-Object}!get\-Key@{get\-Key}}
+\index{get\-Key@{get\-Key}!cryomesh::manager::ConnectionDatabaseObject@{cryomesh\-::manager\-::\-Connection\-Database\-Object}}
+\subsubsection[{get\-Key}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::manager\-::\-Database\-Object\-::get\-Key} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{key}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline, inherited\mbox{]}}}}\label{classcryomesh_1_1manager_1_1DatabaseObject_a66ded4e1a1bccd65c94922648c7135c5}
+
+
+\-Return the string object associated with a key. 
+
+\-::string \-The key to search for
+
+\begin{DoxyReturn}{\-Returns}
+std\-::string \-The object associated with the search key, \char`\"{}\char`\"{} if not found 
+\end{DoxyReturn}
+
+
+\-Definition at line 37 of file \-Database\-Object.\-h.
+
+
+
+\-References cryomesh\-::manager\-::\-Database\-Object\-::columns.
+
+
+
+\-Referenced by cryomesh\-::manager\-::\-Pattern\-Database\-Object\-::get\-Insert(), cryomesh\-::manager\-::\-Node\-Database\-Object\-::get\-Insert(), and get\-Insert().
+
+\hypertarget{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_ab3488138917a89a2524c32d7999174c0}{\index{cryomesh\-::manager\-::\-Connection\-Database\-Object@{cryomesh\-::manager\-::\-Connection\-Database\-Object}!get\-Output\-Node\-U\-U\-I\-D@{get\-Output\-Node\-U\-U\-I\-D}}
+\index{get\-Output\-Node\-U\-U\-I\-D@{get\-Output\-Node\-U\-U\-I\-D}!cryomesh::manager::ConnectionDatabaseObject@{cryomesh\-::manager\-::\-Connection\-Database\-Object}}
+\subsubsection[{get\-Output\-Node\-U\-U\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string \& {\bf cryomesh\-::manager\-::\-Connection\-Database\-Object\-::get\-Output\-Node\-U\-U\-I\-D} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_ab3488138917a89a2524c32d7999174c0}
+
+
+\-Get output\-Node\-U\-U\-I\-D variable of this object. 
+
+\begin{DoxyReturn}{\-Returns}
+std\-::string \-The output\-Node\-U\-U\-I\-D variable 
+\end{DoxyReturn}
+
+
+\-Definition at line 88 of file \-Connection\-Database\-Object.\-cpp.
+
+
+
+\-References output\-Node\-U\-U\-I\-D.
+
+\hypertarget{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_aa310082cf95a704640a068db4a328803}{\index{cryomesh\-::manager\-::\-Connection\-Database\-Object@{cryomesh\-::manager\-::\-Connection\-Database\-Object}!get\-U\-U\-I\-D@{get\-U\-U\-I\-D}}
+\index{get\-U\-U\-I\-D@{get\-U\-U\-I\-D}!cryomesh::manager::ConnectionDatabaseObject@{cryomesh\-::manager\-::\-Connection\-Database\-Object}}
+\subsubsection[{get\-U\-U\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string \& {\bf cryomesh\-::manager\-::\-Connection\-Database\-Object\-::get\-U\-U\-I\-D} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_aa310082cf95a704640a068db4a328803}
+
+
+\-Get uuid variable of this object. 
+
+\begin{DoxyReturn}{\-Returns}
+std\-::string \-The uuid variable 
+\end{DoxyReturn}
+
+
+\-Definition at line 80 of file \-Connection\-Database\-Object.\-cpp.
+
+
+
+\-References uuid.
+
+\hypertarget{classcryomesh_1_1manager_1_1DatabaseObject_a1b37d9d07009ae1c71f644761d36b468}{\index{cryomesh\-::manager\-::\-Connection\-Database\-Object@{cryomesh\-::manager\-::\-Connection\-Database\-Object}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!cryomesh::manager::ConnectionDatabaseObject@{cryomesh\-::manager\-::\-Connection\-Database\-Object}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ static std\-::string {\bf cryomesh\-::manager\-::\-Database\-Object\-::to\-String} (
+\begin{DoxyParamCaption}
+\item[{\-T}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static, inherited\mbox{]}}}}\label{classcryomesh_1_1manager_1_1DatabaseObject_a1b37d9d07009ae1c71f644761d36b468}
+
+
+\-Convert an templated object that can be piped to a stream to a string. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-T} & \-The object to get a string for \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 108 of file \-Database\-Object.\-h.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classcryomesh_1_1manager_1_1DatabaseObject_a9c648bf09b9fd8b4d599b0d4f4abf531}{\index{cryomesh\-::manager\-::\-Connection\-Database\-Object@{cryomesh\-::manager\-::\-Connection\-Database\-Object}!columns@{columns}}
+\index{columns@{columns}!cryomesh::manager::ConnectionDatabaseObject@{cryomesh\-::manager\-::\-Connection\-Database\-Object}}
+\subsubsection[{columns}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$std\-::string, std\-::string$>$ {\bf cryomesh\-::manager\-::\-Database\-Object\-::columns}\hspace{0.3cm}{\ttfamily  \mbox{[}protected, inherited\mbox{]}}}}\label{classcryomesh_1_1manager_1_1DatabaseObject_a9c648bf09b9fd8b4d599b0d4f4abf531}
+
+
+\-Definition at line 119 of file \-Database\-Object.\-h.
+
+
+
+\-Referenced by \-Connection\-Database\-Object(), cryomesh\-::manager\-::\-Database\-Object\-::get\-Key(), cryomesh\-::manager\-::\-Node\-Database\-Object\-::\-Node\-Database\-Object(), and cryomesh\-::manager\-::\-Pattern\-Database\-Object\-::\-Pattern\-Database\-Object().
+
+\hypertarget{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a481ed7a285f11016e6f6182293cca49f}{\index{cryomesh\-::manager\-::\-Connection\-Database\-Object@{cryomesh\-::manager\-::\-Connection\-Database\-Object}!cycle@{cycle}}
+\index{cycle@{cycle}!cryomesh::manager::ConnectionDatabaseObject@{cryomesh\-::manager\-::\-Connection\-Database\-Object}}
+\subsubsection[{cycle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf common\-::\-Cycle} {\bf cryomesh\-::manager\-::\-Connection\-Database\-Object\-::cycle}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a481ed7a285f11016e6f6182293cca49f}
+
+
+\-Definition at line 162 of file \-Connection\-Database\-Object.\-h.
+
+
+
+\-Referenced by \-Connection\-Database\-Object(), and get\-Cycle().
+
+\hypertarget{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a6af5ded40e1ecffc6dbe072b68a7a153}{\index{cryomesh\-::manager\-::\-Connection\-Database\-Object@{cryomesh\-::manager\-::\-Connection\-Database\-Object}!\-C\-Y\-C\-L\-E\-\_\-\-T\-A\-G@{\-C\-Y\-C\-L\-E\-\_\-\-T\-A\-G}}
+\index{\-C\-Y\-C\-L\-E\-\_\-\-T\-A\-G@{\-C\-Y\-C\-L\-E\-\_\-\-T\-A\-G}!cryomesh::manager::ConnectionDatabaseObject@{cryomesh\-::manager\-::\-Connection\-Database\-Object}}
+\subsubsection[{\-C\-Y\-C\-L\-E\-\_\-\-T\-A\-G}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string {\bf cryomesh\-::manager\-::\-Connection\-Database\-Object\-::\-C\-Y\-C\-L\-E\-\_\-\-T\-A\-G} = \char`\"{}cycle\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a6af5ded40e1ecffc6dbe072b68a7a153}
+
+
+\-Definition at line 133 of file \-Connection\-Database\-Object.\-h.
+
+
+
+\-Referenced by \-Connection\-Database\-Object(), and get\-Insert().
+
+\hypertarget{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_ad04bc9639dd0ceed8d559f63cdc0c025}{\index{cryomesh\-::manager\-::\-Connection\-Database\-Object@{cryomesh\-::manager\-::\-Connection\-Database\-Object}!\-I\-D\-\_\-\-T\-A\-G@{\-I\-D\-\_\-\-T\-A\-G}}
+\index{\-I\-D\-\_\-\-T\-A\-G@{\-I\-D\-\_\-\-T\-A\-G}!cryomesh::manager::ConnectionDatabaseObject@{cryomesh\-::manager\-::\-Connection\-Database\-Object}}
+\subsubsection[{\-I\-D\-\_\-\-T\-A\-G}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string {\bf cryomesh\-::manager\-::\-Connection\-Database\-Object\-::\-I\-D\-\_\-\-T\-A\-G} = \char`\"{}id\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_ad04bc9639dd0ceed8d559f63cdc0c025}
+
+
+\-Definition at line 106 of file \-Connection\-Database\-Object.\-h.
+
+
+
+\-Referenced by \-Connection\-Database\-Object(), and get\-Insert().
+
+\hypertarget{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a5e1505fdea7990278b9055b87d1071ef}{\index{cryomesh\-::manager\-::\-Connection\-Database\-Object@{cryomesh\-::manager\-::\-Connection\-Database\-Object}!\-I\-M\-P\-U\-L\-S\-E\-\_\-\-C\-O\-U\-N\-T\-\_\-\-T\-A\-G@{\-I\-M\-P\-U\-L\-S\-E\-\_\-\-C\-O\-U\-N\-T\-\_\-\-T\-A\-G}}
+\index{\-I\-M\-P\-U\-L\-S\-E\-\_\-\-C\-O\-U\-N\-T\-\_\-\-T\-A\-G@{\-I\-M\-P\-U\-L\-S\-E\-\_\-\-C\-O\-U\-N\-T\-\_\-\-T\-A\-G}!cryomesh::manager::ConnectionDatabaseObject@{cryomesh\-::manager\-::\-Connection\-Database\-Object}}
+\subsubsection[{\-I\-M\-P\-U\-L\-S\-E\-\_\-\-C\-O\-U\-N\-T\-\_\-\-T\-A\-G}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string {\bf cryomesh\-::manager\-::\-Connection\-Database\-Object\-::\-I\-M\-P\-U\-L\-S\-E\-\_\-\-C\-O\-U\-N\-T\-\_\-\-T\-A\-G} = \char`\"{}impulses\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a5e1505fdea7990278b9055b87d1071ef}
+
+
+\-Definition at line 127 of file \-Connection\-Database\-Object.\-h.
+
+
+
+\-Referenced by \-Connection\-Database\-Object(), and get\-Insert().
+
+\hypertarget{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_ae78ea47f996ccda8b67325edc74922c3}{\index{cryomesh\-::manager\-::\-Connection\-Database\-Object@{cryomesh\-::manager\-::\-Connection\-Database\-Object}!impulse\-Count@{impulse\-Count}}
+\index{impulse\-Count@{impulse\-Count}!cryomesh::manager::ConnectionDatabaseObject@{cryomesh\-::manager\-::\-Connection\-Database\-Object}}
+\subsubsection[{impulse\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::manager\-::\-Connection\-Database\-Object\-::impulse\-Count}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_ae78ea47f996ccda8b67325edc74922c3}
+
+
+\-Definition at line 169 of file \-Connection\-Database\-Object.\-h.
+
+
+
+\-Referenced by \-Connection\-Database\-Object(), and get\-Impulse\-Count().
+
+\hypertarget{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a00720d641e03f298f88c5431d948fa1a}{\index{cryomesh\-::manager\-::\-Connection\-Database\-Object@{cryomesh\-::manager\-::\-Connection\-Database\-Object}!\-I\-N\-P\-U\-T\-\_\-\-I\-D\-\_\-\-T\-A\-G@{\-I\-N\-P\-U\-T\-\_\-\-I\-D\-\_\-\-T\-A\-G}}
+\index{\-I\-N\-P\-U\-T\-\_\-\-I\-D\-\_\-\-T\-A\-G@{\-I\-N\-P\-U\-T\-\_\-\-I\-D\-\_\-\-T\-A\-G}!cryomesh::manager::ConnectionDatabaseObject@{cryomesh\-::manager\-::\-Connection\-Database\-Object}}
+\subsubsection[{\-I\-N\-P\-U\-T\-\_\-\-I\-D\-\_\-\-T\-A\-G}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string {\bf cryomesh\-::manager\-::\-Connection\-Database\-Object\-::\-I\-N\-P\-U\-T\-\_\-\-I\-D\-\_\-\-T\-A\-G} = \char`\"{}inputid\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a00720d641e03f298f88c5431d948fa1a}
+
+
+\-Definition at line 113 of file \-Connection\-Database\-Object.\-h.
+
+
+
+\-Referenced by \-Connection\-Database\-Object(), and get\-Insert().
+
+\hypertarget{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a06774523f087375aaf58b69006b2943d}{\index{cryomesh\-::manager\-::\-Connection\-Database\-Object@{cryomesh\-::manager\-::\-Connection\-Database\-Object}!input\-Node\-U\-U\-I\-D@{input\-Node\-U\-U\-I\-D}}
+\index{input\-Node\-U\-U\-I\-D@{input\-Node\-U\-U\-I\-D}!cryomesh::manager::ConnectionDatabaseObject@{cryomesh\-::manager\-::\-Connection\-Database\-Object}}
+\subsubsection[{input\-Node\-U\-U\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::manager\-::\-Connection\-Database\-Object\-::input\-Node\-U\-U\-I\-D}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a06774523f087375aaf58b69006b2943d}
+
+
+\-Definition at line 148 of file \-Connection\-Database\-Object.\-h.
+
+
+
+\-Referenced by \-Connection\-Database\-Object(), and get\-Input\-Node\-U\-U\-I\-D().
+
+\hypertarget{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_ac0ee0b21e1f626b12b125987283f7ebb}{\index{cryomesh\-::manager\-::\-Connection\-Database\-Object@{cryomesh\-::manager\-::\-Connection\-Database\-Object}!\-O\-U\-T\-P\-U\-T\-\_\-\-I\-D\-\_\-\-T\-A\-G@{\-O\-U\-T\-P\-U\-T\-\_\-\-I\-D\-\_\-\-T\-A\-G}}
+\index{\-O\-U\-T\-P\-U\-T\-\_\-\-I\-D\-\_\-\-T\-A\-G@{\-O\-U\-T\-P\-U\-T\-\_\-\-I\-D\-\_\-\-T\-A\-G}!cryomesh::manager::ConnectionDatabaseObject@{cryomesh\-::manager\-::\-Connection\-Database\-Object}}
+\subsubsection[{\-O\-U\-T\-P\-U\-T\-\_\-\-I\-D\-\_\-\-T\-A\-G}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string {\bf cryomesh\-::manager\-::\-Connection\-Database\-Object\-::\-O\-U\-T\-P\-U\-T\-\_\-\-I\-D\-\_\-\-T\-A\-G} = \char`\"{}outputid\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_ac0ee0b21e1f626b12b125987283f7ebb}
+
+
+\-Definition at line 120 of file \-Connection\-Database\-Object.\-h.
+
+
+
+\-Referenced by \-Connection\-Database\-Object(), and get\-Insert().
+
+\hypertarget{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a0b7a3185c6ef946c0afe806a364d13d5}{\index{cryomesh\-::manager\-::\-Connection\-Database\-Object@{cryomesh\-::manager\-::\-Connection\-Database\-Object}!output\-Node\-U\-U\-I\-D@{output\-Node\-U\-U\-I\-D}}
+\index{output\-Node\-U\-U\-I\-D@{output\-Node\-U\-U\-I\-D}!cryomesh::manager::ConnectionDatabaseObject@{cryomesh\-::manager\-::\-Connection\-Database\-Object}}
+\subsubsection[{output\-Node\-U\-U\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::manager\-::\-Connection\-Database\-Object\-::output\-Node\-U\-U\-I\-D}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a0b7a3185c6ef946c0afe806a364d13d5}
+
+
+\-Definition at line 155 of file \-Connection\-Database\-Object.\-h.
+
+
+
+\-Referenced by \-Connection\-Database\-Object(), and get\-Output\-Node\-U\-U\-I\-D().
+
+\hypertarget{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a31eb0b099470e77da0a89c5cef9d6f68}{\index{cryomesh\-::manager\-::\-Connection\-Database\-Object@{cryomesh\-::manager\-::\-Connection\-Database\-Object}!uuid@{uuid}}
+\index{uuid@{uuid}!cryomesh::manager::ConnectionDatabaseObject@{cryomesh\-::manager\-::\-Connection\-Database\-Object}}
+\subsubsection[{uuid}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::manager\-::\-Connection\-Database\-Object\-::uuid}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_a31eb0b099470e77da0a89c5cef9d6f68}
+
+
+\-Definition at line 141 of file \-Connection\-Database\-Object.\-h.
+
+
+
+\-Referenced by \-Connection\-Database\-Object(), and get\-U\-U\-I\-D().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/manager/\hyperlink{ConnectionDatabaseObject_8h}{\-Connection\-Database\-Object.\-h}\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/manager/\hyperlink{ConnectionDatabaseObject_8cpp}{\-Connection\-Database\-Object.\-cpp}\end{DoxyCompactItemize}

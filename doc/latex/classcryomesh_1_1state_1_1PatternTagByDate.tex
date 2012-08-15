@@ -1,0 +1,636 @@
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate}{\section{cryomesh\-:\-:state\-:\-:\-Pattern\-Tag\-By\-Date \-Class \-Reference}
+\label{classcryomesh_1_1state_1_1PatternTagByDate}\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+}
+
+
+{\ttfamily \#include $<$\-Pattern\-Tag\-By\-Date.\-h$>$}
+
+\-Inheritance diagram for cryomesh\-:\-:state\-:\-:\-Pattern\-Tag\-By\-Date\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcryomesh_1_1state_1_1PatternTagByDate}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a0fe44df3214c9397e04ff9a4e8c57ad9}{\-Date\-Type} \{ \*
+\hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a0fe44df3214c9397e04ff9a4e8c57ad9ad826bb03f7153f932902328c419b8f80}{\-By\-Hour}, 
+\hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a0fe44df3214c9397e04ff9a4e8c57ad9aec5bb160aa0c7a042b45a87f0d3f8979}{\-By\-Day}, 
+\hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a0fe44df3214c9397e04ff9a4e8c57ad9a0bd9fc8aa9c2f402cf350ed1043ebbbe}{\-By\-Week}, 
+\hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a0fe44df3214c9397e04ff9a4e8c57ad9ab50088f4741522f6f750fb2b9727e6de}{\-By\-Month}, 
+\*
+\hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a0fe44df3214c9397e04ff9a4e8c57ad9a3516aaaf680fa1aaf3eabf97f32fe1a9}{\-By\-Year}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a1b9b91f249940e4f334dcba2e2d783b8}{serialize} (\-Archive \&ar, const unsigned int version)
+\item 
+\hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a81779c8abe73f88cf2c165d1a46b34a6}{\-Pattern\-Tag\-By\-Date} (\hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a0fe44df3214c9397e04ff9a4e8c57ad9}{\-Date\-Type} dt)
+\item 
+\hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_ad018e686d9f5b6275cd7cc19971a686f}{\-Pattern\-Tag\-By\-Date} (\hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a0fe44df3214c9397e04ff9a4e8c57ad9}{\-Date\-Type} dt, std\-::tm start\-\_\-time, std\-::tm end\-\_\-time, std\-::tm current\-\_\-time)
+\item 
+virtual \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_ac2117051c13a443148321799601d8586}{$\sim$\-Pattern\-Tag\-By\-Date} ()
+\item 
+virtual std\-::string \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a0f01388871f2e3a96d25ab92082cec4b}{get\-Tag} () const 
+\item 
+virtual void \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_aae131c046e25f41bcd08b19658ca0cc0}{set\-Tag} (std\-::string tg)
+\item 
+virtual std\-::string \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_acbd442ea1927dc9eab7683e67d82ab6c}{move\-Tag} ()
+\item 
+virtual std\-::string \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_aa38857773222e320697dbfede65ed36f}{move\-Tag} (int i)
+\item 
+virtual std\-::string \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_aba2a73f929cba2baa5d51965509230e3}{get\-Start\-Tag} () const 
+\item 
+virtual void \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a9b01bf590164b4644c6d942fc0a3a67b}{set\-Start\-Tag} (std\-::string tg)
+\item 
+virtual std\-::string \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a52262ecad476ba4890bd622addd844f2}{get\-End\-Tag} () const 
+\item 
+virtual void \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a2177a240135e1db32da7c38617a68f31}{set\-End\-Tag} (std\-::string tg)
+\item 
+virtual boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1state_1_1PatternTag}{\-Pattern\-Tag} $>$ \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a4a34d0d5566ae8a3888b8c7a747bef6b}{get\-Global\-Tag} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\-::tm \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a783b2953283a8478f6919fd304cb69f1}{tag\-To\-Tm} (const std\-::string \&tg)
+\item 
+static std\-::string \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a8c7d0a7aa8bf92aa05c2ea8ae2c60700}{tm\-To\-Tag} (const std\-::tm \&t)
+\item 
+static std\-::tm \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_ae0e700b6ce6d8b84e97e8b3e551fde57}{move\-Hour} (std\-::tm \&ttime, int i)
+\item 
+static std\-::tm \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a9911819de318f1d49f04c67110dd95cd}{move\-Day} (std\-::tm \&ttime, int i)
+\item 
+static std\-::tm \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a589ad778ee7350673d25c553bda0eb83}{move\-Week} (std\-::tm \&ttime, int i)
+\item 
+static std\-::tm \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a04a41144a760e5a85c0aa4d7b05fdb30}{move\-Month} (std\-::tm \&ttime, int i)
+\item 
+static std\-::tm \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_ab47ab805764e76faff1791594fa83770}{move\-Year} (std\-::tm \&ttime, int i)
+\item 
+static bool \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a20516b67d8c03a508c0b30395fd2784a}{is\-Leap\-Year} (const std\-::tm \&tmtime)
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\-::string \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_add7aad1fe2fa9ba68a1f6efba392164b}{\-Global\-Start\-Tag} = \char`\"{}\char`\"{}
+\item 
+static std\-::string \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a3e16a76aea6ea2d84e8f90fb9a861a3d}{\-Global\-End\-Tag} = \char`\"{}\char`\"{}
+\item 
+static std\-::string \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a9fd6ba74e86f3f438e9853bd342a0842}{\-Global\-Current\-Tag} = \char`\"{}\char`\"{}
+\item 
+static std\-::string \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_aa377c0641330487a3249f710b92ae7b1}{\-Date\-Format} = \char`\"{}\%\-S \%\-M \%\-H \%d \%m \%\-Y \%w \%j \char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a0fe44df3214c9397e04ff9a4e8c57ad9}{\-Date\-Type} \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a978cee17d8215fcf90a050a033cab7ec}{date\-Type}
+\item 
+std\-::tm \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_afe5398940c00ed0fd3b70dcb52efea1c}{start\-Time}
+\item 
+std\-::tm \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_a7d1640030846523333a228078cd72acc}{end\-Time}
+\item 
+std\-::tm \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_ad80a0a36ec25f13a65c8beadc349c58c}{current\-Time}
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate}{\-Pattern\-Tag\-By\-Date} $>$ \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_ac1d93cdd406b287fd3a008102e1d046c}{global\-Tag}
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classcryomesh_1_1state_1_1PatternTagByDate_ac98d07dd8f7b70e16ccb9a01abf56b9c}{boost\-::serialization\-::access}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+
+
+\-Definition at line 20 of file \-Pattern\-Tag\-By\-Date.\-h.
+
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_a0fe44df3214c9397e04ff9a4e8c57ad9}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!\-Date\-Type@{\-Date\-Type}}
+\index{\-Date\-Type@{\-Date\-Type}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{\-Date\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::\-Date\-Type}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_a0fe44df3214c9397e04ff9a4e8c57ad9}
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-By\-Hour@{\-By\-Hour}!cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!\-By\-Hour@{\-By\-Hour}}\item[{\em 
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_a0fe44df3214c9397e04ff9a4e8c57ad9ad826bb03f7153f932902328c419b8f80}{\-By\-Hour}\label{classcryomesh_1_1state_1_1PatternTagByDate_a0fe44df3214c9397e04ff9a4e8c57ad9ad826bb03f7153f932902328c419b8f80}
+}]\index{\-By\-Day@{\-By\-Day}!cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!\-By\-Day@{\-By\-Day}}\item[{\em 
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_a0fe44df3214c9397e04ff9a4e8c57ad9aec5bb160aa0c7a042b45a87f0d3f8979}{\-By\-Day}\label{classcryomesh_1_1state_1_1PatternTagByDate_a0fe44df3214c9397e04ff9a4e8c57ad9aec5bb160aa0c7a042b45a87f0d3f8979}
+}]\index{\-By\-Week@{\-By\-Week}!cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!\-By\-Week@{\-By\-Week}}\item[{\em 
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_a0fe44df3214c9397e04ff9a4e8c57ad9a0bd9fc8aa9c2f402cf350ed1043ebbbe}{\-By\-Week}\label{classcryomesh_1_1state_1_1PatternTagByDate_a0fe44df3214c9397e04ff9a4e8c57ad9a0bd9fc8aa9c2f402cf350ed1043ebbbe}
+}]\index{\-By\-Month@{\-By\-Month}!cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!\-By\-Month@{\-By\-Month}}\item[{\em 
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_a0fe44df3214c9397e04ff9a4e8c57ad9ab50088f4741522f6f750fb2b9727e6de}{\-By\-Month}\label{classcryomesh_1_1state_1_1PatternTagByDate_a0fe44df3214c9397e04ff9a4e8c57ad9ab50088f4741522f6f750fb2b9727e6de}
+}]\index{\-By\-Year@{\-By\-Year}!cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!\-By\-Year@{\-By\-Year}}\item[{\em 
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_a0fe44df3214c9397e04ff9a4e8c57ad9a3516aaaf680fa1aaf3eabf97f32fe1a9}{\-By\-Year}\label{classcryomesh_1_1state_1_1PatternTagByDate_a0fe44df3214c9397e04ff9a4e8c57ad9a3516aaaf680fa1aaf3eabf97f32fe1a9}
+}]\end{description}
+\end{Desc}
+
+
+
+\-Definition at line 22 of file \-Pattern\-Tag\-By\-Date.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_a81779c8abe73f88cf2c165d1a46b34a6}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!\-Pattern\-Tag\-By\-Date@{\-Pattern\-Tag\-By\-Date}}
+\index{\-Pattern\-Tag\-By\-Date@{\-Pattern\-Tag\-By\-Date}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{\-Pattern\-Tag\-By\-Date}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::\-Pattern\-Tag\-By\-Date} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Date\-Type}}]{dt}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1PatternTagByDate_a81779c8abe73f88cf2c165d1a46b34a6}
+
+
+\-Definition at line 22 of file \-Pattern\-Tag\-By\-Date.\-cpp.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_ad018e686d9f5b6275cd7cc19971a686f}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!\-Pattern\-Tag\-By\-Date@{\-Pattern\-Tag\-By\-Date}}
+\index{\-Pattern\-Tag\-By\-Date@{\-Pattern\-Tag\-By\-Date}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{\-Pattern\-Tag\-By\-Date}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::\-Pattern\-Tag\-By\-Date} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Date\-Type}}]{dt, }
+\item[{std\-::tm}]{start\-\_\-time, }
+\item[{std\-::tm}]{end\-\_\-time, }
+\item[{std\-::tm}]{current\-\_\-time}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1PatternTagByDate_ad018e686d9f5b6275cd7cc19971a686f}
+
+
+\-Definition at line 26 of file \-Pattern\-Tag\-By\-Date.\-cpp.
+
+
+
+\-References \-Global\-End\-Tag, \-Global\-Start\-Tag, global\-Tag, and start\-Time.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_ac2117051c13a443148321799601d8586}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!$\sim$\-Pattern\-Tag\-By\-Date@{$\sim$\-Pattern\-Tag\-By\-Date}}
+\index{$\sim$\-Pattern\-Tag\-By\-Date@{$\sim$\-Pattern\-Tag\-By\-Date}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{$\sim$\-Pattern\-Tag\-By\-Date}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::$\sim$\-Pattern\-Tag\-By\-Date} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_ac2117051c13a443148321799601d8586}
+
+
+\-Definition at line 34 of file \-Pattern\-Tag\-By\-Date.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_a52262ecad476ba4890bd622addd844f2}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!get\-End\-Tag@{get\-End\-Tag}}
+\index{get\-End\-Tag@{get\-End\-Tag}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{get\-End\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::get\-End\-Tag} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_a52262ecad476ba4890bd622addd844f2}
+
+
+\-Implements \hyperlink{classcryomesh_1_1state_1_1PatternTag_ae6a5eb0d13e5152a33de9527c66d358b}{cryomesh\-::state\-::\-Pattern\-Tag}.
+
+
+
+\-Definition at line 70 of file \-Pattern\-Tag\-By\-Date.\-cpp.
+
+
+
+\-References end\-Time, and tm\-To\-Tag().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_a4a34d0d5566ae8a3888b8c7a747bef6b}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!get\-Global\-Tag@{get\-Global\-Tag}}
+\index{get\-Global\-Tag@{get\-Global\-Tag}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{get\-Global\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$ {\bf \-Pattern\-Tag} $>$ {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::get\-Global\-Tag} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_a4a34d0d5566ae8a3888b8c7a747bef6b}
+
+
+\-Implements \hyperlink{classcryomesh_1_1state_1_1PatternTag_ae689bd0c2045fbb30f482123adfe4657}{cryomesh\-::state\-::\-Pattern\-Tag}.
+
+
+
+\-Definition at line 77 of file \-Pattern\-Tag\-By\-Date.\-cpp.
+
+
+
+\-References global\-Tag.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_aba2a73f929cba2baa5d51965509230e3}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!get\-Start\-Tag@{get\-Start\-Tag}}
+\index{get\-Start\-Tag@{get\-Start\-Tag}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{get\-Start\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::get\-Start\-Tag} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_aba2a73f929cba2baa5d51965509230e3}
+
+
+\-Implements \hyperlink{classcryomesh_1_1state_1_1PatternTag_a19284a4419275776a7277af2de158620}{cryomesh\-::state\-::\-Pattern\-Tag}.
+
+
+
+\-Definition at line 64 of file \-Pattern\-Tag\-By\-Date.\-cpp.
+
+
+
+\-References start\-Time, and tm\-To\-Tag().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_a0f01388871f2e3a96d25ab92082cec4b}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!get\-Tag@{get\-Tag}}
+\index{get\-Tag@{get\-Tag}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{get\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::get\-Tag} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_a0f01388871f2e3a96d25ab92082cec4b}
+
+
+\-Implements \hyperlink{classcryomesh_1_1state_1_1PatternTag_a00c56f1f6f348e51a9c02338abf3e5ab}{cryomesh\-::state\-::\-Pattern\-Tag}.
+
+
+
+\-Definition at line 37 of file \-Pattern\-Tag\-By\-Date.\-cpp.
+
+
+
+\-References current\-Time, and tm\-To\-Tag().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_a20516b67d8c03a508c0b30395fd2784a}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!is\-Leap\-Year@{is\-Leap\-Year}}
+\index{is\-Leap\-Year@{is\-Leap\-Year}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{is\-Leap\-Year}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::is\-Leap\-Year} (
+\begin{DoxyParamCaption}
+\item[{const std\-::tm \&}]{tmtime}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_a20516b67d8c03a508c0b30395fd2784a}
+
+
+\-Definition at line 206 of file \-Pattern\-Tag\-By\-Date.\-cpp.
+
+
+
+\-Referenced by move\-Month(), and move\-Year().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_a9911819de318f1d49f04c67110dd95cd}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!move\-Day@{move\-Day}}
+\index{move\-Day@{move\-Day}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{move\-Day}]{\setlength{\rightskip}{0pt plus 5cm}std\-::tm {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::move\-Day} (
+\begin{DoxyParamCaption}
+\item[{std\-::tm \&}]{ttime, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_a9911819de318f1d49f04c67110dd95cd}
+
+
+\-Definition at line 151 of file \-Pattern\-Tag\-By\-Date.\-cpp.
+
+
+
+\-References move\-Hour().
+
+
+
+\-Referenced by move\-Month(), move\-Tag(), move\-Week(), and move\-Year().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_ae0e700b6ce6d8b84e97e8b3e551fde57}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!move\-Hour@{move\-Hour}}
+\index{move\-Hour@{move\-Hour}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{move\-Hour}]{\setlength{\rightskip}{0pt plus 5cm}std\-::tm {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::move\-Hour} (
+\begin{DoxyParamCaption}
+\item[{std\-::tm \&}]{ttime, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_ae0e700b6ce6d8b84e97e8b3e551fde57}
+
+
+\-Definition at line 139 of file \-Pattern\-Tag\-By\-Date.\-cpp.
+
+
+
+\-Referenced by move\-Day(), and move\-Tag().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_a04a41144a760e5a85c0aa4d7b05fdb30}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!move\-Month@{move\-Month}}
+\index{move\-Month@{move\-Month}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{move\-Month}]{\setlength{\rightskip}{0pt plus 5cm}std\-::tm {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::move\-Month} (
+\begin{DoxyParamCaption}
+\item[{std\-::tm \&}]{ttime, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_a04a41144a760e5a85c0aa4d7b05fdb30}
+
+
+\-Definition at line 161 of file \-Pattern\-Tag\-By\-Date.\-cpp.
+
+
+
+\-References is\-Leap\-Year(), move\-Day(), and move\-Year().
+
+
+
+\-Referenced by move\-Tag().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_acbd442ea1927dc9eab7683e67d82ab6c}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!move\-Tag@{move\-Tag}}
+\index{move\-Tag@{move\-Tag}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{move\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::move\-Tag} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_acbd442ea1927dc9eab7683e67d82ab6c}
+
+
+\-Implements \hyperlink{classcryomesh_1_1state_1_1PatternTag_a0b22ab8e03558ed9a2370a66b67761a0}{cryomesh\-::state\-::\-Pattern\-Tag}.
+
+
+
+\-Definition at line 43 of file \-Pattern\-Tag\-By\-Date.\-cpp.
+
+
+
+\-References \-By\-Day, \-By\-Hour, \-By\-Month, \-By\-Week, \-By\-Year, current\-Time, date\-Type, move\-Day(), move\-Hour(), move\-Month(), move\-Week(), move\-Year(), and tm\-To\-Tag().
+
+
+
+\-Referenced by move\-Tag().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_aa38857773222e320697dbfede65ed36f}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!move\-Tag@{move\-Tag}}
+\index{move\-Tag@{move\-Tag}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{move\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::move\-Tag} (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_aa38857773222e320697dbfede65ed36f}
+
+
+\-Implements \hyperlink{classcryomesh_1_1state_1_1PatternTag_ac904d5f971af7e9930ce85a256097c48}{cryomesh\-::state\-::\-Pattern\-Tag}.
+
+
+
+\-Definition at line 57 of file \-Pattern\-Tag\-By\-Date.\-cpp.
+
+
+
+\-References current\-Time, move\-Tag(), and tm\-To\-Tag().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_a589ad778ee7350673d25c553bda0eb83}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!move\-Week@{move\-Week}}
+\index{move\-Week@{move\-Week}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{move\-Week}]{\setlength{\rightskip}{0pt plus 5cm}std\-::tm {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::move\-Week} (
+\begin{DoxyParamCaption}
+\item[{std\-::tm \&}]{ttime, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_a589ad778ee7350673d25c553bda0eb83}
+
+
+\-Definition at line 156 of file \-Pattern\-Tag\-By\-Date.\-cpp.
+
+
+
+\-References move\-Day().
+
+
+
+\-Referenced by move\-Tag().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_ab47ab805764e76faff1791594fa83770}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!move\-Year@{move\-Year}}
+\index{move\-Year@{move\-Year}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{move\-Year}]{\setlength{\rightskip}{0pt plus 5cm}std\-::tm {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::move\-Year} (
+\begin{DoxyParamCaption}
+\item[{std\-::tm \&}]{ttime, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_ab47ab805764e76faff1791594fa83770}
+
+
+\-Definition at line 193 of file \-Pattern\-Tag\-By\-Date.\-cpp.
+
+
+
+\-References is\-Leap\-Year(), and move\-Day().
+
+
+
+\-Referenced by move\-Month(), and move\-Tag().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_a1b9b91f249940e4f334dcba2e2d783b8}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!serialize@{serialize}}
+\index{serialize@{serialize}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Archive $>$ void {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::serialize} (
+\begin{DoxyParamCaption}
+\item[{\-Archive \&}]{ar, }
+\item[{const unsigned int}]{version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_a1b9b91f249940e4f334dcba2e2d783b8}
+
+
+\-Definition at line 28 of file \-Pattern\-Tag\-By\-Date.\-h.
+
+
+
+\-References current\-Time, date\-Type, end\-Time, global\-Tag, and start\-Time.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_a2177a240135e1db32da7c38617a68f31}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!set\-End\-Tag@{set\-End\-Tag}}
+\index{set\-End\-Tag@{set\-End\-Tag}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{set\-End\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::set\-End\-Tag} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{tg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_a2177a240135e1db32da7c38617a68f31}
+
+
+\-Implements \hyperlink{classcryomesh_1_1state_1_1PatternTag_a5026dd228cf678c58267ff343ff84e04}{cryomesh\-::state\-::\-Pattern\-Tag}.
+
+
+
+\-Definition at line 73 of file \-Pattern\-Tag\-By\-Date.\-cpp.
+
+
+
+\-References end\-Time, and tag\-To\-Tm().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_a9b01bf590164b4644c6d942fc0a3a67b}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!set\-Start\-Tag@{set\-Start\-Tag}}
+\index{set\-Start\-Tag@{set\-Start\-Tag}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{set\-Start\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::set\-Start\-Tag} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{tg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_a9b01bf590164b4644c6d942fc0a3a67b}
+
+
+\-Implements \hyperlink{classcryomesh_1_1state_1_1PatternTag_a0c7e050117e2cc5d146b90efad122561}{cryomesh\-::state\-::\-Pattern\-Tag}.
+
+
+
+\-Definition at line 67 of file \-Pattern\-Tag\-By\-Date.\-cpp.
+
+
+
+\-References start\-Time, and tag\-To\-Tm().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_aae131c046e25f41bcd08b19658ca0cc0}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!set\-Tag@{set\-Tag}}
+\index{set\-Tag@{set\-Tag}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{set\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::set\-Tag} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{tg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_aae131c046e25f41bcd08b19658ca0cc0}
+
+
+\-Implements \hyperlink{classcryomesh_1_1state_1_1PatternTag_a17830f089a443437fa736460e231706e}{cryomesh\-::state\-::\-Pattern\-Tag}.
+
+
+
+\-Definition at line 40 of file \-Pattern\-Tag\-By\-Date.\-cpp.
+
+
+
+\-References current\-Time, and tag\-To\-Tm().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_a783b2953283a8478f6919fd304cb69f1}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!tag\-To\-Tm@{tag\-To\-Tm}}
+\index{tag\-To\-Tm@{tag\-To\-Tm}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{tag\-To\-Tm}]{\setlength{\rightskip}{0pt plus 5cm}std\-::tm {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::tag\-To\-Tm} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{tg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_a783b2953283a8478f6919fd304cb69f1}
+
+
+\-Definition at line 81 of file \-Pattern\-Tag\-By\-Date.\-cpp.
+
+
+
+\-Referenced by set\-End\-Tag(), set\-Start\-Tag(), and set\-Tag().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_a8c7d0a7aa8bf92aa05c2ea8ae2c60700}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!tm\-To\-Tag@{tm\-To\-Tag}}
+\index{tm\-To\-Tag@{tm\-To\-Tag}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{tm\-To\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::tm\-To\-Tag} (
+\begin{DoxyParamCaption}
+\item[{const std\-::tm \&}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_a8c7d0a7aa8bf92aa05c2ea8ae2c60700}
+
+
+\-Definition at line 132 of file \-Pattern\-Tag\-By\-Date.\-cpp.
+
+
+
+\-References \-Date\-Format.
+
+
+
+\-Referenced by get\-End\-Tag(), get\-Start\-Tag(), get\-Tag(), and move\-Tag().
+
+
+
+\subsection{\-Friends \-And \-Related \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_ac98d07dd8f7b70e16ccb9a01abf56b9c}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!boost\-::serialization\-::access@{boost\-::serialization\-::access}}
+\index{boost\-::serialization\-::access@{boost\-::serialization\-::access}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{boost\-::serialization\-::access}]{\setlength{\rightskip}{0pt plus 5cm}friend class boost\-::serialization\-::access\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_ac98d07dd8f7b70e16ccb9a01abf56b9c}
+
+
+\-Definition at line 26 of file \-Pattern\-Tag\-By\-Date.\-h.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_ad80a0a36ec25f13a65c8beadc349c58c}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!current\-Time@{current\-Time}}
+\index{current\-Time@{current\-Time}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{current\-Time}]{\setlength{\rightskip}{0pt plus 5cm}std\-::tm {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::current\-Time}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_ad80a0a36ec25f13a65c8beadc349c58c}
+
+
+\-Definition at line 73 of file \-Pattern\-Tag\-By\-Date.\-h.
+
+
+
+\-Referenced by get\-Tag(), move\-Tag(), serialize(), and set\-Tag().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_aa377c0641330487a3249f710b92ae7b1}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!\-Date\-Format@{\-Date\-Format}}
+\index{\-Date\-Format@{\-Date\-Format}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{\-Date\-Format}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::\-Date\-Format} = \char`\"{}\%\-S \%\-M \%\-H \%d \%m \%\-Y \%w \%j \char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_aa377c0641330487a3249f710b92ae7b1}
+
+
+\-Definition at line 66 of file \-Pattern\-Tag\-By\-Date.\-h.
+
+
+
+\-Referenced by tm\-To\-Tag().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_a978cee17d8215fcf90a050a033cab7ec}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!date\-Type@{date\-Type}}
+\index{date\-Type@{date\-Type}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{date\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Date\-Type} {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::date\-Type}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_a978cee17d8215fcf90a050a033cab7ec}
+
+
+\-Definition at line 70 of file \-Pattern\-Tag\-By\-Date.\-h.
+
+
+
+\-Referenced by move\-Tag(), and serialize().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_a7d1640030846523333a228078cd72acc}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!end\-Time@{end\-Time}}
+\index{end\-Time@{end\-Time}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{end\-Time}]{\setlength{\rightskip}{0pt plus 5cm}std\-::tm {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::end\-Time}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_a7d1640030846523333a228078cd72acc}
+
+
+\-Definition at line 72 of file \-Pattern\-Tag\-By\-Date.\-h.
+
+
+
+\-Referenced by get\-End\-Tag(), serialize(), and set\-End\-Tag().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_a9fd6ba74e86f3f438e9853bd342a0842}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!\-Global\-Current\-Tag@{\-Global\-Current\-Tag}}
+\index{\-Global\-Current\-Tag@{\-Global\-Current\-Tag}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{\-Global\-Current\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::\-Global\-Current\-Tag} = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_a9fd6ba74e86f3f438e9853bd342a0842}
+
+
+\-Definition at line 65 of file \-Pattern\-Tag\-By\-Date.\-h.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_a3e16a76aea6ea2d84e8f90fb9a861a3d}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!\-Global\-End\-Tag@{\-Global\-End\-Tag}}
+\index{\-Global\-End\-Tag@{\-Global\-End\-Tag}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{\-Global\-End\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::\-Global\-End\-Tag} = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_a3e16a76aea6ea2d84e8f90fb9a861a3d}
+
+
+\-Definition at line 64 of file \-Pattern\-Tag\-By\-Date.\-h.
+
+
+
+\-Referenced by \-Pattern\-Tag\-By\-Date().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_add7aad1fe2fa9ba68a1f6efba392164b}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!\-Global\-Start\-Tag@{\-Global\-Start\-Tag}}
+\index{\-Global\-Start\-Tag@{\-Global\-Start\-Tag}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{\-Global\-Start\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::\-Global\-Start\-Tag} = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_add7aad1fe2fa9ba68a1f6efba392164b}
+
+
+\-Definition at line 63 of file \-Pattern\-Tag\-By\-Date.\-h.
+
+
+
+\-Referenced by \-Pattern\-Tag\-By\-Date().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_ac1d93cdd406b287fd3a008102e1d046c}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!global\-Tag@{global\-Tag}}
+\index{global\-Tag@{global\-Tag}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{global\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$ {\bf \-Pattern\-Tag\-By\-Date} $>$ {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::global\-Tag}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_ac1d93cdd406b287fd3a008102e1d046c}
+
+
+\-Definition at line 69 of file \-Pattern\-Tag\-By\-Date.\-h.
+
+
+
+\-Referenced by get\-Global\-Tag(), \-Pattern\-Tag\-By\-Date(), and serialize().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternTagByDate_afe5398940c00ed0fd3b70dcb52efea1c}{\index{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}!start\-Time@{start\-Time}}
+\index{start\-Time@{start\-Time}!cryomesh::state::PatternTagByDate@{cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date}}
+\subsubsection[{start\-Time}]{\setlength{\rightskip}{0pt plus 5cm}std\-::tm {\bf cryomesh\-::state\-::\-Pattern\-Tag\-By\-Date\-::start\-Time}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternTagByDate_afe5398940c00ed0fd3b70dcb52efea1c}
+
+
+\-Definition at line 71 of file \-Pattern\-Tag\-By\-Date.\-h.
+
+
+
+\-Referenced by get\-Start\-Tag(), \-Pattern\-Tag\-By\-Date(), serialize(), and set\-Start\-Tag().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/state/\hyperlink{PatternTagByDate_8h}{\-Pattern\-Tag\-By\-Date.\-h}\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/state/\hyperlink{PatternTagByDate_8cpp}{\-Pattern\-Tag\-By\-Date.\-cpp}\end{DoxyCompactItemize}

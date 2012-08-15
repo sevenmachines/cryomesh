@@ -1,0 +1,590 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="classcryomesh_1_1components_1_1ActivityTimerDistance" kind="class" prot="public">
+    <compoundname>cryomesh::components::ActivityTimerDistance</compoundname>
+    <basecompoundref refid="classcryomesh_1_1components_1_1ActivityTimer" prot="public" virt="non-virtual">cryomesh::components::ActivityTimer</basecompoundref>
+    <includes refid="ActivityTimerDistance_8h" local="no">ActivityTimerDistance.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classcryomesh_1_1components_1_1ActivityTimerDistance_1afb9cf33e702747ecd42d1bfd0c3a3ce3" prot="public" static="yes" mutable="no">
+        <type>const double</type>
+        <definition>const double cryomesh::components::ActivityTimerDistance::MIN_DECREMENT_FRACTION</definition>
+        <argsstring></argsstring>
+        <name>MIN_DECREMENT_FRACTION</name>
+        <initializer> 0.1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="149" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" bodystart="149" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1ad82f62afe5a34af54ff4c4ec8d1c2344" compoundref="ActivityTimerDistance_8cpp" startline="22" endline="34">getRandom</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1components_1_1ActivityTimerDistance_1ab24df04f889693641f609aa8f199455f" prot="public" static="yes" mutable="no">
+        <type>const double</type>
+        <definition>const double cryomesh::components::ActivityTimerDistance::MAX_DECREMENT_FRACTION</definition>
+        <argsstring></argsstring>
+        <name>MAX_DECREMENT_FRACTION</name>
+        <initializer> 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="156" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" bodystart="156" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1ad82f62afe5a34af54ff4c4ec8d1c2344" compoundref="ActivityTimerDistance_8cpp" startline="22" endline="34">getRandom</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1components_1_1ActivityTimerDistance_1a549f2e016df32a594092179570ae742d" prot="public" static="yes" mutable="no">
+        <type>const double</type>
+        <definition>const double cryomesh::components::ActivityTimerDistance::MIN_DISTANCE</definition>
+        <argsstring></argsstring>
+        <name>MIN_DISTANCE</name>
+        <initializer> 1.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="163" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" bodystart="163" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a2e2ac1b8bc8d942346c1a758d7602a99" compoundref="ActivityTimerDistance_8cpp" startline="113" endline="127">checkConstraints</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1ad82f62afe5a34af54ff4c4ec8d1c2344" compoundref="ActivityTimerDistance_8cpp" startline="22" endline="34">getRandom</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1a7a12f7e30960796e481291041ca149b7" compoundref="Connection_8cpp" startline="160" endline="175">cryomesh::components::Connection::updatePosition</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1components_1_1ActivityTimerDistance_1a87e36fd0ad252132017fa1c9664cf2ca" prot="public" static="yes" mutable="no">
+        <type>const double</type>
+        <definition>const double cryomesh::components::ActivityTimerDistance::MAX_DISTANCE</definition>
+        <argsstring></argsstring>
+        <name>MAX_DISTANCE</name>
+        <initializer> 100.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="170" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" bodystart="170" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1ad82f62afe5a34af54ff4c4ec8d1c2344" compoundref="ActivityTimerDistance_8cpp" startline="22" endline="34">getRandom</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcryomesh_1_1components_1_1ActivityTimerDistance_1a191b202e783b14973aa327c460cdc46e" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double cryomesh::components::ActivityTimerDistance::distance</definition>
+        <argsstring></argsstring>
+        <name>distance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="181" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" bodystart="181" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a7da9fc6bc83657837f90ad3a6158e3a5" compoundref="ActivityTimerDistance_8cpp" startline="94" endline="96">getStartingDelay</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1aaf72572d1cb481f519132e7a17b8125b" compoundref="ActivityTimerDistance_8cpp" startline="82" endline="88">operator+=</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a36db36aad72526f4d1541213ed762c01" compoundref="ActivityTimerDistance_8cpp" startline="54" endline="56">operator&lt;</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a37992cab5a1bfde00c8f069fc47a7c2f" compoundref="ActivityTimerDistance_8cpp" startline="47" endline="52">operator=</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1aca048029f8ff311c7e215bb2d7689c7b" compoundref="ActivityTimerDistance_8cpp" startline="104" endline="106">reset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1components_1_1ActivityTimerDistance_1a0e793c735a10edd18fa12a019dcf8c22" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double cryomesh::components::ActivityTimerDistance::distance_remaining</definition>
+        <argsstring></argsstring>
+        <name>distance_remaining</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="188" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" bodystart="188" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1aa0ded366836ca5bb7ce9db6abf7b4d51" compoundref="ActivityTimerDistance_8cpp" startline="90" endline="92">getDelay</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1aaf72572d1cb481f519132e7a17b8125b" compoundref="ActivityTimerDistance_8cpp" startline="82" endline="88">operator+=</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1adf508add943655664c792c93795406fd" compoundref="ActivityTimerDistance_8cpp" startline="62" endline="68">operator--</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a37992cab5a1bfde00c8f069fc47a7c2f" compoundref="ActivityTimerDistance_8cpp" startline="47" endline="52">operator=</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1ae33ecef3ba181aec976ceb6304fc7935" compoundref="ActivityTimerDistance_8cpp" startline="58" endline="60">operator&gt;</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1aca048029f8ff311c7e215bb2d7689c7b" compoundref="ActivityTimerDistance_8cpp" startline="104" endline="106">reset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1components_1_1ActivityTimerDistance_1a81f6c8dffa1dbe89e7e3d67603f84b9a" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double cryomesh::components::ActivityTimerDistance::decrement</definition>
+        <argsstring></argsstring>
+        <name>decrement</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="196" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" bodystart="196" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a3691132699928dc9f7089576ad0c12ce" compoundref="ActivityTimerDistance_8cpp" startline="98" endline="100">getDecrement</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1aaf72572d1cb481f519132e7a17b8125b" compoundref="ActivityTimerDistance_8cpp" startline="82" endline="88">operator+=</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1adf508add943655664c792c93795406fd" compoundref="ActivityTimerDistance_8cpp" startline="62" endline="68">operator--</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a37992cab5a1bfde00c8f069fc47a7c2f" compoundref="ActivityTimerDistance_8cpp" startline="47" endline="52">operator=</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ActivityTimerDistance_1a3da36944fccd3512740a63fdae13de20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::components::ActivityTimerDistance::ActivityTimerDistance</definition>
+        <argsstring>()</argsstring>
+        <name>ActivityTimerDistance</name>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="25" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.cpp" bodystart="36" bodyend="38"/>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1ad82f62afe5a34af54ff4c4ec8d1c2344" compoundref="ActivityTimerDistance_8cpp" startline="22" endline="34">getRandom</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ActivityTimerDistance_1a09f1241cc4c1ddd4423ac288e534b1e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::components::ActivityTimerDistance::ActivityTimerDistance</definition>
+        <argsstring>(double dist, double dec)</argsstring>
+        <name>ActivityTimerDistance</name>
+        <param>
+          <type>double</type>
+          <declname>dist</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dec</declname>
+        </param>
+        <briefdescription>
+<para>Construct from an initial distance, and a rate of decrement. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="30" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.cpp" bodystart="40" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ActivityTimerDistance_1ac31091719dbdcebb505a47a2ed99fc4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>cryomesh::components::ActivityTimerDistance::~ActivityTimerDistance</definition>
+        <argsstring>()</argsstring>
+        <name>~ActivityTimerDistance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="31" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.cpp" bodystart="44" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ActivityTimerDistance_1a37992cab5a1bfde00c8f069fc47a7c2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref> &amp;</type>
+        <definition>ActivityTimerDistance &amp; cryomesh::components::ActivityTimerDistance::operator=</definition>
+        <argsstring>(const ActivityTimerDistance &amp;obj)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>Assignment operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref> &amp; obj RHS assignment</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref> &amp; This object after assignment </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="42" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.cpp" bodystart="47" bodyend="52"/>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a81f6c8dffa1dbe89e7e3d67603f84b9a" compoundref="ActivityTimerDistance_8h" startline="196">decrement</references>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a191b202e783b14973aa327c460cdc46e" compoundref="ActivityTimerDistance_8h" startline="181">distance</references>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a0e793c735a10edd18fa12a019dcf8c22" compoundref="ActivityTimerDistance_8h" startline="188">distance_remaining</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ActivityTimerDistance_1a36db36aad72526f4d1541213ed762c01" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::components::ActivityTimerDistance::operator&lt;</definition>
+        <argsstring>(const ActivityTimerDistance &amp;obj) const </argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>Less than operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref> &amp; obj RHS</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True if &lt; than obj, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="53" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.cpp" bodystart="54" bodyend="56"/>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a191b202e783b14973aa327c460cdc46e" compoundref="ActivityTimerDistance_8h" startline="181">distance</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ActivityTimerDistance_1ae33ecef3ba181aec976ceb6304fc7935" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::components::ActivityTimerDistance::operator&gt;</definition>
+        <argsstring>(const ActivityTimerDistance &amp;obj) const </argsstring>
+        <name>operator&gt;</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>Greater than operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref> &amp; obj RHS</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True if &gt; than obj, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="64" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.cpp" bodystart="58" bodyend="60"/>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a0e793c735a10edd18fa12a019dcf8c22" compoundref="ActivityTimerDistance_8h" startline="188">distance_remaining</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ActivityTimerDistance_1adf508add943655664c792c93795406fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref> &amp;</type>
+        <definition>ActivityTimerDistance &amp; cryomesh::components::ActivityTimerDistance::operator--</definition>
+        <argsstring>()</argsstring>
+        <name>operator--</name>
+        <briefdescription>
+<para>Prefix increment operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref> &amp; Return this </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="72" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.cpp" bodystart="62" bodyend="68"/>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a81f6c8dffa1dbe89e7e3d67603f84b9a" compoundref="ActivityTimerDistance_8h" startline="196">decrement</references>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a0e793c735a10edd18fa12a019dcf8c22" compoundref="ActivityTimerDistance_8h" startline="188">distance_remaining</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ActivityTimerDistance_1aa8f2cf4dbabcc623aa7e0cf1f793f98a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref></type>
+        <definition>ActivityTimerDistance cryomesh::components::ActivityTimerDistance::operator--</definition>
+        <argsstring>(int)</argsstring>
+        <name>operator--</name>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+<para>Postfix decrement operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref> &amp; Return this </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="80" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.cpp" bodystart="70" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ActivityTimerDistance_1a7c91c5d5255899d6504cc3fe6669cbab" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref></type>
+        <definition>const ActivityTimerDistance cryomesh::components::ActivityTimerDistance::operator+</definition>
+        <argsstring>(const ActivityTimerDistance &amp;obj) const </argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>Non-destructive addition operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref> &amp; obj RHS addition</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref> New object after addition </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="91" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.cpp" bodystart="76" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ActivityTimerDistance_1aaf72572d1cb481f519132e7a17b8125b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref> &amp;</type>
+        <definition>ActivityTimerDistance &amp; cryomesh::components::ActivityTimerDistance::operator+=</definition>
+        <argsstring>(const ActivityTimerDistance &amp;obj)</argsstring>
+        <name>operator+=</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>Destructive addition and assignment operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref> &amp; obj RHS addition</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref> &amp; This object after addition and assignment </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="102" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.cpp" bodystart="82" bodyend="88"/>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a81f6c8dffa1dbe89e7e3d67603f84b9a" compoundref="ActivityTimerDistance_8h" startline="196">decrement</references>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a191b202e783b14973aa327c460cdc46e" compoundref="ActivityTimerDistance_8h" startline="181">distance</references>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a0e793c735a10edd18fa12a019dcf8c22" compoundref="ActivityTimerDistance_8h" startline="188">distance_remaining</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ActivityTimerDistance_1aa0ded366836ca5bb7ce9db6abf7b4d51" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double cryomesh::components::ActivityTimerDistance::getDelay</definition>
+        <argsstring>() const </argsstring>
+        <name>getDelay</name>
+        <briefdescription>
+<para>Get the delay. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>double The distance delay </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="110" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.cpp" bodystart="90" bodyend="92"/>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a0e793c735a10edd18fa12a019dcf8c22" compoundref="ActivityTimerDistance_8h" startline="188">distance_remaining</references>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a6e109b8f4ddcf6d4e24f0347d4060f78" compoundref="ActivityTimerDistance_8cpp" startline="107" endline="111">print</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ActivityTimerDistance_1a7da9fc6bc83657837f90ad3a6158e3a5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double cryomesh::components::ActivityTimerDistance::getStartingDelay</definition>
+        <argsstring>() const </argsstring>
+        <name>getStartingDelay</name>
+        <briefdescription>
+<para>Get the starting delay. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>double The starting distance delay </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="118" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.cpp" bodystart="94" bodyend="96"/>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a191b202e783b14973aa327c460cdc46e" compoundref="ActivityTimerDistance_8h" startline="181">distance</references>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a2e2ac1b8bc8d942346c1a758d7602a99" compoundref="ActivityTimerDistance_8cpp" startline="113" endline="127">checkConstraints</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a6e109b8f4ddcf6d4e24f0347d4060f78" compoundref="ActivityTimerDistance_8cpp" startline="107" endline="111">print</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ActivityTimerDistance_1a3691132699928dc9f7089576ad0c12ce" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double cryomesh::components::ActivityTimerDistance::getDecrement</definition>
+        <argsstring>() const </argsstring>
+        <name>getDecrement</name>
+        <briefdescription>
+<para>Get the decrement. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>double The decrement of the timer </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="127" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.cpp" bodystart="98" bodyend="100"/>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a81f6c8dffa1dbe89e7e3d67603f84b9a" compoundref="ActivityTimerDistance_8h" startline="196">decrement</references>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a2e2ac1b8bc8d942346c1a758d7602a99" compoundref="ActivityTimerDistance_8cpp" startline="113" endline="127">checkConstraints</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a6e109b8f4ddcf6d4e24f0347d4060f78" compoundref="ActivityTimerDistance_8cpp" startline="107" endline="111">print</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ActivityTimerDistance_1aca048029f8ff311c7e215bb2d7689c7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void cryomesh::components::ActivityTimerDistance::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <reimplements refid="classcryomesh_1_1components_1_1ActivityTimer_1a8842b0b6e73ddf1d1809b79b7b239baf">reset</reimplements>
+        <briefdescription>
+<para>Reset the countdown. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="132" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.cpp" bodystart="104" bodyend="106"/>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a191b202e783b14973aa327c460cdc46e" compoundref="ActivityTimerDistance_8h" startline="181">distance</references>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a0e793c735a10edd18fa12a019dcf8c22" compoundref="ActivityTimerDistance_8h" startline="188">distance_remaining</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ActivityTimerDistance_1a2e2ac1b8bc8d942346c1a758d7602a99" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::components::ActivityTimerDistance::checkConstraints</definition>
+        <argsstring>() const </argsstring>
+        <name>checkConstraints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="133" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.cpp" bodystart="113" bodyend="127"/>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a3691132699928dc9f7089576ad0c12ce" compoundref="ActivityTimerDistance_8cpp" startline="98" endline="100">getDecrement</references>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a7da9fc6bc83657837f90ad3a6158e3a5" compoundref="ActivityTimerDistance_8cpp" startline="94" endline="96">getStartingDelay</references>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a549f2e016df32a594092179570ae742d" compoundref="ActivityTimerDistance_8h" startline="163">MIN_DISTANCE</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ActivityTimerDistance_1a54d73b877fd99ece736c7352a09688ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void cryomesh::components::ActivityTimerDistance::enableDebug</definition>
+        <argsstring>(bool b)</argsstring>
+        <name>enableDebug</name>
+        <param>
+          <type>bool</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="134" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.cpp" bodystart="101" bodyend="103"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ActivityTimerDistance_1ad82f62afe5a34af54ff4c4ec8d1c2344" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">ActivityTimerDistance</ref> &gt;</type>
+        <definition>boost::shared_ptr&lt; ActivityTimerDistance &gt; cryomesh::components::ActivityTimerDistance::getRandom</definition>
+        <argsstring>()</argsstring>
+        <name>getRandom</name>
+        <briefdescription>
+<para>Get a random object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>boost::shared_ptr&lt;ActivityTimerDistance&gt; The random object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="142" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.cpp" bodystart="22" bodyend="34"/>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a3da36944fccd3512740a63fdae13de20" compoundref="ActivityTimerDistance_8cpp" startline="36" endline="38">ActivityTimerDistance</references>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1ab24df04f889693641f609aa8f199455f" compoundref="ActivityTimerDistance_8h" startline="156">MAX_DECREMENT_FRACTION</references>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a87e36fd0ad252132017fa1c9664cf2ca" compoundref="ActivityTimerDistance_8h" startline="170">MAX_DISTANCE</references>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1afb9cf33e702747ecd42d1bfd0c3a3ce3" compoundref="ActivityTimerDistance_8h" startline="149">MIN_DECREMENT_FRACTION</references>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a549f2e016df32a594092179570ae742d" compoundref="ActivityTimerDistance_8h" startline="163">MIN_DISTANCE</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1ActivityTimerDistance_1a6e109b8f4ddcf6d4e24f0347d4060f78" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; cryomesh::components::ActivityTimerDistance::print</definition>
+        <argsstring>(std::ostream &amp;os) const </argsstring>
+        <name>print</name>
+        <reimplements refid="classcryomesh_1_1components_1_1ActivityTimer_1a1a4fd82c20fdc2b17ebe4582222ab8a3">print</reimplements>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="173" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.cpp" bodystart="107" bodyend="111"/>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a3691132699928dc9f7089576ad0c12ce" compoundref="ActivityTimerDistance_8cpp" startline="98" endline="100">getDecrement</references>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1aa0ded366836ca5bb7ce9db6abf7b4d51" compoundref="ActivityTimerDistance_8cpp" startline="90" endline="92">getDelay</references>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a7da9fc6bc83657837f90ad3a6158e3a5" compoundref="ActivityTimerDistance_8cpp" startline="94" endline="96">getStartingDelay</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classcryomesh_1_1components_1_1ActivityTimer_1ac35779cd02eec3662a6cd9d75e1572cd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const ActivityTimer &amp;obj)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1components_1_1ActivityTimer" kindref="compound">ActivityTimer</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>To stream operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::ostream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp; os The output stream </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1components_1_1ActivityTimer" kindref="compound">ActivityTimer</ref> &amp; obj The object to stream</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::ostream &amp; The output stream </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimer.h" line="47" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimer.h" bodystart="47" bodyend="50"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="6">
+        <label>cryomesh::components::ActivityTimer</label>
+        <link refid="classcryomesh_1_1components_1_1ActivityTimer"/>
+      </node>
+      <node id="5">
+        <label>cryomesh::components::ActivityTimerDistance</label>
+        <link refid="classcryomesh_1_1components_1_1ActivityTimerDistance"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="8">
+        <label>cryomesh::components::ActivityTimer</label>
+        <link refid="classcryomesh_1_1components_1_1ActivityTimer"/>
+      </node>
+      <node id="7">
+        <label>cryomesh::components::ActivityTimerDistance</label>
+        <link refid="classcryomesh_1_1components_1_1ActivityTimerDistance"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" line="19" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimerDistance.h" bodystart="19" bodyend="197"/>
+    <listofallmembers>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimer_1abf1241a780f7c6fa5d626b4585afc017" prot="public" virt="non-virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>ActivityTimer</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a3da36944fccd3512740a63fdae13de20" prot="public" virt="non-virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>ActivityTimerDistance</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a09f1241cc4c1ddd4423ac288e534b1e1" prot="public" virt="non-virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>ActivityTimerDistance</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a2e2ac1b8bc8d942346c1a758d7602a99" prot="public" virt="virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>checkConstraints</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a81f6c8dffa1dbe89e7e3d67603f84b9a" prot="private" virt="non-virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>decrement</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a191b202e783b14973aa327c460cdc46e" prot="private" virt="non-virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>distance</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a0e793c735a10edd18fa12a019dcf8c22" prot="private" virt="non-virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>distance_remaining</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a54d73b877fd99ece736c7352a09688ad" prot="public" virt="virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>enableDebug</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a3691132699928dc9f7089576ad0c12ce" prot="public" virt="non-virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>getDecrement</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1aa0ded366836ca5bb7ce9db6abf7b4d51" prot="public" virt="non-virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>getDelay</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1ad82f62afe5a34af54ff4c4ec8d1c2344" prot="public" virt="non-virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>getRandom</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a7da9fc6bc83657837f90ad3a6158e3a5" prot="public" virt="non-virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>getStartingDelay</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1ab24df04f889693641f609aa8f199455f" prot="public" virt="non-virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>MAX_DECREMENT_FRACTION</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a87e36fd0ad252132017fa1c9664cf2ca" prot="public" virt="non-virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>MAX_DISTANCE</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1afb9cf33e702747ecd42d1bfd0c3a3ce3" prot="public" virt="non-virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>MIN_DECREMENT_FRACTION</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a549f2e016df32a594092179570ae742d" prot="public" virt="non-virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>MIN_DISTANCE</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a7c91c5d5255899d6504cc3fe6669cbab" prot="public" virt="non-virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>operator+</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1aaf72572d1cb481f519132e7a17b8125b" prot="public" virt="non-virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>operator+=</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1adf508add943655664c792c93795406fd" prot="public" virt="non-virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>operator--</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1aa8f2cf4dbabcc623aa7e0cf1f793f98a" prot="public" virt="non-virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>operator--</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a36db36aad72526f4d1541213ed762c01" prot="public" virt="non-virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>operator&lt;</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimer_1ac35779cd02eec3662a6cd9d75e1572cd" prot="public" virt="non-virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a37992cab5a1bfde00c8f069fc47a7c2f" prot="public" virt="non-virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>operator=</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1ae33ecef3ba181aec976ceb6304fc7935" prot="public" virt="non-virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>operator&gt;</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a6e109b8f4ddcf6d4e24f0347d4060f78" prot="protected" virt="virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>print</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1aca048029f8ff311c7e215bb2d7689c7b" prot="public" virt="virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>reset</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimer_1a8383004d633ae75433d3961bdec431cf" prot="public" virt="virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>~ActivityTimer</name></member>
+      <member refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1ac31091719dbdcebb505a47a2ed99fc4e" prot="public" virt="virtual"><scope>cryomesh::components::ActivityTimerDistance</scope><name>~ActivityTimerDistance</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

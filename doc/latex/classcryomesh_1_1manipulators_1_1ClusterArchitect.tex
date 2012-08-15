@@ -1,0 +1,838 @@
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect}{\section{cryomesh\-:\-:manipulators\-:\-:\-Cluster\-Architect \-Class \-Reference}
+\label{classcryomesh_1_1manipulators_1_1ClusterArchitect}\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+}
+
+
+{\ttfamily \#include $<$\-Cluster\-Architect.\-h$>$}
+
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a0188a785aaeb3c5f2cbbbe62259fa01b}{\-Connection\-Strategy} \{ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a0188a785aaeb3c5f2cbbbe62259fa01ba94bf69771f5d79e3a1b0b942869de362}{\-E\-N\-A\-B\-L\-E\-\_\-\-S\-E\-L\-F\-\_\-\-C\-O\-N\-N\-E\-C\-T} = 1, 
+\hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a0188a785aaeb3c5f2cbbbe62259fa01ba851f2313adc7277f4d051dd7f50ec39f}{\-E\-N\-A\-B\-L\-E\-\_\-\-E\-V\-E\-N\-\_\-\-D\-I\-S\-T\-R\-I\-B\-U\-T\-I\-O\-N} = 2
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a943322d4216479bb2a789de252c9e832}{\-Cluster\-Architect} (\hyperlink{classcryomesh_1_1structures_1_1Cluster}{structures\-::\-Cluster} \&clus, const int max\-\_\-history\-\_\-sz=\hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_aedfa4722a69f72fcb1a9094dd584495d}{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-H\-I\-S\-T\-O\-R\-Y\-\_\-\-S\-I\-Z\-E}, const int history\-\_\-stepping\-\_\-factor=\hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_ab79a6ae93e47eaf107d78ed558f41d83}{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-I\-S\-T\-O\-R\-Y\-\_\-\-S\-T\-E\-P\-P\-I\-N\-G\-\_\-\-F\-A\-C\-T\-O\-R})
+\item 
+virtual \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_aaa98287d6353166d890d0e9b862cc915}{$\sim$\-Cluster\-Architect} ()
+\item 
+virtual void \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a7e11839aa729d0e39bc055621d058d88}{run\-Analysis} ()
+\item 
+virtual const std\-::map$<$ int, \*
+std\-::list$<$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalysisData}{\-Cluster\-Analysis\-Data} $>$ $>$ \& \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a7bd6b5860a9aeb18a294f7d36bf252dd}{get\-Histories} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the history of analysis. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a1ea67e03b3ac0717d8e01a57453f0f7b}{create\-Connection} (boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Node}{components\-::\-Node} $>$ node\-Start, boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Node}{components\-::\-Node} $>$ node\-End, int connectivity=1)
+\item 
+boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Connection}{components\-::\-Connection} $>$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a9e79e7b5195234ce9b1734ba51b97f2e}{delete\-Connection} (boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Connection}{components\-::\-Connection} $>$ conn)
+\item 
+virtual std\-::set\*
+$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Node}{cryomesh\-::components\-::\-Node} $>$ $>$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a3f84ac78aebfe6bbe9734db282fec918}{create\-Random\-Nodes} (int count, int connectivity=0, int strategy=0)
+\begin{DoxyCompactList}\small\item\em \-Create a number of random nodes. \end{DoxyCompactList}\item 
+virtual std\-::map\*
+$<$ boost\-::uuids\-::uuid, \*
+boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Connection}{components\-::\-Connection} $>$ $>$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a022af7cca36ec0477b6729dcea003c0d}{create\-Random\-Connections} (int count)
+\begin{DoxyCompactList}\small\item\em \-Create a number of random connections. \end{DoxyCompactList}\item 
+virtual std\-::map\*
+$<$ boost\-::uuids\-::uuid, \*
+boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Node}{components\-::\-Node} $>$ $>$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a48390e61b94b0d6bcea14318d9594da9}{destroy\-Random\-Nodes} (int count)
+\begin{DoxyCompactList}\small\item\em \-Destroy random nodes. \end{DoxyCompactList}\item 
+virtual std\-::map\*
+$<$ boost\-::uuids\-::uuid, \*
+boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Connection}{components\-::\-Connection} $>$ $>$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_aa49f0b9d3cad4a8e167cc780f541f9af}{destroy\-Random\-Connections} (int count)
+\begin{DoxyCompactList}\small\item\em \-Destroy random connections. \end{DoxyCompactList}\item 
+virtual std\-::map\*
+$<$ boost\-::uuids\-::uuid, \*
+boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Node}{components\-::\-Node} $>$ $>$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a6147b7a25140c334898fcae6889a4a4a}{get\-Random\-Nodes} (const int count, const bool allow\-\_\-primary)
+\begin{DoxyCompactList}\small\item\em \-Get a collection of random nodes from the cluster. \end{DoxyCompactList}\item 
+virtual std\-::map\*
+$<$ boost\-::uuids\-::uuid, \*
+boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Connection}{components\-::\-Connection} $>$ $>$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a325de5c9d5a956af23b42da995b67c9a}{get\-Random\-Connections} (const int count, const bool allow\-\_\-primary)
+\begin{DoxyCompactList}\small\item\em \-Get a collection of random connections from the cluster. \end{DoxyCompactList}\item 
+int \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a35ef78740a40db97d54ca44ea660841b}{get\-Max\-History\-Size} () const 
+\item 
+void \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a4192c928465d82dbad196d3331052545}{set\-Max\-History\-Size} (int sz)
+\item 
+\hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalysisData}{\-Cluster\-Analysis\-Data} \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_aa0a901c7d11f35cf8dbde4ecd7f2d467}{get\-Current\-Cluster\-Analysis\-Data} () const 
+\item 
+const std\-::list\*
+$<$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalysisData}{\-Cluster\-Analysis\-Data} $>$ \& \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_aab7a3fce246914548d090315316d90a1}{get\-Current\-History} () const 
+\item 
+int \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_af3bae257112679c24736b49c9fe8ccee}{get\-History\-Stepping\-Factor} () const 
+\item 
+void \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_ab2bfac465a4ca8982ae17af0cf7cd19c}{set\-Current\-Cluster\-Analysis\-Data} (\hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalysisData}{\-Cluster\-Analysis\-Data} \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a90412a42b771826aa325163eb8dd35ea}{current\-Cluster\-Analysis\-Data})
+\item 
+void \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_af901173faf53da06d91165779e31cae2}{set\-Current\-History} (std\-::list$<$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalysisData}{\-Cluster\-Analysis\-Data} $>$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a5ab807b2682f56ffd1cfcf8b7b54b2a0}{current\-History})
+\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a27c696f8203fb914e51a223eee562254}{print\-All\-History} (std\-::ostream \&os)
+\item 
+const \hyperlink{classcryomesh_1_1structures_1_1Cluster}{structures\-::\-Cluster} \& \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a3e561db659ae0d4a4d46e22741772994}{get\-Cluster} () const 
+\item 
+const boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1manipulators_1_1IClusterAnalyser}{\-I\-Cluster\-Analyser} $>$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_aa46dba6257689b3c467afb988f2efb22}{get\-Cluster\-Analyser} () const 
+\item 
+void \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a88493418dae7b67370f090c389ae0bfa}{set\-Cluster\-Analyser} (boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1manipulators_1_1IClusterAnalyser}{\-I\-Cluster\-Analyser} $>$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a376af658286be49dc6fc5fea9927c7bc}{cluster\-Analyser})
+\item 
+void \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_af8c67291845601ffd8c9e740ea868db0}{set\-Histories} (std\-::map$<$ int, std\-::list$<$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalysisData}{\-Cluster\-Analysis\-Data} $>$ $>$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a8414fe32bad8df5943f91018b9258112}{histories})
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1structures_1_1Cluster}{structures\-::\-Cluster} \& \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a66c39a642d37c989c59c6176adfe12c1}{cluster}
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_ab79a6ae93e47eaf107d78ed558f41d83}{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-I\-S\-T\-O\-R\-Y\-\_\-\-S\-T\-E\-P\-P\-I\-N\-G\-\_\-\-F\-A\-C\-T\-O\-R} = 2
+\item 
+static const int \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_aedfa4722a69f72fcb1a9094dd584495d}{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-H\-I\-S\-T\-O\-R\-Y\-\_\-\-S\-I\-Z\-E} = 3
+\item 
+static const double \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a6ce4a9d1278748853bd451ef7adcfb36}{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N} = 0.\-01
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a2139b33760d3506195f5ad4f452b0223}{add\-History\-Entry} (\hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalysisData}{\-Cluster\-Analysis\-Data} entry)
+\item 
+void \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_acc6793fab1779aaa70ccecd1bfcc4b92}{split\-History\-By\-Value} (const std\-::list$<$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalysisData}{\-Cluster\-Analysis\-Data} $>$ \&history, double db, int countback, std\-::map$<$ \hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle}, \hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalysisData}{\-Cluster\-Analysis\-Data} $>$ \&below, std\-::map$<$ \hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle}, \hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalysisData}{\-Cluster\-Analysis\-Data} $>$ \&above) const 
+\item 
+std\-::vector$<$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalysisData}{\-Cluster\-Analysis\-Data} $>$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a4f8d0f159900e6c9b5819cb80e7b1b75}{get\-History\-Entries\-In\-Range} (const std\-::list$<$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalysisData}{\-Cluster\-Analysis\-Data} $>$ \&history, double min\-\_\-db, double max\-\_\-db, int countback=0) const 
+\begin{DoxyCompactList}\small\item\em \-Get the fraction of history entries from the past count entries that are inside of a range, default is to check all of them. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_aad99204b1d87578ad9f83a7abed7e0e5}{reduce\-Container\-Size} (std\-::list$<$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalysisData}{\-Cluster\-Analysis\-Data} $>$ \&cont, const unsigned int sz)
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::list$<$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalysisData}{\-Cluster\-Analysis\-Data} $>$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a5ab807b2682f56ffd1cfcf8b7b54b2a0}{current\-History}
+\item 
+std\-::map$<$ int, std\-::list\*
+$<$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalysisData}{\-Cluster\-Analysis\-Data} $>$ $>$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a8414fe32bad8df5943f91018b9258112}{histories}
+\begin{DoxyCompactList}\small\item\em \-Map of all histories, the int represents the cycle seperation, the list is the resultant values/averages. \end{DoxyCompactList}\item 
+std\-::map$<$ int, unsigned int $>$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_abaeb85dae0b04e1cec3d988211b5bd91}{histories\-New\-Entries}
+\item 
+const int \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a766f4eb432605c7fff53dae0e8569dd7}{history\-Stepping\-Factor}
+\item 
+boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1manipulators_1_1IClusterAnalyser}{\-I\-Cluster\-Analyser} $>$ \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a376af658286be49dc6fc5fea9927c7bc}{cluster\-Analyser}
+\item 
+\hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalysisData}{\-Cluster\-Analysis\-Data} \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a90412a42b771826aa325163eb8dd35ea}{current\-Cluster\-Analysis\-Data}
+\item 
+int \hyperlink{classcryomesh_1_1manipulators_1_1ClusterArchitect_a2a3b819358a723ce61c58063c6adff7f}{max\-History\-Size}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+
+
+\-Definition at line 23 of file \-Cluster\-Architect.\-h.
+
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a0188a785aaeb3c5f2cbbbe62259fa01b}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!\-Connection\-Strategy@{\-Connection\-Strategy}}
+\index{\-Connection\-Strategy@{\-Connection\-Strategy}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{\-Connection\-Strategy}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::\-Connection\-Strategy}}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a0188a785aaeb3c5f2cbbbe62259fa01b}
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-E\-N\-A\-B\-L\-E\-\_\-\-S\-E\-L\-F\-\_\-\-C\-O\-N\-N\-E\-C\-T@{\-E\-N\-A\-B\-L\-E\-\_\-\-S\-E\-L\-F\-\_\-\-C\-O\-N\-N\-E\-C\-T}!cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!\-E\-N\-A\-B\-L\-E\-\_\-\-S\-E\-L\-F\-\_\-\-C\-O\-N\-N\-E\-C\-T@{\-E\-N\-A\-B\-L\-E\-\_\-\-S\-E\-L\-F\-\_\-\-C\-O\-N\-N\-E\-C\-T}}\item[{\em 
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a0188a785aaeb3c5f2cbbbe62259fa01ba94bf69771f5d79e3a1b0b942869de362}{\-E\-N\-A\-B\-L\-E\-\_\-\-S\-E\-L\-F\-\_\-\-C\-O\-N\-N\-E\-C\-T}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a0188a785aaeb3c5f2cbbbe62259fa01ba94bf69771f5d79e3a1b0b942869de362}
+}]\index{\-E\-N\-A\-B\-L\-E\-\_\-\-E\-V\-E\-N\-\_\-\-D\-I\-S\-T\-R\-I\-B\-U\-T\-I\-O\-N@{\-E\-N\-A\-B\-L\-E\-\_\-\-E\-V\-E\-N\-\_\-\-D\-I\-S\-T\-R\-I\-B\-U\-T\-I\-O\-N}!cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!\-E\-N\-A\-B\-L\-E\-\_\-\-E\-V\-E\-N\-\_\-\-D\-I\-S\-T\-R\-I\-B\-U\-T\-I\-O\-N@{\-E\-N\-A\-B\-L\-E\-\_\-\-E\-V\-E\-N\-\_\-\-D\-I\-S\-T\-R\-I\-B\-U\-T\-I\-O\-N}}\item[{\em 
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a0188a785aaeb3c5f2cbbbe62259fa01ba851f2313adc7277f4d051dd7f50ec39f}{\-E\-N\-A\-B\-L\-E\-\_\-\-E\-V\-E\-N\-\_\-\-D\-I\-S\-T\-R\-I\-B\-U\-T\-I\-O\-N}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a0188a785aaeb3c5f2cbbbe62259fa01ba851f2313adc7277f4d051dd7f50ec39f}
+}]\end{description}
+\end{Desc}
+
+
+
+\-Definition at line 26 of file \-Cluster\-Architect.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a943322d4216479bb2a789de252c9e832}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!\-Cluster\-Architect@{\-Cluster\-Architect}}
+\index{\-Cluster\-Architect@{\-Cluster\-Architect}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{\-Cluster\-Architect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::\-Cluster\-Architect} (
+\begin{DoxyParamCaption}
+\item[{{\bf structures\-::\-Cluster} \&}]{clus, }
+\item[{const int}]{max\-\_\-history\-\_\-sz = {\ttfamily {\bf \-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-H\-I\-S\-T\-O\-R\-Y\-\_\-\-S\-I\-Z\-E}}, }
+\item[{const int}]{history\-\_\-stepping\-\_\-factor = {\ttfamily {\bf \-D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-I\-S\-T\-O\-R\-Y\-\_\-\-S\-T\-E\-P\-P\-I\-N\-G\-\_\-\-F\-A\-C\-T\-O\-R}}}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a943322d4216479bb2a789de252c9e832}
+
+
+\-Definition at line 29 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-References histories\-New\-Entries, and max\-History\-Size.
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_aaa98287d6353166d890d0e9b862cc915}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!$\sim$\-Cluster\-Architect@{$\sim$\-Cluster\-Architect}}
+\index{$\sim$\-Cluster\-Architect@{$\sim$\-Cluster\-Architect}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{$\sim$\-Cluster\-Architect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::$\sim$\-Cluster\-Architect} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_aaa98287d6353166d890d0e9b862cc915}
+
+
+\-Definition at line 38 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a2139b33760d3506195f5ad4f452b0223}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!add\-History\-Entry@{add\-History\-Entry}}
+\index{add\-History\-Entry@{add\-History\-Entry}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{add\-History\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::add\-History\-Entry} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Cluster\-Analysis\-Data}}]{entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a2139b33760d3506195f5ad4f452b0223}
+
+
+\-Definition at line 507 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-References cluster\-Analyser, current\-Cluster\-Analysis\-Data, current\-History, get\-History\-Stepping\-Factor(), get\-Max\-History\-Size(), histories, histories\-New\-Entries, print\-All\-History(), and reduce\-Container\-Size().
+
+
+
+\-Referenced by run\-Analysis().
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a1ea67e03b3ac0717d8e01a57453f0f7b}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!create\-Connection@{create\-Connection}}
+\index{create\-Connection@{create\-Connection}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{create\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::create\-Connection} (
+\begin{DoxyParamCaption}
+\item[{boost\-::shared\-\_\-ptr$<$ {\bf components\-::\-Node} $>$}]{node\-Start, }
+\item[{boost\-::shared\-\_\-ptr$<$ {\bf components\-::\-Node} $>$}]{node\-End, }
+\item[{int}]{connectivity = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a1ea67e03b3ac0717d8e01a57453f0f7b}
+
+
+\-Definition at line 647 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-References cluster, and cryomesh\-::structures\-::\-Cluster\-::get\-Mutable\-Connection\-Map().
+
+
+
+\-Referenced by create\-Random\-Nodes().
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a022af7cca36ec0477b6729dcea003c0d}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!create\-Random\-Connections@{create\-Random\-Connections}}
+\index{create\-Random\-Connections@{create\-Random\-Connections}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{create\-Random\-Connections}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$ boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ {\bf components\-::\-Connection} $>$ $>$ {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::create\-Random\-Connections} (
+\begin{DoxyParamCaption}
+\item[{int}]{count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a022af7cca36ec0477b6729dcea003c0d}
+
+
+\-Create a number of random connections. 
+
+
+
+\-Definition at line 282 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-References cluster, cryomesh\-::structures\-::\-Cluster\-::get\-Mutable\-Connection\-Map(), and cryomesh\-::structures\-::\-Cluster\-::get\-Mutable\-Node\-Map().
+
+
+
+\-Referenced by run\-Analysis().
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a3f84ac78aebfe6bbe9734db282fec918}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!create\-Random\-Nodes@{create\-Random\-Nodes}}
+\index{create\-Random\-Nodes@{create\-Random\-Nodes}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{create\-Random\-Nodes}]{\setlength{\rightskip}{0pt plus 5cm}std\-::set$<$ boost\-::shared\-\_\-ptr$<$ {\bf cryomesh\-::components\-::\-Node} $>$ $>$ {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::create\-Random\-Nodes} (
+\begin{DoxyParamCaption}
+\item[{int}]{count, }
+\item[{int}]{connectivity = {\ttfamily 0}, }
+\item[{int}]{strategy = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a3f84ac78aebfe6bbe9734db282fec918}
+
+
+\-Create a number of random nodes. 
+
+
+
+\-Definition at line 57 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-References cluster, create\-Connection(), \-D\-E\-F\-A\-U\-L\-T\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N, \-E\-N\-A\-B\-L\-E\-\_\-\-E\-V\-E\-N\-\_\-\-D\-I\-S\-T\-R\-I\-B\-U\-T\-I\-O\-N, \-E\-N\-A\-B\-L\-E\-\_\-\-S\-E\-L\-F\-\_\-\-C\-O\-N\-N\-E\-C\-T, cryomesh\-::structures\-::\-Cluster\-::get\-Mutable\-Node\-Map(), cryomesh\-::structures\-::\-Cluster\-::get\-Node\-Map(), and cryomesh\-::components\-::\-Node\-::get\-Random().
+
+
+
+\-Referenced by run\-Analysis().
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a9e79e7b5195234ce9b1734ba51b97f2e}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!delete\-Connection@{delete\-Connection}}
+\index{delete\-Connection@{delete\-Connection}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{delete\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$ {\bf components\-::\-Connection} $>$ {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::delete\-Connection} (
+\begin{DoxyParamCaption}
+\item[{boost\-::shared\-\_\-ptr$<$ {\bf components\-::\-Connection} $>$}]{conn}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a9e79e7b5195234ce9b1734ba51b97f2e}
+
+
+\-Definition at line 665 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-References cluster, and cryomesh\-::structures\-::\-Cluster\-::get\-Mutable\-Connection\-Map().
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_aa49f0b9d3cad4a8e167cc780f541f9af}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!destroy\-Random\-Connections@{destroy\-Random\-Connections}}
+\index{destroy\-Random\-Connections@{destroy\-Random\-Connections}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{destroy\-Random\-Connections}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$ boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ {\bf components\-::\-Connection} $>$ $>$ {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::destroy\-Random\-Connections} (
+\begin{DoxyParamCaption}
+\item[{int}]{count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_aa49f0b9d3cad4a8e167cc780f541f9af}
+
+
+\-Destroy random connections. 
+
+
+
+\-Definition at line 361 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-References cluster, cryomesh\-::structures\-::\-Cluster\-::get\-Mutable\-Connection\-Map(), and get\-Random\-Connections().
+
+
+
+\-Referenced by run\-Analysis().
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a48390e61b94b0d6bcea14318d9594da9}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!destroy\-Random\-Nodes@{destroy\-Random\-Nodes}}
+\index{destroy\-Random\-Nodes@{destroy\-Random\-Nodes}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{destroy\-Random\-Nodes}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$ boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ {\bf components\-::\-Node} $>$ $>$ {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::destroy\-Random\-Nodes} (
+\begin{DoxyParamCaption}
+\item[{int}]{count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a48390e61b94b0d6bcea14318d9594da9}
+
+
+\-Destroy random nodes. 
+
+
+
+\-Definition at line 333 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-References cluster, cryomesh\-::structures\-::\-Cluster\-::get\-Mutable\-Connection\-Map(), cryomesh\-::structures\-::\-Cluster\-::get\-Mutable\-Node\-Map(), and get\-Random\-Nodes().
+
+
+
+\-Referenced by run\-Analysis().
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a3e561db659ae0d4a4d46e22741772994}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!get\-Cluster@{get\-Cluster}}
+\index{get\-Cluster@{get\-Cluster}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{get\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf structures\-::\-Cluster} \& {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::get\-Cluster} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a3e561db659ae0d4a4d46e22741772994}
+
+
+\-Definition at line 604 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-References cluster.
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_aa46dba6257689b3c467afb988f2efb22}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!get\-Cluster\-Analyser@{get\-Cluster\-Analyser}}
+\index{get\-Cluster\-Analyser@{get\-Cluster\-Analyser}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{get\-Cluster\-Analyser}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::shared\-\_\-ptr$<$ {\bf \-I\-Cluster\-Analyser} $>$ {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::get\-Cluster\-Analyser} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_aa46dba6257689b3c467afb988f2efb22}
+
+
+\-Definition at line 608 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-References cluster\-Analyser.
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_aa0a901c7d11f35cf8dbde4ecd7f2d467}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!get\-Current\-Cluster\-Analysis\-Data@{get\-Current\-Cluster\-Analysis\-Data}}
+\index{get\-Current\-Cluster\-Analysis\-Data@{get\-Current\-Cluster\-Analysis\-Data}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{get\-Current\-Cluster\-Analysis\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Cluster\-Analysis\-Data} {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::get\-Current\-Cluster\-Analysis\-Data} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_aa0a901c7d11f35cf8dbde4ecd7f2d467}
+
+
+\-Definition at line 584 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-References current\-Cluster\-Analysis\-Data.
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_aab7a3fce246914548d090315316d90a1}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!get\-Current\-History@{get\-Current\-History}}
+\index{get\-Current\-History@{get\-Current\-History}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{get\-Current\-History}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::list$<$ {\bf \-Cluster\-Analysis\-Data} $>$ \& {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::get\-Current\-History} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_aab7a3fce246914548d090315316d90a1}
+
+
+\-Definition at line 588 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-References current\-History.
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a7bd6b5860a9aeb18a294f7d36bf252dd}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!get\-Histories@{get\-Histories}}
+\index{get\-Histories@{get\-Histories}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{get\-Histories}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::map$<$ int, std\-::list$<$ {\bf \-Cluster\-Analysis\-Data} $>$ $>$ \& {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::get\-Histories} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a7bd6b5860a9aeb18a294f7d36bf252dd}
+
+
+\-Get the history of analysis. 
+
+\begin{DoxyReturn}{\-Returns}
+const common\-::\-Simple\-Collection$<$\-Cluster\-Analysis\-Data$>$ \& \-The container with the history of analysis 
+\end{DoxyReturn}
+
+
+\-Definition at line 491 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-References histories.
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a4f8d0f159900e6c9b5819cb80e7b1b75}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!get\-History\-Entries\-In\-Range@{get\-History\-Entries\-In\-Range}}
+\index{get\-History\-Entries\-In\-Range@{get\-History\-Entries\-In\-Range}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{get\-History\-Entries\-In\-Range}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf \-Cluster\-Analysis\-Data} $>$ {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::get\-History\-Entries\-In\-Range} (
+\begin{DoxyParamCaption}
+\item[{const std\-::list$<$ {\bf \-Cluster\-Analysis\-Data} $>$ \&}]{history, }
+\item[{double}]{min\-\_\-db, }
+\item[{double}]{max\-\_\-db, }
+\item[{int}]{countback = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a4f8d0f159900e6c9b5819cb80e7b1b75}
+
+
+\-Get the fraction of history entries from the past count entries that are inside of a range, default is to check all of them. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em double} & \-Value for entries to be above \\
+\hline
+{\em double} & \-Value for entries to be below \\
+\hline
+{\em int} & \-Number of past entries to go back\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::vector$<$\-Cluster\-Analysis\-Data$>$ \-Entries within range 
+\end{DoxyReturn}
+
+
+\-Definition at line 620 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-References split\-History\-By\-Value().
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_af3bae257112679c24736b49c9fe8ccee}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!get\-History\-Stepping\-Factor@{get\-History\-Stepping\-Factor}}
+\index{get\-History\-Stepping\-Factor@{get\-History\-Stepping\-Factor}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{get\-History\-Stepping\-Factor}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::get\-History\-Stepping\-Factor} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_af3bae257112679c24736b49c9fe8ccee}
+
+
+\-Definition at line 592 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-References history\-Stepping\-Factor.
+
+
+
+\-Referenced by add\-History\-Entry(), and cryomesh\-::manipulators\-::\-Cluster\-Analyser\-Basic\-::analyse\-Cluster().
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a35ef78740a40db97d54ca44ea660841b}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!get\-Max\-History\-Size@{get\-Max\-History\-Size}}
+\index{get\-Max\-History\-Size@{get\-Max\-History\-Size}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{get\-Max\-History\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::get\-Max\-History\-Size} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a35ef78740a40db97d54ca44ea660841b}
+
+
+\-Definition at line 495 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-References max\-History\-Size.
+
+
+
+\-Referenced by add\-History\-Entry(), and cryomesh\-::manipulators\-::\-Cluster\-Analyser\-Basic\-::analyse\-Cluster().
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a325de5c9d5a956af23b42da995b67c9a}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!get\-Random\-Connections@{get\-Random\-Connections}}
+\index{get\-Random\-Connections@{get\-Random\-Connections}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{get\-Random\-Connections}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$ boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ {\bf components\-::\-Connection} $>$ $>$ {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::get\-Random\-Connections} (
+\begin{DoxyParamCaption}
+\item[{const int}]{count, }
+\item[{const bool}]{allow\-\_\-primary}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a325de5c9d5a956af23b42da995b67c9a}
+
+
+\-Get a collection of random connections from the cluster. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em const} & int \-The number of random connections to return \\
+\hline
+{\em const} & bool \-Allow the random connections to be attached primaries, default false\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::list$<$boost\-::shared\-\_\-ptr$<$components\-::\-Connection$>$ $>$ \-List of random connections 
+\end{DoxyReturn}
+
+
+\-Definition at line 440 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-References cluster, cryomesh\-::components\-::\-Connection\-Map\-::get\-All\-Primary\-Input\-Connections(), cryomesh\-::components\-::\-Connection\-Map\-::get\-All\-Primary\-Output\-Connections(), cryomesh\-::structures\-::\-Cluster\-::get\-Connection\-Map(), and cryomesh\-::structures\-::\-Cluster\-::get\-Mutable\-Connection\-Map().
+
+
+
+\-Referenced by destroy\-Random\-Connections().
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a6147b7a25140c334898fcae6889a4a4a}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!get\-Random\-Nodes@{get\-Random\-Nodes}}
+\index{get\-Random\-Nodes@{get\-Random\-Nodes}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{get\-Random\-Nodes}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$ boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ {\bf components\-::\-Node} $>$ $>$ {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::get\-Random\-Nodes} (
+\begin{DoxyParamCaption}
+\item[{const int}]{count, }
+\item[{const bool}]{allow\-\_\-primary}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a6147b7a25140c334898fcae6889a4a4a}
+
+
+\-Get a collection of random nodes from the cluster. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em const} & int \-The number of random nodes to return \\
+\hline
+{\em const} & bool \-Allow the random nodes to be attached primaries, default false\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::list$<$boost\-::shared\-\_\-ptr$<$components\-::\-Node$>$ $>$ \-List of random nodes 
+\end{DoxyReturn}
+
+
+\-Definition at line 388 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-References cluster, cryomesh\-::components\-::\-Node\-Map\-::get\-All\-Primary\-Input\-Nodes(), cryomesh\-::components\-::\-Node\-Map\-::get\-All\-Primary\-Output\-Nodes(), cryomesh\-::structures\-::\-Cluster\-::get\-Mutable\-Node\-Map(), and cryomesh\-::structures\-::\-Cluster\-::get\-Node\-Map().
+
+
+
+\-Referenced by destroy\-Random\-Nodes().
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a27c696f8203fb914e51a223eee562254}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!print\-All\-History@{print\-All\-History}}
+\index{print\-All\-History@{print\-All\-History}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{print\-All\-History}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream \& {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::print\-All\-History} (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a27c696f8203fb914e51a223eee562254}
+
+
+\-Definition at line 672 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-References current\-History, and histories.
+
+
+
+\-Referenced by add\-History\-Entry().
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_aad99204b1d87578ad9f83a7abed7e0e5}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!reduce\-Container\-Size@{reduce\-Container\-Size}}
+\index{reduce\-Container\-Size@{reduce\-Container\-Size}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{reduce\-Container\-Size}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::reduce\-Container\-Size} (
+\begin{DoxyParamCaption}
+\item[{std\-::list$<$ {\bf \-Cluster\-Analysis\-Data} $>$ \&}]{cont, }
+\item[{const unsigned int}]{sz}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_aad99204b1d87578ad9f83a7abed7e0e5}
+
+
+\-Definition at line 691 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-Referenced by add\-History\-Entry().
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a7e11839aa729d0e39bc055621d058d88}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!run\-Analysis@{run\-Analysis}}
+\index{run\-Analysis@{run\-Analysis}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{run\-Analysis}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::run\-Analysis} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a7e11839aa729d0e39bc055621d058d88}
+
+
+\-Definition at line 41 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-References add\-History\-Entry(), cluster, cluster\-Analyser, create\-Random\-Connections(), create\-Random\-Nodes(), destroy\-Random\-Connections(), destroy\-Random\-Nodes(), cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::get\-Connections\-To\-Create(), cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::get\-Connections\-To\-Destroy(), cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::get\-Nodes\-To\-Create(), cryomesh\-::manipulators\-::\-Cluster\-Analysis\-Data\-::get\-Nodes\-To\-Destroy(), and histories.
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a88493418dae7b67370f090c389ae0bfa}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!set\-Cluster\-Analyser@{set\-Cluster\-Analyser}}
+\index{set\-Cluster\-Analyser@{set\-Cluster\-Analyser}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{set\-Cluster\-Analyser}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::set\-Cluster\-Analyser} (
+\begin{DoxyParamCaption}
+\item[{boost\-::shared\-\_\-ptr$<$ {\bf \-I\-Cluster\-Analyser} $>$}]{cluster\-Analyser}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a88493418dae7b67370f090c389ae0bfa}
+
+
+\-Definition at line 612 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-References cluster\-Analyser.
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_ab2bfac465a4ca8982ae17af0cf7cd19c}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!set\-Current\-Cluster\-Analysis\-Data@{set\-Current\-Cluster\-Analysis\-Data}}
+\index{set\-Current\-Cluster\-Analysis\-Data@{set\-Current\-Cluster\-Analysis\-Data}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{set\-Current\-Cluster\-Analysis\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::set\-Current\-Cluster\-Analysis\-Data} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Cluster\-Analysis\-Data}}]{current\-Cluster\-Analysis\-Data}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_ab2bfac465a4ca8982ae17af0cf7cd19c}
+
+
+\-Definition at line 596 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-References current\-Cluster\-Analysis\-Data.
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_af901173faf53da06d91165779e31cae2}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!set\-Current\-History@{set\-Current\-History}}
+\index{set\-Current\-History@{set\-Current\-History}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{set\-Current\-History}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::set\-Current\-History} (
+\begin{DoxyParamCaption}
+\item[{std\-::list$<$ {\bf \-Cluster\-Analysis\-Data} $>$}]{current\-History}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_af901173faf53da06d91165779e31cae2}
+
+
+\-Definition at line 600 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-References current\-History.
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_af8c67291845601ffd8c9e740ea868db0}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!set\-Histories@{set\-Histories}}
+\index{set\-Histories@{set\-Histories}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{set\-Histories}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::set\-Histories} (
+\begin{DoxyParamCaption}
+\item[{std\-::map$<$ int, std\-::list$<$ {\bf \-Cluster\-Analysis\-Data} $>$ $>$}]{histories}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_af8c67291845601ffd8c9e740ea868db0}
+
+
+\-Definition at line 616 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-References histories.
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a4192c928465d82dbad196d3331052545}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!set\-Max\-History\-Size@{set\-Max\-History\-Size}}
+\index{set\-Max\-History\-Size@{set\-Max\-History\-Size}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{set\-Max\-History\-Size}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::set\-Max\-History\-Size} (
+\begin{DoxyParamCaption}
+\item[{int}]{sz}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a4192c928465d82dbad196d3331052545}
+
+
+\-Definition at line 499 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-References max\-History\-Size.
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_acc6793fab1779aaa70ccecd1bfcc4b92}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!split\-History\-By\-Value@{split\-History\-By\-Value}}
+\index{split\-History\-By\-Value@{split\-History\-By\-Value}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{split\-History\-By\-Value}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::split\-History\-By\-Value} (
+\begin{DoxyParamCaption}
+\item[{const std\-::list$<$ {\bf \-Cluster\-Analysis\-Data} $>$ \&}]{history, }
+\item[{double}]{db, }
+\item[{int}]{countback, }
+\item[{std\-::map$<$ {\bf common\-::\-Cycle}, {\bf \-Cluster\-Analysis\-Data} $>$ \&}]{below, }
+\item[{std\-::map$<$ {\bf common\-::\-Cycle}, {\bf \-Cluster\-Analysis\-Data} $>$ \&}]{above}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_acc6793fab1779aaa70ccecd1bfcc4b92}
+
+
+\-Definition at line 560 of file \-Cluster\-Architect.\-cpp.
+
+
+
+\-Referenced by get\-History\-Entries\-In\-Range().
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a66c39a642d37c989c59c6176adfe12c1}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!cluster@{cluster}}
+\index{cluster@{cluster}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{cluster}]{\setlength{\rightskip}{0pt plus 5cm}{\bf structures\-::\-Cluster}\& {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::cluster}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a66c39a642d37c989c59c6176adfe12c1}
+
+
+\-Definition at line 98 of file \-Cluster\-Architect.\-h.
+
+
+
+\-Referenced by create\-Connection(), create\-Random\-Connections(), create\-Random\-Nodes(), delete\-Connection(), destroy\-Random\-Connections(), destroy\-Random\-Nodes(), get\-Cluster(), get\-Random\-Connections(), get\-Random\-Nodes(), and run\-Analysis().
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a376af658286be49dc6fc5fea9927c7bc}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!cluster\-Analyser@{cluster\-Analyser}}
+\index{cluster\-Analyser@{cluster\-Analyser}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{cluster\-Analyser}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$ {\bf \-I\-Cluster\-Analyser} $>$ {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::cluster\-Analyser}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a376af658286be49dc6fc5fea9927c7bc}
+
+
+\-Definition at line 131 of file \-Cluster\-Architect.\-h.
+
+
+
+\-Referenced by add\-History\-Entry(), get\-Cluster\-Analyser(), run\-Analysis(), and set\-Cluster\-Analyser().
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a90412a42b771826aa325163eb8dd35ea}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!current\-Cluster\-Analysis\-Data@{current\-Cluster\-Analysis\-Data}}
+\index{current\-Cluster\-Analysis\-Data@{current\-Cluster\-Analysis\-Data}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{current\-Cluster\-Analysis\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Cluster\-Analysis\-Data} {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::current\-Cluster\-Analysis\-Data}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a90412a42b771826aa325163eb8dd35ea}
+
+
+\-Definition at line 132 of file \-Cluster\-Architect.\-h.
+
+
+
+\-Referenced by add\-History\-Entry(), get\-Current\-Cluster\-Analysis\-Data(), and set\-Current\-Cluster\-Analysis\-Data().
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a5ab807b2682f56ffd1cfcf8b7b54b2a0}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!current\-History@{current\-History}}
+\index{current\-History@{current\-History}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{current\-History}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<${\bf \-Cluster\-Analysis\-Data} $>$ {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::current\-History}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a5ab807b2682f56ffd1cfcf8b7b54b2a0}
+
+
+\-Definition at line 115 of file \-Cluster\-Architect.\-h.
+
+
+
+\-Referenced by add\-History\-Entry(), get\-Current\-History(), print\-All\-History(), and set\-Current\-History().
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a6ce4a9d1278748853bd451ef7adcfb36}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!\-D\-E\-F\-A\-U\-L\-T\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N@{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N}}
+\index{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N@{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}const double {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::\-D\-E\-F\-A\-U\-L\-T\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N} = 0.\-01\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a6ce4a9d1278748853bd451ef7adcfb36}
+
+
+\-Definition at line 107 of file \-Cluster\-Architect.\-h.
+
+
+
+\-Referenced by create\-Random\-Nodes().
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_ab79a6ae93e47eaf107d78ed558f41d83}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!\-D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-I\-S\-T\-O\-R\-Y\-\_\-\-S\-T\-E\-P\-P\-I\-N\-G\-\_\-\-F\-A\-C\-T\-O\-R@{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-I\-S\-T\-O\-R\-Y\-\_\-\-S\-T\-E\-P\-P\-I\-N\-G\-\_\-\-F\-A\-C\-T\-O\-R}}
+\index{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-I\-S\-T\-O\-R\-Y\-\_\-\-S\-T\-E\-P\-P\-I\-N\-G\-\_\-\-F\-A\-C\-T\-O\-R@{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-I\-S\-T\-O\-R\-Y\-\_\-\-S\-T\-E\-P\-P\-I\-N\-G\-\_\-\-F\-A\-C\-T\-O\-R}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-I\-S\-T\-O\-R\-Y\-\_\-\-S\-T\-E\-P\-P\-I\-N\-G\-\_\-\-F\-A\-C\-T\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::\-D\-E\-F\-A\-U\-L\-T\-\_\-\-H\-I\-S\-T\-O\-R\-Y\-\_\-\-S\-T\-E\-P\-P\-I\-N\-G\-\_\-\-F\-A\-C\-T\-O\-R} = 2\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_ab79a6ae93e47eaf107d78ed558f41d83}
+
+
+\-Definition at line 105 of file \-Cluster\-Architect.\-h.
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_aedfa4722a69f72fcb1a9094dd584495d}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-H\-I\-S\-T\-O\-R\-Y\-\_\-\-S\-I\-Z\-E@{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-H\-I\-S\-T\-O\-R\-Y\-\_\-\-S\-I\-Z\-E}}
+\index{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-H\-I\-S\-T\-O\-R\-Y\-\_\-\-S\-I\-Z\-E@{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-H\-I\-S\-T\-O\-R\-Y\-\_\-\-S\-I\-Z\-E}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-H\-I\-S\-T\-O\-R\-Y\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-H\-I\-S\-T\-O\-R\-Y\-\_\-\-S\-I\-Z\-E} = 3\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_aedfa4722a69f72fcb1a9094dd584495d}
+
+
+\-Definition at line 106 of file \-Cluster\-Architect.\-h.
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a8414fe32bad8df5943f91018b9258112}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!histories@{histories}}
+\index{histories@{histories}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{histories}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$int, std\-::list$<${\bf \-Cluster\-Analysis\-Data}$>$ $>$ {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::histories}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a8414fe32bad8df5943f91018b9258112}
+
+
+\-Map of all histories, the int represents the cycle seperation, the list is the resultant values/averages. 
+
+eg
+\begin{DoxyItemize}
+\item mapping of 1 to a list of \hyperlink{classcryomesh_1_1manipulators_1_1ClusterAnalysisData}{\-Cluster\-Analysis\-Data} is the standard save of every cycles history (up to cutoff)
+\item mapping of 10 means that every 10 cycles are averaged and the result added to the mapped list
+\end{DoxyItemize}
+
+\-Note that mapping steps are recursive, we can only have int keys as multiples of each other, eg \{1, 2, 4, 8, etc\} or \{1, 10, 100, ... \} , so \{ 1, a, a$^\wedge$2, a$^\wedge$3, ... \} 
+
+\-Definition at line 127 of file \-Cluster\-Architect.\-h.
+
+
+
+\-Referenced by add\-History\-Entry(), get\-Histories(), print\-All\-History(), run\-Analysis(), and set\-Histories().
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_abaeb85dae0b04e1cec3d988211b5bd91}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!histories\-New\-Entries@{histories\-New\-Entries}}
+\index{histories\-New\-Entries@{histories\-New\-Entries}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{histories\-New\-Entries}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$int, unsigned int $>$ {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::histories\-New\-Entries}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_abaeb85dae0b04e1cec3d988211b5bd91}
+
+
+\-Definition at line 128 of file \-Cluster\-Architect.\-h.
+
+
+
+\-Referenced by add\-History\-Entry(), and \-Cluster\-Architect().
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a766f4eb432605c7fff53dae0e8569dd7}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!history\-Stepping\-Factor@{history\-Stepping\-Factor}}
+\index{history\-Stepping\-Factor@{history\-Stepping\-Factor}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{history\-Stepping\-Factor}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::history\-Stepping\-Factor}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a766f4eb432605c7fff53dae0e8569dd7}
+
+
+\-Definition at line 129 of file \-Cluster\-Architect.\-h.
+
+
+
+\-Referenced by get\-History\-Stepping\-Factor().
+
+\hypertarget{classcryomesh_1_1manipulators_1_1ClusterArchitect_a2a3b819358a723ce61c58063c6adff7f}{\index{cryomesh\-::manipulators\-::\-Cluster\-Architect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}!max\-History\-Size@{max\-History\-Size}}
+\index{max\-History\-Size@{max\-History\-Size}!cryomesh::manipulators::ClusterArchitect@{cryomesh\-::manipulators\-::\-Cluster\-Architect}}
+\subsubsection[{max\-History\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::manipulators\-::\-Cluster\-Architect\-::max\-History\-Size}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1manipulators_1_1ClusterArchitect_a2a3b819358a723ce61c58063c6adff7f}
+
+
+\-Definition at line 134 of file \-Cluster\-Architect.\-h.
+
+
+
+\-Referenced by \-Cluster\-Architect(), get\-Max\-History\-Size(), and set\-Max\-History\-Size().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/manipulators/\hyperlink{ClusterArchitect_8h}{\-Cluster\-Architect.\-h}\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/manipulators/\hyperlink{ClusterArchitect_8cpp}{\-Cluster\-Architect.\-cpp}\end{DoxyCompactItemize}

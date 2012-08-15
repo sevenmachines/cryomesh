@@ -1,0 +1,540 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="classcryomesh_1_1utilities_1_1Statistician" kind="class" prot="public">
+    <compoundname>cryomesh::utilities::Statistician</compoundname>
+    <includes refid="Statistician_8h" local="no">Statistician.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcryomesh_1_1utilities_1_1Statistician_1a478ec1e4a9b68063f1422e97d8cbea99" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classcryomesh_1_1structures_1_1Bundle" kindref="compound">structures::Bundle</ref> &amp;</type>
+        <definition>const structures::Bundle&amp; cryomesh::utilities::Statistician::bundle</definition>
+        <argsstring></argsstring>
+        <name>bundle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="74" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" bodystart="74" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1a9e6c8527426ae11edbedbc21b4215007" compoundref="Statistician_8cpp" startline="76" endline="93">getActiveNodesPerCluster</referencedby>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1a5ce2aab91e03121c69aa23209fbe9c97" compoundref="Statistician_8cpp" startline="127" endline="129">getBundle</referencedby>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1ab38d0c6cfb206e6c331c6af95388faab" compoundref="Statistician_8cpp" startline="57" endline="74">getTriggeredNodesPerCluster</referencedby>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1a3b6005b898ef77ca2fa2724f069b2c25" compoundref="Statistician_8cpp" startline="24" endline="33">update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1utilities_1_1Statistician_1af6b5d81fc1b6821e7fff8d4ccbcf15bb" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cryomesh::utilities::Statistician::clusterCount</definition>
+        <argsstring></argsstring>
+        <name>clusterCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="76" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" bodystart="76" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1a64ee08e16f1f42fc518ce2d1255f353e" compoundref="Statistician_8cpp" startline="35" endline="37">getClusterCount</referencedby>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1a3b6005b898ef77ca2fa2724f069b2c25" compoundref="Statistician_8cpp" startline="24" endline="33">update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1utilities_1_1Statistician_1a12780e2d450e3013d6a8a306a4b02bd7" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cryomesh::utilities::Statistician::inputFibresCount</definition>
+        <argsstring></argsstring>
+        <name>inputFibresCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="77" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" bodystart="77" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1a55bf105c419acad376e9aafeb135be71" compoundref="Statistician_8cpp" startline="38" endline="40">getInputFibresCount</referencedby>
+        <referencedby refid="namespacecryomesh_1_1utilities_1ac4c4fba803953a8db7e695796fef95f8" compoundref="Statistician_8cpp" startline="131" endline="150">cryomesh::utilities::operator&lt;&lt;</referencedby>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1a3b6005b898ef77ca2fa2724f069b2c25" compoundref="Statistician_8cpp" startline="24" endline="33">update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1utilities_1_1Statistician_1a90aeaf6f65a5cad0b3936731378ea07a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cryomesh::utilities::Statistician::outputFibresCount</definition>
+        <argsstring></argsstring>
+        <name>outputFibresCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="78" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" bodystart="78" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1aac6a1aeec3987386f175cc771e3e7a3a" compoundref="Statistician_8cpp" startline="41" endline="43">getOutputFibresCount</referencedby>
+        <referencedby refid="namespacecryomesh_1_1utilities_1ac4c4fba803953a8db7e695796fef95f8" compoundref="Statistician_8cpp" startline="131" endline="150">cryomesh::utilities::operator&lt;&lt;</referencedby>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1a3b6005b898ef77ca2fa2724f069b2c25" compoundref="Statistician_8cpp" startline="24" endline="33">update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1utilities_1_1Statistician_1a1540b6a7e491f9241f31fbcfd62bdd74" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cryomesh::utilities::Statistician::normalFibresCount</definition>
+        <argsstring></argsstring>
+        <name>normalFibresCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="79" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" bodystart="79" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1a5545756c254e28b165c806ddb8eb6780" compoundref="Statistician_8cpp" startline="44" endline="46">getNormalFibresCount</referencedby>
+        <referencedby refid="namespacecryomesh_1_1utilities_1ac4c4fba803953a8db7e695796fef95f8" compoundref="Statistician_8cpp" startline="131" endline="150">cryomesh::utilities::operator&lt;&lt;</referencedby>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1a3b6005b898ef77ca2fa2724f069b2c25" compoundref="Statistician_8cpp" startline="24" endline="33">update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1utilities_1_1Statistician_1a734a2d7317a2d1a08dfa64a6f5a7da8c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cryomesh::utilities::Statistician::inputChannelsCount</definition>
+        <argsstring></argsstring>
+        <name>inputChannelsCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="80" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" bodystart="80" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1a49864c3951b6aa8e1a263449bd0a0daf" compoundref="Statistician_8cpp" startline="47" endline="49">getInputChannelsCount</referencedby>
+        <referencedby refid="namespacecryomesh_1_1utilities_1ac4c4fba803953a8db7e695796fef95f8" compoundref="Statistician_8cpp" startline="131" endline="150">cryomesh::utilities::operator&lt;&lt;</referencedby>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1a3b6005b898ef77ca2fa2724f069b2c25" compoundref="Statistician_8cpp" startline="24" endline="33">update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1utilities_1_1Statistician_1aa13c9110a9a210b7656ec815166f20c2" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cryomesh::utilities::Statistician::outputChannelsCount</definition>
+        <argsstring></argsstring>
+        <name>outputChannelsCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="81" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" bodystart="81" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1ae1aed7da3340cbd51d31318f92794f4d" compoundref="Statistician_8cpp" startline="50" endline="52">getOutputChannelsCount</referencedby>
+        <referencedby refid="namespacecryomesh_1_1utilities_1ac4c4fba803953a8db7e695796fef95f8" compoundref="Statistician_8cpp" startline="131" endline="150">cryomesh::utilities::operator&lt;&lt;</referencedby>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1a3b6005b898ef77ca2fa2724f069b2c25" compoundref="Statistician_8cpp" startline="24" endline="33">update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1utilities_1_1Statistician_1af2c7a19dfd7c305b1767a3abec4cb75e" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string cryomesh::utilities::Statistician::bundleuuid</definition>
+        <argsstring></argsstring>
+        <name>bundleuuid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="82" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" bodystart="82" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1ab0d4863ff8c1962e56dfbab4eabfb6cf" compoundref="Statistician_8cpp" startline="53" endline="55">getBundleUUID</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1utilities_1_1Statistician_1a4395675ddbfb598566faca1096bfe2da" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cryomesh::utilities::Statistician::nodesTotal</definition>
+        <argsstring></argsstring>
+        <name>nodesTotal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="83" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1utilities_1_1Statistician_1a5a38000033e2405dcfac5ef48d2a6820" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cryomesh::utilities::Statistician::nodesTriggered</definition>
+        <argsstring></argsstring>
+        <name>nodesTriggered</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="84" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1utilities_1_1Statistician_1aab51af29476bb894d8f145b8ce3d80ce" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cryomesh::utilities::Statistician::nodesActive</definition>
+        <argsstring></argsstring>
+        <name>nodesActive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="85" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1Statistician_1aa382bfde65efb16fa02b9c9d7d39a1b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::utilities::Statistician::Statistician</definition>
+        <argsstring>(const structures::Bundle &amp;bun)</argsstring>
+        <name>Statistician</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1structures_1_1Bundle" kindref="compound">structures::Bundle</ref> &amp;</type>
+          <declname>bun</declname>
+        </param>
+        <briefdescription>
+<para>Contruct a statistician with a build in Bundle reference. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="33" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp" bodystart="15" bodyend="19"/>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1a3b6005b898ef77ca2fa2724f069b2c25" compoundref="Statistician_8cpp" startline="24" endline="33">update</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1Statistician_1afbba60713cc3a96c8659d155d6f9c853" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>cryomesh::utilities::Statistician::~Statistician</definition>
+        <argsstring>()</argsstring>
+        <name>~Statistician</name>
+        <briefdescription>
+<para>Default destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="38" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp" bodystart="21" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1Statistician_1a3b6005b898ef77ca2fa2724f069b2c25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::utilities::Statistician::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="40" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp" bodystart="24" bodyend="33"/>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1a478ec1e4a9b68063f1422e97d8cbea99" compoundref="Statistician_8h" startline="74">bundle</references>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1af6b5d81fc1b6821e7fff8d4ccbcf15bb" compoundref="Statistician_8h" startline="76">clusterCount</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a181e1f2aaa3b529b8609917d5b5315e0" compoundref="Bundle_8cpp" startline="408" endline="410">cryomesh::structures::Bundle::getClusters</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a8f112d3b34f84511781879217b15c6d2" compoundref="Bundle_8cpp" startline="427" endline="429">cryomesh::structures::Bundle::getFibres</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a5c6496d00065462122a71c812fa7a4e8" compoundref="Bundle_8cpp" startline="431" endline="433">cryomesh::structures::Bundle::getInputFibres</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a2c14a3f2cc96236bff6548e5103183de" compoundref="Bundle_8cpp" startline="439" endline="441">cryomesh::structures::Bundle::getOutputFibres</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1ada0ae8374d27d9b59ca82b8075fbd401" compoundref="Bundle_8cpp" startline="447" endline="449">cryomesh::structures::Bundle::getRealInputChannelsMap</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a893be908a14ecc2d07270273d3d127e2" compoundref="Bundle_8cpp" startline="450" endline="452">cryomesh::structures::Bundle::getRealOutputChannelsMap</references>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1a734a2d7317a2d1a08dfa64a6f5a7da8c" compoundref="Statistician_8h" startline="80">inputChannelsCount</references>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1a12780e2d450e3013d6a8a306a4b02bd7" compoundref="Statistician_8h" startline="77">inputFibresCount</references>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1a1540b6a7e491f9241f31fbcfd62bdd74" compoundref="Statistician_8h" startline="79">normalFibresCount</references>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1aa13c9110a9a210b7656ec815166f20c2" compoundref="Statistician_8h" startline="81">outputChannelsCount</references>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1a90aeaf6f65a5cad0b3936731378ea07a" compoundref="Statistician_8h" startline="78">outputFibresCount</references>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1aa382bfde65efb16fa02b9c9d7d39a1b7" compoundref="Statistician_8cpp" startline="15" endline="19">Statistician</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1Statistician_1a5ce2aab91e03121c69aa23209fbe9c97" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classcryomesh_1_1structures_1_1Bundle" kindref="compound">structures::Bundle</ref> &amp;</type>
+        <definition>const structures::Bundle &amp; cryomesh::utilities::Statistician::getBundle</definition>
+        <argsstring>() const </argsstring>
+        <name>getBundle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="41" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp" bodystart="127" bodyend="129"/>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1a478ec1e4a9b68063f1422e97d8cbea99" compoundref="Statistician_8h" startline="74">bundle</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1Statistician_1a64ee08e16f1f42fc518ce2d1255f353e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int cryomesh::utilities::Statistician::getClusterCount</definition>
+        <argsstring>() const </argsstring>
+        <name>getClusterCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="42" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp" bodystart="35" bodyend="37"/>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1af6b5d81fc1b6821e7fff8d4ccbcf15bb" compoundref="Statistician_8h" startline="76">clusterCount</references>
+        <referencedby refid="namespacecryomesh_1_1utilities_1ac4c4fba803953a8db7e695796fef95f8" compoundref="Statistician_8cpp" startline="131" endline="150">cryomesh::utilities::operator&lt;&lt;</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1Statistician_1a55bf105c419acad376e9aafeb135be71" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int cryomesh::utilities::Statistician::getInputFibresCount</definition>
+        <argsstring>() const </argsstring>
+        <name>getInputFibresCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="43" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp" bodystart="38" bodyend="40"/>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1a12780e2d450e3013d6a8a306a4b02bd7" compoundref="Statistician_8h" startline="77">inputFibresCount</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1Statistician_1aac6a1aeec3987386f175cc771e3e7a3a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int cryomesh::utilities::Statistician::getOutputFibresCount</definition>
+        <argsstring>() const </argsstring>
+        <name>getOutputFibresCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="44" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp" bodystart="41" bodyend="43"/>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1a90aeaf6f65a5cad0b3936731378ea07a" compoundref="Statistician_8h" startline="78">outputFibresCount</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1Statistician_1a5545756c254e28b165c806ddb8eb6780" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int cryomesh::utilities::Statistician::getNormalFibresCount</definition>
+        <argsstring>() const </argsstring>
+        <name>getNormalFibresCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="45" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp" bodystart="44" bodyend="46"/>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1a1540b6a7e491f9241f31fbcfd62bdd74" compoundref="Statistician_8h" startline="79">normalFibresCount</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1Statistician_1a49864c3951b6aa8e1a263449bd0a0daf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int cryomesh::utilities::Statistician::getInputChannelsCount</definition>
+        <argsstring>() const </argsstring>
+        <name>getInputChannelsCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="46" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp" bodystart="47" bodyend="49"/>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1a734a2d7317a2d1a08dfa64a6f5a7da8c" compoundref="Statistician_8h" startline="80">inputChannelsCount</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1Statistician_1ae1aed7da3340cbd51d31318f92794f4d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int cryomesh::utilities::Statistician::getOutputChannelsCount</definition>
+        <argsstring>() const </argsstring>
+        <name>getOutputChannelsCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="47" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp" bodystart="50" bodyend="52"/>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1aa13c9110a9a210b7656ec815166f20c2" compoundref="Statistician_8h" startline="81">outputChannelsCount</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1Statistician_1ab0d4863ff8c1962e56dfbab4eabfb6cf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::utilities::Statistician::getBundleUUID</definition>
+        <argsstring>() const </argsstring>
+        <name>getBundleUUID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="48" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp" bodystart="53" bodyend="55"/>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1af2c7a19dfd7c305b1767a3abec4cb75e" compoundref="Statistician_8h" startline="82">bundleuuid</references>
+        <referencedby refid="namespacecryomesh_1_1utilities_1ac4c4fba803953a8db7e695796fef95f8" compoundref="Statistician_8cpp" startline="131" endline="150">cryomesh::utilities::operator&lt;&lt;</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1Statistician_1ab38d0c6cfb206e6c331c6af95388faab" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::map&lt; std::string, int &gt;</type>
+        <definition>std::map&lt; std::string, int &gt; cryomesh::utilities::Statistician::getTriggeredNodesPerCluster</definition>
+        <argsstring>() const </argsstring>
+        <name>getTriggeredNodesPerCluster</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="49" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp" bodystart="57" bodyend="74"/>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1a478ec1e4a9b68063f1422e97d8cbea99" compoundref="Statistician_8h" startline="74">bundle</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a181e1f2aaa3b529b8609917d5b5315e0" compoundref="Bundle_8cpp" startline="408" endline="410">cryomesh::structures::Bundle::getClusters</references>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1a4a60fac1c7060a891feae84096109315" compoundref="Statistician_8cpp" startline="95" endline="108">getTriggeredNodesTotal</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1Statistician_1a9e6c8527426ae11edbedbc21b4215007" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::map&lt; std::string, int &gt;</type>
+        <definition>std::map&lt; std::string, int &gt; cryomesh::utilities::Statistician::getActiveNodesPerCluster</definition>
+        <argsstring>() const </argsstring>
+        <name>getActiveNodesPerCluster</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="50" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp" bodystart="76" bodyend="93"/>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1a478ec1e4a9b68063f1422e97d8cbea99" compoundref="Statistician_8h" startline="74">bundle</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a181e1f2aaa3b529b8609917d5b5315e0" compoundref="Bundle_8cpp" startline="408" endline="410">cryomesh::structures::Bundle::getClusters</references>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1af743b58d7a21f7c0056252d15c71016d" compoundref="Statistician_8cpp" startline="110" endline="125">getActiveNodesTotal</referencedby>
+        <referencedby refid="namespacecryomesh_1_1utilities_1ac4c4fba803953a8db7e695796fef95f8" compoundref="Statistician_8cpp" startline="131" endline="150">cryomesh::utilities::operator&lt;&lt;</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1Statistician_1a4a60fac1c7060a891feae84096109315" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int cryomesh::utilities::Statistician::getTriggeredNodesTotal</definition>
+        <argsstring>() const </argsstring>
+        <name>getTriggeredNodesTotal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="52" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp" bodystart="95" bodyend="108"/>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1ab38d0c6cfb206e6c331c6af95388faab" compoundref="Statistician_8cpp" startline="57" endline="74">getTriggeredNodesPerCluster</references>
+        <referencedby refid="namespacecryomesh_1_1utilities_1ac4c4fba803953a8db7e695796fef95f8" compoundref="Statistician_8cpp" startline="131" endline="150">cryomesh::utilities::operator&lt;&lt;</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1utilities_1_1Statistician_1af743b58d7a21f7c0056252d15c71016d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int cryomesh::utilities::Statistician::getActiveNodesTotal</definition>
+        <argsstring>() const </argsstring>
+        <name>getActiveNodesTotal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="53" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp" bodystart="110" bodyend="125"/>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1a9e6c8527426ae11edbedbc21b4215007" compoundref="Statistician_8cpp" startline="76" endline="93">getActiveNodesPerCluster</references>
+        <referencedby refid="namespacecryomesh_1_1utilities_1ac4c4fba803953a8db7e695796fef95f8" compoundref="Statistician_8cpp" startline="131" endline="150">cryomesh::utilities::operator&lt;&lt;</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classcryomesh_1_1utilities_1_1Statistician_1a5898d288b67c44776f0d0e194601c628" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const Statistician &amp;obj)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1utilities_1_1Statistician" kindref="compound">Statistician</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>To stream operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::ostream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp; os The output stream </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1utilities_1_1Statistician" kindref="compound">Statistician</ref> &amp; obj The object to stream</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::ostream &amp; The output stream </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="66" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp" bodystart="131" bodyend="150"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class to draw together lots of useful statistics and monitoring data for a Bundle and its components. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="807">
+        <label>cryomesh::utilities::Statistician</label>
+        <link refid="classcryomesh_1_1utilities_1_1Statistician"/>
+        <childnode refid="808" relation="usage">
+          <edgelabel>bundle</edgelabel>
+        </childnode>
+        <childnode refid="813" relation="usage">
+          <edgelabel>bundleuuid</edgelabel>
+        </childnode>
+      </node>
+      <node id="811">
+        <label>cryomesh::state::PatternChannelMap</label>
+        <link refid="classcryomesh_1_1state_1_1PatternChannelMap"/>
+      </node>
+      <node id="814">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="809">
+        <label>cryomesh::common::Loggable</label>
+        <link refid="classcryomesh_1_1common_1_1Loggable"/>
+      </node>
+      <node id="808">
+        <label>cryomesh::structures::Bundle</label>
+        <link refid="classcryomesh_1_1structures_1_1Bundle"/>
+        <childnode refid="809" relation="public-inheritance">
+        </childnode>
+        <childnode refid="810" relation="usage">
+          <edgelabel>actualFibrePatternChannelMap</edgelabel>
+          <edgelabel>realFibrePatternChannelMap</edgelabel>
+        </childnode>
+        <childnode refid="811" relation="usage">
+          <edgelabel>actualOutputChannelsMap</edgelabel>
+          <edgelabel>realInputChannelsMap</edgelabel>
+          <edgelabel>actualInputChannelsMap</edgelabel>
+          <edgelabel>realOutputChannelsMap</edgelabel>
+        </childnode>
+        <childnode refid="812" relation="usage">
+          <edgelabel>inputFibres</edgelabel>
+          <edgelabel>outputFibres</edgelabel>
+          <edgelabel>fibres</edgelabel>
+        </childnode>
+      </node>
+      <node id="812">
+        <label>cryomesh::structures::FibreMap</label>
+        <link refid="classcryomesh_1_1structures_1_1FibreMap"/>
+      </node>
+      <node id="810">
+        <label>std::map&lt; boost::uuids::uuid, boost::uuids::uuid &gt;</label>
+      </node>
+      <node id="813">
+        <label>std::string</label>
+        <childnode refid="814" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" line="28" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.h" bodystart="28" bodyend="86"/>
+    <listofallmembers>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1a478ec1e4a9b68063f1422e97d8cbea99" prot="private" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>bundle</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1af2c7a19dfd7c305b1767a3abec4cb75e" prot="private" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>bundleuuid</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1af6b5d81fc1b6821e7fff8d4ccbcf15bb" prot="private" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>clusterCount</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1a9e6c8527426ae11edbedbc21b4215007" prot="public" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>getActiveNodesPerCluster</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1af743b58d7a21f7c0056252d15c71016d" prot="public" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>getActiveNodesTotal</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1a5ce2aab91e03121c69aa23209fbe9c97" prot="public" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>getBundle</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1ab0d4863ff8c1962e56dfbab4eabfb6cf" prot="public" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>getBundleUUID</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1a64ee08e16f1f42fc518ce2d1255f353e" prot="public" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>getClusterCount</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1a49864c3951b6aa8e1a263449bd0a0daf" prot="public" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>getInputChannelsCount</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1a55bf105c419acad376e9aafeb135be71" prot="public" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>getInputFibresCount</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1a5545756c254e28b165c806ddb8eb6780" prot="public" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>getNormalFibresCount</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1ae1aed7da3340cbd51d31318f92794f4d" prot="public" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>getOutputChannelsCount</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1aac6a1aeec3987386f175cc771e3e7a3a" prot="public" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>getOutputFibresCount</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1ab38d0c6cfb206e6c331c6af95388faab" prot="public" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>getTriggeredNodesPerCluster</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1a4a60fac1c7060a891feae84096109315" prot="public" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>getTriggeredNodesTotal</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1a734a2d7317a2d1a08dfa64a6f5a7da8c" prot="private" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>inputChannelsCount</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1a12780e2d450e3013d6a8a306a4b02bd7" prot="private" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>inputFibresCount</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1aab51af29476bb894d8f145b8ce3d80ce" prot="private" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>nodesActive</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1a4395675ddbfb598566faca1096bfe2da" prot="private" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>nodesTotal</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1a5a38000033e2405dcfac5ef48d2a6820" prot="private" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>nodesTriggered</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1a1540b6a7e491f9241f31fbcfd62bdd74" prot="private" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>normalFibresCount</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1a5898d288b67c44776f0d0e194601c628" prot="public" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1aa13c9110a9a210b7656ec815166f20c2" prot="private" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>outputChannelsCount</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1a90aeaf6f65a5cad0b3936731378ea07a" prot="private" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>outputFibresCount</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1aa382bfde65efb16fa02b9c9d7d39a1b7" prot="public" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>Statistician</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1a3b6005b898ef77ca2fa2724f069b2c25" prot="public" virt="non-virtual"><scope>cryomesh::utilities::Statistician</scope><name>update</name></member>
+      <member refid="classcryomesh_1_1utilities_1_1Statistician_1afbba60713cc3a96c8659d155d6f9c853" prot="public" virt="virtual"><scope>cryomesh::utilities::Statistician</scope><name>~Statistician</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

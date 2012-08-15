@@ -1,4 +1,4 @@
-.TH "cryomesh::components" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::components" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -12,34 +12,34 @@ cryomesh::components \-
 .ti -1c
 .RI "class \fBActivityTimer\fP"
 .br
-.RI "\fISimple interface class for activity timers. \fP"
+.RI "\fISimple interface class for activity timers\&. \fP"
 .ti -1c
 .RI "class \fBActivityTimerDistance\fP"
 .br
 .ti -1c
 .RI "class \fBConnection\fP"
 .br
-.RI "\fI\fBConnection\fP class to manage the transfer of Impulses between Nodes. \fP"
+.RI "\fI\fBConnection\fP class to manage the transfer of Impulses between Nodes\&. \fP"
 .ti -1c
 .RI "class \fBConnectionMap\fP"
 .br
-.RI "\fIHelper class for \fBConnectionMap\fP to KeyMappedCollection mapping. \fP"
+.RI "\fIHelper class for \fBConnectionMap\fP to KeyMappedCollection mapping\&. \fP"
 .ti -1c
 .RI "class \fBImpulse\fP"
 .br
-.RI "\fI\fBImpulse\fP is a mobile information packet to be passed between Nodes. \fP"
+.RI "\fI\fBImpulse\fP is a mobile information packet to be passed between Nodes\&. \fP"
 .ti -1c
 .RI "class \fBImpulseCollection\fP"
 .br
-.RI "\fI\fBImpulseCollection\fP represents a collection of \fBImpulse\fP objects. \fP"
+.RI "\fI\fBImpulseCollection\fP represents a collection of \fBImpulse\fP objects\&. \fP"
 .ti -1c
 .RI "class \fBNode\fP"
 .br
-.RI "\fI\fBNode\fP is an accumulation and computational nodal point of impulses. \fP"
+.RI "\fI\fBNode\fP is an accumulation and computational nodal point of impulses\&. \fP"
 .ti -1c
 .RI "class \fBNodeMap\fP"
 .br
-.RI "\fIHelper class for \fBNodeMap\fP to KeyMappedCollection mapping. \fP"
+.RI "\fIHelper class for \fBNodeMap\fP to KeyMappedCollection mapping\&. \fP"
 .in -1c
 .SS "Functions"
 
@@ -73,39 +73,9 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 202 of file Connection.cpp.
-.SS "std::ostream& cryomesh::components::operator<< (std::ostream &os, const Node &obj)"\fBParameters:\fP
-.RS 4
-\fIstd::ostream\fP & os The output stream 
-.br
-\fIconst\fP \fBNode\fP & obj The object to stream
-.RE
+Definition at line 245 of file Connection\&.cpp\&.
 .PP
-\fBReturns:\fP
-.RS 4
-std::ostream & The output stream 
-.RE
-.PP
-
-.PP
-Definition at line 496 of file Node.cpp.
-.PP
-References cryomesh::components::Node::getConnector(), cryomesh::components::Node::getImpulses(), cryomesh::components::Node::isPrimaryInputAttachedNode(), cryomesh::components::Node::isPrimaryOutputAttachedNode(), and cryomesh::components::Node::printConnections().
-.SS "std::ostream& cryomesh::components::operator<< (std::ostream &os, const ImpulseCollection &obj)"\fBParameters:\fP
-.RS 4
-\fIstd::ostream\fP & os The output stream 
-.br
-\fIconst\fP \fBImpulseCollection\fP & obj The object to stream
-.RE
-.PP
-\fBReturns:\fP
-.RS 4
-std::ostream & The output stream 
-.RE
-.PP
-
-.PP
-Definition at line 369 of file ImpulseCollection.cpp.
+References cryomesh::components::Connection::getConnector(), cryomesh::components::Connection::getImpulses(), cryomesh::components::Connection::isPrimaryInputConnection(), and cryomesh::components::Connection::isPrimaryOutputConnection()\&.
 .SS "std::ostream& cryomesh::components::operator<< (std::ostream &os, const Impulse &obj)"\fBParameters:\fP
 .RS 4
 \fIstd::ostream\fP & os The output stream 
@@ -120,9 +90,41 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 335 of file Impulse.cpp.
+Definition at line 339 of file Impulse\&.cpp\&.
 .PP
-References cryomesh::components::Impulse::getActivityDelay(), cryomesh::components::Impulse::getActivityTimer(), cryomesh::components::Impulse::getFirstActiveCycle(), and cryomesh::components::Impulse::getLastActiveCycle().
+References cryomesh::components::Impulse::getActivityDelay(), cryomesh::components::Impulse::getActivityTimer(), cryomesh::components::Impulse::getFirstActiveCycle(), and cryomesh::components::Impulse::getLastActiveCycle()\&.
+.SS "std::ostream& cryomesh::components::operator<< (std::ostream &os, const ImpulseCollection &obj)"\fBParameters:\fP
+.RS 4
+\fIstd::ostream\fP & os The output stream 
+.br
+\fIconst\fP \fBImpulseCollection\fP & obj The object to stream
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::ostream & The output stream 
+.RE
+.PP
+
+.PP
+Definition at line 375 of file ImpulseCollection\&.cpp\&.
+.SS "std::ostream& cryomesh::components::operator<< (std::ostream &os, const Node &obj)"\fBParameters:\fP
+.RS 4
+\fIstd::ostream\fP & os The output stream 
+.br
+\fIconst\fP \fBNode\fP & obj The object to stream
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::ostream & The output stream 
+.RE
+.PP
+
+.PP
+Definition at line 548 of file Node\&.cpp\&.
+.PP
+References cryomesh::components::Node::getActivityThreshold(), cryomesh::components::Node::getConnector(), cryomesh::components::Node::getImpulses(), cryomesh::components::Node::isPrimaryInputAttachedNode(), cryomesh::components::Node::isPrimaryOutputAttachedNode(), and cryomesh::components::Node::printConnections()\&.
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for cryomesh from the source code.
+Generated automatically by Doxygen for cryomesh from the source code\&.

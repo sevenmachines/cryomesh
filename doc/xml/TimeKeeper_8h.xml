@@ -1,0 +1,479 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="TimeKeeper_8h" kind="file">
+    <compoundname>TimeKeeper.h</compoundname>
+    <includes refid="Cycle_8h" local="yes">common/Cycle.h</includes>
+    <includes local="no">boost/shared_ptr.hpp</includes>
+    <includes local="no">boost/serialization/shared_ptr.hpp</includes>
+    <includes local="no">boost/date_time/posix_time/posix_time.hpp</includes>
+    <includes local="no">boost/timer.hpp</includes>
+    <includes local="no">time.h</includes>
+    <includedby refid="TimeKeeper_8cpp" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/TimeKeeper.cpp</includedby>
+    <includedby refid="Impulse_8h" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Impulse.h</includedby>
+    <includedby refid="ConnectionMap_8h" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ConnectionMap.h</includedby>
+    <includedby refid="Impulse_8cpp" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Impulse.cpp</includedby>
+    <includedby refid="ImpulseCollection_8cpp" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ImpulseCollection.cpp</includedby>
+    <includedby refid="Node_8cpp" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Node.cpp</includedby>
+    <includedby refid="CryoManager_8h" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.h</includedby>
+    <includedby refid="DatabaseManager_8h" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h</includedby>
+    <includedby refid="DatabaseManager_8cpp" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp</includedby>
+    <includedby refid="ClusterAnalysisData_8h" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/ClusterAnalysisData.h</includedby>
+    <includedby refid="Pattern_8cpp" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/Pattern.cpp</includedby>
+    <includedby refid="PatternChannel_8cpp" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternChannel.cpp</includedby>
+    <includedby refid="PatternChannelMap_8h" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternChannelMap.h</includedby>
+    <incdepgraph>
+      <node id="125">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="124">
+        <label>gmpxx.h</label>
+      </node>
+      <node id="122">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/TimeKeeper.h</label>
+        <link refid="TimeKeeper.h"/>
+        <childnode refid="123" relation="include">
+        </childnode>
+        <childnode refid="125" relation="include">
+        </childnode>
+        <childnode refid="126" relation="include">
+        </childnode>
+        <childnode refid="127" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+        <childnode refid="129" relation="include">
+        </childnode>
+      </node>
+      <node id="128">
+        <label>boost/timer.hpp</label>
+      </node>
+      <node id="127">
+        <label>boost/date_time/posix_time/posix_time.hpp</label>
+      </node>
+      <node id="129">
+        <label>time.h</label>
+      </node>
+      <node id="126">
+        <label>boost/serialization/shared_ptr.hpp</label>
+      </node>
+      <node id="123">
+        <label>common/Cycle.h</label>
+        <link refid="Cycle_8h"/>
+        <childnode refid="124" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="166">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/ClusterAnalysisData.cpp</label>
+        <link refid="ClusterAnalysisData_8cpp"/>
+      </node>
+      <node id="147">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h</label>
+        <link refid="Creator_8h"/>
+        <childnode refid="148" relation="include">
+        </childnode>
+        <childnode refid="149" relation="include">
+        </childnode>
+      </node>
+      <node id="139">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/IClusterAnalyser.h</label>
+        <link refid="IClusterAnalyser_8h"/>
+        <childnode refid="140" relation="include">
+        </childnode>
+        <childnode refid="143" relation="include">
+        </childnode>
+      </node>
+      <node id="158">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Node.cpp</label>
+        <link refid="Node_8cpp"/>
+      </node>
+      <node id="152">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp</label>
+        <link refid="Statistician_8cpp"/>
+      </node>
+      <node id="167">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/Pattern.cpp</label>
+        <link refid="Pattern_8cpp"/>
+      </node>
+      <node id="164">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp</label>
+        <link refid="DatabaseManager_8cpp"/>
+      </node>
+      <node id="146">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h</label>
+        <link refid="Bundle_8h"/>
+        <childnode refid="147" relation="include">
+        </childnode>
+        <childnode refid="151" relation="include">
+        </childnode>
+        <childnode refid="152" relation="include">
+        </childnode>
+      </node>
+      <node id="134">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Node.h</label>
+        <link refid="Node_8h"/>
+        <childnode refid="135" relation="include">
+        </childnode>
+        <childnode refid="158" relation="include">
+        </childnode>
+        <childnode refid="159" relation="include">
+        </childnode>
+        <childnode refid="142" relation="include">
+        </childnode>
+        <childnode refid="138" relation="include">
+        </childnode>
+        <childnode refid="156" relation="include">
+        </childnode>
+        <childnode refid="154" relation="include">
+        </childnode>
+        <childnode refid="160" relation="include">
+        </childnode>
+      </node>
+      <node id="170">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerChannels.h</label>
+        <link refid="SequencerChannels_8h"/>
+        <childnode refid="151" relation="include">
+        </childnode>
+        <childnode refid="171" relation="include">
+        </childnode>
+      </node>
+      <node id="130">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/TimeKeeper.h</label>
+        <link refid="TimeKeeper.h"/>
+        <childnode refid="131" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+        <childnode refid="137" relation="include">
+        </childnode>
+        <childnode refid="162" relation="include">
+        </childnode>
+        <childnode refid="161" relation="include">
+        </childnode>
+        <childnode refid="158" relation="include">
+        </childnode>
+        <childnode refid="149" relation="include">
+        </childnode>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="164" relation="include">
+        </childnode>
+        <childnode refid="165" relation="include">
+        </childnode>
+        <childnode refid="167" relation="include">
+        </childnode>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+      </node>
+      <node id="151">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp</label>
+        <link refid="Bundle_8cpp"/>
+      </node>
+      <node id="153">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Fibre.cpp</label>
+        <link refid="Fibre_8cpp"/>
+      </node>
+      <node id="171">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerChannels.cpp</label>
+        <link refid="SequencerChannels_8cpp"/>
+      </node>
+      <node id="141">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/ClusterAnalyserBasic.cpp</label>
+        <link refid="ClusterAnalyserBasic_8cpp"/>
+      </node>
+      <node id="156">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Fibre.h</label>
+        <link refid="Fibre_8h"/>
+        <childnode refid="142" relation="include">
+        </childnode>
+        <childnode refid="157" relation="include">
+        </childnode>
+        <childnode refid="144" relation="include">
+        </childnode>
+        <childnode refid="153" relation="include">
+        </childnode>
+      </node>
+      <node id="160">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h</label>
+        <link refid="NodeMesh_8h"/>
+        <childnode refid="138" relation="include">
+        </childnode>
+        <childnode refid="155" relation="include">
+        </childnode>
+      </node>
+      <node id="168">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternChannel.cpp</label>
+        <link refid="PatternChannel_8cpp"/>
+      </node>
+      <node id="136">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp</label>
+        <link refid="Connection_8cpp"/>
+      </node>
+      <node id="137">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ConnectionMap.h</label>
+        <link refid="ConnectionMap_8h"/>
+        <childnode refid="138" relation="include">
+        </childnode>
+        <childnode refid="156" relation="include">
+        </childnode>
+      </node>
+      <node id="138">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Cluster.h</label>
+        <link refid="Cluster_8h"/>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="143" relation="include">
+        </childnode>
+        <childnode refid="145" relation="include">
+        </childnode>
+        <childnode refid="144" relation="include">
+        </childnode>
+        <childnode refid="153" relation="include">
+        </childnode>
+        <childnode refid="154" relation="include">
+        </childnode>
+        <childnode refid="155" relation="include">
+        </childnode>
+      </node>
+      <node id="155">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.cpp</label>
+        <link refid="NodeMesh_8cpp"/>
+      </node>
+      <node id="161">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ImpulseCollection.cpp</label>
+        <link refid="ImpulseCollection_8cpp"/>
+      </node>
+      <node id="157">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/FibreMap.h</label>
+        <link refid="FibreMap_8h"/>
+        <childnode refid="146" relation="include">
+        </childnode>
+      </node>
+      <node id="131">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/TimeKeeper.cpp</label>
+        <link refid="TimeKeeper_8cpp"/>
+      </node>
+      <node id="143">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/ClusterArchitect.h</label>
+        <link refid="ClusterArchitect_8h"/>
+        <childnode refid="141" relation="include">
+        </childnode>
+        <childnode refid="142" relation="include">
+        </childnode>
+        <childnode refid="144" relation="include">
+        </childnode>
+      </node>
+      <node id="159">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h</label>
+        <link refid="NodeMap_8h"/>
+        <childnode refid="142" relation="include">
+        </childnode>
+        <childnode refid="138" relation="include">
+        </childnode>
+      </node>
+      <node id="154">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Mesh.cpp</label>
+        <link refid="Mesh_8cpp"/>
+      </node>
+      <node id="140">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/ClusterAnalyserBasic.h</label>
+        <link refid="ClusterAnalyserBasic_8h"/>
+        <childnode refid="141" relation="include">
+        </childnode>
+        <childnode refid="142" relation="include">
+        </childnode>
+      </node>
+      <node id="165">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/ClusterAnalysisData.h</label>
+        <link refid="ClusterAnalysisData_8h"/>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="143" relation="include">
+        </childnode>
+        <childnode refid="166" relation="include">
+        </childnode>
+      </node>
+      <node id="163">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h</label>
+        <link refid="DatabaseManager_8h"/>
+        <childnode refid="149" relation="include">
+        </childnode>
+        <childnode refid="164" relation="include">
+        </childnode>
+      </node>
+      <node id="132">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Impulse.h</label>
+        <link refid="Impulse_8h"/>
+        <childnode refid="133" relation="include">
+        </childnode>
+        <childnode refid="162" relation="include">
+        </childnode>
+        <childnode refid="154" relation="include">
+        </childnode>
+      </node>
+      <node id="144">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Cluster.cpp</label>
+        <link refid="Cluster_8cpp"/>
+      </node>
+      <node id="169">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternChannelMap.h</label>
+        <link refid="PatternChannelMap_8h"/>
+        <childnode refid="146" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+      </node>
+      <node id="145">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/ClusterMap.h</label>
+        <link refid="ClusterMap_8h"/>
+        <childnode refid="146" relation="include">
+        </childnode>
+      </node>
+      <node id="150">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.cpp</label>
+        <link refid="CryoManager_8cpp"/>
+      </node>
+      <node id="149">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.h</label>
+        <link refid="CryoManager_8h"/>
+        <childnode refid="150" relation="include">
+        </childnode>
+      </node>
+      <node id="162">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Impulse.cpp</label>
+        <link refid="Impulse_8cpp"/>
+      </node>
+      <node id="135">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h</label>
+        <link refid="Connection_8h"/>
+        <childnode refid="136" relation="include">
+        </childnode>
+        <childnode refid="137" relation="include">
+        </childnode>
+        <childnode refid="158" relation="include">
+        </childnode>
+        <childnode refid="138" relation="include">
+        </childnode>
+        <childnode refid="153" relation="include">
+        </childnode>
+      </node>
+      <node id="142">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/ClusterArchitect.cpp</label>
+        <link refid="ClusterArchitect_8cpp"/>
+      </node>
+      <node id="148">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp</label>
+        <link refid="Creator_8cpp"/>
+      </node>
+      <node id="133">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ImpulseCollection.h</label>
+        <link refid="ImpulseCollection_8h"/>
+        <childnode refid="134" relation="include">
+        </childnode>
+        <childnode refid="161" relation="include">
+        </childnode>
+        <childnode refid="154" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classcryomesh_1_1common_1_1TimeKeeper" prot="public">cryomesh::common::TimeKeeper</innerclass>
+    <innernamespace refid="namespacecryomesh">cryomesh</innernamespace>
+    <innernamespace refid="namespacecryomesh_1_1common">cryomesh::common</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>TimeKeeper.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>Created<sp/>on:<sp/>24-Jul-2009</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Author:<sp/>niall</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TIMEKEEPER_H_</highlight></codeline>
+<codeline lineno="9"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>TIMEKEEPER_H_</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Cycle_8h" kindref="compound">common/Cycle.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/shared_ptr.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/serialization/shared_ptr.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/date_time/posix_time/posix_time.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/timer.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">cryomesh<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">common<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="classcryomesh_1_1common_1_1TimeKeeper" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcryomesh_1_1common_1_1TimeKeeper" kindref="compound" tooltip="TimeKeeper is a class keep track of the cycle state and timing.">TimeKeeper</ref><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>ENABLE_SERIALISATION</highlight></codeline>
+<codeline lineno="36"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">boost::serialization::access;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Archive&gt;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>serialize(Archive<sp/>&amp;<sp/>ar,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>version)<sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ar<sp/>&amp;<sp/>cycleInt;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ar<sp/>&amp;<sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1a9182b02e3805961510f48954276ef389" kindref="member">timekeeper</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ar<sp/>&amp;<sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1ad6e92ec3c962aa3e6db82d69188e9686" kindref="member">start_time</ref>;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ar<sp/>&amp;<sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1acb896ec81cbe9d18f4e618320353dc4f" kindref="member">last_timing</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ar<sp/>&amp;<sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1afe9c0b2cd669e9d4d62718734e5b630a" kindref="member">this_timing</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>ENABLE_SERIALISATION</highlight></codeline>
+<codeline lineno="54"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper" kindref="compound" tooltip="TimeKeeper is a class keep track of the cycle state and timing.">TimeKeeper</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1afe7b229532e11119cb2653192615d679" kindref="member">getTimeKeeper</ref>();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1abb7b3042e8b2087326c2405a0bc8d230" kindref="member" tooltip="Destructor.">reset</ref>();</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1a1023707129088652ac2cced3e0f4a0be" kindref="member">~TimeKeeper</ref>();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1a7c710ae8bdb2fff0aaf284a9c1108ace" kindref="member" tooltip="Equality test override for object.">operator==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper" kindref="compound" tooltip="TimeKeeper is a class keep track of the cycle state and timing.">TimeKeeper</ref><sp/>&amp;);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1a0581cd24a6eebfbdd67a363467483456" kindref="member" tooltip="Move the timing on one cycle.">update</ref>();</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1aa0bfaecbd5118af91d63296f158cee09" kindref="member" tooltip="Get the current cycle we&amp;#39;re on as an Cycle.">getCycle</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::time_t<sp/><sp/><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1a73a685a859e69ce3660b6a6d3469997e" kindref="member" tooltip="Get the time we started cycling.">getStartTime</ref>()</highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1ad3f49c5602d1e51b4ee9aa9535a59454" kindref="member" tooltip="Difference between the last time and now.">getTiming</ref>()</highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><sp/><sp/>boost::timer<sp/>&amp;<sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1a888f7db463cc84b0a00478c4bbcf7c44" kindref="member" tooltip="Get the Timer.">getTimer</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1a133c730f64b915e6ef25be1442ea688e" kindref="member" tooltip="Constructor.">TimeKeeper</ref>();</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1a133c730f64b915e6ef25be1442ea688e" kindref="member" tooltip="Constructor.">TimeKeeper</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper" kindref="compound" tooltip="TimeKeeper is a class keep track of the cycle state and timing.">TimeKeeper</ref><sp/>&amp;);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper" kindref="compound" tooltip="TimeKeeper is a class keep track of the cycle state and timing.">TimeKeeper</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1ad22e5329268d4e6f55b4a29045c11035" kindref="member" tooltip="Assignment Operator.">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper" kindref="compound" tooltip="TimeKeeper is a class keep track of the cycle state and timing.">TimeKeeper</ref><sp/>&amp;);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151" refid="classcryomesh_1_1common_1_1TimeKeeper_1a9182b02e3805961510f48954276ef389" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;TimeKeeper&gt;<sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1a9182b02e3805961510f48954276ef389" kindref="member">timekeeper</ref>;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159" refid="classcryomesh_1_1common_1_1TimeKeeper_1af2f511fb5df5b4a1e6d9eb8dffa4f6ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1af2f511fb5df5b4a1e6d9eb8dffa4f6ef" kindref="member">cycle</ref>;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166" refid="classcryomesh_1_1common_1_1TimeKeeper_1ad6e92ec3c962aa3e6db82d69188e9686" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::time_t<sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1ad6e92ec3c962aa3e6db82d69188e9686" kindref="member">start_time</ref>;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173" refid="classcryomesh_1_1common_1_1TimeKeeper_1a41690fc156fdee825fb5e7a5e26a2102" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::timer<sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1a41690fc156fdee825fb5e7a5e26a2102" kindref="member">timer</ref>;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180" refid="classcryomesh_1_1common_1_1TimeKeeper_1afe9c0b2cd669e9d4d62718734e5b630a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1afe9c0b2cd669e9d4d62718734e5b630a" kindref="member">this_timing</ref>;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187" refid="classcryomesh_1_1common_1_1TimeKeeper_1acb896ec81cbe9d18f4e618320353dc4f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1acb896ec81cbe9d18f4e618320353dc4f" kindref="member">last_timing</ref>;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TIMEKEEPER_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/TimeKeeper.h"/>
+  </compounddef>
+</doxygen>

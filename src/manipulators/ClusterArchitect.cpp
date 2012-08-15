@@ -45,7 +45,7 @@ void ClusterArchitect::runAnalysis() {
 
 	if ((cad.getNodesToCreate() + cad.getNodesToDestroy() + cad.getConnectionsToCreate() + cad.getConnectionsToDestroy())
 			> 0) {
-		std::cout << "ClusterArchitect::runAnalysis: Restructuring... " << cad << std::endl;
+		std::cout << "ClusterArchitect::runAnalysis: Restructuring... "<< cad << std::endl;
 	}
 
 	this->destroyRandomNodes(cad.getNodesToDestroy());

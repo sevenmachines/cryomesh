@@ -1,0 +1,195 @@
+.TH "cryomesh::manipulators::ClusterAnalysisData::RangeEnergy" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::manipulators::ClusterAnalysisData::RangeEnergy \- 
+.PP
+Struct representing the value extrapolated over a history range\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ClusterAnalysisData\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRangeEnergy\fP ()"
+.br
+.ti -1c
+.RI "\fBRangeEnergy\fP (double en, double energy_fraction)"
+.br
+.ti -1c
+.RI "\fBRangeEnergy\fP (double en, double energy_fraction, \fBcommon::Cycle\fP st, \fBcommon::Cycle\fP ed, double min, double max)"
+.br
+.ti -1c
+.RI "\fBRangeEnergy\fP (const \fBRangeEnergy\fP &obj)"
+.br
+.ti -1c
+.RI "virtual \fB~RangeEnergy\fP ()"
+.br
+.ti -1c
+.RI "const \fBRangeEnergy\fP \fBoperator+\fP (const \fBRangeEnergy\fP &obj) const "
+.br
+.RI "\fINon-destructive addition operator\&. \fP"
+.ti -1c
+.RI "\fBRangeEnergy\fP & \fBoperator+=\fP (const \fBRangeEnergy\fP &obj)"
+.br
+.RI "\fIDestructive addition and assignment operator\&. \fP"
+.ti -1c
+.RI "const \fBRangeEnergy\fP \fBoperator/\fP (double div) const "
+.br
+.ti -1c
+.RI "\fBRangeEnergy\fP & \fBoperator/=\fP (double div)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBenergy\fP"
+.br
+.ti -1c
+.RI "double \fBenergyFraction\fP"
+.br
+.ti -1c
+.RI "\fBcommon::Cycle\fP \fBstartCycle\fP"
+.br
+.ti -1c
+.RI "\fBcommon::Cycle\fP \fBendCycle\fP"
+.br
+.ti -1c
+.RI "double \fBenergyMin\fP"
+.br
+.ti -1c
+.RI "double \fBenergyMax\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBRangeEnergy\fP &obj)"
+.br
+.RI "\fITo stream operator\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Struct representing the value extrapolated over a history range\&. 
+.PP
+Definition at line 24 of file ClusterAnalysisData\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBcryomesh::manipulators::ClusterAnalysisData::RangeEnergy::RangeEnergy\fP ()\fC [inline]\fP"
+.PP
+Definition at line 25 of file ClusterAnalysisData\&.h\&.
+.SS "\fBcryomesh::manipulators::ClusterAnalysisData::RangeEnergy::RangeEnergy\fP (doubleen, doubleenergy_fraction)\fC [inline]\fP"
+.PP
+Definition at line 28 of file ClusterAnalysisData\&.h\&.
+.SS "\fBcryomesh::manipulators::ClusterAnalysisData::RangeEnergy::RangeEnergy\fP (doubleen, doubleenergy_fraction, \fBcommon::Cycle\fPst, \fBcommon::Cycle\fPed, doublemin, doublemax)\fC [inline]\fP"
+.PP
+Definition at line 32 of file ClusterAnalysisData\&.h\&.
+.SS "\fBcryomesh::manipulators::ClusterAnalysisData::RangeEnergy::RangeEnergy\fP (const \fBRangeEnergy\fP &obj)\fC [inline]\fP"
+.PP
+Definition at line 36 of file ClusterAnalysisData\&.h\&.
+.SS "virtual \fBcryomesh::manipulators::ClusterAnalysisData::RangeEnergy::~RangeEnergy\fP ()\fC [inline, virtual]\fP"
+.PP
+Definition at line 40 of file ClusterAnalysisData\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "const \fBRangeEnergy\fP cryomesh::manipulators::ClusterAnalysisData::RangeEnergy::operator+ (const \fBRangeEnergy\fP &obj) const\fC [inline]\fP"
+.PP
+Non-destructive addition operator\&. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBRangeEnergy\fP & obj RHS addition
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBRangeEnergy\fP New object after addition 
+.RE
+.PP
+
+.PP
+Definition at line 51 of file ClusterAnalysisData\&.h\&.
+.SS "\fBRangeEnergy\fP& cryomesh::manipulators::ClusterAnalysisData::RangeEnergy::operator+= (const \fBRangeEnergy\fP &obj)\fC [inline]\fP"
+.PP
+Destructive addition and assignment operator\&. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBRangeEnergy\fP & obj RHS addition
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBRangeEnergy\fP & This object after addition and assignment 
+.RE
+.PP
+
+.PP
+Definition at line 65 of file ClusterAnalysisData\&.h\&.
+.PP
+References endCycle, energy, energyMax, energyMin, and startCycle\&.
+.SS "const \fBRangeEnergy\fP cryomesh::manipulators::ClusterAnalysisData::RangeEnergy::operator/ (doublediv) const\fC [inline]\fP"
+.PP
+Definition at line 75 of file ClusterAnalysisData\&.h\&.
+.SS "\fBRangeEnergy\fP& cryomesh::manipulators::ClusterAnalysisData::RangeEnergy::operator/= (doublediv)\fC [inline]\fP"
+.PP
+Definition at line 80 of file ClusterAnalysisData\&.h\&.
+.PP
+References energy\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream &os, const \fBRangeEnergy\fP &obj)\fC [friend]\fP"
+.PP
+To stream operator\&. \fBParameters:\fP
+.RS 4
+\fIstd::ostream\fP & os The output stream 
+.br
+\fIconst\fP \fBRangeEnergy\fP & obj The object to stream
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::ostream & The output stream 
+.RE
+.PP
+
+.PP
+Definition at line 96 of file ClusterAnalysisData\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBcommon::Cycle\fP \fBcryomesh::manipulators::ClusterAnalysisData::RangeEnergy::endCycle\fP"
+.PP
+Definition at line 104 of file ClusterAnalysisData\&.h\&.
+.PP
+Referenced by operator+=()\&.
+.SS "double \fBcryomesh::manipulators::ClusterAnalysisData::RangeEnergy::energy\fP"
+.PP
+Definition at line 101 of file ClusterAnalysisData\&.h\&.
+.PP
+Referenced by operator+=(), and operator/=()\&.
+.SS "double \fBcryomesh::manipulators::ClusterAnalysisData::RangeEnergy::energyFraction\fP"
+.PP
+Definition at line 102 of file ClusterAnalysisData\&.h\&.
+.PP
+Referenced by cryomesh::manipulators::ClusterAnalyserBasic::analyseCluster()\&.
+.SS "double \fBcryomesh::manipulators::ClusterAnalysisData::RangeEnergy::energyMax\fP"
+.PP
+Definition at line 106 of file ClusterAnalysisData\&.h\&.
+.PP
+Referenced by operator+=()\&.
+.SS "double \fBcryomesh::manipulators::ClusterAnalysisData::RangeEnergy::energyMin\fP"
+.PP
+Definition at line 105 of file ClusterAnalysisData\&.h\&.
+.PP
+Referenced by operator+=()\&.
+.SS "\fBcommon::Cycle\fP \fBcryomesh::manipulators::ClusterAnalysisData::RangeEnergy::startCycle\fP"
+.PP
+Definition at line 103 of file ClusterAnalysisData\&.h\&.
+.PP
+Referenced by operator+=()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code\&.

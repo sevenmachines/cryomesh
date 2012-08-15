@@ -1,0 +1,341 @@
+\hypertarget{classcryomesh_1_1structures_1_1Mesh}{\section{cryomesh\-:\-:structures\-:\-:\-Mesh \-Class \-Reference}
+\label{classcryomesh_1_1structures_1_1Mesh}\index{cryomesh\-::structures\-::\-Mesh@{cryomesh\-::structures\-::\-Mesh}}
+}
+
+
+\hyperlink{classcryomesh_1_1structures_1_1Mesh}{\-Mesh} is the fabric of connection space and warps and is warped by it.  
+
+
+
+
+{\ttfamily \#include $<$\-Mesh.\-h$>$}
+
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classcryomesh_1_1structures_1_1Mesh_a5899ce5c4ac651fe82d0bd7b25d4b743}{\-Blending\-Method} \{ \hyperlink{classcryomesh_1_1structures_1_1Mesh_a5899ce5c4ac651fe82d0bd7b25d4b743a9e12dc9ac54b6b1eadbe806b90caf332}{\-B\-L\-E\-N\-D\-\_\-\-L\-I\-N\-E\-A\-R}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1structures_1_1Mesh_abdc3f0f1976c80f177c2ed5ca05f87c4}{\-Mesh} (\hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster} \&clus)
+\begin{DoxyCompactList}\small\item\em \-Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1structures_1_1Mesh_ac017c9919ddc6e43eaae4bfc41482494}{\-Mesh} (const \hyperlink{classcryomesh_1_1structures_1_1Mesh}{\-Mesh} \&)
+\begin{DoxyCompactList}\small\item\em \-Copy \-Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classcryomesh_1_1structures_1_1Mesh_aef373539eb9566c327ec33adb21dc631}{$\sim$\-Mesh} ()
+\begin{DoxyCompactList}\small\item\em \-Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1structures_1_1Mesh_ab21a332badd5ccc36bc0f7d2ade2560b}{update} ()
+\begin{DoxyCompactList}\small\item\em \-Update mesh from cluster. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1components_1_1Node}{components\-::\-Node} \& \hyperlink{classcryomesh_1_1structures_1_1Mesh_a9e8d644176a116f998e7d2b904427564}{warp} (\hyperlink{classcryomesh_1_1components_1_1Node}{components\-::\-Node} \&node)
+\begin{DoxyCompactList}\small\item\em \-Warp the a \-Node using the mesh. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{components\-::\-Impulse\-Collection} \& \hyperlink{classcryomesh_1_1structures_1_1Mesh_a0dba481a327d8353b2c17f6174a750fe}{warp} (\hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{components\-::\-Impulse\-Collection} \&impulse\-Collection)
+\begin{DoxyCompactList}\small\item\em \-Warp an \-Impulse\-Collection using the mesh. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1components_1_1Impulse}{cryomesh\-::components\-::\-Impulse} \& \hyperlink{classcryomesh_1_1structures_1_1Mesh_a8e04bfe94511b2532f7847db58443ff5}{warp} (\hyperlink{classcryomesh_1_1components_1_1Impulse}{cryomesh\-::components\-::\-Impulse} \&impulse)
+\begin{DoxyCompactList}\small\item\em \-Warp an \-Impulse using the mesh. \end{DoxyCompactList}\item 
+const \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster} \& \hyperlink{classcryomesh_1_1structures_1_1Mesh_a4dd11ae677f2337314378338993d79f7}{get\-Cluster} () const 
+\item 
+const boost\-::shared\-\_\-ptr\*
+$<$ spacial\-::\-Activity\-Grid $>$ \hyperlink{classcryomesh_1_1structures_1_1Mesh_a8e3ffde2dccc774da89e523fc2965333}{get\-Activity\-Grid} () const 
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classcryomesh_1_1structures_1_1Mesh_af42af644c8d5b4b46bf4006a4e3b0b21}{get\-Blended\-Activity} (const double first\-\_\-activity, const double second\-\_\-activity, const \hyperlink{classcryomesh_1_1structures_1_1Mesh_a5899ce5c4ac651fe82d0bd7b25d4b743}{\-Blending\-Method} blending\-\_\-method=\hyperlink{classcryomesh_1_1structures_1_1Mesh_a5899ce5c4ac651fe82d0bd7b25d4b743a9e12dc9ac54b6b1eadbe806b90caf332}{\-B\-L\-E\-N\-D\-\_\-\-L\-I\-N\-E\-A\-R}, double force=0.\-5)
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster} \& \hyperlink{classcryomesh_1_1structures_1_1Mesh_abcb6d0f863592f641cb5f8801d268fa2}{cluster}
+\item 
+boost\-::shared\-\_\-ptr\*
+$<$ spacial\-::\-Activity\-Grid $>$ \hyperlink{classcryomesh_1_1structures_1_1Mesh_a6a93097e85b79b2b5073d1a580ffea25}{grid}
+\item 
+const int \hyperlink{classcryomesh_1_1structures_1_1Mesh_a3a748cc09c8a337d6cb4087a44255ece}{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-E\-S\-H\-\_\-\-G\-R\-A\-N\-U\-L\-A\-R\-I\-T\-Y}
+\item 
+const int \hyperlink{classcryomesh_1_1structures_1_1Mesh_a1f56ed809a278be7c36d96a46e33549a}{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-L\-E\-N\-D\-\_\-\-F\-O\-R\-C\-E}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\hyperlink{classcryomesh_1_1structures_1_1Mesh}{\-Mesh} is the fabric of connection space and warps and is warped by it. 
+
+\-The \hyperlink{classcryomesh_1_1structures_1_1Mesh}{\-Mesh} is an overlying structure on top of \-Connections space that can be used to warp the underlying space, \-Impulses, \-Connections, \-Nodes, etc based on spacial criteria on any other criteria that can be applied to the underlying data objects 
+
+\-Definition at line 33 of file \-Mesh.\-h.
+
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\hypertarget{classcryomesh_1_1structures_1_1Mesh_a5899ce5c4ac651fe82d0bd7b25d4b743}{\index{cryomesh\-::structures\-::\-Mesh@{cryomesh\-::structures\-::\-Mesh}!\-Blending\-Method@{\-Blending\-Method}}
+\index{\-Blending\-Method@{\-Blending\-Method}!cryomesh::structures::Mesh@{cryomesh\-::structures\-::\-Mesh}}
+\subsubsection[{\-Blending\-Method}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cryomesh\-::structures\-::\-Mesh\-::\-Blending\-Method}}}\label{classcryomesh_1_1structures_1_1Mesh_a5899ce5c4ac651fe82d0bd7b25d4b743}
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-B\-L\-E\-N\-D\-\_\-\-L\-I\-N\-E\-A\-R@{\-B\-L\-E\-N\-D\-\_\-\-L\-I\-N\-E\-A\-R}!cryomesh\-::structures\-::\-Mesh@{cryomesh\-::structures\-::\-Mesh}}\index{cryomesh\-::structures\-::\-Mesh@{cryomesh\-::structures\-::\-Mesh}!\-B\-L\-E\-N\-D\-\_\-\-L\-I\-N\-E\-A\-R@{\-B\-L\-E\-N\-D\-\_\-\-L\-I\-N\-E\-A\-R}}\item[{\em 
+\hypertarget{classcryomesh_1_1structures_1_1Mesh_a5899ce5c4ac651fe82d0bd7b25d4b743a9e12dc9ac54b6b1eadbe806b90caf332}{\-B\-L\-E\-N\-D\-\_\-\-L\-I\-N\-E\-A\-R}\label{classcryomesh_1_1structures_1_1Mesh_a5899ce5c4ac651fe82d0bd7b25d4b743a9e12dc9ac54b6b1eadbe806b90caf332}
+}]\end{description}
+\end{Desc}
+
+
+
+\-Definition at line 36 of file \-Mesh.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcryomesh_1_1structures_1_1Mesh_abdc3f0f1976c80f177c2ed5ca05f87c4}{\index{cryomesh\-::structures\-::\-Mesh@{cryomesh\-::structures\-::\-Mesh}!\-Mesh@{\-Mesh}}
+\index{\-Mesh@{\-Mesh}!cryomesh::structures::Mesh@{cryomesh\-::structures\-::\-Mesh}}
+\subsubsection[{\-Mesh}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::structures\-::\-Mesh\-::\-Mesh} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Cluster} \&}]{clus}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Mesh_abdc3f0f1976c80f177c2ed5ca05f87c4}
+
+
+\-Constructor. 
+
+\-Constructor for \hyperlink{classcryomesh_1_1structures_1_1Mesh}{\-Mesh}. \-Inaccessible to force singleton class 
+
+\-Definition at line 32 of file \-Mesh.\-cpp.
+
+
+
+\-References update().
+
+\hypertarget{classcryomesh_1_1structures_1_1Mesh_ac017c9919ddc6e43eaae4bfc41482494}{\index{cryomesh\-::structures\-::\-Mesh@{cryomesh\-::structures\-::\-Mesh}!\-Mesh@{\-Mesh}}
+\index{\-Mesh@{\-Mesh}!cryomesh::structures::Mesh@{cryomesh\-::structures\-::\-Mesh}}
+\subsubsection[{\-Mesh}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::structures\-::\-Mesh\-::\-Mesh} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Mesh} \&}]{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Mesh_ac017c9919ddc6e43eaae4bfc41482494}
+
+
+\-Copy \-Constructor. 
+
+\-Overridden \-Copy \-Contructor for \hyperlink{classcryomesh_1_1structures_1_1Mesh}{\-Mesh}. \-Inaccessible to force singleton class
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \hyperlink{classcryomesh_1_1structures_1_1Mesh}{\-Mesh}} & \-Object to \-Copy \-Construct from \\
+\hline
+\end{DoxyParams}
+\hypertarget{classcryomesh_1_1structures_1_1Mesh_aef373539eb9566c327ec33adb21dc631}{\index{cryomesh\-::structures\-::\-Mesh@{cryomesh\-::structures\-::\-Mesh}!$\sim$\-Mesh@{$\sim$\-Mesh}}
+\index{$\sim$\-Mesh@{$\sim$\-Mesh}!cryomesh::structures::Mesh@{cryomesh\-::structures\-::\-Mesh}}
+\subsubsection[{$\sim$\-Mesh}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::structures\-::\-Mesh\-::$\sim$\-Mesh} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Mesh_aef373539eb9566c327ec33adb21dc631}
+
+
+\-Destructor. 
+
+
+
+\-Definition at line 43 of file \-Mesh.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1structures_1_1Mesh_a8e3ffde2dccc774da89e523fc2965333}{\index{cryomesh\-::structures\-::\-Mesh@{cryomesh\-::structures\-::\-Mesh}!get\-Activity\-Grid@{get\-Activity\-Grid}}
+\index{get\-Activity\-Grid@{get\-Activity\-Grid}!cryomesh::structures::Mesh@{cryomesh\-::structures\-::\-Mesh}}
+\subsubsection[{get\-Activity\-Grid}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::shared\-\_\-ptr$<$ spacial\-::\-Activity\-Grid $>$ {\bf cryomesh\-::structures\-::\-Mesh\-::get\-Activity\-Grid} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Mesh_a8e3ffde2dccc774da89e523fc2965333}
+
+
+\-Definition at line 109 of file \-Mesh.\-cpp.
+
+
+
+\-References grid.
+
+\hypertarget{classcryomesh_1_1structures_1_1Mesh_af42af644c8d5b4b46bf4006a4e3b0b21}{\index{cryomesh\-::structures\-::\-Mesh@{cryomesh\-::structures\-::\-Mesh}!get\-Blended\-Activity@{get\-Blended\-Activity}}
+\index{get\-Blended\-Activity@{get\-Blended\-Activity}!cryomesh::structures::Mesh@{cryomesh\-::structures\-::\-Mesh}}
+\subsubsection[{get\-Blended\-Activity}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::structures\-::\-Mesh\-::get\-Blended\-Activity} (
+\begin{DoxyParamCaption}
+\item[{const double}]{first\-\_\-activity, }
+\item[{const double}]{second\-\_\-activity, }
+\item[{const {\bf \-Blending\-Method}}]{blending\-\_\-method = {\ttfamily {\bf \-B\-L\-E\-N\-D\-\_\-\-L\-I\-N\-E\-A\-R}}, }
+\item[{double}]{force = {\ttfamily 0.5}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Mesh_af42af644c8d5b4b46bf4006a4e3b0b21}
+
+
+\-Definition at line 93 of file \-Mesh.\-cpp.
+
+
+
+\-References \-B\-L\-E\-N\-D\-\_\-\-L\-I\-N\-E\-A\-R.
+
+
+
+\-Referenced by warp().
+
+\hypertarget{classcryomesh_1_1structures_1_1Mesh_a4dd11ae677f2337314378338993d79f7}{\index{cryomesh\-::structures\-::\-Mesh@{cryomesh\-::structures\-::\-Mesh}!get\-Cluster@{get\-Cluster}}
+\index{get\-Cluster@{get\-Cluster}!cryomesh::structures::Mesh@{cryomesh\-::structures\-::\-Mesh}}
+\subsubsection[{get\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Cluster} \& {\bf cryomesh\-::structures\-::\-Mesh\-::get\-Cluster} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Mesh_a4dd11ae677f2337314378338993d79f7}
+
+
+\-Definition at line 105 of file \-Mesh.\-cpp.
+
+
+
+\-References cluster.
+
+\hypertarget{classcryomesh_1_1structures_1_1Mesh_ab21a332badd5ccc36bc0f7d2ade2560b}{\index{cryomesh\-::structures\-::\-Mesh@{cryomesh\-::structures\-::\-Mesh}!update@{update}}
+\index{update@{update}!cryomesh::structures::Mesh@{cryomesh\-::structures\-::\-Mesh}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::structures\-::\-Mesh\-::update} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Mesh_ab21a332badd5ccc36bc0f7d2ade2560b}
+
+
+\-Update mesh from cluster. 
+
+
+
+\-Definition at line 46 of file \-Mesh.\-cpp.
+
+
+
+\-References cluster, cryomesh\-::components\-::\-Node\-::get\-Activity(), cryomesh\-::structures\-::\-Cluster\-::get\-Nodes(), cryomesh\-::components\-::\-Node\-::get\-Position(), and grid.
+
+
+
+\-Referenced by \-Mesh().
+
+\hypertarget{classcryomesh_1_1structures_1_1Mesh_a9e8d644176a116f998e7d2b904427564}{\index{cryomesh\-::structures\-::\-Mesh@{cryomesh\-::structures\-::\-Mesh}!warp@{warp}}
+\index{warp@{warp}!cryomesh::structures::Mesh@{cryomesh\-::structures\-::\-Mesh}}
+\subsubsection[{warp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Node} \& {\bf cryomesh\-::structures\-::\-Mesh\-::warp} (
+\begin{DoxyParamCaption}
+\item[{{\bf components\-::\-Node} \&}]{node}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Mesh_a9e8d644176a116f998e7d2b904427564}
+
+
+\-Warp the a \-Node using the mesh. 
+
+\-This function will use any values of the node, such as position in space for example, to apply a warp to the node. \-In practice this might be to suppress or increase the activity threshold, or to scale the activites at that node in some way. \-Note that this is an permanent change, ie, the node is warped 'in place'
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Node} & \& node \-The node to be warped\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Node \& \-The warped node 
+\end{DoxyReturn}
+
+
+\-Definition at line 71 of file \-Mesh.\-cpp.
+
+
+
+\-References \-B\-L\-E\-N\-D\-\_\-\-L\-I\-N\-E\-A\-R, \-D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-L\-E\-N\-D\-\_\-\-F\-O\-R\-C\-E, cryomesh\-::components\-::\-Node\-::get\-Activity(), get\-Blended\-Activity(), cryomesh\-::components\-::\-Node\-::get\-Position(), grid, and cryomesh\-::components\-::\-Node\-::set\-Activity().
+
+\hypertarget{classcryomesh_1_1structures_1_1Mesh_a0dba481a327d8353b2c17f6174a750fe}{\index{cryomesh\-::structures\-::\-Mesh@{cryomesh\-::structures\-::\-Mesh}!warp@{warp}}
+\index{warp@{warp}!cryomesh::structures::Mesh@{cryomesh\-::structures\-::\-Mesh}}
+\subsubsection[{warp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Impulse\-Collection} \& {\bf cryomesh\-::structures\-::\-Mesh\-::warp} (
+\begin{DoxyParamCaption}
+\item[{{\bf components\-::\-Impulse\-Collection} \&}]{impulse\-Collection}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Mesh_a0dba481a327d8353b2c17f6174a750fe}
+
+
+\-Warp an \-Impulse\-Collection using the mesh. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Impulse\-Collection} & \& \-Impulse\-Collection\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Impulse\-Collection \& \-The warped collection 
+\end{DoxyReturn}
+
+
+\-Definition at line 81 of file \-Mesh.\-cpp.
+
+\hypertarget{classcryomesh_1_1structures_1_1Mesh_a8e04bfe94511b2532f7847db58443ff5}{\index{cryomesh\-::structures\-::\-Mesh@{cryomesh\-::structures\-::\-Mesh}!warp@{warp}}
+\index{warp@{warp}!cryomesh::structures::Mesh@{cryomesh\-::structures\-::\-Mesh}}
+\subsubsection[{warp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Impulse} \& {\bf cryomesh\-::structures\-::\-Mesh\-::warp} (
+\begin{DoxyParamCaption}
+\item[{{\bf cryomesh\-::components\-::\-Impulse} \&}]{impulse}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Mesh_a8e04bfe94511b2532f7847db58443ff5}
+
+
+\-Warp an \-Impulse using the mesh. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Impulse} & \& \-Impulse\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Impulse \& \-The warped \-Impulse 
+\end{DoxyReturn}
+
+
+\-Definition at line 87 of file \-Mesh.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classcryomesh_1_1structures_1_1Mesh_abcb6d0f863592f641cb5f8801d268fa2}{\index{cryomesh\-::structures\-::\-Mesh@{cryomesh\-::structures\-::\-Mesh}!cluster@{cluster}}
+\index{cluster@{cluster}!cryomesh::structures::Mesh@{cryomesh\-::structures\-::\-Mesh}}
+\subsubsection[{cluster}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Cluster}\& {\bf cryomesh\-::structures\-::\-Mesh\-::cluster}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Mesh_abcb6d0f863592f641cb5f8801d268fa2}
+
+
+\-Definition at line 110 of file \-Mesh.\-h.
+
+
+
+\-Referenced by get\-Cluster(), and update().
+
+\hypertarget{classcryomesh_1_1structures_1_1Mesh_a1f56ed809a278be7c36d96a46e33549a}{\index{cryomesh\-::structures\-::\-Mesh@{cryomesh\-::structures\-::\-Mesh}!\-D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-L\-E\-N\-D\-\_\-\-F\-O\-R\-C\-E@{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-L\-E\-N\-D\-\_\-\-F\-O\-R\-C\-E}}
+\index{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-L\-E\-N\-D\-\_\-\-F\-O\-R\-C\-E@{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-L\-E\-N\-D\-\_\-\-F\-O\-R\-C\-E}!cryomesh::structures::Mesh@{cryomesh\-::structures\-::\-Mesh}}
+\subsubsection[{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-L\-E\-N\-D\-\_\-\-F\-O\-R\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf cryomesh\-::structures\-::\-Mesh\-::\-D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-L\-E\-N\-D\-\_\-\-F\-O\-R\-C\-E}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Mesh_a1f56ed809a278be7c36d96a46e33549a}
+
+
+\-Definition at line 113 of file \-Mesh.\-h.
+
+
+
+\-Referenced by warp().
+
+\hypertarget{classcryomesh_1_1structures_1_1Mesh_a3a748cc09c8a337d6cb4087a44255ece}{\index{cryomesh\-::structures\-::\-Mesh@{cryomesh\-::structures\-::\-Mesh}!\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-E\-S\-H\-\_\-\-G\-R\-A\-N\-U\-L\-A\-R\-I\-T\-Y@{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-E\-S\-H\-\_\-\-G\-R\-A\-N\-U\-L\-A\-R\-I\-T\-Y}}
+\index{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-E\-S\-H\-\_\-\-G\-R\-A\-N\-U\-L\-A\-R\-I\-T\-Y@{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-E\-S\-H\-\_\-\-G\-R\-A\-N\-U\-L\-A\-R\-I\-T\-Y}!cryomesh::structures::Mesh@{cryomesh\-::structures\-::\-Mesh}}
+\subsubsection[{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-E\-S\-H\-\_\-\-G\-R\-A\-N\-U\-L\-A\-R\-I\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf cryomesh\-::structures\-::\-Mesh\-::\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-E\-S\-H\-\_\-\-G\-R\-A\-N\-U\-L\-A\-R\-I\-T\-Y}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Mesh_a3a748cc09c8a337d6cb4087a44255ece}
+
+
+\-Definition at line 112 of file \-Mesh.\-h.
+
+\hypertarget{classcryomesh_1_1structures_1_1Mesh_a6a93097e85b79b2b5073d1a580ffea25}{\index{cryomesh\-::structures\-::\-Mesh@{cryomesh\-::structures\-::\-Mesh}!grid@{grid}}
+\index{grid@{grid}!cryomesh::structures::Mesh@{cryomesh\-::structures\-::\-Mesh}}
+\subsubsection[{grid}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$spacial\-::\-Activity\-Grid$>$ {\bf cryomesh\-::structures\-::\-Mesh\-::grid}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Mesh_a6a93097e85b79b2b5073d1a580ffea25}
+
+
+\-Definition at line 111 of file \-Mesh.\-h.
+
+
+
+\-Referenced by get\-Activity\-Grid(), update(), and warp().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/structures/\hyperlink{Mesh_8h}{\-Mesh.\-h}\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/structures/\hyperlink{Mesh_8cpp}{\-Mesh.\-cpp}\end{DoxyCompactItemize}

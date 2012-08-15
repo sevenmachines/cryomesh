@@ -1,4 +1,4 @@
-.TH "cryomesh::state::PatternChannelMap" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::state::PatternChannelMap" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -7,7 +7,7 @@ cryomesh::state::PatternChannelMap \-
 .br
 .PP
 .PP
-\fC#include <PatternChannelMap.h>\fP
+\fC#include <PatternChannelMap\&.h>\fP
 .SS "Public Member Functions"
 
 .in +1c
@@ -17,19 +17,36 @@ cryomesh::state::PatternChannelMap \-
 .ti -1c
 .RI "virtual \fB~PatternChannelMap\fP ()"
 .br
+.ti -1c
+.RI "const std::map
+.br
+< boost::uuids::uuid, 
+.br
+boost::shared_ptr
+.br
+< \fBstate::Pattern\fP > > \fBgetPatterns\fP (const \fBcommon::Cycle\fP &cycle=\fBcommon::TimeKeeper::getTimeKeeper\fP()\&.getTimeKeeper()\&.getCycle()) const "
+.br
+.RI "\fIGet a mapping of pattern channel uuids to their patterns on a specific cycle\&. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 18 of file PatternChannelMap.h.
+Definition at line 19 of file PatternChannelMap\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "cryomesh::state::PatternChannelMap::PatternChannelMap ()\fC [inline]\fP"
+.SS "\fBcryomesh::state::PatternChannelMap::PatternChannelMap\fP ()\fC [inline]\fP"
 .PP
-Definition at line 20 of file PatternChannelMap.h.
-.SS "virtual cryomesh::state::PatternChannelMap::~PatternChannelMap ()\fC [inline, virtual]\fP"
+Definition at line 21 of file PatternChannelMap\&.h\&.
+.SS "virtual \fBcryomesh::state::PatternChannelMap::~PatternChannelMap\fP ()\fC [inline, virtual]\fP"
 .PP
-Definition at line 21 of file PatternChannelMap.h.
+Definition at line 23 of file PatternChannelMap\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "const std::map<boost::uuids::uuid, boost::shared_ptr<\fBstate::Pattern\fP> > \fBcryomesh::state::PatternChannelMap::getPatterns\fP (const \fBcommon::Cycle\fP &cycle = \fC\fBcommon::TimeKeeper::getTimeKeeper\fP()\&.getTimeKeeper()\&.getCycle()\fP) const\fC [inline]\fP"
+.PP
+Get a mapping of pattern channel uuids to their patterns on a specific cycle\&. 
+.PP
+Definition at line 30 of file PatternChannelMap\&.h\&.
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for cryomesh from the source code.
+Generated automatically by Doxygen for cryomesh from the source code\&.

@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="SequencerGeneric_8h" kind="file">
+    <compoundname>SequencerGeneric.h</compoundname>
+    <includes local="no">map</includes>
+    <includes local="no">list</includes>
+    <includes local="no">libxml++-2.6/libxml++/libxml++.h</includes>
+    <includes local="no">fstream</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">boost/shared_ptr.hpp</includes>
+    <includedby refid="SequencerChannels_8h" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerChannels.h</includedby>
+    <includedby refid="SequencerGeneric_8cpp" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.cpp</includedby>
+    <incdepgraph>
+      <node id="2691">
+        <label>list</label>
+      </node>
+      <node id="2695">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="2690">
+        <label>map</label>
+      </node>
+      <node id="2693">
+        <label>fstream</label>
+      </node>
+      <node id="2692">
+        <label>libxml++-2.6/libxml++/libxml++.h</label>
+      </node>
+      <node id="2689">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.h</label>
+        <link refid="SequencerGeneric.h"/>
+        <childnode refid="2690" relation="include">
+        </childnode>
+        <childnode refid="2691" relation="include">
+        </childnode>
+        <childnode refid="2692" relation="include">
+        </childnode>
+        <childnode refid="2693" relation="include">
+        </childnode>
+        <childnode refid="2694" relation="include">
+        </childnode>
+        <childnode refid="2695" relation="include">
+        </childnode>
+      </node>
+      <node id="2694">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2700">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.cpp</label>
+        <link refid="SequencerGeneric_8cpp"/>
+      </node>
+      <node id="2697">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerChannels.h</label>
+        <link refid="SequencerChannels_8h"/>
+        <childnode refid="2698" relation="include">
+        </childnode>
+        <childnode refid="2699" relation="include">
+        </childnode>
+      </node>
+      <node id="2698">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp</label>
+        <link refid="Bundle_8cpp"/>
+      </node>
+      <node id="2699">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerChannels.cpp</label>
+        <link refid="SequencerChannels_8cpp"/>
+      </node>
+      <node id="2696">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.h</label>
+        <link refid="SequencerGeneric.h"/>
+        <childnode refid="2697" relation="include">
+        </childnode>
+        <childnode refid="2700" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classcryomesh_1_1utilities_1_1SequencerGeneric" prot="public">cryomesh::utilities::SequencerGeneric</innerclass>
+    <innerclass refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry" prot="public">cryomesh::utilities::SequencerGeneric::NodeEntry</innerclass>
+    <innernamespace refid="namespacecryomesh">cryomesh</innernamespace>
+    <innernamespace refid="namespacecryomesh_1_1utilities">cryomesh::utilities</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>SEQUENCERGENERIC_H_</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>SEQUENCERGENERIC_H_</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;list&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;libxml++-2.6/libxml++/libxml++.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/shared_ptr.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">cryomesh<sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">utilities<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="classcryomesh_1_1utilities_1_1SequencerGeneric" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcryomesh_1_1utilities_1_1SequencerGeneric" kindref="compound">SequencerGeneric</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>xmlpp::SaxParser<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="14" refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry" kindref="compound">NodeEntry</ref><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="16" refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry_1a09783531f959f6f240446bf9247affd7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry_1a09783531f959f6f240446bf9247affd7" kindref="member">NodeEntry</ref>()<sp/>:<sp/><ref refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry_1ac7bdacc33badb83a8599ac90a94b25aa" kindref="member">name</ref>(),<sp/><ref refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry_1a902d9ca7a5864a758bae3e9eb9de711a" kindref="member">info</ref>(),<sp/><ref refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry_1ad243d1b3137d6601cb413a43761ac073" kindref="member">parentNode</ref>(),<sp/><ref refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry_1aa81743684d922c5af1dca8c15923d272" kindref="member">childNodes</ref>(){}</highlight></codeline>
+<codeline lineno="17" refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry_1ac7bdacc33badb83a8599ac90a94b25aa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry_1ac7bdacc33badb83a8599ac90a94b25aa" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>map<sp/>of<sp/>string<sp/>entry<sp/>names<sp/>to<sp/>values<sp/>held<sp/>by<sp/>the<sp/>node</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry_1a902d9ca7a5864a758bae3e9eb9de711a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>std::string&gt;<sp/><ref refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry_1a902d9ca7a5864a758bae3e9eb9de711a" kindref="member">info</ref>;</highlight></codeline>
+<codeline lineno="20" refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry_1ad243d1b3137d6601cb413a43761ac073" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::shared_ptr&lt;NodeEntry&gt;<sp/><ref refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry_1ad243d1b3137d6601cb413a43761ac073" kindref="member">parentNode</ref>;</highlight></codeline>
+<codeline lineno="21" refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry_1aa81743684d922c5af1dca8c15923d272" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::list&lt;boost::shared_ptr&lt;NodeEntry&gt;<sp/>&gt;<sp/><ref refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry_1aa81743684d922c5af1dca8c15923d272" kindref="member">childNodes</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry_1a0f3acff395102a2a1b89879932088968" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::ostream<sp/>&amp;<sp/><ref refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry_1a0f3acff395102a2a1b89879932088968" kindref="member">operator&lt;&lt;</ref>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry" kindref="compound">NodeEntry</ref><sp/>&amp;<sp/>obj){</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os&lt;&lt;</highlight><highlight class="stringliteral">&quot;NodeEntry:<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;obj.<ref refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry_1ac7bdacc33badb83a8599ac90a94b25aa" kindref="member">name</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>child:<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;<sp/>obj.<ref refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry_1aa81743684d922c5af1dca8c15923d272" kindref="member">childNodes</ref>.size()&lt;&lt;std::endl;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//for<sp/>all<sp/>in<sp/>info</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map<sp/>&lt;<sp/>std::string<sp/>,<sp/>std::string<sp/><sp/>&gt;::const_iterator<sp/>it_info<sp/>=<sp/>obj.<ref refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry_1a902d9ca7a5864a758bae3e9eb9de711a" kindref="member">info</ref>.begin();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map<sp/>&lt;<sp/>std::string<sp/>,<sp/>std::string<sp/><sp/>&gt;::const_iterator<sp/>it_info_end<sp/>=<sp/>obj.<ref refid="structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry_1a902d9ca7a5864a758bae3e9eb9de711a" kindref="member">info</ref>.end();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(it_info!=it_info_end)<sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os&lt;&lt;</highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal">&lt;&lt;it_info-&gt;first&lt;&lt;</highlight><highlight class="stringliteral">&quot;:<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;it_info-&gt;second&lt;&lt;std::endl;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++it_info;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1ad0e50f0a304a248df61ca43e7bfd0717" kindref="member">SequencerGeneric</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>ifstr);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1aabe2ac353f7c805827a7a652cf1a8e23" kindref="member">~SequencerGeneric</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::list&lt;<sp/>boost::shared_ptr&lt;SequencerGeneric::NodeEntry&gt;<sp/>&gt;<sp/>&amp;<sp/><ref refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1a5537ecb58c9308c82be295c871001efd" kindref="member">getNodeEntries</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1a071c15286ad8aac33fa73ff5cc78136b" kindref="member">on_start_document</ref>();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1a5d38706a972e2037ba5a22cd04f273a0" kindref="member">on_end_document</ref>();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1ac9307acc5a461e9da6272a7aafcd0cf7" kindref="member">on_start_element</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Glib::ustring&amp;<sp/>name,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>AttributeList&amp;<sp/>properties);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1ad7d0c1c324c09ccbeba7c54caa6a77aa" kindref="member">on_end_element</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Glib::ustring&amp;<sp/>name);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1a1db9b60c25849b178124e9761d0ded64" kindref="member">on_comment</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Glib::ustring&amp;<sp/>text);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1aa8f08fad1118ad8d2a787f2f8b50df47" kindref="member">on_warning</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Glib::ustring&amp;<sp/>text);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1a797f1cda33a8dfff5fdb4d5fa095a90b" kindref="member">on_error</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Glib::ustring&amp;<sp/>text);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1af464b348d68b6ae93f473c0e02a05ff2" kindref="member">on_fatal_error</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Glib::ustring&amp;<sp/>text);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::ostream<sp/>&amp;<sp/><ref refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1ab85e57798daebe5b4c2e7979e216cd3d" kindref="member">operator&lt;&lt;</ref>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1SequencerGeneric" kindref="compound">SequencerGeneric</ref><sp/>&amp;<sp/>obj);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="54" refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1a72d9cc5d05add7cd271a6210f9164009" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::list&lt;<sp/>boost::shared_ptr&lt;NodeEntry&gt;<sp/>&gt;<sp/><ref refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1a72d9cc5d05add7cd271a6210f9164009" kindref="member">nodeEntries</ref>;</highlight></codeline>
+<codeline lineno="55" refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1abf4c1421712f9ffaf5ef731d66eec5fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::list<sp/>&lt;<sp/>boost::shared_ptr&lt;NodeEntry&gt;<sp/>&gt;<sp/><ref refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1abf4c1421712f9ffaf5ef731d66eec5fc" kindref="member">nodeStack</ref>;</highlight></codeline>
+<codeline lineno="56" refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1a2c43386ba27825ca4a1ff17a00602a2f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1a2c43386ba27825ca4a1ff17a00602a2f" kindref="member">elementCount</ref>;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>SEQUENCERGENERIC_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.h"/>
+  </compounddef>
+</doxygen>

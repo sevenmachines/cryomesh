@@ -1,0 +1,1969 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="classcryomesh_1_1manager_1_1DatabaseManager" kind="class" prot="public">
+    <compoundname>cryomesh::manager::DatabaseManager</compoundname>
+    <includes refid="DatabaseManager_8h" local="no">DatabaseManager.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classcryomesh_1_1manager_1_1DatabaseManager_1a83c6bbd218ba8c1b5e7391e60b933fe9" prot="public" static="yes" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string cryomesh::manager::DatabaseManager::DEFAULT_DATABASE</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_DATABASE</name>
+        <initializer>&quot;default.db&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="478" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" bodystart="478" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1manager_1_1DatabaseManager_1add36833b81e7d10423c902929484c70c" prot="public" static="yes" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string cryomesh::manager::DatabaseManager::DEFAULT_DATABASE_PATH</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_DATABASE_PATH</name>
+        <initializer>&quot;Output&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="479" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" bodystart="479" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a5dbfbb7dd102cdc96d76992eda32fc2d" compoundref="DatabaseManager_8cpp" startline="67" endline="90">DatabaseManager</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1manager_1_1DatabaseManager_1a012235d36d2c11662d1714723d70beb2" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structcryomesh_1_1manager_1_1NodeTableFormat" kindref="compound">NodeTableFormat</ref></type>
+        <definition>const NodeTableFormat cryomesh::manager::DatabaseManager::NODES_TABLE_FORMAT</definition>
+        <argsstring></argsstring>
+        <name>NODES_TABLE_FORMAT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="491" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" bodystart="491" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a21be3e6475e8e0bbb831a152438db9" compoundref="DatabaseManager_8cpp" startline="117" endline="121">createTables</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a74b282e11bd8c59a1e620b89cfe95ab2" compoundref="DatabaseManager_8cpp" startline="135" endline="137">insertNode</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1manager_1_1DatabaseManager_1ad318d1adc10df5e9ad8a55252b627456" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structcryomesh_1_1manager_1_1ConnectionTableFormat" kindref="compound">ConnectionTableFormat</ref></type>
+        <definition>const ConnectionTableFormat cryomesh::manager::DatabaseManager::CONNECTIONS_TABLE_FORMAT</definition>
+        <argsstring></argsstring>
+        <name>CONNECTIONS_TABLE_FORMAT</name>
+        <briefdescription>
+<para>Default connection table format. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="496" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" bodystart="496" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a21be3e6475e8e0bbb831a152438db9" compoundref="DatabaseManager_8cpp" startline="117" endline="121">createTables</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a0e5eaf4c78e61a54e9ead0148d7e8851" compoundref="DatabaseManager_8cpp" startline="138" endline="140">insertConnection</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1manager_1_1DatabaseManager_1a4e48c5624fa72f404f104c079e961b74" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structcryomesh_1_1manager_1_1OutputPatternsTableFormat" kindref="compound">OutputPatternsTableFormat</ref></type>
+        <definition>const OutputPatternsTableFormat cryomesh::manager::DatabaseManager::OUTPUT_PATTERNS_TABLE_FORMAT</definition>
+        <argsstring></argsstring>
+        <name>OUTPUT_PATTERNS_TABLE_FORMAT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="498" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" bodystart="498" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a21be3e6475e8e0bbb831a152438db9" compoundref="DatabaseManager_8cpp" startline="117" endline="121">createTables</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a48308f572e1d87a7f44e1e9fbeaf132b" compoundref="DatabaseManager_8cpp" startline="141" endline="143">insertOutputPattern</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classcryomesh_1_1manager_1_1DatabaseManager_1afa0d9b3d19f26e04dc14e5cbb018cddc" prot="protected" static="no" mutable="no">
+        <type>sqlite3 *</type>
+        <definition>sqlite3* cryomesh::manager::DatabaseManager::database</definition>
+        <argsstring></argsstring>
+        <name>database</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="506" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" bodystart="506" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a5dbfbb7dd102cdc96d76992eda32fc2d" compoundref="DatabaseManager_8cpp" startline="67" endline="90">DatabaseManager</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a50fcb1a1aa55a3330ddc189e65bd46d4" compoundref="DatabaseManager_8cpp" startline="104" endline="111">operator=</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a6bb580dd32e3af71670579e05663a1" compoundref="DatabaseManager_8cpp" startline="329" endline="362">sqlCommand</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a776fd73e7daa1dd6aa222daf6398b7cf" compoundref="DatabaseManager_8cpp" startline="99" endline="102">~DatabaseManager</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1manager_1_1DatabaseManager_1a05a135d69a6712413acd15427ce7e630" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cryomesh::manager::DatabaseManager::errorCode</definition>
+        <argsstring></argsstring>
+        <name>errorCode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="513" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" bodystart="513" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a5dbfbb7dd102cdc96d76992eda32fc2d" compoundref="DatabaseManager_8cpp" startline="67" endline="90">DatabaseManager</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a50fcb1a1aa55a3330ddc189e65bd46d4" compoundref="DatabaseManager_8cpp" startline="104" endline="111">operator=</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a6bb580dd32e3af71670579e05663a1" compoundref="DatabaseManager_8cpp" startline="329" endline="362">sqlCommand</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1manager_1_1DatabaseManager_1a090927bf06bda68c2f19f6c91997e606" prot="protected" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* cryomesh::manager::DatabaseManager::errorMessage</definition>
+        <argsstring></argsstring>
+        <name>errorMessage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="520" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" bodystart="520" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1af923abab509958feea706f57c8a9cd81" compoundref="DatabaseManager_8cpp" startline="91" endline="98">DatabaseManager</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a50fcb1a1aa55a3330ddc189e65bd46d4" compoundref="DatabaseManager_8cpp" startline="104" endline="111">operator=</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a6bb580dd32e3af71670579e05663a1" compoundref="DatabaseManager_8cpp" startline="329" endline="362">sqlCommand</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1manager_1_1DatabaseManager_1ac09173fec7302858a6c0e4ac2d0f5b5d" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool cryomesh::manager::DatabaseManager::databaseAccess</definition>
+        <argsstring></argsstring>
+        <name>databaseAccess</name>
+        <briefdescription>
+<para>Database accessable. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="527" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" bodystart="527" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a5dbfbb7dd102cdc96d76992eda32fc2d" compoundref="DatabaseManager_8cpp" startline="67" endline="90">DatabaseManager</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1ad486e95ee9d6542ad72f91047abbc98a" compoundref="DatabaseManager_8cpp" startline="113" endline="115">isDatabaseAccessable</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a50fcb1a1aa55a3330ddc189e65bd46d4" compoundref="DatabaseManager_8cpp" startline="104" endline="111">operator=</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a776fd73e7daa1dd6aa222daf6398b7cf" compoundref="DatabaseManager_8cpp" startline="99" endline="102">~DatabaseManager</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1manager_1_1DatabaseManager_1a1f492cb29428437d917edf1e5b085825" prot="protected" static="no" mutable="no">
+        <type>std::multimap&lt; <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref>, std::pair&lt; std::string, std::string &gt; &gt;</type>
+        <definition>std::multimap&lt;common::Cycle, std::pair&lt;std::string, std::string&gt; &gt; cryomesh::manager::DatabaseManager::sqlResults</definition>
+        <argsstring></argsstring>
+        <name>sqlResults</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="534" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" bodystart="534" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1af923abab509958feea706f57c8a9cd81" compoundref="DatabaseManager_8cpp" startline="91" endline="98">DatabaseManager</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a50fcb1a1aa55a3330ddc189e65bd46d4" compoundref="DatabaseManager_8cpp" startline="104" endline="111">operator=</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a91bcff35ff6bc32dcb9eee99d416f1e2" compoundref="DatabaseManager_8cpp" startline="406" endline="452">printHistory</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a6bb580dd32e3af71670579e05663a1" compoundref="DatabaseManager_8cpp" startline="329" endline="362">sqlCommand</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1manager_1_1DatabaseManager_1aae9b0bfc988f6cab5dc3b0f931c7214c" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; cryomesh::manager::DatabaseManager::sqlResultsBuffer</definition>
+        <argsstring></argsstring>
+        <name>sqlResultsBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="541" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" bodystart="541" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a6bb580dd32e3af71670579e05663a1" compoundref="DatabaseManager_8cpp" startline="329" endline="362">sqlCommand</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="classcryomesh_1_1manager_1_1DatabaseManager_1aa982e5617f8180e3a3cc848f860d69de" prot="protected" static="yes" mutable="no">
+        <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref></type>
+        <definition>const common::Cycle cryomesh::manager::DatabaseManager::MAX_COMMAND_HISTORY</definition>
+        <argsstring></argsstring>
+        <name>MAX_COMMAND_HISTORY</name>
+        <initializer> <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref>(100)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="548" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" bodystart="548" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a928357a9f8dc8f962dd1997258b4f26e" compoundref="DatabaseManager_8cpp" startline="383" endline="394">addHistoryEntry</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a5dbfbb7dd102cdc96d76992eda32fc2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::manager::DatabaseManager::DatabaseManager</definition>
+        <argsstring>(const std::string &amp;dbfile=DEFAULT_DATABASE)</argsstring>
+        <name>DatabaseManager</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>dbfile</declname>
+          <defval><ref refid="classcryomesh_1_1manager_1_1DatabaseManager_1a83c6bbd218ba8c1b5e7391e60b933fe9" kindref="member">DEFAULT_DATABASE</ref></defval>
+        </param>
+        <briefdescription>
+<para>Default constructor using a filename as the database or a default Opens the file or creates it and creates the tables if it doesnt exist. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the database to open/create </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="40" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="67" bodyend="90"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a21be3e6475e8e0bbb831a152438db9" compoundref="DatabaseManager_8cpp" startline="117" endline="121">createTables</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1afa0d9b3d19f26e04dc14e5cbb018cddc" compoundref="DatabaseManager_8h" startline="506">database</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1ac09173fec7302858a6c0e4ac2d0f5b5d" compoundref="DatabaseManager_8h" startline="527">databaseAccess</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1add36833b81e7d10423c902929484c70c" compoundref="DatabaseManager_8h" startline="479">DEFAULT_DATABASE_PATH</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a05a135d69a6712413acd15427ce7e630" compoundref="DatabaseManager_8h" startline="513">errorCode</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1af923abab509958feea706f57c8a9cd81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::manager::DatabaseManager::DatabaseManager</definition>
+        <argsstring>(const DatabaseManager &amp;obj)</argsstring>
+        <name>DatabaseManager</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1manager_1_1DatabaseManager" kindref="compound">DatabaseManager</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="41" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="91" bodyend="98"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1afa0d9b3d19f26e04dc14e5cbb018cddc" compoundref="DatabaseManager_8h" startline="506">database</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1ac09173fec7302858a6c0e4ac2d0f5b5d" compoundref="DatabaseManager_8h" startline="527">databaseAccess</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a05a135d69a6712413acd15427ce7e630" compoundref="DatabaseManager_8h" startline="513">errorCode</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a090927bf06bda68c2f19f6c91997e606" compoundref="DatabaseManager_8h" startline="520">errorMessage</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a1f492cb29428437d917edf1e5b085825" compoundref="DatabaseManager_8h" startline="534">sqlResults</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a50fcb1a1aa55a3330ddc189e65bd46d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classcryomesh_1_1manager_1_1DatabaseManager" kindref="compound">DatabaseManager</ref> &amp;</type>
+        <definition>DatabaseManager &amp; cryomesh::manager::DatabaseManager::operator=</definition>
+        <argsstring>(const DatabaseManager &amp;obj)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1manager_1_1DatabaseManager" kindref="compound">DatabaseManager</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>Assignment operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1manager_1_1DatabaseManager" kindref="compound">DatabaseManager</ref> &amp; obj RHS assignment</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classcryomesh_1_1manager_1_1DatabaseManager" kindref="compound">DatabaseManager</ref> &amp; This object after assignment </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="52" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="104" bodyend="111"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1afa0d9b3d19f26e04dc14e5cbb018cddc" compoundref="DatabaseManager_8h" startline="506">database</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1ac09173fec7302858a6c0e4ac2d0f5b5d" compoundref="DatabaseManager_8h" startline="527">databaseAccess</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a05a135d69a6712413acd15427ce7e630" compoundref="DatabaseManager_8h" startline="513">errorCode</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a090927bf06bda68c2f19f6c91997e606" compoundref="DatabaseManager_8h" startline="520">errorMessage</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a1f492cb29428437d917edf1e5b085825" compoundref="DatabaseManager_8h" startline="534">sqlResults</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a776fd73e7daa1dd6aa222daf6398b7cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>cryomesh::manager::DatabaseManager::~DatabaseManager</definition>
+        <argsstring>()</argsstring>
+        <name>~DatabaseManager</name>
+        <briefdescription>
+<para>Default destructor closes the database. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="57" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="99" bodyend="102"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1afa0d9b3d19f26e04dc14e5cbb018cddc" compoundref="DatabaseManager_8h" startline="506">database</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1ac09173fec7302858a6c0e4ac2d0f5b5d" compoundref="DatabaseManager_8h" startline="527">databaseAccess</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1ad486e95ee9d6542ad72f91047abbc98a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::manager::DatabaseManager::isDatabaseAccessable</definition>
+        <argsstring>() const </argsstring>
+        <name>isDatabaseAccessable</name>
+        <briefdescription>
+<para>Check if the database is accessible. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>bool True if deemed accessible, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="65" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="113" bodyend="115"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1ac09173fec7302858a6c0e4ac2d0f5b5d" compoundref="DatabaseManager_8h" startline="527">databaseAccess</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a7a21be3e6475e8e0bbb831a152438db9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::manager::DatabaseManager::createTables</definition>
+        <argsstring>()</argsstring>
+        <name>createTables</name>
+        <briefdescription>
+<para>Create all needed tables. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="70" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="117" bodyend="121"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1ad318d1adc10df5e9ad8a55252b627456" compoundref="DatabaseManager_8h" startline="496">CONNECTIONS_TABLE_FORMAT</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a012235d36d2c11662d1714723d70beb2" compoundref="DatabaseManager_8h" startline="491">NODES_TABLE_FORMAT</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a4e48c5624fa72f404f104c079e961b74" compoundref="DatabaseManager_8h" startline="498">OUTPUT_PATTERNS_TABLE_FORMAT</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a6bb580dd32e3af71670579e05663a1" compoundref="DatabaseManager_8cpp" startline="329" endline="362">sqlCommand</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a5dbfbb7dd102cdc96d76992eda32fc2d" compoundref="DatabaseManager_8cpp" startline="67" endline="90">DatabaseManager</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1ad59a62d4e7a3dee8bb04ed5cbd579efb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::manager::DatabaseManager::clearTables</definition>
+        <argsstring>()</argsstring>
+        <name>clearTables</name>
+        <briefdescription>
+<para>Clear all tables. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="75" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="123" bodyend="127"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1aa7265c2234d74d2931281ecb5cda83db" compoundref="DatabaseManager_8cpp" startline="129" endline="133">clearTable</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1aa7265c2234d74d2931281ecb5cda83db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::clearTable</definition>
+        <argsstring>(const std::string &amp;table)</argsstring>
+        <name>clearTable</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <briefdescription>
+<para>Clear all values in a table. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The table to clear</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::string The result of the sql query </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="86" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="129" bodyend="133"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a6bb580dd32e3af71670579e05663a1" compoundref="DatabaseManager_8cpp" startline="329" endline="362">sqlCommand</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1ad59a62d4e7a3dee8bb04ed5cbd579efb" compoundref="DatabaseManager_8cpp" startline="123" endline="127">clearTables</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a93a9f35b55d065f82df536c228c75a2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::dropTable</definition>
+        <argsstring>(const std::string &amp;table)</argsstring>
+        <name>dropTable</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <briefdescription>
+<para>Drop a table from database. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The table to drop</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::string The result of the sql query </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="97" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="292" bodyend="297"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a6bb580dd32e3af71670579e05663a1" compoundref="DatabaseManager_8cpp" startline="329" endline="362">sqlCommand</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a74b282e11bd8c59a1e620b89cfe95ab2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::insertNode</definition>
+        <argsstring>(const DatabaseObject &amp;db_object)</argsstring>
+        <name>insertNode</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1manager_1_1DatabaseObject" kindref="compound">DatabaseObject</ref> &amp;</type>
+          <declname>db_object</declname>
+        </param>
+        <briefdescription>
+<para>Insert a node data object into the table. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classcryomesh_1_1manager_1_1DatabaseObject" kindref="compound">DatabaseObject</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Database object to insert as a node</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::string Result of sql query </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="108" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="135" bodyend="137"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseObject_1ad55c6e711341a652790b97f549b0dc63">cryomesh::manager::DatabaseObject::getInsert</references>
+        <references refid="structcryomesh_1_1manager_1_1TableFormat_1a3e797d6130c6b0745a1fac799c25677a" compoundref="TableFormats_8h" startline="32" endline="34">cryomesh::manager::TableFormat::getName</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a012235d36d2c11662d1714723d70beb2" compoundref="DatabaseManager_8h" startline="491">NODES_TABLE_FORMAT</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a6bb580dd32e3af71670579e05663a1" compoundref="DatabaseManager_8cpp" startline="329" endline="362">sqlCommand</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a0e5eaf4c78e61a54e9ead0148d7e8851" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::insertConnection</definition>
+        <argsstring>(const DatabaseObject &amp;db_object)</argsstring>
+        <name>insertConnection</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1manager_1_1DatabaseObject" kindref="compound">DatabaseObject</ref> &amp;</type>
+          <declname>db_object</declname>
+        </param>
+        <briefdescription>
+<para>Insert a connection data object into the table. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classcryomesh_1_1manager_1_1DatabaseObject" kindref="compound">DatabaseObject</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Database object to insert as a node</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::string Result of sql query </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="119" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="138" bodyend="140"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1ad318d1adc10df5e9ad8a55252b627456" compoundref="DatabaseManager_8h" startline="496">CONNECTIONS_TABLE_FORMAT</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseObject_1ad55c6e711341a652790b97f549b0dc63">cryomesh::manager::DatabaseObject::getInsert</references>
+        <references refid="structcryomesh_1_1manager_1_1TableFormat_1a3e797d6130c6b0745a1fac799c25677a" compoundref="TableFormats_8h" startline="32" endline="34">cryomesh::manager::TableFormat::getName</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a6bb580dd32e3af71670579e05663a1" compoundref="DatabaseManager_8cpp" startline="329" endline="362">sqlCommand</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a48308f572e1d87a7f44e1e9fbeaf132b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::insertOutputPattern</definition>
+        <argsstring>(const DatabaseObject &amp;db_object)</argsstring>
+        <name>insertOutputPattern</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1manager_1_1DatabaseObject" kindref="compound">DatabaseObject</ref> &amp;</type>
+          <declname>db_object</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="121" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="141" bodyend="143"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseObject_1ad55c6e711341a652790b97f549b0dc63">cryomesh::manager::DatabaseObject::getInsert</references>
+        <references refid="structcryomesh_1_1manager_1_1TableFormat_1a3e797d6130c6b0745a1fac799c25677a" compoundref="TableFormats_8h" startline="32" endline="34">cryomesh::manager::TableFormat::getName</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a4e48c5624fa72f404f104c079e961b74" compoundref="DatabaseManager_8h" startline="498">OUTPUT_PATTERNS_TABLE_FORMAT</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a6bb580dd32e3af71670579e05663a1" compoundref="DatabaseManager_8cpp" startline="329" endline="362">sqlCommand</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a72e0ced2c0638556f66cbceb60123aa5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::selectNode</definition>
+        <argsstring>(const std::string &amp;uuid, const common::Cycle &amp;cycle)</argsstring>
+        <name>selectNode</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>uuid</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref> &amp;</type>
+          <declname>cycle</declname>
+        </param>
+        <briefdescription>
+<para>Select unique node entry. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The uuid of the node </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Cycle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The cycle to select on, to force uniqueness</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::string The value of the entry </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="134" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="144" bodyend="149"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a409074c27567420f0a2d578f9a6bc124" compoundref="DatabaseManager_8cpp" startline="281" endline="290">sqlCommandBySelection</references>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1ad71494a74fe0dfdb7e470a091ee0906d" compoundref="Cycle_8cpp" startline="60" endline="62">cryomesh::common::Cycle::toLInt</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1ab24de957b5908a4dc7d0c9146b43488b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::selectConnection</definition>
+        <argsstring>(const std::string &amp;uuid, const common::Cycle &amp;cycle)</argsstring>
+        <name>selectConnection</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>uuid</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref> &amp;</type>
+          <declname>cycle</declname>
+        </param>
+        <briefdescription>
+<para>Select unique column entry. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The uuid of the node </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Cycle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The cycle to select on, to force uniqueness</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::string The value of the entry </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="147" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="150" bodyend="155"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a409074c27567420f0a2d578f9a6bc124" compoundref="DatabaseManager_8cpp" startline="281" endline="290">sqlCommandBySelection</references>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1ad71494a74fe0dfdb7e470a091ee0906d" compoundref="Cycle_8cpp" startline="60" endline="62">cryomesh::common::Cycle::toLInt</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a04e8afc360e46b238415910dcafc2dd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::selectOutputPattern</definition>
+        <argsstring>(const std::string &amp;uuid, const common::Cycle &amp;cycle)</argsstring>
+        <name>selectOutputPattern</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>uuid</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref> &amp;</type>
+          <declname>cycle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="149" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="157" bodyend="162"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a409074c27567420f0a2d578f9a6bc124" compoundref="DatabaseManager_8cpp" startline="281" endline="290">sqlCommandBySelection</references>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1ad71494a74fe0dfdb7e470a091ee0906d" compoundref="Cycle_8cpp" startline="60" endline="62">cryomesh::common::Cycle::toLInt</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a2a37d932ea951b4a45d4452e8631c1b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::selectNodeValue</definition>
+        <argsstring>(const std::string &amp;uuid, const common::Cycle &amp;cycle, const std::string &amp;column)</argsstring>
+        <name>selectNodeValue</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>uuid</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref> &amp;</type>
+          <declname>cycle</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>column</declname>
+        </param>
+        <briefdescription>
+<para>Select unique node column entry. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The uuid of the node </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Cycle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The cycle to select on, to force uniqueness </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The column to select</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::string The value of the entry </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="164" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="164" bodyend="167"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1af2d4487c9955417740ecaeeb7e27db4f" compoundref="DatabaseManager_8cpp" startline="179" endline="189">selectValue</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1aaeb8756f7f7e62b152fa226cddbc191e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::selectConnectionValue</definition>
+        <argsstring>(const std::string &amp;uuid, const common::Cycle &amp;cycle, const std::string &amp;column)</argsstring>
+        <name>selectConnectionValue</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>uuid</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref> &amp;</type>
+          <declname>cycle</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>column</declname>
+        </param>
+        <briefdescription>
+<para>Select unique column column entry. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The uuid of the node </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Cycle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The cycle to select on, to force uniqueness </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The column to select</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::string The value of the entry </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="179" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="169" bodyend="172"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1af2d4487c9955417740ecaeeb7e27db4f" compoundref="DatabaseManager_8cpp" startline="179" endline="189">selectValue</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a31be85012297a3c2cda1ab43f7730986" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::selectOutputPatternValue</definition>
+        <argsstring>(const std::string &amp;uuid, const common::Cycle &amp;cycle, const std::string &amp;column)</argsstring>
+        <name>selectOutputPatternValue</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>uuid</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref> &amp;</type>
+          <declname>cycle</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>column</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="182" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="174" bodyend="177"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1af2d4487c9955417740ecaeeb7e27db4f" compoundref="DatabaseManager_8cpp" startline="179" endline="189">selectValue</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1af2d4487c9955417740ecaeeb7e27db4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::selectValue</definition>
+        <argsstring>(const std::string &amp;table, const std::string &amp;uuid, const common::Cycle &amp;cycle, const std::string &amp;column)</argsstring>
+        <name>selectValue</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>uuid</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref> &amp;</type>
+          <declname>cycle</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>column</declname>
+        </param>
+        <briefdescription>
+<para>Select unique column column entry from table. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The table to utilise </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The uuid of the node </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Cycle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The cycle to select on, to force uniqueness </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The column to select</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::string The value of the entry </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="200" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="179" bodyend="189"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a6bb580dd32e3af71670579e05663a1" compoundref="DatabaseManager_8cpp" startline="329" endline="362">sqlCommand</references>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1ad71494a74fe0dfdb7e470a091ee0906d" compoundref="Cycle_8cpp" startline="60" endline="62">cryomesh::common::Cycle::toLInt</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1aaeb8756f7f7e62b152fa226cddbc191e" compoundref="DatabaseManager_8cpp" startline="169" endline="172">selectConnectionValue</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a2a37d932ea951b4a45d4452e8631c1b4" compoundref="DatabaseManager_8cpp" startline="164" endline="167">selectNodeValue</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a31be85012297a3c2cda1ab43f7730986" compoundref="DatabaseManager_8cpp" startline="174" endline="177">selectOutputPatternValue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1abbdc677c45f6cf24e46f9ab4f1d15804" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::selectNodes</definition>
+        <argsstring>(const std::string &amp;criteria=&quot;&quot;)</argsstring>
+        <name>selectNodes</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>criteria</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Select nodes by a criteria string eg, &apos;id=erwrs324 AND cycle=1&apos;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The criteria to match</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::string Result of sql query </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="211" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="191" bodyend="193"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1aa706d8042942d406c73d7ab60c5c1a89" compoundref="DatabaseManager_8cpp" startline="200" endline="202">select</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a293d93aa671e648edb0dc8a47663e7d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::selectConnections</definition>
+        <argsstring>(const std::string &amp;criteria=&quot;&quot;)</argsstring>
+        <name>selectConnections</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>criteria</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Select connections by a criteria string eg, &apos;id=erwrs324 AND cycle=1&apos;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The criteria to match</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::string Result of sql query </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="222" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="194" bodyend="196"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1aa706d8042942d406c73d7ab60c5c1a89" compoundref="DatabaseManager_8cpp" startline="200" endline="202">select</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a9a49d50bc76aa1686da01b9ebe3bbc8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::selectOutputPatterns</definition>
+        <argsstring>(const std::string &amp;criteria=&quot;&quot;)</argsstring>
+        <name>selectOutputPatterns</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>criteria</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="224" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="197" bodyend="199"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1aa706d8042942d406c73d7ab60c5c1a89" compoundref="DatabaseManager_8cpp" startline="200" endline="202">select</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a95b3a22e66f6803e9b9875fc9d522218" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::deleteNode</definition>
+        <argsstring>(const std::string &amp;id)</argsstring>
+        <name>deleteNode</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Delete node by uuid. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The uuid to match</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::string Result of sql query </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="235" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="204" bodyend="208"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1aae668efd45d2f48593e7e7810ecfa0c2" compoundref="DatabaseManager_8cpp" startline="210" endline="212">deleteNodes</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1aae668efd45d2f48593e7e7810ecfa0c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::deleteNodes</definition>
+        <argsstring>(const std::string &amp;criteria=&quot;&quot;)</argsstring>
+        <name>deleteNodes</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>criteria</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Delete nodes by a criteria string eg, &apos;id=erwrs324 AND cycle=1&apos;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The criteria to match</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::string Result of sql query </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="246" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="210" bodyend="212"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1ae7a0c296543488886e60e4cb73a4cf95" compoundref="DatabaseManager_8cpp" startline="234" endline="238">deleteSelected</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a95b3a22e66f6803e9b9875fc9d522218" compoundref="DatabaseManager_8cpp" startline="204" endline="208">deleteNode</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a9dcb39c5eda5a6aa91addb20b8090968" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::deleteConnection</definition>
+        <argsstring>(const std::string &amp;id)</argsstring>
+        <name>deleteConnection</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Delete connection by uuid. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The uuid to match</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::string Result of sql query </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="257" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="214" bodyend="218"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a15dfa7b9dbf0164d7f37e6546f368e38" compoundref="DatabaseManager_8cpp" startline="220" endline="222">deleteConnections</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a15dfa7b9dbf0164d7f37e6546f368e38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::deleteConnections</definition>
+        <argsstring>(const std::string &amp;criteria=&quot;&quot;)</argsstring>
+        <name>deleteConnections</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>criteria</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Delete nodes by a criteria string eg, &apos;id=erwrs324 AND cycle=1&apos;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The criteria to match</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::string Result of sql query </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="268" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="220" bodyend="222"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1ae7a0c296543488886e60e4cb73a4cf95" compoundref="DatabaseManager_8cpp" startline="234" endline="238">deleteSelected</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a9dcb39c5eda5a6aa91addb20b8090968" compoundref="DatabaseManager_8cpp" startline="214" endline="218">deleteConnection</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1aa843bb7f909b2b47437a9597a8966786" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::deleteOutputPattern</definition>
+        <argsstring>(const std::string &amp;id)</argsstring>
+        <name>deleteOutputPattern</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="270" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="224" bodyend="228"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1ae0bdd63971d6363c6525136264def2c9" compoundref="DatabaseManager_8cpp" startline="230" endline="232">deleteOutputPatterns</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1ae0bdd63971d6363c6525136264def2c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::deleteOutputPatterns</definition>
+        <argsstring>(const std::string &amp;criteria=&quot;&quot;)</argsstring>
+        <name>deleteOutputPatterns</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>criteria</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="271" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="230" bodyend="232"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1ae7a0c296543488886e60e4cb73a4cf95" compoundref="DatabaseManager_8cpp" startline="234" endline="238">deleteSelected</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1aa843bb7f909b2b47437a9597a8966786" compoundref="DatabaseManager_8cpp" startline="224" endline="228">deleteOutputPattern</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1ae7a0c296543488886e60e4cb73a4cf95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::deleteSelected</definition>
+        <argsstring>(const std::string &amp;table, const std::string &amp;criteria=&quot;&quot;)</argsstring>
+        <name>deleteSelected</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>criteria</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Delete objects from a table by a criteria string eg, &apos;id=erwrs324 AND cycle=1&apos;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The table to delete from </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The criteria to match</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::string Result of sql query </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="284" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="234" bodyend="238"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a6bb580dd32e3af71670579e05663a1" compoundref="DatabaseManager_8cpp" startline="329" endline="362">sqlCommand</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a15dfa7b9dbf0164d7f37e6546f368e38" compoundref="DatabaseManager_8cpp" startline="220" endline="222">deleteConnections</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1aae668efd45d2f48593e7e7810ecfa0c2" compoundref="DatabaseManager_8cpp" startline="210" endline="212">deleteNodes</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1ae0bdd63971d6363c6525136264def2c9" compoundref="DatabaseManager_8cpp" startline="230" endline="232">deleteOutputPatterns</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a8c2a8fe55d1df17b9ed35bfa0a625390" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int cryomesh::manager::DatabaseManager::countNodes</definition>
+        <argsstring>(const std::string &amp;criteria=&quot;&quot;)</argsstring>
+        <name>countNodes</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>criteria</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Count nodes by a criteria string eg, &apos;cycle=1&apos;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The criteria to match</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int The result of the count </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="295" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="240" bodyend="242"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a5aefac8742cb35d27d2df611658fe10b" compoundref="DatabaseManager_8cpp" startline="247" endline="263">countRows</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a40f5c4b6df9c281e1f667f27c18aacba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int cryomesh::manager::DatabaseManager::countConnections</definition>
+        <argsstring>(const std::string &amp;criteria=&quot;&quot;)</argsstring>
+        <name>countConnections</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>criteria</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Count connections by a criteria string eg, &apos;cycle=1&apos;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The criteria to match</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int The result of the count </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="306" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="243" bodyend="246"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a5aefac8742cb35d27d2df611658fe10b" compoundref="DatabaseManager_8cpp" startline="247" endline="263">countRows</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a5aefac8742cb35d27d2df611658fe10b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int cryomesh::manager::DatabaseManager::countRows</definition>
+        <argsstring>(const std::string &amp;table, const std::string &amp;criteria=&quot;&quot;)</argsstring>
+        <name>countRows</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>criteria</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Count objects from a table by a criteria string eg, &apos;cycle=1&apos;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The table to count from </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The criteria to match</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int The result of the count </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="319" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="247" bodyend="263"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a6bb580dd32e3af71670579e05663a1" compoundref="DatabaseManager_8cpp" startline="329" endline="362">sqlCommand</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a40f5c4b6df9c281e1f667f27c18aacba" compoundref="DatabaseManager_8cpp" startline="243" endline="246">countConnections</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a8c2a8fe55d1df17b9ed35bfa0a625390" compoundref="DatabaseManager_8cpp" startline="240" endline="242">countNodes</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a9099aacdb6f8570c7b95364986e5e32a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::updateNode</definition>
+        <argsstring>(const std::string &amp;uuid_str, const common::Cycle &amp;cycle, const std::string &amp;options)</argsstring>
+        <name>updateNode</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>uuid_str</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref> &amp;</type>
+          <declname>cycle</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>options</declname>
+        </param>
+        <briefdescription>
+<para>update node from using options list </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The id to match </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The cycle to match </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The options to set</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int The result of the count </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="334" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="265" bodyend="268"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a591a9f332c898ed4a49f388baccdf6aa" compoundref="DatabaseManager_8cpp" startline="273" endline="279">updateByUUID</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a56bcdc411b12086ca0c7e652bb47efa0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::updateConnection</definition>
+        <argsstring>(const std::string &amp;uuid_str, const common::Cycle &amp;cycle, const std::string &amp;options)</argsstring>
+        <name>updateConnection</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>uuid_str</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref> &amp;</type>
+          <declname>cycle</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>options</declname>
+        </param>
+        <briefdescription>
+<para>update node from using options list </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The id to match </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The cycle to match </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The options to set</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int The result of the count </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="350" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="269" bodyend="272"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a591a9f332c898ed4a49f388baccdf6aa" compoundref="DatabaseManager_8cpp" startline="273" endline="279">updateByUUID</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a591a9f332c898ed4a49f388baccdf6aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::updateByUUID</definition>
+        <argsstring>(const std::string &amp;uuid_str, const common::Cycle &amp;cycle, const std::string &amp;options, const std::string &amp;table)</argsstring>
+        <name>updateByUUID</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>uuid_str</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref> &amp;</type>
+          <declname>cycle</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>options</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <briefdescription>
+<para>update object from a table using options list </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The id to match </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The cycle to match </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The options to set </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The table to use</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int The result of the count </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="368" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="273" bodyend="279"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a6bb580dd32e3af71670579e05663a1" compoundref="DatabaseManager_8cpp" startline="329" endline="362">sqlCommand</references>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1ad71494a74fe0dfdb7e470a091ee0906d" compoundref="Cycle_8cpp" startline="60" endline="62">cryomesh::common::Cycle::toLInt</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a56bcdc411b12086ca0c7e652bb47efa0" compoundref="DatabaseManager_8cpp" startline="269" endline="272">updateConnection</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a9099aacdb6f8570c7b95364986e5e32a" compoundref="DatabaseManager_8cpp" startline="265" endline="268">updateNode</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1aa706d8042942d406c73d7ab60c5c1a89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::select</definition>
+        <argsstring>(const std::string &amp;table, const std::string &amp;criteria=&quot;&quot;)</argsstring>
+        <name>select</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>criteria</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Select all columns from table using criteria. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of table </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Selection criteria</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::string sql query results </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="380" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="200" bodyend="202"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a409074c27567420f0a2d578f9a6bc124" compoundref="DatabaseManager_8cpp" startline="281" endline="290">sqlCommandBySelection</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a293d93aa671e648edb0dc8a47663e7d0" compoundref="DatabaseManager_8cpp" startline="194" endline="196">selectConnections</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1abbdc677c45f6cf24e46f9ab4f1d15804" compoundref="DatabaseManager_8cpp" startline="191" endline="193">selectNodes</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a9a49d50bc76aa1686da01b9ebe3bbc8b" compoundref="DatabaseManager_8cpp" startline="197" endline="199">selectOutputPatterns</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1afbfe5f58ea22424da83657c525bbe50e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::deleteAll</definition>
+        <argsstring>(const std::string &amp;table)</argsstring>
+        <name>deleteAll</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <briefdescription>
+<para>delete all data from table </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of table</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::string sql query results </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="391"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a27d2711406856ab0a3145e16117b1095" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::deleteAllByCycle</definition>
+        <argsstring>(const common::Cycle &amp;cycle, int comparison_type)</argsstring>
+        <name>deleteAllByCycle</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref> &amp;</type>
+          <declname>cycle</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>comparison_type</declname>
+        </param>
+        <briefdescription>
+<para>delete all by cycle </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cycle to compare against </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of comparison to make, &lt;0 for less than, ==0 for equals, and &gt;0 for greater than</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::string sql query results </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="404" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="299" bodyend="302"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a419d14216ddd047471c8c5d5124b83cf" compoundref="DatabaseManager_8cpp" startline="308" endline="310">deleteConnectionsByCycle</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1ae7b5187077ed92ee43b408a635f0ec87" compoundref="DatabaseManager_8cpp" startline="304" endline="306">deleteNodesByCycle</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1ae7b5187077ed92ee43b408a635f0ec87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::deleteNodesByCycle</definition>
+        <argsstring>(const common::Cycle &amp;cycle, int comparison_type)</argsstring>
+        <name>deleteNodesByCycle</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref> &amp;</type>
+          <declname>cycle</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>comparison_type</declname>
+        </param>
+        <briefdescription>
+<para>delete nodes by cycle </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cycle to compare against </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of comparison to make, &lt;0 for less than, ==0 for equals, and &gt;0 for greater than</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::string sql query results </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="417" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="304" bodyend="306"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a8095a326205cb6bccf529291f3ecb372" compoundref="DatabaseManager_8cpp" startline="312" endline="327">deleteByCycle</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a27d2711406856ab0a3145e16117b1095" compoundref="DatabaseManager_8cpp" startline="299" endline="302">deleteAllByCycle</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a419d14216ddd047471c8c5d5124b83cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::deleteConnectionsByCycle</definition>
+        <argsstring>(const common::Cycle &amp;cycle, int comparison_type)</argsstring>
+        <name>deleteConnectionsByCycle</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref> &amp;</type>
+          <declname>cycle</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>comparison_type</declname>
+        </param>
+        <briefdescription>
+<para>delete connections by cycle </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cycle to compare against </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of comparison to make, &lt;0 for less than, ==0 for equals, and &gt;0 for greater than</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::string sql query results </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="430" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="308" bodyend="310"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a8095a326205cb6bccf529291f3ecb372" compoundref="DatabaseManager_8cpp" startline="312" endline="327">deleteByCycle</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a27d2711406856ab0a3145e16117b1095" compoundref="DatabaseManager_8cpp" startline="299" endline="302">deleteAllByCycle</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a8095a326205cb6bccf529291f3ecb372" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::deleteByCycle</definition>
+        <argsstring>(const std::string &amp;table, const common::Cycle &amp;cycle, int comparison_type)</argsstring>
+        <name>deleteByCycle</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref> &amp;</type>
+          <declname>cycle</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>comparison_type</declname>
+        </param>
+        <briefdescription>
+<para>delete objects from table by cycle </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The table to delete from </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cycle to compare against </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of comparison to make, &lt;0 for less than, ==0 for equals, and &gt;0 for greater than</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::string sql query results </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="445" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="312" bodyend="327"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a6bb580dd32e3af71670579e05663a1" compoundref="DatabaseManager_8cpp" startline="329" endline="362">sqlCommand</references>
+        <references refid="classcryomesh_1_1common_1_1Cycle_1ad71494a74fe0dfdb7e470a091ee0906d" compoundref="Cycle_8cpp" startline="60" endline="62">cryomesh::common::Cycle::toLInt</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a419d14216ddd047471c8c5d5124b83cf" compoundref="DatabaseManager_8cpp" startline="308" endline="310">deleteConnectionsByCycle</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1ae7b5187077ed92ee43b408a635f0ec87" compoundref="DatabaseManager_8cpp" startline="304" endline="306">deleteNodesByCycle</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a91bcff35ff6bc32dcb9eee99d416f1e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; cryomesh::manager::DatabaseManager::printHistory</definition>
+        <argsstring>(std::ostream &amp;os, const common::Cycle &amp;cycle)</argsstring>
+        <name>printHistory</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref> &amp;</type>
+          <declname>cycle</declname>
+        </param>
+        <briefdescription>
+<para>Print sql history to output stream. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::ostream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output stream to print to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Cycle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The cycle to print information on</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::ostream Return the supplied output stream </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="458" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="406" bodyend="452"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a1f492cb29428437d917edf1e5b085825" compoundref="DatabaseManager_8h" startline="534">sqlResults</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1ae949b3904e471572d7cbe389016b991e" compoundref="DatabaseManager_8cpp" startline="396" endline="404">printHistory</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1ae949b3904e471572d7cbe389016b991e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; cryomesh::manager::DatabaseManager::printHistory</definition>
+        <argsstring>(std::ostream &amp;os, unsigned int countback=1)</argsstring>
+        <name>printHistory</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>countback</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>Print sql history to output stream. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::ostream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output stream to print to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>unsigned</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>int Muber of cycles of previous history to print</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::ostream Return the supplied output stream </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="471" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="396" bodyend="404"/>
+        <references refid="classcryomesh_1_1common_1_1TimeKeeper_1aa0bfaecbd5118af91d63296f158cee09" compoundref="TimeKeeper_8cpp" startline="76" endline="78">cryomesh::common::TimeKeeper::getCycle</references>
+        <references refid="classcryomesh_1_1common_1_1TimeKeeper_1afe7b229532e11119cb2653192615d679" compoundref="TimeKeeper_8cpp" startline="19" endline="24">cryomesh::common::TimeKeeper::getTimeKeeper</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a91bcff35ff6bc32dcb9eee99d416f1e2" compoundref="DatabaseManager_8cpp" startline="406" endline="452">printHistory</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a3cde0d12f3b2a4ae1e48cd07089920be" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int cryomesh::manager::DatabaseManager::databaseCallback</definition>
+        <argsstring>(void *unused, int argc, char **argv, char **columnName)</argsstring>
+        <name>databaseCallback</name>
+        <param>
+          <type>void *</type>
+          <declname>unused</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>columnName</declname>
+        </param>
+        <briefdescription>
+<para>Function that is called on finishing an sql command. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="484" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="32" bodyend="65"/>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a6bb580dd32e3af71670579e05663a1" compoundref="DatabaseManager_8cpp" startline="329" endline="362">sqlCommand</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a7a6bb580dd32e3af71670579e05663a1" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::sqlCommand</definition>
+        <argsstring>(const std::string &amp;command)</argsstring>
+        <name>sqlCommand</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+<para>Run a provided sql command string. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command string to run</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::vector&lt;std::string&gt; vector of results </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="559" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="329" bodyend="362"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a928357a9f8dc8f962dd1997258b4f26e" compoundref="DatabaseManager_8cpp" startline="383" endline="394">addHistoryEntry</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1afa0d9b3d19f26e04dc14e5cbb018cddc" compoundref="DatabaseManager_8h" startline="506">database</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a3cde0d12f3b2a4ae1e48cd07089920be" compoundref="DatabaseManager_8cpp" startline="32" endline="65">databaseCallback</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a05a135d69a6712413acd15427ce7e630" compoundref="DatabaseManager_8h" startline="513">errorCode</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a090927bf06bda68c2f19f6c91997e606" compoundref="DatabaseManager_8h" startline="520">errorMessage</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a1f492cb29428437d917edf1e5b085825" compoundref="DatabaseManager_8h" startline="534">sqlResults</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1aae9b0bfc988f6cab5dc3b0f931c7214c" compoundref="DatabaseManager_8h" startline="541">sqlResultsBuffer</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1aa7265c2234d74d2931281ecb5cda83db" compoundref="DatabaseManager_8cpp" startline="129" endline="133">clearTable</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a5aefac8742cb35d27d2df611658fe10b" compoundref="DatabaseManager_8cpp" startline="247" endline="263">countRows</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a21be3e6475e8e0bbb831a152438db9" compoundref="DatabaseManager_8cpp" startline="117" endline="121">createTables</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a8095a326205cb6bccf529291f3ecb372" compoundref="DatabaseManager_8cpp" startline="312" endline="327">deleteByCycle</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1ae7a0c296543488886e60e4cb73a4cf95" compoundref="DatabaseManager_8cpp" startline="234" endline="238">deleteSelected</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a93a9f35b55d065f82df536c228c75a2d" compoundref="DatabaseManager_8cpp" startline="292" endline="297">dropTable</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a0e5eaf4c78e61a54e9ead0148d7e8851" compoundref="DatabaseManager_8cpp" startline="138" endline="140">insertConnection</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a74b282e11bd8c59a1e620b89cfe95ab2" compoundref="DatabaseManager_8cpp" startline="135" endline="137">insertNode</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a48308f572e1d87a7f44e1e9fbeaf132b" compoundref="DatabaseManager_8cpp" startline="141" endline="143">insertOutputPattern</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1af2d4487c9955417740ecaeeb7e27db4f" compoundref="DatabaseManager_8cpp" startline="179" endline="189">selectValue</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a409074c27567420f0a2d578f9a6bc124" compoundref="DatabaseManager_8cpp" startline="281" endline="290">sqlCommandBySelection</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a591a9f332c898ed4a49f388baccdf6aa" compoundref="DatabaseManager_8cpp" startline="273" endline="279">updateByUUID</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a409074c27567420f0a2d578f9a6bc124" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseManager::sqlCommandBySelection</definition>
+        <argsstring>(const std::string &amp;table, const std::string &amp;command, const std::string &amp;criteria)</argsstring>
+        <name>sqlCommandBySelection</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>criteria</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="562" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="281" bodyend="290"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a6bb580dd32e3af71670579e05663a1" compoundref="DatabaseManager_8cpp" startline="329" endline="362">sqlCommand</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1aa706d8042942d406c73d7ab60c5c1a89" compoundref="DatabaseManager_8cpp" startline="200" endline="202">select</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1ab24de957b5908a4dc7d0c9146b43488b" compoundref="DatabaseManager_8cpp" startline="150" endline="155">selectConnection</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a72e0ced2c0638556f66cbceb60123aa5" compoundref="DatabaseManager_8cpp" startline="144" endline="149">selectNode</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a04e8afc360e46b238415910dcafc2dd8" compoundref="DatabaseManager_8cpp" startline="157" endline="162">selectOutputPattern</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-func">
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a928357a9f8dc8f962dd1997258b4f26e" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::multimap&lt; <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref>, std::pair&lt; std::string, std::string &gt; &gt; &amp;</type>
+        <definition>const std::multimap&lt; common::Cycle, std::pair&lt; std::string, std::string &gt; &gt; &amp; cryomesh::manager::DatabaseManager::addHistoryEntry</definition>
+        <argsstring>(const std::string &amp;command, const std::string &amp;results, std::multimap&lt; common::Cycle, std::pair&lt; std::string, std::string &gt; &gt; &amp;map)</argsstring>
+        <name>addHistoryEntry</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>results</declname>
+        </param>
+        <param>
+          <type>std::multimap&lt; <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref>, std::pair&lt; std::string, std::string &gt; &gt; &amp;</type>
+          <declname>map</declname>
+        </param>
+        <briefdescription>
+<para>Add an entry to a historical multimap. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Entry to add </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>std::multimap&lt;std::string</parametername>
+<parametername>std::string&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Map to add entry to</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::multimap&lt;std::string, std::string&gt; Return the modified map </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="577" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="383" bodyend="394"/>
+        <references refid="classcryomesh_1_1common_1_1TimeKeeper_1aa0bfaecbd5118af91d63296f158cee09" compoundref="TimeKeeper_8cpp" startline="76" endline="78">cryomesh::common::TimeKeeper::getCycle</references>
+        <references refid="classcryomesh_1_1common_1_1TimeKeeper_1afe7b229532e11119cb2653192615d679" compoundref="TimeKeeper_8cpp" startline="19" endline="24">cryomesh::common::TimeKeeper::getTimeKeeper</references>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1aa982e5617f8180e3a3cc848f860d69de" compoundref="DatabaseManager_8h" startline="548">MAX_COMMAND_HISTORY</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a5fd2be20d4f85aa6b61f0e42724f71ff" compoundref="DatabaseManager_8cpp" startline="364" endline="382">addHistoryEntry</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a6bb580dd32e3af71670579e05663a1" compoundref="DatabaseManager_8cpp" startline="329" endline="362">sqlCommand</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseManager_1a5fd2be20d4f85aa6b61f0e42724f71ff" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::multimap&lt; <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref>, std::pair&lt; std::string, std::string &gt; &gt; &amp;</type>
+        <definition>const std::multimap&lt; common::Cycle, std::pair&lt; std::string, std::string &gt; &gt; &amp; cryomesh::manager::DatabaseManager::addHistoryEntry</definition>
+        <argsstring>(const std::string &amp;command, const std::vector&lt; std::string &gt; &amp;results, std::multimap&lt; common::Cycle, std::pair&lt; std::string, std::string &gt; &gt; &amp;map)</argsstring>
+        <name>addHistoryEntry</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>results</declname>
+        </param>
+        <param>
+          <type>std::multimap&lt; <ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref>, std::pair&lt; std::string, std::string &gt; &gt; &amp;</type>
+          <declname>map</declname>
+        </param>
+        <briefdescription>
+<para>Add an list of entries to a historical multimap. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::vector&lt;std::string&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Entries to add </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>std::multimap&lt;std::string</parametername>
+<parametername>std::string&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Map to add entry to</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::multimap&lt;std::string, std::string&gt; Return the modified map </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="592" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.cpp" bodystart="364" bodyend="382"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseManager_1a928357a9f8dc8f962dd1997258b4f26e" compoundref="DatabaseManager_8cpp" startline="383" endline="394">addHistoryEntry</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Database manager creates and maintains a database of mesh related objects and data. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="371">
+        <label>cryomesh::manager::NodeTableFormat</label>
+        <link refid="structcryomesh_1_1manager_1_1NodeTableFormat"/>
+        <childnode refid="367" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="367">
+        <label>cryomesh::manager::TableFormat</label>
+        <link refid="structcryomesh_1_1manager_1_1TableFormat"/>
+        <childnode refid="368" relation="usage">
+          <edgelabel>columns</edgelabel>
+        </childnode>
+        <childnode refid="369" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="365">
+        <label>cryomesh::manager::DatabaseManager</label>
+        <link refid="classcryomesh_1_1manager_1_1DatabaseManager"/>
+        <childnode refid="366" relation="usage">
+          <edgelabel>OUTPUT_PATTERNS_TABLE_FORMAT</edgelabel>
+        </childnode>
+        <childnode refid="371" relation="usage">
+          <edgelabel>NODES_TABLE_FORMAT</edgelabel>
+        </childnode>
+        <childnode refid="372" relation="usage">
+          <edgelabel>CONNECTIONS_TABLE_FORMAT</edgelabel>
+        </childnode>
+        <childnode refid="373" relation="usage">
+          <edgelabel>MAX_COMMAND_HISTORY</edgelabel>
+        </childnode>
+        <childnode refid="369" relation="usage">
+          <edgelabel>DEFAULT_DATABASE_PATH</edgelabel>
+          <edgelabel>DEFAULT_DATABASE</edgelabel>
+        </childnode>
+        <childnode refid="374" relation="usage">
+          <edgelabel>sqlResults</edgelabel>
+        </childnode>
+        <childnode refid="375" relation="usage">
+          <edgelabel>sqlResultsBuffer</edgelabel>
+        </childnode>
+      </node>
+      <node id="373">
+        <label>cryomesh::common::Cycle</label>
+        <link refid="classcryomesh_1_1common_1_1Cycle"/>
+      </node>
+      <node id="370">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="368">
+        <label>std::map&lt; std::string, std::string &gt;</label>
+        <childnode refid="369" relation="usage">
+          <edgelabel>keys</edgelabel>
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="375">
+        <label>std::vector&lt; std::string &gt;</label>
+        <childnode refid="369" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="366">
+        <label>cryomesh::manager::OutputPatternsTableFormat</label>
+        <link refid="structcryomesh_1_1manager_1_1OutputPatternsTableFormat"/>
+        <childnode refid="367" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="372">
+        <label>cryomesh::manager::ConnectionTableFormat</label>
+        <link refid="structcryomesh_1_1manager_1_1ConnectionTableFormat"/>
+        <childnode refid="367" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="374">
+        <label>std::multimap&lt; common::Cycle, std::pair&lt; std::string, std::string &gt; &gt;</label>
+        <childnode refid="373" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+      </node>
+      <node id="369">
+        <label>std::string</label>
+        <childnode refid="370" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" line="30" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseManager.h" bodystart="30" bodyend="593"/>
+    <listofallmembers>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a928357a9f8dc8f962dd1997258b4f26e" prot="protected" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>addHistoryEntry</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a5fd2be20d4f85aa6b61f0e42724f71ff" prot="protected" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>addHistoryEntry</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1aa7265c2234d74d2931281ecb5cda83db" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>clearTable</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1ad59a62d4e7a3dee8bb04ed5cbd579efb" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>clearTables</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1ad318d1adc10df5e9ad8a55252b627456" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>CONNECTIONS_TABLE_FORMAT</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a40f5c4b6df9c281e1f667f27c18aacba" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>countConnections</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a8c2a8fe55d1df17b9ed35bfa0a625390" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>countNodes</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a5aefac8742cb35d27d2df611658fe10b" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>countRows</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a21be3e6475e8e0bbb831a152438db9" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>createTables</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1afa0d9b3d19f26e04dc14e5cbb018cddc" prot="protected" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>database</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1ac09173fec7302858a6c0e4ac2d0f5b5d" prot="protected" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>databaseAccess</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a3cde0d12f3b2a4ae1e48cd07089920be" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>databaseCallback</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a5dbfbb7dd102cdc96d76992eda32fc2d" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>DatabaseManager</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1af923abab509958feea706f57c8a9cd81" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>DatabaseManager</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a83c6bbd218ba8c1b5e7391e60b933fe9" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>DEFAULT_DATABASE</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1add36833b81e7d10423c902929484c70c" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>DEFAULT_DATABASE_PATH</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1afbfe5f58ea22424da83657c525bbe50e" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>deleteAll</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a27d2711406856ab0a3145e16117b1095" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>deleteAllByCycle</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a8095a326205cb6bccf529291f3ecb372" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>deleteByCycle</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a9dcb39c5eda5a6aa91addb20b8090968" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>deleteConnection</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a15dfa7b9dbf0164d7f37e6546f368e38" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>deleteConnections</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a419d14216ddd047471c8c5d5124b83cf" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>deleteConnectionsByCycle</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a95b3a22e66f6803e9b9875fc9d522218" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>deleteNode</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1aae668efd45d2f48593e7e7810ecfa0c2" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>deleteNodes</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1ae7b5187077ed92ee43b408a635f0ec87" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>deleteNodesByCycle</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1aa843bb7f909b2b47437a9597a8966786" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>deleteOutputPattern</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1ae0bdd63971d6363c6525136264def2c9" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>deleteOutputPatterns</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1ae7a0c296543488886e60e4cb73a4cf95" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>deleteSelected</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a93a9f35b55d065f82df536c228c75a2d" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>dropTable</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a05a135d69a6712413acd15427ce7e630" prot="protected" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>errorCode</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a090927bf06bda68c2f19f6c91997e606" prot="protected" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>errorMessage</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a0e5eaf4c78e61a54e9ead0148d7e8851" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>insertConnection</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a74b282e11bd8c59a1e620b89cfe95ab2" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>insertNode</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a48308f572e1d87a7f44e1e9fbeaf132b" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>insertOutputPattern</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1ad486e95ee9d6542ad72f91047abbc98a" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>isDatabaseAccessable</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1aa982e5617f8180e3a3cc848f860d69de" prot="protected" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>MAX_COMMAND_HISTORY</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a012235d36d2c11662d1714723d70beb2" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>NODES_TABLE_FORMAT</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a50fcb1a1aa55a3330ddc189e65bd46d4" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>operator=</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a4e48c5624fa72f404f104c079e961b74" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>OUTPUT_PATTERNS_TABLE_FORMAT</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a91bcff35ff6bc32dcb9eee99d416f1e2" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>printHistory</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1ae949b3904e471572d7cbe389016b991e" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>printHistory</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1aa706d8042942d406c73d7ab60c5c1a89" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>select</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1ab24de957b5908a4dc7d0c9146b43488b" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>selectConnection</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a293d93aa671e648edb0dc8a47663e7d0" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>selectConnections</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1aaeb8756f7f7e62b152fa226cddbc191e" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>selectConnectionValue</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a72e0ced2c0638556f66cbceb60123aa5" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>selectNode</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1abbdc677c45f6cf24e46f9ab4f1d15804" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>selectNodes</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a2a37d932ea951b4a45d4452e8631c1b4" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>selectNodeValue</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a04e8afc360e46b238415910dcafc2dd8" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>selectOutputPattern</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a9a49d50bc76aa1686da01b9ebe3bbc8b" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>selectOutputPatterns</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a31be85012297a3c2cda1ab43f7730986" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>selectOutputPatternValue</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1af2d4487c9955417740ecaeeb7e27db4f" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>selectValue</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a7a6bb580dd32e3af71670579e05663a1" prot="protected" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>sqlCommand</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a409074c27567420f0a2d578f9a6bc124" prot="protected" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>sqlCommandBySelection</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a1f492cb29428437d917edf1e5b085825" prot="protected" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>sqlResults</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1aae9b0bfc988f6cab5dc3b0f931c7214c" prot="protected" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>sqlResultsBuffer</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a591a9f332c898ed4a49f388baccdf6aa" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>updateByUUID</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a56bcdc411b12086ca0c7e652bb47efa0" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>updateConnection</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a9099aacdb6f8570c7b95364986e5e32a" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>updateNode</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseManager_1a776fd73e7daa1dd6aa222daf6398b7cf" prot="public" virt="virtual"><scope>cryomesh::manager::DatabaseManager</scope><name>~DatabaseManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

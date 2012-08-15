@@ -1,0 +1,562 @@
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject}{\section{cryomesh\-:\-:dataobjects\-:\-:\-Data\-Object$<$ \-U, \-T $>$ \-Class \-Template \-Reference}
+\label{classcryomesh_1_1dataobjects_1_1DataObject}\index{cryomesh\-::dataobjects\-::\-Data\-Object$<$ U, T $>$@{cryomesh\-::dataobjects\-::\-Data\-Object$<$ U, T $>$}}
+}
+
+
+\-Class to contain all the useful data about an object.  
+
+
+
+
+{\ttfamily \#include $<$\-Data\-Object.\-h$>$}
+
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_a88c071e82534aa8b82c336a8104f9df8}{\-Comparison\-Type} \{ \hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_a88c071e82534aa8b82c336a8104f9df8a00afa6fa8995597a48446b10044adc31}{\-Maximum\-Value}, 
+\hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_a88c071e82534aa8b82c336a8104f9df8adae0956c6e44c6d998d47407b6c1c9cd}{\-Minimum\-Value}, 
+\hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_a88c071e82534aa8b82c336a8104f9df8a9d1e58881794d424bd4759039d034741}{\-Equality\-Value}, 
+\hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_a88c071e82534aa8b82c336a8104f9df8abb8ba259cb26552c16f621c559f3e23d}{\-Average\-Value}
+ \}
+\begin{DoxyCompactList}\small\item\em \-Enum to signal the type of comparison to make. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_a8be8493ecc93482b2ab10dc8c0a93440}{\-Data\-Object} ()
+\begin{DoxyCompactList}\small\item\em \-Default contructor. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_aff5302c3c41e16d4cc828d2bc3658cda}{\-Data\-Object} (unsigned int sz)
+\begin{DoxyCompactList}\small\item\em \-Contructor with max size. \end{DoxyCompactList}\item 
+virtual \hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_a5542785b10e905eae83370406126830d}{$\sim$\-Data\-Object} ()
+\begin{DoxyCompactList}\small\item\em \-Default destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_a82e70f55cf4bff3c139a7aeaad4fc475}{enable\-Logging} (bool enable)
+\begin{DoxyCompactList}\small\item\em \-Whether logging is enabled or not. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_ac47906fb6abbb0e655e143b604255785}{is\-Logging\-Enabled} ()
+\begin{DoxyCompactList}\small\item\em \-Check logging is enabled or not. \end{DoxyCompactList}\item 
+const std\-::map$<$ \-U, \-T $>$ \& \hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_a7b940ad5f397713567877b5295094fdd}{get\-Map} () const 
+\begin{DoxyCompactList}\small\item\em \-Get all cycle values. \end{DoxyCompactList}\item 
+std\-::map$<$ \-U, \-T $>$ \& \hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_a52fe0b6b4106762a553875406ebd7023}{get\-Mutable\-Map} ()
+\begin{DoxyCompactList}\small\item\em \-Get all mutable cycle values. \end{DoxyCompactList}\item 
+const std\-::map$<$ \-U, \-T $>$ \hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_a8e13c80d428064a1df4102da310c7836}{get\-Map} (\-U start, \-U end) const 
+\begin{DoxyCompactList}\small\item\em \-Get all values within a range \mbox{[}start, end\mbox{]}. \end{DoxyCompactList}\item 
+const std\-::map$<$ \-U, \-T $>$ \hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_a04d86549f1cda29465e548fa3776fea6}{get\-Map} (\-U start) const 
+\begin{DoxyCompactList}\small\item\em \-Get all values within a range \mbox{[}start, \mbox{]}. \end{DoxyCompactList}\item 
+const \-T \hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_a186b4e6a80bdf6a6d26c65e00c8aa547}{get\-By\-Key} (\-U key) const 
+\begin{DoxyCompactList}\small\item\em \-Get value from key. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_a55ad9c772c8b174af40cbb530cf5fade}{clear} ()
+\begin{DoxyCompactList}\small\item\em \-Clear all data. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_a7e57af8afd265116b13b027cc9ab6c52}{insert} (\-U key, \-T object)
+\begin{DoxyCompactList}\small\item\em \-Add entry. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_a4b98ff0b286059f8c2cbe8277bfd3e02}{get\-Dataset\-Maximum\-Size} () const 
+\item 
+void \hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_acdbdebc4d83ea9bde080ecf15a3ec6c6}{set\-Dataset\-Maximum\-Size} (unsigned int sz)
+\item 
+\-T \hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_a1069d7cb1f2eb64c23d5eff7a5e15285}{get\-Value\-Comparison} (\hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_a88c071e82534aa8b82c336a8104f9df8}{\-Comparison\-Type} type) const 
+\begin{DoxyCompactList}\small\item\em \-Get comparison values. \end{DoxyCompactList}\item 
+\-T \hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_af92f3014a1406b596854b4b2fc9677a0}{get\-Maximum\-Value} () const 
+\begin{DoxyCompactList}\small\item\em \-Get maximum value. \end{DoxyCompactList}\item 
+\-T \hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_a13afe46cb0349fba1a48636d34a46810}{get\-Minimum\-Value} () const 
+\begin{DoxyCompactList}\small\item\em \-Get minimum value. \end{DoxyCompactList}\item 
+\-T \hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_ad1cd1f103cdaabb509abae7709cd8b09}{get\-Average\-Value} () const 
+\begin{DoxyCompactList}\small\item\em \-Get average value value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::map$<$ \-U, \-T $>$ \hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_a9f345f10bea7d0554e09dbb4f598cd57}{value\-Map}
+\item 
+bool \hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_a02128a10817ab449328375401f0199a9}{logging\-Enabled}
+\item 
+unsigned int \hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_acec41108abc1ba2b1228e79bf14bb991}{dataset\-Maximum\-Size}
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int \hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_a493f002671f8c2d4db2b2a2953e434a0}{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-A\-S\-E\-T\-\_\-\-S\-I\-Z\-E} = 100
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1dataobjects_1_1DataObject_a71175025fe382ef063f84ad2281165aa}{operator$<$$<$} (std\-::ostream \&os, const \hyperlink{classcryomesh_1_1dataobjects_1_1DataObject}{\-Data\-Object} \&obj)
+\begin{DoxyCompactList}\small\item\em \-To stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\subsubsection*{template$<$class \-U, class \-T$>$class cryomesh\-::dataobjects\-::\-Data\-Object$<$ U, T $>$}
+
+\-Class to contain all the useful data about an object. 
+
+\-Useful for output and plotting 
+
+\-Definition at line 22 of file \-Data\-Object.\-h.
+
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_a88c071e82534aa8b82c336a8104f9df8}{\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!\-Comparison\-Type@{\-Comparison\-Type}}
+\index{\-Comparison\-Type@{\-Comparison\-Type}!cryomesh::dataobjects::DataObject@{cryomesh\-::dataobjects\-::\-Data\-Object}}
+\subsubsection[{\-Comparison\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ enum {\bf cryomesh\-::dataobjects\-::\-Data\-Object}$<$ \-U, \-T $>$\-::{\bf \-Comparison\-Type}}}\label{classcryomesh_1_1dataobjects_1_1DataObject_a88c071e82534aa8b82c336a8104f9df8}
+
+
+\-Enum to signal the type of comparison to make. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-Maximum\-Value@{\-Maximum\-Value}!cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}}\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!\-Maximum\-Value@{\-Maximum\-Value}}\item[{\em 
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_a88c071e82534aa8b82c336a8104f9df8a00afa6fa8995597a48446b10044adc31}{\-Maximum\-Value}\label{classcryomesh_1_1dataobjects_1_1DataObject_a88c071e82534aa8b82c336a8104f9df8a00afa6fa8995597a48446b10044adc31}
+}]\index{\-Minimum\-Value@{\-Minimum\-Value}!cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}}\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!\-Minimum\-Value@{\-Minimum\-Value}}\item[{\em 
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_a88c071e82534aa8b82c336a8104f9df8adae0956c6e44c6d998d47407b6c1c9cd}{\-Minimum\-Value}\label{classcryomesh_1_1dataobjects_1_1DataObject_a88c071e82534aa8b82c336a8104f9df8adae0956c6e44c6d998d47407b6c1c9cd}
+}]\index{\-Equality\-Value@{\-Equality\-Value}!cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}}\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!\-Equality\-Value@{\-Equality\-Value}}\item[{\em 
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_a88c071e82534aa8b82c336a8104f9df8a9d1e58881794d424bd4759039d034741}{\-Equality\-Value}\label{classcryomesh_1_1dataobjects_1_1DataObject_a88c071e82534aa8b82c336a8104f9df8a9d1e58881794d424bd4759039d034741}
+}]\index{\-Average\-Value@{\-Average\-Value}!cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}}\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!\-Average\-Value@{\-Average\-Value}}\item[{\em 
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_a88c071e82534aa8b82c336a8104f9df8abb8ba259cb26552c16f621c559f3e23d}{\-Average\-Value}\label{classcryomesh_1_1dataobjects_1_1DataObject_a88c071e82534aa8b82c336a8104f9df8abb8ba259cb26552c16f621c559f3e23d}
+}]\end{description}
+\end{Desc}
+
+
+
+\-Definition at line 29 of file \-Data\-Object.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_a8be8493ecc93482b2ab10dc8c0a93440}{\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!\-Data\-Object@{\-Data\-Object}}
+\index{\-Data\-Object@{\-Data\-Object}!cryomesh::dataobjects::DataObject@{cryomesh\-::dataobjects\-::\-Data\-Object}}
+\subsubsection[{\-Data\-Object}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ {\bf cryomesh\-::dataobjects\-::\-Data\-Object}$<$ \-U, \-T $>$\-::{\bf \-Data\-Object} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObject_a8be8493ecc93482b2ab10dc8c0a93440}
+
+
+\-Default contructor. 
+
+
+
+\-Definition at line 36 of file \-Data\-Object.\-h.
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_aff5302c3c41e16d4cc828d2bc3658cda}{\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!\-Data\-Object@{\-Data\-Object}}
+\index{\-Data\-Object@{\-Data\-Object}!cryomesh::dataobjects::DataObject@{cryomesh\-::dataobjects\-::\-Data\-Object}}
+\subsubsection[{\-Data\-Object}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ {\bf cryomesh\-::dataobjects\-::\-Data\-Object}$<$ \-U, \-T $>$\-::{\bf \-Data\-Object} (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{sz}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObject_aff5302c3c41e16d4cc828d2bc3658cda}
+
+
+\-Contructor with max size. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em unsigned} & int \-The maximum size of the data set \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 46 of file \-Data\-Object.\-h.
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_a5542785b10e905eae83370406126830d}{\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!$\sim$\-Data\-Object@{$\sim$\-Data\-Object}}
+\index{$\sim$\-Data\-Object@{$\sim$\-Data\-Object}!cryomesh::dataobjects::DataObject@{cryomesh\-::dataobjects\-::\-Data\-Object}}
+\subsubsection[{$\sim$\-Data\-Object}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ virtual {\bf cryomesh\-::dataobjects\-::\-Data\-Object}$<$ \-U, \-T $>$\-::$\sim${\bf \-Data\-Object} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObject_a5542785b10e905eae83370406126830d}
+
+
+\-Default destructor. 
+
+
+
+\-Definition at line 53 of file \-Data\-Object.\-h.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_a55ad9c772c8b174af40cbb530cf5fade}{\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!clear@{clear}}
+\index{clear@{clear}!cryomesh::dataobjects::DataObject@{cryomesh\-::dataobjects\-::\-Data\-Object}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ void {\bf cryomesh\-::dataobjects\-::\-Data\-Object}$<$ \-U, \-T $>$\-::{\bf clear} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObject_a55ad9c772c8b174af40cbb530cf5fade}
+
+
+\-Clear all data. 
+
+
+
+\-Definition at line 178 of file \-Data\-Object.\-h.
+
+
+
+\-Referenced by cryomesh\-::components\-::\-Impulse\-Collection\-::refresh\-Data\-Object().
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_a82e70f55cf4bff3c139a7aeaad4fc475}{\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!enable\-Logging@{enable\-Logging}}
+\index{enable\-Logging@{enable\-Logging}!cryomesh::dataobjects::DataObject@{cryomesh\-::dataobjects\-::\-Data\-Object}}
+\subsubsection[{enable\-Logging}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ void {\bf cryomesh\-::dataobjects\-::\-Data\-Object}$<$ \-U, \-T $>$\-::{\bf enable\-Logging} (
+\begin{DoxyParamCaption}
+\item[{bool}]{enable}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObject_a82e70f55cf4bff3c139a7aeaad4fc475}
+
+
+\-Whether logging is enabled or not. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em bool} & enable \-True to enable logging, false otherwise \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 62 of file \-Data\-Object.\-h.
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_ad1cd1f103cdaabb509abae7709cd8b09}{\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!get\-Average\-Value@{get\-Average\-Value}}
+\index{get\-Average\-Value@{get\-Average\-Value}!cryomesh::dataobjects::DataObject@{cryomesh\-::dataobjects\-::\-Data\-Object}}
+\subsubsection[{get\-Average\-Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ \-T {\bf cryomesh\-::dataobjects\-::\-Data\-Object}$<$ \-U, \-T $>$\-::{\bf get\-Average\-Value} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObject_ad1cd1f103cdaabb509abae7709cd8b09}
+
+
+\-Get average value value. 
+
+\begin{DoxyReturn}{\-Returns}
+\-T \-The resultant value 
+\end{DoxyReturn}
+
+
+\-Definition at line 283 of file \-Data\-Object.\-h.
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_a186b4e6a80bdf6a6d26c65e00c8aa547}{\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!get\-By\-Key@{get\-By\-Key}}
+\index{get\-By\-Key@{get\-By\-Key}!cryomesh::dataobjects::DataObject@{cryomesh\-::dataobjects\-::\-Data\-Object}}
+\subsubsection[{get\-By\-Key}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ const \-T {\bf cryomesh\-::dataobjects\-::\-Data\-Object}$<$ \-U, \-T $>$\-::{\bf get\-By\-Key} (
+\begin{DoxyParamCaption}
+\item[{\-U}]{key}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObject_a186b4e6a80bdf6a6d26c65e00c8aa547}
+
+
+\-Get value from key. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-U} & key \-The key to find\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-T \-The value found 
+\end{DoxyReturn}
+
+
+\-Definition at line 138 of file \-Data\-Object.\-h.
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_a4b98ff0b286059f8c2cbe8277bfd3e02}{\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!get\-Dataset\-Maximum\-Size@{get\-Dataset\-Maximum\-Size}}
+\index{get\-Dataset\-Maximum\-Size@{get\-Dataset\-Maximum\-Size}!cryomesh::dataobjects::DataObject@{cryomesh\-::dataobjects\-::\-Data\-Object}}
+\subsubsection[{get\-Dataset\-Maximum\-Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ unsigned int {\bf cryomesh\-::dataobjects\-::\-Data\-Object}$<$ \-U, \-T $>$\-::{\bf get\-Dataset\-Maximum\-Size} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObject_a4b98ff0b286059f8c2cbe8277bfd3e02}
+
+
+\-Definition at line 212 of file \-Data\-Object.\-h.
+
+
+
+\-Referenced by cryomesh\-::dataobjects\-::\-Data\-Object$<$ common\-::\-Cycle, double $>$\-::insert(), and cryomesh\-::components\-::\-Impulse\-Collection\-::refresh\-Data\-Object().
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_a7b940ad5f397713567877b5295094fdd}{\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!get\-Map@{get\-Map}}
+\index{get\-Map@{get\-Map}!cryomesh::dataobjects::DataObject@{cryomesh\-::dataobjects\-::\-Data\-Object}}
+\subsubsection[{get\-Map}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ const std\-::map$<$\-U, \-T$>$\& {\bf cryomesh\-::dataobjects\-::\-Data\-Object}$<$ \-U, \-T $>$\-::{\bf get\-Map} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObject_a7b940ad5f397713567877b5295094fdd}
+
+
+\-Get all cycle values. 
+
+\begin{DoxyReturn}{\-Returns}
+std\-::map$<$unsigned long int, double$>$ \& \-The cycle values 
+\end{DoxyReturn}
+
+
+\-Definition at line 81 of file \-Data\-Object.\-h.
+
+
+
+\-Referenced by cryomesh\-::components\-::\-Node\-::get\-Activities().
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_a8e13c80d428064a1df4102da310c7836}{\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!get\-Map@{get\-Map}}
+\index{get\-Map@{get\-Map}!cryomesh::dataobjects::DataObject@{cryomesh\-::dataobjects\-::\-Data\-Object}}
+\subsubsection[{get\-Map}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ const std\-::map$<$\-U, \-T$>$ {\bf cryomesh\-::dataobjects\-::\-Data\-Object}$<$ \-U, \-T $>$\-::{\bf get\-Map} (
+\begin{DoxyParamCaption}
+\item[{\-U}]{start, }
+\item[{\-U}]{end}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObject_a8e13c80d428064a1df4102da310c7836}
+
+
+\-Get all values within a range \mbox{[}start, end\mbox{]}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-U} & start \-The start cycle of the range \\
+\hline
+{\em \-U} & end \-The end cycle of the range\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::map$<$unsigned long int, double$>$ \-The cycle values 
+\end{DoxyReturn}
+
+
+\-Definition at line 106 of file \-Data\-Object.\-h.
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_a04d86549f1cda29465e548fa3776fea6}{\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!get\-Map@{get\-Map}}
+\index{get\-Map@{get\-Map}!cryomesh::dataobjects::DataObject@{cryomesh\-::dataobjects\-::\-Data\-Object}}
+\subsubsection[{get\-Map}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ const std\-::map$<$\-U, \-T$>$ {\bf cryomesh\-::dataobjects\-::\-Data\-Object}$<$ \-U, \-T $>$\-::{\bf get\-Map} (
+\begin{DoxyParamCaption}
+\item[{\-U}]{start}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObject_a04d86549f1cda29465e548fa3776fea6}
+
+
+\-Get all values within a range \mbox{[}start, \mbox{]}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-U} & start \-The start cycle of the range\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::map$<$unsigned long int, double$>$ \-The cycle values 
+\end{DoxyReturn}
+
+
+\-Definition at line 122 of file \-Data\-Object.\-h.
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_af92f3014a1406b596854b4b2fc9677a0}{\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!get\-Maximum\-Value@{get\-Maximum\-Value}}
+\index{get\-Maximum\-Value@{get\-Maximum\-Value}!cryomesh::dataobjects::DataObject@{cryomesh\-::dataobjects\-::\-Data\-Object}}
+\subsubsection[{get\-Maximum\-Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ \-T {\bf cryomesh\-::dataobjects\-::\-Data\-Object}$<$ \-U, \-T $>$\-::{\bf get\-Maximum\-Value} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObject_af92f3014a1406b596854b4b2fc9677a0}
+
+
+\-Get maximum value. 
+
+\begin{DoxyReturn}{\-Returns}
+\-T \-The resultant value 
+\end{DoxyReturn}
+
+
+\-Definition at line 263 of file \-Data\-Object.\-h.
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_a13afe46cb0349fba1a48636d34a46810}{\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!get\-Minimum\-Value@{get\-Minimum\-Value}}
+\index{get\-Minimum\-Value@{get\-Minimum\-Value}!cryomesh::dataobjects::DataObject@{cryomesh\-::dataobjects\-::\-Data\-Object}}
+\subsubsection[{get\-Minimum\-Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ \-T {\bf cryomesh\-::dataobjects\-::\-Data\-Object}$<$ \-U, \-T $>$\-::{\bf get\-Minimum\-Value} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObject_a13afe46cb0349fba1a48636d34a46810}
+
+
+\-Get minimum value. 
+
+\begin{DoxyReturn}{\-Returns}
+\-T \-The resultant value 
+\end{DoxyReturn}
+
+
+\-Definition at line 273 of file \-Data\-Object.\-h.
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_a52fe0b6b4106762a553875406ebd7023}{\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!get\-Mutable\-Map@{get\-Mutable\-Map}}
+\index{get\-Mutable\-Map@{get\-Mutable\-Map}!cryomesh::dataobjects::DataObject@{cryomesh\-::dataobjects\-::\-Data\-Object}}
+\subsubsection[{get\-Mutable\-Map}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ std\-::map$<$\-U, \-T$>$\& {\bf cryomesh\-::dataobjects\-::\-Data\-Object}$<$ \-U, \-T $>$\-::{\bf get\-Mutable\-Map} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObject_a52fe0b6b4106762a553875406ebd7023}
+
+
+\-Get all mutable cycle values. 
+
+\begin{DoxyReturn}{\-Returns}
+std\-::map$<$\-U, T$>$ \& \-The mutable cycle values 
+\end{DoxyReturn}
+
+
+\-Definition at line 91 of file \-Data\-Object.\-h.
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_a1069d7cb1f2eb64c23d5eff7a5e15285}{\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!get\-Value\-Comparison@{get\-Value\-Comparison}}
+\index{get\-Value\-Comparison@{get\-Value\-Comparison}!cryomesh::dataobjects::DataObject@{cryomesh\-::dataobjects\-::\-Data\-Object}}
+\subsubsection[{get\-Value\-Comparison}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ \-T {\bf cryomesh\-::dataobjects\-::\-Data\-Object}$<$ \-U, \-T $>$\-::{\bf get\-Value\-Comparison} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Comparison\-Type}}]{type}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObject_a1069d7cb1f2eb64c23d5eff7a5e15285}
+
+
+\-Get comparison values. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Comparison\-Type} & type \-The type of comparison to make\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-T \-The result of the comparison 
+\end{DoxyReturn}
+
+
+\-Definition at line 229 of file \-Data\-Object.\-h.
+
+
+
+\-Referenced by cryomesh\-::dataobjects\-::\-Data\-Object$<$ common\-::\-Cycle, double $>$\-::get\-Average\-Value(), cryomesh\-::dataobjects\-::\-Data\-Object$<$ common\-::\-Cycle, double $>$\-::get\-Maximum\-Value(), and cryomesh\-::dataobjects\-::\-Data\-Object$<$ common\-::\-Cycle, double $>$\-::get\-Minimum\-Value().
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_a7e57af8afd265116b13b027cc9ab6c52}{\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!insert@{insert}}
+\index{insert@{insert}!cryomesh::dataobjects::DataObject@{cryomesh\-::dataobjects\-::\-Data\-Object}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ void {\bf cryomesh\-::dataobjects\-::\-Data\-Object}$<$ \-U, \-T $>$\-::{\bf insert} (
+\begin{DoxyParamCaption}
+\item[{\-U}]{key, }
+\item[{\-T}]{object}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObject_a7e57af8afd265116b13b027cc9ab6c52}
+
+
+\-Add entry. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em unsigned} & int cycle \-The cycle the value is on \\
+\hline
+{\em double} & \-The value \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 191 of file \-Data\-Object.\-h.
+
+
+
+\-Referenced by cryomesh\-::components\-::\-Node\-::add\-Activity(), cryomesh\-::components\-::\-Impulse\-Collection\-::refresh\-Data\-Object(), and cryomesh\-::components\-::\-Node\-::update().
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_ac47906fb6abbb0e655e143b604255785}{\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!is\-Logging\-Enabled@{is\-Logging\-Enabled}}
+\index{is\-Logging\-Enabled@{is\-Logging\-Enabled}!cryomesh::dataobjects::DataObject@{cryomesh\-::dataobjects\-::\-Data\-Object}}
+\subsubsection[{is\-Logging\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ bool {\bf cryomesh\-::dataobjects\-::\-Data\-Object}$<$ \-U, \-T $>$\-::{\bf is\-Logging\-Enabled} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObject_ac47906fb6abbb0e655e143b604255785}
+
+
+\-Check logging is enabled or not. 
+
+\begin{DoxyReturn}{\-Returns}
+bool enable \-Trueif logging enabled, flase otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 71 of file \-Data\-Object.\-h.
+
+
+
+\-Referenced by cryomesh\-::components\-::\-Impulse\-Collection\-::refresh\-Data\-Object(), and cryomesh\-::components\-::\-Node\-::update().
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_acdbdebc4d83ea9bde080ecf15a3ec6c6}{\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!set\-Dataset\-Maximum\-Size@{set\-Dataset\-Maximum\-Size}}
+\index{set\-Dataset\-Maximum\-Size@{set\-Dataset\-Maximum\-Size}!cryomesh::dataobjects::DataObject@{cryomesh\-::dataobjects\-::\-Data\-Object}}
+\subsubsection[{set\-Dataset\-Maximum\-Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ void {\bf cryomesh\-::dataobjects\-::\-Data\-Object}$<$ \-U, \-T $>$\-::{\bf set\-Dataset\-Maximum\-Size} (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{sz}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObject_acdbdebc4d83ea9bde080ecf15a3ec6c6}
+
+
+\-Definition at line 216 of file \-Data\-Object.\-h.
+
+
+
+\-Referenced by cryomesh\-::components\-::\-Node\-::\-Node().
+
+
+
+\subsection{\-Friends \-And \-Related \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_a71175025fe382ef063f84ad2281165aa}{\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cryomesh::dataobjects::DataObject@{cryomesh\-::dataobjects\-::\-Data\-Object}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ std\-::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const {\bf \-Data\-Object}$<$ \-U, \-T $>$ \&}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObject_a71175025fe382ef063f84ad2281165aa}
+
+
+\-To stream operator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::ostream} & \& os \-The output stream \\
+\hline
+{\em const} & \hyperlink{classcryomesh_1_1dataobjects_1_1DataObject}{\-Data\-Object} \& obj \-The object to stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::ostream \& \-The output stream 
+\end{DoxyReturn}
+
+
+\-Definition at line 159 of file \-Data\-Object.\-h.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_acec41108abc1ba2b1228e79bf14bb991}{\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!dataset\-Maximum\-Size@{dataset\-Maximum\-Size}}
+\index{dataset\-Maximum\-Size@{dataset\-Maximum\-Size}!cryomesh::dataobjects::DataObject@{cryomesh\-::dataobjects\-::\-Data\-Object}}
+\subsubsection[{dataset\-Maximum\-Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ unsigned int {\bf cryomesh\-::dataobjects\-::\-Data\-Object}$<$ \-U, \-T $>$\-::{\bf dataset\-Maximum\-Size}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObject_acec41108abc1ba2b1228e79bf14bb991}
+
+
+\-Definition at line 306 of file \-Data\-Object.\-h.
+
+
+
+\-Referenced by cryomesh\-::dataobjects\-::\-Data\-Object$<$ common\-::\-Cycle, double $>$\-::get\-Dataset\-Maximum\-Size(), and cryomesh\-::dataobjects\-::\-Data\-Object$<$ common\-::\-Cycle, double $>$\-::set\-Dataset\-Maximum\-Size().
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_a493f002671f8c2d4db2b2a2953e434a0}{\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-A\-S\-E\-T\-\_\-\-S\-I\-Z\-E@{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-A\-S\-E\-T\-\_\-\-S\-I\-Z\-E}}
+\index{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-A\-S\-E\-T\-\_\-\-S\-I\-Z\-E@{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-A\-S\-E\-T\-\_\-\-S\-I\-Z\-E}!cryomesh::dataobjects::DataObject@{cryomesh\-::dataobjects\-::\-Data\-Object}}
+\subsubsection[{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-A\-S\-E\-T\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ const unsigned int {\bf cryomesh\-::dataobjects\-::\-Data\-Object}$<$ \-U, \-T $>$\-::{\bf \-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-A\-S\-E\-T\-\_\-\-S\-I\-Z\-E} = 100\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObject_a493f002671f8c2d4db2b2a2953e434a0}
+
+
+\-Definition at line 313 of file \-Data\-Object.\-h.
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_a02128a10817ab449328375401f0199a9}{\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!logging\-Enabled@{logging\-Enabled}}
+\index{logging\-Enabled@{logging\-Enabled}!cryomesh::dataobjects::DataObject@{cryomesh\-::dataobjects\-::\-Data\-Object}}
+\subsubsection[{logging\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ bool {\bf cryomesh\-::dataobjects\-::\-Data\-Object}$<$ \-U, \-T $>$\-::{\bf logging\-Enabled}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObject_a02128a10817ab449328375401f0199a9}
+
+
+\-Definition at line 299 of file \-Data\-Object.\-h.
+
+
+
+\-Referenced by cryomesh\-::dataobjects\-::\-Data\-Object$<$ common\-::\-Cycle, double $>$\-::enable\-Logging(), and cryomesh\-::dataobjects\-::\-Data\-Object$<$ common\-::\-Cycle, double $>$\-::is\-Logging\-Enabled().
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObject_a9f345f10bea7d0554e09dbb4f598cd57}{\index{cryomesh\-::dataobjects\-::\-Data\-Object@{cryomesh\-::dataobjects\-::\-Data\-Object}!value\-Map@{value\-Map}}
+\index{value\-Map@{value\-Map}!cryomesh::dataobjects::DataObject@{cryomesh\-::dataobjects\-::\-Data\-Object}}
+\subsubsection[{value\-Map}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ std\-::map$<$\-U, \-T$>$ {\bf cryomesh\-::dataobjects\-::\-Data\-Object}$<$ \-U, \-T $>$\-::{\bf value\-Map}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObject_a9f345f10bea7d0554e09dbb4f598cd57}
+
+
+\-Definition at line 292 of file \-Data\-Object.\-h.
+
+
+
+\-Referenced by cryomesh\-::dataobjects\-::\-Data\-Object$<$ common\-::\-Cycle, double $>$\-::clear(), cryomesh\-::dataobjects\-::\-Data\-Object$<$ common\-::\-Cycle, double $>$\-::get\-By\-Key(), cryomesh\-::dataobjects\-::\-Data\-Object$<$ common\-::\-Cycle, double $>$\-::get\-Map(), cryomesh\-::dataobjects\-::\-Data\-Object$<$ common\-::\-Cycle, double $>$\-::get\-Mutable\-Map(), cryomesh\-::dataobjects\-::\-Data\-Object$<$ common\-::\-Cycle, double $>$\-::get\-Value\-Comparison(), and cryomesh\-::dataobjects\-::\-Data\-Object$<$ common\-::\-Cycle, double $>$\-::insert().
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/dataobjects/\hyperlink{DataObject_8h}{\-Data\-Object.\-h}\end{DoxyCompactItemize}

@@ -1,0 +1,944 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="classcryomesh_1_1manager_1_1Creator" kind="class" prot="public">
+    <compoundname>cryomesh::manager::Creator</compoundname>
+    <includes refid="Creator_8h" local="no">Creator.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classcryomesh_1_1manager_1_1Creator_1a36ec491bb68e6a595086c239af7bd989" prot="public" static="yes" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string cryomesh::manager::Creator::DEFAULT_DATABASE_FILENAME</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_DATABASE_FILENAME</name>
+        <initializer>&quot;cryomesh_default.db&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="205" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" bodystart="205" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1manager_1_1Creator_1ad0ddc3782c7fe0415181156fdeb6306b" prot="public" static="yes" mutable="no">
+        <type>std::map&lt; std::string, std::list&lt; std::string &gt; &gt;</type>
+        <definition>std::map&lt; std::string, std::list&lt; std::string &gt; &gt; cryomesh::manager::Creator::acceptedCommandList</definition>
+        <argsstring></argsstring>
+        <name>acceptedCommandList</name>
+        <initializer> <ref refid="classcryomesh_1_1manager_1_1Creator_1aa6de6b79f746213f844b207518b1577a" kindref="member">Creator::getAcceptedCommandList</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="212" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" bodystart="212" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1ae3d7dd77beadb0d05bbbe5f0c67e8292" compoundref="Creator_8cpp" startline="215" endline="243">checkConfigEntry</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcryomesh_1_1manager_1_1Creator_1a5d5c9a8aafa817c49c0787d0dae91a3a" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::Creator::databaseFilename</definition>
+        <argsstring></argsstring>
+        <name>databaseFilename</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="259" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" bodystart="259" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1manager_1_1Creator_1ace9dd9da21fab7cf04f6681d332d40cc" prot="private" static="no" mutable="no">
+        <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1structures_1_1Bundle" kindref="compound">structures::Bundle</ref> &gt;</type>
+        <definition>boost::shared_ptr&lt;structures::Bundle&gt; cryomesh::manager::Creator::bundle</definition>
+        <argsstring></argsstring>
+        <name>bundle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="266" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" bodystart="266" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1a8c773b097b7b4db87a46f749a2606a2b" compoundref="Creator_8cpp" startline="356" endline="372">autoConnectPrimaryInputs</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1a7ad46f5b3864cc596f0f36b55f884ce7" compoundref="Creator_8cpp" startline="374" endline="390">autoConnectPrimaryOutputs</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1a66333bb0409b2e6de38a58eaddeeb7b1" compoundref="Creator_8cpp" startline="284" endline="292">connectCluster</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1a074c92de2d06664b5d9d9fa5f96aa5ee" compoundref="Creator_8cpp" startline="342" endline="348">connectPrimaryInputChannel</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1a0977991d6697d06a104aacf40c07f5b4" compoundref="Creator_8cpp" startline="349" endline="354">connectPrimaryOutputChannel</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1af1395df65f66b2e1af4fdba9afe15cbc" compoundref="Creator_8cpp" startline="280" endline="283">createCluster</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1a10d07b373f504e7a479acb16abacb713" compoundref="Creator_8cpp" startline="74" endline="76">getBundle</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1a2155dae515aa5d360a577ef82437f338" compoundref="Creator_8cpp" startline="78" endline="80">getMutableBundle</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1a1cf96043a609df452620aba02370dd46" compoundref="Creator_8cpp" startline="94" endline="96">initialise</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1a73a74e5e35b5c969108a99cdf31c5108" compoundref="Creator_8cpp" startline="315" endline="341">loadData</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1manager_1_1Creator_1a10123f4421b6231c863d86ebb219b545" prot="private" static="no" mutable="no">
+        <type>std::map&lt; int, boost::uuids::uuid &gt;</type>
+        <definition>std::map&lt;int, boost::uuids::uuid&gt; cryomesh::manager::Creator::clusterIDMap</definition>
+        <argsstring></argsstring>
+        <name>clusterIDMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="273" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" bodystart="273" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1af1395df65f66b2e1af4fdba9afe15cbc" compoundref="Creator_8cpp" startline="280" endline="283">createCluster</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1adf060224477ba4086f7e4aab30b60cf6" compoundref="Creator_8cpp" startline="82" endline="84">getClusterIDMap</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1a1f8a19ce5f8e07015b3bbc7040ac2a8e" compoundref="Creator_8cpp" startline="419" endline="424">getClusterRealID</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1manager_1_1Creator_1aae2da58961bda370f9ec3498462a2411" prot="private" static="no" mutable="no">
+        <type>std::map&lt; int, boost::uuids::uuid &gt;</type>
+        <definition>std::map&lt;int, boost::uuids::uuid&gt; cryomesh::manager::Creator::fibreIDMap</definition>
+        <argsstring></argsstring>
+        <name>fibreIDMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="280" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" bodystart="280" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1ab4d9444e6760f1dd634db0f07db630bb" compoundref="Creator_8cpp" startline="86" endline="88">getFibreIDMap</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1ab6987a15c0794e7cd651519c28ad7eec" compoundref="Creator_8cpp" startline="426" endline="431">getFibreRealID</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1manager_1_1Creator_1a23dfcdd559d8bdbb1d03aac2587feb3a" prot="private" static="no" mutable="no">
+        <type>std::map&lt; int, boost::uuids::uuid &gt;</type>
+        <definition>std::map&lt;int, boost::uuids::uuid&gt; cryomesh::manager::Creator::patternChannelIDMap</definition>
+        <argsstring></argsstring>
+        <name>patternChannelIDMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="287" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" bodystart="287" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1a6721fe152f65ef7040b3dfa0cd143dc2" compoundref="Creator_8cpp" startline="90" endline="92">getPatternChannelIDMap</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1aeb8b3b6fddffcefb7f81780a81f5f28c" compoundref="Creator_8cpp" startline="433" endline="438">getPatternChannelRealID</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1a73a74e5e35b5c969108a99cdf31c5108" compoundref="Creator_8cpp" startline="315" endline="341">loadData</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1a4881650c49a273648a9bccddb9a832fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::manager::Creator::Creator</definition>
+        <argsstring>(const std::string &amp;config_filename, const std::string &amp;database_filename=DEFAULT_DATABASE_FILENAME)</argsstring>
+        <name>Creator</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>config_filename</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>database_filename</declname>
+          <defval><ref refid="classcryomesh_1_1manager_1_1Creator_1a36ec491bb68e6a595086c239af7bd989" kindref="member">DEFAULT_DATABASE_FILENAME</ref></defval>
+        </param>
+        <briefdescription>
+<para>Constructor to create a bundle from a config file name with option to specify the database file name that will be used. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name with full path of the config file </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name with full path of the database file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="42" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="47" bodyend="59"/>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1ac25b12d7fcd727c0228e551732605e10" compoundref="Creator_8cpp" startline="181" endline="193">createFromConfigFile</references>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1a1cf96043a609df452620aba02370dd46" compoundref="Creator_8cpp" startline="94" endline="96">initialise</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1a6479ea01aa020c99899198f08ef558b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::manager::Creator::Creator</definition>
+        <argsstring>(std::istream &amp;config_stream, const std::string &amp;database_filename=DEFAULT_DATABASE_FILENAME)</argsstring>
+        <name>Creator</name>
+        <param>
+          <type>std::istream &amp;</type>
+          <declname>config_stream</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>database_filename</declname>
+          <defval><ref refid="classcryomesh_1_1manager_1_1Creator_1a36ec491bb68e6a595086c239af7bd989" kindref="member">DEFAULT_DATABASE_FILENAME</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="43" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="61" bodyend="69"/>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1ab816409b411aed0ceb2abe38afb8fef9" compoundref="Creator_8cpp" startline="156" endline="179">createFromConfigStream</references>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1a1cf96043a609df452620aba02370dd46" compoundref="Creator_8cpp" startline="94" endline="96">initialise</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1a8eea37df1f5fc6c94a97c42ce4d9a5d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>cryomesh::manager::Creator::~Creator</definition>
+        <argsstring>()</argsstring>
+        <name>~Creator</name>
+        <briefdescription>
+<para>Deffault destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="48" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="71" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1a10d07b373f504e7a479acb16abacb713" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const boost::shared_ptr&lt; <ref refid="classcryomesh_1_1structures_1_1Bundle" kindref="compound">structures::Bundle</ref> &gt;</type>
+        <definition>const boost::shared_ptr&lt; structures::Bundle &gt; cryomesh::manager::Creator::getBundle</definition>
+        <argsstring>() const </argsstring>
+        <name>getBundle</name>
+        <briefdescription>
+<para>Get the create bundle. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>boost::shared_ptr&lt;structures::Bundle&gt; The created bundle </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="56" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="74" bodyend="76"/>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1ace9dd9da21fab7cf04f6681d332d40cc" compoundref="Creator_8h" startline="266">bundle</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1a2155dae515aa5d360a577ef82437f338" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1structures_1_1Bundle" kindref="compound">structures::Bundle</ref> &gt;</type>
+        <definition>boost::shared_ptr&lt; structures::Bundle &gt; cryomesh::manager::Creator::getMutableBundle</definition>
+        <argsstring>()</argsstring>
+        <name>getMutableBundle</name>
+        <briefdescription>
+<para>Get the mutable create bundle. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>boost::shared_ptr&lt;structures::Bundle&gt; The created bundle </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="64" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="78" bodyend="80"/>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1ace9dd9da21fab7cf04f6681d332d40cc" compoundref="Creator_8h" startline="266">bundle</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1adf060224477ba4086f7e4aab30b60cf6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::map&lt; int, boost::uuids::uuid &gt; &amp;</type>
+        <definition>const std::map&lt; int, boost::uuids::uuid &gt; &amp; cryomesh::manager::Creator::getClusterIDMap</definition>
+        <argsstring>() const </argsstring>
+        <name>getClusterIDMap</name>
+        <briefdescription>
+<para>get the clusterIDMap </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>const std::map&lt;int, boost::uuids::uuid&gt; the clusterIDMap </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="72" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="82" bodyend="84"/>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1a10123f4421b6231c863d86ebb219b545" compoundref="Creator_8h" startline="273">clusterIDMap</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1ab4d9444e6760f1dd634db0f07db630bb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::map&lt; int, boost::uuids::uuid &gt; &amp;</type>
+        <definition>const std::map&lt; int, boost::uuids::uuid &gt; &amp; cryomesh::manager::Creator::getFibreIDMap</definition>
+        <argsstring>() const </argsstring>
+        <name>getFibreIDMap</name>
+        <briefdescription>
+<para>get the fibreIDMap </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>const std::map&lt;int, boost::uuids::uuid&gt; the fibreIDMap </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="80" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="86" bodyend="88"/>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1aae2da58961bda370f9ec3498462a2411" compoundref="Creator_8h" startline="280">fibreIDMap</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1a6721fe152f65ef7040b3dfa0cd143dc2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::map&lt; int, boost::uuids::uuid &gt; &amp;</type>
+        <definition>const std::map&lt; int, boost::uuids::uuid &gt; &amp; cryomesh::manager::Creator::getPatternChannelIDMap</definition>
+        <argsstring>() const </argsstring>
+        <name>getPatternChannelIDMap</name>
+        <briefdescription>
+<para>get the patternChannelIDMap </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>const std::map&lt;int, boost::uuids::uuid&gt; the patternChannelIDMap </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="88" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="90" bodyend="92"/>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1a23dfcdd559d8bdbb1d03aac2587feb3a" compoundref="Creator_8h" startline="287">patternChannelIDMap</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1af1395df65f66b2e1af4fdba9afe15cbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::manager::Creator::createCluster</definition>
+        <argsstring>(int id, int size, int connectivity)</argsstring>
+        <name>createCluster</name>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>connectivity</declname>
+        </param>
+        <briefdescription>
+<para>Translator from config command to actual command. </para>        </briefdescription>
+        <detaileddescription>
+<para>Create a cluster using a fake id to map to a real one</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fake id of the cluster </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the cluster </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The connetivity of the cluster </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="136" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="280" bodyend="283"/>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1ace9dd9da21fab7cf04f6681d332d40cc" compoundref="Creator_8h" startline="266">bundle</references>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1a10123f4421b6231c863d86ebb219b545" compoundref="Creator_8h" startline="273">clusterIDMap</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1ad6eb863eb6f8278979e07ef97e9140b5" compoundref="Creator_8cpp" startline="98" endline="154">runCommand</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1a66333bb0409b2e6de38a58eaddeeb7b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::manager::Creator::connectCluster</definition>
+        <argsstring>(int input_cluster_id, int ouput_cluster_id, int width)</argsstring>
+        <name>connectCluster</name>
+        <param>
+          <type>int</type>
+          <declname>input_cluster_id</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ouput_cluster_id</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <briefdescription>
+<para>Translator from config command to actual command. </para>        </briefdescription>
+        <detaileddescription>
+<para>Connect two clusters using there fake ids</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fake id of the input cluster </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fake id of the output cluster </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width of the new fibre connection </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="149" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="284" bodyend="292"/>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1ace9dd9da21fab7cf04f6681d332d40cc" compoundref="Creator_8h" startline="266">bundle</references>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1a1f8a19ce5f8e07015b3bbc7040ac2a8e" compoundref="Creator_8cpp" startline="419" endline="424">getClusterRealID</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1ad6eb863eb6f8278979e07ef97e9140b5" compoundref="Creator_8cpp" startline="98" endline="154">runCommand</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1a73a74e5e35b5c969108a99cdf31c5108" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::manager::Creator::loadData</definition>
+        <argsstring>(std::string datafile)</argsstring>
+        <name>loadData</name>
+        <param>
+          <type>std::string</type>
+          <declname>datafile</declname>
+        </param>
+        <briefdescription>
+<para>Translator from config command to actual command. </para>        </briefdescription>
+        <detaileddescription>
+<para>Load the pattern data in from a file</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The full file path name of the pattern data file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="158" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="315" bodyend="341"/>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1ace9dd9da21fab7cf04f6681d332d40cc" compoundref="Creator_8h" startline="266">bundle</references>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1a23dfcdd559d8bdbb1d03aac2587feb3a" compoundref="Creator_8h" startline="287">patternChannelIDMap</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1ad6eb863eb6f8278979e07ef97e9140b5" compoundref="Creator_8cpp" startline="98" endline="154">runCommand</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1ad6eb863eb6f8278979e07ef97e9140b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::manager::Creator::runCommand</definition>
+        <argsstring>(const config::ConfigEntry &amp;conf_entry)</argsstring>
+        <name>runCommand</name>
+        <param>
+          <type>const config::ConfigEntry &amp;</type>
+          <declname>conf_entry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="160" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="98" bodyend="154"/>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1a8c773b097b7b4db87a46f749a2606a2b" compoundref="Creator_8cpp" startline="356" endline="372">autoConnectPrimaryInputs</references>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1a7ad46f5b3864cc596f0f36b55f884ce7" compoundref="Creator_8cpp" startline="374" endline="390">autoConnectPrimaryOutputs</references>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1a66333bb0409b2e6de38a58eaddeeb7b1" compoundref="Creator_8cpp" startline="284" endline="292">connectCluster</references>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1a074c92de2d06664b5d9d9fa5f96aa5ee" compoundref="Creator_8cpp" startline="342" endline="348">connectPrimaryInputChannel</references>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1a0977991d6697d06a104aacf40c07f5b4" compoundref="Creator_8cpp" startline="349" endline="354">connectPrimaryOutputChannel</references>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1af1395df65f66b2e1af4fdba9afe15cbc" compoundref="Creator_8cpp" startline="280" endline="283">createCluster</references>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1a73a74e5e35b5c969108a99cdf31c5108" compoundref="Creator_8cpp" startline="315" endline="341">loadData</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1ab816409b411aed0ceb2abe38afb8fef9" compoundref="Creator_8cpp" startline="156" endline="179">createFromConfigStream</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1a074c92de2d06664b5d9d9fa5f96aa5ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::manager::Creator::connectPrimaryInputChannel</definition>
+        <argsstring>(int channel_id, int outputid)</argsstring>
+        <name>connectPrimaryInputChannel</name>
+        <param>
+          <type>int</type>
+          <declname>channel_id</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>outputid</declname>
+        </param>
+        <briefdescription>
+<para>Translator from config command to actual command. </para>        </briefdescription>
+        <detaileddescription>
+<para>Create a fibre to connect a primary input pattern channel to a cluster output</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fake id of the pattern channel </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>The</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>fake id of the output cluster </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="171" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="342" bodyend="348"/>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1ace9dd9da21fab7cf04f6681d332d40cc" compoundref="Creator_8h" startline="266">bundle</references>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1a1f8a19ce5f8e07015b3bbc7040ac2a8e" compoundref="Creator_8cpp" startline="419" endline="424">getClusterRealID</references>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1aeb8b3b6fddffcefb7f81780a81f5f28c" compoundref="Creator_8cpp" startline="433" endline="438">getPatternChannelRealID</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1ad6eb863eb6f8278979e07ef97e9140b5" compoundref="Creator_8cpp" startline="98" endline="154">runCommand</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1a0977991d6697d06a104aacf40c07f5b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::manager::Creator::connectPrimaryOutputChannel</definition>
+        <argsstring>(int channel_id, int inputid)</argsstring>
+        <name>connectPrimaryOutputChannel</name>
+        <param>
+          <type>int</type>
+          <declname>channel_id</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>inputid</declname>
+        </param>
+        <briefdescription>
+<para>Translator from config command to actual command. </para>        </briefdescription>
+        <detaileddescription>
+<para>Create a fibre to connect a primary output pattern channel to a cluster output</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fake id of the pattern channel </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>The</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>fake id of the input cluster </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="182" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="349" bodyend="354"/>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1ace9dd9da21fab7cf04f6681d332d40cc" compoundref="Creator_8h" startline="266">bundle</references>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1a1f8a19ce5f8e07015b3bbc7040ac2a8e" compoundref="Creator_8cpp" startline="419" endline="424">getClusterRealID</references>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1aeb8b3b6fddffcefb7f81780a81f5f28c" compoundref="Creator_8cpp" startline="433" endline="438">getPatternChannelRealID</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1ad6eb863eb6f8278979e07ef97e9140b5" compoundref="Creator_8cpp" startline="98" endline="154">runCommand</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1a8c773b097b7b4db87a46f749a2606a2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::manager::Creator::autoConnectPrimaryInputs</definition>
+        <argsstring>(const std::vector&lt; int &gt; &amp;cluster_ids)</argsstring>
+        <name>autoConnectPrimaryInputs</name>
+        <param>
+          <type>const std::vector&lt; int &gt; &amp;</type>
+          <declname>cluster_ids</declname>
+        </param>
+        <briefdescription>
+<para>auto connect all the primary input channels to the list of clusters </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::vector&lt;int&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fake ids of the clusters to connect </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="190" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="356" bodyend="372"/>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1ace9dd9da21fab7cf04f6681d332d40cc" compoundref="Creator_8h" startline="266">bundle</references>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1a1f8a19ce5f8e07015b3bbc7040ac2a8e" compoundref="Creator_8cpp" startline="419" endline="424">getClusterRealID</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1ad6eb863eb6f8278979e07ef97e9140b5" compoundref="Creator_8cpp" startline="98" endline="154">runCommand</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1a7ad46f5b3864cc596f0f36b55f884ce7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::manager::Creator::autoConnectPrimaryOutputs</definition>
+        <argsstring>(const std::vector&lt; int &gt; &amp;cluster_ids)</argsstring>
+        <name>autoConnectPrimaryOutputs</name>
+        <param>
+          <type>const std::vector&lt; int &gt; &amp;</type>
+          <declname>cluster_ids</declname>
+        </param>
+        <briefdescription>
+<para>auto connect all the primary output channels to the list of clusters </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::vector&lt;int&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fake ids of the clusters to connect </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="198" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="374" bodyend="390"/>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1ace9dd9da21fab7cf04f6681d332d40cc" compoundref="Creator_8h" startline="266">bundle</references>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1a1f8a19ce5f8e07015b3bbc7040ac2a8e" compoundref="Creator_8cpp" startline="419" endline="424">getClusterRealID</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1ad6eb863eb6f8278979e07ef97e9140b5" compoundref="Creator_8cpp" startline="98" endline="154">runCommand</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1a69a825d7856c367e400b2ff6e2cefe68" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::manager::Creator::analyseConfig</definition>
+        <argsstring>(const config::ConfigTranslator &amp;conf_trans)</argsstring>
+        <name>analyseConfig</name>
+        <param>
+          <type>const config::ConfigTranslator &amp;</type>
+          <declname>conf_trans</declname>
+        </param>
+        <briefdescription>
+<para>Analyse the config translator for coherence. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ConfigTranslator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The config translator to analyse</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True if the config translator passed all the tests for coherence, false otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="99" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="195" bodyend="213"/>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1ae3d7dd77beadb0d05bbbe5f0c67e8292" compoundref="Creator_8cpp" startline="215" endline="243">checkConfigEntry</references>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1add4748985eb8bc35a442a9e4e4c2a087" compoundref="Creator_8cpp" startline="245" endline="278">checkConfigStructure</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1ab816409b411aed0ceb2abe38afb8fef9" compoundref="Creator_8cpp" startline="156" endline="179">createFromConfigStream</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1ae3d7dd77beadb0d05bbbe5f0c67e8292" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::manager::Creator::checkConfigEntry</definition>
+        <argsstring>(const config::ConfigEntry &amp;conf_entry)</argsstring>
+        <name>checkConfigEntry</name>
+        <param>
+          <type>const config::ConfigEntry &amp;</type>
+          <declname>conf_entry</declname>
+        </param>
+        <briefdescription>
+<para>Analyse the config entry for coherence. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ConfigEntry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The config entry to analyse</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True if the config entry passed all the tests for coherence, false otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="110" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="215" bodyend="243"/>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1ad0ddc3782c7fe0415181156fdeb6306b" compoundref="Creator_8h" startline="212">acceptedCommandList</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1a69a825d7856c367e400b2ff6e2cefe68" compoundref="Creator_8cpp" startline="195" endline="213">analyseConfig</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1add4748985eb8bc35a442a9e4e4c2a087" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::manager::Creator::checkConfigStructure</definition>
+        <argsstring>(const std::list&lt; config::ConfigEntry &gt; &amp;conf_entries)</argsstring>
+        <name>checkConfigStructure</name>
+        <param>
+          <type>const std::list&lt; config::ConfigEntry &gt; &amp;</type>
+          <declname>conf_entries</declname>
+        </param>
+        <briefdescription>
+<para>Analyse the config for structural coherence. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::list&lt;config::ConfigEntry&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The list of config entries to analyse for structure</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True if the config entries passed all the tests for structural coherence, false otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="121" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="245" bodyend="278"/>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1a69a825d7856c367e400b2ff6e2cefe68" compoundref="Creator_8cpp" startline="195" endline="213">analyseConfig</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1aa6de6b79f746213f844b207518b1577a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::map&lt; std::string, std::list&lt; std::string &gt; &gt;</type>
+        <definition>std::map&lt; std::string, std::list&lt; std::string &gt; &gt; cryomesh::manager::Creator::getAcceptedCommandList</definition>
+        <argsstring>()</argsstring>
+        <name>getAcceptedCommandList</name>
+        <briefdescription>
+<para>Generate and return the accepted command list. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>std::map&lt;std::string, std::list&lt;std::string&gt; &gt; The accepted commands mapping </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="220" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="22" bodyend="45"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1a1cf96043a609df452620aba02370dd46" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::manager::Creator::initialise</definition>
+        <argsstring>()</argsstring>
+        <name>initialise</name>
+        <briefdescription>
+<para>Helper to initialise the creator. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="227" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="94" bodyend="96"/>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1ace9dd9da21fab7cf04f6681d332d40cc" compoundref="Creator_8h" startline="266">bundle</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1a4881650c49a273648a9bccddb9a832fc" compoundref="Creator_8cpp" startline="47" endline="59">Creator</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1ac25b12d7fcd727c0228e551732605e10" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::manager::Creator::createFromConfigFile</definition>
+        <argsstring>(const std::string config_filename)</argsstring>
+        <name>createFromConfigFile</name>
+        <param>
+          <type>const std::string</type>
+          <declname>config_filename</declname>
+        </param>
+        <briefdescription>
+<para>Run through the config file generating all commands. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>bool True if running the config file was successful, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="235" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="181" bodyend="193"/>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1ab816409b411aed0ceb2abe38afb8fef9" compoundref="Creator_8cpp" startline="156" endline="179">createFromConfigStream</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1a4881650c49a273648a9bccddb9a832fc" compoundref="Creator_8cpp" startline="47" endline="59">Creator</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1ab816409b411aed0ceb2abe38afb8fef9" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::manager::Creator::createFromConfigStream</definition>
+        <argsstring>(std::istream &amp;is)</argsstring>
+        <name>createFromConfigStream</name>
+        <param>
+          <type>std::istream &amp;</type>
+          <declname>is</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="236" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="156" bodyend="179"/>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1a69a825d7856c367e400b2ff6e2cefe68" compoundref="Creator_8cpp" startline="195" endline="213">analyseConfig</references>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1ad6eb863eb6f8278979e07ef97e9140b5" compoundref="Creator_8cpp" startline="98" endline="154">runCommand</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1ac25b12d7fcd727c0228e551732605e10" compoundref="Creator_8cpp" startline="181" endline="193">createFromConfigFile</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1a6479ea01aa020c99899198f08ef558b6" compoundref="Creator_8cpp" startline="61" endline="69">Creator</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1a1d848c7a78e970a49693434dad741880" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::uuids::uuid</type>
+        <definition>boost::uuids::uuid cryomesh::manager::Creator::getRealID</definition>
+        <argsstring>(const int id, const std::map&lt; int, boost::uuids::uuid &gt; &amp;idmap) const </argsstring>
+        <name>getRealID</name>
+        <param>
+          <type>const int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const std::map&lt; int, boost::uuids::uuid &gt; &amp;</type>
+          <declname>idmap</declname>
+        </param>
+        <briefdescription>
+<para>Retreive a uuid from a fake int id inside a map. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fake id to translate </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>std::map&lt;int</parametername>
+<parametername>boost::uuids::uuid&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The map to use for translation</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boost::uuids::uuid The corresponding real uuid to the fake one, null if it doesnt exist </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="300" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="392" bodyend="417"/>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1a1f8a19ce5f8e07015b3bbc7040ac2a8e" compoundref="Creator_8cpp" startline="419" endline="424">getClusterRealID</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1ab6987a15c0794e7cd651519c28ad7eec" compoundref="Creator_8cpp" startline="426" endline="431">getFibreRealID</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1aeb8b3b6fddffcefb7f81780a81f5f28c" compoundref="Creator_8cpp" startline="433" endline="438">getPatternChannelRealID</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1a1f8a19ce5f8e07015b3bbc7040ac2a8e" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::uuids::uuid</type>
+        <definition>boost::uuids::uuid cryomesh::manager::Creator::getClusterRealID</definition>
+        <argsstring>(const int id) const </argsstring>
+        <name>getClusterRealID</name>
+        <param>
+          <type>const int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Helper to retrieve a uuid from a fake int id for clusters. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fake id to translate</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boost::uuids::uuid The corresponding real uuid to the fake one, null if it doesnt exist </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="311" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="419" bodyend="424"/>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1a10123f4421b6231c863d86ebb219b545" compoundref="Creator_8h" startline="273">clusterIDMap</references>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1a1d848c7a78e970a49693434dad741880" compoundref="Creator_8cpp" startline="392" endline="417">getRealID</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1a8c773b097b7b4db87a46f749a2606a2b" compoundref="Creator_8cpp" startline="356" endline="372">autoConnectPrimaryInputs</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1a7ad46f5b3864cc596f0f36b55f884ce7" compoundref="Creator_8cpp" startline="374" endline="390">autoConnectPrimaryOutputs</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1a66333bb0409b2e6de38a58eaddeeb7b1" compoundref="Creator_8cpp" startline="284" endline="292">connectCluster</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1a074c92de2d06664b5d9d9fa5f96aa5ee" compoundref="Creator_8cpp" startline="342" endline="348">connectPrimaryInputChannel</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1a0977991d6697d06a104aacf40c07f5b4" compoundref="Creator_8cpp" startline="349" endline="354">connectPrimaryOutputChannel</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1ab6987a15c0794e7cd651519c28ad7eec" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::uuids::uuid</type>
+        <definition>boost::uuids::uuid cryomesh::manager::Creator::getFibreRealID</definition>
+        <argsstring>(const int id) const </argsstring>
+        <name>getFibreRealID</name>
+        <param>
+          <type>const int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Helper to retrieve a uuid from a fake int id for fibres. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fake id to translate</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boost::uuids::uuid The corresponding real uuid to the fake one, null if it doesnt exist </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="322" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="426" bodyend="431"/>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1aae2da58961bda370f9ec3498462a2411" compoundref="Creator_8h" startline="280">fibreIDMap</references>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1a1d848c7a78e970a49693434dad741880" compoundref="Creator_8cpp" startline="392" endline="417">getRealID</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1Creator_1aeb8b3b6fddffcefb7f81780a81f5f28c" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::uuids::uuid</type>
+        <definition>boost::uuids::uuid cryomesh::manager::Creator::getPatternChannelRealID</definition>
+        <argsstring>(const int id) const </argsstring>
+        <name>getPatternChannelRealID</name>
+        <param>
+          <type>const int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Helper to retrieve a uuid from a fake int id for pattern channels. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fake id to translate</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boost::uuids::uuid The corresponding real uuid to the fake one, null if it doesnt exist </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="333" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp" bodystart="433" bodyend="438"/>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1a1d848c7a78e970a49693434dad741880" compoundref="Creator_8cpp" startline="392" endline="417">getRealID</references>
+        <references refid="classcryomesh_1_1manager_1_1Creator_1a23dfcdd559d8bdbb1d03aac2587feb3a" compoundref="Creator_8h" startline="287">patternChannelIDMap</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1a074c92de2d06664b5d9d9fa5f96aa5ee" compoundref="Creator_8cpp" startline="342" endline="348">connectPrimaryInputChannel</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1Creator_1a0977991d6697d06a104aacf40c07f5b4" compoundref="Creator_8cpp" startline="349" endline="354">connectPrimaryOutputChannel</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class to take in a config file of ConfigTranslator form and parse the commands to create a full cryomesh object. </para>    </briefdescription>
+    <detaileddescription>
+<para><itemizedlist>
+<listitem><para>needs to hold a fakeid to realid mapping to facillitate using fake ids in config files before the objects ids are actually known</para></listitem><listitem><para>holds a unique instance of any create cryomeshes</para></listitem><listitem><para>holds other data from the config file or defaults such as database name, filename, data filename, etc </para></listitem></itemizedlist>
+</para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="357">
+        <label>std::map&lt; int, boost::uuids::uuid &gt;</label>
+      </node>
+      <node id="361">
+        <label>std::list&lt; std::string &gt;</label>
+        <childnode refid="358" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="359">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="360">
+        <label>std::map&lt; std::string, std::list&lt; std::string &gt; &gt;</label>
+        <childnode refid="358" relation="usage">
+          <edgelabel>keys</edgelabel>
+        </childnode>
+        <childnode refid="361" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="356">
+        <label>cryomesh::manager::Creator</label>
+        <link refid="classcryomesh_1_1manager_1_1Creator"/>
+        <childnode refid="357" relation="usage">
+          <edgelabel>patternChannelIDMap</edgelabel>
+          <edgelabel>clusterIDMap</edgelabel>
+          <edgelabel>fibreIDMap</edgelabel>
+        </childnode>
+        <childnode refid="358" relation="usage">
+          <edgelabel>DEFAULT_DATABASE_FILENAME</edgelabel>
+          <edgelabel>databaseFilename</edgelabel>
+        </childnode>
+        <childnode refid="360" relation="usage">
+          <edgelabel>acceptedCommandList</edgelabel>
+        </childnode>
+      </node>
+      <node id="358">
+        <label>std::string</label>
+        <childnode refid="359" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" line="31" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h" bodystart="31" bodyend="334"/>
+    <listofallmembers>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1ad0ddc3782c7fe0415181156fdeb6306b" prot="public" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>acceptedCommandList</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1a69a825d7856c367e400b2ff6e2cefe68" prot="public" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>analyseConfig</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1a8c773b097b7b4db87a46f749a2606a2b" prot="public" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>autoConnectPrimaryInputs</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1a7ad46f5b3864cc596f0f36b55f884ce7" prot="public" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>autoConnectPrimaryOutputs</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1ace9dd9da21fab7cf04f6681d332d40cc" prot="private" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>bundle</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1ae3d7dd77beadb0d05bbbe5f0c67e8292" prot="public" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>checkConfigEntry</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1add4748985eb8bc35a442a9e4e4c2a087" prot="public" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>checkConfigStructure</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1a10123f4421b6231c863d86ebb219b545" prot="private" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>clusterIDMap</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1a66333bb0409b2e6de38a58eaddeeb7b1" prot="public" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>connectCluster</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1a074c92de2d06664b5d9d9fa5f96aa5ee" prot="public" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>connectPrimaryInputChannel</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1a0977991d6697d06a104aacf40c07f5b4" prot="public" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>connectPrimaryOutputChannel</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1af1395df65f66b2e1af4fdba9afe15cbc" prot="public" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>createCluster</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1ac25b12d7fcd727c0228e551732605e10" prot="protected" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>createFromConfigFile</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1ab816409b411aed0ceb2abe38afb8fef9" prot="protected" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>createFromConfigStream</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1a4881650c49a273648a9bccddb9a832fc" prot="public" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>Creator</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1a6479ea01aa020c99899198f08ef558b6" prot="public" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>Creator</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1a5d5c9a8aafa817c49c0787d0dae91a3a" prot="private" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>databaseFilename</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1a36ec491bb68e6a595086c239af7bd989" prot="public" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>DEFAULT_DATABASE_FILENAME</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1aae2da58961bda370f9ec3498462a2411" prot="private" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>fibreIDMap</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1aa6de6b79f746213f844b207518b1577a" prot="public" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>getAcceptedCommandList</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1a10d07b373f504e7a479acb16abacb713" prot="public" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>getBundle</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1adf060224477ba4086f7e4aab30b60cf6" prot="public" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>getClusterIDMap</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1a1f8a19ce5f8e07015b3bbc7040ac2a8e" prot="private" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>getClusterRealID</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1ab4d9444e6760f1dd634db0f07db630bb" prot="public" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>getFibreIDMap</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1ab6987a15c0794e7cd651519c28ad7eec" prot="private" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>getFibreRealID</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1a2155dae515aa5d360a577ef82437f338" prot="public" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>getMutableBundle</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1a6721fe152f65ef7040b3dfa0cd143dc2" prot="public" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>getPatternChannelIDMap</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1aeb8b3b6fddffcefb7f81780a81f5f28c" prot="private" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>getPatternChannelRealID</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1a1d848c7a78e970a49693434dad741880" prot="private" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>getRealID</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1a1cf96043a609df452620aba02370dd46" prot="protected" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>initialise</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1a73a74e5e35b5c969108a99cdf31c5108" prot="public" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>loadData</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1a23dfcdd559d8bdbb1d03aac2587feb3a" prot="private" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>patternChannelIDMap</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1ad6eb863eb6f8278979e07ef97e9140b5" prot="public" virt="non-virtual"><scope>cryomesh::manager::Creator</scope><name>runCommand</name></member>
+      <member refid="classcryomesh_1_1manager_1_1Creator_1a8eea37df1f5fc6c94a97c42ce4d9a5d0" prot="public" virt="virtual"><scope>cryomesh::manager::Creator</scope><name>~Creator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

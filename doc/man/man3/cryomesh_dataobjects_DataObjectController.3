@@ -1,46 +1,48 @@
-.TH "cryomesh::dataobjects::DataObjectController" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::dataobjects::DataObjectController< U, T >" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-cryomesh::dataobjects::DataObjectController \- 
+cryomesh::dataobjects::DataObjectController< U, T > \- 
 .PP
-Class used to interface with data objects.  
+Class used to interface with data objects\&.  
 
 .SH SYNOPSIS
 .br
 .PP
 .PP
-\fC#include <DataObjectController.h>\fP
+\fC#include <DataObjectController\&.h>\fP
 .SS "Public Member Functions"
 
 .in +1c
 .ti -1c
 .RI "\fBDataObjectController\fP ()"
 .br
-.RI "\fIDefault constructor. \fP"
+.RI "\fIDefault constructor\&. \fP"
 .ti -1c
 .RI "\fBDataObjectController\fP (unsigned int sz)"
 .br
-.RI "\fIContructor with size. \fP"
+.RI "\fIContructor with size\&. \fP"
 .ti -1c
 .RI "virtual \fB~DataObjectController\fP ()"
 .br
 .ti -1c
 .RI "virtual void \fBenableLogging\fP (bool enable)"
 .br
-.RI "\fIWhether logging is enabled or not. \fP"
+.RI "\fIWhether logging is enabled or not\&. \fP"
 .ti -1c
 .RI "virtual const std::map< U, T > & \fBgetMap\fP ()"
 .br
-.RI "\fIGet all cycle values. \fP"
+.RI "\fIGet all cycle values\&. \fP"
 .ti -1c
-.RI "virtual const \fBdataobjects::DataObject\fP< U, T > & \fBgetDataObject\fP ()"
+.RI "virtual const 
 .br
-.RI "\fIGet data object. \fP"
+\fBdataobjects::DataObject\fP< U, T > & \fBgetDataObject\fP ()"
+.br
+.RI "\fIGet data object\&. \fP"
 .ti -1c
 .RI "virtual void \fBrefreshDataObject\fP ()"
 .br
-.RI "\fIFunction to allow refreshing implementation if required by subclasses. \fP"
+.RI "\fIFunction to allow refreshing implementation if required by subclasses\&. \fP"
 .in -1c
 .SS "Protected Attributes"
 
@@ -52,75 +54,79 @@ Class used to interface with data objects.
 .SH "Detailed Description"
 .PP 
 
-.SS "template<class U, class T> class cryomesh::dataobjects::DataObjectController< U, T >"
-Class used to interface with data objects. 
+.SS "template<class U, class T>class cryomesh::dataobjects::DataObjectController< U, T >"
+Class used to interface with data objects\&. 
 .PP
-Definition at line 22 of file DataObjectController.h.
+Definition at line 21 of file DataObjectController\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "template<class U, class T> \fBcryomesh::dataobjects::DataObjectController\fP< U, T >::\fBDataObjectController\fP ()\fC [inline]\fP"
 .PP
-Default constructor. 
+Default constructor\&. 
 .PP
-Definition at line 28 of file DataObjectController.h.
+Definition at line 27 of file DataObjectController\&.h\&.
 .SS "template<class U, class T> \fBcryomesh::dataobjects::DataObjectController\fP< U, T >::\fBDataObjectController\fP (unsigned intsz)\fC [inline]\fP"
 .PP
-Contructor with size. \fBParameters:\fP
+Contructor with size\&. \fBParameters:\fP
 .RS 4
 \fIunsigned\fP int The maximum size of the data set 
 .RE
 .PP
 
 .PP
-Definition at line 37 of file DataObjectController.h.
+Definition at line 36 of file DataObjectController\&.h\&.
 .SS "template<class U, class T> virtual \fBcryomesh::dataobjects::DataObjectController\fP< U, T >::~\fBDataObjectController\fP ()\fC [inline, virtual]\fP"
 .PP
-Definition at line 40 of file DataObjectController.h.
+Definition at line 39 of file DataObjectController\&.h\&.
 .SH "Member Function Documentation"
 .PP 
-.SS "template<class U, class T> virtual void \fBcryomesh::dataobjects::DataObjectController\fP< U, T >::enableLogging (boolenable)\fC [inline, virtual]\fP"
+.SS "template<class U, class T> virtual void \fBcryomesh::dataobjects::DataObjectController\fP< U, T >::\fBenableLogging\fP (boolenable)\fC [inline, virtual]\fP"
 .PP
-Whether logging is enabled or not. \fBParameters:\fP
+Whether logging is enabled or not\&. \fBParameters:\fP
 .RS 4
 \fIbool\fP enable True to enable logging, false otherwise 
 .RE
 .PP
 
 .PP
-Definition at line 48 of file DataObjectController.h.
-.SS "template<class U, class T> virtual const \fBdataobjects::DataObject\fP<U, T>& \fBcryomesh::dataobjects::DataObjectController\fP< U, T >::getDataObject ()\fC [inline, virtual]\fP"
+Definition at line 47 of file DataObjectController\&.h\&.
+.SS "template<class U, class T> virtual const \fBdataobjects::DataObject\fP<U, T>& \fBcryomesh::dataobjects::DataObjectController\fP< U, T >::\fBgetDataObject\fP ()\fC [inline, virtual]\fP"
 .PP
-Get data object. \fBReturns:\fP
+Get data object\&. \fBReturns:\fP
 .RS 4
 dataobjects::DataObject<U,T> & The data object 
 .RE
 .PP
 
 .PP
-Definition at line 69 of file DataObjectController.h.
-.SS "template<class U, class T> virtual const std::map<U, T>& \fBcryomesh::dataobjects::DataObjectController\fP< U, T >::getMap ()\fC [inline, virtual]\fP"
+Definition at line 68 of file DataObjectController\&.h\&.
+.SS "template<class U, class T> virtual const std::map<U, T>& \fBcryomesh::dataobjects::DataObjectController\fP< U, T >::\fBgetMap\fP ()\fC [inline, virtual]\fP"
 .PP
-Get all cycle values. \fBReturns:\fP
+Get all cycle values\&. \fBReturns:\fP
 .RS 4
 std::map<unsigned long int, double> & The cycle values 
 .RE
 .PP
 
 .PP
-Definition at line 58 of file DataObjectController.h.
-.SS "template<class U, class T> virtual void \fBcryomesh::dataobjects::DataObjectController\fP< U, T >::refreshDataObject ()\fC [inline, virtual]\fP"
+Definition at line 57 of file DataObjectController\&.h\&.
+.SS "template<class U, class T> virtual void \fBcryomesh::dataobjects::DataObjectController\fP< U, T >::\fBrefreshDataObject\fP ()\fC [inline, virtual]\fP"
 .PP
-Function to allow refreshing implementation if required by subclasses. 
+Function to allow refreshing implementation if required by subclasses\&. 
 .PP
-Reimplemented in \fBcryomesh::components::ImpulseCollection\fP.
+Reimplemented in \fBcryomesh::components::ImpulseCollection\fP\&.
 .PP
-Definition at line 77 of file DataObjectController.h.
+Definition at line 76 of file DataObjectController\&.h\&.
+.PP
+Referenced by cryomesh::dataobjects::DataObjectController< unsigned long int, double >::getDataObject(), and cryomesh::dataobjects::DataObjectController< unsigned long int, double >::getMap()\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "template<class U, class T> \fBdataobjects::DataObject\fP<U, T> \fBcryomesh::dataobjects::DataObjectController\fP< U, T >::\fBdataObject\fP\fC [protected]\fP"
 .PP
-Definition at line 86 of file DataObjectController.h.
+Definition at line 85 of file DataObjectController\&.h\&.
+.PP
+Referenced by cryomesh::dataobjects::DataObjectController< unsigned long int, double >::DataObjectController(), cryomesh::dataobjects::DataObjectController< unsigned long int, double >::enableLogging(), cryomesh::dataobjects::DataObjectController< unsigned long int, double >::getDataObject(), and cryomesh::dataobjects::DataObjectController< unsigned long int, double >::getMap()\&.
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for cryomesh from the source code.
+Generated automatically by Doxygen for cryomesh from the source code\&.

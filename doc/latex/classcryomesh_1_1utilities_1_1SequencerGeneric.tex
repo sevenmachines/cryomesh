@@ -1,0 +1,259 @@
+\hypertarget{classcryomesh_1_1utilities_1_1SequencerGeneric}{\section{cryomesh\-:\-:utilities\-:\-:\-Sequencer\-Generic \-Class \-Reference}
+\label{classcryomesh_1_1utilities_1_1SequencerGeneric}\index{cryomesh\-::utilities\-::\-Sequencer\-Generic@{cryomesh\-::utilities\-::\-Sequencer\-Generic}}
+}
+
+
+{\ttfamily \#include $<$\-Sequencer\-Generic.\-h$>$}
+
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry}{\-Node\-Entry}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1utilities_1_1SequencerGeneric_ad0e50f0a304a248df61ca43e7bfd0717}{\-Sequencer\-Generic} (const std\-::string \&ifstr)
+\item 
+virtual \hyperlink{classcryomesh_1_1utilities_1_1SequencerGeneric_aabe2ac353f7c805827a7a652cf1a8e23}{$\sim$\-Sequencer\-Generic} ()
+\item 
+const std\-::list\*
+$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry}{\-Sequencer\-Generic\-::\-Node\-Entry} $>$ $>$ \& \hyperlink{classcryomesh_1_1utilities_1_1SequencerGeneric_a5537ecb58c9308c82be295c871001efd}{get\-Node\-Entries} () const 
+\item 
+virtual void \hyperlink{classcryomesh_1_1utilities_1_1SequencerGeneric_a071c15286ad8aac33fa73ff5cc78136b}{on\-\_\-start\-\_\-document} ()
+\item 
+virtual void \hyperlink{classcryomesh_1_1utilities_1_1SequencerGeneric_a5d38706a972e2037ba5a22cd04f273a0}{on\-\_\-end\-\_\-document} ()
+\item 
+virtual void \hyperlink{classcryomesh_1_1utilities_1_1SequencerGeneric_ac9307acc5a461e9da6272a7aafcd0cf7}{on\-\_\-start\-\_\-element} (const \-Glib\-::ustring \&name, const \-Attribute\-List \&properties)
+\item 
+virtual void \hyperlink{classcryomesh_1_1utilities_1_1SequencerGeneric_ad7d0c1c324c09ccbeba7c54caa6a77aa}{on\-\_\-end\-\_\-element} (const \-Glib\-::ustring \&name)
+\item 
+virtual void \hyperlink{classcryomesh_1_1utilities_1_1SequencerGeneric_a1db9b60c25849b178124e9761d0ded64}{on\-\_\-comment} (const \-Glib\-::ustring \&text)
+\item 
+virtual void \hyperlink{classcryomesh_1_1utilities_1_1SequencerGeneric_aa8f08fad1118ad8d2a787f2f8b50df47}{on\-\_\-warning} (const \-Glib\-::ustring \&text)
+\item 
+virtual void \hyperlink{classcryomesh_1_1utilities_1_1SequencerGeneric_a797f1cda33a8dfff5fdb4d5fa095a90b}{on\-\_\-error} (const \-Glib\-::ustring \&text)
+\item 
+virtual void \hyperlink{classcryomesh_1_1utilities_1_1SequencerGeneric_af464b348d68b6ae93f473c0e02a05ff2}{on\-\_\-fatal\-\_\-error} (const \-Glib\-::ustring \&text)
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::list$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry}{\-Node\-Entry} $>$ $>$ \hyperlink{classcryomesh_1_1utilities_1_1SequencerGeneric_a72d9cc5d05add7cd271a6210f9164009}{node\-Entries}
+\item 
+std\-::list$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{structcryomesh_1_1utilities_1_1SequencerGeneric_1_1NodeEntry}{\-Node\-Entry} $>$ $>$ \hyperlink{classcryomesh_1_1utilities_1_1SequencerGeneric_abf4c1421712f9ffaf5ef731d66eec5fc}{node\-Stack}
+\item 
+int \hyperlink{classcryomesh_1_1utilities_1_1SequencerGeneric_a2c43386ba27825ca4a1ff17a00602a2f}{element\-Count}
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1utilities_1_1SequencerGeneric_ab85e57798daebe5b4c2e7979e216cd3d}{operator$<$$<$} (std\-::ostream \&os, const \hyperlink{classcryomesh_1_1utilities_1_1SequencerGeneric}{\-Sequencer\-Generic} \&obj)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+
+
+\-Definition at line 12 of file \-Sequencer\-Generic.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcryomesh_1_1utilities_1_1SequencerGeneric_ad0e50f0a304a248df61ca43e7bfd0717}{\index{cryomesh\-::utilities\-::\-Sequencer\-Generic@{cryomesh\-::utilities\-::\-Sequencer\-Generic}!\-Sequencer\-Generic@{\-Sequencer\-Generic}}
+\index{\-Sequencer\-Generic@{\-Sequencer\-Generic}!cryomesh::utilities::SequencerGeneric@{cryomesh\-::utilities\-::\-Sequencer\-Generic}}
+\subsubsection[{\-Sequencer\-Generic}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::utilities\-::\-Sequencer\-Generic\-::\-Sequencer\-Generic} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{ifstr}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1utilities_1_1SequencerGeneric_ad0e50f0a304a248df61ca43e7bfd0717}
+
+
+\-Definition at line 7 of file \-Sequencer\-Generic.\-cpp.
+
+\hypertarget{classcryomesh_1_1utilities_1_1SequencerGeneric_aabe2ac353f7c805827a7a652cf1a8e23}{\index{cryomesh\-::utilities\-::\-Sequencer\-Generic@{cryomesh\-::utilities\-::\-Sequencer\-Generic}!$\sim$\-Sequencer\-Generic@{$\sim$\-Sequencer\-Generic}}
+\index{$\sim$\-Sequencer\-Generic@{$\sim$\-Sequencer\-Generic}!cryomesh::utilities::SequencerGeneric@{cryomesh\-::utilities\-::\-Sequencer\-Generic}}
+\subsubsection[{$\sim$\-Sequencer\-Generic}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::utilities\-::\-Sequencer\-Generic\-::$\sim$\-Sequencer\-Generic} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1SequencerGeneric_aabe2ac353f7c805827a7a652cf1a8e23}
+
+
+\-Definition at line 19 of file \-Sequencer\-Generic.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1utilities_1_1SequencerGeneric_a5537ecb58c9308c82be295c871001efd}{\index{cryomesh\-::utilities\-::\-Sequencer\-Generic@{cryomesh\-::utilities\-::\-Sequencer\-Generic}!get\-Node\-Entries@{get\-Node\-Entries}}
+\index{get\-Node\-Entries@{get\-Node\-Entries}!cryomesh::utilities::SequencerGeneric@{cryomesh\-::utilities\-::\-Sequencer\-Generic}}
+\subsubsection[{get\-Node\-Entries}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::list$<$ boost\-::shared\-\_\-ptr$<$ {\bf \-Sequencer\-Generic\-::\-Node\-Entry} $>$ $>$ \& {\bf cryomesh\-::utilities\-::\-Sequencer\-Generic\-::get\-Node\-Entries} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1utilities_1_1SequencerGeneric_a5537ecb58c9308c82be295c871001efd}
+
+
+\-Definition at line 106 of file \-Sequencer\-Generic.\-cpp.
+
+
+
+\-References node\-Entries.
+
+
+
+\-Referenced by cryomesh\-::utilities\-::\-Sequencer\-Channels\-::read\-Sequences().
+
+\hypertarget{classcryomesh_1_1utilities_1_1SequencerGeneric_a1db9b60c25849b178124e9761d0ded64}{\index{cryomesh\-::utilities\-::\-Sequencer\-Generic@{cryomesh\-::utilities\-::\-Sequencer\-Generic}!on\-\_\-comment@{on\-\_\-comment}}
+\index{on\-\_\-comment@{on\-\_\-comment}!cryomesh::utilities::SequencerGeneric@{cryomesh\-::utilities\-::\-Sequencer\-Generic}}
+\subsubsection[{on\-\_\-comment}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::utilities\-::\-Sequencer\-Generic\-::on\-\_\-comment} (
+\begin{DoxyParamCaption}
+\item[{const \-Glib\-::ustring \&}]{text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1SequencerGeneric_a1db9b60c25849b178124e9761d0ded64}
+
+
+\-Definition at line 70 of file \-Sequencer\-Generic.\-cpp.
+
+\hypertarget{classcryomesh_1_1utilities_1_1SequencerGeneric_a5d38706a972e2037ba5a22cd04f273a0}{\index{cryomesh\-::utilities\-::\-Sequencer\-Generic@{cryomesh\-::utilities\-::\-Sequencer\-Generic}!on\-\_\-end\-\_\-document@{on\-\_\-end\-\_\-document}}
+\index{on\-\_\-end\-\_\-document@{on\-\_\-end\-\_\-document}!cryomesh::utilities::SequencerGeneric@{cryomesh\-::utilities\-::\-Sequencer\-Generic}}
+\subsubsection[{on\-\_\-end\-\_\-document}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::utilities\-::\-Sequencer\-Generic\-::on\-\_\-end\-\_\-document} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1SequencerGeneric_a5d38706a972e2037ba5a22cd04f273a0}
+
+
+\-Definition at line 26 of file \-Sequencer\-Generic.\-cpp.
+
+\hypertarget{classcryomesh_1_1utilities_1_1SequencerGeneric_ad7d0c1c324c09ccbeba7c54caa6a77aa}{\index{cryomesh\-::utilities\-::\-Sequencer\-Generic@{cryomesh\-::utilities\-::\-Sequencer\-Generic}!on\-\_\-end\-\_\-element@{on\-\_\-end\-\_\-element}}
+\index{on\-\_\-end\-\_\-element@{on\-\_\-end\-\_\-element}!cryomesh::utilities::SequencerGeneric@{cryomesh\-::utilities\-::\-Sequencer\-Generic}}
+\subsubsection[{on\-\_\-end\-\_\-element}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::utilities\-::\-Sequencer\-Generic\-::on\-\_\-end\-\_\-element} (
+\begin{DoxyParamCaption}
+\item[{const \-Glib\-::ustring \&}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1SequencerGeneric_ad7d0c1c324c09ccbeba7c54caa6a77aa}
+
+
+\-Definition at line 65 of file \-Sequencer\-Generic.\-cpp.
+
+
+
+\-References node\-Stack.
+
+\hypertarget{classcryomesh_1_1utilities_1_1SequencerGeneric_a797f1cda33a8dfff5fdb4d5fa095a90b}{\index{cryomesh\-::utilities\-::\-Sequencer\-Generic@{cryomesh\-::utilities\-::\-Sequencer\-Generic}!on\-\_\-error@{on\-\_\-error}}
+\index{on\-\_\-error@{on\-\_\-error}!cryomesh::utilities::SequencerGeneric@{cryomesh\-::utilities\-::\-Sequencer\-Generic}}
+\subsubsection[{on\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::utilities\-::\-Sequencer\-Generic\-::on\-\_\-error} (
+\begin{DoxyParamCaption}
+\item[{const \-Glib\-::ustring \&}]{text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1SequencerGeneric_a797f1cda33a8dfff5fdb4d5fa095a90b}
+
+
+\-Definition at line 88 of file \-Sequencer\-Generic.\-cpp.
+
+\hypertarget{classcryomesh_1_1utilities_1_1SequencerGeneric_af464b348d68b6ae93f473c0e02a05ff2}{\index{cryomesh\-::utilities\-::\-Sequencer\-Generic@{cryomesh\-::utilities\-::\-Sequencer\-Generic}!on\-\_\-fatal\-\_\-error@{on\-\_\-fatal\-\_\-error}}
+\index{on\-\_\-fatal\-\_\-error@{on\-\_\-fatal\-\_\-error}!cryomesh::utilities::SequencerGeneric@{cryomesh\-::utilities\-::\-Sequencer\-Generic}}
+\subsubsection[{on\-\_\-fatal\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::utilities\-::\-Sequencer\-Generic\-::on\-\_\-fatal\-\_\-error} (
+\begin{DoxyParamCaption}
+\item[{const \-Glib\-::ustring \&}]{text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1SequencerGeneric_af464b348d68b6ae93f473c0e02a05ff2}
+
+
+\-Definition at line 97 of file \-Sequencer\-Generic.\-cpp.
+
+\hypertarget{classcryomesh_1_1utilities_1_1SequencerGeneric_a071c15286ad8aac33fa73ff5cc78136b}{\index{cryomesh\-::utilities\-::\-Sequencer\-Generic@{cryomesh\-::utilities\-::\-Sequencer\-Generic}!on\-\_\-start\-\_\-document@{on\-\_\-start\-\_\-document}}
+\index{on\-\_\-start\-\_\-document@{on\-\_\-start\-\_\-document}!cryomesh::utilities::SequencerGeneric@{cryomesh\-::utilities\-::\-Sequencer\-Generic}}
+\subsubsection[{on\-\_\-start\-\_\-document}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::utilities\-::\-Sequencer\-Generic\-::on\-\_\-start\-\_\-document} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1SequencerGeneric_a071c15286ad8aac33fa73ff5cc78136b}
+
+
+\-Definition at line 22 of file \-Sequencer\-Generic.\-cpp.
+
+\hypertarget{classcryomesh_1_1utilities_1_1SequencerGeneric_ac9307acc5a461e9da6272a7aafcd0cf7}{\index{cryomesh\-::utilities\-::\-Sequencer\-Generic@{cryomesh\-::utilities\-::\-Sequencer\-Generic}!on\-\_\-start\-\_\-element@{on\-\_\-start\-\_\-element}}
+\index{on\-\_\-start\-\_\-element@{on\-\_\-start\-\_\-element}!cryomesh::utilities::SequencerGeneric@{cryomesh\-::utilities\-::\-Sequencer\-Generic}}
+\subsubsection[{on\-\_\-start\-\_\-element}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::utilities\-::\-Sequencer\-Generic\-::on\-\_\-start\-\_\-element} (
+\begin{DoxyParamCaption}
+\item[{const \-Glib\-::ustring \&}]{name, }
+\item[{const \-Attribute\-List \&}]{properties}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1SequencerGeneric_ac9307acc5a461e9da6272a7aafcd0cf7}
+
+
+\-Definition at line 30 of file \-Sequencer\-Generic.\-cpp.
+
+
+
+\-References node\-Entries, and node\-Stack.
+
+\hypertarget{classcryomesh_1_1utilities_1_1SequencerGeneric_aa8f08fad1118ad8d2a787f2f8b50df47}{\index{cryomesh\-::utilities\-::\-Sequencer\-Generic@{cryomesh\-::utilities\-::\-Sequencer\-Generic}!on\-\_\-warning@{on\-\_\-warning}}
+\index{on\-\_\-warning@{on\-\_\-warning}!cryomesh::utilities::SequencerGeneric@{cryomesh\-::utilities\-::\-Sequencer\-Generic}}
+\subsubsection[{on\-\_\-warning}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::utilities\-::\-Sequencer\-Generic\-::on\-\_\-warning} (
+\begin{DoxyParamCaption}
+\item[{const \-Glib\-::ustring \&}]{text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1SequencerGeneric_aa8f08fad1118ad8d2a787f2f8b50df47}
+
+
+\-Definition at line 79 of file \-Sequencer\-Generic.\-cpp.
+
+
+
+\subsection{\-Friends \-And \-Related \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1utilities_1_1SequencerGeneric_ab85e57798daebe5b4c2e7979e216cd3d}{\index{cryomesh\-::utilities\-::\-Sequencer\-Generic@{cryomesh\-::utilities\-::\-Sequencer\-Generic}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cryomesh::utilities::SequencerGeneric@{cryomesh\-::utilities\-::\-Sequencer\-Generic}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const {\bf \-Sequencer\-Generic} \&}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1SequencerGeneric_ab85e57798daebe5b4c2e7979e216cd3d}
+
+
+\-Definition at line 109 of file \-Sequencer\-Generic.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classcryomesh_1_1utilities_1_1SequencerGeneric_a2c43386ba27825ca4a1ff17a00602a2f}{\index{cryomesh\-::utilities\-::\-Sequencer\-Generic@{cryomesh\-::utilities\-::\-Sequencer\-Generic}!element\-Count@{element\-Count}}
+\index{element\-Count@{element\-Count}!cryomesh::utilities::SequencerGeneric@{cryomesh\-::utilities\-::\-Sequencer\-Generic}}
+\subsubsection[{element\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::utilities\-::\-Sequencer\-Generic\-::element\-Count}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1SequencerGeneric_a2c43386ba27825ca4a1ff17a00602a2f}
+
+
+\-Definition at line 56 of file \-Sequencer\-Generic.\-h.
+
+\hypertarget{classcryomesh_1_1utilities_1_1SequencerGeneric_a72d9cc5d05add7cd271a6210f9164009}{\index{cryomesh\-::utilities\-::\-Sequencer\-Generic@{cryomesh\-::utilities\-::\-Sequencer\-Generic}!node\-Entries@{node\-Entries}}
+\index{node\-Entries@{node\-Entries}!cryomesh::utilities::SequencerGeneric@{cryomesh\-::utilities\-::\-Sequencer\-Generic}}
+\subsubsection[{node\-Entries}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<$ boost\-::shared\-\_\-ptr$<${\bf \-Node\-Entry}$>$ $>$ {\bf cryomesh\-::utilities\-::\-Sequencer\-Generic\-::node\-Entries}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1SequencerGeneric_a72d9cc5d05add7cd271a6210f9164009}
+
+
+\-Definition at line 54 of file \-Sequencer\-Generic.\-h.
+
+
+
+\-Referenced by get\-Node\-Entries(), on\-\_\-start\-\_\-element(), and cryomesh\-::utilities\-::operator$<$$<$().
+
+\hypertarget{classcryomesh_1_1utilities_1_1SequencerGeneric_abf4c1421712f9ffaf5ef731d66eec5fc}{\index{cryomesh\-::utilities\-::\-Sequencer\-Generic@{cryomesh\-::utilities\-::\-Sequencer\-Generic}!node\-Stack@{node\-Stack}}
+\index{node\-Stack@{node\-Stack}!cryomesh::utilities::SequencerGeneric@{cryomesh\-::utilities\-::\-Sequencer\-Generic}}
+\subsubsection[{node\-Stack}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<$ boost\-::shared\-\_\-ptr$<${\bf \-Node\-Entry}$>$ $>$ {\bf cryomesh\-::utilities\-::\-Sequencer\-Generic\-::node\-Stack}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1utilities_1_1SequencerGeneric_abf4c1421712f9ffaf5ef731d66eec5fc}
+
+
+\-Definition at line 55 of file \-Sequencer\-Generic.\-h.
+
+
+
+\-Referenced by on\-\_\-end\-\_\-element(), and on\-\_\-start\-\_\-element().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/utilities/\hyperlink{SequencerGeneric_8h}{\-Sequencer\-Generic.\-h}\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/utilities/\hyperlink{SequencerGeneric_8cpp}{\-Sequencer\-Generic.\-cpp}\end{DoxyCompactItemize}

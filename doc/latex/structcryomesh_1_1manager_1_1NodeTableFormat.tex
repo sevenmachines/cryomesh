@@ -1,0 +1,171 @@
+\hypertarget{structcryomesh_1_1manager_1_1NodeTableFormat}{\section{cryomesh\-:\-:manager\-:\-:\-Node\-Table\-Format \-Struct \-Reference}
+\label{structcryomesh_1_1manager_1_1NodeTableFormat}\index{cryomesh\-::manager\-::\-Node\-Table\-Format@{cryomesh\-::manager\-::\-Node\-Table\-Format}}
+}
+
+
+\-Struct representing a node table structure.  
+
+
+
+
+{\ttfamily \#include $<$\-Table\-Formats.\-h$>$}
+
+\-Inheritance diagram for cryomesh\-:\-:manager\-:\-:\-Node\-Table\-Format\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structcryomesh_1_1manager_1_1NodeTableFormat}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structcryomesh_1_1manager_1_1NodeTableFormat_a3fc3590dfb2aaca8658db8f66ca7b5e8}{\-Node\-Table\-Format} ()
+\begin{DoxyCompactList}\small\item\em \-Default constructor will construct all the names and columns assiciated with a node table. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{structcryomesh_1_1manager_1_1TableFormat_a3e797d6130c6b0745a1fac799c25677a}{get\-Name} () const 
+\begin{DoxyCompactList}\small\item\em \-Return the name of the table. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{structcryomesh_1_1manager_1_1TableFormat_a2256ce39471582b92bf7cbb6eec74d30}{get\-Key} (const std\-::string \&key)
+\begin{DoxyCompactList}\small\item\em \-Return the string object associated with a key. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{structcryomesh_1_1manager_1_1TableFormat_a898ae0d0c5490ccdf71aec5156b10fcc}{get\-Create\-Table} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the string that can be used to create the sql table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{structcryomesh_1_1manager_1_1TableFormat_ab49912897ccb7fd0f8d42f1cc21332e8}{name}
+\item 
+std\-::map$<$ std\-::string, \*
+std\-::string $>$ \hyperlink{structcryomesh_1_1manager_1_1TableFormat_a29ab6f4cfc0c56da1fa461ea665a1b61}{columns}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Struct representing a node table structure. 
+
+\-Definition at line 99 of file \-Table\-Formats.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{structcryomesh_1_1manager_1_1NodeTableFormat_a3fc3590dfb2aaca8658db8f66ca7b5e8}{\index{cryomesh\-::manager\-::\-Node\-Table\-Format@{cryomesh\-::manager\-::\-Node\-Table\-Format}!\-Node\-Table\-Format@{\-Node\-Table\-Format}}
+\index{\-Node\-Table\-Format@{\-Node\-Table\-Format}!cryomesh::manager::NodeTableFormat@{cryomesh\-::manager\-::\-Node\-Table\-Format}}
+\subsubsection[{\-Node\-Table\-Format}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::manager\-::\-Node\-Table\-Format\-::\-Node\-Table\-Format} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{structcryomesh_1_1manager_1_1NodeTableFormat_a3fc3590dfb2aaca8658db8f66ca7b5e8}
+
+
+\-Default constructor will construct all the names and columns assiciated with a node table. 
+
+
+
+\-Definition at line 104 of file \-Table\-Formats.\-h.
+
+
+
+\-References cryomesh\-::manager\-::\-Table\-Format\-::columns, and cryomesh\-::manager\-::\-Table\-Format\-::name.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{structcryomesh_1_1manager_1_1TableFormat_a898ae0d0c5490ccdf71aec5156b10fcc}{\index{cryomesh\-::manager\-::\-Node\-Table\-Format@{cryomesh\-::manager\-::\-Node\-Table\-Format}!get\-Create\-Table@{get\-Create\-Table}}
+\index{get\-Create\-Table@{get\-Create\-Table}!cryomesh::manager::NodeTableFormat@{cryomesh\-::manager\-::\-Node\-Table\-Format}}
+\subsubsection[{get\-Create\-Table}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::manager\-::\-Table\-Format\-::get\-Create\-Table} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline, inherited\mbox{]}}}}\label{structcryomesh_1_1manager_1_1TableFormat_a898ae0d0c5490ccdf71aec5156b10fcc}
+
+
+\-Get the string that can be used to create the sql table. 
+
+\begin{DoxyReturn}{\-Returns}
+the sql command string to create this table 
+\end{DoxyReturn}
+
+
+\-Definition at line 60 of file \-Table\-Formats.\-h.
+
+
+
+\-References cryomesh\-::manager\-::\-Table\-Format\-::columns, and cryomesh\-::manager\-::\-Table\-Format\-::get\-Name().
+
+\hypertarget{structcryomesh_1_1manager_1_1TableFormat_a2256ce39471582b92bf7cbb6eec74d30}{\index{cryomesh\-::manager\-::\-Node\-Table\-Format@{cryomesh\-::manager\-::\-Node\-Table\-Format}!get\-Key@{get\-Key}}
+\index{get\-Key@{get\-Key}!cryomesh::manager::NodeTableFormat@{cryomesh\-::manager\-::\-Node\-Table\-Format}}
+\subsubsection[{get\-Key}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::manager\-::\-Table\-Format\-::get\-Key} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, inherited\mbox{]}}}}\label{structcryomesh_1_1manager_1_1TableFormat_a2256ce39471582b92bf7cbb6eec74d30}
+
+
+\-Return the string object associated with a key. 
+
+\-::string \-The key to search for
+
+\begin{DoxyReturn}{\-Returns}
+std\-::string \-The object associated with the search key, \char`\"{}\char`\"{} if not found 
+\end{DoxyReturn}
+
+
+\-Definition at line 45 of file \-Table\-Formats.\-h.
+
+
+
+\-References cryomesh\-::manager\-::\-Table\-Format\-::columns.
+
+\hypertarget{structcryomesh_1_1manager_1_1TableFormat_a3e797d6130c6b0745a1fac799c25677a}{\index{cryomesh\-::manager\-::\-Node\-Table\-Format@{cryomesh\-::manager\-::\-Node\-Table\-Format}!get\-Name@{get\-Name}}
+\index{get\-Name@{get\-Name}!cryomesh::manager::NodeTableFormat@{cryomesh\-::manager\-::\-Node\-Table\-Format}}
+\subsubsection[{get\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::manager\-::\-Table\-Format\-::get\-Name} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline, inherited\mbox{]}}}}\label{structcryomesh_1_1manager_1_1TableFormat_a3e797d6130c6b0745a1fac799c25677a}
+
+
+\-Return the name of the table. 
+
+\begin{DoxyReturn}{\-Returns}
+std\-::string \-The name of the table 
+\end{DoxyReturn}
+
+
+\-Definition at line 32 of file \-Table\-Formats.\-h.
+
+
+
+\-References cryomesh\-::manager\-::\-Table\-Format\-::name.
+
+
+
+\-Referenced by cryomesh\-::manager\-::\-Table\-Format\-::get\-Create\-Table(), cryomesh\-::manager\-::\-Database\-Manager\-::insert\-Connection(), cryomesh\-::manager\-::\-Database\-Manager\-::insert\-Node(), and cryomesh\-::manager\-::\-Database\-Manager\-::insert\-Output\-Pattern().
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{structcryomesh_1_1manager_1_1TableFormat_a29ab6f4cfc0c56da1fa461ea665a1b61}{\index{cryomesh\-::manager\-::\-Node\-Table\-Format@{cryomesh\-::manager\-::\-Node\-Table\-Format}!columns@{columns}}
+\index{columns@{columns}!cryomesh::manager::NodeTableFormat@{cryomesh\-::manager\-::\-Node\-Table\-Format}}
+\subsubsection[{columns}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$std\-::string, std\-::string$>$ {\bf cryomesh\-::manager\-::\-Table\-Format\-::columns}\hspace{0.3cm}{\ttfamily  \mbox{[}protected, inherited\mbox{]}}}}\label{structcryomesh_1_1manager_1_1TableFormat_a29ab6f4cfc0c56da1fa461ea665a1b61}
+
+
+\-Definition at line 93 of file \-Table\-Formats.\-h.
+
+
+
+\-Referenced by cryomesh\-::manager\-::\-Connection\-Table\-Format\-::\-Connection\-Table\-Format(), cryomesh\-::manager\-::\-Table\-Format\-::get\-Create\-Table(), cryomesh\-::manager\-::\-Table\-Format\-::get\-Key(), cryomesh\-::manager\-::\-Input\-Patterns\-Table\-Format\-::\-Input\-Patterns\-Table\-Format(), \-Node\-Table\-Format(), and cryomesh\-::manager\-::\-Output\-Patterns\-Table\-Format\-::\-Output\-Patterns\-Table\-Format().
+
+\hypertarget{structcryomesh_1_1manager_1_1TableFormat_ab49912897ccb7fd0f8d42f1cc21332e8}{\index{cryomesh\-::manager\-::\-Node\-Table\-Format@{cryomesh\-::manager\-::\-Node\-Table\-Format}!name@{name}}
+\index{name@{name}!cryomesh::manager::NodeTableFormat@{cryomesh\-::manager\-::\-Node\-Table\-Format}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::manager\-::\-Table\-Format\-::name}\hspace{0.3cm}{\ttfamily  \mbox{[}protected, inherited\mbox{]}}}}\label{structcryomesh_1_1manager_1_1TableFormat_ab49912897ccb7fd0f8d42f1cc21332e8}
+
+
+\-Definition at line 86 of file \-Table\-Formats.\-h.
+
+
+
+\-Referenced by cryomesh\-::manager\-::\-Connection\-Table\-Format\-::\-Connection\-Table\-Format(), cryomesh\-::manager\-::\-Table\-Format\-::get\-Name(), cryomesh\-::manager\-::\-Input\-Patterns\-Table\-Format\-::\-Input\-Patterns\-Table\-Format(), \-Node\-Table\-Format(), and cryomesh\-::manager\-::\-Output\-Patterns\-Table\-Format\-::\-Output\-Patterns\-Table\-Format().
+
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/manager/\hyperlink{TableFormats_8h}{\-Table\-Formats.\-h}\end{DoxyCompactItemize}

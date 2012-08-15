@@ -1,0 +1,570 @@
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh}{\section{cryomesh\-:\-:structures\-:\-:\-Node\-Mesh \-Class \-Reference}
+\label{classcryomesh_1_1structures_1_1NodeMesh}\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}}
+}
+
+
+\hyperlink{classcryomesh_1_1structures_1_1Mesh}{\-Mesh} of nodes and their neighbouring nodes and distances.  
+
+
+
+
+{\ttfamily \#include $<$\-Node\-Mesh.\-h$>$}
+
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcryomesh_1_1structures_1_1NodeMesh_1_1NeighbourhoodRanges}{\-Neighbourhood\-Ranges}
+\begin{DoxyCompactList}\small\item\em \-Struct to capture some statistics data on a nodes neighbourhood. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classcryomesh_1_1structures_1_1NodeMesh_a2abd31c9553e8eea47b2f48f4128baa1}{\-Interpolation\-Style} \{ \hyperlink{classcryomesh_1_1structures_1_1NodeMesh_a2abd31c9553e8eea47b2f48f4128baa1a9c19702f5ebbdb27e8c729ea80ed4092}{\-I\-N\-V\-E\-R\-S\-E\-\_\-\-R}, 
+\hyperlink{classcryomesh_1_1structures_1_1NodeMesh_a2abd31c9553e8eea47b2f48f4128baa1a074487093091d0a9da3ab11454a3ae86}{\-I\-N\-V\-E\-R\-S\-E\-\_\-\-R2}
+ \}
+\begin{DoxyCompactList}\small\item\em \-Stype to use when interpolating values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1structures_1_1NodeMesh_a3cd9e7d377076d678de79401650c492d}{\-Node\-Mesh} (\hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster} \&clus)
+\begin{DoxyCompactList}\small\item\em \-Constructor to create a node mesh from a cluster. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1structures_1_1NodeMesh_ac7846a95811e38ae6a89cb74e4acbe26}{\-Node\-Mesh} (\hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster} \&clus, double max\-\_\-radius)
+\begin{DoxyCompactList}\small\item\em \-Constructor to create a node mesh from at minimum, a cluster and an optional maximum neighbour radius. \end{DoxyCompactList}\item 
+virtual \hyperlink{classcryomesh_1_1structures_1_1NodeMesh_a3a40ab73f5130b83215bfd8f72d95eb4}{$\sim$\-Node\-Mesh} ()
+\begin{DoxyCompactList}\small\item\em \-Default destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1structures_1_1NodeMesh_a56acee3ddfaa6aad8cfcf4f135c18661}{update} ()
+\begin{DoxyCompactList}\small\item\em \-Per cycle update calls. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1structures_1_1NodeMesh_a746174aeb591281f713a751b1eed25da}{warp\-Nodes} ()
+\begin{DoxyCompactList}\small\item\em \-Merge the interpolated activities with the actual node activities. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1structures_1_1NodeMesh_ac3a3cada093a0114fe6eb1e8172f388b}{regenerate\-Neighbourhoods} ()
+\begin{DoxyCompactList}\small\item\em \-Regenerate the neighbourhood nodes and distances. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1structures_1_1NodeMesh_a010992dff04f952fc2de43b12c2b0003}{regenerate\-Activities} ()
+\begin{DoxyCompactList}\small\item\em \-Recalculate the applied interpolated activity at all nodes from their neighbours. \end{DoxyCompactList}\item 
+\hyperlink{structcryomesh_1_1structures_1_1NodeMesh_1_1NeighbourhoodRanges}{\-Neighbourhood\-Ranges} \hyperlink{classcryomesh_1_1structures_1_1NodeMesh_a7ece5dde420fa8e11d5f341ae35b5ecf}{get\-Neighbour\-Ranges} () const 
+\begin{DoxyCompactList}\small\item\em \-Return a pair of pairs. \end{DoxyCompactList}\item 
+const \hyperlink{namespacecryomesh_1_1structures_a50c955c70377b1dc7d3fcf1364d5e33e}{\-Neighbourhood\-Map} \& \hyperlink{classcryomesh_1_1structures_1_1NodeMesh_a18d54e3addac89800930d1f8eb2d3790}{get\-Node\-Neighbourhood\-Map} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the neighbourhood map. \end{DoxyCompactList}\item 
+const std\-::map\*
+$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Node}{components\-::\-Node} $>$, double $>$ \& \hyperlink{classcryomesh_1_1structures_1_1NodeMesh_a6ba0bd71797a166ebc85375a5a366104}{get\-Neighbourhood\-Activities} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the neighbourhood activities. \end{DoxyCompactList}\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1structures_1_1NodeMesh_a712c2b1f420fc8f29926db9e609a0ee8}{print\-Neighbourhoods} (std\-::ostream \&os) const 
+\begin{DoxyCompactList}\small\item\em \-Print the neighbourhood map. \end{DoxyCompactList}\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1structures_1_1NodeMesh_a6a850e634ec14509ba12dd52fac8ff20}{print\-Neighbourhood\-Activities} (std\-::ostream \&os) const 
+\begin{DoxyCompactList}\small\item\em \-Print the neighbourhood activities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classcryomesh_1_1structures_1_1NodeMesh_a518d312139ab92f1251cd387304e60fd}{get\-Interpolated\-Activity} (const std\-::map$<$ boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Node}{cryomesh\-::components\-::\-Node} $>$, double $>$ \&all\-\_\-neighbours, const \hyperlink{classcryomesh_1_1structures_1_1NodeMesh_a2abd31c9553e8eea47b2f48f4128baa1}{\-Interpolation\-Style} style=\hyperlink{classcryomesh_1_1structures_1_1NodeMesh_a2abd31c9553e8eea47b2f48f4128baa1a9c19702f5ebbdb27e8c729ea80ed4092}{\-I\-N\-V\-E\-R\-S\-E\-\_\-\-R}) const 
+\begin{DoxyCompactList}\small\item\em \-Use a list of neighbours and their distances to generated an interpolated activity value at the central node. \end{DoxyCompactList}\item 
+double \hyperlink{classcryomesh_1_1structures_1_1NodeMesh_a3f12c3d9d3a69a6edf1e04d37041af23}{get\-Decay\-Rate} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the spacial decay rate for activities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Static \-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const double \hyperlink{classcryomesh_1_1structures_1_1NodeMesh_aede40ee5229b60fb8d2e516435e73027}{\-M\-A\-X\-\_\-\-R\-A\-D\-I\-U\-S\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N\-\_\-\-O\-F\-\_\-\-B\-O\-U\-N\-D\-I\-N\-G\-\_\-\-B\-O\-X} = (1.\-0 / 100.\-0)
+\item 
+static const double \hyperlink{classcryomesh_1_1structures_1_1NodeMesh_aabeafa7c3195b23a5505b9a4b1feb99d}{\-I\-N\-T\-E\-R\-P\-O\-L\-A\-T\-E\-D\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-S\-C\-A\-L\-I\-N\-G\-\_\-\-F\-A\-C\-T\-O\-R} = (1.\-0 / 100.\-0)
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacecryomesh_1_1structures_a50c955c70377b1dc7d3fcf1364d5e33e}{\-Neighbourhood\-Map} \hyperlink{classcryomesh_1_1structures_1_1NodeMesh_a506e0ef94a257773bdfa68ef52d57387}{node\-Neighbourhood\-Map}
+\item 
+std\-::map$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Node}{components\-::\-Node} $>$, double $>$ \hyperlink{classcryomesh_1_1structures_1_1NodeMesh_a7fdce4472420f0b1b5fd30edf230bded}{neighbourhood\-Activities}
+\item 
+\hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster} \& \hyperlink{classcryomesh_1_1structures_1_1NodeMesh_a0f94d9777f9f9e2533b64881d59c225e}{cluster}
+\item 
+double \hyperlink{classcryomesh_1_1structures_1_1NodeMesh_a33f53d06bade0255a23c615f4229a631}{maximum\-Neighbourhood\-Radius}
+\item 
+const double \hyperlink{classcryomesh_1_1structures_1_1NodeMesh_aa7ce39158d506dcda63859ca1afb08dc}{decay\-Rate}
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1structures_1_1NodeMesh_acebf6afe649259a1e2eb991a8ee5167c}{operator$<$$<$} (std\-::ostream \&os, const \hyperlink{classcryomesh_1_1structures_1_1NodeMesh}{\-Node\-Mesh} \&obj)
+\begin{DoxyCompactList}\small\item\em \-To stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\hyperlink{classcryomesh_1_1structures_1_1Mesh}{\-Mesh} of nodes and their neighbouring nodes and distances. 
+
+\-Definition at line 34 of file \-Node\-Mesh.\-h.
+
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh_a2abd31c9553e8eea47b2f48f4128baa1}{\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}!\-Interpolation\-Style@{\-Interpolation\-Style}}
+\index{\-Interpolation\-Style@{\-Interpolation\-Style}!cryomesh::structures::NodeMesh@{cryomesh\-::structures\-::\-Node\-Mesh}}
+\subsubsection[{\-Interpolation\-Style}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cryomesh\-::structures\-::\-Node\-Mesh\-::\-Interpolation\-Style}}}\label{classcryomesh_1_1structures_1_1NodeMesh_a2abd31c9553e8eea47b2f48f4128baa1}
+
+
+\-Stype to use when interpolating values. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-I\-N\-V\-E\-R\-S\-E\-\_\-\-R@{\-I\-N\-V\-E\-R\-S\-E\-\_\-\-R}!cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}}\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}!\-I\-N\-V\-E\-R\-S\-E\-\_\-\-R@{\-I\-N\-V\-E\-R\-S\-E\-\_\-\-R}}\item[{\em 
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh_a2abd31c9553e8eea47b2f48f4128baa1a9c19702f5ebbdb27e8c729ea80ed4092}{\-I\-N\-V\-E\-R\-S\-E\-\_\-\-R}\label{classcryomesh_1_1structures_1_1NodeMesh_a2abd31c9553e8eea47b2f48f4128baa1a9c19702f5ebbdb27e8c729ea80ed4092}
+}]\index{\-I\-N\-V\-E\-R\-S\-E\-\_\-\-R2@{\-I\-N\-V\-E\-R\-S\-E\-\_\-\-R2}!cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}}\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}!\-I\-N\-V\-E\-R\-S\-E\-\_\-\-R2@{\-I\-N\-V\-E\-R\-S\-E\-\_\-\-R2}}\item[{\em 
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh_a2abd31c9553e8eea47b2f48f4128baa1a074487093091d0a9da3ab11454a3ae86}{\-I\-N\-V\-E\-R\-S\-E\-\_\-\-R2}\label{classcryomesh_1_1structures_1_1NodeMesh_a2abd31c9553e8eea47b2f48f4128baa1a074487093091d0a9da3ab11454a3ae86}
+}]\end{description}
+\end{Desc}
+
+
+
+\-Definition at line 50 of file \-Node\-Mesh.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh_a3cd9e7d377076d678de79401650c492d}{\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}!\-Node\-Mesh@{\-Node\-Mesh}}
+\index{\-Node\-Mesh@{\-Node\-Mesh}!cryomesh::structures::NodeMesh@{cryomesh\-::structures\-::\-Node\-Mesh}}
+\subsubsection[{\-Node\-Mesh}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::structures\-::\-Node\-Mesh\-::\-Node\-Mesh} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Cluster} \&}]{clus}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1NodeMesh_a3cd9e7d377076d678de79401650c492d}
+
+
+\-Constructor to create a node mesh from a cluster. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster}} & \-The cluster associated with this node mesh \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 22 of file \-Node\-Mesh.\-cpp.
+
+
+
+\-References cluster, cryomesh\-::structures\-::\-Cluster\-::get\-Nodes(), maximum\-Neighbourhood\-Radius, and regenerate\-Neighbourhoods().
+
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh_ac7846a95811e38ae6a89cb74e4acbe26}{\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}!\-Node\-Mesh@{\-Node\-Mesh}}
+\index{\-Node\-Mesh@{\-Node\-Mesh}!cryomesh::structures::NodeMesh@{cryomesh\-::structures\-::\-Node\-Mesh}}
+\subsubsection[{\-Node\-Mesh}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::structures\-::\-Node\-Mesh\-::\-Node\-Mesh} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Cluster} \&}]{clus, }
+\item[{double}]{max\-\_\-radius}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1NodeMesh_ac7846a95811e38ae6a89cb74e4acbe26}
+
+
+\-Constructor to create a node mesh from at minimum, a cluster and an optional maximum neighbour radius. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster}} & \-The cluster associated with this node mesh \\
+\hline
+{\em double} & \-Maximum radius cutoff point for neighbourhood distance \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 43 of file \-Node\-Mesh.\-cpp.
+
+
+
+\-References regenerate\-Neighbourhoods().
+
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh_a3a40ab73f5130b83215bfd8f72d95eb4}{\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}!$\sim$\-Node\-Mesh@{$\sim$\-Node\-Mesh}}
+\index{$\sim$\-Node\-Mesh@{$\sim$\-Node\-Mesh}!cryomesh::structures::NodeMesh@{cryomesh\-::structures\-::\-Node\-Mesh}}
+\subsubsection[{$\sim$\-Node\-Mesh}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::structures\-::\-Node\-Mesh\-::$\sim$\-Node\-Mesh} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1NodeMesh_a3a40ab73f5130b83215bfd8f72d95eb4}
+
+
+\-Default destructor. 
+
+
+
+\-Definition at line 48 of file \-Node\-Mesh.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh_a3f12c3d9d3a69a6edf1e04d37041af23}{\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}!get\-Decay\-Rate@{get\-Decay\-Rate}}
+\index{get\-Decay\-Rate@{get\-Decay\-Rate}!cryomesh::structures::NodeMesh@{cryomesh\-::structures\-::\-Node\-Mesh}}
+\subsubsection[{get\-Decay\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::structures\-::\-Node\-Mesh\-::get\-Decay\-Rate} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1structures_1_1NodeMesh_a3f12c3d9d3a69a6edf1e04d37041af23}
+
+
+\-Get the spacial decay rate for activities. 
+
+\begin{DoxyReturn}{\-Returns}
+double \-The spacial decay rate 
+\end{DoxyReturn}
+
+
+\-Definition at line 216 of file \-Node\-Mesh.\-cpp.
+
+
+
+\-References decay\-Rate.
+
+
+
+\-Referenced by get\-Interpolated\-Activity().
+
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh_a518d312139ab92f1251cd387304e60fd}{\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}!get\-Interpolated\-Activity@{get\-Interpolated\-Activity}}
+\index{get\-Interpolated\-Activity@{get\-Interpolated\-Activity}!cryomesh::structures::NodeMesh@{cryomesh\-::structures\-::\-Node\-Mesh}}
+\subsubsection[{get\-Interpolated\-Activity}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::structures\-::\-Node\-Mesh\-::get\-Interpolated\-Activity} (
+\begin{DoxyParamCaption}
+\item[{const std\-::map$<$ boost\-::shared\-\_\-ptr$<$ {\bf cryomesh\-::components\-::\-Node} $>$, double $>$ \&}]{all\-\_\-neighbours, }
+\item[{const {\bf \-Interpolation\-Style}}]{style = {\ttfamily {\bf \-I\-N\-V\-E\-R\-S\-E\-\_\-\-R}}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1structures_1_1NodeMesh_a518d312139ab92f1251cd387304e60fd}
+
+
+\-Use a list of neighbours and their distances to generated an interpolated activity value at the central node. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::map$<$boost\-::shared\-\_\-ptr$<$cryomesh\-::components\-::\-Node$>$,double$>$} & \-List of all the neighbour nodes and their distances to their central node \\
+\hline
+{\em \-Interpolation\-Style} & \-Which method to use to interpolate the central activity\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+double \-The interpolated activity 
+\end{DoxyReturn}
+
+
+\-Definition at line 164 of file \-Node\-Mesh.\-cpp.
+
+
+
+\-References get\-Decay\-Rate().
+
+
+
+\-Referenced by regenerate\-Activities().
+
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh_a6ba0bd71797a166ebc85375a5a366104}{\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}!get\-Neighbourhood\-Activities@{get\-Neighbourhood\-Activities}}
+\index{get\-Neighbourhood\-Activities@{get\-Neighbourhood\-Activities}!cryomesh::structures::NodeMesh@{cryomesh\-::structures\-::\-Node\-Mesh}}
+\subsubsection[{get\-Neighbourhood\-Activities}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::map$<$ boost\-::shared\-\_\-ptr$<$ {\bf components\-::\-Node} $>$, double $>$ \& {\bf cryomesh\-::structures\-::\-Node\-Mesh\-::get\-Neighbourhood\-Activities} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1NodeMesh_a6ba0bd71797a166ebc85375a5a366104}
+
+
+\-Get the neighbourhood activities. 
+
+\begin{DoxyReturn}{\-Returns}
+std\-::map$<$boost\-::shared\-\_\-ptr$<$components\-::\-Node$>$, double$>$ \-The neighbourhood activities 
+\end{DoxyReturn}
+
+
+\-Definition at line 261 of file \-Node\-Mesh.\-cpp.
+
+
+
+\-References neighbourhood\-Activities.
+
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh_a7ece5dde420fa8e11d5f341ae35b5ecf}{\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}!get\-Neighbour\-Ranges@{get\-Neighbour\-Ranges}}
+\index{get\-Neighbour\-Ranges@{get\-Neighbour\-Ranges}!cryomesh::structures::NodeMesh@{cryomesh\-::structures\-::\-Node\-Mesh}}
+\subsubsection[{get\-Neighbour\-Ranges}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Node\-Mesh\-::\-Neighbourhood\-Ranges} {\bf cryomesh\-::structures\-::\-Node\-Mesh\-::get\-Neighbour\-Ranges} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1NodeMesh_a7ece5dde420fa8e11d5f341ae35b5ecf}
+
+
+\-Return a pair of pairs. 
+
+the first representing the min/max of neighbour counts, the second the min/max of distances
+
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{structcryomesh_1_1structures_1_1NodeMesh_1_1NeighbourhoodRanges}{\-Neighbourhood\-Ranges} min/max of neighbour counts and min/max of distances 
+\end{DoxyReturn}
+
+
+\-Definition at line 220 of file \-Node\-Mesh.\-cpp.
+
+
+
+\-References cryomesh\-::structures\-::\-Node\-Mesh\-::\-Neighbourhood\-Ranges\-::maximum\-Neighbour\-Count, cryomesh\-::structures\-::\-Node\-Mesh\-::\-Neighbourhood\-Ranges\-::maximum\-Neighbour\-Distance, cryomesh\-::structures\-::\-Node\-Mesh\-::\-Neighbourhood\-Ranges\-::minimum\-Neighbour\-Count, cryomesh\-::structures\-::\-Node\-Mesh\-::\-Neighbourhood\-Ranges\-::minimum\-Neighbour\-Distance, and node\-Neighbourhood\-Map.
+
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh_a18d54e3addac89800930d1f8eb2d3790}{\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}!get\-Node\-Neighbourhood\-Map@{get\-Node\-Neighbourhood\-Map}}
+\index{get\-Node\-Neighbourhood\-Map@{get\-Node\-Neighbourhood\-Map}!cryomesh::structures::NodeMesh@{cryomesh\-::structures\-::\-Node\-Mesh}}
+\subsubsection[{get\-Node\-Neighbourhood\-Map}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Neighbourhood\-Map} \& {\bf cryomesh\-::structures\-::\-Node\-Mesh\-::get\-Node\-Neighbourhood\-Map} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1NodeMesh_a18d54e3addac89800930d1f8eb2d3790}
+
+
+\-Get the neighbourhood map. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Neighbourhood\-Map \-The neighbourhood map 
+\end{DoxyReturn}
+
+
+\-Definition at line 258 of file \-Node\-Mesh.\-cpp.
+
+
+
+\-References node\-Neighbourhood\-Map.
+
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh_a6a850e634ec14509ba12dd52fac8ff20}{\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}!print\-Neighbourhood\-Activities@{print\-Neighbourhood\-Activities}}
+\index{print\-Neighbourhood\-Activities@{print\-Neighbourhood\-Activities}!cryomesh::structures::NodeMesh@{cryomesh\-::structures\-::\-Node\-Mesh}}
+\subsubsection[{print\-Neighbourhood\-Activities}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream \& {\bf cryomesh\-::structures\-::\-Node\-Mesh\-::print\-Neighbourhood\-Activities} (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1NodeMesh_a6a850e634ec14509ba12dd52fac8ff20}
+
+
+\-Print the neighbourhood activities. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::ostream} & \-The output stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::ostream \-The output stream 
+\end{DoxyReturn}
+
+
+\-Definition at line 287 of file \-Node\-Mesh.\-cpp.
+
+
+
+\-References neighbourhood\-Activities.
+
+
+
+\-Referenced by cryomesh\-::structures\-::operator$<$$<$(), regenerate\-Neighbourhoods(), and update().
+
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh_a712c2b1f420fc8f29926db9e609a0ee8}{\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}!print\-Neighbourhoods@{print\-Neighbourhoods}}
+\index{print\-Neighbourhoods@{print\-Neighbourhoods}!cryomesh::structures::NodeMesh@{cryomesh\-::structures\-::\-Node\-Mesh}}
+\subsubsection[{print\-Neighbourhoods}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream \& {\bf cryomesh\-::structures\-::\-Node\-Mesh\-::print\-Neighbourhoods} (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1NodeMesh_a712c2b1f420fc8f29926db9e609a0ee8}
+
+
+\-Print the neighbourhood map. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::ostream} & \-The output stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::ostream \-The output stream 
+\end{DoxyReturn}
+
+
+\-Definition at line 265 of file \-Node\-Mesh.\-cpp.
+
+
+
+\-References node\-Neighbourhood\-Map.
+
+
+
+\-Referenced by cryomesh\-::structures\-::operator$<$$<$(), regenerate\-Neighbourhoods(), and update().
+
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh_a010992dff04f952fc2de43b12c2b0003}{\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}!regenerate\-Activities@{regenerate\-Activities}}
+\index{regenerate\-Activities@{regenerate\-Activities}!cryomesh::structures::NodeMesh@{cryomesh\-::structures\-::\-Node\-Mesh}}
+\subsubsection[{regenerate\-Activities}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::structures\-::\-Node\-Mesh\-::regenerate\-Activities} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1NodeMesh_a010992dff04f952fc2de43b12c2b0003}
+
+
+\-Recalculate the applied interpolated activity at all nodes from their neighbours. 
+
+
+
+\-Definition at line 146 of file \-Node\-Mesh.\-cpp.
+
+
+
+\-References get\-Interpolated\-Activity(), neighbourhood\-Activities, and node\-Neighbourhood\-Map.
+
+
+
+\-Referenced by update().
+
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh_ac3a3cada093a0114fe6eb1e8172f388b}{\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}!regenerate\-Neighbourhoods@{regenerate\-Neighbourhoods}}
+\index{regenerate\-Neighbourhoods@{regenerate\-Neighbourhoods}!cryomesh::structures::NodeMesh@{cryomesh\-::structures\-::\-Node\-Mesh}}
+\subsubsection[{regenerate\-Neighbourhoods}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::structures\-::\-Node\-Mesh\-::regenerate\-Neighbourhoods} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1NodeMesh_ac3a3cada093a0114fe6eb1e8172f388b}
+
+
+\-Regenerate the neighbourhood nodes and distances. 
+
+
+
+\-Definition at line 99 of file \-Node\-Mesh.\-cpp.
+
+
+
+\-References cluster, cryomesh\-::structures\-::\-Cluster\-::get\-Nodes(), maximum\-Neighbourhood\-Radius, neighbourhood\-Activities, node\-Neighbourhood\-Map, print\-Neighbourhood\-Activities(), and print\-Neighbourhoods().
+
+
+
+\-Referenced by \-Node\-Mesh().
+
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh_a56acee3ddfaa6aad8cfcf4f135c18661}{\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}!update@{update}}
+\index{update@{update}!cryomesh::structures::NodeMesh@{cryomesh\-::structures\-::\-Node\-Mesh}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::structures\-::\-Node\-Mesh\-::update} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1NodeMesh_a56acee3ddfaa6aad8cfcf4f135c18661}
+
+
+\-Per cycle update calls. 
+
+
+
+\-Definition at line 51 of file \-Node\-Mesh.\-cpp.
+
+
+
+\-References print\-Neighbourhood\-Activities(), print\-Neighbourhoods(), and regenerate\-Activities().
+
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh_a746174aeb591281f713a751b1eed25da}{\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}!warp\-Nodes@{warp\-Nodes}}
+\index{warp\-Nodes@{warp\-Nodes}!cryomesh::structures::NodeMesh@{cryomesh\-::structures\-::\-Node\-Mesh}}
+\subsubsection[{warp\-Nodes}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::structures\-::\-Node\-Mesh\-::warp\-Nodes} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1NodeMesh_a746174aeb591281f713a751b1eed25da}
+
+
+\-Merge the interpolated activities with the actual node activities. 
+
+
+
+\-Definition at line 65 of file \-Node\-Mesh.\-cpp.
+
+
+
+\-References cluster, cryomesh\-::structures\-::\-Cluster\-::get\-Energy(), and neighbourhood\-Activities.
+
+
+
+\subsection{\-Friends \-And \-Related \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh_acebf6afe649259a1e2eb991a8ee5167c}{\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cryomesh::structures::NodeMesh@{cryomesh\-::structures\-::\-Node\-Mesh}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const {\bf \-Node\-Mesh} \&}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{classcryomesh_1_1structures_1_1NodeMesh_acebf6afe649259a1e2eb991a8ee5167c}
+
+
+\-To stream operator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::ostream} & \& os \-The output stream \\
+\hline
+{\em const} & \hyperlink{classcryomesh_1_1structures_1_1NodeMesh}{\-Node\-Mesh} \& obj \-The object to stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::ostream \& \-The output stream 
+\end{DoxyReturn}
+
+
+\-Definition at line 306 of file \-Node\-Mesh.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh_a0f94d9777f9f9e2533b64881d59c225e}{\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}!cluster@{cluster}}
+\index{cluster@{cluster}!cryomesh::structures::NodeMesh@{cryomesh\-::structures\-::\-Node\-Mesh}}
+\subsubsection[{cluster}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Cluster}\& {\bf cryomesh\-::structures\-::\-Node\-Mesh\-::cluster}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1NodeMesh_a0f94d9777f9f9e2533b64881d59c225e}
+
+
+\-Definition at line 219 of file \-Node\-Mesh.\-h.
+
+
+
+\-Referenced by \-Node\-Mesh(), regenerate\-Neighbourhoods(), and warp\-Nodes().
+
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh_aa7ce39158d506dcda63859ca1afb08dc}{\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}!decay\-Rate@{decay\-Rate}}
+\index{decay\-Rate@{decay\-Rate}!cryomesh::structures::NodeMesh@{cryomesh\-::structures\-::\-Node\-Mesh}}
+\subsubsection[{decay\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}const double {\bf cryomesh\-::structures\-::\-Node\-Mesh\-::decay\-Rate}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1NodeMesh_aa7ce39158d506dcda63859ca1afb08dc}
+
+
+\-Definition at line 233 of file \-Node\-Mesh.\-h.
+
+
+
+\-Referenced by get\-Decay\-Rate().
+
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh_aabeafa7c3195b23a5505b9a4b1feb99d}{\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}!\-I\-N\-T\-E\-R\-P\-O\-L\-A\-T\-E\-D\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-S\-C\-A\-L\-I\-N\-G\-\_\-\-F\-A\-C\-T\-O\-R@{\-I\-N\-T\-E\-R\-P\-O\-L\-A\-T\-E\-D\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-S\-C\-A\-L\-I\-N\-G\-\_\-\-F\-A\-C\-T\-O\-R}}
+\index{\-I\-N\-T\-E\-R\-P\-O\-L\-A\-T\-E\-D\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-S\-C\-A\-L\-I\-N\-G\-\_\-\-F\-A\-C\-T\-O\-R@{\-I\-N\-T\-E\-R\-P\-O\-L\-A\-T\-E\-D\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-S\-C\-A\-L\-I\-N\-G\-\_\-\-F\-A\-C\-T\-O\-R}!cryomesh::structures::NodeMesh@{cryomesh\-::structures\-::\-Node\-Mesh}}
+\subsubsection[{\-I\-N\-T\-E\-R\-P\-O\-L\-A\-T\-E\-D\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-S\-C\-A\-L\-I\-N\-G\-\_\-\-F\-A\-C\-T\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}const double {\bf cryomesh\-::structures\-::\-Node\-Mesh\-::\-I\-N\-T\-E\-R\-P\-O\-L\-A\-T\-E\-D\-\_\-\-A\-C\-T\-I\-V\-I\-T\-Y\-\_\-\-S\-C\-A\-L\-I\-N\-G\-\_\-\-F\-A\-C\-T\-O\-R} = (1.\-0 / 100.\-0)\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}\label{classcryomesh_1_1structures_1_1NodeMesh_aabeafa7c3195b23a5505b9a4b1feb99d}
+
+
+\-Definition at line 196 of file \-Node\-Mesh.\-h.
+
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh_aede40ee5229b60fb8d2e516435e73027}{\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}!\-M\-A\-X\-\_\-\-R\-A\-D\-I\-U\-S\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N\-\_\-\-O\-F\-\_\-\-B\-O\-U\-N\-D\-I\-N\-G\-\_\-\-B\-O\-X@{\-M\-A\-X\-\_\-\-R\-A\-D\-I\-U\-S\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N\-\_\-\-O\-F\-\_\-\-B\-O\-U\-N\-D\-I\-N\-G\-\_\-\-B\-O\-X}}
+\index{\-M\-A\-X\-\_\-\-R\-A\-D\-I\-U\-S\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N\-\_\-\-O\-F\-\_\-\-B\-O\-U\-N\-D\-I\-N\-G\-\_\-\-B\-O\-X@{\-M\-A\-X\-\_\-\-R\-A\-D\-I\-U\-S\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N\-\_\-\-O\-F\-\_\-\-B\-O\-U\-N\-D\-I\-N\-G\-\_\-\-B\-O\-X}!cryomesh::structures::NodeMesh@{cryomesh\-::structures\-::\-Node\-Mesh}}
+\subsubsection[{\-M\-A\-X\-\_\-\-R\-A\-D\-I\-U\-S\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N\-\_\-\-O\-F\-\_\-\-B\-O\-U\-N\-D\-I\-N\-G\-\_\-\-B\-O\-X}]{\setlength{\rightskip}{0pt plus 5cm}const double {\bf cryomesh\-::structures\-::\-Node\-Mesh\-::\-M\-A\-X\-\_\-\-R\-A\-D\-I\-U\-S\-\_\-\-F\-R\-A\-C\-T\-I\-O\-N\-\_\-\-O\-F\-\_\-\-B\-O\-U\-N\-D\-I\-N\-G\-\_\-\-B\-O\-X} = (1.\-0 / 100.\-0)\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}\label{classcryomesh_1_1structures_1_1NodeMesh_aede40ee5229b60fb8d2e516435e73027}
+
+
+\-Definition at line 189 of file \-Node\-Mesh.\-h.
+
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh_a33f53d06bade0255a23c615f4229a631}{\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}!maximum\-Neighbourhood\-Radius@{maximum\-Neighbourhood\-Radius}}
+\index{maximum\-Neighbourhood\-Radius@{maximum\-Neighbourhood\-Radius}!cryomesh::structures::NodeMesh@{cryomesh\-::structures\-::\-Node\-Mesh}}
+\subsubsection[{maximum\-Neighbourhood\-Radius}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::structures\-::\-Node\-Mesh\-::maximum\-Neighbourhood\-Radius}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1NodeMesh_a33f53d06bade0255a23c615f4229a631}
+
+
+\-Definition at line 226 of file \-Node\-Mesh.\-h.
+
+
+
+\-Referenced by \-Node\-Mesh(), and regenerate\-Neighbourhoods().
+
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh_a7fdce4472420f0b1b5fd30edf230bded}{\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}!neighbourhood\-Activities@{neighbourhood\-Activities}}
+\index{neighbourhood\-Activities@{neighbourhood\-Activities}!cryomesh::structures::NodeMesh@{cryomesh\-::structures\-::\-Node\-Mesh}}
+\subsubsection[{neighbourhood\-Activities}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$boost\-::shared\-\_\-ptr$<${\bf components\-::\-Node}$>$, double$>$ {\bf cryomesh\-::structures\-::\-Node\-Mesh\-::neighbourhood\-Activities}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1NodeMesh_a7fdce4472420f0b1b5fd30edf230bded}
+
+
+\-Definition at line 212 of file \-Node\-Mesh.\-h.
+
+
+
+\-Referenced by get\-Neighbourhood\-Activities(), print\-Neighbourhood\-Activities(), regenerate\-Activities(), regenerate\-Neighbourhoods(), and warp\-Nodes().
+
+\hypertarget{classcryomesh_1_1structures_1_1NodeMesh_a506e0ef94a257773bdfa68ef52d57387}{\index{cryomesh\-::structures\-::\-Node\-Mesh@{cryomesh\-::structures\-::\-Node\-Mesh}!node\-Neighbourhood\-Map@{node\-Neighbourhood\-Map}}
+\index{node\-Neighbourhood\-Map@{node\-Neighbourhood\-Map}!cryomesh::structures::NodeMesh@{cryomesh\-::structures\-::\-Node\-Mesh}}
+\subsubsection[{node\-Neighbourhood\-Map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Neighbourhood\-Map} {\bf cryomesh\-::structures\-::\-Node\-Mesh\-::node\-Neighbourhood\-Map}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1NodeMesh_a506e0ef94a257773bdfa68ef52d57387}
+
+
+\-Definition at line 205 of file \-Node\-Mesh.\-h.
+
+
+
+\-Referenced by get\-Neighbour\-Ranges(), get\-Node\-Neighbourhood\-Map(), print\-Neighbourhoods(), regenerate\-Activities(), and regenerate\-Neighbourhoods().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/structures/\hyperlink{NodeMesh_8h}{\-Node\-Mesh.\-h}\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/structures/\hyperlink{NodeMesh_8cpp}{\-Node\-Mesh.\-cpp}\end{DoxyCompactItemize}

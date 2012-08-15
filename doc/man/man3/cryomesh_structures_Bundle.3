@@ -1,25 +1,25 @@
-.TH "cryomesh::structures::Bundle" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::structures::Bundle" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 cryomesh::structures::Bundle \- 
 .PP
-A \fBBundle\fP is the collection of clusters and fibres, it represents the system as a whole.  
+A \fBBundle\fP is the collection of clusters and fibres, it represents the system as a whole\&.  
 
 .SH SYNOPSIS
 .br
 .PP
 .PP
-\fC#include <Bundle.h>\fP
+\fC#include <Bundle\&.h>\fP
 .PP
-Inherits \fBcryomesh::common::Loggable\fP.
+Inherits \fBcryomesh::common::Loggable\fP\&.
 .SS "Public Types"
 
 .in +1c
 .ti -1c
 .RI "enum \fBLoggingDepth\fP { \fBSUMMARY\fP, \fBMAX\fP }"
 .br
-.RI "\fIEnum representing print detail. \fP"
+.RI "\fIEnum representing print detail\&. \fP"
 .in -1c
 .SS "Public Member Functions"
 
@@ -27,131 +27,161 @@ Inherits \fBcryomesh::common::Loggable\fP.
 .ti -1c
 .RI "\fBBundle\fP ()"
 .br
-.RI "\fIDefault contructor. \fP"
+.RI "\fIDefault contructor\&. \fP"
 .ti -1c
 .RI "virtual \fB~Bundle\fP ()"
 .br
-.RI "\fIDefault destructor. \fP"
+.RI "\fIDefault destructor\&. \fP"
 .ti -1c
 .RI "void \fBupdate\fP ()"
 .br
-.RI "\fIUpdate all bundle components. \fP"
+.RI "\fIUpdate all bundle components\&. \fP"
 .ti -1c
-.RI "virtual boost::shared_ptr< \fBCluster\fP > \fBcreateCluster\fP (int nodeSize, int nodeConnectivity)"
+.RI "virtual boost::shared_ptr
 .br
-.RI "\fICreate a cluster with a size and connectivity. \fP"
+< \fBCluster\fP > \fBcreateCluster\fP (int nodeSize, int nodeConnectivity)"
+.br
+.RI "\fICreate a cluster with a size and connectivity\&. \fP"
 .ti -1c
 .RI "virtual boost::shared_ptr< \fBFibre\fP > \fBconnectCluster\fP (boost::uuids::uuid inputClusterUUID, boost::uuids::uuid outputClusterUUID, int fibreWidth)"
 .br
-.RI "\fIConnect clusters specified by uuids with a fibre of width. \fP"
+.RI "\fIConnect clusters specified by uuids with a fibre of width\&. \fP"
 .ti -1c
 .RI "virtual boost::shared_ptr< \fBFibre\fP > \fBconnectCluster\fP (boost::uuids::uuid clusterUUID, const \fBFibre::FibreType\fP &type, int fibreWidth)"
 .br
-.RI "\fIConnect clusters specified by uuids with a fibre of width. \fP"
+.RI "\fIConnect clusters specified by uuids with a fibre of width\&. \fP"
 .ti -1c
 .RI "virtual boost::shared_ptr< \fBFibre\fP > \fBconnectPrimaryInputCluster\fP (boost::uuids::uuid patchanid, boost::uuids::uuid clusterUUID)"
 .br
-.RI "\fIHelper access function for specialised connection. \fP"
+.RI "\fIHelper access function for specialised connection\&. \fP"
 .ti -1c
 .RI "virtual boost::shared_ptr< \fBFibre\fP > \fBconnectPrimaryOutputCluster\fP (boost::uuids::uuid patchanid, boost::uuids::uuid clusterUUID)"
 .br
-.RI "\fIHelper access function for specialised connection. \fP"
+.RI "\fIHelper access function for specialised connection\&. \fP"
 .ti -1c
-.RI "std::vector< boost::shared_ptr< \fBFibre\fP > > \fBautoConnectPrimaryInputClusters\fP (const std::vector< boost::uuids::uuid > &cluster_uuids)"
+.RI "std::vector< boost::shared_ptr
+.br
+< \fBFibre\fP > > \fBautoConnectPrimaryInputClusters\fP (const std::vector< boost::uuids::uuid > &cluster_uuids)"
 .br
 .ti -1c
-.RI "std::vector< boost::shared_ptr< \fBFibre\fP > > \fBautoConnectPrimaryOutputClusters\fP (const std::vector< boost::uuids::uuid > &cluster_uuids)"
+.RI "std::vector< boost::shared_ptr
+.br
+< \fBFibre\fP > > \fBautoConnectPrimaryOutputClusters\fP (const std::vector< boost::uuids::uuid > &cluster_uuids)"
 .br
 .ti -1c
-.RI "virtual std::vector< boost::shared_ptr< \fBFibre\fP > > \fBautoConnectPrimaryInputClusters\fP (std::vector< boost::shared_ptr< \fBCluster\fP > > list)"
+.RI "virtual std::vector
+.br
+< boost::shared_ptr< \fBFibre\fP > > \fBautoConnectPrimaryInputClusters\fP (std::vector< boost::shared_ptr< \fBCluster\fP > > list)"
 .br
 .ti -1c
-.RI "virtual std::vector< boost::shared_ptr< \fBFibre\fP > > \fBautoConnectPrimaryOutputClusters\fP (std::vector< boost::shared_ptr< \fBCluster\fP > > list)"
+.RI "virtual std::vector
+.br
+< boost::shared_ptr< \fBFibre\fP > > \fBautoConnectPrimaryOutputClusters\fP (std::vector< boost::shared_ptr< \fBCluster\fP > > list)"
 .br
 .ti -1c
-.RI "virtual std::vector< boost::shared_ptr< \fBstate::PatternChannel\fP > > \fBgetDisconnectedRealInputPatternChannels\fP ()"
+.RI "virtual std::vector
+.br
+< boost::shared_ptr
+.br
+< \fBstate::PatternChannel\fP > > \fBgetDisconnectedRealInputPatternChannels\fP ()"
 .br
 .ti -1c
-.RI "virtual std::vector< boost::shared_ptr< \fBstate::PatternChannel\fP > > \fBgetDisconnectedRealOutputPatternChannels\fP ()"
+.RI "virtual std::vector
+.br
+< boost::shared_ptr
+.br
+< \fBstate::PatternChannel\fP > > \fBgetDisconnectedRealOutputPatternChannels\fP ()"
 .br
 .ti -1c
 .RI "virtual boost::shared_ptr< \fBFibre\fP > \fBconnectLoopbackCluster\fP (boost::uuids::uuid clusterUUID, int fibreWidth)"
 .br
-.RI "\fIHelper access function for specialised connection. \fP"
+.RI "\fIHelper access function for specialised connection\&. \fP"
 .ti -1c
 .RI "virtual void \fBloadChannels\fP (const std::string &ifstr)"
 .br
-.RI "\fILoad in the pattern channels from a filename of a pattern dataset. \fP"
+.RI "\fILoad in the pattern channels from a filename of a pattern dataset\&. \fP"
 .ti -1c
-.RI "const \fBClusterMap\fP & \fBgetClusters\fP () const "
+.RI "const ClusterMap & \fBgetClusters\fP () const "
 .br
-.RI "\fIGet the clusters in this bundle. \fP"
+.RI "\fIGet the clusters in this bundle\&. \fP"
 .ti -1c
 .RI "const \fBFibreMap\fP & \fBgetFibres\fP () const "
 .br
-.RI "\fIGet the mutable clusters in this bundle. \fP"
+.RI "\fIGet the mutable clusters in this bundle\&. \fP"
 .ti -1c
 .RI "const \fBFibreMap\fP & \fBgetInputFibres\fP () const "
 .br
-.RI "\fIGet the input fibres of this bundle. \fP"
+.RI "\fIGet the input fibres of this bundle\&. \fP"
 .ti -1c
 .RI "\fBFibreMap\fP & \fBgetMutableInputFibres\fP ()"
 .br
-.RI "\fIGet the mutable input fibres of this bundle. \fP"
+.RI "\fIGet the mutable input fibres of this bundle\&. \fP"
 .ti -1c
 .RI "const \fBFibreMap\fP & \fBgetOutputFibres\fP () const "
 .br
-.RI "\fIGet the output fibres of this bundle. \fP"
+.RI "\fIGet the output fibres of this bundle\&. \fP"
 .ti -1c
 .RI "\fBFibreMap\fP & \fBgetMutableOutputFibres\fP ()"
 .br
-.RI "\fIGet the mutable output fibres of this bundle. \fP"
+.RI "\fIGet the mutable output fibres of this bundle\&. \fP"
 .ti -1c
 .RI "const \fBstate::PatternChannelMap\fP & \fBgetRealInputChannelsMap\fP () const "
 .br
-.RI "\fIGet the real input pattern channels of this bundle. \fP"
+.RI "\fIGet the real input pattern channels of this bundle\&. \fP"
 .ti -1c
 .RI "const \fBstate::PatternChannelMap\fP & \fBgetRealOutputChannelsMap\fP () const "
 .br
-.RI "\fIGet the real output pattern channels of this bundle. \fP"
+.RI "\fIGet the real output pattern channels of this bundle\&. \fP"
 .ti -1c
 .RI "const \fBstate::PatternChannelMap\fP & \fBgetActualInputChannelsMap\fP () const "
 .br
-.RI "\fIGet the actual input pattern channels of this bundle. \fP"
+.RI "\fIGet the actual input pattern channels of this bundle\&. \fP"
 .ti -1c
 .RI "const \fBstate::PatternChannelMap\fP & \fBgetActualOutputChannelsMap\fP () const "
 .br
-.RI "\fIGet the real output pattern channels of this bundle. \fP"
+.RI "\fIGet the real output pattern channels of this bundle\&. \fP"
 .ti -1c
-.RI "const std::map< boost::uuids::uuid, boost::uuids::uuid > & \fBgetRealFibrePatternChannelMap\fP () const "
+.RI "const std::map
 .br
-.RI "\fIGet the map of fibres to their associated pattern channels. \fP"
+< boost::uuids::uuid, 
+.br
+boost::uuids::uuid > & \fBgetRealFibrePatternChannelMap\fP () const "
+.br
+.RI "\fIGet the map of fibres to their associated pattern channels\&. \fP"
 .ti -1c
-.RI "const std::map< boost::uuids::uuid, boost::uuids::uuid > & \fBgetActualFibrePatternChannelMap\fP () const "
+.RI "const std::map
+.br
+< boost::uuids::uuid, 
+.br
+boost::uuids::uuid > & \fBgetActualFibrePatternChannelMap\fP () const "
 .br
 .ti -1c
-.RI "const boost::shared_ptr< \fButilities::Statistician\fP > \fBgetStatistician\fP () const "
+.RI "const boost::shared_ptr
 .br
-.RI "\fIGet the Statistician. \fP"
+< \fButilities::Statistician\fP > \fBgetStatistician\fP () const "
+.br
+.RI "\fIGet the Statistician\&. \fP"
 .ti -1c
-.RI "boost::shared_ptr< \fButilities::Statistician\fP > \fBgetMutableStatistician\fP ()"
+.RI "boost::shared_ptr
+.br
+< \fButilities::Statistician\fP > \fBgetMutableStatistician\fP ()"
 .br
 .ti -1c
 .RI "double \fBgetEnergy\fP () const "
 .br
-.RI "\fIGet the last calculated energy of the bundle. \fP"
+.RI "\fIGet the last calculated energy of the bundle\&. \fP"
 .ti -1c
 .RI "virtual bool \fBcheckStructure\fP () const "
 .br
-.RI "\fIRun a system structure check. \fP"
+.RI "\fIRun a system structure check\&. \fP"
 .ti -1c
 .RI "virtual bool \fBcheckFibreStructure\fP () const "
 .br
-.RI "\fICheck the structure of Fibres. \fP"
+.RI "\fICheck the structure of Fibres\&. \fP"
 .ti -1c
 .RI "virtual bool \fBcheckChannelStructure\fP () const "
 .br
-.RI "\fICheck the structure of Channels. \fP"
+.RI "\fICheck the structure of Channels\&. \fP"
 .ti -1c
 .RI "virtual void \fBenableDebug\fP (bool b)"
 .br
@@ -162,13 +192,13 @@ Inherits \fBcryomesh::common::Loggable\fP.
 .RI "virtual void \fBenableDebugFibres\fP (bool b)"
 .br
 .ti -1c
-.RI "std::ostream & \fBprint\fP (std::ostream &os, const \fBcommon::Loggable::LoggingDepth\fP depth=SUMMARY) const "
+.RI "virtual std::ostream & \fBprint\fP (std::ostream &os, const \fBcommon::Loggable::LoggingDepth\fP depth=\fBSUMMARY\fP) const "
 .br
-.RI "\fIPrint the bundle to stream. \fP"
+.RI "\fIPrint the bundle to stream\&. \fP"
 .ti -1c
 .RI "std::ostream & \fBprintChannels\fP (std::ostream &os) const "
 .br
-.RI "\fIPrint the channels to stream. \fP"
+.RI "\fIPrint the channels to stream\&. \fP"
 .ti -1c
 .RI "std::ostream & \fBprintFibreMaps\fP (std::ostream &os) const "
 .br
@@ -182,54 +212,62 @@ Inherits \fBcryomesh::common::Loggable\fP.
 .ti -1c
 .RI "virtual void \fBupdatePrimaryInputFibres\fP ()"
 .br
-.RI "\fIGet the next patterns from channels and apply them to their mapped fibres. \fP"
+.RI "\fIGet the next patterns from channels and apply them to their mapped fibres\&. \fP"
 .ti -1c
 .RI "virtual void \fBupdatePrimaryOutputFibres\fP ()"
 .br
-.RI "\fIGet the patterns from primary output fibres and apply them to their mapped pattern channels. \fP"
+.RI "\fIGet the patterns from primary output fibres and apply them to their mapped pattern channels\&. \fP"
 .ti -1c
 .RI "virtual double \fBmatchOutputChannelsSum\fP () const "
 .br
-.RI "\fICompare the output channels of primary output fibres to expected output channel patterns. \fP"
+.RI "\fICompare the output channels of primary output fibres to expected output channel patterns\&. \fP"
 .ti -1c
 .RI "virtual void \fBupdateStatistician\fP ()"
 .br
-.RI "\fIUpdate the statistician if debugging is enabled. \fP"
+.RI "\fIUpdate the statistician if debugging is enabled\&. \fP"
 .ti -1c
 .RI "void \fBsetEnergy\fP (double d)"
 .br
-.RI "\fISet the energy of the bundle. \fP"
+.RI "\fISet the energy of the bundle\&. \fP"
 .ti -1c
-.RI "\fBClusterMap\fP & \fBgetMutableClusters\fP ()"
+.RI "ClusterMap & \fBgetMutableClusters\fP ()"
 .br
 .ti -1c
 .RI "template<class T > std::ostream & \fBprintSearch\fP (std::ostream &os, const boost::uuids::uuid &uuid, const std::map< boost::uuids::uuid, boost::shared_ptr< T > > &map) const "
 .br
-.RI "\fIPrint out a uuid search. \fP"
+.RI "\fIPrint out a uuid search\&. \fP"
 .in -1c
 .SS "Private Member Functions"
 
 .in +1c
 .ti -1c
-.RI "const boost::shared_ptr< \fBstate::PatternChannel\fP > \fBgetRealPrimaryInputChannelByFibre\fP (const boost::uuids::uuid fibre_uuid) const "
+.RI "const boost::shared_ptr
+.br
+< \fBstate::PatternChannel\fP > \fBgetRealPrimaryInputChannelByFibre\fP (const boost::uuids::uuid fibre_uuid) const "
 .br
 .ti -1c
-.RI "const boost::shared_ptr< \fBstate::PatternChannel\fP > \fBgetRealPrimaryOutputChannelByFibre\fP (const boost::uuids::uuid fibre_uuid) const "
+.RI "const boost::shared_ptr
+.br
+< \fBstate::PatternChannel\fP > \fBgetRealPrimaryOutputChannelByFibre\fP (const boost::uuids::uuid fibre_uuid) const "
 .br
 .ti -1c
-.RI "const boost::shared_ptr< \fBstate::PatternChannel\fP > \fBgetActualPrimaryInputChannelByFibre\fP (const boost::uuids::uuid fibre_uuid) const "
+.RI "const boost::shared_ptr
+.br
+< \fBstate::PatternChannel\fP > \fBgetActualPrimaryInputChannelByFibre\fP (const boost::uuids::uuid fibre_uuid) const "
 .br
 .ti -1c
-.RI "const boost::shared_ptr< \fBstate::PatternChannel\fP > \fBgetActualPrimaryOutputChannelByFibre\fP (const boost::uuids::uuid fibre_uuid) const "
+.RI "const boost::shared_ptr
+.br
+< \fBstate::PatternChannel\fP > \fBgetActualPrimaryOutputChannelByFibre\fP (const boost::uuids::uuid fibre_uuid) const "
 .br
 .ti -1c
 .RI "const boost::shared_ptr< \fBFibre\fP > \fBgetPrimaryInputFibreByRealChannel\fP (const boost::uuids::uuid pattern_channel_uuid) const "
 .br
-.RI "\fIHelper method to take a uuid and find its correspondingly mapped object Take an input PatternChannel uuid and find the input \fBFibre\fP its mapped to. \fP"
+.RI "\fIHelper method to take a uuid and find its correspondingly mapped object Take an input PatternChannel uuid and find the input \fBFibre\fP its mapped to\&. \fP"
 .ti -1c
 .RI "const boost::shared_ptr< \fBFibre\fP > \fBgetPrimaryOutputFibreByRealChannel\fP (const boost::uuids::uuid pattern_channel_uuid) const "
 .br
-.RI "\fIHelper method to take a uuid and find its correspondingly mapped object Take an output PatternChannel uuid and find the output \fBFibre\fP its mapped to. \fP"
+.RI "\fIHelper method to take a uuid and find its correspondingly mapped object Take an output PatternChannel uuid and find the output \fBFibre\fP its mapped to\&. \fP"
 .ti -1c
 .RI "const boost::shared_ptr< \fBFibre\fP > \fBgetPrimaryInputFibreByActualChannel\fP (const boost::uuids::uuid pattern_channel_uuid) const "
 .br
@@ -239,17 +277,19 @@ Inherits \fBcryomesh::common::Loggable\fP.
 .ti -1c
 .RI "const boost::shared_ptr< \fBFibre\fP > \fBgetPrimaryFibreByChannel\fP (const boost::uuids::uuid id, const \fBFibreMap\fP &map, const std::map< boost::uuids::uuid, boost::uuids::uuid > &fibrepattern_channelmap) const "
 .br
-.RI "\fIHelper method to take a uuid and find its correspondingly mapped object Take an channel uuid and find the \fBFibre\fP its mapped to inside the supplied map. \fP"
+.RI "\fIHelper method to take a uuid and find its correspondingly mapped object Take an channel uuid and find the \fBFibre\fP its mapped to inside the supplied map\&. \fP"
 .ti -1c
-.RI "const boost::shared_ptr< \fBstate::PatternChannel\fP > \fBgetPrimaryChannelByFibre\fP (const boost::uuids::uuid id, const \fBstate::PatternChannelMap\fP &map, const std::map< boost::uuids::uuid, boost::uuids::uuid > &fibrepattern_channelmap) const "
+.RI "const boost::shared_ptr
 .br
-.RI "\fIHelper method to take a uuid and find its correspondingly mapped object Take an \fBFibre\fP uuid and find the PatternChannel its mapped to inside the supplied map. \fP"
+< \fBstate::PatternChannel\fP > \fBgetPrimaryChannelByFibre\fP (const boost::uuids::uuid id, const \fBstate::PatternChannelMap\fP &map, const std::map< boost::uuids::uuid, boost::uuids::uuid > &fibrepattern_channelmap) const "
+.br
+.RI "\fIHelper method to take a uuid and find its correspondingly mapped object Take an \fBFibre\fP uuid and find the PatternChannel its mapped to inside the supplied map\&. \fP"
 .in -1c
 .SS "Private Attributes"
 
 .in +1c
 .ti -1c
-.RI "\fBClusterMap\fP \fBclusters\fP"
+.RI "ClusterMap \fBclusters\fP"
 .br
 .ti -1c
 .RI "\fBFibreMap\fP \fBfibres\fP"
@@ -273,18 +313,27 @@ Inherits \fBcryomesh::common::Loggable\fP.
 .RI "\fBFibreMap\fP \fBoutputFibres\fP"
 .br
 .ti -1c
-.RI "boost::shared_ptr< \fButilities::Statistician\fP > \fBstatistician\fP"
+.RI "boost::shared_ptr
 .br
-.RI "\fIStatistics object to generate useful info on the bundle. \fP"
+< \fButilities::Statistician\fP > \fBstatistician\fP"
+.br
+.RI "\fIStatistics object to generate useful info on the bundle\&. \fP"
 .ti -1c
 .RI "double \fBenergy\fP"
 .br
-.RI "\fILast energy calculation of the output channel matching. \fP"
+.RI "\fILast energy calculation of the output channel matching\&. \fP"
 .ti -1c
-.RI "std::map< boost::uuids::uuid, boost::uuids::uuid > \fBrealFibrePatternChannelMap\fP"
+.RI "std::map< boost::uuids::uuid, 
+.br
+boost::uuids::uuid > \fBrealFibrePatternChannelMap\fP"
 .br
 .ti -1c
-.RI "std::map< boost::uuids::uuid, boost::uuids::uuid > \fBactualFibrePatternChannelMap\fP"
+.RI "std::map< boost::uuids::uuid, 
+.br
+boost::uuids::uuid > \fBactualFibrePatternChannelMap\fP"
+.br
+.ti -1c
+.RI "\fBCluster::EnergyFractionMethod\fP \fBenergyFractionMethod\fP"
 .br
 .in -1c
 .SS "Friends"
@@ -293,18 +342,18 @@ Inherits \fBcryomesh::common::Loggable\fP.
 .ti -1c
 .RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBBundle\fP &obj)"
 .br
-.RI "\fITo stream operator. \fP"
+.RI "\fITo stream operator\&. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
-A \fBBundle\fP is the collection of clusters and fibres, it represents the system as a whole. 
+A \fBBundle\fP is the collection of clusters and fibres, it represents the system as a whole\&. 
 .PP
-Definition at line 29 of file Bundle.h.
+Definition at line 29 of file Bundle\&.h\&.
 .SH "Member Enumeration Documentation"
 .PP 
 .SS "enum \fBcryomesh::common::Loggable::LoggingDepth\fP\fC [inherited]\fP"
 .PP
-Enum representing print detail. 
+Enum representing print detail\&. 
 .PP
 \fBEnumerator: \fP
 .in +1c
@@ -314,95 +363,82 @@ Enum representing print detail.
 \fB\fIMAX \fP\fP
 
 .PP
-Definition at line 23 of file Loggable.h.
+Definition at line 23 of file Loggable\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "cryomesh::structures::Bundle::Bundle ()"
+.SS "\fBcryomesh::structures::Bundle::Bundle\fP ()"
 .PP
-Default contructor. 
+Default contructor\&. 
 .PP
-Definition at line 19 of file Bundle.cpp.
-.SS "cryomesh::structures::Bundle::~Bundle ()\fC [virtual]\fP"
+Definition at line 17 of file Bundle\&.cpp\&.
+.SS "\fBcryomesh::structures::Bundle::~Bundle\fP ()\fC [virtual]\fP"
 .PP
-Default destructor. 
+Default destructor\&. 
 .PP
-Definition at line 25 of file Bundle.cpp.
+Definition at line 23 of file Bundle\&.cpp\&.
 .SH "Member Function Documentation"
 .PP 
-.SS "std::vector< boost::shared_ptr< \fBFibre\fP > > cryomesh::structures::Bundle::autoConnectPrimaryInputClusters (const std::vector< boost::uuids::uuid > &cluster_uuids)"
+.SS "std::vector< boost::shared_ptr< \fBFibre\fP > > \fBcryomesh::structures::Bundle::autoConnectPrimaryInputClusters\fP (const std::vector< boost::uuids::uuid > &cluster_uuids)"
 .PP
-Definition at line 206 of file Bundle.cpp.
+Definition at line 206 of file Bundle\&.cpp\&.
 .PP
-References getMutableClusters().
-.SS "std::vector< boost::shared_ptr< \fBFibre\fP > > cryomesh::structures::Bundle::autoConnectPrimaryInputClusters (std::vector< boost::shared_ptr< \fBCluster\fP > >list)\fC [virtual]\fP"
+References getMutableClusters()\&.
+.SS "std::vector< boost::shared_ptr< \fBFibre\fP > > \fBcryomesh::structures::Bundle::autoConnectPrimaryInputClusters\fP (std::vector< boost::shared_ptr< \fBCluster\fP > >list)\fC [virtual]\fP"
 .PP
-Definition at line 254 of file Bundle.cpp.
+Definition at line 254 of file Bundle\&.cpp\&.
 .PP
-References connectPrimaryInputCluster(), and getDisconnectedRealInputPatternChannels().
-.SS "std::vector< boost::shared_ptr< \fBFibre\fP > > cryomesh::structures::Bundle::autoConnectPrimaryOutputClusters (const std::vector< boost::uuids::uuid > &cluster_uuids)"
+References connectPrimaryInputCluster(), and getDisconnectedRealInputPatternChannels()\&.
+.SS "std::vector< boost::shared_ptr< \fBFibre\fP > > \fBcryomesh::structures::Bundle::autoConnectPrimaryOutputClusters\fP (const std::vector< boost::uuids::uuid > &cluster_uuids)"
 .PP
-Definition at line 231 of file Bundle.cpp.
+Definition at line 231 of file Bundle\&.cpp\&.
 .PP
-References getMutableClusters().
-.SS "std::vector< boost::shared_ptr< \fBFibre\fP > > cryomesh::structures::Bundle::autoConnectPrimaryOutputClusters (std::vector< boost::shared_ptr< \fBCluster\fP > >list)\fC [virtual]\fP"
+References getMutableClusters()\&.
+.SS "std::vector< boost::shared_ptr< \fBFibre\fP > > \fBcryomesh::structures::Bundle::autoConnectPrimaryOutputClusters\fP (std::vector< boost::shared_ptr< \fBCluster\fP > >list)\fC [virtual]\fP"
 .PP
-Definition at line 300 of file Bundle.cpp.
+Definition at line 301 of file Bundle\&.cpp\&.
 .PP
-References connectPrimaryOutputCluster(), and getDisconnectedRealOutputPatternChannels().
-.SS "bool cryomesh::structures::Bundle::checkChannelStructure () const\fC [virtual]\fP"
+References connectPrimaryOutputCluster(), and getDisconnectedRealOutputPatternChannels()\&.
+.SS "bool \fBcryomesh::structures::Bundle::checkChannelStructure\fP () const\fC [virtual]\fP"
 .PP
-Check the structure of Channels. \fBReturns:\fP
+Check the structure of Channels\&. \fBReturns:\fP
 .RS 4
 bool True if structure tests pass, false otherwise 
 .RE
 .PP
 
 .PP
-Definition at line 557 of file Bundle.cpp.
-.SS "bool cryomesh::structures::Bundle::checkFibreStructure () const\fC [virtual]\fP"
+Definition at line 558 of file Bundle\&.cpp\&.
 .PP
-Check the structure of Fibres. \fBReturns:\fP
+Referenced by checkStructure()\&.
+.SS "bool \fBcryomesh::structures::Bundle::checkFibreStructure\fP () const\fC [virtual]\fP"
+.PP
+Check the structure of Fibres\&. \fBReturns:\fP
 .RS 4
 bool True if structure tests pass, false otherwise 
 .RE
 .PP
 
 .PP
-Definition at line 476 of file Bundle.cpp.
-.SS "bool cryomesh::structures::Bundle::checkStructure () const\fC [virtual]\fP"
+Definition at line 477 of file Bundle\&.cpp\&.
 .PP
-Run a system structure check. \fBReturns:\fP
+References getClusters(), getFibres(), getInputFibres(), and getOutputFibres()\&.
+.PP
+Referenced by checkStructure()\&.
+.SS "bool \fBcryomesh::structures::Bundle::checkStructure\fP () const\fC [virtual]\fP"
+.PP
+Run a system structure check\&. \fBReturns:\fP
 .RS 4
 bool True if system passes all tests, false otherwise 
 .RE
 .PP
 
 .PP
-Definition at line 560 of file Bundle.cpp.
-.SS "boost::shared_ptr< \fBFibre\fP > cryomesh::structures::Bundle::connectCluster (boost::uuids::uuidclusterUUID, const \fBFibre::FibreType\fP &type, intfibreWidth)\fC [virtual]\fP"
+Definition at line 561 of file Bundle\&.cpp\&.
 .PP
-Connect clusters specified by uuids with a fibre of width. \fBParameters:\fP
-.RS 4
-\fIboost::uuids::uuid\fP clusterUUID UUID of cluster to connect to fibre 
-.br
-\fIconst\fP \fBFibre::FibreType\fP & type Type of fibre connection to make 
-.br
-\fIint\fP width Width of fibre to create
-.RE
+References checkChannelStructure(), and checkFibreStructure()\&.
+.SS "boost::shared_ptr< \fBFibre\fP > \fBcryomesh::structures::Bundle::connectCluster\fP (boost::uuids::uuidinputClusterUUID, boost::uuids::uuidoutputClusterUUID, intfibreWidth)\fC [virtual]\fP"
 .PP
-\fBReturns:\fP
-.RS 4
-The new fibre created, possible null 
-.RE
-.PP
-
-.PP
-Definition at line 78 of file Bundle.cpp.
-.PP
-References clusters, fibres, inputFibres, cryomesh::structures::Fibre::LoopbackFibre, outputFibres, cryomesh::structures::Fibre::PrimaryInputFibre, and cryomesh::structures::Fibre::PrimaryOutputFibre.
-.SS "boost::shared_ptr< \fBFibre\fP > cryomesh::structures::Bundle::connectCluster (boost::uuids::uuidinputClusterUUID, boost::uuids::uuidoutputClusterUUID, intfibreWidth)\fC [virtual]\fP"
-.PP
-Connect clusters specified by uuids with a fibre of width. \fBParameters:\fP
+Connect clusters specified by uuids with a fibre of width\&. \fBParameters:\fP
 .RS 4
 \fIboost::uuids::uuid\fP inputClusterUUID UUID of input cluster 
 .br
@@ -418,14 +454,35 @@ The new fibre created, possible null
 .PP
 
 .PP
-Definition at line 61 of file Bundle.cpp.
+Definition at line 61 of file Bundle\&.cpp\&.
 .PP
-References clusters, and fibres.
+References clusters, and fibres\&.
 .PP
-Referenced by connectPrimaryInputCluster(), and connectPrimaryOutputCluster().
-.SS "boost::shared_ptr< \fBFibre\fP > cryomesh::structures::Bundle::connectLoopbackCluster (boost::uuids::uuidclusterUUID, intfibreWidth)\fC [virtual]\fP"
+Referenced by connectLoopbackCluster(), connectPrimaryInputCluster(), and connectPrimaryOutputCluster()\&.
+.SS "boost::shared_ptr< \fBFibre\fP > \fBcryomesh::structures::Bundle::connectCluster\fP (boost::uuids::uuidclusterUUID, const \fBFibre::FibreType\fP &type, intfibreWidth)\fC [virtual]\fP"
 .PP
-Helper access function for specialised connection. \fBParameters:\fP
+Connect clusters specified by uuids with a fibre of width\&. \fBParameters:\fP
+.RS 4
+\fIboost::uuids::uuid\fP clusterUUID UUID of cluster to connect to fibre 
+.br
+\fIconst\fP \fBFibre::FibreType\fP & type Type of fibre connection to make 
+.br
+\fIint\fP width Width of fibre to create
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The new fibre created, possible null 
+.RE
+.PP
+
+.PP
+Definition at line 78 of file Bundle\&.cpp\&.
+.PP
+References clusters, fibres, inputFibres, cryomesh::structures::Fibre::LoopbackFibre, outputFibres, cryomesh::structures::Fibre::PrimaryInputFibre, and cryomesh::structures::Fibre::PrimaryOutputFibre\&.
+.SS "boost::shared_ptr< \fBFibre\fP > \fBcryomesh::structures::Bundle::connectLoopbackCluster\fP (boost::uuids::uuidclusterUUID, intfibreWidth)\fC [virtual]\fP"
+.PP
+Helper access function for specialised connection\&. \fBParameters:\fP
 .RS 4
 \fIconst\fP \fBFibre::FibreType\fP & type Type of fibre connection to make 
 .br
@@ -439,10 +496,12 @@ The new fibre created, possible null
 .PP
 
 .PP
-Definition at line 391 of file Bundle.cpp.
-.SS "boost::shared_ptr< \fBFibre\fP > cryomesh::structures::Bundle::connectPrimaryInputCluster (boost::uuids::uuidpatchanid, boost::uuids::uuidclusterUUID)\fC [virtual]\fP"
+Definition at line 392 of file Bundle\&.cpp\&.
 .PP
-Helper access function for specialised connection. \fBParameters:\fP
+References connectCluster(), and cryomesh::structures::Fibre::LoopbackFibre\&.
+.SS "boost::shared_ptr< \fBFibre\fP > \fBcryomesh::structures::Bundle::connectPrimaryInputCluster\fP (boost::uuids::uuidpatchanid, boost::uuids::uuidclusterUUID)\fC [virtual]\fP"
+.PP
+Helper access function for specialised connection\&. \fBParameters:\fP
 .RS 4
 \fIboost::uuids::uuid\fP PatternChannel to map the fibre to 
 .br
@@ -456,14 +515,14 @@ The new fibre created, possible null
 .PP
 
 .PP
-Definition at line 110 of file Bundle.cpp.
+Definition at line 110 of file Bundle\&.cpp\&.
 .PP
-References actualFibrePatternChannelMap, actualInputChannelsMap, connectCluster(), cryomesh::state::PatternChannel::Input, cryomesh::structures::Fibre::PrimaryInputFibre, realFibrePatternChannelMap, and realInputChannelsMap.
+References actualFibrePatternChannelMap, actualInputChannelsMap, connectCluster(), cryomesh::state::PatternChannel::Input, cryomesh::structures::Fibre::PrimaryInputFibre, realFibrePatternChannelMap, and realInputChannelsMap\&.
 .PP
-Referenced by autoConnectPrimaryInputClusters().
-.SS "boost::shared_ptr< \fBFibre\fP > cryomesh::structures::Bundle::connectPrimaryOutputCluster (boost::uuids::uuidpatchanid, boost::uuids::uuidclusterUUID)\fC [virtual]\fP"
+Referenced by autoConnectPrimaryInputClusters()\&.
+.SS "boost::shared_ptr< \fBFibre\fP > \fBcryomesh::structures::Bundle::connectPrimaryOutputCluster\fP (boost::uuids::uuidpatchanid, boost::uuids::uuidclusterUUID)\fC [virtual]\fP"
 .PP
-Helper access function for specialised connection. \fBParameters:\fP
+Helper access function for specialised connection\&. \fBParameters:\fP
 .RS 4
 \fIboost::uuids::uuid\fP PatternChannel to map the fibre to 
 .br
@@ -477,14 +536,14 @@ The new fibre created, possible null
 .PP
 
 .PP
-Definition at line 157 of file Bundle.cpp.
+Definition at line 157 of file Bundle\&.cpp\&.
 .PP
-References actualFibrePatternChannelMap, actualOutputChannelsMap, connectCluster(), cryomesh::state::PatternChannel::Output, cryomesh::structures::Fibre::PrimaryOutputFibre, realFibrePatternChannelMap, and realOutputChannelsMap.
+References actualFibrePatternChannelMap, actualOutputChannelsMap, connectCluster(), cryomesh::state::PatternChannel::Output, cryomesh::structures::Fibre::PrimaryOutputFibre, realFibrePatternChannelMap, and realOutputChannelsMap\&.
 .PP
-Referenced by autoConnectPrimaryOutputClusters().
-.SS "boost::shared_ptr< \fBCluster\fP > cryomesh::structures::Bundle::createCluster (intnodeSize, intnodeConnectivity)\fC [virtual]\fP"
+Referenced by autoConnectPrimaryOutputClusters()\&.
+.SS "boost::shared_ptr< \fBCluster\fP > \fBcryomesh::structures::Bundle::createCluster\fP (intnodeSize, intnodeConnectivity)\fC [virtual]\fP"
 .PP
-Create a cluster with a size and connectivity. \fBParameters:\fP
+Create a cluster with a size and connectivity\&. \fBParameters:\fP
 .RS 4
 \fIint\fP The number of nodes to create 
 .br
@@ -498,148 +557,196 @@ boost::shared_ptr<Cluster> The cluster that was created
 .PP
 
 .PP
-Definition at line 55 of file Bundle.cpp.
-.SS "void cryomesh::structures::Bundle::enableDebug (boolb)\fC [virtual]\fP"
+Definition at line 54 of file Bundle\&.cpp\&.
 .PP
-Definition at line 411 of file Bundle.cpp.
-.SS "void cryomesh::structures::Bundle::enableDebugClusters (boolb)\fC [virtual]\fP"
+References clusters, and energyFractionMethod\&.
+.SS "void \fBcryomesh::structures::Bundle::enableDebug\fP (boolb)\fC [virtual]\fP"
 .PP
-Definition at line 416 of file Bundle.cpp.
-.SS "void cryomesh::structures::Bundle::enableDebugFibres (boolb)\fC [virtual]\fP"
+Definition at line 412 of file Bundle\&.cpp\&.
 .PP
-Definition at line 419 of file Bundle.cpp.
-.SS "const std::map< boost::uuids::uuid, boost::uuids::uuid > & cryomesh::structures::Bundle::getActualFibrePatternChannelMap () const"
+References enableDebugClusters(), and enableDebugFibres()\&.
+.SS "void \fBcryomesh::structures::Bundle::enableDebugClusters\fP (boolb)\fC [virtual]\fP"
 .PP
-Definition at line 462 of file Bundle.cpp.
-.SS "const \fBstate::PatternChannelMap\fP & cryomesh::structures::Bundle::getActualInputChannelsMap () const"
+Definition at line 417 of file Bundle\&.cpp\&.
 .PP
-Get the actual input pattern channels of this bundle. \fBReturns:\fP
+References clusters\&.
+.PP
+Referenced by enableDebug()\&.
+.SS "void \fBcryomesh::structures::Bundle::enableDebugFibres\fP (boolb)\fC [virtual]\fP"
+.PP
+Definition at line 420 of file Bundle\&.cpp\&.
+.PP
+References fibres\&.
+.PP
+Referenced by enableDebug()\&.
+.SS "const std::map< boost::uuids::uuid, boost::uuids::uuid > & \fBcryomesh::structures::Bundle::getActualFibrePatternChannelMap\fP () const"
+.PP
+Definition at line 463 of file Bundle\&.cpp\&.
+.PP
+References actualFibrePatternChannelMap\&.
+.PP
+Referenced by printFibreMaps()\&.
+.SS "const \fBstate::PatternChannelMap\fP & \fBcryomesh::structures::Bundle::getActualInputChannelsMap\fP () const"
+.PP
+Get the actual input pattern channels of this bundle\&. \fBReturns:\fP
 .RS 4
 PatternChannelMap The map of actual input pattern channels of this bundle 
 .RE
 .PP
 
 .PP
-Definition at line 452 of file Bundle.cpp.
-.SS "const \fBstate::PatternChannelMap\fP & cryomesh::structures::Bundle::getActualOutputChannelsMap () const"
+Definition at line 453 of file Bundle\&.cpp\&.
 .PP
-Get the real output pattern channels of this bundle. \fBReturns:\fP
+References actualInputChannelsMap\&.
+.SS "const \fBstate::PatternChannelMap\fP & \fBcryomesh::structures::Bundle::getActualOutputChannelsMap\fP () const"
+.PP
+Get the real output pattern channels of this bundle\&. \fBReturns:\fP
 .RS 4
 PatternChannelMap The map of actual output pattern channels of this bundle 
 .RE
 .PP
 
 .PP
-Definition at line 455 of file Bundle.cpp.
-.SS "const boost::shared_ptr< \fBstate::PatternChannel\fP > cryomesh::structures::Bundle::getActualPrimaryInputChannelByFibre (const boost::uuids::uuidfibre_uuid) const\fC [private]\fP"
+Definition at line 456 of file Bundle\&.cpp\&.
 .PP
-Definition at line 702 of file Bundle.cpp.
+References actualOutputChannelsMap\&.
+.SS "const boost::shared_ptr< \fBstate::PatternChannel\fP > \fBcryomesh::structures::Bundle::getActualPrimaryInputChannelByFibre\fP (const boost::uuids::uuidfibre_uuid) const\fC [private]\fP"
 .PP
-References actualFibrePatternChannelMap, actualInputChannelsMap, and getPrimaryChannelByFibre().
+Definition at line 711 of file Bundle\&.cpp\&.
 .PP
-Referenced by updatePrimaryInputFibres().
-.SS "const boost::shared_ptr< \fBstate::PatternChannel\fP > cryomesh::structures::Bundle::getActualPrimaryOutputChannelByFibre (const boost::uuids::uuidfibre_uuid) const\fC [private]\fP"
+References actualFibrePatternChannelMap, actualInputChannelsMap, and getPrimaryChannelByFibre()\&.
 .PP
-Definition at line 706 of file Bundle.cpp.
+Referenced by updatePrimaryInputFibres()\&.
+.SS "const boost::shared_ptr< \fBstate::PatternChannel\fP > \fBcryomesh::structures::Bundle::getActualPrimaryOutputChannelByFibre\fP (const boost::uuids::uuidfibre_uuid) const\fC [private]\fP"
 .PP
-References actualFibrePatternChannelMap, actualOutputChannelsMap, and getPrimaryChannelByFibre().
+Definition at line 715 of file Bundle\&.cpp\&.
 .PP
-Referenced by matchOutputChannelsSum(), and updatePrimaryOutputFibres().
-.SS "const \fBClusterMap\fP & cryomesh::structures::Bundle::getClusters () const"
+References actualFibrePatternChannelMap, actualOutputChannelsMap, and getPrimaryChannelByFibre()\&.
 .PP
-Get the clusters in this bundle. \fBReturns:\fP
+Referenced by matchOutputChannelsSum(), and updatePrimaryOutputFibres()\&.
+.SS "const ClusterMap & \fBcryomesh::structures::Bundle::getClusters\fP () const"
+.PP
+Get the clusters in this bundle\&. \fBReturns:\fP
 .RS 4
-\fBClusterMap\fP The map of clusters in this bundle 
+ClusterMap The map of clusters in this bundle 
 .RE
 .PP
 
 .PP
-Definition at line 407 of file Bundle.cpp.
-.SS "std::vector< boost::shared_ptr< \fBstate::PatternChannel\fP > > cryomesh::structures::Bundle::getDisconnectedRealInputPatternChannels ()\fC [virtual]\fP"
+Definition at line 408 of file Bundle\&.cpp\&.
 .PP
-Definition at line 341 of file Bundle.cpp.
+References clusters\&.
 .PP
-References getPrimaryInputFibreByRealChannel().
+Referenced by checkFibreStructure(), cryomesh::utilities::Statistician::getActiveNodesPerCluster(), cryomesh::utilities::Statistician::getTriggeredNodesPerCluster(), print(), and cryomesh::utilities::Statistician::update()\&.
+.SS "std::vector< boost::shared_ptr< \fBstate::PatternChannel\fP > > \fBcryomesh::structures::Bundle::getDisconnectedRealInputPatternChannels\fP ()\fC [virtual]\fP"
 .PP
-Referenced by autoConnectPrimaryInputClusters().
-.SS "std::vector< boost::shared_ptr< \fBstate::PatternChannel\fP > > cryomesh::structures::Bundle::getDisconnectedRealOutputPatternChannels ()\fC [virtual]\fP"
+Definition at line 342 of file Bundle\&.cpp\&.
 .PP
-Definition at line 367 of file Bundle.cpp.
+References getPrimaryInputFibreByRealChannel(), and realInputChannelsMap\&.
 .PP
-References getPrimaryOutputFibreByRealChannel().
+Referenced by autoConnectPrimaryInputClusters()\&.
+.SS "std::vector< boost::shared_ptr< \fBstate::PatternChannel\fP > > \fBcryomesh::structures::Bundle::getDisconnectedRealOutputPatternChannels\fP ()\fC [virtual]\fP"
 .PP
-Referenced by autoConnectPrimaryOutputClusters().
-.SS "double cryomesh::structures::Bundle::getEnergy () const"
+Definition at line 368 of file Bundle\&.cpp\&.
 .PP
-Get the last calculated energy of the bundle. \fBReturns:\fP
+References getPrimaryOutputFibreByRealChannel(), and realOutputChannelsMap\&.
+.PP
+Referenced by autoConnectPrimaryOutputClusters()\&.
+.SS "double \fBcryomesh::structures::Bundle::getEnergy\fP () const"
+.PP
+Get the last calculated energy of the bundle\&. \fBReturns:\fP
 .RS 4
 double The last calculated energy 
 .RE
 .PP
 
 .PP
-Definition at line 469 of file Bundle.cpp.
-.SS "const \fBFibreMap\fP & cryomesh::structures::Bundle::getFibres () const"
+Definition at line 470 of file Bundle\&.cpp\&.
 .PP
-Get the mutable clusters in this bundle. \fBReturns:\fP
+References energy\&.
+.PP
+Referenced by update()\&.
+.SS "const \fBFibreMap\fP & \fBcryomesh::structures::Bundle::getFibres\fP () const"
+.PP
+Get the mutable clusters in this bundle\&. \fBReturns:\fP
 .RS 4
-\fBClusterMap\fP The mutable map of clusters in this bundle 
+ClusterMap The mutable map of clusters in this bundle 
 .RE
 .PP
 
 .PP
-Definition at line 426 of file Bundle.cpp.
-.SS "const \fBFibreMap\fP & cryomesh::structures::Bundle::getInputFibres () const"
+Definition at line 427 of file Bundle\&.cpp\&.
 .PP
-Get the input fibres of this bundle. \fBReturns:\fP
+References fibres\&.
+.PP
+Referenced by checkFibreStructure(), print(), and cryomesh::utilities::Statistician::update()\&.
+.SS "const \fBFibreMap\fP & \fBcryomesh::structures::Bundle::getInputFibres\fP () const"
+.PP
+Get the input fibres of this bundle\&. \fBReturns:\fP
 .RS 4
 \fBFibreMap\fP The map of input fibres of this bundle 
 .RE
 .PP
 
 .PP
-Definition at line 430 of file Bundle.cpp.
-.SS "\fBClusterMap\fP & cryomesh::structures::Bundle::getMutableClusters ()\fC [protected]\fP"
+Definition at line 431 of file Bundle\&.cpp\&.
 .PP
-Definition at line 423 of file Bundle.cpp.
+References inputFibres\&.
 .PP
-Referenced by autoConnectPrimaryInputClusters(), and autoConnectPrimaryOutputClusters().
-.SS "\fBFibreMap\fP & cryomesh::structures::Bundle::getMutableInputFibres ()"
+Referenced by checkFibreStructure(), print(), and cryomesh::utilities::Statistician::update()\&.
+.SS "ClusterMap & \fBcryomesh::structures::Bundle::getMutableClusters\fP ()\fC [protected]\fP"
 .PP
-Get the mutable input fibres of this bundle. \fBReturns:\fP
+Definition at line 424 of file Bundle\&.cpp\&.
+.PP
+References clusters\&.
+.PP
+Referenced by autoConnectPrimaryInputClusters(), and autoConnectPrimaryOutputClusters()\&.
+.SS "\fBFibreMap\fP & \fBcryomesh::structures::Bundle::getMutableInputFibres\fP ()"
+.PP
+Get the mutable input fibres of this bundle\&. \fBReturns:\fP
 .RS 4
 \fBFibreMap\fP The map of mutable input fibres of this bundle 
 .RE
 .PP
 
 .PP
-Definition at line 434 of file Bundle.cpp.
-.SS "\fBFibreMap\fP & cryomesh::structures::Bundle::getMutableOutputFibres ()"
+Definition at line 435 of file Bundle\&.cpp\&.
 .PP
-Get the mutable output fibres of this bundle. \fBReturns:\fP
+References inputFibres\&.
+.SS "\fBFibreMap\fP & \fBcryomesh::structures::Bundle::getMutableOutputFibres\fP ()"
+.PP
+Get the mutable output fibres of this bundle\&. \fBReturns:\fP
 .RS 4
 \fBFibreMap\fP The map of mutable output fibres of this bundle 
 .RE
 .PP
 
 .PP
-Definition at line 442 of file Bundle.cpp.
-.SS "boost::shared_ptr< \fButilities::Statistician\fP > cryomesh::structures::Bundle::getMutableStatistician ()"
+Definition at line 443 of file Bundle\&.cpp\&.
 .PP
-Definition at line 472 of file Bundle.cpp.
-.SS "const \fBFibreMap\fP & cryomesh::structures::Bundle::getOutputFibres () const"
+References outputFibres\&.
+.SS "boost::shared_ptr< \fButilities::Statistician\fP > \fBcryomesh::structures::Bundle::getMutableStatistician\fP ()"
 .PP
-Get the output fibres of this bundle. \fBReturns:\fP
+Definition at line 473 of file Bundle\&.cpp\&.
+.PP
+References statistician\&.
+.SS "const \fBFibreMap\fP & \fBcryomesh::structures::Bundle::getOutputFibres\fP () const"
+.PP
+Get the output fibres of this bundle\&. \fBReturns:\fP
 .RS 4
 \fBFibreMap\fP The map of output fibres of this bundle 
 .RE
 .PP
 
 .PP
-Definition at line 438 of file Bundle.cpp.
-.SS "const boost::shared_ptr< \fBstate::PatternChannel\fP > cryomesh::structures::Bundle::getPrimaryChannelByFibre (const boost::uuids::uuidid, const \fBstate::PatternChannelMap\fP &map, const std::map< boost::uuids::uuid, boost::uuids::uuid > &fibrepattern_channelmap) const\fC [private]\fP"
+Definition at line 439 of file Bundle\&.cpp\&.
 .PP
-Helper method to take a uuid and find its correspondingly mapped object Take an \fBFibre\fP uuid and find the PatternChannel its mapped to inside the supplied map. \fBParameters:\fP
+References outputFibres\&.
+.PP
+Referenced by checkFibreStructure(), matchOutputChannelsSum(), print(), and cryomesh::utilities::Statistician::update()\&.
+.SS "const boost::shared_ptr< \fBstate::PatternChannel\fP > \fBcryomesh::structures::Bundle::getPrimaryChannelByFibre\fP (const boost::uuids::uuidid, const \fBstate::PatternChannelMap\fP &map, const std::map< boost::uuids::uuid, boost::uuids::uuid > &fibrepattern_channelmap) const\fC [private]\fP"
+.PP
+Helper method to take a uuid and find its correspondingly mapped object Take an \fBFibre\fP uuid and find the PatternChannel its mapped to inside the supplied map\&. \fBParameters:\fP
 .RS 4
 \fIboost::uuids::uuid\fP The uuid of the \fBFibre\fP 
 .br
@@ -653,12 +760,12 @@ boost::shared_ptr<PatternChannel> The PatternChannel object the \fBFibre\fP with
 .PP
 
 .PP
-Definition at line 776 of file Bundle.cpp.
+Definition at line 787 of file Bundle\&.cpp\&.
 .PP
-Referenced by getActualPrimaryInputChannelByFibre(), getActualPrimaryOutputChannelByFibre(), getRealPrimaryInputChannelByFibre(), and getRealPrimaryOutputChannelByFibre().
-.SS "const boost::shared_ptr< \fBFibre\fP > cryomesh::structures::Bundle::getPrimaryFibreByChannel (const boost::uuids::uuidid, const \fBFibreMap\fP &map, const std::map< boost::uuids::uuid, boost::uuids::uuid > &fibrepattern_channelmap) const\fC [private]\fP"
+Referenced by getActualPrimaryInputChannelByFibre(), getActualPrimaryOutputChannelByFibre(), getRealPrimaryInputChannelByFibre(), and getRealPrimaryOutputChannelByFibre()\&.
+.SS "const boost::shared_ptr< \fBFibre\fP > \fBcryomesh::structures::Bundle::getPrimaryFibreByChannel\fP (const boost::uuids::uuidid, const \fBFibreMap\fP &map, const std::map< boost::uuids::uuid, boost::uuids::uuid > &fibrepattern_channelmap) const\fC [private]\fP"
 .PP
-Helper method to take a uuid and find its correspondingly mapped object Take an channel uuid and find the \fBFibre\fP its mapped to inside the supplied map. \fBParameters:\fP
+Helper method to take a uuid and find its correspondingly mapped object Take an channel uuid and find the \fBFibre\fP its mapped to inside the supplied map\&. \fBParameters:\fP
 .RS 4
 \fIboost::uuids::uuid\fP The uuid of the PatternChannel 
 .br
@@ -672,17 +779,17 @@ boost::shared_ptr<Fibre> The \fBFibre\fP object the PatternChannel with this uui
 .PP
 
 .PP
-Definition at line 725 of file Bundle.cpp.
+Definition at line 736 of file Bundle\&.cpp\&.
 .PP
-Referenced by getPrimaryInputFibreByActualChannel(), and getPrimaryOutputFibreByActualChannel().
-.SS "const boost::shared_ptr< \fBFibre\fP > cryomesh::structures::Bundle::getPrimaryInputFibreByActualChannel (const boost::uuids::uuidpattern_channel_uuid) const\fC [private]\fP"
+Referenced by getPrimaryInputFibreByActualChannel(), getPrimaryInputFibreByRealChannel(), getPrimaryOutputFibreByActualChannel(), and getPrimaryOutputFibreByRealChannel()\&.
+.SS "const boost::shared_ptr< \fBFibre\fP > \fBcryomesh::structures::Bundle::getPrimaryInputFibreByActualChannel\fP (const boost::uuids::uuidpattern_channel_uuid) const\fC [private]\fP"
 .PP
-Definition at line 717 of file Bundle.cpp.
+Definition at line 728 of file Bundle\&.cpp\&.
 .PP
-References actualFibrePatternChannelMap, getPrimaryFibreByChannel(), and inputFibres.
-.SS "const boost::shared_ptr< \fBFibre\fP > cryomesh::structures::Bundle::getPrimaryInputFibreByRealChannel (const boost::uuids::uuidpattern_channel_uuid) const\fC [private]\fP"
+References actualFibrePatternChannelMap, getPrimaryFibreByChannel(), and inputFibres\&.
+.SS "const boost::shared_ptr< \fBFibre\fP > \fBcryomesh::structures::Bundle::getPrimaryInputFibreByRealChannel\fP (const boost::uuids::uuidpattern_channel_uuid) const\fC [private]\fP"
 .PP
-Helper method to take a uuid and find its correspondingly mapped object Take an input PatternChannel uuid and find the input \fBFibre\fP its mapped to. \fBParameters:\fP
+Helper method to take a uuid and find its correspondingly mapped object Take an input PatternChannel uuid and find the input \fBFibre\fP its mapped to\&. \fBParameters:\fP
 .RS 4
 \fIboost::uuids::uuid\fP The uuid of the input PatternChannel
 .RE
@@ -694,17 +801,19 @@ boost::shared_ptr<Fibre> The input \fBFibre\fP object the input PatternChannel w
 .PP
 
 .PP
-Definition at line 711 of file Bundle.cpp.
+Definition at line 720 of file Bundle\&.cpp\&.
 .PP
-Referenced by getDisconnectedRealInputPatternChannels(), and updatePrimaryInputFibres().
-.SS "const boost::shared_ptr< \fBFibre\fP > cryomesh::structures::Bundle::getPrimaryOutputFibreByActualChannel (const boost::uuids::uuidpattern_channel_uuid) const\fC [private]\fP"
+References getPrimaryFibreByChannel(), inputFibres, and realFibrePatternChannelMap\&.
 .PP
-Definition at line 721 of file Bundle.cpp.
+Referenced by getDisconnectedRealInputPatternChannels(), and updatePrimaryInputFibres()\&.
+.SS "const boost::shared_ptr< \fBFibre\fP > \fBcryomesh::structures::Bundle::getPrimaryOutputFibreByActualChannel\fP (const boost::uuids::uuidpattern_channel_uuid) const\fC [private]\fP"
 .PP
-References actualFibrePatternChannelMap, getPrimaryFibreByChannel(), and outputFibres.
-.SS "const boost::shared_ptr< \fBFibre\fP > cryomesh::structures::Bundle::getPrimaryOutputFibreByRealChannel (const boost::uuids::uuidpattern_channel_uuid) const\fC [private]\fP"
+Definition at line 732 of file Bundle\&.cpp\&.
 .PP
-Helper method to take a uuid and find its correspondingly mapped object Take an output PatternChannel uuid and find the output \fBFibre\fP its mapped to. \fBParameters:\fP
+References actualFibrePatternChannelMap, getPrimaryFibreByChannel(), and outputFibres\&.
+.SS "const boost::shared_ptr< \fBFibre\fP > \fBcryomesh::structures::Bundle::getPrimaryOutputFibreByRealChannel\fP (const boost::uuids::uuidpattern_channel_uuid) const\fC [private]\fP"
+.PP
+Helper method to take a uuid and find its correspondingly mapped object Take an output PatternChannel uuid and find the output \fBFibre\fP its mapped to\&. \fBParameters:\fP
 .RS 4
 \fIboost::uuids::uuid\fP The uuid of the output PatternChannel
 .RE
@@ -716,149 +825,193 @@ boost::shared_ptr<Fibre> The output \fBFibre\fP object the output PatternChannel
 .PP
 
 .PP
-Definition at line 714 of file Bundle.cpp.
+Definition at line 724 of file Bundle\&.cpp\&.
 .PP
-Referenced by getDisconnectedRealOutputPatternChannels().
-.SS "const std::map< boost::uuids::uuid, boost::uuids::uuid > & cryomesh::structures::Bundle::getRealFibrePatternChannelMap () const"
+References getPrimaryFibreByChannel(), outputFibres, and realFibrePatternChannelMap\&.
 .PP
-Get the map of fibres to their associated pattern channels. \fBReturns:\fP
+Referenced by getDisconnectedRealOutputPatternChannels()\&.
+.SS "const std::map< boost::uuids::uuid, boost::uuids::uuid > & \fBcryomesh::structures::Bundle::getRealFibrePatternChannelMap\fP () const"
+.PP
+Get the map of fibres to their associated pattern channels\&. \fBReturns:\fP
 .RS 4
 std::map<boost::uuids::uuid, boost::uuids::uuid> The map of fibres to their associated pattern channels 
 .RE
 .PP
 
 .PP
-Definition at line 459 of file Bundle.cpp.
-.SS "const \fBstate::PatternChannelMap\fP & cryomesh::structures::Bundle::getRealInputChannelsMap () const"
+Definition at line 460 of file Bundle\&.cpp\&.
 .PP
-Get the real input pattern channels of this bundle. \fBReturns:\fP
+References realFibrePatternChannelMap\&.
+.PP
+Referenced by printFibreMaps()\&.
+.SS "const \fBstate::PatternChannelMap\fP & \fBcryomesh::structures::Bundle::getRealInputChannelsMap\fP () const"
+.PP
+Get the real input pattern channels of this bundle\&. \fBReturns:\fP
 .RS 4
 PatternChannelMap The map of real input pattern channels of this bundle 
 .RE
 .PP
 
 .PP
-Definition at line 446 of file Bundle.cpp.
-.SS "const \fBstate::PatternChannelMap\fP & cryomesh::structures::Bundle::getRealOutputChannelsMap () const"
+Definition at line 447 of file Bundle\&.cpp\&.
 .PP
-Get the real output pattern channels of this bundle. \fBReturns:\fP
+References realInputChannelsMap\&.
+.PP
+Referenced by cryomesh::utilities::Statistician::update()\&.
+.SS "const \fBstate::PatternChannelMap\fP & \fBcryomesh::structures::Bundle::getRealOutputChannelsMap\fP () const"
+.PP
+Get the real output pattern channels of this bundle\&. \fBReturns:\fP
 .RS 4
 PatternChannelMap The map of real output pattern channels of this bundle 
 .RE
 .PP
 
 .PP
-Definition at line 449 of file Bundle.cpp.
-.SS "const boost::shared_ptr< \fBstate::PatternChannel\fP > cryomesh::structures::Bundle::getRealPrimaryInputChannelByFibre (const boost::uuids::uuidfibre_uuid) const\fC [private]\fP"
+Definition at line 450 of file Bundle\&.cpp\&.
 .PP
-Definition at line 694 of file Bundle.cpp.
+References realOutputChannelsMap\&.
 .PP
-References getPrimaryChannelByFibre(), realFibrePatternChannelMap, and realInputChannelsMap.
-.SS "const boost::shared_ptr< \fBstate::PatternChannel\fP > cryomesh::structures::Bundle::getRealPrimaryOutputChannelByFibre (const boost::uuids::uuidfibre_uuid) const\fC [private]\fP"
+Referenced by cryomesh::utilities::Statistician::update()\&.
+.SS "const boost::shared_ptr< \fBstate::PatternChannel\fP > \fBcryomesh::structures::Bundle::getRealPrimaryInputChannelByFibre\fP (const boost::uuids::uuidfibre_uuid) const\fC [private]\fP"
 .PP
-Definition at line 698 of file Bundle.cpp.
+Definition at line 703 of file Bundle\&.cpp\&.
 .PP
-References getPrimaryChannelByFibre(), realFibrePatternChannelMap, and realOutputChannelsMap.
+References getPrimaryChannelByFibre(), realFibrePatternChannelMap, and realInputChannelsMap\&.
+.SS "const boost::shared_ptr< \fBstate::PatternChannel\fP > \fBcryomesh::structures::Bundle::getRealPrimaryOutputChannelByFibre\fP (const boost::uuids::uuidfibre_uuid) const\fC [private]\fP"
 .PP
-Referenced by matchOutputChannelsSum().
-.SS "const boost::shared_ptr< \fButilities::Statistician\fP > cryomesh::structures::Bundle::getStatistician () const"
+Definition at line 707 of file Bundle\&.cpp\&.
 .PP
-Get the Statistician. \fBReturns:\fP
+References getPrimaryChannelByFibre(), realFibrePatternChannelMap, and realOutputChannelsMap\&.
+.PP
+Referenced by matchOutputChannelsSum()\&.
+.SS "const boost::shared_ptr< \fButilities::Statistician\fP > \fBcryomesh::structures::Bundle::getStatistician\fP () const"
+.PP
+Get the Statistician\&. \fBReturns:\fP
 .RS 4
 boost::shared_ptr< Statistician > The current statistician, null pointer if we dont have one 
 .RE
 .PP
 
 .PP
-Definition at line 465 of file Bundle.cpp.
-.SS "void cryomesh::structures::Bundle::loadChannels (const std::string &ifstr)\fC [virtual]\fP"
+Definition at line 466 of file Bundle\&.cpp\&.
 .PP
-Load in the pattern channels from a filename of a pattern dataset. \fBParameters:\fP
+References statistician\&.
+.SS "void \fBcryomesh::structures::Bundle::loadChannels\fP (const std::string &ifstr)\fC [virtual]\fP"
+.PP
+Load in the pattern channels from a filename of a pattern dataset\&. \fBParameters:\fP
 .RS 4
 \fIstd::string\fP The full path filename of the pattern data set 
 .RE
 .PP
 
 .PP
-Definition at line 395 of file Bundle.cpp.
-.SS "double cryomesh::structures::Bundle::matchOutputChannelsSum () const\fC [protected, virtual]\fP"
+Definition at line 396 of file Bundle\&.cpp\&.
 .PP
-Compare the output channels of primary output fibres to expected output channel patterns. \fBReturns:\fP
+References cryomesh::utilities::SequencerChannels::readSequences(), realInputChannelsMap, and realOutputChannelsMap\&.
+.SS "double \fBcryomesh::structures::Bundle::matchOutputChannelsSum\fP () const\fC [protected, virtual]\fP"
+.PP
+Compare the output channels of primary output fibres to expected output channel patterns\&. \fBReturns:\fP
 .RS 4
 double The double represesenting the accumulated 'energy' of all matches 
 .RE
 .PP
 
 .PP
-Definition at line 643 of file Bundle.cpp.
+Definition at line 652 of file Bundle\&.cpp\&.
 .PP
-References getActualPrimaryOutputChannelByFibre(), and getRealPrimaryOutputChannelByFibre().
-.SS "std::ostream & cryomesh::structures::Bundle::print (std::ostream &os, const \fBcommon::Loggable::LoggingDepth\fPdepth = \fCSUMMARY\fP) const"
+References getActualPrimaryOutputChannelByFibre(), getOutputFibres(), and getRealPrimaryOutputChannelByFibre()\&.
 .PP
-Print the bundle to stream. 
+Referenced by update()\&.
+.SS "std::ostream & \fBcryomesh::structures::Bundle::print\fP (std::ostream &os, const \fBcommon::Loggable::LoggingDepth\fPdepth = \fC\fBSUMMARY\fP\fP) const\fC [virtual]\fP"
 .PP
-Reimplemented from \fBcryomesh::common::Loggable\fP.
+Print the bundle to stream\&. 
 .PP
-Definition at line 825 of file Bundle.cpp.
-.SS "std::ostream & cryomesh::structures::Bundle::printChannels (std::ostream &os) const"
+Implements \fBcryomesh::common::Loggable\fP\&.
 .PP
-Print the channels to stream. 
+Definition at line 836 of file Bundle\&.cpp\&.
 .PP
-Definition at line 857 of file Bundle.cpp.
+References getClusters(), cryomesh::common::TimeKeeper::getCycle(), getFibres(), getInputFibres(), getOutputFibres(), cryomesh::common::TimeKeeper::getTimeKeeper(), cryomesh::common::Loggable::MAX, printChannels(), printFibreMaps(), and cryomesh::common::Loggable::SUMMARY\&.
 .PP
-References realInputChannelsMap.
-.SS "std::ostream & cryomesh::structures::Bundle::printFibreMap (std::ostream &os, const std::map< boost::uuids::uuid, boost::uuids::uuid > &fibre_map) const"
+Referenced by cryomesh::structures::operator<<()\&.
+.SS "std::ostream & \fBcryomesh::structures::Bundle::printChannels\fP (std::ostream &os) const"
 .PP
-Definition at line 948 of file Bundle.cpp.
-.SS "std::ostream & cryomesh::structures::Bundle::printFibreMaps (std::ostream &os) const"
+Print the channels to stream\&. 
 .PP
-Definition at line 939 of file Bundle.cpp.
-.SS "template<class T > std::ostream & cryomesh::structures::Bundle::printSearch (std::ostream &os, const boost::uuids::uuid &uuid, const std::map< boost::uuids::uuid, boost::shared_ptr< T > > &map) const\fC [protected]\fP"
+Definition at line 868 of file Bundle\&.cpp\&.
 .PP
-Print out a uuid search. 
+References actualInputChannelsMap, actualOutputChannelsMap, realInputChannelsMap, and realOutputChannelsMap\&.
 .PP
-Definition at line 803 of file Bundle.cpp.
-.SS "void cryomesh::structures::Bundle::setEnergy (doubled)\fC [protected]\fP"
+Referenced by print()\&.
+.SS "std::ostream & \fBcryomesh::structures::Bundle::printFibreMap\fP (std::ostream &os, const std::map< boost::uuids::uuid, boost::uuids::uuid > &fibre_map) const"
 .PP
-Set the energy of the bundle. \fBParameters:\fP
+Definition at line 959 of file Bundle\&.cpp\&.
+.PP
+Referenced by printFibreMaps()\&.
+.SS "std::ostream & \fBcryomesh::structures::Bundle::printFibreMaps\fP (std::ostream &os) const"
+.PP
+Definition at line 950 of file Bundle\&.cpp\&.
+.PP
+References getActualFibrePatternChannelMap(), getRealFibrePatternChannelMap(), and printFibreMap()\&.
+.PP
+Referenced by print(), and updatePrimaryOutputFibres()\&.
+.SS "template<class T > std::ostream & \fBcryomesh::structures::Bundle::printSearch\fP (std::ostream &os, const boost::uuids::uuid &uuid, const std::map< boost::uuids::uuid, boost::shared_ptr< T > > &map) const\fC [protected]\fP"
+.PP
+Print out a uuid search\&. 
+.PP
+Definition at line 814 of file Bundle\&.cpp\&.
+.SS "void \fBcryomesh::structures::Bundle::setEnergy\fP (doubled)\fC [protected]\fP"
+.PP
+Set the energy of the bundle\&. \fBParameters:\fP
 .RS 4
 \fIdouble\fP The energy to set 
 .RE
 .PP
 
 .PP
-Definition at line 677 of file Bundle.cpp.
-.SS "void cryomesh::structures::Bundle::update ()"
+Definition at line 686 of file Bundle\&.cpp\&.
 .PP
-Update all bundle components. 
+References energy\&.
 .PP
-Definition at line 28 of file Bundle.cpp.
-.SS "void cryomesh::structures::Bundle::updatePrimaryInputFibres ()\fC [protected, virtual]\fP"
+Referenced by update()\&.
+.SS "void \fBcryomesh::structures::Bundle::update\fP ()"
 .PP
-Get the next patterns from channels and apply them to their mapped fibres. 
+Update all bundle components\&. 
 .PP
-Definition at line 567 of file Bundle.cpp.
+Definition at line 26 of file Bundle\&.cpp\&.
 .PP
-References getActualPrimaryInputChannelByFibre(), and getPrimaryInputFibreByRealChannel().
-.SS "void cryomesh::structures::Bundle::updatePrimaryOutputFibres ()\fC [protected, virtual]\fP"
+References clusters, fibres, getEnergy(), cryomesh::common::TimeKeeper::getTimeKeeper(), matchOutputChannelsSum(), setEnergy(), cryomesh::structures::FibreMap::update(), cryomesh::common::TimeKeeper::update(), updatePrimaryInputFibres(), updatePrimaryOutputFibres(), and updateStatistician()\&.
+.SS "void \fBcryomesh::structures::Bundle::updatePrimaryInputFibres\fP ()\fC [protected, virtual]\fP"
 .PP
-Get the patterns from primary output fibres and apply them to their mapped pattern channels. 
+Get the next patterns from channels and apply them to their mapped fibres\&. 
 .PP
-Definition at line 613 of file Bundle.cpp.
+Definition at line 568 of file Bundle\&.cpp\&.
 .PP
-References getActualPrimaryOutputChannelByFibre(), and outputFibres.
-.SS "void cryomesh::structures::Bundle::updateStatistician ()\fC [protected, virtual]\fP"
+References getActualPrimaryInputChannelByFibre(), getPrimaryInputFibreByRealChannel(), inputFibres, realInputChannelsMap, and cryomesh::structures::FibreMap::update()\&.
 .PP
-Update the statistician if debugging is enabled. 
+Referenced by update()\&.
+.SS "void \fBcryomesh::structures::Bundle::updatePrimaryOutputFibres\fP ()\fC [protected, virtual]\fP"
 .PP
-Definition at line 681 of file Bundle.cpp.
+Get the patterns from primary output fibres and apply them to their mapped pattern channels\&. 
 .PP
-References statistician.
+Definition at line 618 of file Bundle\&.cpp\&.
+.PP
+References getActualPrimaryOutputChannelByFibre(), outputFibres, printFibreMaps(), and cryomesh::structures::FibreMap::update()\&.
+.PP
+Referenced by update()\&.
+.SS "void \fBcryomesh::structures::Bundle::updateStatistician\fP ()\fC [protected, virtual]\fP"
+.PP
+Update the statistician if debugging is enabled\&. 
+.PP
+Definition at line 690 of file Bundle\&.cpp\&.
+.PP
+References statistician\&.
+.PP
+Referenced by update()\&.
 .SH "Friends And Related Function Documentation"
 .PP 
 .SS "std::ostream& operator<< (std::ostream &os, const \fBBundle\fP &obj)\fC [friend]\fP"
 .PP
-To stream operator. \fBParameters:\fP
+To stream operator\&. \fBParameters:\fP
 .RS 4
 \fIstd::ostream\fP & os The output stream 
 .br
@@ -872,72 +1025,79 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 962 of file Bundle.cpp.
+Definition at line 973 of file Bundle\&.cpp\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "std::map<boost::uuids::uuid, boost::uuids::uuid> \fBcryomesh::structures::Bundle::actualFibrePatternChannelMap\fP\fC [private]\fP"
 .PP
-Definition at line 431 of file Bundle.h.
+Definition at line 430 of file Bundle\&.h\&.
 .PP
-Referenced by connectPrimaryInputCluster(), connectPrimaryOutputCluster(), getActualPrimaryInputChannelByFibre(), getActualPrimaryOutputChannelByFibre(), getPrimaryInputFibreByActualChannel(), and getPrimaryOutputFibreByActualChannel().
+Referenced by connectPrimaryInputCluster(), connectPrimaryOutputCluster(), getActualFibrePatternChannelMap(), getActualPrimaryInputChannelByFibre(), getActualPrimaryOutputChannelByFibre(), getPrimaryInputFibreByActualChannel(), and getPrimaryOutputFibreByActualChannel()\&.
 .SS "\fBstate::PatternChannelMap\fP \fBcryomesh::structures::Bundle::actualInputChannelsMap\fP\fC [private]\fP"
 .PP
-Definition at line 386 of file Bundle.h.
+Definition at line 385 of file Bundle\&.h\&.
 .PP
-Referenced by connectPrimaryInputCluster(), and getActualPrimaryInputChannelByFibre().
+Referenced by connectPrimaryInputCluster(), getActualInputChannelsMap(), getActualPrimaryInputChannelByFibre(), and printChannels()\&.
 .SS "\fBstate::PatternChannelMap\fP \fBcryomesh::structures::Bundle::actualOutputChannelsMap\fP\fC [private]\fP"
 .PP
-Definition at line 393 of file Bundle.h.
+Definition at line 392 of file Bundle\&.h\&.
 .PP
-Referenced by connectPrimaryOutputCluster(), and getActualPrimaryOutputChannelByFibre().
-.SS "\fBClusterMap\fP \fBcryomesh::structures::Bundle::clusters\fP\fC [private]\fP"
+Referenced by connectPrimaryOutputCluster(), getActualOutputChannelsMap(), getActualPrimaryOutputChannelByFibre(), and printChannels()\&.
+.SS "ClusterMap \fBcryomesh::structures::Bundle::clusters\fP\fC [private]\fP"
 .PP
-Definition at line 358 of file Bundle.h.
+Definition at line 357 of file Bundle\&.h\&.
 .PP
-Referenced by connectCluster().
+Referenced by connectCluster(), createCluster(), enableDebugClusters(), getClusters(), getMutableClusters(), and update()\&.
 .SS "double \fBcryomesh::structures::Bundle::energy\fP\fC [private]\fP"
 .PP
-Last energy calculation of the output channel matching. 
+Last energy calculation of the output channel matching\&. 
 .PP
-Definition at line 417 of file Bundle.h.
+Definition at line 416 of file Bundle\&.h\&.
+.PP
+Referenced by getEnergy(), and setEnergy()\&.
+.SS "\fBCluster::EnergyFractionMethod\fP \fBcryomesh::structures::Bundle::energyFractionMethod\fP\fC [private]\fP"
+.PP
+Definition at line 432 of file Bundle\&.h\&.
+.PP
+Referenced by createCluster()\&.
 .SS "\fBFibreMap\fP \fBcryomesh::structures::Bundle::fibres\fP\fC [private]\fP"
 .PP
-Definition at line 365 of file Bundle.h.
+Definition at line 364 of file Bundle\&.h\&.
 .PP
-Referenced by connectCluster().
+Referenced by connectCluster(), enableDebugFibres(), getFibres(), and update()\&.
 .SS "\fBFibreMap\fP \fBcryomesh::structures::Bundle::inputFibres\fP\fC [private]\fP"
 .PP
-Definition at line 400 of file Bundle.h.
+Definition at line 399 of file Bundle\&.h\&.
 .PP
-Referenced by connectCluster(), and getPrimaryInputFibreByActualChannel().
+Referenced by connectCluster(), getInputFibres(), getMutableInputFibres(), getPrimaryInputFibreByActualChannel(), getPrimaryInputFibreByRealChannel(), and updatePrimaryInputFibres()\&.
 .SS "\fBFibreMap\fP \fBcryomesh::structures::Bundle::outputFibres\fP\fC [private]\fP"
 .PP
-Definition at line 407 of file Bundle.h.
+Definition at line 406 of file Bundle\&.h\&.
 .PP
-Referenced by connectCluster(), getPrimaryOutputFibreByActualChannel(), and updatePrimaryOutputFibres().
+Referenced by connectCluster(), getMutableOutputFibres(), getOutputFibres(), getPrimaryOutputFibreByActualChannel(), getPrimaryOutputFibreByRealChannel(), and updatePrimaryOutputFibres()\&.
 .SS "std::map<boost::uuids::uuid, boost::uuids::uuid> \fBcryomesh::structures::Bundle::realFibrePatternChannelMap\fP\fC [private]\fP"
 .PP
-Definition at line 424 of file Bundle.h.
+Definition at line 423 of file Bundle\&.h\&.
 .PP
-Referenced by connectPrimaryInputCluster(), connectPrimaryOutputCluster(), getRealPrimaryInputChannelByFibre(), and getRealPrimaryOutputChannelByFibre().
+Referenced by connectPrimaryInputCluster(), connectPrimaryOutputCluster(), getPrimaryInputFibreByRealChannel(), getPrimaryOutputFibreByRealChannel(), getRealFibrePatternChannelMap(), getRealPrimaryInputChannelByFibre(), and getRealPrimaryOutputChannelByFibre()\&.
 .SS "\fBstate::PatternChannelMap\fP \fBcryomesh::structures::Bundle::realInputChannelsMap\fP\fC [private]\fP"
 .PP
-Definition at line 372 of file Bundle.h.
+Definition at line 371 of file Bundle\&.h\&.
 .PP
-Referenced by connectPrimaryInputCluster(), getRealPrimaryInputChannelByFibre(), and printChannels().
+Referenced by connectPrimaryInputCluster(), getDisconnectedRealInputPatternChannels(), getRealInputChannelsMap(), getRealPrimaryInputChannelByFibre(), loadChannels(), printChannels(), and updatePrimaryInputFibres()\&.
 .SS "\fBstate::PatternChannelMap\fP \fBcryomesh::structures::Bundle::realOutputChannelsMap\fP\fC [private]\fP"
 .PP
-Definition at line 379 of file Bundle.h.
+Definition at line 378 of file Bundle\&.h\&.
 .PP
-Referenced by connectPrimaryOutputCluster(), and getRealPrimaryOutputChannelByFibre().
+Referenced by connectPrimaryOutputCluster(), getDisconnectedRealOutputPatternChannels(), getRealOutputChannelsMap(), getRealPrimaryOutputChannelByFibre(), loadChannels(), and printChannels()\&.
 .SS "boost::shared_ptr<\fButilities::Statistician\fP> \fBcryomesh::structures::Bundle::statistician\fP\fC [private]\fP"
 .PP
-Statistics object to generate useful info on the bundle. 
+Statistics object to generate useful info on the bundle\&. 
 .PP
-Definition at line 412 of file Bundle.h.
+Definition at line 411 of file Bundle\&.h\&.
 .PP
-Referenced by updateStatistician().
+Referenced by getMutableStatistician(), getStatistician(), and updateStatistician()\&.
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for cryomesh from the source code.
+Generated automatically by Doxygen for cryomesh from the source code\&.

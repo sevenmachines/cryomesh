@@ -1,0 +1,674 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="classcryomesh_1_1state_1_1BinaryString" kind="class" prot="public">
+    <compoundname>cryomesh::state::BinaryString</compoundname>
+    <includes refid="BinaryString_8h" local="no">BinaryString.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classcryomesh_1_1state_1_1BinaryString_1adaad1428a9b504122a82b03879748466" prot="public" static="no">
+        <name>Type</name>
+        <enumvalue id="classcryomesh_1_1state_1_1BinaryString_1adaad1428a9b504122a82b03879748466ae29b88acd457612271587fc8a11b252a" prot="public">
+          <name>TXT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classcryomesh_1_1state_1_1BinaryString_1adaad1428a9b504122a82b03879748466aa507e87a4889fddd05f3b03b0ba96ff7" prot="public">
+          <name>BIN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="29" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" bodystart="29" bodyend="31"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classcryomesh_1_1state_1_1BinaryString_1ac98d07dd8f7b70e16ccb9a01abf56b9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class boost::serialization::access</definition>
+        <argsstring></argsstring>
+        <name>boost::serialization::access</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="23" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classcryomesh_1_1state_1_1BinaryString_1a734cab800f1e57aca6285cdcac48180d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const BinaryString &amp;obj)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1state_1_1BinaryString" kindref="compound">BinaryString</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="54" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.cpp" bodystart="223" bodyend="226"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classcryomesh_1_1state_1_1BinaryString_1aa4d7d35e5b93d290dfe6f1bafa0e0cc2" prot="public" static="yes" mutable="no">
+        <type>const unsigned int</type>
+        <definition>const unsigned int cryomesh::state::BinaryString::BINARY_CHAR_LENGTH</definition>
+        <argsstring></argsstring>
+        <name>BINARY_CHAR_LENGTH</name>
+        <initializer> 8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="61" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" bodystart="61" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1a023550e6e1753c5c1d64d308b55a9ff0" compoundref="BinaryString_8cpp" startline="25" endline="58">BinaryString</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1af3b1fbe76e1adf6428bbe60a393cc1df" compoundref="BinaryString_8cpp" startline="327" endline="373">charToBinaryString</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1a6bd5aaed5f90ab29c8e057fc015f1092" compoundref="BinaryString_8cpp" startline="242" endline="275">toText</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1state_1_1BinaryString_1abd1c70d0aef65ad2ba5af998a22b01ab" prot="public" static="yes" mutable="no">
+        <type>const unsigned int</type>
+        <definition>const unsigned int cryomesh::state::BinaryString::MAX_BINARY_INTEGER_SIZE</definition>
+        <argsstring></argsstring>
+        <name>MAX_BINARY_INTEGER_SIZE</name>
+        <initializer> 32</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="62" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" bodystart="62" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1add005a118d9b10305b8790397c9aae0e" compoundref="BinaryString_8cpp" startline="181" endline="221">toInt</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcryomesh_1_1state_1_1BinaryString_1ad125f434a2cb9693597aa8be05217d21" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string cryomesh::state::BinaryString::binaryString</definition>
+        <argsstring></argsstring>
+        <name>binaryString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="64" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" bodystart="64" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1a023550e6e1753c5c1d64d308b55a9ff0" compoundref="BinaryString_8cpp" startline="25" endline="58">BinaryString</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1ad5f20b679d6ee977abf389f4cb252bbe" compoundref="BinaryString_8cpp" startline="93" endline="95">getBinaryString</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1aed4c3e5869c8c62b8d189d59e731b8da" compoundref="BinaryString_8cpp" startline="97" endline="123">getBools</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1a09c187077c863fe9782334db0de63139" compoundref="BinaryString_8cpp" startline="177" endline="179">getWidth</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1a48ca7c2319260b3317561ea71f48efca" compoundref="BinaryString_8cpp" startline="162" endline="175">isAllZeroes</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1a80d5b4b762ec09b2a7e3a6945c2dc2d6" compoundref="BinaryString_8cpp" startline="147" endline="161">isValidBinary</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1ae65ca7d94f44208ba7aec54d1e691f6a" compoundref="BinaryString_8cpp" startline="374" endline="423">resize</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1af23aecbe6785a7e134aa6e247f4c160b" compoundref="BinaryString_8h" startline="25" endline="28">serialize</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1aa1666a479090e4ad5aefb28a09f98476" compoundref="BinaryString_8cpp" startline="125" endline="127">setBinaryString</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1add005a118d9b10305b8790397c9aae0e" compoundref="BinaryString_8cpp" startline="181" endline="221">toInt</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1a6bd5aaed5f90ab29c8e057fc015f1092" compoundref="BinaryString_8cpp" startline="242" endline="275">toText</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1state_1_1BinaryString_1a82a7189edccf834f144e4717294bb505" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool cryomesh::state::BinaryString::signBit</definition>
+        <argsstring></argsstring>
+        <name>signBit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="65" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" bodystart="65" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1ac8de3e6cf11d94161865ae78e7494397" compoundref="BinaryString_8cpp" startline="78" endline="81">BinaryString</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1a01370c6d213baea734c41ee6225fb69c" compoundref="BinaryString_8cpp" startline="90" endline="92">getSignBit</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1af23aecbe6785a7e134aa6e247f4c160b" compoundref="BinaryString_8h" startline="25" endline="28">serialize</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1a61f0e88355bd60fd6df43b418170ded6" compoundref="BinaryString_8cpp" startline="87" endline="89">setSignBit</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1add005a118d9b10305b8790397c9aae0e" compoundref="BinaryString_8cpp" startline="181" endline="221">toInt</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1BinaryString_1af23aecbe6785a7e134aa6e247f4c160b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Archive</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void cryomesh::state::BinaryString::serialize</definition>
+        <argsstring>(Archive &amp;ar, const unsigned int version)</argsstring>
+        <name>serialize</name>
+        <param>
+          <type>Archive &amp;</type>
+          <declname>ar</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>version</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="25" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" bodystart="25" bodyend="28"/>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1ad125f434a2cb9693597aa8be05217d21" compoundref="BinaryString_8h" startline="64">binaryString</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1a82a7189edccf834f144e4717294bb505" compoundref="BinaryString_8h" startline="65">signBit</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1BinaryString_1a3e133c657f04c3ee2a895d2df988b306" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::state::BinaryString::BinaryString</definition>
+        <argsstring>()</argsstring>
+        <name>BinaryString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="32" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.cpp" bodystart="21" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1BinaryString_1a023550e6e1753c5c1d64d308b55a9ff0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::state::BinaryString::BinaryString</definition>
+        <argsstring>(const std::string &amp;str, bool sign_bit=false, Type tp=TXT)</argsstring>
+        <name>BinaryString</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>sign_bit</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type><ref refid="classcryomesh_1_1state_1_1BinaryString_1adaad1428a9b504122a82b03879748466" kindref="member">Type</ref></type>
+          <declname>tp</declname>
+          <defval><ref refid="classcryomesh_1_1state_1_1BinaryString_1adaad1428a9b504122a82b03879748466ae29b88acd457612271587fc8a11b252a" kindref="member">TXT</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="33" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.cpp" bodystart="25" bodyend="58"/>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1adaad1428a9b504122a82b03879748466aa507e87a4889fddd05f3b03b0ba96ff7" compoundref="BinaryString_8h" startline="30">BIN</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1aa4d7d35e5b93d290dfe6f1bafa0e0cc2" compoundref="BinaryString_8h" startline="61">BINARY_CHAR_LENGTH</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1ad125f434a2cb9693597aa8be05217d21" compoundref="BinaryString_8h" startline="64">binaryString</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1af3b1fbe76e1adf6428bbe60a393cc1df" compoundref="BinaryString_8cpp" startline="327" endline="373">charToBinaryString</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1a59b3856d1a5629a8c85734b5d226d102" compoundref="BinaryString_8cpp" startline="277" endline="289">formatTextToInts</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1a01370c6d213baea734c41ee6225fb69c" compoundref="BinaryString_8cpp" startline="90" endline="92">getSignBit</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1ae65ca7d94f44208ba7aec54d1e691f6a" compoundref="BinaryString_8cpp" startline="374" endline="423">resize</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1BinaryString_1acd8030555e7e8962ba2f587f3712fb79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::state::BinaryString::BinaryString</definition>
+        <argsstring>(const std::vector&lt; bool &gt; &amp;binvec, bool sign_bit)</argsstring>
+        <name>BinaryString</name>
+        <param>
+          <type>const std::vector&lt; bool &gt; &amp;</type>
+          <declname>binvec</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>sign_bit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="34" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.cpp" bodystart="59" bodyend="76"/>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1ad125f434a2cb9693597aa8be05217d21" compoundref="BinaryString_8h" startline="64">binaryString</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1BinaryString_1ac8de3e6cf11d94161865ae78e7494397" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::state::BinaryString::BinaryString</definition>
+        <argsstring>(const BinaryString &amp;obj)</argsstring>
+        <name>BinaryString</name>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1state_1_1BinaryString" kindref="compound">BinaryString</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="35" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.cpp" bodystart="78" bodyend="81"/>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1ad125f434a2cb9693597aa8be05217d21" compoundref="BinaryString_8h" startline="64">binaryString</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1ad5f20b679d6ee977abf389f4cb252bbe" compoundref="BinaryString_8cpp" startline="93" endline="95">getBinaryString</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1a01370c6d213baea734c41ee6225fb69c" compoundref="BinaryString_8cpp" startline="90" endline="92">getSignBit</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1a82a7189edccf834f144e4717294bb505" compoundref="BinaryString_8h" startline="65">signBit</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1BinaryString_1a64283f9b44fe2216d66458f083d92e38" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>cryomesh::state::BinaryString::~BinaryString</definition>
+        <argsstring>()</argsstring>
+        <name>~BinaryString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="36" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.cpp" bodystart="83" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1BinaryString_1a61f0e88355bd60fd6df43b418170ded6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::state::BinaryString::setSignBit</definition>
+        <argsstring>(bool b)</argsstring>
+        <name>setSignBit</name>
+        <param>
+          <type>bool</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="38" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.cpp" bodystart="87" bodyend="89"/>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1a82a7189edccf834f144e4717294bb505" compoundref="BinaryString_8h" startline="65">signBit</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1BinaryString_1a01370c6d213baea734c41ee6225fb69c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::state::BinaryString::getSignBit</definition>
+        <argsstring>() const </argsstring>
+        <name>getSignBit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="39" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.cpp" bodystart="90" bodyend="92"/>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1a82a7189edccf834f144e4717294bb505" compoundref="BinaryString_8h" startline="65">signBit</references>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1a023550e6e1753c5c1d64d308b55a9ff0" compoundref="BinaryString_8cpp" startline="25" endline="58">BinaryString</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1ae65ca7d94f44208ba7aec54d1e691f6a" compoundref="BinaryString_8cpp" startline="374" endline="423">resize</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1add005a118d9b10305b8790397c9aae0e" compoundref="BinaryString_8cpp" startline="181" endline="221">toInt</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1a6bd5aaed5f90ab29c8e057fc015f1092" compoundref="BinaryString_8cpp" startline="242" endline="275">toText</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1BinaryString_1ad5f20b679d6ee977abf389f4cb252bbe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; cryomesh::state::BinaryString::getBinaryString</definition>
+        <argsstring>() const </argsstring>
+        <name>getBinaryString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="40" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.cpp" bodystart="93" bodyend="95"/>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1ad125f434a2cb9693597aa8be05217d21" compoundref="BinaryString_8h" startline="64">binaryString</references>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1ac8de3e6cf11d94161865ae78e7494397" compoundref="BinaryString_8cpp" startline="78" endline="81">BinaryString</referencedby>
+        <referencedby refid="namespacecryomesh_1_1state_1a54d53f52ec3e1e98328d2d4f3cdca7f3" compoundref="BinaryString_8cpp" startline="223" endline="226">cryomesh::state::operator&lt;&lt;</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1ae65ca7d94f44208ba7aec54d1e691f6a" compoundref="BinaryString_8cpp" startline="374" endline="423">resize</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1a0c3ad2bc0926b0c1131e23e1fca1ce7a" compoundref="BinaryString_8cpp" startline="227" endline="241">toInts</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1a6bd5aaed5f90ab29c8e057fc015f1092" compoundref="BinaryString_8cpp" startline="242" endline="275">toText</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1BinaryString_1aed4c3e5869c8c62b8d189d59e731b8da" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; bool &gt;</type>
+        <definition>const std::vector&lt; bool &gt; cryomesh::state::BinaryString::getBools</definition>
+        <argsstring>() const </argsstring>
+        <name>getBools</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="41" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.cpp" bodystart="97" bodyend="123"/>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1ad125f434a2cb9693597aa8be05217d21" compoundref="BinaryString_8h" startline="64">binaryString</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1a80d5b4b762ec09b2a7e3a6945c2dc2d6" compoundref="BinaryString_8cpp" startline="147" endline="161">isValidBinary</references>
+        <referencedby refid="classcryomesh_1_1state_1_1Pattern_1ab6fe1d9bee48f3bdaffb0cf683de4d17" compoundref="Pattern_8cpp" startline="133" endline="135">cryomesh::state::Pattern::getPattern</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1BinaryString_1aa1666a479090e4ad5aefb28a09f98476" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::state::BinaryString::setBinaryString</definition>
+        <argsstring>(const std::string &amp;str)</argsstring>
+        <name>setBinaryString</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="43" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.cpp" bodystart="125" bodyend="127"/>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1ad125f434a2cb9693597aa8be05217d21" compoundref="BinaryString_8h" startline="64">binaryString</references>
+        <referencedby refid="classcryomesh_1_1state_1_1Pattern_1acf193a66c3a2e41d99f40b2666687ad9" compoundref="Pattern_8cpp" startline="139" endline="141">cryomesh::state::Pattern::setPattern</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1BinaryString_1a70507e3fb33fbe4cfe158981ead72ed9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::state::BinaryString::setBinaryString</definition>
+        <argsstring>(const std::vector&lt; bool &gt; &amp;binvec)</argsstring>
+        <name>setBinaryString</name>
+        <param>
+          <type>const std::vector&lt; bool &gt; &amp;</type>
+          <declname>binvec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="44" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.cpp" bodystart="128" bodyend="146"/>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1ad125f434a2cb9693597aa8be05217d21" compoundref="BinaryString_8h" startline="64">binaryString</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1BinaryString_1a80d5b4b762ec09b2a7e3a6945c2dc2d6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::state::BinaryString::isValidBinary</definition>
+        <argsstring>() const </argsstring>
+        <name>isValidBinary</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="46" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.cpp" bodystart="147" bodyend="161"/>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1ad125f434a2cb9693597aa8be05217d21" compoundref="BinaryString_8h" startline="64">binaryString</references>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1aed4c3e5869c8c62b8d189d59e731b8da" compoundref="BinaryString_8cpp" startline="97" endline="123">getBools</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1add005a118d9b10305b8790397c9aae0e" compoundref="BinaryString_8cpp" startline="181" endline="221">toInt</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1BinaryString_1a48ca7c2319260b3317561ea71f48efca" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::state::BinaryString::isAllZeroes</definition>
+        <argsstring>() const </argsstring>
+        <name>isAllZeroes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="47" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.cpp" bodystart="162" bodyend="175"/>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1ad125f434a2cb9693597aa8be05217d21" compoundref="BinaryString_8h" startline="64">binaryString</references>
+        <referencedby refid="classcryomesh_1_1state_1_1Pattern_1a8dc6809b00c16358f993ac7e774d130a" compoundref="Pattern_8cpp" startline="60" endline="62">cryomesh::state::Pattern::isAllZeroes</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1BinaryString_1a09c187077c863fe9782334db0de63139" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int cryomesh::state::BinaryString::getWidth</definition>
+        <argsstring>() const </argsstring>
+        <name>getWidth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="48" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.cpp" bodystart="177" bodyend="179"/>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1ad125f434a2cb9693597aa8be05217d21" compoundref="BinaryString_8h" startline="64">binaryString</references>
+        <referencedby refid="classcryomesh_1_1state_1_1Pattern_1a448d14d09a39d35182bef8169511faf8" compoundref="Pattern_8cpp" startline="155" endline="157">cryomesh::state::Pattern::getSize</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1BinaryString_1a0c3ad2bc0926b0c1131e23e1fca1ce7a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::list&lt; int &gt;</type>
+        <definition>std::list&lt; int &gt; cryomesh::state::BinaryString::toInts</definition>
+        <argsstring>() const </argsstring>
+        <name>toInts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="50" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.cpp" bodystart="227" bodyend="241"/>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1a78205804420ed2dc20fef3a81919bdff" compoundref="BinaryString_8cpp" startline="304" endline="325">formatTextToBinaryStrings</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1ad5f20b679d6ee977abf389f4cb252bbe" compoundref="BinaryString_8cpp" startline="93" endline="95">getBinaryString</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1BinaryString_1a6bd5aaed5f90ab29c8e057fc015f1092" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::state::BinaryString::toText</definition>
+        <argsstring>() const </argsstring>
+        <name>toText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="51" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.cpp" bodystart="242" bodyend="275"/>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1adaad1428a9b504122a82b03879748466aa507e87a4889fddd05f3b03b0ba96ff7" compoundref="BinaryString_8h" startline="30">BIN</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1aa4d7d35e5b93d290dfe6f1bafa0e0cc2" compoundref="BinaryString_8h" startline="61">BINARY_CHAR_LENGTH</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1ad125f434a2cb9693597aa8be05217d21" compoundref="BinaryString_8h" startline="64">binaryString</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1ad5f20b679d6ee977abf389f4cb252bbe" compoundref="BinaryString_8cpp" startline="93" endline="95">getBinaryString</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1a01370c6d213baea734c41ee6225fb69c" compoundref="BinaryString_8cpp" startline="90" endline="92">getSignBit</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1ae65ca7d94f44208ba7aec54d1e691f6a" compoundref="BinaryString_8cpp" startline="374" endline="423">resize</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1add005a118d9b10305b8790397c9aae0e" compoundref="BinaryString_8cpp" startline="181" endline="221">toInt</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1BinaryString_1ae65ca7d94f44208ba7aec54d1e691f6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::state::BinaryString::resize</definition>
+        <argsstring>(const unsigned int size)</argsstring>
+        <name>resize</name>
+        <param>
+          <type>const unsigned int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="52" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.cpp" bodystart="374" bodyend="423"/>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1ad125f434a2cb9693597aa8be05217d21" compoundref="BinaryString_8h" startline="64">binaryString</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1ad5f20b679d6ee977abf389f4cb252bbe" compoundref="BinaryString_8cpp" startline="93" endline="95">getBinaryString</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1a01370c6d213baea734c41ee6225fb69c" compoundref="BinaryString_8cpp" startline="90" endline="92">getSignBit</references>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1a023550e6e1753c5c1d64d308b55a9ff0" compoundref="BinaryString_8cpp" startline="25" endline="58">BinaryString</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1af3b1fbe76e1adf6428bbe60a393cc1df" compoundref="BinaryString_8cpp" startline="327" endline="373">charToBinaryString</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1a6bd5aaed5f90ab29c8e057fc015f1092" compoundref="BinaryString_8cpp" startline="242" endline="275">toText</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1BinaryString_1add005a118d9b10305b8790397c9aae0e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int cryomesh::state::BinaryString::toInt</definition>
+        <argsstring>() const </argsstring>
+        <name>toInt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="53" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.cpp" bodystart="181" bodyend="221"/>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1ad125f434a2cb9693597aa8be05217d21" compoundref="BinaryString_8h" startline="64">binaryString</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1a01370c6d213baea734c41ee6225fb69c" compoundref="BinaryString_8cpp" startline="90" endline="92">getSignBit</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1a80d5b4b762ec09b2a7e3a6945c2dc2d6" compoundref="BinaryString_8cpp" startline="147" endline="161">isValidBinary</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1abd1c70d0aef65ad2ba5af998a22b01ab" compoundref="BinaryString_8h" startline="62">MAX_BINARY_INTEGER_SIZE</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1a82a7189edccf834f144e4717294bb505" compoundref="BinaryString_8h" startline="65">signBit</references>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1a6bd5aaed5f90ab29c8e057fc015f1092" compoundref="BinaryString_8cpp" startline="242" endline="275">toText</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1BinaryString_1a59b3856d1a5629a8c85734b5d226d102" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::list&lt; int &gt;</type>
+        <definition>std::list&lt; int &gt; cryomesh::state::BinaryString::formatTextToInts</definition>
+        <argsstring>(const std::string &amp;str)</argsstring>
+        <name>formatTextToInts</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="56" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.cpp" bodystart="277" bodyend="289"/>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1a023550e6e1753c5c1d64d308b55a9ff0" compoundref="BinaryString_8cpp" startline="25" endline="58">BinaryString</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1BinaryString_1aa989d3c6ce4f5f155751628f091ee93a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::state::BinaryString::formatIntsToText</definition>
+        <argsstring>(const std::list&lt; int &gt; &amp;charints)</argsstring>
+        <name>formatIntsToText</name>
+        <param>
+          <type>const std::list&lt; int &gt; &amp;</type>
+          <declname>charints</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="57" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.cpp" bodystart="290" bodyend="303"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1BinaryString_1a78205804420ed2dc20fef3a81919bdff" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::list&lt; <ref refid="classcryomesh_1_1state_1_1BinaryString" kindref="compound">BinaryString</ref> &gt;</type>
+        <definition>std::list&lt; BinaryString &gt; cryomesh::state::BinaryString::formatTextToBinaryStrings</definition>
+        <argsstring>(const std::string &amp;str, std::string &amp;allbins)</argsstring>
+        <name>formatTextToBinaryStrings</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>allbins</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="59" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.cpp" bodystart="304" bodyend="325"/>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1adaad1428a9b504122a82b03879748466aa507e87a4889fddd05f3b03b0ba96ff7" compoundref="BinaryString_8h" startline="30">BIN</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1af3b1fbe76e1adf6428bbe60a393cc1df" compoundref="BinaryString_8cpp" startline="327" endline="373">charToBinaryString</references>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1a0c3ad2bc0926b0c1131e23e1fca1ce7a" compoundref="BinaryString_8cpp" startline="227" endline="241">toInts</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1BinaryString_1a3ce9e8a45b89bdf608249c5bfdeaea15" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>static std::string cryomesh::state::BinaryString::formatBinaryStringsToText</definition>
+        <argsstring>(const std::list&lt; std::string &gt; &amp;strs)</argsstring>
+        <name>formatBinaryStringsToText</name>
+        <param>
+          <type>const std::list&lt; std::string &gt; &amp;</type>
+          <declname>strs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="60"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1BinaryString_1af3b1fbe76e1adf6428bbe60a393cc1df" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::state::BinaryString::charToBinaryString</definition>
+        <argsstring>(const char &amp;ch, bool sign_bit)</argsstring>
+        <name>charToBinaryString</name>
+        <param>
+          <type>const char &amp;</type>
+          <declname>ch</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>sign_bit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="69" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.cpp" bodystart="327" bodyend="373"/>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1adaad1428a9b504122a82b03879748466aa507e87a4889fddd05f3b03b0ba96ff7" compoundref="BinaryString_8h" startline="30">BIN</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1aa4d7d35e5b93d290dfe6f1bafa0e0cc2" compoundref="BinaryString_8h" startline="61">BINARY_CHAR_LENGTH</references>
+        <references refid="classcryomesh_1_1state_1_1BinaryString_1ae65ca7d94f44208ba7aec54d1e691f6a" compoundref="BinaryString_8cpp" startline="374" endline="423">resize</references>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1a023550e6e1753c5c1d64d308b55a9ff0" compoundref="BinaryString_8cpp" startline="25" endline="58">BinaryString</referencedby>
+        <referencedby refid="classcryomesh_1_1state_1_1BinaryString_1a78205804420ed2dc20fef3a81919bdff" compoundref="BinaryString_8cpp" startline="304" endline="325">formatTextToBinaryStrings</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="237">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="235">
+        <label>cryomesh::state::BinaryString</label>
+        <link refid="classcryomesh_1_1state_1_1BinaryString"/>
+        <childnode refid="236" relation="usage">
+          <edgelabel>binaryString</edgelabel>
+        </childnode>
+      </node>
+      <node id="236">
+        <label>std::string</label>
+        <childnode refid="237" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" line="21" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/BinaryString.h" bodystart="21" bodyend="71"/>
+    <listofallmembers>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1adaad1428a9b504122a82b03879748466aa507e87a4889fddd05f3b03b0ba96ff7" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>BIN</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1aa4d7d35e5b93d290dfe6f1bafa0e0cc2" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>BINARY_CHAR_LENGTH</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1ad125f434a2cb9693597aa8be05217d21" prot="private" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>binaryString</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1a3e133c657f04c3ee2a895d2df988b306" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>BinaryString</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1a023550e6e1753c5c1d64d308b55a9ff0" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>BinaryString</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1acd8030555e7e8962ba2f587f3712fb79" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>BinaryString</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1ac8de3e6cf11d94161865ae78e7494397" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>BinaryString</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1ac98d07dd8f7b70e16ccb9a01abf56b9c" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>boost::serialization::access</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1af3b1fbe76e1adf6428bbe60a393cc1df" prot="private" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>charToBinaryString</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1a3ce9e8a45b89bdf608249c5bfdeaea15" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>formatBinaryStringsToText</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1aa989d3c6ce4f5f155751628f091ee93a" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>formatIntsToText</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1a78205804420ed2dc20fef3a81919bdff" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>formatTextToBinaryStrings</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1a59b3856d1a5629a8c85734b5d226d102" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>formatTextToInts</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1ad5f20b679d6ee977abf389f4cb252bbe" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>getBinaryString</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1aed4c3e5869c8c62b8d189d59e731b8da" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>getBools</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1a01370c6d213baea734c41ee6225fb69c" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>getSignBit</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1a09c187077c863fe9782334db0de63139" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>getWidth</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1a48ca7c2319260b3317561ea71f48efca" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>isAllZeroes</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1a80d5b4b762ec09b2a7e3a6945c2dc2d6" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>isValidBinary</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1abd1c70d0aef65ad2ba5af998a22b01ab" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>MAX_BINARY_INTEGER_SIZE</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1a734cab800f1e57aca6285cdcac48180d" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1ae65ca7d94f44208ba7aec54d1e691f6a" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>resize</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1af23aecbe6785a7e134aa6e247f4c160b" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>serialize</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1aa1666a479090e4ad5aefb28a09f98476" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>setBinaryString</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1a70507e3fb33fbe4cfe158981ead72ed9" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>setBinaryString</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1a61f0e88355bd60fd6df43b418170ded6" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>setSignBit</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1a82a7189edccf834f144e4717294bb505" prot="private" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>signBit</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1add005a118d9b10305b8790397c9aae0e" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>toInt</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1a0c3ad2bc0926b0c1131e23e1fca1ce7a" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>toInts</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1a6bd5aaed5f90ab29c8e057fc015f1092" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>toText</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1adaad1428a9b504122a82b03879748466ae29b88acd457612271587fc8a11b252a" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>TXT</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1adaad1428a9b504122a82b03879748466" prot="public" virt="non-virtual"><scope>cryomesh::state::BinaryString</scope><name>Type</name></member>
+      <member refid="classcryomesh_1_1state_1_1BinaryString_1a64283f9b44fe2216d66458f083d92e38" prot="public" virt="virtual"><scope>cryomesh::state::BinaryString</scope><name>~BinaryString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

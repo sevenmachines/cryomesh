@@ -1,39 +1,57 @@
-.TH "cryomesh::components::ConnectionMap" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::components::ConnectionMap" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 cryomesh::components::ConnectionMap \- 
 .PP
-Helper class for \fBConnectionMap\fP to KeyMappedCollection mapping.  
+Helper class for \fBConnectionMap\fP to KeyMappedCollection mapping\&.  
 
 .SH SYNOPSIS
 .br
 .PP
 .PP
-\fC#include <ConnectionMap.h>\fP
+\fC#include <ConnectionMap\&.h>\fP
 .SS "Public Member Functions"
 
 .in +1c
 .ti -1c
 .RI "\fBConnectionMap\fP ()"
 .br
-.RI "\fIDefault constructor. \fP"
+.RI "\fIDefault constructor\&. \fP"
 .ti -1c
 .RI "virtual \fB~ConnectionMap\fP ()"
 .br
-.RI "\fIDefault destructor. \fP"
+.RI "\fIDefault destructor\&. \fP"
 .ti -1c
 .RI "virtual void \fBupdate\fP ()"
 .br
-.RI "\fIUpdate all entries in the map. \fP"
+.RI "\fIUpdate all entries in the map\&. \fP"
 .ti -1c
-.RI "boost::shared_ptr< \fBstate::ActivityPattern\fP > \fBgetActivityPattern\fP () const "
+.RI "boost::shared_ptr
 .br
-.RI "\fIGet activity pattern on current cycle. \fP"
+< \fBstate::ActivityPattern\fP > \fBgetActivityPattern\fP () const "
+.br
+.RI "\fIGet activity pattern on current cycle\&. \fP"
 .ti -1c
-.RI "boost::shared_ptr< \fBstate::ActivityPattern\fP > \fBgetActivityPattern\fP (const \fBcommon::Cycle\fP &cycle) const "
+.RI "boost::shared_ptr
 .br
-.RI "\fIGet activity pattern on cycle. \fP"
+< \fBstate::ActivityPattern\fP > \fBgetActivityPattern\fP (const \fBcommon::Cycle\fP &cycle) const "
+.br
+.RI "\fIGet activity pattern on cycle\&. \fP"
+.ti -1c
+.RI "const std::map
+.br
+< boost::uuids::uuid, 
+.br
+boost::shared_ptr< \fBConnection\fP > > \fBgetAllPrimaryInputConnections\fP () const "
+.br
+.ti -1c
+.RI "const std::map
+.br
+< boost::uuids::uuid, 
+.br
+boost::shared_ptr< \fBConnection\fP > > \fBgetAllPrimaryOutputConnections\fP () const "
+.br
 .in -1c
 .SS "Friends"
 
@@ -41,51 +59,61 @@ Helper class for \fBConnectionMap\fP to KeyMappedCollection mapping.
 .ti -1c
 .RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBConnectionMap\fP &obj)"
 .br
-.RI "\fITo stream operator. \fP"
+.RI "\fITo stream operator\&. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
-Helper class for \fBConnectionMap\fP to KeyMappedCollection mapping. 
+Helper class for \fBConnectionMap\fP to KeyMappedCollection mapping\&. 
 .PP
-Definition at line 26 of file ConnectionMap.h.
+Definition at line 26 of file ConnectionMap\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "cryomesh::components::ConnectionMap::ConnectionMap ()\fC [inline]\fP"
+.SS "\fBcryomesh::components::ConnectionMap::ConnectionMap\fP ()\fC [inline]\fP"
 .PP
-Default constructor. 
+Default constructor\&. 
 .PP
-Definition at line 31 of file ConnectionMap.h.
-.SS "virtual cryomesh::components::ConnectionMap::~ConnectionMap ()\fC [inline, virtual]\fP"
+Definition at line 31 of file ConnectionMap\&.h\&.
+.SS "virtual \fBcryomesh::components::ConnectionMap::~ConnectionMap\fP ()\fC [inline, virtual]\fP"
 .PP
-Default destructor. 
+Default destructor\&. 
 .PP
-Definition at line 37 of file ConnectionMap.h.
+Definition at line 37 of file ConnectionMap\&.h\&.
 .SH "Member Function Documentation"
 .PP 
-.SS "boost::shared_ptr<\fBstate::ActivityPattern\fP> cryomesh::components::ConnectionMap::getActivityPattern () const\fC [inline]\fP"
+.SS "boost::shared_ptr<\fBstate::ActivityPattern\fP> \fBcryomesh::components::ConnectionMap::getActivityPattern\fP () const\fC [inline]\fP"
 .PP
-Get activity pattern on current cycle. @ param const Cycle & cycle Cycle to get activity on 
+Get activity pattern on current cycle\&. @ param const Cycle & cycle Cycle to get activity on 
 .PP
-Definition at line 65 of file ConnectionMap.h.
+Definition at line 65 of file ConnectionMap\&.h\&.
 .PP
-References cryomesh::common::TimeKeeper::getTimeKeeper().
-.SS "boost::shared_ptr<\fBstate::ActivityPattern\fP> cryomesh::components::ConnectionMap::getActivityPattern (const \fBcommon::Cycle\fP &cycle) const\fC [inline]\fP"
+References cryomesh::common::TimeKeeper::getTimeKeeper()\&.
+.SS "boost::shared_ptr<\fBstate::ActivityPattern\fP> \fBcryomesh::components::ConnectionMap::getActivityPattern\fP (const \fBcommon::Cycle\fP &cycle) const\fC [inline]\fP"
 .PP
-Get activity pattern on cycle. @ param const Cycle & cycle Cycle to get activity on 
+Get activity pattern on cycle\&. @ param const Cycle & cycle Cycle to get activity on 
 .PP
-Definition at line 75 of file ConnectionMap.h.
-.SS "virtual void cryomesh::components::ConnectionMap::update ()\fC [inline, virtual]\fP"
+Definition at line 75 of file ConnectionMap\&.h\&.
+.SS "const std::map<boost::uuids::uuid, boost::shared_ptr<\fBConnection\fP> > \fBcryomesh::components::ConnectionMap::getAllPrimaryInputConnections\fP () const\fC [inline]\fP"
 .PP
-Update all entries in the map. 
+Definition at line 97 of file ConnectionMap\&.h\&.
 .PP
-Definition at line 43 of file ConnectionMap.h.
+Referenced by cryomesh::manipulators::ClusterArchitect::getRandomConnections()\&.
+.SS "const std::map<boost::uuids::uuid, boost::shared_ptr<\fBConnection\fP> > \fBcryomesh::components::ConnectionMap::getAllPrimaryOutputConnections\fP () const\fC [inline]\fP"
 .PP
-Referenced by cryomesh::structures::Fibre::update(), and cryomesh::structures::Cluster::update().
+Definition at line 119 of file ConnectionMap\&.h\&.
+.PP
+Referenced by cryomesh::manipulators::ClusterArchitect::getRandomConnections()\&.
+.SS "virtual void \fBcryomesh::components::ConnectionMap::update\fP ()\fC [inline, virtual]\fP"
+.PP
+Update all entries in the map\&. 
+.PP
+Definition at line 43 of file ConnectionMap\&.h\&.
+.PP
+Referenced by cryomesh::structures::Cluster::update(), and cryomesh::structures::Fibre::update()\&.
 .SH "Friends And Related Function Documentation"
 .PP 
 .SS "std::ostream& operator<< (std::ostream &os, const \fBConnectionMap\fP &obj)\fC [friend]\fP"
 .PP
-To stream operator. \fBParameters:\fP
+To stream operator\&. \fBParameters:\fP
 .RS 4
 \fIstd::ostream\fP & os The output stream 
 .br
@@ -99,8 +127,8 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 108 of file ConnectionMap.h.
+Definition at line 152 of file ConnectionMap\&.h\&.
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for cryomesh from the source code.
+Generated automatically by Doxygen for cryomesh from the source code\&.

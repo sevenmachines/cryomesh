@@ -43,7 +43,7 @@ class Cluster: public common::Tagged, public spacial::Spacial, public common::De
 public:
 
 	enum EnergyFractionMethod {
-		ENERGY_FRACTION_BY_CLUSTER_COUNT, ENERGY_FRACTION_BY_NODE_COUNT
+		ENERGY_FRACTION_BY_CLUSTER_COUNT, ENERGY_FRACTION_BY_NODE_COUNT, ENERGY_FRACTION_NULL
 	};
 
 	/**
@@ -80,7 +80,7 @@ public:
 	 */
 	void update();
 	void updateEnergy(double total_energy);
-	void setEnergyFractionMethod(EnergyFractionMethod method) ;
+	void setEnergyFractionMethod(EnergyFractionMethod method, double max_energy_fraction) ;
 	EnergyFractionMethod  getEnergyFractionMethod() const ;
 
 	void warpNodes();
@@ -176,6 +176,7 @@ public:
 
 	double getEnergy() const;
 	void setEnergy(double d);
+	double getMaxEnergyFraction()const;
 
 	const boost::shared_ptr<manipulators::ClusterArchitect> getClusterArchitect() const;
 	boost::shared_ptr<manipulators::ClusterArchitect> getMutableClusterArchitect();
@@ -245,6 +246,7 @@ private:
 
 	boost::shared_ptr<manipulators::ClusterArchitect> clusterArchitect;
 	EnergyFractionMethod energyFractionMethod;
+	double maxEnergyFraction;
 
 };
 

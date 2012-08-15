@@ -1,0 +1,442 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="PatternChannel_8h" kind="file">
+    <compoundname>PatternChannel.h</compoundname>
+    <includes refid="Pattern_8h" local="yes">Pattern.h</includes>
+    <includes refid="PatternTag_8h" local="yes">PatternTag.h</includes>
+    <includes local="yes">common/Tagged.h</includes>
+    <includes local="yes">common/Debuggable.h</includes>
+    <includes local="no">map</includes>
+    <includes local="no">list</includes>
+    <includes local="no">set</includes>
+    <includes local="no">boost/uuid/uuid.hpp</includes>
+    <includes local="no">boost/shared_ptr.hpp</includes>
+    <includedby refid="PatternChannel_8cpp" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternChannel.cpp</includedby>
+    <includedby refid="PatternChannelMap_8h" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternChannelMap.h</includedby>
+    <includedby refid="SequencerChannels_8h" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerChannels.h</includedby>
+    <incdepgraph>
+      <node id="1773">
+        <label>list</label>
+      </node>
+      <node id="1771">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="1779">
+        <label>boost/serialization/vector.hpp</label>
+      </node>
+      <node id="1786">
+        <label>boost/tokenizer.hpp</label>
+      </node>
+      <node id="1782">
+        <label>manager/PatternDatabaseObject.h</label>
+        <link refid="PatternDatabaseObject_8h"/>
+        <childnode refid="1783" relation="include">
+        </childnode>
+        <childnode refid="1787" relation="include">
+        </childnode>
+        <childnode refid="1770" relation="include">
+        </childnode>
+        <childnode refid="1771" relation="include">
+        </childnode>
+      </node>
+      <node id="1788">
+        <label>gmpxx.h</label>
+      </node>
+      <node id="1789">
+        <label>common/Debuggable.h</label>
+      </node>
+      <node id="1783">
+        <label>DatabaseObject.h</label>
+        <link refid="DatabaseObject_8h"/>
+        <childnode refid="1784" relation="include">
+        </childnode>
+        <childnode refid="1770" relation="include">
+        </childnode>
+        <childnode refid="1774" relation="include">
+        </childnode>
+        <childnode refid="1785" relation="include">
+        </childnode>
+        <childnode refid="1786" relation="include">
+        </childnode>
+      </node>
+      <node id="1770">
+        <label>string</label>
+      </node>
+      <node id="1769">
+        <label>PatternTag.h</label>
+        <link refid="PatternTag_8h"/>
+        <childnode refid="1770" relation="include">
+        </childnode>
+        <childnode refid="1771" relation="include">
+        </childnode>
+      </node>
+      <node id="1784">
+        <label>map</label>
+      </node>
+      <node id="1778">
+        <label>common/Tagged.h</label>
+      </node>
+      <node id="1776">
+        <label>boost/serialization/string.hpp</label>
+      </node>
+      <node id="1775">
+        <label>vector</label>
+      </node>
+      <node id="1781">
+        <label>boost/uuid/uuid_generators.hpp</label>
+      </node>
+      <node id="1774">
+        <label>sstream</label>
+      </node>
+      <node id="1767">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternChannel.h</label>
+        <link refid="PatternChannel.h"/>
+        <childnode refid="1768" relation="include">
+        </childnode>
+        <childnode refid="1769" relation="include">
+        </childnode>
+        <childnode refid="1778" relation="include">
+        </childnode>
+        <childnode refid="1789" relation="include">
+        </childnode>
+        <childnode refid="1784" relation="include">
+        </childnode>
+        <childnode refid="1773" relation="include">
+        </childnode>
+        <childnode refid="1790" relation="include">
+        </childnode>
+        <childnode refid="1780" relation="include">
+        </childnode>
+        <childnode refid="1771" relation="include">
+        </childnode>
+      </node>
+      <node id="1785">
+        <label>iostream</label>
+      </node>
+      <node id="1787">
+        <label>common/Cycle.h</label>
+        <link refid="Cycle_8h"/>
+        <childnode refid="1788" relation="include">
+        </childnode>
+      </node>
+      <node id="1780">
+        <label>boost/uuid/uuid.hpp</label>
+      </node>
+      <node id="1790">
+        <label>set</label>
+      </node>
+      <node id="1777">
+        <label>boost/serialization/serialization.hpp</label>
+      </node>
+      <node id="1768">
+        <label>Pattern.h</label>
+        <link refid="Pattern_8h"/>
+        <childnode refid="1769" relation="include">
+        </childnode>
+        <childnode refid="1772" relation="include">
+        </childnode>
+        <childnode refid="1778" relation="include">
+        </childnode>
+        <childnode refid="1775" relation="include">
+        </childnode>
+        <childnode refid="1770" relation="include">
+        </childnode>
+        <childnode refid="1779" relation="include">
+        </childnode>
+        <childnode refid="1780" relation="include">
+        </childnode>
+        <childnode refid="1781" relation="include">
+        </childnode>
+        <childnode refid="1782" relation="include">
+        </childnode>
+      </node>
+      <node id="1772">
+        <label>BinaryString.h</label>
+        <link refid="BinaryString_8h"/>
+        <childnode refid="1773" relation="include">
+        </childnode>
+        <childnode refid="1770" relation="include">
+        </childnode>
+        <childnode refid="1774" relation="include">
+        </childnode>
+        <childnode refid="1775" relation="include">
+        </childnode>
+        <childnode refid="1776" relation="include">
+        </childnode>
+        <childnode refid="1777" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1795">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h</label>
+        <link refid="Creator_8h"/>
+        <childnode refid="1796" relation="include">
+        </childnode>
+        <childnode refid="1797" relation="include">
+        </childnode>
+      </node>
+      <node id="1800">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp</label>
+        <link refid="Statistician_8cpp"/>
+      </node>
+      <node id="1794">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h</label>
+        <link refid="Bundle_8h"/>
+        <childnode refid="1795" relation="include">
+        </childnode>
+        <childnode refid="1799" relation="include">
+        </childnode>
+        <childnode refid="1800" relation="include">
+        </childnode>
+      </node>
+      <node id="1801">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerChannels.h</label>
+        <link refid="SequencerChannels_8h"/>
+        <childnode refid="1799" relation="include">
+        </childnode>
+        <childnode refid="1802" relation="include">
+        </childnode>
+      </node>
+      <node id="1799">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp</label>
+        <link refid="Bundle_8cpp"/>
+      </node>
+      <node id="1802">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerChannels.cpp</label>
+        <link refid="SequencerChannels_8cpp"/>
+      </node>
+      <node id="1792">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternChannel.cpp</label>
+        <link refid="PatternChannel_8cpp"/>
+      </node>
+      <node id="1791">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternChannel.h</label>
+        <link refid="PatternChannel.h"/>
+        <childnode refid="1792" relation="include">
+        </childnode>
+        <childnode refid="1793" relation="include">
+        </childnode>
+        <childnode refid="1801" relation="include">
+        </childnode>
+      </node>
+      <node id="1793">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternChannelMap.h</label>
+        <link refid="PatternChannelMap_8h"/>
+        <childnode refid="1794" relation="include">
+        </childnode>
+        <childnode refid="1801" relation="include">
+        </childnode>
+      </node>
+      <node id="1798">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.cpp</label>
+        <link refid="CryoManager_8cpp"/>
+      </node>
+      <node id="1797">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.h</label>
+        <link refid="CryoManager_8h"/>
+        <childnode refid="1798" relation="include">
+        </childnode>
+      </node>
+      <node id="1796">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp</label>
+        <link refid="Creator_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classcryomesh_1_1state_1_1PatternChannel" prot="public">cryomesh::state::PatternChannel</innerclass>
+    <innernamespace refid="namespacecryomesh">cryomesh</innernamespace>
+    <innernamespace refid="namespacecryomesh_1_1state">cryomesh::state</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>PatternChannel.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>Created<sp/>on:<sp/>18<sp/>Aug<sp/>2010</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Author:<sp/>niall</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>PATTERNCHANNEL_H_</highlight></codeline>
+<codeline lineno="9"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>PATTERNCHANNEL_H_</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Pattern_8h" kindref="compound">Pattern.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="PatternTag_8h" kindref="compound">PatternTag.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;common/Tagged.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;common/Debuggable.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;list&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;set&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/uuid/uuid.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/shared_ptr.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">cryomesh<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">state<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="classcryomesh_1_1state_1_1PatternChannel" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcryomesh_1_1state_1_1PatternChannel" kindref="compound">PatternChannel</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>common::Tagged,<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>common::Debuggable<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="27" refid="classcryomesh_1_1state_1_1PatternChannel_1aecb6feb12b771abb3cca4a77f5a47903" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1aecb6feb12b771abb3cca4a77f5a47903" kindref="member">PrintFormat</ref><sp/>{</highlight></codeline>
+<codeline lineno="28" refid="classcryomesh_1_1state_1_1PatternChannel_1aecb6feb12b771abb3cca4a77f5a47903a323e9e3c328769d1ef777f10b3a2315b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1aecb6feb12b771abb3cca4a77f5a47903ac9ab380f74b4a50f13013e4785cf9e41" kindref="member">BINARY</ref>,<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1aecb6feb12b771abb3cca4a77f5a47903a323e9e3c328769d1ef777f10b3a2315b" kindref="member">TEXT</ref>,<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1aecb6feb12b771abb3cca4a77f5a47903a95004c9c6007ed3c766a5e6cec3ed521" kindref="member">INTEGER</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="30" refid="classcryomesh_1_1state_1_1PatternChannel_1ac8a0ae515a221519890fc1181f2c895a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1ac8a0ae515a221519890fc1181f2c895a" kindref="member">ChannelDataType</ref><sp/>{</highlight></codeline>
+<codeline lineno="31" refid="classcryomesh_1_1state_1_1PatternChannel_1ac8a0ae515a221519890fc1181f2c895aa4f561e33e002f951204ee1f01497f994" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1ac8a0ae515a221519890fc1181f2c895aab75202b529e4a7cfb8db3daa14b9f477" kindref="member">Input</ref>,<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1ac8a0ae515a221519890fc1181f2c895aa981b9873565a0888e43eef95b4d003bf" kindref="member">Output</ref>,<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1ac8a0ae515a221519890fc1181f2c895aa4f561e33e002f951204ee1f01497f994" kindref="member">Transitional</ref></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Contruct<sp/>with<sp/>no<sp/>pattern</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a10d5404f3c3d7005d48f681552cca552" kindref="member">PatternChannel</ref>(<ref refid="classcryomesh_1_1state_1_1PatternChannel_1ac8a0ae515a221519890fc1181f2c895a" kindref="member">ChannelDataType</ref><sp/>dt);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Construct<sp/>from<sp/>pattern</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a10d5404f3c3d7005d48f681552cca552" kindref="member">PatternChannel</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::list&lt;boost::shared_ptr&lt;Pattern&gt;<sp/>&gt;<sp/>&amp;<sp/>pats,<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1ac8a0ae515a221519890fc1181f2c895a" kindref="member">ChannelDataType</ref><sp/>dt);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1ad2f8eaa8b1925a9bab61181154511b51" kindref="member">~PatternChannel</ref>();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a10d5404f3c3d7005d48f681552cca552" kindref="member">PatternChannel</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel" kindref="compound">PatternChannel</ref><sp/>&amp;<sp/>obj);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel" kindref="compound">PatternChannel</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a136a8a320b095ad9ce04eb67ea0a8c17" kindref="member" tooltip="Assignment operator.">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel" kindref="compound">PatternChannel</ref><sp/>&amp;<sp/>obj);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>add<sp/>and<sp/>remove<sp/>patterns</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>add<sp/>single<sp/>pattern<sp/>to<sp/>the<sp/>end</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1ab8c96531bfdfa24facbec91e81fa0158" kindref="member">addPattern</ref>(boost::shared_ptr&lt;Pattern&gt;<sp/>pat);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Add<sp/>list<sp/>of<sp/>patterns<sp/>to<sp/>end</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a46b385352284ab06ea31c36bfb37a0ac" kindref="member">addPatterns</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::list&lt;boost::shared_ptr&lt;Pattern&gt;<sp/>&gt;<sp/>&amp;<sp/>pats);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Add<sp/>list<sp/>of<sp/>patterns<sp/>starting<sp/>at<sp/>position</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a46b385352284ab06ea31c36bfb37a0ac" kindref="member">addPatterns</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::list&lt;boost::shared_ptr&lt;Pattern&gt;<sp/>&gt;<sp/>&amp;<sp/>pats,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>position);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Remove<sp/>list<sp/>of<sp/>patterns</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::list&lt;boost::shared_ptr&lt;Pattern&gt;<sp/>&gt;<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a58645e5bd3b44290db489c095ad34895" kindref="member">removePatterns</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::list&lt;boost::shared_ptr&lt;Pattern&gt;<sp/>&gt;<sp/>&amp;<sp/>pats);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>remove<sp/>list<sp/>of<sp/>patterns<sp/>by<sp/>uuid</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::list&lt;boost::shared_ptr&lt;Pattern&gt;<sp/>&gt;<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a58645e5bd3b44290db489c095ad34895" kindref="member">removePatterns</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::list&lt;boost::uuids::uuid&gt;<sp/>&amp;<sp/>uuids);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Clear<sp/>pattern<sp/>list<sp/>and<sp/>all<sp/>related<sp/>settings<sp/>are<sp/>reset</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a13753c86675493e5cb8cb911238e3410" kindref="member">clearPatternList</ref>();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Force<sp/>Channel<sp/>size<sp/>contraint<sp/>by<sp/>dropping<sp/>the<sp/>earliest<sp/>patterns</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::list&lt;boost::shared_ptr&lt;Pattern&gt;<sp/>&gt;<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a66783001791bd4b51bec7eb97b8a1b4e" kindref="member">forcePatternListSize</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sz);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Force<sp/>Channel<sp/>size<sp/>contraint<sp/>by<sp/>dropping<sp/>the<sp/>earliest<sp/>patterns<sp/>using<sp/>default<sp/>max<sp/>size</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::list&lt;boost::shared_ptr&lt;Pattern&gt;<sp/>&gt;<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a66783001791bd4b51bec7eb97b8a1b4e" kindref="member">forcePatternListSize</ref>();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Manipulation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>return<sp/>current<sp/>pattern</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;Pattern&gt;<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a92ef0469e782dc022c00d804f30fff3d" kindref="member">getCurrentPattern</ref>();</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Return<sp/>bactracked<sp/>pattern<sp/>using<sp/>last<sp/>entry<sp/>in<sp/>pattern<sp/>list<sp/>as<sp/>that</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>of<sp/>the<sp/>current<sp/>cycle</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>Cycle</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>cycle<sp/>to<sp/>retrieve<sp/>relative<sp/>to<sp/>now</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>@return<sp/>boost::shared_ptr&lt;Pattern&gt;</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>pattern<sp/>found<sp/>at<sp/>the<sp/>supplied<sp/>cycle,<sp/>null<sp/>if<sp/>none<sp/>found</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;Pattern&gt;<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a553a85437f3197ea4fa751319de0fd56" kindref="member">getPatternByCycle</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref><sp/>&amp;<sp/>cycle);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Return<sp/>pattern<sp/>from<sp/>tag</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;Pattern&gt;<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a88e0394f678b199aa5f2866b1487fc92" kindref="member">getPatternByTag</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;PatternTag&gt;<sp/>tg)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Move<sp/>to<sp/>next<sp/>pattern<sp/>and<sp/>return<sp/>it</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;Pattern&gt;<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1ae5dd9fdcebe6af92c48c4ac1f0d889c7" kindref="member">nextPattern</ref>();</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Move<sp/>to<sp/>previous<sp/>pattern<sp/>and<sp/>return<sp/>it</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;Pattern&gt;<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a4b96871d0a8bf38d6d9a2998dd0a81f7" kindref="member">previousPattern</ref>();</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Try<sp/>to<sp/>match<sp/>this<sp/>pattern<sp/>channel<sp/>with<sp/>another.<sp/>from<sp/>0<sp/>to<sp/>1(full<sp/>match)</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Global<sp/>match,<sp/>constantly<sp/>go<sp/>through<sp/>the<sp/>pattern<sp/>list<sp/>removing<sp/>the<sp/>best<sp/>match</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>before<sp/>proceeding</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a05400d50d8206b82426bdc8b277c4c14" kindref="member">matchGlobally</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel" kindref="compound">PatternChannel</ref><sp/>&amp;);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Try<sp/>to<sp/>match<sp/>this<sp/>pattern<sp/>channel<sp/>with<sp/>another.<sp/>from<sp/>0<sp/>to<sp/>1(full<sp/>match)</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Sequential<sp/>match,<sp/>match<sp/>each<sp/>pattern<sp/>with<sp/>its<sp/>equivalent<sp/>in<sp/>the<sp/>other</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>pattern<sp/>channel<sp/>then<sp/>proceed<sp/>sequntally<sp/>through<sp/>both<sp/>channels</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1aa354fc22d88359c3b83d92a224761c69" kindref="member">matchSequentially</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel" kindref="compound">PatternChannel</ref><sp/>&amp;);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1acbaa7ae7afbe42e8ebca56f889220289" kindref="member">enableDebug</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>b);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GETTERS/SETTERS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1ac8a0ae515a221519890fc1181f2c895a" kindref="member">ChannelDataType</ref><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1ad7890be8253221b14e673c4fb1cddffa" kindref="member">getChannelDataType</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a7ab7d66118f678d1406a14c4ebb79752" kindref="member">getLength</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;boost::shared_ptr&lt;PatternTag&gt;,<sp/>boost::uuids::uuid&gt;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1ab5260edbf3ada707a91994c60b866dd5" kindref="member">getPatternByTagMap</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;Pattern&gt;<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a33b3c30b6137eaf727a58cafab32f692" kindref="member">getPatternByUUID</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::uuids::uuid<sp/>&amp;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::shared_ptr&lt;Pattern&gt;<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1ad588e65dc12cee6d91bb3035a6958d44" kindref="member">getMutablePatternByUUID</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::uuids::uuid<sp/>&amp;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::list&lt;boost::uuids::uuid&gt;<sp/>&amp;<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a56b0b495e91692302da543807a93fa02" kindref="member">getPatternList</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::list&lt;boost::uuids::uuid&gt;::iterator<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a79af2f63fa3b5dfa7c48615a47c20842" kindref="member">getPatternListIterator</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;boost::uuids::uuid,<sp/>boost::shared_ptr&lt;Pattern&gt;<sp/>&gt;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1ab3bc796775ce23366a18206ac2c5119d" kindref="member">getPatternMap</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a930bbb05180ecd22aa9a87eb62daba0f" kindref="member">getPatternPosition</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a1b02b011f6abc75354e75fe44218190d" kindref="member">getWidth</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1ae9f396f25c1f9650cc57b4c02c84a5f3" kindref="member">setWidth</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>w);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a6d02f9db85383449d208ebb012edbe48" kindref="member">getRefID</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a8df9a6aace2cf6810d3d6f3bc72b5a3b" kindref="member">setRefID</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a6c1ae5242c32abd71055d35c7d126bfa" kindref="member">getMaxPatternListSize</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1acd69920f539ac7a7149faa92c5e766e1" kindref="member">setMaxPatternListSize</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sz);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::ostream<sp/>&amp;<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a74a37c66904647c83d459ee4a90446d7" kindref="member">printPatternList</ref>(std::ostream<sp/>&amp;<sp/>os,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>reversed<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::ostream<sp/>&amp;<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a1ab67f8d6565a4a2b987152d4c38d175" kindref="member">printTextFormattedPatternList</ref>(std::ostream<sp/>&amp;<sp/>os,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>reversed<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::ostream<sp/>&amp;<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a8d92b898f11a8cea38022bf888807c69" kindref="member">printIntegerFormattedPatternList</ref>(std::ostream<sp/>&amp;<sp/>os,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>reversed)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::ostream<sp/>&amp;<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1aa6d23443589ea223baed8eb9042a2139" kindref="member">printBinaryFormattedPatternList</ref>(std::ostream<sp/>&amp;<sp/>os,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>reversed)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::ostream<sp/>&amp;<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a4813e35ef5321611b83d523c5cc3bfb6" kindref="member">printFormattedPatternList</ref>(std::ostream<sp/>&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1aecb6feb12b771abb3cca4a77f5a47903" kindref="member">PrintFormat</ref><sp/>&amp;<sp/>pf,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>reversed)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161" refid="classcryomesh_1_1state_1_1PatternChannel_1a2931ca38ca2e5d816c8917cb857e62fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a2931ca38ca2e5d816c8917cb857e62fc" kindref="member">DEFAULT_MAX_PATTERN_LIST_SIZE</ref>;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163" refid="classcryomesh_1_1state_1_1PatternChannel_1a1476695074d7d8e184aed0c4401f72d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a1476695074d7d8e184aed0c4401f72d5" kindref="member">REFID_CREATE_START</ref>;</highlight></codeline>
+<codeline lineno="164" refid="classcryomesh_1_1state_1_1PatternChannel_1aafed47c54c1db97487a333f43bb85e25" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1aafed47c54c1db97487a333f43bb85e25" kindref="member">refIDS</ref>;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a4a1ca89d0b7867c4faa13d779a35ae97" kindref="member">getRefIDS</ref>();</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::ostream<sp/>&amp;<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a8a4a6cb06dd05aa353207980bcf59319" kindref="member">operator&lt;&lt;</ref>(std::ostream<sp/>&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel" kindref="compound">PatternChannel</ref><sp/>&amp;<sp/>obj);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="169" refid="classcryomesh_1_1state_1_1PatternChannel_1a0638a69625dd19480563b245dc1c6853" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1ac8a0ae515a221519890fc1181f2c895a" kindref="member">ChannelDataType</ref><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a0638a69625dd19480563b245dc1c6853" kindref="member">channelDataType</ref>;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>auto<sp/>generated<sp/>from<sp/>pattern<sp/>list</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171" refid="classcryomesh_1_1state_1_1PatternChannel_1a979af8e9743379cc8484cfa7348838f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a979af8e9743379cc8484cfa7348838f2" kindref="member">length</ref>;</highlight></codeline>
+<codeline lineno="172" refid="classcryomesh_1_1state_1_1PatternChannel_1aeab8770881ec9be1b48c712a23dd6271" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1aeab8770881ec9be1b48c712a23dd6271" kindref="member">maxPatternListSize</ref>;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Map<sp/>of<sp/>a<sp/>useful<sp/>pattern<sp/>tag<sp/>to<sp/>an<sp/>actual<sp/>pattern,<sp/>for<sp/>example,<sp/>date</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174" refid="classcryomesh_1_1state_1_1PatternChannel_1a5155045e7e94fc10a1d60e418bf82b71" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;boost::shared_ptr&lt;PatternTag&gt;,<sp/>boost::uuids::uuid&gt;<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a5155045e7e94fc10a1d60e418bf82b71" kindref="member">patternByTagMap</ref>;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Ordered<sp/>sequential<sp/>list<sp/>of<sp/>Pattern<sp/>uuids</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176" refid="classcryomesh_1_1state_1_1PatternChannel_1a71800edd10923b7b00f0c292414b4ba1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::list&lt;boost::uuids::uuid&gt;<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a71800edd10923b7b00f0c292414b4ba1" kindref="member">patternList</ref>;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Current<sp/>position<sp/>in<sp/>patternList</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178" refid="classcryomesh_1_1state_1_1PatternChannel_1ac06b2bd5e0bc4aa4da633bc80a64b290" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::list&lt;boost::uuids::uuid&gt;::iterator<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1ac06b2bd5e0bc4aa4da633bc80a64b290" kindref="member">patternListIterator</ref>;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Contains<sp/>map<sp/>of<sp/>Pattern<sp/>uuids<sp/>to<sp/>actual<sp/>Patterns</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180" refid="classcryomesh_1_1state_1_1PatternChannel_1a72f70fbaad5ff134b07c3fe198d9fd67" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;boost::uuids::uuid,<sp/>boost::shared_ptr&lt;Pattern&gt;<sp/>&gt;<sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a72f70fbaad5ff134b07c3fe198d9fd67" kindref="member">patternMap</ref>;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Position<sp/>count<sp/>of<sp/>patternList</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182" refid="classcryomesh_1_1state_1_1PatternChannel_1af4a9ce80cd65ae8a11ec27e4b027a34c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1af4a9ce80cd65ae8a11ec27e4b027a34c" kindref="member">patternPosition</ref>;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>reference<sp/>id<sp/>taken<sp/>from<sp/>xml<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184" refid="classcryomesh_1_1state_1_1PatternChannel_1a609d1d8ac76ff856bf7885c040dc339a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1a609d1d8ac76ff856bf7885c040dc339a" kindref="member">refID</ref>;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>auto<sp/>generated<sp/>from<sp/>pattern<sp/>list<sp/>using<sp/>minimum<sp/>element<sp/>width</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186" refid="classcryomesh_1_1state_1_1PatternChannel_1af7bcede6cf5c8d768e7d1f1d897106d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternChannel_1af7bcede6cf5c8d768e7d1f1d897106d2" kindref="member">width</ref>;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>PATTERNCHANNEL_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternChannel.h"/>
+  </compounddef>
+</doxygen>

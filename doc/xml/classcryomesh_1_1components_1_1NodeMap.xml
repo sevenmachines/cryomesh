@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="classcryomesh_1_1components_1_1NodeMap" kind="class" prot="public">
+    <compoundname>cryomesh::components::NodeMap</compoundname>
+    <includes refid="NodeMap_8h" local="no">NodeMap.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1NodeMap_1a007c30a64d4e67fd13d4e17564a36efd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::components::NodeMap::NodeMap</definition>
+        <argsstring>()</argsstring>
+        <name>NodeMap</name>
+        <briefdescription>
+<para>Default constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h" line="29" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h" bodystart="28" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1NodeMap_1a0a69ff4da08fab9ce067c833287168cd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual cryomesh::components::NodeMap::~NodeMap</definition>
+        <argsstring>()</argsstring>
+        <name>~NodeMap</name>
+        <briefdescription>
+<para>Default destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h" line="35" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h" bodystart="35" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1NodeMap_1ae85cc8ab692efb960c599d35d462455b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::components::NodeMap::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+<para>Update all entries in the nodemap. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h" line="41" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h" bodystart="41" bodyend="51"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1Cluster_1a933d1d7f51cc709ba4a891407b4885e3" compoundref="Cluster_8cpp" startline="45" endline="52">cryomesh::structures::Cluster::update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1NodeMap_1a7e5fa285811aed1d2e9c32138b3375af" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <ref refid="classcryomesh_1_1components_1_1Node" kindref="compound">Node</ref> &gt; &gt;</type>
+        <definition>const std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Node&gt; &gt; cryomesh::components::NodeMap::getAllPrimaryInputNodes</definition>
+        <argsstring>() const </argsstring>
+        <name>getAllPrimaryInputNodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h" line="53" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h" bodystart="53" bodyend="72"/>
+        <referencedby refid="classcryomesh_1_1manipulators_1_1ClusterArchitect_1a6147b7a25140c334898fcae6889a4a4a" compoundref="ClusterArchitect_8cpp" startline="388" endline="438">cryomesh::manipulators::ClusterArchitect::getRandomNodes</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1NodeMap_1a4b008a802aaee265c5b92fef2a6d2725" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <ref refid="classcryomesh_1_1components_1_1Node" kindref="compound">Node</ref> &gt; &gt;</type>
+        <definition>const std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Node&gt; &gt; cryomesh::components::NodeMap::getAllPrimaryOutputNodes</definition>
+        <argsstring>() const </argsstring>
+        <name>getAllPrimaryOutputNodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h" line="74" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h" bodystart="74" bodyend="93"/>
+        <referencedby refid="classcryomesh_1_1manipulators_1_1ClusterArchitect_1a6147b7a25140c334898fcae6889a4a4a" compoundref="ClusterArchitect_8cpp" startline="388" endline="438">cryomesh::manipulators::ClusterArchitect::getRandomNodes</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1NodeMap_1ad4b42918273af05d2ca54120f4539b24" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::components::NodeMap::addRandomImpulses</definition>
+        <argsstring>(double positive_bias=0.5)</argsstring>
+        <name>addRandomImpulses</name>
+        <param>
+          <type>double</type>
+          <declname>positive_bias</declname>
+          <defval>0.5</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h" line="95" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h" bodystart="95" bodyend="107"/>
+        <references refid="classcryomesh_1_1components_1_1Impulse_1a9433c8dbc841beb6e3bfa63dd99ed838" compoundref="Impulse_8cpp" startline="38" endline="43">cryomesh::components::Impulse::getRandom</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1NodeMap_1af1efc85da645cb2e0b41d8e9cb80eb64" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <ref refid="classcryomesh_1_1components_1_1Connection" kindref="compound">Connection</ref> &gt; &gt;</type>
+        <definition>const std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Connection&gt; &gt; cryomesh::components::NodeMap::getAllInputConnections</definition>
+        <argsstring>() const </argsstring>
+        <name>getAllInputConnections</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h" line="109" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h" bodystart="109" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1NodeMap_1a8848e745f7a85f781f9f9e8bbe8e0ffc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <ref refid="classcryomesh_1_1components_1_1Connection" kindref="compound">Connection</ref> &gt; &gt;</type>
+        <definition>const std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Connection&gt; &gt; cryomesh::components::NodeMap::getAllOutputConnections</definition>
+        <argsstring>() const </argsstring>
+        <name>getAllOutputConnections</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h" line="129" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h" bodystart="129" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1NodeMap_1af85f9c069d1ee5ca3898d15b576acc11" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; <ref refid="classcryomesh_1_1components_1_1Connection" kindref="compound">Connection</ref> &gt; &gt;</type>
+        <definition>const std::map&lt;boost::uuids::uuid, boost::shared_ptr&lt;Connection&gt; &gt; cryomesh::components::NodeMap::getAllConnections</definition>
+        <argsstring>() const </argsstring>
+        <name>getAllConnections</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h" line="149" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h" bodystart="149" bodyend="168"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classcryomesh_1_1components_1_1NodeMap_1aa0d144f9e757f0af6219b8181a48d6da" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const NodeMap &amp;obj)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1components_1_1NodeMap" kindref="compound">NodeMap</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>To stream operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::ostream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp; os The output stream </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1components_1_1NodeMap" kindref="compound">NodeMap</ref> &amp; obj The object to stream</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::ostream &amp; The output stream </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h" line="181" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h" bodystart="181" bodyend="195"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Helper class for <ref refid="classcryomesh_1_1components_1_1NodeMap" kindref="compound">NodeMap</ref> to KeyMappedCollection mapping. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h" line="23" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h" bodystart="23" bodyend="196"/>
+    <listofallmembers>
+      <member refid="classcryomesh_1_1components_1_1NodeMap_1ad4b42918273af05d2ca54120f4539b24" prot="public" virt="non-virtual"><scope>cryomesh::components::NodeMap</scope><name>addRandomImpulses</name></member>
+      <member refid="classcryomesh_1_1components_1_1NodeMap_1af85f9c069d1ee5ca3898d15b576acc11" prot="public" virt="non-virtual"><scope>cryomesh::components::NodeMap</scope><name>getAllConnections</name></member>
+      <member refid="classcryomesh_1_1components_1_1NodeMap_1af1efc85da645cb2e0b41d8e9cb80eb64" prot="public" virt="non-virtual"><scope>cryomesh::components::NodeMap</scope><name>getAllInputConnections</name></member>
+      <member refid="classcryomesh_1_1components_1_1NodeMap_1a8848e745f7a85f781f9f9e8bbe8e0ffc" prot="public" virt="non-virtual"><scope>cryomesh::components::NodeMap</scope><name>getAllOutputConnections</name></member>
+      <member refid="classcryomesh_1_1components_1_1NodeMap_1a7e5fa285811aed1d2e9c32138b3375af" prot="public" virt="non-virtual"><scope>cryomesh::components::NodeMap</scope><name>getAllPrimaryInputNodes</name></member>
+      <member refid="classcryomesh_1_1components_1_1NodeMap_1a4b008a802aaee265c5b92fef2a6d2725" prot="public" virt="non-virtual"><scope>cryomesh::components::NodeMap</scope><name>getAllPrimaryOutputNodes</name></member>
+      <member refid="classcryomesh_1_1components_1_1NodeMap_1a007c30a64d4e67fd13d4e17564a36efd" prot="public" virt="non-virtual"><scope>cryomesh::components::NodeMap</scope><name>NodeMap</name></member>
+      <member refid="classcryomesh_1_1components_1_1NodeMap_1aa0d144f9e757f0af6219b8181a48d6da" prot="public" virt="non-virtual"><scope>cryomesh::components::NodeMap</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classcryomesh_1_1components_1_1NodeMap_1ae85cc8ab692efb960c599d35d462455b" prot="public" virt="non-virtual"><scope>cryomesh::components::NodeMap</scope><name>update</name></member>
+      <member refid="classcryomesh_1_1components_1_1NodeMap_1a0a69ff4da08fab9ce067c833287168cd" prot="public" virt="virtual"><scope>cryomesh::components::NodeMap</scope><name>~NodeMap</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="Cycle_8cpp" kind="file">
+    <compoundname>Cycle.cpp</compoundname>
+    <includes refid="Cycle_8h" local="yes">Cycle.h</includes>
+    <includes local="no">iostream</includes>
+    <incdepgraph>
+      <node id="38">
+        <label>gmpxx.h</label>
+      </node>
+      <node id="36">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.cpp</label>
+        <link refid="Cycle.cpp"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>iostream</label>
+      </node>
+      <node id="37">
+        <label>Cycle.h</label>
+        <link refid="Cycle_8h"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacecryomesh">cryomesh</innernamespace>
+    <innernamespace refid="namespacecryomesh_1_1common">cryomesh::common</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="8"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Cycle_8h" kindref="compound">Cycle.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">cryomesh<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">common<sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="classcryomesh_1_1common_1_1Cycle_1a3ec7b4684fc43ded87c53f497124d384" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1common_1_1Cycle_1a3ec7b4684fc43ded87c53f497124d384" kindref="member" tooltip="Default Constructor.">Cycle::Cycle</ref>()<sp/>:<sp/>cycle<sp/>(0)<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="17" refid="classcryomesh_1_1common_1_1Cycle_1af3feb1bcc151a49815a13950c2c2e786" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1common_1_1Cycle_1a3ec7b4684fc43ded87c53f497124d384" kindref="member" tooltip="Default Constructor.">Cycle::Cycle</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>it)<sp/>:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cycle(it)<sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="classcryomesh_1_1common_1_1Cycle_1a9187de66119f4f3f7e035ff9f961e60f" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1common_1_1Cycle_1a3ec7b4684fc43ded87c53f497124d384" kindref="member" tooltip="Default Constructor.">Cycle::Cycle</ref>(mpz_class<sp/>mp)<sp/>:</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cycle(mp)<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="classcryomesh_1_1common_1_1Cycle_1a5061bb5d219d7a0cc841e1ee7306942e" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1common_1_1Cycle_1a5061bb5d219d7a0cc841e1ee7306942e" kindref="member" tooltip="Assignment operator.">Cycle::operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/>&amp;<sp/>obj)<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" kindref="member">cycle</ref><sp/>=<sp/>obj.<ref refid="classcryomesh_1_1common_1_1Cycle_1ae1d8058a487c48c4a1fe3fbf9f2c4f14" kindref="member" tooltip="Get multiprecision value.">getMP</ref>();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="classcryomesh_1_1common_1_1Cycle_1abfb487638d7cbcb6dc7cc9b69c5bfbbc" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/><ref refid="classcryomesh_1_1common_1_1Cycle_1abfb487638d7cbcb6dc7cc9b69c5bfbbc" kindref="member" tooltip="Non-destructive addition operator.">Cycle::operator+</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/>&amp;<sp/>obj)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/>cyc<sp/>=<sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cyc<sp/>+=<sp/>obj;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cyc;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="classcryomesh_1_1common_1_1Cycle_1aba766561a03d089461cf2f59c6a4e9b9" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1common_1_1Cycle_1aba766561a03d089461cf2f59c6a4e9b9" kindref="member" tooltip="Destructive addition and assignment operator.">Cycle::operator+=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/>&amp;<sp/>obj)<sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" kindref="member">cycle</ref><sp/>+=<sp/>obj.<ref refid="classcryomesh_1_1common_1_1Cycle_1ae1d8058a487c48c4a1fe3fbf9f2c4f14" kindref="member" tooltip="Get multiprecision value.">getMP</ref>();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="classcryomesh_1_1common_1_1Cycle_1a2c8b5be6e8ce87e4994cf1aa5e5db104" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/><ref refid="classcryomesh_1_1common_1_1Cycle_1a2c8b5be6e8ce87e4994cf1aa5e5db104" kindref="member" tooltip="Non-destructive addition operator.">Cycle::operator-</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/>&amp;<sp/>obj)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout&lt;&lt;&quot;Cycle::operator<sp/>-:<sp/>&quot;&lt;&lt;&quot;START&quot;&lt;&lt;std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/>cyc(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cyc<sp/>-=<sp/>obj;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>CYCLE_DEBUG</highlight></codeline>
+<codeline lineno="46"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;Cycle::operator<sp/>-:<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>&lt;&lt;</highlight><highlight class="stringliteral">&quot;<sp/>-<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;obj<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>=<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;cyc&lt;&lt;std::endl;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="48"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cyc;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="classcryomesh_1_1common_1_1Cycle_1a1486f852d2104c5fbf806c9f1ad783b1" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1common_1_1Cycle_1a1486f852d2104c5fbf806c9f1ad783b1" kindref="member" tooltip="Destructive addition and assignment operator.">Cycle::operator-=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/>&amp;<sp/>obj)<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" kindref="member">cycle</ref><sp/>-=<sp/>obj.<ref refid="classcryomesh_1_1common_1_1Cycle_1ae1d8058a487c48c4a1fe3fbf9f2c4f14" kindref="member" tooltip="Get multiprecision value.">getMP</ref>();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="classcryomesh_1_1common_1_1Cycle_1a5168b76b3a3f20b5f6e38f96f8f9a8b5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle_1a5168b76b3a3f20b5f6e38f96f8f9a8b5" kindref="member" tooltip="Return as an unsigned integer.">Cycle::toULInt</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" kindref="member">cycle</ref>.get_ui();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="classcryomesh_1_1common_1_1Cycle_1ad71494a74fe0dfdb7e470a091ee0906d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle_1ad71494a74fe0dfdb7e470a091ee0906d" kindref="member" tooltip="Return as an signed integer.">Cycle::toLInt</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" kindref="member">cycle</ref>.get_si();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="classcryomesh_1_1common_1_1Cycle_1adeb27509ede9eebe8d39605b976f3ecd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle_1adeb27509ede9eebe8d39605b976f3ecd" kindref="member" tooltip="Comparator operator.">Cycle::operator==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/>&amp;<sp/>obj)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" kindref="member">cycle</ref><sp/>==<sp/>obj.<ref refid="classcryomesh_1_1common_1_1Cycle_1ae1d8058a487c48c4a1fe3fbf9f2c4f14" kindref="member" tooltip="Get multiprecision value.">getMP</ref>();</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="classcryomesh_1_1common_1_1Cycle_1a7a60d932e1b4b215ec6c5cfd829dba66" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle_1a7a60d932e1b4b215ec6c5cfd829dba66" kindref="member" tooltip="Not comparator operator.">Cycle::operator!=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/>&amp;obj)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!(*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>==<sp/>obj);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="classcryomesh_1_1common_1_1Cycle_1afd820cd18549a6473004584e0ea20dc2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle_1afd820cd18549a6473004584e0ea20dc2" kindref="member" tooltip="Greater than operator.">Cycle::operator&gt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/>&amp;<sp/>obj)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" kindref="member">cycle</ref><sp/>&gt;<sp/>obj.<ref refid="classcryomesh_1_1common_1_1Cycle_1ae1d8058a487c48c4a1fe3fbf9f2c4f14" kindref="member" tooltip="Get multiprecision value.">getMP</ref>();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="classcryomesh_1_1common_1_1Cycle_1a7c81026bf214be012717ce71472b4d1d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle_1a7c81026bf214be012717ce71472b4d1d" kindref="member" tooltip="Less than operator.">Cycle::operator&lt;</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/>&amp;<sp/>obj)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" kindref="member">cycle</ref><sp/>&lt;<sp/>obj.<ref refid="classcryomesh_1_1common_1_1Cycle_1ae1d8058a487c48c4a1fe3fbf9f2c4f14" kindref="member" tooltip="Get multiprecision value.">getMP</ref>();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="classcryomesh_1_1common_1_1Cycle_1a88304063eceb877cfefc5ce707a8e2a6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle_1a88304063eceb877cfefc5ce707a8e2a6" kindref="member" tooltip="&amp;gt;= than operator">Cycle::operator&gt;=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/>&amp;<sp/>obj)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" kindref="member">cycle</ref><sp/>&gt;=<sp/>obj.<ref refid="classcryomesh_1_1common_1_1Cycle_1ae1d8058a487c48c4a1fe3fbf9f2c4f14" kindref="member" tooltip="Get multiprecision value.">getMP</ref>();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="classcryomesh_1_1common_1_1Cycle_1af4129a01aee0e3285d3d7354a02e9f8a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle_1af4129a01aee0e3285d3d7354a02e9f8a" kindref="member" tooltip="&amp;lt;= than operator">Cycle::operator&lt;=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/>&amp;<sp/>obj)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" kindref="member">cycle</ref><sp/>&lt;=<sp/>obj.<ref refid="classcryomesh_1_1common_1_1Cycle_1ae1d8058a487c48c4a1fe3fbf9f2c4f14" kindref="member" tooltip="Get multiprecision value.">getMP</ref>();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="classcryomesh_1_1common_1_1Cycle_1ae8ed3bd0a7d6dca37e6aff08cb18f1bb" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1common_1_1Cycle_1ae8ed3bd0a7d6dca37e6aff08cb18f1bb" kindref="member" tooltip="Prefix increment operator.">Cycle::operator++</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++<ref refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" kindref="member">cycle</ref>;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="classcryomesh_1_1common_1_1Cycle_1adf4af828db11969f216159f7b6256a78" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/><ref refid="classcryomesh_1_1common_1_1Cycle_1ae8ed3bd0a7d6dca37e6aff08cb18f1bb" kindref="member" tooltip="Prefix increment operator.">Cycle::operator++</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/>temp<sp/>=<sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++(*this);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>temp;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="classcryomesh_1_1common_1_1Cycle_1a57b60f46c0304d9980577e1dc096aea1" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/><ref refid="classcryomesh_1_1common_1_1Cycle_1a420ad7ce993fa00a92fc61f84f3142cf" kindref="member" tooltip="Prefix increment operator.">Cycle::operator--</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/>temp<sp/>=<sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--(*this);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>temp;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="classcryomesh_1_1common_1_1Cycle_1a420ad7ce993fa00a92fc61f84f3142cf" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1common_1_1Cycle_1a420ad7ce993fa00a92fc61f84f3142cf" kindref="member" tooltip="Prefix increment operator.">Cycle::operator--</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--<ref refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" kindref="member">cycle</ref>;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="namespacecryomesh_1_1common_1a09ffb633342203192e93c454f4dbd6f9" refkind="member"><highlight class="normal">std::ostream&amp;<sp/><ref refid="namespacecryomesh_1_1common_1a09ffb633342203192e93c454f4dbd6f9" kindref="member">operator&lt;&lt;</ref>(std::ostream<sp/>&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/>&amp;<sp/>obj)<sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/>obj.<ref refid="classcryomesh_1_1common_1_1Cycle_1ad71494a74fe0dfdb7e470a091ee0906d" kindref="member" tooltip="Return as an signed integer.">toLInt</ref>();</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="classcryomesh_1_1common_1_1Cycle_1ae1d8058a487c48c4a1fe3fbf9f2c4f14" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>mpz_class<sp/>&amp;<sp/><ref refid="classcryomesh_1_1common_1_1Cycle_1ae1d8058a487c48c4a1fe3fbf9f2c4f14" kindref="member" tooltip="Get multiprecision value.">Cycle::getMP</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle_1a42d6c17a2cc0921eee969105ac9c8e03" kindref="member">cycle</ref>;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}</highlight><highlight class="comment">//NAMESPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal">}</highlight><highlight class="comment">//NAMESPACE</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Cycle.cpp"/>
+  </compounddef>
+</doxygen>

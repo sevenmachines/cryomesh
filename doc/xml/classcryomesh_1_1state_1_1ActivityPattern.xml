@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="classcryomesh_1_1state_1_1ActivityPattern" kind="class" prot="public">
+    <compoundname>cryomesh::state::ActivityPattern</compoundname>
+    <includes refid="ActivityPattern_8h" local="no">ActivityPattern.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classcryomesh_1_1state_1_1ActivityPattern_1a6bd9cf293aeb147f73bb82c67c626142" prot="public" static="no">
+        <name>ActivityComparison</name>
+        <enumvalue id="classcryomesh_1_1state_1_1ActivityPattern_1a6bd9cf293aeb147f73bb82c67c626142a662e9a99585fd1bc07baeb0c41d918fb" prot="public">
+          <name>GreaterThan</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classcryomesh_1_1state_1_1ActivityPattern_1a6bd9cf293aeb147f73bb82c67c626142acbf08b9dc89f783f6a30b7fdfb1cf566" prot="public">
+          <name>LessThan</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classcryomesh_1_1state_1_1ActivityPattern_1a6bd9cf293aeb147f73bb82c67c626142ab45ac9f1c25aba4e864672959f0467e9" prot="public">
+          <name>EqualTo</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/ActivityPattern.h" line="22" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/ActivityPattern.h" bodystart="22" bodyend="24"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1ActivityPattern_1a78d90e329f3fc620c06999ab1f6e8613" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::state::ActivityPattern::ActivityPattern</definition>
+        <argsstring>()</argsstring>
+        <name>ActivityPattern</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/ActivityPattern.h" line="25" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/ActivityPattern.cpp" bodystart="18" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1ActivityPattern_1af15e1c186e21be79db47ea07c9e8175f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>cryomesh::state::ActivityPattern::~ActivityPattern</definition>
+        <argsstring>()</argsstring>
+        <name>~ActivityPattern</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/ActivityPattern.h" line="26" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/ActivityPattern.cpp" bodystart="22" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1ActivityPattern_1a5b57eec82f5de97fc01ed356c13903f5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::state::ActivityPattern::toPlusBooleanString</definition>
+        <argsstring>() const </argsstring>
+        <name>toPlusBooleanString</name>
+        <briefdescription>
+<para>Return a string of booleans representing with each element is &gt; 0 or not. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>std::string The string of booleans </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/ActivityPattern.h" line="34" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/ActivityPattern.cpp" bodystart="25" bodyend="29"/>
+        <references refid="classcryomesh_1_1state_1_1ActivityPattern_1a3482fe5e7dbaed86272dd536adc7d751" compoundref="ActivityPattern_8cpp" startline="31" endline="33">toPlusBooleanList</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1ActivityPattern_1a3482fe5e7dbaed86272dd536adc7d751" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::list&lt; bool &gt;</type>
+        <definition>std::list&lt; bool &gt; cryomesh::state::ActivityPattern::toPlusBooleanList</definition>
+        <argsstring>() const </argsstring>
+        <name>toPlusBooleanList</name>
+        <briefdescription>
+<para>Return a vector of booleans representing with each element &gt; 0 or not. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>std::vector&lt;bool&gt; The vector of booleans </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/ActivityPattern.h" line="43" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/ActivityPattern.cpp" bodystart="31" bodyend="33"/>
+        <references refid="classcryomesh_1_1state_1_1ActivityPattern_1a6bd9cf293aeb147f73bb82c67c626142a662e9a99585fd1bc07baeb0c41d918fb" compoundref="ActivityPattern_8h" startline="23">GreaterThan</references>
+        <references refid="classcryomesh_1_1state_1_1ActivityPattern_1a0d002a277bcb38447e738349593ae0af" compoundref="ActivityPattern_8cpp" startline="35" endline="66">toBooleanVector</references>
+        <referencedby refid="classcryomesh_1_1state_1_1ActivityPattern_1a5b57eec82f5de97fc01ed356c13903f5" compoundref="ActivityPattern_8cpp" startline="25" endline="29">toPlusBooleanString</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1ActivityPattern_1a0d002a277bcb38447e738349593ae0af" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::list&lt; bool &gt;</type>
+        <definition>std::list&lt; bool &gt; cryomesh::state::ActivityPattern::toBooleanVector</definition>
+        <argsstring>(const double cuttoff, const ActivityComparison compare) const </argsstring>
+        <name>toBooleanVector</name>
+        <param>
+          <type>const double</type>
+          <declname>cuttoff</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1state_1_1ActivityPattern_1a6bd9cf293aeb147f73bb82c67c626142" kindref="member">ActivityComparison</ref></type>
+          <declname>compare</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/ActivityPattern.h" line="46" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/ActivityPattern.cpp" bodystart="35" bodyend="66"/>
+        <references refid="classcryomesh_1_1state_1_1ActivityPattern_1a6bd9cf293aeb147f73bb82c67c626142ab45ac9f1c25aba4e864672959f0467e9" compoundref="ActivityPattern_8h" startline="23">EqualTo</references>
+        <references refid="classcryomesh_1_1state_1_1ActivityPattern_1a6bd9cf293aeb147f73bb82c67c626142a662e9a99585fd1bc07baeb0c41d918fb" compoundref="ActivityPattern_8h" startline="23">GreaterThan</references>
+        <references refid="classcryomesh_1_1state_1_1ActivityPattern_1a6bd9cf293aeb147f73bb82c67c626142acbf08b9dc89f783f6a30b7fdfb1cf566" compoundref="ActivityPattern_8h" startline="23">LessThan</references>
+        <referencedby refid="classcryomesh_1_1state_1_1ActivityPattern_1a3482fe5e7dbaed86272dd536adc7d751" compoundref="ActivityPattern_8cpp" startline="31" endline="33">toPlusBooleanList</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A simple collection of doubles representing a pattern of activities. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/ActivityPattern.h" line="20" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/ActivityPattern.h" bodystart="20" bodyend="48"/>
+    <listofallmembers>
+      <member refid="classcryomesh_1_1state_1_1ActivityPattern_1a6bd9cf293aeb147f73bb82c67c626142" prot="public" virt="non-virtual"><scope>cryomesh::state::ActivityPattern</scope><name>ActivityComparison</name></member>
+      <member refid="classcryomesh_1_1state_1_1ActivityPattern_1a78d90e329f3fc620c06999ab1f6e8613" prot="public" virt="non-virtual"><scope>cryomesh::state::ActivityPattern</scope><name>ActivityPattern</name></member>
+      <member refid="classcryomesh_1_1state_1_1ActivityPattern_1a6bd9cf293aeb147f73bb82c67c626142ab45ac9f1c25aba4e864672959f0467e9" prot="public" virt="non-virtual"><scope>cryomesh::state::ActivityPattern</scope><name>EqualTo</name></member>
+      <member refid="classcryomesh_1_1state_1_1ActivityPattern_1a6bd9cf293aeb147f73bb82c67c626142a662e9a99585fd1bc07baeb0c41d918fb" prot="public" virt="non-virtual"><scope>cryomesh::state::ActivityPattern</scope><name>GreaterThan</name></member>
+      <member refid="classcryomesh_1_1state_1_1ActivityPattern_1a6bd9cf293aeb147f73bb82c67c626142acbf08b9dc89f783f6a30b7fdfb1cf566" prot="public" virt="non-virtual"><scope>cryomesh::state::ActivityPattern</scope><name>LessThan</name></member>
+      <member refid="classcryomesh_1_1state_1_1ActivityPattern_1a0d002a277bcb38447e738349593ae0af" prot="protected" virt="non-virtual"><scope>cryomesh::state::ActivityPattern</scope><name>toBooleanVector</name></member>
+      <member refid="classcryomesh_1_1state_1_1ActivityPattern_1a3482fe5e7dbaed86272dd536adc7d751" prot="public" virt="virtual"><scope>cryomesh::state::ActivityPattern</scope><name>toPlusBooleanList</name></member>
+      <member refid="classcryomesh_1_1state_1_1ActivityPattern_1a5b57eec82f5de97fc01ed356c13903f5" prot="public" virt="virtual"><scope>cryomesh::state::ActivityPattern</scope><name>toPlusBooleanString</name></member>
+      <member refid="classcryomesh_1_1state_1_1ActivityPattern_1af15e1c186e21be79db47ea07c9e8175f" prot="public" virt="virtual"><scope>cryomesh::state::ActivityPattern</scope><name>~ActivityPattern</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

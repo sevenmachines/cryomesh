@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="classcryomesh_1_1manager_1_1DatabaseObject" kind="class" prot="public">
+    <compoundname>cryomesh::manager::DatabaseObject</compoundname>
+    <derivedcompoundref refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject" prot="public" virt="non-virtual">cryomesh::manager::ConnectionDatabaseObject</derivedcompoundref>
+    <derivedcompoundref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject" prot="public" virt="non-virtual">cryomesh::manager::NodeDatabaseObject</derivedcompoundref>
+    <derivedcompoundref refid="classcryomesh_1_1manager_1_1PatternDatabaseObject" prot="public" virt="non-virtual">cryomesh::manager::PatternDatabaseObject</derivedcompoundref>
+    <includes refid="DatabaseObject_8h" local="no">DatabaseObject.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classcryomesh_1_1manager_1_1DatabaseObject_1a9c648bf09b9fd8b4d599b0d4f4abf531" prot="protected" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::string &gt;</type>
+        <definition>std::map&lt;std::string, std::string&gt; cryomesh::manager::DatabaseObject::columns</definition>
+        <argsstring></argsstring>
+        <name>columns</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseObject.h" line="119" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseObject.h" bodystart="119" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1a62f33a7c826d115aa981d3cca149e14b" compoundref="ConnectionDatabaseObject_8cpp" startline="20" endline="29">cryomesh::manager::ConnectionDatabaseObject::ConnectionDatabaseObject</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseObject_1a66ded4e1a1bccd65c94922648c7135c5" compoundref="DatabaseObject_8h" startline="37" endline="44">getKey</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a69cbe2fb91ca27e0b167165c52d11231" compoundref="NodeDatabaseObject_8cpp" startline="13" endline="21">cryomesh::manager::NodeDatabaseObject::NodeDatabaseObject</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1PatternDatabaseObject_1a880f682507abc648bf30ca5b0572a802" compoundref="PatternDatabaseObject_8cpp" startline="19" endline="24">cryomesh::manager::PatternDatabaseObject::PatternDatabaseObject</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseObject_1a4806f6b018d86828c4251e06ac2634d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::manager::DatabaseObject::DatabaseObject</definition>
+        <argsstring>()</argsstring>
+        <name>DatabaseObject</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseObject.h" line="23" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseObject.h" bodystart="23" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseObject_1a462e3eeb0610dc1e7e47661b86c862f6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual cryomesh::manager::DatabaseObject::~DatabaseObject</definition>
+        <argsstring>()</argsstring>
+        <name>~DatabaseObject</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseObject.h" line="25" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseObject.h" bodystart="25" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseObject_1a66ded4e1a1bccd65c94922648c7135c5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::manager::DatabaseObject::getKey</definition>
+        <argsstring>(const std::string &amp;key) const </argsstring>
+        <name>getKey</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Return the string object associated with a key. </para>        </briefdescription>
+        <detaileddescription>
+<para>::string The key to search for</para><para><simplesect kind="return"><para>std::string The object associated with the search key, &quot;&quot; if not found </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseObject.h" line="37" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseObject.h" bodystart="37" bodyend="44"/>
+        <references refid="classcryomesh_1_1manager_1_1DatabaseObject_1a9c648bf09b9fd8b4d599b0d4f4abf531" compoundref="DatabaseObject_8h" startline="119">columns</references>
+        <referencedby refid="classcryomesh_1_1manager_1_1PatternDatabaseObject_1a0f4325cce7fd6c70017815ea50cd4fd6" compoundref="PatternDatabaseObject_8cpp" startline="42" endline="50">cryomesh::manager::PatternDatabaseObject::getInsert</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1ac5512082d08fa59cbaa496b711f4c8c2" compoundref="NodeDatabaseObject_8cpp" startline="63" endline="72">cryomesh::manager::NodeDatabaseObject::getInsert</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1ac7b22d25a4366175fd7d1578f476b125" compoundref="ConnectionDatabaseObject_8cpp" startline="69" endline="78">cryomesh::manager::ConnectionDatabaseObject::getInsert</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseObject_1ad55c6e711341a652790b97f549b0dc63" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string cryomesh::manager::DatabaseObject::getInsert</definition>
+        <argsstring>(const std::string &amp;table) const =0</argsstring>
+        <name>getInsert</name>
+        <reimplementedby refid="classcryomesh_1_1manager_1_1PatternDatabaseObject_1a0f4325cce7fd6c70017815ea50cd4fd6">getInsert</reimplementedby>
+        <reimplementedby refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1ac5512082d08fa59cbaa496b711f4c8c2">getInsert</reimplementedby>
+        <reimplementedby refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1ac7b22d25a4366175fd7d1578f476b125">getInsert</reimplementedby>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>table</declname>
+        </param>
+        <briefdescription>
+<para>Get the string that can be used to insert the sql data. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the sql command string to insert into this table </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseObject.h" line="99"/>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a0e5eaf4c78e61a54e9ead0148d7e8851" compoundref="DatabaseManager_8cpp" startline="138" endline="140">cryomesh::manager::DatabaseManager::insertConnection</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a74b282e11bd8c59a1e620b89cfe95ab2" compoundref="DatabaseManager_8cpp" startline="135" endline="137">cryomesh::manager::DatabaseManager::insertNode</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1DatabaseManager_1a48308f572e1d87a7f44e1e9fbeaf132b" compoundref="DatabaseManager_8cpp" startline="141" endline="143">cryomesh::manager::DatabaseManager::insertOutputPattern</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseObject_1aa4ef26ce91fea092f146e67add491e0f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>static std::string cryomesh::manager::DatabaseObject::findValue</definition>
+        <argsstring>(const std::string &amp;entry, const std::map&lt; std::string, std::string &gt; &amp;map)</argsstring>
+        <name>findValue</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>entry</declname>
+        </param>
+        <param>
+          <type>const std::map&lt; std::string, std::string &gt; &amp;</type>
+          <declname>map</declname>
+        </param>
+        <briefdescription>
+<para>Find entries value in map or return null. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Entry to find </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>std::map&lt;std::string</parametername>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>map to search</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Value of entry </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseObject.h" line="59" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseObject.h" bodystart="59" bodyend="66"/>
+        <referencedby refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1a8e38ce2ee538fc20ce2c2f04b6abce79" compoundref="ConnectionDatabaseObject_8cpp" startline="31" endline="64">cryomesh::manager::ConnectionDatabaseObject::ConnectionDatabaseObject</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a96ec12a3290ce621734fb5695a4ca5c1" compoundref="NodeDatabaseObject_8cpp" startline="23" endline="58">cryomesh::manager::NodeDatabaseObject::NodeDatabaseObject</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1PatternDatabaseObject_1a77332450f88ed8904d0a0e92527668f3" compoundref="PatternDatabaseObject_8cpp" startline="26" endline="36">cryomesh::manager::PatternDatabaseObject::PatternDatabaseObject</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseObject_1a04ce7c34b51e3290c972121cf2f16565" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::map&lt; std::string, std::string &gt;</type>
+        <definition>static std::map&lt;std::string, std::string&gt; cryomesh::manager::DatabaseObject::getColumnMapFromEntry</definition>
+        <argsstring>(const std::string &amp;entry)</argsstring>
+        <name>getColumnMapFromEntry</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>entry</declname>
+        </param>
+        <briefdescription>
+<para>Parse a string database entry, extract columns and values and return a map. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseObject.h" line="72" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseObject.h" bodystart="72" bodyend="92"/>
+        <referencedby refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject_1a8e38ce2ee538fc20ce2c2f04b6abce79" compoundref="ConnectionDatabaseObject_8cpp" startline="31" endline="64">cryomesh::manager::ConnectionDatabaseObject::ConnectionDatabaseObject</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a96ec12a3290ce621734fb5695a4ca5c1" compoundref="NodeDatabaseObject_8cpp" startline="23" endline="58">cryomesh::manager::NodeDatabaseObject::NodeDatabaseObject</referencedby>
+        <referencedby refid="classcryomesh_1_1manager_1_1PatternDatabaseObject_1a77332450f88ed8904d0a0e92527668f3" compoundref="PatternDatabaseObject_8cpp" startline="26" endline="36">cryomesh::manager::PatternDatabaseObject::PatternDatabaseObject</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manager_1_1DatabaseObject_1a1b37d9d07009ae1c71f644761d36b468" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::string</type>
+        <definition>static std::string cryomesh::manager::DatabaseObject::toString</definition>
+        <argsstring>(T obj)</argsstring>
+        <name>toString</name>
+        <param>
+          <type>T</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>Convert an templated object that can be piped to a stream to a string. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object to get a string for </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseObject.h" line="108" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseObject.h" bodystart="108" bodyend="112"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="376">
+        <label>cryomesh::manager::DatabaseObject</label>
+        <link refid="classcryomesh_1_1manager_1_1DatabaseObject"/>
+      </node>
+      <node id="378">
+        <label>cryomesh::manager::NodeDatabaseObject</label>
+        <link refid="classcryomesh_1_1manager_1_1NodeDatabaseObject"/>
+        <childnode refid="376" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="377">
+        <label>cryomesh::manager::ConnectionDatabaseObject</label>
+        <link refid="classcryomesh_1_1manager_1_1ConnectionDatabaseObject"/>
+        <childnode refid="376" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="379">
+        <label>cryomesh::manager::PatternDatabaseObject</label>
+        <link refid="classcryomesh_1_1manager_1_1PatternDatabaseObject"/>
+        <childnode refid="376" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="380">
+        <label>cryomesh::manager::DatabaseObject</label>
+        <link refid="classcryomesh_1_1manager_1_1DatabaseObject"/>
+        <childnode refid="381" relation="usage">
+          <edgelabel>columns</edgelabel>
+        </childnode>
+      </node>
+      <node id="383">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="381">
+        <label>std::map&lt; std::string, std::string &gt;</label>
+        <childnode refid="382" relation="usage">
+          <edgelabel>keys</edgelabel>
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="382">
+        <label>std::string</label>
+        <childnode refid="383" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseObject.h" line="21" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/DatabaseObject.h" bodystart="21" bodyend="120"/>
+    <listofallmembers>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseObject_1a9c648bf09b9fd8b4d599b0d4f4abf531" prot="protected" virt="non-virtual"><scope>cryomesh::manager::DatabaseObject</scope><name>columns</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseObject_1a4806f6b018d86828c4251e06ac2634d9" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseObject</scope><name>DatabaseObject</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseObject_1aa4ef26ce91fea092f146e67add491e0f" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseObject</scope><name>findValue</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseObject_1a04ce7c34b51e3290c972121cf2f16565" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseObject</scope><name>getColumnMapFromEntry</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseObject_1ad55c6e711341a652790b97f549b0dc63" prot="public" virt="pure-virtual"><scope>cryomesh::manager::DatabaseObject</scope><name>getInsert</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseObject_1a66ded4e1a1bccd65c94922648c7135c5" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseObject</scope><name>getKey</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseObject_1a1b37d9d07009ae1c71f644761d36b468" prot="public" virt="non-virtual"><scope>cryomesh::manager::DatabaseObject</scope><name>toString</name></member>
+      <member refid="classcryomesh_1_1manager_1_1DatabaseObject_1a462e3eeb0610dc1e7e47661b86c862f6" prot="public" virt="virtual"><scope>cryomesh::manager::DatabaseObject</scope><name>~DatabaseObject</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,4 +1,4 @@
-.TH "cryomesh::manager::PatternDatabaseObject" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::manager::PatternDatabaseObject" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -7,44 +7,44 @@ cryomesh::manager::PatternDatabaseObject \-
 .br
 .PP
 .PP
-\fC#include <PatternDatabaseObject.h>\fP
+\fC#include <PatternDatabaseObject\&.h>\fP
 .PP
-Inherits \fBcryomesh::manager::DatabaseObject\fP.
+Inherits \fBcryomesh::manager::DatabaseObject\fP\&.
 .SS "Public Member Functions"
 
 .in +1c
 .ti -1c
 .RI "\fBPatternDatabaseObject\fP (const std::string uuid_str, const \fBcommon::Cycle\fP &cyc, const \fBstate::Pattern\fP &pat)"
 .br
-.RI "\fICreate database object using pattern and a cycle. \fP"
+.RI "\fICreate database object using pattern and a cycle\&. \fP"
 .ti -1c
 .RI "\fBPatternDatabaseObject\fP (const std::string &node_table_entry)"
 .br
-.RI "\fICreate object from the string of entries in the database output table. \fP"
+.RI "\fICreate object from the string of entries in the database output table\&. \fP"
 .ti -1c
 .RI "virtual \fB~PatternDatabaseObject\fP ()"
 .br
-.RI "\fIDefault destructor. \fP"
+.RI "\fIDefault destructor\&. \fP"
 .ti -1c
 .RI "virtual std::string \fBgetInsert\fP (const std::string &table) const "
 .br
-.RI "\fIGet the string that can be used to insert the sql data. \fP"
+.RI "\fIGet the string that can be used to insert the sql data\&. \fP"
 .ti -1c
 .RI "std::string \fBgetUUID\fP () const "
 .br
-.RI "\fIGet uuid variable. \fP"
+.RI "\fIGet uuid variable\&. \fP"
 .ti -1c
 .RI "const \fBcommon::Cycle\fP & \fBgetCycle\fP () const "
 .br
-.RI "\fIGet cycle variable. \fP"
+.RI "\fIGet cycle variable\&. \fP"
 .ti -1c
 .RI "const \fBstate::Pattern\fP & \fBgetPattern\fP () const "
 .br
-.RI "\fIGet pattern variable. \fP"
+.RI "\fIGet pattern variable\&. \fP"
 .ti -1c
 .RI "std::string \fBgetKey\fP (const std::string &key) const "
 .br
-.RI "\fIReturn the string object associated with a key. \fP"
+.RI "\fIReturn the string object associated with a key\&. \fP"
 .in -1c
 .SS "Static Public Member Functions"
 
@@ -52,15 +52,17 @@ Inherits \fBcryomesh::manager::DatabaseObject\fP.
 .ti -1c
 .RI "static std::string \fBfindValue\fP (const std::string &entry, const std::map< std::string, std::string > &map)"
 .br
-.RI "\fIFind entries value in map or return null. \fP"
+.RI "\fIFind entries value in map or return null\&. \fP"
 .ti -1c
-.RI "static std::map< std::string, std::string > \fBgetColumnMapFromEntry\fP (const std::string &entry)"
+.RI "static std::map< std::string, 
 .br
-.RI "\fIParse a string database entry, extract columns and values and return a map. \fP"
+std::string > \fBgetColumnMapFromEntry\fP (const std::string &entry)"
+.br
+.RI "\fIParse a string database entry, extract columns and values and return a map\&. \fP"
 .ti -1c
 .RI "template<class T > static std::string \fBtoString\fP (T obj)"
 .br
-.RI "\fIConvert an templated object that can be piped to a stream to a string. \fP"
+.RI "\fIConvert an templated object that can be piped to a stream to a string\&. \fP"
 .in -1c
 .SS "Static Public Attributes"
 
@@ -79,7 +81,9 @@ Inherits \fBcryomesh::manager::DatabaseObject\fP.
 
 .in +1c
 .ti -1c
-.RI "std::map< std::string, std::string > \fBcolumns\fP"
+.RI "std::map< std::string, 
+.br
+std::string > \fBcolumns\fP"
 .br
 .in -1c
 .SS "Private Attributes"
@@ -97,34 +101,38 @@ Inherits \fBcryomesh::manager::DatabaseObject\fP.
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 22 of file PatternDatabaseObject.h.
+Definition at line 22 of file PatternDatabaseObject\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "cryomesh::manager::PatternDatabaseObject::PatternDatabaseObject (const std::stringuuid_str, const \fBcommon::Cycle\fP &cyc, const \fBstate::Pattern\fP &pat)"
+.SS "\fBcryomesh::manager::PatternDatabaseObject::PatternDatabaseObject\fP (const std::stringuuid_str, const \fBcommon::Cycle\fP &cyc, const \fBstate::Pattern\fP &pat)"
 .PP
-Create database object using pattern and a cycle. 
+Create database object using pattern and a cycle\&. 
 .PP
-Definition at line 20 of file PatternDatabaseObject.cpp.
-.SS "cryomesh::manager::PatternDatabaseObject::PatternDatabaseObject (const std::string &node_table_entry)"
+Definition at line 19 of file PatternDatabaseObject\&.cpp\&.
 .PP
-Create object from the string of entries in the database output table. \fBParameters:\fP
+References cryomesh::manager::DatabaseObject::columns, cycle, CYCLE_TAG, ID_TAG, pattern, PATTERN_TAG, cryomesh::common::Cycle::toULInt(), and uuid\&.
+.SS "\fBcryomesh::manager::PatternDatabaseObject::PatternDatabaseObject\fP (const std::string &node_table_entry)"
+.PP
+Create object from the string of entries in the database output table\&. \fBParameters:\fP
 .RS 4
 \fIstd::string\fP The string of data taken from a output entry in the database node table 
 .RE
 .PP
 
 .PP
-Definition at line 27 of file PatternDatabaseObject.cpp.
-.SS "cryomesh::manager::PatternDatabaseObject::~PatternDatabaseObject ()\fC [virtual]\fP"
+Definition at line 26 of file PatternDatabaseObject\&.cpp\&.
 .PP
-Default destructor. 
+References cycle, CYCLE_TAG, cryomesh::manager::DatabaseObject::findValue(), cryomesh::manager::DatabaseObject::getColumnMapFromEntry(), ID_TAG, pattern, PATTERN_TAG, and uuid\&.
+.SS "\fBcryomesh::manager::PatternDatabaseObject::~PatternDatabaseObject\fP ()\fC [virtual]\fP"
 .PP
-Definition at line 39 of file PatternDatabaseObject.cpp.
+Default destructor\&. 
+.PP
+Definition at line 38 of file PatternDatabaseObject\&.cpp\&.
 .SH "Member Function Documentation"
 .PP 
-.SS "static std::string cryomesh::manager::DatabaseObject::findValue (const std::string &entry, const std::map< std::string, std::string > &map)\fC [inline, static, inherited]\fP"
+.SS "static std::string \fBcryomesh::manager::DatabaseObject::findValue\fP (const std::string &entry, const std::map< std::string, std::string > &map)\fC [inline, static, inherited]\fP"
 .PP
-Find entries value in map or return null. \fBParameters:\fP
+Find entries value in map or return null\&. \fBParameters:\fP
 .RS 4
 \fIstd::string\fP Entry to find 
 .br
@@ -138,41 +146,45 @@ Value of entry
 .PP
 
 .PP
-Definition at line 59 of file DatabaseObject.h.
+Definition at line 59 of file DatabaseObject\&.h\&.
 .PP
-Referenced by cryomesh::manager::NodeDatabaseObject::NodeDatabaseObject().
-.SS "static std::map<std::string, std::string> cryomesh::manager::DatabaseObject::getColumnMapFromEntry (const std::string &entry)\fC [inline, static, inherited]\fP"
+Referenced by cryomesh::manager::ConnectionDatabaseObject::ConnectionDatabaseObject(), cryomesh::manager::NodeDatabaseObject::NodeDatabaseObject(), and PatternDatabaseObject()\&.
+.SS "static std::map<std::string, std::string> \fBcryomesh::manager::DatabaseObject::getColumnMapFromEntry\fP (const std::string &entry)\fC [inline, static, inherited]\fP"
 .PP
-Parse a string database entry, extract columns and values and return a map. 
+Parse a string database entry, extract columns and values and return a map\&. 
 .PP
-Definition at line 72 of file DatabaseObject.h.
+Definition at line 72 of file DatabaseObject\&.h\&.
 .PP
-Referenced by cryomesh::manager::NodeDatabaseObject::NodeDatabaseObject().
-.SS "const \fBcommon::Cycle\fP & cryomesh::manager::PatternDatabaseObject::getCycle () const"
+Referenced by cryomesh::manager::ConnectionDatabaseObject::ConnectionDatabaseObject(), cryomesh::manager::NodeDatabaseObject::NodeDatabaseObject(), and PatternDatabaseObject()\&.
+.SS "const \fBcommon::Cycle\fP & \fBcryomesh::manager::PatternDatabaseObject::getCycle\fP () const"
 .PP
-Get cycle variable. \fBReturns:\fP
+Get cycle variable\&. \fBReturns:\fP
 .RS 4
 \fBcommon::Cycle\fP The cycle variable 
 .RE
 .PP
 
 .PP
-Definition at line 56 of file PatternDatabaseObject.cpp.
-.SS "std::string cryomesh::manager::PatternDatabaseObject::getInsert (const std::string &table) const\fC [virtual]\fP"
+Definition at line 55 of file PatternDatabaseObject\&.cpp\&.
 .PP
-Get the string that can be used to insert the sql data. \fBReturns:\fP
+References cycle\&.
+.SS "std::string \fBcryomesh::manager::PatternDatabaseObject::getInsert\fP (const std::string &table) const\fC [virtual]\fP"
+.PP
+Get the string that can be used to insert the sql data\&. \fBReturns:\fP
 .RS 4
 the sql command string to insert into this table 
 .RE
 .PP
 
 .PP
-Implements \fBcryomesh::manager::DatabaseObject\fP.
+Implements \fBcryomesh::manager::DatabaseObject\fP\&.
 .PP
-Definition at line 43 of file PatternDatabaseObject.cpp.
-.SS "std::string cryomesh::manager::DatabaseObject::getKey (const std::string &key) const\fC [inline, inherited]\fP"
+Definition at line 42 of file PatternDatabaseObject\&.cpp\&.
 .PP
-Return the string object associated with a key. ::string The key to search for
+References CYCLE_TAG, cryomesh::manager::DatabaseObject::getKey(), ID_TAG, and PATTERN_TAG\&.
+.SS "std::string \fBcryomesh::manager::DatabaseObject::getKey\fP (const std::string &key) const\fC [inline, inherited]\fP"
+.PP
+Return the string object associated with a key\&. ::string The key to search for
 .PP
 \fBReturns:\fP
 .RS 4
@@ -181,67 +193,83 @@ std::string The object associated with the search key, '' if not found
 .PP
 
 .PP
-Definition at line 37 of file DatabaseObject.h.
+Definition at line 37 of file DatabaseObject\&.h\&.
 .PP
-References cryomesh::manager::DatabaseObject::columns.
+References cryomesh::manager::DatabaseObject::columns\&.
 .PP
-Referenced by cryomesh::manager::NodeDatabaseObject::getInsert().
-.SS "const \fBstate::Pattern\fP & cryomesh::manager::PatternDatabaseObject::getPattern () const"
+Referenced by getInsert(), cryomesh::manager::NodeDatabaseObject::getInsert(), and cryomesh::manager::ConnectionDatabaseObject::getInsert()\&.
+.SS "const \fBstate::Pattern\fP & \fBcryomesh::manager::PatternDatabaseObject::getPattern\fP () const"
 .PP
-Get pattern variable. \fBReturns:\fP
+Get pattern variable\&. \fBReturns:\fP
 .RS 4
 Pattern The pattern variable 
 .RE
 .PP
 
 .PP
-Definition at line 60 of file PatternDatabaseObject.cpp.
-.SS "std::string cryomesh::manager::PatternDatabaseObject::getUUID () const"
+Definition at line 59 of file PatternDatabaseObject\&.cpp\&.
 .PP
-Get uuid variable. \fBReturns:\fP
+References pattern\&.
+.SS "std::string \fBcryomesh::manager::PatternDatabaseObject::getUUID\fP () const"
+.PP
+Get uuid variable\&. \fBReturns:\fP
 .RS 4
 std::string The uuid variable 
 .RE
 .PP
 
 .PP
-Definition at line 53 of file PatternDatabaseObject.cpp.
-.SS "template<class T > static std::string cryomesh::manager::DatabaseObject::toString (Tobj)\fC [inline, static, inherited]\fP"
+Definition at line 52 of file PatternDatabaseObject\&.cpp\&.
 .PP
-Convert an templated object that can be piped to a stream to a string. \fBParameters:\fP
+References uuid\&.
+.SS "template<class T > static std::string \fBcryomesh::manager::DatabaseObject::toString\fP (Tobj)\fC [inline, static, inherited]\fP"
+.PP
+Convert an templated object that can be piped to a stream to a string\&. \fBParameters:\fP
 .RS 4
 \fIT\fP The object to get a string for 
 .RE
 .PP
 
 .PP
-Definition at line 108 of file DatabaseObject.h.
+Definition at line 108 of file DatabaseObject\&.h\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "std::map<std::string, std::string> \fBcryomesh::manager::DatabaseObject::columns\fP\fC [protected, inherited]\fP"
 .PP
-Definition at line 119 of file DatabaseObject.h.
+Definition at line 119 of file DatabaseObject\&.h\&.
 .PP
-Referenced by cryomesh::manager::ConnectionDatabaseObject::ConnectionDatabaseObject(), cryomesh::manager::DatabaseObject::getKey(), and cryomesh::manager::NodeDatabaseObject::NodeDatabaseObject().
+Referenced by cryomesh::manager::ConnectionDatabaseObject::ConnectionDatabaseObject(), cryomesh::manager::DatabaseObject::getKey(), cryomesh::manager::NodeDatabaseObject::NodeDatabaseObject(), and PatternDatabaseObject()\&.
 .SS "\fBcommon::Cycle\fP \fBcryomesh::manager::PatternDatabaseObject::cycle\fP\fC [private]\fP"
 .PP
-Definition at line 106 of file PatternDatabaseObject.h.
+Definition at line 106 of file PatternDatabaseObject\&.h\&.
+.PP
+Referenced by getCycle(), and PatternDatabaseObject()\&.
 .SS "const std::string \fBcryomesh::manager::PatternDatabaseObject::CYCLE_TAG\fP = 'cycle'\fC [static]\fP"
 .PP
-Definition at line 85 of file PatternDatabaseObject.h.
+Definition at line 85 of file PatternDatabaseObject\&.h\&.
+.PP
+Referenced by getInsert(), and PatternDatabaseObject()\&.
 .SS "const std::string \fBcryomesh::manager::PatternDatabaseObject::ID_TAG\fP = 'id'\fC [static]\fP"
 .PP
-Definition at line 79 of file PatternDatabaseObject.h.
+Definition at line 79 of file PatternDatabaseObject\&.h\&.
+.PP
+Referenced by getInsert(), and PatternDatabaseObject()\&.
 .SS "boost::shared_ptr< \fBstate::Pattern\fP > \fBcryomesh::manager::PatternDatabaseObject::pattern\fP\fC [private]\fP"
 .PP
-Definition at line 113 of file PatternDatabaseObject.h.
+Definition at line 113 of file PatternDatabaseObject\&.h\&.
+.PP
+Referenced by getPattern(), and PatternDatabaseObject()\&.
 .SS "const std::string \fBcryomesh::manager::PatternDatabaseObject::PATTERN_TAG\fP = 'pattern'\fC [static]\fP"
 .PP
-Definition at line 92 of file PatternDatabaseObject.h.
+Definition at line 92 of file PatternDatabaseObject\&.h\&.
+.PP
+Referenced by getInsert(), and PatternDatabaseObject()\&.
 .SS "std::string \fBcryomesh::manager::PatternDatabaseObject::uuid\fP\fC [private]\fP"
 .PP
-Definition at line 99 of file PatternDatabaseObject.h.
+Definition at line 99 of file PatternDatabaseObject\&.h\&.
+.PP
+Referenced by getUUID(), and PatternDatabaseObject()\&.
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for cryomesh from the source code.
+Generated automatically by Doxygen for cryomesh from the source code\&.

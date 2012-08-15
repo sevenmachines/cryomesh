@@ -429,6 +429,8 @@ private:
 	 */
 	std::map<boost::uuids::uuid, boost::uuids::uuid> actualFibrePatternChannelMap;
 
+	Cluster::EnergyFractionMethod energyFractionMethod;
+
 	const boost::shared_ptr<state::PatternChannel> getRealPrimaryInputChannelByFibre(
 			const boost::uuids::uuid fibre_uuid)const;
 	const boost::shared_ptr<state::PatternChannel> getRealPrimaryOutputChannelByFibre(

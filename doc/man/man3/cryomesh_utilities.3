@@ -1,4 +1,4 @@
-.TH "cryomesh::utilities" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::utilities" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -18,7 +18,7 @@ cryomesh::utilities \-
 .ti -1c
 .RI "class \fBStatistician\fP"
 .br
-.RI "\fIClass to draw together lots of useful statistics and monitoring data for a Bundle and its components. \fP"
+.RI "\fIClass to draw together lots of useful statistics and monitoring data for a Bundle and its components\&. \fP"
 .in -1c
 .SS "Functions"
 
@@ -34,9 +34,9 @@ cryomesh::utilities \-
 .PP 
 .SS "std::ostream& cryomesh::utilities::operator<< (std::ostream &os, const SequencerGeneric &obj)"
 .PP
-Definition at line 126 of file SequencerGeneric.cpp.
+Definition at line 109 of file SequencerGeneric\&.cpp\&.
 .PP
-References cryomesh::utilities::SequencerGeneric::nodeEntries.
+References cryomesh::utilities::SequencerGeneric::nodeEntries\&.
 .SS "std::ostream& cryomesh::utilities::operator<< (std::ostream &os, const Statistician &obj)"\fBParameters:\fP
 .RS 4
 \fIstd::ostream\fP & os The output stream 
@@ -51,7 +51,9 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 132 of file Statistician.cpp.
+Definition at line 131 of file Statistician\&.cpp\&.
+.PP
+References cryomesh::utilities::Statistician::getActiveNodesPerCluster(), cryomesh::utilities::Statistician::getActiveNodesTotal(), cryomesh::utilities::Statistician::getBundleUUID(), cryomesh::utilities::Statistician::getClusterCount(), cryomesh::common::TimeKeeper::getCycle(), cryomesh::common::TimeKeeper::getTimeKeeper(), cryomesh::utilities::Statistician::getTriggeredNodesTotal(), cryomesh::utilities::Statistician::inputChannelsCount, cryomesh::utilities::Statistician::inputFibresCount, cryomesh::utilities::Statistician::normalFibresCount, cryomesh::utilities::Statistician::outputChannelsCount, and cryomesh::utilities::Statistician::outputFibresCount\&.
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for cryomesh from the source code.
+Generated automatically by Doxygen for cryomesh from the source code\&.

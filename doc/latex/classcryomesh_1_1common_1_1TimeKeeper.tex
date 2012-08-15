@@ -1,0 +1,408 @@
+\hypertarget{classcryomesh_1_1common_1_1TimeKeeper}{\section{cryomesh\-:\-:common\-:\-:\-Time\-Keeper \-Class \-Reference}
+\label{classcryomesh_1_1common_1_1TimeKeeper}\index{cryomesh\-::common\-::\-Time\-Keeper@{cryomesh\-::common\-::\-Time\-Keeper}}
+}
+
+
+\hyperlink{classcryomesh_1_1common_1_1TimeKeeper}{\-Time\-Keeper} is a class keep track of the cycle state and timing.  
+
+
+
+
+{\ttfamily \#include $<$\-Time\-Keeper.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcryomesh_1_1common_1_1TimeKeeper_abb7b3042e8b2087326c2405a0bc8d230}{reset} ()
+\begin{DoxyCompactList}\small\item\em \-Destructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classcryomesh_1_1common_1_1TimeKeeper_a1023707129088652ac2cced3e0f4a0be}{$\sim$\-Time\-Keeper} ()
+\item 
+bool \hyperlink{classcryomesh_1_1common_1_1TimeKeeper_a7c710ae8bdb2fff0aaf284a9c1108ace}{operator==} (const \hyperlink{classcryomesh_1_1common_1_1TimeKeeper}{\-Time\-Keeper} \&)
+\begin{DoxyCompactList}\small\item\em \-Equality test override for object. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1common_1_1TimeKeeper_a0581cd24a6eebfbdd67a363467483456}{update} ()
+\begin{DoxyCompactList}\small\item\em \-Move the timing on one cycle. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1common_1_1Cycle}{\-Cycle} \hyperlink{classcryomesh_1_1common_1_1TimeKeeper_aa0bfaecbd5118af91d63296f158cee09}{get\-Cycle} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the current cycle we're on as an \hyperlink{classcryomesh_1_1common_1_1Cycle}{\-Cycle}. \end{DoxyCompactList}\item 
+std\-::time\-\_\-t \hyperlink{classcryomesh_1_1common_1_1TimeKeeper_a73a685a859e69ce3660b6a6d3469997e}{get\-Start\-Time} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the time we started cycling. \end{DoxyCompactList}\item 
+double \hyperlink{classcryomesh_1_1common_1_1TimeKeeper_ad3f49c5602d1e51b4ee9aa9535a59454}{get\-Timing} () const 
+\begin{DoxyCompactList}\small\item\em \-Difference between the last time and now. \end{DoxyCompactList}\item 
+const boost\-::timer \& \hyperlink{classcryomesh_1_1common_1_1TimeKeeper_a888f7db463cc84b0a00478c4bbcf7c44}{get\-Timer} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the \-Timer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classcryomesh_1_1common_1_1TimeKeeper}{\-Time\-Keeper} \& \hyperlink{classcryomesh_1_1common_1_1TimeKeeper_afe7b229532e11119cb2653192615d679}{get\-Time\-Keeper} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1common_1_1TimeKeeper_a133c730f64b915e6ef25be1442ea688e}{\-Time\-Keeper} ()
+\begin{DoxyCompactList}\small\item\em \-Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1common_1_1TimeKeeper_a3ea9062a72b2cc0af37b445ed254b64f}{\-Time\-Keeper} (const \hyperlink{classcryomesh_1_1common_1_1TimeKeeper}{\-Time\-Keeper} \&)
+\begin{DoxyCompactList}\small\item\em \-Copy \-Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1common_1_1TimeKeeper}{\-Time\-Keeper} \& \hyperlink{classcryomesh_1_1common_1_1TimeKeeper_ad22e5329268d4e6f55b4a29045c11035}{operator=} (const \hyperlink{classcryomesh_1_1common_1_1TimeKeeper}{\-Time\-Keeper} \&)
+\begin{DoxyCompactList}\small\item\em \-Assignment \-Operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1common_1_1Cycle}{\-Cycle} \hyperlink{classcryomesh_1_1common_1_1TimeKeeper_af2f511fb5df5b4a1e6d9eb8dffa4f6ef}{cycle}
+\item 
+std\-::time\-\_\-t \hyperlink{classcryomesh_1_1common_1_1TimeKeeper_ad6e92ec3c962aa3e6db82d69188e9686}{start\-\_\-time}
+\item 
+boost\-::timer \hyperlink{classcryomesh_1_1common_1_1TimeKeeper_a41690fc156fdee825fb5e7a5e26a2102}{timer}
+\item 
+double \hyperlink{classcryomesh_1_1common_1_1TimeKeeper_afe9c0b2cd669e9d4d62718734e5b630a}{this\-\_\-timing}
+\item 
+double \hyperlink{classcryomesh_1_1common_1_1TimeKeeper_acb896ec81cbe9d18f4e618320353dc4f}{last\-\_\-timing}
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1common_1_1TimeKeeper}{\-Time\-Keeper} $>$ \hyperlink{classcryomesh_1_1common_1_1TimeKeeper_a9182b02e3805961510f48954276ef389}{timekeeper}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\hyperlink{classcryomesh_1_1common_1_1TimeKeeper}{\-Time\-Keeper} is a class keep track of the cycle state and timing. 
+
+\hyperlink{classcryomesh_1_1common_1_1TimeKeeper}{\-Time\-Keeper} manages the 'tick' cycle and provides the means by which classes throughout the system can keep track of the cycle 
+
+\-Definition at line 31 of file \-Time\-Keeper.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcryomesh_1_1common_1_1TimeKeeper_a1023707129088652ac2cced3e0f4a0be}{\index{cryomesh\-::common\-::\-Time\-Keeper@{cryomesh\-::common\-::\-Time\-Keeper}!$\sim$\-Time\-Keeper@{$\sim$\-Time\-Keeper}}
+\index{$\sim$\-Time\-Keeper@{$\sim$\-Time\-Keeper}!cryomesh::common::TimeKeeper@{cryomesh\-::common\-::\-Time\-Keeper}}
+\subsubsection[{$\sim$\-Time\-Keeper}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::common\-::\-Time\-Keeper\-::$\sim$\-Time\-Keeper} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1common_1_1TimeKeeper_a1023707129088652ac2cced3e0f4a0be}
+
+
+\-Definition at line 37 of file \-Time\-Keeper.\-cpp.
+
+\hypertarget{classcryomesh_1_1common_1_1TimeKeeper_a133c730f64b915e6ef25be1442ea688e}{\index{cryomesh\-::common\-::\-Time\-Keeper@{cryomesh\-::common\-::\-Time\-Keeper}!\-Time\-Keeper@{\-Time\-Keeper}}
+\index{\-Time\-Keeper@{\-Time\-Keeper}!cryomesh::common::TimeKeeper@{cryomesh\-::common\-::\-Time\-Keeper}}
+\subsubsection[{\-Time\-Keeper}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::common\-::\-Time\-Keeper\-::\-Time\-Keeper} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1common_1_1TimeKeeper_a133c730f64b915e6ef25be1442ea688e}
+
+
+\-Constructor. 
+
+\-Constructor for \hyperlink{classcryomesh_1_1common_1_1TimeKeeper}{\-Time\-Keeper}. \-Inaccessible to force singleton class 
+
+\-Definition at line 34 of file \-Time\-Keeper.\-cpp.
+
+
+
+\-References reset().
+
+
+
+\-Referenced by get\-Time\-Keeper().
+
+\hypertarget{classcryomesh_1_1common_1_1TimeKeeper_a3ea9062a72b2cc0af37b445ed254b64f}{\index{cryomesh\-::common\-::\-Time\-Keeper@{cryomesh\-::common\-::\-Time\-Keeper}!\-Time\-Keeper@{\-Time\-Keeper}}
+\index{\-Time\-Keeper@{\-Time\-Keeper}!cryomesh::common::TimeKeeper@{cryomesh\-::common\-::\-Time\-Keeper}}
+\subsubsection[{\-Time\-Keeper}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::common\-::\-Time\-Keeper\-::\-Time\-Keeper} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Time\-Keeper} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1common_1_1TimeKeeper_a3ea9062a72b2cc0af37b445ed254b64f}
+
+
+\-Copy \-Constructor. 
+
+\-Overridden \-Copy \-Contructor for \hyperlink{classcryomesh_1_1common_1_1TimeKeeper}{\-Time\-Keeper}. \-Inaccessible to force singleton class
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \hyperlink{classcryomesh_1_1common_1_1TimeKeeper}{\-Time\-Keeper}} & \-Object to \-Copy \-Construct from \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1common_1_1TimeKeeper_aa0bfaecbd5118af91d63296f158cee09}{\index{cryomesh\-::common\-::\-Time\-Keeper@{cryomesh\-::common\-::\-Time\-Keeper}!get\-Cycle@{get\-Cycle}}
+\index{get\-Cycle@{get\-Cycle}!cryomesh::common::TimeKeeper@{cryomesh\-::common\-::\-Time\-Keeper}}
+\subsubsection[{get\-Cycle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Cycle} {\bf cryomesh\-::common\-::\-Time\-Keeper\-::get\-Cycle} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1common_1_1TimeKeeper_aa0bfaecbd5118af91d63296f158cee09}
+
+
+\-Get the current cycle we're on as an \hyperlink{classcryomesh_1_1common_1_1Cycle}{\-Cycle}. 
+
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{classcryomesh_1_1common_1_1Cycle}{\-Cycle} \-The cycle we're currently on 
+\end{DoxyReturn}
+
+
+\-Definition at line 76 of file \-Time\-Keeper.\-cpp.
+
+
+
+\-References cycle.
+
+
+
+\-Referenced by cryomesh\-::manager\-::\-Database\-Manager\-::add\-History\-Entry(), cryomesh\-::components\-::\-Impulse\-Collection\-::clear\-Active\-Impulses(), cryomesh\-::components\-::\-Impulse\-Collection\-::clear\-Impulses(), cryomesh\-::components\-::\-Impulse\-Collection\-::get\-Activity(), cryomesh\-::state\-::\-Pattern\-::get\-Database\-Object(), cryomesh\-::components\-::\-Connection\-::get\-Database\-Object(), cryomesh\-::components\-::\-Node\-::get\-Database\-Object(), cryomesh\-::state\-::\-Pattern\-Channel\-::get\-Pattern\-By\-Cycle(), cryomesh\-::utilities\-::operator$<$$<$(), cryomesh\-::structures\-::\-Bundle\-::print(), cryomesh\-::manager\-::\-Database\-Manager\-::print\-History(), and cryomesh\-::components\-::\-Impulse\-Collection\-::refresh\-Data\-Object().
+
+\hypertarget{classcryomesh_1_1common_1_1TimeKeeper_a73a685a859e69ce3660b6a6d3469997e}{\index{cryomesh\-::common\-::\-Time\-Keeper@{cryomesh\-::common\-::\-Time\-Keeper}!get\-Start\-Time@{get\-Start\-Time}}
+\index{get\-Start\-Time@{get\-Start\-Time}!cryomesh::common::TimeKeeper@{cryomesh\-::common\-::\-Time\-Keeper}}
+\subsubsection[{get\-Start\-Time}]{\setlength{\rightskip}{0pt plus 5cm}std\-::time\-\_\-t {\bf cryomesh\-::common\-::\-Time\-Keeper\-::get\-Start\-Time} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1common_1_1TimeKeeper_a73a685a859e69ce3660b6a6d3469997e}
+
+
+\-Get the time we started cycling. 
+
+\begin{DoxyReturn}{\-Returns}
+time\-\_\-t \-The start time 
+\end{DoxyReturn}
+
+
+\-Definition at line 83 of file \-Time\-Keeper.\-cpp.
+
+
+
+\-References start\-\_\-time.
+
+\hypertarget{classcryomesh_1_1common_1_1TimeKeeper_afe7b229532e11119cb2653192615d679}{\index{cryomesh\-::common\-::\-Time\-Keeper@{cryomesh\-::common\-::\-Time\-Keeper}!get\-Time\-Keeper@{get\-Time\-Keeper}}
+\index{get\-Time\-Keeper@{get\-Time\-Keeper}!cryomesh::common::TimeKeeper@{cryomesh\-::common\-::\-Time\-Keeper}}
+\subsubsection[{get\-Time\-Keeper}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Keeper} \& {\bf cryomesh\-::common\-::\-Time\-Keeper\-::get\-Time\-Keeper} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1common_1_1TimeKeeper_afe7b229532e11119cb2653192615d679}
+
+
+\-Definition at line 19 of file \-Time\-Keeper.\-cpp.
+
+
+
+\-References \-Time\-Keeper(), and timekeeper.
+
+
+
+\-Referenced by cryomesh\-::manager\-::\-Database\-Manager\-::add\-History\-Entry(), cryomesh\-::components\-::\-Node\-::add\-Impulse(), cryomesh\-::components\-::\-Impulse\-Collection\-::clear\-Active\-Impulses(), cryomesh\-::components\-::\-Impulse\-Collection\-::clear\-Impulses(), cryomesh\-::components\-::\-Node\-::enter\-Recovery(), cryomesh\-::components\-::\-Impulse\-Collection\-::get\-Activity(), cryomesh\-::components\-::\-Impulse\-::get\-Activity(), cryomesh\-::components\-::\-Node\-::get\-Activity(), cryomesh\-::components\-::\-Connection\-Map\-::get\-Activity\-Pattern(), cryomesh\-::state\-::\-Pattern\-::get\-Database\-Object(), cryomesh\-::components\-::\-Connection\-::get\-Database\-Object(), cryomesh\-::components\-::\-Node\-::get\-Database\-Object(), cryomesh\-::state\-::\-Pattern\-Channel\-::get\-Pattern\-By\-Cycle(), cryomesh\-::components\-::\-Impulse\-::is\-Active(), cryomesh\-::utilities\-::operator$<$$<$(), cryomesh\-::structures\-::\-Bundle\-::print(), cryomesh\-::manager\-::\-Database\-Manager\-::print\-History(), cryomesh\-::components\-::\-Impulse\-Collection\-::refresh\-Data\-Object(), cryomesh\-::components\-::\-Node\-::set\-Activity(), and cryomesh\-::structures\-::\-Bundle\-::update().
+
+\hypertarget{classcryomesh_1_1common_1_1TimeKeeper_a888f7db463cc84b0a00478c4bbcf7c44}{\index{cryomesh\-::common\-::\-Time\-Keeper@{cryomesh\-::common\-::\-Time\-Keeper}!get\-Timer@{get\-Timer}}
+\index{get\-Timer@{get\-Timer}!cryomesh::common::TimeKeeper@{cryomesh\-::common\-::\-Time\-Keeper}}
+\subsubsection[{get\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::timer \& {\bf cryomesh\-::common\-::\-Time\-Keeper\-::get\-Timer} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1common_1_1TimeKeeper_a888f7db463cc84b0a00478c4bbcf7c44}
+
+
+\-Get the \-Timer. 
+
+\begin{DoxyReturn}{\-Returns}
+boost\-::\-Timer 
+\end{DoxyReturn}
+
+
+\-Definition at line 87 of file \-Time\-Keeper.\-cpp.
+
+
+
+\-References timer.
+
+\hypertarget{classcryomesh_1_1common_1_1TimeKeeper_ad3f49c5602d1e51b4ee9aa9535a59454}{\index{cryomesh\-::common\-::\-Time\-Keeper@{cryomesh\-::common\-::\-Time\-Keeper}!get\-Timing@{get\-Timing}}
+\index{get\-Timing@{get\-Timing}!cryomesh::common::TimeKeeper@{cryomesh\-::common\-::\-Time\-Keeper}}
+\subsubsection[{get\-Timing}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::common\-::\-Time\-Keeper\-::get\-Timing} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1common_1_1TimeKeeper_ad3f49c5602d1e51b4ee9aa9535a59454}
+
+
+\-Difference between the last time and now. 
+
+\begin{DoxyReturn}{\-Returns}
+double \-The difference between the clock now and the last clock 
+\end{DoxyReturn}
+
+
+\-Definition at line 80 of file \-Time\-Keeper.\-cpp.
+
+
+
+\-References last\-\_\-timing, and this\-\_\-timing.
+
+\hypertarget{classcryomesh_1_1common_1_1TimeKeeper_ad22e5329268d4e6f55b4a29045c11035}{\index{cryomesh\-::common\-::\-Time\-Keeper@{cryomesh\-::common\-::\-Time\-Keeper}!operator=@{operator=}}
+\index{operator=@{operator=}!cryomesh::common::TimeKeeper@{cryomesh\-::common\-::\-Time\-Keeper}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Time\-Keeper}\& cryomesh\-::common\-::\-Time\-Keeper\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Time\-Keeper} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1common_1_1TimeKeeper_ad22e5329268d4e6f55b4a29045c11035}
+
+
+\-Assignment \-Operator. 
+
+\-Overridden \-Assignment \-Operator for \hyperlink{classcryomesh_1_1common_1_1TimeKeeper}{\-Time\-Keeper}. \-Inaccessible to force singleton class
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \hyperlink{classcryomesh_1_1common_1_1TimeKeeper}{\-Time\-Keeper}} & \-Object to \-Assign this to \\
+\hline
+\end{DoxyParams}
+\hypertarget{classcryomesh_1_1common_1_1TimeKeeper_a7c710ae8bdb2fff0aaf284a9c1108ace}{\index{cryomesh\-::common\-::\-Time\-Keeper@{cryomesh\-::common\-::\-Time\-Keeper}!operator==@{operator==}}
+\index{operator==@{operator==}!cryomesh::common::TimeKeeper@{cryomesh\-::common\-::\-Time\-Keeper}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool cryomesh\-::common\-::\-Time\-Keeper\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Time\-Keeper} \&}]{obj}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1common_1_1TimeKeeper_a7c710ae8bdb2fff0aaf284a9c1108ace}
+
+
+\-Equality test override for object. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \hyperlink{classcryomesh_1_1common_1_1TimeKeeper}{\-Time\-Keeper}} & obj \-Object to compare this with\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+bool \-True if equal, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 40 of file \-Time\-Keeper.\-cpp.
+
+
+
+\-References cycle, last\-\_\-timing, start\-\_\-time, and this\-\_\-timing.
+
+\hypertarget{classcryomesh_1_1common_1_1TimeKeeper_abb7b3042e8b2087326c2405a0bc8d230}{\index{cryomesh\-::common\-::\-Time\-Keeper@{cryomesh\-::common\-::\-Time\-Keeper}!reset@{reset}}
+\index{reset@{reset}!cryomesh::common::TimeKeeper@{cryomesh\-::common\-::\-Time\-Keeper}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::common\-::\-Time\-Keeper\-::reset} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1common_1_1TimeKeeper_abb7b3042e8b2087326c2405a0bc8d230}
+
+
+\-Destructor. 
+
+\-Destructor for \hyperlink{classcryomesh_1_1common_1_1TimeKeeper}{\-Time\-Keeper} \-Reset the timekeeper 
+
+\-Definition at line 26 of file \-Time\-Keeper.\-cpp.
+
+
+
+\-References cycle, last\-\_\-timing, start\-\_\-time, this\-\_\-timing, and timer.
+
+
+
+\-Referenced by \-Time\-Keeper().
+
+\hypertarget{classcryomesh_1_1common_1_1TimeKeeper_a0581cd24a6eebfbdd67a363467483456}{\index{cryomesh\-::common\-::\-Time\-Keeper@{cryomesh\-::common\-::\-Time\-Keeper}!update@{update}}
+\index{update@{update}!cryomesh::common::TimeKeeper@{cryomesh\-::common\-::\-Time\-Keeper}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::common\-::\-Time\-Keeper\-::update} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1common_1_1TimeKeeper_a0581cd24a6eebfbdd67a363467483456}
+
+
+\-Move the timing on one cycle. 
+
+
+
+\-Definition at line 66 of file \-Time\-Keeper.\-cpp.
+
+
+
+\-References cycle, last\-\_\-timing, this\-\_\-timing, and timer.
+
+
+
+\-Referenced by cryomesh\-::structures\-::\-Bundle\-::update().
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classcryomesh_1_1common_1_1TimeKeeper_af2f511fb5df5b4a1e6d9eb8dffa4f6ef}{\index{cryomesh\-::common\-::\-Time\-Keeper@{cryomesh\-::common\-::\-Time\-Keeper}!cycle@{cycle}}
+\index{cycle@{cycle}!cryomesh::common::TimeKeeper@{cryomesh\-::common\-::\-Time\-Keeper}}
+\subsubsection[{cycle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Cycle} {\bf cryomesh\-::common\-::\-Time\-Keeper\-::cycle}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1common_1_1TimeKeeper_af2f511fb5df5b4a1e6d9eb8dffa4f6ef}
+
+
+\-Definition at line 159 of file \-Time\-Keeper.\-h.
+
+
+
+\-Referenced by get\-Cycle(), operator==(), reset(), and update().
+
+\hypertarget{classcryomesh_1_1common_1_1TimeKeeper_acb896ec81cbe9d18f4e618320353dc4f}{\index{cryomesh\-::common\-::\-Time\-Keeper@{cryomesh\-::common\-::\-Time\-Keeper}!last\-\_\-timing@{last\-\_\-timing}}
+\index{last\-\_\-timing@{last\-\_\-timing}!cryomesh::common::TimeKeeper@{cryomesh\-::common\-::\-Time\-Keeper}}
+\subsubsection[{last\-\_\-timing}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::common\-::\-Time\-Keeper\-::last\-\_\-timing}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1common_1_1TimeKeeper_acb896ec81cbe9d18f4e618320353dc4f}
+
+
+\-Definition at line 187 of file \-Time\-Keeper.\-h.
+
+
+
+\-Referenced by get\-Timing(), operator==(), reset(), and update().
+
+\hypertarget{classcryomesh_1_1common_1_1TimeKeeper_ad6e92ec3c962aa3e6db82d69188e9686}{\index{cryomesh\-::common\-::\-Time\-Keeper@{cryomesh\-::common\-::\-Time\-Keeper}!start\-\_\-time@{start\-\_\-time}}
+\index{start\-\_\-time@{start\-\_\-time}!cryomesh::common::TimeKeeper@{cryomesh\-::common\-::\-Time\-Keeper}}
+\subsubsection[{start\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}std\-::time\-\_\-t {\bf cryomesh\-::common\-::\-Time\-Keeper\-::start\-\_\-time}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1common_1_1TimeKeeper_ad6e92ec3c962aa3e6db82d69188e9686}
+
+
+\-Definition at line 166 of file \-Time\-Keeper.\-h.
+
+
+
+\-Referenced by get\-Start\-Time(), operator==(), and reset().
+
+\hypertarget{classcryomesh_1_1common_1_1TimeKeeper_afe9c0b2cd669e9d4d62718734e5b630a}{\index{cryomesh\-::common\-::\-Time\-Keeper@{cryomesh\-::common\-::\-Time\-Keeper}!this\-\_\-timing@{this\-\_\-timing}}
+\index{this\-\_\-timing@{this\-\_\-timing}!cryomesh::common::TimeKeeper@{cryomesh\-::common\-::\-Time\-Keeper}}
+\subsubsection[{this\-\_\-timing}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::common\-::\-Time\-Keeper\-::this\-\_\-timing}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1common_1_1TimeKeeper_afe9c0b2cd669e9d4d62718734e5b630a}
+
+
+\-Definition at line 180 of file \-Time\-Keeper.\-h.
+
+
+
+\-Referenced by get\-Timing(), operator==(), reset(), and update().
+
+\hypertarget{classcryomesh_1_1common_1_1TimeKeeper_a9182b02e3805961510f48954276ef389}{\index{cryomesh\-::common\-::\-Time\-Keeper@{cryomesh\-::common\-::\-Time\-Keeper}!timekeeper@{timekeeper}}
+\index{timekeeper@{timekeeper}!cryomesh::common::TimeKeeper@{cryomesh\-::common\-::\-Time\-Keeper}}
+\subsubsection[{timekeeper}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$ {\bf \-Time\-Keeper} $>$ {\bf cryomesh\-::common\-::\-Time\-Keeper\-::timekeeper}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classcryomesh_1_1common_1_1TimeKeeper_a9182b02e3805961510f48954276ef389}
+
+
+\-Definition at line 151 of file \-Time\-Keeper.\-h.
+
+
+
+\-Referenced by get\-Time\-Keeper().
+
+\hypertarget{classcryomesh_1_1common_1_1TimeKeeper_a41690fc156fdee825fb5e7a5e26a2102}{\index{cryomesh\-::common\-::\-Time\-Keeper@{cryomesh\-::common\-::\-Time\-Keeper}!timer@{timer}}
+\index{timer@{timer}!cryomesh::common::TimeKeeper@{cryomesh\-::common\-::\-Time\-Keeper}}
+\subsubsection[{timer}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::timer {\bf cryomesh\-::common\-::\-Time\-Keeper\-::timer}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1common_1_1TimeKeeper_a41690fc156fdee825fb5e7a5e26a2102}
+
+
+\-Definition at line 173 of file \-Time\-Keeper.\-h.
+
+
+
+\-Referenced by get\-Timer(), reset(), and update().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/common/\hyperlink{TimeKeeper_8h}{\-Time\-Keeper.\-h}\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/common/\hyperlink{TimeKeeper_8cpp}{\-Time\-Keeper.\-cpp}\end{DoxyCompactItemize}

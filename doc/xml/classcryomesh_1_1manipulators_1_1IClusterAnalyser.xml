@@ -1,0 +1,348 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="classcryomesh_1_1manipulators_1_1IClusterAnalyser" kind="class" prot="public">
+    <compoundname>cryomesh::manipulators::IClusterAnalyser</compoundname>
+    <derivedcompoundref refid="classcryomesh_1_1manipulators_1_1ClusterAnalyserBasic" prot="public" virt="non-virtual">cryomesh::manipulators::ClusterAnalyserBasic</derivedcompoundref>
+    <includes refid="IClusterAnalyser_8h" local="no">IClusterAnalyser.h</includes>
+    <innerclass refid="structcryomesh_1_1manipulators_1_1IClusterAnalyser_1_1EnergyVariationWeightingMap" prot="public">cryomesh::manipulators::IClusterAnalyser::EnergyVariationWeightingMap</innerclass>
+    <innerclass refid="structcryomesh_1_1manipulators_1_1IClusterAnalyser_1_1RestructuringCountdown" prot="public">cryomesh::manipulators::IClusterAnalyser::RestructuringCountdown</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781b" prot="public" static="no">
+        <name>EnergyVariation</name>
+        <enumvalue id="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781ba5b6d113aa10f4f70e703a35a39f828d6" prot="public">
+          <name>NONE</name>
+          <initializer> 2048</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781ba1378201d3fdbeeb653457ffb75488e85" prot="public">
+          <name>OUT_OF_RANGE_POSITIVE</name>
+          <initializer> 1024</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781baef559139b3fe444fe2b3a24cd8ad0e4d" prot="public">
+          <name>HIGH_POSITIVE</name>
+          <initializer> 512</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781baab792b24800c050c84be43dddc08e75c" prot="public">
+          <name>MEDIUM_POSITIVE</name>
+          <initializer> 256</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781ba7d05576fa354d351682eb4fa4f7261e8" prot="public">
+          <name>SMALL_POSITIVE</name>
+          <initializer> 128</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781ba27c546877668dfb253e99b8985e4785e" prot="public">
+          <name>STAGNANT_POSITIVE</name>
+          <initializer> 64</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781bae3634dc08cf07554af474b718a1e6b1a" prot="public">
+          <name>ZERO</name>
+          <initializer> 32</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781bae2174fd5cb8c0db340ffd78804b56947" prot="public">
+          <name>STAGNANT_NEGATIVE</name>
+          <initializer> 16</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781bafab77593c2979a49443331f74ed2ba3b" prot="public">
+          <name>SMALL_NEGATIVE</name>
+          <initializer> 8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781ba745d3d50f982c9db34f6b55d589ab24c" prot="public">
+          <name>MEDIUM_NEGATIVE</name>
+          <initializer> 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781bac5cc71ffb113077fb2d67cafb98210e0" prot="public">
+          <name>HIGH_NEGATIVE</name>
+          <initializer> 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781ba531a3f899bfdad545563f019093505c8" prot="public">
+          <name>OUT_OF_RANGE_NEGATIVE</name>
+          <initializer> 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/IClusterAnalyser.h" line="136" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/IClusterAnalyser.h" bodystart="136" bodyend="149"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a78d90b9829e4188ded3d94da49c6887a" prot="protected" static="no" mutable="no">
+        <type><ref refid="structcryomesh_1_1manipulators_1_1IClusterAnalyser_1_1RestructuringCountdown" kindref="compound">RestructuringCountdown</ref></type>
+        <definition>RestructuringCountdown cryomesh::manipulators::IClusterAnalyser::nodeRestructuring</definition>
+        <argsstring></argsstring>
+        <name>nodeRestructuring</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/IClusterAnalyser.h" line="205" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/IClusterAnalyser.h" bodystart="205" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1manipulators_1_1ClusterAnalyserBasic_1ad98be2e316548236479ce5da459d530b" compoundref="ClusterAnalyserBasic_8cpp" startline="23" endline="250">cryomesh::manipulators::ClusterAnalyserBasic::analyseCluster</referencedby>
+        <referencedby refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a72da7d8f63441671b8ebd1f4cd994347" compoundref="IClusterAnalyser_8h" startline="201" endline="203">getNodeRestructuring</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1ae0442c245ec17e22d51ffd05c3a2f86e" prot="protected" static="no" mutable="no">
+        <type><ref refid="structcryomesh_1_1manipulators_1_1IClusterAnalyser_1_1RestructuringCountdown" kindref="compound">RestructuringCountdown</ref></type>
+        <definition>RestructuringCountdown cryomesh::manipulators::IClusterAnalyser::connectionRestructuring</definition>
+        <argsstring></argsstring>
+        <name>connectionRestructuring</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/IClusterAnalyser.h" line="206" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/IClusterAnalyser.h" bodystart="206" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1manipulators_1_1ClusterAnalyserBasic_1ad98be2e316548236479ce5da459d530b" compoundref="ClusterAnalyserBasic_8cpp" startline="23" endline="250">cryomesh::manipulators::ClusterAnalyserBasic::analyseCluster</referencedby>
+        <referencedby refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1af8eb711949e1d69bbe31b564ff9ab340" compoundref="IClusterAnalyser_8h" startline="198" endline="200">getConnectionRestructuring</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1aa3b46d3be5c9ab4eeaccd95316412b6a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::manipulators::IClusterAnalyser::IClusterAnalyser</definition>
+        <argsstring>()</argsstring>
+        <name>IClusterAnalyser</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/IClusterAnalyser.h" line="169" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/IClusterAnalyser.h" bodystart="168" bodyend="170"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1af75850be2d49a54411cf5c9274c1ec76" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual cryomesh::manipulators::IClusterAnalyser::~IClusterAnalyser</definition>
+        <argsstring>()</argsstring>
+        <name>~IClusterAnalyser</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/IClusterAnalyser.h" line="171" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/IClusterAnalyser.h" bodystart="171" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a0b8594c4b41ed14d5a94d191d1ab11fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData" kindref="compound">ClusterAnalysisData</ref></type>
+        <definition>virtual ClusterAnalysisData cryomesh::manipulators::IClusterAnalyser::analyseCluster</definition>
+        <argsstring>(const structures::Cluster &amp;cluster, const std::map&lt; int, std::list&lt; ClusterAnalysisData &gt; &gt; &amp;histories)=0</argsstring>
+        <name>analyseCluster</name>
+        <reimplementedby refid="classcryomesh_1_1manipulators_1_1ClusterAnalyserBasic_1ad98be2e316548236479ce5da459d530b">analyseCluster</reimplementedby>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1structures_1_1Cluster" kindref="compound">structures::Cluster</ref> &amp;</type>
+          <declname>cluster</declname>
+        </param>
+        <param>
+          <type>const std::map&lt; int, std::list&lt; <ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData" kindref="compound">ClusterAnalysisData</ref> &gt; &gt; &amp;</type>
+          <declname>histories</declname>
+        </param>
+        <briefdescription>
+<para>Run an analysis on the cluster to decide what action to take on nodes and connections. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1structures_1_1Cluster" kindref="compound">structures::Cluster</ref> &amp; The cluster to analyse </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>std::list&lt;ClusterAnalysisData&gt; The historical analysis data to use</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData" kindref="compound">ClusterAnalysisData</ref> The reulting analytical data </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/IClusterAnalyser.h" line="185"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a1f666c2ccf0a6564510c8b4f062e2e21" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData" kindref="compound">ClusterAnalysisData</ref></type>
+        <definition>virtual ClusterAnalysisData cryomesh::manipulators::IClusterAnalyser::calculateRangeEnergies</definition>
+        <argsstring>(const std::list&lt; ClusterAnalysisData &gt; &amp;history) const =0</argsstring>
+        <name>calculateRangeEnergies</name>
+        <reimplementedby refid="classcryomesh_1_1manipulators_1_1ClusterAnalyserBasic_1ab4e344d193d764d0e60aaed87c9770b3">calculateRangeEnergies</reimplementedby>
+        <param>
+          <type>const std::list&lt; <ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData" kindref="compound">ClusterAnalysisData</ref> &gt; &amp;</type>
+          <declname>history</declname>
+        </param>
+        <briefdescription>
+<para>Calculate the range energies stats. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>std::list&lt;ClusterAnalysisData&gt; &amp; The history range to work with</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData" kindref="compound">ClusterAnalysisData</ref> The resulting cluster analysis data </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/IClusterAnalyser.h" line="195"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a27db139b4aa43f0c008de165d2f22f5b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="structcryomesh_1_1manipulators_1_1IClusterAnalyser_1_1EnergyVariationWeightingMap" kindref="compound">EnergyVariationWeightingMap</ref></type>
+        <definition>virtual EnergyVariationWeightingMap cryomesh::manipulators::IClusterAnalyser::getEnergyVariationMap</definition>
+        <argsstring>(const double energy_input, double range) const =0</argsstring>
+        <name>getEnergyVariationMap</name>
+        <reimplementedby refid="classcryomesh_1_1manipulators_1_1ClusterAnalyserBasic_1a8870233415221b9c971a30452fb9452a">getEnergyVariationMap</reimplementedby>
+        <param>
+          <type>const double</type>
+          <declname>energy_input</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>range</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/IClusterAnalyser.h" line="196"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1af8eb711949e1d69bbe31b564ff9ab340" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="structcryomesh_1_1manipulators_1_1IClusterAnalyser_1_1RestructuringCountdown" kindref="compound">RestructuringCountdown</ref> &amp;</type>
+        <definition>const RestructuringCountdown&amp; cryomesh::manipulators::IClusterAnalyser::getConnectionRestructuring</definition>
+        <argsstring>() const </argsstring>
+        <name>getConnectionRestructuring</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/IClusterAnalyser.h" line="198" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/IClusterAnalyser.h" bodystart="198" bodyend="200"/>
+        <references refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1ae0442c245ec17e22d51ffd05c3a2f86e" compoundref="IClusterAnalyser_8h" startline="206">connectionRestructuring</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a72da7d8f63441671b8ebd1f4cd994347" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="structcryomesh_1_1manipulators_1_1IClusterAnalyser_1_1RestructuringCountdown" kindref="compound">RestructuringCountdown</ref> &amp;</type>
+        <definition>const RestructuringCountdown&amp; cryomesh::manipulators::IClusterAnalyser::getNodeRestructuring</definition>
+        <argsstring>() const </argsstring>
+        <name>getNodeRestructuring</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/IClusterAnalyser.h" line="201" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/IClusterAnalyser.h" bodystart="201" bodyend="203"/>
+        <references refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a78d90b9829e4188ded3d94da49c6887a" compoundref="IClusterAnalyser_8h" startline="205">nodeRestructuring</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="444">
+        <label>cryomesh::manipulators::ClusterAnalyserBasic</label>
+        <link refid="classcryomesh_1_1manipulators_1_1ClusterAnalyserBasic"/>
+        <childnode refid="443" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="443">
+        <label>cryomesh::manipulators::IClusterAnalyser</label>
+        <link refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="446">
+        <label>cryomesh::manipulators::IClusterAnalyser::RestructuringCountdown</label>
+        <link refid="structcryomesh_1_1manipulators_1_1IClusterAnalyser_1_1RestructuringCountdown"/>
+      </node>
+      <node id="445">
+        <label>cryomesh::manipulators::IClusterAnalyser</label>
+        <link refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser"/>
+        <childnode refid="446" relation="usage">
+          <edgelabel>connectionRestructuring</edgelabel>
+          <edgelabel>nodeRestructuring</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/IClusterAnalyser.h" line="17" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/IClusterAnalyser.h" bodystart="17" bodyend="207"/>
+    <listofallmembers>
+      <member refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a0b8594c4b41ed14d5a94d191d1ab11fd" prot="public" virt="pure-virtual"><scope>cryomesh::manipulators::IClusterAnalyser</scope><name>analyseCluster</name></member>
+      <member refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a1f666c2ccf0a6564510c8b4f062e2e21" prot="public" virt="pure-virtual"><scope>cryomesh::manipulators::IClusterAnalyser</scope><name>calculateRangeEnergies</name></member>
+      <member refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1ae0442c245ec17e22d51ffd05c3a2f86e" prot="protected" virt="non-virtual"><scope>cryomesh::manipulators::IClusterAnalyser</scope><name>connectionRestructuring</name></member>
+      <member refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781b" prot="public" virt="non-virtual"><scope>cryomesh::manipulators::IClusterAnalyser</scope><name>EnergyVariation</name></member>
+      <member refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1af8eb711949e1d69bbe31b564ff9ab340" prot="public" virt="non-virtual"><scope>cryomesh::manipulators::IClusterAnalyser</scope><name>getConnectionRestructuring</name></member>
+      <member refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a27db139b4aa43f0c008de165d2f22f5b" prot="public" virt="pure-virtual"><scope>cryomesh::manipulators::IClusterAnalyser</scope><name>getEnergyVariationMap</name></member>
+      <member refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a72da7d8f63441671b8ebd1f4cd994347" prot="public" virt="non-virtual"><scope>cryomesh::manipulators::IClusterAnalyser</scope><name>getNodeRestructuring</name></member>
+      <member refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781bac5cc71ffb113077fb2d67cafb98210e0" prot="public" virt="non-virtual"><scope>cryomesh::manipulators::IClusterAnalyser</scope><name>HIGH_NEGATIVE</name></member>
+      <member refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781baef559139b3fe444fe2b3a24cd8ad0e4d" prot="public" virt="non-virtual"><scope>cryomesh::manipulators::IClusterAnalyser</scope><name>HIGH_POSITIVE</name></member>
+      <member refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1aa3b46d3be5c9ab4eeaccd95316412b6a" prot="public" virt="non-virtual"><scope>cryomesh::manipulators::IClusterAnalyser</scope><name>IClusterAnalyser</name></member>
+      <member refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781ba745d3d50f982c9db34f6b55d589ab24c" prot="public" virt="non-virtual"><scope>cryomesh::manipulators::IClusterAnalyser</scope><name>MEDIUM_NEGATIVE</name></member>
+      <member refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781baab792b24800c050c84be43dddc08e75c" prot="public" virt="non-virtual"><scope>cryomesh::manipulators::IClusterAnalyser</scope><name>MEDIUM_POSITIVE</name></member>
+      <member refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a78d90b9829e4188ded3d94da49c6887a" prot="protected" virt="non-virtual"><scope>cryomesh::manipulators::IClusterAnalyser</scope><name>nodeRestructuring</name></member>
+      <member refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781ba5b6d113aa10f4f70e703a35a39f828d6" prot="public" virt="non-virtual"><scope>cryomesh::manipulators::IClusterAnalyser</scope><name>NONE</name></member>
+      <member refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781ba531a3f899bfdad545563f019093505c8" prot="public" virt="non-virtual"><scope>cryomesh::manipulators::IClusterAnalyser</scope><name>OUT_OF_RANGE_NEGATIVE</name></member>
+      <member refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781ba1378201d3fdbeeb653457ffb75488e85" prot="public" virt="non-virtual"><scope>cryomesh::manipulators::IClusterAnalyser</scope><name>OUT_OF_RANGE_POSITIVE</name></member>
+      <member refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781bafab77593c2979a49443331f74ed2ba3b" prot="public" virt="non-virtual"><scope>cryomesh::manipulators::IClusterAnalyser</scope><name>SMALL_NEGATIVE</name></member>
+      <member refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781ba7d05576fa354d351682eb4fa4f7261e8" prot="public" virt="non-virtual"><scope>cryomesh::manipulators::IClusterAnalyser</scope><name>SMALL_POSITIVE</name></member>
+      <member refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781bae2174fd5cb8c0db340ffd78804b56947" prot="public" virt="non-virtual"><scope>cryomesh::manipulators::IClusterAnalyser</scope><name>STAGNANT_NEGATIVE</name></member>
+      <member refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781ba27c546877668dfb253e99b8985e4785e" prot="public" virt="non-virtual"><scope>cryomesh::manipulators::IClusterAnalyser</scope><name>STAGNANT_POSITIVE</name></member>
+      <member refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1a28a17f8e1363cfb575bacdf213b0781bae3634dc08cf07554af474b718a1e6b1a" prot="public" virt="non-virtual"><scope>cryomesh::manipulators::IClusterAnalyser</scope><name>ZERO</name></member>
+      <member refid="classcryomesh_1_1manipulators_1_1IClusterAnalyser_1af75850be2d49a54411cf5c9274c1ec76" prot="public" virt="virtual"><scope>cryomesh::manipulators::IClusterAnalyser</scope><name>~IClusterAnalyser</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="NodeDatabaseObject_8cpp" kind="file">
+    <compoundname>NodeDatabaseObject.cpp</compoundname>
+    <includes refid="NodeDatabaseObject_8h" local="yes">NodeDatabaseObject.h</includes>
+    <incdepgraph>
+      <node id="1184">
+        <label>boost/tokenizer.hpp</label>
+      </node>
+      <node id="1185">
+        <label>spacial/Point.h</label>
+      </node>
+      <node id="1187">
+        <label>gmpxx.h</label>
+      </node>
+      <node id="1179">
+        <label>DatabaseObject.h</label>
+        <link refid="DatabaseObject_8h"/>
+        <childnode refid="1180" relation="include">
+        </childnode>
+        <childnode refid="1181" relation="include">
+        </childnode>
+        <childnode refid="1182" relation="include">
+        </childnode>
+        <childnode refid="1183" relation="include">
+        </childnode>
+        <childnode refid="1184" relation="include">
+        </childnode>
+      </node>
+      <node id="1181">
+        <label>string</label>
+      </node>
+      <node id="1180">
+        <label>map</label>
+      </node>
+      <node id="1182">
+        <label>sstream</label>
+      </node>
+      <node id="1177">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/NodeDatabaseObject.cpp</label>
+        <link refid="NodeDatabaseObject.cpp"/>
+        <childnode refid="1178" relation="include">
+        </childnode>
+      </node>
+      <node id="1183">
+        <label>iostream</label>
+      </node>
+      <node id="1178">
+        <label>NodeDatabaseObject.h</label>
+        <link refid="NodeDatabaseObject_8h"/>
+        <childnode refid="1179" relation="include">
+        </childnode>
+        <childnode refid="1185" relation="include">
+        </childnode>
+        <childnode refid="1186" relation="include">
+        </childnode>
+        <childnode refid="1181" relation="include">
+        </childnode>
+        <childnode refid="1182" relation="include">
+        </childnode>
+      </node>
+      <node id="1186">
+        <label>common/Cycle.h</label>
+        <link refid="Cycle_8h"/>
+        <childnode refid="1187" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacecryomesh">cryomesh</innernamespace>
+    <innernamespace refid="namespacecryomesh_1_1manager">cryomesh::manager</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="NodeDatabaseObject_8h" kindref="compound">NodeDatabaseObject.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">cryomesh<sp/>{</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">manager<sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1ac46a43bc3578edde244684a90c0347c6" kindref="member">NodeDatabaseObject::ID_TAG</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;id&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a13b5bc3d98b96aaf13946d894ee198da" kindref="member">NodeDatabaseObject::X_TAG</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;x&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a53f9eddc7a4946d85d3c2a873b501fb4" kindref="member">NodeDatabaseObject::Y_TAG</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;y&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a6ad97b44dd2f10fd83db1c62283f5bdd" kindref="member">NodeDatabaseObject::Z_TAG</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;z&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a5b88df8ce26dc6ee6b7f2fd369ee88d7" kindref="member">NodeDatabaseObject::ACTIVITY_TAG</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;activity&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a27dbca85d042b1bf292de812e3da608c" kindref="member">NodeDatabaseObject::CYCLE_TAG</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;cycle&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a69cbe2fb91ca27e0b167165c52d11231" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a69cbe2fb91ca27e0b167165c52d11231" kindref="member" tooltip="Create object from node variables.">NodeDatabaseObject::NodeDatabaseObject</ref>(std::string<sp/>uuid_str,<sp/>spacial::Point<sp/>pt,<sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref><sp/>cyc,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>act)<sp/>:</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uuid(uuid_str),<sp/>point(pt),<sp/>cycle(cyc),<sp/>activity(act)<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1a9c648bf09b9fd8b4d599b0d4f4abf531" kindref="member">columns</ref>[<ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1ac46a43bc3578edde244684a90c0347c6" kindref="member">ID_TAG</ref>]<sp/>=<sp/>uuid_str;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1a9c648bf09b9fd8b4d599b0d4f4abf531" kindref="member">columns</ref>[<ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a13b5bc3d98b96aaf13946d894ee198da" kindref="member">X_TAG</ref>]<sp/>=<sp/>toString&lt;double&gt;<sp/>(<ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1ae3f66b98b554fb2ef839e18b4d2a6e28" kindref="member">point</ref>.getX());</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1a9c648bf09b9fd8b4d599b0d4f4abf531" kindref="member">columns</ref>[<ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a53f9eddc7a4946d85d3c2a873b501fb4" kindref="member">Y_TAG</ref>]<sp/>=<sp/>toString&lt;double&gt;<sp/>(<ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1ae3f66b98b554fb2ef839e18b4d2a6e28" kindref="member">point</ref>.getY());</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>columns[<ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a6ad97b44dd2f10fd83db1c62283f5bdd" kindref="member">Z_TAG</ref>]<sp/>=<sp/>toString&lt;double&gt;<sp/>(<ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1ae3f66b98b554fb2ef839e18b4d2a6e28" kindref="member">point</ref>.getZ());</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>columns[<ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a27dbca85d042b1bf292de812e3da608c" kindref="member">CYCLE_TAG</ref>]<sp/>=<sp/>toString&lt;unsigned<sp/>long<sp/>int&gt;<sp/>(<ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a64c6887b55673bfb0dcd49919c2f21f8" kindref="member">cycle</ref>.<ref refid="classcryomesh_1_1common_1_1Cycle_1a5168b76b3a3f20b5f6e38f96f8f9a8b5" kindref="member" tooltip="Return as an unsigned integer.">toULInt</ref>());</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>columns[<ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a5b88df8ce26dc6ee6b7f2fd369ee88d7" kindref="member">ACTIVITY_TAG</ref>]<sp/>=<sp/>toString&lt;double&gt;<sp/>(<ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a058afbf0cba44ece21b40f30a6ff31a1" kindref="member">activity</ref>);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a96ec12a3290ce621734fb5695a4ca5c1" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a69cbe2fb91ca27e0b167165c52d11231" kindref="member" tooltip="Create object from node variables.">NodeDatabaseObject::NodeDatabaseObject</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>node_table_entry)<sp/>:uuid(),<sp/>point(0,0,0),<sp/><sp/>cycle(),<sp/>activity(0){</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;TODO<sp/>NodeDatabaseObject::NodeDatabaseObject(const<sp/>std::string<sp/>&amp;<sp/>node_table_entry)&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>std::string&gt;<sp/>entry_map<sp/>=<sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1a04ce7c34b51e3290c972121cf2f16565" kindref="member" tooltip="Parse a string database entry, extract columns and values and return a map.">DatabaseObject::getColumnMapFromEntry</ref>(node_table_entry);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>uuid_str<sp/>=<sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1aa4ef26ce91fea092f146e67add491e0f" kindref="member" tooltip="Find entries value in map or return null.">DatabaseObject::findValue</ref>(</highlight><highlight class="stringliteral">&quot;id&quot;</highlight><highlight class="normal">,<sp/>entry_map);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>x_str<sp/>=<sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1aa4ef26ce91fea092f146e67add491e0f" kindref="member" tooltip="Find entries value in map or return null.">DatabaseObject::findValue</ref>(</highlight><highlight class="stringliteral">&quot;x&quot;</highlight><highlight class="normal">,<sp/>entry_map);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>y_str<sp/>=<sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1aa4ef26ce91fea092f146e67add491e0f" kindref="member" tooltip="Find entries value in map or return null.">DatabaseObject::findValue</ref>(</highlight><highlight class="stringliteral">&quot;y&quot;</highlight><highlight class="normal">,<sp/>entry_map);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>z_str<sp/>=<sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1aa4ef26ce91fea092f146e67add491e0f" kindref="member" tooltip="Find entries value in map or return null.">DatabaseObject::findValue</ref>(</highlight><highlight class="stringliteral">&quot;z&quot;</highlight><highlight class="normal">,<sp/>entry_map);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>activity_str<sp/>=<sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1aa4ef26ce91fea092f146e67add491e0f" kindref="member" tooltip="Find entries value in map or return null.">DatabaseObject::findValue</ref>(</highlight><highlight class="stringliteral">&quot;activity&quot;</highlight><highlight class="normal">,<sp/>entry_map);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>cycle_str<sp/>=<sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1aa4ef26ce91fea092f146e67add491e0f" kindref="member" tooltip="Find entries value in map or return null.">DatabaseObject::findValue</ref>(</highlight><highlight class="stringliteral">&quot;cycle&quot;</highlight><highlight class="normal">,<sp/>entry_map);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a26f7172c0939529683f5ffcba9bf18f7" kindref="member">uuid</ref><sp/>=<sp/>uuid_str;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x<sp/>=<sp/>(x_str<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/>?<sp/>0<sp/>:<sp/>atof(x_str.c_str());</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y<sp/>=<sp/>(y_str<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/>?<sp/>0<sp/>:<sp/>atof(y_str.c_str());</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>z<sp/>=<sp/>(z_str<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/>?<sp/>0<sp/>:<sp/>atof(z_str.c_str());</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1ae3f66b98b554fb2ef839e18b4d2a6e28" kindref="member">point</ref><sp/>=<sp/>spacial::Point(x,<sp/>y,<sp/>z);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a058afbf0cba44ece21b40f30a6ff31a1" kindref="member">activity</ref><sp/>=<sp/>(activity_str<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/>?<sp/>0<sp/>:<sp/>atof(activity_str.c_str());</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cycleint<sp/>=<sp/>(cycle_str<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/>?<sp/>0<sp/>:<sp/>atol(cycle_str.c_str());</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a64c6887b55673bfb0dcd49919c2f21f8" kindref="member">cycle</ref><sp/>=<sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref>(cycleint);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;NodeDatabaseObject::NodeDatabaseObject:<sp/>&quot;<sp/>&lt;&lt;<sp/>&quot;FOUND:&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;\t&quot;<sp/>&lt;&lt;<sp/>&quot;uuid_str&quot;<sp/>&lt;&lt;<sp/>&quot;=&quot;<sp/>&lt;&lt;<sp/>uuid_str<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;\t&quot;<sp/>&lt;&lt;<sp/>&quot;x_str&quot;<sp/>&lt;&lt;<sp/>&quot;=&quot;<sp/>&lt;&lt;<sp/>x_str<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;\t&quot;<sp/>&lt;&lt;<sp/>&quot;y_str&quot;<sp/>&lt;&lt;<sp/>&quot;=&quot;<sp/>&lt;&lt;<sp/>y_str<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;\t&quot;<sp/>&lt;&lt;<sp/>&quot;z_str&quot;<sp/>&lt;&lt;<sp/>&quot;=&quot;<sp/>&lt;&lt;<sp/>z_str<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;\t&quot;<sp/>&lt;&lt;<sp/>&quot;cycle_str&quot;<sp/>&lt;&lt;<sp/>&quot;=&quot;<sp/>&lt;&lt;<sp/>cycle_str<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;\t&quot;<sp/>&lt;&lt;<sp/>&quot;activity_str&quot;<sp/>&lt;&lt;<sp/>&quot;=&quot;<sp/>&lt;&lt;<sp/>activity_str<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"></highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;NodeDatabaseObject::NodeDatabaseObject:<sp/>&quot;<sp/>&lt;&lt;<sp/>&quot;FOUND:&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;\t&quot;<sp/>&lt;&lt;<sp/>&quot;uuid&quot;<sp/>&lt;&lt;<sp/>&quot;=&quot;<sp/>&lt;&lt;<sp/>uuid<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;\t&quot;<sp/>&lt;&lt;<sp/>&quot;point&quot;<sp/>&lt;&lt;<sp/>&quot;=&quot;<sp/>&lt;&lt;<sp/>point<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;\t&quot;<sp/>&lt;&lt;<sp/>&quot;cycle&quot;<sp/>&lt;&lt;<sp/>&quot;=&quot;<sp/>&lt;&lt;<sp/>cycle<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;\t&quot;<sp/>&lt;&lt;<sp/>&quot;activity&quot;<sp/>&lt;&lt;<sp/>&quot;=&quot;<sp/>&lt;&lt;<sp/>activity<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="57"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a1a9157f719dfef63441e0bc1d3c9a86e" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a1a9157f719dfef63441e0bc1d3c9a86e" kindref="member" tooltip="Default destructor.">NodeDatabaseObject::~NodeDatabaseObject</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1ac5512082d08fa59cbaa496b711f4c8c2" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1ac5512082d08fa59cbaa496b711f4c8c2" kindref="member" tooltip="Get the string that can be used to insert the sql data.">NodeDatabaseObject::getInsert</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>table)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//&quot;insert<sp/>into<sp/>nodesTable<sp/>(id,<sp/>x,<sp/>y,<sp/>activity)<sp/>values<sp/>(&apos;1&apos;,<sp/>0.5,<sp/>0.6,<sp/>4.5)&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::stringstream<sp/>ss;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ss<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;insert<sp/>into<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>table<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1ac46a43bc3578edde244684a90c0347c6" kindref="member">ID_TAG</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a13b5bc3d98b96aaf13946d894ee198da" kindref="member">X_TAG</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a53f9eddc7a4946d85d3c2a873b501fb4" kindref="member">Y_TAG</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a6ad97b44dd2f10fd83db1c62283f5bdd" kindref="member">Z_TAG</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/><ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a27dbca85d042b1bf292de812e3da608c" kindref="member">CYCLE_TAG</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a5b88df8ce26dc6ee6b7f2fd369ee88d7" kindref="member">ACTIVITY_TAG</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ss<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>values<sp/>(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\&apos;&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1a66ded4e1a1bccd65c94922648c7135c5" kindref="member" tooltip="Return the string object associated with a key.">getKey</ref>(<ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1ac46a43bc3578edde244684a90c0347c6" kindref="member">ID_TAG</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\&apos;&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1a66ded4e1a1bccd65c94922648c7135c5" kindref="member" tooltip="Return the string object associated with a key.">getKey</ref>(<ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a13b5bc3d98b96aaf13946d894ee198da" kindref="member">X_TAG</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1a66ded4e1a1bccd65c94922648c7135c5" kindref="member" tooltip="Return the string object associated with a key.">getKey</ref>(<ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a53f9eddc7a4946d85d3c2a873b501fb4" kindref="member">Y_TAG</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1a66ded4e1a1bccd65c94922648c7135c5" kindref="member" tooltip="Return the string object associated with a key.">getKey</ref>(<ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a6ad97b44dd2f10fd83db1c62283f5bdd" kindref="member">Z_TAG</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1a66ded4e1a1bccd65c94922648c7135c5" kindref="member" tooltip="Return the string object associated with a key.">getKey</ref>(<ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a27dbca85d042b1bf292de812e3da608c" kindref="member">CYCLE_TAG</ref>)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classcryomesh_1_1manager_1_1DatabaseObject_1a66ded4e1a1bccd65c94922648c7135c5" kindref="member" tooltip="Return the string object associated with a key.">getKey</ref>(ACTIVITY_TAG)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;);&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ss.str();</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a57b4da149aa2ac3ea49b6cb10b06afda" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a57b4da149aa2ac3ea49b6cb10b06afda" kindref="member" tooltip="Get uuid variable.">NodeDatabaseObject::getUUID</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a26f7172c0939529683f5ffcba9bf18f7" kindref="member">uuid</ref>;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77" refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a8271688dc70be0b476f4890633d99fb0" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>spacial::Point<sp/>&amp;<sp/><ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a8271688dc70be0b476f4890633d99fb0" kindref="member" tooltip="Get point variable.">NodeDatabaseObject::getPoint</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1ae3f66b98b554fb2ef839e18b4d2a6e28" kindref="member">point</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80" refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a55fe6f939ab39a2db10fcf27681ef39e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a55fe6f939ab39a2db10fcf27681ef39e" kindref="member" tooltip="Get cycle variable.">NodeDatabaseObject::getCycle</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a64c6887b55673bfb0dcd49919c2f21f8" kindref="member">cycle</ref>;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83" refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1ac5bc1d274dbaa92abaec9ed59e05d805" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1ac5bc1d274dbaa92abaec9ed59e05d805" kindref="member" tooltip="Get activity variable.">NodeDatabaseObject::getActivity</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manager_1_1NodeDatabaseObject_1a058afbf0cba44ece21b40f30a6ff31a1" kindref="member">activity</ref>;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight><highlight class="comment">//NAMESPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}</highlight><highlight class="comment">//NAMESPACE</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/NodeDatabaseObject.cpp"/>
+  </compounddef>
+</doxygen>

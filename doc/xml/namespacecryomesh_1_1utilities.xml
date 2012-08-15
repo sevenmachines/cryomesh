@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="namespacecryomesh_1_1utilities" kind="namespace">
+    <compoundname>cryomesh::utilities</compoundname>
+    <innerclass refid="classcryomesh_1_1utilities_1_1SequencerChannels" prot="public">cryomesh::utilities::SequencerChannels</innerclass>
+    <innerclass refid="classcryomesh_1_1utilities_1_1SequencerGeneric" prot="public">cryomesh::utilities::SequencerGeneric</innerclass>
+    <innerclass refid="classcryomesh_1_1utilities_1_1Statistician" prot="public">cryomesh::utilities::Statistician</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacecryomesh_1_1utilities_1aeccbff80ac6fd380b48e91982e68677d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; cryomesh::utilities::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const SequencerGeneric &amp;obj)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1utilities_1_1SequencerGeneric" kindref="compound">SequencerGeneric</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.cpp" line="109" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerGeneric.cpp" bodystart="109" bodyend="123"/>
+        <references refid="classcryomesh_1_1utilities_1_1SequencerGeneric_1a72d9cc5d05add7cd271a6210f9164009" compoundref="SequencerGeneric_8h" startline="54">cryomesh::utilities::SequencerGeneric::nodeEntries</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacecryomesh_1_1utilities_1ac4c4fba803953a8db7e695796fef95f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; cryomesh::utilities::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const Statistician &amp;obj)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1utilities_1_1Statistician" kindref="compound">Statistician</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::ostream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp; os The output stream </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1utilities_1_1Statistician" kindref="compound">Statistician</ref> &amp; obj The object to stream</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::ostream &amp; The output stream </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp" line="131" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp" bodystart="131" bodyend="150"/>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1a9e6c8527426ae11edbedbc21b4215007" compoundref="Statistician_8cpp" startline="76" endline="93">cryomesh::utilities::Statistician::getActiveNodesPerCluster</references>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1af743b58d7a21f7c0056252d15c71016d" compoundref="Statistician_8cpp" startline="110" endline="125">cryomesh::utilities::Statistician::getActiveNodesTotal</references>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1ab0d4863ff8c1962e56dfbab4eabfb6cf" compoundref="Statistician_8cpp" startline="53" endline="55">cryomesh::utilities::Statistician::getBundleUUID</references>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1a64ee08e16f1f42fc518ce2d1255f353e" compoundref="Statistician_8cpp" startline="35" endline="37">cryomesh::utilities::Statistician::getClusterCount</references>
+        <references refid="classcryomesh_1_1common_1_1TimeKeeper_1aa0bfaecbd5118af91d63296f158cee09" compoundref="TimeKeeper_8cpp" startline="76" endline="78">cryomesh::common::TimeKeeper::getCycle</references>
+        <references refid="classcryomesh_1_1common_1_1TimeKeeper_1afe7b229532e11119cb2653192615d679" compoundref="TimeKeeper_8cpp" startline="19" endline="24">cryomesh::common::TimeKeeper::getTimeKeeper</references>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1a4a60fac1c7060a891feae84096109315" compoundref="Statistician_8cpp" startline="95" endline="108">cryomesh::utilities::Statistician::getTriggeredNodesTotal</references>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1a734a2d7317a2d1a08dfa64a6f5a7da8c" compoundref="Statistician_8h" startline="80">cryomesh::utilities::Statistician::inputChannelsCount</references>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1a12780e2d450e3013d6a8a306a4b02bd7" compoundref="Statistician_8h" startline="77">cryomesh::utilities::Statistician::inputFibresCount</references>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1a1540b6a7e491f9241f31fbcfd62bdd74" compoundref="Statistician_8h" startline="79">cryomesh::utilities::Statistician::normalFibresCount</references>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1aa13c9110a9a210b7656ec815166f20c2" compoundref="Statistician_8h" startline="81">cryomesh::utilities::Statistician::outputChannelsCount</references>
+        <references refid="classcryomesh_1_1utilities_1_1Statistician_1a90aeaf6f65a5cad0b3936731378ea07a" compoundref="Statistician_8h" startline="78">cryomesh::utilities::Statistician::outputFibresCount</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/SequencerChannels.cpp" line="12"/>
+  </compounddef>
+</doxygen>

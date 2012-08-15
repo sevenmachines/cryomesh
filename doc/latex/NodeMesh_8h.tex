@@ -1,0 +1,37 @@
+\hypertarget{NodeMesh_8h}{\section{/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/structures/\-Node\-Mesh.h \-File \-Reference}
+\label{NodeMesh_8h}\index{/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/structures/\-Node\-Mesh.\-h@{/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/structures/\-Node\-Mesh.\-h}}
+}
+{\ttfamily \#include \char`\"{}components/\-Node.\-h\char`\"{}}\*
+{\ttfamily \#include $<$map$>$}\*
+{\ttfamily \#include $<$boost/shared\-\_\-ptr.\-hpp$>$}\*
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classcryomesh_1_1structures_1_1NodeMesh}{cryomesh\-::structures\-::\-Node\-Mesh}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classcryomesh_1_1structures_1_1Mesh}{\-Mesh} of nodes and their neighbouring nodes and distances. \end{DoxyCompactList}\item 
+struct \hyperlink{structcryomesh_1_1structures_1_1NodeMesh_1_1NeighbourhoodRanges}{cryomesh\-::structures\-::\-Node\-Mesh\-::\-Neighbourhood\-Ranges}
+\begin{DoxyCompactList}\small\item\em \-Struct to capture some statistics data on a nodes neighbourhood. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespacecryomesh}{cryomesh}
+\begin{DoxyCompactList}\small\item\em \hyperlink{Connector_8h}{\-Connector.\-h}. \end{DoxyCompactList}\item 
+namespace \hyperlink{namespacecryomesh_1_1structures}{cryomesh\-::structures}
+\end{DoxyCompactItemize}
+\subsection*{\-Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::map\*
+$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Node}{cryomesh\-::components\-::\-Node} $>$\*
+, std\-::map$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Node}{cryomesh\-::components\-::\-Node} $>$\*
+, double $>$ $>$ \hyperlink{namespacecryomesh_1_1structures_a50c955c70377b1dc7d3fcf1364d5e33e}{cryomesh\-::structures\-::\-Neighbourhood\-Map}
+\begin{DoxyCompactList}\small\item\em \-Typedef to simplify neighbourhood map structure. \end{DoxyCompactList}\item 
+typedef std\-::map\*
+$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Node}{cryomesh\-::components\-::\-Node} $>$\*
+, std\-::map$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Node}{cryomesh\-::components\-::\-Node} $>$\*
+, double $>$ $>$\-::const\-\_\-iterator \hyperlink{namespacecryomesh_1_1structures_a321983538b31d02a5bb7345c72c63769}{cryomesh\-::structures\-::\-Neighbourhood\-Map\-Const\-Iterator}
+\begin{DoxyCompactList}\small\item\em \-Typdef for iterator to neighbourhood map. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,16 +1,16 @@
-.TH "cryomesh::state::ActivityPattern" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::state::ActivityPattern" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 cryomesh::state::ActivityPattern \- 
 .PP
-A simple collection of doubles representing a pattern of activities.  
+A simple collection of doubles representing a pattern of activities\&.  
 
 .SH SYNOPSIS
 .br
 .PP
 .PP
-\fC#include <ActivityPattern.h>\fP
+\fC#include <ActivityPattern\&.h>\fP
 .SS "Public Types"
 
 .in +1c
@@ -30,11 +30,11 @@ A simple collection of doubles representing a pattern of activities.
 .ti -1c
 .RI "virtual std::string \fBtoPlusBooleanString\fP () const "
 .br
-.RI "\fIReturn a string of booleans representing with each element is > 0 or not. \fP"
+.RI "\fIReturn a string of booleans representing with each element is > 0 or not\&. \fP"
 .ti -1c
 .RI "virtual std::list< bool > \fBtoPlusBooleanList\fP () const "
 .br
-.RI "\fIReturn a vector of booleans representing with each element > 0 or not. \fP"
+.RI "\fIReturn a vector of booleans representing with each element > 0 or not\&. \fP"
 .in -1c
 .SS "Protected Member Functions"
 
@@ -45,9 +45,9 @@ A simple collection of doubles representing a pattern of activities.
 .in -1c
 .SH "Detailed Description"
 .PP 
-A simple collection of doubles representing a pattern of activities. 
+A simple collection of doubles representing a pattern of activities\&. 
 .PP
-Definition at line 20 of file ActivityPattern.h.
+Definition at line 20 of file ActivityPattern\&.h\&.
 .SH "Member Enumeration Documentation"
 .PP 
 .SS "enum \fBcryomesh::state::ActivityPattern::ActivityComparison\fP"
@@ -62,41 +62,51 @@ Definition at line 20 of file ActivityPattern.h.
 \fB\fIEqualTo \fP\fP
 
 .PP
-Definition at line 22 of file ActivityPattern.h.
+Definition at line 22 of file ActivityPattern\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "cryomesh::state::ActivityPattern::ActivityPattern ()"
+.SS "\fBcryomesh::state::ActivityPattern::ActivityPattern\fP ()"
 .PP
-Definition at line 19 of file ActivityPattern.cpp.
-.SS "cryomesh::state::ActivityPattern::~ActivityPattern ()\fC [virtual]\fP"
+Definition at line 18 of file ActivityPattern\&.cpp\&.
+.SS "\fBcryomesh::state::ActivityPattern::~ActivityPattern\fP ()\fC [virtual]\fP"
 .PP
-Definition at line 23 of file ActivityPattern.cpp.
+Definition at line 22 of file ActivityPattern\&.cpp\&.
 .SH "Member Function Documentation"
 .PP 
-.SS "std::list< bool > cryomesh::state::ActivityPattern::toBooleanVector (const doublecuttoff, const \fBActivityComparison\fPcompare) const\fC [protected]\fP"
+.SS "std::list< bool > \fBcryomesh::state::ActivityPattern::toBooleanVector\fP (const doublecuttoff, const \fBActivityComparison\fPcompare) const\fC [protected]\fP"
 .PP
-Definition at line 36 of file ActivityPattern.cpp.
-.SS "std::list< bool > cryomesh::state::ActivityPattern::toPlusBooleanList () const\fC [virtual]\fP"
+Definition at line 35 of file ActivityPattern\&.cpp\&.
 .PP
-Return a vector of booleans representing with each element > 0 or not. \fBReturns:\fP
+References EqualTo, GreaterThan, and LessThan\&.
+.PP
+Referenced by toPlusBooleanList()\&.
+.SS "std::list< bool > \fBcryomesh::state::ActivityPattern::toPlusBooleanList\fP () const\fC [virtual]\fP"
+.PP
+Return a vector of booleans representing with each element > 0 or not\&. \fBReturns:\fP
 .RS 4
 std::vector<bool> The vector of booleans 
 .RE
 .PP
 
 .PP
-Definition at line 32 of file ActivityPattern.cpp.
-.SS "std::string cryomesh::state::ActivityPattern::toPlusBooleanString () const\fC [virtual]\fP"
+Definition at line 31 of file ActivityPattern\&.cpp\&.
 .PP
-Return a string of booleans representing with each element is > 0 or not. \fBReturns:\fP
+References GreaterThan, and toBooleanVector()\&.
+.PP
+Referenced by toPlusBooleanString()\&.
+.SS "std::string \fBcryomesh::state::ActivityPattern::toPlusBooleanString\fP () const\fC [virtual]\fP"
+.PP
+Return a string of booleans representing with each element is > 0 or not\&. \fBReturns:\fP
 .RS 4
 std::string The string of booleans 
 .RE
 .PP
 
 .PP
-Definition at line 26 of file ActivityPattern.cpp.
+Definition at line 25 of file ActivityPattern\&.cpp\&.
+.PP
+References toPlusBooleanList()\&.
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for cryomesh from the source code.
+Generated automatically by Doxygen for cryomesh from the source code\&.

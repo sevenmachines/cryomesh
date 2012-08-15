@@ -1,0 +1,200 @@
+\hypertarget{classcryomesh_1_1components_1_1ConnectionMap}{\section{cryomesh\-:\-:components\-:\-:\-Connection\-Map \-Class \-Reference}
+\label{classcryomesh_1_1components_1_1ConnectionMap}\index{cryomesh\-::components\-::\-Connection\-Map@{cryomesh\-::components\-::\-Connection\-Map}}
+}
+
+
+\-Helper class for \hyperlink{classcryomesh_1_1components_1_1ConnectionMap}{\-Connection\-Map} to \-Key\-Mapped\-Collection mapping.  
+
+
+
+
+{\ttfamily \#include $<$\-Connection\-Map.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1components_1_1ConnectionMap_a512061797f1a737c674b6fae284295c7}{\-Connection\-Map} ()
+\begin{DoxyCompactList}\small\item\em \-Default constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classcryomesh_1_1components_1_1ConnectionMap_a7c22a125652d332da2d8ceb194ad925e}{$\sim$\-Connection\-Map} ()
+\begin{DoxyCompactList}\small\item\em \-Default destructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcryomesh_1_1components_1_1ConnectionMap_aadb06c43b0eae37154fd7efb22a08949}{update} ()
+\begin{DoxyCompactList}\small\item\em \-Update all entries in the map. \end{DoxyCompactList}\item 
+boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1state_1_1ActivityPattern}{state\-::\-Activity\-Pattern} $>$ \hyperlink{classcryomesh_1_1components_1_1ConnectionMap_a6de4ccc8a4a85199329c0d2a884a0dba}{get\-Activity\-Pattern} () const 
+\begin{DoxyCompactList}\small\item\em \-Get activity pattern on current cycle. \end{DoxyCompactList}\item 
+boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1state_1_1ActivityPattern}{state\-::\-Activity\-Pattern} $>$ \hyperlink{classcryomesh_1_1components_1_1ConnectionMap_aeb905313475043da7bff0739925b5483}{get\-Activity\-Pattern} (const \hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle} \&cycle) const 
+\begin{DoxyCompactList}\small\item\em \-Get activity pattern on cycle. \end{DoxyCompactList}\item 
+const std\-::map\*
+$<$ boost\-::uuids\-::uuid, \*
+boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection} $>$ $>$ \hyperlink{classcryomesh_1_1components_1_1ConnectionMap_afa08a6bd4894d7ff84db83a7eb15ad37}{get\-All\-Primary\-Input\-Connections} () const 
+\item 
+const std\-::map\*
+$<$ boost\-::uuids\-::uuid, \*
+boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection} $>$ $>$ \hyperlink{classcryomesh_1_1components_1_1ConnectionMap_a9c6868c8f9b977ceb99e799fb6cc98eb}{get\-All\-Primary\-Output\-Connections} () const 
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1components_1_1ConnectionMap_a192eef17246516228fc7665ff541ee53}{operator$<$$<$} (std\-::ostream \&os, const \hyperlink{classcryomesh_1_1components_1_1ConnectionMap}{\-Connection\-Map} \&obj)
+\begin{DoxyCompactList}\small\item\em \-To stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Helper class for \hyperlink{classcryomesh_1_1components_1_1ConnectionMap}{\-Connection\-Map} to \-Key\-Mapped\-Collection mapping. 
+
+\-Definition at line 26 of file \-Connection\-Map.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcryomesh_1_1components_1_1ConnectionMap_a512061797f1a737c674b6fae284295c7}{\index{cryomesh\-::components\-::\-Connection\-Map@{cryomesh\-::components\-::\-Connection\-Map}!\-Connection\-Map@{\-Connection\-Map}}
+\index{\-Connection\-Map@{\-Connection\-Map}!cryomesh::components::ConnectionMap@{cryomesh\-::components\-::\-Connection\-Map}}
+\subsubsection[{\-Connection\-Map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::components\-::\-Connection\-Map\-::\-Connection\-Map} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1components_1_1ConnectionMap_a512061797f1a737c674b6fae284295c7}
+
+
+\-Default constructor. 
+
+
+
+\-Definition at line 31 of file \-Connection\-Map.\-h.
+
+\hypertarget{classcryomesh_1_1components_1_1ConnectionMap_a7c22a125652d332da2d8ceb194ad925e}{\index{cryomesh\-::components\-::\-Connection\-Map@{cryomesh\-::components\-::\-Connection\-Map}!$\sim$\-Connection\-Map@{$\sim$\-Connection\-Map}}
+\index{$\sim$\-Connection\-Map@{$\sim$\-Connection\-Map}!cryomesh::components::ConnectionMap@{cryomesh\-::components\-::\-Connection\-Map}}
+\subsubsection[{$\sim$\-Connection\-Map}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf cryomesh\-::components\-::\-Connection\-Map\-::$\sim$\-Connection\-Map} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1ConnectionMap_a7c22a125652d332da2d8ceb194ad925e}
+
+
+\-Default destructor. 
+
+
+
+\-Definition at line 37 of file \-Connection\-Map.\-h.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1components_1_1ConnectionMap_a6de4ccc8a4a85199329c0d2a884a0dba}{\index{cryomesh\-::components\-::\-Connection\-Map@{cryomesh\-::components\-::\-Connection\-Map}!get\-Activity\-Pattern@{get\-Activity\-Pattern}}
+\index{get\-Activity\-Pattern@{get\-Activity\-Pattern}!cryomesh::components::ConnectionMap@{cryomesh\-::components\-::\-Connection\-Map}}
+\subsubsection[{get\-Activity\-Pattern}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<${\bf state\-::\-Activity\-Pattern}$>$ {\bf cryomesh\-::components\-::\-Connection\-Map\-::get\-Activity\-Pattern} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1components_1_1ConnectionMap_a6de4ccc8a4a85199329c0d2a884a0dba}
+
+
+\-Get activity pattern on current cycle. 
+
+@ param const \-Cycle \& cycle \-Cycle to get activity on 
+
+\-Definition at line 65 of file \-Connection\-Map.\-h.
+
+
+
+\-References cryomesh\-::common\-::\-Time\-Keeper\-::get\-Time\-Keeper().
+
+\hypertarget{classcryomesh_1_1components_1_1ConnectionMap_aeb905313475043da7bff0739925b5483}{\index{cryomesh\-::components\-::\-Connection\-Map@{cryomesh\-::components\-::\-Connection\-Map}!get\-Activity\-Pattern@{get\-Activity\-Pattern}}
+\index{get\-Activity\-Pattern@{get\-Activity\-Pattern}!cryomesh::components::ConnectionMap@{cryomesh\-::components\-::\-Connection\-Map}}
+\subsubsection[{get\-Activity\-Pattern}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<${\bf state\-::\-Activity\-Pattern}$>$ {\bf cryomesh\-::components\-::\-Connection\-Map\-::get\-Activity\-Pattern} (
+\begin{DoxyParamCaption}
+\item[{const {\bf common\-::\-Cycle} \&}]{cycle}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1components_1_1ConnectionMap_aeb905313475043da7bff0739925b5483}
+
+
+\-Get activity pattern on cycle. 
+
+@ param const \-Cycle \& cycle \-Cycle to get activity on 
+
+\-Definition at line 75 of file \-Connection\-Map.\-h.
+
+\hypertarget{classcryomesh_1_1components_1_1ConnectionMap_afa08a6bd4894d7ff84db83a7eb15ad37}{\index{cryomesh\-::components\-::\-Connection\-Map@{cryomesh\-::components\-::\-Connection\-Map}!get\-All\-Primary\-Input\-Connections@{get\-All\-Primary\-Input\-Connections}}
+\index{get\-All\-Primary\-Input\-Connections@{get\-All\-Primary\-Input\-Connections}!cryomesh::components::ConnectionMap@{cryomesh\-::components\-::\-Connection\-Map}}
+\subsubsection[{get\-All\-Primary\-Input\-Connections}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::map$<$boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<${\bf \-Connection}$>$ $>$ {\bf cryomesh\-::components\-::\-Connection\-Map\-::get\-All\-Primary\-Input\-Connections} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1components_1_1ConnectionMap_afa08a6bd4894d7ff84db83a7eb15ad37}
+
+
+\-Definition at line 97 of file \-Connection\-Map.\-h.
+
+
+
+\-Referenced by cryomesh\-::manipulators\-::\-Cluster\-Architect\-::get\-Random\-Connections().
+
+\hypertarget{classcryomesh_1_1components_1_1ConnectionMap_a9c6868c8f9b977ceb99e799fb6cc98eb}{\index{cryomesh\-::components\-::\-Connection\-Map@{cryomesh\-::components\-::\-Connection\-Map}!get\-All\-Primary\-Output\-Connections@{get\-All\-Primary\-Output\-Connections}}
+\index{get\-All\-Primary\-Output\-Connections@{get\-All\-Primary\-Output\-Connections}!cryomesh::components::ConnectionMap@{cryomesh\-::components\-::\-Connection\-Map}}
+\subsubsection[{get\-All\-Primary\-Output\-Connections}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::map$<$boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<${\bf \-Connection}$>$ $>$ {\bf cryomesh\-::components\-::\-Connection\-Map\-::get\-All\-Primary\-Output\-Connections} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1components_1_1ConnectionMap_a9c6868c8f9b977ceb99e799fb6cc98eb}
+
+
+\-Definition at line 119 of file \-Connection\-Map.\-h.
+
+
+
+\-Referenced by cryomesh\-::manipulators\-::\-Cluster\-Architect\-::get\-Random\-Connections().
+
+\hypertarget{classcryomesh_1_1components_1_1ConnectionMap_aadb06c43b0eae37154fd7efb22a08949}{\index{cryomesh\-::components\-::\-Connection\-Map@{cryomesh\-::components\-::\-Connection\-Map}!update@{update}}
+\index{update@{update}!cryomesh::components::ConnectionMap@{cryomesh\-::components\-::\-Connection\-Map}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf cryomesh\-::components\-::\-Connection\-Map\-::update} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1ConnectionMap_aadb06c43b0eae37154fd7efb22a08949}
+
+
+\-Update all entries in the map. 
+
+
+
+\-Definition at line 43 of file \-Connection\-Map.\-h.
+
+
+
+\-Referenced by cryomesh\-::structures\-::\-Cluster\-::update(), and cryomesh\-::structures\-::\-Fibre\-::update().
+
+
+
+\subsection{\-Friends \-And \-Related \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1components_1_1ConnectionMap_a192eef17246516228fc7665ff541ee53}{\index{cryomesh\-::components\-::\-Connection\-Map@{cryomesh\-::components\-::\-Connection\-Map}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cryomesh::components::ConnectionMap@{cryomesh\-::components\-::\-Connection\-Map}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const {\bf \-Connection\-Map} \&}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{classcryomesh_1_1components_1_1ConnectionMap_a192eef17246516228fc7665ff541ee53}
+
+
+\-To stream operator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::ostream} & \& os \-The output stream \\
+\hline
+{\em const} & \hyperlink{classcryomesh_1_1components_1_1ConnectionMap}{\-Connection\-Map} \& obj \-The object to stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::ostream \& \-The output stream 
+\end{DoxyReturn}
+
+
+\-Definition at line 152 of file \-Connection\-Map.\-h.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/components/\hyperlink{ConnectionMap_8h}{\-Connection\-Map.\-h}\end{DoxyCompactItemize}

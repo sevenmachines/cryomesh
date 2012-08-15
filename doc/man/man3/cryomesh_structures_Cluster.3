@@ -1,23 +1,26 @@
-.TH "cryomesh::structures::Cluster" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::structures::Cluster" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 cryomesh::structures::Cluster \- 
 .PP
-A \fBCluster\fP is a collection of self-contained nodes and connections along with an associated \fBMesh\fP, that can be connected up to one another.  
+A \fBCluster\fP is a collection of self-contained nodes and connections along with an associated \fBMesh\fP, that can be connected up to one another\&.  
 
 .SH SYNOPSIS
 .br
 .PP
 .PP
-\fC#include <Cluster.h>\fP
+\fC#include <Cluster\&.h>\fP
 .SS "Public Types"
 
 .in +1c
 .ti -1c
+.RI "enum \fBEnergyFractionMethod\fP { \fBENERGY_FRACTION_BY_CLUSTER_COUNT\fP, \fBENERGY_FRACTION_BY_NODE_COUNT\fP, \fBENERGY_FRACTION_NULL\fP }"
+.br
+.ti -1c
 .RI "enum \fBValueTypeSpecifier\fP { \fBAsIncrement\fP, \fBAsDecrement\fP, \fBAsMinumum\fP, \fBAsAbsolute\fP }"
 .br
-.RI "\fIEnum to force value type of a parameter. \fP"
+.RI "\fIEnum to force value type of a parameter\&. \fP"
 .in -1c
 .SS "Public Member Functions"
 
@@ -25,72 +28,99 @@ A \fBCluster\fP is a collection of self-contained nodes and connections along wi
 .ti -1c
 .RI "\fBCluster\fP ()"
 .br
-.RI "\fIDefault constructor. \fP"
+.RI "\fIDefault constructor\&. \fP"
 .ti -1c
 .RI "\fBCluster\fP (int nodeCount, int connectivity)"
 .br
-.RI "\fIConstructor with number of nodes and connectivity. \fP"
+.RI "\fIConstructor with number of nodes and connectivity\&. \fP"
 .ti -1c
 .RI "\fBCluster\fP (int nodeCount, int connectivity, const spacial::Point bounding_box)"
 .br
 .ti -1c
 .RI "virtual \fB~Cluster\fP ()"
 .br
-.RI "\fIDestructor. \fP"
+.RI "\fIDestructor\&. \fP"
 .ti -1c
 .RI "void \fBupdate\fP ()"
 .br
-.RI "\fIUpdate all elements. \fP"
+.RI "\fIUpdate all elements\&. \fP"
 .ti -1c
 .RI "void \fBupdateEnergy\fP (double total_energy)"
+.br
+.ti -1c
+.RI "void \fBsetEnergyFractionMethod\fP (\fBEnergyFractionMethod\fP method, double max_energy_fraction)"
+.br
+.ti -1c
+.RI "\fBEnergyFractionMethod\fP \fBgetEnergyFractionMethod\fP () const "
 .br
 .ti -1c
 .RI "void \fBwarpNodes\fP ()"
 .br
 .ti -1c
-.RI "virtual void \fBcreateNodes\fP (const int number=1)"
+.RI "void \fBrunAnalyser\fP ()"
 .br
-.RI "\fICreate a number of nodes in the cluster. \fP"
 .ti -1c
 .RI "virtual void \fBcreateConnectivity\fP (const int connectivity=1)"
 .br
-.RI "\fICreate connections between all nodes. \fP"
+.RI "\fICreate connections between all nodes\&. \fP"
 .ti -1c
-.RI "const std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Node\fP > > & \fBgetNodes\fP () const "
+.RI "const std::map
 .br
-.RI "\fIGet all nodes. \fP"
+< boost::uuids::uuid, 
+.br
+boost::shared_ptr
+.br
+< \fBcomponents::Node\fP > > & \fBgetNodes\fP () const "
+.br
+.RI "\fIGet all nodes\&. \fP"
 .ti -1c
-.RI "const std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Connection\fP > > & \fBgetConnections\fP () const "
+.RI "const std::map
 .br
-.RI "\fIGet all connections. \fP"
+< boost::uuids::uuid, 
+.br
+boost::shared_ptr
+.br
+< \fBcomponents::Connection\fP > > & \fBgetConnections\fP () const "
+.br
+.RI "\fIGet all connections\&. \fP"
 .ti -1c
-.RI "const \fBcommon::Connector\fP< \fBCluster\fP, \fBFibre\fP > & \fBgetConnector\fP () const "
+.RI "const \fBcommon::Connector\fP
 .br
-.RI "\fIGet the connector for this \fBCluster\fP. \fP"
+< \fBCluster\fP, \fBFibre\fP > & \fBgetConnector\fP () const "
+.br
+.RI "\fIGet the connector for this \fBCluster\fP\&. \fP"
 .ti -1c
-.RI "\fBcommon::Connector\fP< \fBCluster\fP, \fBFibre\fP > & \fBgetMutableConnector\fP ()"
+.RI "\fBcommon::Connector\fP< \fBCluster\fP, 
 .br
-.RI "\fIGet the mutable connector for this \fBCluster\fP. \fP"
+\fBFibre\fP > & \fBgetMutableConnector\fP ()"
+.br
+.RI "\fIGet the mutable connector for this \fBCluster\fP\&. \fP"
 .ti -1c
 .RI "const \fBcomponents::NodeMap\fP & \fBgetNodeMap\fP () const "
 .br
-.RI "\fIGet the NodeMap for this \fBCluster\fP. \fP"
+.RI "\fIGet the NodeMap for this \fBCluster\fP\&. \fP"
+.ti -1c
+.RI "const \fBcomponents::ConnectionMap\fP & \fBgetConnectionMap\fP () const "
+.br
 .ti -1c
 .RI "\fBcomponents::NodeMap\fP & \fBgetMutableNodeMap\fP ()"
 .br
-.RI "\fIGet the mutable NodeMap for this \fBCluster\fP. \fP"
+.RI "\fIGet the mutable NodeMap for this \fBCluster\fP\&. \fP"
+.ti -1c
+.RI "\fBcomponents::ConnectionMap\fP & \fBgetMutableConnectionMap\fP ()"
+.br
 .ti -1c
 .RI "int \fBgetTriggeredNodeCount\fP (const int indicator=0) const "
 .br
-.RI "\fIGet the total fired nodes in this cluster currently. \fP"
+.RI "\fIGet the total fired nodes in this cluster currently\&. \fP"
 .ti -1c
 .RI "int \fBgetActiveNodeCount\fP (const int indicator=0) const "
 .br
-.RI "\fIGet the total active nodes in this cluster currently. \fP"
+.RI "\fIGet the total active nodes in this cluster currently\&. \fP"
 .ti -1c
 .RI "int \fBgetLiveNodeCount\fP () const "
 .br
-.RI "\fIGet the total live nodes in this cluster currently, ie those with at least one impulse. \fP"
+.RI "\fIGet the total live nodes in this cluster currently, ie those with at least one impulse\&. \fP"
 .ti -1c
 .RI "double \fBgetEnergy\fP () const "
 .br
@@ -98,7 +128,23 @@ A \fBCluster\fP is a collection of self-contained nodes and connections along wi
 .RI "void \fBsetEnergy\fP (double d)"
 .br
 .ti -1c
+.RI "double \fBgetMaxEnergyFraction\fP () const "
+.br
+.ti -1c
+.RI "const boost::shared_ptr
+.br
+< \fBmanipulators::ClusterArchitect\fP > \fBgetClusterArchitect\fP () const "
+.br
+.ti -1c
+.RI "boost::shared_ptr
+.br
+< \fBmanipulators::ClusterArchitect\fP > \fBgetMutableClusterArchitect\fP ()"
+.br
+.ti -1c
 .RI "const boost::shared_ptr< \fBNodeMesh\fP > \fBgetMesh\fP () const "
+.br
+.ti -1c
+.RI "boost::shared_ptr< \fBNodeMesh\fP > \fBgetMutableMesh\fP ()"
 .br
 .ti -1c
 .RI "virtual void \fBenableDebug\fP (bool b)"
@@ -108,20 +154,16 @@ A \fBCluster\fP is a collection of self-contained nodes and connections along wi
 
 .in +1c
 .ti -1c
-.RI "static const double \fBSELF_CONNECTED_NODES_FRACTION\fP = 0.1"
+.RI "static const double \fBSELF_CONNECTED_NODES_FRACTION\fP = 0\&.1"
 .br
 .in -1c
 .SS "Protected Member Functions"
 
 .in +1c
 .ti -1c
-.RI "virtual void \fBupdateConnectivity\fP (const int connectivity, \fBValueTypeSpecifier\fP asValue=AsIncrement)"
+.RI "virtual void \fBupdateConnectivity\fP (const int connectivity, \fBValueTypeSpecifier\fP asValue=\fBAsIncrement\fP)"
 .br
-.RI "\fIUpdate connectivity so that each node has at least param number of connections. \fP"
-.ti -1c
-.RI "virtual void \fBcreateConnection\fP (boost::shared_ptr< \fBcomponents::Node\fP > nodeStart, boost::shared_ptr< \fBcomponents::Node\fP > nodeEnd, int connectivity=1)"
-.br
-.RI "\fICreate connection between an input node and output node. \fP"
+.RI "\fIUpdate connectivity so that each node has at least param number of connections\&. \fP"
 .in -1c
 .SS "Private Attributes"
 
@@ -141,6 +183,17 @@ A \fBCluster\fP is a collection of self-contained nodes and connections along wi
 .ti -1c
 .RI "\fBcommon::Connector\fP< \fBCluster\fP, \fBFibre\fP > \fBconnector\fP"
 .br
+.ti -1c
+.RI "boost::shared_ptr
+.br
+< \fBmanipulators::ClusterArchitect\fP > \fBclusterArchitect\fP"
+.br
+.ti -1c
+.RI "\fBEnergyFractionMethod\fP \fBenergyFractionMethod\fP"
+.br
+.ti -1c
+.RI "double \fBmaxEnergyFraction\fP"
+.br
 .in -1c
 .SS "Friends"
 
@@ -148,18 +201,31 @@ A \fBCluster\fP is a collection of self-contained nodes and connections along wi
 .ti -1c
 .RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBCluster\fP &obj)"
 .br
-.RI "\fITo stream operator. \fP"
+.RI "\fITo stream operator\&. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
-A \fBCluster\fP is a collection of self-contained nodes and connections along with an associated \fBMesh\fP, that can be connected up to one another. 
+A \fBCluster\fP is a collection of self-contained nodes and connections along with an associated \fBMesh\fP, that can be connected up to one another\&. 
 .PP
-Definition at line 37 of file Cluster.h.
+Definition at line 41 of file Cluster\&.h\&.
 .SH "Member Enumeration Documentation"
 .PP 
+.SS "enum \fBcryomesh::structures::Cluster::EnergyFractionMethod\fP"
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIENERGY_FRACTION_BY_CLUSTER_COUNT \fP\fP
+.TP
+\fB\fIENERGY_FRACTION_BY_NODE_COUNT \fP\fP
+.TP
+\fB\fIENERGY_FRACTION_NULL \fP\fP
+
+.PP
+Definition at line 45 of file Cluster\&.h\&.
 .SS "enum \fBcryomesh::structures::Cluster::ValueTypeSpecifier\fP"
 .PP
-Enum to force value type of a parameter. 
+Enum to force value type of a parameter\&. 
 .PP
 \fBEnumerator: \fP
 .in +1c
@@ -173,19 +239,17 @@ Enum to force value type of a parameter.
 \fB\fIAsAbsolute \fP\fP
 
 .PP
-Definition at line 44 of file Cluster.h.
+Definition at line 53 of file Cluster\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "cryomesh::structures::Cluster::Cluster ()"
+.SS "\fBcryomesh::structures::Cluster::Cluster\fP ()"
 .PP
-Default constructor. 
+Default constructor\&. 
 .PP
-Definition at line 22 of file Cluster.cpp.
+Definition at line 22 of file Cluster\&.cpp\&.
+.SS "\fBcryomesh::structures::Cluster::Cluster\fP (intnodeCount, intconnectivity)"
 .PP
-References mesh.
-.SS "cryomesh::structures::Cluster::Cluster (intnodeCount, intconnectivity)"
-.PP
-Constructor with number of nodes and connectivity. \fBParameters:\fP
+Constructor with number of nodes and connectivity\&. \fBParameters:\fP
 .RS 4
 \fIint\fP nodeCount Number of nodes to make 
 .br
@@ -194,75 +258,41 @@ Constructor with number of nodes and connectivity. \fBParameters:\fP
 .PP
 
 .PP
-Definition at line 34 of file Cluster.cpp.
+Definition at line 35 of file Cluster\&.cpp\&.
 .PP
-References createConnectivity(), createNodes(), and mesh.
-.SS "cryomesh::structures::Cluster::Cluster (intnodeCount, intconnectivity, const spacial::Pointbounding_box)"
+References clusterArchitect\&.
+.SS "\fBcryomesh::structures::Cluster::Cluster\fP (intnodeCount, intconnectivity, const spacial::Pointbounding_box)"
 .PP
-Definition at line 27 of file Cluster.cpp.
+Definition at line 28 of file Cluster\&.cpp\&.
 .PP
-References createConnectivity(), createNodes(), and mesh.
-.SS "cryomesh::structures::Cluster::~Cluster ()\fC [virtual]\fP"
+References clusterArchitect\&.
+.SS "\fBcryomesh::structures::Cluster::~Cluster\fP ()\fC [virtual]\fP"
 .PP
-Destructor. 
+Destructor\&. 
 .PP
-Definition at line 41 of file Cluster.cpp.
+Definition at line 42 of file Cluster\&.cpp\&.
 .SH "Member Function Documentation"
 .PP 
-.SS "void cryomesh::structures::Cluster::createConnection (boost::shared_ptr< \fBcomponents::Node\fP >nodeStart, boost::shared_ptr< \fBcomponents::Node\fP >nodeEnd, intconnectivity = \fC1\fP)\fC [protected, virtual]\fP"
+.SS "void \fBcryomesh::structures::Cluster::createConnectivity\fP (const intconnectivity = \fC1\fP)\fC [virtual]\fP"
 .PP
-Create connection between an input node and output node. \fBParameters:\fP
-.RS 4
-\fIboost::shared_ptr<Node>\fP nodeStart Input node to connect 
-.br
-\fIboost::shared_ptr<Node>\fP nodeEnd Output node to connect 
-.br
-\fIint\fP connecticity Number of connections to create between start and end nodes 
-.RE
-.PP
-
-.PP
-Definition at line 181 of file Cluster.cpp.
-.PP
-References connections.
-.PP
-Referenced by updateConnectivity().
-.SS "void cryomesh::structures::Cluster::createConnectivity (const intconnectivity = \fC1\fP)\fC [virtual]\fP"
-.PP
-Create connections between all nodes. \fBParameters:\fP
+Create connections between all nodes\&. \fBParameters:\fP
 .RS 4
 \fIint\fP connectivity The number of connections between each node 
 .RE
 .PP
 
 .PP
-Definition at line 71 of file Cluster.cpp.
+Definition at line 89 of file Cluster\&.cpp\&.
 .PP
-References AsIncrement, and updateConnectivity().
+References AsIncrement, and updateConnectivity()\&.
+.SS "void \fBcryomesh::structures::Cluster::enableDebug\fP (boolb)\fC [virtual]\fP"
 .PP
-Referenced by Cluster().
-.SS "void cryomesh::structures::Cluster::createNodes (const intnumber = \fC1\fP)\fC [virtual]\fP"
+Definition at line 306 of file Cluster\&.cpp\&.
 .PP
-Create a number of nodes in the cluster. \fBParameters:\fP
-.RS 4
-\fIint\fP number Number of nodes to create 
-.RE
+References connections, and nodes\&.
+.SS "int \fBcryomesh::structures::Cluster::getActiveNodeCount\fP (const intindicator = \fC0\fP) const"
 .PP
-
-.PP
-Definition at line 64 of file Cluster.cpp.
-.PP
-References cryomesh::components::Node::getRandom(), and nodes.
-.PP
-Referenced by Cluster().
-.SS "void cryomesh::structures::Cluster::enableDebug (boolb)\fC [virtual]\fP"
-.PP
-Definition at line 300 of file Cluster.cpp.
-.PP
-References connections, and nodes.
-.SS "int cryomesh::structures::Cluster::getActiveNodeCount (const intindicator = \fC0\fP) const"
-.PP
-Get the total active nodes in this cluster currently. \fBParameters:\fP
+Get the total active nodes in this cluster currently\&. \fBParameters:\fP
 .RS 4
 \fIint\fP Set >0 for only positive active nodes, <0 for negative, 0 for all (default)
 .RE
@@ -274,112 +304,157 @@ int The total count of currently active nodes
 .PP
 
 .PP
-Definition at line 257 of file Cluster.cpp.
+Definition at line 263 of file Cluster\&.cpp\&.
 .PP
-References getNodes().
-.SS "const std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Connection\fP > > & cryomesh::structures::Cluster::getConnections () const"
+References getNodes()\&.
+.SS "const boost::shared_ptr< \fBmanipulators::ClusterArchitect\fP > \fBcryomesh::structures::Cluster::getClusterArchitect\fP () const"
 .PP
-Get all connections. \fBReturns:\fP
+Definition at line 72 of file Cluster\&.cpp\&.
+.PP
+References clusterArchitect\&.
+.SS "const \fBcomponents::ConnectionMap\fP & \fBcryomesh::structures::Cluster::getConnectionMap\fP () const"
+.PP
+Definition at line 222 of file Cluster\&.cpp\&.
+.PP
+References connections\&.
+.PP
+Referenced by cryomesh::manipulators::ClusterAnalyserBasic::analyseCluster(), and cryomesh::manipulators::ClusterArchitect::getRandomConnections()\&.
+.SS "const std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Connection\fP > > & \fBcryomesh::structures::Cluster::getConnections\fP () const"
+.PP
+Get all connections\&. \fBReturns:\fP
 .RS 4
 std::map<boost::uuids::uuid, boost::shared_ptr< components::Connection > > Return all Connections 
 .RE
 .PP
 
 .PP
-Definition at line 203 of file Cluster.cpp.
+Definition at line 204 of file Cluster\&.cpp\&.
 .PP
-References connections.
+References connections\&.
 .PP
-Referenced by cryomesh::structures::operator<<().
-.SS "const \fBcommon::Connector\fP< \fBCluster\fP, \fBFibre\fP > & cryomesh::structures::Cluster::getConnector () const"
+Referenced by cryomesh::structures::operator<<()\&.
+.SS "const \fBcommon::Connector\fP< \fBCluster\fP, \fBFibre\fP > & \fBcryomesh::structures::Cluster::getConnector\fP () const"
 .PP
-Get the connector for this \fBCluster\fP. \fBReturns:\fP
+Get the connector for this \fBCluster\fP\&. \fBReturns:\fP
 .RS 4
 common::Connector<Cluster, Fibre> The connector for this \fBCluster\fP 
 .RE
 .PP
 
 .PP
-Definition at line 207 of file Cluster.cpp.
+Definition at line 208 of file Cluster\&.cpp\&.
 .PP
-References connector.
-.SS "double cryomesh::structures::Cluster::getEnergy () const"
+References connector\&.
+.SS "double \fBcryomesh::structures::Cluster::getEnergy\fP () const"
 .PP
-Definition at line 53 of file Cluster.cpp.
+Definition at line 54 of file Cluster\&.cpp\&.
 .PP
-References energy.
-.SS "int cryomesh::structures::Cluster::getLiveNodeCount () const"
+References energy\&.
 .PP
-Get the total live nodes in this cluster currently, ie those with at least one impulse. \fBReturns:\fP
+Referenced by cryomesh::manipulators::ClusterAnalyserBasic::analyseCluster(), and cryomesh::structures::NodeMesh::warpNodes()\&.
+.SS "\fBCluster::EnergyFractionMethod\fP \fBcryomesh::structures::Cluster::getEnergyFractionMethod\fP () const"
+.PP
+Definition at line 68 of file Cluster\&.cpp\&.
+.PP
+References energyFractionMethod\&.
+.SS "int \fBcryomesh::structures::Cluster::getLiveNodeCount\fP () const"
+.PP
+Get the total live nodes in this cluster currently, ie those with at least one impulse\&. \fBReturns:\fP
 .RS 4
 int The total count of currently live nodes 
 .RE
 .PP
 
 .PP
-Definition at line 306 of file Cluster.cpp.
+Definition at line 312 of file Cluster\&.cpp\&.
 .PP
-References getNodes().
-.SS "const boost::shared_ptr<\fBNodeMesh\fP> cryomesh::structures::Cluster::getMesh () const\fC [inline]\fP"
+References getNodes()\&.
+.SS "double \fBcryomesh::structures::Cluster::getMaxEnergyFraction\fP () const"
 .PP
-Definition at line 175 of file Cluster.h.
+Definition at line 60 of file Cluster\&.cpp\&.
 .PP
-References mesh.
-.SS "\fBcommon::Connector\fP< \fBCluster\fP, \fBFibre\fP > & cryomesh::structures::Cluster::getMutableConnector ()"
+References maxEnergyFraction\&.
 .PP
-Get the mutable connector for this \fBCluster\fP. \fBReturns:\fP
+Referenced by cryomesh::manipulators::ClusterAnalyserBasic::analyseCluster()\&.
+.SS "const boost::shared_ptr<\fBNodeMesh\fP> \fBcryomesh::structures::Cluster::getMesh\fP () const\fC [inline]\fP"
+.PP
+Definition at line 184 of file Cluster\&.h\&.
+.PP
+References mesh\&.
+.SS "boost::shared_ptr< \fBmanipulators::ClusterArchitect\fP > \fBcryomesh::structures::Cluster::getMutableClusterArchitect\fP ()"
+.PP
+Definition at line 76 of file Cluster\&.cpp\&.
+.PP
+References clusterArchitect\&.
+.SS "\fBcomponents::ConnectionMap\fP & \fBcryomesh::structures::Cluster::getMutableConnectionMap\fP ()"
+.PP
+Definition at line 225 of file Cluster\&.cpp\&.
+.PP
+References connections\&.
+.PP
+Referenced by cryomesh::manipulators::ClusterArchitect::createConnection(), cryomesh::manipulators::ClusterArchitect::createRandomConnections(), cryomesh::manipulators::ClusterArchitect::deleteConnection(), cryomesh::manipulators::ClusterArchitect::destroyRandomConnections(), cryomesh::manipulators::ClusterArchitect::destroyRandomNodes(), and cryomesh::manipulators::ClusterArchitect::getRandomConnections()\&.
+.SS "\fBcommon::Connector\fP< \fBCluster\fP, \fBFibre\fP > & \fBcryomesh::structures::Cluster::getMutableConnector\fP ()"
+.PP
+Get the mutable connector for this \fBCluster\fP\&. \fBReturns:\fP
 .RS 4
 common::Connector<Cluster, Fibre> The mutable onnector for this \fBCluster\fP 
 .RE
 .PP
 
 .PP
-Definition at line 211 of file Cluster.cpp.
+Definition at line 212 of file Cluster\&.cpp\&.
 .PP
-References connector.
-.SS "\fBcomponents::NodeMap\fP & cryomesh::structures::Cluster::getMutableNodeMap ()"
+References connector\&.
+.SS "boost::shared_ptr<\fBNodeMesh\fP> \fBcryomesh::structures::Cluster::getMutableMesh\fP ()\fC [inline]\fP"
 .PP
-Get the mutable NodeMap for this \fBCluster\fP. \fBReturns:\fP
+Definition at line 187 of file Cluster\&.h\&.
+.PP
+References mesh\&.
+.SS "\fBcomponents::NodeMap\fP & \fBcryomesh::structures::Cluster::getMutableNodeMap\fP ()"
+.PP
+Get the mutable NodeMap for this \fBCluster\fP\&. \fBReturns:\fP
 .RS 4
 \fBcomponents::NodeMap\fP The mutable NodeMap for this \fBCluster\fP 
 .RE
 .PP
 
 .PP
-Definition at line 218 of file Cluster.cpp.
+Definition at line 219 of file Cluster\&.cpp\&.
 .PP
-References nodes.
-.SS "const \fBcomponents::NodeMap\fP & cryomesh::structures::Cluster::getNodeMap () const"
+References nodes\&.
 .PP
-Get the NodeMap for this \fBCluster\fP. \fBReturns:\fP
+Referenced by cryomesh::manipulators::ClusterArchitect::createRandomConnections(), cryomesh::manipulators::ClusterArchitect::createRandomNodes(), cryomesh::manipulators::ClusterArchitect::destroyRandomNodes(), and cryomesh::manipulators::ClusterArchitect::getRandomNodes()\&.
+.SS "const \fBcomponents::NodeMap\fP & \fBcryomesh::structures::Cluster::getNodeMap\fP () const"
+.PP
+Get the NodeMap for this \fBCluster\fP\&. \fBReturns:\fP
 .RS 4
 \fBcomponents::NodeMap\fP The NodeMap for this \fBCluster\fP 
 .RE
 .PP
 
 .PP
-Definition at line 215 of file Cluster.cpp.
+Definition at line 216 of file Cluster\&.cpp\&.
 .PP
-References nodes.
+References nodes\&.
 .PP
-Referenced by cryomesh::structures::operator<<().
-.SS "const std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Node\fP > > & cryomesh::structures::Cluster::getNodes () const"
+Referenced by cryomesh::manipulators::ClusterAnalyserBasic::analyseCluster(), cryomesh::manipulators::ClusterArchitect::createRandomNodes(), cryomesh::manipulators::ClusterArchitect::getRandomNodes(), and cryomesh::structures::operator<<()\&.
+.SS "const std::map< boost::uuids::uuid, boost::shared_ptr< \fBcomponents::Node\fP > > & \fBcryomesh::structures::Cluster::getNodes\fP () const"
 .PP
-Get all nodes. \fBReturns:\fP
+Get all nodes\&. \fBReturns:\fP
 .RS 4
 std::map<boost::uuids::uuid, boost::shared_ptr< components::Node > > Return all nodes 
 .RE
 .PP
 
 .PP
-Definition at line 199 of file Cluster.cpp.
+Definition at line 200 of file Cluster\&.cpp\&.
 .PP
-References nodes.
+References nodes\&.
 .PP
-Referenced by getActiveNodeCount(), getLiveNodeCount(), getTriggeredNodeCount(), cryomesh::structures::operator<<(), and cryomesh::structures::Mesh::update().
-.SS "int cryomesh::structures::Cluster::getTriggeredNodeCount (const intindicator = \fC0\fP) const"
+Referenced by getActiveNodeCount(), getLiveNodeCount(), getTriggeredNodeCount(), cryomesh::structures::NodeMesh::NodeMesh(), cryomesh::structures::operator<<(), cryomesh::structures::NodeMesh::regenerateNeighbourhoods(), and cryomesh::structures::Mesh::update()\&.
+.SS "int \fBcryomesh::structures::Cluster::getTriggeredNodeCount\fP (const intindicator = \fC0\fP) const"
 .PP
-Get the total fired nodes in this cluster currently. \fBParameters:\fP
+Get the total fired nodes in this cluster currently\&. \fBParameters:\fP
 .RS 4
 \fIint\fP Set >0 for only positive triggered nodes, <0 for negative, 0 for all (default)
 .RE
@@ -391,46 +466,56 @@ int The total count of currently triggered nodes
 .PP
 
 .PP
-Definition at line 222 of file Cluster.cpp.
+Definition at line 228 of file Cluster\&.cpp\&.
 .PP
-References getNodes(), cryomesh::components::Node::Negative, cryomesh::components::Node::None, and cryomesh::components::Node::Positive.
-.SS "void cryomesh::structures::Cluster::setEnergy (doubled)"
+References getNodes(), cryomesh::components::Node::Negative, cryomesh::components::Node::None, and cryomesh::components::Node::Positive\&.
+.SS "void \fBcryomesh::structures::Cluster::runAnalyser\fP ()"
 .PP
-Definition at line 56 of file Cluster.cpp.
+Definition at line 85 of file Cluster\&.cpp\&.
 .PP
-References energy.
-.SS "void cryomesh::structures::Cluster::update ()"
+References clusterArchitect\&.
+.SS "void \fBcryomesh::structures::Cluster::setEnergy\fP (doubled)"
 .PP
-Update all elements. 
+Definition at line 57 of file Cluster\&.cpp\&.
 .PP
-Definition at line 44 of file Cluster.cpp.
+References energy\&.
+.SS "void \fBcryomesh::structures::Cluster::setEnergyFractionMethod\fP (\fBEnergyFractionMethod\fPmethod, doublemax_energy_fraction)"
 .PP
-References connections, mesh, nodes, cryomesh::components::ConnectionMap::update(), and cryomesh::components::NodeMap::update().
-.SS "void cryomesh::structures::Cluster::updateConnectivity (const intconnectivity, \fBValueTypeSpecifier\fPasValue = \fCAsIncrement\fP)\fC [protected, virtual]\fP"
+Definition at line 63 of file Cluster\&.cpp\&.
 .PP
-Update connectivity so that each node has at least param number of connections. \fBParameters:\fP
+References energyFractionMethod, and maxEnergyFraction\&.
+.SS "void \fBcryomesh::structures::Cluster::update\fP ()"
+.PP
+Update all elements\&. 
+.PP
+Definition at line 45 of file Cluster\&.cpp\&.
+.PP
+References connections, mesh, nodes, cryomesh::components::NodeMap::update(), and cryomesh::components::ConnectionMap::update()\&.
+.SS "void \fBcryomesh::structures::Cluster::updateConnectivity\fP (const intconnectivity, \fBValueTypeSpecifier\fPasValue = \fC\fBAsIncrement\fP\fP)\fC [protected, virtual]\fP"
+.PP
+Update connectivity so that each node has at least param number of connections\&. \fBParameters:\fP
 .RS 4
 \fIint\fP connectivity The least connectivity to ensure 
 .RE
 .PP
 
 .PP
-Definition at line 75 of file Cluster.cpp.
+Definition at line 93 of file Cluster\&.cpp\&.
 .PP
-References AsIncrement, AsMinumum, createConnection(), nodes, and SELF_CONNECTED_NODES_FRACTION.
+References AsIncrement, AsMinumum, clusterArchitect, nodes, and SELF_CONNECTED_NODES_FRACTION\&.
 .PP
-Referenced by createConnectivity().
-.SS "void cryomesh::structures::Cluster::updateEnergy (doubletotal_energy)"
-.SS "void cryomesh::structures::Cluster::warpNodes ()"
+Referenced by createConnectivity()\&.
+.SS "void \fBcryomesh::structures::Cluster::updateEnergy\fP (doubletotal_energy)"
+.SS "void \fBcryomesh::structures::Cluster::warpNodes\fP ()"
 .PP
-Definition at line 60 of file Cluster.cpp.
+Definition at line 80 of file Cluster\&.cpp\&.
 .PP
-References mesh.
+References mesh\&.
 .SH "Friends And Related Function Documentation"
 .PP 
 .SS "std::ostream& operator<< (std::ostream &os, const \fBCluster\fP &obj)\fC [friend]\fP"
 .PP
-To stream operator. \fBParameters:\fP
+To stream operator\&. \fBParameters:\fP
 .RS 4
 \fIstd::ostream\fP & os The output stream 
 .br
@@ -444,40 +529,55 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 325 of file Cluster.cpp.
+Definition at line 331 of file Cluster\&.cpp\&.
 .SH "Member Data Documentation"
 .PP 
+.SS "boost::shared_ptr<\fBmanipulators::ClusterArchitect\fP> \fBcryomesh::structures::Cluster::clusterArchitect\fP\fC [private]\fP"
+.PP
+Definition at line 247 of file Cluster\&.h\&.
+.PP
+Referenced by Cluster(), getClusterArchitect(), getMutableClusterArchitect(), runAnalyser(), and updateConnectivity()\&.
 .SS "\fBcomponents::ConnectionMap\fP \fBcryomesh::structures::Cluster::connections\fP\fC [private]\fP"
 .PP
-Definition at line 233 of file Cluster.h.
+Definition at line 231 of file Cluster\&.h\&.
 .PP
-Referenced by createConnection(), enableDebug(), getConnections(), and update().
+Referenced by enableDebug(), getConnectionMap(), getConnections(), getMutableConnectionMap(), and update()\&.
 .SS "\fBcommon::Connector\fP<\fBCluster\fP, \fBFibre\fP> \fBcryomesh::structures::Cluster::connector\fP\fC [private]\fP"
 .PP
-Definition at line 247 of file Cluster.h.
+Definition at line 245 of file Cluster\&.h\&.
 .PP
-Referenced by getConnector(), and getMutableConnector().
+Referenced by getConnector(), and getMutableConnector()\&.
 .SS "double \fBcryomesh::structures::Cluster::energy\fP\fC [private]\fP"
 .PP
-Definition at line 219 of file Cluster.h.
+Definition at line 217 of file Cluster\&.h\&.
 .PP
-Referenced by getEnergy(), and setEnergy().
+Referenced by getEnergy(), and setEnergy()\&.
+.SS "\fBEnergyFractionMethod\fP \fBcryomesh::structures::Cluster::energyFractionMethod\fP\fC [private]\fP"
+.PP
+Definition at line 248 of file Cluster\&.h\&.
+.PP
+Referenced by getEnergyFractionMethod(), and setEnergyFractionMethod()\&.
+.SS "double \fBcryomesh::structures::Cluster::maxEnergyFraction\fP\fC [private]\fP"
+.PP
+Definition at line 249 of file Cluster\&.h\&.
+.PP
+Referenced by getMaxEnergyFraction(), and setEnergyFractionMethod()\&.
 .SS "boost::shared_ptr<\fBNodeMesh\fP> \fBcryomesh::structures::Cluster::mesh\fP\fC [private]\fP"
 .PP
-Definition at line 240 of file Cluster.h.
+Definition at line 238 of file Cluster\&.h\&.
 .PP
-Referenced by Cluster(), getMesh(), update(), and warpNodes().
+Referenced by getMesh(), getMutableMesh(), update(), and warpNodes()\&.
 .SS "\fBcomponents::NodeMap\fP \fBcryomesh::structures::Cluster::nodes\fP\fC [private]\fP"
 .PP
-Definition at line 226 of file Cluster.h.
+Definition at line 224 of file Cluster\&.h\&.
 .PP
-Referenced by createNodes(), enableDebug(), getMutableNodeMap(), getNodeMap(), getNodes(), update(), and updateConnectivity().
-.SS "const double \fBcryomesh::structures::Cluster::SELF_CONNECTED_NODES_FRACTION\fP = 0.1\fC [static]\fP"
+Referenced by enableDebug(), getMutableNodeMap(), getNodeMap(), getNodes(), update(), and updateConnectivity()\&.
+.SS "const double \fBcryomesh::structures::Cluster::SELF_CONNECTED_NODES_FRACTION\fP = 0\&.1\fC [static]\fP"
 .PP
-Definition at line 193 of file Cluster.h.
+Definition at line 204 of file Cluster\&.h\&.
 .PP
-Referenced by updateConnectivity().
+Referenced by updateConnectivity()\&.
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for cryomesh from the source code.
+Generated automatically by Doxygen for cryomesh from the source code\&.

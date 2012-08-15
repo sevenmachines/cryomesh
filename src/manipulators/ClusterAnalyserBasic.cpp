@@ -5,7 +5,7 @@
  *      Author: niall
  */
 
-#define CLUSTERANALYSERBASIC_DEBUG
+//#define CLUSTERANALYSERBASIC_DEBUG
 
 #include "ClusterAnalyserBasic.h"
 #include "ClusterArchitect.h"
@@ -29,11 +29,12 @@ ClusterAnalysisData ClusterAnalyserBasic::analyseCluster(const structures::Clust
 	const int current_cluster_node_count = cluster.getNodeMap().getSize();
 	const int current_cluster_conn_count = cluster.getConnectionMap().getSize();
 
+
 	// current cycle
-	ClusterAnalysisData::RangeEnergy current_range_energy(cluster.getEnergy());
+	ClusterAnalysisData::RangeEnergy current_range_energy(cluster.getEnergy(), cluster.getEnergy()/cluster.getMaxEnergyFraction());
 #ifdef CLUSTERANALYSERBASIC_DEBUG
-	assert(current_range_energy.energy >= -1);
-	assert(current_range_energy.energy <= 1);
+	assert(current_range_energy.energyFraction >= -1);
+	assert(current_range_energy.energyFraction <= 1);
 #endif
 	const std::map<int, std::list<ClusterAnalysisData> >::const_iterator it_histories_end = histories.end();
 	std::map<int, std::list<ClusterAnalysisData> >::const_iterator it_histories = histories.begin();
@@ -85,8 +86,8 @@ ClusterAnalysisData ClusterAnalyserBasic::analyseCluster(const structures::Clust
 				ClusterAnalysisData cad_short_summary = this->calculateRangeEnergies(it_short_range_history->second);
 
 				ClusterAnalysisData cad_medium_summary = this->calculateRangeEnergies(it_medium_range_history->second);
-				double val_diff_medium_summary = cad_short_summary.getClusterRangeEnergy().energy
-						- cad_medium_summary.getClusterRangeEnergy().energy;
+				double val_diff_medium_summary = (cad_short_summary.getClusterRangeEnergy().energyFraction
+						- cad_medium_summary.getClusterRangeEnergy().energyFraction);
 
 				EnergyVariationWeightingMap medium_variation = this->getEnergyVariationMap(val_diff_medium_summary,
 						1.0);
@@ -148,16 +149,15 @@ ClusterAnalysisData ClusterAnalyserBasic::analyseCluster(const structures::Clust
 
 				if (it_long_range_history != it_histories_end) {
 					ClusterAnalysisData cad_long_summary = this->calculateRangeEnergies(it_long_range_history->second);
-					double val_diff_long_summary = cad_medium_summary.getClusterRangeEnergy().energy
-							- cad_long_summary.getClusterRangeEnergy().energy;
+					double val_diff_long_summary = cad_medium_summary.getClusterRangeEnergy().energyFraction
+							- cad_long_summary.getClusterRangeEnergy().energyFraction;
 					//	double min_diff_long_summary = cad_medium_summary.getClusterRangeEnergy().energy
 					//			- cad_long_summary.getClusterRangeEnergy().energyMin;
 					//	double max_diff_long_summary = cad_medium_summary.getClusterRangeEnergy().energy
 					//			- cad_long_summary.getClusterRangeEnergy().energyMax;
 
 					const double long_base_fraction = 0.1;
-					EnergyVariationWeightingMap long_variation = this->getEnergyVariationMap(val_diff_long_summary,
-							1.0);
+					EnergyVariationWeightingMap long_variation = this->getEnergyVariationMap(val_diff_long_summary, 1.0);
 					if (any_long_restructure_enabled == true) {
 						if (long_variation.variationMap[EnergyVariation::HIGH_NEGATIVE] > 0) {
 							// kill/create a lot of nodes
@@ -306,6 +306,7 @@ ClusterAnalysisData ClusterAnalyserBasic::calculateRangeEnergies(const std::list
 
 ClusterAnalyserBasic::EnergyVariationWeightingMap ClusterAnalyserBasic::getEnergyVariationMap(const double energy_input,
 		double range) const {
+	std::cout<<"ClusterAnalyserBasic::getEnergyVariationMap: "<<"energy_input: "<<energy_input<<" range: "<<range<<std::endl;
 	EnergyVariationWeightingMap evwp;
 	const double DELTA = 0.000001;
 	if (range < 0) {

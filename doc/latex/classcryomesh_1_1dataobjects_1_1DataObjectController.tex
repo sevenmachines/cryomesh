@@ -1,0 +1,194 @@
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObjectController}{\section{cryomesh\-:\-:dataobjects\-:\-:\-Data\-Object\-Controller$<$ \-U, \-T $>$ \-Class \-Template \-Reference}
+\label{classcryomesh_1_1dataobjects_1_1DataObjectController}\index{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller$<$ U, T $>$@{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller$<$ U, T $>$}}
+}
+
+
+\-Class used to interface with data objects.  
+
+
+
+
+{\ttfamily \#include $<$\-Data\-Object\-Controller.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1dataobjects_1_1DataObjectController_a9b5dd38c83c6fb1dc5bcf4ddcbc7a577}{\-Data\-Object\-Controller} ()
+\begin{DoxyCompactList}\small\item\em \-Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1dataobjects_1_1DataObjectController_a01e98fc9bc0f3495bd05e01e6cc15f29}{\-Data\-Object\-Controller} (unsigned int sz)
+\begin{DoxyCompactList}\small\item\em \-Contructor with size. \end{DoxyCompactList}\item 
+virtual \hyperlink{classcryomesh_1_1dataobjects_1_1DataObjectController_aa023e2b5199e935b52781a8556d97cbe}{$\sim$\-Data\-Object\-Controller} ()
+\item 
+virtual void \hyperlink{classcryomesh_1_1dataobjects_1_1DataObjectController_a3e510413675407ec0a6745345ca9a3a8}{enable\-Logging} (bool enable)
+\begin{DoxyCompactList}\small\item\em \-Whether logging is enabled or not. \end{DoxyCompactList}\item 
+virtual const std\-::map$<$ \-U, \-T $>$ \& \hyperlink{classcryomesh_1_1dataobjects_1_1DataObjectController_a70a03ee28392ecf2e039702a18511f05}{get\-Map} ()
+\begin{DoxyCompactList}\small\item\em \-Get all cycle values. \end{DoxyCompactList}\item 
+virtual const \*
+\hyperlink{classcryomesh_1_1dataobjects_1_1DataObject}{dataobjects\-::\-Data\-Object}$<$ \-U, \-T $>$ \& \hyperlink{classcryomesh_1_1dataobjects_1_1DataObjectController_aa919e8676a611028c6b6e6791c87f438}{get\-Data\-Object} ()
+\begin{DoxyCompactList}\small\item\em \-Get data object. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcryomesh_1_1dataobjects_1_1DataObjectController_ae015efe3d10cced82d5043f560cbe04f}{refresh\-Data\-Object} ()
+\begin{DoxyCompactList}\small\item\em \-Function to allow refreshing implementation if required by subclasses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1dataobjects_1_1DataObject}{dataobjects\-::\-Data\-Object}$<$ \-U, \-T $>$ \hyperlink{classcryomesh_1_1dataobjects_1_1DataObjectController_aa13d30e9fa2f1caa0510635214d4bb26}{data\-Object}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\subsubsection*{template$<$class \-U, class \-T$>$class cryomesh\-::dataobjects\-::\-Data\-Object\-Controller$<$ U, T $>$}
+
+\-Class used to interface with data objects. 
+
+\-Definition at line 21 of file \-Data\-Object\-Controller.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObjectController_a9b5dd38c83c6fb1dc5bcf4ddcbc7a577}{\index{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller@{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}!\-Data\-Object\-Controller@{\-Data\-Object\-Controller}}
+\index{\-Data\-Object\-Controller@{\-Data\-Object\-Controller}!cryomesh::dataobjects::DataObjectController@{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}}
+\subsubsection[{\-Data\-Object\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ {\bf cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}$<$ \-U, \-T $>$\-::{\bf \-Data\-Object\-Controller} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObjectController_a9b5dd38c83c6fb1dc5bcf4ddcbc7a577}
+
+
+\-Default constructor. 
+
+
+
+\-Definition at line 27 of file \-Data\-Object\-Controller.\-h.
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObjectController_a01e98fc9bc0f3495bd05e01e6cc15f29}{\index{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller@{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}!\-Data\-Object\-Controller@{\-Data\-Object\-Controller}}
+\index{\-Data\-Object\-Controller@{\-Data\-Object\-Controller}!cryomesh::dataobjects::DataObjectController@{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}}
+\subsubsection[{\-Data\-Object\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ {\bf cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}$<$ \-U, \-T $>$\-::{\bf \-Data\-Object\-Controller} (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{sz}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObjectController_a01e98fc9bc0f3495bd05e01e6cc15f29}
+
+
+\-Contructor with size. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em unsigned} & int \-The maximum size of the data set \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 36 of file \-Data\-Object\-Controller.\-h.
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObjectController_aa023e2b5199e935b52781a8556d97cbe}{\index{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller@{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}!$\sim$\-Data\-Object\-Controller@{$\sim$\-Data\-Object\-Controller}}
+\index{$\sim$\-Data\-Object\-Controller@{$\sim$\-Data\-Object\-Controller}!cryomesh::dataobjects::DataObjectController@{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}}
+\subsubsection[{$\sim$\-Data\-Object\-Controller}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ virtual {\bf cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}$<$ \-U, \-T $>$\-::$\sim${\bf \-Data\-Object\-Controller} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObjectController_aa023e2b5199e935b52781a8556d97cbe}
+
+
+\-Definition at line 39 of file \-Data\-Object\-Controller.\-h.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObjectController_a3e510413675407ec0a6745345ca9a3a8}{\index{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller@{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}!enable\-Logging@{enable\-Logging}}
+\index{enable\-Logging@{enable\-Logging}!cryomesh::dataobjects::DataObjectController@{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}}
+\subsubsection[{enable\-Logging}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ virtual void {\bf cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}$<$ \-U, \-T $>$\-::{\bf enable\-Logging} (
+\begin{DoxyParamCaption}
+\item[{bool}]{enable}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObjectController_a3e510413675407ec0a6745345ca9a3a8}
+
+
+\-Whether logging is enabled or not. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em bool} & enable \-True to enable logging, false otherwise \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 47 of file \-Data\-Object\-Controller.\-h.
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObjectController_aa919e8676a611028c6b6e6791c87f438}{\index{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller@{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}!get\-Data\-Object@{get\-Data\-Object}}
+\index{get\-Data\-Object@{get\-Data\-Object}!cryomesh::dataobjects::DataObjectController@{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}}
+\subsubsection[{get\-Data\-Object}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ virtual const {\bf dataobjects\-::\-Data\-Object}$<$\-U, \-T$>$\& {\bf cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}$<$ \-U, \-T $>$\-::{\bf get\-Data\-Object} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObjectController_aa919e8676a611028c6b6e6791c87f438}
+
+
+\-Get data object. 
+
+\begin{DoxyReturn}{\-Returns}
+dataobjects\-::\-Data\-Object$<$\-U,\-T$>$ \& \-The data object 
+\end{DoxyReturn}
+
+
+\-Definition at line 68 of file \-Data\-Object\-Controller.\-h.
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObjectController_a70a03ee28392ecf2e039702a18511f05}{\index{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller@{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}!get\-Map@{get\-Map}}
+\index{get\-Map@{get\-Map}!cryomesh::dataobjects::DataObjectController@{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}}
+\subsubsection[{get\-Map}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ virtual const std\-::map$<$\-U, \-T$>$\& {\bf cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}$<$ \-U, \-T $>$\-::{\bf get\-Map} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObjectController_a70a03ee28392ecf2e039702a18511f05}
+
+
+\-Get all cycle values. 
+
+\begin{DoxyReturn}{\-Returns}
+std\-::map$<$unsigned long int, double$>$ \& \-The cycle values 
+\end{DoxyReturn}
+
+
+\-Definition at line 57 of file \-Data\-Object\-Controller.\-h.
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObjectController_ae015efe3d10cced82d5043f560cbe04f}{\index{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller@{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}!refresh\-Data\-Object@{refresh\-Data\-Object}}
+\index{refresh\-Data\-Object@{refresh\-Data\-Object}!cryomesh::dataobjects::DataObjectController@{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}}
+\subsubsection[{refresh\-Data\-Object}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ virtual void {\bf cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}$<$ \-U, \-T $>$\-::{\bf refresh\-Data\-Object} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObjectController_ae015efe3d10cced82d5043f560cbe04f}
+
+
+\-Function to allow refreshing implementation if required by subclasses. 
+
+
+
+\-Reimplemented in \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a892cc1028a9539de15668c39511adba3}{cryomesh\-::components\-::\-Impulse\-Collection}.
+
+
+
+\-Definition at line 76 of file \-Data\-Object\-Controller.\-h.
+
+
+
+\-Referenced by cryomesh\-::dataobjects\-::\-Data\-Object\-Controller$<$ unsigned long int, double $>$\-::get\-Data\-Object(), and cryomesh\-::dataobjects\-::\-Data\-Object\-Controller$<$ unsigned long int, double $>$\-::get\-Map().
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObjectController_aa13d30e9fa2f1caa0510635214d4bb26}{\index{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller@{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}!data\-Object@{data\-Object}}
+\index{data\-Object@{data\-Object}!cryomesh::dataobjects::DataObjectController@{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}}
+\subsubsection[{data\-Object}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \-U, class \-T$>$ {\bf dataobjects\-::\-Data\-Object}$<$\-U, \-T$>$ {\bf cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}$<$ \-U, \-T $>$\-::{\bf data\-Object}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObjectController_aa13d30e9fa2f1caa0510635214d4bb26}
+
+
+\-Definition at line 85 of file \-Data\-Object\-Controller.\-h.
+
+
+
+\-Referenced by cryomesh\-::dataobjects\-::\-Data\-Object\-Controller$<$ unsigned long int, double $>$\-::\-Data\-Object\-Controller(), cryomesh\-::dataobjects\-::\-Data\-Object\-Controller$<$ unsigned long int, double $>$\-::enable\-Logging(), cryomesh\-::dataobjects\-::\-Data\-Object\-Controller$<$ unsigned long int, double $>$\-::get\-Data\-Object(), and cryomesh\-::dataobjects\-::\-Data\-Object\-Controller$<$ unsigned long int, double $>$\-::get\-Map().
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/dataobjects/\hyperlink{DataObjectController_8h}{\-Data\-Object\-Controller.\-h}\end{DoxyCompactItemize}

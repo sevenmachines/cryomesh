@@ -1,0 +1,1775 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="classcryomesh_1_1structures_1_1Bundle" kind="class" prot="public">
+    <compoundname>cryomesh::structures::Bundle</compoundname>
+    <basecompoundref refid="classcryomesh_1_1common_1_1Loggable" prot="public" virt="non-virtual">cryomesh::common::Loggable</basecompoundref>
+    <includes refid="Bundle_8h" local="no">Bundle.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcryomesh_1_1structures_1_1Bundle_1a35a36d3305706f597f4c586fcd9f74b7" prot="private" static="no" mutable="no">
+        <type>ClusterMap</type>
+        <definition>ClusterMap cryomesh::structures::Bundle::clusters</definition>
+        <argsstring></argsstring>
+        <name>clusters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="357" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" bodystart="357" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1af1884f99e746cdfa549b63f1589b5dac" compoundref="Bundle_8cpp" startline="61" endline="76">connectCluster</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a6228d35bd96caa191bd89096dd260ee2" compoundref="Bundle_8cpp" startline="54" endline="59">createCluster</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a8e7f1752b8b0112adf8939921eff4e50" compoundref="Bundle_8cpp" startline="417" endline="419">enableDebugClusters</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a181e1f2aaa3b529b8609917d5b5315e0" compoundref="Bundle_8cpp" startline="408" endline="410">getClusters</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a14990ba8cec7b9c18426ae8c2fdd0dcf" compoundref="Bundle_8cpp" startline="424" endline="426">getMutableClusters</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1add5af28ceb5c7722d267ba32810c5df7" compoundref="Bundle_8cpp" startline="26" endline="52">update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1structures_1_1Bundle_1a71b3308a867169b8e9af9ab71b8bdf98" prot="private" static="no" mutable="no">
+        <type><ref refid="classcryomesh_1_1structures_1_1FibreMap" kindref="compound">FibreMap</ref></type>
+        <definition>FibreMap cryomesh::structures::Bundle::fibres</definition>
+        <argsstring></argsstring>
+        <name>fibres</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="364" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" bodystart="364" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1af1884f99e746cdfa549b63f1589b5dac" compoundref="Bundle_8cpp" startline="61" endline="76">connectCluster</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a742597fd733573d8242966f89f8e6715" compoundref="Bundle_8cpp" startline="420" endline="422">enableDebugFibres</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a8f112d3b34f84511781879217b15c6d2" compoundref="Bundle_8cpp" startline="427" endline="429">getFibres</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1add5af28ceb5c7722d267ba32810c5df7" compoundref="Bundle_8cpp" startline="26" endline="52">update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1structures_1_1Bundle_1ac9bd1c696001ef8acb7291a5f9e81c8b" prot="private" static="no" mutable="no">
+        <type><ref refid="classcryomesh_1_1state_1_1PatternChannelMap" kindref="compound">state::PatternChannelMap</ref></type>
+        <definition>state::PatternChannelMap cryomesh::structures::Bundle::realInputChannelsMap</definition>
+        <argsstring></argsstring>
+        <name>realInputChannelsMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="371" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" bodystart="371" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1abe23b17f35ef338df7db8d2903ee2bfd" compoundref="Bundle_8cpp" startline="110" endline="155">connectPrimaryInputCluster</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a6f400ee92f49fed82ca9ef5b48cde285" compoundref="Bundle_8cpp" startline="342" endline="367">getDisconnectedRealInputPatternChannels</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1ada0ae8374d27d9b59ca82b8075fbd401" compoundref="Bundle_8cpp" startline="447" endline="449">getRealInputChannelsMap</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a51eb35ecb02094016f0f3a74fd07f6e9" compoundref="Bundle_8cpp" startline="703" endline="706">getRealPrimaryInputChannelByFibre</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1ad60a89acf924c5aebae3a5f816f358db" compoundref="Bundle_8cpp" startline="396" endline="406">loadChannels</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1ad794a923f68c51c5c1ac4588586b6be7" compoundref="Bundle_8cpp" startline="868" endline="948">printChannels</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1abe52d8718eeb7bb6a17211d4dfbed440" compoundref="Bundle_8cpp" startline="568" endline="616">updatePrimaryInputFibres</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1structures_1_1Bundle_1a4043d8bfeb8b066418029864f51d92de" prot="private" static="no" mutable="no">
+        <type><ref refid="classcryomesh_1_1state_1_1PatternChannelMap" kindref="compound">state::PatternChannelMap</ref></type>
+        <definition>state::PatternChannelMap cryomesh::structures::Bundle::realOutputChannelsMap</definition>
+        <argsstring></argsstring>
+        <name>realOutputChannelsMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="378" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" bodystart="378" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a01dd3e844fe3332df9be5156e329f821" compoundref="Bundle_8cpp" startline="157" endline="204">connectPrimaryOutputCluster</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a5ce1e31c814ef83026c0dbda5ba04a24" compoundref="Bundle_8cpp" startline="368" endline="390">getDisconnectedRealOutputPatternChannels</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a893be908a14ecc2d07270273d3d127e2" compoundref="Bundle_8cpp" startline="450" endline="452">getRealOutputChannelsMap</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a00eb0f18cc3331a4e6d0ed4698e92cb5" compoundref="Bundle_8cpp" startline="707" endline="710">getRealPrimaryOutputChannelByFibre</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1ad60a89acf924c5aebae3a5f816f358db" compoundref="Bundle_8cpp" startline="396" endline="406">loadChannels</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1ad794a923f68c51c5c1ac4588586b6be7" compoundref="Bundle_8cpp" startline="868" endline="948">printChannels</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1structures_1_1Bundle_1ae20b2f9819708971357148dd024db00d" prot="private" static="no" mutable="no">
+        <type><ref refid="classcryomesh_1_1state_1_1PatternChannelMap" kindref="compound">state::PatternChannelMap</ref></type>
+        <definition>state::PatternChannelMap cryomesh::structures::Bundle::actualInputChannelsMap</definition>
+        <argsstring></argsstring>
+        <name>actualInputChannelsMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="385" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" bodystart="385" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1abe23b17f35ef338df7db8d2903ee2bfd" compoundref="Bundle_8cpp" startline="110" endline="155">connectPrimaryInputCluster</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a65bf0246390e7cb0e90caf4fb302fa41" compoundref="Bundle_8cpp" startline="453" endline="455">getActualInputChannelsMap</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a101bda3e32c34cf8e0cff4526446af02" compoundref="Bundle_8cpp" startline="711" endline="714">getActualPrimaryInputChannelByFibre</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1ad794a923f68c51c5c1ac4588586b6be7" compoundref="Bundle_8cpp" startline="868" endline="948">printChannels</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1structures_1_1Bundle_1ac67a6d7b29b37b8927c93350e8bcf6e5" prot="private" static="no" mutable="no">
+        <type><ref refid="classcryomesh_1_1state_1_1PatternChannelMap" kindref="compound">state::PatternChannelMap</ref></type>
+        <definition>state::PatternChannelMap cryomesh::structures::Bundle::actualOutputChannelsMap</definition>
+        <argsstring></argsstring>
+        <name>actualOutputChannelsMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="392" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" bodystart="392" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a01dd3e844fe3332df9be5156e329f821" compoundref="Bundle_8cpp" startline="157" endline="204">connectPrimaryOutputCluster</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a382242e3b29b92b25edc9162aa810ebe" compoundref="Bundle_8cpp" startline="456" endline="458">getActualOutputChannelsMap</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a13dcea26d3379199f9e993caa5e132d7" compoundref="Bundle_8cpp" startline="715" endline="718">getActualPrimaryOutputChannelByFibre</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1ad794a923f68c51c5c1ac4588586b6be7" compoundref="Bundle_8cpp" startline="868" endline="948">printChannels</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1structures_1_1Bundle_1aa6a461295021bdfb4ef4cab0f136a2c1" prot="private" static="no" mutable="no">
+        <type><ref refid="classcryomesh_1_1structures_1_1FibreMap" kindref="compound">FibreMap</ref></type>
+        <definition>FibreMap cryomesh::structures::Bundle::inputFibres</definition>
+        <argsstring></argsstring>
+        <name>inputFibres</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="399" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" bodystart="399" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1adc784bc4a171eb28b5a7d038fe73f2de" compoundref="Bundle_8cpp" startline="78" endline="108">connectCluster</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a5c6496d00065462122a71c812fa7a4e8" compoundref="Bundle_8cpp" startline="431" endline="433">getInputFibres</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1af8b848abb7ec12997b09c63c0c10650d" compoundref="Bundle_8cpp" startline="435" endline="437">getMutableInputFibres</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1ad80f4bbb8bdc379e156282bf0b17fbc3" compoundref="Bundle_8cpp" startline="728" endline="731">getPrimaryInputFibreByActualChannel</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1ae1259ecf25a6b140cad735defd9069f9" compoundref="Bundle_8cpp" startline="720" endline="723">getPrimaryInputFibreByRealChannel</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1abe52d8718eeb7bb6a17211d4dfbed440" compoundref="Bundle_8cpp" startline="568" endline="616">updatePrimaryInputFibres</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1structures_1_1Bundle_1aa671193358b7aba173e45574def3d4c1" prot="private" static="no" mutable="no">
+        <type><ref refid="classcryomesh_1_1structures_1_1FibreMap" kindref="compound">FibreMap</ref></type>
+        <definition>FibreMap cryomesh::structures::Bundle::outputFibres</definition>
+        <argsstring></argsstring>
+        <name>outputFibres</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="406" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" bodystart="406" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1adc784bc4a171eb28b5a7d038fe73f2de" compoundref="Bundle_8cpp" startline="78" endline="108">connectCluster</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1af9fd12e753bab64750f5c32d5f17a554" compoundref="Bundle_8cpp" startline="443" endline="445">getMutableOutputFibres</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a2c14a3f2cc96236bff6548e5103183de" compoundref="Bundle_8cpp" startline="439" endline="441">getOutputFibres</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1ae6ccd53821a90466d96ebcbf171549a2" compoundref="Bundle_8cpp" startline="732" endline="735">getPrimaryOutputFibreByActualChannel</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a7ba3f747f8e164f0c0984fdb14922e7a" compoundref="Bundle_8cpp" startline="724" endline="727">getPrimaryOutputFibreByRealChannel</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a7a95265553776d6216799e143134a59f" compoundref="Bundle_8cpp" startline="618" endline="650">updatePrimaryOutputFibres</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1structures_1_1Bundle_1ad505cbda03b4e78399fd3a9568d79708" prot="private" static="no" mutable="no">
+        <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1utilities_1_1Statistician" kindref="compound">utilities::Statistician</ref> &gt;</type>
+        <definition>boost::shared_ptr&lt;utilities::Statistician&gt; cryomesh::structures::Bundle::statistician</definition>
+        <argsstring></argsstring>
+        <name>statistician</name>
+        <briefdescription>
+<para>Statistics object to generate useful info on the bundle. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="411" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" bodystart="411" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1ae750ab1bd2b1a937f90d97e416aefced" compoundref="Bundle_8cpp" startline="473" endline="475">getMutableStatistician</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a5bfac318b9a6f9f651fad0657b9b9196" compoundref="Bundle_8cpp" startline="466" endline="468">getStatistician</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a804c625c912657cebd3350c7c1b53c10" compoundref="Bundle_8cpp" startline="690" endline="701">updateStatistician</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1structures_1_1Bundle_1aac5229c4c52e646767db2144ba745aa6" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double cryomesh::structures::Bundle::energy</definition>
+        <argsstring></argsstring>
+        <name>energy</name>
+        <briefdescription>
+<para>Last energy calculation of the output channel matching. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="416" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" bodystart="416" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1aec88635d8c4fdc76b6c3c22b915ee459" compoundref="Bundle_8cpp" startline="470" endline="472">getEnergy</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1ae6a553eaab4ddf2b6bbd6bdeca9361ad" compoundref="Bundle_8cpp" startline="686" endline="688">setEnergy</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1structures_1_1Bundle_1adaf7fa91209de01b9d42ae2d8228c3cd" prot="private" static="no" mutable="no">
+        <type>std::map&lt; boost::uuids::uuid, boost::uuids::uuid &gt;</type>
+        <definition>std::map&lt;boost::uuids::uuid, boost::uuids::uuid&gt; cryomesh::structures::Bundle::realFibrePatternChannelMap</definition>
+        <argsstring></argsstring>
+        <name>realFibrePatternChannelMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="423" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" bodystart="423" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1abe23b17f35ef338df7db8d2903ee2bfd" compoundref="Bundle_8cpp" startline="110" endline="155">connectPrimaryInputCluster</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a01dd3e844fe3332df9be5156e329f821" compoundref="Bundle_8cpp" startline="157" endline="204">connectPrimaryOutputCluster</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1ae1259ecf25a6b140cad735defd9069f9" compoundref="Bundle_8cpp" startline="720" endline="723">getPrimaryInputFibreByRealChannel</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a7ba3f747f8e164f0c0984fdb14922e7a" compoundref="Bundle_8cpp" startline="724" endline="727">getPrimaryOutputFibreByRealChannel</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a2e31be3bab4a15e4e9ba6aeac48b91df" compoundref="Bundle_8cpp" startline="460" endline="462">getRealFibrePatternChannelMap</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a51eb35ecb02094016f0f3a74fd07f6e9" compoundref="Bundle_8cpp" startline="703" endline="706">getRealPrimaryInputChannelByFibre</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a00eb0f18cc3331a4e6d0ed4698e92cb5" compoundref="Bundle_8cpp" startline="707" endline="710">getRealPrimaryOutputChannelByFibre</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1structures_1_1Bundle_1a0f3e20833ce850f97ae450d27a4607dd" prot="private" static="no" mutable="no">
+        <type>std::map&lt; boost::uuids::uuid, boost::uuids::uuid &gt;</type>
+        <definition>std::map&lt;boost::uuids::uuid, boost::uuids::uuid&gt; cryomesh::structures::Bundle::actualFibrePatternChannelMap</definition>
+        <argsstring></argsstring>
+        <name>actualFibrePatternChannelMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="430" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" bodystart="430" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1abe23b17f35ef338df7db8d2903ee2bfd" compoundref="Bundle_8cpp" startline="110" endline="155">connectPrimaryInputCluster</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a01dd3e844fe3332df9be5156e329f821" compoundref="Bundle_8cpp" startline="157" endline="204">connectPrimaryOutputCluster</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a872de96a76f772182eda2abbb98a99cc" compoundref="Bundle_8cpp" startline="463" endline="465">getActualFibrePatternChannelMap</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a101bda3e32c34cf8e0cff4526446af02" compoundref="Bundle_8cpp" startline="711" endline="714">getActualPrimaryInputChannelByFibre</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a13dcea26d3379199f9e993caa5e132d7" compoundref="Bundle_8cpp" startline="715" endline="718">getActualPrimaryOutputChannelByFibre</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1ad80f4bbb8bdc379e156282bf0b17fbc3" compoundref="Bundle_8cpp" startline="728" endline="731">getPrimaryInputFibreByActualChannel</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1ae6ccd53821a90466d96ebcbf171549a2" compoundref="Bundle_8cpp" startline="732" endline="735">getPrimaryOutputFibreByActualChannel</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1structures_1_1Bundle_1abbd8555380ffa4c33a235636837bafaa" prot="private" static="no" mutable="no">
+        <type><ref refid="classcryomesh_1_1structures_1_1Cluster_1a69c420b79675c6ffc9a0df8381ca9497" kindref="member">Cluster::EnergyFractionMethod</ref></type>
+        <definition>Cluster::EnergyFractionMethod cryomesh::structures::Bundle::energyFractionMethod</definition>
+        <argsstring></argsstring>
+        <name>energyFractionMethod</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="432" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" bodystart="432" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a6228d35bd96caa191bd89096dd260ee2" compoundref="Bundle_8cpp" startline="54" endline="59">createCluster</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a8d6b95207324291f919f1835b81b1640" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::structures::Bundle::Bundle</definition>
+        <argsstring>()</argsstring>
+        <name>Bundle</name>
+        <briefdescription>
+<para>Default contructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="35" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="17" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1ab2ec2696336dddbae17166c056c2f038" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>cryomesh::structures::Bundle::~Bundle</definition>
+        <argsstring>()</argsstring>
+        <name>~Bundle</name>
+        <briefdescription>
+<para>Default destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="40" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="23" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1add5af28ceb5c7722d267ba32810c5df7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::structures::Bundle::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+<para>Update all bundle components. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="45" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="26" bodyend="52"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a35a36d3305706f597f4c586fcd9f74b7" compoundref="Bundle_8h" startline="357">clusters</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a71b3308a867169b8e9af9ab71b8bdf98" compoundref="Bundle_8h" startline="364">fibres</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1aec88635d8c4fdc76b6c3c22b915ee459" compoundref="Bundle_8cpp" startline="470" endline="472">getEnergy</references>
+        <references refid="classcryomesh_1_1common_1_1TimeKeeper_1afe7b229532e11119cb2653192615d679" compoundref="TimeKeeper_8cpp" startline="19" endline="24">cryomesh::common::TimeKeeper::getTimeKeeper</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a3a8a7cfb5d525ff59a52dd1a39909621" compoundref="Bundle_8cpp" startline="652" endline="684">matchOutputChannelsSum</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1ae6a553eaab4ddf2b6bbd6bdeca9361ad" compoundref="Bundle_8cpp" startline="686" endline="688">setEnergy</references>
+        <references refid="classcryomesh_1_1structures_1_1FibreMap_1a9caf159d1ca71ed1046bd52167fe009f" compoundref="FibreMap_8h" startline="24" endline="38">cryomesh::structures::FibreMap::update</references>
+        <references refid="classcryomesh_1_1common_1_1TimeKeeper_1a0581cd24a6eebfbdd67a363467483456" compoundref="TimeKeeper_8cpp" startline="66" endline="74">cryomesh::common::TimeKeeper::update</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1abe52d8718eeb7bb6a17211d4dfbed440" compoundref="Bundle_8cpp" startline="568" endline="616">updatePrimaryInputFibres</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a7a95265553776d6216799e143134a59f" compoundref="Bundle_8cpp" startline="618" endline="650">updatePrimaryOutputFibres</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a804c625c912657cebd3350c7c1b53c10" compoundref="Bundle_8cpp" startline="690" endline="701">updateStatistician</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a6228d35bd96caa191bd89096dd260ee2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1structures_1_1Cluster" kindref="compound">Cluster</ref> &gt;</type>
+        <definition>boost::shared_ptr&lt; Cluster &gt; cryomesh::structures::Bundle::createCluster</definition>
+        <argsstring>(int nodeSize, int nodeConnectivity)</argsstring>
+        <name>createCluster</name>
+        <param>
+          <type>int</type>
+          <declname>nodeSize</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nodeConnectivity</declname>
+        </param>
+        <briefdescription>
+<para>Create a cluster with a size and connectivity. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of nodes to create </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The connectivity of the nodes</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boost::shared_ptr&lt;Cluster&gt; The cluster that was created </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="58" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="54" bodyend="59"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a35a36d3305706f597f4c586fcd9f74b7" compoundref="Bundle_8h" startline="357">clusters</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1abbd8555380ffa4c33a235636837bafaa" compoundref="Bundle_8h" startline="432">energyFractionMethod</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1af1884f99e746cdfa549b63f1589b5dac" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1structures_1_1Fibre" kindref="compound">Fibre</ref> &gt;</type>
+        <definition>boost::shared_ptr&lt; Fibre &gt; cryomesh::structures::Bundle::connectCluster</definition>
+        <argsstring>(boost::uuids::uuid inputClusterUUID, boost::uuids::uuid outputClusterUUID, int fibreWidth)</argsstring>
+        <name>connectCluster</name>
+        <param>
+          <type>boost::uuids::uuid</type>
+          <declname>inputClusterUUID</declname>
+        </param>
+        <param>
+          <type>boost::uuids::uuid</type>
+          <declname>outputClusterUUID</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fibreWidth</declname>
+        </param>
+        <briefdescription>
+<para>Connect clusters specified by uuids with a fibre of width. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boost::uuids::uuid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>inputClusterUUID UUID of input cluster </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>boost::uuids::uuid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>outputClusterUUID UUID of output cluster </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>width Width of fibre to create</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The new fibre created, possible null </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="74" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="61" bodyend="76"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a35a36d3305706f597f4c586fcd9f74b7" compoundref="Bundle_8h" startline="357">clusters</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a71b3308a867169b8e9af9ab71b8bdf98" compoundref="Bundle_8h" startline="364">fibres</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a0aa4399de46de8ee753e3959fca2fb62" compoundref="Bundle_8cpp" startline="392" endline="394">connectLoopbackCluster</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1abe23b17f35ef338df7db8d2903ee2bfd" compoundref="Bundle_8cpp" startline="110" endline="155">connectPrimaryInputCluster</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a01dd3e844fe3332df9be5156e329f821" compoundref="Bundle_8cpp" startline="157" endline="204">connectPrimaryOutputCluster</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1adc784bc4a171eb28b5a7d038fe73f2de" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1structures_1_1Fibre" kindref="compound">Fibre</ref> &gt;</type>
+        <definition>boost::shared_ptr&lt; Fibre &gt; cryomesh::structures::Bundle::connectCluster</definition>
+        <argsstring>(boost::uuids::uuid clusterUUID, const Fibre::FibreType &amp;type, int fibreWidth)</argsstring>
+        <name>connectCluster</name>
+        <param>
+          <type>boost::uuids::uuid</type>
+          <declname>clusterUUID</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1structures_1_1Fibre_1aecbba6d46a76f888b3722491b674f5e4" kindref="member">Fibre::FibreType</ref> &amp;</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fibreWidth</declname>
+        </param>
+        <briefdescription>
+<para>Connect clusters specified by uuids with a fibre of width. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boost::uuids::uuid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>clusterUUID UUID of cluster to connect to fibre </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1structures_1_1Fibre_1aecbba6d46a76f888b3722491b674f5e4" kindref="member">Fibre::FibreType</ref> &amp; type Type of fibre connection to make </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>width Width of fibre to create</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The new fibre created, possible null </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="90" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="78" bodyend="108"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a35a36d3305706f597f4c586fcd9f74b7" compoundref="Bundle_8h" startline="357">clusters</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a71b3308a867169b8e9af9ab71b8bdf98" compoundref="Bundle_8h" startline="364">fibres</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1aa6a461295021bdfb4ef4cab0f136a2c1" compoundref="Bundle_8h" startline="399">inputFibres</references>
+        <references refid="classcryomesh_1_1structures_1_1Fibre_1aecbba6d46a76f888b3722491b674f5e4abb9c562751800615ea00d21c6d1a0dfe" compoundref="Fibre_8h" startline="47">cryomesh::structures::Fibre::LoopbackFibre</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1aa671193358b7aba173e45574def3d4c1" compoundref="Bundle_8h" startline="406">outputFibres</references>
+        <references refid="classcryomesh_1_1structures_1_1Fibre_1aecbba6d46a76f888b3722491b674f5e4a04c484accec936ca5b35fed02fd3affd" compoundref="Fibre_8h" startline="45">cryomesh::structures::Fibre::PrimaryInputFibre</references>
+        <references refid="classcryomesh_1_1structures_1_1Fibre_1aecbba6d46a76f888b3722491b674f5e4a09e0e43a8d02ccfe05dfe8c0b5cce1c6" compoundref="Fibre_8h" startline="46">cryomesh::structures::Fibre::PrimaryOutputFibre</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1abe23b17f35ef338df7db8d2903ee2bfd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1structures_1_1Fibre" kindref="compound">Fibre</ref> &gt;</type>
+        <definition>boost::shared_ptr&lt; Fibre &gt; cryomesh::structures::Bundle::connectPrimaryInputCluster</definition>
+        <argsstring>(boost::uuids::uuid patchanid, boost::uuids::uuid clusterUUID)</argsstring>
+        <name>connectPrimaryInputCluster</name>
+        <param>
+          <type>boost::uuids::uuid</type>
+          <declname>patchanid</declname>
+        </param>
+        <param>
+          <type>boost::uuids::uuid</type>
+          <declname>clusterUUID</declname>
+        </param>
+        <briefdescription>
+<para>Helper access function for specialised connection. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boost::uuids::uuid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>PatternChannel to map the fibre to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1structures_1_1Fibre_1aecbba6d46a76f888b3722491b674f5e4" kindref="member">Fibre::FibreType</ref> &amp; type Type of fibre connection to make</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The new fibre created, possible null </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="104" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="110" bodyend="155"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a0f3e20833ce850f97ae450d27a4607dd" compoundref="Bundle_8h" startline="430">actualFibrePatternChannelMap</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1ae20b2f9819708971357148dd024db00d" compoundref="Bundle_8h" startline="385">actualInputChannelsMap</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1af1884f99e746cdfa549b63f1589b5dac" compoundref="Bundle_8cpp" startline="61" endline="76">connectCluster</references>
+        <references refid="classcryomesh_1_1state_1_1PatternChannel_1ac8a0ae515a221519890fc1181f2c895aab75202b529e4a7cfb8db3daa14b9f477" compoundref="PatternChannel_8h" startline="31">cryomesh::state::PatternChannel::Input</references>
+        <references refid="classcryomesh_1_1structures_1_1Fibre_1aecbba6d46a76f888b3722491b674f5e4a04c484accec936ca5b35fed02fd3affd" compoundref="Fibre_8h" startline="45">cryomesh::structures::Fibre::PrimaryInputFibre</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1adaf7fa91209de01b9d42ae2d8228c3cd" compoundref="Bundle_8h" startline="423">realFibrePatternChannelMap</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1ac9bd1c696001ef8acb7291a5f9e81c8b" compoundref="Bundle_8h" startline="371">realInputChannelsMap</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1aae9fb3393c44f4aeff03ecb8bfa5316e" compoundref="Bundle_8cpp" startline="254" endline="300">autoConnectPrimaryInputClusters</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a01dd3e844fe3332df9be5156e329f821" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1structures_1_1Fibre" kindref="compound">Fibre</ref> &gt;</type>
+        <definition>boost::shared_ptr&lt; Fibre &gt; cryomesh::structures::Bundle::connectPrimaryOutputCluster</definition>
+        <argsstring>(boost::uuids::uuid patchanid, boost::uuids::uuid clusterUUID)</argsstring>
+        <name>connectPrimaryOutputCluster</name>
+        <param>
+          <type>boost::uuids::uuid</type>
+          <declname>patchanid</declname>
+        </param>
+        <param>
+          <type>boost::uuids::uuid</type>
+          <declname>clusterUUID</declname>
+        </param>
+        <briefdescription>
+<para>Helper access function for specialised connection. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boost::uuids::uuid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>PatternChannel to map the fibre to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1structures_1_1Fibre_1aecbba6d46a76f888b3722491b674f5e4" kindref="member">Fibre::FibreType</ref> &amp; type Type of fibre connection to make</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The new fibre created, possible null </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="118" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="157" bodyend="204"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a0f3e20833ce850f97ae450d27a4607dd" compoundref="Bundle_8h" startline="430">actualFibrePatternChannelMap</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1ac67a6d7b29b37b8927c93350e8bcf6e5" compoundref="Bundle_8h" startline="392">actualOutputChannelsMap</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1af1884f99e746cdfa549b63f1589b5dac" compoundref="Bundle_8cpp" startline="61" endline="76">connectCluster</references>
+        <references refid="classcryomesh_1_1state_1_1PatternChannel_1ac8a0ae515a221519890fc1181f2c895aa981b9873565a0888e43eef95b4d003bf" compoundref="PatternChannel_8h" startline="31">cryomesh::state::PatternChannel::Output</references>
+        <references refid="classcryomesh_1_1structures_1_1Fibre_1aecbba6d46a76f888b3722491b674f5e4a09e0e43a8d02ccfe05dfe8c0b5cce1c6" compoundref="Fibre_8h" startline="46">cryomesh::structures::Fibre::PrimaryOutputFibre</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1adaf7fa91209de01b9d42ae2d8228c3cd" compoundref="Bundle_8h" startline="423">realFibrePatternChannelMap</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a4043d8bfeb8b066418029864f51d92de" compoundref="Bundle_8h" startline="378">realOutputChannelsMap</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a7e38b0167e7873fea9d768d3b096a9d8" compoundref="Bundle_8cpp" startline="301" endline="340">autoConnectPrimaryOutputClusters</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a31fef59219384dafb4d250eae65f3574" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; boost::shared_ptr&lt; <ref refid="classcryomesh_1_1structures_1_1Fibre" kindref="compound">Fibre</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; boost::shared_ptr&lt; Fibre &gt; &gt; cryomesh::structures::Bundle::autoConnectPrimaryInputClusters</definition>
+        <argsstring>(const std::vector&lt; boost::uuids::uuid &gt; &amp;cluster_uuids)</argsstring>
+        <name>autoConnectPrimaryInputClusters</name>
+        <param>
+          <type>const std::vector&lt; boost::uuids::uuid &gt; &amp;</type>
+          <declname>cluster_uuids</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="120" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="206" bodyend="229"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a14990ba8cec7b9c18426ae8c2fdd0dcf" compoundref="Bundle_8cpp" startline="424" endline="426">getMutableClusters</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a53f6a455e7cb553352dbef64d3a1ec04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; boost::shared_ptr&lt; <ref refid="classcryomesh_1_1structures_1_1Fibre" kindref="compound">Fibre</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; boost::shared_ptr&lt; Fibre &gt; &gt; cryomesh::structures::Bundle::autoConnectPrimaryOutputClusters</definition>
+        <argsstring>(const std::vector&lt; boost::uuids::uuid &gt; &amp;cluster_uuids)</argsstring>
+        <name>autoConnectPrimaryOutputClusters</name>
+        <param>
+          <type>const std::vector&lt; boost::uuids::uuid &gt; &amp;</type>
+          <declname>cluster_uuids</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="121" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="231" bodyend="252"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a14990ba8cec7b9c18426ae8c2fdd0dcf" compoundref="Bundle_8cpp" startline="424" endline="426">getMutableClusters</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1aae9fb3393c44f4aeff03ecb8bfa5316e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::vector&lt; boost::shared_ptr&lt; <ref refid="classcryomesh_1_1structures_1_1Fibre" kindref="compound">Fibre</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; boost::shared_ptr&lt; Fibre &gt; &gt; cryomesh::structures::Bundle::autoConnectPrimaryInputClusters</definition>
+        <argsstring>(std::vector&lt; boost::shared_ptr&lt; Cluster &gt; &gt; list)</argsstring>
+        <name>autoConnectPrimaryInputClusters</name>
+        <param>
+          <type>std::vector&lt; boost::shared_ptr&lt; <ref refid="classcryomesh_1_1structures_1_1Cluster" kindref="compound">Cluster</ref> &gt; &gt;</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="122" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="254" bodyend="300"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1abe23b17f35ef338df7db8d2903ee2bfd" compoundref="Bundle_8cpp" startline="110" endline="155">connectPrimaryInputCluster</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a6f400ee92f49fed82ca9ef5b48cde285" compoundref="Bundle_8cpp" startline="342" endline="367">getDisconnectedRealInputPatternChannels</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a7e38b0167e7873fea9d768d3b096a9d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::vector&lt; boost::shared_ptr&lt; <ref refid="classcryomesh_1_1structures_1_1Fibre" kindref="compound">Fibre</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; boost::shared_ptr&lt; Fibre &gt; &gt; cryomesh::structures::Bundle::autoConnectPrimaryOutputClusters</definition>
+        <argsstring>(std::vector&lt; boost::shared_ptr&lt; Cluster &gt; &gt; list)</argsstring>
+        <name>autoConnectPrimaryOutputClusters</name>
+        <param>
+          <type>std::vector&lt; boost::shared_ptr&lt; <ref refid="classcryomesh_1_1structures_1_1Cluster" kindref="compound">Cluster</ref> &gt; &gt;</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="123" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="301" bodyend="340"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a01dd3e844fe3332df9be5156e329f821" compoundref="Bundle_8cpp" startline="157" endline="204">connectPrimaryOutputCluster</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a5ce1e31c814ef83026c0dbda5ba04a24" compoundref="Bundle_8cpp" startline="368" endline="390">getDisconnectedRealOutputPatternChannels</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a6f400ee92f49fed82ca9ef5b48cde285" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::vector&lt; boost::shared_ptr&lt; <ref refid="classcryomesh_1_1state_1_1PatternChannel" kindref="compound">state::PatternChannel</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; boost::shared_ptr&lt; state::PatternChannel &gt; &gt; cryomesh::structures::Bundle::getDisconnectedRealInputPatternChannels</definition>
+        <argsstring>()</argsstring>
+        <name>getDisconnectedRealInputPatternChannels</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="124" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="342" bodyend="367"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1ae1259ecf25a6b140cad735defd9069f9" compoundref="Bundle_8cpp" startline="720" endline="723">getPrimaryInputFibreByRealChannel</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1ac9bd1c696001ef8acb7291a5f9e81c8b" compoundref="Bundle_8h" startline="371">realInputChannelsMap</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1aae9fb3393c44f4aeff03ecb8bfa5316e" compoundref="Bundle_8cpp" startline="254" endline="300">autoConnectPrimaryInputClusters</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a5ce1e31c814ef83026c0dbda5ba04a24" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::vector&lt; boost::shared_ptr&lt; <ref refid="classcryomesh_1_1state_1_1PatternChannel" kindref="compound">state::PatternChannel</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; boost::shared_ptr&lt; state::PatternChannel &gt; &gt; cryomesh::structures::Bundle::getDisconnectedRealOutputPatternChannels</definition>
+        <argsstring>()</argsstring>
+        <name>getDisconnectedRealOutputPatternChannels</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="125" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="368" bodyend="390"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a7ba3f747f8e164f0c0984fdb14922e7a" compoundref="Bundle_8cpp" startline="724" endline="727">getPrimaryOutputFibreByRealChannel</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a4043d8bfeb8b066418029864f51d92de" compoundref="Bundle_8h" startline="378">realOutputChannelsMap</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a7e38b0167e7873fea9d768d3b096a9d8" compoundref="Bundle_8cpp" startline="301" endline="340">autoConnectPrimaryOutputClusters</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a0aa4399de46de8ee753e3959fca2fb62" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1structures_1_1Fibre" kindref="compound">Fibre</ref> &gt;</type>
+        <definition>boost::shared_ptr&lt; Fibre &gt; cryomesh::structures::Bundle::connectLoopbackCluster</definition>
+        <argsstring>(boost::uuids::uuid clusterUUID, int fibreWidth)</argsstring>
+        <name>connectLoopbackCluster</name>
+        <param>
+          <type>boost::uuids::uuid</type>
+          <declname>clusterUUID</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fibreWidth</declname>
+        </param>
+        <briefdescription>
+<para>Helper access function for specialised connection. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1structures_1_1Fibre_1aecbba6d46a76f888b3722491b674f5e4" kindref="member">Fibre::FibreType</ref> &amp; type Type of fibre connection to make </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>width Width of fibre to create</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The new fibre created, possible null </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="138" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="392" bodyend="394"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1af1884f99e746cdfa549b63f1589b5dac" compoundref="Bundle_8cpp" startline="61" endline="76">connectCluster</references>
+        <references refid="classcryomesh_1_1structures_1_1Fibre_1aecbba6d46a76f888b3722491b674f5e4abb9c562751800615ea00d21c6d1a0dfe" compoundref="Fibre_8h" startline="47">cryomesh::structures::Fibre::LoopbackFibre</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1ad60a89acf924c5aebae3a5f816f358db" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void cryomesh::structures::Bundle::loadChannels</definition>
+        <argsstring>(const std::string &amp;ifstr)</argsstring>
+        <name>loadChannels</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>ifstr</declname>
+        </param>
+        <briefdescription>
+<para>Load in the pattern channels from a filename of a pattern dataset. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The full path filename of the pattern data set </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="146" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="396" bodyend="406"/>
+        <references refid="classcryomesh_1_1utilities_1_1SequencerChannels_1a2099c0ea6a68acda477034425c0d599c" compoundref="SequencerChannels_8cpp" startline="39" endline="129">cryomesh::utilities::SequencerChannels::readSequences</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1ac9bd1c696001ef8acb7291a5f9e81c8b" compoundref="Bundle_8h" startline="371">realInputChannelsMap</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a4043d8bfeb8b066418029864f51d92de" compoundref="Bundle_8h" startline="378">realOutputChannelsMap</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a181e1f2aaa3b529b8609917d5b5315e0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const ClusterMap &amp;</type>
+        <definition>const ClusterMap &amp; cryomesh::structures::Bundle::getClusters</definition>
+        <argsstring>() const </argsstring>
+        <name>getClusters</name>
+        <briefdescription>
+<para>Get the clusters in this bundle. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>ClusterMap The map of clusters in this bundle </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="154" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="408" bodyend="410"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a35a36d3305706f597f4c586fcd9f74b7" compoundref="Bundle_8h" startline="357">clusters</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a441eda1670224083d5efc20b3a6bb9ff" compoundref="Bundle_8cpp" startline="477" endline="556">checkFibreStructure</referencedby>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1a9e6c8527426ae11edbedbc21b4215007" compoundref="Statistician_8cpp" startline="76" endline="93">cryomesh::utilities::Statistician::getActiveNodesPerCluster</referencedby>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1ab38d0c6cfb206e6c331c6af95388faab" compoundref="Statistician_8cpp" startline="57" endline="74">cryomesh::utilities::Statistician::getTriggeredNodesPerCluster</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a1b2bdda71a78b4e89af23f21e7611ee4" compoundref="Bundle_8cpp" startline="836" endline="866">print</referencedby>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1a3b6005b898ef77ca2fa2724f069b2c25" compoundref="Statistician_8cpp" startline="24" endline="33">cryomesh::utilities::Statistician::update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a8f112d3b34f84511781879217b15c6d2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classcryomesh_1_1structures_1_1FibreMap" kindref="compound">FibreMap</ref> &amp;</type>
+        <definition>const FibreMap &amp; cryomesh::structures::Bundle::getFibres</definition>
+        <argsstring>() const </argsstring>
+        <name>getFibres</name>
+        <briefdescription>
+<para>Get the mutable clusters in this bundle. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>ClusterMap The mutable map of clusters in this bundle </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="162" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="427" bodyend="429"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a71b3308a867169b8e9af9ab71b8bdf98" compoundref="Bundle_8h" startline="364">fibres</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a441eda1670224083d5efc20b3a6bb9ff" compoundref="Bundle_8cpp" startline="477" endline="556">checkFibreStructure</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a1b2bdda71a78b4e89af23f21e7611ee4" compoundref="Bundle_8cpp" startline="836" endline="866">print</referencedby>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1a3b6005b898ef77ca2fa2724f069b2c25" compoundref="Statistician_8cpp" startline="24" endline="33">cryomesh::utilities::Statistician::update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a5c6496d00065462122a71c812fa7a4e8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classcryomesh_1_1structures_1_1FibreMap" kindref="compound">FibreMap</ref> &amp;</type>
+        <definition>const FibreMap &amp; cryomesh::structures::Bundle::getInputFibres</definition>
+        <argsstring>() const </argsstring>
+        <name>getInputFibres</name>
+        <briefdescription>
+<para>Get the input fibres of this bundle. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classcryomesh_1_1structures_1_1FibreMap" kindref="compound">FibreMap</ref> The map of input fibres of this bundle </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="170" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="431" bodyend="433"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1aa6a461295021bdfb4ef4cab0f136a2c1" compoundref="Bundle_8h" startline="399">inputFibres</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a441eda1670224083d5efc20b3a6bb9ff" compoundref="Bundle_8cpp" startline="477" endline="556">checkFibreStructure</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a1b2bdda71a78b4e89af23f21e7611ee4" compoundref="Bundle_8cpp" startline="836" endline="866">print</referencedby>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1a3b6005b898ef77ca2fa2724f069b2c25" compoundref="Statistician_8cpp" startline="24" endline="33">cryomesh::utilities::Statistician::update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1af8b848abb7ec12997b09c63c0c10650d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classcryomesh_1_1structures_1_1FibreMap" kindref="compound">FibreMap</ref> &amp;</type>
+        <definition>FibreMap &amp; cryomesh::structures::Bundle::getMutableInputFibres</definition>
+        <argsstring>()</argsstring>
+        <name>getMutableInputFibres</name>
+        <briefdescription>
+<para>Get the mutable input fibres of this bundle. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classcryomesh_1_1structures_1_1FibreMap" kindref="compound">FibreMap</ref> The map of mutable input fibres of this bundle </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="178" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="435" bodyend="437"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1aa6a461295021bdfb4ef4cab0f136a2c1" compoundref="Bundle_8h" startline="399">inputFibres</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a2c14a3f2cc96236bff6548e5103183de" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classcryomesh_1_1structures_1_1FibreMap" kindref="compound">FibreMap</ref> &amp;</type>
+        <definition>const FibreMap &amp; cryomesh::structures::Bundle::getOutputFibres</definition>
+        <argsstring>() const </argsstring>
+        <name>getOutputFibres</name>
+        <briefdescription>
+<para>Get the output fibres of this bundle. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classcryomesh_1_1structures_1_1FibreMap" kindref="compound">FibreMap</ref> The map of output fibres of this bundle </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="186" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="439" bodyend="441"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1aa671193358b7aba173e45574def3d4c1" compoundref="Bundle_8h" startline="406">outputFibres</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a441eda1670224083d5efc20b3a6bb9ff" compoundref="Bundle_8cpp" startline="477" endline="556">checkFibreStructure</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a3a8a7cfb5d525ff59a52dd1a39909621" compoundref="Bundle_8cpp" startline="652" endline="684">matchOutputChannelsSum</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a1b2bdda71a78b4e89af23f21e7611ee4" compoundref="Bundle_8cpp" startline="836" endline="866">print</referencedby>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1a3b6005b898ef77ca2fa2724f069b2c25" compoundref="Statistician_8cpp" startline="24" endline="33">cryomesh::utilities::Statistician::update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1af9fd12e753bab64750f5c32d5f17a554" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classcryomesh_1_1structures_1_1FibreMap" kindref="compound">FibreMap</ref> &amp;</type>
+        <definition>FibreMap &amp; cryomesh::structures::Bundle::getMutableOutputFibres</definition>
+        <argsstring>()</argsstring>
+        <name>getMutableOutputFibres</name>
+        <briefdescription>
+<para>Get the mutable output fibres of this bundle. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classcryomesh_1_1structures_1_1FibreMap" kindref="compound">FibreMap</ref> The map of mutable output fibres of this bundle </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="194" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="443" bodyend="445"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1aa671193358b7aba173e45574def3d4c1" compoundref="Bundle_8h" startline="406">outputFibres</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1ada0ae8374d27d9b59ca82b8075fbd401" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classcryomesh_1_1state_1_1PatternChannelMap" kindref="compound">state::PatternChannelMap</ref> &amp;</type>
+        <definition>const state::PatternChannelMap &amp; cryomesh::structures::Bundle::getRealInputChannelsMap</definition>
+        <argsstring>() const </argsstring>
+        <name>getRealInputChannelsMap</name>
+        <briefdescription>
+<para>Get the real input pattern channels of this bundle. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>PatternChannelMap The map of real input pattern channels of this bundle </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="202" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="447" bodyend="449"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1ac9bd1c696001ef8acb7291a5f9e81c8b" compoundref="Bundle_8h" startline="371">realInputChannelsMap</references>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1a3b6005b898ef77ca2fa2724f069b2c25" compoundref="Statistician_8cpp" startline="24" endline="33">cryomesh::utilities::Statistician::update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a893be908a14ecc2d07270273d3d127e2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classcryomesh_1_1state_1_1PatternChannelMap" kindref="compound">state::PatternChannelMap</ref> &amp;</type>
+        <definition>const state::PatternChannelMap &amp; cryomesh::structures::Bundle::getRealOutputChannelsMap</definition>
+        <argsstring>() const </argsstring>
+        <name>getRealOutputChannelsMap</name>
+        <briefdescription>
+<para>Get the real output pattern channels of this bundle. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>PatternChannelMap The map of real output pattern channels of this bundle </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="210" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="450" bodyend="452"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a4043d8bfeb8b066418029864f51d92de" compoundref="Bundle_8h" startline="378">realOutputChannelsMap</references>
+        <referencedby refid="classcryomesh_1_1utilities_1_1Statistician_1a3b6005b898ef77ca2fa2724f069b2c25" compoundref="Statistician_8cpp" startline="24" endline="33">cryomesh::utilities::Statistician::update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a65bf0246390e7cb0e90caf4fb302fa41" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classcryomesh_1_1state_1_1PatternChannelMap" kindref="compound">state::PatternChannelMap</ref> &amp;</type>
+        <definition>const state::PatternChannelMap &amp; cryomesh::structures::Bundle::getActualInputChannelsMap</definition>
+        <argsstring>() const </argsstring>
+        <name>getActualInputChannelsMap</name>
+        <briefdescription>
+<para>Get the actual input pattern channels of this bundle. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>PatternChannelMap The map of actual input pattern channels of this bundle </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="218" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="453" bodyend="455"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1ae20b2f9819708971357148dd024db00d" compoundref="Bundle_8h" startline="385">actualInputChannelsMap</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a382242e3b29b92b25edc9162aa810ebe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classcryomesh_1_1state_1_1PatternChannelMap" kindref="compound">state::PatternChannelMap</ref> &amp;</type>
+        <definition>const state::PatternChannelMap &amp; cryomesh::structures::Bundle::getActualOutputChannelsMap</definition>
+        <argsstring>() const </argsstring>
+        <name>getActualOutputChannelsMap</name>
+        <briefdescription>
+<para>Get the real output pattern channels of this bundle. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>PatternChannelMap The map of actual output pattern channels of this bundle </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="226" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="456" bodyend="458"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1ac67a6d7b29b37b8927c93350e8bcf6e5" compoundref="Bundle_8h" startline="392">actualOutputChannelsMap</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a2e31be3bab4a15e4e9ba6aeac48b91df" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::map&lt; boost::uuids::uuid, boost::uuids::uuid &gt; &amp;</type>
+        <definition>const std::map&lt; boost::uuids::uuid, boost::uuids::uuid &gt; &amp; cryomesh::structures::Bundle::getRealFibrePatternChannelMap</definition>
+        <argsstring>() const </argsstring>
+        <name>getRealFibrePatternChannelMap</name>
+        <briefdescription>
+<para>Get the map of fibres to their associated pattern channels. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>std::map&lt;boost::uuids::uuid, boost::uuids::uuid&gt; The map of fibres to their associated pattern channels </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="234" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="460" bodyend="462"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1adaf7fa91209de01b9d42ae2d8228c3cd" compoundref="Bundle_8h" startline="423">realFibrePatternChannelMap</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1ab7308eec882450980ebfbb7167a3538d" compoundref="Bundle_8cpp" startline="950" endline="957">printFibreMaps</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a872de96a76f772182eda2abbb98a99cc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::map&lt; boost::uuids::uuid, boost::uuids::uuid &gt; &amp;</type>
+        <definition>const std::map&lt; boost::uuids::uuid, boost::uuids::uuid &gt; &amp; cryomesh::structures::Bundle::getActualFibrePatternChannelMap</definition>
+        <argsstring>() const </argsstring>
+        <name>getActualFibrePatternChannelMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="235" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="463" bodyend="465"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a0f3e20833ce850f97ae450d27a4607dd" compoundref="Bundle_8h" startline="430">actualFibrePatternChannelMap</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1ab7308eec882450980ebfbb7167a3538d" compoundref="Bundle_8cpp" startline="950" endline="957">printFibreMaps</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a5bfac318b9a6f9f651fad0657b9b9196" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const boost::shared_ptr&lt; <ref refid="classcryomesh_1_1utilities_1_1Statistician" kindref="compound">utilities::Statistician</ref> &gt;</type>
+        <definition>const boost::shared_ptr&lt; utilities::Statistician &gt; cryomesh::structures::Bundle::getStatistician</definition>
+        <argsstring>() const </argsstring>
+        <name>getStatistician</name>
+        <briefdescription>
+<para>Get the Statistician. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>boost::shared_ptr&lt; Statistician &gt; The current statistician, null pointer if we dont have one </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="243" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="466" bodyend="468"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1ad505cbda03b4e78399fd3a9568d79708" compoundref="Bundle_8h" startline="411">statistician</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1ae750ab1bd2b1a937f90d97e416aefced" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1utilities_1_1Statistician" kindref="compound">utilities::Statistician</ref> &gt;</type>
+        <definition>boost::shared_ptr&lt; utilities::Statistician &gt; cryomesh::structures::Bundle::getMutableStatistician</definition>
+        <argsstring>()</argsstring>
+        <name>getMutableStatistician</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="244" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="473" bodyend="475"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1ad505cbda03b4e78399fd3a9568d79708" compoundref="Bundle_8h" startline="411">statistician</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1aec88635d8c4fdc76b6c3c22b915ee459" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double cryomesh::structures::Bundle::getEnergy</definition>
+        <argsstring>() const </argsstring>
+        <name>getEnergy</name>
+        <briefdescription>
+<para>Get the last calculated energy of the bundle. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>double The last calculated energy </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="252" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="470" bodyend="472"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1aac5229c4c52e646767db2144ba745aa6" compoundref="Bundle_8h" startline="416">energy</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1add5af28ceb5c7722d267ba32810c5df7" compoundref="Bundle_8cpp" startline="26" endline="52">update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a5927b1a21111e6b78c143280c49a9701" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::structures::Bundle::checkStructure</definition>
+        <argsstring>() const </argsstring>
+        <name>checkStructure</name>
+        <briefdescription>
+<para>Run a system structure check. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>bool True if system passes all tests, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="260" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="561" bodyend="566"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a1c1b3a4fe6d32259753d69c8a9b0deaa" compoundref="Bundle_8cpp" startline="558" endline="560">checkChannelStructure</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a441eda1670224083d5efc20b3a6bb9ff" compoundref="Bundle_8cpp" startline="477" endline="556">checkFibreStructure</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a441eda1670224083d5efc20b3a6bb9ff" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::structures::Bundle::checkFibreStructure</definition>
+        <argsstring>() const </argsstring>
+        <name>checkFibreStructure</name>
+        <briefdescription>
+<para>Check the structure of Fibres. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>bool True if structure tests pass, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="268" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="477" bodyend="556"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a181e1f2aaa3b529b8609917d5b5315e0" compoundref="Bundle_8cpp" startline="408" endline="410">getClusters</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a8f112d3b34f84511781879217b15c6d2" compoundref="Bundle_8cpp" startline="427" endline="429">getFibres</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a5c6496d00065462122a71c812fa7a4e8" compoundref="Bundle_8cpp" startline="431" endline="433">getInputFibres</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a2c14a3f2cc96236bff6548e5103183de" compoundref="Bundle_8cpp" startline="439" endline="441">getOutputFibres</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a5927b1a21111e6b78c143280c49a9701" compoundref="Bundle_8cpp" startline="561" endline="566">checkStructure</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a1c1b3a4fe6d32259753d69c8a9b0deaa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::structures::Bundle::checkChannelStructure</definition>
+        <argsstring>() const </argsstring>
+        <name>checkChannelStructure</name>
+        <briefdescription>
+<para>Check the structure of Channels. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>bool True if structure tests pass, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="276" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="558" bodyend="560"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a5927b1a21111e6b78c143280c49a9701" compoundref="Bundle_8cpp" startline="561" endline="566">checkStructure</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1abe63fcceae95f0ffb06db094076b42c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void cryomesh::structures::Bundle::enableDebug</definition>
+        <argsstring>(bool b)</argsstring>
+        <name>enableDebug</name>
+        <param>
+          <type>bool</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="278" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="412" bodyend="415"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a8e7f1752b8b0112adf8939921eff4e50" compoundref="Bundle_8cpp" startline="417" endline="419">enableDebugClusters</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a742597fd733573d8242966f89f8e6715" compoundref="Bundle_8cpp" startline="420" endline="422">enableDebugFibres</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a8e7f1752b8b0112adf8939921eff4e50" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void cryomesh::structures::Bundle::enableDebugClusters</definition>
+        <argsstring>(bool b)</argsstring>
+        <name>enableDebugClusters</name>
+        <param>
+          <type>bool</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="279" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="417" bodyend="419"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a35a36d3305706f597f4c586fcd9f74b7" compoundref="Bundle_8h" startline="357">clusters</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1abe63fcceae95f0ffb06db094076b42c5" compoundref="Bundle_8cpp" startline="412" endline="415">enableDebug</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a742597fd733573d8242966f89f8e6715" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void cryomesh::structures::Bundle::enableDebugFibres</definition>
+        <argsstring>(bool b)</argsstring>
+        <name>enableDebugFibres</name>
+        <param>
+          <type>bool</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="280" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="420" bodyend="422"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a71b3308a867169b8e9af9ab71b8bdf98" compoundref="Bundle_8h" startline="364">fibres</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1abe63fcceae95f0ffb06db094076b42c5" compoundref="Bundle_8cpp" startline="412" endline="415">enableDebug</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a1b2bdda71a78b4e89af23f21e7611ee4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; cryomesh::structures::Bundle::print</definition>
+        <argsstring>(std::ostream &amp;os, const common::Loggable::LoggingDepth depth=SUMMARY) const </argsstring>
+        <name>print</name>
+        <reimplements refid="classcryomesh_1_1common_1_1Loggable_1a8709b369a43141412e72786dba572dfd">print</reimplements>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1common_1_1Loggable_1a4d85401f6c81bc8ed94e49d66ae574c5" kindref="member">common::Loggable::LoggingDepth</ref></type>
+          <declname>depth</declname>
+          <defval><ref refid="classcryomesh_1_1common_1_1Loggable_1a4d85401f6c81bc8ed94e49d66ae574c5a51f5abcf5a53a8930a09b065fc64a44f" kindref="member">SUMMARY</ref></defval>
+        </param>
+        <briefdescription>
+<para>Print the bundle to stream. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="284" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="836" bodyend="866"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a181e1f2aaa3b529b8609917d5b5315e0" compoundref="Bundle_8cpp" startline="408" endline="410">getClusters</references>
+        <references refid="classcryomesh_1_1common_1_1TimeKeeper_1aa0bfaecbd5118af91d63296f158cee09" compoundref="TimeKeeper_8cpp" startline="76" endline="78">cryomesh::common::TimeKeeper::getCycle</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a8f112d3b34f84511781879217b15c6d2" compoundref="Bundle_8cpp" startline="427" endline="429">getFibres</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a5c6496d00065462122a71c812fa7a4e8" compoundref="Bundle_8cpp" startline="431" endline="433">getInputFibres</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a2c14a3f2cc96236bff6548e5103183de" compoundref="Bundle_8cpp" startline="439" endline="441">getOutputFibres</references>
+        <references refid="classcryomesh_1_1common_1_1TimeKeeper_1afe7b229532e11119cb2653192615d679" compoundref="TimeKeeper_8cpp" startline="19" endline="24">cryomesh::common::TimeKeeper::getTimeKeeper</references>
+        <references refid="classcryomesh_1_1common_1_1Loggable_1a4d85401f6c81bc8ed94e49d66ae574c5ae496af0b41e3b64530b61e315822cc51" compoundref="Loggable_8h" startline="24">cryomesh::common::Loggable::MAX</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1ad794a923f68c51c5c1ac4588586b6be7" compoundref="Bundle_8cpp" startline="868" endline="948">printChannels</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1ab7308eec882450980ebfbb7167a3538d" compoundref="Bundle_8cpp" startline="950" endline="957">printFibreMaps</references>
+        <references refid="classcryomesh_1_1common_1_1Loggable_1a4d85401f6c81bc8ed94e49d66ae574c5a51f5abcf5a53a8930a09b065fc64a44f" compoundref="Loggable_8h" startline="24">cryomesh::common::Loggable::SUMMARY</references>
+        <referencedby refid="namespacecryomesh_1_1structures_1a2e1e77e062248b853cfcfc84d5451ca7" compoundref="Bundle_8cpp" startline="973" endline="976">cryomesh::structures::operator&lt;&lt;</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1ad794a923f68c51c5c1ac4588586b6be7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; cryomesh::structures::Bundle::printChannels</definition>
+        <argsstring>(std::ostream &amp;os) const </argsstring>
+        <name>printChannels</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <briefdescription>
+<para>Print the channels to stream. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="288" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="868" bodyend="948"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1ae20b2f9819708971357148dd024db00d" compoundref="Bundle_8h" startline="385">actualInputChannelsMap</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1ac67a6d7b29b37b8927c93350e8bcf6e5" compoundref="Bundle_8h" startline="392">actualOutputChannelsMap</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1ac9bd1c696001ef8acb7291a5f9e81c8b" compoundref="Bundle_8h" startline="371">realInputChannelsMap</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a4043d8bfeb8b066418029864f51d92de" compoundref="Bundle_8h" startline="378">realOutputChannelsMap</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a1b2bdda71a78b4e89af23f21e7611ee4" compoundref="Bundle_8cpp" startline="836" endline="866">print</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1ab7308eec882450980ebfbb7167a3538d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; cryomesh::structures::Bundle::printFibreMaps</definition>
+        <argsstring>(std::ostream &amp;os) const </argsstring>
+        <name>printFibreMaps</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="290" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="950" bodyend="957"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a872de96a76f772182eda2abbb98a99cc" compoundref="Bundle_8cpp" startline="463" endline="465">getActualFibrePatternChannelMap</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a2e31be3bab4a15e4e9ba6aeac48b91df" compoundref="Bundle_8cpp" startline="460" endline="462">getRealFibrePatternChannelMap</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a6a6110f318167f4cc82ab6736e291628" compoundref="Bundle_8cpp" startline="959" endline="971">printFibreMap</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a1b2bdda71a78b4e89af23f21e7611ee4" compoundref="Bundle_8cpp" startline="836" endline="866">print</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a7a95265553776d6216799e143134a59f" compoundref="Bundle_8cpp" startline="618" endline="650">updatePrimaryOutputFibres</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a6a6110f318167f4cc82ab6736e291628" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; cryomesh::structures::Bundle::printFibreMap</definition>
+        <argsstring>(std::ostream &amp;os, const std::map&lt; boost::uuids::uuid, boost::uuids::uuid &gt; &amp;fibre_map) const </argsstring>
+        <name>printFibreMap</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const std::map&lt; boost::uuids::uuid, boost::uuids::uuid &gt; &amp;</type>
+          <declname>fibre_map</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="292" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="959" bodyend="971"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1ab7308eec882450980ebfbb7167a3538d" compoundref="Bundle_8cpp" startline="950" endline="957">printFibreMaps</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classcryomesh_1_1structures_1_1Bundle_1a21e43a0b5ea3e93accc964e269c730bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const Bundle &amp;obj)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1structures_1_1Bundle" kindref="compound">Bundle</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>To stream operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::ostream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp; os The output stream </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1structures_1_1Bundle" kindref="compound">Bundle</ref> &amp; obj The object to stream</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::ostream &amp; The output stream </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="305" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="973" bodyend="976"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1abe52d8718eeb7bb6a17211d4dfbed440" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void cryomesh::structures::Bundle::updatePrimaryInputFibres</definition>
+        <argsstring>()</argsstring>
+        <name>updatePrimaryInputFibres</name>
+        <briefdescription>
+<para>Get the next patterns from channels and apply them to their mapped fibres. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="311" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="568" bodyend="616"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a101bda3e32c34cf8e0cff4526446af02" compoundref="Bundle_8cpp" startline="711" endline="714">getActualPrimaryInputChannelByFibre</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1ae1259ecf25a6b140cad735defd9069f9" compoundref="Bundle_8cpp" startline="720" endline="723">getPrimaryInputFibreByRealChannel</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1aa6a461295021bdfb4ef4cab0f136a2c1" compoundref="Bundle_8h" startline="399">inputFibres</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1ac9bd1c696001ef8acb7291a5f9e81c8b" compoundref="Bundle_8h" startline="371">realInputChannelsMap</references>
+        <references refid="classcryomesh_1_1structures_1_1FibreMap_1a9caf159d1ca71ed1046bd52167fe009f" compoundref="FibreMap_8h" startline="24" endline="38">cryomesh::structures::FibreMap::update</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1add5af28ceb5c7722d267ba32810c5df7" compoundref="Bundle_8cpp" startline="26" endline="52">update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a7a95265553776d6216799e143134a59f" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void cryomesh::structures::Bundle::updatePrimaryOutputFibres</definition>
+        <argsstring>()</argsstring>
+        <name>updatePrimaryOutputFibres</name>
+        <briefdescription>
+<para>Get the patterns from primary output fibres and apply them to their mapped pattern channels. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="317" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="618" bodyend="650"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a13dcea26d3379199f9e993caa5e132d7" compoundref="Bundle_8cpp" startline="715" endline="718">getActualPrimaryOutputChannelByFibre</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1aa671193358b7aba173e45574def3d4c1" compoundref="Bundle_8h" startline="406">outputFibres</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1ab7308eec882450980ebfbb7167a3538d" compoundref="Bundle_8cpp" startline="950" endline="957">printFibreMaps</references>
+        <references refid="classcryomesh_1_1structures_1_1FibreMap_1a9caf159d1ca71ed1046bd52167fe009f" compoundref="FibreMap_8h" startline="24" endline="38">cryomesh::structures::FibreMap::update</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1add5af28ceb5c7722d267ba32810c5df7" compoundref="Bundle_8cpp" startline="26" endline="52">update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a3a8a7cfb5d525ff59a52dd1a39909621" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double cryomesh::structures::Bundle::matchOutputChannelsSum</definition>
+        <argsstring>() const </argsstring>
+        <name>matchOutputChannelsSum</name>
+        <briefdescription>
+<para>Compare the output channels of primary output fibres to expected output channel patterns. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>double The double represesenting the accumulated &apos;energy&apos; of all matches </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="326" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="652" bodyend="684"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a13dcea26d3379199f9e993caa5e132d7" compoundref="Bundle_8cpp" startline="715" endline="718">getActualPrimaryOutputChannelByFibre</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a2c14a3f2cc96236bff6548e5103183de" compoundref="Bundle_8cpp" startline="439" endline="441">getOutputFibres</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a00eb0f18cc3331a4e6d0ed4698e92cb5" compoundref="Bundle_8cpp" startline="707" endline="710">getRealPrimaryOutputChannelByFibre</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1add5af28ceb5c7722d267ba32810c5df7" compoundref="Bundle_8cpp" startline="26" endline="52">update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a804c625c912657cebd3350c7c1b53c10" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void cryomesh::structures::Bundle::updateStatistician</definition>
+        <argsstring>()</argsstring>
+        <name>updateStatistician</name>
+        <briefdescription>
+<para>Update the statistician if debugging is enabled. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="331" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="690" bodyend="701"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1ad505cbda03b4e78399fd3a9568d79708" compoundref="Bundle_8h" startline="411">statistician</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1add5af28ceb5c7722d267ba32810c5df7" compoundref="Bundle_8cpp" startline="26" endline="52">update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1ae6a553eaab4ddf2b6bbd6bdeca9361ad" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::structures::Bundle::setEnergy</definition>
+        <argsstring>(double d)</argsstring>
+        <name>setEnergy</name>
+        <param>
+          <type>double</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+<para>Set the energy of the bundle. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>double</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The energy to set </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="339" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="686" bodyend="688"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1aac5229c4c52e646767db2144ba745aa6" compoundref="Bundle_8h" startline="416">energy</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1add5af28ceb5c7722d267ba32810c5df7" compoundref="Bundle_8cpp" startline="26" endline="52">update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a14990ba8cec7b9c18426ae8c2fdd0dcf" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ClusterMap &amp;</type>
+        <definition>ClusterMap &amp; cryomesh::structures::Bundle::getMutableClusters</definition>
+        <argsstring>()</argsstring>
+        <name>getMutableClusters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="341" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="424" bodyend="426"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a35a36d3305706f597f4c586fcd9f74b7" compoundref="Bundle_8h" startline="357">clusters</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a31fef59219384dafb4d250eae65f3574" compoundref="Bundle_8cpp" startline="206" endline="229">autoConnectPrimaryInputClusters</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a53f6a455e7cb553352dbef64d3a1ec04" compoundref="Bundle_8cpp" startline="231" endline="252">autoConnectPrimaryOutputClusters</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1af89da428bb056c8eea81a416783cf2ae" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; cryomesh::structures::Bundle::printSearch</definition>
+        <argsstring>(std::ostream &amp;os, const boost::uuids::uuid &amp;uuid, const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; T &gt; &gt; &amp;map) const </argsstring>
+        <name>printSearch</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const boost::uuids::uuid &amp;</type>
+          <declname>uuid</declname>
+        </param>
+        <param>
+          <type>const std::map&lt; boost::uuids::uuid, boost::shared_ptr&lt; T &gt; &gt; &amp;</type>
+          <declname>map</declname>
+        </param>
+        <briefdescription>
+<para>Print out a uuid search. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="348" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="814" bodyend="834"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a51eb35ecb02094016f0f3a74fd07f6e9" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const boost::shared_ptr&lt; <ref refid="classcryomesh_1_1state_1_1PatternChannel" kindref="compound">state::PatternChannel</ref> &gt;</type>
+        <definition>const boost::shared_ptr&lt; state::PatternChannel &gt; cryomesh::structures::Bundle::getRealPrimaryInputChannelByFibre</definition>
+        <argsstring>(const boost::uuids::uuid fibre_uuid) const </argsstring>
+        <name>getRealPrimaryInputChannelByFibre</name>
+        <param>
+          <type>const boost::uuids::uuid</type>
+          <declname>fibre_uuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="435" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="703" bodyend="706"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a237b9698b966c6498fb723f685292599" compoundref="Bundle_8cpp" startline="787" endline="811">getPrimaryChannelByFibre</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1adaf7fa91209de01b9d42ae2d8228c3cd" compoundref="Bundle_8h" startline="423">realFibrePatternChannelMap</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1ac9bd1c696001ef8acb7291a5f9e81c8b" compoundref="Bundle_8h" startline="371">realInputChannelsMap</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a00eb0f18cc3331a4e6d0ed4698e92cb5" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const boost::shared_ptr&lt; <ref refid="classcryomesh_1_1state_1_1PatternChannel" kindref="compound">state::PatternChannel</ref> &gt;</type>
+        <definition>const boost::shared_ptr&lt; state::PatternChannel &gt; cryomesh::structures::Bundle::getRealPrimaryOutputChannelByFibre</definition>
+        <argsstring>(const boost::uuids::uuid fibre_uuid) const </argsstring>
+        <name>getRealPrimaryOutputChannelByFibre</name>
+        <param>
+          <type>const boost::uuids::uuid</type>
+          <declname>fibre_uuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="437" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="707" bodyend="710"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a237b9698b966c6498fb723f685292599" compoundref="Bundle_8cpp" startline="787" endline="811">getPrimaryChannelByFibre</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1adaf7fa91209de01b9d42ae2d8228c3cd" compoundref="Bundle_8h" startline="423">realFibrePatternChannelMap</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a4043d8bfeb8b066418029864f51d92de" compoundref="Bundle_8h" startline="378">realOutputChannelsMap</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a3a8a7cfb5d525ff59a52dd1a39909621" compoundref="Bundle_8cpp" startline="652" endline="684">matchOutputChannelsSum</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a101bda3e32c34cf8e0cff4526446af02" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const boost::shared_ptr&lt; <ref refid="classcryomesh_1_1state_1_1PatternChannel" kindref="compound">state::PatternChannel</ref> &gt;</type>
+        <definition>const boost::shared_ptr&lt; state::PatternChannel &gt; cryomesh::structures::Bundle::getActualPrimaryInputChannelByFibre</definition>
+        <argsstring>(const boost::uuids::uuid fibre_uuid) const </argsstring>
+        <name>getActualPrimaryInputChannelByFibre</name>
+        <param>
+          <type>const boost::uuids::uuid</type>
+          <declname>fibre_uuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="439" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="711" bodyend="714"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a0f3e20833ce850f97ae450d27a4607dd" compoundref="Bundle_8h" startline="430">actualFibrePatternChannelMap</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1ae20b2f9819708971357148dd024db00d" compoundref="Bundle_8h" startline="385">actualInputChannelsMap</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a237b9698b966c6498fb723f685292599" compoundref="Bundle_8cpp" startline="787" endline="811">getPrimaryChannelByFibre</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1abe52d8718eeb7bb6a17211d4dfbed440" compoundref="Bundle_8cpp" startline="568" endline="616">updatePrimaryInputFibres</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a13dcea26d3379199f9e993caa5e132d7" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const boost::shared_ptr&lt; <ref refid="classcryomesh_1_1state_1_1PatternChannel" kindref="compound">state::PatternChannel</ref> &gt;</type>
+        <definition>const boost::shared_ptr&lt; state::PatternChannel &gt; cryomesh::structures::Bundle::getActualPrimaryOutputChannelByFibre</definition>
+        <argsstring>(const boost::uuids::uuid fibre_uuid) const </argsstring>
+        <name>getActualPrimaryOutputChannelByFibre</name>
+        <param>
+          <type>const boost::uuids::uuid</type>
+          <declname>fibre_uuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="441" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="715" bodyend="718"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a0f3e20833ce850f97ae450d27a4607dd" compoundref="Bundle_8h" startline="430">actualFibrePatternChannelMap</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1ac67a6d7b29b37b8927c93350e8bcf6e5" compoundref="Bundle_8h" startline="392">actualOutputChannelsMap</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a237b9698b966c6498fb723f685292599" compoundref="Bundle_8cpp" startline="787" endline="811">getPrimaryChannelByFibre</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a3a8a7cfb5d525ff59a52dd1a39909621" compoundref="Bundle_8cpp" startline="652" endline="684">matchOutputChannelsSum</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a7a95265553776d6216799e143134a59f" compoundref="Bundle_8cpp" startline="618" endline="650">updatePrimaryOutputFibres</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1ae1259ecf25a6b140cad735defd9069f9" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const boost::shared_ptr&lt; <ref refid="classcryomesh_1_1structures_1_1Fibre" kindref="compound">Fibre</ref> &gt;</type>
+        <definition>const boost::shared_ptr&lt; Fibre &gt; cryomesh::structures::Bundle::getPrimaryInputFibreByRealChannel</definition>
+        <argsstring>(const boost::uuids::uuid pattern_channel_uuid) const </argsstring>
+        <name>getPrimaryInputFibreByRealChannel</name>
+        <param>
+          <type>const boost::uuids::uuid</type>
+          <declname>pattern_channel_uuid</declname>
+        </param>
+        <briefdescription>
+<para>Helper method to take a uuid and find its correspondingly mapped object Take an input PatternChannel uuid and find the input <ref refid="classcryomesh_1_1structures_1_1Fibre" kindref="compound">Fibre</ref> its mapped to. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boost::uuids::uuid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The uuid of the input PatternChannel</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boost::shared_ptr&lt;Fibre&gt; The input <ref refid="classcryomesh_1_1structures_1_1Fibre" kindref="compound">Fibre</ref> object the input PatternChannel with this uuid is mapped to, null if not found </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="453" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="720" bodyend="723"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1aecdb1fc4017f4e4aa954b4158e99c86f" compoundref="Bundle_8cpp" startline="736" endline="786">getPrimaryFibreByChannel</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1aa6a461295021bdfb4ef4cab0f136a2c1" compoundref="Bundle_8h" startline="399">inputFibres</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1adaf7fa91209de01b9d42ae2d8228c3cd" compoundref="Bundle_8h" startline="423">realFibrePatternChannelMap</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a6f400ee92f49fed82ca9ef5b48cde285" compoundref="Bundle_8cpp" startline="342" endline="367">getDisconnectedRealInputPatternChannels</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1abe52d8718eeb7bb6a17211d4dfbed440" compoundref="Bundle_8cpp" startline="568" endline="616">updatePrimaryInputFibres</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a7ba3f747f8e164f0c0984fdb14922e7a" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const boost::shared_ptr&lt; <ref refid="classcryomesh_1_1structures_1_1Fibre" kindref="compound">Fibre</ref> &gt;</type>
+        <definition>const boost::shared_ptr&lt; Fibre &gt; cryomesh::structures::Bundle::getPrimaryOutputFibreByRealChannel</definition>
+        <argsstring>(const boost::uuids::uuid pattern_channel_uuid) const </argsstring>
+        <name>getPrimaryOutputFibreByRealChannel</name>
+        <param>
+          <type>const boost::uuids::uuid</type>
+          <declname>pattern_channel_uuid</declname>
+        </param>
+        <briefdescription>
+<para>Helper method to take a uuid and find its correspondingly mapped object Take an output PatternChannel uuid and find the output <ref refid="classcryomesh_1_1structures_1_1Fibre" kindref="compound">Fibre</ref> its mapped to. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boost::uuids::uuid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The uuid of the output PatternChannel</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boost::shared_ptr&lt;Fibre&gt; The output <ref refid="classcryomesh_1_1structures_1_1Fibre" kindref="compound">Fibre</ref> object the output PatternChannel with this uuid is mapped to, null if not found </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="465" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="724" bodyend="727"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1aecdb1fc4017f4e4aa954b4158e99c86f" compoundref="Bundle_8cpp" startline="736" endline="786">getPrimaryFibreByChannel</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1aa671193358b7aba173e45574def3d4c1" compoundref="Bundle_8h" startline="406">outputFibres</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1adaf7fa91209de01b9d42ae2d8228c3cd" compoundref="Bundle_8h" startline="423">realFibrePatternChannelMap</references>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a5ce1e31c814ef83026c0dbda5ba04a24" compoundref="Bundle_8cpp" startline="368" endline="390">getDisconnectedRealOutputPatternChannels</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1ad80f4bbb8bdc379e156282bf0b17fbc3" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const boost::shared_ptr&lt; <ref refid="classcryomesh_1_1structures_1_1Fibre" kindref="compound">Fibre</ref> &gt;</type>
+        <definition>const boost::shared_ptr&lt; Fibre &gt; cryomesh::structures::Bundle::getPrimaryInputFibreByActualChannel</definition>
+        <argsstring>(const boost::uuids::uuid pattern_channel_uuid) const </argsstring>
+        <name>getPrimaryInputFibreByActualChannel</name>
+        <param>
+          <type>const boost::uuids::uuid</type>
+          <declname>pattern_channel_uuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="466" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="728" bodyend="731"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a0f3e20833ce850f97ae450d27a4607dd" compoundref="Bundle_8h" startline="430">actualFibrePatternChannelMap</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1aecdb1fc4017f4e4aa954b4158e99c86f" compoundref="Bundle_8cpp" startline="736" endline="786">getPrimaryFibreByChannel</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1aa6a461295021bdfb4ef4cab0f136a2c1" compoundref="Bundle_8h" startline="399">inputFibres</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1ae6ccd53821a90466d96ebcbf171549a2" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const boost::shared_ptr&lt; <ref refid="classcryomesh_1_1structures_1_1Fibre" kindref="compound">Fibre</ref> &gt;</type>
+        <definition>const boost::shared_ptr&lt; Fibre &gt; cryomesh::structures::Bundle::getPrimaryOutputFibreByActualChannel</definition>
+        <argsstring>(const boost::uuids::uuid pattern_channel_uuid) const </argsstring>
+        <name>getPrimaryOutputFibreByActualChannel</name>
+        <param>
+          <type>const boost::uuids::uuid</type>
+          <declname>pattern_channel_uuid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="467" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="732" bodyend="735"/>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1a0f3e20833ce850f97ae450d27a4607dd" compoundref="Bundle_8h" startline="430">actualFibrePatternChannelMap</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1aecdb1fc4017f4e4aa954b4158e99c86f" compoundref="Bundle_8cpp" startline="736" endline="786">getPrimaryFibreByChannel</references>
+        <references refid="classcryomesh_1_1structures_1_1Bundle_1aa671193358b7aba173e45574def3d4c1" compoundref="Bundle_8h" startline="406">outputFibres</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1aecdb1fc4017f4e4aa954b4158e99c86f" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const boost::shared_ptr&lt; <ref refid="classcryomesh_1_1structures_1_1Fibre" kindref="compound">Fibre</ref> &gt;</type>
+        <definition>const boost::shared_ptr&lt; Fibre &gt; cryomesh::structures::Bundle::getPrimaryFibreByChannel</definition>
+        <argsstring>(const boost::uuids::uuid id, const FibreMap &amp;map, const std::map&lt; boost::uuids::uuid, boost::uuids::uuid &gt; &amp;fibrepattern_channelmap) const </argsstring>
+        <name>getPrimaryFibreByChannel</name>
+        <param>
+          <type>const boost::uuids::uuid</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1structures_1_1FibreMap" kindref="compound">FibreMap</ref> &amp;</type>
+          <declname>map</declname>
+        </param>
+        <param>
+          <type>const std::map&lt; boost::uuids::uuid, boost::uuids::uuid &gt; &amp;</type>
+          <declname>fibrepattern_channelmap</declname>
+        </param>
+        <briefdescription>
+<para>Helper method to take a uuid and find its correspondingly mapped object Take an channel uuid and find the <ref refid="classcryomesh_1_1structures_1_1Fibre" kindref="compound">Fibre</ref> its mapped to inside the supplied map. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boost::uuids::uuid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The uuid of the PatternChannel </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="classcryomesh_1_1structures_1_1FibreMap" kindref="compound">FibreMap</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The map to search for a mapping from</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boost::shared_ptr&lt;Fibre&gt; The <ref refid="classcryomesh_1_1structures_1_1Fibre" kindref="compound">Fibre</ref> object the PatternChannel with this uuid is mapped to, null if not found </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="480" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="736" bodyend="786"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1ad80f4bbb8bdc379e156282bf0b17fbc3" compoundref="Bundle_8cpp" startline="728" endline="731">getPrimaryInputFibreByActualChannel</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1ae1259ecf25a6b140cad735defd9069f9" compoundref="Bundle_8cpp" startline="720" endline="723">getPrimaryInputFibreByRealChannel</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1ae6ccd53821a90466d96ebcbf171549a2" compoundref="Bundle_8cpp" startline="732" endline="735">getPrimaryOutputFibreByActualChannel</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a7ba3f747f8e164f0c0984fdb14922e7a" compoundref="Bundle_8cpp" startline="724" endline="727">getPrimaryOutputFibreByRealChannel</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1structures_1_1Bundle_1a237b9698b966c6498fb723f685292599" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const boost::shared_ptr&lt; <ref refid="classcryomesh_1_1state_1_1PatternChannel" kindref="compound">state::PatternChannel</ref> &gt;</type>
+        <definition>const boost::shared_ptr&lt; state::PatternChannel &gt; cryomesh::structures::Bundle::getPrimaryChannelByFibre</definition>
+        <argsstring>(const boost::uuids::uuid id, const state::PatternChannelMap &amp;map, const std::map&lt; boost::uuids::uuid, boost::uuids::uuid &gt; &amp;fibrepattern_channelmap) const </argsstring>
+        <name>getPrimaryChannelByFibre</name>
+        <param>
+          <type>const boost::uuids::uuid</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1state_1_1PatternChannelMap" kindref="compound">state::PatternChannelMap</ref> &amp;</type>
+          <declname>map</declname>
+        </param>
+        <param>
+          <type>const std::map&lt; boost::uuids::uuid, boost::uuids::uuid &gt; &amp;</type>
+          <declname>fibrepattern_channelmap</declname>
+        </param>
+        <briefdescription>
+<para>Helper method to take a uuid and find its correspondingly mapped object Take an <ref refid="classcryomesh_1_1structures_1_1Fibre" kindref="compound">Fibre</ref> uuid and find the PatternChannel its mapped to inside the supplied map. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boost::uuids::uuid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The uuid of the <ref refid="classcryomesh_1_1structures_1_1Fibre" kindref="compound">Fibre</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PatternChannelMap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The map to search for a mapping from</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boost::shared_ptr&lt;PatternChannel&gt; The PatternChannel object the <ref refid="classcryomesh_1_1structures_1_1Fibre" kindref="compound">Fibre</ref> with this uuid is mapped to, null if not found </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="495" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp" bodystart="787" bodyend="811"/>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a101bda3e32c34cf8e0cff4526446af02" compoundref="Bundle_8cpp" startline="711" endline="714">getActualPrimaryInputChannelByFibre</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a13dcea26d3379199f9e993caa5e132d7" compoundref="Bundle_8cpp" startline="715" endline="718">getActualPrimaryOutputChannelByFibre</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a51eb35ecb02094016f0f3a74fd07f6e9" compoundref="Bundle_8cpp" startline="703" endline="706">getRealPrimaryInputChannelByFibre</referencedby>
+        <referencedby refid="classcryomesh_1_1structures_1_1Bundle_1a00eb0f18cc3331a4e6d0ed4698e92cb5" compoundref="Bundle_8cpp" startline="707" endline="710">getRealPrimaryOutputChannelByFibre</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classcryomesh_1_1common_1_1Loggable_1a4d85401f6c81bc8ed94e49d66ae574c5" prot="public" static="no">
+        <name>LoggingDepth</name>
+        <enumvalue id="classcryomesh_1_1common_1_1Loggable_1a4d85401f6c81bc8ed94e49d66ae574c5a51f5abcf5a53a8930a09b065fc64a44f" prot="public">
+          <name>SUMMARY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classcryomesh_1_1common_1_1Loggable_1a4d85401f6c81bc8ed94e49d66ae574c5ae496af0b41e3b64530b61e315822cc51" prot="public">
+          <name>MAX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum representing print detail. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Loggable.h" line="23" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/Loggable.h" bodystart="23" bodyend="25"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A <ref refid="classcryomesh_1_1structures_1_1Bundle" kindref="compound">Bundle</ref> is the collection of clusters and fibres, it represents the system as a whole. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="241">
+        <label>cryomesh::common::Loggable</label>
+        <link refid="classcryomesh_1_1common_1_1Loggable"/>
+      </node>
+      <node id="240">
+        <label>cryomesh::structures::Bundle</label>
+        <link refid="classcryomesh_1_1structures_1_1Bundle"/>
+        <childnode refid="241" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="245">
+        <label>cryomesh::state::PatternChannelMap</label>
+        <link refid="classcryomesh_1_1state_1_1PatternChannelMap"/>
+      </node>
+      <node id="243">
+        <label>cryomesh::common::Loggable</label>
+        <link refid="classcryomesh_1_1common_1_1Loggable"/>
+      </node>
+      <node id="242">
+        <label>cryomesh::structures::Bundle</label>
+        <link refid="classcryomesh_1_1structures_1_1Bundle"/>
+        <childnode refid="243" relation="public-inheritance">
+        </childnode>
+        <childnode refid="244" relation="usage">
+          <edgelabel>actualFibrePatternChannelMap</edgelabel>
+          <edgelabel>realFibrePatternChannelMap</edgelabel>
+        </childnode>
+        <childnode refid="245" relation="usage">
+          <edgelabel>actualOutputChannelsMap</edgelabel>
+          <edgelabel>realInputChannelsMap</edgelabel>
+          <edgelabel>actualInputChannelsMap</edgelabel>
+          <edgelabel>realOutputChannelsMap</edgelabel>
+        </childnode>
+        <childnode refid="246" relation="usage">
+          <edgelabel>inputFibres</edgelabel>
+          <edgelabel>outputFibres</edgelabel>
+          <edgelabel>fibres</edgelabel>
+        </childnode>
+      </node>
+      <node id="246">
+        <label>cryomesh::structures::FibreMap</label>
+        <link refid="classcryomesh_1_1structures_1_1FibreMap"/>
+      </node>
+      <node id="244">
+        <label>std::map&lt; boost::uuids::uuid, boost::uuids::uuid &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" line="29" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h" bodystart="29" bodyend="496"/>
+    <listofallmembers>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a0f3e20833ce850f97ae450d27a4607dd" prot="private" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>actualFibrePatternChannelMap</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1ae20b2f9819708971357148dd024db00d" prot="private" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>actualInputChannelsMap</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1ac67a6d7b29b37b8927c93350e8bcf6e5" prot="private" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>actualOutputChannelsMap</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a31fef59219384dafb4d250eae65f3574" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>autoConnectPrimaryInputClusters</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1aae9fb3393c44f4aeff03ecb8bfa5316e" prot="public" virt="virtual"><scope>cryomesh::structures::Bundle</scope><name>autoConnectPrimaryInputClusters</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a53f6a455e7cb553352dbef64d3a1ec04" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>autoConnectPrimaryOutputClusters</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a7e38b0167e7873fea9d768d3b096a9d8" prot="public" virt="virtual"><scope>cryomesh::structures::Bundle</scope><name>autoConnectPrimaryOutputClusters</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a8d6b95207324291f919f1835b81b1640" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>Bundle</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a1c1b3a4fe6d32259753d69c8a9b0deaa" prot="public" virt="virtual"><scope>cryomesh::structures::Bundle</scope><name>checkChannelStructure</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a441eda1670224083d5efc20b3a6bb9ff" prot="public" virt="virtual"><scope>cryomesh::structures::Bundle</scope><name>checkFibreStructure</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a5927b1a21111e6b78c143280c49a9701" prot="public" virt="virtual"><scope>cryomesh::structures::Bundle</scope><name>checkStructure</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a35a36d3305706f597f4c586fcd9f74b7" prot="private" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>clusters</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1af1884f99e746cdfa549b63f1589b5dac" prot="public" virt="virtual"><scope>cryomesh::structures::Bundle</scope><name>connectCluster</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1adc784bc4a171eb28b5a7d038fe73f2de" prot="public" virt="virtual"><scope>cryomesh::structures::Bundle</scope><name>connectCluster</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a0aa4399de46de8ee753e3959fca2fb62" prot="public" virt="virtual"><scope>cryomesh::structures::Bundle</scope><name>connectLoopbackCluster</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1abe23b17f35ef338df7db8d2903ee2bfd" prot="public" virt="virtual"><scope>cryomesh::structures::Bundle</scope><name>connectPrimaryInputCluster</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a01dd3e844fe3332df9be5156e329f821" prot="public" virt="virtual"><scope>cryomesh::structures::Bundle</scope><name>connectPrimaryOutputCluster</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a6228d35bd96caa191bd89096dd260ee2" prot="public" virt="virtual"><scope>cryomesh::structures::Bundle</scope><name>createCluster</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1abe63fcceae95f0ffb06db094076b42c5" prot="public" virt="virtual"><scope>cryomesh::structures::Bundle</scope><name>enableDebug</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a8e7f1752b8b0112adf8939921eff4e50" prot="public" virt="virtual"><scope>cryomesh::structures::Bundle</scope><name>enableDebugClusters</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a742597fd733573d8242966f89f8e6715" prot="public" virt="virtual"><scope>cryomesh::structures::Bundle</scope><name>enableDebugFibres</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1aac5229c4c52e646767db2144ba745aa6" prot="private" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>energy</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1abbd8555380ffa4c33a235636837bafaa" prot="private" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>energyFractionMethod</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a71b3308a867169b8e9af9ab71b8bdf98" prot="private" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>fibres</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a872de96a76f772182eda2abbb98a99cc" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getActualFibrePatternChannelMap</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a65bf0246390e7cb0e90caf4fb302fa41" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getActualInputChannelsMap</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a382242e3b29b92b25edc9162aa810ebe" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getActualOutputChannelsMap</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a101bda3e32c34cf8e0cff4526446af02" prot="private" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getActualPrimaryInputChannelByFibre</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a13dcea26d3379199f9e993caa5e132d7" prot="private" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getActualPrimaryOutputChannelByFibre</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a181e1f2aaa3b529b8609917d5b5315e0" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getClusters</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a6f400ee92f49fed82ca9ef5b48cde285" prot="public" virt="virtual"><scope>cryomesh::structures::Bundle</scope><name>getDisconnectedRealInputPatternChannels</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a5ce1e31c814ef83026c0dbda5ba04a24" prot="public" virt="virtual"><scope>cryomesh::structures::Bundle</scope><name>getDisconnectedRealOutputPatternChannels</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1aec88635d8c4fdc76b6c3c22b915ee459" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getEnergy</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a8f112d3b34f84511781879217b15c6d2" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getFibres</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a5c6496d00065462122a71c812fa7a4e8" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getInputFibres</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a14990ba8cec7b9c18426ae8c2fdd0dcf" prot="protected" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getMutableClusters</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1af8b848abb7ec12997b09c63c0c10650d" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getMutableInputFibres</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1af9fd12e753bab64750f5c32d5f17a554" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getMutableOutputFibres</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1ae750ab1bd2b1a937f90d97e416aefced" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getMutableStatistician</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a2c14a3f2cc96236bff6548e5103183de" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getOutputFibres</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a237b9698b966c6498fb723f685292599" prot="private" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getPrimaryChannelByFibre</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1aecdb1fc4017f4e4aa954b4158e99c86f" prot="private" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getPrimaryFibreByChannel</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1ad80f4bbb8bdc379e156282bf0b17fbc3" prot="private" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getPrimaryInputFibreByActualChannel</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1ae1259ecf25a6b140cad735defd9069f9" prot="private" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getPrimaryInputFibreByRealChannel</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1ae6ccd53821a90466d96ebcbf171549a2" prot="private" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getPrimaryOutputFibreByActualChannel</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a7ba3f747f8e164f0c0984fdb14922e7a" prot="private" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getPrimaryOutputFibreByRealChannel</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a2e31be3bab4a15e4e9ba6aeac48b91df" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getRealFibrePatternChannelMap</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1ada0ae8374d27d9b59ca82b8075fbd401" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getRealInputChannelsMap</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a893be908a14ecc2d07270273d3d127e2" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getRealOutputChannelsMap</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a51eb35ecb02094016f0f3a74fd07f6e9" prot="private" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getRealPrimaryInputChannelByFibre</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a00eb0f18cc3331a4e6d0ed4698e92cb5" prot="private" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getRealPrimaryOutputChannelByFibre</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a5bfac318b9a6f9f651fad0657b9b9196" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>getStatistician</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1aa6a461295021bdfb4ef4cab0f136a2c1" prot="private" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>inputFibres</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1ad60a89acf924c5aebae3a5f816f358db" prot="public" virt="virtual"><scope>cryomesh::structures::Bundle</scope><name>loadChannels</name></member>
+      <member refid="classcryomesh_1_1common_1_1Loggable_1a52e7934753ed7cc33972ed2fc57b571c" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>Loggable</name></member>
+      <member refid="classcryomesh_1_1common_1_1Loggable_1a4d85401f6c81bc8ed94e49d66ae574c5" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>LoggingDepth</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a3a8a7cfb5d525ff59a52dd1a39909621" prot="protected" virt="virtual"><scope>cryomesh::structures::Bundle</scope><name>matchOutputChannelsSum</name></member>
+      <member refid="classcryomesh_1_1common_1_1Loggable_1a4d85401f6c81bc8ed94e49d66ae574c5ae496af0b41e3b64530b61e315822cc51" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>MAX</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a21e43a0b5ea3e93accc964e269c730bd" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1aa671193358b7aba173e45574def3d4c1" prot="private" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>outputFibres</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a1b2bdda71a78b4e89af23f21e7611ee4" prot="public" virt="virtual"><scope>cryomesh::structures::Bundle</scope><name>print</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1ad794a923f68c51c5c1ac4588586b6be7" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>printChannels</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a6a6110f318167f4cc82ab6736e291628" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>printFibreMap</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1ab7308eec882450980ebfbb7167a3538d" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>printFibreMaps</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1af89da428bb056c8eea81a416783cf2ae" prot="protected" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>printSearch</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1adaf7fa91209de01b9d42ae2d8228c3cd" prot="private" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>realFibrePatternChannelMap</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1ac9bd1c696001ef8acb7291a5f9e81c8b" prot="private" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>realInputChannelsMap</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a4043d8bfeb8b066418029864f51d92de" prot="private" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>realOutputChannelsMap</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1ae6a553eaab4ddf2b6bbd6bdeca9361ad" prot="protected" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>setEnergy</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1ad505cbda03b4e78399fd3a9568d79708" prot="private" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>statistician</name></member>
+      <member refid="classcryomesh_1_1common_1_1Loggable_1a4d85401f6c81bc8ed94e49d66ae574c5a51f5abcf5a53a8930a09b065fc64a44f" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>SUMMARY</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1add5af28ceb5c7722d267ba32810c5df7" prot="public" virt="non-virtual"><scope>cryomesh::structures::Bundle</scope><name>update</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1abe52d8718eeb7bb6a17211d4dfbed440" prot="protected" virt="virtual"><scope>cryomesh::structures::Bundle</scope><name>updatePrimaryInputFibres</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a7a95265553776d6216799e143134a59f" prot="protected" virt="virtual"><scope>cryomesh::structures::Bundle</scope><name>updatePrimaryOutputFibres</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1a804c625c912657cebd3350c7c1b53c10" prot="protected" virt="virtual"><scope>cryomesh::structures::Bundle</scope><name>updateStatistician</name></member>
+      <member refid="classcryomesh_1_1structures_1_1Bundle_1ab2ec2696336dddbae17166c056c2f038" prot="public" virt="virtual"><scope>cryomesh::structures::Bundle</scope><name>~Bundle</name></member>
+      <member refid="classcryomesh_1_1common_1_1Loggable_1a8295792cec325f663f0d6c64ec960cb2" prot="public" virt="virtual"><scope>cryomesh::structures::Bundle</scope><name>~Loggable</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

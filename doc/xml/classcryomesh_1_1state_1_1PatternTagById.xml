@@ -1,0 +1,281 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="classcryomesh_1_1state_1_1PatternTagById" kind="class" prot="public">
+    <compoundname>cryomesh::state::PatternTagById</compoundname>
+    <basecompoundref refid="classcryomesh_1_1state_1_1PatternTag" prot="public" virt="non-virtual">cryomesh::state::PatternTag</basecompoundref>
+    <includes refid="PatternTagById_8h" local="no">PatternTagById.h</includes>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classcryomesh_1_1state_1_1PatternTagById_1a691a6ad8390ea3badf22bb88bade46cb" prot="private" static="yes" mutable="no">
+        <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1state_1_1PatternTagById" kindref="compound">PatternTagById</ref> &gt;</type>
+        <definition>boost::shared_ptr&lt; PatternTagById &gt; cryomesh::state::PatternTagById::globalTag</definition>
+        <argsstring></argsstring>
+        <name>globalTag</name>
+        <initializer>	boost::shared_ptr&lt;<ref refid="classcryomesh_1_1state_1_1PatternTagById" kindref="compound">PatternTagById</ref>&gt;(new <ref refid="classcryomesh_1_1state_1_1PatternTagById" kindref="compound">PatternTagById</ref>(1))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.h" line="29" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.h" bodystart="29" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1state_1_1PatternTagById_1ac3dbe345fe252b9ab9feafa995e91474" compoundref="PatternTagById_8cpp" startline="56" endline="58">getGlobalTag</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcryomesh_1_1state_1_1PatternTagById_1a9470fbc97fc84afd2eeae7b5e9166715" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string cryomesh::state::PatternTagById::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.h" line="30" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.h" bodystart="30" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1state_1_1PatternTagById_1acee63d4183580398eb30161dfbb3a88d" compoundref="PatternTagById_8cpp" startline="23" endline="25">getTag</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1PatternTagById_1a2c11f41ca6f8ab4a65fa63e250fd2660" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::state::PatternTagById::PatternTagById</definition>
+        <argsstring>(int d)</argsstring>
+        <name>PatternTagById</name>
+        <param>
+          <type>int</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.h" line="16" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.cpp" bodystart="15" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1PatternTagById_1a67999e382d416f40ccdcb4be2d491ced" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>cryomesh::state::PatternTagById::~PatternTagById</definition>
+        <argsstring>()</argsstring>
+        <name>~PatternTagById</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.h" line="17" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.cpp" bodystart="21" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1PatternTagById_1acee63d4183580398eb30161dfbb3a88d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::state::PatternTagById::getTag</definition>
+        <argsstring>() const </argsstring>
+        <name>getTag</name>
+        <reimplements refid="classcryomesh_1_1state_1_1PatternTag_1a00c56f1f6f348e51a9c02338abf3e5ab">getTag</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.h" line="18" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.cpp" bodystart="23" bodyend="25"/>
+        <references refid="classcryomesh_1_1state_1_1PatternTagById_1a9470fbc97fc84afd2eeae7b5e9166715" compoundref="PatternTagById_8h" startline="30">id</references>
+        <referencedby refid="classcryomesh_1_1state_1_1PatternTagById_1a27fb4f51f07766bd1715b5c8b31454ee" compoundref="PatternTagById_8cpp" startline="32" endline="39">moveTag</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1PatternTagById_1a5cfba8a1a26501eb671f186c0b47ff0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void cryomesh::state::PatternTagById::setTag</definition>
+        <argsstring>(std::string tg)</argsstring>
+        <name>setTag</name>
+        <reimplements refid="classcryomesh_1_1state_1_1PatternTag_1a17830f089a443437fa736460e231706e">setTag</reimplements>
+        <param>
+          <type>std::string</type>
+          <declname>tg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.h" line="19" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.cpp" bodystart="26" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1PatternTagById_1aa8146b29d5b9448d9a73fde4f18c1b70" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::state::PatternTagById::moveTag</definition>
+        <argsstring>()</argsstring>
+        <name>moveTag</name>
+        <reimplements refid="classcryomesh_1_1state_1_1PatternTag_1a0b22ab8e03558ed9a2370a66b67761a0">moveTag</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.h" line="20" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.cpp" bodystart="29" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1PatternTagById_1a27fb4f51f07766bd1715b5c8b31454ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::state::PatternTagById::moveTag</definition>
+        <argsstring>(int i)</argsstring>
+        <name>moveTag</name>
+        <reimplements refid="classcryomesh_1_1state_1_1PatternTag_1ac904d5f971af7e9930ce85a256097c48">moveTag</reimplements>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.h" line="21" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.cpp" bodystart="32" bodyend="39"/>
+        <references refid="classcryomesh_1_1state_1_1PatternTagById_1acee63d4183580398eb30161dfbb3a88d" compoundref="PatternTagById_8cpp" startline="23" endline="25">getTag</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1PatternTagById_1ac2624633ba018f4ad1ae229278cfe198" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::state::PatternTagById::getStartTag</definition>
+        <argsstring>() const </argsstring>
+        <name>getStartTag</name>
+        <reimplements refid="classcryomesh_1_1state_1_1PatternTag_1a19284a4419275776a7277af2de158620">getStartTag</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.h" line="22" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.cpp" bodystart="40" bodyend="42"/>
+        <referencedby refid="classcryomesh_1_1state_1_1PatternTagById_1a9adf0ade652a4e48acd264e11e10e3b7" compoundref="PatternTagById_8cpp" startline="50" endline="52">setStartTag</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1PatternTagById_1a9d5f9cc34fd14d895ce235cea35aebe8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string cryomesh::state::PatternTagById::getEndTag</definition>
+        <argsstring>() const </argsstring>
+        <name>getEndTag</name>
+        <reimplements refid="classcryomesh_1_1state_1_1PatternTag_1ae6a5eb0d13e5152a33de9527c66d358b">getEndTag</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.h" line="23" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.cpp" bodystart="43" bodyend="48"/>
+        <references refid="classcryomesh_1_1state_1_1Pattern_1aaf0fef8e434a2bf4e2a3de2146506e55" compoundref="Pattern_8cpp" startline="218" endline="220">cryomesh::state::Pattern::getIds</references>
+        <referencedby refid="classcryomesh_1_1state_1_1PatternTagById_1a02e3ef3349001a9cba60cb5e0fc150cd" compoundref="PatternTagById_8cpp" startline="53" endline="55">setEndTag</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1PatternTagById_1a9adf0ade652a4e48acd264e11e10e3b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void cryomesh::state::PatternTagById::setStartTag</definition>
+        <argsstring>(std::string tg)</argsstring>
+        <name>setStartTag</name>
+        <reimplements refid="classcryomesh_1_1state_1_1PatternTag_1a0c7e050117e2cc5d146b90efad122561">setStartTag</reimplements>
+        <param>
+          <type>std::string</type>
+          <declname>tg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.h" line="24" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.cpp" bodystart="50" bodyend="52"/>
+        <references refid="classcryomesh_1_1state_1_1PatternTagById_1ac2624633ba018f4ad1ae229278cfe198" compoundref="PatternTagById_8cpp" startline="40" endline="42">getStartTag</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1PatternTagById_1a02e3ef3349001a9cba60cb5e0fc150cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void cryomesh::state::PatternTagById::setEndTag</definition>
+        <argsstring>(std::string tg)</argsstring>
+        <name>setEndTag</name>
+        <reimplements refid="classcryomesh_1_1state_1_1PatternTag_1a5026dd228cf678c58267ff343ff84e04">setEndTag</reimplements>
+        <param>
+          <type>std::string</type>
+          <declname>tg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.h" line="25" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.cpp" bodystart="53" bodyend="55"/>
+        <references refid="classcryomesh_1_1state_1_1PatternTagById_1a9d5f9cc34fd14d895ce235cea35aebe8" compoundref="PatternTagById_8cpp" startline="43" endline="48">getEndTag</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1state_1_1PatternTagById_1ac3dbe345fe252b9ab9feafa995e91474" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1state_1_1PatternTag" kindref="compound">PatternTag</ref> &gt;</type>
+        <definition>boost::shared_ptr&lt; PatternTag &gt; cryomesh::state::PatternTagById::getGlobalTag</definition>
+        <argsstring>()</argsstring>
+        <name>getGlobalTag</name>
+        <reimplements refid="classcryomesh_1_1state_1_1PatternTag_1ae689bd0c2045fbb30f482123adfe4657">getGlobalTag</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.h" line="26" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.cpp" bodystart="56" bodyend="58"/>
+        <references refid="classcryomesh_1_1state_1_1PatternTagById_1a691a6ad8390ea3badf22bb88bade46cb" compoundref="PatternTagById_8h" startline="29">globalTag</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="733">
+        <label>cryomesh::state::PatternTag</label>
+        <link refid="classcryomesh_1_1state_1_1PatternTag"/>
+      </node>
+      <node id="732">
+        <label>cryomesh::state::PatternTagById</label>
+        <link refid="classcryomesh_1_1state_1_1PatternTagById"/>
+        <childnode refid="733" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="735">
+        <label>cryomesh::state::PatternTag</label>
+        <link refid="classcryomesh_1_1state_1_1PatternTag"/>
+      </node>
+      <node id="737">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="734">
+        <label>cryomesh::state::PatternTagById</label>
+        <link refid="classcryomesh_1_1state_1_1PatternTagById"/>
+        <childnode refid="735" relation="public-inheritance">
+        </childnode>
+        <childnode refid="736" relation="usage">
+          <edgelabel>id</edgelabel>
+        </childnode>
+      </node>
+      <node id="736">
+        <label>std::string</label>
+        <childnode refid="737" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.h" line="14" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.h" bodystart="14" bodyend="31"/>
+    <listofallmembers>
+      <member refid="classcryomesh_1_1state_1_1PatternTagById_1a9d5f9cc34fd14d895ce235cea35aebe8" prot="public" virt="virtual"><scope>cryomesh::state::PatternTagById</scope><name>getEndTag</name></member>
+      <member refid="classcryomesh_1_1state_1_1PatternTagById_1ac3dbe345fe252b9ab9feafa995e91474" prot="public" virt="virtual"><scope>cryomesh::state::PatternTagById</scope><name>getGlobalTag</name></member>
+      <member refid="classcryomesh_1_1state_1_1PatternTagById_1ac2624633ba018f4ad1ae229278cfe198" prot="public" virt="virtual"><scope>cryomesh::state::PatternTagById</scope><name>getStartTag</name></member>
+      <member refid="classcryomesh_1_1state_1_1PatternTagById_1acee63d4183580398eb30161dfbb3a88d" prot="public" virt="virtual"><scope>cryomesh::state::PatternTagById</scope><name>getTag</name></member>
+      <member refid="classcryomesh_1_1state_1_1PatternTagById_1a691a6ad8390ea3badf22bb88bade46cb" prot="private" virt="non-virtual"><scope>cryomesh::state::PatternTagById</scope><name>globalTag</name></member>
+      <member refid="classcryomesh_1_1state_1_1PatternTagById_1a9470fbc97fc84afd2eeae7b5e9166715" prot="private" virt="non-virtual"><scope>cryomesh::state::PatternTagById</scope><name>id</name></member>
+      <member refid="classcryomesh_1_1state_1_1PatternTagById_1aa8146b29d5b9448d9a73fde4f18c1b70" prot="public" virt="virtual"><scope>cryomesh::state::PatternTagById</scope><name>moveTag</name></member>
+      <member refid="classcryomesh_1_1state_1_1PatternTagById_1a27fb4f51f07766bd1715b5c8b31454ee" prot="public" virt="virtual"><scope>cryomesh::state::PatternTagById</scope><name>moveTag</name></member>
+      <member refid="classcryomesh_1_1state_1_1PatternTag_1ab4743b4692605d766378994b87d786ed" prot="public" virt="non-virtual"><scope>cryomesh::state::PatternTagById</scope><name>PatternTag</name></member>
+      <member refid="classcryomesh_1_1state_1_1PatternTagById_1a2c11f41ca6f8ab4a65fa63e250fd2660" prot="public" virt="non-virtual"><scope>cryomesh::state::PatternTagById</scope><name>PatternTagById</name></member>
+      <member refid="classcryomesh_1_1state_1_1PatternTagById_1a02e3ef3349001a9cba60cb5e0fc150cd" prot="public" virt="virtual"><scope>cryomesh::state::PatternTagById</scope><name>setEndTag</name></member>
+      <member refid="classcryomesh_1_1state_1_1PatternTagById_1a9adf0ade652a4e48acd264e11e10e3b7" prot="public" virt="virtual"><scope>cryomesh::state::PatternTagById</scope><name>setStartTag</name></member>
+      <member refid="classcryomesh_1_1state_1_1PatternTagById_1a5cfba8a1a26501eb671f186c0b47ff0c" prot="public" virt="virtual"><scope>cryomesh::state::PatternTagById</scope><name>setTag</name></member>
+      <member refid="classcryomesh_1_1state_1_1PatternTag_1aa5239974dfc79638f346145d28ddf961" prot="public" virt="virtual"><scope>cryomesh::state::PatternTagById</scope><name>~PatternTag</name></member>
+      <member refid="classcryomesh_1_1state_1_1PatternTagById_1a67999e382d416f40ccdcb4be2d491ced" prot="public" virt="virtual"><scope>cryomesh::state::PatternTagById</scope><name>~PatternTagById</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

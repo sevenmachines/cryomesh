@@ -1,0 +1,1073 @@
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel}{\section{cryomesh\-:\-:state\-:\-:\-Pattern\-Channel \-Class \-Reference}
+\label{classcryomesh_1_1state_1_1PatternChannel}\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+}
+
+
+{\ttfamily \#include $<$\-Pattern\-Channel.\-h$>$}
+
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classcryomesh_1_1state_1_1PatternChannel_aecb6feb12b771abb3cca4a77f5a47903}{\-Print\-Format} \{ \hyperlink{classcryomesh_1_1state_1_1PatternChannel_aecb6feb12b771abb3cca4a77f5a47903ac9ab380f74b4a50f13013e4785cf9e41}{\-B\-I\-N\-A\-R\-Y}, 
+\hyperlink{classcryomesh_1_1state_1_1PatternChannel_aecb6feb12b771abb3cca4a77f5a47903a323e9e3c328769d1ef777f10b3a2315b}{\-T\-E\-X\-T}, 
+\hyperlink{classcryomesh_1_1state_1_1PatternChannel_aecb6feb12b771abb3cca4a77f5a47903a95004c9c6007ed3c766a5e6cec3ed521}{\-I\-N\-T\-E\-G\-E\-R}
+ \}
+\item 
+enum \hyperlink{classcryomesh_1_1state_1_1PatternChannel_ac8a0ae515a221519890fc1181f2c895a}{\-Channel\-Data\-Type} \{ \hyperlink{classcryomesh_1_1state_1_1PatternChannel_ac8a0ae515a221519890fc1181f2c895aab75202b529e4a7cfb8db3daa14b9f477}{\-Input}, 
+\hyperlink{classcryomesh_1_1state_1_1PatternChannel_ac8a0ae515a221519890fc1181f2c895aa981b9873565a0888e43eef95b4d003bf}{\-Output}, 
+\hyperlink{classcryomesh_1_1state_1_1PatternChannel_ac8a0ae515a221519890fc1181f2c895aa4f561e33e002f951204ee1f01497f994}{\-Transitional}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1state_1_1PatternChannel_a10d5404f3c3d7005d48f681552cca552}{\-Pattern\-Channel} (\hyperlink{classcryomesh_1_1state_1_1PatternChannel_ac8a0ae515a221519890fc1181f2c895a}{\-Channel\-Data\-Type} dt)
+\item 
+\hyperlink{classcryomesh_1_1state_1_1PatternChannel_a15701153fd6de84797aee5b6543e90ec}{\-Pattern\-Channel} (const std\-::list$<$ boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1state_1_1Pattern}{\-Pattern} $>$ $>$ \&pats, \hyperlink{classcryomesh_1_1state_1_1PatternChannel_ac8a0ae515a221519890fc1181f2c895a}{\-Channel\-Data\-Type} dt)
+\item 
+virtual \hyperlink{classcryomesh_1_1state_1_1PatternChannel_ad2f8eaa8b1925a9bab61181154511b51}{$\sim$\-Pattern\-Channel} ()
+\item 
+\hyperlink{classcryomesh_1_1state_1_1PatternChannel_a840ee854b5050c4034de97ee7625a562}{\-Pattern\-Channel} (const \hyperlink{classcryomesh_1_1state_1_1PatternChannel}{\-Pattern\-Channel} \&obj)
+\item 
+\hyperlink{classcryomesh_1_1state_1_1PatternChannel}{\-Pattern\-Channel} \& \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a136a8a320b095ad9ce04eb67ea0a8c17}{operator=} (const \hyperlink{classcryomesh_1_1state_1_1PatternChannel}{\-Pattern\-Channel} \&obj)
+\begin{DoxyCompactList}\small\item\em \-Assignment operator. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1state_1_1PatternChannel_ab8c96531bfdfa24facbec91e81fa0158}{add\-Pattern} (boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1state_1_1Pattern}{\-Pattern} $>$ pat)
+\item 
+void \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a46b385352284ab06ea31c36bfb37a0ac}{add\-Patterns} (const std\-::list$<$ boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1state_1_1Pattern}{\-Pattern} $>$ $>$ \&pats)
+\item 
+void \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a79780e5a353cd0e376d0a8abad93f8bd}{add\-Patterns} (const std\-::list$<$ boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1state_1_1Pattern}{\-Pattern} $>$ $>$ \&pats, int position)
+\item 
+std\-::list$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1state_1_1Pattern}{\-Pattern} $>$ $>$ \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a58645e5bd3b44290db489c095ad34895}{remove\-Patterns} (const std\-::list$<$ boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1state_1_1Pattern}{\-Pattern} $>$ $>$ \&pats)
+\item 
+std\-::list$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1state_1_1Pattern}{\-Pattern} $>$ $>$ \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a95cdc1ef47d4647f16db7a618fbcb1c3}{remove\-Patterns} (const std\-::list$<$ boost\-::uuids\-::uuid $>$ \&uuids)
+\item 
+void \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a13753c86675493e5cb8cb911238e3410}{clear\-Pattern\-List} ()
+\item 
+std\-::list$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1state_1_1Pattern}{\-Pattern} $>$ $>$ \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a756aafbdf9bd37870b60ae1e5c174c27}{force\-Pattern\-List\-Size} (int sz)
+\item 
+std\-::list$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1state_1_1Pattern}{\-Pattern} $>$ $>$ \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a66783001791bd4b51bec7eb97b8a1b4e}{force\-Pattern\-List\-Size} ()
+\item 
+const boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1state_1_1Pattern}{\-Pattern} $>$ \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a92ef0469e782dc022c00d804f30fff3d}{get\-Current\-Pattern} ()
+\item 
+const boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1state_1_1Pattern}{\-Pattern} $>$ \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a553a85437f3197ea4fa751319de0fd56}{get\-Pattern\-By\-Cycle} (const \hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle} \&cycle)
+\item 
+const boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1state_1_1Pattern}{\-Pattern} $>$ \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a88e0394f678b199aa5f2866b1487fc92}{get\-Pattern\-By\-Tag} (const boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1state_1_1PatternTag}{\-Pattern\-Tag} $>$ tg) const 
+\item 
+const boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1state_1_1Pattern}{\-Pattern} $>$ \hyperlink{classcryomesh_1_1state_1_1PatternChannel_ae5dd9fdcebe6af92c48c4ac1f0d889c7}{next\-Pattern} ()
+\item 
+const boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1state_1_1Pattern}{\-Pattern} $>$ \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a4b96871d0a8bf38d6d9a2998dd0a81f7}{previous\-Pattern} ()
+\item 
+double \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a05400d50d8206b82426bdc8b277c4c14}{match\-Globally} (const \hyperlink{classcryomesh_1_1state_1_1PatternChannel}{\-Pattern\-Channel} \&)
+\item 
+double \hyperlink{classcryomesh_1_1state_1_1PatternChannel_aa354fc22d88359c3b83d92a224761c69}{match\-Sequentially} (const \hyperlink{classcryomesh_1_1state_1_1PatternChannel}{\-Pattern\-Channel} \&)
+\item 
+virtual void \hyperlink{classcryomesh_1_1state_1_1PatternChannel_acbaa7ae7afbe42e8ebca56f889220289}{enable\-Debug} (bool b)
+\item 
+\hyperlink{classcryomesh_1_1state_1_1PatternChannel_ac8a0ae515a221519890fc1181f2c895a}{\-Channel\-Data\-Type} \hyperlink{classcryomesh_1_1state_1_1PatternChannel_ad7890be8253221b14e673c4fb1cddffa}{get\-Channel\-Data\-Type} () const 
+\item 
+int \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a7ab7d66118f678d1406a14c4ebb79752}{get\-Length} () const 
+\item 
+const std\-::map\*
+$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1state_1_1PatternTag}{\-Pattern\-Tag} $>$\*
+, boost\-::uuids\-::uuid $>$ \& \hyperlink{classcryomesh_1_1state_1_1PatternChannel_ab5260edbf3ada707a91994c60b866dd5}{get\-Pattern\-By\-Tag\-Map} () const 
+\item 
+const boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1state_1_1Pattern}{\-Pattern} $>$ \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a33b3c30b6137eaf727a58cafab32f692}{get\-Pattern\-By\-U\-U\-I\-D} (const boost\-::uuids\-::uuid \&id) const 
+\item 
+boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1state_1_1Pattern}{\-Pattern} $>$ \hyperlink{classcryomesh_1_1state_1_1PatternChannel_ad588e65dc12cee6d91bb3035a6958d44}{get\-Mutable\-Pattern\-By\-U\-U\-I\-D} (const boost\-::uuids\-::uuid \&id)
+\item 
+const std\-::list\*
+$<$ boost\-::uuids\-::uuid $>$ \& \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a56b0b495e91692302da543807a93fa02}{get\-Pattern\-List} () const 
+\item 
+std\-::list$<$ boost\-::uuids\-::uuid $>$\*
+\-::iterator \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a79af2f63fa3b5dfa7c48615a47c20842}{get\-Pattern\-List\-Iterator} () const 
+\item 
+const std\-::map\*
+$<$ boost\-::uuids\-::uuid, \*
+boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1state_1_1Pattern}{\-Pattern} $>$ $>$ \& \hyperlink{classcryomesh_1_1state_1_1PatternChannel_ab3bc796775ce23366a18206ac2c5119d}{get\-Pattern\-Map} () const 
+\item 
+int \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a930bbb05180ecd22aa9a87eb62daba0f}{get\-Pattern\-Position} () const 
+\item 
+int \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a1b02b011f6abc75354e75fe44218190d}{get\-Width} () const 
+\item 
+void \hyperlink{classcryomesh_1_1state_1_1PatternChannel_ae9f396f25c1f9650cc57b4c02c84a5f3}{set\-Width} (int w)
+\item 
+int \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a6d02f9db85383449d208ebb012edbe48}{get\-Ref\-I\-D} () const 
+\item 
+void \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a8df9a6aace2cf6810d3d6f3bc72b5a3b}{set\-Ref\-I\-D} (int r)
+\item 
+int \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a6c1ae5242c32abd71055d35c7d126bfa}{get\-Max\-Pattern\-List\-Size} () const 
+\item 
+void \hyperlink{classcryomesh_1_1state_1_1PatternChannel_acd69920f539ac7a7149faa92c5e766e1}{set\-Max\-Pattern\-List\-Size} (int sz)
+\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a74a37c66904647c83d459ee4a90446d7}{print\-Pattern\-List} (std\-::ostream \&os, bool reversed=false) const 
+\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a1ab67f8d6565a4a2b987152d4c38d175}{print\-Text\-Formatted\-Pattern\-List} (std\-::ostream \&os, bool reversed=false) const 
+\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a8d92b898f11a8cea38022bf888807c69}{print\-Integer\-Formatted\-Pattern\-List} (std\-::ostream \&os, bool reversed) const 
+\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1state_1_1PatternChannel_aa6d23443589ea223baed8eb9042a2139}{print\-Binary\-Formatted\-Pattern\-List} (std\-::ostream \&os, bool reversed) const 
+\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a4813e35ef5321611b83d523c5cc3bfb6}{print\-Formatted\-Pattern\-List} (std\-::ostream \&os, const \hyperlink{classcryomesh_1_1state_1_1PatternChannel_aecb6feb12b771abb3cca4a77f5a47903}{\-Print\-Format} \&pf, bool reversed) const 
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a4a1ca89d0b7867c4faa13d779a35ae97}{get\-Ref\-I\-D\-S} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a2931ca38ca2e5d816c8917cb857e62fc}{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-P\-A\-T\-T\-E\-R\-N\-\_\-\-L\-I\-S\-T\-\_\-\-S\-I\-Z\-E} = -\/1
+\item 
+static const unsigned int \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a1476695074d7d8e184aed0c4401f72d5}{\-R\-E\-F\-I\-D\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-S\-T\-A\-R\-T} = 100000
+\item 
+static unsigned int \hyperlink{classcryomesh_1_1state_1_1PatternChannel_aafed47c54c1db97487a333f43bb85e25}{ref\-I\-D\-S} = \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a1476695074d7d8e184aed0c4401f72d5}{\-Pattern\-Channel\-::\-R\-E\-F\-I\-D\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-S\-T\-A\-R\-T}
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1state_1_1PatternChannel_ac8a0ae515a221519890fc1181f2c895a}{\-Channel\-Data\-Type} \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a0638a69625dd19480563b245dc1c6853}{channel\-Data\-Type}
+\item 
+int \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a979af8e9743379cc8484cfa7348838f2}{length}
+\item 
+int \hyperlink{classcryomesh_1_1state_1_1PatternChannel_aeab8770881ec9be1b48c712a23dd6271}{max\-Pattern\-List\-Size}
+\item 
+std\-::map$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1state_1_1PatternTag}{\-Pattern\-Tag} $>$\*
+, boost\-::uuids\-::uuid $>$ \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a5155045e7e94fc10a1d60e418bf82b71}{pattern\-By\-Tag\-Map}
+\item 
+std\-::list$<$ boost\-::uuids\-::uuid $>$ \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a71800edd10923b7b00f0c292414b4ba1}{pattern\-List}
+\item 
+std\-::list$<$ boost\-::uuids\-::uuid $>$\*
+\-::iterator \hyperlink{classcryomesh_1_1state_1_1PatternChannel_ac06b2bd5e0bc4aa4da633bc80a64b290}{pattern\-List\-Iterator}
+\item 
+std\-::map$<$ boost\-::uuids\-::uuid, \*
+boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1state_1_1Pattern}{\-Pattern} $>$ $>$ \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a72f70fbaad5ff134b07c3fe198d9fd67}{pattern\-Map}
+\item 
+int \hyperlink{classcryomesh_1_1state_1_1PatternChannel_af4a9ce80cd65ae8a11ec27e4b027a34c}{pattern\-Position}
+\item 
+int \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a609d1d8ac76ff856bf7885c040dc339a}{ref\-I\-D}
+\item 
+int \hyperlink{classcryomesh_1_1state_1_1PatternChannel_af7bcede6cf5c8d768e7d1f1d897106d2}{width}
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1state_1_1PatternChannel_a8a4a6cb06dd05aa353207980bcf59319}{operator$<$$<$} (std\-::ostream \&os, const \hyperlink{classcryomesh_1_1state_1_1PatternChannel}{\-Pattern\-Channel} \&obj)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+
+
+\-Definition at line 25 of file \-Pattern\-Channel.\-h.
+
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_ac8a0ae515a221519890fc1181f2c895a}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!\-Channel\-Data\-Type@{\-Channel\-Data\-Type}}
+\index{\-Channel\-Data\-Type@{\-Channel\-Data\-Type}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{\-Channel\-Data\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::\-Channel\-Data\-Type}}}\label{classcryomesh_1_1state_1_1PatternChannel_ac8a0ae515a221519890fc1181f2c895a}
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-Input@{\-Input}!cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}}\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!\-Input@{\-Input}}\item[{\em 
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_ac8a0ae515a221519890fc1181f2c895aab75202b529e4a7cfb8db3daa14b9f477}{\-Input}\label{classcryomesh_1_1state_1_1PatternChannel_ac8a0ae515a221519890fc1181f2c895aab75202b529e4a7cfb8db3daa14b9f477}
+}]\index{\-Output@{\-Output}!cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}}\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!\-Output@{\-Output}}\item[{\em 
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_ac8a0ae515a221519890fc1181f2c895aa981b9873565a0888e43eef95b4d003bf}{\-Output}\label{classcryomesh_1_1state_1_1PatternChannel_ac8a0ae515a221519890fc1181f2c895aa981b9873565a0888e43eef95b4d003bf}
+}]\index{\-Transitional@{\-Transitional}!cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}}\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!\-Transitional@{\-Transitional}}\item[{\em 
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_ac8a0ae515a221519890fc1181f2c895aa4f561e33e002f951204ee1f01497f994}{\-Transitional}\label{classcryomesh_1_1state_1_1PatternChannel_ac8a0ae515a221519890fc1181f2c895aa4f561e33e002f951204ee1f01497f994}
+}]\end{description}
+\end{Desc}
+
+
+
+\-Definition at line 30 of file \-Pattern\-Channel.\-h.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_aecb6feb12b771abb3cca4a77f5a47903}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!\-Print\-Format@{\-Print\-Format}}
+\index{\-Print\-Format@{\-Print\-Format}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{\-Print\-Format}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::\-Print\-Format}}}\label{classcryomesh_1_1state_1_1PatternChannel_aecb6feb12b771abb3cca4a77f5a47903}
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-B\-I\-N\-A\-R\-Y@{\-B\-I\-N\-A\-R\-Y}!cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}}\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!\-B\-I\-N\-A\-R\-Y@{\-B\-I\-N\-A\-R\-Y}}\item[{\em 
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_aecb6feb12b771abb3cca4a77f5a47903ac9ab380f74b4a50f13013e4785cf9e41}{\-B\-I\-N\-A\-R\-Y}\label{classcryomesh_1_1state_1_1PatternChannel_aecb6feb12b771abb3cca4a77f5a47903ac9ab380f74b4a50f13013e4785cf9e41}
+}]\index{\-T\-E\-X\-T@{\-T\-E\-X\-T}!cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}}\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!\-T\-E\-X\-T@{\-T\-E\-X\-T}}\item[{\em 
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_aecb6feb12b771abb3cca4a77f5a47903a323e9e3c328769d1ef777f10b3a2315b}{\-T\-E\-X\-T}\label{classcryomesh_1_1state_1_1PatternChannel_aecb6feb12b771abb3cca4a77f5a47903a323e9e3c328769d1ef777f10b3a2315b}
+}]\index{\-I\-N\-T\-E\-G\-E\-R@{\-I\-N\-T\-E\-G\-E\-R}!cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}}\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!\-I\-N\-T\-E\-G\-E\-R@{\-I\-N\-T\-E\-G\-E\-R}}\item[{\em 
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_aecb6feb12b771abb3cca4a77f5a47903a95004c9c6007ed3c766a5e6cec3ed521}{\-I\-N\-T\-E\-G\-E\-R}\label{classcryomesh_1_1state_1_1PatternChannel_aecb6feb12b771abb3cca4a77f5a47903a95004c9c6007ed3c766a5e6cec3ed521}
+}]\end{description}
+\end{Desc}
+
+
+
+\-Definition at line 27 of file \-Pattern\-Channel.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a10d5404f3c3d7005d48f681552cca552}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!\-Pattern\-Channel@{\-Pattern\-Channel}}
+\index{\-Pattern\-Channel@{\-Pattern\-Channel}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{\-Pattern\-Channel}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::state\-::\-Pattern\-Channel\-::\-Pattern\-Channel} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Channel\-Data\-Type}}]{dt}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1PatternChannel_a10d5404f3c3d7005d48f681552cca552}
+
+
+\-Definition at line 24 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References channel\-Data\-Type, and \-Input.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a15701153fd6de84797aee5b6543e90ec}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!\-Pattern\-Channel@{\-Pattern\-Channel}}
+\index{\-Pattern\-Channel@{\-Pattern\-Channel}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{\-Pattern\-Channel}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::state\-::\-Pattern\-Channel\-::\-Pattern\-Channel} (
+\begin{DoxyParamCaption}
+\item[{const std\-::list$<$ boost\-::shared\-\_\-ptr$<$ {\bf \-Pattern} $>$ $>$ \&}]{pats, }
+\item[{{\bf \-Channel\-Data\-Type}}]{dt}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1PatternChannel_a15701153fd6de84797aee5b6543e90ec}
+
+
+\-Definition at line 37 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References add\-Patterns(), channel\-Data\-Type, \-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-P\-A\-T\-T\-E\-R\-N\-\_\-\-L\-I\-S\-T\-\_\-\-S\-I\-Z\-E, get\-Ref\-I\-D\-S(), \-Input, max\-Pattern\-List\-Size, \-Output, pattern\-List, pattern\-List\-Iterator, and ref\-I\-D.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_ad2f8eaa8b1925a9bab61181154511b51}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!$\sim$\-Pattern\-Channel@{$\sim$\-Pattern\-Channel}}
+\index{$\sim$\-Pattern\-Channel@{$\sim$\-Pattern\-Channel}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{$\sim$\-Pattern\-Channel}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::state\-::\-Pattern\-Channel\-::$\sim$\-Pattern\-Channel} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternChannel_ad2f8eaa8b1925a9bab61181154511b51}
+
+
+\-Definition at line 59 of file \-Pattern\-Channel.\-cpp.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a840ee854b5050c4034de97ee7625a562}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!\-Pattern\-Channel@{\-Pattern\-Channel}}
+\index{\-Pattern\-Channel@{\-Pattern\-Channel}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{\-Pattern\-Channel}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::state\-::\-Pattern\-Channel\-::\-Pattern\-Channel} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Pattern\-Channel} \&}]{obj}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1PatternChannel_a840ee854b5050c4034de97ee7625a562}
+
+
+\-Definition at line 65 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References channel\-Data\-Type, length, max\-Pattern\-List\-Size, pattern\-By\-Tag\-Map, pattern\-List, pattern\-List\-Iterator, pattern\-Map, pattern\-Position, ref\-I\-D, and width.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_ab8c96531bfdfa24facbec91e81fa0158}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!add\-Pattern@{add\-Pattern}}
+\index{add\-Pattern@{add\-Pattern}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{add\-Pattern}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::add\-Pattern} (
+\begin{DoxyParamCaption}
+\item[{boost\-::shared\-\_\-ptr$<$ {\bf \-Pattern} $>$}]{pat}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1PatternChannel_ab8c96531bfdfa24facbec91e81fa0158}
+
+
+\-Definition at line 98 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References add\-Patterns(), and get\-Length().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a46b385352284ab06ea31c36bfb37a0ac}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!add\-Patterns@{add\-Patterns}}
+\index{add\-Patterns@{add\-Patterns}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{add\-Patterns}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::add\-Patterns} (
+\begin{DoxyParamCaption}
+\item[{const std\-::list$<$ boost\-::shared\-\_\-ptr$<$ {\bf \-Pattern} $>$ $>$ \&}]{pats}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1PatternChannel_a46b385352284ab06ea31c36bfb37a0ac}
+
+
+\-Definition at line 103 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References get\-Length().
+
+
+
+\-Referenced by add\-Pattern(), and \-Pattern\-Channel().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a79780e5a353cd0e376d0a8abad93f8bd}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!add\-Patterns@{add\-Patterns}}
+\index{add\-Patterns@{add\-Patterns}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{add\-Patterns}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::add\-Patterns} (
+\begin{DoxyParamCaption}
+\item[{const std\-::list$<$ boost\-::shared\-\_\-ptr$<$ {\bf \-Pattern} $>$ $>$ \&}]{pats, }
+\item[{int}]{position}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1PatternChannel_a79780e5a353cd0e376d0a8abad93f8bd}
+
+
+\-Definition at line 107 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References force\-Pattern\-List\-Size(), get\-Length(), get\-Width(), length, pattern\-By\-Tag\-Map, pattern\-List, pattern\-List\-Iterator, pattern\-Map, pattern\-Position, and set\-Width().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a13753c86675493e5cb8cb911238e3410}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!clear\-Pattern\-List@{clear\-Pattern\-List}}
+\index{clear\-Pattern\-List@{clear\-Pattern\-List}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{clear\-Pattern\-List}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::clear\-Pattern\-List} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1PatternChannel_a13753c86675493e5cb8cb911238e3410}
+
+
+\-Definition at line 200 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References length, pattern\-By\-Tag\-Map, pattern\-List, pattern\-List\-Iterator, pattern\-Map, pattern\-Position, and width.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_acbaa7ae7afbe42e8ebca56f889220289}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!enable\-Debug@{enable\-Debug}}
+\index{enable\-Debug@{enable\-Debug}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{enable\-Debug}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::enable\-Debug} (
+\begin{DoxyParamCaption}
+\item[{bool}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternChannel_acbaa7ae7afbe42e8ebca56f889220289}
+
+
+\-Definition at line 536 of file \-Pattern\-Channel.\-cpp.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a756aafbdf9bd37870b60ae1e5c174c27}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!force\-Pattern\-List\-Size@{force\-Pattern\-List\-Size}}
+\index{force\-Pattern\-List\-Size@{force\-Pattern\-List\-Size}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{force\-Pattern\-List\-Size}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<$ boost\-::shared\-\_\-ptr$<$ {\bf \-Pattern} $>$ $>$ {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::force\-Pattern\-List\-Size} (
+\begin{DoxyParamCaption}
+\item[{int}]{sz}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1PatternChannel_a756aafbdf9bd37870b60ae1e5c174c27}
+
+
+\-Definition at line 209 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References pattern\-List, and remove\-Patterns().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a66783001791bd4b51bec7eb97b8a1b4e}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!force\-Pattern\-List\-Size@{force\-Pattern\-List\-Size}}
+\index{force\-Pattern\-List\-Size@{force\-Pattern\-List\-Size}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{force\-Pattern\-List\-Size}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<$ boost\-::shared\-\_\-ptr$<$ {\bf \-Pattern} $>$ $>$ {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::force\-Pattern\-List\-Size} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1PatternChannel_a66783001791bd4b51bec7eb97b8a1b4e}
+
+
+\-Definition at line 233 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References get\-Max\-Pattern\-List\-Size().
+
+
+
+\-Referenced by add\-Patterns(), and set\-Max\-Pattern\-List\-Size().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_ad7890be8253221b14e673c4fb1cddffa}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!get\-Channel\-Data\-Type@{get\-Channel\-Data\-Type}}
+\index{get\-Channel\-Data\-Type@{get\-Channel\-Data\-Type}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{get\-Channel\-Data\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Pattern\-Channel\-::\-Channel\-Data\-Type} {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::get\-Channel\-Data\-Type} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1PatternChannel_ad7890be8253221b14e673c4fb1cddffa}
+
+
+\-Definition at line 498 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References channel\-Data\-Type.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a92ef0469e782dc022c00d804f30fff3d}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!get\-Current\-Pattern@{get\-Current\-Pattern}}
+\index{get\-Current\-Pattern@{get\-Current\-Pattern}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{get\-Current\-Pattern}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::shared\-\_\-ptr$<$ {\bf \-Pattern} $>$ {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::get\-Current\-Pattern} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1PatternChannel_a92ef0469e782dc022c00d804f30fff3d}
+
+
+\-Definition at line 241 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References pattern\-Map.
+
+
+
+\-Referenced by next\-Pattern(), and previous\-Pattern().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a7ab7d66118f678d1406a14c4ebb79752}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!get\-Length@{get\-Length}}
+\index{get\-Length@{get\-Length}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{get\-Length}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::get\-Length} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1PatternChannel_a7ab7d66118f678d1406a14c4ebb79752}
+
+
+\-Definition at line 458 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References pattern\-List.
+
+
+
+\-Referenced by add\-Pattern(), add\-Patterns(), and next\-Pattern().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a6c1ae5242c32abd71055d35c7d126bfa}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!get\-Max\-Pattern\-List\-Size@{get\-Max\-Pattern\-List\-Size}}
+\index{get\-Max\-Pattern\-List\-Size@{get\-Max\-Pattern\-List\-Size}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{get\-Max\-Pattern\-List\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::get\-Max\-Pattern\-List\-Size} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1PatternChannel_a6c1ae5242c32abd71055d35c7d126bfa}
+
+
+\-Definition at line 502 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References max\-Pattern\-List\-Size.
+
+
+
+\-Referenced by force\-Pattern\-List\-Size().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_ad588e65dc12cee6d91bb3035a6958d44}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!get\-Mutable\-Pattern\-By\-U\-U\-I\-D@{get\-Mutable\-Pattern\-By\-U\-U\-I\-D}}
+\index{get\-Mutable\-Pattern\-By\-U\-U\-I\-D@{get\-Mutable\-Pattern\-By\-U\-U\-I\-D}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{get\-Mutable\-Pattern\-By\-U\-U\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$ {\bf \-Pattern} $>$ {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::get\-Mutable\-Pattern\-By\-U\-U\-I\-D} (
+\begin{DoxyParamCaption}
+\item[{const boost\-::uuids\-::uuid \&}]{id}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1PatternChannel_ad588e65dc12cee6d91bb3035a6958d44}
+
+
+\-Definition at line 524 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References pattern\-Map.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a553a85437f3197ea4fa751319de0fd56}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!get\-Pattern\-By\-Cycle@{get\-Pattern\-By\-Cycle}}
+\index{get\-Pattern\-By\-Cycle@{get\-Pattern\-By\-Cycle}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{get\-Pattern\-By\-Cycle}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::shared\-\_\-ptr$<$ {\bf \-Pattern} $>$ {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::get\-Pattern\-By\-Cycle} (
+\begin{DoxyParamCaption}
+\item[{const {\bf common\-::\-Cycle} \&}]{cycle}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1PatternChannel_a553a85437f3197ea4fa751319de0fd56}
+
+
+\-Definition at line 245 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References cryomesh\-::common\-::\-Time\-Keeper\-::get\-Cycle(), cryomesh\-::common\-::\-Time\-Keeper\-::get\-Time\-Keeper(), pattern\-List, and pattern\-Map.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a88e0394f678b199aa5f2866b1487fc92}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!get\-Pattern\-By\-Tag@{get\-Pattern\-By\-Tag}}
+\index{get\-Pattern\-By\-Tag@{get\-Pattern\-By\-Tag}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{get\-Pattern\-By\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::shared\-\_\-ptr$<$ {\bf \-Pattern} $>$ {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::get\-Pattern\-By\-Tag} (
+\begin{DoxyParamCaption}
+\item[{const boost\-::shared\-\_\-ptr$<$ {\bf \-Pattern\-Tag} $>$}]{tg}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1PatternChannel_a88e0394f678b199aa5f2866b1487fc92}
+
+
+\-Definition at line 269 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References pattern\-By\-Tag\-Map, and pattern\-Map.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_ab5260edbf3ada707a91994c60b866dd5}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!get\-Pattern\-By\-Tag\-Map@{get\-Pattern\-By\-Tag\-Map}}
+\index{get\-Pattern\-By\-Tag\-Map@{get\-Pattern\-By\-Tag\-Map}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{get\-Pattern\-By\-Tag\-Map}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::map$<$ boost\-::shared\-\_\-ptr$<$ {\bf \-Pattern\-Tag} $>$, boost\-::uuids\-::uuid $>$ \& {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::get\-Pattern\-By\-Tag\-Map} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1PatternChannel_ab5260edbf3ada707a91994c60b866dd5}
+
+
+\-Definition at line 462 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References pattern\-By\-Tag\-Map.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a33b3c30b6137eaf727a58cafab32f692}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!get\-Pattern\-By\-U\-U\-I\-D@{get\-Pattern\-By\-U\-U\-I\-D}}
+\index{get\-Pattern\-By\-U\-U\-I\-D@{get\-Pattern\-By\-U\-U\-I\-D}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{get\-Pattern\-By\-U\-U\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::shared\-\_\-ptr$<$ {\bf \-Pattern} $>$ {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::get\-Pattern\-By\-U\-U\-I\-D} (
+\begin{DoxyParamCaption}
+\item[{const boost\-::uuids\-::uuid \&}]{id}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1PatternChannel_a33b3c30b6137eaf727a58cafab32f692}
+
+
+\-Definition at line 512 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References pattern\-Map.
+
+
+
+\-Referenced by print\-Formatted\-Pattern\-List(), and print\-Pattern\-List().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a56b0b495e91692302da543807a93fa02}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!get\-Pattern\-List@{get\-Pattern\-List}}
+\index{get\-Pattern\-List@{get\-Pattern\-List}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{get\-Pattern\-List}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::list$<$ boost\-::uuids\-::uuid $>$ \& {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::get\-Pattern\-List} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1PatternChannel_a56b0b495e91692302da543807a93fa02}
+
+
+\-Definition at line 466 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References pattern\-List.
+
+
+
+\-Referenced by match\-Globally(), and match\-Sequentially().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a79af2f63fa3b5dfa7c48615a47c20842}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!get\-Pattern\-List\-Iterator@{get\-Pattern\-List\-Iterator}}
+\index{get\-Pattern\-List\-Iterator@{get\-Pattern\-List\-Iterator}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{get\-Pattern\-List\-Iterator}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<$ boost\-::uuids\-::uuid $>$\-::iterator {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::get\-Pattern\-List\-Iterator} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1PatternChannel_a79af2f63fa3b5dfa7c48615a47c20842}
+
+
+\-Definition at line 470 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References pattern\-List\-Iterator.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_ab3bc796775ce23366a18206ac2c5119d}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!get\-Pattern\-Map@{get\-Pattern\-Map}}
+\index{get\-Pattern\-Map@{get\-Pattern\-Map}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{get\-Pattern\-Map}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::map$<$ boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ {\bf \-Pattern} $>$ $>$ \& {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::get\-Pattern\-Map} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1PatternChannel_ab3bc796775ce23366a18206ac2c5119d}
+
+
+\-Definition at line 474 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References pattern\-Map.
+
+
+
+\-Referenced by match\-Globally(), and match\-Sequentially().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a930bbb05180ecd22aa9a87eb62daba0f}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!get\-Pattern\-Position@{get\-Pattern\-Position}}
+\index{get\-Pattern\-Position@{get\-Pattern\-Position}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{get\-Pattern\-Position}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::get\-Pattern\-Position} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1PatternChannel_a930bbb05180ecd22aa9a87eb62daba0f}
+
+
+\-Definition at line 478 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References pattern\-Position.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a6d02f9db85383449d208ebb012edbe48}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!get\-Ref\-I\-D@{get\-Ref\-I\-D}}
+\index{get\-Ref\-I\-D@{get\-Ref\-I\-D}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{get\-Ref\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::get\-Ref\-I\-D} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1PatternChannel_a6d02f9db85383449d208ebb012edbe48}
+
+
+\-Definition at line 490 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References ref\-I\-D.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a4a1ca89d0b7867c4faa13d779a35ae97}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!get\-Ref\-I\-D\-S@{get\-Ref\-I\-D\-S}}
+\index{get\-Ref\-I\-D\-S@{get\-Ref\-I\-D\-S}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{get\-Ref\-I\-D\-S}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::get\-Ref\-I\-D\-S} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternChannel_a4a1ca89d0b7867c4faa13d779a35ae97}
+
+
+\-Definition at line 20 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References ref\-I\-D\-S.
+
+
+
+\-Referenced by \-Pattern\-Channel().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a1b02b011f6abc75354e75fe44218190d}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!get\-Width@{get\-Width}}
+\index{get\-Width@{get\-Width}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{get\-Width}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::get\-Width} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1PatternChannel_a1b02b011f6abc75354e75fe44218190d}
+
+
+\-Definition at line 482 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References width.
+
+
+
+\-Referenced by add\-Patterns().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a05400d50d8206b82426bdc8b277c4c14}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!match\-Globally@{match\-Globally}}
+\index{match\-Globally@{match\-Globally}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{match\-Globally}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::match\-Globally} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Pattern\-Channel} \&}]{obj}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1PatternChannel_a05400d50d8206b82426bdc8b277c4c14}
+
+
+\-Definition at line 309 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References get\-Pattern\-List(), and get\-Pattern\-Map().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_aa354fc22d88359c3b83d92a224761c69}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!match\-Sequentially@{match\-Sequentially}}
+\index{match\-Sequentially@{match\-Sequentially}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{match\-Sequentially}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::match\-Sequentially} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Pattern\-Channel} \&}]{obj}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1PatternChannel_aa354fc22d88359c3b83d92a224761c69}
+
+
+\-Definition at line 395 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References get\-Pattern\-List(), and get\-Pattern\-Map().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_ae5dd9fdcebe6af92c48c4ac1f0d889c7}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!next\-Pattern@{next\-Pattern}}
+\index{next\-Pattern@{next\-Pattern}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{next\-Pattern}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::shared\-\_\-ptr$<$ {\bf \-Pattern} $>$ {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::next\-Pattern} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1PatternChannel_ae5dd9fdcebe6af92c48c4ac1f0d889c7}
+
+
+\-Definition at line 278 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References get\-Current\-Pattern(), get\-Length(), pattern\-List, pattern\-List\-Iterator, and pattern\-Position.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a136a8a320b095ad9ce04eb67ea0a8c17}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!operator=@{operator=}}
+\index{operator=@{operator=}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Pattern\-Channel} \& cryomesh\-::state\-::\-Pattern\-Channel\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Pattern\-Channel} \&}]{obj}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1PatternChannel_a136a8a320b095ad9ce04eb67ea0a8c17}
+
+
+\-Assignment operator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em const} & \hyperlink{classcryomesh_1_1state_1_1PatternChannel}{\-Pattern\-Channel} \& obj \-R\-H\-S assignment\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{classcryomesh_1_1state_1_1PatternChannel}{\-Pattern\-Channel} \& \-This object after assignment 
+\end{DoxyReturn}
+
+
+\-Definition at line 81 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References channel\-Data\-Type, length, max\-Pattern\-List\-Size, pattern\-By\-Tag\-Map, pattern\-List, pattern\-List\-Iterator, pattern\-Map, pattern\-Position, ref\-I\-D, and width.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a4b96871d0a8bf38d6d9a2998dd0a81f7}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!previous\-Pattern@{previous\-Pattern}}
+\index{previous\-Pattern@{previous\-Pattern}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{previous\-Pattern}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::shared\-\_\-ptr$<$ {\bf \-Pattern} $>$ {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::previous\-Pattern} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1PatternChannel_a4b96871d0a8bf38d6d9a2998dd0a81f7}
+
+
+\-Definition at line 298 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References get\-Current\-Pattern(), pattern\-List, pattern\-List\-Iterator, and pattern\-Position.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_aa6d23443589ea223baed8eb9042a2139}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!print\-Binary\-Formatted\-Pattern\-List@{print\-Binary\-Formatted\-Pattern\-List}}
+\index{print\-Binary\-Formatted\-Pattern\-List@{print\-Binary\-Formatted\-Pattern\-List}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{print\-Binary\-Formatted\-Pattern\-List}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream \& {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::print\-Binary\-Formatted\-Pattern\-List} (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{bool}]{reversed}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1PatternChannel_aa6d23443589ea223baed8eb9042a2139}
+
+
+\-Definition at line 576 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References \-B\-I\-N\-A\-R\-Y, and print\-Formatted\-Pattern\-List().
+
+
+
+\-Referenced by cryomesh\-::state\-::operator$<$$<$().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a4813e35ef5321611b83d523c5cc3bfb6}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!print\-Formatted\-Pattern\-List@{print\-Formatted\-Pattern\-List}}
+\index{print\-Formatted\-Pattern\-List@{print\-Formatted\-Pattern\-List}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{print\-Formatted\-Pattern\-List}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream \& {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::print\-Formatted\-Pattern\-List} (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const {\bf \-Print\-Format} \&}]{pf, }
+\item[{bool}]{reversed}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1PatternChannel_a4813e35ef5321611b83d523c5cc3bfb6}
+
+
+\-Definition at line 579 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References \-B\-I\-N\-A\-R\-Y, get\-Pattern\-By\-U\-U\-I\-D(), \-I\-N\-T\-E\-G\-E\-R, pattern\-List, and \-T\-E\-X\-T.
+
+
+
+\-Referenced by print\-Binary\-Formatted\-Pattern\-List(), print\-Integer\-Formatted\-Pattern\-List(), and print\-Text\-Formatted\-Pattern\-List().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a8d92b898f11a8cea38022bf888807c69}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!print\-Integer\-Formatted\-Pattern\-List@{print\-Integer\-Formatted\-Pattern\-List}}
+\index{print\-Integer\-Formatted\-Pattern\-List@{print\-Integer\-Formatted\-Pattern\-List}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{print\-Integer\-Formatted\-Pattern\-List}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream \& {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::print\-Integer\-Formatted\-Pattern\-List} (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{bool}]{reversed}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1PatternChannel_a8d92b898f11a8cea38022bf888807c69}
+
+
+\-Definition at line 573 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References \-I\-N\-T\-E\-G\-E\-R, and print\-Formatted\-Pattern\-List().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a74a37c66904647c83d459ee4a90446d7}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!print\-Pattern\-List@{print\-Pattern\-List}}
+\index{print\-Pattern\-List@{print\-Pattern\-List}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{print\-Pattern\-List}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream \& {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::print\-Pattern\-List} (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{bool}]{reversed = {\ttfamily false}}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1PatternChannel_a74a37c66904647c83d459ee4a90446d7}
+
+
+\-Definition at line 540 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References get\-Pattern\-By\-U\-U\-I\-D(), and pattern\-List.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a1ab67f8d6565a4a2b987152d4c38d175}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!print\-Text\-Formatted\-Pattern\-List@{print\-Text\-Formatted\-Pattern\-List}}
+\index{print\-Text\-Formatted\-Pattern\-List@{print\-Text\-Formatted\-Pattern\-List}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{print\-Text\-Formatted\-Pattern\-List}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream \& {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::print\-Text\-Formatted\-Pattern\-List} (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{bool}]{reversed = {\ttfamily false}}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1state_1_1PatternChannel_a1ab67f8d6565a4a2b987152d4c38d175}
+
+
+\-Definition at line 569 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References print\-Formatted\-Pattern\-List(), and \-T\-E\-X\-T.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a58645e5bd3b44290db489c095ad34895}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!remove\-Patterns@{remove\-Patterns}}
+\index{remove\-Patterns@{remove\-Patterns}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{remove\-Patterns}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<$ boost\-::shared\-\_\-ptr$<$ {\bf \-Pattern} $>$ $>$ {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::remove\-Patterns} (
+\begin{DoxyParamCaption}
+\item[{const std\-::list$<$ boost\-::shared\-\_\-ptr$<$ {\bf \-Pattern} $>$ $>$ \&}]{pats}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1PatternChannel_a58645e5bd3b44290db489c095ad34895}
+
+
+\-Definition at line 156 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-Referenced by force\-Pattern\-List\-Size().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a95cdc1ef47d4647f16db7a618fbcb1c3}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!remove\-Patterns@{remove\-Patterns}}
+\index{remove\-Patterns@{remove\-Patterns}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{remove\-Patterns}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<$ boost\-::shared\-\_\-ptr$<$ {\bf \-Pattern} $>$ $>$ {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::remove\-Patterns} (
+\begin{DoxyParamCaption}
+\item[{const std\-::list$<$ boost\-::uuids\-::uuid $>$ \&}]{uuids}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1PatternChannel_a95cdc1ef47d4647f16db7a618fbcb1c3}
+
+
+\-Definition at line 175 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References length, pattern\-By\-Tag\-Map, pattern\-List, pattern\-List\-Iterator, pattern\-Map, and pattern\-Position.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_acd69920f539ac7a7149faa92c5e766e1}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!set\-Max\-Pattern\-List\-Size@{set\-Max\-Pattern\-List\-Size}}
+\index{set\-Max\-Pattern\-List\-Size@{set\-Max\-Pattern\-List\-Size}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{set\-Max\-Pattern\-List\-Size}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::set\-Max\-Pattern\-List\-Size} (
+\begin{DoxyParamCaption}
+\item[{int}]{sz}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1PatternChannel_acd69920f539ac7a7149faa92c5e766e1}
+
+
+\-Definition at line 505 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References force\-Pattern\-List\-Size(), and max\-Pattern\-List\-Size.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a8df9a6aace2cf6810d3d6f3bc72b5a3b}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!set\-Ref\-I\-D@{set\-Ref\-I\-D}}
+\index{set\-Ref\-I\-D@{set\-Ref\-I\-D}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{set\-Ref\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::set\-Ref\-I\-D} (
+\begin{DoxyParamCaption}
+\item[{int}]{r}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1PatternChannel_a8df9a6aace2cf6810d3d6f3bc72b5a3b}
+
+
+\-Definition at line 493 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References ref\-I\-D.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_ae9f396f25c1f9650cc57b4c02c84a5f3}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!set\-Width@{set\-Width}}
+\index{set\-Width@{set\-Width}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{set\-Width}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::set\-Width} (
+\begin{DoxyParamCaption}
+\item[{int}]{w}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1PatternChannel_ae9f396f25c1f9650cc57b4c02c84a5f3}
+
+
+\-Definition at line 485 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\-References width.
+
+
+
+\-Referenced by add\-Patterns().
+
+
+
+\subsection{\-Friends \-And \-Related \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a8a4a6cb06dd05aa353207980bcf59319}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const {\bf \-Pattern\-Channel} \&}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternChannel_a8a4a6cb06dd05aa353207980bcf59319}
+
+
+\-Definition at line 639 of file \-Pattern\-Channel.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a0638a69625dd19480563b245dc1c6853}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!channel\-Data\-Type@{channel\-Data\-Type}}
+\index{channel\-Data\-Type@{channel\-Data\-Type}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{channel\-Data\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Channel\-Data\-Type} {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::channel\-Data\-Type}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternChannel_a0638a69625dd19480563b245dc1c6853}
+
+
+\-Definition at line 169 of file \-Pattern\-Channel.\-h.
+
+
+
+\-Referenced by get\-Channel\-Data\-Type(), operator=(), and \-Pattern\-Channel().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a2931ca38ca2e5d816c8917cb857e62fc}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-P\-A\-T\-T\-E\-R\-N\-\_\-\-L\-I\-S\-T\-\_\-\-S\-I\-Z\-E@{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-P\-A\-T\-T\-E\-R\-N\-\_\-\-L\-I\-S\-T\-\_\-\-S\-I\-Z\-E}}
+\index{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-P\-A\-T\-T\-E\-R\-N\-\_\-\-L\-I\-S\-T\-\_\-\-S\-I\-Z\-E@{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-P\-A\-T\-T\-E\-R\-N\-\_\-\-L\-I\-S\-T\-\_\-\-S\-I\-Z\-E}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-P\-A\-T\-T\-E\-R\-N\-\_\-\-L\-I\-S\-T\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::\-D\-E\-F\-A\-U\-L\-T\-\_\-\-M\-A\-X\-\_\-\-P\-A\-T\-T\-E\-R\-N\-\_\-\-L\-I\-S\-T\-\_\-\-S\-I\-Z\-E} = -\/1\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternChannel_a2931ca38ca2e5d816c8917cb857e62fc}
+
+
+\-Definition at line 161 of file \-Pattern\-Channel.\-h.
+
+
+
+\-Referenced by \-Pattern\-Channel().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a979af8e9743379cc8484cfa7348838f2}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!length@{length}}
+\index{length@{length}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{length}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::length}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternChannel_a979af8e9743379cc8484cfa7348838f2}
+
+
+\-Definition at line 171 of file \-Pattern\-Channel.\-h.
+
+
+
+\-Referenced by add\-Patterns(), clear\-Pattern\-List(), cryomesh\-::state\-::operator$<$$<$(), operator=(), \-Pattern\-Channel(), and remove\-Patterns().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_aeab8770881ec9be1b48c712a23dd6271}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!max\-Pattern\-List\-Size@{max\-Pattern\-List\-Size}}
+\index{max\-Pattern\-List\-Size@{max\-Pattern\-List\-Size}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{max\-Pattern\-List\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::max\-Pattern\-List\-Size}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternChannel_aeab8770881ec9be1b48c712a23dd6271}
+
+
+\-Definition at line 172 of file \-Pattern\-Channel.\-h.
+
+
+
+\-Referenced by get\-Max\-Pattern\-List\-Size(), cryomesh\-::state\-::operator$<$$<$(), operator=(), \-Pattern\-Channel(), and set\-Max\-Pattern\-List\-Size().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a5155045e7e94fc10a1d60e418bf82b71}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!pattern\-By\-Tag\-Map@{pattern\-By\-Tag\-Map}}
+\index{pattern\-By\-Tag\-Map@{pattern\-By\-Tag\-Map}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{pattern\-By\-Tag\-Map}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$boost\-::shared\-\_\-ptr$<${\bf \-Pattern\-Tag}$>$, boost\-::uuids\-::uuid$>$ {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::pattern\-By\-Tag\-Map}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternChannel_a5155045e7e94fc10a1d60e418bf82b71}
+
+
+\-Definition at line 174 of file \-Pattern\-Channel.\-h.
+
+
+
+\-Referenced by add\-Patterns(), clear\-Pattern\-List(), get\-Pattern\-By\-Tag(), get\-Pattern\-By\-Tag\-Map(), operator=(), \-Pattern\-Channel(), and remove\-Patterns().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a71800edd10923b7b00f0c292414b4ba1}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!pattern\-List@{pattern\-List}}
+\index{pattern\-List@{pattern\-List}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{pattern\-List}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<$boost\-::uuids\-::uuid$>$ {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::pattern\-List}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternChannel_a71800edd10923b7b00f0c292414b4ba1}
+
+
+\-Definition at line 176 of file \-Pattern\-Channel.\-h.
+
+
+
+\-Referenced by add\-Patterns(), clear\-Pattern\-List(), force\-Pattern\-List\-Size(), get\-Length(), get\-Pattern\-By\-Cycle(), get\-Pattern\-List(), next\-Pattern(), operator=(), \-Pattern\-Channel(), previous\-Pattern(), print\-Formatted\-Pattern\-List(), print\-Pattern\-List(), and remove\-Patterns().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_ac06b2bd5e0bc4aa4da633bc80a64b290}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!pattern\-List\-Iterator@{pattern\-List\-Iterator}}
+\index{pattern\-List\-Iterator@{pattern\-List\-Iterator}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{pattern\-List\-Iterator}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<$boost\-::uuids\-::uuid$>$\-::iterator {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::pattern\-List\-Iterator}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternChannel_ac06b2bd5e0bc4aa4da633bc80a64b290}
+
+
+\-Definition at line 178 of file \-Pattern\-Channel.\-h.
+
+
+
+\-Referenced by add\-Patterns(), clear\-Pattern\-List(), get\-Pattern\-List\-Iterator(), next\-Pattern(), operator=(), \-Pattern\-Channel(), previous\-Pattern(), and remove\-Patterns().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a72f70fbaad5ff134b07c3fe198d9fd67}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!pattern\-Map@{pattern\-Map}}
+\index{pattern\-Map@{pattern\-Map}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{pattern\-Map}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<${\bf \-Pattern}$>$ $>$ {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::pattern\-Map}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternChannel_a72f70fbaad5ff134b07c3fe198d9fd67}
+
+
+\-Definition at line 180 of file \-Pattern\-Channel.\-h.
+
+
+
+\-Referenced by add\-Patterns(), clear\-Pattern\-List(), get\-Current\-Pattern(), get\-Mutable\-Pattern\-By\-U\-U\-I\-D(), get\-Pattern\-By\-Cycle(), get\-Pattern\-By\-Tag(), get\-Pattern\-By\-U\-U\-I\-D(), get\-Pattern\-Map(), cryomesh\-::state\-::operator$<$$<$(), operator=(), \-Pattern\-Channel(), and remove\-Patterns().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_af4a9ce80cd65ae8a11ec27e4b027a34c}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!pattern\-Position@{pattern\-Position}}
+\index{pattern\-Position@{pattern\-Position}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{pattern\-Position}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::pattern\-Position}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternChannel_af4a9ce80cd65ae8a11ec27e4b027a34c}
+
+
+\-Definition at line 182 of file \-Pattern\-Channel.\-h.
+
+
+
+\-Referenced by add\-Patterns(), clear\-Pattern\-List(), get\-Pattern\-Position(), next\-Pattern(), cryomesh\-::state\-::operator$<$$<$(), operator=(), \-Pattern\-Channel(), previous\-Pattern(), and remove\-Patterns().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a609d1d8ac76ff856bf7885c040dc339a}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!ref\-I\-D@{ref\-I\-D}}
+\index{ref\-I\-D@{ref\-I\-D}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{ref\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::ref\-I\-D}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternChannel_a609d1d8ac76ff856bf7885c040dc339a}
+
+
+\-Definition at line 184 of file \-Pattern\-Channel.\-h.
+
+
+
+\-Referenced by get\-Ref\-I\-D(), cryomesh\-::state\-::operator$<$$<$(), operator=(), \-Pattern\-Channel(), and set\-Ref\-I\-D().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_a1476695074d7d8e184aed0c4401f72d5}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!\-R\-E\-F\-I\-D\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-S\-T\-A\-R\-T@{\-R\-E\-F\-I\-D\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-S\-T\-A\-R\-T}}
+\index{\-R\-E\-F\-I\-D\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-S\-T\-A\-R\-T@{\-R\-E\-F\-I\-D\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-S\-T\-A\-R\-T}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{\-R\-E\-F\-I\-D\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-S\-T\-A\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::\-R\-E\-F\-I\-D\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-S\-T\-A\-R\-T} = 100000\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternChannel_a1476695074d7d8e184aed0c4401f72d5}
+
+
+\-Definition at line 163 of file \-Pattern\-Channel.\-h.
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_aafed47c54c1db97487a333f43bb85e25}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!ref\-I\-D\-S@{ref\-I\-D\-S}}
+\index{ref\-I\-D\-S@{ref\-I\-D\-S}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{ref\-I\-D\-S}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::ref\-I\-D\-S} = {\bf \-Pattern\-Channel\-::\-R\-E\-F\-I\-D\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-S\-T\-A\-R\-T}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternChannel_aafed47c54c1db97487a333f43bb85e25}
+
+
+\-Definition at line 164 of file \-Pattern\-Channel.\-h.
+
+
+
+\-Referenced by get\-Ref\-I\-D\-S().
+
+\hypertarget{classcryomesh_1_1state_1_1PatternChannel_af7bcede6cf5c8d768e7d1f1d897106d2}{\index{cryomesh\-::state\-::\-Pattern\-Channel@{cryomesh\-::state\-::\-Pattern\-Channel}!width@{width}}
+\index{width@{width}!cryomesh::state::PatternChannel@{cryomesh\-::state\-::\-Pattern\-Channel}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf cryomesh\-::state\-::\-Pattern\-Channel\-::width}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1state_1_1PatternChannel_af7bcede6cf5c8d768e7d1f1d897106d2}
+
+
+\-Definition at line 186 of file \-Pattern\-Channel.\-h.
+
+
+
+\-Referenced by clear\-Pattern\-List(), get\-Width(), cryomesh\-::state\-::operator$<$$<$(), operator=(), \-Pattern\-Channel(), and set\-Width().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/state/\hyperlink{PatternChannel_8h}{\-Pattern\-Channel.\-h}\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/state/\hyperlink{PatternChannel_8cpp}{\-Pattern\-Channel.\-cpp}\end{DoxyCompactItemize}

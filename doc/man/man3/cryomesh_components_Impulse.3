@@ -1,101 +1,105 @@
-.TH "cryomesh::components::Impulse" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::components::Impulse" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 cryomesh::components::Impulse \- 
 .PP
-\fBImpulse\fP is a mobile information packet to be passed between Nodes.  
+\fBImpulse\fP is a mobile information packet to be passed between Nodes\&.  
 
 .SH SYNOPSIS
 .br
 .PP
 .PP
-\fC#include <Impulse.h>\fP
+\fC#include <Impulse\&.h>\fP
 .SS "Public Member Functions"
 
 .in +1c
 .ti -1c
 .RI "\fBImpulse\fP ()"
 .br
-.RI "\fIConstructor. \fP"
+.RI "\fIConstructor\&. \fP"
 .ti -1c
 .RI "\fBImpulse\fP (const double max_y, const int length, const int delay=0)"
 .br
-.RI "\fIConstruct a from a curve with max f(x) and length and set starting cycle to startCycle, which defaults to the present, 'now' cycle. \fP"
+.RI "\fIConstruct a from a curve with max f(x) and length and set starting cycle to startCycle, which defaults to the present, 'now' cycle\&. \fP"
 .ti -1c
 .RI "\fBImpulse\fP (const double max_y, const int length, const int delay, boost::shared_ptr< \fBActivityTimerDistance\fP >)"
 .br
-.RI "\fIConstruct a from a curve with max f(x) and length and set starting cycle to startCycle, and an activity timer. \fP"
+.RI "\fIConstruct a from a curve with max f(x) and length and set starting cycle to startCycle, and an activity timer\&. \fP"
 .ti -1c
 .RI "\fBImpulse\fP (const \fBImpulse\fP &obj)"
 .br
 .ti -1c
 .RI "virtual \fB~Impulse\fP ()"
 .br
-.RI "\fIDestructor. \fP"
+.RI "\fIDestructor\&. \fP"
 .ti -1c
-.RI "void \fBrandomise\fP (double positive_bias=0.5)"
+.RI "void \fBrandomise\fP (double positive_bias=0\&.5)"
 .br
 .ti -1c
 .RI "bool \fBisActive\fP () const "
 .br
-.RI "\fIIs the \fBImpulse\fP active on current cycle. \fP"
+.RI "\fIIs the \fBImpulse\fP active on current cycle\&. \fP"
 .ti -1c
 .RI "bool \fBisActive\fP (const \fBcommon::Cycle\fP &cycle) const "
 .br
-.RI "\fIIs the \fBImpulse\fP active on cycle. \fP"
+.RI "\fIIs the \fBImpulse\fP active on cycle\&. \fP"
 .ti -1c
 .RI "bool \fBisActive\fP (const \fBcommon::Cycle\fP &startCycle, const \fBcommon::Cycle\fP &endCycle) const "
 .br
-.RI "\fIIs the \fBImpulse\fP active at some point in cycle range. \fP"
+.RI "\fIIs the \fBImpulse\fP active at some point in cycle range\&. \fP"
 .ti -1c
 .RI "double \fBgetActivity\fP (\fBcommon::Cycle\fP cycle) const "
 .br
-.RI "\fIGet activity at cycle. \fP"
+.RI "\fIGet activity at cycle\&. \fP"
 .ti -1c
 .RI "double \fBgetActivity\fP () const "
 .br
-.RI "\fIGet activity at current cycle. \fP"
+.RI "\fIGet activity at current cycle\&. \fP"
 .ti -1c
 .RI "double \fBgetActivityMaximum\fP () const "
 .br
-.RI "\fIGet maximum activity. \fP"
+.RI "\fIGet maximum activity\&. \fP"
 .ti -1c
 .RI "double \fBgetActivityMinimum\fP () const "
 .br
-.RI "\fIGet minimum activity. \fP"
+.RI "\fIGet minimum activity\&. \fP"
 .ti -1c
 .RI "virtual \fBImpulse\fP & \fBinvert\fP ()"
 .br
-.RI "\fIInvert the impulse. \fP"
+.RI "\fIInvert the impulse\&. \fP"
 .ti -1c
 .RI "\fBcommon::Cycle\fP \fBgetFirstActiveCycle\fP () const "
 .br
-.RI "\fIGet the first active cycle. \fP"
+.RI "\fIGet the first active cycle\&. \fP"
 .ti -1c
 .RI "void \fBsetFirstActiveCycle\fP (const \fBcommon::Cycle\fP cycle)"
 .br
-.RI "\fISet the first active cycle. \fP"
+.RI "\fISet the first active cycle\&. \fP"
 .ti -1c
 .RI "\fBcommon::Cycle\fP \fBgetLastActiveCycle\fP () const "
 .br
-.RI "\fIGet the last active cycle. \fP"
+.RI "\fIGet the last active cycle\&. \fP"
 .ti -1c
 .RI "const std::list< double > & \fBgetActivities\fP () const "
 .br
-.RI "\fIGet activities. \fP"
+.RI "\fIGet activities\&. \fP"
 .ti -1c
-.RI "const boost::shared_ptr< \fBActivityTimerDistance\fP > \fBgetActivityTimer\fP () const "
+.RI "const boost::shared_ptr
 .br
-.RI "\fIGet activity timer. \fP"
+< \fBActivityTimerDistance\fP > \fBgetActivityTimer\fP () const "
+.br
+.RI "\fIGet activity timer\&. \fP"
 .ti -1c
-.RI "boost::shared_ptr< \fBActivityTimerDistance\fP > \fBgetMutableActivityTimer\fP ()"
+.RI "boost::shared_ptr
 .br
-.RI "\fIGet mutable activity timer. \fP"
+< \fBActivityTimerDistance\fP > \fBgetMutableActivityTimer\fP ()"
+.br
+.RI "\fIGet mutable activity timer\&. \fP"
 .ti -1c
 .RI "void \fBsetActivityTimer\fP (boost::shared_ptr< \fBActivityTimerDistance\fP > timer)"
 .br
-.RI "\fISet activity timer. \fP"
+.RI "\fISet activity timer\&. \fP"
 .ti -1c
 .RI "int \fBgetActivityDelay\fP () const "
 .br
@@ -105,23 +109,23 @@ cryomesh::components::Impulse \-
 .ti -1c
 .RI "const \fBImpulse\fP \fBoperator+\fP (const \fBImpulse\fP &obj) const "
 .br
-.RI "\fINon-destructive addition operator. \fP"
+.RI "\fINon-destructive addition operator\&. \fP"
 .ti -1c
 .RI "\fBImpulse\fP & \fBoperator+=\fP (const \fBImpulse\fP &obj)"
 .br
-.RI "\fIDestructive addition and assignment operator. \fP"
+.RI "\fIDestructive addition and assignment operator\&. \fP"
 .ti -1c
 .RI "\fBImpulse\fP & \fBoperator=\fP (const \fBImpulse\fP &obj)"
 .br
-.RI "\fIAssignment operator. \fP"
+.RI "\fIAssignment operator\&. \fP"
 .ti -1c
 .RI "bool \fBoperator==\fP (const \fBImpulse\fP &obj) const "
 .br
-.RI "\fIComparator operator. \fP"
+.RI "\fIComparator operator\&. \fP"
 .ti -1c
 .RI "bool \fBoperator!=\fP (const \fBImpulse\fP &obj) const "
 .br
-.RI "\fINot comparator operator. \fP"
+.RI "\fINot comparator operator\&. \fP"
 .ti -1c
 .RI "virtual void \fBenableDebug\fP (bool b)"
 .br
@@ -132,11 +136,11 @@ cryomesh::components::Impulse \-
 .ti -1c
 .RI "static boost::shared_ptr< \fBImpulse\fP > \fBgetTriggerImpulse\fP ()"
 .br
-.RI "\fIGet a 'trigger' impulse, a maximum impulse. \fP"
+.RI "\fIGet a 'trigger' impulse, a maximum impulse\&. \fP"
 .ti -1c
-.RI "static boost::shared_ptr< \fBImpulse\fP > \fBgetRandom\fP (double positive_bias=0.5)"
+.RI "static boost::shared_ptr< \fBImpulse\fP > \fBgetRandom\fP (double positive_bias=0\&.5)"
 .br
-.RI "\fIGet a randomised impulse. \fP"
+.RI "\fIGet a randomised impulse\&. \fP"
 .in -1c
 .SS "Static Public Attributes"
 
@@ -157,7 +161,7 @@ cryomesh::components::Impulse \-
 .RI "static const int \fBMIN_ACTIVITY_LENGTH\fP = 1"
 .br
 .ti -1c
-.RI "static const double \fBMIN_ACTIVITY_MAGNITUDE\fP = 0.01"
+.RI "static const double \fBMIN_ACTIVITY_MAGNITUDE\fP = 0\&.01"
 .br
 .ti -1c
 .RI "static const int \fBMIN_ACTIVITY_DELAY\fP = 0"
@@ -172,7 +176,7 @@ cryomesh::components::Impulse \-
 .ti -1c
 .RI "double \fBgetActivityBoundary\fP (bool maximal) const "
 .br
-.RI "\fIGet the boundary value of activity. \fP"
+.RI "\fIGet the boundary value of activity\&. \fP"
 .in -1c
 .SS "Private Attributes"
 
@@ -180,16 +184,18 @@ cryomesh::components::Impulse \-
 .ti -1c
 .RI "\fBcommon::Cycle\fP \fBfirstActiveCycle\fP"
 .br
-.RI "\fIThe first cycle that this \fBImpulse\fP has activity. \fP"
+.RI "\fIThe first cycle that this \fBImpulse\fP has activity\&. \fP"
 .ti -1c
 .RI "\fBcommon::Cycle\fP \fBlastActiveCycle\fP"
 .br
-.RI "\fIThe lase cycle that this \fBImpulse\fP has activity. \fP"
+.RI "\fIThe lase cycle that this \fBImpulse\fP has activity\&. \fP"
 .ti -1c
 .RI "int \fBactivityDelay\fP"
 .br
 .ti -1c
-.RI "boost::shared_ptr< \fBActivityTimerDistance\fP > \fBactivityTimer\fP"
+.RI "boost::shared_ptr
+.br
+< \fBActivityTimerDistance\fP > \fBactivityTimer\fP"
 .br
 .in -1c
 .SS "Friends"
@@ -198,20 +204,20 @@ cryomesh::components::Impulse \-
 .ti -1c
 .RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBImpulse\fP &obj)"
 .br
-.RI "\fITo stream operator. \fP"
+.RI "\fITo stream operator\&. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
-\fBImpulse\fP is a mobile information packet to be passed between Nodes. 
+\fBImpulse\fP is a mobile information packet to be passed between Nodes\&. 
 
 Impulses represent information generated by a \fBNode\fP firing They are propagated along a connection Can be modified by the overlying Mesh as they propagate 
 .PP
-Definition at line 31 of file Impulse.h.
+Definition at line 31 of file Impulse\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "cryomesh::components::Impulse::Impulse ()"
+.SS "\fBcryomesh::components::Impulse::Impulse\fP ()"
 .PP
-Constructor. Constructor for \fBImpulse\fP
+Constructor\&. Constructor for \fBImpulse\fP
 .PP
 \fBParameters:\fP
 .RS 4
@@ -220,12 +226,12 @@ Constructor. Constructor for \fBImpulse\fP
 .PP
 
 .PP
-Definition at line 45 of file Impulse.cpp.
+Definition at line 45 of file Impulse\&.cpp\&.
 .PP
-References MIN_ACTIVITY_LENGTH, setActivityTimer(), and setFirstActiveCycle().
-.SS "cryomesh::components::Impulse::Impulse (const doublemax_y, const intlength, const intdelay = \fC0\fP)"
+References MIN_ACTIVITY_LENGTH, setActivityTimer(), and setFirstActiveCycle()\&.
+.SS "\fBcryomesh::components::Impulse::Impulse\fP (const doublemax_y, const intlength, const intdelay = \fC0\fP)"
 .PP
-Construct a from a curve with max f(x) and length and set starting cycle to startCycle, which defaults to the present, 'now' cycle. \fBParameters:\fP
+Construct a from a curve with max f(x) and length and set starting cycle to startCycle, which defaults to the present, 'now' cycle\&. \fBParameters:\fP
 .RS 4
 \fIconst\fP int max_y Boundary value of curve 
 .br
@@ -236,12 +242,12 @@ Construct a from a curve with max f(x) and length and set starting cycle to star
 .PP
 
 .PP
-Definition at line 54 of file Impulse.cpp.
+Definition at line 54 of file Impulse\&.cpp\&.
 .PP
-References MIN_ACTIVITY_LENGTH, setActivityTimer(), and setFirstActiveCycle().
-.SS "cryomesh::components::Impulse::Impulse (const doublemax_y, const intlength, const intdelay, boost::shared_ptr< \fBActivityTimerDistance\fP >timer)"
+References MIN_ACTIVITY_LENGTH, setActivityDelay(), setActivityTimer(), and setFirstActiveCycle()\&.
+.SS "\fBcryomesh::components::Impulse::Impulse\fP (const doublemax_y, const intlength, const intdelay, boost::shared_ptr< \fBActivityTimerDistance\fP >timer)"
 .PP
-Construct a from a curve with max f(x) and length and set starting cycle to startCycle, and an activity timer. \fBParameters:\fP
+Construct a from a curve with max f(x) and length and set starting cycle to startCycle, and an activity timer\&. \fBParameters:\fP
 .RS 4
 \fIconst\fP int max_y Boundary value of curve 
 .br
@@ -254,37 +260,37 @@ Construct a from a curve with max f(x) and length and set starting cycle to star
 .PP
 
 .PP
-Definition at line 64 of file Impulse.cpp.
+Definition at line 65 of file Impulse\&.cpp\&.
 .PP
-References MIN_ACTIVITY_LENGTH, setActivityTimer(), and setFirstActiveCycle().
-.SS "cryomesh::components::Impulse::Impulse (const \fBImpulse\fP &obj)"
+References MIN_ACTIVITY_LENGTH, setActivityDelay(), setActivityTimer(), and setFirstActiveCycle()\&.
+.SS "\fBcryomesh::components::Impulse::Impulse\fP (const \fBImpulse\fP &obj)"
 .PP
-Definition at line 73 of file Impulse.cpp.
+Definition at line 75 of file Impulse\&.cpp\&.
 .PP
-References firstActiveCycle, getActivityDelay(), getActivityTimer(), getFirstActiveCycle(), getLastActiveCycle(), lastActiveCycle, setActivityDelay(), and setActivityTimer().
-.SS "cryomesh::components::Impulse::~Impulse ()\fC [virtual]\fP"
+References firstActiveCycle, getActivityDelay(), getActivityTimer(), getFirstActiveCycle(), getLastActiveCycle(), lastActiveCycle, setActivityDelay(), and setActivityTimer()\&.
+.SS "\fBcryomesh::components::Impulse::~Impulse\fP ()\fC [virtual]\fP"
 .PP
-Destructor. Destructor for \fBImpulse\fP 
+Destructor\&. Destructor for \fBImpulse\fP 
 .PP
-Definition at line 80 of file Impulse.cpp.
+Definition at line 83 of file Impulse\&.cpp\&.
 .SH "Member Function Documentation"
 .PP 
-.SS "void cryomesh::components::Impulse::enableDebug (boolb)\fC [virtual]\fP"
+.SS "void \fBcryomesh::components::Impulse::enableDebug\fP (boolb)\fC [virtual]\fP"
 .PP
-Definition at line 332 of file Impulse.cpp.
-.SS "const std::list< double > & cryomesh::components::Impulse::getActivities () const"
+Definition at line 336 of file Impulse\&.cpp\&.
+.SS "const std::list< double > & \fBcryomesh::components::Impulse::getActivities\fP () const"
 .PP
-Get activities. \fBReturns:\fP
+Get activities\&. \fBReturns:\fP
 .RS 4
 const std::list<double> & The activities list 
 .RE
 .PP
 
 .PP
-Definition at line 189 of file Impulse.cpp.
-.SS "double cryomesh::components::Impulse::getActivity (\fBcommon::Cycle\fPcycle) const"
+Definition at line 192 of file Impulse\&.cpp\&.
+.SS "double \fBcryomesh::components::Impulse::getActivity\fP (\fBcommon::Cycle\fPcycle) const"
 .PP
-Get activity at cycle. Sum all the Impulses in the collection on specified cycle and return activity
+Get activity at cycle\&. Sum all the Impulses in the collection on specified cycle and return activity
 .PP
 \fBParameters:\fP
 .RS 4
@@ -298,12 +304,12 @@ double The activity on specified cycle
 .PP
 
 .PP
-Definition at line 126 of file Impulse.cpp.
+Definition at line 129 of file Impulse\&.cpp\&.
 .PP
-References firstActiveCycle, getFirstActiveCycle(), getLastActiveCycle(), lastActiveCycle, and cryomesh::common::Cycle::toLInt().
-.SS "double cryomesh::components::Impulse::getActivity () const"
+References firstActiveCycle, getFirstActiveCycle(), getLastActiveCycle(), lastActiveCycle, and cryomesh::common::Cycle::toLInt()\&.
+.SS "double \fBcryomesh::components::Impulse::getActivity\fP () const"
 .PP
-Get activity at current cycle. Sum all the Impulses in the collection on the current cycle and return activity
+Get activity at current cycle\&. Sum all the Impulses in the collection on the current cycle and return activity
 .PP
 \fBReturns:\fP
 .RS 4
@@ -312,12 +318,12 @@ double The activity on specified cycle
 .PP
 
 .PP
-Definition at line 122 of file Impulse.cpp.
+Definition at line 125 of file Impulse\&.cpp\&.
 .PP
-References cryomesh::common::TimeKeeper::getTimeKeeper().
-.SS "double cryomesh::components::Impulse::getActivityBoundary (boolmaximal) const\fC [protected]\fP"
+References cryomesh::common::TimeKeeper::getTimeKeeper()\&.
+.SS "double \fBcryomesh::components::Impulse::getActivityBoundary\fP (boolmaximal) const\fC [protected]\fP"
 .PP
-Get the boundary value of activity. \fBParameters:\fP
+Get the boundary value of activity\&. \fBParameters:\fP
 .RS 4
 \fIbool\fP maximal True if maximal boundary, false if minimal
 .RE
@@ -328,16 +334,16 @@ double The boundary value of activity
 .RE
 .PP
 
-.SS "int cryomesh::components::Impulse::getActivityDelay () const"
+.SS "int \fBcryomesh::components::Impulse::getActivityDelay\fP () const"
 .PP
-Definition at line 205 of file Impulse.cpp.
+Definition at line 208 of file Impulse\&.cpp\&.
 .PP
-References activityDelay.
+References activityDelay\&.
 .PP
-Referenced by Impulse(), cryomesh::components::operator<<(), operator=(), and setFirstActiveCycle().
-.SS "double cryomesh::components::Impulse::getActivityMaximum () const"
+Referenced by Impulse(), cryomesh::components::operator<<(), operator=(), and setFirstActiveCycle()\&.
+.SS "double \fBcryomesh::components::Impulse::getActivityMaximum\fP () const"
 .PP
-Get maximum activity. Find the maximum activity between start and end cycles
+Get maximum activity\&. Find the maximum activity between start and end cycles
 .PP
 \fBReturns:\fP
 .RS 4
@@ -346,10 +352,10 @@ double The maximum activity
 .PP
 
 .PP
-Definition at line 153 of file Impulse.cpp.
-.SS "double cryomesh::components::Impulse::getActivityMinimum () const"
+Definition at line 156 of file Impulse\&.cpp\&.
+.SS "double \fBcryomesh::components::Impulse::getActivityMinimum\fP () const"
 .PP
-Get minimum activity. Find the minimum activity between start and end cycles
+Get minimum activity\&. Find the minimum activity between start and end cycles
 .PP
 \fBReturns:\fP
 .RS 4
@@ -358,64 +364,64 @@ double The minimum activity
 .PP
 
 .PP
-Definition at line 157 of file Impulse.cpp.
-.SS "const boost::shared_ptr< \fBActivityTimerDistance\fP > cryomesh::components::Impulse::getActivityTimer () const"
+Definition at line 160 of file Impulse\&.cpp\&.
+.SS "const boost::shared_ptr< \fBActivityTimerDistance\fP > \fBcryomesh::components::Impulse::getActivityTimer\fP () const"
 .PP
-Get activity timer. \fBReturns:\fP
+Get activity timer\&. \fBReturns:\fP
 .RS 4
 boost::shared_ptr< ActivityTimer > activityTimer; The activity timer 
 .RE
 .PP
 
 .PP
-Definition at line 193 of file Impulse.cpp.
+Definition at line 196 of file Impulse\&.cpp\&.
 .PP
-References activityTimer.
+References activityTimer\&.
 .PP
-Referenced by Impulse(), cryomesh::components::operator<<(), and operator=().
-.SS "\fBCycle\fP cryomesh::components::Impulse::getFirstActiveCycle () const"
+Referenced by Impulse(), cryomesh::components::operator<<(), and operator=()\&.
+.SS "\fBCycle\fP \fBcryomesh::components::Impulse::getFirstActiveCycle\fP () const"
 .PP
-Get the first active cycle. \fBReturns:\fP
+Get the first active cycle\&. \fBReturns:\fP
 .RS 4
 Cycle The first active cycle 
 .RE
 .PP
 
 .PP
-Definition at line 166 of file Impulse.cpp.
+Definition at line 169 of file Impulse\&.cpp\&.
 .PP
-References firstActiveCycle.
+References firstActiveCycle\&.
 .PP
-Referenced by cryomesh::components::ImpulseCollection::clearActiveImpulses(), getActivity(), Impulse(), operator+=(), cryomesh::components::operator<<(), operator=(), and operator==().
-.SS "\fBCycle\fP cryomesh::components::Impulse::getLastActiveCycle () const"
+Referenced by cryomesh::components::ImpulseCollection::clearActiveImpulses(), getActivity(), Impulse(), operator+=(), cryomesh::components::operator<<(), operator=(), and operator==()\&.
+.SS "\fBCycle\fP \fBcryomesh::components::Impulse::getLastActiveCycle\fP () const"
 .PP
-Get the last active cycle. \fBReturns:\fP
+Get the last active cycle\&. \fBReturns:\fP
 .RS 4
 Cycle The last active cycle 
 .RE
 .PP
 
 .PP
-Definition at line 185 of file Impulse.cpp.
+Definition at line 188 of file Impulse\&.cpp\&.
 .PP
-References lastActiveCycle.
+References lastActiveCycle\&.
 .PP
-Referenced by cryomesh::components::ImpulseCollection::clearActiveImpulses(), getActivity(), Impulse(), operator+=(), cryomesh::components::operator<<(), operator=(), and operator==().
-.SS "boost::shared_ptr< \fBActivityTimerDistance\fP > cryomesh::components::Impulse::getMutableActivityTimer ()"
+Referenced by cryomesh::components::ImpulseCollection::clearActiveImpulses(), getActivity(), Impulse(), operator+=(), cryomesh::components::operator<<(), operator=(), and operator==()\&.
+.SS "boost::shared_ptr< \fBActivityTimerDistance\fP > \fBcryomesh::components::Impulse::getMutableActivityTimer\fP ()"
 .PP
-Get mutable activity timer. \fBReturns:\fP
+Get mutable activity timer\&. \fBReturns:\fP
 .RS 4
 boost::shared_ptr< ActivityTimer > activityTimer; The activity timer 
 .RE
 .PP
 
 .PP
-Definition at line 197 of file Impulse.cpp.
+Definition at line 200 of file Impulse\&.cpp\&.
 .PP
-References activityTimer.
-.SS "boost::shared_ptr< \fBImpulse\fP > cryomesh::components::Impulse::getRandom (doublepositive_bias = \fC0.5\fP)\fC [static]\fP"
+References activityTimer\&.
+.SS "boost::shared_ptr< \fBImpulse\fP > \fBcryomesh::components::Impulse::getRandom\fP (doublepositive_bias = \fC0\&.5\fP)\fC [static]\fP"
 .PP
-Get a randomised impulse. \fBParameters:\fP
+Get a randomised impulse\&. \fBParameters:\fP
 .RS 4
 \fIdouble\fP the (0,1) bias of a positive impulse outcome, 0 negative, 1, positive
 .RE
@@ -427,67 +433,67 @@ boost::shared_ptr<Impulse> The randomised impulse
 .PP
 
 .PP
-Definition at line 38 of file Impulse.cpp.
+Definition at line 38 of file Impulse\&.cpp\&.
 .PP
-Referenced by cryomesh::components::NodeMap::addRandomImpulses(), and randomise().
-.SS "boost::shared_ptr< \fBImpulse\fP > cryomesh::components::Impulse::getTriggerImpulse ()\fC [static]\fP"
+Referenced by cryomesh::components::NodeMap::addRandomImpulses(), and randomise()\&.
+.SS "boost::shared_ptr< \fBImpulse\fP > \fBcryomesh::components::Impulse::getTriggerImpulse\fP ()\fC [static]\fP"
 .PP
-Get a 'trigger' impulse, a maximum impulse. \fBReturns:\fP
+Get a 'trigger' impulse, a maximum impulse\&. \fBReturns:\fP
 .RS 4
 boost::shared_ptr<Impulse> The trigger impulse 
 .RE
 .PP
 
 .PP
-Definition at line 33 of file Impulse.cpp.
+Definition at line 33 of file Impulse\&.cpp\&.
 .PP
-Referenced by cryomesh::components::Node::forceFire(), and cryomesh::structures::Fibre::trigger().
-.SS "\fBImpulse\fP & cryomesh::components::Impulse::invert ()\fC [virtual]\fP"
+Referenced by cryomesh::components::Node::forceFire(), and cryomesh::structures::Fibre::trigger()\&.
+.SS "\fBImpulse\fP & \fBcryomesh::components::Impulse::invert\fP ()\fC [virtual]\fP"
 .PP
-Invert the impulse. @ return \fBImpulse\fP & This object inverted 
+Invert the impulse\&. @ return \fBImpulse\fP & This object inverted 
 .PP
-Definition at line 161 of file Impulse.cpp.
-.SS "bool cryomesh::components::Impulse::isActive () const"
+Definition at line 164 of file Impulse\&.cpp\&.
+.SS "bool \fBcryomesh::components::Impulse::isActive\fP () const"
 .PP
-Is the \fBImpulse\fP active on current cycle. \fBReturns:\fP
+Is the \fBImpulse\fP active on current cycle\&. \fBReturns:\fP
 .RS 4
 bool True if active, false otherwise 
 .RE
 .PP
 
 .PP
-Definition at line 105 of file Impulse.cpp.
+Definition at line 108 of file Impulse\&.cpp\&.
 .PP
-References cryomesh::common::TimeKeeper::getTimeKeeper().
+References cryomesh::common::TimeKeeper::getTimeKeeper()\&.
 .PP
-Referenced by cryomesh::components::ImpulseCollection::clearActiveImpulses(), and isActive().
-.SS "bool cryomesh::components::Impulse::isActive (const \fBcommon::Cycle\fP &startCycle, const \fBcommon::Cycle\fP &endCycle) const"
+Referenced by cryomesh::components::ImpulseCollection::clearActiveImpulses(), and isActive()\&.
+.SS "bool \fBcryomesh::components::Impulse::isActive\fP (const \fBcommon::Cycle\fP &cycle) const"
 .PP
-Is the \fBImpulse\fP active at some point in cycle range. \fBReturns:\fP
+Is the \fBImpulse\fP active on cycle\&. \fBReturns:\fP
 .RS 4
 bool True if active, false otherwise 
 .RE
 .PP
 
 .PP
-Definition at line 113 of file Impulse.cpp.
+Definition at line 112 of file Impulse\&.cpp\&.
 .PP
-References firstActiveCycle, and lastActiveCycle.
-.SS "bool cryomesh::components::Impulse::isActive (const \fBcommon::Cycle\fP &cycle) const"
+References isActive()\&.
+.SS "bool \fBcryomesh::components::Impulse::isActive\fP (const \fBcommon::Cycle\fP &startCycle, const \fBcommon::Cycle\fP &endCycle) const"
 .PP
-Is the \fBImpulse\fP active on cycle. \fBReturns:\fP
+Is the \fBImpulse\fP active at some point in cycle range\&. \fBReturns:\fP
 .RS 4
 bool True if active, false otherwise 
 .RE
 .PP
 
 .PP
-Definition at line 109 of file Impulse.cpp.
+Definition at line 116 of file Impulse\&.cpp\&.
 .PP
-References isActive().
+References firstActiveCycle, and lastActiveCycle\&.
 .SS "bool cryomesh::components::Impulse::operator!= (const \fBImpulse\fP &obj) const"
 .PP
-Not comparator operator. \fBParameters:\fP
+Not comparator operator\&. \fBParameters:\fP
 .RS 4
 \fIconst\fP \fBImpulse\fP & obj RHS object
 .RE
@@ -499,10 +505,10 @@ bool True if not equal, false otherwise
 .PP
 
 .PP
-Definition at line 329 of file Impulse.cpp.
+Definition at line 333 of file Impulse\&.cpp\&.
 .SS "const \fBImpulse\fP cryomesh::components::Impulse::operator+ (const \fBImpulse\fP &obj) const"
 .PP
-Non-destructive addition operator. \fBParameters:\fP
+Non-destructive addition operator\&. \fBParameters:\fP
 .RS 4
 \fIconst\fP \fBImpulse\fP & obj RHS addition
 .RE
@@ -514,10 +520,10 @@ Non-destructive addition operator. \fBParameters:\fP
 .PP
 
 .PP
-Definition at line 212 of file Impulse.cpp.
+Definition at line 215 of file Impulse\&.cpp\&.
 .SS "\fBImpulse\fP & cryomesh::components::Impulse::operator+= (const \fBImpulse\fP &obj)"
 .PP
-Destructive addition and assignment operator. \fBParameters:\fP
+Destructive addition and assignment operator\&. \fBParameters:\fP
 .RS 4
 \fIconst\fP \fBImpulse\fP & obj RHS addition
 .RE
@@ -529,12 +535,12 @@ Destructive addition and assignment operator. \fBParameters:\fP
 .PP
 
 .PP
-Definition at line 218 of file Impulse.cpp.
+Definition at line 221 of file Impulse\&.cpp\&.
 .PP
-References getFirstActiveCycle(), getLastActiveCycle(), and setFirstActiveCycle().
+References getFirstActiveCycle(), getLastActiveCycle(), and setFirstActiveCycle()\&.
 .SS "\fBImpulse\fP & cryomesh::components::Impulse::operator= (const \fBImpulse\fP &obj)"
 .PP
-Assignment operator. \fBParameters:\fP
+Assignment operator\&. \fBParameters:\fP
 .RS 4
 \fIconst\fP \fBImpulse\fP & obj RHS assignment
 .RE
@@ -546,12 +552,12 @@ Assignment operator. \fBParameters:\fP
 .PP
 
 .PP
-Definition at line 272 of file Impulse.cpp.
+Definition at line 275 of file Impulse\&.cpp\&.
 .PP
-References firstActiveCycle, getActivityDelay(), getActivityTimer(), getFirstActiveCycle(), getLastActiveCycle(), lastActiveCycle, setActivityDelay(), setActivityTimer(), and cryomesh::common::Cycle::toLInt().
+References firstActiveCycle, getActivityDelay(), getActivityTimer(), getFirstActiveCycle(), getLastActiveCycle(), lastActiveCycle, setActivityDelay(), setActivityTimer(), and cryomesh::common::Cycle::toLInt()\&.
 .SS "bool cryomesh::components::Impulse::operator== (const \fBImpulse\fP &obj) const"
 .PP
-Comparator operator. \fBParameters:\fP
+Comparator operator\&. \fBParameters:\fP
 .RS 4
 \fIconst\fP \fBImpulse\fP & obj RHS object
 .RE
@@ -563,54 +569,54 @@ bool True if equal, false otherwise
 .PP
 
 .PP
-Definition at line 292 of file Impulse.cpp.
+Definition at line 296 of file Impulse\&.cpp\&.
 .PP
-References getFirstActiveCycle(), and getLastActiveCycle().
-.SS "void cryomesh::components::Impulse::randomise (doublepositive_bias = \fC0.5\fP)"
+References getFirstActiveCycle(), and getLastActiveCycle()\&.
+.SS "void \fBcryomesh::components::Impulse::randomise\fP (doublepositive_bias = \fC0\&.5\fP)"
 .PP
-Definition at line 83 of file Impulse.cpp.
+Definition at line 86 of file Impulse\&.cpp\&.
 .PP
-References firstActiveCycle, getRandom(), lastActiveCycle, MAX_ACTIVITY, MAX_ACTIVITY_DELAY, MAX_ACTIVITY_LENGTH, MIN_ACTIVITY, MIN_ACTIVITY_DELAY, MIN_ACTIVITY_LENGTH, MIN_ACTIVITY_MAGNITUDE, setActivityDelay(), and setActivityTimer().
-.SS "void cryomesh::components::Impulse::setActivityDelay (intdelay)"
+References firstActiveCycle, getRandom(), lastActiveCycle, MAX_ACTIVITY, MAX_ACTIVITY_DELAY, MAX_ACTIVITY_LENGTH, MIN_ACTIVITY, MIN_ACTIVITY_DELAY, MIN_ACTIVITY_LENGTH, MIN_ACTIVITY_MAGNITUDE, setActivityDelay(), and setActivityTimer()\&.
+.SS "void \fBcryomesh::components::Impulse::setActivityDelay\fP (intdelay)"
 .PP
-Definition at line 209 of file Impulse.cpp.
+Definition at line 212 of file Impulse\&.cpp\&.
 .PP
-References activityDelay.
+References activityDelay\&.
 .PP
-Referenced by Impulse(), operator=(), and randomise().
-.SS "void cryomesh::components::Impulse::setActivityTimer (boost::shared_ptr< \fBActivityTimerDistance\fP >timer)"
+Referenced by Impulse(), operator=(), and randomise()\&.
+.SS "void \fBcryomesh::components::Impulse::setActivityTimer\fP (boost::shared_ptr< \fBActivityTimerDistance\fP >timer)"
 .PP
-Set activity timer. \fBParameters:\fP
+Set activity timer\&. \fBParameters:\fP
 .RS 4
 \fIboost::shared_ptr<ActivityTimer>\fP The activity timer to set 
 .RE
 .PP
 
 .PP
-Definition at line 201 of file Impulse.cpp.
+Definition at line 204 of file Impulse\&.cpp\&.
 .PP
-References activityTimer.
+References activityTimer\&.
 .PP
-Referenced by Impulse(), operator=(), and randomise().
-.SS "void cryomesh::components::Impulse::setFirstActiveCycle (const \fBcommon::Cycle\fPcycle)"
+Referenced by Impulse(), operator=(), and randomise()\&.
+.SS "void \fBcryomesh::components::Impulse::setFirstActiveCycle\fP (const \fBcommon::Cycle\fPcycle)"
 .PP
-Set the first active cycle. \fBParameters:\fP
+Set the first active cycle\&. \fBParameters:\fP
 .RS 4
 \fIconst\fP Cycle cycle The first active cycle 
 .RE
 .PP
 
 .PP
-Definition at line 170 of file Impulse.cpp.
+Definition at line 173 of file Impulse\&.cpp\&.
 .PP
-References firstActiveCycle, getActivityDelay(), and lastActiveCycle.
+References firstActiveCycle, getActivityDelay(), and lastActiveCycle\&.
 .PP
-Referenced by Impulse(), and operator+=().
+Referenced by Impulse(), and operator+=()\&.
 .SH "Friends And Related Function Documentation"
 .PP 
 .SS "std::ostream& operator<< (std::ostream &os, const \fBImpulse\fP &obj)\fC [friend]\fP"
 .PP
-To stream operator. \fBParameters:\fP
+To stream operator\&. \fBParameters:\fP
 .RS 4
 \fIstd::ostream\fP & os The output stream 
 .br
@@ -624,82 +630,82 @@ std::ostream & The output stream
 .PP
 
 .PP
-Definition at line 335 of file Impulse.cpp.
+Definition at line 339 of file Impulse\&.cpp\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "int \fBcryomesh::components::Impulse::activityDelay\fP\fC [private]\fP"
 .PP
-Definition at line 411 of file Impulse.h.
+Definition at line 411 of file Impulse\&.h\&.
 .PP
-Referenced by getActivityDelay(), and setActivityDelay().
+Referenced by getActivityDelay(), and setActivityDelay()\&.
 .SS "boost::shared_ptr<\fBActivityTimerDistance\fP> \fBcryomesh::components::Impulse::activityTimer\fP\fC [private]\fP"
 .PP
-Definition at line 418 of file Impulse.h.
+Definition at line 418 of file Impulse\&.h\&.
 .PP
-Referenced by getActivityTimer(), getMutableActivityTimer(), and setActivityTimer().
+Referenced by getActivityTimer(), getMutableActivityTimer(), and setActivityTimer()\&.
 .SS "\fBcommon::Cycle\fP \fBcryomesh::components::Impulse::firstActiveCycle\fP\fC [private]\fP"
 .PP
-The first cycle that this \fBImpulse\fP has activity. \fBReturns:\fP
+The first cycle that this \fBImpulse\fP has activity\&. \fBReturns:\fP
 .RS 4
 Cycle Return first active cycle 
 .RE
 .PP
 
 .PP
-Definition at line 396 of file Impulse.h.
+Definition at line 396 of file Impulse\&.h\&.
 .PP
-Referenced by getActivity(), getFirstActiveCycle(), Impulse(), isActive(), operator=(), randomise(), and setFirstActiveCycle().
+Referenced by getActivity(), getFirstActiveCycle(), Impulse(), isActive(), operator=(), randomise(), and setFirstActiveCycle()\&.
 .SS "const double \fBcryomesh::components::Impulse::FORCED_TRIGGER_ACTIVITY\fP = 1000\fC [static]\fP"
 .PP
-Definition at line 300 of file Impulse.h.
+Definition at line 300 of file Impulse\&.h\&.
 .SS "\fBcommon::Cycle\fP \fBcryomesh::components::Impulse::lastActiveCycle\fP\fC [private]\fP"
 .PP
-The lase cycle that this \fBImpulse\fP has activity. \fBReturns:\fP
+The lase cycle that this \fBImpulse\fP has activity\&. \fBReturns:\fP
 .RS 4
 Cycle Return last active cycle 
 .RE
 .PP
 
 .PP
-Definition at line 404 of file Impulse.h.
+Definition at line 404 of file Impulse\&.h\&.
 .PP
-Referenced by getActivity(), getLastActiveCycle(), Impulse(), isActive(), operator=(), randomise(), and setFirstActiveCycle().
+Referenced by getActivity(), getLastActiveCycle(), Impulse(), isActive(), operator=(), randomise(), and setFirstActiveCycle()\&.
 .SS "const double \fBcryomesh::components::Impulse::MAX_ACTIVITY\fP = 1\fC [static]\fP"
 .PP
-Definition at line 307 of file Impulse.h.
+Definition at line 307 of file Impulse\&.h\&.
 .PP
-Referenced by randomise().
+Referenced by randomise()\&.
 .SS "const int \fBcryomesh::components::Impulse::MAX_ACTIVITY_DELAY\fP = 10\fC [static]\fP"
 .PP
-Definition at line 355 of file Impulse.h.
+Definition at line 355 of file Impulse\&.h\&.
 .PP
-Referenced by randomise().
+Referenced by randomise()\&.
 .SS "const int \fBcryomesh::components::Impulse::MAX_ACTIVITY_LENGTH\fP = 20\fC [static]\fP"
 .PP
-Definition at line 323 of file Impulse.h.
+Definition at line 323 of file Impulse\&.h\&.
 .PP
-Referenced by randomise().
+Referenced by randomise()\&.
 .SS "const double \fBcryomesh::components::Impulse::MIN_ACTIVITY\fP = -1\fC [static]\fP"
 .PP
-Definition at line 315 of file Impulse.h.
+Definition at line 315 of file Impulse\&.h\&.
 .PP
-Referenced by randomise().
+Referenced by randomise()\&.
 .SS "const int \fBcryomesh::components::Impulse::MIN_ACTIVITY_DELAY\fP = 0\fC [static]\fP"
 .PP
-Definition at line 347 of file Impulse.h.
+Definition at line 347 of file Impulse\&.h\&.
 .PP
-Referenced by randomise().
+Referenced by randomise()\&.
 .SS "const int \fBcryomesh::components::Impulse::MIN_ACTIVITY_LENGTH\fP = 1\fC [static]\fP"
 .PP
-Definition at line 331 of file Impulse.h.
+Definition at line 331 of file Impulse\&.h\&.
 .PP
-Referenced by Impulse(), and randomise().
-.SS "const double \fBcryomesh::components::Impulse::MIN_ACTIVITY_MAGNITUDE\fP = 0.01\fC [static]\fP"
+Referenced by Impulse(), and randomise()\&.
+.SS "const double \fBcryomesh::components::Impulse::MIN_ACTIVITY_MAGNITUDE\fP = 0\&.01\fC [static]\fP"
 .PP
-Definition at line 339 of file Impulse.h.
+Definition at line 339 of file Impulse\&.h\&.
 .PP
-Referenced by randomise().
+Referenced by randomise()\&.
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for cryomesh from the source code.
+Generated automatically by Doxygen for cryomesh from the source code\&.

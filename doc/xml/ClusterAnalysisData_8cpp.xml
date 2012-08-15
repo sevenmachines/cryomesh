@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="ClusterAnalysisData_8cpp" kind="file">
+    <compoundname>ClusterAnalysisData.cpp</compoundname>
+    <includes refid="ClusterAnalysisData_8h" local="yes">ClusterAnalysisData.h</includes>
+    <incdepgraph>
+      <node id="1394">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/ClusterAnalysisData.cpp</label>
+        <link refid="ClusterAnalysisData.cpp"/>
+        <childnode refid="1395" relation="include">
+        </childnode>
+      </node>
+      <node id="1400">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="1399">
+        <label>common/TimeKeeper.h</label>
+        <link refid="TimeKeeper_8h"/>
+        <childnode refid="1397" relation="include">
+        </childnode>
+        <childnode refid="1400" relation="include">
+        </childnode>
+        <childnode refid="1401" relation="include">
+        </childnode>
+        <childnode refid="1402" relation="include">
+        </childnode>
+        <childnode refid="1403" relation="include">
+        </childnode>
+        <childnode refid="1404" relation="include">
+        </childnode>
+      </node>
+      <node id="1398">
+        <label>gmpxx.h</label>
+      </node>
+      <node id="1396">
+        <label>common/Tagged.h</label>
+      </node>
+      <node id="1403">
+        <label>boost/timer.hpp</label>
+      </node>
+      <node id="1402">
+        <label>boost/date_time/posix_time/posix_time.hpp</label>
+      </node>
+      <node id="1404">
+        <label>time.h</label>
+      </node>
+      <node id="1395">
+        <label>ClusterAnalysisData.h</label>
+        <link refid="ClusterAnalysisData_8h"/>
+        <childnode refid="1396" relation="include">
+        </childnode>
+        <childnode refid="1397" relation="include">
+        </childnode>
+        <childnode refid="1399" relation="include">
+        </childnode>
+      </node>
+      <node id="1401">
+        <label>boost/serialization/shared_ptr.hpp</label>
+      </node>
+      <node id="1397">
+        <label>common/Cycle.h</label>
+        <link refid="Cycle_8h"/>
+        <childnode refid="1398" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacecryomesh">cryomesh</innernamespace>
+    <innernamespace refid="namespacecryomesh_1_1manipulators">cryomesh::manipulators</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>ClusterAnalysisData.cpp</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>Created<sp/>on:<sp/>30<sp/>Sep<sp/>2011</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Author:<sp/>niall</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ClusterAnalysisData_8h" kindref="compound">ClusterAnalysisData.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">cryomesh<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">manipulators<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a98f5e73167b6c67c2ccaf323d2746eb5" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a98f5e73167b6c67c2ccaf323d2746eb5" kindref="member">ClusterAnalysisData::ClusterAnalysisData</ref>()<sp/>:</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clusterRangeEnergy(),<sp/>nodeCreationWeight(0),<sp/>nodeDestructionWeight(0),<sp/>connectionCreationWeight(0),<sp/>connectionDestructionWeight(</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0),<sp/>nodesToCreate(0),<sp/>nodesToDestroy(0),<sp/>connectionsToCreate(0),<sp/>connectionsToDestroy(0){</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="17" refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a3b924bf249e5da2908ba59e523178be0" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a98f5e73167b6c67c2ccaf323d2746eb5" kindref="member">ClusterAnalysisData::ClusterAnalysisData</ref>(<ref refid="structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy" kindref="compound" tooltip="Struct representing the value extrapolated over a history range.">RangeEnergy</ref><sp/>cre)<sp/>:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clusterRangeEnergy(cre),<sp/>nodeCreationWeight(0),<sp/>nodeDestructionWeight(0),<sp/>connectionCreationWeight(0),<sp/>connectionDestructionWeight(</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0),<sp/>nodesToCreate(0),<sp/>nodesToDestroy(0),<sp/>connectionsToCreate(0),<sp/>connectionsToDestroy(0){</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a2fa4c1fd92df8f5f84d7574598c44a31" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a98f5e73167b6c67c2ccaf323d2746eb5" kindref="member">ClusterAnalysisData::ClusterAnalysisData</ref>(<ref refid="structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy" kindref="compound" tooltip="Struct representing the value extrapolated over a history range.">RangeEnergy</ref><sp/>range_energy,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>node_creation_weight,</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>node_destruction_weight,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>conn_creation_weight,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>conn_destruction_weight,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>node_create,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nodes_destroy,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>conn_create,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>conn_destroy)<sp/>:</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clusterRangeEnergy(range_energy),<sp/>nodeCreationWeight(node_creation_weight),<sp/>nodeDestructionWeight(</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>node_destruction_weight),<sp/>connectionCreationWeight(conn_creation_weight),<sp/>connectionDestructionWeight(</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>conn_destruction_weight),<sp/>nodesToCreate(node_create),<sp/>nodesToDestroy(nodes_destroy),<sp/>connectionsToCreate(</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>conn_create),<sp/>connectionsToDestroy(conn_destroy)<sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1ac94a5b4dfcba2a089bcb2bb768efc27a" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a98f5e73167b6c67c2ccaf323d2746eb5" kindref="member">ClusterAnalysisData::ClusterAnalysisData</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData" kindref="compound">ClusterAnalysisData</ref><sp/>&amp;<sp/>obj)<sp/>:</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Tagged(),<sp/>clusterRangeEnergy(obj.getClusterRangeEnergy()),<sp/>nodeCreationWeight(obj.getNodeCreationWeight()),<sp/>nodeDestructionWeight(</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>obj.getNodeDestructionWeight()),<sp/>connectionCreationWeight(obj.getConnectionCreationWeight()),<sp/>connectionDestructionWeight(</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>obj.getConnectionDestructionWeight()),<sp/>nodesToCreate(obj.getNodesToCreate()),<sp/>nodesToDestroy(</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>obj.getNodesToDestroy()),<sp/>connectionsToCreate(obj.getConnectionsToCreate()),<sp/>connectionsToDestroy(</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>obj.getConnectionsToDestroy())<sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38" refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a6a8af77c801c546b8286f7611d63240a" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a6a8af77c801c546b8286f7611d63240a" kindref="member">ClusterAnalysisData::~ClusterAnalysisData</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a671823e8f64d2525f3084e7ab82ce205" refkind="member"><highlight class="normal"><ref refid="structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy" kindref="compound" tooltip="Struct representing the value extrapolated over a history range.">ClusterAnalysisData::RangeEnergy</ref><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a671823e8f64d2525f3084e7ab82ce205" kindref="member">ClusterAnalysisData::getClusterRangeEnergy</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a2cc91850c86c1a09509266b639cbacdb" kindref="member">clusterRangeEnergy</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44" refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a849a5a4bedbf3267883a34695d9fc832" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a849a5a4bedbf3267883a34695d9fc832" kindref="member">ClusterAnalysisData::getNodeCreationWeight</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a135e912ae399505480429e488a163d75" kindref="member">nodeCreationWeight</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47" refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a39954c2cfd0bf18ad011f1b637f02b26" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a39954c2cfd0bf18ad011f1b637f02b26" kindref="member">ClusterAnalysisData::getNodeDestructionWeight</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1ace52167d730c5513c9981a7be9a56499" kindref="member">nodeDestructionWeight</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50" refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a59df774485e384f9706d12085cc1448a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a59df774485e384f9706d12085cc1448a" kindref="member">ClusterAnalysisData::getConnectionCreationWeight</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a25abb815b2869d410c9d32819471d67b" kindref="member">connectionCreationWeight</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53" refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a37ebc1eeb8acca183b93d379c59f0dc6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a37ebc1eeb8acca183b93d379c59f0dc6" kindref="member">ClusterAnalysisData::getConnectionDestructionWeight</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1ac9f1a2eada7f214b62a257067ee7d336" kindref="member">connectionDestructionWeight</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a04bbdb34881e7d5a716e6b45b461a330" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a04bbdb34881e7d5a716e6b45b461a330" kindref="member">ClusterAnalysisData::getNodesToDestroy</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1afcdd6cf5b2a890ed24cce7ddf6855bd8" kindref="member">nodesToDestroy</ref>;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60" refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1aedee2369cd1b2a8c934b3fe75b063eaf" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1aedee2369cd1b2a8c934b3fe75b063eaf" kindref="member">ClusterAnalysisData::getConnectionsToDestroy</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a303e9f1b0de641d8c3f79ff4ad05a9a5" kindref="member">connectionsToDestroy</ref>;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63" refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a89a5f4d7d395f192c9d7809783584608" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a89a5f4d7d395f192c9d7809783584608" kindref="member">ClusterAnalysisData::getNodesToCreate</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1aa7100219ad6f168229ae1bea3b0f4c95" kindref="member">nodesToCreate</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66" refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1adb384db5722ed36e50218b6a99362524" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1adb384db5722ed36e50218b6a99362524" kindref="member">ClusterAnalysisData::getConnectionsToCreate</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1add3ac0cb45a6782d3d92d9d4ea181609" kindref="member">connectionsToCreate</ref>;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1aa1b5e2b36b91959135ed40a1e0393309" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1aa1b5e2b36b91959135ed40a1e0393309" kindref="member">ClusterAnalysisData::setClusterRangeEnergy</ref>(<ref refid="structcryomesh_1_1manipulators_1_1ClusterAnalysisData_1_1RangeEnergy" kindref="compound" tooltip="Struct representing the value extrapolated over a history range.">RangeEnergy</ref><sp/>range_energy)<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a2cc91850c86c1a09509266b639cbacdb" kindref="member">clusterRangeEnergy</ref><sp/>=<sp/>range_energy;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a4afa9476dc34d1c4230915c135f0f085" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a4afa9476dc34d1c4230915c135f0f085" kindref="member">ClusterAnalysisData::setConnectionCreationWeight</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>connectionCreationWeight)<sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;connectionCreationWeight<sp/>=<sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a25abb815b2869d410c9d32819471d67b" kindref="member">connectionCreationWeight</ref>;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1aa8370250c00d64878683d0c34663f23a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1aa8370250c00d64878683d0c34663f23a" kindref="member">ClusterAnalysisData::setConnectionDestructionWeight</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>connectionDestructionWeight)<sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;connectionDestructionWeight<sp/>=<sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1ac9f1a2eada7f214b62a257067ee7d336" kindref="member">connectionDestructionWeight</ref>;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a390b7af8b7aaad30ae2434d3cc38ce34" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a390b7af8b7aaad30ae2434d3cc38ce34" kindref="member">ClusterAnalysisData::setConnectionsToCreate</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>connectionsToCreate)<sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;connectionsToCreate<sp/>=<sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1add3ac0cb45a6782d3d92d9d4ea181609" kindref="member">connectionsToCreate</ref>;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a92092f1fc3184708f2360a1f237330c1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a92092f1fc3184708f2360a1f237330c1" kindref="member">ClusterAnalysisData::setConnectionsToDestroy</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>connectionsToDestroy)<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;connectionsToDestroy<sp/>=<sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a303e9f1b0de641d8c3f79ff4ad05a9a5" kindref="member">connectionsToDestroy</ref>;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a41ad78f8918e9898e7c4d08263e631c2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a41ad78f8918e9898e7c4d08263e631c2" kindref="member">ClusterAnalysisData::setNodeCreationWeight</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nodeCreationWeight)<sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;nodeCreationWeight<sp/>=<sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a135e912ae399505480429e488a163d75" kindref="member">nodeCreationWeight</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a6bbc3f1089e480e644517c01e119cc56" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a6bbc3f1089e480e644517c01e119cc56" kindref="member">ClusterAnalysisData::setNodeDestructionWeight</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nodeDestructionWeight)<sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;nodeDestructionWeight<sp/>=<sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1ace52167d730c5513c9981a7be9a56499" kindref="member">nodeDestructionWeight</ref>;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a76000e1f7a03c3026f5e0c8c34cb655c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1a76000e1f7a03c3026f5e0c8c34cb655c" kindref="member">ClusterAnalysisData::setNodesToCreate</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nodesToCreate)<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;nodesToCreate<sp/>=<sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1aa7100219ad6f168229ae1bea3b0f4c95" kindref="member">nodesToCreate</ref>;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1ae42bcf04427d1260b7c4210bff7dc109" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1ae42bcf04427d1260b7c4210bff7dc109" kindref="member">ClusterAnalysisData::setNodesToDestroy</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nodesToDestroy)<sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;nodesToDestroy<sp/>=<sp/><ref refid="classcryomesh_1_1manipulators_1_1ClusterAnalysisData_1afcdd6cf5b2a890ed24cce7ddf6855bd8" kindref="member">nodesToDestroy</ref>;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>namespace<sp/>manipulators<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>namespace<sp/>cryomesh<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/ClusterAnalysisData.cpp"/>
+  </compounddef>
+</doxygen>

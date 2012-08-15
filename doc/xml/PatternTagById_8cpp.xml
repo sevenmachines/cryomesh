@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="PatternTagById_8cpp" kind="file">
+    <compoundname>PatternTagById.cpp</compoundname>
+    <includes refid="PatternTagById_8h" local="yes">PatternTagById.h</includes>
+    <includes refid="Pattern_8h" local="yes">Pattern.h</includes>
+    <includes local="no">sstream</includes>
+    <incdepgraph>
+      <node id="1904">
+        <label>list</label>
+      </node>
+      <node id="1901">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="1910">
+        <label>boost/serialization/vector.hpp</label>
+      </node>
+      <node id="1917">
+        <label>boost/tokenizer.hpp</label>
+      </node>
+      <node id="1913">
+        <label>manager/PatternDatabaseObject.h</label>
+        <link refid="PatternDatabaseObject_8h"/>
+        <childnode refid="1914" relation="include">
+        </childnode>
+        <childnode refid="1918" relation="include">
+        </childnode>
+        <childnode refid="1900" relation="include">
+        </childnode>
+        <childnode refid="1901" relation="include">
+        </childnode>
+      </node>
+      <node id="1919">
+        <label>gmpxx.h</label>
+      </node>
+      <node id="1914">
+        <label>DatabaseObject.h</label>
+        <link refid="DatabaseObject_8h"/>
+        <childnode refid="1915" relation="include">
+        </childnode>
+        <childnode refid="1900" relation="include">
+        </childnode>
+        <childnode refid="1905" relation="include">
+        </childnode>
+        <childnode refid="1916" relation="include">
+        </childnode>
+        <childnode refid="1917" relation="include">
+        </childnode>
+      </node>
+      <node id="1900">
+        <label>string</label>
+      </node>
+      <node id="1899">
+        <label>PatternTag.h</label>
+        <link refid="PatternTag_8h"/>
+        <childnode refid="1900" relation="include">
+        </childnode>
+        <childnode refid="1901" relation="include">
+        </childnode>
+      </node>
+      <node id="1898">
+        <label>PatternTagById.h</label>
+        <link refid="PatternTagById_8h"/>
+        <childnode refid="1899" relation="include">
+        </childnode>
+      </node>
+      <node id="1915">
+        <label>map</label>
+      </node>
+      <node id="1909">
+        <label>common/Tagged.h</label>
+      </node>
+      <node id="1897">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.cpp</label>
+        <link refid="PatternTagById.cpp"/>
+        <childnode refid="1898" relation="include">
+        </childnode>
+        <childnode refid="1902" relation="include">
+        </childnode>
+        <childnode refid="1905" relation="include">
+        </childnode>
+      </node>
+      <node id="1907">
+        <label>boost/serialization/string.hpp</label>
+      </node>
+      <node id="1906">
+        <label>vector</label>
+      </node>
+      <node id="1912">
+        <label>boost/uuid/uuid_generators.hpp</label>
+      </node>
+      <node id="1905">
+        <label>sstream</label>
+      </node>
+      <node id="1916">
+        <label>iostream</label>
+      </node>
+      <node id="1918">
+        <label>common/Cycle.h</label>
+        <link refid="Cycle_8h"/>
+        <childnode refid="1919" relation="include">
+        </childnode>
+      </node>
+      <node id="1911">
+        <label>boost/uuid/uuid.hpp</label>
+      </node>
+      <node id="1908">
+        <label>boost/serialization/serialization.hpp</label>
+      </node>
+      <node id="1902">
+        <label>Pattern.h</label>
+        <link refid="Pattern_8h"/>
+        <childnode refid="1899" relation="include">
+        </childnode>
+        <childnode refid="1903" relation="include">
+        </childnode>
+        <childnode refid="1909" relation="include">
+        </childnode>
+        <childnode refid="1906" relation="include">
+        </childnode>
+        <childnode refid="1900" relation="include">
+        </childnode>
+        <childnode refid="1910" relation="include">
+        </childnode>
+        <childnode refid="1911" relation="include">
+        </childnode>
+        <childnode refid="1912" relation="include">
+        </childnode>
+        <childnode refid="1913" relation="include">
+        </childnode>
+      </node>
+      <node id="1903">
+        <label>BinaryString.h</label>
+        <link refid="BinaryString_8h"/>
+        <childnode refid="1904" relation="include">
+        </childnode>
+        <childnode refid="1900" relation="include">
+        </childnode>
+        <childnode refid="1905" relation="include">
+        </childnode>
+        <childnode refid="1906" relation="include">
+        </childnode>
+        <childnode refid="1907" relation="include">
+        </childnode>
+        <childnode refid="1908" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacecryomesh">cryomesh</innernamespace>
+    <innernamespace refid="namespacecryomesh_1_1state">cryomesh::state</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>PatternTagById.cpp</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>Created<sp/>on:<sp/>31<sp/>Aug<sp/>2010</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Author:<sp/>SevenMachines&lt;SevenMachines@yahoo.co.uk&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="PatternTagById_8h" kindref="compound">PatternTagById.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Pattern_8h" kindref="compound">Pattern.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">cryomesh<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">state<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">boost::shared_ptr&lt;PatternTagById&gt;<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagById_1a691a6ad8390ea3badf22bb88bade46cb" kindref="member">PatternTagById::globalTag</ref>=<sp/><sp/><sp/><sp/>boost::shared_ptr&lt;PatternTagById&gt;(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>PatternTagById(1));</highlight></codeline>
+<codeline lineno="15" refid="classcryomesh_1_1state_1_1PatternTagById_1a2c11f41ca6f8ab4a65fa63e250fd2660" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1state_1_1PatternTagById_1a2c11f41ca6f8ab4a65fa63e250fd2660" kindref="member">PatternTagById::PatternTagById</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>d)<sp/>:<sp/>id(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::stringstream<sp/>ss;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ss&lt;&lt;d;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>=<sp/>ss.str();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="classcryomesh_1_1state_1_1PatternTagById_1a67999e382d416f40ccdcb4be2d491ced" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1state_1_1PatternTagById_1a67999e382d416f40ccdcb4be2d491ced" kindref="member">PatternTagById::~PatternTagById</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="23" refid="classcryomesh_1_1state_1_1PatternTagById_1acee63d4183580398eb30161dfbb3a88d" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagById_1acee63d4183580398eb30161dfbb3a88d" kindref="member">PatternTagById::getTag</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagById_1a9470fbc97fc84afd2eeae7b5e9166715" kindref="member">id</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26" refid="classcryomesh_1_1state_1_1PatternTagById_1a5cfba8a1a26501eb671f186c0b47ff0c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagById_1a5cfba8a1a26501eb671f186c0b47ff0c" kindref="member">PatternTagById::setTag</ref>(std::string<sp/>tg){</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>=tg;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29" refid="classcryomesh_1_1state_1_1PatternTagById_1aa8146b29d5b9448d9a73fde4f18c1b70" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagById_1aa8146b29d5b9448d9a73fde4f18c1b70" kindref="member">PatternTagById::moveTag</ref>(){</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagById_1aa8146b29d5b9448d9a73fde4f18c1b70" kindref="member">moveTag</ref>(1);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32" refid="classcryomesh_1_1state_1_1PatternTagById_1a27fb4f51f07766bd1715b5c8b31454ee" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagById_1aa8146b29d5b9448d9a73fde4f18c1b70" kindref="member">PatternTagById::moveTag</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i){</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>newint<sp/>=<sp/>atoi(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">.c_str());</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newint<sp/>+=i;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::stringstream<sp/>ss;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ss&lt;&lt;newint;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>=<sp/>ss.str();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagById_1acee63d4183580398eb30161dfbb3a88d" kindref="member">getTag</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40" refid="classcryomesh_1_1state_1_1PatternTagById_1ac2624633ba018f4ad1ae229278cfe198" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagById_1ac2624633ba018f4ad1ae229278cfe198" kindref="member">PatternTagById::getStartTag</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;0&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43" refid="classcryomesh_1_1state_1_1PatternTagById_1a9d5f9cc34fd14d895ce235cea35aebe8" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagById_1a9d5f9cc34fd14d895ce235cea35aebe8" kindref="member">PatternTagById::getEndTag</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::stringstream<sp/>ss;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ss&lt;&lt;<ref refid="classcryomesh_1_1state_1_1Pattern_1aaf0fef8e434a2bf4e2a3de2146506e55" kindref="member">Pattern::getIds</ref>();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ss.str();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="classcryomesh_1_1state_1_1PatternTagById_1a9adf0ade652a4e48acd264e11e10e3b7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagById_1a9adf0ade652a4e48acd264e11e10e3b7" kindref="member">PatternTagById::setStartTag</ref>(std::string<sp/>tg){</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;PatternTagById::setStartTag:<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;</highlight><highlight class="stringliteral">&quot;WARNING:<sp/>Not<sp/>setting<sp/>start<sp/>tag<sp/>of<sp/>PatternTagById<sp/>to<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;tg&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>defaults<sp/>to<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;this-&gt;<ref refid="classcryomesh_1_1state_1_1PatternTagById_1ac2624633ba018f4ad1ae229278cfe198" kindref="member">getStartTag</ref>()&lt;&lt;std::endl;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53" refid="classcryomesh_1_1state_1_1PatternTagById_1a02e3ef3349001a9cba60cb5e0fc150cd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagById_1a02e3ef3349001a9cba60cb5e0fc150cd" kindref="member">PatternTagById::setEndTag</ref>(std::string<sp/>tg){</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;PatternTagById::setEndTag:<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;</highlight><highlight class="stringliteral">&quot;WARNING:<sp/>Not<sp/>setting<sp/>end<sp/>tag<sp/>of<sp/>PatternTagById<sp/>to<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;tg&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>defaults<sp/>to<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;this-&gt;<ref refid="classcryomesh_1_1state_1_1PatternTagById_1a9d5f9cc34fd14d895ce235cea35aebe8" kindref="member">getEndTag</ref>()&lt;&lt;std::endl;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56" refid="classcryomesh_1_1state_1_1PatternTagById_1ac3dbe345fe252b9ab9feafa995e91474" refkind="member"><highlight class="normal">boost::shared_ptr&lt;PatternTag&gt;<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagById_1ac3dbe345fe252b9ab9feafa995e91474" kindref="member">PatternTagById::getGlobalTag</ref>(){</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagById_1a691a6ad8390ea3badf22bb88bade46cb" kindref="member">PatternTagById::globalTag</ref>;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagById.cpp"/>
+  </compounddef>
+</doxygen>

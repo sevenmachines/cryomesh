@@ -1,0 +1,167 @@
+\hypertarget{classcryomesh_1_1state_1_1ActivityPattern}{\section{cryomesh\-:\-:state\-:\-:\-Activity\-Pattern \-Class \-Reference}
+\label{classcryomesh_1_1state_1_1ActivityPattern}\index{cryomesh\-::state\-::\-Activity\-Pattern@{cryomesh\-::state\-::\-Activity\-Pattern}}
+}
+
+
+\-A simple collection of doubles representing a pattern of activities.  
+
+
+
+
+{\ttfamily \#include $<$\-Activity\-Pattern.\-h$>$}
+
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classcryomesh_1_1state_1_1ActivityPattern_a6bd9cf293aeb147f73bb82c67c626142}{\-Activity\-Comparison} \{ \hyperlink{classcryomesh_1_1state_1_1ActivityPattern_a6bd9cf293aeb147f73bb82c67c626142a662e9a99585fd1bc07baeb0c41d918fb}{\-Greater\-Than}, 
+\hyperlink{classcryomesh_1_1state_1_1ActivityPattern_a6bd9cf293aeb147f73bb82c67c626142acbf08b9dc89f783f6a30b7fdfb1cf566}{\-Less\-Than}, 
+\hyperlink{classcryomesh_1_1state_1_1ActivityPattern_a6bd9cf293aeb147f73bb82c67c626142ab45ac9f1c25aba4e864672959f0467e9}{\-Equal\-To}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1state_1_1ActivityPattern_a78d90e329f3fc620c06999ab1f6e8613}{\-Activity\-Pattern} ()
+\item 
+virtual \hyperlink{classcryomesh_1_1state_1_1ActivityPattern_af15e1c186e21be79db47ea07c9e8175f}{$\sim$\-Activity\-Pattern} ()
+\item 
+virtual std\-::string \hyperlink{classcryomesh_1_1state_1_1ActivityPattern_a5b57eec82f5de97fc01ed356c13903f5}{to\-Plus\-Boolean\-String} () const 
+\begin{DoxyCompactList}\small\item\em \-Return a string of booleans representing with each element is $>$ 0 or not. \end{DoxyCompactList}\item 
+virtual std\-::list$<$ bool $>$ \hyperlink{classcryomesh_1_1state_1_1ActivityPattern_a3482fe5e7dbaed86272dd536adc7d751}{to\-Plus\-Boolean\-List} () const 
+\begin{DoxyCompactList}\small\item\em \-Return a vector of booleans representing with each element $>$ 0 or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\-::list$<$ bool $>$ \hyperlink{classcryomesh_1_1state_1_1ActivityPattern_a0d002a277bcb38447e738349593ae0af}{to\-Boolean\-Vector} (const double cuttoff, const \hyperlink{classcryomesh_1_1state_1_1ActivityPattern_a6bd9cf293aeb147f73bb82c67c626142}{\-Activity\-Comparison} compare) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-A simple collection of doubles representing a pattern of activities. 
+
+\-Definition at line 20 of file \-Activity\-Pattern.\-h.
+
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\hypertarget{classcryomesh_1_1state_1_1ActivityPattern_a6bd9cf293aeb147f73bb82c67c626142}{\index{cryomesh\-::state\-::\-Activity\-Pattern@{cryomesh\-::state\-::\-Activity\-Pattern}!\-Activity\-Comparison@{\-Activity\-Comparison}}
+\index{\-Activity\-Comparison@{\-Activity\-Comparison}!cryomesh::state::ActivityPattern@{cryomesh\-::state\-::\-Activity\-Pattern}}
+\subsubsection[{\-Activity\-Comparison}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cryomesh\-::state\-::\-Activity\-Pattern\-::\-Activity\-Comparison}}}\label{classcryomesh_1_1state_1_1ActivityPattern_a6bd9cf293aeb147f73bb82c67c626142}
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-Greater\-Than@{\-Greater\-Than}!cryomesh\-::state\-::\-Activity\-Pattern@{cryomesh\-::state\-::\-Activity\-Pattern}}\index{cryomesh\-::state\-::\-Activity\-Pattern@{cryomesh\-::state\-::\-Activity\-Pattern}!\-Greater\-Than@{\-Greater\-Than}}\item[{\em 
+\hypertarget{classcryomesh_1_1state_1_1ActivityPattern_a6bd9cf293aeb147f73bb82c67c626142a662e9a99585fd1bc07baeb0c41d918fb}{\-Greater\-Than}\label{classcryomesh_1_1state_1_1ActivityPattern_a6bd9cf293aeb147f73bb82c67c626142a662e9a99585fd1bc07baeb0c41d918fb}
+}]\index{\-Less\-Than@{\-Less\-Than}!cryomesh\-::state\-::\-Activity\-Pattern@{cryomesh\-::state\-::\-Activity\-Pattern}}\index{cryomesh\-::state\-::\-Activity\-Pattern@{cryomesh\-::state\-::\-Activity\-Pattern}!\-Less\-Than@{\-Less\-Than}}\item[{\em 
+\hypertarget{classcryomesh_1_1state_1_1ActivityPattern_a6bd9cf293aeb147f73bb82c67c626142acbf08b9dc89f783f6a30b7fdfb1cf566}{\-Less\-Than}\label{classcryomesh_1_1state_1_1ActivityPattern_a6bd9cf293aeb147f73bb82c67c626142acbf08b9dc89f783f6a30b7fdfb1cf566}
+}]\index{\-Equal\-To@{\-Equal\-To}!cryomesh\-::state\-::\-Activity\-Pattern@{cryomesh\-::state\-::\-Activity\-Pattern}}\index{cryomesh\-::state\-::\-Activity\-Pattern@{cryomesh\-::state\-::\-Activity\-Pattern}!\-Equal\-To@{\-Equal\-To}}\item[{\em 
+\hypertarget{classcryomesh_1_1state_1_1ActivityPattern_a6bd9cf293aeb147f73bb82c67c626142ab45ac9f1c25aba4e864672959f0467e9}{\-Equal\-To}\label{classcryomesh_1_1state_1_1ActivityPattern_a6bd9cf293aeb147f73bb82c67c626142ab45ac9f1c25aba4e864672959f0467e9}
+}]\end{description}
+\end{Desc}
+
+
+
+\-Definition at line 22 of file \-Activity\-Pattern.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcryomesh_1_1state_1_1ActivityPattern_a78d90e329f3fc620c06999ab1f6e8613}{\index{cryomesh\-::state\-::\-Activity\-Pattern@{cryomesh\-::state\-::\-Activity\-Pattern}!\-Activity\-Pattern@{\-Activity\-Pattern}}
+\index{\-Activity\-Pattern@{\-Activity\-Pattern}!cryomesh::state::ActivityPattern@{cryomesh\-::state\-::\-Activity\-Pattern}}
+\subsubsection[{\-Activity\-Pattern}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::state\-::\-Activity\-Pattern\-::\-Activity\-Pattern} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1state_1_1ActivityPattern_a78d90e329f3fc620c06999ab1f6e8613}
+
+
+\-Definition at line 18 of file \-Activity\-Pattern.\-cpp.
+
+\hypertarget{classcryomesh_1_1state_1_1ActivityPattern_af15e1c186e21be79db47ea07c9e8175f}{\index{cryomesh\-::state\-::\-Activity\-Pattern@{cryomesh\-::state\-::\-Activity\-Pattern}!$\sim$\-Activity\-Pattern@{$\sim$\-Activity\-Pattern}}
+\index{$\sim$\-Activity\-Pattern@{$\sim$\-Activity\-Pattern}!cryomesh::state::ActivityPattern@{cryomesh\-::state\-::\-Activity\-Pattern}}
+\subsubsection[{$\sim$\-Activity\-Pattern}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::state\-::\-Activity\-Pattern\-::$\sim$\-Activity\-Pattern} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1state_1_1ActivityPattern_af15e1c186e21be79db47ea07c9e8175f}
+
+
+\-Definition at line 22 of file \-Activity\-Pattern.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1state_1_1ActivityPattern_a0d002a277bcb38447e738349593ae0af}{\index{cryomesh\-::state\-::\-Activity\-Pattern@{cryomesh\-::state\-::\-Activity\-Pattern}!to\-Boolean\-Vector@{to\-Boolean\-Vector}}
+\index{to\-Boolean\-Vector@{to\-Boolean\-Vector}!cryomesh::state::ActivityPattern@{cryomesh\-::state\-::\-Activity\-Pattern}}
+\subsubsection[{to\-Boolean\-Vector}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<$ bool $>$ {\bf cryomesh\-::state\-::\-Activity\-Pattern\-::to\-Boolean\-Vector} (
+\begin{DoxyParamCaption}
+\item[{const double}]{cuttoff, }
+\item[{const {\bf \-Activity\-Comparison}}]{compare}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1state_1_1ActivityPattern_a0d002a277bcb38447e738349593ae0af}
+
+
+\-Definition at line 35 of file \-Activity\-Pattern.\-cpp.
+
+
+
+\-References \-Equal\-To, \-Greater\-Than, and \-Less\-Than.
+
+
+
+\-Referenced by to\-Plus\-Boolean\-List().
+
+\hypertarget{classcryomesh_1_1state_1_1ActivityPattern_a3482fe5e7dbaed86272dd536adc7d751}{\index{cryomesh\-::state\-::\-Activity\-Pattern@{cryomesh\-::state\-::\-Activity\-Pattern}!to\-Plus\-Boolean\-List@{to\-Plus\-Boolean\-List}}
+\index{to\-Plus\-Boolean\-List@{to\-Plus\-Boolean\-List}!cryomesh::state::ActivityPattern@{cryomesh\-::state\-::\-Activity\-Pattern}}
+\subsubsection[{to\-Plus\-Boolean\-List}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<$ bool $>$ {\bf cryomesh\-::state\-::\-Activity\-Pattern\-::to\-Plus\-Boolean\-List} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1state_1_1ActivityPattern_a3482fe5e7dbaed86272dd536adc7d751}
+
+
+\-Return a vector of booleans representing with each element $>$ 0 or not. 
+
+\begin{DoxyReturn}{\-Returns}
+std\-::vector$<$bool$>$ \-The vector of booleans 
+\end{DoxyReturn}
+
+
+\-Definition at line 31 of file \-Activity\-Pattern.\-cpp.
+
+
+
+\-References \-Greater\-Than, and to\-Boolean\-Vector().
+
+
+
+\-Referenced by to\-Plus\-Boolean\-String().
+
+\hypertarget{classcryomesh_1_1state_1_1ActivityPattern_a5b57eec82f5de97fc01ed356c13903f5}{\index{cryomesh\-::state\-::\-Activity\-Pattern@{cryomesh\-::state\-::\-Activity\-Pattern}!to\-Plus\-Boolean\-String@{to\-Plus\-Boolean\-String}}
+\index{to\-Plus\-Boolean\-String@{to\-Plus\-Boolean\-String}!cryomesh::state::ActivityPattern@{cryomesh\-::state\-::\-Activity\-Pattern}}
+\subsubsection[{to\-Plus\-Boolean\-String}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::state\-::\-Activity\-Pattern\-::to\-Plus\-Boolean\-String} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1state_1_1ActivityPattern_a5b57eec82f5de97fc01ed356c13903f5}
+
+
+\-Return a string of booleans representing with each element is $>$ 0 or not. 
+
+\begin{DoxyReturn}{\-Returns}
+std\-::string \-The string of booleans 
+\end{DoxyReturn}
+
+
+\-Definition at line 25 of file \-Activity\-Pattern.\-cpp.
+
+
+
+\-References to\-Plus\-Boolean\-List().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/state/\hyperlink{ActivityPattern_8h}{\-Activity\-Pattern.\-h}\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/state/\hyperlink{ActivityPattern_8cpp}{\-Activity\-Pattern.\-cpp}\end{DoxyCompactItemize}

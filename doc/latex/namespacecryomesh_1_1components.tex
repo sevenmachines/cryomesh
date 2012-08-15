@@ -1,0 +1,136 @@
+\hypertarget{namespacecryomesh_1_1components}{\section{cryomesh\-:\-:components \-Namespace \-Reference}
+\label{namespacecryomesh_1_1components}\index{cryomesh\-::components@{cryomesh\-::components}}
+}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classcryomesh_1_1components_1_1ActivityTimer}{\-Activity\-Timer}
+\begin{DoxyCompactList}\small\item\em \-Simple interface class for activity timers. \end{DoxyCompactList}\item 
+class \hyperlink{classcryomesh_1_1components_1_1ActivityTimerDistance}{\-Activity\-Timer\-Distance}
+\item 
+class \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection} class to manage the transfer of \-Impulses between \-Nodes. \end{DoxyCompactList}\item 
+class \hyperlink{classcryomesh_1_1components_1_1ConnectionMap}{\-Connection\-Map}
+\begin{DoxyCompactList}\small\item\em \-Helper class for \hyperlink{classcryomesh_1_1components_1_1ConnectionMap}{\-Connection\-Map} to \-Key\-Mapped\-Collection mapping. \end{DoxyCompactList}\item 
+class \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} is a mobile information packet to be passed between \-Nodes. \end{DoxyCompactList}\item 
+class \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} represents a collection of \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} objects. \end{DoxyCompactList}\item 
+class \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} is an accumulation and computational nodal point of impulses. \end{DoxyCompactList}\item 
+class \hyperlink{classcryomesh_1_1components_1_1NodeMap}{\-Node\-Map}
+\begin{DoxyCompactList}\small\item\em \-Helper class for \hyperlink{classcryomesh_1_1components_1_1NodeMap}{\-Node\-Map} to \-Key\-Mapped\-Collection mapping. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream \& \hyperlink{namespacecryomesh_1_1components_a2407f0942f1623e6cb795553fa4eec7b}{operator$<$$<$} (std\-::ostream \&os, const \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection} \&obj)
+\item 
+std\-::ostream \& \hyperlink{namespacecryomesh_1_1components_acda27209fe63cde02e1349a902e45d76}{operator$<$$<$} (std\-::ostream \&os, const \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} \&obj)
+\item 
+std\-::ostream \& \hyperlink{namespacecryomesh_1_1components_afc599531f192027048e4f451f3e81a89}{operator$<$$<$} (std\-::ostream \&os, const \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \&obj)
+\item 
+std\-::ostream \& \hyperlink{namespacecryomesh_1_1components_a34840c34dc560387163b72e367d62f8a}{operator$<$$<$} (std\-::ostream \&os, const \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} \&obj)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{namespacecryomesh_1_1components_a2407f0942f1623e6cb795553fa4eec7b}{\index{cryomesh\-::components@{cryomesh\-::components}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cryomesh::components@{cryomesh\-::components}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& cryomesh\-::components\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const \-Connection \&}]{obj}
+\end{DoxyParamCaption}
+)}}\label{namespacecryomesh_1_1components_a2407f0942f1623e6cb795553fa4eec7b}
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::ostream} & \& os \-The output stream \\
+\hline
+{\em const} & \hyperlink{classcryomesh_1_1components_1_1Connection}{\-Connection} \& obj \-The object to stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::ostream \& \-The output stream 
+\end{DoxyReturn}
+
+
+\-Definition at line 245 of file \-Connection.\-cpp.
+
+
+
+\-References cryomesh\-::components\-::\-Connection\-::get\-Connector(), cryomesh\-::components\-::\-Connection\-::get\-Impulses(), cryomesh\-::components\-::\-Connection\-::is\-Primary\-Input\-Connection(), and cryomesh\-::components\-::\-Connection\-::is\-Primary\-Output\-Connection().
+
+\hypertarget{namespacecryomesh_1_1components_acda27209fe63cde02e1349a902e45d76}{\index{cryomesh\-::components@{cryomesh\-::components}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cryomesh::components@{cryomesh\-::components}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& cryomesh\-::components\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const \-Impulse \&}]{obj}
+\end{DoxyParamCaption}
+)}}\label{namespacecryomesh_1_1components_acda27209fe63cde02e1349a902e45d76}
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::ostream} & \& os \-The output stream \\
+\hline
+{\em const} & \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} \& obj \-The object to stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::ostream \& \-The output stream 
+\end{DoxyReturn}
+
+
+\-Definition at line 339 of file \-Impulse.\-cpp.
+
+
+
+\-References cryomesh\-::components\-::\-Impulse\-::get\-Activity\-Delay(), cryomesh\-::components\-::\-Impulse\-::get\-Activity\-Timer(), cryomesh\-::components\-::\-Impulse\-::get\-First\-Active\-Cycle(), and cryomesh\-::components\-::\-Impulse\-::get\-Last\-Active\-Cycle().
+
+\hypertarget{namespacecryomesh_1_1components_afc599531f192027048e4f451f3e81a89}{\index{cryomesh\-::components@{cryomesh\-::components}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cryomesh::components@{cryomesh\-::components}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& cryomesh\-::components\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const \-Impulse\-Collection \&}]{obj}
+\end{DoxyParamCaption}
+)}}\label{namespacecryomesh_1_1components_afc599531f192027048e4f451f3e81a89}
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::ostream} & \& os \-The output stream \\
+\hline
+{\em const} & \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \& obj \-The object to stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::ostream \& \-The output stream 
+\end{DoxyReturn}
+
+
+\-Definition at line 375 of file \-Impulse\-Collection.\-cpp.
+
+\hypertarget{namespacecryomesh_1_1components_a34840c34dc560387163b72e367d62f8a}{\index{cryomesh\-::components@{cryomesh\-::components}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cryomesh::components@{cryomesh\-::components}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& cryomesh\-::components\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const \-Node \&}]{obj}
+\end{DoxyParamCaption}
+)}}\label{namespacecryomesh_1_1components_a34840c34dc560387163b72e367d62f8a}
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::ostream} & \& os \-The output stream \\
+\hline
+{\em const} & \hyperlink{classcryomesh_1_1components_1_1Node}{\-Node} \& obj \-The object to stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::ostream \& \-The output stream 
+\end{DoxyReturn}
+
+
+\-Definition at line 548 of file \-Node.\-cpp.
+
+
+
+\-References cryomesh\-::components\-::\-Node\-::get\-Activity\-Threshold(), cryomesh\-::components\-::\-Node\-::get\-Connector(), cryomesh\-::components\-::\-Node\-::get\-Impulses(), cryomesh\-::components\-::\-Node\-::is\-Primary\-Input\-Attached\-Node(), cryomesh\-::components\-::\-Node\-::is\-Primary\-Output\-Attached\-Node(), and cryomesh\-::components\-::\-Node\-::print\-Connections().
+

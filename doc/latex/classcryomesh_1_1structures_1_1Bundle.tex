@@ -1,0 +1,1748 @@
+\hypertarget{classcryomesh_1_1structures_1_1Bundle}{\section{cryomesh\-:\-:structures\-:\-:\-Bundle \-Class \-Reference}
+\label{classcryomesh_1_1structures_1_1Bundle}\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}}
+}
+
+
+\-A \hyperlink{classcryomesh_1_1structures_1_1Bundle}{\-Bundle} is the collection of clusters and fibres, it represents the system as a whole.  
+
+
+
+
+{\ttfamily \#include $<$\-Bundle.\-h$>$}
+
+\-Inheritance diagram for cryomesh\-:\-:structures\-:\-:\-Bundle\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcryomesh_1_1structures_1_1Bundle}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classcryomesh_1_1common_1_1Loggable_a4d85401f6c81bc8ed94e49d66ae574c5}{\-Logging\-Depth} \{ \hyperlink{classcryomesh_1_1common_1_1Loggable_a4d85401f6c81bc8ed94e49d66ae574c5a51f5abcf5a53a8930a09b065fc64a44f}{\-S\-U\-M\-M\-A\-R\-Y}, 
+\hyperlink{classcryomesh_1_1common_1_1Loggable_a4d85401f6c81bc8ed94e49d66ae574c5ae496af0b41e3b64530b61e315822cc51}{\-M\-A\-X}
+ \}
+\begin{DoxyCompactList}\small\item\em \-Enum representing print detail. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1structures_1_1Bundle_a8d6b95207324291f919f1835b81b1640}{\-Bundle} ()
+\begin{DoxyCompactList}\small\item\em \-Default contructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classcryomesh_1_1structures_1_1Bundle_ab2ec2696336dddbae17166c056c2f038}{$\sim$\-Bundle} ()
+\begin{DoxyCompactList}\small\item\em \-Default destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1structures_1_1Bundle_add5af28ceb5c7722d267ba32810c5df7}{update} ()
+\begin{DoxyCompactList}\small\item\em \-Update all bundle components. \end{DoxyCompactList}\item 
+virtual boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster} $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_a6228d35bd96caa191bd89096dd260ee2}{create\-Cluster} (int node\-Size, int node\-Connectivity)
+\begin{DoxyCompactList}\small\item\em \-Create a cluster with a size and connectivity. \end{DoxyCompactList}\item 
+virtual boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_af1884f99e746cdfa549b63f1589b5dac}{connect\-Cluster} (boost\-::uuids\-::uuid input\-Cluster\-U\-U\-I\-D, boost\-::uuids\-::uuid output\-Cluster\-U\-U\-I\-D, int fibre\-Width)
+\begin{DoxyCompactList}\small\item\em \-Connect clusters specified by uuids with a fibre of width. \end{DoxyCompactList}\item 
+virtual boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_adc784bc4a171eb28b5a7d038fe73f2de}{connect\-Cluster} (boost\-::uuids\-::uuid cluster\-U\-U\-I\-D, const \hyperlink{classcryomesh_1_1structures_1_1Fibre_aecbba6d46a76f888b3722491b674f5e4}{\-Fibre\-::\-Fibre\-Type} \&type, int fibre\-Width)
+\begin{DoxyCompactList}\small\item\em \-Connect clusters specified by uuids with a fibre of width. \end{DoxyCompactList}\item 
+virtual boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_abe23b17f35ef338df7db8d2903ee2bfd}{connect\-Primary\-Input\-Cluster} (boost\-::uuids\-::uuid patchanid, boost\-::uuids\-::uuid cluster\-U\-U\-I\-D)
+\begin{DoxyCompactList}\small\item\em \-Helper access function for specialised connection. \end{DoxyCompactList}\item 
+virtual boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_a01dd3e844fe3332df9be5156e329f821}{connect\-Primary\-Output\-Cluster} (boost\-::uuids\-::uuid patchanid, boost\-::uuids\-::uuid cluster\-U\-U\-I\-D)
+\begin{DoxyCompactList}\small\item\em \-Helper access function for specialised connection. \end{DoxyCompactList}\item 
+std\-::vector$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} $>$ $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_a31fef59219384dafb4d250eae65f3574}{auto\-Connect\-Primary\-Input\-Clusters} (const std\-::vector$<$ boost\-::uuids\-::uuid $>$ \&cluster\-\_\-uuids)
+\item 
+std\-::vector$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} $>$ $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_a53f6a455e7cb553352dbef64d3a1ec04}{auto\-Connect\-Primary\-Output\-Clusters} (const std\-::vector$<$ boost\-::uuids\-::uuid $>$ \&cluster\-\_\-uuids)
+\item 
+virtual std\-::vector\*
+$<$ boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} $>$ $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_aae9fb3393c44f4aeff03ecb8bfa5316e}{auto\-Connect\-Primary\-Input\-Clusters} (std\-::vector$<$ boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster} $>$ $>$ list)
+\item 
+virtual std\-::vector\*
+$<$ boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} $>$ $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_a7e38b0167e7873fea9d768d3b096a9d8}{auto\-Connect\-Primary\-Output\-Clusters} (std\-::vector$<$ boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1structures_1_1Cluster}{\-Cluster} $>$ $>$ list)
+\item 
+virtual std\-::vector\*
+$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1state_1_1PatternChannel}{state\-::\-Pattern\-Channel} $>$ $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_a6f400ee92f49fed82ca9ef5b48cde285}{get\-Disconnected\-Real\-Input\-Pattern\-Channels} ()
+\item 
+virtual std\-::vector\*
+$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1state_1_1PatternChannel}{state\-::\-Pattern\-Channel} $>$ $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_a5ce1e31c814ef83026c0dbda5ba04a24}{get\-Disconnected\-Real\-Output\-Pattern\-Channels} ()
+\item 
+virtual boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_a0aa4399de46de8ee753e3959fca2fb62}{connect\-Loopback\-Cluster} (boost\-::uuids\-::uuid cluster\-U\-U\-I\-D, int fibre\-Width)
+\begin{DoxyCompactList}\small\item\em \-Helper access function for specialised connection. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcryomesh_1_1structures_1_1Bundle_ad60a89acf924c5aebae3a5f816f358db}{load\-Channels} (const std\-::string \&ifstr)
+\begin{DoxyCompactList}\small\item\em \-Load in the pattern channels from a filename of a pattern dataset. \end{DoxyCompactList}\item 
+const \-Cluster\-Map \& \hyperlink{classcryomesh_1_1structures_1_1Bundle_a181e1f2aaa3b529b8609917d5b5315e0}{get\-Clusters} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the clusters in this bundle. \end{DoxyCompactList}\item 
+const \hyperlink{classcryomesh_1_1structures_1_1FibreMap}{\-Fibre\-Map} \& \hyperlink{classcryomesh_1_1structures_1_1Bundle_a8f112d3b34f84511781879217b15c6d2}{get\-Fibres} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the mutable clusters in this bundle. \end{DoxyCompactList}\item 
+const \hyperlink{classcryomesh_1_1structures_1_1FibreMap}{\-Fibre\-Map} \& \hyperlink{classcryomesh_1_1structures_1_1Bundle_a5c6496d00065462122a71c812fa7a4e8}{get\-Input\-Fibres} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the input fibres of this bundle. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1structures_1_1FibreMap}{\-Fibre\-Map} \& \hyperlink{classcryomesh_1_1structures_1_1Bundle_af8b848abb7ec12997b09c63c0c10650d}{get\-Mutable\-Input\-Fibres} ()
+\begin{DoxyCompactList}\small\item\em \-Get the mutable input fibres of this bundle. \end{DoxyCompactList}\item 
+const \hyperlink{classcryomesh_1_1structures_1_1FibreMap}{\-Fibre\-Map} \& \hyperlink{classcryomesh_1_1structures_1_1Bundle_a2c14a3f2cc96236bff6548e5103183de}{get\-Output\-Fibres} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the output fibres of this bundle. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1structures_1_1FibreMap}{\-Fibre\-Map} \& \hyperlink{classcryomesh_1_1structures_1_1Bundle_af9fd12e753bab64750f5c32d5f17a554}{get\-Mutable\-Output\-Fibres} ()
+\begin{DoxyCompactList}\small\item\em \-Get the mutable output fibres of this bundle. \end{DoxyCompactList}\item 
+const \hyperlink{classcryomesh_1_1state_1_1PatternChannelMap}{state\-::\-Pattern\-Channel\-Map} \& \hyperlink{classcryomesh_1_1structures_1_1Bundle_ada0ae8374d27d9b59ca82b8075fbd401}{get\-Real\-Input\-Channels\-Map} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the real input pattern channels of this bundle. \end{DoxyCompactList}\item 
+const \hyperlink{classcryomesh_1_1state_1_1PatternChannelMap}{state\-::\-Pattern\-Channel\-Map} \& \hyperlink{classcryomesh_1_1structures_1_1Bundle_a893be908a14ecc2d07270273d3d127e2}{get\-Real\-Output\-Channels\-Map} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the real output pattern channels of this bundle. \end{DoxyCompactList}\item 
+const \hyperlink{classcryomesh_1_1state_1_1PatternChannelMap}{state\-::\-Pattern\-Channel\-Map} \& \hyperlink{classcryomesh_1_1structures_1_1Bundle_a65bf0246390e7cb0e90caf4fb302fa41}{get\-Actual\-Input\-Channels\-Map} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the actual input pattern channels of this bundle. \end{DoxyCompactList}\item 
+const \hyperlink{classcryomesh_1_1state_1_1PatternChannelMap}{state\-::\-Pattern\-Channel\-Map} \& \hyperlink{classcryomesh_1_1structures_1_1Bundle_a382242e3b29b92b25edc9162aa810ebe}{get\-Actual\-Output\-Channels\-Map} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the real output pattern channels of this bundle. \end{DoxyCompactList}\item 
+const std\-::map\*
+$<$ boost\-::uuids\-::uuid, \*
+boost\-::uuids\-::uuid $>$ \& \hyperlink{classcryomesh_1_1structures_1_1Bundle_a2e31be3bab4a15e4e9ba6aeac48b91df}{get\-Real\-Fibre\-Pattern\-Channel\-Map} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the map of fibres to their associated pattern channels. \end{DoxyCompactList}\item 
+const std\-::map\*
+$<$ boost\-::uuids\-::uuid, \*
+boost\-::uuids\-::uuid $>$ \& \hyperlink{classcryomesh_1_1structures_1_1Bundle_a872de96a76f772182eda2abbb98a99cc}{get\-Actual\-Fibre\-Pattern\-Channel\-Map} () const 
+\item 
+const boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1utilities_1_1Statistician}{utilities\-::\-Statistician} $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_a5bfac318b9a6f9f651fad0657b9b9196}{get\-Statistician} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the \-Statistician. \end{DoxyCompactList}\item 
+boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1utilities_1_1Statistician}{utilities\-::\-Statistician} $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_ae750ab1bd2b1a937f90d97e416aefced}{get\-Mutable\-Statistician} ()
+\item 
+double \hyperlink{classcryomesh_1_1structures_1_1Bundle_aec88635d8c4fdc76b6c3c22b915ee459}{get\-Energy} () const 
+\begin{DoxyCompactList}\small\item\em \-Get the last calculated energy of the bundle. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classcryomesh_1_1structures_1_1Bundle_a5927b1a21111e6b78c143280c49a9701}{check\-Structure} () const 
+\begin{DoxyCompactList}\small\item\em \-Run a system structure check. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classcryomesh_1_1structures_1_1Bundle_a441eda1670224083d5efc20b3a6bb9ff}{check\-Fibre\-Structure} () const 
+\begin{DoxyCompactList}\small\item\em \-Check the structure of \-Fibres. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classcryomesh_1_1structures_1_1Bundle_a1c1b3a4fe6d32259753d69c8a9b0deaa}{check\-Channel\-Structure} () const 
+\begin{DoxyCompactList}\small\item\em \-Check the structure of \-Channels. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcryomesh_1_1structures_1_1Bundle_abe63fcceae95f0ffb06db094076b42c5}{enable\-Debug} (bool b)
+\item 
+virtual void \hyperlink{classcryomesh_1_1structures_1_1Bundle_a8e7f1752b8b0112adf8939921eff4e50}{enable\-Debug\-Clusters} (bool b)
+\item 
+virtual void \hyperlink{classcryomesh_1_1structures_1_1Bundle_a742597fd733573d8242966f89f8e6715}{enable\-Debug\-Fibres} (bool b)
+\item 
+virtual std\-::ostream \& \hyperlink{classcryomesh_1_1structures_1_1Bundle_a1b2bdda71a78b4e89af23f21e7611ee4}{print} (std\-::ostream \&os, const \hyperlink{classcryomesh_1_1common_1_1Loggable_a4d85401f6c81bc8ed94e49d66ae574c5}{common\-::\-Loggable\-::\-Logging\-Depth} depth=\hyperlink{classcryomesh_1_1common_1_1Loggable_a4d85401f6c81bc8ed94e49d66ae574c5a51f5abcf5a53a8930a09b065fc64a44f}{\-S\-U\-M\-M\-A\-R\-Y}) const 
+\begin{DoxyCompactList}\small\item\em \-Print the bundle to stream. \end{DoxyCompactList}\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1structures_1_1Bundle_ad794a923f68c51c5c1ac4588586b6be7}{print\-Channels} (std\-::ostream \&os) const 
+\begin{DoxyCompactList}\small\item\em \-Print the channels to stream. \end{DoxyCompactList}\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1structures_1_1Bundle_ab7308eec882450980ebfbb7167a3538d}{print\-Fibre\-Maps} (std\-::ostream \&os) const 
+\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1structures_1_1Bundle_a6a6110f318167f4cc82ab6736e291628}{print\-Fibre\-Map} (std\-::ostream \&os, const std\-::map$<$ boost\-::uuids\-::uuid, boost\-::uuids\-::uuid $>$ \&fibre\-\_\-map) const 
+\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classcryomesh_1_1structures_1_1Bundle_abe52d8718eeb7bb6a17211d4dfbed440}{update\-Primary\-Input\-Fibres} ()
+\begin{DoxyCompactList}\small\item\em \-Get the next patterns from channels and apply them to their mapped fibres. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcryomesh_1_1structures_1_1Bundle_a7a95265553776d6216799e143134a59f}{update\-Primary\-Output\-Fibres} ()
+\begin{DoxyCompactList}\small\item\em \-Get the patterns from primary output fibres and apply them to their mapped pattern channels. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classcryomesh_1_1structures_1_1Bundle_a3a8a7cfb5d525ff59a52dd1a39909621}{match\-Output\-Channels\-Sum} () const 
+\begin{DoxyCompactList}\small\item\em \-Compare the output channels of primary output fibres to expected output channel patterns. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcryomesh_1_1structures_1_1Bundle_a804c625c912657cebd3350c7c1b53c10}{update\-Statistician} ()
+\begin{DoxyCompactList}\small\item\em \-Update the statistician if debugging is enabled. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1structures_1_1Bundle_ae6a553eaab4ddf2b6bbd6bdeca9361ad}{set\-Energy} (double d)
+\begin{DoxyCompactList}\small\item\em \-Set the energy of the bundle. \end{DoxyCompactList}\item 
+\-Cluster\-Map \& \hyperlink{classcryomesh_1_1structures_1_1Bundle_a14990ba8cec7b9c18426ae8c2fdd0dcf}{get\-Mutable\-Clusters} ()
+\item 
+{\footnotesize template$<$class T $>$ }\\std\-::ostream \& \hyperlink{classcryomesh_1_1structures_1_1Bundle_af89da428bb056c8eea81a416783cf2ae}{print\-Search} (std\-::ostream \&os, const boost\-::uuids\-::uuid \&uuid, const std\-::map$<$ boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \&map) const 
+\begin{DoxyCompactList}\small\item\em \-Print out a uuid search. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+const boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1state_1_1PatternChannel}{state\-::\-Pattern\-Channel} $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_a51eb35ecb02094016f0f3a74fd07f6e9}{get\-Real\-Primary\-Input\-Channel\-By\-Fibre} (const boost\-::uuids\-::uuid fibre\-\_\-uuid) const 
+\item 
+const boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1state_1_1PatternChannel}{state\-::\-Pattern\-Channel} $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_a00eb0f18cc3331a4e6d0ed4698e92cb5}{get\-Real\-Primary\-Output\-Channel\-By\-Fibre} (const boost\-::uuids\-::uuid fibre\-\_\-uuid) const 
+\item 
+const boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1state_1_1PatternChannel}{state\-::\-Pattern\-Channel} $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_a101bda3e32c34cf8e0cff4526446af02}{get\-Actual\-Primary\-Input\-Channel\-By\-Fibre} (const boost\-::uuids\-::uuid fibre\-\_\-uuid) const 
+\item 
+const boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1state_1_1PatternChannel}{state\-::\-Pattern\-Channel} $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_a13dcea26d3379199f9e993caa5e132d7}{get\-Actual\-Primary\-Output\-Channel\-By\-Fibre} (const boost\-::uuids\-::uuid fibre\-\_\-uuid) const 
+\item 
+const boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_ae1259ecf25a6b140cad735defd9069f9}{get\-Primary\-Input\-Fibre\-By\-Real\-Channel} (const boost\-::uuids\-::uuid pattern\-\_\-channel\-\_\-uuid) const 
+\begin{DoxyCompactList}\small\item\em \-Helper method to take a uuid and find its correspondingly mapped object \-Take an input \-Pattern\-Channel uuid and find the input \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} its mapped to. \end{DoxyCompactList}\item 
+const boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_a7ba3f747f8e164f0c0984fdb14922e7a}{get\-Primary\-Output\-Fibre\-By\-Real\-Channel} (const boost\-::uuids\-::uuid pattern\-\_\-channel\-\_\-uuid) const 
+\begin{DoxyCompactList}\small\item\em \-Helper method to take a uuid and find its correspondingly mapped object \-Take an output \-Pattern\-Channel uuid and find the output \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} its mapped to. \end{DoxyCompactList}\item 
+const boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_ad80f4bbb8bdc379e156282bf0b17fbc3}{get\-Primary\-Input\-Fibre\-By\-Actual\-Channel} (const boost\-::uuids\-::uuid pattern\-\_\-channel\-\_\-uuid) const 
+\item 
+const boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_ae6ccd53821a90466d96ebcbf171549a2}{get\-Primary\-Output\-Fibre\-By\-Actual\-Channel} (const boost\-::uuids\-::uuid pattern\-\_\-channel\-\_\-uuid) const 
+\item 
+const boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_aecdb1fc4017f4e4aa954b4158e99c86f}{get\-Primary\-Fibre\-By\-Channel} (const boost\-::uuids\-::uuid id, const \hyperlink{classcryomesh_1_1structures_1_1FibreMap}{\-Fibre\-Map} \&map, const std\-::map$<$ boost\-::uuids\-::uuid, boost\-::uuids\-::uuid $>$ \&fibrepattern\-\_\-channelmap) const 
+\begin{DoxyCompactList}\small\item\em \-Helper method to take a uuid and find its correspondingly mapped object \-Take an channel uuid and find the \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} its mapped to inside the supplied map. \end{DoxyCompactList}\item 
+const boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1state_1_1PatternChannel}{state\-::\-Pattern\-Channel} $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_a237b9698b966c6498fb723f685292599}{get\-Primary\-Channel\-By\-Fibre} (const boost\-::uuids\-::uuid id, const \hyperlink{classcryomesh_1_1state_1_1PatternChannelMap}{state\-::\-Pattern\-Channel\-Map} \&map, const std\-::map$<$ boost\-::uuids\-::uuid, boost\-::uuids\-::uuid $>$ \&fibrepattern\-\_\-channelmap) const 
+\begin{DoxyCompactList}\small\item\em \-Helper method to take a uuid and find its correspondingly mapped object \-Take an \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} uuid and find the \-Pattern\-Channel its mapped to inside the supplied map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\-Cluster\-Map \hyperlink{classcryomesh_1_1structures_1_1Bundle_a35a36d3305706f597f4c586fcd9f74b7}{clusters}
+\item 
+\hyperlink{classcryomesh_1_1structures_1_1FibreMap}{\-Fibre\-Map} \hyperlink{classcryomesh_1_1structures_1_1Bundle_a71b3308a867169b8e9af9ab71b8bdf98}{fibres}
+\item 
+\hyperlink{classcryomesh_1_1state_1_1PatternChannelMap}{state\-::\-Pattern\-Channel\-Map} \hyperlink{classcryomesh_1_1structures_1_1Bundle_ac9bd1c696001ef8acb7291a5f9e81c8b}{real\-Input\-Channels\-Map}
+\item 
+\hyperlink{classcryomesh_1_1state_1_1PatternChannelMap}{state\-::\-Pattern\-Channel\-Map} \hyperlink{classcryomesh_1_1structures_1_1Bundle_a4043d8bfeb8b066418029864f51d92de}{real\-Output\-Channels\-Map}
+\item 
+\hyperlink{classcryomesh_1_1state_1_1PatternChannelMap}{state\-::\-Pattern\-Channel\-Map} \hyperlink{classcryomesh_1_1structures_1_1Bundle_ae20b2f9819708971357148dd024db00d}{actual\-Input\-Channels\-Map}
+\item 
+\hyperlink{classcryomesh_1_1state_1_1PatternChannelMap}{state\-::\-Pattern\-Channel\-Map} \hyperlink{classcryomesh_1_1structures_1_1Bundle_ac67a6d7b29b37b8927c93350e8bcf6e5}{actual\-Output\-Channels\-Map}
+\item 
+\hyperlink{classcryomesh_1_1structures_1_1FibreMap}{\-Fibre\-Map} \hyperlink{classcryomesh_1_1structures_1_1Bundle_aa6a461295021bdfb4ef4cab0f136a2c1}{input\-Fibres}
+\item 
+\hyperlink{classcryomesh_1_1structures_1_1FibreMap}{\-Fibre\-Map} \hyperlink{classcryomesh_1_1structures_1_1Bundle_aa671193358b7aba173e45574def3d4c1}{output\-Fibres}
+\item 
+boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1utilities_1_1Statistician}{utilities\-::\-Statistician} $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_ad505cbda03b4e78399fd3a9568d79708}{statistician}
+\begin{DoxyCompactList}\small\item\em \-Statistics object to generate useful info on the bundle. \end{DoxyCompactList}\item 
+double \hyperlink{classcryomesh_1_1structures_1_1Bundle_aac5229c4c52e646767db2144ba745aa6}{energy}
+\begin{DoxyCompactList}\small\item\em \-Last energy calculation of the output channel matching. \end{DoxyCompactList}\item 
+std\-::map$<$ boost\-::uuids\-::uuid, \*
+boost\-::uuids\-::uuid $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_adaf7fa91209de01b9d42ae2d8228c3cd}{real\-Fibre\-Pattern\-Channel\-Map}
+\item 
+std\-::map$<$ boost\-::uuids\-::uuid, \*
+boost\-::uuids\-::uuid $>$ \hyperlink{classcryomesh_1_1structures_1_1Bundle_a0f3e20833ce850f97ae450d27a4607dd}{actual\-Fibre\-Pattern\-Channel\-Map}
+\item 
+\hyperlink{classcryomesh_1_1structures_1_1Cluster_a69c420b79675c6ffc9a0df8381ca9497}{\-Cluster\-::\-Energy\-Fraction\-Method} \hyperlink{classcryomesh_1_1structures_1_1Bundle_abbd8555380ffa4c33a235636837bafaa}{energy\-Fraction\-Method}
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1structures_1_1Bundle_a21e43a0b5ea3e93accc964e269c730bd}{operator$<$$<$} (std\-::ostream \&os, const \hyperlink{classcryomesh_1_1structures_1_1Bundle}{\-Bundle} \&obj)
+\begin{DoxyCompactList}\small\item\em \-To stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-A \hyperlink{classcryomesh_1_1structures_1_1Bundle}{\-Bundle} is the collection of clusters and fibres, it represents the system as a whole. 
+
+\-Definition at line 29 of file \-Bundle.\-h.
+
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\hypertarget{classcryomesh_1_1common_1_1Loggable_a4d85401f6c81bc8ed94e49d66ae574c5}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!\-Logging\-Depth@{\-Logging\-Depth}}
+\index{\-Logging\-Depth@{\-Logging\-Depth}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{\-Logging\-Depth}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cryomesh\-::common\-::\-Loggable\-::\-Logging\-Depth}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}\label{classcryomesh_1_1common_1_1Loggable_a4d85401f6c81bc8ed94e49d66ae574c5}
+
+
+\-Enum representing print detail. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-S\-U\-M\-M\-A\-R\-Y@{\-S\-U\-M\-M\-A\-R\-Y}!cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}}\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!\-S\-U\-M\-M\-A\-R\-Y@{\-S\-U\-M\-M\-A\-R\-Y}}\item[{\em 
+\hypertarget{classcryomesh_1_1common_1_1Loggable_a4d85401f6c81bc8ed94e49d66ae574c5a51f5abcf5a53a8930a09b065fc64a44f}{\-S\-U\-M\-M\-A\-R\-Y}\label{classcryomesh_1_1common_1_1Loggable_a4d85401f6c81bc8ed94e49d66ae574c5a51f5abcf5a53a8930a09b065fc64a44f}
+}]\index{\-M\-A\-X@{\-M\-A\-X}!cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}}\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!\-M\-A\-X@{\-M\-A\-X}}\item[{\em 
+\hypertarget{classcryomesh_1_1common_1_1Loggable_a4d85401f6c81bc8ed94e49d66ae574c5ae496af0b41e3b64530b61e315822cc51}{\-M\-A\-X}\label{classcryomesh_1_1common_1_1Loggable_a4d85401f6c81bc8ed94e49d66ae574c5ae496af0b41e3b64530b61e315822cc51}
+}]\end{description}
+\end{Desc}
+
+
+
+\-Definition at line 23 of file \-Loggable.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a8d6b95207324291f919f1835b81b1640}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!\-Bundle@{\-Bundle}}
+\index{\-Bundle@{\-Bundle}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{\-Bundle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::structures\-::\-Bundle\-::\-Bundle} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Bundle_a8d6b95207324291f919f1835b81b1640}
+
+
+\-Default contructor. 
+
+
+
+\-Definition at line 17 of file \-Bundle.\-cpp.
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_ab2ec2696336dddbae17166c056c2f038}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!$\sim$\-Bundle@{$\sim$\-Bundle}}
+\index{$\sim$\-Bundle@{$\sim$\-Bundle}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{$\sim$\-Bundle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::structures\-::\-Bundle\-::$\sim$\-Bundle} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_ab2ec2696336dddbae17166c056c2f038}
+
+
+\-Default destructor. 
+
+
+
+\-Definition at line 23 of file \-Bundle.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a31fef59219384dafb4d250eae65f3574}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!auto\-Connect\-Primary\-Input\-Clusters@{auto\-Connect\-Primary\-Input\-Clusters}}
+\index{auto\-Connect\-Primary\-Input\-Clusters@{auto\-Connect\-Primary\-Input\-Clusters}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{auto\-Connect\-Primary\-Input\-Clusters}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ boost\-::shared\-\_\-ptr$<$ {\bf \-Fibre} $>$ $>$ {\bf cryomesh\-::structures\-::\-Bundle\-::auto\-Connect\-Primary\-Input\-Clusters} (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ boost\-::uuids\-::uuid $>$ \&}]{cluster\-\_\-uuids}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Bundle_a31fef59219384dafb4d250eae65f3574}
+
+
+\-Definition at line 206 of file \-Bundle.\-cpp.
+
+
+
+\-References get\-Mutable\-Clusters().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_aae9fb3393c44f4aeff03ecb8bfa5316e}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!auto\-Connect\-Primary\-Input\-Clusters@{auto\-Connect\-Primary\-Input\-Clusters}}
+\index{auto\-Connect\-Primary\-Input\-Clusters@{auto\-Connect\-Primary\-Input\-Clusters}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{auto\-Connect\-Primary\-Input\-Clusters}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ boost\-::shared\-\_\-ptr$<$ {\bf \-Fibre} $>$ $>$ {\bf cryomesh\-::structures\-::\-Bundle\-::auto\-Connect\-Primary\-Input\-Clusters} (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ boost\-::shared\-\_\-ptr$<$ {\bf \-Cluster} $>$ $>$}]{list}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_aae9fb3393c44f4aeff03ecb8bfa5316e}
+
+
+\-Definition at line 254 of file \-Bundle.\-cpp.
+
+
+
+\-References connect\-Primary\-Input\-Cluster(), and get\-Disconnected\-Real\-Input\-Pattern\-Channels().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a53f6a455e7cb553352dbef64d3a1ec04}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!auto\-Connect\-Primary\-Output\-Clusters@{auto\-Connect\-Primary\-Output\-Clusters}}
+\index{auto\-Connect\-Primary\-Output\-Clusters@{auto\-Connect\-Primary\-Output\-Clusters}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{auto\-Connect\-Primary\-Output\-Clusters}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ boost\-::shared\-\_\-ptr$<$ {\bf \-Fibre} $>$ $>$ {\bf cryomesh\-::structures\-::\-Bundle\-::auto\-Connect\-Primary\-Output\-Clusters} (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ boost\-::uuids\-::uuid $>$ \&}]{cluster\-\_\-uuids}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Bundle_a53f6a455e7cb553352dbef64d3a1ec04}
+
+
+\-Definition at line 231 of file \-Bundle.\-cpp.
+
+
+
+\-References get\-Mutable\-Clusters().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a7e38b0167e7873fea9d768d3b096a9d8}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!auto\-Connect\-Primary\-Output\-Clusters@{auto\-Connect\-Primary\-Output\-Clusters}}
+\index{auto\-Connect\-Primary\-Output\-Clusters@{auto\-Connect\-Primary\-Output\-Clusters}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{auto\-Connect\-Primary\-Output\-Clusters}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ boost\-::shared\-\_\-ptr$<$ {\bf \-Fibre} $>$ $>$ {\bf cryomesh\-::structures\-::\-Bundle\-::auto\-Connect\-Primary\-Output\-Clusters} (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ boost\-::shared\-\_\-ptr$<$ {\bf \-Cluster} $>$ $>$}]{list}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a7e38b0167e7873fea9d768d3b096a9d8}
+
+
+\-Definition at line 301 of file \-Bundle.\-cpp.
+
+
+
+\-References connect\-Primary\-Output\-Cluster(), and get\-Disconnected\-Real\-Output\-Pattern\-Channels().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a1c1b3a4fe6d32259753d69c8a9b0deaa}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!check\-Channel\-Structure@{check\-Channel\-Structure}}
+\index{check\-Channel\-Structure@{check\-Channel\-Structure}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{check\-Channel\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf cryomesh\-::structures\-::\-Bundle\-::check\-Channel\-Structure} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a1c1b3a4fe6d32259753d69c8a9b0deaa}
+
+
+\-Check the structure of \-Channels. 
+
+\begin{DoxyReturn}{\-Returns}
+bool \-True if structure tests pass, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 558 of file \-Bundle.\-cpp.
+
+
+
+\-Referenced by check\-Structure().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a441eda1670224083d5efc20b3a6bb9ff}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!check\-Fibre\-Structure@{check\-Fibre\-Structure}}
+\index{check\-Fibre\-Structure@{check\-Fibre\-Structure}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{check\-Fibre\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf cryomesh\-::structures\-::\-Bundle\-::check\-Fibre\-Structure} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a441eda1670224083d5efc20b3a6bb9ff}
+
+
+\-Check the structure of \-Fibres. 
+
+\begin{DoxyReturn}{\-Returns}
+bool \-True if structure tests pass, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 477 of file \-Bundle.\-cpp.
+
+
+
+\-References get\-Clusters(), get\-Fibres(), get\-Input\-Fibres(), and get\-Output\-Fibres().
+
+
+
+\-Referenced by check\-Structure().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a5927b1a21111e6b78c143280c49a9701}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!check\-Structure@{check\-Structure}}
+\index{check\-Structure@{check\-Structure}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{check\-Structure}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf cryomesh\-::structures\-::\-Bundle\-::check\-Structure} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a5927b1a21111e6b78c143280c49a9701}
+
+
+\-Run a system structure check. 
+
+\begin{DoxyReturn}{\-Returns}
+bool \-True if system passes all tests, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 561 of file \-Bundle.\-cpp.
+
+
+
+\-References check\-Channel\-Structure(), and check\-Fibre\-Structure().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_af1884f99e746cdfa549b63f1589b5dac}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!connect\-Cluster@{connect\-Cluster}}
+\index{connect\-Cluster@{connect\-Cluster}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{connect\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$ {\bf \-Fibre} $>$ {\bf cryomesh\-::structures\-::\-Bundle\-::connect\-Cluster} (
+\begin{DoxyParamCaption}
+\item[{boost\-::uuids\-::uuid}]{input\-Cluster\-U\-U\-I\-D, }
+\item[{boost\-::uuids\-::uuid}]{output\-Cluster\-U\-U\-I\-D, }
+\item[{int}]{fibre\-Width}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_af1884f99e746cdfa549b63f1589b5dac}
+
+
+\-Connect clusters specified by uuids with a fibre of width. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em boost\-::uuids\-::uuid} & input\-Cluster\-U\-U\-I\-D \-U\-U\-I\-D of input cluster \\
+\hline
+{\em boost\-::uuids\-::uuid} & output\-Cluster\-U\-U\-I\-D \-U\-U\-I\-D of output cluster \\
+\hline
+{\em int} & width \-Width of fibre to create\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The new fibre created, possible null 
+\end{DoxyReturn}
+
+
+\-Definition at line 61 of file \-Bundle.\-cpp.
+
+
+
+\-References clusters, and fibres.
+
+
+
+\-Referenced by connect\-Loopback\-Cluster(), connect\-Primary\-Input\-Cluster(), and connect\-Primary\-Output\-Cluster().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_adc784bc4a171eb28b5a7d038fe73f2de}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!connect\-Cluster@{connect\-Cluster}}
+\index{connect\-Cluster@{connect\-Cluster}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{connect\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$ {\bf \-Fibre} $>$ {\bf cryomesh\-::structures\-::\-Bundle\-::connect\-Cluster} (
+\begin{DoxyParamCaption}
+\item[{boost\-::uuids\-::uuid}]{cluster\-U\-U\-I\-D, }
+\item[{const {\bf \-Fibre\-::\-Fibre\-Type} \&}]{type, }
+\item[{int}]{fibre\-Width}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_adc784bc4a171eb28b5a7d038fe73f2de}
+
+
+\-Connect clusters specified by uuids with a fibre of width. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em boost\-::uuids\-::uuid} & cluster\-U\-U\-I\-D \-U\-U\-I\-D of cluster to connect to fibre \\
+\hline
+{\em const} & \hyperlink{classcryomesh_1_1structures_1_1Fibre_aecbba6d46a76f888b3722491b674f5e4}{\-Fibre\-::\-Fibre\-Type} \& type \-Type of fibre connection to make \\
+\hline
+{\em int} & width \-Width of fibre to create\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The new fibre created, possible null 
+\end{DoxyReturn}
+
+
+\-Definition at line 78 of file \-Bundle.\-cpp.
+
+
+
+\-References clusters, fibres, input\-Fibres, cryomesh\-::structures\-::\-Fibre\-::\-Loopback\-Fibre, output\-Fibres, cryomesh\-::structures\-::\-Fibre\-::\-Primary\-Input\-Fibre, and cryomesh\-::structures\-::\-Fibre\-::\-Primary\-Output\-Fibre.
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a0aa4399de46de8ee753e3959fca2fb62}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!connect\-Loopback\-Cluster@{connect\-Loopback\-Cluster}}
+\index{connect\-Loopback\-Cluster@{connect\-Loopback\-Cluster}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{connect\-Loopback\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$ {\bf \-Fibre} $>$ {\bf cryomesh\-::structures\-::\-Bundle\-::connect\-Loopback\-Cluster} (
+\begin{DoxyParamCaption}
+\item[{boost\-::uuids\-::uuid}]{cluster\-U\-U\-I\-D, }
+\item[{int}]{fibre\-Width}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a0aa4399de46de8ee753e3959fca2fb62}
+
+
+\-Helper access function for specialised connection. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em const} & \hyperlink{classcryomesh_1_1structures_1_1Fibre_aecbba6d46a76f888b3722491b674f5e4}{\-Fibre\-::\-Fibre\-Type} \& type \-Type of fibre connection to make \\
+\hline
+{\em int} & width \-Width of fibre to create\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The new fibre created, possible null 
+\end{DoxyReturn}
+
+
+\-Definition at line 392 of file \-Bundle.\-cpp.
+
+
+
+\-References connect\-Cluster(), and cryomesh\-::structures\-::\-Fibre\-::\-Loopback\-Fibre.
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_abe23b17f35ef338df7db8d2903ee2bfd}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!connect\-Primary\-Input\-Cluster@{connect\-Primary\-Input\-Cluster}}
+\index{connect\-Primary\-Input\-Cluster@{connect\-Primary\-Input\-Cluster}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{connect\-Primary\-Input\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$ {\bf \-Fibre} $>$ {\bf cryomesh\-::structures\-::\-Bundle\-::connect\-Primary\-Input\-Cluster} (
+\begin{DoxyParamCaption}
+\item[{boost\-::uuids\-::uuid}]{patchanid, }
+\item[{boost\-::uuids\-::uuid}]{cluster\-U\-U\-I\-D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_abe23b17f35ef338df7db8d2903ee2bfd}
+
+
+\-Helper access function for specialised connection. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em boost\-::uuids\-::uuid} & \-Pattern\-Channel to map the fibre to \\
+\hline
+{\em const} & \hyperlink{classcryomesh_1_1structures_1_1Fibre_aecbba6d46a76f888b3722491b674f5e4}{\-Fibre\-::\-Fibre\-Type} \& type \-Type of fibre connection to make\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The new fibre created, possible null 
+\end{DoxyReturn}
+
+
+\-Definition at line 110 of file \-Bundle.\-cpp.
+
+
+
+\-References actual\-Fibre\-Pattern\-Channel\-Map, actual\-Input\-Channels\-Map, connect\-Cluster(), cryomesh\-::state\-::\-Pattern\-Channel\-::\-Input, cryomesh\-::structures\-::\-Fibre\-::\-Primary\-Input\-Fibre, real\-Fibre\-Pattern\-Channel\-Map, and real\-Input\-Channels\-Map.
+
+
+
+\-Referenced by auto\-Connect\-Primary\-Input\-Clusters().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a01dd3e844fe3332df9be5156e329f821}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!connect\-Primary\-Output\-Cluster@{connect\-Primary\-Output\-Cluster}}
+\index{connect\-Primary\-Output\-Cluster@{connect\-Primary\-Output\-Cluster}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{connect\-Primary\-Output\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$ {\bf \-Fibre} $>$ {\bf cryomesh\-::structures\-::\-Bundle\-::connect\-Primary\-Output\-Cluster} (
+\begin{DoxyParamCaption}
+\item[{boost\-::uuids\-::uuid}]{patchanid, }
+\item[{boost\-::uuids\-::uuid}]{cluster\-U\-U\-I\-D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a01dd3e844fe3332df9be5156e329f821}
+
+
+\-Helper access function for specialised connection. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em boost\-::uuids\-::uuid} & \-Pattern\-Channel to map the fibre to \\
+\hline
+{\em const} & \hyperlink{classcryomesh_1_1structures_1_1Fibre_aecbba6d46a76f888b3722491b674f5e4}{\-Fibre\-::\-Fibre\-Type} \& type \-Type of fibre connection to make\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The new fibre created, possible null 
+\end{DoxyReturn}
+
+
+\-Definition at line 157 of file \-Bundle.\-cpp.
+
+
+
+\-References actual\-Fibre\-Pattern\-Channel\-Map, actual\-Output\-Channels\-Map, connect\-Cluster(), cryomesh\-::state\-::\-Pattern\-Channel\-::\-Output, cryomesh\-::structures\-::\-Fibre\-::\-Primary\-Output\-Fibre, real\-Fibre\-Pattern\-Channel\-Map, and real\-Output\-Channels\-Map.
+
+
+
+\-Referenced by auto\-Connect\-Primary\-Output\-Clusters().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a6228d35bd96caa191bd89096dd260ee2}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!create\-Cluster@{create\-Cluster}}
+\index{create\-Cluster@{create\-Cluster}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{create\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$ {\bf \-Cluster} $>$ {\bf cryomesh\-::structures\-::\-Bundle\-::create\-Cluster} (
+\begin{DoxyParamCaption}
+\item[{int}]{node\-Size, }
+\item[{int}]{node\-Connectivity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a6228d35bd96caa191bd89096dd260ee2}
+
+
+\-Create a cluster with a size and connectivity. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em int} & \-The number of nodes to create \\
+\hline
+{\em int} & \-The connectivity of the nodes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+boost\-::shared\-\_\-ptr$<$\-Cluster$>$ \-The cluster that was created 
+\end{DoxyReturn}
+
+
+\-Definition at line 54 of file \-Bundle.\-cpp.
+
+
+
+\-References clusters, and energy\-Fraction\-Method.
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_abe63fcceae95f0ffb06db094076b42c5}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!enable\-Debug@{enable\-Debug}}
+\index{enable\-Debug@{enable\-Debug}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{enable\-Debug}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::structures\-::\-Bundle\-::enable\-Debug} (
+\begin{DoxyParamCaption}
+\item[{bool}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_abe63fcceae95f0ffb06db094076b42c5}
+
+
+\-Definition at line 412 of file \-Bundle.\-cpp.
+
+
+
+\-References enable\-Debug\-Clusters(), and enable\-Debug\-Fibres().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a8e7f1752b8b0112adf8939921eff4e50}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!enable\-Debug\-Clusters@{enable\-Debug\-Clusters}}
+\index{enable\-Debug\-Clusters@{enable\-Debug\-Clusters}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{enable\-Debug\-Clusters}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::structures\-::\-Bundle\-::enable\-Debug\-Clusters} (
+\begin{DoxyParamCaption}
+\item[{bool}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a8e7f1752b8b0112adf8939921eff4e50}
+
+
+\-Definition at line 417 of file \-Bundle.\-cpp.
+
+
+
+\-References clusters.
+
+
+
+\-Referenced by enable\-Debug().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a742597fd733573d8242966f89f8e6715}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!enable\-Debug\-Fibres@{enable\-Debug\-Fibres}}
+\index{enable\-Debug\-Fibres@{enable\-Debug\-Fibres}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{enable\-Debug\-Fibres}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::structures\-::\-Bundle\-::enable\-Debug\-Fibres} (
+\begin{DoxyParamCaption}
+\item[{bool}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a742597fd733573d8242966f89f8e6715}
+
+
+\-Definition at line 420 of file \-Bundle.\-cpp.
+
+
+
+\-References fibres.
+
+
+
+\-Referenced by enable\-Debug().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a872de96a76f772182eda2abbb98a99cc}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Actual\-Fibre\-Pattern\-Channel\-Map@{get\-Actual\-Fibre\-Pattern\-Channel\-Map}}
+\index{get\-Actual\-Fibre\-Pattern\-Channel\-Map@{get\-Actual\-Fibre\-Pattern\-Channel\-Map}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Actual\-Fibre\-Pattern\-Channel\-Map}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::map$<$ boost\-::uuids\-::uuid, boost\-::uuids\-::uuid $>$ \& {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Actual\-Fibre\-Pattern\-Channel\-Map} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Bundle_a872de96a76f772182eda2abbb98a99cc}
+
+
+\-Definition at line 463 of file \-Bundle.\-cpp.
+
+
+
+\-References actual\-Fibre\-Pattern\-Channel\-Map.
+
+
+
+\-Referenced by print\-Fibre\-Maps().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a65bf0246390e7cb0e90caf4fb302fa41}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Actual\-Input\-Channels\-Map@{get\-Actual\-Input\-Channels\-Map}}
+\index{get\-Actual\-Input\-Channels\-Map@{get\-Actual\-Input\-Channels\-Map}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Actual\-Input\-Channels\-Map}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf state\-::\-Pattern\-Channel\-Map} \& {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Actual\-Input\-Channels\-Map} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Bundle_a65bf0246390e7cb0e90caf4fb302fa41}
+
+
+\-Get the actual input pattern channels of this bundle. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Pattern\-Channel\-Map \-The map of actual input pattern channels of this bundle 
+\end{DoxyReturn}
+
+
+\-Definition at line 453 of file \-Bundle.\-cpp.
+
+
+
+\-References actual\-Input\-Channels\-Map.
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a382242e3b29b92b25edc9162aa810ebe}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Actual\-Output\-Channels\-Map@{get\-Actual\-Output\-Channels\-Map}}
+\index{get\-Actual\-Output\-Channels\-Map@{get\-Actual\-Output\-Channels\-Map}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Actual\-Output\-Channels\-Map}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf state\-::\-Pattern\-Channel\-Map} \& {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Actual\-Output\-Channels\-Map} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Bundle_a382242e3b29b92b25edc9162aa810ebe}
+
+
+\-Get the real output pattern channels of this bundle. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Pattern\-Channel\-Map \-The map of actual output pattern channels of this bundle 
+\end{DoxyReturn}
+
+
+\-Definition at line 456 of file \-Bundle.\-cpp.
+
+
+
+\-References actual\-Output\-Channels\-Map.
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a101bda3e32c34cf8e0cff4526446af02}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Actual\-Primary\-Input\-Channel\-By\-Fibre@{get\-Actual\-Primary\-Input\-Channel\-By\-Fibre}}
+\index{get\-Actual\-Primary\-Input\-Channel\-By\-Fibre@{get\-Actual\-Primary\-Input\-Channel\-By\-Fibre}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Actual\-Primary\-Input\-Channel\-By\-Fibre}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::shared\-\_\-ptr$<$ {\bf state\-::\-Pattern\-Channel} $>$ {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Actual\-Primary\-Input\-Channel\-By\-Fibre} (
+\begin{DoxyParamCaption}
+\item[{const boost\-::uuids\-::uuid}]{fibre\-\_\-uuid}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a101bda3e32c34cf8e0cff4526446af02}
+
+
+\-Definition at line 711 of file \-Bundle.\-cpp.
+
+
+
+\-References actual\-Fibre\-Pattern\-Channel\-Map, actual\-Input\-Channels\-Map, and get\-Primary\-Channel\-By\-Fibre().
+
+
+
+\-Referenced by update\-Primary\-Input\-Fibres().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a13dcea26d3379199f9e993caa5e132d7}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Actual\-Primary\-Output\-Channel\-By\-Fibre@{get\-Actual\-Primary\-Output\-Channel\-By\-Fibre}}
+\index{get\-Actual\-Primary\-Output\-Channel\-By\-Fibre@{get\-Actual\-Primary\-Output\-Channel\-By\-Fibre}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Actual\-Primary\-Output\-Channel\-By\-Fibre}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::shared\-\_\-ptr$<$ {\bf state\-::\-Pattern\-Channel} $>$ {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Actual\-Primary\-Output\-Channel\-By\-Fibre} (
+\begin{DoxyParamCaption}
+\item[{const boost\-::uuids\-::uuid}]{fibre\-\_\-uuid}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a13dcea26d3379199f9e993caa5e132d7}
+
+
+\-Definition at line 715 of file \-Bundle.\-cpp.
+
+
+
+\-References actual\-Fibre\-Pattern\-Channel\-Map, actual\-Output\-Channels\-Map, and get\-Primary\-Channel\-By\-Fibre().
+
+
+
+\-Referenced by match\-Output\-Channels\-Sum(), and update\-Primary\-Output\-Fibres().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a181e1f2aaa3b529b8609917d5b5315e0}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Clusters@{get\-Clusters}}
+\index{get\-Clusters@{get\-Clusters}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Clusters}]{\setlength{\rightskip}{0pt plus 5cm}const \-Cluster\-Map \& {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Clusters} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Bundle_a181e1f2aaa3b529b8609917d5b5315e0}
+
+
+\-Get the clusters in this bundle. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Cluster\-Map \-The map of clusters in this bundle 
+\end{DoxyReturn}
+
+
+\-Definition at line 408 of file \-Bundle.\-cpp.
+
+
+
+\-References clusters.
+
+
+
+\-Referenced by check\-Fibre\-Structure(), cryomesh\-::utilities\-::\-Statistician\-::get\-Active\-Nodes\-Per\-Cluster(), cryomesh\-::utilities\-::\-Statistician\-::get\-Triggered\-Nodes\-Per\-Cluster(), print(), and cryomesh\-::utilities\-::\-Statistician\-::update().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a6f400ee92f49fed82ca9ef5b48cde285}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Disconnected\-Real\-Input\-Pattern\-Channels@{get\-Disconnected\-Real\-Input\-Pattern\-Channels}}
+\index{get\-Disconnected\-Real\-Input\-Pattern\-Channels@{get\-Disconnected\-Real\-Input\-Pattern\-Channels}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Disconnected\-Real\-Input\-Pattern\-Channels}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ boost\-::shared\-\_\-ptr$<$ {\bf state\-::\-Pattern\-Channel} $>$ $>$ {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Disconnected\-Real\-Input\-Pattern\-Channels} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a6f400ee92f49fed82ca9ef5b48cde285}
+
+
+\-Definition at line 342 of file \-Bundle.\-cpp.
+
+
+
+\-References get\-Primary\-Input\-Fibre\-By\-Real\-Channel(), and real\-Input\-Channels\-Map.
+
+
+
+\-Referenced by auto\-Connect\-Primary\-Input\-Clusters().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a5ce1e31c814ef83026c0dbda5ba04a24}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Disconnected\-Real\-Output\-Pattern\-Channels@{get\-Disconnected\-Real\-Output\-Pattern\-Channels}}
+\index{get\-Disconnected\-Real\-Output\-Pattern\-Channels@{get\-Disconnected\-Real\-Output\-Pattern\-Channels}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Disconnected\-Real\-Output\-Pattern\-Channels}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ boost\-::shared\-\_\-ptr$<$ {\bf state\-::\-Pattern\-Channel} $>$ $>$ {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Disconnected\-Real\-Output\-Pattern\-Channels} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a5ce1e31c814ef83026c0dbda5ba04a24}
+
+
+\-Definition at line 368 of file \-Bundle.\-cpp.
+
+
+
+\-References get\-Primary\-Output\-Fibre\-By\-Real\-Channel(), and real\-Output\-Channels\-Map.
+
+
+
+\-Referenced by auto\-Connect\-Primary\-Output\-Clusters().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_aec88635d8c4fdc76b6c3c22b915ee459}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Energy@{get\-Energy}}
+\index{get\-Energy@{get\-Energy}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Energy} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Bundle_aec88635d8c4fdc76b6c3c22b915ee459}
+
+
+\-Get the last calculated energy of the bundle. 
+
+\begin{DoxyReturn}{\-Returns}
+double \-The last calculated energy 
+\end{DoxyReturn}
+
+
+\-Definition at line 470 of file \-Bundle.\-cpp.
+
+
+
+\-References energy.
+
+
+
+\-Referenced by update().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a8f112d3b34f84511781879217b15c6d2}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Fibres@{get\-Fibres}}
+\index{get\-Fibres@{get\-Fibres}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Fibres}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Fibre\-Map} \& {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Fibres} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Bundle_a8f112d3b34f84511781879217b15c6d2}
+
+
+\-Get the mutable clusters in this bundle. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Cluster\-Map \-The mutable map of clusters in this bundle 
+\end{DoxyReturn}
+
+
+\-Definition at line 427 of file \-Bundle.\-cpp.
+
+
+
+\-References fibres.
+
+
+
+\-Referenced by check\-Fibre\-Structure(), print(), and cryomesh\-::utilities\-::\-Statistician\-::update().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a5c6496d00065462122a71c812fa7a4e8}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Input\-Fibres@{get\-Input\-Fibres}}
+\index{get\-Input\-Fibres@{get\-Input\-Fibres}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Input\-Fibres}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Fibre\-Map} \& {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Input\-Fibres} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Bundle_a5c6496d00065462122a71c812fa7a4e8}
+
+
+\-Get the input fibres of this bundle. 
+
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{classcryomesh_1_1structures_1_1FibreMap}{\-Fibre\-Map} \-The map of input fibres of this bundle 
+\end{DoxyReturn}
+
+
+\-Definition at line 431 of file \-Bundle.\-cpp.
+
+
+
+\-References input\-Fibres.
+
+
+
+\-Referenced by check\-Fibre\-Structure(), print(), and cryomesh\-::utilities\-::\-Statistician\-::update().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a14990ba8cec7b9c18426ae8c2fdd0dcf}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Mutable\-Clusters@{get\-Mutable\-Clusters}}
+\index{get\-Mutable\-Clusters@{get\-Mutable\-Clusters}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Mutable\-Clusters}]{\setlength{\rightskip}{0pt plus 5cm}\-Cluster\-Map \& {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Mutable\-Clusters} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a14990ba8cec7b9c18426ae8c2fdd0dcf}
+
+
+\-Definition at line 424 of file \-Bundle.\-cpp.
+
+
+
+\-References clusters.
+
+
+
+\-Referenced by auto\-Connect\-Primary\-Input\-Clusters(), and auto\-Connect\-Primary\-Output\-Clusters().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_af8b848abb7ec12997b09c63c0c10650d}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Mutable\-Input\-Fibres@{get\-Mutable\-Input\-Fibres}}
+\index{get\-Mutable\-Input\-Fibres@{get\-Mutable\-Input\-Fibres}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Mutable\-Input\-Fibres}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Fibre\-Map} \& {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Mutable\-Input\-Fibres} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Bundle_af8b848abb7ec12997b09c63c0c10650d}
+
+
+\-Get the mutable input fibres of this bundle. 
+
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{classcryomesh_1_1structures_1_1FibreMap}{\-Fibre\-Map} \-The map of mutable input fibres of this bundle 
+\end{DoxyReturn}
+
+
+\-Definition at line 435 of file \-Bundle.\-cpp.
+
+
+
+\-References input\-Fibres.
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_af9fd12e753bab64750f5c32d5f17a554}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Mutable\-Output\-Fibres@{get\-Mutable\-Output\-Fibres}}
+\index{get\-Mutable\-Output\-Fibres@{get\-Mutable\-Output\-Fibres}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Mutable\-Output\-Fibres}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Fibre\-Map} \& {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Mutable\-Output\-Fibres} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Bundle_af9fd12e753bab64750f5c32d5f17a554}
+
+
+\-Get the mutable output fibres of this bundle. 
+
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{classcryomesh_1_1structures_1_1FibreMap}{\-Fibre\-Map} \-The map of mutable output fibres of this bundle 
+\end{DoxyReturn}
+
+
+\-Definition at line 443 of file \-Bundle.\-cpp.
+
+
+
+\-References output\-Fibres.
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_ae750ab1bd2b1a937f90d97e416aefced}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Mutable\-Statistician@{get\-Mutable\-Statistician}}
+\index{get\-Mutable\-Statistician@{get\-Mutable\-Statistician}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Mutable\-Statistician}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$ {\bf utilities\-::\-Statistician} $>$ {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Mutable\-Statistician} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Bundle_ae750ab1bd2b1a937f90d97e416aefced}
+
+
+\-Definition at line 473 of file \-Bundle.\-cpp.
+
+
+
+\-References statistician.
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a2c14a3f2cc96236bff6548e5103183de}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Output\-Fibres@{get\-Output\-Fibres}}
+\index{get\-Output\-Fibres@{get\-Output\-Fibres}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Output\-Fibres}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Fibre\-Map} \& {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Output\-Fibres} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Bundle_a2c14a3f2cc96236bff6548e5103183de}
+
+
+\-Get the output fibres of this bundle. 
+
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{classcryomesh_1_1structures_1_1FibreMap}{\-Fibre\-Map} \-The map of output fibres of this bundle 
+\end{DoxyReturn}
+
+
+\-Definition at line 439 of file \-Bundle.\-cpp.
+
+
+
+\-References output\-Fibres.
+
+
+
+\-Referenced by check\-Fibre\-Structure(), match\-Output\-Channels\-Sum(), print(), and cryomesh\-::utilities\-::\-Statistician\-::update().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a237b9698b966c6498fb723f685292599}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Primary\-Channel\-By\-Fibre@{get\-Primary\-Channel\-By\-Fibre}}
+\index{get\-Primary\-Channel\-By\-Fibre@{get\-Primary\-Channel\-By\-Fibre}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Primary\-Channel\-By\-Fibre}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::shared\-\_\-ptr$<$ {\bf state\-::\-Pattern\-Channel} $>$ {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Primary\-Channel\-By\-Fibre} (
+\begin{DoxyParamCaption}
+\item[{const boost\-::uuids\-::uuid}]{id, }
+\item[{const {\bf state\-::\-Pattern\-Channel\-Map} \&}]{map, }
+\item[{const std\-::map$<$ boost\-::uuids\-::uuid, boost\-::uuids\-::uuid $>$ \&}]{fibrepattern\-\_\-channelmap}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a237b9698b966c6498fb723f685292599}
+
+
+\-Helper method to take a uuid and find its correspondingly mapped object \-Take an \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} uuid and find the \-Pattern\-Channel its mapped to inside the supplied map. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em boost\-::uuids\-::uuid} & \-The uuid of the \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} \\
+\hline
+{\em \-Pattern\-Channel\-Map} & \-The map to search for a mapping from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+boost\-::shared\-\_\-ptr$<$\-Pattern\-Channel$>$ \-The \-Pattern\-Channel object the \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} with this uuid is mapped to, null if not found 
+\end{DoxyReturn}
+
+
+\-Definition at line 787 of file \-Bundle.\-cpp.
+
+
+
+\-Referenced by get\-Actual\-Primary\-Input\-Channel\-By\-Fibre(), get\-Actual\-Primary\-Output\-Channel\-By\-Fibre(), get\-Real\-Primary\-Input\-Channel\-By\-Fibre(), and get\-Real\-Primary\-Output\-Channel\-By\-Fibre().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_aecdb1fc4017f4e4aa954b4158e99c86f}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Primary\-Fibre\-By\-Channel@{get\-Primary\-Fibre\-By\-Channel}}
+\index{get\-Primary\-Fibre\-By\-Channel@{get\-Primary\-Fibre\-By\-Channel}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Primary\-Fibre\-By\-Channel}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::shared\-\_\-ptr$<$ {\bf \-Fibre} $>$ {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Primary\-Fibre\-By\-Channel} (
+\begin{DoxyParamCaption}
+\item[{const boost\-::uuids\-::uuid}]{id, }
+\item[{const {\bf \-Fibre\-Map} \&}]{map, }
+\item[{const std\-::map$<$ boost\-::uuids\-::uuid, boost\-::uuids\-::uuid $>$ \&}]{fibrepattern\-\_\-channelmap}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_aecdb1fc4017f4e4aa954b4158e99c86f}
+
+
+\-Helper method to take a uuid and find its correspondingly mapped object \-Take an channel uuid and find the \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} its mapped to inside the supplied map. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em boost\-::uuids\-::uuid} & \-The uuid of the \-Pattern\-Channel \\
+\hline
+{\em \hyperlink{classcryomesh_1_1structures_1_1FibreMap}{\-Fibre\-Map}} & \-The map to search for a mapping from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+boost\-::shared\-\_\-ptr$<$\-Fibre$>$ \-The \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} object the \-Pattern\-Channel with this uuid is mapped to, null if not found 
+\end{DoxyReturn}
+
+
+\-Definition at line 736 of file \-Bundle.\-cpp.
+
+
+
+\-Referenced by get\-Primary\-Input\-Fibre\-By\-Actual\-Channel(), get\-Primary\-Input\-Fibre\-By\-Real\-Channel(), get\-Primary\-Output\-Fibre\-By\-Actual\-Channel(), and get\-Primary\-Output\-Fibre\-By\-Real\-Channel().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_ad80f4bbb8bdc379e156282bf0b17fbc3}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Primary\-Input\-Fibre\-By\-Actual\-Channel@{get\-Primary\-Input\-Fibre\-By\-Actual\-Channel}}
+\index{get\-Primary\-Input\-Fibre\-By\-Actual\-Channel@{get\-Primary\-Input\-Fibre\-By\-Actual\-Channel}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Primary\-Input\-Fibre\-By\-Actual\-Channel}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::shared\-\_\-ptr$<$ {\bf \-Fibre} $>$ {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Primary\-Input\-Fibre\-By\-Actual\-Channel} (
+\begin{DoxyParamCaption}
+\item[{const boost\-::uuids\-::uuid}]{pattern\-\_\-channel\-\_\-uuid}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_ad80f4bbb8bdc379e156282bf0b17fbc3}
+
+
+\-Definition at line 728 of file \-Bundle.\-cpp.
+
+
+
+\-References actual\-Fibre\-Pattern\-Channel\-Map, get\-Primary\-Fibre\-By\-Channel(), and input\-Fibres.
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_ae1259ecf25a6b140cad735defd9069f9}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Primary\-Input\-Fibre\-By\-Real\-Channel@{get\-Primary\-Input\-Fibre\-By\-Real\-Channel}}
+\index{get\-Primary\-Input\-Fibre\-By\-Real\-Channel@{get\-Primary\-Input\-Fibre\-By\-Real\-Channel}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Primary\-Input\-Fibre\-By\-Real\-Channel}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::shared\-\_\-ptr$<$ {\bf \-Fibre} $>$ {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Primary\-Input\-Fibre\-By\-Real\-Channel} (
+\begin{DoxyParamCaption}
+\item[{const boost\-::uuids\-::uuid}]{pattern\-\_\-channel\-\_\-uuid}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_ae1259ecf25a6b140cad735defd9069f9}
+
+
+\-Helper method to take a uuid and find its correspondingly mapped object \-Take an input \-Pattern\-Channel uuid and find the input \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} its mapped to. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em boost\-::uuids\-::uuid} & \-The uuid of the input \-Pattern\-Channel\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+boost\-::shared\-\_\-ptr$<$\-Fibre$>$ \-The input \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} object the input \-Pattern\-Channel with this uuid is mapped to, null if not found 
+\end{DoxyReturn}
+
+
+\-Definition at line 720 of file \-Bundle.\-cpp.
+
+
+
+\-References get\-Primary\-Fibre\-By\-Channel(), input\-Fibres, and real\-Fibre\-Pattern\-Channel\-Map.
+
+
+
+\-Referenced by get\-Disconnected\-Real\-Input\-Pattern\-Channels(), and update\-Primary\-Input\-Fibres().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_ae6ccd53821a90466d96ebcbf171549a2}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Primary\-Output\-Fibre\-By\-Actual\-Channel@{get\-Primary\-Output\-Fibre\-By\-Actual\-Channel}}
+\index{get\-Primary\-Output\-Fibre\-By\-Actual\-Channel@{get\-Primary\-Output\-Fibre\-By\-Actual\-Channel}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Primary\-Output\-Fibre\-By\-Actual\-Channel}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::shared\-\_\-ptr$<$ {\bf \-Fibre} $>$ {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Primary\-Output\-Fibre\-By\-Actual\-Channel} (
+\begin{DoxyParamCaption}
+\item[{const boost\-::uuids\-::uuid}]{pattern\-\_\-channel\-\_\-uuid}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_ae6ccd53821a90466d96ebcbf171549a2}
+
+
+\-Definition at line 732 of file \-Bundle.\-cpp.
+
+
+
+\-References actual\-Fibre\-Pattern\-Channel\-Map, get\-Primary\-Fibre\-By\-Channel(), and output\-Fibres.
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a7ba3f747f8e164f0c0984fdb14922e7a}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Primary\-Output\-Fibre\-By\-Real\-Channel@{get\-Primary\-Output\-Fibre\-By\-Real\-Channel}}
+\index{get\-Primary\-Output\-Fibre\-By\-Real\-Channel@{get\-Primary\-Output\-Fibre\-By\-Real\-Channel}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Primary\-Output\-Fibre\-By\-Real\-Channel}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::shared\-\_\-ptr$<$ {\bf \-Fibre} $>$ {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Primary\-Output\-Fibre\-By\-Real\-Channel} (
+\begin{DoxyParamCaption}
+\item[{const boost\-::uuids\-::uuid}]{pattern\-\_\-channel\-\_\-uuid}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a7ba3f747f8e164f0c0984fdb14922e7a}
+
+
+\-Helper method to take a uuid and find its correspondingly mapped object \-Take an output \-Pattern\-Channel uuid and find the output \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} its mapped to. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em boost\-::uuids\-::uuid} & \-The uuid of the output \-Pattern\-Channel\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+boost\-::shared\-\_\-ptr$<$\-Fibre$>$ \-The output \hyperlink{classcryomesh_1_1structures_1_1Fibre}{\-Fibre} object the output \-Pattern\-Channel with this uuid is mapped to, null if not found 
+\end{DoxyReturn}
+
+
+\-Definition at line 724 of file \-Bundle.\-cpp.
+
+
+
+\-References get\-Primary\-Fibre\-By\-Channel(), output\-Fibres, and real\-Fibre\-Pattern\-Channel\-Map.
+
+
+
+\-Referenced by get\-Disconnected\-Real\-Output\-Pattern\-Channels().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a2e31be3bab4a15e4e9ba6aeac48b91df}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Real\-Fibre\-Pattern\-Channel\-Map@{get\-Real\-Fibre\-Pattern\-Channel\-Map}}
+\index{get\-Real\-Fibre\-Pattern\-Channel\-Map@{get\-Real\-Fibre\-Pattern\-Channel\-Map}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Real\-Fibre\-Pattern\-Channel\-Map}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::map$<$ boost\-::uuids\-::uuid, boost\-::uuids\-::uuid $>$ \& {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Real\-Fibre\-Pattern\-Channel\-Map} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Bundle_a2e31be3bab4a15e4e9ba6aeac48b91df}
+
+
+\-Get the map of fibres to their associated pattern channels. 
+
+\begin{DoxyReturn}{\-Returns}
+std\-::map$<$boost\-::uuids\-::uuid, boost\-::uuids\-::uuid$>$ \-The map of fibres to their associated pattern channels 
+\end{DoxyReturn}
+
+
+\-Definition at line 460 of file \-Bundle.\-cpp.
+
+
+
+\-References real\-Fibre\-Pattern\-Channel\-Map.
+
+
+
+\-Referenced by print\-Fibre\-Maps().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_ada0ae8374d27d9b59ca82b8075fbd401}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Real\-Input\-Channels\-Map@{get\-Real\-Input\-Channels\-Map}}
+\index{get\-Real\-Input\-Channels\-Map@{get\-Real\-Input\-Channels\-Map}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Real\-Input\-Channels\-Map}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf state\-::\-Pattern\-Channel\-Map} \& {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Real\-Input\-Channels\-Map} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Bundle_ada0ae8374d27d9b59ca82b8075fbd401}
+
+
+\-Get the real input pattern channels of this bundle. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Pattern\-Channel\-Map \-The map of real input pattern channels of this bundle 
+\end{DoxyReturn}
+
+
+\-Definition at line 447 of file \-Bundle.\-cpp.
+
+
+
+\-References real\-Input\-Channels\-Map.
+
+
+
+\-Referenced by cryomesh\-::utilities\-::\-Statistician\-::update().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a893be908a14ecc2d07270273d3d127e2}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Real\-Output\-Channels\-Map@{get\-Real\-Output\-Channels\-Map}}
+\index{get\-Real\-Output\-Channels\-Map@{get\-Real\-Output\-Channels\-Map}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Real\-Output\-Channels\-Map}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf state\-::\-Pattern\-Channel\-Map} \& {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Real\-Output\-Channels\-Map} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Bundle_a893be908a14ecc2d07270273d3d127e2}
+
+
+\-Get the real output pattern channels of this bundle. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Pattern\-Channel\-Map \-The map of real output pattern channels of this bundle 
+\end{DoxyReturn}
+
+
+\-Definition at line 450 of file \-Bundle.\-cpp.
+
+
+
+\-References real\-Output\-Channels\-Map.
+
+
+
+\-Referenced by cryomesh\-::utilities\-::\-Statistician\-::update().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a51eb35ecb02094016f0f3a74fd07f6e9}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Real\-Primary\-Input\-Channel\-By\-Fibre@{get\-Real\-Primary\-Input\-Channel\-By\-Fibre}}
+\index{get\-Real\-Primary\-Input\-Channel\-By\-Fibre@{get\-Real\-Primary\-Input\-Channel\-By\-Fibre}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Real\-Primary\-Input\-Channel\-By\-Fibre}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::shared\-\_\-ptr$<$ {\bf state\-::\-Pattern\-Channel} $>$ {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Real\-Primary\-Input\-Channel\-By\-Fibre} (
+\begin{DoxyParamCaption}
+\item[{const boost\-::uuids\-::uuid}]{fibre\-\_\-uuid}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a51eb35ecb02094016f0f3a74fd07f6e9}
+
+
+\-Definition at line 703 of file \-Bundle.\-cpp.
+
+
+
+\-References get\-Primary\-Channel\-By\-Fibre(), real\-Fibre\-Pattern\-Channel\-Map, and real\-Input\-Channels\-Map.
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a00eb0f18cc3331a4e6d0ed4698e92cb5}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Real\-Primary\-Output\-Channel\-By\-Fibre@{get\-Real\-Primary\-Output\-Channel\-By\-Fibre}}
+\index{get\-Real\-Primary\-Output\-Channel\-By\-Fibre@{get\-Real\-Primary\-Output\-Channel\-By\-Fibre}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Real\-Primary\-Output\-Channel\-By\-Fibre}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::shared\-\_\-ptr$<$ {\bf state\-::\-Pattern\-Channel} $>$ {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Real\-Primary\-Output\-Channel\-By\-Fibre} (
+\begin{DoxyParamCaption}
+\item[{const boost\-::uuids\-::uuid}]{fibre\-\_\-uuid}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a00eb0f18cc3331a4e6d0ed4698e92cb5}
+
+
+\-Definition at line 707 of file \-Bundle.\-cpp.
+
+
+
+\-References get\-Primary\-Channel\-By\-Fibre(), real\-Fibre\-Pattern\-Channel\-Map, and real\-Output\-Channels\-Map.
+
+
+
+\-Referenced by match\-Output\-Channels\-Sum().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a5bfac318b9a6f9f651fad0657b9b9196}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!get\-Statistician@{get\-Statistician}}
+\index{get\-Statistician@{get\-Statistician}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{get\-Statistician}]{\setlength{\rightskip}{0pt plus 5cm}const boost\-::shared\-\_\-ptr$<$ {\bf utilities\-::\-Statistician} $>$ {\bf cryomesh\-::structures\-::\-Bundle\-::get\-Statistician} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Bundle_a5bfac318b9a6f9f651fad0657b9b9196}
+
+
+\-Get the \-Statistician. 
+
+\begin{DoxyReturn}{\-Returns}
+boost\-::shared\-\_\-ptr$<$ Statistician $>$ \-The current statistician, null pointer if we dont have one 
+\end{DoxyReturn}
+
+
+\-Definition at line 466 of file \-Bundle.\-cpp.
+
+
+
+\-References statistician.
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_ad60a89acf924c5aebae3a5f816f358db}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!load\-Channels@{load\-Channels}}
+\index{load\-Channels@{load\-Channels}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{load\-Channels}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::structures\-::\-Bundle\-::load\-Channels} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{ifstr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_ad60a89acf924c5aebae3a5f816f358db}
+
+
+\-Load in the pattern channels from a filename of a pattern dataset. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::string} & \-The full path filename of the pattern data set \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 396 of file \-Bundle.\-cpp.
+
+
+
+\-References cryomesh\-::utilities\-::\-Sequencer\-Channels\-::read\-Sequences(), real\-Input\-Channels\-Map, and real\-Output\-Channels\-Map.
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a3a8a7cfb5d525ff59a52dd1a39909621}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!match\-Output\-Channels\-Sum@{match\-Output\-Channels\-Sum}}
+\index{match\-Output\-Channels\-Sum@{match\-Output\-Channels\-Sum}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{match\-Output\-Channels\-Sum}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::structures\-::\-Bundle\-::match\-Output\-Channels\-Sum} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a3a8a7cfb5d525ff59a52dd1a39909621}
+
+
+\-Compare the output channels of primary output fibres to expected output channel patterns. 
+
+\begin{DoxyReturn}{\-Returns}
+double \-The double represesenting the accumulated 'energy' of all matches 
+\end{DoxyReturn}
+
+
+\-Definition at line 652 of file \-Bundle.\-cpp.
+
+
+
+\-References get\-Actual\-Primary\-Output\-Channel\-By\-Fibre(), get\-Output\-Fibres(), and get\-Real\-Primary\-Output\-Channel\-By\-Fibre().
+
+
+
+\-Referenced by update().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a1b2bdda71a78b4e89af23f21e7611ee4}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!print@{print}}
+\index{print@{print}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream \& {\bf cryomesh\-::structures\-::\-Bundle\-::print} (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const {\bf common\-::\-Loggable\-::\-Logging\-Depth}}]{depth = {\ttfamily {\bf \-S\-U\-M\-M\-A\-R\-Y}}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a1b2bdda71a78b4e89af23f21e7611ee4}
+
+
+\-Print the bundle to stream. 
+
+
+
+\-Implements \hyperlink{classcryomesh_1_1common_1_1Loggable_a8709b369a43141412e72786dba572dfd}{cryomesh\-::common\-::\-Loggable}.
+
+
+
+\-Definition at line 836 of file \-Bundle.\-cpp.
+
+
+
+\-References get\-Clusters(), cryomesh\-::common\-::\-Time\-Keeper\-::get\-Cycle(), get\-Fibres(), get\-Input\-Fibres(), get\-Output\-Fibres(), cryomesh\-::common\-::\-Time\-Keeper\-::get\-Time\-Keeper(), cryomesh\-::common\-::\-Loggable\-::\-M\-A\-X, print\-Channels(), print\-Fibre\-Maps(), and cryomesh\-::common\-::\-Loggable\-::\-S\-U\-M\-M\-A\-R\-Y.
+
+
+
+\-Referenced by cryomesh\-::structures\-::operator$<$$<$().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_ad794a923f68c51c5c1ac4588586b6be7}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!print\-Channels@{print\-Channels}}
+\index{print\-Channels@{print\-Channels}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{print\-Channels}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream \& {\bf cryomesh\-::structures\-::\-Bundle\-::print\-Channels} (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Bundle_ad794a923f68c51c5c1ac4588586b6be7}
+
+
+\-Print the channels to stream. 
+
+
+
+\-Definition at line 868 of file \-Bundle.\-cpp.
+
+
+
+\-References actual\-Input\-Channels\-Map, actual\-Output\-Channels\-Map, real\-Input\-Channels\-Map, and real\-Output\-Channels\-Map.
+
+
+
+\-Referenced by print().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a6a6110f318167f4cc82ab6736e291628}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!print\-Fibre\-Map@{print\-Fibre\-Map}}
+\index{print\-Fibre\-Map@{print\-Fibre\-Map}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{print\-Fibre\-Map}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream \& {\bf cryomesh\-::structures\-::\-Bundle\-::print\-Fibre\-Map} (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const std\-::map$<$ boost\-::uuids\-::uuid, boost\-::uuids\-::uuid $>$ \&}]{fibre\-\_\-map}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Bundle_a6a6110f318167f4cc82ab6736e291628}
+
+
+\-Definition at line 959 of file \-Bundle.\-cpp.
+
+
+
+\-Referenced by print\-Fibre\-Maps().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_ab7308eec882450980ebfbb7167a3538d}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!print\-Fibre\-Maps@{print\-Fibre\-Maps}}
+\index{print\-Fibre\-Maps@{print\-Fibre\-Maps}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{print\-Fibre\-Maps}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream \& {\bf cryomesh\-::structures\-::\-Bundle\-::print\-Fibre\-Maps} (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1structures_1_1Bundle_ab7308eec882450980ebfbb7167a3538d}
+
+
+\-Definition at line 950 of file \-Bundle.\-cpp.
+
+
+
+\-References get\-Actual\-Fibre\-Pattern\-Channel\-Map(), get\-Real\-Fibre\-Pattern\-Channel\-Map(), and print\-Fibre\-Map().
+
+
+
+\-Referenced by print(), and update\-Primary\-Output\-Fibres().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_af89da428bb056c8eea81a416783cf2ae}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!print\-Search@{print\-Search}}
+\index{print\-Search@{print\-Search}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{print\-Search}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ std\-::ostream \& {\bf cryomesh\-::structures\-::\-Bundle\-::print\-Search} (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const boost\-::uuids\-::uuid \&}]{uuid, }
+\item[{const std\-::map$<$ boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ \-T $>$ $>$ \&}]{map}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_af89da428bb056c8eea81a416783cf2ae}
+
+
+\-Print out a uuid search. 
+
+
+
+\-Definition at line 814 of file \-Bundle.\-cpp.
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_ae6a553eaab4ddf2b6bbd6bdeca9361ad}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!set\-Energy@{set\-Energy}}
+\index{set\-Energy@{set\-Energy}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{set\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::structures\-::\-Bundle\-::set\-Energy} (
+\begin{DoxyParamCaption}
+\item[{double}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_ae6a553eaab4ddf2b6bbd6bdeca9361ad}
+
+
+\-Set the energy of the bundle. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em double} & \-The energy to set \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 686 of file \-Bundle.\-cpp.
+
+
+
+\-References energy.
+
+
+
+\-Referenced by update().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_add5af28ceb5c7722d267ba32810c5df7}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!update@{update}}
+\index{update@{update}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::structures\-::\-Bundle\-::update} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1structures_1_1Bundle_add5af28ceb5c7722d267ba32810c5df7}
+
+
+\-Update all bundle components. 
+
+
+
+\-Definition at line 26 of file \-Bundle.\-cpp.
+
+
+
+\-References clusters, fibres, get\-Energy(), cryomesh\-::common\-::\-Time\-Keeper\-::get\-Time\-Keeper(), match\-Output\-Channels\-Sum(), set\-Energy(), cryomesh\-::structures\-::\-Fibre\-Map\-::update(), cryomesh\-::common\-::\-Time\-Keeper\-::update(), update\-Primary\-Input\-Fibres(), update\-Primary\-Output\-Fibres(), and update\-Statistician().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_abe52d8718eeb7bb6a17211d4dfbed440}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!update\-Primary\-Input\-Fibres@{update\-Primary\-Input\-Fibres}}
+\index{update\-Primary\-Input\-Fibres@{update\-Primary\-Input\-Fibres}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{update\-Primary\-Input\-Fibres}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::structures\-::\-Bundle\-::update\-Primary\-Input\-Fibres} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_abe52d8718eeb7bb6a17211d4dfbed440}
+
+
+\-Get the next patterns from channels and apply them to their mapped fibres. 
+
+
+
+\-Definition at line 568 of file \-Bundle.\-cpp.
+
+
+
+\-References get\-Actual\-Primary\-Input\-Channel\-By\-Fibre(), get\-Primary\-Input\-Fibre\-By\-Real\-Channel(), input\-Fibres, real\-Input\-Channels\-Map, and cryomesh\-::structures\-::\-Fibre\-Map\-::update().
+
+
+
+\-Referenced by update().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a7a95265553776d6216799e143134a59f}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!update\-Primary\-Output\-Fibres@{update\-Primary\-Output\-Fibres}}
+\index{update\-Primary\-Output\-Fibres@{update\-Primary\-Output\-Fibres}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{update\-Primary\-Output\-Fibres}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::structures\-::\-Bundle\-::update\-Primary\-Output\-Fibres} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a7a95265553776d6216799e143134a59f}
+
+
+\-Get the patterns from primary output fibres and apply them to their mapped pattern channels. 
+
+
+
+\-Definition at line 618 of file \-Bundle.\-cpp.
+
+
+
+\-References get\-Actual\-Primary\-Output\-Channel\-By\-Fibre(), output\-Fibres, print\-Fibre\-Maps(), and cryomesh\-::structures\-::\-Fibre\-Map\-::update().
+
+
+
+\-Referenced by update().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a804c625c912657cebd3350c7c1b53c10}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!update\-Statistician@{update\-Statistician}}
+\index{update\-Statistician@{update\-Statistician}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{update\-Statistician}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::structures\-::\-Bundle\-::update\-Statistician} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a804c625c912657cebd3350c7c1b53c10}
+
+
+\-Update the statistician if debugging is enabled. 
+
+
+
+\-Definition at line 690 of file \-Bundle.\-cpp.
+
+
+
+\-References statistician.
+
+
+
+\-Referenced by update().
+
+
+
+\subsection{\-Friends \-And \-Related \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a21e43a0b5ea3e93accc964e269c730bd}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const {\bf \-Bundle} \&}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a21e43a0b5ea3e93accc964e269c730bd}
+
+
+\-To stream operator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::ostream} & \& os \-The output stream \\
+\hline
+{\em const} & \hyperlink{classcryomesh_1_1structures_1_1Bundle}{\-Bundle} \& obj \-The object to stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::ostream \& \-The output stream 
+\end{DoxyReturn}
+
+
+\-Definition at line 973 of file \-Bundle.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a0f3e20833ce850f97ae450d27a4607dd}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!actual\-Fibre\-Pattern\-Channel\-Map@{actual\-Fibre\-Pattern\-Channel\-Map}}
+\index{actual\-Fibre\-Pattern\-Channel\-Map@{actual\-Fibre\-Pattern\-Channel\-Map}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{actual\-Fibre\-Pattern\-Channel\-Map}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$boost\-::uuids\-::uuid, boost\-::uuids\-::uuid$>$ {\bf cryomesh\-::structures\-::\-Bundle\-::actual\-Fibre\-Pattern\-Channel\-Map}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a0f3e20833ce850f97ae450d27a4607dd}
+
+
+\-Definition at line 430 of file \-Bundle.\-h.
+
+
+
+\-Referenced by connect\-Primary\-Input\-Cluster(), connect\-Primary\-Output\-Cluster(), get\-Actual\-Fibre\-Pattern\-Channel\-Map(), get\-Actual\-Primary\-Input\-Channel\-By\-Fibre(), get\-Actual\-Primary\-Output\-Channel\-By\-Fibre(), get\-Primary\-Input\-Fibre\-By\-Actual\-Channel(), and get\-Primary\-Output\-Fibre\-By\-Actual\-Channel().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_ae20b2f9819708971357148dd024db00d}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!actual\-Input\-Channels\-Map@{actual\-Input\-Channels\-Map}}
+\index{actual\-Input\-Channels\-Map@{actual\-Input\-Channels\-Map}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{actual\-Input\-Channels\-Map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf state\-::\-Pattern\-Channel\-Map} {\bf cryomesh\-::structures\-::\-Bundle\-::actual\-Input\-Channels\-Map}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_ae20b2f9819708971357148dd024db00d}
+
+
+\-Definition at line 385 of file \-Bundle.\-h.
+
+
+
+\-Referenced by connect\-Primary\-Input\-Cluster(), get\-Actual\-Input\-Channels\-Map(), get\-Actual\-Primary\-Input\-Channel\-By\-Fibre(), and print\-Channels().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_ac67a6d7b29b37b8927c93350e8bcf6e5}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!actual\-Output\-Channels\-Map@{actual\-Output\-Channels\-Map}}
+\index{actual\-Output\-Channels\-Map@{actual\-Output\-Channels\-Map}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{actual\-Output\-Channels\-Map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf state\-::\-Pattern\-Channel\-Map} {\bf cryomesh\-::structures\-::\-Bundle\-::actual\-Output\-Channels\-Map}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_ac67a6d7b29b37b8927c93350e8bcf6e5}
+
+
+\-Definition at line 392 of file \-Bundle.\-h.
+
+
+
+\-Referenced by connect\-Primary\-Output\-Cluster(), get\-Actual\-Output\-Channels\-Map(), get\-Actual\-Primary\-Output\-Channel\-By\-Fibre(), and print\-Channels().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a35a36d3305706f597f4c586fcd9f74b7}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!clusters@{clusters}}
+\index{clusters@{clusters}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{clusters}]{\setlength{\rightskip}{0pt plus 5cm}\-Cluster\-Map {\bf cryomesh\-::structures\-::\-Bundle\-::clusters}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a35a36d3305706f597f4c586fcd9f74b7}
+
+
+\-Definition at line 357 of file \-Bundle.\-h.
+
+
+
+\-Referenced by connect\-Cluster(), create\-Cluster(), enable\-Debug\-Clusters(), get\-Clusters(), get\-Mutable\-Clusters(), and update().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_aac5229c4c52e646767db2144ba745aa6}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!energy@{energy}}
+\index{energy@{energy}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{energy}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::structures\-::\-Bundle\-::energy}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_aac5229c4c52e646767db2144ba745aa6}
+
+
+\-Last energy calculation of the output channel matching. 
+
+
+
+\-Definition at line 416 of file \-Bundle.\-h.
+
+
+
+\-Referenced by get\-Energy(), and set\-Energy().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_abbd8555380ffa4c33a235636837bafaa}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!energy\-Fraction\-Method@{energy\-Fraction\-Method}}
+\index{energy\-Fraction\-Method@{energy\-Fraction\-Method}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{energy\-Fraction\-Method}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Cluster\-::\-Energy\-Fraction\-Method} {\bf cryomesh\-::structures\-::\-Bundle\-::energy\-Fraction\-Method}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_abbd8555380ffa4c33a235636837bafaa}
+
+
+\-Definition at line 432 of file \-Bundle.\-h.
+
+
+
+\-Referenced by create\-Cluster().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a71b3308a867169b8e9af9ab71b8bdf98}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!fibres@{fibres}}
+\index{fibres@{fibres}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{fibres}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Fibre\-Map} {\bf cryomesh\-::structures\-::\-Bundle\-::fibres}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a71b3308a867169b8e9af9ab71b8bdf98}
+
+
+\-Definition at line 364 of file \-Bundle.\-h.
+
+
+
+\-Referenced by connect\-Cluster(), enable\-Debug\-Fibres(), get\-Fibres(), and update().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_aa6a461295021bdfb4ef4cab0f136a2c1}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!input\-Fibres@{input\-Fibres}}
+\index{input\-Fibres@{input\-Fibres}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{input\-Fibres}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Fibre\-Map} {\bf cryomesh\-::structures\-::\-Bundle\-::input\-Fibres}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_aa6a461295021bdfb4ef4cab0f136a2c1}
+
+
+\-Definition at line 399 of file \-Bundle.\-h.
+
+
+
+\-Referenced by connect\-Cluster(), get\-Input\-Fibres(), get\-Mutable\-Input\-Fibres(), get\-Primary\-Input\-Fibre\-By\-Actual\-Channel(), get\-Primary\-Input\-Fibre\-By\-Real\-Channel(), and update\-Primary\-Input\-Fibres().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_aa671193358b7aba173e45574def3d4c1}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!output\-Fibres@{output\-Fibres}}
+\index{output\-Fibres@{output\-Fibres}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{output\-Fibres}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Fibre\-Map} {\bf cryomesh\-::structures\-::\-Bundle\-::output\-Fibres}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_aa671193358b7aba173e45574def3d4c1}
+
+
+\-Definition at line 406 of file \-Bundle.\-h.
+
+
+
+\-Referenced by connect\-Cluster(), get\-Mutable\-Output\-Fibres(), get\-Output\-Fibres(), get\-Primary\-Output\-Fibre\-By\-Actual\-Channel(), get\-Primary\-Output\-Fibre\-By\-Real\-Channel(), and update\-Primary\-Output\-Fibres().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_adaf7fa91209de01b9d42ae2d8228c3cd}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!real\-Fibre\-Pattern\-Channel\-Map@{real\-Fibre\-Pattern\-Channel\-Map}}
+\index{real\-Fibre\-Pattern\-Channel\-Map@{real\-Fibre\-Pattern\-Channel\-Map}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{real\-Fibre\-Pattern\-Channel\-Map}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$boost\-::uuids\-::uuid, boost\-::uuids\-::uuid$>$ {\bf cryomesh\-::structures\-::\-Bundle\-::real\-Fibre\-Pattern\-Channel\-Map}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_adaf7fa91209de01b9d42ae2d8228c3cd}
+
+
+\-Definition at line 423 of file \-Bundle.\-h.
+
+
+
+\-Referenced by connect\-Primary\-Input\-Cluster(), connect\-Primary\-Output\-Cluster(), get\-Primary\-Input\-Fibre\-By\-Real\-Channel(), get\-Primary\-Output\-Fibre\-By\-Real\-Channel(), get\-Real\-Fibre\-Pattern\-Channel\-Map(), get\-Real\-Primary\-Input\-Channel\-By\-Fibre(), and get\-Real\-Primary\-Output\-Channel\-By\-Fibre().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_ac9bd1c696001ef8acb7291a5f9e81c8b}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!real\-Input\-Channels\-Map@{real\-Input\-Channels\-Map}}
+\index{real\-Input\-Channels\-Map@{real\-Input\-Channels\-Map}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{real\-Input\-Channels\-Map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf state\-::\-Pattern\-Channel\-Map} {\bf cryomesh\-::structures\-::\-Bundle\-::real\-Input\-Channels\-Map}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_ac9bd1c696001ef8acb7291a5f9e81c8b}
+
+
+\-Definition at line 371 of file \-Bundle.\-h.
+
+
+
+\-Referenced by connect\-Primary\-Input\-Cluster(), get\-Disconnected\-Real\-Input\-Pattern\-Channels(), get\-Real\-Input\-Channels\-Map(), get\-Real\-Primary\-Input\-Channel\-By\-Fibre(), load\-Channels(), print\-Channels(), and update\-Primary\-Input\-Fibres().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_a4043d8bfeb8b066418029864f51d92de}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!real\-Output\-Channels\-Map@{real\-Output\-Channels\-Map}}
+\index{real\-Output\-Channels\-Map@{real\-Output\-Channels\-Map}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{real\-Output\-Channels\-Map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf state\-::\-Pattern\-Channel\-Map} {\bf cryomesh\-::structures\-::\-Bundle\-::real\-Output\-Channels\-Map}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_a4043d8bfeb8b066418029864f51d92de}
+
+
+\-Definition at line 378 of file \-Bundle.\-h.
+
+
+
+\-Referenced by connect\-Primary\-Output\-Cluster(), get\-Disconnected\-Real\-Output\-Pattern\-Channels(), get\-Real\-Output\-Channels\-Map(), get\-Real\-Primary\-Output\-Channel\-By\-Fibre(), load\-Channels(), and print\-Channels().
+
+\hypertarget{classcryomesh_1_1structures_1_1Bundle_ad505cbda03b4e78399fd3a9568d79708}{\index{cryomesh\-::structures\-::\-Bundle@{cryomesh\-::structures\-::\-Bundle}!statistician@{statistician}}
+\index{statistician@{statistician}!cryomesh::structures::Bundle@{cryomesh\-::structures\-::\-Bundle}}
+\subsubsection[{statistician}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<${\bf utilities\-::\-Statistician}$>$ {\bf cryomesh\-::structures\-::\-Bundle\-::statistician}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcryomesh_1_1structures_1_1Bundle_ad505cbda03b4e78399fd3a9568d79708}
+
+
+\-Statistics object to generate useful info on the bundle. 
+
+
+
+\-Definition at line 411 of file \-Bundle.\-h.
+
+
+
+\-Referenced by get\-Mutable\-Statistician(), get\-Statistician(), and update\-Statistician().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/structures/\hyperlink{Bundle_8h}{\-Bundle.\-h}\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/structures/\hyperlink{Bundle_8cpp}{\-Bundle.\-cpp}\end{DoxyCompactItemize}

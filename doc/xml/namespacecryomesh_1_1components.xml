@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="namespacecryomesh_1_1components" kind="namespace">
+    <compoundname>cryomesh::components</compoundname>
+    <innerclass refid="classcryomesh_1_1components_1_1ActivityTimer" prot="public">cryomesh::components::ActivityTimer</innerclass>
+    <innerclass refid="classcryomesh_1_1components_1_1ActivityTimerDistance" prot="public">cryomesh::components::ActivityTimerDistance</innerclass>
+    <innerclass refid="classcryomesh_1_1components_1_1Connection" prot="public">cryomesh::components::Connection</innerclass>
+    <innerclass refid="classcryomesh_1_1components_1_1ConnectionMap" prot="public">cryomesh::components::ConnectionMap</innerclass>
+    <innerclass refid="classcryomesh_1_1components_1_1Impulse" prot="public">cryomesh::components::Impulse</innerclass>
+    <innerclass refid="classcryomesh_1_1components_1_1ImpulseCollection" prot="public">cryomesh::components::ImpulseCollection</innerclass>
+    <innerclass refid="classcryomesh_1_1components_1_1Node" prot="public">cryomesh::components::Node</innerclass>
+    <innerclass refid="classcryomesh_1_1components_1_1NodeMap" prot="public">cryomesh::components::NodeMap</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacecryomesh_1_1components_1a2407f0942f1623e6cb795553fa4eec7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; cryomesh::components::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const Connection &amp;obj)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1components_1_1Connection" kindref="compound">Connection</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::ostream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp; os The output stream </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1components_1_1Connection" kindref="compound">Connection</ref> &amp; obj The object to stream</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::ostream &amp; The output stream </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp" line="245" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp" bodystart="245" bodyend="276"/>
+        <references refid="classcryomesh_1_1components_1_1Connection_1ad3a94443297c27fc9d52be81afb408e8" compoundref="Connection_8cpp" startline="78" endline="80">cryomesh::components::Connection::getConnector</references>
+        <references refid="classcryomesh_1_1components_1_1Connection_1aacfec7d5bedc59b5b5bb72565767c705" compoundref="Connection_8cpp" startline="114" endline="116">cryomesh::components::Connection::getImpulses</references>
+        <references refid="classcryomesh_1_1components_1_1Connection_1a7455c6e4c45ffff9e7a64146bc5ff6e2" compoundref="Connection_8cpp" startline="227" endline="233">cryomesh::components::Connection::isPrimaryInputConnection</references>
+        <references refid="classcryomesh_1_1components_1_1Connection_1a967fb5cafcd38f0ceec16437ea160d23" compoundref="Connection_8cpp" startline="235" endline="241">cryomesh::components::Connection::isPrimaryOutputConnection</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacecryomesh_1_1components_1acda27209fe63cde02e1349a902e45d76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; cryomesh::components::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const Impulse &amp;obj)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1components_1_1Impulse" kindref="compound">Impulse</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::ostream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp; os The output stream </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1components_1_1Impulse" kindref="compound">Impulse</ref> &amp; obj The object to stream</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::ostream &amp; The output stream </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Impulse.cpp" line="339" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Impulse.cpp" bodystart="339" bodyend="354"/>
+        <references refid="classcryomesh_1_1components_1_1Impulse_1a6d0fd21f516b5182dd357b59f2112c64" compoundref="Impulse_8cpp" startline="208" endline="210">cryomesh::components::Impulse::getActivityDelay</references>
+        <references refid="classcryomesh_1_1components_1_1Impulse_1a356adeb4cebeb35ecef7231718fb20cd" compoundref="Impulse_8cpp" startline="196" endline="198">cryomesh::components::Impulse::getActivityTimer</references>
+        <references refid="classcryomesh_1_1components_1_1Impulse_1a348598ef30bd651b94ebbc0cdc46cb28" compoundref="Impulse_8cpp" startline="169" endline="171">cryomesh::components::Impulse::getFirstActiveCycle</references>
+        <references refid="classcryomesh_1_1components_1_1Impulse_1ac91dae86e992103f921da77f0cfe0d02" compoundref="Impulse_8cpp" startline="188" endline="190">cryomesh::components::Impulse::getLastActiveCycle</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacecryomesh_1_1components_1afc599531f192027048e4f451f3e81a89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; cryomesh::components::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const ImpulseCollection &amp;obj)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1components_1_1ImpulseCollection" kindref="compound">ImpulseCollection</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::ostream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp; os The output stream </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1components_1_1ImpulseCollection" kindref="compound">ImpulseCollection</ref> &amp; obj The object to stream</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::ostream &amp; The output stream </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ImpulseCollection.cpp" line="375" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ImpulseCollection.cpp" bodystart="375" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacecryomesh_1_1components_1a34840c34dc560387163b72e367d62f8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; cryomesh::components::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const Node &amp;obj)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1components_1_1Node" kindref="compound">Node</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::ostream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp; os The output stream </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1components_1_1Node" kindref="compound">Node</ref> &amp; obj The object to stream</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::ostream &amp; The output stream </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Node.cpp" line="548" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Node.cpp" bodystart="548" bodyend="575"/>
+        <references refid="classcryomesh_1_1components_1_1Node_1ab561d1b0b10339ad8ae2280a8063677b" compoundref="Node_8cpp" startline="271" endline="273">cryomesh::components::Node::getActivityThreshold</references>
+        <references refid="classcryomesh_1_1components_1_1Node_1a28367d5dc76da04958ca22f6384f6073" compoundref="Node_8cpp" startline="84" endline="86">cryomesh::components::Node::getConnector</references>
+        <references refid="classcryomesh_1_1components_1_1Node_1a63316f8a1ad0ffe3ee22f8b455ef27a4" compoundref="Node_8cpp" startline="243" endline="245">cryomesh::components::Node::getImpulses</references>
+        <references refid="classcryomesh_1_1components_1_1Node_1a2f55aa5adcac4a2f1aa1f0a7c8fc697d" compoundref="Node_8cpp" startline="375" endline="398">cryomesh::components::Node::isPrimaryInputAttachedNode</references>
+        <references refid="classcryomesh_1_1components_1_1Node_1a8466a252c7a4e6fb2d825826be53e218" compoundref="Node_8cpp" startline="400" endline="423">cryomesh::components::Node::isPrimaryOutputAttachedNode</references>
+        <references refid="classcryomesh_1_1components_1_1Node_1a036878d7028df14d1015c0ce413d4038" compoundref="Node_8cpp" startline="577" endline="593">cryomesh::components::Node::printConnections</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ActivityTimer.h" line="15"/>
+  </compounddef>
+</doxygen>

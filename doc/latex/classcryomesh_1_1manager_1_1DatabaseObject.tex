@@ -1,0 +1,213 @@
+\hypertarget{classcryomesh_1_1manager_1_1DatabaseObject}{\section{cryomesh\-:\-:manager\-:\-:\-Database\-Object \-Class \-Reference}
+\label{classcryomesh_1_1manager_1_1DatabaseObject}\index{cryomesh\-::manager\-::\-Database\-Object@{cryomesh\-::manager\-::\-Database\-Object}}
+}
+
+
+{\ttfamily \#include $<$\-Database\-Object.\-h$>$}
+
+\-Inheritance diagram for cryomesh\-:\-:manager\-:\-:\-Database\-Object\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.287356cm]{classcryomesh_1_1manager_1_1DatabaseObject}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1manager_1_1DatabaseObject_a4806f6b018d86828c4251e06ac2634d9}{\-Database\-Object} ()
+\item 
+virtual \hyperlink{classcryomesh_1_1manager_1_1DatabaseObject_a462e3eeb0610dc1e7e47661b86c862f6}{$\sim$\-Database\-Object} ()
+\item 
+std\-::string \hyperlink{classcryomesh_1_1manager_1_1DatabaseObject_a66ded4e1a1bccd65c94922648c7135c5}{get\-Key} (const std\-::string \&key) const 
+\begin{DoxyCompactList}\small\item\em \-Return the string object associated with a key. \end{DoxyCompactList}\item 
+virtual std\-::string \hyperlink{classcryomesh_1_1manager_1_1DatabaseObject_ad55c6e711341a652790b97f549b0dc63}{get\-Insert} (const std\-::string \&table) const =0
+\begin{DoxyCompactList}\small\item\em \-Get the string that can be used to insert the sql data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\-::string \hyperlink{classcryomesh_1_1manager_1_1DatabaseObject_aa4ef26ce91fea092f146e67add491e0f}{find\-Value} (const std\-::string \&entry, const std\-::map$<$ std\-::string, std\-::string $>$ \&map)
+\begin{DoxyCompactList}\small\item\em \-Find entries value in map or return null. \end{DoxyCompactList}\item 
+static std\-::map$<$ std\-::string, \*
+std\-::string $>$ \hyperlink{classcryomesh_1_1manager_1_1DatabaseObject_a04ce7c34b51e3290c972121cf2f16565}{get\-Column\-Map\-From\-Entry} (const std\-::string \&entry)
+\begin{DoxyCompactList}\small\item\em \-Parse a string database entry, extract columns and values and return a map. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\static std\-::string \hyperlink{classcryomesh_1_1manager_1_1DatabaseObject_a1b37d9d07009ae1c71f644761d36b468}{to\-String} (\-T obj)
+\begin{DoxyCompactList}\small\item\em \-Convert an templated object that can be piped to a stream to a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::map$<$ std\-::string, \*
+std\-::string $>$ \hyperlink{classcryomesh_1_1manager_1_1DatabaseObject_a9c648bf09b9fd8b4d599b0d4f4abf531}{columns}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+
+
+\-Definition at line 21 of file \-Database\-Object.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcryomesh_1_1manager_1_1DatabaseObject_a4806f6b018d86828c4251e06ac2634d9}{\index{cryomesh\-::manager\-::\-Database\-Object@{cryomesh\-::manager\-::\-Database\-Object}!\-Database\-Object@{\-Database\-Object}}
+\index{\-Database\-Object@{\-Database\-Object}!cryomesh::manager::DatabaseObject@{cryomesh\-::manager\-::\-Database\-Object}}
+\subsubsection[{\-Database\-Object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::manager\-::\-Database\-Object\-::\-Database\-Object} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1manager_1_1DatabaseObject_a4806f6b018d86828c4251e06ac2634d9}
+
+
+\-Definition at line 23 of file \-Database\-Object.\-h.
+
+\hypertarget{classcryomesh_1_1manager_1_1DatabaseObject_a462e3eeb0610dc1e7e47661b86c862f6}{\index{cryomesh\-::manager\-::\-Database\-Object@{cryomesh\-::manager\-::\-Database\-Object}!$\sim$\-Database\-Object@{$\sim$\-Database\-Object}}
+\index{$\sim$\-Database\-Object@{$\sim$\-Database\-Object}!cryomesh::manager::DatabaseObject@{cryomesh\-::manager\-::\-Database\-Object}}
+\subsubsection[{$\sim$\-Database\-Object}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf cryomesh\-::manager\-::\-Database\-Object\-::$\sim$\-Database\-Object} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{classcryomesh_1_1manager_1_1DatabaseObject_a462e3eeb0610dc1e7e47661b86c862f6}
+
+
+\-Definition at line 25 of file \-Database\-Object.\-h.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1manager_1_1DatabaseObject_aa4ef26ce91fea092f146e67add491e0f}{\index{cryomesh\-::manager\-::\-Database\-Object@{cryomesh\-::manager\-::\-Database\-Object}!find\-Value@{find\-Value}}
+\index{find\-Value@{find\-Value}!cryomesh::manager::DatabaseObject@{cryomesh\-::manager\-::\-Database\-Object}}
+\subsubsection[{find\-Value}]{\setlength{\rightskip}{0pt plus 5cm}static std\-::string {\bf cryomesh\-::manager\-::\-Database\-Object\-::find\-Value} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{entry, }
+\item[{const std\-::map$<$ std\-::string, std\-::string $>$ \&}]{map}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}\label{classcryomesh_1_1manager_1_1DatabaseObject_aa4ef26ce91fea092f146e67add491e0f}
+
+
+\-Find entries value in map or return null. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::string} & \-Entry to find \\
+\hline
+{\em std\-::map$<$std\-::string,std\-::string} & map to search\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Value of entry 
+\end{DoxyReturn}
+
+
+\-Definition at line 59 of file \-Database\-Object.\-h.
+
+
+
+\-Referenced by cryomesh\-::manager\-::\-Connection\-Database\-Object\-::\-Connection\-Database\-Object(), cryomesh\-::manager\-::\-Node\-Database\-Object\-::\-Node\-Database\-Object(), and cryomesh\-::manager\-::\-Pattern\-Database\-Object\-::\-Pattern\-Database\-Object().
+
+\hypertarget{classcryomesh_1_1manager_1_1DatabaseObject_a04ce7c34b51e3290c972121cf2f16565}{\index{cryomesh\-::manager\-::\-Database\-Object@{cryomesh\-::manager\-::\-Database\-Object}!get\-Column\-Map\-From\-Entry@{get\-Column\-Map\-From\-Entry}}
+\index{get\-Column\-Map\-From\-Entry@{get\-Column\-Map\-From\-Entry}!cryomesh::manager::DatabaseObject@{cryomesh\-::manager\-::\-Database\-Object}}
+\subsubsection[{get\-Column\-Map\-From\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}static std\-::map$<$std\-::string, std\-::string$>$ {\bf cryomesh\-::manager\-::\-Database\-Object\-::get\-Column\-Map\-From\-Entry} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}\label{classcryomesh_1_1manager_1_1DatabaseObject_a04ce7c34b51e3290c972121cf2f16565}
+
+
+\-Parse a string database entry, extract columns and values and return a map. 
+
+
+
+\-Definition at line 72 of file \-Database\-Object.\-h.
+
+
+
+\-Referenced by cryomesh\-::manager\-::\-Connection\-Database\-Object\-::\-Connection\-Database\-Object(), cryomesh\-::manager\-::\-Node\-Database\-Object\-::\-Node\-Database\-Object(), and cryomesh\-::manager\-::\-Pattern\-Database\-Object\-::\-Pattern\-Database\-Object().
+
+\hypertarget{classcryomesh_1_1manager_1_1DatabaseObject_ad55c6e711341a652790b97f549b0dc63}{\index{cryomesh\-::manager\-::\-Database\-Object@{cryomesh\-::manager\-::\-Database\-Object}!get\-Insert@{get\-Insert}}
+\index{get\-Insert@{get\-Insert}!cryomesh::manager::DatabaseObject@{cryomesh\-::manager\-::\-Database\-Object}}
+\subsubsection[{get\-Insert}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::string {\bf cryomesh\-::manager\-::\-Database\-Object\-::get\-Insert} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{table}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}\label{classcryomesh_1_1manager_1_1DatabaseObject_ad55c6e711341a652790b97f549b0dc63}
+
+
+\-Get the string that can be used to insert the sql data. 
+
+\begin{DoxyReturn}{\-Returns}
+the sql command string to insert into this table 
+\end{DoxyReturn}
+
+
+\-Implemented in \hyperlink{classcryomesh_1_1manager_1_1ConnectionDatabaseObject_ac7b22d25a4366175fd7d1578f476b125}{cryomesh\-::manager\-::\-Connection\-Database\-Object}, \hyperlink{classcryomesh_1_1manager_1_1NodeDatabaseObject_ac5512082d08fa59cbaa496b711f4c8c2}{cryomesh\-::manager\-::\-Node\-Database\-Object}, and \hyperlink{classcryomesh_1_1manager_1_1PatternDatabaseObject_a0f4325cce7fd6c70017815ea50cd4fd6}{cryomesh\-::manager\-::\-Pattern\-Database\-Object}.
+
+
+
+\-Referenced by cryomesh\-::manager\-::\-Database\-Manager\-::insert\-Connection(), cryomesh\-::manager\-::\-Database\-Manager\-::insert\-Node(), and cryomesh\-::manager\-::\-Database\-Manager\-::insert\-Output\-Pattern().
+
+\hypertarget{classcryomesh_1_1manager_1_1DatabaseObject_a66ded4e1a1bccd65c94922648c7135c5}{\index{cryomesh\-::manager\-::\-Database\-Object@{cryomesh\-::manager\-::\-Database\-Object}!get\-Key@{get\-Key}}
+\index{get\-Key@{get\-Key}!cryomesh::manager::DatabaseObject@{cryomesh\-::manager\-::\-Database\-Object}}
+\subsubsection[{get\-Key}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string {\bf cryomesh\-::manager\-::\-Database\-Object\-::get\-Key} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{key}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classcryomesh_1_1manager_1_1DatabaseObject_a66ded4e1a1bccd65c94922648c7135c5}
+
+
+\-Return the string object associated with a key. 
+
+\-::string \-The key to search for
+
+\begin{DoxyReturn}{\-Returns}
+std\-::string \-The object associated with the search key, \char`\"{}\char`\"{} if not found 
+\end{DoxyReturn}
+
+
+\-Definition at line 37 of file \-Database\-Object.\-h.
+
+
+
+\-References columns.
+
+
+
+\-Referenced by cryomesh\-::manager\-::\-Pattern\-Database\-Object\-::get\-Insert(), cryomesh\-::manager\-::\-Node\-Database\-Object\-::get\-Insert(), and cryomesh\-::manager\-::\-Connection\-Database\-Object\-::get\-Insert().
+
+\hypertarget{classcryomesh_1_1manager_1_1DatabaseObject_a1b37d9d07009ae1c71f644761d36b468}{\index{cryomesh\-::manager\-::\-Database\-Object@{cryomesh\-::manager\-::\-Database\-Object}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!cryomesh::manager::DatabaseObject@{cryomesh\-::manager\-::\-Database\-Object}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ static std\-::string {\bf cryomesh\-::manager\-::\-Database\-Object\-::to\-String} (
+\begin{DoxyParamCaption}
+\item[{\-T}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}\label{classcryomesh_1_1manager_1_1DatabaseObject_a1b37d9d07009ae1c71f644761d36b468}
+
+
+\-Convert an templated object that can be piped to a stream to a string. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-T} & \-The object to get a string for \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 108 of file \-Database\-Object.\-h.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classcryomesh_1_1manager_1_1DatabaseObject_a9c648bf09b9fd8b4d599b0d4f4abf531}{\index{cryomesh\-::manager\-::\-Database\-Object@{cryomesh\-::manager\-::\-Database\-Object}!columns@{columns}}
+\index{columns@{columns}!cryomesh::manager::DatabaseObject@{cryomesh\-::manager\-::\-Database\-Object}}
+\subsubsection[{columns}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$std\-::string, std\-::string$>$ {\bf cryomesh\-::manager\-::\-Database\-Object\-::columns}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1manager_1_1DatabaseObject_a9c648bf09b9fd8b4d599b0d4f4abf531}
+
+
+\-Definition at line 119 of file \-Database\-Object.\-h.
+
+
+
+\-Referenced by cryomesh\-::manager\-::\-Connection\-Database\-Object\-::\-Connection\-Database\-Object(), get\-Key(), cryomesh\-::manager\-::\-Node\-Database\-Object\-::\-Node\-Database\-Object(), and cryomesh\-::manager\-::\-Pattern\-Database\-Object\-::\-Pattern\-Database\-Object().
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/manager/\hyperlink{DatabaseObject_8h}{\-Database\-Object.\-h}\end{DoxyCompactItemize}

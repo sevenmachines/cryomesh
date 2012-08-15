@@ -1,111 +1,118 @@
-.TH "cryomesh::manager::DatabaseManager" 3 "Thu Jul 7 2011" "cryomesh" \" -*- nroff -*-
+.TH "cryomesh::manager::DatabaseManager" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 cryomesh::manager::DatabaseManager \- 
 .PP
-Database manager creates and maintains a database of mesh related objects and data.  
+Database manager creates and maintains a database of mesh related objects and data\&.  
 
 .SH SYNOPSIS
 .br
 .PP
 .PP
-\fC#include <DatabaseManager.h>\fP
+\fC#include <DatabaseManager\&.h>\fP
 .SS "Public Member Functions"
 
 .in +1c
 .ti -1c
 .RI "\fBDatabaseManager\fP (const std::string &dbfile=\fBDEFAULT_DATABASE\fP)"
 .br
-.RI "\fIDefault constructor using a filename as the database or a default Opens the file or creates it and creates the tables if it doesnt exist. \fP"
+.RI "\fIDefault constructor using a filename as the database or a default Opens the file or creates it and creates the tables if it doesnt exist\&. \fP"
+.ti -1c
+.RI "\fBDatabaseManager\fP (const \fBDatabaseManager\fP &obj)"
+.br
+.ti -1c
+.RI "\fBDatabaseManager\fP & \fBoperator=\fP (const \fBDatabaseManager\fP &obj)"
+.br
+.RI "\fIAssignment operator\&. \fP"
 .ti -1c
 .RI "virtual \fB~DatabaseManager\fP ()"
 .br
-.RI "\fIDefault destructor closes the database. \fP"
+.RI "\fIDefault destructor closes the database\&. \fP"
 .ti -1c
 .RI "bool \fBisDatabaseAccessable\fP () const "
 .br
-.RI "\fICheck if the database is accessible. \fP"
+.RI "\fICheck if the database is accessible\&. \fP"
 .ti -1c
 .RI "void \fBcreateTables\fP ()"
 .br
-.RI "\fICreate all needed tables. \fP"
+.RI "\fICreate all needed tables\&. \fP"
 .ti -1c
 .RI "void \fBclearTables\fP ()"
 .br
-.RI "\fIClear all tables. \fP"
+.RI "\fIClear all tables\&. \fP"
 .ti -1c
 .RI "std::string \fBclearTable\fP (const std::string &table)"
 .br
-.RI "\fIClear all values in a table. \fP"
+.RI "\fIClear all values in a table\&. \fP"
 .ti -1c
 .RI "std::string \fBdropTable\fP (const std::string &table)"
 .br
-.RI "\fIDrop a table from database. \fP"
+.RI "\fIDrop a table from database\&. \fP"
 .ti -1c
 .RI "std::string \fBinsertNode\fP (const \fBDatabaseObject\fP &db_object)"
 .br
-.RI "\fIInsert a node data object into the table. \fP"
+.RI "\fIInsert a node data object into the table\&. \fP"
 .ti -1c
 .RI "std::string \fBinsertConnection\fP (const \fBDatabaseObject\fP &db_object)"
 .br
-.RI "\fIInsert a connection data object into the table. \fP"
+.RI "\fIInsert a connection data object into the table\&. \fP"
 .ti -1c
 .RI "std::string \fBinsertOutputPattern\fP (const \fBDatabaseObject\fP &db_object)"
 .br
 .ti -1c
 .RI "std::string \fBselectNode\fP (const std::string &uuid, const \fBcommon::Cycle\fP &cycle)"
 .br
-.RI "\fISelect unique node entry. \fP"
+.RI "\fISelect unique node entry\&. \fP"
 .ti -1c
 .RI "std::string \fBselectConnection\fP (const std::string &uuid, const \fBcommon::Cycle\fP &cycle)"
 .br
-.RI "\fISelect unique column entry. \fP"
+.RI "\fISelect unique column entry\&. \fP"
 .ti -1c
 .RI "std::string \fBselectOutputPattern\fP (const std::string &uuid, const \fBcommon::Cycle\fP &cycle)"
 .br
 .ti -1c
 .RI "std::string \fBselectNodeValue\fP (const std::string &uuid, const \fBcommon::Cycle\fP &cycle, const std::string &column)"
 .br
-.RI "\fISelect unique node column entry. \fP"
+.RI "\fISelect unique node column entry\&. \fP"
 .ti -1c
 .RI "std::string \fBselectConnectionValue\fP (const std::string &uuid, const \fBcommon::Cycle\fP &cycle, const std::string &column)"
 .br
-.RI "\fISelect unique column column entry. \fP"
+.RI "\fISelect unique column column entry\&. \fP"
 .ti -1c
 .RI "std::string \fBselectOutputPatternValue\fP (const std::string &uuid, const \fBcommon::Cycle\fP &cycle, const std::string &column)"
 .br
 .ti -1c
 .RI "std::string \fBselectValue\fP (const std::string &table, const std::string &uuid, const \fBcommon::Cycle\fP &cycle, const std::string &column)"
 .br
-.RI "\fISelect unique column column entry from table. \fP"
+.RI "\fISelect unique column column entry from table\&. \fP"
 .ti -1c
 .RI "std::string \fBselectNodes\fP (const std::string &criteria='')"
 .br
-.RI "\fISelect nodes by a criteria string eg, 'id=erwrs324 AND cycle=1'. \fP"
+.RI "\fISelect nodes by a criteria string eg, 'id=erwrs324 AND cycle=1'\&. \fP"
 .ti -1c
 .RI "std::string \fBselectConnections\fP (const std::string &criteria='')"
 .br
-.RI "\fISelect connections by a criteria string eg, 'id=erwrs324 AND cycle=1'. \fP"
+.RI "\fISelect connections by a criteria string eg, 'id=erwrs324 AND cycle=1'\&. \fP"
 .ti -1c
 .RI "std::string \fBselectOutputPatterns\fP (const std::string &criteria='')"
 .br
 .ti -1c
 .RI "std::string \fBdeleteNode\fP (const std::string &id)"
 .br
-.RI "\fIDelete node by uuid. \fP"
+.RI "\fIDelete node by uuid\&. \fP"
 .ti -1c
 .RI "std::string \fBdeleteNodes\fP (const std::string &criteria='')"
 .br
-.RI "\fIDelete nodes by a criteria string eg, 'id=erwrs324 AND cycle=1'. \fP"
+.RI "\fIDelete nodes by a criteria string eg, 'id=erwrs324 AND cycle=1'\&. \fP"
 .ti -1c
 .RI "std::string \fBdeleteConnection\fP (const std::string &id)"
 .br
-.RI "\fIDelete connection by uuid. \fP"
+.RI "\fIDelete connection by uuid\&. \fP"
 .ti -1c
 .RI "std::string \fBdeleteConnections\fP (const std::string &criteria='')"
 .br
-.RI "\fIDelete nodes by a criteria string eg, 'id=erwrs324 AND cycle=1'. \fP"
+.RI "\fIDelete nodes by a criteria string eg, 'id=erwrs324 AND cycle=1'\&. \fP"
 .ti -1c
 .RI "std::string \fBdeleteOutputPattern\fP (const std::string &id)"
 .br
@@ -115,19 +122,19 @@ Database manager creates and maintains a database of mesh related objects and da
 .ti -1c
 .RI "std::string \fBdeleteSelected\fP (const std::string &table, const std::string &criteria='')"
 .br
-.RI "\fIDelete objects from a table by a criteria string eg, 'id=erwrs324 AND cycle=1'. \fP"
+.RI "\fIDelete objects from a table by a criteria string eg, 'id=erwrs324 AND cycle=1'\&. \fP"
 .ti -1c
 .RI "int \fBcountNodes\fP (const std::string &criteria='')"
 .br
-.RI "\fICount nodes by a criteria string eg, 'cycle=1'. \fP"
+.RI "\fICount nodes by a criteria string eg, 'cycle=1'\&. \fP"
 .ti -1c
 .RI "int \fBcountConnections\fP (const std::string &criteria='')"
 .br
-.RI "\fICount connections by a criteria string eg, 'cycle=1'. \fP"
+.RI "\fICount connections by a criteria string eg, 'cycle=1'\&. \fP"
 .ti -1c
 .RI "int \fBcountRows\fP (const std::string &table, const std::string &criteria='')"
 .br
-.RI "\fICount objects from a table by a criteria string eg, 'cycle=1'. \fP"
+.RI "\fICount objects from a table by a criteria string eg, 'cycle=1'\&. \fP"
 .ti -1c
 .RI "std::string \fBupdateNode\fP (const std::string &uuid_str, const \fBcommon::Cycle\fP &cycle, const std::string &options)"
 .br
@@ -143,7 +150,7 @@ Database manager creates and maintains a database of mesh related objects and da
 .ti -1c
 .RI "std::string \fBselect\fP (const std::string &table, const std::string &criteria='')"
 .br
-.RI "\fISelect all columns from table using criteria. \fP"
+.RI "\fISelect all columns from table using criteria\&. \fP"
 .ti -1c
 .RI "std::string \fBdeleteAll\fP (const std::string &table)"
 .br
@@ -167,11 +174,11 @@ Database manager creates and maintains a database of mesh related objects and da
 .ti -1c
 .RI "std::ostream & \fBprintHistory\fP (std::ostream &os, const \fBcommon::Cycle\fP &cycle)"
 .br
-.RI "\fIPrint sql history to output stream. \fP"
+.RI "\fIPrint sql history to output stream\&. \fP"
 .ti -1c
 .RI "std::ostream & \fBprintHistory\fP (std::ostream &os, unsigned int countback=1)"
 .br
-.RI "\fIPrint sql history to output stream. \fP"
+.RI "\fIPrint sql history to output stream\&. \fP"
 .in -1c
 .SS "Static Public Member Functions"
 
@@ -179,13 +186,16 @@ Database manager creates and maintains a database of mesh related objects and da
 .ti -1c
 .RI "static int \fBdatabaseCallback\fP (void *unused, int argc, char **argv, char **columnName)"
 .br
-.RI "\fIFunction that is called on finishing an sql command. \fP"
+.RI "\fIFunction that is called on finishing an sql command\&. \fP"
 .in -1c
 .SS "Static Public Attributes"
 
 .in +1c
 .ti -1c
-.RI "static const std::string \fBDEFAULT_DATABASE\fP = 'default.db'"
+.RI "static const std::string \fBDEFAULT_DATABASE\fP = 'default\&.db'"
+.br
+.ti -1c
+.RI "static const std::string \fBDEFAULT_DATABASE_PATH\fP = 'Output'"
 .br
 .ti -1c
 .RI "static const \fBNodeTableFormat\fP \fBNODES_TABLE_FORMAT\fP"
@@ -193,9 +203,11 @@ Database manager creates and maintains a database of mesh related objects and da
 .ti -1c
 .RI "static const \fBConnectionTableFormat\fP \fBCONNECTIONS_TABLE_FORMAT\fP"
 .br
-.RI "\fIDefault connection table format. \fP"
+.RI "\fIDefault connection table format\&. \fP"
 .ti -1c
-.RI "static const \fBOutputPatternsTableFormat\fP \fBOUTPUT_PATTERNS_TABLE_FORMAT\fP"
+.RI "static const 
+.br
+\fBOutputPatternsTableFormat\fP \fBOUTPUT_PATTERNS_TABLE_FORMAT\fP"
 .br
 .in -1c
 .SS "Protected Member Functions"
@@ -204,7 +216,7 @@ Database manager creates and maintains a database of mesh related objects and da
 .ti -1c
 .RI "std::string \fBsqlCommand\fP (const std::string &command)"
 .br
-.RI "\fIRun a provided sql command string. \fP"
+.RI "\fIRun a provided sql command string\&. \fP"
 .ti -1c
 .RI "std::string \fBsqlCommandBySelection\fP (const std::string &table, const std::string &command, const std::string &criteria)"
 .br
@@ -213,13 +225,21 @@ Database manager creates and maintains a database of mesh related objects and da
 
 .in +1c
 .ti -1c
-.RI "static const std::multimap< \fBcommon::Cycle\fP, std::pair< std::string, std::string > > & \fBaddHistoryEntry\fP (const std::string &command, const std::string &results, std::multimap< \fBcommon::Cycle\fP, std::pair< std::string, std::string > > &map)"
+.RI "static const std::multimap
 .br
-.RI "\fIAdd an entry to a historical multimap. \fP"
+< \fBcommon::Cycle\fP, std::pair
+.br
+< std::string, std::string > > & \fBaddHistoryEntry\fP (const std::string &command, const std::string &results, std::multimap< \fBcommon::Cycle\fP, std::pair< std::string, std::string > > &map)"
+.br
+.RI "\fIAdd an entry to a historical multimap\&. \fP"
 .ti -1c
-.RI "static const std::multimap< \fBcommon::Cycle\fP, std::pair< std::string, std::string > > & \fBaddHistoryEntry\fP (const std::string &command, const std::vector< std::string > &results, std::multimap< \fBcommon::Cycle\fP, std::pair< std::string, std::string > > &map)"
+.RI "static const std::multimap
 .br
-.RI "\fIAdd an list of entries to a historical multimap. \fP"
+< \fBcommon::Cycle\fP, std::pair
+.br
+< std::string, std::string > > & \fBaddHistoryEntry\fP (const std::string &command, const std::vector< std::string > &results, std::multimap< \fBcommon::Cycle\fP, std::pair< std::string, std::string > > &map)"
+.br
+.RI "\fIAdd an list of entries to a historical multimap\&. \fP"
 .in -1c
 .SS "Protected Attributes"
 
@@ -236,9 +256,13 @@ Database manager creates and maintains a database of mesh related objects and da
 .ti -1c
 .RI "bool \fBdatabaseAccess\fP"
 .br
-.RI "\fIDatabase accessable. \fP"
+.RI "\fIDatabase accessable\&. \fP"
 .ti -1c
-.RI "std::multimap< \fBcommon::Cycle\fP, std::pair< std::string, std::string > > \fBsqlResults\fP"
+.RI "std::multimap< \fBcommon::Cycle\fP, 
+.br
+std::pair< std::string, 
+.br
+std::string > > \fBsqlResults\fP"
 .br
 .ti -1c
 .RI "std::vector< std::string > \fBsqlResultsBuffer\fP"
@@ -253,31 +277,40 @@ Database manager creates and maintains a database of mesh related objects and da
 .in -1c
 .SH "Detailed Description"
 .PP 
-Database manager creates and maintains a database of mesh related objects and data. 
+Database manager creates and maintains a database of mesh related objects and data\&. 
 .PP
-Definition at line 30 of file DatabaseManager.h.
+Definition at line 30 of file DatabaseManager\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "cryomesh::manager::DatabaseManager::DatabaseManager (const std::string &dbfile = \fC\fBDEFAULT_DATABASE\fP\fP)"
+.SS "\fBcryomesh::manager::DatabaseManager::DatabaseManager\fP (const std::string &dbfile = \fC\fBDEFAULT_DATABASE\fP\fP)"
 .PP
-Default constructor using a filename as the database or a default Opens the file or creates it and creates the tables if it doesnt exist. \fBParameters:\fP
+Default constructor using a filename as the database or a default Opens the file or creates it and creates the tables if it doesnt exist\&. \fBParameters:\fP
 .RS 4
 \fIstd::string\fP The name of the database to open/create 
 .RE
 .PP
 
 .PP
-Definition at line 58 of file DatabaseManager.cpp.
-.SS "cryomesh::manager::DatabaseManager::~DatabaseManager ()\fC [virtual]\fP"
+Definition at line 67 of file DatabaseManager\&.cpp\&.
 .PP
-Default destructor closes the database. 
+References createTables(), database, databaseAccess, DEFAULT_DATABASE_PATH, and errorCode\&.
+.SS "\fBcryomesh::manager::DatabaseManager::DatabaseManager\fP (const \fBDatabaseManager\fP &obj)"
 .PP
-Definition at line 83 of file DatabaseManager.cpp.
+Definition at line 91 of file DatabaseManager\&.cpp\&.
+.PP
+References database, databaseAccess, errorCode, errorMessage, and sqlResults\&.
+.SS "\fBcryomesh::manager::DatabaseManager::~DatabaseManager\fP ()\fC [virtual]\fP"
+.PP
+Default destructor closes the database\&. 
+.PP
+Definition at line 99 of file DatabaseManager\&.cpp\&.
+.PP
+References database, and databaseAccess\&.
 .SH "Member Function Documentation"
 .PP 
-.SS "const std::multimap< \fBcommon::Cycle\fP, std::pair< std::string, std::string > > & cryomesh::manager::DatabaseManager::addHistoryEntry (const std::string &command, const std::string &results, std::multimap< \fBcommon::Cycle\fP, std::pair< std::string, std::string > > &map)\fC [static, protected]\fP"
+.SS "const std::multimap< \fBcommon::Cycle\fP, std::pair< std::string, std::string > > & \fBcryomesh::manager::DatabaseManager::addHistoryEntry\fP (const std::string &command, const std::string &results, std::multimap< \fBcommon::Cycle\fP, std::pair< std::string, std::string > > &map)\fC [static, protected]\fP"
 .PP
-Add an entry to a historical multimap. \fBParameters:\fP
+Add an entry to a historical multimap\&. \fBParameters:\fP
 .RS 4
 \fIstd::string\fP Entry to add 
 .br
@@ -291,14 +324,14 @@ std::multimap<std::string, std::string> Return the modified map
 .PP
 
 .PP
-Definition at line 355 of file DatabaseManager.cpp.
+Definition at line 383 of file DatabaseManager\&.cpp\&.
 .PP
-References cryomesh::common::TimeKeeper::getTimeKeeper(), and MAX_COMMAND_HISTORY.
+References cryomesh::common::TimeKeeper::getCycle(), cryomesh::common::TimeKeeper::getTimeKeeper(), and MAX_COMMAND_HISTORY\&.
 .PP
-Referenced by addHistoryEntry().
-.SS "const std::multimap< \fBcommon::Cycle\fP, std::pair< std::string, std::string > > & cryomesh::manager::DatabaseManager::addHistoryEntry (const std::string &command, const std::vector< std::string > &results, std::multimap< \fBcommon::Cycle\fP, std::pair< std::string, std::string > > &map)\fC [static, protected]\fP"
+Referenced by addHistoryEntry(), and sqlCommand()\&.
+.SS "const std::multimap< \fBcommon::Cycle\fP, std::pair< std::string, std::string > > & \fBcryomesh::manager::DatabaseManager::addHistoryEntry\fP (const std::string &command, const std::vector< std::string > &results, std::multimap< \fBcommon::Cycle\fP, std::pair< std::string, std::string > > &map)\fC [static, protected]\fP"
 .PP
-Add an list of entries to a historical multimap. \fBParameters:\fP
+Add an list of entries to a historical multimap\&. \fBParameters:\fP
 .RS 4
 \fIstd::vector<std::string>\fP Entries to add 
 .br
@@ -312,12 +345,12 @@ std::multimap<std::string, std::string> Return the modified map
 .PP
 
 .PP
-Definition at line 336 of file DatabaseManager.cpp.
+Definition at line 364 of file DatabaseManager\&.cpp\&.
 .PP
-References addHistoryEntry().
-.SS "std::string cryomesh::manager::DatabaseManager::clearTable (const std::string &table)"
+References addHistoryEntry()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::clearTable\fP (const std::string &table)"
 .PP
-Clear all values in a table. \fBParameters:\fP
+Clear all values in a table\&. \fBParameters:\fP
 .RS 4
 \fIstd::string\fP The table to clear
 .RE
@@ -329,15 +362,21 @@ std::string The result of the sql query
 .PP
 
 .PP
-Definition at line 104 of file DatabaseManager.cpp.
-.SS "void cryomesh::manager::DatabaseManager::clearTables ()"
+Definition at line 129 of file DatabaseManager\&.cpp\&.
 .PP
-Clear all tables. 
+References sqlCommand()\&.
 .PP
-Definition at line 98 of file DatabaseManager.cpp.
-.SS "int cryomesh::manager::DatabaseManager::countConnections (const std::string &criteria = \fC''\fP)"
+Referenced by clearTables()\&.
+.SS "void \fBcryomesh::manager::DatabaseManager::clearTables\fP ()"
 .PP
-Count connections by a criteria string eg, 'cycle=1'. \fBParameters:\fP
+Clear all tables\&. 
+.PP
+Definition at line 123 of file DatabaseManager\&.cpp\&.
+.PP
+References clearTable()\&.
+.SS "int \fBcryomesh::manager::DatabaseManager::countConnections\fP (const std::string &criteria = \fC''\fP)"
+.PP
+Count connections by a criteria string eg, 'cycle=1'\&. \fBParameters:\fP
 .RS 4
 \fIstd::string\fP The criteria to match
 .RE
@@ -349,10 +388,12 @@ int The result of the count
 .PP
 
 .PP
-Definition at line 218 of file DatabaseManager.cpp.
-.SS "int cryomesh::manager::DatabaseManager::countNodes (const std::string &criteria = \fC''\fP)"
+Definition at line 243 of file DatabaseManager\&.cpp\&.
 .PP
-Count nodes by a criteria string eg, 'cycle=1'. \fBParameters:\fP
+References countRows()\&.
+.SS "int \fBcryomesh::manager::DatabaseManager::countNodes\fP (const std::string &criteria = \fC''\fP)"
+.PP
+Count nodes by a criteria string eg, 'cycle=1'\&. \fBParameters:\fP
 .RS 4
 \fIstd::string\fP The criteria to match
 .RE
@@ -364,10 +405,12 @@ int The result of the count
 .PP
 
 .PP
-Definition at line 215 of file DatabaseManager.cpp.
-.SS "int cryomesh::manager::DatabaseManager::countRows (const std::string &table, const std::string &criteria = \fC''\fP)"
+Definition at line 240 of file DatabaseManager\&.cpp\&.
 .PP
-Count objects from a table by a criteria string eg, 'cycle=1'. \fBParameters:\fP
+References countRows()\&.
+.SS "int \fBcryomesh::manager::DatabaseManager::countRows\fP (const std::string &table, const std::string &criteria = \fC''\fP)"
+.PP
+Count objects from a table by a criteria string eg, 'cycle=1'\&. \fBParameters:\fP
 .RS 4
 \fIstd::string\fP The table to count from 
 .br
@@ -381,18 +424,28 @@ int The result of the count
 .PP
 
 .PP
-Definition at line 222 of file DatabaseManager.cpp.
-.SS "void cryomesh::manager::DatabaseManager::createTables ()"
+Definition at line 247 of file DatabaseManager\&.cpp\&.
 .PP
-Create all needed tables. 
+References sqlCommand()\&.
 .PP
-Definition at line 92 of file DatabaseManager.cpp.
-.SS "int cryomesh::manager::DatabaseManager::databaseCallback (void *unused, intargc, char **argv, char **columnName)\fC [static]\fP"
+Referenced by countConnections(), and countNodes()\&.
+.SS "void \fBcryomesh::manager::DatabaseManager::createTables\fP ()"
 .PP
-Function that is called on finishing an sql command. 
+Create all needed tables\&. 
 .PP
-Definition at line 29 of file DatabaseManager.cpp.
-.SS "std::string cryomesh::manager::DatabaseManager::deleteAll (const std::string &table)"
+Definition at line 117 of file DatabaseManager\&.cpp\&.
+.PP
+References CONNECTIONS_TABLE_FORMAT, NODES_TABLE_FORMAT, OUTPUT_PATTERNS_TABLE_FORMAT, and sqlCommand()\&.
+.PP
+Referenced by DatabaseManager()\&.
+.SS "int \fBcryomesh::manager::DatabaseManager::databaseCallback\fP (void *unused, intargc, char **argv, char **columnName)\fC [static]\fP"
+.PP
+Function that is called on finishing an sql command\&. 
+.PP
+Definition at line 32 of file DatabaseManager\&.cpp\&.
+.PP
+Referenced by sqlCommand()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::deleteAll\fP (const std::string &table)"
 .PP
 delete all data from table \fBParameters:\fP
 .RS 4
@@ -405,7 +458,7 @@ std::string sql query results
 .RE
 .PP
 
-.SS "std::string cryomesh::manager::DatabaseManager::deleteAllByCycle (const \fBcommon::Cycle\fP &cycle, intcomparison_type)"
+.SS "std::string \fBcryomesh::manager::DatabaseManager::deleteAllByCycle\fP (const \fBcommon::Cycle\fP &cycle, intcomparison_type)"
 .PP
 delete all by cycle \fBParameters:\fP
 .RS 4
@@ -421,8 +474,10 @@ std::string sql query results
 .PP
 
 .PP
-Definition at line 270 of file DatabaseManager.cpp.
-.SS "std::string cryomesh::manager::DatabaseManager::deleteByCycle (const std::string &table, const \fBcommon::Cycle\fP &cycle, intcomparison_type)"
+Definition at line 299 of file DatabaseManager\&.cpp\&.
+.PP
+References deleteConnectionsByCycle(), and deleteNodesByCycle()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::deleteByCycle\fP (const std::string &table, const \fBcommon::Cycle\fP &cycle, intcomparison_type)"
 .PP
 delete objects from table by cycle \fBParameters:\fP
 .RS 4
@@ -440,10 +495,14 @@ std::string sql query results
 .PP
 
 .PP
-Definition at line 283 of file DatabaseManager.cpp.
-.SS "std::string cryomesh::manager::DatabaseManager::deleteConnection (const std::string &id)"
+Definition at line 312 of file DatabaseManager\&.cpp\&.
 .PP
-Delete connection by uuid. \fBParameters:\fP
+References sqlCommand(), and cryomesh::common::Cycle::toLInt()\&.
+.PP
+Referenced by deleteConnectionsByCycle(), and deleteNodesByCycle()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::deleteConnection\fP (const std::string &id)"
+.PP
+Delete connection by uuid\&. \fBParameters:\fP
 .RS 4
 \fIstd::string\fP The uuid to match
 .RE
@@ -455,10 +514,12 @@ std::string Result of sql query
 .PP
 
 .PP
-Definition at line 189 of file DatabaseManager.cpp.
-.SS "std::string cryomesh::manager::DatabaseManager::deleteConnections (const std::string &criteria = \fC''\fP)"
+Definition at line 214 of file DatabaseManager\&.cpp\&.
 .PP
-Delete nodes by a criteria string eg, 'id=erwrs324 AND cycle=1'. \fBParameters:\fP
+References deleteConnections()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::deleteConnections\fP (const std::string &criteria = \fC''\fP)"
+.PP
+Delete nodes by a criteria string eg, 'id=erwrs324 AND cycle=1'\&. \fBParameters:\fP
 .RS 4
 \fIstd::string\fP The criteria to match
 .RE
@@ -470,8 +531,12 @@ std::string Result of sql query
 .PP
 
 .PP
-Definition at line 195 of file DatabaseManager.cpp.
-.SS "std::string cryomesh::manager::DatabaseManager::deleteConnectionsByCycle (const \fBcommon::Cycle\fP &cycle, intcomparison_type)"
+Definition at line 220 of file DatabaseManager\&.cpp\&.
+.PP
+References deleteSelected()\&.
+.PP
+Referenced by deleteConnection()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::deleteConnectionsByCycle\fP (const \fBcommon::Cycle\fP &cycle, intcomparison_type)"
 .PP
 delete connections by cycle \fBParameters:\fP
 .RS 4
@@ -487,10 +552,14 @@ std::string sql query results
 .PP
 
 .PP
-Definition at line 279 of file DatabaseManager.cpp.
-.SS "std::string cryomesh::manager::DatabaseManager::deleteNode (const std::string &id)"
+Definition at line 308 of file DatabaseManager\&.cpp\&.
 .PP
-Delete node by uuid. \fBParameters:\fP
+References deleteByCycle()\&.
+.PP
+Referenced by deleteAllByCycle()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::deleteNode\fP (const std::string &id)"
+.PP
+Delete node by uuid\&. \fBParameters:\fP
 .RS 4
 \fIstd::string\fP The uuid to match
 .RE
@@ -502,10 +571,12 @@ std::string Result of sql query
 .PP
 
 .PP
-Definition at line 179 of file DatabaseManager.cpp.
-.SS "std::string cryomesh::manager::DatabaseManager::deleteNodes (const std::string &criteria = \fC''\fP)"
+Definition at line 204 of file DatabaseManager\&.cpp\&.
 .PP
-Delete nodes by a criteria string eg, 'id=erwrs324 AND cycle=1'. \fBParameters:\fP
+References deleteNodes()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::deleteNodes\fP (const std::string &criteria = \fC''\fP)"
+.PP
+Delete nodes by a criteria string eg, 'id=erwrs324 AND cycle=1'\&. \fBParameters:\fP
 .RS 4
 \fIstd::string\fP The criteria to match
 .RE
@@ -517,8 +588,12 @@ std::string Result of sql query
 .PP
 
 .PP
-Definition at line 185 of file DatabaseManager.cpp.
-.SS "std::string cryomesh::manager::DatabaseManager::deleteNodesByCycle (const \fBcommon::Cycle\fP &cycle, intcomparison_type)"
+Definition at line 210 of file DatabaseManager\&.cpp\&.
+.PP
+References deleteSelected()\&.
+.PP
+Referenced by deleteNode()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::deleteNodesByCycle\fP (const \fBcommon::Cycle\fP &cycle, intcomparison_type)"
 .PP
 delete nodes by cycle \fBParameters:\fP
 .RS 4
@@ -534,16 +609,26 @@ std::string sql query results
 .PP
 
 .PP
-Definition at line 275 of file DatabaseManager.cpp.
-.SS "std::string cryomesh::manager::DatabaseManager::deleteOutputPattern (const std::string &id)"
+Definition at line 304 of file DatabaseManager\&.cpp\&.
 .PP
-Definition at line 199 of file DatabaseManager.cpp.
-.SS "std::string cryomesh::manager::DatabaseManager::deleteOutputPatterns (const std::string &criteria = \fC''\fP)"
+References deleteByCycle()\&.
 .PP
-Definition at line 205 of file DatabaseManager.cpp.
-.SS "std::string cryomesh::manager::DatabaseManager::deleteSelected (const std::string &table, const std::string &criteria = \fC''\fP)"
+Referenced by deleteAllByCycle()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::deleteOutputPattern\fP (const std::string &id)"
 .PP
-Delete objects from a table by a criteria string eg, 'id=erwrs324 AND cycle=1'. \fBParameters:\fP
+Definition at line 224 of file DatabaseManager\&.cpp\&.
+.PP
+References deleteOutputPatterns()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::deleteOutputPatterns\fP (const std::string &criteria = \fC''\fP)"
+.PP
+Definition at line 230 of file DatabaseManager\&.cpp\&.
+.PP
+References deleteSelected()\&.
+.PP
+Referenced by deleteOutputPattern()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::deleteSelected\fP (const std::string &table, const std::string &criteria = \fC''\fP)"
+.PP
+Delete objects from a table by a criteria string eg, 'id=erwrs324 AND cycle=1'\&. \fBParameters:\fP
 .RS 4
 \fIstd::string\fP The table to delete from 
 .br
@@ -557,10 +642,14 @@ std::string Result of sql query
 .PP
 
 .PP
-Definition at line 209 of file DatabaseManager.cpp.
-.SS "std::string cryomesh::manager::DatabaseManager::dropTable (const std::string &table)"
+Definition at line 234 of file DatabaseManager\&.cpp\&.
 .PP
-Drop a table from database. \fBParameters:\fP
+References sqlCommand()\&.
+.PP
+Referenced by deleteConnections(), deleteNodes(), and deleteOutputPatterns()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::dropTable\fP (const std::string &table)"
+.PP
+Drop a table from database\&. \fBParameters:\fP
 .RS 4
 \fIstd::string\fP The table to drop
 .RE
@@ -572,10 +661,12 @@ std::string The result of the sql query
 .PP
 
 .PP
-Definition at line 263 of file DatabaseManager.cpp.
-.SS "std::string cryomesh::manager::DatabaseManager::insertConnection (const \fBDatabaseObject\fP &db_object)"
+Definition at line 292 of file DatabaseManager\&.cpp\&.
 .PP
-Insert a connection data object into the table. \fBParameters:\fP
+References sqlCommand()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::insertConnection\fP (const \fBDatabaseObject\fP &db_object)"
+.PP
+Insert a connection data object into the table\&. \fBParameters:\fP
 .RS 4
 \fI\fBDatabaseObject\fP\fP Database object to insert as a node
 .RE
@@ -587,10 +678,12 @@ std::string Result of sql query
 .PP
 
 .PP
-Definition at line 113 of file DatabaseManager.cpp.
-.SS "std::string cryomesh::manager::DatabaseManager::insertNode (const \fBDatabaseObject\fP &db_object)"
+Definition at line 138 of file DatabaseManager\&.cpp\&.
 .PP
-Insert a node data object into the table. \fBParameters:\fP
+References CONNECTIONS_TABLE_FORMAT, cryomesh::manager::DatabaseObject::getInsert(), cryomesh::manager::TableFormat::getName(), and sqlCommand()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::insertNode\fP (const \fBDatabaseObject\fP &db_object)"
+.PP
+Insert a node data object into the table\&. \fBParameters:\fP
 .RS 4
 \fI\fBDatabaseObject\fP\fP Database object to insert as a node
 .RE
@@ -602,23 +695,46 @@ std::string Result of sql query
 .PP
 
 .PP
-Definition at line 110 of file DatabaseManager.cpp.
-.SS "std::string cryomesh::manager::DatabaseManager::insertOutputPattern (const \fBDatabaseObject\fP &db_object)"
+Definition at line 135 of file DatabaseManager\&.cpp\&.
 .PP
-Definition at line 116 of file DatabaseManager.cpp.
-.SS "bool cryomesh::manager::DatabaseManager::isDatabaseAccessable () const"
+References cryomesh::manager::DatabaseObject::getInsert(), cryomesh::manager::TableFormat::getName(), NODES_TABLE_FORMAT, and sqlCommand()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::insertOutputPattern\fP (const \fBDatabaseObject\fP &db_object)"
 .PP
-Check if the database is accessible. \fBReturns:\fP
+Definition at line 141 of file DatabaseManager\&.cpp\&.
+.PP
+References cryomesh::manager::DatabaseObject::getInsert(), cryomesh::manager::TableFormat::getName(), OUTPUT_PATTERNS_TABLE_FORMAT, and sqlCommand()\&.
+.SS "bool \fBcryomesh::manager::DatabaseManager::isDatabaseAccessable\fP () const"
+.PP
+Check if the database is accessible\&. \fBReturns:\fP
 .RS 4
 bool True if deemed accessible, false otherwise 
 .RE
 .PP
 
 .PP
-Definition at line 88 of file DatabaseManager.cpp.
-.SS "std::ostream & cryomesh::manager::DatabaseManager::printHistory (std::ostream &os, const \fBcommon::Cycle\fP &cycle)"
+Definition at line 113 of file DatabaseManager\&.cpp\&.
 .PP
-Print sql history to output stream. \fBParameters:\fP
+References databaseAccess\&.
+.SS "\fBDatabaseManager\fP & cryomesh::manager::DatabaseManager::operator= (const \fBDatabaseManager\fP &obj)"
+.PP
+Assignment operator\&. \fBParameters:\fP
+.RS 4
+\fIconst\fP \fBDatabaseManager\fP & obj RHS assignment
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBDatabaseManager\fP & This object after assignment 
+.RE
+.PP
+
+.PP
+Definition at line 104 of file DatabaseManager\&.cpp\&.
+.PP
+References database, databaseAccess, errorCode, errorMessage, and sqlResults\&.
+.SS "std::ostream & \fBcryomesh::manager::DatabaseManager::printHistory\fP (std::ostream &os, const \fBcommon::Cycle\fP &cycle)"
+.PP
+Print sql history to output stream\&. \fBParameters:\fP
 .RS 4
 \fIstd::ostream\fP Output stream to print to 
 .br
@@ -632,12 +748,14 @@ std::ostream Return the supplied output stream
 .PP
 
 .PP
-Definition at line 378 of file DatabaseManager.cpp.
+Definition at line 406 of file DatabaseManager\&.cpp\&.
 .PP
-References sqlResults.
-.SS "std::ostream & cryomesh::manager::DatabaseManager::printHistory (std::ostream &os, unsigned intcountback = \fC1\fP)"
+References sqlResults\&.
 .PP
-Print sql history to output stream. \fBParameters:\fP
+Referenced by printHistory()\&.
+.SS "std::ostream & \fBcryomesh::manager::DatabaseManager::printHistory\fP (std::ostream &os, unsigned intcountback = \fC1\fP)"
+.PP
+Print sql history to output stream\&. \fBParameters:\fP
 .RS 4
 \fIstd::ostream\fP Output stream to print to 
 .br
@@ -651,10 +769,12 @@ std::ostream Return the supplied output stream
 .PP
 
 .PP
-Definition at line 368 of file DatabaseManager.cpp.
-.SS "std::string cryomesh::manager::DatabaseManager::select (const std::string &table, const std::string &criteria = \fC''\fP)"
+Definition at line 396 of file DatabaseManager\&.cpp\&.
 .PP
-Select all columns from table using criteria. \fBParameters:\fP
+References cryomesh::common::TimeKeeper::getCycle(), cryomesh::common::TimeKeeper::getTimeKeeper(), and printHistory()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::select\fP (const std::string &table, const std::string &criteria = \fC''\fP)"
+.PP
+Select all columns from table using criteria\&. \fBParameters:\fP
 .RS 4
 \fIstd::string\fP Name of table 
 .br
@@ -668,10 +788,14 @@ std::string sql query results
 .PP
 
 .PP
-Definition at line 175 of file DatabaseManager.cpp.
-.SS "std::string cryomesh::manager::DatabaseManager::selectConnection (const std::string &uuid, const \fBcommon::Cycle\fP &cycle)"
+Definition at line 200 of file DatabaseManager\&.cpp\&.
 .PP
-Select unique column entry. \fBParameters:\fP
+References sqlCommandBySelection()\&.
+.PP
+Referenced by selectConnections(), selectNodes(), and selectOutputPatterns()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::selectConnection\fP (const std::string &uuid, const \fBcommon::Cycle\fP &cycle)"
+.PP
+Select unique column entry\&. \fBParameters:\fP
 .RS 4
 \fIstd::string\fP The uuid of the node 
 .br
@@ -685,10 +809,12 @@ std::string The value of the entry
 .PP
 
 .PP
-Definition at line 125 of file DatabaseManager.cpp.
-.SS "std::string cryomesh::manager::DatabaseManager::selectConnections (const std::string &criteria = \fC''\fP)"
+Definition at line 150 of file DatabaseManager\&.cpp\&.
 .PP
-Select connections by a criteria string eg, 'id=erwrs324 AND cycle=1'. \fBParameters:\fP
+References sqlCommandBySelection(), and cryomesh::common::Cycle::toLInt()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::selectConnections\fP (const std::string &criteria = \fC''\fP)"
+.PP
+Select connections by a criteria string eg, 'id=erwrs324 AND cycle=1'\&. \fBParameters:\fP
 .RS 4
 \fIstd::string\fP The criteria to match
 .RE
@@ -700,10 +826,12 @@ std::string Result of sql query
 .PP
 
 .PP
-Definition at line 169 of file DatabaseManager.cpp.
-.SS "std::string cryomesh::manager::DatabaseManager::selectConnectionValue (const std::string &uuid, const \fBcommon::Cycle\fP &cycle, const std::string &column)"
+Definition at line 194 of file DatabaseManager\&.cpp\&.
 .PP
-Select unique column column entry. \fBParameters:\fP
+References select()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::selectConnectionValue\fP (const std::string &uuid, const \fBcommon::Cycle\fP &cycle, const std::string &column)"
+.PP
+Select unique column column entry\&. \fBParameters:\fP
 .RS 4
 \fIstd::string\fP The uuid of the node 
 .br
@@ -719,12 +847,12 @@ std::string The value of the entry
 .PP
 
 .PP
-Definition at line 144 of file DatabaseManager.cpp.
+Definition at line 169 of file DatabaseManager\&.cpp\&.
 .PP
-References selectValue().
-.SS "std::string cryomesh::manager::DatabaseManager::selectNode (const std::string &uuid, const \fBcommon::Cycle\fP &cycle)"
+References selectValue()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::selectNode\fP (const std::string &uuid, const \fBcommon::Cycle\fP &cycle)"
 .PP
-Select unique node entry. \fBParameters:\fP
+Select unique node entry\&. \fBParameters:\fP
 .RS 4
 \fIstd::string\fP The uuid of the node 
 .br
@@ -738,10 +866,12 @@ std::string The value of the entry
 .PP
 
 .PP
-Definition at line 119 of file DatabaseManager.cpp.
-.SS "std::string cryomesh::manager::DatabaseManager::selectNodes (const std::string &criteria = \fC''\fP)"
+Definition at line 144 of file DatabaseManager\&.cpp\&.
 .PP
-Select nodes by a criteria string eg, 'id=erwrs324 AND cycle=1'. \fBParameters:\fP
+References sqlCommandBySelection(), and cryomesh::common::Cycle::toLInt()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::selectNodes\fP (const std::string &criteria = \fC''\fP)"
+.PP
+Select nodes by a criteria string eg, 'id=erwrs324 AND cycle=1'\&. \fBParameters:\fP
 .RS 4
 \fIstd::string\fP The criteria to match
 .RE
@@ -753,10 +883,12 @@ std::string Result of sql query
 .PP
 
 .PP
-Definition at line 166 of file DatabaseManager.cpp.
-.SS "std::string cryomesh::manager::DatabaseManager::selectNodeValue (const std::string &uuid, const \fBcommon::Cycle\fP &cycle, const std::string &column)"
+Definition at line 191 of file DatabaseManager\&.cpp\&.
 .PP
-Select unique node column entry. \fBParameters:\fP
+References select()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::selectNodeValue\fP (const std::string &uuid, const \fBcommon::Cycle\fP &cycle, const std::string &column)"
+.PP
+Select unique node column entry\&. \fBParameters:\fP
 .RS 4
 \fIstd::string\fP The uuid of the node 
 .br
@@ -772,23 +904,27 @@ std::string The value of the entry
 .PP
 
 .PP
-Definition at line 139 of file DatabaseManager.cpp.
+Definition at line 164 of file DatabaseManager\&.cpp\&.
 .PP
-References selectValue().
-.SS "std::string cryomesh::manager::DatabaseManager::selectOutputPattern (const std::string &uuid, const \fBcommon::Cycle\fP &cycle)"
+References selectValue()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::selectOutputPattern\fP (const std::string &uuid, const \fBcommon::Cycle\fP &cycle)"
 .PP
-Definition at line 132 of file DatabaseManager.cpp.
-.SS "std::string cryomesh::manager::DatabaseManager::selectOutputPatterns (const std::string &criteria = \fC''\fP)"
+Definition at line 157 of file DatabaseManager\&.cpp\&.
 .PP
-Definition at line 172 of file DatabaseManager.cpp.
-.SS "std::string cryomesh::manager::DatabaseManager::selectOutputPatternValue (const std::string &uuid, const \fBcommon::Cycle\fP &cycle, const std::string &column)"
+References sqlCommandBySelection(), and cryomesh::common::Cycle::toLInt()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::selectOutputPatterns\fP (const std::string &criteria = \fC''\fP)"
 .PP
-Definition at line 149 of file DatabaseManager.cpp.
+Definition at line 197 of file DatabaseManager\&.cpp\&.
 .PP
-References selectValue().
-.SS "std::string cryomesh::manager::DatabaseManager::selectValue (const std::string &table, const std::string &uuid, const \fBcommon::Cycle\fP &cycle, const std::string &column)"
+References select()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::selectOutputPatternValue\fP (const std::string &uuid, const \fBcommon::Cycle\fP &cycle, const std::string &column)"
 .PP
-Select unique column column entry from table. \fBParameters:\fP
+Definition at line 174 of file DatabaseManager\&.cpp\&.
+.PP
+References selectValue()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::selectValue\fP (const std::string &table, const std::string &uuid, const \fBcommon::Cycle\fP &cycle, const std::string &column)"
+.PP
+Select unique column column entry from table\&. \fBParameters:\fP
 .RS 4
 \fIstd::string\fP The table to utilise 
 .br
@@ -806,14 +942,14 @@ std::string The value of the entry
 .PP
 
 .PP
-Definition at line 154 of file DatabaseManager.cpp.
+Definition at line 179 of file DatabaseManager\&.cpp\&.
 .PP
-References sqlCommand(), and cryomesh::common::Cycle::toLInt().
+References sqlCommand(), and cryomesh::common::Cycle::toLInt()\&.
 .PP
-Referenced by selectConnectionValue(), selectNodeValue(), and selectOutputPatternValue().
-.SS "std::string cryomesh::manager::DatabaseManager::sqlCommand (const std::string &command)\fC [protected]\fP"
+Referenced by selectConnectionValue(), selectNodeValue(), and selectOutputPatternValue()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::sqlCommand\fP (const std::string &command)\fC [protected]\fP"
 .PP
-Run a provided sql command string. \fBParameters:\fP
+Run a provided sql command string\&. \fBParameters:\fP
 .RS 4
 \fIstd::string\fP The command string to run
 .RE
@@ -825,15 +961,19 @@ std::vector<std::string> vector of results
 .PP
 
 .PP
-Definition at line 299 of file DatabaseManager.cpp.
+Definition at line 329 of file DatabaseManager\&.cpp\&.
 .PP
-Referenced by selectValue(), sqlCommandBySelection(), and updateByUUID().
-.SS "std::string cryomesh::manager::DatabaseManager::sqlCommandBySelection (const std::string &table, const std::string &command, const std::string &criteria)\fC [protected]\fP"
+References addHistoryEntry(), database, databaseCallback(), errorCode, errorMessage, sqlResults, and sqlResultsBuffer\&.
 .PP
-Definition at line 252 of file DatabaseManager.cpp.
+Referenced by clearTable(), countRows(), createTables(), deleteByCycle(), deleteSelected(), dropTable(), insertConnection(), insertNode(), insertOutputPattern(), selectValue(), sqlCommandBySelection(), and updateByUUID()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::sqlCommandBySelection\fP (const std::string &table, const std::string &command, const std::string &criteria)\fC [protected]\fP"
 .PP
-References sqlCommand().
-.SS "std::string cryomesh::manager::DatabaseManager::updateByUUID (const std::string &uuid_str, const \fBcommon::Cycle\fP &cycle, const std::string &options, const std::string &table)"
+Definition at line 281 of file DatabaseManager\&.cpp\&.
+.PP
+References sqlCommand()\&.
+.PP
+Referenced by select(), selectConnection(), selectNode(), and selectOutputPattern()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::updateByUUID\fP (const std::string &uuid_str, const \fBcommon::Cycle\fP &cycle, const std::string &options, const std::string &table)"
 .PP
 update object from a table using options list \fBParameters:\fP
 .RS 4
@@ -853,33 +993,12 @@ int The result of the count
 .PP
 
 .PP
-Definition at line 244 of file DatabaseManager.cpp.
+Definition at line 273 of file DatabaseManager\&.cpp\&.
 .PP
-References sqlCommand(), and cryomesh::common::Cycle::toLInt().
+References sqlCommand(), and cryomesh::common::Cycle::toLInt()\&.
 .PP
-Referenced by updateConnection(), and updateNode().
-.SS "std::string cryomesh::manager::DatabaseManager::updateConnection (const std::string &uuid_str, const \fBcommon::Cycle\fP &cycle, const std::string &options)"
-.PP
-update node from using options list \fBParameters:\fP
-.RS 4
-\fIstd::string\fP The id to match 
-.br
-\fI\fBcommon::Cycle\fP\fP The cycle to match 
-.br
-\fIstd::string\fP The options to set
-.RE
-.PP
-\fBReturns:\fP
-.RS 4
-int The result of the count 
-.RE
-.PP
-
-.PP
-Definition at line 240 of file DatabaseManager.cpp.
-.PP
-References updateByUUID().
-.SS "std::string cryomesh::manager::DatabaseManager::updateNode (const std::string &uuid_str, const \fBcommon::Cycle\fP &cycle, const std::string &options)"
+Referenced by updateConnection(), and updateNode()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::updateConnection\fP (const std::string &uuid_str, const \fBcommon::Cycle\fP &cycle, const std::string &options)"
 .PP
 update node from using options list \fBParameters:\fP
 .RS 4
@@ -897,53 +1016,95 @@ int The result of the count
 .PP
 
 .PP
-Definition at line 236 of file DatabaseManager.cpp.
+Definition at line 269 of file DatabaseManager\&.cpp\&.
 .PP
-References updateByUUID().
+References updateByUUID()\&.
+.SS "std::string \fBcryomesh::manager::DatabaseManager::updateNode\fP (const std::string &uuid_str, const \fBcommon::Cycle\fP &cycle, const std::string &options)"
+.PP
+update node from using options list \fBParameters:\fP
+.RS 4
+\fIstd::string\fP The id to match 
+.br
+\fI\fBcommon::Cycle\fP\fP The cycle to match 
+.br
+\fIstd::string\fP The options to set
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+int The result of the count 
+.RE
+.PP
+
+.PP
+Definition at line 265 of file DatabaseManager\&.cpp\&.
+.PP
+References updateByUUID()\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "const \fBConnectionTableFormat\fP \fBcryomesh::manager::DatabaseManager::CONNECTIONS_TABLE_FORMAT\fP\fC [static]\fP"
 .PP
-Default connection table format. 
+Default connection table format\&. 
 .PP
-Definition at line 482 of file DatabaseManager.h.
+Definition at line 496 of file DatabaseManager\&.h\&.
+.PP
+Referenced by createTables(), and insertConnection()\&.
 .SS "sqlite3* \fBcryomesh::manager::DatabaseManager::database\fP\fC [protected]\fP"
 .PP
-Definition at line 493 of file DatabaseManager.h.
+Definition at line 506 of file DatabaseManager\&.h\&.
+.PP
+Referenced by DatabaseManager(), operator=(), sqlCommand(), and ~DatabaseManager()\&.
 .SS "bool \fBcryomesh::manager::DatabaseManager::databaseAccess\fP\fC [protected]\fP"
 .PP
-Database accessable. 
+Database accessable\&. 
 .PP
-Definition at line 514 of file DatabaseManager.h.
-.SS "const std::string \fBcryomesh::manager::DatabaseManager::DEFAULT_DATABASE\fP = 'default.db'\fC [static]\fP"
+Definition at line 527 of file DatabaseManager\&.h\&.
 .PP
-Definition at line 465 of file DatabaseManager.h.
+Referenced by DatabaseManager(), isDatabaseAccessable(), operator=(), and ~DatabaseManager()\&.
+.SS "const std::string \fBcryomesh::manager::DatabaseManager::DEFAULT_DATABASE\fP = 'default\&.db'\fC [static]\fP"
+.PP
+Definition at line 478 of file DatabaseManager\&.h\&.
+.SS "const std::string \fBcryomesh::manager::DatabaseManager::DEFAULT_DATABASE_PATH\fP = 'Output'\fC [static]\fP"
+.PP
+Definition at line 479 of file DatabaseManager\&.h\&.
+.PP
+Referenced by DatabaseManager()\&.
 .SS "int \fBcryomesh::manager::DatabaseManager::errorCode\fP\fC [protected]\fP"
 .PP
-Definition at line 500 of file DatabaseManager.h.
+Definition at line 513 of file DatabaseManager\&.h\&.
+.PP
+Referenced by DatabaseManager(), operator=(), and sqlCommand()\&.
 .SS "char* \fBcryomesh::manager::DatabaseManager::errorMessage\fP\fC [protected]\fP"
 .PP
-Definition at line 507 of file DatabaseManager.h.
+Definition at line 520 of file DatabaseManager\&.h\&.
+.PP
+Referenced by DatabaseManager(), operator=(), and sqlCommand()\&.
 .SS "const \fBcommon::Cycle\fP \fBcryomesh::manager::DatabaseManager::MAX_COMMAND_HISTORY\fP = \fBcommon::Cycle\fP(100)\fC [static, protected]\fP"
 .PP
-Definition at line 535 of file DatabaseManager.h.
+Definition at line 548 of file DatabaseManager\&.h\&.
 .PP
-Referenced by addHistoryEntry().
+Referenced by addHistoryEntry()\&.
 .SS "const \fBNodeTableFormat\fP \fBcryomesh::manager::DatabaseManager::NODES_TABLE_FORMAT\fP\fC [static]\fP"
 .PP
-Definition at line 477 of file DatabaseManager.h.
+Definition at line 491 of file DatabaseManager\&.h\&.
+.PP
+Referenced by createTables(), and insertNode()\&.
 .SS "const \fBOutputPatternsTableFormat\fP \fBcryomesh::manager::DatabaseManager::OUTPUT_PATTERNS_TABLE_FORMAT\fP\fC [static]\fP"
 .PP
-Definition at line 484 of file DatabaseManager.h.
+Definition at line 498 of file DatabaseManager\&.h\&.
+.PP
+Referenced by createTables(), and insertOutputPattern()\&.
 .SS "std::multimap<\fBcommon::Cycle\fP, std::pair<std::string, std::string> > \fBcryomesh::manager::DatabaseManager::sqlResults\fP\fC [protected]\fP"
 .PP
-Definition at line 521 of file DatabaseManager.h.
+Definition at line 534 of file DatabaseManager\&.h\&.
 .PP
-Referenced by printHistory().
+Referenced by DatabaseManager(), operator=(), printHistory(), and sqlCommand()\&.
 .SS "std::vector<std::string> \fBcryomesh::manager::DatabaseManager::sqlResultsBuffer\fP\fC [protected]\fP"
 .PP
-Definition at line 528 of file DatabaseManager.h.
+Definition at line 541 of file DatabaseManager\&.h\&.
+.PP
+Referenced by sqlCommand()\&.
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for cryomesh from the source code.
+Generated automatically by Doxygen for cryomesh from the source code\&.

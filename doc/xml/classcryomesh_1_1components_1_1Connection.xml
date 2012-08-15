@@ -1,0 +1,570 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="classcryomesh_1_1components_1_1Connection" kind="class" prot="public">
+    <compoundname>cryomesh::components::Connection</compoundname>
+    <includes refid="Connection_8h" local="no">Connection.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classcryomesh_1_1components_1_1Connection_1ab6d2d5386a6fe3dc5e5797a0b131ea15" prot="protected" static="no" mutable="no">
+        <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1common_1_1Connector" kindref="compound">common::Connector</ref>&lt; <ref refid="classcryomesh_1_1components_1_1Connection" kindref="compound">Connection</ref>, <ref refid="classcryomesh_1_1components_1_1Node" kindref="compound">Node</ref> &gt; &gt;</type>
+        <definition>boost::shared_ptr&lt;common::Connector&lt;Connection, Node&gt; &gt; cryomesh::components::Connection::connector</definition>
+        <argsstring></argsstring>
+        <name>connector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="197" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" bodystart="197" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1ad3a94443297c27fc9d52be81afb408e8" compoundref="Connection_8cpp" startline="78" endline="80">getConnector</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1a106759b683be9446b519eb8e3e75866e" compoundref="Connection_8cpp" startline="82" endline="84">getMutableConnector</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1acb0d89bb9d8f2e2a808f7181c308c267" compoundref="Connection_8cpp" startline="25" endline="76">update</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1a7a12f7e30960796e481291041ca149b7" compoundref="Connection_8cpp" startline="160" endline="175">updatePosition</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1components_1_1Connection_1a00323e7080eba7a1bfae022915022f47" prot="protected" static="no" mutable="no">
+        <type><ref refid="classcryomesh_1_1components_1_1ImpulseCollection" kindref="compound">ImpulseCollection</ref></type>
+        <definition>ImpulseCollection cryomesh::components::Connection::impulses</definition>
+        <argsstring></argsstring>
+        <name>impulses</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="204" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" bodystart="204" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1a620d9f0f12df818c675c258470887240" compoundref="Connection_8cpp" startline="86" endline="104">add</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1aacfec7d5bedc59b5b5bb72565767c705" compoundref="Connection_8cpp" startline="114" endline="116">getImpulses</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1a42ad2f54cf156ba270d4fb9ed10113db" compoundref="Connection_8cpp" startline="118" endline="120">getMutableImpulses</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1a6c38044760c9b4a677709c41c633dc4a" compoundref="Connection_8cpp" startline="106" endline="108">remove</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1acb0d89bb9d8f2e2a808f7181c308c267" compoundref="Connection_8cpp" startline="25" endline="76">update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classcryomesh_1_1components_1_1Connection_1aec487280dd02b018049b7a1dd6906861" prot="protected" static="no" mutable="no">
+        <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">components::ActivityTimerDistance</ref> &gt;</type>
+        <definition>boost::shared_ptr&lt;components::ActivityTimerDistance&gt; cryomesh::components::Connection::activityTimer</definition>
+        <argsstring></argsstring>
+        <name>activityTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="211" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" bodystart="211" bodyend="-1"/>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1a620d9f0f12df818c675c258470887240" compoundref="Connection_8cpp" startline="86" endline="104">add</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1a1ff605cc45ba4cdaad44e5c68a52cadc" compoundref="Connection_8cpp" startline="132" endline="134">getActivityTimer</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1a2013cc96ac34c8b4897e81cda18fe146" compoundref="Connection_8cpp" startline="136" endline="138">getMutableActivityTimer</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1a7a12f7e30960796e481291041ca149b7" compoundref="Connection_8cpp" startline="160" endline="175">updatePosition</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1Connection_1a4b779dbd6303cab9351375feb89046ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>cryomesh::components::Connection::Connection</definition>
+        <argsstring>()</argsstring>
+        <name>Connection</name>
+        <briefdescription>
+<para>Constructor for <ref refid="classcryomesh_1_1components_1_1Connection" kindref="compound">Connection</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Constructor </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="44" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp" bodystart="16" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1Connection_1a0fe48902242a29c73effddfd9250de32" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>cryomesh::components::Connection::~Connection</definition>
+        <argsstring>()</argsstring>
+        <name>~Connection</name>
+        <briefdescription>
+<para>Destructor for <ref refid="classcryomesh_1_1components_1_1Connection" kindref="compound">Connection</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Destructor </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="51" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp" bodystart="22" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1Connection_1acb0d89bb9d8f2e2a808f7181c308c267" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void cryomesh::components::Connection::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+<para>Update the <ref refid="classcryomesh_1_1components_1_1Connection" kindref="compound">Connection</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Update our collection of impulses. If any reach the &apos;endpoint&apos; of the connection then pass them on to our end Nodes </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="60" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp" bodystart="25" bodyend="76"/>
+        <references refid="classcryomesh_1_1components_1_1Connection_1ab6d2d5386a6fe3dc5e5797a0b131ea15" compoundref="Connection_8h" startline="197">connector</references>
+        <references refid="classcryomesh_1_1components_1_1ImpulseCollection_1a44ba846c61ae3d39730bd141072dc8e9" compoundref="ImpulseCollection_8cpp" startline="192" endline="206">cryomesh::components::ImpulseCollection::decrementActivityTimers</references>
+        <references refid="classcryomesh_1_1components_1_1Connection_1a00323e7080eba7a1bfae022915022f47" compoundref="Connection_8h" startline="204">impulses</references>
+        <references refid="classcryomesh_1_1components_1_1ImpulseCollection_1a3682719f1c0bd471e8c5a19b39cc285dabb82adff3882cdd74faaef695b6bc82d" compoundref="ImpulseCollection_8h" startline="39">cryomesh::components::ImpulseCollection::LessThanOrEqualTo</references>
+        <references refid="classcryomesh_1_1components_1_1ImpulseCollection_1a317b84fe238bd4ff6bb8eda97b35cf1a" compoundref="ImpulseCollection_8cpp" startline="258" endline="263">cryomesh::components::ImpulseCollection::removeByActivityTimerValue</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1Connection_1ad3a94443297c27fc9d52be81afb408e8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>const <ref refid="classcryomesh_1_1common_1_1Connector" kindref="compound">common::Connector</ref>&lt; <ref refid="classcryomesh_1_1components_1_1Connection" kindref="compound">Connection</ref>, <ref refid="classcryomesh_1_1components_1_1Node" kindref="compound">Node</ref> &gt; &amp;</type>
+        <definition>const common::Connector&lt; Connection, Node &gt; &amp; cryomesh::components::Connection::getConnector</definition>
+        <argsstring>() const </argsstring>
+        <name>getConnector</name>
+        <briefdescription>
+<para>Get the Connector object for this <ref refid="classcryomesh_1_1components_1_1Connection" kindref="compound">Connection</ref> input. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>common::Connector&lt;Connection, Node&gt; The connector for this <ref refid="classcryomesh_1_1components_1_1Connection" kindref="compound">Connection</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="68" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp" bodystart="78" bodyend="80"/>
+        <references refid="classcryomesh_1_1components_1_1Connection_1ab6d2d5386a6fe3dc5e5797a0b131ea15" compoundref="Connection_8h" startline="197">connector</references>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1aea5f7cbc5e732729b30611b31964a9f7" compoundref="Connection_8cpp" startline="188" endline="206">disconnectInput</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1abbb25c5222aa18da00097e96b1c50a5f" compoundref="Connection_8cpp" startline="207" endline="225">disconnectOutput</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1afb641c5447546df8b54ff7ea7ea98275" compoundref="Connection_8cpp" startline="140" endline="158">getDatabaseObject</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1a7455c6e4c45ffff9e7a64146bc5ff6e2" compoundref="Connection_8cpp" startline="227" endline="233">isPrimaryInputConnection</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1a967fb5cafcd38f0ceec16437ea160d23" compoundref="Connection_8cpp" startline="235" endline="241">isPrimaryOutputConnection</referencedby>
+        <referencedby refid="namespacecryomesh_1_1components_1a2407f0942f1623e6cb795553fa4eec7b" compoundref="Connection_8cpp" startline="245" endline="276">cryomesh::components::operator&lt;&lt;</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1Connection_1a106759b683be9446b519eb8e3e75866e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classcryomesh_1_1common_1_1Connector" kindref="compound">common::Connector</ref>&lt; <ref refid="classcryomesh_1_1components_1_1Connection" kindref="compound">Connection</ref>, <ref refid="classcryomesh_1_1components_1_1Node" kindref="compound">Node</ref> &gt; &amp;</type>
+        <definition>common::Connector&lt; Connection, Node &gt; &amp; cryomesh::components::Connection::getMutableConnector</definition>
+        <argsstring>()</argsstring>
+        <name>getMutableConnector</name>
+        <briefdescription>
+<para>Get the mutable Connector object for this <ref refid="classcryomesh_1_1components_1_1Connection" kindref="compound">Connection</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>common::Connector&lt;Connection, Node&gt; The connector for this <ref refid="classcryomesh_1_1components_1_1Connection" kindref="compound">Connection</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="76" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp" bodystart="82" bodyend="84"/>
+        <references refid="classcryomesh_1_1components_1_1Connection_1ab6d2d5386a6fe3dc5e5797a0b131ea15" compoundref="Connection_8h" startline="197">connector</references>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1a29a5c50130a5a34657d67cfb317131e0" compoundref="Connection_8cpp" startline="177" endline="179">connectInput</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1a87b1e2db44b157697b026a92dfa950de" compoundref="Connection_8cpp" startline="180" endline="182">connectOutput</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1aea5f7cbc5e732729b30611b31964a9f7" compoundref="Connection_8cpp" startline="188" endline="206">disconnectInput</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1abbb25c5222aa18da00097e96b1c50a5f" compoundref="Connection_8cpp" startline="207" endline="225">disconnectOutput</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1Connection_1a620d9f0f12df818c675c258470887240" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1components_1_1Impulse" kindref="compound">Impulse</ref> &gt;</type>
+        <definition>boost::shared_ptr&lt; Impulse &gt; cryomesh::components::Connection::add</definition>
+        <argsstring>(boost::shared_ptr&lt; Impulse &gt; impulse)</argsstring>
+        <name>add</name>
+        <param>
+          <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1components_1_1Impulse" kindref="compound">Impulse</ref> &gt;</type>
+          <declname>impulse</declname>
+        </param>
+        <briefdescription>
+<para>Add an <ref refid="classcryomesh_1_1components_1_1Impulse" kindref="compound">Impulse</ref> to this connection. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boost::shared_ptr&lt;Impulse&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>impulse The <ref refid="classcryomesh_1_1components_1_1Impulse" kindref="compound">Impulse</ref> to add</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boost::shared_ptr&lt;Impulse&gt; The <ref refid="classcryomesh_1_1components_1_1Impulse" kindref="compound">Impulse</ref> added, null if none added </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="87" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp" bodystart="86" bodyend="104"/>
+        <references refid="classcryomesh_1_1components_1_1Connection_1aec487280dd02b018049b7a1dd6906861" compoundref="Connection_8h" startline="211">activityTimer</references>
+        <references refid="classcryomesh_1_1components_1_1Connection_1a00323e7080eba7a1bfae022915022f47" compoundref="Connection_8h" startline="204">impulses</references>
+        <referencedby refid="classcryomesh_1_1components_1_1Node_1a3323a7f7e9958b78552746ddf374c4fc" compoundref="Node_8cpp" startline="199" endline="241">cryomesh::components::Node::emitImpulse</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1Connection_1a6c38044760c9b4a677709c41c633dc4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1components_1_1Impulse" kindref="compound">Impulse</ref> &gt;</type>
+        <definition>boost::shared_ptr&lt; Impulse &gt; cryomesh::components::Connection::remove</definition>
+        <argsstring>(boost::shared_ptr&lt; Impulse &gt; impulse)</argsstring>
+        <name>remove</name>
+        <param>
+          <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1components_1_1Impulse" kindref="compound">Impulse</ref> &gt;</type>
+          <declname>impulse</declname>
+        </param>
+        <briefdescription>
+<para>Add an <ref refid="classcryomesh_1_1components_1_1Impulse" kindref="compound">Impulse</ref> to this connection. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classcryomesh_1_1components_1_1Impulse" kindref="compound">Impulse</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp; impulse The <ref refid="classcryomesh_1_1components_1_1Impulse" kindref="compound">Impulse</ref> to add</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boost::shared_ptr&lt;Impulse&gt; The <ref refid="classcryomesh_1_1components_1_1Impulse" kindref="compound">Impulse</ref> added, null if none added boost::shared_ptr&lt;Impulse&gt; add(Impulse &amp; impulse); Remove an <ref refid="classcryomesh_1_1components_1_1Impulse" kindref="compound">Impulse</ref> from this connection</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boost::shared_ptr&lt;Impulse&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>impulse The impulse to remove</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boost::shared_ptr&lt;Impulse&gt; The <ref refid="classcryomesh_1_1components_1_1Impulse" kindref="compound">Impulse</ref> removed, null if none removed </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="110" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp" bodystart="106" bodyend="108"/>
+        <references refid="classcryomesh_1_1components_1_1Connection_1a00323e7080eba7a1bfae022915022f47" compoundref="Connection_8h" startline="204">impulses</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1Connection_1abaf8a91eab3a7b5d943fe3f5818f2a39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1components_1_1Impulse" kindref="compound">Impulse</ref> &gt;</type>
+        <definition>boost::shared_ptr&lt; Impulse &gt; cryomesh::components::Connection::remove</definition>
+        <argsstring>(Impulse &amp;impulse)</argsstring>
+        <name>remove</name>
+        <param>
+          <type><ref refid="classcryomesh_1_1components_1_1Impulse" kindref="compound">Impulse</ref> &amp;</type>
+          <declname>impulse</declname>
+        </param>
+        <briefdescription>
+<para>Remove an <ref refid="classcryomesh_1_1components_1_1Impulse" kindref="compound">Impulse</ref> from this connection. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classcryomesh_1_1components_1_1Impulse" kindref="compound">Impulse</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp; impulse The impulse to remove</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boost::shared_ptr&lt;Impulse&gt; The <ref refid="classcryomesh_1_1components_1_1Impulse" kindref="compound">Impulse</ref> removed, null if none removed </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="121" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp" bodystart="110" bodyend="112"/>
+        <references refid="classcryomesh_1_1components_1_1Connection_1a00323e7080eba7a1bfae022915022f47" compoundref="Connection_8h" startline="204">impulses</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1Connection_1aacfec7d5bedc59b5b5bb72565767c705" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classcryomesh_1_1components_1_1ImpulseCollection" kindref="compound">ImpulseCollection</ref> &amp;</type>
+        <definition>const ImpulseCollection &amp; cryomesh::components::Connection::getImpulses</definition>
+        <argsstring>() const </argsstring>
+        <name>getImpulses</name>
+        <briefdescription>
+<para>Get the impulse collection. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>const <ref refid="classcryomesh_1_1components_1_1ImpulseCollection" kindref="compound">ImpulseCollection</ref> &amp; The impulse collection </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="129" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp" bodystart="114" bodyend="116"/>
+        <references refid="classcryomesh_1_1components_1_1Connection_1a00323e7080eba7a1bfae022915022f47" compoundref="Connection_8h" startline="204">impulses</references>
+        <referencedby refid="classcryomesh_1_1components_1_1Node_1a3323a7f7e9958b78552746ddf374c4fc" compoundref="Node_8cpp" startline="199" endline="241">cryomesh::components::Node::emitImpulse</referencedby>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1afb641c5447546df8b54ff7ea7ea98275" compoundref="Connection_8cpp" startline="140" endline="158">getDatabaseObject</referencedby>
+        <referencedby refid="namespacecryomesh_1_1components_1a2407f0942f1623e6cb795553fa4eec7b" compoundref="Connection_8cpp" startline="245" endline="276">cryomesh::components::operator&lt;&lt;</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1Connection_1a42ad2f54cf156ba270d4fb9ed10113db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classcryomesh_1_1components_1_1ImpulseCollection" kindref="compound">ImpulseCollection</ref> &amp;</type>
+        <definition>ImpulseCollection &amp; cryomesh::components::Connection::getMutableImpulses</definition>
+        <argsstring>()</argsstring>
+        <name>getMutableImpulses</name>
+        <briefdescription>
+<para>Get the mutable impulse collection. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classcryomesh_1_1components_1_1ImpulseCollection" kindref="compound">ImpulseCollection</ref> &amp; The mutable impulse collection </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="137" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp" bodystart="118" bodyend="120"/>
+        <references refid="classcryomesh_1_1components_1_1Connection_1a00323e7080eba7a1bfae022915022f47" compoundref="Connection_8h" startline="204">impulses</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1Connection_1a1ff605cc45ba4cdaad44e5c68a52cadc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const boost::shared_ptr&lt; <ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">components::ActivityTimerDistance</ref> &gt;</type>
+        <definition>const boost::shared_ptr&lt; components::ActivityTimerDistance &gt; cryomesh::components::Connection::getActivityTimer</definition>
+        <argsstring>() const </argsstring>
+        <name>getActivityTimer</name>
+        <briefdescription>
+<para>The get activity timer for this object. </para>        </briefdescription>
+        <detaileddescription>
+<para>const ActiveImpulseCollection &amp; Connection::getActiveImpulses() const { return this-&gt;activeImpulses; }</para><para><simplesect kind="return"><para>boost::shared_ptr&lt;ActivityTimer&gt;</para></simplesect>
+ActiveImpulseCollection &amp; Connection::getMutableActiveImpulses() { return this-&gt;activeImpulses; } </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="144" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp" bodystart="132" bodyend="134"/>
+        <references refid="classcryomesh_1_1components_1_1Connection_1aec487280dd02b018049b7a1dd6906861" compoundref="Connection_8h" startline="211">activityTimer</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1Connection_1a2013cc96ac34c8b4897e81cda18fe146" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1components_1_1ActivityTimerDistance" kindref="compound">components::ActivityTimerDistance</ref> &gt;</type>
+        <definition>boost::shared_ptr&lt; components::ActivityTimerDistance &gt; cryomesh::components::Connection::getMutableActivityTimer</definition>
+        <argsstring>()</argsstring>
+        <name>getMutableActivityTimer</name>
+        <briefdescription>
+<para>The get mutable activity timer for this object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>boost::shared_ptr&lt;ActivityTimer&gt; </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="151" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp" bodystart="136" bodyend="138"/>
+        <references refid="classcryomesh_1_1components_1_1Connection_1aec487280dd02b018049b7a1dd6906861" compoundref="Connection_8h" startline="211">activityTimer</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1Connection_1afb641c5447546df8b54ff7ea7ea98275" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1manager_1_1DatabaseObject" kindref="compound">manager::DatabaseObject</ref> &gt;</type>
+        <definition>boost::shared_ptr&lt; manager::DatabaseObject &gt; cryomesh::components::Connection::getDatabaseObject</definition>
+        <argsstring>() const </argsstring>
+        <name>getDatabaseObject</name>
+        <briefdescription>
+<para>Return a database object for this object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>DatabaseObject </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="158" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp" bodystart="140" bodyend="158"/>
+        <references refid="classcryomesh_1_1components_1_1Connection_1ad3a94443297c27fc9d52be81afb408e8" compoundref="Connection_8cpp" startline="78" endline="80">getConnector</references>
+        <references refid="classcryomesh_1_1common_1_1TimeKeeper_1aa0bfaecbd5118af91d63296f158cee09" compoundref="TimeKeeper_8cpp" startline="76" endline="78">cryomesh::common::TimeKeeper::getCycle</references>
+        <references refid="classcryomesh_1_1components_1_1Connection_1aacfec7d5bedc59b5b5bb72565767c705" compoundref="Connection_8cpp" startline="114" endline="116">getImpulses</references>
+        <references refid="classcryomesh_1_1common_1_1TimeKeeper_1afe7b229532e11119cb2653192615d679" compoundref="TimeKeeper_8cpp" startline="19" endline="24">cryomesh::common::TimeKeeper::getTimeKeeper</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1Connection_1a7a12f7e30960796e481291041ca149b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::components::Connection::updatePosition</definition>
+        <argsstring>()</argsstring>
+        <name>updatePosition</name>
+        <briefdescription>
+<para>Update position. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="163" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp" bodystart="160" bodyend="175"/>
+        <references refid="classcryomesh_1_1components_1_1Connection_1aec487280dd02b018049b7a1dd6906861" compoundref="Connection_8h" startline="211">activityTimer</references>
+        <references refid="classcryomesh_1_1components_1_1Connection_1ab6d2d5386a6fe3dc5e5797a0b131ea15" compoundref="Connection_8h" startline="197">connector</references>
+        <references refid="classcryomesh_1_1components_1_1ActivityTimerDistance_1a549f2e016df32a594092179570ae742d" compoundref="ActivityTimerDistance_8h" startline="163">cryomesh::components::ActivityTimerDistance::MIN_DISTANCE</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1Connection_1a29a5c50130a5a34657d67cfb317131e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::components::Connection::connectInput</definition>
+        <argsstring>(boost::shared_ptr&lt; Node &gt; node)</argsstring>
+        <name>connectInput</name>
+        <param>
+          <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1components_1_1Node" kindref="compound">Node</ref> &gt;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="165" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp" bodystart="177" bodyend="179"/>
+        <references refid="classcryomesh_1_1components_1_1Connection_1a106759b683be9446b519eb8e3e75866e" compoundref="Connection_8cpp" startline="82" endline="84">getMutableConnector</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1Connection_1a87b1e2db44b157697b026a92dfa950de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::components::Connection::connectOutput</definition>
+        <argsstring>(boost::shared_ptr&lt; Node &gt; node)</argsstring>
+        <name>connectOutput</name>
+        <param>
+          <type>boost::shared_ptr&lt; <ref refid="classcryomesh_1_1components_1_1Node" kindref="compound">Node</ref> &gt;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="166" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp" bodystart="180" bodyend="182"/>
+        <references refid="classcryomesh_1_1components_1_1Connection_1a106759b683be9446b519eb8e3e75866e" compoundref="Connection_8cpp" startline="82" endline="84">getMutableConnector</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1Connection_1acc48aedd2b98f080dc5cec1d229a1b24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::components::Connection::disconnect</definition>
+        <argsstring>()</argsstring>
+        <name>disconnect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="168" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp" bodystart="183" bodyend="186"/>
+        <references refid="classcryomesh_1_1components_1_1Connection_1aea5f7cbc5e732729b30611b31964a9f7" compoundref="Connection_8cpp" startline="188" endline="206">disconnectInput</references>
+        <references refid="classcryomesh_1_1components_1_1Connection_1abbb25c5222aa18da00097e96b1c50a5f" compoundref="Connection_8cpp" startline="207" endline="225">disconnectOutput</references>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1Connection_1aea5f7cbc5e732729b30611b31964a9f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::components::Connection::disconnectInput</definition>
+        <argsstring>()</argsstring>
+        <name>disconnectInput</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="169" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp" bodystart="188" bodyend="206"/>
+        <references refid="classcryomesh_1_1components_1_1Connection_1ad3a94443297c27fc9d52be81afb408e8" compoundref="Connection_8cpp" startline="78" endline="80">getConnector</references>
+        <references refid="classcryomesh_1_1components_1_1Connection_1a106759b683be9446b519eb8e3e75866e" compoundref="Connection_8cpp" startline="82" endline="84">getMutableConnector</references>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1acc48aedd2b98f080dc5cec1d229a1b24" compoundref="Connection_8cpp" startline="183" endline="186">disconnect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1Connection_1abbb25c5222aa18da00097e96b1c50a5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cryomesh::components::Connection::disconnectOutput</definition>
+        <argsstring>()</argsstring>
+        <name>disconnectOutput</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="170" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp" bodystart="207" bodyend="225"/>
+        <references refid="classcryomesh_1_1components_1_1Connection_1ad3a94443297c27fc9d52be81afb408e8" compoundref="Connection_8cpp" startline="78" endline="80">getConnector</references>
+        <references refid="classcryomesh_1_1components_1_1Connection_1a106759b683be9446b519eb8e3e75866e" compoundref="Connection_8cpp" startline="82" endline="84">getMutableConnector</references>
+        <referencedby refid="classcryomesh_1_1components_1_1Connection_1acc48aedd2b98f080dc5cec1d229a1b24" compoundref="Connection_8cpp" startline="183" endline="186">disconnect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1Connection_1a7455c6e4c45ffff9e7a64146bc5ff6e2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::components::Connection::isPrimaryInputConnection</definition>
+        <argsstring>() const </argsstring>
+        <name>isPrimaryInputConnection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="172" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp" bodystart="227" bodyend="233"/>
+        <references refid="classcryomesh_1_1components_1_1Connection_1ad3a94443297c27fc9d52be81afb408e8" compoundref="Connection_8cpp" startline="78" endline="80">getConnector</references>
+        <referencedby refid="namespacecryomesh_1_1components_1a2407f0942f1623e6cb795553fa4eec7b" compoundref="Connection_8cpp" startline="245" endline="276">cryomesh::components::operator&lt;&lt;</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1Connection_1a967fb5cafcd38f0ceec16437ea160d23" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cryomesh::components::Connection::isPrimaryOutputConnection</definition>
+        <argsstring>() const </argsstring>
+        <name>isPrimaryOutputConnection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="173" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp" bodystart="235" bodyend="241"/>
+        <references refid="classcryomesh_1_1components_1_1Connection_1ad3a94443297c27fc9d52be81afb408e8" compoundref="Connection_8cpp" startline="78" endline="80">getConnector</references>
+        <referencedby refid="namespacecryomesh_1_1components_1a2407f0942f1623e6cb795553fa4eec7b" compoundref="Connection_8cpp" startline="245" endline="276">cryomesh::components::operator&lt;&lt;</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcryomesh_1_1components_1_1Connection_1a276be807f8cf331e1965661a67100440" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void cryomesh::components::Connection::enableDebug</definition>
+        <argsstring>(bool b)</argsstring>
+        <name>enableDebug</name>
+        <param>
+          <type>bool</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="174" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp" bodystart="242" bodyend="244"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classcryomesh_1_1components_1_1Connection_1ac7d751fcf5dc9a4daa22cc6ad770f06b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const Connection &amp;obj)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcryomesh_1_1components_1_1Connection" kindref="compound">Connection</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>To stream operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::ostream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp; os The output stream </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classcryomesh_1_1components_1_1Connection" kindref="compound">Connection</ref> &amp; obj The object to stream</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::ostream &amp; The output stream </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="187" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp" bodystart="245" bodyend="276"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classcryomesh_1_1components_1_1Connection" kindref="compound">Connection</ref> class to manage the transfer of Impulses between Nodes. </para>    </briefdescription>
+    <detaileddescription>
+<para>A <ref refid="classcryomesh_1_1components_1_1Connection" kindref="compound">Connection</ref> represents the &apos;journey&apos; made by Impulses as they travel between a start <ref refid="classcryomesh_1_1components_1_1Node" kindref="compound">Node</ref> and an end <ref refid="classcryomesh_1_1components_1_1Node" kindref="compound">Node</ref>. They can be spatially based or more abstract representations of this journey. As each clock moment passes Impulses are propagated in some way &apos;closer&apos; to their end <ref refid="classcryomesh_1_1components_1_1Node" kindref="compound">Node</ref>. Impulses can be altered by the Mesh on each cycle. When Impulses reach the &apos;end&apos; of their journey they are passed to the end <ref refid="classcryomesh_1_1components_1_1Node" kindref="compound">Node</ref> for accumulation. Connections can also be bi-directional, an <ref refid="classcryomesh_1_1components_1_1Impulse" kindref="compound">Impulse</ref> from a start <ref refid="classcryomesh_1_1components_1_1Node" kindref="compound">Node</ref> could be in some way &apos;reflected&apos; back to that node. Perhaps once in a &apos;weighted&apos; reflection to be accumulated by the start <ref refid="classcryomesh_1_1components_1_1Node" kindref="compound">Node</ref>, or even in a constant per-cycle reflection as the original <ref refid="classcryomesh_1_1components_1_1Impulse" kindref="compound">Impulse</ref> &apos;moves along&apos; the <ref refid="classcryomesh_1_1components_1_1Connection" kindref="compound">Connection</ref> </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="291">
+        <label>cryomesh::components::ImpulseCollection</label>
+        <link refid="classcryomesh_1_1components_1_1ImpulseCollection"/>
+        <childnode refid="292" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="290">
+        <label>cryomesh::components::Connection</label>
+        <link refid="classcryomesh_1_1components_1_1Connection"/>
+        <childnode refid="291" relation="usage">
+          <edgelabel>impulses</edgelabel>
+        </childnode>
+      </node>
+      <node id="292">
+        <label>cryomesh::dataobjects::DataObjectController&lt; unsigned long int, double &gt;</label>
+        <link refid="classcryomesh_1_1dataobjects_1_1DataObjectController"/>
+        <childnode refid="293" relation="usage">
+          <edgelabel>dataObject</edgelabel>
+        </childnode>
+      </node>
+      <node id="294">
+        <label>std::map&lt; unsigned long int, double &gt;</label>
+      </node>
+      <node id="293">
+        <label>cryomesh::dataobjects::DataObject&lt; unsigned long int, double &gt;</label>
+        <link refid="classcryomesh_1_1dataobjects_1_1DataObject"/>
+        <childnode refid="294" relation="usage">
+          <edgelabel>valueMap</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" line="37" bodyfile="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h" bodystart="37" bodyend="212"/>
+    <listofallmembers>
+      <member refid="classcryomesh_1_1components_1_1Connection_1aec487280dd02b018049b7a1dd6906861" prot="protected" virt="non-virtual"><scope>cryomesh::components::Connection</scope><name>activityTimer</name></member>
+      <member refid="classcryomesh_1_1components_1_1Connection_1a620d9f0f12df818c675c258470887240" prot="public" virt="non-virtual"><scope>cryomesh::components::Connection</scope><name>add</name></member>
+      <member refid="classcryomesh_1_1components_1_1Connection_1a29a5c50130a5a34657d67cfb317131e0" prot="public" virt="non-virtual"><scope>cryomesh::components::Connection</scope><name>connectInput</name></member>
+      <member refid="classcryomesh_1_1components_1_1Connection_1a4b779dbd6303cab9351375feb89046ff" prot="public" virt="non-virtual"><scope>cryomesh::components::Connection</scope><name>Connection</name></member>
+      <member refid="classcryomesh_1_1components_1_1Connection_1ab6d2d5386a6fe3dc5e5797a0b131ea15" prot="protected" virt="non-virtual"><scope>cryomesh::components::Connection</scope><name>connector</name></member>
+      <member refid="classcryomesh_1_1components_1_1Connection_1a87b1e2db44b157697b026a92dfa950de" prot="public" virt="non-virtual"><scope>cryomesh::components::Connection</scope><name>connectOutput</name></member>
+      <member refid="classcryomesh_1_1components_1_1Connection_1acc48aedd2b98f080dc5cec1d229a1b24" prot="public" virt="non-virtual"><scope>cryomesh::components::Connection</scope><name>disconnect</name></member>
+      <member refid="classcryomesh_1_1components_1_1Connection_1aea5f7cbc5e732729b30611b31964a9f7" prot="public" virt="non-virtual"><scope>cryomesh::components::Connection</scope><name>disconnectInput</name></member>
+      <member refid="classcryomesh_1_1components_1_1Connection_1abbb25c5222aa18da00097e96b1c50a5f" prot="public" virt="non-virtual"><scope>cryomesh::components::Connection</scope><name>disconnectOutput</name></member>
+      <member refid="classcryomesh_1_1components_1_1Connection_1a276be807f8cf331e1965661a67100440" prot="public" virt="virtual"><scope>cryomesh::components::Connection</scope><name>enableDebug</name></member>
+      <member refid="classcryomesh_1_1components_1_1Connection_1a1ff605cc45ba4cdaad44e5c68a52cadc" prot="public" virt="non-virtual"><scope>cryomesh::components::Connection</scope><name>getActivityTimer</name></member>
+      <member refid="classcryomesh_1_1components_1_1Connection_1ad3a94443297c27fc9d52be81afb408e8" prot="public" virt="virtual"><scope>cryomesh::components::Connection</scope><name>getConnector</name></member>
+      <member refid="classcryomesh_1_1components_1_1Connection_1afb641c5447546df8b54ff7ea7ea98275" prot="public" virt="non-virtual"><scope>cryomesh::components::Connection</scope><name>getDatabaseObject</name></member>
+      <member refid="classcryomesh_1_1components_1_1Connection_1aacfec7d5bedc59b5b5bb72565767c705" prot="public" virt="non-virtual"><scope>cryomesh::components::Connection</scope><name>getImpulses</name></member>
+      <member refid="classcryomesh_1_1components_1_1Connection_1a2013cc96ac34c8b4897e81cda18fe146" prot="public" virt="non-virtual"><scope>cryomesh::components::Connection</scope><name>getMutableActivityTimer</name></member>
+      <member refid="classcryomesh_1_1components_1_1Connection_1a106759b683be9446b519eb8e3e75866e" prot="public" virt="virtual"><scope>cryomesh::components::Connection</scope><name>getMutableConnector</name></member>
+      <member refid="classcryomesh_1_1components_1_1Connection_1a42ad2f54cf156ba270d4fb9ed10113db" prot="public" virt="non-virtual"><scope>cryomesh::components::Connection</scope><name>getMutableImpulses</name></member>
+      <member refid="classcryomesh_1_1components_1_1Connection_1a00323e7080eba7a1bfae022915022f47" prot="protected" virt="non-virtual"><scope>cryomesh::components::Connection</scope><name>impulses</name></member>
+      <member refid="classcryomesh_1_1components_1_1Connection_1a7455c6e4c45ffff9e7a64146bc5ff6e2" prot="public" virt="non-virtual"><scope>cryomesh::components::Connection</scope><name>isPrimaryInputConnection</name></member>
+      <member refid="classcryomesh_1_1components_1_1Connection_1a967fb5cafcd38f0ceec16437ea160d23" prot="public" virt="non-virtual"><scope>cryomesh::components::Connection</scope><name>isPrimaryOutputConnection</name></member>
+      <member refid="classcryomesh_1_1components_1_1Connection_1ac7d751fcf5dc9a4daa22cc6ad770f06b" prot="public" virt="non-virtual"><scope>cryomesh::components::Connection</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classcryomesh_1_1components_1_1Connection_1a6c38044760c9b4a677709c41c633dc4a" prot="public" virt="non-virtual"><scope>cryomesh::components::Connection</scope><name>remove</name></member>
+      <member refid="classcryomesh_1_1components_1_1Connection_1abaf8a91eab3a7b5d943fe3f5818f2a39" prot="public" virt="non-virtual"><scope>cryomesh::components::Connection</scope><name>remove</name></member>
+      <member refid="classcryomesh_1_1components_1_1Connection_1acb0d89bb9d8f2e2a808f7181c308c267" prot="public" virt="virtual"><scope>cryomesh::components::Connection</scope><name>update</name></member>
+      <member refid="classcryomesh_1_1components_1_1Connection_1a7a12f7e30960796e481291041ca149b7" prot="public" virt="non-virtual"><scope>cryomesh::components::Connection</scope><name>updatePosition</name></member>
+      <member refid="classcryomesh_1_1components_1_1Connection_1a0fe48902242a29c73effddfd9250de32" prot="public" virt="virtual"><scope>cryomesh::components::Connection</scope><name>~Connection</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="TimeKeeper_8cpp" kind="file">
+    <compoundname>TimeKeeper.cpp</compoundname>
+    <includes refid="TimeKeeper_8h" local="yes">TimeKeeper.h</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">ctime</includes>
+    <includes local="no">time.h</includes>
+    <incdepgraph>
+      <node id="114">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="113">
+        <label>gmpxx.h</label>
+      </node>
+      <node id="111">
+        <label>TimeKeeper.h</label>
+        <link refid="TimeKeeper_8h"/>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="116" relation="include">
+        </childnode>
+        <childnode refid="117" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+      </node>
+      <node id="117">
+        <label>boost/timer.hpp</label>
+      </node>
+      <node id="116">
+        <label>boost/date_time/posix_time/posix_time.hpp</label>
+      </node>
+      <node id="120">
+        <label>ctime</label>
+      </node>
+      <node id="110">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/TimeKeeper.cpp</label>
+        <link refid="TimeKeeper.cpp"/>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+      </node>
+      <node id="118">
+        <label>time.h</label>
+      </node>
+      <node id="119">
+        <label>iostream</label>
+      </node>
+      <node id="115">
+        <label>boost/serialization/shared_ptr.hpp</label>
+      </node>
+      <node id="112">
+        <label>common/Cycle.h</label>
+        <link refid="Cycle_8h"/>
+        <childnode refid="113" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacecryomesh">cryomesh</innernamespace>
+    <innernamespace refid="namespacecryomesh_1_1common">cryomesh::common</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>TimeKeeper.cpp</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>Created<sp/>on:<sp/>24-Jul-2009</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Author:<sp/>niall</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TimeKeeper_8h" kindref="compound">TimeKeeper.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ctime&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">cryomesh<sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">common<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">boost::shared_ptr&lt;TimeKeeper&gt;<sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1a9182b02e3805961510f48954276ef389" kindref="member">TimeKeeper::timekeeper</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="classcryomesh_1_1common_1_1TimeKeeper_1afe7b229532e11119cb2653192615d679" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1common_1_1TimeKeeper" kindref="compound" tooltip="TimeKeeper is a class keep track of the cycle state and timing.">TimeKeeper</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1afe7b229532e11119cb2653192615d679" kindref="member">TimeKeeper::getTimeKeeper</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classcryomesh_1_1common_1_1TimeKeeper_1a9182b02e3805961510f48954276ef389" kindref="member">timekeeper</ref><sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1a9182b02e3805961510f48954276ef389" kindref="member">timekeeper</ref><sp/>=<sp/>boost::shared_ptr&lt;TimeKeeper&gt;(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1a133c730f64b915e6ef25be1442ea688e" kindref="member" tooltip="Constructor.">TimeKeeper</ref>);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*<ref refid="classcryomesh_1_1common_1_1TimeKeeper_1a9182b02e3805961510f48954276ef389" kindref="member">timekeeper</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classcryomesh_1_1common_1_1TimeKeeper_1abb7b3042e8b2087326c2405a0bc8d230" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1abb7b3042e8b2087326c2405a0bc8d230" kindref="member" tooltip="Destructor.">TimeKeeper::reset</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classcryomesh_1_1common_1_1TimeKeeper_1af2f511fb5df5b4a1e6d9eb8dffa4f6ef" kindref="member">cycle</ref><sp/>=<sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref>(0);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1afe9c0b2cd669e9d4d62718734e5b630a" kindref="member">this_timing</ref><sp/>=0;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1acb896ec81cbe9d18f4e618320353dc4f" kindref="member">last_timing</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::time(&amp;<ref refid="classcryomesh_1_1common_1_1TimeKeeper_1ad6e92ec3c962aa3e6db82d69188e9686" kindref="member">start_time</ref>);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1a41690fc156fdee825fb5e7a5e26a2102" kindref="member">timer</ref>.restart();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="classcryomesh_1_1common_1_1TimeKeeper_1a133c730f64b915e6ef25be1442ea688e" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1a133c730f64b915e6ef25be1442ea688e" kindref="member" tooltip="Constructor.">TimeKeeper::TimeKeeper</ref>()<sp/>:<sp/>cycle<sp/>(<ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref>(0)),<sp/>start_time(),<sp/>timer(),this_timing<sp/>(0),<sp/>last_timing<sp/>(<sp/>0){</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classcryomesh_1_1common_1_1TimeKeeper_1abb7b3042e8b2087326c2405a0bc8d230" kindref="member" tooltip="Destructor.">reset</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37" refid="classcryomesh_1_1common_1_1TimeKeeper_1a1023707129088652ac2cced3e0f4a0be" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1a1023707129088652ac2cced3e0f4a0be" kindref="member">TimeKeeper::~TimeKeeper</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="classcryomesh_1_1common_1_1TimeKeeper_1a7c710ae8bdb2fff0aaf284a9c1108ace" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1a7c710ae8bdb2fff0aaf284a9c1108ace" kindref="member" tooltip="Equality test override for object.">TimeKeeper::operator==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper" kindref="compound" tooltip="TimeKeeper is a class keep track of the cycle state and timing.">TimeKeeper</ref><sp/>&amp;<sp/>obj)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>match<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>match<sp/>=<sp/>match<sp/>&amp;&amp;<sp/>(this-&gt;<ref refid="classcryomesh_1_1common_1_1TimeKeeper_1af2f511fb5df5b4a1e6d9eb8dffa4f6ef" kindref="member">cycle</ref><sp/>==<sp/>obj.<ref refid="classcryomesh_1_1common_1_1TimeKeeper_1af2f511fb5df5b4a1e6d9eb8dffa4f6ef" kindref="member">cycle</ref>);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(match<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;TimeKeeper::operator<sp/>==:<sp/>cycle<sp/>mismatch<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>match<sp/>=<sp/>match<sp/>&amp;&amp;<sp/>(this-&gt;<ref refid="classcryomesh_1_1common_1_1TimeKeeper_1ad6e92ec3c962aa3e6db82d69188e9686" kindref="member">start_time</ref><sp/>==<sp/>obj.<ref refid="classcryomesh_1_1common_1_1TimeKeeper_1ad6e92ec3c962aa3e6db82d69188e9686" kindref="member">start_time</ref>);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(match<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;TimeKeeper::operator<sp/>==:<sp/>start_time<sp/>mismatch<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>match<sp/>=<sp/>match<sp/>&amp;&amp;<sp/>(this-&gt;<ref refid="classcryomesh_1_1common_1_1TimeKeeper_1acb896ec81cbe9d18f4e618320353dc4f" kindref="member">last_timing</ref><sp/>==<sp/>obj.<ref refid="classcryomesh_1_1common_1_1TimeKeeper_1acb896ec81cbe9d18f4e618320353dc4f" kindref="member">last_timing</ref>);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(match<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;TimeKeeper::operator<sp/>==:<sp/>last_timing<sp/>mismatch<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>match<sp/>=<sp/>match<sp/>&amp;&amp;<sp/>(this-&gt;<ref refid="classcryomesh_1_1common_1_1TimeKeeper_1afe9c0b2cd669e9d4d62718734e5b630a" kindref="member">this_timing</ref><sp/>==<sp/>obj.<ref refid="classcryomesh_1_1common_1_1TimeKeeper_1afe9c0b2cd669e9d4d62718734e5b630a" kindref="member">this_timing</ref>);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(match<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;TimeKeeper::operator<sp/>==:<sp/>this_timing<sp/>mismatch<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66" refid="classcryomesh_1_1common_1_1TimeKeeper_1a0581cd24a6eebfbdd67a363467483456" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1a0581cd24a6eebfbdd67a363467483456" kindref="member" tooltip="Move the timing on one cycle.">TimeKeeper::update</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classcryomesh_1_1common_1_1TimeKeeper_1af2f511fb5df5b4a1e6d9eb8dffa4f6ef" kindref="member">cycle</ref><sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classcryomesh_1_1common_1_1TimeKeeper_1acb896ec81cbe9d18f4e618320353dc4f" kindref="member">last_timing</ref><sp/>=<sp/>this-&gt;<ref refid="classcryomesh_1_1common_1_1TimeKeeper_1afe9c0b2cd669e9d4d62718734e5b630a" kindref="member">this_timing</ref>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1afe9c0b2cd669e9d4d62718734e5b630a" kindref="member">this_timing</ref><sp/>=<sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1a41690fc156fdee825fb5e7a5e26a2102" kindref="member">timer</ref>.elapsed();</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;TimeKeeper::update:<sp/>&quot;<sp/>&lt;&lt;<sp/>&quot;this_timing:&quot;<sp/>&lt;&lt;<sp/>this-&gt;last_timing<sp/>&lt;&lt;<sp/>&quot;<sp/>last_timing:&quot;<sp/>&lt;&lt;<sp/>this-&gt;this_timing</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="classcryomesh_1_1common_1_1TimeKeeper_1aa0bfaecbd5118af91d63296f158cee09" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">Cycle</ref><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1aa0bfaecbd5118af91d63296f158cee09" kindref="member" tooltip="Get the current cycle we&amp;#39;re on as an Cycle.">TimeKeeper::getCycle</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classcryomesh_1_1common_1_1TimeKeeper_1af2f511fb5df5b4a1e6d9eb8dffa4f6ef" kindref="member">cycle</ref>;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="classcryomesh_1_1common_1_1TimeKeeper_1ad3f49c5602d1e51b4ee9aa9535a59454" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1ad3f49c5602d1e51b4ee9aa9535a59454" kindref="member" tooltip="Difference between the last time and now.">TimeKeeper::getTiming</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1afe9c0b2cd669e9d4d62718734e5b630a" kindref="member">this_timing</ref><sp/>-<sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1acb896ec81cbe9d18f4e618320353dc4f" kindref="member">last_timing</ref>;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83" refid="classcryomesh_1_1common_1_1TimeKeeper_1a73a685a859e69ce3660b6a6d3469997e" refkind="member"><highlight class="normal">std::time_t<sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1a73a685a859e69ce3660b6a6d3469997e" kindref="member" tooltip="Get the time we started cycling.">TimeKeeper::getStartTime</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(this-&gt;<ref refid="classcryomesh_1_1common_1_1TimeKeeper_1ad6e92ec3c962aa3e6db82d69188e9686" kindref="member">start_time</ref>);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="classcryomesh_1_1common_1_1TimeKeeper_1a888f7db463cc84b0a00478c4bbcf7c44" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::timer<sp/>&amp;<sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1a888f7db463cc84b0a00478c4bbcf7c44" kindref="member" tooltip="Get the Timer.">TimeKeeper::getTimer</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1TimeKeeper_1a41690fc156fdee825fb5e7a5e26a2102" kindref="member">timer</ref>;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight><highlight class="comment">//NAMESPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight><highlight class="comment">//NAMESPACE</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/common/TimeKeeper.cpp"/>
+  </compounddef>
+</doxygen>

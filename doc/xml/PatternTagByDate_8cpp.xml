@@ -1,0 +1,310 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="PatternTagByDate_8cpp" kind="file">
+    <compoundname>PatternTagByDate.cpp</compoundname>
+    <includes refid="PatternTagByDate_8h" local="yes">PatternTagByDate.h</includes>
+    <includes local="no">boost/tokenizer.hpp</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">sstream</includes>
+    <incdepgraph>
+      <node id="1878">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="1881">
+        <label>boost/serialization/map.hpp</label>
+      </node>
+      <node id="1880">
+        <label>boost/serialization/vector.hpp</label>
+      </node>
+      <node id="1883">
+        <label>boost/tokenizer.hpp</label>
+      </node>
+      <node id="1877">
+        <label>string</label>
+      </node>
+      <node id="1876">
+        <label>PatternTag.h</label>
+        <link refid="PatternTag_8h"/>
+        <childnode refid="1877" relation="include">
+        </childnode>
+        <childnode refid="1878" relation="include">
+        </childnode>
+      </node>
+      <node id="1875">
+        <label>PatternTagByDate.h</label>
+        <link refid="PatternTagByDate_8h"/>
+        <childnode refid="1876" relation="include">
+        </childnode>
+        <childnode refid="1879" relation="include">
+        </childnode>
+        <childnode refid="1877" relation="include">
+        </childnode>
+        <childnode refid="1880" relation="include">
+        </childnode>
+        <childnode refid="1881" relation="include">
+        </childnode>
+        <childnode refid="1882" relation="include">
+        </childnode>
+      </node>
+      <node id="1874">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagByDate.cpp</label>
+        <link refid="PatternTagByDate.cpp"/>
+        <childnode refid="1875" relation="include">
+        </childnode>
+        <childnode refid="1883" relation="include">
+        </childnode>
+        <childnode refid="1884" relation="include">
+        </childnode>
+        <childnode refid="1885" relation="include">
+        </childnode>
+      </node>
+      <node id="1879">
+        <label>ctime</label>
+      </node>
+      <node id="1885">
+        <label>sstream</label>
+      </node>
+      <node id="1884">
+        <label>iostream</label>
+      </node>
+      <node id="1882">
+        <label>boost/serialization/shared_ptr.hpp</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacecryomesh">cryomesh</innernamespace>
+    <innernamespace refid="namespacecryomesh_1_1state">cryomesh::state</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>PatternTagByDate.cpp</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>Created<sp/>on:<sp/>17<sp/>Aug<sp/>2010</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Author:<sp/>niall</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="PatternTagByDate_8h" kindref="compound">PatternTagByDate.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/tokenizer.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">cryomesh<sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">state<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">std::string<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1aa377c0641330487a3249f710b92ae7b1" kindref="member">PatternTagByDate::DateFormat</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;%S<sp/>%M<sp/>%H<sp/>%d<sp/>%m<sp/>%Y<sp/>%w<sp/>%j<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">std::string<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1add7aad1fe2fa9ba68a1f6efba392164b" kindref="member">PatternTagByDate::GlobalStartTag</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">std::string<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a3e16a76aea6ea2d84e8f90fb9a861a3d" kindref="member">PatternTagByDate::GlobalEndTag</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">std::string<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a9fd6ba74e86f3f438e9853bd342a0842" kindref="member">PatternTagByDate::GlobalCurrentTag</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">boost::shared_ptr&lt;PatternTagByDate&gt;<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1ac1d93cdd406b287fd3a008102e1d046c" kindref="member">PatternTagByDate::globalTag</ref>;<sp/></highlight><highlight class="comment">//()=<sp/><sp/>boost::shared_ptr&lt;PatternTagByDate&gt;(new<sp/>PatternTagByDate(ByDay));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="classcryomesh_1_1state_1_1PatternTagByDate_1a81779c8abe73f88cf2c165d1a46b34a6" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a81779c8abe73f88cf2c165d1a46b34a6" kindref="member">PatternTagByDate::PatternTagByDate</ref>(<ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a0fe44df3214c9397e04ff9a4e8c57ad9" kindref="member">DateType</ref><sp/>dt)<sp/>:</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dateType(dt),startTime()<sp/>,<sp/>endTime(),<sp/>currentTime(){</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classcryomesh_1_1state_1_1PatternTagByDate_1ad018e686d9f5b6275cd7cc19971a686f" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a81779c8abe73f88cf2c165d1a46b34a6" kindref="member">PatternTagByDate::PatternTagByDate</ref>(<ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a0fe44df3214c9397e04ff9a4e8c57ad9" kindref="member">DateType</ref><sp/>dt,<sp/>std::tm<sp/>start_time,<sp/>std::tm<sp/>end_time,<sp/>std::tm<sp/>current_time)<sp/>:</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dateType(dt),<sp/>startTime(start_time),<sp/>endTime(end_time),<sp/>currentTime(current_time)<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1ac1d93cdd406b287fd3a008102e1d046c" kindref="member">globalTag</ref>-&gt;setStartTag(<ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1add7aad1fe2fa9ba68a1f6efba392164b" kindref="member">GlobalStartTag</ref>);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1ac1d93cdd406b287fd3a008102e1d046c" kindref="member">globalTag</ref>-&gt;setEndTag(<ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a3e16a76aea6ea2d84e8f90fb9a861a3d" kindref="member">GlobalEndTag</ref>);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1ac1d93cdd406b287fd3a008102e1d046c" kindref="member">globalTag</ref>-&gt;setTag(<ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1add7aad1fe2fa9ba68a1f6efba392164b" kindref="member">GlobalStartTag</ref>);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1afe5398940c00ed0fd3b70dcb52efea1c" kindref="member">startTime</ref>.tm_hour<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="classcryomesh_1_1state_1_1PatternTagByDate_1ac2117051c13a443148321799601d8586" refkind="member"><highlight class="normal"><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1ac2117051c13a443148321799601d8586" kindref="member">PatternTagByDate::~PatternTagByDate</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="classcryomesh_1_1state_1_1PatternTagByDate_1a0f01388871f2e3a96d25ab92082cec4b" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a0f01388871f2e3a96d25ab92082cec4b" kindref="member">PatternTagByDate::getTag</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a8c7d0a7aa8bf92aa05c2ea8ae2c60700" kindref="member">PatternTagByDate::tmToTag</ref>(<ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1ad80a0a36ec25f13a65c8beadc349c58c" kindref="member">currentTime</ref>);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40" refid="classcryomesh_1_1state_1_1PatternTagByDate_1aae131c046e25f41bcd08b19658ca0cc0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1aae131c046e25f41bcd08b19658ca0cc0" kindref="member">PatternTagByDate::setTag</ref>(std::string<sp/>tg)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1ad80a0a36ec25f13a65c8beadc349c58c" kindref="member">currentTime</ref><sp/>=<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a783b2953283a8478f6919fd304cb69f1" kindref="member">PatternTagByDate::tagToTm</ref>(tg);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43" refid="classcryomesh_1_1state_1_1PatternTagByDate_1acbd442ea1927dc9eab7683e67d82ab6c" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1acbd442ea1927dc9eab7683e67d82ab6c" kindref="member">PatternTagByDate::moveTag</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a978cee17d8215fcf90a050a033cab7ec" kindref="member">dateType</ref><sp/>==<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a0fe44df3214c9397e04ff9a4e8c57ad9ad826bb03f7153f932902328c419b8f80" kindref="member">ByHour</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1ae0e700b6ce6d8b84e97e8b3e551fde57" kindref="member">PatternTagByDate::moveHour</ref>(<ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1ad80a0a36ec25f13a65c8beadc349c58c" kindref="member">currentTime</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a978cee17d8215fcf90a050a033cab7ec" kindref="member">dateType</ref><sp/>==<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a0fe44df3214c9397e04ff9a4e8c57ad9aec5bb160aa0c7a042b45a87f0d3f8979" kindref="member">ByDay</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a9911819de318f1d49f04c67110dd95cd" kindref="member">PatternTagByDate::moveDay</ref>(<ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1ad80a0a36ec25f13a65c8beadc349c58c" kindref="member">currentTime</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a978cee17d8215fcf90a050a033cab7ec" kindref="member">dateType</ref><sp/>==<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a0fe44df3214c9397e04ff9a4e8c57ad9a0bd9fc8aa9c2f402cf350ed1043ebbbe" kindref="member">ByWeek</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a589ad778ee7350673d25c553bda0eb83" kindref="member">PatternTagByDate::moveWeek</ref>(<ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1ad80a0a36ec25f13a65c8beadc349c58c" kindref="member">currentTime</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a978cee17d8215fcf90a050a033cab7ec" kindref="member">dateType</ref><sp/>==<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a0fe44df3214c9397e04ff9a4e8c57ad9ab50088f4741522f6f750fb2b9727e6de" kindref="member">ByMonth</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a04a41144a760e5a85c0aa4d7b05fdb30" kindref="member">PatternTagByDate::moveMonth</ref>(<ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1ad80a0a36ec25f13a65c8beadc349c58c" kindref="member">currentTime</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a978cee17d8215fcf90a050a033cab7ec" kindref="member">dateType</ref><sp/>==<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a0fe44df3214c9397e04ff9a4e8c57ad9a3516aaaf680fa1aaf3eabf97f32fe1a9" kindref="member">ByYear</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1ab47ab805764e76faff1791594fa83770" kindref="member">PatternTagByDate::moveYear</ref>(<ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1ad80a0a36ec25f13a65c8beadc349c58c" kindref="member">currentTime</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a8c7d0a7aa8bf92aa05c2ea8ae2c60700" kindref="member">PatternTagByDate::tmToTag</ref>(<ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1ad80a0a36ec25f13a65c8beadc349c58c" kindref="member">currentTime</ref>);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="57" refid="classcryomesh_1_1state_1_1PatternTagByDate_1aa38857773222e320697dbfede65ed36f" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1acbd442ea1927dc9eab7683e67d82ab6c" kindref="member">PatternTagByDate::moveTag</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i)<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>i;<sp/>j++)<sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1acbd442ea1927dc9eab7683e67d82ab6c" kindref="member">moveTag</ref>();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a8c7d0a7aa8bf92aa05c2ea8ae2c60700" kindref="member">PatternTagByDate::tmToTag</ref>(<ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1ad80a0a36ec25f13a65c8beadc349c58c" kindref="member">currentTime</ref>);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="classcryomesh_1_1state_1_1PatternTagByDate_1aba2a73f929cba2baa5d51965509230e3" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1aba2a73f929cba2baa5d51965509230e3" kindref="member">PatternTagByDate::getStartTag</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a8c7d0a7aa8bf92aa05c2ea8ae2c60700" kindref="member">PatternTagByDate::tmToTag</ref>(<ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1afe5398940c00ed0fd3b70dcb52efea1c" kindref="member">startTime</ref>);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67" refid="classcryomesh_1_1state_1_1PatternTagByDate_1a9b01bf590164b4644c6d942fc0a3a67b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a9b01bf590164b4644c6d942fc0a3a67b" kindref="member">PatternTagByDate::setStartTag</ref>(std::string<sp/>tg)<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1afe5398940c00ed0fd3b70dcb52efea1c" kindref="member">startTime</ref><sp/>=<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a783b2953283a8478f6919fd304cb69f1" kindref="member">PatternTagByDate::tagToTm</ref>(tg);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70" refid="classcryomesh_1_1state_1_1PatternTagByDate_1a52262ecad476ba4890bd622addd844f2" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a52262ecad476ba4890bd622addd844f2" kindref="member">PatternTagByDate::getEndTag</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a8c7d0a7aa8bf92aa05c2ea8ae2c60700" kindref="member">PatternTagByDate::tmToTag</ref>(<ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a7d1640030846523333a228078cd72acc" kindref="member">endTime</ref>);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73" refid="classcryomesh_1_1state_1_1PatternTagByDate_1a2177a240135e1db32da7c38617a68f31" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a2177a240135e1db32da7c38617a68f31" kindref="member">PatternTagByDate::setEndTag</ref>(std::string<sp/>tg)<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a7d1640030846523333a228078cd72acc" kindref="member">endTime</ref><sp/>=<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a783b2953283a8478f6919fd304cb69f1" kindref="member">PatternTagByDate::tagToTm</ref>(tg);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="classcryomesh_1_1state_1_1PatternTagByDate_1a4a34d0d5566ae8a3888b8c7a747bef6b" refkind="member"><highlight class="normal">boost::shared_ptr&lt;PatternTag&gt;<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a4a34d0d5566ae8a3888b8c7a747bef6b" kindref="member">PatternTagByDate::getGlobalTag</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1ac1d93cdd406b287fd3a008102e1d046c" kindref="member">globalTag</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="classcryomesh_1_1state_1_1PatternTagByDate_1a783b2953283a8478f6919fd304cb69f1" refkind="member"><highlight class="normal">std::tm<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a783b2953283a8478f6919fd304cb69f1" kindref="member">PatternTagByDate::tagToTm</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>tg)<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::tm<sp/>temp_tm;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//parse<sp/>string</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>&apos;Thu<sp/>Aug<sp/>23<sp/>14:55:02<sp/>2001&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::tokenizer&lt;&gt;<sp/>tok(tg);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::tokenizer&lt;&gt;::iterator<sp/>it_tok;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::tokenizer&lt;&gt;::const_iterator<sp/>it_tok_end;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//count<sp/>entries</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it_tok<sp/>=<sp/>tok.begin();</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it_tok_end<sp/>=<sp/>tok.end();</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//%S<sp/>%M<sp/>%H<sp/>%d<sp/>%m<sp/>%Y<sp/>%w<sp/>%j<sp/>dst</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//9<sp/>entries</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(it_tok<sp/>!=<sp/>it_tok_end)<sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++it_tok;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++count;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>assign<sp/>tm<sp/>if<sp/>possible</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(count<sp/>==<sp/>9)<sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it_tok<sp/>=<sp/>tok.begin();</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp_tm.tm_sec<sp/>=<sp/>atoi(it_tok-&gt;c_str());</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++it_tok;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp_tm.tm_min<sp/>=<sp/>atoi(it_tok-&gt;c_str());</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++it_tok;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp_tm.tm_hour<sp/>=<sp/>atoi(it_tok-&gt;c_str());</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++it_tok;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp_tm.tm_mday<sp/>=<sp/>atoi(it_tok-&gt;c_str());</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++it_tok;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp_tm.tm_mon<sp/>=<sp/>atoi(it_tok-&gt;c_str())<sp/>-<sp/>1;<sp/></highlight><highlight class="comment">//months<sp/>*since*<sp/>january<sp/>so<sp/>month<sp/>-1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++it_tok;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp_tm.tm_year<sp/>=<sp/>atoi(it_tok-&gt;c_str())<sp/>-<sp/>1900;<sp/></highlight><highlight class="comment">//<sp/>years<sp/>*since*<sp/>1900</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++it_tok;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp_tm.tm_wday<sp/>=<sp/>atoi(it_tok-&gt;c_str());</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++it_tok;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp_tm.tm_yday<sp/>=<sp/>atoi(it_tok-&gt;c_str())<sp/>-<sp/>1;<sp/></highlight><highlight class="comment">//days<sp/>*since*<sp/>january<sp/>1st<sp/>so<sp/>day<sp/>number<sp/>-1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++it_tok;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp_tm.tm_isdst<sp/>=<sp/>atoi(it_tok-&gt;c_str());</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//temp_tm.tm_zone;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//temp_tm.tm_gmtoff;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;PatternTagByDate::tagToTm:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;ERROR:<sp/>Tag<sp/>doesnt<sp/>have<sp/>enough<sp/>entries!<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>temp_tm;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="classcryomesh_1_1state_1_1PatternTagByDate_1a8c7d0a7aa8bf92aa05c2ea8ae2c60700" refkind="member"><highlight class="normal">std::string<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a8c7d0a7aa8bf92aa05c2ea8ae2c60700" kindref="member">PatternTagByDate::tmToTag</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::tm<sp/>&amp;<sp/>t)<sp/>{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buffer[80];</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::strftime(buffer,<sp/>80,<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1aa377c0641330487a3249f710b92ae7b1" kindref="member">PatternTagByDate::DateFormat</ref>.c_str(),<sp/>&amp;t);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::stringstream<sp/>ss;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ss<sp/>&lt;&lt;<sp/>std::string(buffer)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>t.tm_isdst;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ss.str();</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="139" refid="classcryomesh_1_1state_1_1PatternTagByDate_1ae0e700b6ce6d8b84e97e8b3e551fde57" refkind="member"><highlight class="normal">std::tm<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1ae0e700b6ce6d8b84e97e8b3e551fde57" kindref="member">PatternTagByDate::moveHour</ref>(std::tm<sp/>&amp;<sp/>tmtime,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i)<sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//convert<sp/>to<sp/>time_t</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::time_t<sp/>tt<sp/>=<sp/>std::mktime(&amp;tmtime);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//add<sp/>i*<sp/>60<sp/>secs<sp/>*<sp/>60<sp/>mins<sp/>=i*<sp/>3600<sp/>secs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tt<sp/>+=<sp/>i<sp/>*<sp/>3600;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//convert<sp/>to<sp/>tm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::tm<sp/>*<sp/>tmret<sp/>=<sp/>std::localtime(&amp;tt);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*tmret;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="151" refid="classcryomesh_1_1state_1_1PatternTagByDate_1a9911819de318f1d49f04c67110dd95cd" refkind="member"><highlight class="normal">std::tm<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a9911819de318f1d49f04c67110dd95cd" kindref="member">PatternTagByDate::moveDay</ref>(std::tm<sp/>&amp;<sp/>tmtime,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i)<sp/>{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>move<sp/>24<sp/>hours</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>hours<sp/>=<sp/>i<sp/>*<sp/>24;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1ae0e700b6ce6d8b84e97e8b3e551fde57" kindref="member">PatternTagByDate::moveHour</ref>(tmtime,<sp/>hours);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="156" refid="classcryomesh_1_1state_1_1PatternTagByDate_1a589ad778ee7350673d25c553bda0eb83" refkind="member"><highlight class="normal">std::tm<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a589ad778ee7350673d25c553bda0eb83" kindref="member">PatternTagByDate::moveWeek</ref>(std::tm<sp/>&amp;<sp/>tmtime,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i)<sp/>{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>move<sp/>7<sp/>days</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>days<sp/>=<sp/>i<sp/>*<sp/>7;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a9911819de318f1d49f04c67110dd95cd" kindref="member">PatternTagByDate::moveDay</ref>(tmtime,<sp/>days);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="161" refid="classcryomesh_1_1state_1_1PatternTagByDate_1a04a41144a760e5a85c0aa4d7b05fdb30" refkind="member"><highlight class="normal">std::tm<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a04a41144a760e5a85c0aa4d7b05fdb30" kindref="member">PatternTagByDate::moveMonth</ref>(std::tm<sp/>&amp;<sp/>tmtime,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i)<sp/>{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>years<sp/>=<sp/>i<sp/>/<sp/>12;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::tm<sp/>month_tm<sp/>=<sp/>tmtime;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(years<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>month_tm<sp/>=<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1ab47ab805764e76faff1791594fa83770" kindref="member">PatternTagByDate::moveYear</ref>(tmtime,<sp/>years);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>days<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>month<sp/>=<sp/>tmtime.tm_mon<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>months_to_go<sp/>=<sp/>i<sp/>%<sp/>12;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(months_to_go<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>month_days<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(month<sp/>==<sp/>2)<sp/>{</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//check<sp/>leap<sp/>year</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>past_feb<sp/>=<sp/>tmtime.tm_mon<sp/>&gt;<sp/>1;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>month_days<sp/>=<sp/>28;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(past_feb<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a20516b67d8c03a508c0b30395fd2784a" kindref="member">PatternTagByDate::isLeapYear</ref>(tmtime)<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>month_days<sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(month<sp/>==<sp/>1<sp/>||<sp/>month<sp/>==<sp/>3<sp/>||<sp/>month<sp/>==<sp/>5<sp/>||<sp/>month<sp/>==<sp/>7<sp/>||<sp/>month<sp/>==<sp/>8<sp/>||<sp/>month<sp/>==<sp/>10<sp/>||<sp/>month<sp/>==<sp/>12)<sp/>{</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>month_days<sp/>=<sp/>31;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>month_days<sp/>=<sp/>30;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>days<sp/>+=<sp/>month_days;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++month;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--months_to_go;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a9911819de318f1d49f04c67110dd95cd" kindref="member">PatternTagByDate::moveDay</ref>(month_tm,<sp/>days);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="193" refid="classcryomesh_1_1state_1_1PatternTagByDate_1ab47ab805764e76faff1791594fa83770" refkind="member"><highlight class="normal">std::tm<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1ab47ab805764e76faff1791594fa83770" kindref="member">PatternTagByDate::moveYear</ref>(std::tm<sp/>&amp;<sp/>tmtime,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>years)<sp/>{</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::tm<sp/>presenttime<sp/>(tmtime);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>YEAR_DAYS<sp/>=<sp/>365;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>years;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a20516b67d8c03a508c0b30395fd2784a" kindref="member">PatternTagByDate::isLeapYear</ref>(tmtime)<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>presenttime<sp/>=<sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a9911819de318f1d49f04c67110dd95cd" kindref="member">PatternTagByDate::moveDay</ref>(presenttime,<sp/>YEAR_DAYS+1);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>presenttime<sp/>=<ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a9911819de318f1d49f04c67110dd95cd" kindref="member">PatternTagByDate::moveDay</ref>(presenttime,<sp/>YEAR_DAYS);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>presenttime;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="206" refid="classcryomesh_1_1state_1_1PatternTagByDate_1a20516b67d8c03a508c0b30395fd2784a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1state_1_1PatternTagByDate_1a20516b67d8c03a508c0b30395fd2784a" kindref="member">PatternTagByDate::isLeapYear</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::tm<sp/>&amp;<sp/>tmtime)<sp/>{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>leap_year<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>year<sp/>=<sp/>1900<sp/>+<sp/>tmtime.tm_year;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>div_by_4<sp/>=<sp/>(year<sp/>%<sp/>4<sp/>==<sp/>0);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>div_by_100<sp/>=<sp/>(year<sp/>%<sp/>100<sp/>==<sp/>0);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>div_by_400<sp/>=<sp/>(year<sp/>%<sp/>400<sp/>==<sp/>0);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(div_by_4<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>leap_year<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(div_by_100<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>leap_year<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(div_by_400<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>leap_year<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>leap_year<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>leap_year;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="224"><highlight class="normal">}<sp/></highlight><highlight class="comment">//NAMESPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal">}<sp/></highlight><highlight class="comment">//NAMESPACE</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/state/PatternTagByDate.cpp"/>
+  </compounddef>
+</doxygen>

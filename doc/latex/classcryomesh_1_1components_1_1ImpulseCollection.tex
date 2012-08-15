@@ -1,0 +1,856 @@
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection}{\section{cryomesh\-:\-:components\-:\-:\-Impulse\-Collection \-Class \-Reference}
+\label{classcryomesh_1_1components_1_1ImpulseCollection}\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+}
+
+
+\hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} represents a collection of \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} objects.  
+
+
+
+
+{\ttfamily \#include $<$\-Impulse\-Collection.\-h$>$}
+
+\-Inheritance diagram for cryomesh\-:\-:components\-:\-:\-Impulse\-Collection\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcryomesh_1_1components_1_1ImpulseCollection}
+\end{center}
+\end{figure}
+\subsection*{\-Public \-Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a3682719f1c0bd471e8c5a19b39cc285d}{\-Comparison} \{ \*
+\hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a3682719f1c0bd471e8c5a19b39cc285da5288e1792a76693414517164a2289ec8}{\-Greater\-Than}, 
+\hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a3682719f1c0bd471e8c5a19b39cc285da049307d079370521e85998e7141ec3af}{\-Less\-Than}, 
+\hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a3682719f1c0bd471e8c5a19b39cc285da591330a7a512ed11c4429536a5d1e6d5}{\-Equal\-To}, 
+\hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a3682719f1c0bd471e8c5a19b39cc285da1402ae2e51bdcd9c25fae0dbb70e0b7a}{\-Not\-Equal\-To}, 
+\*
+\hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a3682719f1c0bd471e8c5a19b39cc285dabb82adff3882cdd74faaef695b6bc82d}{\-Less\-Than\-Or\-Equal\-To}, 
+\hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a3682719f1c0bd471e8c5a19b39cc285da5c716b8625dde68ad195d063f37be1d1}{\-Greater\-Than\-Or\-Equal\-To}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a230de3cb1f60f8eba8a53237af529ed2}{\-Impulse\-Collection} ()
+\begin{DoxyCompactList}\small\item\em \-Contructor for \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection}. \end{DoxyCompactList}\item 
+virtual \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a91bdcfc982090f9c665d5d8b80b8d3b9}{$\sim$\-Impulse\-Collection} ()
+\begin{DoxyCompactList}\small\item\em \-Destructor for \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection}. \end{DoxyCompactList}\item 
+double \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_ac9f6be8ecad07258e2c7b25efaa3df70}{get\-Activity} (\hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle} cycle) const 
+\begin{DoxyCompactList}\small\item\em \-Get activity at cycle. \end{DoxyCompactList}\item 
+double \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_acf0a767c00f141a2caee02a36aea6569}{get\-Activity} () const 
+\begin{DoxyCompactList}\small\item\em \-Get activity at current cycle. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_ad465e66e8b49debd309bed6c8ca5bedb}{clear\-Impulses} ()
+\begin{DoxyCompactList}\small\item\em \-Clear collection up to present cycle. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a07c7c16d3a12c1f65dcb1686578d19da}{clear\-Impulses} (\hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle} cycle)
+\begin{DoxyCompactList}\small\item\em \-Clear collection up to specified cycle. \end{DoxyCompactList}\item 
+std\-::map$<$ boost\-::uuids\-::uuid, \*
+boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} $>$ $>$ \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_abe07a298df807be2c62eadf976e02027}{clear\-Impulses} (\hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle} cycle\-Start, \hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle} cycle\-End)
+\begin{DoxyCompactList}\small\item\em \-Clear the \-Impulses that start on or after cycle start parameter and finish before cycle end parameter. \end{DoxyCompactList}\item 
+std\-::map$<$ boost\-::uuids\-::uuid, \*
+boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} $>$ $>$ \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a13560031007e894ea8d8d6cb0bdf48ff}{clear\-Active\-Impulses} ()
+\begin{DoxyCompactList}\small\item\em \-Clear cycles that are active on this cycle. \end{DoxyCompactList}\item 
+std\-::map$<$ boost\-::uuids\-::uuid, \*
+boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} $>$ $>$ \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a34f24b20735831c72fb4db04d014cff3}{clear\-Active\-Impulses} (\hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle} cycle)
+\begin{DoxyCompactList}\small\item\em \-Clear cycles that are active on cycle. \end{DoxyCompactList}\item 
+std\-::map$<$ boost\-::uuids\-::uuid, \*
+boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} $>$ $>$ \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a79fffb878409aff462a5fe9b1c1917f8}{clear\-Active\-Impulses} (\hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle} cycle\-Start, \hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle} cycle\-End)
+\begin{DoxyCompactList}\small\item\em \-Clear cycles that are active on cycle range. \end{DoxyCompactList}\item 
+std\-::map$<$ boost\-::uuids\-::uuid, \*
+boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} $>$ $>$ \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_ab27eb4667bdb58c98e6614712f3b7373}{clear\-Activities\-By\-Minimum} (double activity)
+\begin{DoxyCompactList}\small\item\em \-Clear the \-Impulses that have activities less than parameter. \end{DoxyCompactList}\item 
+std\-::map$<$ boost\-::uuids\-::uuid, \*
+boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} $>$ $>$ \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a30ac8a9f8a401faf8277dd948ed2be15}{clear\-Activities\-By\-Maximum} (double activity)
+\begin{DoxyCompactList}\small\item\em \-Clear the \-Impulses that have activities greater than parameter. \end{DoxyCompactList}\item 
+void \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a44ba846c61ae3d39730bd141072dc8e9}{decrement\-Activity\-Timers} ()
+\begin{DoxyCompactList}\small\item\em \-Decrement the activity timers of all impulses. \end{DoxyCompactList}\item 
+std\-::list$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} $>$ $>$ \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_aea52c674f13597d808ad3e5f4f4bb9c1}{get\-By\-Activity\-Timer\-Value} (double value, \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a3682719f1c0bd471e8c5a19b39cc285d}{\-Comparison} comp)
+\begin{DoxyCompactList}\small\item\em \-Get impulse list by activity timer value. \end{DoxyCompactList}\item 
+std\-::list$<$ boost\-::shared\-\_\-ptr\*
+$<$ \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} $>$ $>$ \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a317b84fe238bd4ff6bb8eda97b35cf1a}{remove\-By\-Activity\-Timer\-Value} (double value=0, \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a3682719f1c0bd471e8c5a19b39cc285d}{\-Comparison} comp=\hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a3682719f1c0bd471e8c5a19b39cc285dabb82adff3882cdd74faaef695b6bc82d}{\-Less\-Than\-Or\-Equal\-To})
+\begin{DoxyCompactList}\small\item\em remove impulses by activity timer value \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a892cc1028a9539de15668c39511adba3}{refresh\-Data\-Object} ()
+\begin{DoxyCompactList}\small\item\em \-Inherited from \-Data\-Object\-Controller. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a3e6df4eb108bd6e5acc6abe4184912b8}{enable\-Debug} (bool b)
+\item 
+\hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \& \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_af2f41361cb06d4e6a4028e7ad9ba4792}{operator=} (const \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \&obj)
+\begin{DoxyCompactList}\small\item\em \-Assignment operator. \end{DoxyCompactList}\item 
+\hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \& \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a92954d37e3ef80ead5205fc5b288925e}{operator+=} (const \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \&obj)
+\begin{DoxyCompactList}\small\item\em \-Destructive addition and assignment operator. \end{DoxyCompactList}\item 
+const \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_af3e0802e865b4de8c005d749953c0102}{operator+} (const \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \&obj) const 
+\begin{DoxyCompactList}\small\item\em \-Non-\/destructive addition operator. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a68b0c4b2aa6b213d0e579cad2cb920af}{operator==} (const \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \&obj) const 
+\begin{DoxyCompactList}\small\item\em \-Comparator operator. \end{DoxyCompactList}\item 
+bool \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a64e8ed03f0ef6b33a0a94331bef08b05}{operator!=} (const \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \&obj) const 
+\begin{DoxyCompactList}\small\item\em \-Not comparator operator. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcryomesh_1_1dataobjects_1_1DataObjectController_a3e510413675407ec0a6745345ca9a3a8}{enable\-Logging} (bool enable)
+\begin{DoxyCompactList}\small\item\em \-Whether logging is enabled or not. \end{DoxyCompactList}\item 
+virtual const std\-::map\*
+$<$ unsigned long int, double $>$ \& \hyperlink{classcryomesh_1_1dataobjects_1_1DataObjectController_a70a03ee28392ecf2e039702a18511f05}{get\-Map} ()
+\begin{DoxyCompactList}\small\item\em \-Get all cycle values. \end{DoxyCompactList}\item 
+virtual const \*
+\hyperlink{classcryomesh_1_1dataobjects_1_1DataObject}{dataobjects\-::\-Data\-Object}\*
+$<$ unsigned long int, double $>$ \& \hyperlink{classcryomesh_1_1dataobjects_1_1DataObjectController_aa919e8676a611028c6b6e6791c87f438}{get\-Data\-Object} ()
+\begin{DoxyCompactList}\small\item\em \-Get data object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\-::map$<$ boost\-::uuids\-::uuid, \*
+boost\-::shared\-\_\-ptr$<$ \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} $>$ $>$ \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a3d5bac577752316e38d0d54715b85dca}{clear\-Activities\-By\-Value} (double activity, bool greater)
+\begin{DoxyCompactList}\small\item\em \-Get the associated \-Mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcryomesh_1_1dataobjects_1_1DataObject}{dataobjects\-::\-Data\-Object}\*
+$<$ unsigned long int, double $>$ \hyperlink{classcryomesh_1_1dataobjects_1_1DataObjectController_aa13d30e9fa2f1caa0510635214d4bb26}{data\-Object}
+\end{DoxyCompactItemize}
+\subsection*{\-Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream \& \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection_a7c219e0c7bb5a54301e5655d28f8a81b}{operator$<$$<$} (std\-::ostream \&os, const \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \&obj)
+\begin{DoxyCompactList}\small\item\em \-To stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} represents a collection of \hyperlink{classcryomesh_1_1components_1_1Impulse}{\-Impulse} objects. 
+
+\-A collection of \-Impulses that allows for \-Impulses to be held, 'moved forward' in time, and summated in some way 
+
+\-Definition at line 35 of file \-Impulse\-Collection.\-h.
+
+
+
+\subsection{\-Member \-Enumeration \-Documentation}
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_a3682719f1c0bd471e8c5a19b39cc285d}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!\-Comparison@{\-Comparison}}
+\index{\-Comparison@{\-Comparison}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{\-Comparison}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cryomesh\-::components\-::\-Impulse\-Collection\-::\-Comparison}}}\label{classcryomesh_1_1components_1_1ImpulseCollection_a3682719f1c0bd471e8c5a19b39cc285d}
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-Greater\-Than@{\-Greater\-Than}!cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}}\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!\-Greater\-Than@{\-Greater\-Than}}\item[{\em 
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_a3682719f1c0bd471e8c5a19b39cc285da5288e1792a76693414517164a2289ec8}{\-Greater\-Than}\label{classcryomesh_1_1components_1_1ImpulseCollection_a3682719f1c0bd471e8c5a19b39cc285da5288e1792a76693414517164a2289ec8}
+}]\index{\-Less\-Than@{\-Less\-Than}!cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}}\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!\-Less\-Than@{\-Less\-Than}}\item[{\em 
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_a3682719f1c0bd471e8c5a19b39cc285da049307d079370521e85998e7141ec3af}{\-Less\-Than}\label{classcryomesh_1_1components_1_1ImpulseCollection_a3682719f1c0bd471e8c5a19b39cc285da049307d079370521e85998e7141ec3af}
+}]\index{\-Equal\-To@{\-Equal\-To}!cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}}\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!\-Equal\-To@{\-Equal\-To}}\item[{\em 
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_a3682719f1c0bd471e8c5a19b39cc285da591330a7a512ed11c4429536a5d1e6d5}{\-Equal\-To}\label{classcryomesh_1_1components_1_1ImpulseCollection_a3682719f1c0bd471e8c5a19b39cc285da591330a7a512ed11c4429536a5d1e6d5}
+}]\index{\-Not\-Equal\-To@{\-Not\-Equal\-To}!cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}}\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!\-Not\-Equal\-To@{\-Not\-Equal\-To}}\item[{\em 
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_a3682719f1c0bd471e8c5a19b39cc285da1402ae2e51bdcd9c25fae0dbb70e0b7a}{\-Not\-Equal\-To}\label{classcryomesh_1_1components_1_1ImpulseCollection_a3682719f1c0bd471e8c5a19b39cc285da1402ae2e51bdcd9c25fae0dbb70e0b7a}
+}]\index{\-Less\-Than\-Or\-Equal\-To@{\-Less\-Than\-Or\-Equal\-To}!cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}}\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!\-Less\-Than\-Or\-Equal\-To@{\-Less\-Than\-Or\-Equal\-To}}\item[{\em 
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_a3682719f1c0bd471e8c5a19b39cc285dabb82adff3882cdd74faaef695b6bc82d}{\-Less\-Than\-Or\-Equal\-To}\label{classcryomesh_1_1components_1_1ImpulseCollection_a3682719f1c0bd471e8c5a19b39cc285dabb82adff3882cdd74faaef695b6bc82d}
+}]\index{\-Greater\-Than\-Or\-Equal\-To@{\-Greater\-Than\-Or\-Equal\-To}!cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}}\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!\-Greater\-Than\-Or\-Equal\-To@{\-Greater\-Than\-Or\-Equal\-To}}\item[{\em 
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_a3682719f1c0bd471e8c5a19b39cc285da5c716b8625dde68ad195d063f37be1d1}{\-Greater\-Than\-Or\-Equal\-To}\label{classcryomesh_1_1components_1_1ImpulseCollection_a3682719f1c0bd471e8c5a19b39cc285da5c716b8625dde68ad195d063f37be1d1}
+}]\end{description}
+\end{Desc}
+
+
+
+\-Definition at line 38 of file \-Impulse\-Collection.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_a230de3cb1f60f8eba8a53237af529ed2}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!\-Impulse\-Collection@{\-Impulse\-Collection}}
+\index{\-Impulse\-Collection@{\-Impulse\-Collection}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{\-Impulse\-Collection}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::components\-::\-Impulse\-Collection\-::\-Impulse\-Collection} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1ImpulseCollection_a230de3cb1f60f8eba8a53237af529ed2}
+
+
+\-Contructor for \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection}. 
+
+\-Contruct using default \-Mesh 
+
+\-Definition at line 18 of file \-Impulse\-Collection.\-cpp.
+
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_a91bdcfc982090f9c665d5d8b80b8d3b9}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!$\sim$\-Impulse\-Collection@{$\sim$\-Impulse\-Collection}}
+\index{$\sim$\-Impulse\-Collection@{$\sim$\-Impulse\-Collection}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{$\sim$\-Impulse\-Collection}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cryomesh\-::components\-::\-Impulse\-Collection\-::$\sim$\-Impulse\-Collection} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1ImpulseCollection_a91bdcfc982090f9c665d5d8b80b8d3b9}
+
+
+\-Destructor for \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection}. 
+
+\-Destructor 
+
+\-Definition at line 22 of file \-Impulse\-Collection.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_a13560031007e894ea8d8d6cb0bdf48ff}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!clear\-Active\-Impulses@{clear\-Active\-Impulses}}
+\index{clear\-Active\-Impulses@{clear\-Active\-Impulses}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{clear\-Active\-Impulses}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$ boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ {\bf \-Impulse} $>$ $>$ {\bf cryomesh\-::components\-::\-Impulse\-Collection\-::clear\-Active\-Impulses} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1ImpulseCollection_a13560031007e894ea8d8d6cb0bdf48ff}
+
+
+\-Clear cycles that are active on this cycle. 
+
+\-Update the collection to by dropping all impulses that are active on this cycle
+
+\begin{DoxyReturn}{\-Returns}
+std\-::map$<$boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$\-Impulse$>$ $>$ \-The collection of deleted impulses 
+\end{DoxyReturn}
+
+
+\-Definition at line 122 of file \-Impulse\-Collection.\-cpp.
+
+
+
+\-References cryomesh\-::common\-::\-Time\-Keeper\-::get\-Time\-Keeper().
+
+
+
+\-Referenced by clear\-Active\-Impulses(), cryomesh\-::components\-::\-Node\-::enter\-Recovery(), and cryomesh\-::components\-::\-Node\-::update().
+
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_a34f24b20735831c72fb4db04d014cff3}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!clear\-Active\-Impulses@{clear\-Active\-Impulses}}
+\index{clear\-Active\-Impulses@{clear\-Active\-Impulses}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{clear\-Active\-Impulses}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$ boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ {\bf \-Impulse} $>$ $>$ {\bf cryomesh\-::components\-::\-Impulse\-Collection\-::clear\-Active\-Impulses} (
+\begin{DoxyParamCaption}
+\item[{{\bf common\-::\-Cycle}}]{cycle}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1ImpulseCollection_a34f24b20735831c72fb4db04d014cff3}
+
+
+\-Clear cycles that are active on cycle. 
+
+\-Update the collection to by dropping all impulses that are active on cycle
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle}} & cycle \-The cycle to drop inclusive impulses from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::map$<$boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$\-Impulse$>$ $>$ \-The collection of deleted impulses 
+\end{DoxyReturn}
+
+
+\-Definition at line 127 of file \-Impulse\-Collection.\-cpp.
+
+
+
+\-References clear\-Active\-Impulses().
+
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_a79fffb878409aff462a5fe9b1c1917f8}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!clear\-Active\-Impulses@{clear\-Active\-Impulses}}
+\index{clear\-Active\-Impulses@{clear\-Active\-Impulses}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{clear\-Active\-Impulses}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$ boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ {\bf \-Impulse} $>$ $>$ {\bf cryomesh\-::components\-::\-Impulse\-Collection\-::clear\-Active\-Impulses} (
+\begin{DoxyParamCaption}
+\item[{{\bf common\-::\-Cycle}}]{cycle\-Start, }
+\item[{{\bf common\-::\-Cycle}}]{cycle\-End}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1ImpulseCollection_a79fffb878409aff462a5fe9b1c1917f8}
+
+
+\-Clear cycles that are active on cycle range. 
+
+\-Interval is \mbox{[}cycle\-\_\-start,cycle\-\_\-end)
+
+\-Update the collection to by dropping all impulses that are active on cycle range
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle}} & cycle\-Start \-The start cycle to drop inclusive impulses from \\
+\hline
+{\em \hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle}} & cycle\-End \-The end cycle to drop inclusive impulses from excluded\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::map$<$boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$\-Impulse$>$ $>$ \-The collection of deleted impulses 
+\end{DoxyReturn}
+
+
+\-Definition at line 131 of file \-Impulse\-Collection.\-cpp.
+
+
+
+\-References cryomesh\-::common\-::\-Time\-Keeper\-::get\-Cycle(), cryomesh\-::components\-::\-Impulse\-::get\-First\-Active\-Cycle(), cryomesh\-::components\-::\-Impulse\-::get\-Last\-Active\-Cycle(), cryomesh\-::common\-::\-Time\-Keeper\-::get\-Time\-Keeper(), and cryomesh\-::components\-::\-Impulse\-::is\-Active().
+
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_a30ac8a9f8a401faf8277dd948ed2be15}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!clear\-Activities\-By\-Maximum@{clear\-Activities\-By\-Maximum}}
+\index{clear\-Activities\-By\-Maximum@{clear\-Activities\-By\-Maximum}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{clear\-Activities\-By\-Maximum}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$ boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ {\bf \-Impulse} $>$ $>$ {\bf cryomesh\-::components\-::\-Impulse\-Collection\-::clear\-Activities\-By\-Maximum} (
+\begin{DoxyParamCaption}
+\item[{double}]{activity}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1ImpulseCollection_a30ac8a9f8a401faf8277dd948ed2be15}
+
+
+\-Clear the \-Impulses that have activities greater than parameter. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em double} & activity \-The maximum activity impulses must have to avoid deleteion\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::map$<$boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$\-Impulse$>$ $>$ \-The deleted collection of impulses 
+\end{DoxyReturn}
+
+
+\-Definition at line 188 of file \-Impulse\-Collection.\-cpp.
+
+
+
+\-References clear\-Activities\-By\-Value().
+
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_ab27eb4667bdb58c98e6614712f3b7373}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!clear\-Activities\-By\-Minimum@{clear\-Activities\-By\-Minimum}}
+\index{clear\-Activities\-By\-Minimum@{clear\-Activities\-By\-Minimum}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{clear\-Activities\-By\-Minimum}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$ boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ {\bf \-Impulse} $>$ $>$ {\bf cryomesh\-::components\-::\-Impulse\-Collection\-::clear\-Activities\-By\-Minimum} (
+\begin{DoxyParamCaption}
+\item[{double}]{activity}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1ImpulseCollection_ab27eb4667bdb58c98e6614712f3b7373}
+
+
+\-Clear the \-Impulses that have activities less than parameter. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em double} & activity \-The minimum activity impulses must have to avoid deleteion\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::map$<$boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$\-Impulse$>$ $>$ \-The deleted collection of impulses 
+\end{DoxyReturn}
+
+
+\-Definition at line 184 of file \-Impulse\-Collection.\-cpp.
+
+
+
+\-References clear\-Activities\-By\-Value().
+
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_a3d5bac577752316e38d0d54715b85dca}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!clear\-Activities\-By\-Value@{clear\-Activities\-By\-Value}}
+\index{clear\-Activities\-By\-Value@{clear\-Activities\-By\-Value}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{clear\-Activities\-By\-Value}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$ boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ {\bf \-Impulse} $>$ $>$ {\bf cryomesh\-::components\-::\-Impulse\-Collection\-::clear\-Activities\-By\-Value} (
+\begin{DoxyParamCaption}
+\item[{double}]{activity, }
+\item[{bool}]{greater}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classcryomesh_1_1components_1_1ImpulseCollection_a3d5bac577752316e38d0d54715b85dca}
+
+
+\-Get the associated \-Mesh. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Mesh
+\end{DoxyReturn}
+const boost\-::shared\-\_\-ptr$<$\-Mesh$>$ get\-Mesh() const; \-Clear the \-Impulses that have activities greater or less than parameter
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em double} & activity \-The maximum or minimum activity impulses must have to avoid deleteion \\
+\hline
+{\em bool} & \-True is first parameter is maximum allowed value, false if its the minimum\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::map$<$boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$\-Impulse$>$ $>$ \-The deleted collection of impulses 
+\end{DoxyReturn}
+
+
+\-Definition at line 400 of file \-Impulse\-Collection.\-cpp.
+
+
+
+\-Referenced by clear\-Activities\-By\-Maximum(), and clear\-Activities\-By\-Minimum().
+
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_ad465e66e8b49debd309bed6c8ca5bedb}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!clear\-Impulses@{clear\-Impulses}}
+\index{clear\-Impulses@{clear\-Impulses}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{clear\-Impulses}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Impulse\-Collection\-::clear\-Impulses} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1ImpulseCollection_ad465e66e8b49debd309bed6c8ca5bedb}
+
+
+\-Clear collection up to present cycle. 
+
+\-Update the collection to present cycle (non-\/inclusive) by dropping all impulses that are 'in the past' relative to that cycle. \-Interval is \mbox{[}0,present\-\_\-cycle) 
+
+\-Definition at line 56 of file \-Impulse\-Collection.\-cpp.
+
+
+
+\-References cryomesh\-::common\-::\-Time\-Keeper\-::get\-Cycle(), and cryomesh\-::common\-::\-Time\-Keeper\-::get\-Time\-Keeper().
+
+
+
+\-Referenced by clear\-Impulses(), and cryomesh\-::components\-::\-Node\-::update\-Impulses().
+
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_a07c7c16d3a12c1f65dcb1686578d19da}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!clear\-Impulses@{clear\-Impulses}}
+\index{clear\-Impulses@{clear\-Impulses}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{clear\-Impulses}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Impulse\-Collection\-::clear\-Impulses} (
+\begin{DoxyParamCaption}
+\item[{{\bf common\-::\-Cycle}}]{cycle}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1ImpulseCollection_a07c7c16d3a12c1f65dcb1686578d19da}
+
+
+\-Clear collection up to specified cycle. 
+
+\-Update the collection to specified cycle (non-\/inclusive) by dropping all impulses that are 'in the past' relative to that cycle. \-Interval is \mbox{[}0,cycle)
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \hyperlink{classcryomesh_1_1common_1_1Cycle}{common\-::\-Cycle}} & cycle \-The cycle that is the cutoff point for the collection \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 60 of file \-Impulse\-Collection.\-cpp.
+
+
+
+\-References clear\-Impulses().
+
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_abe07a298df807be2c62eadf976e02027}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!clear\-Impulses@{clear\-Impulses}}
+\index{clear\-Impulses@{clear\-Impulses}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{clear\-Impulses}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$ boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$ {\bf \-Impulse} $>$ $>$ {\bf cryomesh\-::components\-::\-Impulse\-Collection\-::clear\-Impulses} (
+\begin{DoxyParamCaption}
+\item[{{\bf common\-::\-Cycle}}]{cycle\-Start, }
+\item[{{\bf common\-::\-Cycle}}]{cycle\-End}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1ImpulseCollection_abe07a298df807be2c62eadf976e02027}
+
+
+\-Clear the \-Impulses that start on or after cycle start parameter and finish before cycle end parameter. 
+
+\-Interval is \mbox{[}cycle\-\_\-start,cycle\-\_\-end)
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Cycle} & cycle\-Start \-Cycle parameter that marks the start of the cleared area \\
+\hline
+{\em \-Cycle} & cycle\-End \-Cycle parameter that marks the end of the cleared area (non-\/inclusive)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::map$<$boost\-::uuids\-::uuid, boost\-::shared\-\_\-ptr$<$\-Impulse$>$ $>$ \-The deleted collection of impulses 
+\end{DoxyReturn}
+
+
+\-Definition at line 64 of file \-Impulse\-Collection.\-cpp.
+
+
+
+\-References cryomesh\-::common\-::\-Time\-Keeper\-::get\-Cycle(), and cryomesh\-::common\-::\-Time\-Keeper\-::get\-Time\-Keeper().
+
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_a44ba846c61ae3d39730bd141072dc8e9}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!decrement\-Activity\-Timers@{decrement\-Activity\-Timers}}
+\index{decrement\-Activity\-Timers@{decrement\-Activity\-Timers}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{decrement\-Activity\-Timers}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Impulse\-Collection\-::decrement\-Activity\-Timers} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1ImpulseCollection_a44ba846c61ae3d39730bd141072dc8e9}
+
+
+\-Decrement the activity timers of all impulses. 
+
+
+
+\-Definition at line 192 of file \-Impulse\-Collection.\-cpp.
+
+
+
+\-Referenced by cryomesh\-::components\-::\-Connection\-::update().
+
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_a3e6df4eb108bd6e5acc6abe4184912b8}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!enable\-Debug@{enable\-Debug}}
+\index{enable\-Debug@{enable\-Debug}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{enable\-Debug}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Impulse\-Collection\-::enable\-Debug} (
+\begin{DoxyParamCaption}
+\item[{bool}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1ImpulseCollection_a3e6df4eb108bd6e5acc6abe4184912b8}
+
+
+\-Definition at line 320 of file \-Impulse\-Collection.\-cpp.
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObjectController_a3e510413675407ec0a6745345ca9a3a8}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!enable\-Logging@{enable\-Logging}}
+\index{enable\-Logging@{enable\-Logging}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{enable\-Logging}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}$<$ unsigned long int , double  $>$\-::{\bf enable\-Logging} (
+\begin{DoxyParamCaption}
+\item[{bool}]{enable}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual, inherited\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObjectController_a3e510413675407ec0a6745345ca9a3a8}
+
+
+\-Whether logging is enabled or not. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em bool} & enable \-True to enable logging, false otherwise \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 47 of file \-Data\-Object\-Controller.\-h.
+
+
+
+\-References cryomesh\-::dataobjects\-::\-Data\-Object\-Controller$<$ U, T $>$\-::data\-Object.
+
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_ac9f6be8ecad07258e2c7b25efaa3df70}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!get\-Activity@{get\-Activity}}
+\index{get\-Activity@{get\-Activity}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{get\-Activity}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::components\-::\-Impulse\-Collection\-::get\-Activity} (
+\begin{DoxyParamCaption}
+\item[{{\bf common\-::\-Cycle}}]{cycle}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1ImpulseCollection_ac9f6be8ecad07258e2c7b25efaa3df70}
+
+
+\-Get activity at cycle. 
+
+\-Sum all the \-Impulses in the collection on specified cycle and return activity
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em \-Cycle} & cycle \-The cycle to calculate the activity on\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+double \-The activity on specified cycle 
+\end{DoxyReturn}
+
+
+\-Definition at line 25 of file \-Impulse\-Collection.\-cpp.
+
+
+
+\-Referenced by cryomesh\-::components\-::\-Node\-::get\-Activity().
+
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_acf0a767c00f141a2caee02a36aea6569}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!get\-Activity@{get\-Activity}}
+\index{get\-Activity@{get\-Activity}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{get\-Activity}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf cryomesh\-::components\-::\-Impulse\-Collection\-::get\-Activity} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1ImpulseCollection_acf0a767c00f141a2caee02a36aea6569}
+
+
+\-Get activity at current cycle. 
+
+\-Sum all the \-Impulses in the collection on the current cycle and return activity
+
+\begin{DoxyReturn}{\-Returns}
+double \-The activity on specified cycle 
+\end{DoxyReturn}
+
+
+\-Definition at line 51 of file \-Impulse\-Collection.\-cpp.
+
+
+
+\-References cryomesh\-::common\-::\-Time\-Keeper\-::get\-Cycle(), and cryomesh\-::common\-::\-Time\-Keeper\-::get\-Time\-Keeper().
+
+
+
+\-Referenced by refresh\-Data\-Object().
+
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_aea52c674f13597d808ad3e5f4f4bb9c1}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!get\-By\-Activity\-Timer\-Value@{get\-By\-Activity\-Timer\-Value}}
+\index{get\-By\-Activity\-Timer\-Value@{get\-By\-Activity\-Timer\-Value}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{get\-By\-Activity\-Timer\-Value}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<$ boost\-::shared\-\_\-ptr$<$ {\bf \-Impulse} $>$ $>$ {\bf cryomesh\-::components\-::\-Impulse\-Collection\-::get\-By\-Activity\-Timer\-Value} (
+\begin{DoxyParamCaption}
+\item[{double}]{value, }
+\item[{{\bf \-Impulse\-Collection\-::\-Comparison}}]{comp}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1ImpulseCollection_aea52c674f13597d808ad3e5f4f4bb9c1}
+
+
+\-Get impulse list by activity timer value. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em double} & value activity timer value \\
+\hline
+{\em \-Comparison} & comp \-What comparison to make with the value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::list$<$boost\-::shared\-\_\-ptr$<$ Impulse$>$ $>$ \-The list of impulses that meet the comparison 
+\end{DoxyReturn}
+
+
+\-Definition at line 208 of file \-Impulse\-Collection.\-cpp.
+
+
+
+\-References \-Equal\-To, \-Greater\-Than, \-Greater\-Than\-Or\-Equal\-To, \-Less\-Than, and \-Less\-Than\-Or\-Equal\-To.
+
+
+
+\-Referenced by remove\-By\-Activity\-Timer\-Value().
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObjectController_aa919e8676a611028c6b6e6791c87f438}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!get\-Data\-Object@{get\-Data\-Object}}
+\index{get\-Data\-Object@{get\-Data\-Object}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{get\-Data\-Object}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf dataobjects\-::\-Data\-Object}$<$unsigned long int , double $>$\& {\bf cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}$<$ unsigned long int , double  $>$\-::{\bf get\-Data\-Object} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual, inherited\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObjectController_aa919e8676a611028c6b6e6791c87f438}
+
+
+\-Get data object. 
+
+\begin{DoxyReturn}{\-Returns}
+dataobjects\-::\-Data\-Object$<$\-U,\-T$>$ \& \-The data object 
+\end{DoxyReturn}
+
+
+\-Definition at line 68 of file \-Data\-Object\-Controller.\-h.
+
+
+
+\-References cryomesh\-::dataobjects\-::\-Data\-Object\-Controller$<$ U, T $>$\-::data\-Object, and cryomesh\-::dataobjects\-::\-Data\-Object\-Controller$<$ U, T $>$\-::refresh\-Data\-Object().
+
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObjectController_a70a03ee28392ecf2e039702a18511f05}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!get\-Map@{get\-Map}}
+\index{get\-Map@{get\-Map}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{get\-Map}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std\-::map$<$unsigned long int , double $>$\& {\bf cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}$<$ unsigned long int , double  $>$\-::{\bf get\-Map} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual, inherited\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObjectController_a70a03ee28392ecf2e039702a18511f05}
+
+
+\-Get all cycle values. 
+
+\begin{DoxyReturn}{\-Returns}
+std\-::map$<$unsigned long int, double$>$ \& \-The cycle values 
+\end{DoxyReturn}
+
+
+\-Definition at line 57 of file \-Data\-Object\-Controller.\-h.
+
+
+
+\-References cryomesh\-::dataobjects\-::\-Data\-Object\-Controller$<$ U, T $>$\-::data\-Object, and cryomesh\-::dataobjects\-::\-Data\-Object\-Controller$<$ U, T $>$\-::refresh\-Data\-Object().
+
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_a64e8ed03f0ef6b33a0a94331bef08b05}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool cryomesh\-::components\-::\-Impulse\-Collection\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Impulse\-Collection} \&}]{obj}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1ImpulseCollection_a64e8ed03f0ef6b33a0a94331bef08b05}
+
+
+\-Not comparator operator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em const} & \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \& obj \-R\-H\-S object\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+bool \-True if not equal, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 371 of file \-Impulse\-Collection.\-cpp.
+
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_af3e0802e865b4de8c005d749953c0102}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!operator+@{operator+}}
+\index{operator+@{operator+}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf \-Impulse\-Collection} cryomesh\-::components\-::\-Impulse\-Collection\-::operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Impulse\-Collection} \&}]{obj}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1ImpulseCollection_af3e0802e865b4de8c005d749953c0102}
+
+
+\-Non-\/destructive addition operator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em const} & \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \& obj \-R\-H\-S addition\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \-New object after addition 
+\end{DoxyReturn}
+
+
+\-Definition at line 314 of file \-Impulse\-Collection.\-cpp.
+
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_a92954d37e3ef80ead5205fc5b288925e}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Impulse\-Collection} \& cryomesh\-::components\-::\-Impulse\-Collection\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Impulse\-Collection} \&}]{obj}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1ImpulseCollection_a92954d37e3ef80ead5205fc5b288925e}
+
+
+\-Destructive addition and assignment operator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em const} & \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \& obj \-R\-H\-S addition\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \& \-This object after addition and assignment 
+\end{DoxyReturn}
+
+
+\-Definition at line 294 of file \-Impulse\-Collection.\-cpp.
+
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_af2f41361cb06d4e6a4028e7ad9ba4792}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!operator=@{operator=}}
+\index{operator=@{operator=}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Impulse\-Collection} \& cryomesh\-::components\-::\-Impulse\-Collection\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Impulse\-Collection} \&}]{obj}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1ImpulseCollection_af2f41361cb06d4e6a4028e7ad9ba4792}
+
+
+\-Assignment operator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em const} & \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \& obj \-R\-H\-S assignment\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \& \-This object after assignment 
+\end{DoxyReturn}
+
+
+\-Definition at line 285 of file \-Impulse\-Collection.\-cpp.
+
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_a68b0c4b2aa6b213d0e579cad2cb920af}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!operator==@{operator==}}
+\index{operator==@{operator==}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool cryomesh\-::components\-::\-Impulse\-Collection\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf \-Impulse\-Collection} \&}]{obj}
+\end{DoxyParamCaption}
+) const}}\label{classcryomesh_1_1components_1_1ImpulseCollection_a68b0c4b2aa6b213d0e579cad2cb920af}
+
+
+\-Comparator operator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em const} & \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \& obj \-R\-H\-S object\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+bool \-True if equal, false otherwise 
+\end{DoxyReturn}
+
+
+\-Definition at line 324 of file \-Impulse\-Collection.\-cpp.
+
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_a892cc1028a9539de15668c39511adba3}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!refresh\-Data\-Object@{refresh\-Data\-Object}}
+\index{refresh\-Data\-Object@{refresh\-Data\-Object}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{refresh\-Data\-Object}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf cryomesh\-::components\-::\-Impulse\-Collection\-::refresh\-Data\-Object} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcryomesh_1_1components_1_1ImpulseCollection_a892cc1028a9539de15668c39511adba3}
+
+
+\-Inherited from \-Data\-Object\-Controller. 
+
+\-Overriden to force refresh update on call 
+
+\-Reimplemented from \hyperlink{classcryomesh_1_1dataobjects_1_1DataObjectController_ae015efe3d10cced82d5043f560cbe04f}{cryomesh\-::dataobjects\-::\-Data\-Object\-Controller$<$ unsigned long int, double $>$}.
+
+
+
+\-Definition at line 265 of file \-Impulse\-Collection.\-cpp.
+
+
+
+\-References cryomesh\-::dataobjects\-::\-Data\-Object$<$ U, T $>$\-::clear(), cryomesh\-::dataobjects\-::\-Data\-Object\-Controller$<$ unsigned long int, double $>$\-::data\-Object, get\-Activity(), cryomesh\-::common\-::\-Time\-Keeper\-::get\-Cycle(), cryomesh\-::dataobjects\-::\-Data\-Object$<$ U, T $>$\-::get\-Dataset\-Maximum\-Size(), cryomesh\-::common\-::\-Time\-Keeper\-::get\-Time\-Keeper(), cryomesh\-::dataobjects\-::\-Data\-Object$<$ U, T $>$\-::insert(), cryomesh\-::dataobjects\-::\-Data\-Object$<$ U, T $>$\-::is\-Logging\-Enabled(), and cryomesh\-::common\-::\-Cycle\-::to\-U\-L\-Int().
+
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_a317b84fe238bd4ff6bb8eda97b35cf1a}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!remove\-By\-Activity\-Timer\-Value@{remove\-By\-Activity\-Timer\-Value}}
+\index{remove\-By\-Activity\-Timer\-Value@{remove\-By\-Activity\-Timer\-Value}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{remove\-By\-Activity\-Timer\-Value}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<$ boost\-::shared\-\_\-ptr$<$ {\bf \-Impulse} $>$ $>$ {\bf cryomesh\-::components\-::\-Impulse\-Collection\-::remove\-By\-Activity\-Timer\-Value} (
+\begin{DoxyParamCaption}
+\item[{double}]{value = {\ttfamily 0}, }
+\item[{{\bf \-Impulse\-Collection\-::\-Comparison}}]{comp = {\ttfamily {\bf \-Less\-Than\-Or\-Equal\-To}}}
+\end{DoxyParamCaption}
+)}}\label{classcryomesh_1_1components_1_1ImpulseCollection_a317b84fe238bd4ff6bb8eda97b35cf1a}
+
+
+remove impulses by activity timer value 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em double} & value activity timer value \\
+\hline
+{\em \-Comparison} & comp \-What comparison to make with the value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::list$<$boost\-::shared\-\_\-ptr$<$ Impulse$>$ $>$ \-The that meet the comparison and were removed 
+\end{DoxyReturn}
+
+
+\-Definition at line 258 of file \-Impulse\-Collection.\-cpp.
+
+
+
+\-References get\-By\-Activity\-Timer\-Value().
+
+
+
+\-Referenced by cryomesh\-::components\-::\-Connection\-::update().
+
+
+
+\subsection{\-Friends \-And \-Related \-Function \-Documentation}
+\hypertarget{classcryomesh_1_1components_1_1ImpulseCollection_a7c219e0c7bb5a54301e5655d28f8a81b}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const {\bf \-Impulse\-Collection} \&}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}\label{classcryomesh_1_1components_1_1ImpulseCollection_a7c219e0c7bb5a54301e5655d28f8a81b}
+
+
+\-To stream operator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em std\-::ostream} & \& os \-The output stream \\
+\hline
+{\em const} & \hyperlink{classcryomesh_1_1components_1_1ImpulseCollection}{\-Impulse\-Collection} \& obj \-The object to stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+std\-::ostream \& \-The output stream 
+\end{DoxyReturn}
+
+
+\-Definition at line 375 of file \-Impulse\-Collection.\-cpp.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classcryomesh_1_1dataobjects_1_1DataObjectController_aa13d30e9fa2f1caa0510635214d4bb26}{\index{cryomesh\-::components\-::\-Impulse\-Collection@{cryomesh\-::components\-::\-Impulse\-Collection}!data\-Object@{data\-Object}}
+\index{data\-Object@{data\-Object}!cryomesh::components::ImpulseCollection@{cryomesh\-::components\-::\-Impulse\-Collection}}
+\subsubsection[{data\-Object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf dataobjects\-::\-Data\-Object}$<$unsigned long int , double $>$ {\bf cryomesh\-::dataobjects\-::\-Data\-Object\-Controller}$<$ unsigned long int , double  $>$\-::{\bf data\-Object}\hspace{0.3cm}{\ttfamily  \mbox{[}protected, inherited\mbox{]}}}}\label{classcryomesh_1_1dataobjects_1_1DataObjectController_aa13d30e9fa2f1caa0510635214d4bb26}
+
+
+\-Definition at line 85 of file \-Data\-Object\-Controller.\-h.
+
+
+
+\-Referenced by refresh\-Data\-Object(), and cryomesh\-::components\-::\-Node\-::update().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/components/\hyperlink{ImpulseCollection_8h}{\-Impulse\-Collection.\-h}\item 
+/home/niall/\-Projects/\-Eclipse/\-C\-P\-P/cryomesh/src/components/\hyperlink{ImpulseCollection_8cpp}{\-Impulse\-Collection.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,241 @@
+.TH "cryomesh::manipulators::IClusterAnalyser::RestructuringCountdown" 3 "Tue Mar 6 2012" "cryomesh" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cryomesh::manipulators::IClusterAnalyser::RestructuringCountdown \- 
+.PP
+Class to hold together information on whether we can act to restructure items\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IClusterAnalyser\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRestructuringCountdown\fP (int ct=0)"
+.br
+.ti -1c
+.RI "bool \fBisRestructuringEnabled\fP (int var) const "
+.br
+.ti -1c
+.RI "bool \fBisAnyShortRestructuringEnabled\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisAnyMediumRestructuringEnabled\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisAnyLongRestructuringEnabled\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisAnyRestructuringEnabled\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisAllShortRestructuringEnabled\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisAllMediumRestructuringEnabled\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisAllLongRestructuringEnabled\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisAllRestructuringEnabled\fP () const "
+.br
+.ti -1c
+.RI "\fBRestructuringCountdown\fP & \fBoperator--\fP ()"
+.br
+.RI "\fIPrefix decrement operator\&. \fP"
+.ti -1c
+.RI "void \fBsetShortCountdown\fP (int ct)"
+.br
+.ti -1c
+.RI "void \fBsetMediumCountdown\fP (int ct)"
+.br
+.ti -1c
+.RI "void \fBsetLongCountdown\fP (int ct)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBshortCreation\fP"
+.br
+.ti -1c
+.RI "int \fBshortDestruction\fP"
+.br
+.ti -1c
+.RI "int \fBmediumCreation\fP"
+.br
+.ti -1c
+.RI "int \fBmediumDestruction\fP"
+.br
+.ti -1c
+.RI "int \fBlongCreation\fP"
+.br
+.ti -1c
+.RI "int \fBlongDestruction\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBRestructuringCountdown\fP &obj)"
+.br
+.RI "\fITo stream operator\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class to hold together information on whether we can act to restructure items\&. 
+.PP
+Definition at line 23 of file IClusterAnalyser\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBcryomesh::manipulators::IClusterAnalyser::RestructuringCountdown::RestructuringCountdown\fP (intct = \fC0\fP)\fC [inline]\fP"
+.PP
+Definition at line 24 of file IClusterAnalyser\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool \fBcryomesh::manipulators::IClusterAnalyser::RestructuringCountdown::isAllLongRestructuringEnabled\fP () const\fC [inline]\fP"
+.PP
+Definition at line 60 of file IClusterAnalyser\&.h\&.
+.PP
+References isRestructuringEnabled(), longCreation, and longDestruction\&.
+.SS "bool \fBcryomesh::manipulators::IClusterAnalyser::RestructuringCountdown::isAllMediumRestructuringEnabled\fP () const\fC [inline]\fP"
+.PP
+Definition at line 56 of file IClusterAnalyser\&.h\&.
+.PP
+References isRestructuringEnabled(), mediumCreation, and mediumDestruction\&.
+.SS "bool \fBcryomesh::manipulators::IClusterAnalyser::RestructuringCountdown::isAllRestructuringEnabled\fP () const\fC [inline]\fP"
+.PP
+Definition at line 64 of file IClusterAnalyser\&.h\&.
+.PP
+References isAnyLongRestructuringEnabled(), isAnyMediumRestructuringEnabled(), and isAnyShortRestructuringEnabled()\&.
+.SS "bool \fBcryomesh::manipulators::IClusterAnalyser::RestructuringCountdown::isAllShortRestructuringEnabled\fP () const\fC [inline]\fP"
+.PP
+Definition at line 52 of file IClusterAnalyser\&.h\&.
+.PP
+References isRestructuringEnabled(), shortCreation, and shortDestruction\&.
+.SS "bool \fBcryomesh::manipulators::IClusterAnalyser::RestructuringCountdown::isAnyLongRestructuringEnabled\fP () const\fC [inline]\fP"
+.PP
+Definition at line 43 of file IClusterAnalyser\&.h\&.
+.PP
+References isRestructuringEnabled(), longCreation, and longDestruction\&.
+.PP
+Referenced by cryomesh::manipulators::ClusterAnalyserBasic::analyseCluster(), isAllRestructuringEnabled(), and isAnyRestructuringEnabled()\&.
+.SS "bool \fBcryomesh::manipulators::IClusterAnalyser::RestructuringCountdown::isAnyMediumRestructuringEnabled\fP () const\fC [inline]\fP"
+.PP
+Definition at line 39 of file IClusterAnalyser\&.h\&.
+.PP
+References isRestructuringEnabled(), mediumCreation, and mediumDestruction\&.
+.PP
+Referenced by cryomesh::manipulators::ClusterAnalyserBasic::analyseCluster(), isAllRestructuringEnabled(), and isAnyRestructuringEnabled()\&.
+.SS "bool \fBcryomesh::manipulators::IClusterAnalyser::RestructuringCountdown::isAnyRestructuringEnabled\fP () const\fC [inline]\fP"
+.PP
+Definition at line 47 of file IClusterAnalyser\&.h\&.
+.PP
+References isAnyLongRestructuringEnabled(), isAnyMediumRestructuringEnabled(), and isAnyShortRestructuringEnabled()\&.
+.PP
+Referenced by cryomesh::manipulators::ClusterAnalyserBasic::analyseCluster()\&.
+.SS "bool \fBcryomesh::manipulators::IClusterAnalyser::RestructuringCountdown::isAnyShortRestructuringEnabled\fP () const\fC [inline]\fP"
+.PP
+Definition at line 35 of file IClusterAnalyser\&.h\&.
+.PP
+References isRestructuringEnabled(), shortCreation, and shortDestruction\&.
+.PP
+Referenced by isAllRestructuringEnabled(), and isAnyRestructuringEnabled()\&.
+.SS "bool \fBcryomesh::manipulators::IClusterAnalyser::RestructuringCountdown::isRestructuringEnabled\fP (intvar) const\fC [inline]\fP"
+.PP
+Definition at line 28 of file IClusterAnalyser\&.h\&.
+.PP
+Referenced by isAllLongRestructuringEnabled(), isAllMediumRestructuringEnabled(), isAllShortRestructuringEnabled(), isAnyLongRestructuringEnabled(), isAnyMediumRestructuringEnabled(), and isAnyShortRestructuringEnabled()\&.
+.SS "\fBRestructuringCountdown\fP& cryomesh::manipulators::IClusterAnalyser::RestructuringCountdown::operator-- ()\fC [inline]\fP"
+.PP
+Prefix decrement operator\&. \fBReturns:\fP
+.RS 4
+\fBRestructuringCountdown\fP & Return this 
+.RE
+.PP
+
+.PP
+Definition at line 75 of file IClusterAnalyser\&.h\&.
+.PP
+References longCreation, longDestruction, mediumCreation, mediumDestruction, shortCreation, and shortDestruction\&.
+.SS "void \fBcryomesh::manipulators::IClusterAnalyser::RestructuringCountdown::setLongCountdown\fP (intct)\fC [inline]\fP"
+.PP
+Definition at line 105 of file IClusterAnalyser\&.h\&.
+.PP
+References longCreation, and longDestruction\&.
+.PP
+Referenced by cryomesh::manipulators::ClusterAnalyserBasic::analyseCluster()\&.
+.SS "void \fBcryomesh::manipulators::IClusterAnalyser::RestructuringCountdown::setMediumCountdown\fP (intct)\fC [inline]\fP"
+.PP
+Definition at line 101 of file IClusterAnalyser\&.h\&.
+.PP
+References mediumCreation, and mediumDestruction\&.
+.PP
+Referenced by cryomesh::manipulators::ClusterAnalyserBasic::analyseCluster()\&.
+.SS "void \fBcryomesh::manipulators::IClusterAnalyser::RestructuringCountdown::setShortCountdown\fP (intct)\fC [inline]\fP"
+.PP
+Definition at line 97 of file IClusterAnalyser\&.h\&.
+.PP
+References shortCreation, and shortDestruction\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream &os, const \fBRestructuringCountdown\fP &obj)\fC [friend]\fP"
+.PP
+To stream operator\&. \fBParameters:\fP
+.RS 4
+\fIstd::ostream\fP & os The output stream 
+.br
+\fIconst\fP \fBRestructuringCountdown\fP & obj The object to stream
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::ostream & The output stream 
+.RE
+.PP
+
+.PP
+Definition at line 121 of file IClusterAnalyser\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int \fBcryomesh::manipulators::IClusterAnalyser::RestructuringCountdown::longCreation\fP"
+.PP
+Definition at line 132 of file IClusterAnalyser\&.h\&.
+.PP
+Referenced by isAllLongRestructuringEnabled(), isAnyLongRestructuringEnabled(), operator--(), and setLongCountdown()\&.
+.SS "int \fBcryomesh::manipulators::IClusterAnalyser::RestructuringCountdown::longDestruction\fP"
+.PP
+Definition at line 133 of file IClusterAnalyser\&.h\&.
+.PP
+Referenced by isAllLongRestructuringEnabled(), isAnyLongRestructuringEnabled(), operator--(), and setLongCountdown()\&.
+.SS "int \fBcryomesh::manipulators::IClusterAnalyser::RestructuringCountdown::mediumCreation\fP"
+.PP
+Definition at line 130 of file IClusterAnalyser\&.h\&.
+.PP
+Referenced by isAllMediumRestructuringEnabled(), isAnyMediumRestructuringEnabled(), operator--(), and setMediumCountdown()\&.
+.SS "int \fBcryomesh::manipulators::IClusterAnalyser::RestructuringCountdown::mediumDestruction\fP"
+.PP
+Definition at line 131 of file IClusterAnalyser\&.h\&.
+.PP
+Referenced by isAllMediumRestructuringEnabled(), isAnyMediumRestructuringEnabled(), operator--(), and setMediumCountdown()\&.
+.SS "int \fBcryomesh::manipulators::IClusterAnalyser::RestructuringCountdown::shortCreation\fP"
+.PP
+Definition at line 128 of file IClusterAnalyser\&.h\&.
+.PP
+Referenced by isAllShortRestructuringEnabled(), isAnyShortRestructuringEnabled(), operator--(), and setShortCountdown()\&.
+.SS "int \fBcryomesh::manipulators::IClusterAnalyser::RestructuringCountdown::shortDestruction\fP"
+.PP
+Definition at line 129 of file IClusterAnalyser\&.h\&.
+.PP
+Referenced by isAllShortRestructuringEnabled(), isAnyShortRestructuringEnabled(), operator--(), and setShortCountdown()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cryomesh from the source code\&.

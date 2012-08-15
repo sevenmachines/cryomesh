@@ -1,0 +1,651 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="Node_8h" kind="file">
+    <compoundname>Node.h</compoundname>
+    <includes refid="ImpulseCollection_8h" local="yes">ImpulseCollection.h</includes>
+    <includes refid="Cycle_8h" local="yes">common/Cycle.h</includes>
+    <includes refid="Connector_8h" local="yes">common/Connector.h</includes>
+    <includes local="yes">common/Tagged.h</includes>
+    <includes local="yes">common/Debuggable.h</includes>
+    <includes local="yes">common/Defs.h</includes>
+    <includes local="yes">spacial/Point.h</includes>
+    <includes refid="DataObjectController_8h" local="yes">dataobjects/DataObjectController.h</includes>
+    <includes refid="NodeDatabaseObject_8h" local="yes">manager/NodeDatabaseObject.h</includes>
+    <includes local="no">list</includes>
+    <includes local="no">map</includes>
+    <includedby refid="Connection_8h" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h</includedby>
+    <includedby refid="Node_8cpp" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Node.cpp</includedby>
+    <includedby refid="NodeMap_8h" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h</includedby>
+    <includedby refid="ClusterArchitect_8cpp" local="no">/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/ClusterArchitect.cpp</includedby>
+    <includedby refid="Cluster_8h" local="no">/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Cluster.h</includedby>
+    <includedby refid="Fibre_8h" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Fibre.h</includedby>
+    <includedby refid="Mesh_8cpp" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Mesh.cpp</includedby>
+    <includedby refid="NodeMesh_8h" local="yes">/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h</includedby>
+    <incdepgraph>
+      <node id="609">
+        <label>list</label>
+      </node>
+      <node id="599">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="625">
+        <label>boost/tokenizer.hpp</label>
+      </node>
+      <node id="596">
+        <label>ActivityTimer.h</label>
+        <link refid="ActivityTimer_8h"/>
+        <childnode refid="597" relation="include">
+        </childnode>
+      </node>
+      <node id="619">
+        <label>spacial/Point.h</label>
+      </node>
+      <node id="592">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Node.h</label>
+        <link refid="Node.h"/>
+        <childnode refid="593" relation="include">
+        </childnode>
+        <childnode refid="602" relation="include">
+        </childnode>
+        <childnode refid="615" relation="include">
+        </childnode>
+        <childnode refid="601" relation="include">
+        </childnode>
+        <childnode refid="598" relation="include">
+        </childnode>
+        <childnode refid="618" relation="include">
+        </childnode>
+        <childnode refid="619" relation="include">
+        </childnode>
+        <childnode refid="611" relation="include">
+        </childnode>
+        <childnode refid="620" relation="include">
+        </childnode>
+        <childnode refid="609" relation="include">
+        </childnode>
+        <childnode refid="613" relation="include">
+        </childnode>
+      </node>
+      <node id="616">
+        <label>boost/uuid/uuid_io.hpp</label>
+      </node>
+      <node id="615">
+        <label>common/Connector.h</label>
+        <link refid="Connector_8h"/>
+        <childnode refid="602" relation="include">
+        </childnode>
+        <childnode refid="613" relation="include">
+        </childnode>
+        <childnode refid="599" relation="include">
+        </childnode>
+        <childnode refid="614" relation="include">
+        </childnode>
+        <childnode refid="616" relation="include">
+        </childnode>
+        <childnode refid="617" relation="include">
+        </childnode>
+      </node>
+      <node id="604">
+        <label>common/TimeKeeper.h</label>
+        <link refid="TimeKeeper_8h"/>
+        <childnode refid="602" relation="include">
+        </childnode>
+        <childnode refid="599" relation="include">
+        </childnode>
+        <childnode refid="605" relation="include">
+        </childnode>
+        <childnode refid="606" relation="include">
+        </childnode>
+        <childnode refid="607" relation="include">
+        </childnode>
+        <childnode refid="608" relation="include">
+        </childnode>
+      </node>
+      <node id="603">
+        <label>gmpxx.h</label>
+      </node>
+      <node id="595">
+        <label>ActivityTimerDistance.h</label>
+        <link refid="ActivityTimerDistance_8h"/>
+        <childnode refid="596" relation="include">
+        </childnode>
+        <childnode refid="598" relation="include">
+        </childnode>
+        <childnode refid="599" relation="include">
+        </childnode>
+      </node>
+      <node id="598">
+        <label>common/Debuggable.h</label>
+      </node>
+      <node id="621">
+        <label>DatabaseObject.h</label>
+        <link refid="DatabaseObject_8h"/>
+        <childnode refid="613" relation="include">
+        </childnode>
+        <childnode refid="622" relation="include">
+        </childnode>
+        <childnode refid="623" relation="include">
+        </childnode>
+        <childnode refid="624" relation="include">
+        </childnode>
+        <childnode refid="625" relation="include">
+        </childnode>
+      </node>
+      <node id="622">
+        <label>string</label>
+      </node>
+      <node id="613">
+        <label>map</label>
+      </node>
+      <node id="601">
+        <label>common/Tagged.h</label>
+      </node>
+      <node id="612">
+        <label>DataObject.h</label>
+        <link refid="DataObject_8h"/>
+        <childnode refid="613" relation="include">
+        </childnode>
+        <childnode refid="597" relation="include">
+        </childnode>
+      </node>
+      <node id="597">
+        <label>ostream</label>
+      </node>
+      <node id="607">
+        <label>boost/timer.hpp</label>
+      </node>
+      <node id="610">
+        <label>common/KeyMappedCollection.h</label>
+      </node>
+      <node id="606">
+        <label>boost/date_time/posix_time/posix_time.hpp</label>
+      </node>
+      <node id="611">
+        <label>dataobjects/DataObjectController.h</label>
+        <link refid="DataObjectController_8h"/>
+        <childnode refid="612" relation="include">
+        </childnode>
+      </node>
+      <node id="600">
+        <label>common/SimpleCollection.h</label>
+      </node>
+      <node id="623">
+        <label>sstream</label>
+      </node>
+      <node id="618">
+        <label>common/Defs.h</label>
+      </node>
+      <node id="617">
+        <label>common/Misc.h</label>
+      </node>
+      <node id="608">
+        <label>time.h</label>
+      </node>
+      <node id="624">
+        <label>iostream</label>
+      </node>
+      <node id="605">
+        <label>boost/serialization/shared_ptr.hpp</label>
+      </node>
+      <node id="594">
+        <label>Impulse.h</label>
+        <link refid="Impulse_8h"/>
+        <childnode refid="595" relation="include">
+        </childnode>
+        <childnode refid="600" relation="include">
+        </childnode>
+        <childnode refid="601" relation="include">
+        </childnode>
+        <childnode refid="602" relation="include">
+        </childnode>
+        <childnode refid="604" relation="include">
+        </childnode>
+        <childnode refid="598" relation="include">
+        </childnode>
+        <childnode refid="609" relation="include">
+        </childnode>
+      </node>
+      <node id="620">
+        <label>manager/NodeDatabaseObject.h</label>
+        <link refid="NodeDatabaseObject_8h"/>
+        <childnode refid="621" relation="include">
+        </childnode>
+        <childnode refid="619" relation="include">
+        </childnode>
+        <childnode refid="602" relation="include">
+        </childnode>
+        <childnode refid="622" relation="include">
+        </childnode>
+        <childnode refid="623" relation="include">
+        </childnode>
+      </node>
+      <node id="602">
+        <label>common/Cycle.h</label>
+        <link refid="Cycle_8h"/>
+        <childnode refid="603" relation="include">
+        </childnode>
+      </node>
+      <node id="614">
+        <label>boost/uuid/uuid.hpp</label>
+      </node>
+      <node id="593">
+        <label>ImpulseCollection.h</label>
+        <link refid="ImpulseCollection_8h"/>
+        <childnode refid="594" relation="include">
+        </childnode>
+        <childnode refid="602" relation="include">
+        </childnode>
+        <childnode refid="610" relation="include">
+        </childnode>
+        <childnode refid="611" relation="include">
+        </childnode>
+        <childnode refid="614" relation="include">
+        </childnode>
+        <childnode refid="598" relation="include">
+        </childnode>
+        <childnode refid="613" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="639">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.h</label>
+        <link refid="Creator_8h"/>
+        <childnode refid="640" relation="include">
+        </childnode>
+        <childnode refid="641" relation="include">
+        </childnode>
+      </node>
+      <node id="631">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/IClusterAnalyser.h</label>
+        <link refid="IClusterAnalyser_8h"/>
+        <childnode refid="632" relation="include">
+        </childnode>
+        <childnode refid="635" relation="include">
+        </childnode>
+      </node>
+      <node id="650">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Node.cpp</label>
+        <link refid="Node_8cpp"/>
+      </node>
+      <node id="644">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/utilities/Statistician.cpp</label>
+        <link refid="Statistician_8cpp"/>
+      </node>
+      <node id="638">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.h</label>
+        <link refid="Bundle_8h"/>
+        <childnode refid="639" relation="include">
+        </childnode>
+        <childnode refid="643" relation="include">
+        </childnode>
+        <childnode refid="644" relation="include">
+        </childnode>
+      </node>
+      <node id="626">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Node.h</label>
+        <link refid="Node.h"/>
+        <childnode refid="627" relation="include">
+        </childnode>
+        <childnode refid="650" relation="include">
+        </childnode>
+        <childnode refid="651" relation="include">
+        </childnode>
+        <childnode refid="634" relation="include">
+        </childnode>
+        <childnode refid="630" relation="include">
+        </childnode>
+        <childnode refid="648" relation="include">
+        </childnode>
+        <childnode refid="646" relation="include">
+        </childnode>
+        <childnode refid="652" relation="include">
+        </childnode>
+      </node>
+      <node id="643">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Bundle.cpp</label>
+        <link refid="Bundle_8cpp"/>
+      </node>
+      <node id="645">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Fibre.cpp</label>
+        <link refid="Fibre_8cpp"/>
+      </node>
+      <node id="633">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/ClusterAnalyserBasic.cpp</label>
+        <link refid="ClusterAnalyserBasic_8cpp"/>
+      </node>
+      <node id="648">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Fibre.h</label>
+        <link refid="Fibre_8h"/>
+        <childnode refid="634" relation="include">
+        </childnode>
+        <childnode refid="649" relation="include">
+        </childnode>
+        <childnode refid="636" relation="include">
+        </childnode>
+        <childnode refid="645" relation="include">
+        </childnode>
+      </node>
+      <node id="652">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.h</label>
+        <link refid="NodeMesh_8h"/>
+        <childnode refid="630" relation="include">
+        </childnode>
+        <childnode refid="647" relation="include">
+        </childnode>
+      </node>
+      <node id="628">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.cpp</label>
+        <link refid="Connection_8cpp"/>
+      </node>
+      <node id="629">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/ConnectionMap.h</label>
+        <link refid="ConnectionMap_8h"/>
+        <childnode refid="630" relation="include">
+        </childnode>
+        <childnode refid="648" relation="include">
+        </childnode>
+      </node>
+      <node id="630">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Cluster.h</label>
+        <link refid="Cluster_8h"/>
+        <childnode refid="631" relation="include">
+        </childnode>
+        <childnode refid="635" relation="include">
+        </childnode>
+        <childnode refid="637" relation="include">
+        </childnode>
+        <childnode refid="636" relation="include">
+        </childnode>
+        <childnode refid="645" relation="include">
+        </childnode>
+        <childnode refid="646" relation="include">
+        </childnode>
+        <childnode refid="647" relation="include">
+        </childnode>
+      </node>
+      <node id="647">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/NodeMesh.cpp</label>
+        <link refid="NodeMesh_8cpp"/>
+      </node>
+      <node id="649">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/FibreMap.h</label>
+        <link refid="FibreMap_8h"/>
+        <childnode refid="638" relation="include">
+        </childnode>
+      </node>
+      <node id="635">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/ClusterArchitect.h</label>
+        <link refid="ClusterArchitect_8h"/>
+        <childnode refid="633" relation="include">
+        </childnode>
+        <childnode refid="634" relation="include">
+        </childnode>
+        <childnode refid="636" relation="include">
+        </childnode>
+      </node>
+      <node id="651">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/NodeMap.h</label>
+        <link refid="NodeMap_8h"/>
+        <childnode refid="634" relation="include">
+        </childnode>
+        <childnode refid="630" relation="include">
+        </childnode>
+      </node>
+      <node id="646">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Mesh.cpp</label>
+        <link refid="Mesh_8cpp"/>
+      </node>
+      <node id="632">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/ClusterAnalyserBasic.h</label>
+        <link refid="ClusterAnalyserBasic_8h"/>
+        <childnode refid="633" relation="include">
+        </childnode>
+        <childnode refid="634" relation="include">
+        </childnode>
+      </node>
+      <node id="636">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/Cluster.cpp</label>
+        <link refid="Cluster_8cpp"/>
+      </node>
+      <node id="637">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/structures/ClusterMap.h</label>
+        <link refid="ClusterMap_8h"/>
+        <childnode refid="638" relation="include">
+        </childnode>
+      </node>
+      <node id="642">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.cpp</label>
+        <link refid="CryoManager_8cpp"/>
+      </node>
+      <node id="641">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/CryoManager.h</label>
+        <link refid="CryoManager_8h"/>
+        <childnode refid="642" relation="include">
+        </childnode>
+      </node>
+      <node id="627">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Connection.h</label>
+        <link refid="Connection_8h"/>
+        <childnode refid="628" relation="include">
+        </childnode>
+        <childnode refid="629" relation="include">
+        </childnode>
+        <childnode refid="650" relation="include">
+        </childnode>
+        <childnode refid="630" relation="include">
+        </childnode>
+        <childnode refid="645" relation="include">
+        </childnode>
+      </node>
+      <node id="634">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manipulators/ClusterArchitect.cpp</label>
+        <link refid="ClusterArchitect_8cpp"/>
+      </node>
+      <node id="640">
+        <label>/home/niall/Projects/Eclipse/CPP/cryomesh/src/manager/Creator.cpp</label>
+        <link refid="Creator_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classcryomesh_1_1components_1_1Node" prot="public">cryomesh::components::Node</innerclass>
+    <innernamespace refid="namespacecryomesh">cryomesh</innernamespace>
+    <innernamespace refid="namespacecryomesh_1_1components">cryomesh::components</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="8"><highlight class="preprocessor">#ifndef<sp/>NODE_H_</highlight></codeline>
+<codeline lineno="9"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>NODE_H_</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ImpulseCollection_8h" kindref="compound">ImpulseCollection.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Cycle_8h" kindref="compound">common/Cycle.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Connector_8h" kindref="compound">common/Connector.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;common/Tagged.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;common/Debuggable.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;common/Defs.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;spacial/Point.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="DataObjectController_8h" kindref="compound">dataobjects/DataObjectController.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="NodeDatabaseObject_8h" kindref="compound">manager/NodeDatabaseObject.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;list&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">cryomesh<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">components<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Connection;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="classcryomesh_1_1components_1_1Node" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcryomesh_1_1components_1_1Node" kindref="compound" tooltip="Node is an accumulation and computational nodal point of impulses.">Node</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>common::Tagged,<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>dataobjects::DataObjectController&lt;unsigned<sp/>long<sp/>int,<sp/>double&gt;,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>common::Debuggable<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="classcryomesh_1_1components_1_1Node_1a291becdd589b5bd338d5c0dd28199798" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a291becdd589b5bd338d5c0dd28199798" kindref="member" tooltip="Enum representing posible activation states.">ActivationState</ref><sp/>{</highlight></codeline>
+<codeline lineno="46" refid="classcryomesh_1_1components_1_1Node_1a291becdd589b5bd338d5c0dd28199798af92c268dc627d5fed69c32d6f0d3d82e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a291becdd589b5bd338d5c0dd28199798af92c268dc627d5fed69c32d6f0d3d82e" kindref="member">Positive</ref>,<sp/><ref refid="classcryomesh_1_1components_1_1Node_1a291becdd589b5bd338d5c0dd28199798ab3953601aa3c39f46155bba156a29fb6" kindref="member">Negative</ref>,<sp/><ref refid="classcryomesh_1_1components_1_1Node_1a291becdd589b5bd338d5c0dd28199798a4b7d78598441d7b9fd51e7bb58415f4b" kindref="member">None</ref></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="classcryomesh_1_1components_1_1Node_1adf36d853022d1b106766aefd3b9f3641" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1adf36d853022d1b106766aefd3b9f3641" kindref="member">RecoverySetting</ref><sp/>{</highlight></codeline>
+<codeline lineno="50" refid="classcryomesh_1_1components_1_1Node_1adf36d853022d1b106766aefd3b9f3641a3d8ee8e0f92053fa06eaa4184f1854b1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1components_1_1Node_1adf36d853022d1b106766aefd3b9f3641a91a2a1e92850c99a22afb1574bd74574" kindref="member">CLEAR_ALL_IMPULSES</ref><sp/>=<sp/>1,<sp/><ref refid="classcryomesh_1_1components_1_1Node_1adf36d853022d1b106766aefd3b9f3641a000e55e803e043c412dfbc2d222a34e6" kindref="member">CLEAR_ACTIVE_IMPULSES</ref><sp/>=<sp/>2,<sp/><ref refid="classcryomesh_1_1components_1_1Node_1adf36d853022d1b106766aefd3b9f3641a3d8ee8e0f92053fa06eaa4184f1854b1" kindref="member">DEACTIVATE_DURING_RECOVERY</ref><sp/>=<sp/>4</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1components_1_1Node_1aa28b184629aa9412666b9674a10c45ab" kindref="member" tooltip="Contructor.">Node</ref>();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1ae1ac5a2ed22ebc9b0cb7055b3e456097" kindref="member" tooltip="Destructor.">~Node</ref>();</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>General<sp/>function<sp/>to<sp/>start<sp/>a<sp/>full<sp/>update<sp/>cycle<sp/>on<sp/>the<sp/>node</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Update<sp/>the<sp/>ImpulseCollection<sp/>of<sp/>impulses,<sp/>then<sp/>check<sp/>if<sp/>this<sp/>is</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>active<sp/>on<sp/>the<sp/>current<sp/>tick.<sp/>If<sp/>active<sp/>then<sp/>send<sp/>an<sp/>impulse<sp/>to<sp/>our</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>connections.</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a960b083db047bb1b860d4ed09f9ad583" kindref="member">update</ref>();</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1ac40f33e5d0986d208b21302232f8a165" kindref="member" tooltip="Force the node to fire.">forceFire</ref>();</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;Impulse&gt;<sp/><ref refid="classcryomesh_1_1components_1_1Node_1a1098a370eba39dce1388d657e3d3aef9" kindref="member" tooltip="Add incoming Impulse.">addImpulse</ref>(boost::shared_ptr&lt;Impulse&gt;<sp/>impulse);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1af8ab49ec82ff876549f75123d65c41b4" kindref="member" tooltip="Add a list of incoming Impulses.">addImpulses</ref>(std::list&lt;boost::shared_ptr&lt;Impulse&gt;<sp/>&gt;<sp/><ref refid="classcryomesh_1_1components_1_1Node_1a8e9ae8373052bb63f2f1e6e453a3c18d" kindref="member">impulses</ref>);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Connector" kindref="compound" tooltip="Connector is a template to add connectable functionality between two classes.">common::Connector&lt;Node, Connection&gt;</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1components_1_1Node_1a28367d5dc76da04958ca22f6384f6073" kindref="member" tooltip="Get the Connector object for this Node.">getConnector</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1common_1_1Connector" kindref="compound" tooltip="Connector is a template to add connectable functionality between two classes.">common::Connector&lt;Node, Connection&gt;</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1components_1_1Node_1ae28261bb67b7412a67b21a4e4adaa9b1" kindref="member" tooltip="Get the mutable Connector object for this Node.">getMutableConnector</ref>();</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a501c4e986a566a4e7fc5f9c87e9c4d8e" kindref="member">isInputIsolated</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a211678e84d71cb71e3721eb9725fa934" kindref="member">isOutputIsolated</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a4a7775d987020170538f059688ff4a1f" kindref="member">connectInput</ref>(boost::shared_ptr&lt;Connection&gt;<sp/>con);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a660adcc4e2b3b7a427ad4625e5279de4" kindref="member">connectOutput</ref>(boost::shared_ptr&lt;Connection&gt;<sp/>con);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1ImpulseCollection" kindref="compound" tooltip="ImpulseCollection represents a collection of Impulse objects.">ImpulseCollection</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1components_1_1Node_1a63316f8a1ad0ffe3ee22f8b455ef27a4" kindref="member" tooltip="Get the collection of Impulses for this Node.">getImpulses</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;Impulse&gt;<sp/><ref refid="classcryomesh_1_1components_1_1Node_1a8a90b1faf2e6b633bbb4853e522c29b7" kindref="member" tooltip="Get the Impulse that is emitted.">getEmittedImpulse</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::shared_ptr&lt;Impulse&gt;<sp/><ref refid="classcryomesh_1_1components_1_1Node_1aa6e0c0a0063e657053482aac777759d3" kindref="member" tooltip="Get the mutable Impulse that is emitted.">getMutableEmittedImpulse</ref>();</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a8fc7efcfff86d2ca72b54166f600b7d0" kindref="member" tooltip="Emit a positive impulse to outgoing connections.">emitImpulsePositive</ref>();</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a75addf25b1b16bf1476cf19f00d7513d" kindref="member" tooltip="Emit a negative impulse to outgoing connections.">emitImpulseNegative</ref>();</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1components_1_1ImpulseCollection" kindref="compound" tooltip="ImpulseCollection represents a collection of Impulse objects.">ImpulseCollection</ref><sp/>&amp;<sp/><ref refid="classcryomesh_1_1components_1_1Node_1adaa0b9f4c9a6130525fce2e43f418bc3" kindref="member" tooltip="Get the mutable collection of Impulses for this Node.">getMutableImpulses</ref>();</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;common::Cycle,<sp/>double&gt;<sp/>&amp;<sp/><ref refid="classcryomesh_1_1components_1_1Node_1a98801c702bf6613f06880f7cc577ddd7" kindref="member" tooltip="Get the collection of all activities.">getActivities</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1ab9f3406d26f50f3dcee4b19c30cfc893" kindref="member" tooltip="Update and get the current activity of the node.">updateActivity</ref>();</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1ab9f3406d26f50f3dcee4b19c30cfc893" kindref="member" tooltip="Update and get the current activity of the node.">updateActivity</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref><sp/>&amp;<sp/>cycle);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a355e414f9a353883fd0f4b7cae24d6cc" kindref="member" tooltip="Get the current activity of the node.">getActivity</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a355e414f9a353883fd0f4b7cae24d6cc" kindref="member" tooltip="Get the current activity of the node.">getActivity</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref><sp/>&amp;<sp/>cycle)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1ab561d1b0b10339ad8ae2280a8063677b" kindref="member">getActivityThreshold</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1acf3b0de410fee4350390bd527c544187" kindref="member" tooltip="Set the current activity of the node.">setActivity</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>activity);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1acf3b0de410fee4350390bd527c544187" kindref="member" tooltip="Set the current activity of the node.">setActivity</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref><sp/>&amp;<sp/>cycle,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>activity);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::shared_ptr&lt;manager::DatabaseObject&gt;<sp/><ref refid="classcryomesh_1_1components_1_1Node_1a811e64601504ff99536c2680429c7582" kindref="member" tooltip="Return a database object for this node.">getDatabaseObject</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>spacial::Point<sp/>&amp;<sp/><ref refid="classcryomesh_1_1components_1_1Node_1a313531f48e1ccc3902fdeb313d41bd7b" kindref="member" tooltip="get the position of the node">getPosition</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a970e8e8ae18053bd9e087ce7faf720de" kindref="member" tooltip="Set the spacial position of the node, remembering to update connections lengths.">setPosition</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>spacial::Point<sp/>&amp;<sp/>new_position);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a291becdd589b5bd338d5c0dd28199798" kindref="member" tooltip="Enum representing posible activation states.">ActivationState</ref><sp/><ref refid="classcryomesh_1_1components_1_1Node_1ac0f6e2c8823c98dc3d85091b2deef3f7" kindref="member" tooltip="Get the last activation state.">getLastActivationState</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a5ec290205a68a8635a740ae32608cebf" kindref="member" tooltip="Randomise the nodes state.">randomise</ref>();</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a42acc61b6b0d590433215535d3bc67cd" kindref="member">enableDebug</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>b);</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>state<sp/>checks</highlight></codeline>
+<codeline lineno="274"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a83303fef90a3093807d76a59e4df5288" kindref="member" tooltip="Check if Node is currently triggered.">isTriggered</ref>(<ref refid="classcryomesh_1_1components_1_1Node_1a291becdd589b5bd338d5c0dd28199798" kindref="member" tooltip="Enum representing posible activation states.">ActivationState</ref><sp/>state<sp/>=<sp/><ref refid="classcryomesh_1_1components_1_1Node_1a291becdd589b5bd338d5c0dd28199798a4b7d78598441d7b9fd51e7bb58415f4b" kindref="member">None</ref>);</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1af2943ca887ce9c2b1a65297cae14d752" kindref="member" tooltip="Check if Node is currently activated.">isActive</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a291becdd589b5bd338d5c0dd28199798" kindref="member" tooltip="Enum representing posible activation states.">ActivationState</ref><sp/>state<sp/>=<sp/><ref refid="classcryomesh_1_1components_1_1Node_1a291becdd589b5bd338d5c0dd28199798a4b7d78598441d7b9fd51e7bb58415f4b" kindref="member">None</ref>);</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a2309ba6b3ffa640410dfdc1630a66400" kindref="member" tooltip="Check if Node is live, ie active at any point in now or the future.">isLive</ref>();</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1ade4a1e563ab60b7d8ff8fa6830d2fcbf" kindref="member" tooltip="Destroy all connections.">destroyAllConnections</ref>();</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1ad61b50a382ae7d64cedb8f8f8a5d66cd" kindref="member" tooltip="Destroy Input connections by removing them all from both their attached input and output nodes...">destroyAllInputConnections</ref>();</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a8147d9a370a680ffb6c847a0df276114" kindref="member" tooltip="Destroy Output connections by removing them all from both their attached input and output nodes...">destroyAllOutputConnections</ref>();</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a2f55aa5adcac4a2f1aa1f0a7c8fc697d" kindref="member">isPrimaryInputAttachedNode</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a8466a252c7a4e6fb2d825826be53e218" kindref="member">isPrimaryOutputAttachedNode</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;boost::shared_ptr&lt;Connection&gt;<sp/>&gt;<sp/><ref refid="classcryomesh_1_1components_1_1Node_1a0f172d0f98de3d008d2d0a5efa15d3b2" kindref="member">getPrimaryInputConnections</ref>();</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;boost::shared_ptr&lt;Connection&gt;<sp/>&gt;<sp/><ref refid="classcryomesh_1_1components_1_1Node_1aa0ac6ca5e0d98261840760bdc07e4d3f" kindref="member">getPrimaryOutputConnections</ref>();</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::ostream&amp;<sp/><ref refid="classcryomesh_1_1components_1_1Node_1aa13c716dda529b01000661b942327bd6" kindref="member" tooltip="To stream operator.">operator&lt;&lt;</ref>(std::ostream<sp/>&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node" kindref="compound" tooltip="Node is an accumulation and computational nodal point of impulses.">Node</ref><sp/>&amp;<sp/>obj);</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::ostream<sp/>&amp;<sp/><ref refid="classcryomesh_1_1components_1_1Node_1a036878d7028df14d1015c0ce413d4038" kindref="member">printConnections</ref>(std::ostream<sp/>&amp;<sp/>os,</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::map&lt;boost::uuids::uuid,<sp/>boost::shared_ptr&lt;Connection&gt;<sp/>&gt;<sp/>&amp;<sp/>all_cons,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>formatter<sp/>=</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>STATICS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341" refid="classcryomesh_1_1components_1_1Node_1ae5b4fa1289a3ab819710ff7a40a77282" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1ae5b4fa1289a3ab819710ff7a40a77282" kindref="member">MAX_ACTIVITIES_LENGTH</ref>;</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight></codeline>
+<codeline lineno="348" refid="classcryomesh_1_1components_1_1Node_1adcfc8e07f6d216817a45f1c27190967b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1adcfc8e07f6d216817a45f1c27190967b" kindref="member">MAX_ACTIVITY_THRESHOLD</ref>;</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight></codeline>
+<codeline lineno="355" refid="classcryomesh_1_1components_1_1Node_1a5ed72f665cf7b32914e61b4655bd52ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a5ed72f665cf7b32914e61b4655bd52ca" kindref="member">MIN_ACTIVITY_THRESHOLD</ref>;</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="358"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>The<sp/>default<sp/>max<sp/>Point<sp/>for<sp/>the<sp/>bounding<sp/>box</highlight></codeline>
+<codeline lineno="359"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="360"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>@<sp/>var<sp/>Point</highlight></codeline>
+<codeline lineno="361"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="362" refid="classcryomesh_1_1components_1_1Node_1a3f4f3b7d2bba533fc0487b4f10c1efcd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>spacial::Point<sp/><ref refid="classcryomesh_1_1components_1_1Node_1a3f4f3b7d2bba533fc0487b4f10c1efcd" kindref="member">MAX_BOUNDING_BOX_POINT</ref>;</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="365"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Get<sp/>a<sp/>random<sp/>node<sp/>within<sp/>specified<sp/>bounding<sp/>box</highlight></codeline>
+<codeline lineno="366"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="367"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>Point</highlight></codeline>
+<codeline lineno="368"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>max<sp/>bounding<sp/>box<sp/>point,<sp/>default<sp/>to<sp/>predefined<sp/>max</highlight></codeline>
+<codeline lineno="369"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="370"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>@return<sp/>boost::shared_ptr&lt;Node&gt;</highlight></codeline>
+<codeline lineno="371"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>randomised<sp/>node</highlight></codeline>
+<codeline lineno="372"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;Node&gt;<sp/><ref refid="classcryomesh_1_1components_1_1Node_1a3ffbf4f53801b9e83c815e97e3072302" kindref="member">getRandom</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>spacial::Point<sp/>&amp;<sp/>max_point<sp/>=<sp/><ref refid="classcryomesh_1_1components_1_1Node_1a3f4f3b7d2bba533fc0487b4f10c1efcd" kindref="member">MAX_BOUNDING_BOX_POINT</ref>);</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"></highlight></codeline>
+<codeline lineno="375"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a291becdd589b5bd338d5c0dd28199798" kindref="member" tooltip="Enum representing posible activation states.">Node::ActivationState</ref><sp/><ref refid="classcryomesh_1_1components_1_1Node_1adeebae01197045204f1b9cda1ece3372" kindref="member" tooltip="Check level of impulses and decide whether to activate the node.">checkActivationState</ref>();</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"></highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a291becdd589b5bd338d5c0dd28199798" kindref="member" tooltip="Enum representing posible activation states.">Node::ActivationState</ref><sp/><ref refid="classcryomesh_1_1components_1_1Node_1ac4f969b7c236a6e910031101879c8da3" kindref="member" tooltip="Check if the object is ready to fire off an impulse and carry it out.">checkFire</ref>();</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"></highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1ade03584e4db3f8e1eeddc9ad371b4658" kindref="member" tooltip="Update the collection of impulses by one cycle.">updateImpulses</ref>();</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"></highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a3323a7f7e9958b78552746ddf374c4fc" kindref="member" tooltip="Emit an impulse to outgoing connections.">emitImpulse</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>positive);</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"></highlight></codeline>
+<codeline lineno="417"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1ab916e0beff2dcecd14c284dd63bd0585" kindref="member" tooltip="Add an activity to the list of activities.">addActivity</ref>(<ref refid="classcryomesh_1_1common_1_1Cycle" kindref="compound">common::Cycle</ref>,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>activity);</highlight></codeline>
+<codeline lineno="418"><highlight class="normal"></highlight></codeline>
+<codeline lineno="423"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1ab769e1efe1fd3e0ae9ff0a7643dd473c" kindref="member" tooltip="Recalculate state of node and connections based on current position.">updatePosition</ref>();</highlight></codeline>
+<codeline lineno="424"><highlight class="normal"></highlight></codeline>
+<codeline lineno="425"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a92bbb37859ba4b810381bd733ad5d63c" kindref="member">enterRecovery</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>recovery_settings<sp/>=<sp/><ref refid="classcryomesh_1_1components_1_1Node_1adf36d853022d1b106766aefd3b9f3641a91a2a1e92850c99a22afb1574bd74574" kindref="member">CLEAR_ALL_IMPULSES</ref>);</highlight></codeline>
+<codeline lineno="426"><highlight class="normal"></highlight></codeline>
+<codeline lineno="427"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="433" refid="classcryomesh_1_1components_1_1Node_1a270451d7286a4e6f344559a3d48d1193" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a270451d7286a4e6f344559a3d48d1193" kindref="member">activityThreshold</ref>;</highlight></codeline>
+<codeline lineno="434"><highlight class="normal"></highlight></codeline>
+<codeline lineno="440" refid="classcryomesh_1_1components_1_1Node_1a43b68f9f1a83bca4d4fc4f55bb8dd8de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::shared_ptr&lt;common::Connector&lt;Node,<sp/>Connection&gt;<sp/>&gt;<sp/><ref refid="classcryomesh_1_1components_1_1Node_1a43b68f9f1a83bca4d4fc4f55bb8dd8de" kindref="member">connector</ref>;</highlight></codeline>
+<codeline lineno="441"><highlight class="normal"></highlight></codeline>
+<codeline lineno="447" refid="classcryomesh_1_1components_1_1Node_1a8e9ae8373052bb63f2f1e6e453a3c18d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1components_1_1ImpulseCollection" kindref="compound" tooltip="ImpulseCollection represents a collection of Impulse objects.">ImpulseCollection</ref><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a8e9ae8373052bb63f2f1e6e453a3c18d" kindref="member">impulses</ref>;</highlight></codeline>
+<codeline lineno="448"><highlight class="normal"></highlight></codeline>
+<codeline lineno="454" refid="classcryomesh_1_1components_1_1Node_1a6b5e004fc2bbdbd8ec7173b44af8ffe5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::shared_ptr&lt;Impulse&gt;<sp/><ref refid="classcryomesh_1_1components_1_1Node_1a6b5e004fc2bbdbd8ec7173b44af8ffe5" kindref="member">emittedImpulse</ref>;</highlight></codeline>
+<codeline lineno="455"><highlight class="normal"></highlight></codeline>
+<codeline lineno="461" refid="classcryomesh_1_1components_1_1Node_1a39bf3a9c006d8ee03769d6b86127e7cf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1dataobjects_1_1DataObject" kindref="compound">dataobjects::DataObject&lt;common::Cycle, double&gt;</ref><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a39bf3a9c006d8ee03769d6b86127e7cf" kindref="member">activities</ref>;</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"></highlight></codeline>
+<codeline lineno="468" refid="classcryomesh_1_1components_1_1Node_1afad345a6d8cc1eacc555acde8c065b61" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>spacial::Point<sp/><ref refid="classcryomesh_1_1components_1_1Node_1afad345a6d8cc1eacc555acde8c065b61" kindref="member">position</ref>;</highlight></codeline>
+<codeline lineno="469"><highlight class="normal"></highlight></codeline>
+<codeline lineno="475" refid="classcryomesh_1_1components_1_1Node_1ab94a09be9e58cc248f9d62ed5c45c83d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcryomesh_1_1components_1_1Node_1a291becdd589b5bd338d5c0dd28199798" kindref="member" tooltip="Enum representing posible activation states.">ActivationState</ref><sp/><ref refid="classcryomesh_1_1components_1_1Node_1ab94a09be9e58cc248f9d62ed5c45c83d" kindref="member">lastActivationState</ref>;</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"></highlight></codeline>
+<codeline lineno="477"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="478"><highlight class="normal"></highlight></codeline>
+<codeline lineno="479"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"></highlight></codeline>
+<codeline lineno="481"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"></highlight></codeline>
+<codeline lineno="483"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>NODE_H_<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/niall/Projects/Eclipse/CPP/cryomesh/src/components/Node.h"/>
+  </compounddef>
+</doxygen>
